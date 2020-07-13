@@ -1,2 +1,2 @@
 # PracticaEB2020
-EB GUIDE Projects
+Welcome to EB GUIDE Internship
