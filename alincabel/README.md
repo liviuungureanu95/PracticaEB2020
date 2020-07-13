@@ -1,3 +1,2 @@
 # PracticaEB2020
-New information
-
+This is an empty EB GUIDE Project
