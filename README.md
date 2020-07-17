@@ -20,12 +20,6 @@
     
 >**Note:** Do not commit changes on master. Always create a branch and start a pull request.
 
-```mermaid
-graph LR
-A[Master] -- create branch --> B(Your work)
-A --> C
-B -- Pull request --> C[Master]
-```
 ## Choose project(s)
 
 * Once you decided you want to start working on your EB GUIDE project, go to your *firstname_lastname* directory, create a new folder with the name of your project (e.g. *MyProject*).
