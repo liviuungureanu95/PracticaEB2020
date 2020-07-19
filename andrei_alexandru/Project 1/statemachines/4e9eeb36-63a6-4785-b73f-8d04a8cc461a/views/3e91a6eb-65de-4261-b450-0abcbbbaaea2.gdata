@@ -1,0 +1,43 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(3e91a6eb-65de-4261-b450-0abcbbbaaea2)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(3bc7cdbb-4208-4f84-a7e3-3e3166eafbf3)
+		{
+			features: feature_list [
+				TouchShortReleased(6d004353-2bce-4774-a3f6-bd83953dffe7)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(36dcaadd-9a5d-4cdc-b433-011a50d1290b)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    fire_delayed 500, ev:\"Event2\"()" \
+							"    true" \
+							"}"
+					}
+				}, 
+				StateTouched(ee18a93c-cc89-4e66-bef0-66b188ba0f40)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "Rectangle 2"
+			visible: true
+			width: 100
+			height: 100
+			x: 635
+			y: 53
+			fillColor: #FF0000FF
+		}]
+	name: "View 2"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
