@@ -1,0 +1,117 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(74a36dea-1e50-4623-9367-559bbe8acd0a)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(5bea054f-2ef8-4f77-a5bb-0b7b98defa24)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Rectangle 1"
+			visible: true
+			width: width@74a36dea-1e50-4623-9367-559bbe8acd0a (propref<int>)
+			height: height@74a36dea-1e50-4623-9367-559bbe8acd0a (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #000000FF
+		}, 
+		GtfLabel(abb9e186-c090-4fb5-b223-69c70a8cf30d)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 1"
+			visible: true
+			width: width@74a36dea-1e50-4623-9367-559bbe8acd0a (propref<int>)
+			height: 100
+			x: 0
+			y: 0
+			text: "Welcome To"
+			textColor: #FFFFFFFF
+			font: font_resource(5d232f68-1d58-4944-9ce0-bd5f787669e2)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(bd60a666-487a-4b6f-9c90-7c0fbfaed772)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 2"
+			visible: true
+			width: width@74a36dea-1e50-4623-9367-559bbe8acd0a (propref<int>)
+			height: 100
+			x: 0
+			y: int_scriptedValue(f46f7144-4b7a-407d-9f8c-003e28393e04)
+			{
+				triggerList: trigger_list(ef15bb4a-6fe7-4dfc-b7b5-093b74dea5c9)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(2df95f3d-0b6c-495c-a6f1-737f3df026ec)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<int>(25f46590-146e-4fe9-b49b-835962124cf8)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	v:this->^.height - v:this.height" \
+						"}"
+				}
+				write: function<bool,int>(3b8e02a0-bcc6-4d6f-a1d3-871d67cac3ec)
+				{
+					script: "function(v:arg0::int)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			text: "EBGUIDE"
+			textColor: #FFFFFFFF
+			font: font_resource(a4f48ba9-fd52-4988-8b2a-afbfef2bbffd)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfImage(513d756e-3ffb-490b-995f-751d7025e96f)
+		{
+			features: feature_list [
+				ScaleMode(a3b854d8-0922-446e-8387-d8fd87c3ff8a)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "Image 1"
+			visible: true
+			width: 184
+			height: 188
+			x: 310
+			y: 136
+			image: image_resource(51740175-bb9f-4d0e-8386-d3397b06c311)
+			{
+				file: "EB.png"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+	name: "View"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
