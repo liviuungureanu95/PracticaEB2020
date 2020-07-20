@@ -1,0 +1,116 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(89f432fe-2bbc-44ea-8c5d-b5c9b8c2fc33)
+{
+	features: feature_list []
+	children: children_list [
+		GtfEllipse(c98d748c-844e-4201-b1ce-4a7ed26f0c2f)
+		{
+			features: feature_list [
+				TouchPressed(f643c379-d80e-49d3-b39d-b5787804027f)
+				{
+					touchPressed: function<bool,int,int,int,int>(fd2b1c1c-c773-4e2c-8fa2-7456b04ad599)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goToRadio()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(fbd623eb-3ffc-42de-8171-c6d2cb59e93a)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfLabel(d2165f7a-5911-401f-a0f6-ab52faffa3cc)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "RadioLable"
+					visible: true
+					width: width@ce9700ad-d28b-492e-b021-8e896b7d40f8 (propref<int>)
+					height: height@ce9700ad-d28b-492e-b021-8e896b7d40f8 (propref<int>)
+					x: 1
+					y: 1
+					text: "Radio"
+					textColor: #FFFFFFFF
+					font: font_resource(7ce7215b-4272-4dfa-b093-9626158060c9)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Ellipse_Button"
+			visible: true
+			width: 154
+			height: 147
+			x: 138
+			y: 171
+			fillColor: #A9A9A9FF
+			arcWidth: 0
+			centralAngle: 360F
+			sectorRotation: 0F
+		}, 
+		GtfRectangle(ce9700ad-d28b-492e-b021-8e896b7d40f8)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(a2814854-9272-40bb-8455-d8da08b6becd)
+				{
+					features: feature_list [
+						TouchPressed(127d5734-19d1-418c-8736-fafd02f8a9b5)
+						{
+							touchPressed: function<bool,int,int,int,int>(7c4f0e09-f922-4912-ac7b-ff4b904aa413)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:goToWeather()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(388aa70d-6780-48d7-b853-adc4c4d5e30b)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "Weatherlable"
+					visible: true
+					width: width@ce9700ad-d28b-492e-b021-8e896b7d40f8 (propref<int>)
+					height: height@ce9700ad-d28b-492e-b021-8e896b7d40f8 (propref<int>)
+					x: 0
+					y: 0
+					text: "Weather"
+					textColor: #FFFFFFFF
+					font: font_resource(d3144a20-7047-4171-8153-3a8f3aefa860)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Rectangle 2"
+			visible: true
+			width: width@c98d748c-844e-4201-b1ce-4a7ed26f0c2f (propref<int>)
+			height: height@c98d748c-844e-4201-b1ce-4a7ed26f0c2f (propref<int>)
+			x: 484
+			y: 171
+			fillColor: #A9A9A9FF
+		}]
+	name: "View 2"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
