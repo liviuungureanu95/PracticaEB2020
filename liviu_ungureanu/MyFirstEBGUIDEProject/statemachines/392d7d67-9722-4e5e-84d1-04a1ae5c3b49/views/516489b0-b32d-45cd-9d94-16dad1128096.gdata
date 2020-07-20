@@ -1,0 +1,90 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(516489b0-b32d-45cd-9d94-16dad1128096)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer(c8659678-5634-4581-81eb-8520e988a031)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(c8432f3a-11d8-4cd7-be63-77a0e96c56a2)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Background"
+					visible: true
+					width: width@c8659678-5634-4581-81eb-8520e988a031 (propref<int>)
+					height: height@c8659678-5634-4581-81eb-8520e988a031 (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #A9A9A9FF
+				}, 
+				GtfLabel(635cbe4d-d001-48ce-bd01-e6ff17eca29d)
+				{
+					features: feature_list [
+						TouchPressed(5d67fcab-fb5c-4b13-891c-80ddb72b2cd6)
+						{
+							touchPressed: function<bool,int,int,int,int>(ac130613-8979-4653-abe9-abbb28588b93)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->Background.fillColor = v:this.ColorWhenPressed" \
+									"	v:this->^->Label.font = dp:FontWhenPressed" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(77ff817d-c2bf-476f-b4cd-3bf38789f0be)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}, 
+						TouchShortReleased(a44f52ce-889f-49f2-b8b2-a1d311a39f9e)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(239f2d43-61fb-433b-b833-69b82ad8d4d1)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->Background.fillColor = v:this.ColorWhenReleased" \
+									"	v:this->^->Label.font = dp:FontWhenReleased" \
+									"	fire ev:goTo_Radio()" \
+									"    false" \
+									"}"
+							}
+						}]
+					children: children_list []
+					name: "Label"
+					visible: true
+					width: width@c8659678-5634-4581-81eb-8520e988a031 (propref<int>)
+					height: height@c8659678-5634-4581-81eb-8520e988a031 (propref<int>)
+					x: 0
+					y: 0
+					text: "Radio"
+					textColor: #FFFFFFFF
+					font: font_resource(84ed73f5-f70c-4477-8be3-e66e69c9f2fd)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+					ColorWhenPressed: #008000FF
+					ColorWhenReleased: #A9A9A9FF
+				}]
+			name: "CustomButton"
+			visible: true
+			width: 140
+			height: 95
+			x: 390
+			y: 136
+		}]
+	name: "MainView"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
