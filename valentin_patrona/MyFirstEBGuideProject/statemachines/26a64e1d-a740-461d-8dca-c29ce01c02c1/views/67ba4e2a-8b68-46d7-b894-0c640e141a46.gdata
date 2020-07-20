@@ -1,0 +1,117 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(67ba4e2a-8b68-46d7-b894-0c640e141a46)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(3b402e30-bc8f-4273-89b5-114f1d617abe)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Background"
+			visible: true
+			width: width@67ba4e2a-8b68-46d7-b894-0c640e141a46 (propref<int>)
+			height: 481
+			x: -2
+			y: -1
+			fillColor: #000000FF
+		}, 
+		GtfImage(6ea7f032-8b91-48a8-869e-b614b5126eea)
+		{
+			features: feature_list [
+				ScaleMode(0b2fb859-e4f1-4618-aeb9-7dcc15c5978c)
+				{
+					scaleMode: 2
+				}]
+			children: children_list []
+			name: "EB logo"
+			visible: true
+			width: width@67ba4e2a-8b68-46d7-b894-0c640e141a46 (propref<int>)
+			height: 130
+			x: 0
+			y: 199
+			image: image_resource(bbaa1db7-9bc3-4c07-8f70-c5169aa132b8)
+			{
+				file: "EB.png"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 1
+		}, 
+		GtfLabel(9972c3a6-0ea0-470f-993c-7b55bd52396d)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label_Welcome"
+			visible: true
+			width: width@67ba4e2a-8b68-46d7-b894-0c640e141a46 (propref<int>)
+			height: 100
+			x: 1
+			y: -1
+			text: "Welcome to"
+			textColor: @d42d0025-c1e0-497a-9bae-76a563935b5e (objectref<color>)
+			font: font_resource(160060b3-e253-4978-b069-bf3283bae617)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 45
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(5d907cb0-3e39-444d-9ce8-19a789866e99)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label_EB_Training"
+			visible: true
+			width: width@67ba4e2a-8b68-46d7-b894-0c640e141a46 (propref<int>)
+			height: 100
+			x: -1
+			y: int_scriptedValue(c2d23d26-da1f-4c89-87f8-b9aa9c98c1a6)
+			{
+				triggerList: trigger_list(62cf32ed-9f32-4f37-85ab-6565005f09cd)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(7bbebc57-7e80-4b2a-8032-5568931bad6a)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<int>(4ad62e53-dc0e-4897-b6e8-c4882dd22047)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	v:this->^.height - v:this.height" \
+						"}"
+				}
+				write: function<bool,int>(17aa5a06-ecd6-40f1-9f68-920452cba738)
+				{
+					script: "function(v:arg0::int)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			text: "EB Guide training"
+			textColor: @d42d0025-c1e0-497a-9bae-76a563935b5e (objectref<color>)
+			font: font_resource(54f8d712-57ec-438e-ad60-f868725ab076)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 45
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+	name: "View "
+	visible: true
+	width: @20ec4302-1804-4b37-8b30-a9a748108d03 (objectref<int>)
+	height: 480
+	x: 0
+	y: 0
+}
