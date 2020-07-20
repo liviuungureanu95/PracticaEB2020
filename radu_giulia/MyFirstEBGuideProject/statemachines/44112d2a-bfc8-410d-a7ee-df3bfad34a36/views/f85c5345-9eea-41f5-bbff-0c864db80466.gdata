@@ -1,0 +1,136 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(f85c5345-9eea-41f5-bbff-0c864db80466)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(9b581b6a-af19-4d38-a7c5-6d2787bfb88a)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Rectangle 1"
+			visible: true
+			width: width@f85c5345-9eea-41f5-bbff-0c864db80466 (propref<int>)
+			height: 480
+			x: 0
+			y: 0
+			fillColor: #000000FF
+		}, 
+		GtfLabel(a7410a54-3464-4c0a-ad0c-6cc83495342c)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "WelcomeTo"
+			visible: true
+			width: width@f85c5345-9eea-41f5-bbff-0c864db80466 (propref<int>)
+			height: 100
+			x: 0
+			y: 0
+			text: "Welcome to"
+			textColor: #FFFFFFFF
+			font: font_resource(78a2c07c-00c2-410d-903c-d4aa741a869a)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 40
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(2f6637c2-96fe-4b62-9cbb-d965e165b368)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "EBGuideTraining"
+			visible: true
+			width: width@f85c5345-9eea-41f5-bbff-0c864db80466 (propref<int>)
+			height: 100
+			x: 0
+			y: 349
+			text: "EB Guide Training"
+			textColor: #FFFFFFFF
+			font: font_resource(d7571077-85d8-4695-871e-4950628197a0)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 80
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfImage(88a8fe61-c3bd-4f56-948f-26a5c3b37812)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Image 10"
+			visible: false
+			width: 409
+			height: 273
+			x: 206
+			y: 86
+			image: image_resource(71b24ff9-c4d8-440d-b88b-cd7a98ca3be3)
+			{
+				file: "pic2.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(42c688a0-50a8-4bea-972b-acc27234fcfe)
+		{
+			features: feature_list [
+				ScaleMode(8fdccf41-f290-42ec-8a3c-d02baca4a76e)
+				{
+					scaleMode: 2
+				}, 
+				StateFocused(254dce2f-fc6f-4448-bc7e-c32cc6b7040d)
+				{
+					focusable: 3
+					focused: false
+				}, 
+				StatePressed(2c5d4d80-e547-4133-bc01-7906c32aa987)
+				{
+					pressed: false
+				}, 
+				TouchPressed(e4c78693-3925-4082-81a6-d2bd21bb186e)
+				{
+					touchPressed: function<bool,int,int,int,int>(05c56547-9b7e-49dc-b4d3-607f99202e0e)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.image = v:this.\"2ndpic\"" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(b4fac338-467a-4c3a-b6d5-5ce6fc2cedfe)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "Image 7"
+			visible: true
+			width: width@f85c5345-9eea-41f5-bbff-0c864db80466 (propref<int>)
+			height: 130
+			x: 0
+			y: 144
+			image: image_resource(06baa7a2-5450-40f0-9070-694c49185aee)
+			{
+				file: "EB.png"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 1
+			"2ndpic": image_resource(80bf8299-7fc5-43fd-99be-94ac155c9b9a)
+			{
+				file: "pic2.jpg"
+			}
+		}]
+	name: "View 1"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
