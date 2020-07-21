@@ -1,0 +1,204 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(6cae6ddf-5d91-4b33-a158-06640d33a640)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(e1d4d469-03c0-447e-910a-f226eaaab88c)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "ImageBackgroundSP"
+			visible: true
+			width: 800
+			height: 480
+			x: 0
+			y: 0
+			image: image_resource(d2e0490f-2510-4400-b640-d941397c4f58)
+			{
+				file: "Background.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(770362d3-a674-4a49-84e9-d194e1a2f0cb)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "LabelMsgSP"
+			visible: true
+			width: 225
+			height: 100
+			x: 25
+			y: 0
+			text: "Delicate/Silk Program"
+			textColor: #FFFFFFFF
+			font: font_resource(e9d5cc31-723f-4fe6-be84-2349e784949a)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfContainer(e99e0ea3-04b6-4739-8be2-5600f15290d3)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(962a0ad0-5457-46db-8d8f-82157076600b)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "ButtonBg"
+					visible: true
+					width: width@e99e0ea3-04b6-4739-8be2-5600f15290d3 (propref<int>)
+					height: height@e99e0ea3-04b6-4739-8be2-5600f15290d3 (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #A9A9A9FF
+				}, 
+				GtfLabel(c913088d-0896-473c-b58f-477fb5a4db3a)
+				{
+					features: feature_list [
+						TouchPressed(87b2b35e-d8cc-4e9e-b132-471b52aadba2)
+						{
+							touchPressed: function<bool,int,int,int,int>(1dc90a31-7d95-401d-8102-c1257ea4847c)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->ButtonBg.fillColor = dp:PressedColor" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(bb483477-977b-4b33-9925-7ece4e8d93e9)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}, 
+						TouchShortReleased(177ac7fc-cca7-4827-8ab7-d5591a07de93)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(482b52f2-aea2-499e-a6e5-da837b6db7b8)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->ButtonBg.fillColor = dp:ReleasedColor" \
+									"	fire ev:goToMenuBack()" \
+									"    false" \
+									"}"
+							}
+						}]
+					children: children_list []
+					name: "ButtonMsg"
+					visible: true
+					width: width@e99e0ea3-04b6-4739-8be2-5600f15290d3 (propref<int>)
+					height: height@e99e0ea3-04b6-4739-8be2-5600f15290d3 (propref<int>)
+					x: 0
+					y: 0
+					text: "Back"
+					textColor: #FFFFFFFF
+					font: font_resource(4d4110a6-5435-4284-9e7d-a788cae7b822)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "ButtonBackSP"
+			visible: true
+			width: 100
+			height: 40
+			x: 600
+			y: 400
+		}, 
+		GtfLabel(8f0f01d4-086e-4e3b-8d6d-14292382ce3d)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "LabelDescriptionProgram"
+			visible: true
+			width: 125
+			height: 50
+			x: 25
+			y: 150
+			text: "Temp: 30 ºC"
+			textColor: #FFFFFFFF
+			font: font_resource(d9e5e534-0761-426c-b738-f83015011674)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(3fc417db-be0b-4fe7-900e-af4404c9e034)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "LabelDescriptionProgram2"
+			visible: true
+			width: 175
+			height: 50
+			x: 25
+			y: 190
+			text: "Rpm: 1000 rpm"
+			textColor: #FFFFFFFF
+			font: font_resource(145f6635-37d3-44b0-9aa1-c921b06e5dd0)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(0c458309-b3a6-426b-a620-a366e9405714)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "LabelDescriptionProgram3"
+			visible: true
+			width: 175
+			height: 50
+			x: 25
+			y: 230
+			text: "WaterPlus: 20%"
+			textColor: #FFFFFFFF
+			font: font_resource(8466053d-1ab4-4e29-a780-e556ee057994)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(1b8ccfeb-f7c0-44f2-93aa-562deaac0319)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "LabelDescriptionProgram4"
+			visible: true
+			width: 175
+			height: 50
+			x: 25
+			y: 269
+			text: "ReadyIn: 60 min"
+			textColor: #FFFFFFFF
+			font: font_resource(4e4585ae-63fc-4798-b648-4bc2f2f82640)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "Second Program View"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
