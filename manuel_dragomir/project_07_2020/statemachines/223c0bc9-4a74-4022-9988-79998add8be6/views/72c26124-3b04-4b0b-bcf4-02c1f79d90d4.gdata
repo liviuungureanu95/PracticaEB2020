@@ -1,0 +1,119 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(72c26124-3b04-4b0b-bcf4-02c1f79d90d4)
+{
+	features: feature_list []
+	children: children_list [
+		GtfEllipse(53bf1756-5a4f-483e-8cbb-184d848dddcc)
+		{
+			features: feature_list [
+				TouchPressed(36464078-174f-462a-9515-89f1f1418616)
+				{
+					touchPressed: function<bool,int,int,int,int>(1f3ec4ed-e0dd-42c2-9486-fa8f54b9992e)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goTo_Radio()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(db7817b0-1cad-4b3e-a9eb-38bc9e6c67c0)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "Ellipse 1"
+			visible: true
+			width: 150
+			height: 151
+			x: 305
+			y: 21
+			fillColor: @a5780059-4089-4305-946d-f87209cea753 (objectref<color>)
+			arcWidth: 0
+			centralAngle: 360F
+			sectorRotation: 0F
+		}, 
+		GtfContainer(7cf7fadc-0127-49fe-8b7c-e3035b986414)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(f29431ad-65ba-4ef0-92fc-74a99bc4d268)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "BackGround"
+					visible: true
+					width: width@7cf7fadc-0127-49fe-8b7c-e3035b986414 (propref<int>)
+					height: height@7cf7fadc-0127-49fe-8b7c-e3035b986414 (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #A9A9A9FF
+				}, 
+				GtfLabel(3906dd63-8fff-4bf1-930d-6a21217f0857)
+				{
+					features: feature_list [
+						TouchPressed(d384f80e-5c07-4fc7-8a3a-70511155345b)
+						{
+							touchPressed: function<bool,int,int,int,int>(4c6a6613-2b77-4ed3-9d4e-f97554a0f3f0)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->BackGround.fillColor = v:this.myColorOnPressed" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(a24f944c-7605-46c4-9b04-47149fa29885)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(0f391f50-4e52-40a5-8ecc-fca8995558f1)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:goTo_Radio()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(fd1dc2f0-b3f2-42ff-81ce-2783b89dc19d)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "Label"
+					visible: true
+					width: width@7cf7fadc-0127-49fe-8b7c-e3035b986414 (propref<int>)
+					height: height@7cf7fadc-0127-49fe-8b7c-e3035b986414 (propref<int>)
+					x: 0
+					y: 0
+					text: "Radio"
+					textColor: #FFFFFFFF
+					font: font_resource(0d9114cc-2db3-4927-9d6b-959df869ca2f)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+					myColorOnPressed: #008000FF
+				}]
+			name: "CustomButton"
+			visible: true
+			width: 311
+			height: 182
+			x: 274
+			y: 190
+		}]
+	name: "View 2"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
