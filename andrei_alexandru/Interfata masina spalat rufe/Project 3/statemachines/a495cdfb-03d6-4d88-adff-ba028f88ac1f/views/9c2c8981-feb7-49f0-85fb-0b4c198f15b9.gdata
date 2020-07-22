@@ -1,0 +1,190 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(9c2c8981-feb7-49f0-85fb-0b4c198f15b9)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(d050f620-b534-4faa-a7d2-a01c494addc4)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "background_meniu_rufe_colorate"
+			visible: true
+			width: width@9c2c8981-feb7-49f0-85fb-0b4c198f15b9 (propref<int>)
+			height: height@9c2c8981-feb7-49f0-85fb-0b4c198f15b9 (propref<int>)
+			x: x@9c2c8981-feb7-49f0-85fb-0b4c198f15b9 (propref<int>)
+			y: y@9c2c8981-feb7-49f0-85fb-0b4c198f15b9 (propref<int>)
+			fillColor: #87CEEBFF
+		}, 
+		GtfImage(5e737410-b5e4-4b80-a829-8e29961b3200)
+		{
+			features: feature_list [
+				ScaleMode(e141985f-4124-4662-ac23-30463e98925f)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "imagine_tricou_colorat"
+			visible: true
+			width: 300
+			height: 300
+			x: 0
+			y: 60
+			image: image_resource(8c899407-45a1-482f-8571-b36eabdd8441)
+			{
+				file: "tricou-rosu.png"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(fb719c31-d95e-4782-bc3c-a9025e8120fc)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Titlu colorate"
+			visible: true
+			width: 450
+			height: 100
+			x: 300
+			y: 0
+			text: "TABEL PROGRAMARE RUFE COLORATE"
+			textColor: #FFFFFFFF
+			font: font_resource(889166e0-0f89-452b-bb38-0faf451378a2)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(e9b905b2-6b02-4d55-8b14-2ce46b336c83)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Temperatura colorate"
+			visible: true
+			width: 200
+			height: 50
+			x: 320
+			y: 120
+			text: "Temperatura: 40° C"
+			textColor: #000000FF
+			font: font_resource(e783ba0a-b867-40ff-85be-d0a91ff03c31)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(5791ed0c-7375-4b84-b5fb-0cc5bf7b936a)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Greutate maxima colorate"
+			visible: true
+			width: 300
+			height: 50
+			x: 320
+			y: 160
+			text: "Incarcatura maxima: 4.0 kg"
+			textColor: #000000FF
+			font: font_resource(03bf7c03-cf1d-47f3-abc2-a82a7a8ec02f)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfContainer(c48e2669-c86c-467c-9cfe-a393bfb4ea23)
+		{
+			features: feature_list [
+				TouchPressed(c8aea915-dcee-43a5-964c-e6e3fc1158a5)
+				{
+					touchPressed: function<bool,int,int,int,int>(65f22b3d-8066-4ae4-958a-24adec896ad6)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"   fire_delayed 500, ev:\"rufe_colorate_BackTo_main_menu\"()" \
+							"   true" \
+							"}"
+					}
+				}, 
+				StateTouched(f8a748d7-c357-4155-953d-571d7d4a28d0)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfRectangle(f8251b58-2391-49e3-8725-826721db0653)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "background_buton_inapoi"
+					visible: true
+					width: width@c48e2669-c86c-467c-9cfe-a393bfb4ea23 (propref<int>)
+					height: height@c48e2669-c86c-467c-9cfe-a393bfb4ea23 (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #FFFFFFFF
+				}, 
+				GtfLabel(36340c9d-4137-4b4f-9cc5-917178370c9f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text_back_to_main_menu"
+					visible: true
+					width: 400
+					height: 50
+					x: 70
+					y: 0
+					text: "INAPOI LA MENIUL PRINCIPAL"
+					textColor: #000000FF
+					font: font_resource(a9e74009-63ee-44a3-a0ab-dee97e4f1c63)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfImage(413cf99c-225c-4572-b128-70b1e94d62ad)
+				{
+					features: feature_list [
+						ScaleMode(38b07f6f-47e6-4b1f-b4e2-f48f57dc9843)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "Imagine back"
+					visible: true
+					width: 70
+					height: 70
+					x: -8
+					y: -9
+					image: image_resource(974c093c-627e-48bc-b31d-68e84c509dad)
+					{
+						file: "1991936-200.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Buton_catre_meniu_principal_colorate"
+			visible: true
+			width: 400
+			height: 50
+			x: 350
+			y: 300
+		}]
+	name: "view meniu rufe colorate"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

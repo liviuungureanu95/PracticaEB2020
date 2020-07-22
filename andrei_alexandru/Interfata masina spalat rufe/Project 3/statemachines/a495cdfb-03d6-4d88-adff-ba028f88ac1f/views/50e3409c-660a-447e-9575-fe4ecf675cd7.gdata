@@ -1,0 +1,190 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(50e3409c-660a-447e-9575-fe4ecf675cd7)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(99e4aff1-43fe-482d-97b6-07d6eb07655a)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "background_meniu_rufe_inchise"
+			visible: true
+			width: 800
+			height: 480
+			x: 0
+			y: 0
+			fillColor: #87CEEBFF
+		}, 
+		GtfImage(fda65852-b74e-4798-863b-2773902f4524)
+		{
+			features: feature_list [
+				ScaleMode(f45f4d18-2d32-4573-86ef-daa2616b0ccd)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "imagine tricou negru"
+			visible: true
+			width: 320
+			height: 320
+			x: 0
+			y: 50
+			image: image_resource(e2ac7bc4-dd5d-4770-9ae0-54e2cc8182ec)
+			{
+				file: "tricou-negru.png"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(d107ef61-45a6-4111-8915-69a9a179e0a8)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Titlu inchise"
+			visible: true
+			width: 450
+			height: 100
+			x: 300
+			y: 0
+			text: "TABEL PROGRAMARE RUFE INCHISE"
+			textColor: #FFFFFFFF
+			font: font_resource(2f4bef88-e790-469e-90b5-dac4a6ff7213)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(31c4f636-456f-4265-b5f8-83c39ea15e75)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Temperatura inchise"
+			visible: true
+			width: 200
+			height: 50
+			x: 320
+			y: 120
+			text: "Temperatura: 30° C"
+			textColor: #000000FF
+			font: font_resource(56630791-a3f7-427a-9fc7-c5aa26eae8d0)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(72485ffb-e10c-450a-b5e2-3dced1ebf3e1)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Greutate maxima inchise"
+			visible: true
+			width: 300
+			height: 50
+			x: 320
+			y: 160
+			text: "Incarcatura maxima: 4.0 kg"
+			textColor: #000000FF
+			font: font_resource(f12e540f-1f3f-4ec9-8218-4a96a4e73892)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfContainer(4ddd2605-54cf-4bda-b451-e7fb2dad4227)
+		{
+			features: feature_list [
+				TouchPressed(5134441e-ef2e-48c6-9ba0-d9fd146c0aef)
+				{
+					touchPressed: function<bool,int,int,int,int>(898c2d6a-a855-4617-ac8b-ee583d63a0c2)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    fire_delayed 500, ev:\"rufe_inchise_BackTo_main_menu\"()" \
+							"    true" \
+							"}"
+					}
+				}, 
+				StateTouched(b822f706-9d7a-4c73-8b29-44c58f6b01d6)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfRectangle(b4006ca5-1bb9-4543-b66b-0544e6167431)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "background_buton_inapoi"
+					visible: true
+					width: width@4ddd2605-54cf-4bda-b451-e7fb2dad4227 (propref<int>)
+					height: height@4ddd2605-54cf-4bda-b451-e7fb2dad4227 (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #FFFFFFFF
+				}, 
+				GtfLabel(1f355cd5-71f2-44ab-b137-ab39399be129)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text_back_to_main_menu"
+					visible: true
+					width: 400
+					height: 50
+					x: 70
+					y: 0
+					text: "INAPOI LA MENIUL PRINCIPAL"
+					textColor: #000000FF
+					font: font_resource(e1e96a9f-b9a4-4e31-bf7e-3237f6de130b)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfImage(889aa990-73c8-452c-b627-3f844416e713)
+				{
+					features: feature_list [
+						ScaleMode(09dab1a9-c66b-4bf5-8e9e-250552bc9dd3)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "Imagine back"
+					visible: true
+					width: 70
+					height: 70
+					x: -8
+					y: -9
+					image: image_resource(9ea50b07-0a05-47d2-9383-88c889c1c41b)
+					{
+						file: "1991936-200.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Buton_catre_meniu_principal_inchise"
+			visible: true
+			width: 400
+			height: 50
+			x: 350
+			y: 300
+		}]
+	name: "view meniu rufe inchise"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

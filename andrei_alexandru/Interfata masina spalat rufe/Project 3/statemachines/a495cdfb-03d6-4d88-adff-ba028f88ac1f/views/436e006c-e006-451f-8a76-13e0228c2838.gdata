@@ -1,0 +1,413 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(436e006c-e006-451f-8a76-13e0228c2838)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(252cadc6-03f5-4bfb-b0b6-3a549bc5c35b)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "background_meniu_principal"
+			visible: true
+			width: 800
+			height: 480
+			x: 0
+			y: 0
+			fillColor: #B6F1FFFF
+		}, 
+		GtfImage(15731a33-fe70-4655-ad71-1c450d44798b)
+		{
+			features: feature_list [
+				ScaleMode(cc10855b-d5ad-4177-a10d-f31a92ec17de)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "logo_samsung"
+			visible: true
+			width: 300
+			height: 300
+			x: 245
+			y: 83
+			image: image_resource(7337c603-77ef-4922-9004-7286a4fd2ec3)
+			{
+				file: "samsung2.png"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer(05b80de4-4279-4828-b08b-43ff09b4dcc3)
+		{
+			features: feature_list [
+				TouchPressed(4f843df4-3201-4322-bd03-01c97f6e279c)
+				{
+					touchPressed: function<bool,int,int,int,int>(68a9e171-7b8e-4a59-91ef-5dbca0099f88)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    fire_delayed 500, ev:rufe_albe_GoTo_meniu_rufe_albe()" \
+							"    true" \
+							"}"
+					}
+				}, 
+				StateTouched(fd23e090-50ef-4281-9762-70140bbe4f5c)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfRectangle(fd423659-0c96-47b3-a882-9a8ba3897bf6)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "background_buton_albe"
+					visible: true
+					width: 200
+					height: 80
+					x: 0
+					y: 0
+					fillColor: #2E8195FF
+				}, 
+				GtfLabel(0653a60c-6cfc-4189-b186-cb68e18e3050)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "rufe_albe"
+					visible: true
+					width: 200
+					height: 80
+					x: 0
+					y: 0
+					text: "Rufe albe"
+					textColor: #FFFFFFFF
+					font: font_resource(51fe1cc2-20e9-4bac-81e8-8e310db0d971)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Buton_rufe_albe"
+			visible: true
+			width: 200
+			height: 80
+			x: 5
+			y: 5
+		}, 
+		GtfContainer(c33a55a8-4683-4025-9b87-bc245e4585d2)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(c07d1237-364f-4b24-a729-546c61576421)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "background_buton_colorate"
+					visible: true
+					width: width@fd423659-0c96-47b3-a882-9a8ba3897bf6 (propref<int>)
+					height: height@fd423659-0c96-47b3-a882-9a8ba3897bf6 (propref<int>)
+					x: 0
+					y: 0
+					fillColor: fillColor@fd423659-0c96-47b3-a882-9a8ba3897bf6 (propref<color>)
+				}, 
+				GtfLabel(9fcd9236-a19c-44ac-b9eb-84da16f88484)
+				{
+					features: feature_list [
+						TouchPressed(42a52783-f3c4-456f-b33d-11e1e8c876e2)
+						{
+							touchPressed: function<bool,int,int,int,int>(fdf3bf4b-3a35-44ed-8425-8ce69b1e3096)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"   fire_delayed 500, ev:rufe_colorate_GoTo_meniu_rufe_colorate()" \
+									"   true" \
+									"}"
+							}
+						}, 
+						StateTouched(fddb24f4-7af9-4e5e-ba9e-da19b90be0cd)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "rufe_colorate"
+					visible: true
+					width: width@0653a60c-6cfc-4189-b186-cb68e18e3050 (propref<int>)
+					height: height@0653a60c-6cfc-4189-b186-cb68e18e3050 (propref<int>)
+					x: 0
+					y: 0
+					text: "Rufe colorate"
+					textColor: #FFFFFFFF
+					font: font_resource(8cf65f77-1f92-4a66-835c-d8109d21e867)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: horizontalAlign@0653a60c-6cfc-4189-b186-cb68e18e3050 (propref<int>)
+					verticalAlign: 0
+				}]
+			name: "Buton_rufe_colorate"
+			visible: true
+			width: 200
+			height: 80
+			x: 5
+			y: 200
+		}, 
+		GtfContainer(384377f4-eab7-4e57-ad04-427a7db6807c)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(f369ba97-d7db-4adc-a866-0d0c21ea63f6)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "background_buton_inchise"
+					visible: true
+					width: width@384377f4-eab7-4e57-ad04-427a7db6807c (propref<int>)
+					height: height@384377f4-eab7-4e57-ad04-427a7db6807c (propref<int>)
+					x: 0
+					y: 0
+					fillColor: fillColor@c07d1237-364f-4b24-a729-546c61576421 (propref<color>)
+				}, 
+				GtfLabel(b2cf62f3-3741-4198-9bbc-15876d9b2252)
+				{
+					features: feature_list [
+						TouchPressed(c3976b7a-87b6-4d5a-8efa-29b077db1003)
+						{
+							touchPressed: function<bool,int,int,int,int>(49d6a05a-4f83-4b67-82c3-ae0990761f30)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"    fire_delayed 500, ev:\"rufe_inchise_GoTo_meniu_rufe_inchise\"()" \
+									"    true" \
+									"}"
+							}
+						}, 
+						StateTouched(e8311f82-46f9-4ed9-85ce-d63d1c9b798a)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "rufe_inchise"
+					visible: true
+					width: width@0653a60c-6cfc-4189-b186-cb68e18e3050 (propref<int>)
+					height: height@0653a60c-6cfc-4189-b186-cb68e18e3050 (propref<int>)
+					x: 0
+					y: 0
+					text: "Rufe inchise"
+					textColor: #FFFFFFFF
+					font: font_resource(196ff2e1-ef15-494a-8210-4787a303f686)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: horizontalAlign@0653a60c-6cfc-4189-b186-cb68e18e3050 (propref<int>)
+					verticalAlign: 0
+				}]
+			name: "Buton_rufe_inchise"
+			visible: true
+			width: 200
+			height: 80
+			x: 5
+			y: 395
+		}, 
+		GtfContainer(0af8066d-d110-401f-9823-6ea3c93cd2f2)
+		{
+			features: feature_list [
+				TouchPressed(7cfca41d-bf36-4906-928a-d18687b3da82)
+				{
+					touchPressed: function<bool,int,int,int,int>(9d662757-101d-42bd-bffb-64a220c84373)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"   fire_delayed 500, ev:\"rufe_bumbac_GoTo_meniu_bumbac\"()" \
+							"   true" \
+							"}"
+					}
+				}, 
+				StateTouched(d425b357-b1d5-479e-9486-0e709ceb3d45)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfRectangle(e6467f8c-7204-4be9-b83c-33d1db3ca13b)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "background_buton_bumbac"
+					visible: true
+					width: width@f369ba97-d7db-4adc-a866-0d0c21ea63f6 (propref<int>)
+					height: height@f369ba97-d7db-4adc-a866-0d0c21ea63f6 (propref<int>)
+					x: 0
+					y: 0
+					fillColor: fillColor@f369ba97-d7db-4adc-a866-0d0c21ea63f6 (propref<color>)
+				}, 
+				GtfLabel(4c3aeaf4-d3c6-44ae-a1b0-ae2bd4df475d)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "rufe_bumbac"
+					visible: true
+					width: width@b2cf62f3-3741-4198-9bbc-15876d9b2252 (propref<int>)
+					height: height@b2cf62f3-3741-4198-9bbc-15876d9b2252 (propref<int>)
+					x: -1
+					y: -1
+					text: "Bumbac"
+					textColor: #FFFFFFFF
+					font: font_resource(02fb368c-466e-43db-8018-4a13fe86b023)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: horizontalAlign@b2cf62f3-3741-4198-9bbc-15876d9b2252 (propref<int>)
+					verticalAlign: 0
+				}]
+			name: "Buton_rufe_bumbac"
+			visible: true
+			width: 200
+			height: 80
+			x: 595
+			y: 5
+		}, 
+		GtfContainer(4e0254e7-c1fe-4195-8ff4-aa3cd5abc96d)
+		{
+			features: feature_list [
+				TouchPressed(841ec4c2-a16f-4334-a92c-92bc742a270c)
+				{
+					touchPressed: function<bool,int,int,int,int>(ffdc5f61-ea18-4d04-9fe7-d8b8369b2e4b)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    fire_delayed 500, ev:rufe_sintetice_GoTo_meniu_sintetice()" \
+							"    true" \
+							"}"
+					}
+				}, 
+				StateTouched(855344c7-63d7-4964-ae2c-6637394963d7)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfRectangle(2d340416-1a32-4a46-90b9-c93d745ec3ef)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "background_buton_sintetice"
+					visible: true
+					width: width@e6467f8c-7204-4be9-b83c-33d1db3ca13b (propref<int>)
+					height: height@e6467f8c-7204-4be9-b83c-33d1db3ca13b (propref<int>)
+					x: 0
+					y: 0
+					fillColor: fillColor@e6467f8c-7204-4be9-b83c-33d1db3ca13b (propref<color>)
+				}, 
+				GtfLabel(eabdf77f-9947-4f42-bbb3-6b7ccaa27516)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "rufe_sintetice"
+					visible: true
+					width: width@4c3aeaf4-d3c6-44ae-a1b0-ae2bd4df475d (propref<int>)
+					height: height@4c3aeaf4-d3c6-44ae-a1b0-ae2bd4df475d (propref<int>)
+					x: 0
+					y: 0
+					text: "Sintetice"
+					textColor: #FFFFFFFF
+					font: font_resource(0c6c7003-495f-421a-ad1f-b3de0384a2e1)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: horizontalAlign@4c3aeaf4-d3c6-44ae-a1b0-ae2bd4df475d (propref<int>)
+					verticalAlign: 0
+				}]
+			name: "Buton rufe_sintetice"
+			visible: true
+			width: 200
+			height: 80
+			x: 595
+			y: 200
+		}, 
+		GtfContainer(78d8f5f1-7aca-4e41-881a-089a66a5d663)
+		{
+			features: feature_list [
+				TouchPressed(1e536949-9b2f-41db-96c9-dd45848f3e42)
+				{
+					touchPressed: function<bool,int,int,int,int>(edb46db2-0f84-450a-b4c1-fa55d3b15094)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"   fire_delayed 500, ev:\"rufe_delicate_GoTo_meniu_rufe_delicate\"()" \
+							"   true" \
+							"}"
+					}
+				}, 
+				StateTouched(111c0b3a-5a78-41af-b3d8-66e9f3456fc2)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfRectangle(3a1f3072-f5a5-4063-b0fa-7043488c6550)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "background_buton_delicate"
+					visible: true
+					width: width@2d340416-1a32-4a46-90b9-c93d745ec3ef (propref<int>)
+					height: height@2d340416-1a32-4a46-90b9-c93d745ec3ef (propref<int>)
+					x: 0
+					y: 0
+					fillColor: fillColor@2d340416-1a32-4a46-90b9-c93d745ec3ef (propref<color>)
+				}, 
+				GtfLabel(9bb61939-91f1-49d1-abae-e4d906435bdc)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "rufe_delicate"
+					visible: true
+					width: width@eabdf77f-9947-4f42-bbb3-6b7ccaa27516 (propref<int>)
+					height: height@eabdf77f-9947-4f42-bbb3-6b7ccaa27516 (propref<int>)
+					x: 0
+					y: 0
+					text: "Delicate"
+					textColor: #FFFFFFFF
+					font: font_resource(8ab40ae6-341b-45ea-b75c-a7c44d000ba2)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: horizontalAlign@eabdf77f-9947-4f42-bbb3-6b7ccaa27516 (propref<int>)
+					verticalAlign: 0
+				}]
+			name: "Buton_rufe_delicate"
+			visible: true
+			width: 200
+			height: 80
+			x: 595
+			y: 395
+		}]
+	name: "view meniu principal"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
