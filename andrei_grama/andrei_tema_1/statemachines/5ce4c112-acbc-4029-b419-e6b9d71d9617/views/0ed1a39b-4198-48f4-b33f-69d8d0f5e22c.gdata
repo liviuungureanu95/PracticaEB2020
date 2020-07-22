@@ -1,0 +1,337 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(0ed1a39b-4198-48f4-b33f-69d8d0f5e22c)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(6c438c87-7b59-437f-98dd-e248dbf3c57b)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "background"
+			visible: true
+			width: width@0ed1a39b-4198-48f4-b33f-69d8d0f5e22c (propref<int>)
+			height: height@0ed1a39b-4198-48f4-b33f-69d8d0f5e22c (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #808080FF
+		}, 
+		GtfLabel(38d19a22-aa26-4454-851d-c3c72ce90184)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 1"
+			visible: true
+			width: width@0ed1a39b-4198-48f4-b33f-69d8d0f5e22c (propref<int>)
+			height: 100
+			x: 0
+			y: 70
+			text: "Meniu"
+			textColor: #FFFFFFFF
+			font: font_resource(bad8cdb9-21e8-41e5-826a-97fbcf3ce598)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer(96da14ff-08a8-4baa-b073-c43a18fcedac)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(67546feb-63c7-4200-aac8-f14f2ecf02a0)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "button1Background"
+					visible: true
+					width: width@96da14ff-08a8-4baa-b073-c43a18fcedac (propref<int>)
+					height: height@96da14ff-08a8-4baa-b073-c43a18fcedac (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #00FF00FF
+				}, 
+				GtfLabel(efd2fae2-f7b4-4d90-87c0-7cf942b86063)
+				{
+					features: feature_list [
+						TouchPressed(511a6372-93f7-4ad8-b626-ed46f26e0259)
+						{
+							touchPressed: function<bool,int,int,int,int>(3e9cac3e-f5e6-4d2a-b477-a972dab6b962)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->button1Background.fillColor=dp:pressedColor" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(1f4e9f38-9314-43eb-a482-859baf0ec7e8)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(a2505a38-5ea2-4080-9cc7-f1b81f679ff5)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->button1Background.fillColor=dp:releasedColor" \
+									"	fire ev:goToP1()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(58481e3c-a2be-42bf-85bb-2834092f532b)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "button1Label"
+					visible: true
+					width: width@96da14ff-08a8-4baa-b073-c43a18fcedac (propref<int>)
+					height: height@96da14ff-08a8-4baa-b073-c43a18fcedac (propref<int>)
+					x: 0
+					y: 0
+					text: "Bumbac"
+					textColor: #000000FF
+					font: font_resource(bac899a2-61c3-4325-b2a6-064374872fa1)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "button1"
+			visible: true
+			width: 100
+			height: 50
+			x: 174
+			y: 165
+		}, 
+		GtfContainer(01ea2c6e-9156-455e-ada7-e6279dec14ae)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(9fd5eea3-8dc3-40fd-926b-b45f3c522af3)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "button2Background"
+					visible: true
+					width: width@01ea2c6e-9156-455e-ada7-e6279dec14ae (propref<int>)
+					height: height@01ea2c6e-9156-455e-ada7-e6279dec14ae (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #00FF00FF
+				}, 
+				GtfLabel(17dcdf5d-ffde-4b6c-92e7-72b0c09906b8)
+				{
+					features: feature_list [
+						TouchPressed(d0d993b0-aca1-4a2a-9054-e84ff7c8c8aa)
+						{
+							touchPressed: function<bool,int,int,int,int>(8a2574cb-47fb-43e2-83ed-695c19500ff3)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->button2Background.fillColor=dp:pressedColor" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(10922af9-c20c-42b3-aec4-b4c523cdb800)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(ed435409-33ef-43c3-8032-794d57273d26)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->button2Background.fillColor=dp:releasedColor" \
+									"	fire ev:goToP2()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(ba06ad04-4ae0-445e-98b5-95b2d483630a)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "button2Label"
+					visible: true
+					width: width@01ea2c6e-9156-455e-ada7-e6279dec14ae (propref<int>)
+					height: height@01ea2c6e-9156-455e-ada7-e6279dec14ae (propref<int>)
+					x: 0
+					y: 0
+					text: "Sintetice"
+					textColor: #000000FF
+					font: font_resource(0b2aaf30-ce19-470d-ae85-238c4dceddad)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "button2"
+			visible: true
+			width: 100
+			height: 50
+			x: x@96da14ff-08a8-4baa-b073-c43a18fcedac (propref<int>)
+			y: 313
+		}, 
+		GtfContainer(d9de25cb-9999-4be7-8233-d31e481f46ac)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(394c7d65-9ddc-4127-89e2-bafacfa5e4f1)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "button3Background"
+					visible: true
+					width: width@d9de25cb-9999-4be7-8233-d31e481f46ac (propref<int>)
+					height: height@d9de25cb-9999-4be7-8233-d31e481f46ac (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #00FF00FF
+				}, 
+				GtfLabel(ab9762c5-b910-4908-a36e-f795f76838bd)
+				{
+					features: feature_list [
+						TouchPressed(edeafac2-5b76-4c2e-a17e-a16f7ebcbcc0)
+						{
+							touchPressed: function<bool,int,int,int,int>(adf4f54a-3319-44c6-b132-744cb4da8c23)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->button3Background.fillColor=dp:pressedColor" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(7cd9d4be-58b8-400d-8d50-550df26494b0)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(791cdf06-898a-4f0a-b486-5989c5731f30)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->button3Background.fillColor=dp:releasedColor" \
+									"	fire ev:goToP3()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(a56da452-c9d9-410b-8a57-4569ac2fb4c5)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "button3Label"
+					visible: true
+					width: width@d9de25cb-9999-4be7-8233-d31e481f46ac (propref<int>)
+					height: height@d9de25cb-9999-4be7-8233-d31e481f46ac (propref<int>)
+					x: 0
+					y: 0
+					text: "Mixt"
+					textColor: #000000FF
+					font: font_resource(8ae4959b-6618-4ef5-b248-f915d664d4ef)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "button3"
+			visible: true
+			width: 100
+			height: 50
+			x: 520
+			y: y@96da14ff-08a8-4baa-b073-c43a18fcedac (propref<int>)
+		}, 
+		GtfContainer(2b49f7ca-4df5-4c4b-9ce7-d65669de22d9)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(0cdd719f-1515-48f1-979a-e30ad6ad88d3)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "button4Background"
+					visible: true
+					width: width@2b49f7ca-4df5-4c4b-9ce7-d65669de22d9 (propref<int>)
+					height: height@2b49f7ca-4df5-4c4b-9ce7-d65669de22d9 (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #00FF00FF
+				}, 
+				GtfLabel(2fd9eee5-bcf7-48ef-a4ca-b8fcddeb7921)
+				{
+					features: feature_list [
+						TouchPressed(4adb4a8d-fb89-4edb-bdc2-439f12f2d914)
+						{
+							touchPressed: function<bool,int,int,int,int>(6af0c73e-7530-4853-82d1-00052b7a7400)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->button4Background.fillColor=dp:pressedColor" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(084d6e8c-4ce0-4de0-ba0c-9f8f0ca32af0)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(5a15e067-fa05-4b2b-a5f5-95210eb5b001)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->button4Background.fillColor=dp:releasedColor" \
+									"	fire ev:goToP4()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(88718afd-e048-440f-9d67-1a92d63fe653)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "button4Label"
+					visible: true
+					width: width@2b49f7ca-4df5-4c4b-9ce7-d65669de22d9 (propref<int>)
+					height: height@2b49f7ca-4df5-4c4b-9ce7-d65669de22d9 (propref<int>)
+					x: 0
+					y: 0
+					text: "Lana"
+					textColor: #000000FF
+					font: font_resource(37dd48c6-3058-45f5-997e-a7e1678e94c7)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "button4"
+			visible: true
+			width: 100
+			height: 50
+			x: x@d9de25cb-9999-4be7-8233-d31e481f46ac (propref<int>)
+			y: y@01ea2c6e-9156-455e-ada7-e6279dec14ae (propref<int>)
+		}]
+	name: "Menu View"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
