@@ -1,0 +1,542 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(8d72e111-109b-4025-9fc9-aec04cb9476a)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(c509dc4a-5907-4bfa-93f3-febaaa3d90fd)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(f7d06de3-39a4-410a-996f-f99fbada752a)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 7"
+					visible: true
+					width: 324
+					height: 100
+					x: 345
+					y: 40
+					text: "Ati selectat modulul \"Delicate\"."
+					textColor: #000000FF
+					font: font_resource(76b12dd4-a37a-478e-bae4-2765c965696c)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfRectangle(90514be7-bbec-4f46-af79-c56dda93b3d7)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Rectangle 5"
+					visible: true
+					width: 100
+					height: 100
+					x: 155
+					y: 309
+					fillColor: #000000FF
+				}, 
+				GtfLabel(5ad13208-9b65-4a86-9728-d184ab828edb)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 9"
+					visible: true
+					width: 100
+					height: 100
+					x: 174
+					y: 386
+					text: "Temp."
+					textColor: #000000FF
+					font: font_resource(7b19f546-efe2-4368-bb74-73d582319b7d)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(c659f7c6-d722-452b-a997-729dbefc0d6f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "value"
+					visible: true
+					width: 100
+					height: 100
+					x: 154
+					y: 309
+					text: "10"
+					textColor: #FFFFFFFF
+					font: font_resource(b4be0e40-508e-4ba6-9e91-12258fb7c1b9)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfRectangle(20fbd425-4e88-4b91-be91-df064e316124)
+				{
+					features: feature_list [
+						TouchPressed(5d78069b-adec-4c46-adf3-e7a244fe9248)
+						{
+							touchPressed: function<bool,int,int,int,int>(9eb4fa9b-9b6c-4562-9b5f-771b345f8349)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(f:string2int(v:this->^->value.text)<40)" \
+									"		v:this->^->value.text = f:int2string(f:string2int(v:this->^->value.text)+10)" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(b0326067-b8ce-462d-999b-44f7dec302a7)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "butPlus"
+					visible: true
+					width: 40
+					height: 35
+					x: 104
+					y: 311
+					fillColor: #A9A9A9FF
+				}, 
+				GtfLabel(76e18b1d-d615-48f9-af84-452d192d497c)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "plus"
+					visible: true
+					width: 40
+					height: 40
+					x: 103
+					y: 306
+					text: "+"
+					textColor: #ADFF2FFF
+					font: font_resource(c3a0b927-0be6-4a7a-9f7d-912e0752e2f0)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfRectangle(c97203f7-cce8-4d19-983e-be81a6152dfd)
+				{
+					features: feature_list [
+						TouchPressed(021837da-c884-458d-bf35-e1a12ed266b8)
+						{
+							touchPressed: function<bool,int,int,int,int>(be0c1f10-2320-4e0e-b0c0-106a2b4c17ee)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(f:string2int(v:this->^->value.text)>10)" \
+									"		v:this->^->value.text = f:int2string(f:string2int(v:this->^->value.text)-10)" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(047143ac-499b-4962-9c8f-e73a3618403f)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "butMinus"
+					visible: true
+					width: 40
+					height: 37
+					x: 267
+					y: 310
+					fillColor: #A9A9A9FF
+				}, 
+				GtfLabel(4d2dd4a9-9e17-45a5-999b-d60e508f77e7)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "minus"
+					visible: true
+					width: 40
+					height: 40
+					x: 267
+					y: 308
+					text: "-"
+					textColor: #FF0000FF
+					font: font_resource(9e89f152-f2f4-4dd2-9f66-d29d0f46496d)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfImage(a902ac0d-b51f-4152-9c98-1ffd6eaec9ad)
+				{
+					features: feature_list [
+						ScaleMode(a98141a1-98fa-42e0-bfb0-e7fa8dd2711e)
+						{
+							scaleMode: 2
+						}, 
+						TouchPressed(32e3eee8-67e1-40dc-af57-c72b9e3e4419)
+						{
+							touchPressed: function<bool,int,int,int,int>(ada49828-850c-46dd-bcd8-9f6d40238fe5)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->textMes.text = \"Programul a inceput\"" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(aaf9703a-5251-4407-b9e4-c41f789a374e)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "play"
+					visible: true
+					width: 125
+					height: 130
+					x: 656
+					y: 337
+					image: image_resource(e63097b9-fd98-484e-8b77-38f2e26cc869)
+					{
+						file: "play.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfRectangle(9e4f5fd8-66f6-46e7-8b95-81888adf44d3)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Rectangle 9"
+					visible: true
+					width: 100
+					height: 100
+					x: 463
+					y: 312
+					fillColor: #000000FF
+				}, 
+				GtfLabel(98b09bf4-2bd7-4772-834c-85e0810a1cbf)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 14"
+					visible: true
+					width: 100
+					height: 100
+					x: 489
+					y: 388
+					text: "Rpm."
+					textColor: #000000FF
+					font: font_resource(d3de9a2d-a1f7-4d1f-ac74-cb83ecbcfc8b)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(59c477c3-4ba5-4109-926a-b241dc01f6fe)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "rpmText"
+					visible: true
+					width: 100
+					height: 100
+					x: 463
+					y: 311
+					text: "400"
+					textColor: #FFFFFFFF
+					font: font_resource(9f4cff69-d89b-40b0-bbd5-0ab004ef0443)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfRectangle(a2acd621-1d02-40f9-b925-1fdde462a582)
+				{
+					features: feature_list [
+						TouchPressed(351fc486-e213-4c5b-8d88-e44f23364410)
+						{
+							touchPressed: function<bool,int,int,int,int>(32887187-0176-41a0-a33f-15290ce13c4d)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(f:string2int(v:this->^->rpmText.text)<800)" \
+									"		v:this->^->rpmText.text = f:int2string(f:string2int(v:this->^->rpmText.text)+200)" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(d46f6039-f2e2-49ad-833c-c428a9725891)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "butPlus2"
+					visible: true
+					width: 40
+					height: 40
+					x: 409
+					y: 310
+					fillColor: #A9A9A9FF
+				}, 
+				GtfLabel(da3805c6-9e71-4089-9c8e-65f8efccb660)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 15"
+					visible: true
+					width: 40
+					height: 40
+					x: 410
+					y: 309
+					text: "+"
+					textColor: #ADFF2FFF
+					font: font_resource(23b38e32-ba7a-43ea-bc84-ca4657d9dfb7)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfRectangle(51786eaa-fcb9-4c93-9a81-1f3ce944e27e)
+				{
+					features: feature_list [
+						TouchPressed(e21d6864-ffd1-46a3-bc15-6ebd35fac3b4)
+						{
+							touchPressed: function<bool,int,int,int,int>(792dbff0-6e4c-4e7f-ba57-75ab0f3c3c77)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(f:string2int(v:this->^->rpmText.text)>400)" \
+									"		v:this->^->rpmText.text = f:int2string(f:string2int(v:this->^->rpmText.text)-200)" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(c48e8b13-5047-4380-928e-6b787e81ee03)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "butMinus2"
+					visible: true
+					width: 40
+					height: 40
+					x: 581
+					y: 311
+					fillColor: #A9A9A9FF
+				}, 
+				GtfLabel(51647f52-b5d3-48a0-b26a-38173db596eb)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 16"
+					visible: true
+					width: 40
+					height: 40
+					x: 581
+					y: 310
+					text: "-"
+					textColor: #FF0000FF
+					font: font_resource(1b94a599-df18-4d25-8fd4-95f0b7a057bc)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfRectangle(66ede56b-abca-4728-86fc-a71fb3832e97)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Message"
+					visible: true
+					width: 486
+					height: 68
+					x: 286
+					y: 137
+					fillColor: #000000FF
+				}, 
+				GtfLabel(69ab9a8e-c495-4697-8180-77d08809e56f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "textMes"
+					visible: true
+					width: 475
+					height: 100
+					x: 294
+					y: 119
+					text: "Ajustati setarile si apasati PLAY"
+					textColor: #7FFF00FF
+					font: font_resource(832ea30e-f0ca-488c-9359-7577004ac028)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfEllipse(17bed268-8c43-4d14-8d60-bbf914df9916)
+				{
+					features: feature_list [
+						TouchPressed(70ec6ac1-02dd-437a-a709-d8dce5071c1e)
+						{
+							touchPressed: function<bool,int,int,int,int>(af2131bf-1907-42c4-90fa-8bb6633dd589)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	" \
+									"    true" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(1ccb1c03-4898-4c61-ae13-3c24118bf6d6)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(cd754573-8283-4d0c-8872-ea6fddcb03b5)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"   " \
+									"   true" \
+									"}"
+							}
+						}, 
+						StateTouched(2f074dc3-5eb0-4f7c-b9df-ca0b74352c9b)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "Ellipse 6"
+					visible: true
+					width: 100
+					height: 100
+					x: 697
+					y: 3
+					fillColor: #ADFF2FFF
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+				}, 
+				GtfImage(799c9751-b698-4597-bfc7-1bec703063bb)
+				{
+					features: feature_list [
+						ScaleMode(6cb1b4d6-7759-4eaa-b424-ca30bafb3d3b)
+						{
+							scaleMode: 2
+						}, 
+						TouchPressed(73ec5968-5246-4a08-a156-63690d4fe252)
+						{
+							touchPressed: function<bool,int,int,int,int>(ad1462e6-e453-481e-8273-ca368f91d9c1)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->\"Ellipse 6\".fillColor = #1CA200" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(524e9834-30e1-43cf-9cbb-43ab4918f218)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}, 
+						TouchShortReleased(2cef723b-1112-4104-97d1-08c3764b40a3)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(4a8e328e-8c07-4f2d-a629-751d3890fdd9)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire_delayed 100, ev:\"back\"()" \
+									"    true" \
+									"}"
+							}
+						}]
+					children: children_list []
+					name: "Image 16"
+					visible: true
+					width: 100
+					height: 100
+					x: 696
+					y: 2
+					image: image_resource(b4c05d7e-1451-43cf-ab01-edff75d499b7)
+					{
+						file: "back.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Rectangle 4"
+			visible: true
+			width: width@8d72e111-109b-4025-9fc9-aec04cb9476a (propref<int>)
+			height: height@8d72e111-109b-4025-9fc9-aec04cb9476a (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #FFFFFFFF
+		}, 
+		GtfImage(0719f5e3-7587-4874-a195-8d73a537a30c)
+		{
+			features: feature_list [
+				ScaleMode(b8196e18-70a6-48fd-9a8c-c85fa85003ff)
+				{
+					scaleMode: 2
+				}]
+			children: children_list []
+			name: "Image 11"
+			visible: true
+			width: 294
+			height: 231
+			x: 0
+			y: 2
+			image: image_resource(e3b039f5-50b4-4b5d-bcd4-df9472cc2733)
+			{
+				file: "butterfly.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "View 4"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
