@@ -1,0 +1,297 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(aa1928be-ed9e-4a45-a6a6-01374853b12c)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(3a19e001-90bb-4421-add1-798720ae9c7c)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "background_meniu_princpal"
+			visible: true
+			width: 800
+			height: 480
+			x: 0
+			y: 0
+			image: image_resource(90bf5d7a-3b97-4e2d-992c-be5c6ffe3f05)
+			{
+				file: "background_meniu_principal.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer(6089c7ee-147f-4236-a9cb-f21ca93048a7)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(477dc23e-01b8-4504-a57c-7407ea9204c0)
+				{
+					features: feature_list [
+						ScaleMode(4692b434-8484-43de-84f6-96d27e0f5382)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "logo_meniu"
+					visible: true
+					width: 100
+					height: 100
+					x: 130
+					y: 0
+					image: image_resource(fbff3711-381b-40e1-9f65-9a0cc623e5d3)
+					{
+						file: "menu2.png"
+					}
+					sRGB: false
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(e5857dc9-a314-4d3b-8cfc-9546b1a2261f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "text_meniu"
+					visible: true
+					width: 500
+					height: 100
+					x: 240
+					y: 0
+					text: "MENIU PRINCIPAL"
+					textColor: #FFFFFFFF
+					font: font_resource(318c7f66-7e59-4b5c-a60e-f233e9488d8a)
+					{
+						file: "Nurom-Bold.ttf"
+						size: 50
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "Buton_meniu_principal"
+			visible: true
+			width: 800
+			height: 110
+			x: 0
+			y: 0
+		}, 
+		GtfContainer(101f80e7-bc40-4dfd-b49a-a4d6c61cd788)
+		{
+			features: feature_list [
+				TouchPressed(519fa4ab-e0bc-4ebf-b32c-074ed98fab54)
+				{
+					touchPressed: function<bool,int,int,int,int>(fdb82b29-5ab5-48ed-b4c5-9b335c1bfb9f)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    fire_delayed 200, ev:mod_normal_GoTo_meniu_mod_normal()" \
+							"    true" \
+							"}"
+					}
+				}, 
+				StateTouched(d8ce2d05-ee68-413a-b889-73bb50aca06f)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfImage(f01bf91b-ded9-4f3c-af99-a8cc9639f791)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "logo_normal"
+					visible: true
+					width: 100
+					height: 100
+					x: 320
+					y: 0
+					image: image_resource(e5e34d3c-a754-404d-973a-aacf912b144d)
+					{
+						file: "logo_normal.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(4a02a491-406c-4ffa-9f71-6f520a5a0810)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "text_normal"
+					visible: true
+					width: 300
+					height: 100
+					x: 70
+					y: 0
+					text: "MOD-NORMAL"
+					textColor: #F0FFFFFF
+					font: font_resource(dde06fd4-7870-4fb9-b3b7-ffbc610bf4ef)
+					{
+						file: "Asleepytiming.otf"
+						size: 50
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "Buton mod_normal"
+			visible: true
+			width: 500
+			height: 100
+			x: 150
+			y: 110
+		}, 
+		GtfContainer(f7e0b871-f4e6-481f-b5b3-8142f668ea42)
+		{
+			features: feature_list [
+				TouchPressed(7742a800-6c86-4ead-8e5b-5dd10e6a8e13)
+				{
+					touchPressed: function<bool,int,int,int,int>(b57c7191-56e1-4b19-8f53-ae2701e5b93c)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    fire_delayed 200, ev:mod_eco_GoTo_meniu_mod_eco()" \
+							"    true" \
+							"}"
+					}
+				}, 
+				StateTouched(e7077d4c-017d-4da0-8bef-2cfb87303072)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfImage(3dfa7fec-9cbd-4c66-932c-8ba94ecc5663)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "logo_eco"
+					visible: true
+					width: width@f01bf91b-ded9-4f3c-af99-a8cc9639f791 (propref<int>)
+					height: height@101f80e7-bc40-4dfd-b49a-a4d6c61cd788 (propref<int>)
+					x: x@f01bf91b-ded9-4f3c-af99-a8cc9639f791 (propref<int>)
+					y: 0
+					image: image_resource(662db35d-336e-469a-9d8f-2c1ad53ad894)
+					{
+						file: "logo_eco.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(162708a4-ba22-402b-bbc9-613ee68bb00e)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "text_eco"
+					visible: true
+					width: width@4a02a491-406c-4ffa-9f71-6f520a5a0810 (propref<int>)
+					height: height@101f80e7-bc40-4dfd-b49a-a4d6c61cd788 (propref<int>)
+					x: x@4a02a491-406c-4ffa-9f71-6f520a5a0810 (propref<int>)
+					y: 0
+					text: "MOD-ECOLOGIC"
+					textColor: textColor@4a02a491-406c-4ffa-9f71-6f520a5a0810 (propref<color>)
+					font: font@4a02a491-406c-4ffa-9f71-6f520a5a0810 (propref<font>)
+					horizontalAlign: horizontalAlign@4a02a491-406c-4ffa-9f71-6f520a5a0810 (propref<int>)
+					verticalAlign: verticalAlign@4a02a491-406c-4ffa-9f71-6f520a5a0810 (propref<int>)
+				}]
+			name: "Buton_mod_eco"
+			visible: true
+			width: width@101f80e7-bc40-4dfd-b49a-a4d6c61cd788 (propref<int>)
+			height: height@101f80e7-bc40-4dfd-b49a-a4d6c61cd788 (propref<int>)
+			x: x@101f80e7-bc40-4dfd-b49a-a4d6c61cd788 (propref<int>)
+			y: 220
+		}, 
+		GtfContainer(721437fa-2d31-4afc-aaf7-3f9c6f3b485c)
+		{
+			features: feature_list [
+				TouchPressed(0a3d388e-43fe-472e-b3d7-fef73455105c)
+				{
+					touchPressed: function<bool,int,int,int,int>(82eecff9-88c5-46bb-8fd7-60370f75a12f)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    fire_delayed 200, ev:mod_rapi_GoTo_meniu_mod_rapid()" \
+							"    true" \
+							"}"
+					}
+				}, 
+				StateTouched(c35329f5-2354-46a6-acfe-5db8aa96389f)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfImage(1ece947f-aa34-4a90-826e-5cdb8bc490af)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "logo_rapid"
+					visible: true
+					width: width@3dfa7fec-9cbd-4c66-932c-8ba94ecc5663 (propref<int>)
+					height: height@3dfa7fec-9cbd-4c66-932c-8ba94ecc5663 (propref<int>)
+					x: x@3dfa7fec-9cbd-4c66-932c-8ba94ecc5663 (propref<int>)
+					y: 0
+					image: image_resource(16e7415b-1847-4e3a-91cd-7959772c9e5c)
+					{
+						file: "logo_rapid.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(b9789304-70fe-4422-92cd-3db6d438e4ad)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "text_rapid"
+					visible: true
+					width: width@162708a4-ba22-402b-bbc9-613ee68bb00e (propref<int>)
+					height: height@162708a4-ba22-402b-bbc9-613ee68bb00e (propref<int>)
+					x: x@162708a4-ba22-402b-bbc9-613ee68bb00e (propref<int>)
+					y: y@4a02a491-406c-4ffa-9f71-6f520a5a0810 (propref<int>)
+					text: "MOD-RAPID"
+					textColor: textColor@162708a4-ba22-402b-bbc9-613ee68bb00e (propref<color>)
+					font: font@162708a4-ba22-402b-bbc9-613ee68bb00e (propref<font>)
+					horizontalAlign: horizontalAlign@162708a4-ba22-402b-bbc9-613ee68bb00e (propref<int>)
+					verticalAlign: verticalAlign@162708a4-ba22-402b-bbc9-613ee68bb00e (propref<int>)
+				}]
+			name: "Buton_mod_rapid"
+			visible: true
+			width: width@f7e0b871-f4e6-481f-b5b3-8142f668ea42 (propref<int>)
+			height: height@f7e0b871-f4e6-481f-b5b3-8142f668ea42 (propref<int>)
+			x: x@f7e0b871-f4e6-481f-b5b3-8142f668ea42 (propref<int>)
+			y: 330
+		}, 
+		GtfLabel(fd3b4b7e-b1b8-4924-90a1-bc5ecb4466a0)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Instructiuni"
+			visible: true
+			width: 800
+			height: 100
+			x: 0
+			y: 420
+			text: "Pentru a incepe programul dorit, apasati unul dintre cele 3 butoane!"
+			textColor: #D3D3D3FF
+			font: font_resource(490de3ed-a1a7-48d7-a58f-45566ca1751f)
+			{
+				file: "Nurom-Bold.ttf"
+				size: 15
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}]
+	name: "view_meniu_principal"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

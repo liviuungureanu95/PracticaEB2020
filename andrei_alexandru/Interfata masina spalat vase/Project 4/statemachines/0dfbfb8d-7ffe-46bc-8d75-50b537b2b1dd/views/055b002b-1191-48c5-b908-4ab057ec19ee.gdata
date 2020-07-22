@@ -1,0 +1,202 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(055b002b-1191-48c5-b908-4ab057ec19ee)
+{
+	features: feature_list [
+		TouchStatusChanged(f714d5b6-51ff-4f0f-b070-61306918a616)
+		{
+			touchStatusChanged: function<bool,int,int,int,int,int>(0ba0b29b-4765-42cd-9b1d-7aec33a43f7a)
+			{
+				script: "function(v:touchId::int, v:touchStatus::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    fire_delayed 5000, ev:mod_rapid_BackTo_meniu_principal()" \
+					"    true" \
+					"}"
+			}
+		}, 
+		StateTouched(077507b2-01ee-4d1a-9924-f0a2b3739c1a)
+		{
+			touchable: true
+			touched: false
+			touchPolicy: 0
+			touchBehavior: 0
+		}]
+	children: children_list [
+		GtfImage(2f64b84c-1c4b-489d-944a-719bfbc0d29a)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "background_rapid"
+			visible: true
+			width: width@055b002b-1191-48c5-b908-4ab057ec19ee (propref<int>)
+			height: height@055b002b-1191-48c5-b908-4ab057ec19ee (propref<int>)
+			x: x@055b002b-1191-48c5-b908-4ab057ec19ee (propref<int>)
+			y: y@055b002b-1191-48c5-b908-4ab057ec19ee (propref<int>)
+			image: image_resource(a904145e-f125-43b0-a21b-a5ad65671326)
+			{
+				file: "background_meniuri.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer(0bcc2824-80d0-4aa6-b9c8-8a295d21f4f7)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(8227ecdd-b640-4688-8b30-229ffd8acfee)
+				{
+					features: feature_list [
+						ScaleMode(d789e16c-777f-4fba-ac6c-6a6e11bb5bc8)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "logo_meniu_rapid"
+					visible: true
+					width: 100
+					height: 100
+					x: 0
+					y: 0
+					image: image_resource(2e58f378-4254-4181-a80d-3c711f9d3ff6)
+					{
+						file: "menu2.png"
+					}
+					sRGB: false
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(cab13eed-202a-4262-95e7-753d856ddf4d)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Titlu"
+					visible: true
+					width: 800
+					height: 100
+					x: 100
+					y: 0
+					text: "MOD-RAPID"
+					textColor: #F0FFFFFF
+					font: font_resource(82832c8d-2a1d-4b6a-99ac-81ea352b1dbc)
+					{
+						file: "Nurom-Bold.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(86c58186-bf23-43db-86db-d95fc69a0cbe)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Temperatura"
+					visible: true
+					width: 800
+					height: 100
+					x: 0
+					y: 100
+					text: "Temperatura: - °C"
+					textColor: #E0FFFFFF
+					font: font_resource(dfb751f5-c5ee-4b41-a38a-d52f3537191b)
+					{
+						file: "Nurom-Bold.ttf"
+						size: 25
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(5b732798-dde9-4409-9d99-78863ade7b44)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Tip murdarie"
+					visible: true
+					width: 800
+					height: 100
+					x: 0
+					y: 150
+					text: "Tip de murdarie: program pentru vasele care nu sunt foarte murdare"
+					textColor: #E0FFFFFF
+					font: font_resource(66808255-9803-4f44-8ec2-bb7284f1eb9b)
+					{
+						file: "Nurom-Bold.ttf"
+						size: 25
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(ba46d979-a1c6-4b35-81c7-6303c6234df7)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Grad de murdarie"
+					visible: true
+					width: 800
+					height: 100
+					x: 0
+					y: 200
+					text: "Grad de murdarie: delicat murdare"
+					textColor: #E0FFFFFF
+					font: font_resource(3dc45b70-5612-42a5-aadc-fba6976e6333)
+					{
+						file: "Nurom-Bold.ttf"
+						size: 25
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(04855606-0be2-4988-90f6-792fb5c73c91)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Durata"
+					visible: true
+					width: 800
+					height: 100
+					x: 0
+					y: 250
+					text: "Durata: 5 secunde"
+					textColor: #E0FFFFFF
+					font: font_resource(f9ba70a5-2811-46e1-bc76-ee31ad2cbd3d)
+					{
+						file: "Nurom-Bold.ttf"
+						size: 25
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(5311e6ac-9c9d-43d4-a103-4efffdf3b1fe)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Atentie intoarcere"
+					visible: true
+					width: 800
+					height: 100
+					x: 0
+					y: 400
+					text: "Dupa incheierea programului, aplicatia se va intoarce la meniul principal!"
+					textColor: #E6E6FAFF
+					font: font_resource(9edd1ebb-70f1-46cd-b2d9-6cc29005df6f)
+					{
+						file: "Nurom-Bold.ttf"
+						size: 22
+					}
+					horizontalAlign: 2
+					verticalAlign: 0
+				}]
+			name: "Titlu mod_rapid"
+			visible: true
+			width: 100
+			height: 100
+			x: 0
+			y: 0
+		}]
+	name: "view_mod_rapid"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
