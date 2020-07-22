@@ -1,0 +1,306 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(6cb3157b-5d04-471d-986a-1b8410bd01b4)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(f409727b-fd62-4e9d-b915-2682725d5e4f)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfEllipse(58374ab1-48e6-4118-a221-7d6bdf81dda9)
+				{
+					features: feature_list [
+						TouchPressed(88acaee6-7b15-4e99-8bdb-f335c55c967f)
+						{
+							touchPressed: function<bool,int,int,int,int>(40d64ae6-5f07-4c26-8e78-3610d2f9d4e6)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->Background_White.fillColor = v:this.PressButtonColor" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(478c1514-1c35-4b38-b091-b9ad5ba8e74a)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(eecaead8-255e-43d5-98d5-72f332bc1dfb)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:GoToInterfaceFromMENU_CC()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(a7c0dc9f-b16b-49b1-abf6-b64bc757ea93)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(b17dafee-a315-4a98-99eb-036ec527c531)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text_White"
+							visible: true
+							width: width@58374ab1-48e6-4118-a221-7d6bdf81dda9 (propref<int>)
+							height: height@58374ab1-48e6-4118-a221-7d6bdf81dda9 (propref<int>)
+							x: 0
+							y: 0
+							text: "White"
+							textColor: #000000FF
+							font: font_resource(286f3c4d-40b6-47f1-a3ce-54ad30e38f36)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 35
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Background_White"
+					visible: true
+					width: 86
+					height: 83
+					x: 73
+					y: 450
+					fillColor: @91fa1cb9-507d-4aa5-898a-0165427bd145 (objectref<color>)
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+					PressButtonColor: @f669df29-343f-4996-9cfe-a7e51d91b4bd (objectref<color>)
+				}, 
+				GtfEllipse(35f178a8-cf54-47c7-99a6-155c3ef35883)
+				{
+					features: feature_list [
+						TouchPressed(1cc52d56-7126-41d8-8fad-29cdfe1ce858)
+						{
+							touchPressed: function<bool,int,int,int,int>(7c8c53ef-8494-41ea-a2f7-892db75141c1)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->Background_LightClotes.fillColor = v:this.PressButtonColor" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(223a1209-0f94-430c-99a9-5a5930bffe11)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(bac5d4cd-e742-41e9-833a-200695c2d757)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:GoToInterfaceFromMENU_CC()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(e990176d-5c9a-4fe9-bce7-e9f873db5486)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(265a0a7c-6a16-4e84-b15e-587d7d42d066)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text_LightClotes"
+							visible: true
+							width: width@35f178a8-cf54-47c7-99a6-155c3ef35883 (propref<int>)
+							height: height@35f178a8-cf54-47c7-99a6-155c3ef35883 (propref<int>)
+							x: 0
+							y: 0
+							text: "Light Clothes"
+							textColor: #000000FF
+							font: font_resource(996017b6-7f4a-496b-b417-f12fadbfafb9)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 20
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Background_LightClotes"
+					visible: true
+					width: 86
+					height: 83
+					x: 198
+					y: 477
+					fillColor: @91fa1cb9-507d-4aa5-898a-0165427bd145 (objectref<color>)
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+					PressButtonColor: @f669df29-343f-4996-9cfe-a7e51d91b4bd (objectref<color>)
+				}, 
+				GtfEllipse(6d6ee326-0c09-4e6c-aac6-b1eb9e69ff7a)
+				{
+					features: feature_list [
+						TouchPressed(dd660886-930d-47b3-ae09-9298044f22c8)
+						{
+							touchPressed: function<bool,int,int,int,int>(a3920e42-809f-4f8f-9277-01e27bff4ccd)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->Background_Dark.fillColor = v:this.PressButtonColor" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(a862876d-53cf-4cd3-8ceb-3df529dea8cb)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(1e95e628-681a-40a6-b32a-cc0825acd007)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:GoToInterfaceFromMENU_CC()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(d9d82d33-1416-483d-b632-a0aa99d514bd)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(842f2934-dfee-453d-98c6-5bff34a6caa9)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text_Dark"
+							visible: true
+							width: width@6d6ee326-0c09-4e6c-aac6-b1eb9e69ff7a (propref<int>)
+							height: height@6d6ee326-0c09-4e6c-aac6-b1eb9e69ff7a (propref<int>)
+							x: 0
+							y: 0
+							text: "Dark"
+							textColor: #000000FF
+							font: font_resource(a3f4d6df-2fde-4f2f-a026-139ac4b3e86d)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 35
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Background_Dark"
+					visible: true
+					width: 86
+					height: 83
+					x: 321
+					y: 450
+					fillColor: @91fa1cb9-507d-4aa5-898a-0165427bd145 (objectref<color>)
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+					PressButtonColor: @f669df29-343f-4996-9cfe-a7e51d91b4bd (objectref<color>)
+				}, 
+				GtfLabel(25dd7862-8806-47e4-8f4f-e530dafaf56b)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(ac9830f9-d96d-4635-8cbb-f956d4f8af69)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text_2"
+							visible: true
+							width: 185
+							height: 33
+							x: 0
+							y: 37
+							text: "you put in the washing machine"
+							textColor: @15efddcb-ae1f-4f62-86bf-d5533f7aa3b5 (objectref<color>)
+							font: font_resource(88fa2676-f03a-4edb-a023-b7b166a74693)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 15
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}, 
+						GtfLabel(328b8380-9cda-4ef0-b72e-9cdb9dfb41fd)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text_3"
+							visible: true
+							width: 186
+							height: 22
+							x: 0
+							y: 75
+							text: "by pressing one of these buttons"
+							textColor: @15efddcb-ae1f-4f62-86bf-d5533f7aa3b5 (objectref<color>)
+							font: font_resource(27c33204-823b-467b-ac3a-138449521172)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 15
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Text_1"
+					visible: true
+					width: 186
+					height: 35
+					x: 147
+					y: 261
+					text: "Choose the color of the clothes "
+					textColor: @15efddcb-ae1f-4f62-86bf-d5533f7aa3b5 (objectref<color>)
+					font: font_resource(cf8a0055-1a0f-4514-b545-d9803fe9b0ca)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 15
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(e34c2f5a-2a50-4cf3-bf2c-ffa5480b5303)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text_Principal"
+					visible: true
+					width: 263
+					height: 100
+					x: 109
+					y: 72
+					text: "\" Clothes Color MENU \""
+					textColor: @15efddcb-ae1f-4f62-86bf-d5533f7aa3b5 (objectref<color>)
+					font: font_resource(1e1bac93-67c3-4a5f-b691-806240fd44d5)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Background"
+			visible: true
+			width: width@6cb3157b-5d04-471d-986a-1b8410bd01b4 (propref<int>)
+			height: height@6cb3157b-5d04-471d-986a-1b8410bd01b4 (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(d2e9be8c-c1c1-4e3e-8cae-395680392a12)
+			{
+				file: "Color_Material_Background.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "MENU_ClotesColor"
+	visible: true
+	width: 480
+	height: 800
+	x: 0
+	y: 0
+}

@@ -1,0 +1,217 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(355d0d97-c2a4-4ce5-ad78-3597ca3d0c5a)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(af6e215b-c97c-4fa1-8903-4ae2b61e24bb)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(51bf63c0-2998-428d-8b69-641515fdc9fd)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text_1"
+					visible: true
+					width: 432
+					height: 99
+					x: 22
+					y: 207
+					text: "You entered in the \"Temperature\" menu !"
+					textColor: @15efddcb-ae1f-4f62-86bf-d5533f7aa3b5 (objectref<color>)
+					font: font_resource(a03902bf-6805-4474-a921-37dcf5da2605)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(12d53bab-20a6-42be-b10e-8305d842f44a)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text_2"
+					visible: true
+					width: 479
+					height: 99
+					x: 0
+					y: 268
+					text: "You can return to the Main Menu or set the Temperature ."
+					textColor: @15efddcb-ae1f-4f62-86bf-d5533f7aa3b5 (objectref<color>)
+					font: font_resource(6c24273c-249b-46f0-99f7-e8c92b1dfcac)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 21
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer(3f0d3722-bf6c-447f-a49e-c6fbd6fdea2f)
+				{
+					features: feature_list [
+						TouchPressed(5ccd5bbb-ff05-4a10-887b-6fb9c29b349c)
+						{
+							touchPressed: function<bool,int,int,int,int>(2a21fc49-b10b-4a3e-816e-495d1e8addfb)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->Background.fillColor = v:this.PressButtonColor" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(270f8073-15f1-4d8d-a10c-1debabbbdcd1)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(13d5f039-f268-4c0c-a0fd-a59f64e0d3b2)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:GoToInterfaceFromASK_T()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(6cc7e54e-d11b-4471-819d-617fea23bc27)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfRectangle(2a784115-19b5-4486-a2f7-f1d5a9f1b7b4)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLabel(4ad4f4c5-02ac-4e10-99ac-dd782bcf1fea)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Text_MainMenu"
+									visible: true
+									width: width@3f0d3722-bf6c-447f-a49e-c6fbd6fdea2f (propref<int>)
+									height: height@2a784115-19b5-4486-a2f7-f1d5a9f1b7b4 (propref<int>)
+									x: 0
+									y: 0
+									text: "Back to Main Menu"
+									textColor: #000000FF
+									font: font_resource(1518141a-6127-43fe-9a87-85ac1cfe4b93)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 25
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+								}]
+							name: "Background"
+							visible: true
+							width: width@3f0d3722-bf6c-447f-a49e-c6fbd6fdea2f (propref<int>)
+							height: height@3f0d3722-bf6c-447f-a49e-c6fbd6fdea2f (propref<int>)
+							x: 0
+							y: 0
+							fillColor: @91fa1cb9-507d-4aa5-898a-0165427bd145 (objectref<color>)
+						}]
+					name: "Button_MainMenu"
+					visible: true
+					width: 180
+					height: 78
+					x: 35
+					y: 548
+					PressButtonColor: @f669df29-343f-4996-9cfe-a7e51d91b4bd (objectref<color>)
+				}, 
+				GtfContainer(3cd7ac3f-d063-4868-9cc8-3221536a92b2)
+				{
+					features: feature_list [
+						TouchPressed(4985dbcc-2186-4e1f-9cb0-e57572391387)
+						{
+							touchPressed: function<bool,int,int,int,int>(ae14fc3a-59e9-4371-ab41-a071a217ed92)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->Background.fillColor = v:this.PressButtonColor" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(50597bb7-77d5-4545-8947-d18aab1d1622)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(5ca42b07-b783-4b22-b41e-216fe0e90d7c)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:GoToMENU_T()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(8db16278-9609-4ad3-89af-46d6ffbf44b4)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfRectangle(a0f99188-07e2-465b-9917-14ea0e9d9855)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLabel(d47d566f-b5e1-4cb1-bec3-6ad69d87b2ec)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Text_Continue"
+									visible: true
+									width: width@3cd7ac3f-d063-4868-9cc8-3221536a92b2 (propref<int>)
+									height: height@3cd7ac3f-d063-4868-9cc8-3221536a92b2 (propref<int>)
+									x: 0
+									y: 0
+									text: "CONTINUE"
+									textColor: #000000FF
+									font: font_resource(bab1dd89-58bf-42af-aa37-7a96a9d91df1)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 33
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+								}]
+							name: "Background"
+							visible: true
+							width: width@3cd7ac3f-d063-4868-9cc8-3221536a92b2 (propref<int>)
+							height: height@3cd7ac3f-d063-4868-9cc8-3221536a92b2 (propref<int>)
+							x: 0
+							y: 0
+							fillColor: @91fa1cb9-507d-4aa5-898a-0165427bd145 (objectref<color>)
+						}]
+					name: "Button_Continue"
+					visible: true
+					width: 180
+					height: 78
+					x: 266
+					y: 548
+					PressButtonColor: @f669df29-343f-4996-9cfe-a7e51d91b4bd (objectref<color>)
+				}]
+			name: "Background"
+			visible: true
+			width: width@355d0d97-c2a4-4ce5-ad78-3597ca3d0c5a (propref<int>)
+			height: height@355d0d97-c2a4-4ce5-ad78-3597ca3d0c5a (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(d5509a94-c9b7-4439-8198-1d353d62104f)
+			{
+				file: "ASKbackground.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "ASK_Temperature"
+	visible: true
+	width: 480
+	height: 800
+	x: 0
+	y: 0
+}
