@@ -1,0 +1,351 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(d02c8d4d-a26c-4892-93dc-f02655e1a20b)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(6fd2e232-6313-492a-bd15-1724dc5a56cc)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(3ef5fcff-c109-4ed7-b340-2a4b805821b9)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text_Principal"
+					visible: true
+					width: 263
+					height: 100
+					x: 109
+					y: 72
+					text: "\" Rotations MENU \""
+					textColor: @15efddcb-ae1f-4f62-86bf-d5533f7aa3b5 (objectref<color>)
+					font: font_resource(bb118c4a-cc53-48a1-8a5c-343cef4ddd54)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(3e201519-376c-4379-bf2c-d9310a9f8dcd)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(b2bae14e-4d01-4ded-9c04-a06560dd4dcb)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text_2"
+							visible: true
+							width: 185
+							height: 33
+							x: 0
+							y: 37
+							text: "machine to spin the clothes"
+							textColor: @15efddcb-ae1f-4f62-86bf-d5533f7aa3b5 (objectref<color>)
+							font: font_resource(9322f33e-f882-4afa-a7fa-ea514814f63b)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 15
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Text_1"
+					visible: true
+					width: 186
+					height: 35
+					x: 147
+					y: 278
+					text: "Choose the rotations of the washing"
+					textColor: @15efddcb-ae1f-4f62-86bf-d5533f7aa3b5 (objectref<color>)
+					font: font_resource(3a65abd8-2288-456e-b44f-9eb794c4653a)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 15
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfEllipse(813118a1-b5e1-4a10-8f61-dd2551086769)
+				{
+					features: feature_list [
+						TouchPressed(abd15c03-254e-40e7-a352-5f7690d104fd)
+						{
+							touchPressed: function<bool,int,int,int,int>(82f56919-e8d4-4fe9-84ca-39c79b6d2d0d)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->Background_600.fillColor = v:this.PressButtonColor" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(723d172d-b692-417b-8bfc-86eda4343e10)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(fcf5ce48-a95a-4c29-bfc8-4589054fddd9)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:GoToInterfaceFromMENU_R()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(21ec48b3-7b3a-4dc2-95cc-4a157f1dc016)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(8c94eb34-0d35-4455-994d-8481e9bea400)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text_600"
+							visible: true
+							width: width@813118a1-b5e1-4a10-8f61-dd2551086769 (propref<int>)
+							height: height@813118a1-b5e1-4a10-8f61-dd2551086769 (propref<int>)
+							x: 0
+							y: 0
+							text: "600 rot/min"
+							textColor: #000000FF
+							font: font_resource(f03c0df1-39aa-4ba9-9cae-d5f554cd6d31)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 20
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Background_600"
+					visible: true
+					width: 86
+					height: 83
+					x: 36
+					y: 440
+					fillColor: @91fa1cb9-507d-4aa5-898a-0165427bd145 (objectref<color>)
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+					PressButtonColor: @f669df29-343f-4996-9cfe-a7e51d91b4bd (objectref<color>)
+				}, 
+				GtfEllipse(eaf5a654-2379-4651-a975-b90c6d79359c)
+				{
+					features: feature_list [
+						TouchPressed(249a9905-ec93-426d-826f-bbd9e049ec55)
+						{
+							touchPressed: function<bool,int,int,int,int>(402ed7a7-037f-4fad-a06c-17a8ff00a182)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->Background_800.fillColor = v:this.PressButtonColor" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(845d504a-4c00-4c9b-b6a1-f8193d635dd8)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(ec95a660-48c5-4086-8a64-46235f6add6c)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:GoToInterfaceFromMENU_R()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(9dd02df5-b611-4f27-a381-fa39893d1bb6)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(96931ffb-fd89-4341-bca8-8ecae818b7e2)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text_800"
+							visible: true
+							width: width@eaf5a654-2379-4651-a975-b90c6d79359c (propref<int>)
+							height: height@eaf5a654-2379-4651-a975-b90c6d79359c (propref<int>)
+							x: 0
+							y: 0
+							text: "800 rot/min"
+							textColor: #000000FF
+							font: font_resource(9086f04e-5026-49ac-a4ce-3ec75ea0a72c)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 20
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Background_800"
+					visible: true
+					width: 86
+					height: 83
+					x: 143
+					y: 469
+					fillColor: @91fa1cb9-507d-4aa5-898a-0165427bd145 (objectref<color>)
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+					PressButtonColor: @f669df29-343f-4996-9cfe-a7e51d91b4bd (objectref<color>)
+				}, 
+				GtfEllipse(9f6c709b-2ecc-4b30-ba80-c45fa4527efd)
+				{
+					features: feature_list [
+						TouchPressed(660e297d-2acb-4acf-897f-0403ef443456)
+						{
+							touchPressed: function<bool,int,int,int,int>(d8a7e415-2295-4484-9b3f-f6ee35d31f1b)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->Background_1000.fillColor = v:this.PressButtonColor" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(13b51af7-a2c0-4308-8a6f-2a7d482112fd)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(d254fdef-066f-4fb4-af97-bb84cbcda8bd)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:GoToInterfaceFromMENU_R()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(0dd59c39-f704-4624-b40f-273e09621fcf)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(56061de6-de1c-4579-9762-fa02834bfce2)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text_1000"
+							visible: true
+							width: width@9f6c709b-2ecc-4b30-ba80-c45fa4527efd (propref<int>)
+							height: height@9f6c709b-2ecc-4b30-ba80-c45fa4527efd (propref<int>)
+							x: 0
+							y: 0
+							text: "1000 rot/min"
+							textColor: #000000FF
+							font: font_resource(bad36110-29fc-4616-a929-b5cb175979bb)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 19
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Background_1000"
+					visible: true
+					width: 86
+					height: 83
+					x: 251
+					y: 470
+					fillColor: @91fa1cb9-507d-4aa5-898a-0165427bd145 (objectref<color>)
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+					PressButtonColor: @f669df29-343f-4996-9cfe-a7e51d91b4bd (objectref<color>)
+				}, 
+				GtfEllipse(fa85ab48-5f7c-480a-abb8-32ad11055194)
+				{
+					features: feature_list [
+						TouchPressed(9f9eab28-ef1d-49c1-90bf-88ab16a33abc)
+						{
+							touchPressed: function<bool,int,int,int,int>(7b38ab16-08e6-4d92-b1ea-b798c0626940)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->Background_1200.fillColor = v:this.PressButtonColor" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(63f95eab-31ae-40df-84b2-f376bff794c9)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(edfde891-63fc-4922-aa5f-fee1b6f51112)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:GoToInterfaceFromMENU_R()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(e875925f-0c41-409b-a39c-55bf8d978c2d)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(a8daf10a-edc7-4a96-b602-31db45bae32d)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text_1200"
+							visible: true
+							width: width@fa85ab48-5f7c-480a-abb8-32ad11055194 (propref<int>)
+							height: height@fa85ab48-5f7c-480a-abb8-32ad11055194 (propref<int>)
+							x: 0
+							y: 0
+							text: "1200 rot/min"
+							textColor: #000000FF
+							font: font_resource(d509afef-0efe-49bb-8dbc-5221444d4407)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 19
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Background_1200"
+					visible: true
+					width: 86
+					height: 83
+					x: 357
+					y: 441
+					fillColor: @91fa1cb9-507d-4aa5-898a-0165427bd145 (objectref<color>)
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+					PressButtonColor: @f669df29-343f-4996-9cfe-a7e51d91b4bd (objectref<color>)
+				}]
+			name: "Background"
+			visible: true
+			width: width@d02c8d4d-a26c-4892-93dc-f02655e1a20b (propref<int>)
+			height: height@d02c8d4d-a26c-4892-93dc-f02655e1a20b (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(66f5280d-c3cb-4513-878d-2d23bd9aad4d)
+			{
+				file: "Rotations_Background.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "MENU_Rotations"
+	visible: true
+	width: 480
+	height: 800
+	x: 0
+	y: 0
+}

@@ -1,0 +1,217 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(2dfac728-4c66-4189-9523-84022c8b374e)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(f41a674f-aad0-4f06-8c54-5af3c51726d9)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(733504d4-7ea1-4373-bd27-5e2000262fa9)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text_1"
+					visible: true
+					width: 432
+					height: 99
+					x: 22
+					y: 207
+					text: "You entered in the \"Clothes Color\" menu !"
+					textColor: @15efddcb-ae1f-4f62-86bf-d5533f7aa3b5 (objectref<color>)
+					font: font_resource(91b05bfc-2405-4886-991f-06e681db6ef5)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(6774a8dc-1f56-400d-9c83-b682fd16425e)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text_2"
+					visible: true
+					width: 478
+					height: 99
+					x: 0
+					y: 268
+					text: "You can return to the Main Menu or continue to the \"Clothes Color\""
+					textColor: @15efddcb-ae1f-4f62-86bf-d5533f7aa3b5 (objectref<color>)
+					font: font_resource(25c16850-3337-40f9-b436-ac6548f18b60)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 21
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer(16a4478b-cdd4-4b54-b559-548396eb9c2e)
+				{
+					features: feature_list [
+						TouchPressed(114d9b75-50fd-49bd-9a18-5d330c76eb39)
+						{
+							touchPressed: function<bool,int,int,int,int>(23a76b1f-668e-41c0-8835-8539fcdf854f)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->Background.fillColor = v:this.PressButtonColor" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(5198fd1d-4fe9-49d2-87cc-87391105cd89)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(7acf0e4a-1053-4946-bc5a-84822ffc7af6)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:GoToInterfaceFromASK_CC()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(82402aaf-54f7-4e0b-a2be-0997d1a1a1eb)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfRectangle(dbd13bd1-bd83-4868-8a05-5b32e7dc911d)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLabel(00ced09c-e905-4995-a642-f82789ba5649)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Text_MainMenu"
+									visible: true
+									width: width@16a4478b-cdd4-4b54-b559-548396eb9c2e (propref<int>)
+									height: height@dbd13bd1-bd83-4868-8a05-5b32e7dc911d (propref<int>)
+									x: 0
+									y: 0
+									text: "Back to Main Menu"
+									textColor: #000000FF
+									font: font_resource(1a6f56f9-b3d2-46d8-8eb9-1ba3f7ad4647)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 25
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+								}]
+							name: "Background"
+							visible: true
+							width: width@16a4478b-cdd4-4b54-b559-548396eb9c2e (propref<int>)
+							height: height@16a4478b-cdd4-4b54-b559-548396eb9c2e (propref<int>)
+							x: 0
+							y: 0
+							fillColor: @91fa1cb9-507d-4aa5-898a-0165427bd145 (objectref<color>)
+						}]
+					name: "Button_MainMenu"
+					visible: true
+					width: 180
+					height: 78
+					x: 35
+					y: 548
+					PressButtonColor: @f669df29-343f-4996-9cfe-a7e51d91b4bd (objectref<color>)
+				}, 
+				GtfContainer(9b354226-207a-4c8a-9cd7-9f49703595ea)
+				{
+					features: feature_list [
+						TouchPressed(26e2a710-7cf2-4230-963e-25a5269f77b3)
+						{
+							touchPressed: function<bool,int,int,int,int>(c405d87e-ebfa-45c1-8dc3-85c9c359b8b3)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->Background.fillColor = v:this.PressButtonColor" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(4d8c9cc7-dc32-437d-9c88-801ee8c3f6e9)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(4b8bcf7d-837f-4828-897a-340416f9a5f7)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:GoToMENU_CC()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(9c7e9fec-f674-424c-94f2-9b4b5a13791d)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfRectangle(0153ff57-efd1-4dd9-a129-f600c1520400)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLabel(c1c29611-1782-4933-9fc0-abf267ea744b)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Text_Continue"
+									visible: true
+									width: width@9b354226-207a-4c8a-9cd7-9f49703595ea (propref<int>)
+									height: height@9b354226-207a-4c8a-9cd7-9f49703595ea (propref<int>)
+									x: 0
+									y: 0
+									text: "CONTINUE"
+									textColor: #000000FF
+									font: font_resource(72070d5c-69d4-4be8-ab8d-37242640bd32)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 33
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+								}]
+							name: "Background"
+							visible: true
+							width: width@9b354226-207a-4c8a-9cd7-9f49703595ea (propref<int>)
+							height: height@9b354226-207a-4c8a-9cd7-9f49703595ea (propref<int>)
+							x: 0
+							y: 0
+							fillColor: @91fa1cb9-507d-4aa5-898a-0165427bd145 (objectref<color>)
+						}]
+					name: "Button_Continue"
+					visible: true
+					width: 180
+					height: 78
+					x: 266
+					y: 548
+					PressButtonColor: @f669df29-343f-4996-9cfe-a7e51d91b4bd (objectref<color>)
+				}]
+			name: "Background"
+			visible: true
+			width: width@2dfac728-4c66-4189-9523-84022c8b374e (propref<int>)
+			height: height@2dfac728-4c66-4189-9523-84022c8b374e (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(293cacfb-418f-4ab0-9266-90fa736682c5)
+			{
+				file: "ASKbackground.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "ASK_ClotesColor"
+	visible: true
+	width: 480
+	height: 800
+	x: 0
+	y: 0
+}

@@ -1,0 +1,364 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(42fcb40c-4172-4872-b1fd-d36e0d8c4f27)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(0d40d702-cbca-45ca-870f-cf4e9d448627)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(7bd8a6fa-0993-4efb-bd93-4b6560b1f8be)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(f452e0ae-3c03-40fd-8faf-bf63c00836b4)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Txt_EB"
+							visible: true
+							width: 145
+							height: 39
+							x: 0
+							y: 129
+							text: "Elektrobit"
+							textColor: @002b73a7-1e51-4a8a-941a-9e1c905cbc94 (objectref<color>)
+							font: font_resource(f39250b9-1036-4374-82d8-9035c635abf7)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "EB"
+					visible: true
+					width: 145
+					height: 130
+					x: 30
+					y: 19
+					image: image_resource(8091eb66-c433-4f52-8a10-d1fb03f3db92)
+					{
+						file: "EB.png"
+					}
+					sRGB: false
+					horizontalAlign: 1
+					verticalAlign: 1
+				}, 
+				GtfLabel(5f0446e0-d064-49bb-bd49-04a297c71586)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(247bb2e7-04ce-48e0-ae4c-1795137381c4)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Txt_Menu"
+							visible: true
+							width: 180
+							height: 100
+							x: 3
+							y: 56
+							text: "MENU"
+							textColor: @9bd88c22-b838-44de-80b7-91f46d44b632 (objectref<color>)
+							font: font_resource(49fb0d1e-e0ca-45b3-86bd-632405885e79)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 50
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Txt_Principal"
+					visible: true
+					width: 184
+					height: 100
+					x: 238
+					y: 0
+					text: "PRINCIPAL"
+					textColor: @9bd88c22-b838-44de-80b7-91f46d44b632 (objectref<color>)
+					font: font_resource(e2c9a945-16d1-42e3-8380-82b955850a2a)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 50
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfEllipse(ec400b5a-96c3-4588-afd3-8093c5f96c5a)
+				{
+					features: feature_list [
+						TouchPressed(090ce906-0004-4063-a6fd-96d6fdf57aaf)
+						{
+							touchPressed: function<bool,int,int,int,int>(fadb3377-9a77-4849-9518-8dbbdbfbcf97)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->Button_Program1.fillColor = v:this.ButtonPressColor" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(97e3237d-fe1f-4b31-9d24-d511fdc3320e)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(f725dfac-2f6f-4111-902f-5857b554da02)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:GoTo_PRG1_fromM ()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(ed10671f-fe79-44c3-8187-b657b9106987)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(ec511493-1312-4419-a3bd-28d33c396aa6)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Txt_Press1"
+							visible: true
+							width: width@ec400b5a-96c3-4588-afd3-8093c5f96c5a (propref<int>)
+							height: height@ec400b5a-96c3-4588-afd3-8093c5f96c5a (propref<int>)
+							x: 0
+							y: 0
+							text: "PRESS"
+							textColor: @002b73a7-1e51-4a8a-941a-9e1c905cbc94 (objectref<color>)
+							font: font_resource(1fa4b03a-d3fa-415c-9544-48c5c972e972)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Button_Program1"
+					visible: true
+					width: 86
+					height: 83
+					x: 52
+					y: 257
+					fillColor: @5a674f3d-b7f4-4789-8c9f-3af2beff17ff (objectref<color>)
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+					ButtonPressColor: @d68fa6b2-acc1-4888-8052-1a614584b215 (objectref<color>)
+				}, 
+				GtfEllipse(8581a79e-d7e1-4f4d-b7e4-269cf018763e)
+				{
+					features: feature_list [
+						TouchPressed(4ab00cee-7c3f-4040-af07-58f8cf8f35cd)
+						{
+							touchPressed: function<bool,int,int,int,int>(f4f9623b-8b6e-44f8-88ef-f56d35f382fc)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->Button_Program2.fillColor = v:this.ButtonPressColor" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(5d5fec38-3600-4e7d-87e8-5c2ba8ef9c4a)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(75065bb8-880f-4905-8f76-8be69b31a6a3)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:GoTo_PRG2_fromM ()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(0618388b-cea1-4872-a091-964390d07488)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(e18d19a6-2b5a-4597-a931-0c291fa687e6)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Txt_Press2"
+							visible: true
+							width: width@8581a79e-d7e1-4f4d-b7e4-269cf018763e (propref<int>)
+							height: height@8581a79e-d7e1-4f4d-b7e4-269cf018763e (propref<int>)
+							x: 0
+							y: 0
+							text: "PRESS"
+							textColor: @002b73a7-1e51-4a8a-941a-9e1c905cbc94 (objectref<color>)
+							font: font_resource(e710bdbe-2e48-4666-b4b7-fa8d49222841)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Button_Program2"
+					visible: true
+					width: 86
+					height: 83
+					x: 53
+					y: 458
+					fillColor: @5a674f3d-b7f4-4789-8c9f-3af2beff17ff (objectref<color>)
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+					ButtonPressColor: @d68fa6b2-acc1-4888-8052-1a614584b215 (objectref<color>)
+				}, 
+				GtfEllipse(f24b4f66-b864-4816-8388-d046e9bb5847)
+				{
+					features: feature_list [
+						TouchPressed(c06e2882-5e9e-4ca5-9cea-205be25137db)
+						{
+							touchPressed: function<bool,int,int,int,int>(780b5a3a-8ee9-405c-b528-2cdb854431cf)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->Button_Program3.fillColor = v:this.ButtonPressColor" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(890be903-6c65-4b6e-9089-bf60f1b4a00a)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(7d37fd5b-e642-4b0b-a83a-0ee97354a9fd)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:GoTo_PRG3_fromM ()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(99463c80-56ad-4d36-8457-970baf2a7d04)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(70316c76-fd89-4ebb-ba95-447dda607d78)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Txt_Press3"
+							visible: true
+							width: width@f24b4f66-b864-4816-8388-d046e9bb5847 (propref<int>)
+							height: height@f24b4f66-b864-4816-8388-d046e9bb5847 (propref<int>)
+							x: 0
+							y: 0
+							text: "PRESS"
+							textColor: @002b73a7-1e51-4a8a-941a-9e1c905cbc94 (objectref<color>)
+							font: font_resource(fe779e9f-3045-44d4-abb4-0c9974938b70)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Button_Program3"
+					visible: true
+					width: 86
+					height: 83
+					x: 53
+					y: 658
+					fillColor: @5a674f3d-b7f4-4789-8c9f-3af2beff17ff (objectref<color>)
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+					ButtonPressColor: @d68fa6b2-acc1-4888-8052-1a614584b215 (objectref<color>)
+				}, 
+				GtfLabel(98bd87d9-4059-4a70-872d-812d301f6309)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Txt_Program1"
+					visible: true
+					width: 275
+					height: 45
+					x: 175
+					y: 277
+					text: "Program 1 ->  Washing"
+					textColor: @002b73a7-1e51-4a8a-941a-9e1c905cbc94 (objectref<color>)
+					font: font_resource(d2fe978c-507a-4ea4-9cf0-dd422e611b74)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(4ad43bdf-0ed6-4aef-a72f-fe629b7a8c0b)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Txt_Program2"
+					visible: true
+					width: 275
+					height: 45
+					x: 175
+					y: 477
+					text: "Program 2 -> Fast washing"
+					textColor: @002b73a7-1e51-4a8a-941a-9e1c905cbc94 (objectref<color>)
+					font: font_resource(2a1845f6-046f-471c-ab3f-3e1c374ab86a)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(5a17983f-b714-4cb1-9331-e78f2b569607)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Txt_Program3"
+					visible: true
+					width: 275
+					height: 45
+					x: 175
+					y: 677
+					text: "Program 3 -> Drying"
+					textColor: @002b73a7-1e51-4a8a-941a-9e1c905cbc94 (objectref<color>)
+					font: font_resource(22d1e523-c59a-4390-a58a-017f2b52f6c0)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Background"
+			visible: true
+			width: width@42fcb40c-4172-4872-b1fd-d36e0d8c4f27 (propref<int>)
+			height: height@42fcb40c-4172-4872-b1fd-d36e0d8c4f27 (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(a75d5515-c5b5-400e-8a62-fc5cc581454b)
+			{
+				file: "Background.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "PrincipalMenu"
+	visible: true
+	width: 480
+	height: 800
+	x: 0
+	y: 0
+}

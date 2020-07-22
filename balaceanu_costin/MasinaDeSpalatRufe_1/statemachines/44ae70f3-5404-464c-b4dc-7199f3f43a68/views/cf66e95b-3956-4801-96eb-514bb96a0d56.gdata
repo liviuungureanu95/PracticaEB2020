@@ -1,0 +1,416 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(cf66e95b-3956-4801-96eb-514bb96a0d56)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(388d680a-18a7-41b2-afa3-6f4a5d36d08e)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(22ecf0cb-242f-4fcc-9617-6dd48e435baf)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text_Principal"
+					visible: true
+					width: 263
+					height: 100
+					x: 109
+					y: 72
+					text: "\" Temperature MENU \""
+					textColor: @15efddcb-ae1f-4f62-86bf-d5533f7aa3b5 (objectref<color>)
+					font: font_resource(2f522cf6-977b-4712-8334-3c11a356b765)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(e6be2ed5-12b2-46c9-b179-24e65e8a21b4)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(8c9d3ec8-4c95-4e42-be5f-3ceb4f85de0c)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text_2"
+							visible: true
+							width: 185
+							height: 33
+							x: 0
+							y: 37
+							text: "to wash your clothes"
+							textColor: @15efddcb-ae1f-4f62-86bf-d5533f7aa3b5 (objectref<color>)
+							font: font_resource(e6d687c4-54b1-4fcc-be90-4bce0b3d2739)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 15
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Text_1"
+					visible: true
+					width: 186
+					height: 35
+					x: 147
+					y: 278
+					text: "Choose the temperature of water"
+					textColor: @15efddcb-ae1f-4f62-86bf-d5533f7aa3b5 (objectref<color>)
+					font: font_resource(bb8dd4fc-bcf5-45dc-90b2-e35c8597dd74)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 15
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfEllipse(0d215f72-eeb8-44c2-8802-c2da8fe264dc)
+				{
+					features: feature_list [
+						TouchPressed(69189ffc-c0e6-4f2c-a83e-557a0a6184ea)
+						{
+							touchPressed: function<bool,int,int,int,int>(fdcf4ecb-0b60-449b-8a78-20e5fc664351)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->Background_60.fillColor = v:this.PressButtonColor" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(b8c17785-0144-4609-8897-1b1f72171a7b)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(047fee39-756b-4868-8e98-96ec74460765)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:GoToInterfaceFromMENU_T()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(42286b1e-8392-4897-975f-34ac5be8fef1)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(c9ff0c4a-7e87-48e3-aaef-1fdf07cec5a6)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text_60"
+							visible: true
+							width: width@0d215f72-eeb8-44c2-8802-c2da8fe264dc (propref<int>)
+							height: height@0d215f72-eeb8-44c2-8802-c2da8fe264dc (propref<int>)
+							x: 0
+							y: 0
+							text: "60 °C"
+							textColor: #000000FF
+							font: font_resource(beb97db2-d5cb-4138-95d2-c1a9acd0fcc3)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 35
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Background_60"
+					visible: true
+					width: 86
+					height: 83
+					x: 321
+					y: 450
+					fillColor: @91fa1cb9-507d-4aa5-898a-0165427bd145 (objectref<color>)
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+					PressButtonColor: @f669df29-343f-4996-9cfe-a7e51d91b4bd (objectref<color>)
+				}, 
+				GtfEllipse(34e45a2d-3e03-4e5f-9e2d-e841136a9aab)
+				{
+					features: feature_list [
+						TouchPressed(d402ce3f-266e-4fc4-a982-28cd028a4c2f)
+						{
+							touchPressed: function<bool,int,int,int,int>(870d32f1-54c3-404d-ac55-3127736488a0)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->Background_40.fillColor = v:this.PressButtonColor" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(23d33d14-dcac-42dc-8f3c-9545a8ea79e6)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(e3f40865-f730-4c4c-8e41-a066e64cb8cf)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:GoToInterfaceFromMENU_T()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(2f1b3c66-e1f7-4542-ab9d-872025847b1f)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(f792a51a-0811-4a68-9d7d-80271d750c5a)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text_40"
+							visible: true
+							width: width@34e45a2d-3e03-4e5f-9e2d-e841136a9aab (propref<int>)
+							height: height@34e45a2d-3e03-4e5f-9e2d-e841136a9aab (propref<int>)
+							x: 0
+							y: 0
+							text: "40 °C"
+							textColor: #000000FF
+							font: font_resource(42fb5b86-7d78-421e-b4df-64ed7d37d2fc)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 35
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Background_40"
+					visible: true
+					width: 86
+					height: 83
+					x: 198
+					y: 477
+					fillColor: @91fa1cb9-507d-4aa5-898a-0165427bd145 (objectref<color>)
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+					PressButtonColor: @f669df29-343f-4996-9cfe-a7e51d91b4bd (objectref<color>)
+				}, 
+				GtfEllipse(2dd3db28-f653-4d0f-a0ac-5b6c7b7833de)
+				{
+					features: feature_list [
+						TouchPressed(ecde8a0d-f8a5-4a52-89dd-cc5a4bd8ef34)
+						{
+							touchPressed: function<bool,int,int,int,int>(3111b295-4c37-4226-87a2-0c6e82e3c10b)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->Background_30.fillColor = v:this.PressButtonColor" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(866d83e1-fd1c-42ee-9389-c570ad02a002)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(cab32e91-a114-4d52-9a56-a4720fdd8663)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:GoToInterfaceFromMENU_T()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(f6372fcd-d0a7-4bf1-8e9b-864bdda5f96c)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(2bc136bf-9287-4d47-a1d3-dba121a5a6d6)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text_30"
+							visible: true
+							width: width@2dd3db28-f653-4d0f-a0ac-5b6c7b7833de (propref<int>)
+							height: height@2dd3db28-f653-4d0f-a0ac-5b6c7b7833de (propref<int>)
+							x: 0
+							y: 0
+							text: "30 °C"
+							textColor: #000000FF
+							font: font_resource(2a8cf8e5-9a4c-49d6-8116-4c69a783c098)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 35
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Background_30"
+					visible: true
+					width: 86
+					height: 83
+					x: 73
+					y: 450
+					fillColor: @91fa1cb9-507d-4aa5-898a-0165427bd145 (objectref<color>)
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+					PressButtonColor: @f669df29-343f-4996-9cfe-a7e51d91b4bd (objectref<color>)
+				}, 
+				GtfEllipse(f3071013-f4ea-439c-b52d-4e1d2e860dc3)
+				{
+					features: feature_list [
+						TouchPressed(a9224b47-fd25-45fc-a11e-5db958f5550c)
+						{
+							touchPressed: function<bool,int,int,int,int>(031854c7-2027-472a-a95e-29e76e031bfc)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->Background_20.fillColor = v:this.PressButtonColor" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(d181385c-6dd9-40ad-9af3-71d7b0ca980c)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(db75f7db-e1e0-4ac3-b516-425e774fd88c)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:GoToInterfaceFromMENU_T()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(6b8130eb-817a-4b20-b9d2-c5fe5944b16c)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(621b6efa-cbbe-4dcf-b207-d405c9bd6dc9)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text_20"
+							visible: true
+							width: width@f3071013-f4ea-439c-b52d-4e1d2e860dc3 (propref<int>)
+							height: height@f3071013-f4ea-439c-b52d-4e1d2e860dc3 (propref<int>)
+							x: 0
+							y: 0
+							text: "20 °C"
+							textColor: #000000FF
+							font: font_resource(6c180393-81d5-4160-b0c0-4488d047593f)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 35
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Background_20"
+					visible: true
+					width: 86
+					height: 83
+					x: 16
+					y: 348
+					fillColor: @91fa1cb9-507d-4aa5-898a-0165427bd145 (objectref<color>)
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+					PressButtonColor: @f669df29-343f-4996-9cfe-a7e51d91b4bd (objectref<color>)
+				}, 
+				GtfEllipse(98801a6f-110b-42d4-aeb9-0895e80ae6d1)
+				{
+					features: feature_list [
+						TouchPressed(a42aeac1-a4fd-4621-a2a3-bfe865cba9ae)
+						{
+							touchPressed: function<bool,int,int,int,int>(f9d4bb3f-58ff-4c23-8d68-7ddc37ba41f3)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->Background_95.fillColor = v:this.PressButtonColor" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(8c04faaf-8b9b-492d-b53b-4e278c8f42e6)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(e16aacea-37a4-4262-8e74-47e5e771577d)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:GoToInterfaceFromMENU_T()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(37daad7f-acc2-4e44-a073-22ebc00e1546)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(a6fe2c67-6cce-4370-8010-f30660e394f1)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text_95"
+							visible: true
+							width: width@98801a6f-110b-42d4-aeb9-0895e80ae6d1 (propref<int>)
+							height: height@98801a6f-110b-42d4-aeb9-0895e80ae6d1 (propref<int>)
+							x: 0
+							y: 0
+							text: "95 °C"
+							textColor: #000000FF
+							font: font_resource(9b38dd0a-646e-4d7b-8dea-37e2d8b5c780)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 35
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Background_95"
+					visible: true
+					width: 86
+					height: 83
+					x: 380
+					y: 343
+					fillColor: @91fa1cb9-507d-4aa5-898a-0165427bd145 (objectref<color>)
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+					PressButtonColor: @f669df29-343f-4996-9cfe-a7e51d91b4bd (objectref<color>)
+				}]
+			name: "Background"
+			visible: true
+			width: width@cf66e95b-3956-4801-96eb-514bb96a0d56 (propref<int>)
+			height: height@cf66e95b-3956-4801-96eb-514bb96a0d56 (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(377e8853-56ee-4fe8-80ea-1132d83a42fa)
+			{
+				file: "Temperature_Background.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "MENU_Temperature"
+	visible: true
+	width: 480
+	height: 800
+	x: 0
+	y: 0
+}
