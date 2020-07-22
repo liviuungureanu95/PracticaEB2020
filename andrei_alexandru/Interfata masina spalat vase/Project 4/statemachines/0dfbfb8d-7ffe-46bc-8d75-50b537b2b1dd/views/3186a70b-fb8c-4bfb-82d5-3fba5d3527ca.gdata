@@ -1,0 +1,202 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(3186a70b-fb8c-4bfb-82d5-3fba5d3527ca)
+{
+	features: feature_list [
+		TouchStatusChanged(def830e4-0726-4d77-9ebd-71eb069a6cb4)
+		{
+			touchStatusChanged: function<bool,int,int,int,int,int>(d660b5aa-29b2-4d19-b4c6-343f7f089fe2)
+			{
+				script: "function(v:touchId::int, v:touchStatus::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    fire_delayed 20000, ev:mod_eco_BackTo_meniu_princpial()" \
+					"    true" \
+					"}"
+			}
+		}, 
+		StateTouched(4931a187-df37-479a-8fe8-b990b47be9dd)
+		{
+			touchable: true
+			touched: false
+			touchPolicy: 0
+			touchBehavior: 0
+		}]
+	children: children_list [
+		GtfImage(7bdd6978-404f-4aa0-8564-806ed534cd12)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "background_eco"
+			visible: true
+			width: width@3186a70b-fb8c-4bfb-82d5-3fba5d3527ca (propref<int>)
+			height: height@3186a70b-fb8c-4bfb-82d5-3fba5d3527ca (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(03a7aac6-7155-4dd7-b096-ea54c1d88484)
+			{
+				file: "background_meniuri.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer(9bbe37e3-686d-48bd-a1f7-7b37ca643fa4)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(799f0514-276b-4e76-8f00-2da70bf38886)
+				{
+					features: feature_list [
+						ScaleMode(4ada2e05-af9a-4ccc-8e4f-5fe7539dace5)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "logo_meniu_eco"
+					visible: true
+					width: 100
+					height: 100
+					x: 0
+					y: 0
+					image: image_resource(5187afc7-ee49-4031-8667-b7504b59f494)
+					{
+						file: "menu2.png"
+					}
+					sRGB: false
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(9797f44b-9ccb-4b08-8fa2-146993c2274b)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Titlu"
+					visible: true
+					width: 800
+					height: 100
+					x: 100
+					y: 0
+					text: "MOD-ECOLOGIC"
+					textColor: #F0FFFFFF
+					font: font_resource(31486e0e-6e45-46a4-824c-588d9b621efc)
+					{
+						file: "Nurom-Bold.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(cfbd5911-2998-4535-b270-1675db4e7eac)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Temperatura"
+					visible: true
+					width: 800
+					height: 100
+					x: 0
+					y: 100
+					text: "Temperatura: 50 °C"
+					textColor: #E0FFFFFF
+					font: font_resource(9da0728d-5d76-4603-8259-4a63ead34fae)
+					{
+						file: "Nurom-Bold.ttf"
+						size: 25
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(9fc5a8eb-7b73-43b0-9995-617a3ae12058)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Tip murdarie"
+					visible: true
+					width: 800
+					height: 100
+					x: 0
+					y: 150
+					text: "Tip de murdarie: vase de sticla, portelan - delicat murdare"
+					textColor: #E0FFFFFF
+					font: font_resource(1baddce7-f65b-4d4d-8b77-d4ba423f8414)
+					{
+						file: "Nurom-Bold.ttf"
+						size: 25
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(93d9ffa8-b45a-4622-92df-0d8543a3045c)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Grad de murdarie"
+					visible: true
+					width: 800
+					height: 100
+					x: 0
+					y: 200
+					text: "Grad de murdarie: delicat murdare"
+					textColor: #E0FFFFFF
+					font: font_resource(dd650c6c-5aab-4d3d-802f-c269609075d1)
+					{
+						file: "Nurom-Bold.ttf"
+						size: 25
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(1d8de242-476b-49fd-805e-e5a6118a6ed6)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Durata"
+					visible: true
+					width: 800
+					height: 100
+					x: 0
+					y: 250
+					text: "Durata: 20 secunde"
+					textColor: #E0FFFFFF
+					font: font_resource(6ac83ed3-6f8d-41a6-a800-e5467a059b46)
+					{
+						file: "Nurom-Bold.ttf"
+						size: 25
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(efb60648-f4c5-477f-a34d-ca276d7cb290)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Atentie intoarcere"
+					visible: true
+					width: 800
+					height: 100
+					x: 0
+					y: 400
+					text: "Dupa incheierea programului, aplicatia se va intoarce la meniul principal!"
+					textColor: #E6E6FAFF
+					font: font_resource(04fea016-3108-4709-aa50-e1b02c813041)
+					{
+						file: "Nurom-Bold.ttf"
+						size: 22
+					}
+					horizontalAlign: 2
+					verticalAlign: 0
+				}]
+			name: "Titlu mod_eco"
+			visible: true
+			width: 100
+			height: 100
+			x: 0
+			y: 0
+		}]
+	name: "view_meniu_eco"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
