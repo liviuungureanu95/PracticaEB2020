@@ -1,0 +1,246 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(2676219f-d85d-458d-bf79-23105281f68a)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(d381f8d6-cb7a-4f35-bba7-578fff79a0d8)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "BackgroundMenu"
+			visible: true
+			width: 800
+			height: 480
+			x: 0
+			y: 0
+			image: image_resource(3b708b9d-9f67-4a4a-88c2-f9b092c6a8ab)
+			{
+				file: "Background.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 1
+		}, 
+		GtfLabel(c10e5b67-850a-45b9-88b4-7e5b3fa6b62b)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "LabelMenu"
+			visible: true
+			width: 450
+			height: 100
+			x: 175
+			y: 40
+			text: "Menu Dishwasher"
+			textColor: #FFFFFFFF
+			font: font_resource(65c9e0e8-0c10-4da5-b27e-2ac1f8a2d487)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfEllipse(df176a80-762b-4e51-b6e4-c4ca6debcc4f)
+		{
+			features: feature_list [
+				TouchPressed(0fb9c574-cb8c-428a-8ecd-34160fc462ba)
+				{
+					touchPressed: function<bool,int,int,int,int>(131f8fa0-0979-432a-94aa-1651a74f9464)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->ButtonP1.fillColor = dp:ColorPressed" \
+							"    false" \
+							"}"
+					}
+				}, 
+				TouchShortReleased(69b86224-80ab-488d-b8fb-90efbfcdc07b)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(9f2aade4-c13f-4c41-86dc-8893777379d6)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->ButtonP1.fillColor = dp:ColorReleased" \
+							"	fire ev:goToP1()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(217b2a61-50a9-4dab-aa72-12ba7c8618a0)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "ButtonP1"
+			visible: true
+			width: 100
+			height: 100
+			x: 176
+			y: 300
+			fillColor: #A9A9A9FF
+			arcWidth: 0
+			centralAngle: 360F
+			sectorRotation: 0F
+		}, 
+		GtfEllipse(e2c0adaa-a308-435c-9c75-64e0cca6376f)
+		{
+			features: feature_list [
+				TouchPressed(7d099563-4f95-4475-b561-04ddc1ad256f)
+				{
+					touchPressed: function<bool,int,int,int,int>(d788ba87-9c27-47bc-99ce-429094abbbbe)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->ButtonP2.fillColor = dp:ColorPressed" \
+							"    false" \
+							"}"
+					}
+				}, 
+				TouchShortReleased(03139f81-ee79-4ba3-a849-f5f2fbebb603)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(807f6ae5-ef27-458b-89e5-5fc1f4402269)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->ButtonP2.fillColor = dp:ColorReleased" \
+							"	fire ev:goToP2()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(95c81929-26f2-4e08-840b-1b109d88cb3e)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "ButtonP2"
+			visible: true
+			width: 100
+			height: 100
+			x: 352
+			y: 300
+			fillColor: #A9A9A9FF
+			arcWidth: 0
+			centralAngle: 360F
+			sectorRotation: 0F
+		}, 
+		GtfEllipse(a2b68991-bede-485c-a448-070a294dfda1)
+		{
+			features: feature_list [
+				TouchPressed(ed15676d-d3c2-4ea8-9815-a7724b28a836)
+				{
+					touchPressed: function<bool,int,int,int,int>(b77e2c75-4e5f-448a-a0e1-938c1af846d4)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->ButtonP3.fillColor = dp:ColorPressed" \
+							"    false" \
+							"}"
+					}
+				}, 
+				TouchShortReleased(16d43c64-53db-49fc-931c-6d2761641955)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(3da48a87-cfad-4daf-982b-66d866d26503)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->ButtonP3.fillColor = dp:ColorReleased" \
+							"	fire ev:goToP3()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(f91de0f2-6669-469e-8dc0-6375576122f6)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "ButtonP3"
+			visible: true
+			width: 100
+			height: 100
+			x: 526
+			y: 300
+			fillColor: #A9A9A9FF
+			arcWidth: 0
+			centralAngle: 360F
+			sectorRotation: 0F
+		}, 
+		GtfLabel(6a71923d-34be-4298-a603-2547ffd5c48c)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "LabelP1"
+			visible: true
+			width: 150
+			height: 100
+			x: 150
+			y: 175
+			text: "QuickWash"
+			textColor: #FFFFFFFF
+			font: font_resource(b028b910-f67e-42a5-8dbc-09fe0f8fc443)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 35
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(cda2cc0b-b978-4991-b5e5-736749d9d896)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "LabelP2"
+			visible: true
+			width: 150
+			height: 100
+			x: 325
+			y: 175
+			text: "LongWash"
+			textColor: #FFFFFFFF
+			font: font_resource(df18bab9-20f9-4e9d-9e5f-400d029a5a04)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 35
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(36930bcf-0747-421c-b916-e0c829d3309c)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "LabelP3"
+			visible: true
+			width: 150
+			height: 100
+			x: 500
+			y: 175
+			text: "CareWash"
+			textColor: #FFFFFFFF
+			font: font_resource(f43da95f-3b3a-489e-b404-01f9b6c83acf)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 35
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+	name: "Menu_View"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
