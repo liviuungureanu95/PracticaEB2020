@@ -1,0 +1,83 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfEllipse_template(d9d94d54-100e-4c5a-99cc-865b7417fb81)
+{
+	name: "Button"
+	structure: GtfEllipse(4b36642f-a057-4579-ac19-6a990dfa4f7c)
+	{
+		features: feature_list [
+			TouchPressed(29dd5202-9682-4df2-b0c4-776f5208a784)
+			{
+				touchPressed: function<bool,int,int,int,int>(48f8f5d1-c6a4-4796-bbbe-33b423afda03)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.scalingX = 90.0" \
+						"	v:this.scalingY = 90.0" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(31965c87-aa19-4bfe-8c5b-0f4c6617fad7)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(f1b5a4bb-4063-4cac-8dd4-ac302881c3f6)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(6d293d1d-28d5-430b-939f-49b5011b4f3f)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			Scaling(14360df1-5557-422a-b418-222bdd8996ff)
+			{
+				scalingEnabled: true
+				scalingX: 100F
+				scalingY: 100F
+				scalingZ: 100F
+			}]
+		children: children_list [
+			GtfLabel(3adcdb95-a97d-4cb5-8a17-5998386b0069)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label 3"
+				visible: true
+				width: width@4b36642f-a057-4579-ac19-6a990dfa4f7c (propref<int>)
+				height: height@4b36642f-a057-4579-ac19-6a990dfa4f7c (propref<int>)
+				x: 0
+				y: 0
+				text: "Hei"
+				textColor: #0000FFFF
+				font: font_resource(97990f78-a6b3-4d80-822f-2906872c387c)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 40
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Ellipse 1"
+		visible: true
+		width: 160
+		height: 160
+		x: 68
+		y: 116
+		fillColor: #FFFF00FF
+		arcWidth: 0
+		centralAngle: 360F
+		sectorRotation: 0F
+	}
+	width: width@4b36642f-a057-4579-ac19-6a990dfa4f7c (propref<int>)
+	height: height@4b36642f-a057-4579-ac19-6a990dfa4f7c (propref<int>)
+	text: text@3adcdb95-a97d-4cb5-8a17-5998386b0069 (propref<string>)
+	x: x@4b36642f-a057-4579-ac19-6a990dfa4f7c (propref<int>)
+	y: y@4b36642f-a057-4579-ac19-6a990dfa4f7c (propref<int>)
+	touchShortReleased: touchShortReleased@31965c87-aa19-4bfe-8c5b-0f4c6617fad7 (propref<function<bool,int,int,int,int>>)
+}

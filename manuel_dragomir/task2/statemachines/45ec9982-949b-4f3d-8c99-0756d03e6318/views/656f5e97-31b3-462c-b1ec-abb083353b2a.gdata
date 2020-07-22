@@ -1,0 +1,196 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(656f5e97-31b3-462c-b1ec-abb083353b2a)
+{
+	name: "View 3"
+	template: @ac19d041-63cc-4fa8-a74f-fecf105237b2 (objectref<GtfView_template>)
+	children: children_list [
+		GtfImage(0f92268d-60ef-4333-832d-17ecc2dedc84)
+		{
+			features: feature_list [
+				ScaleMode(cbc74a9d-8bd9-4c85-bdfa-97b99d082455)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "Image 4"
+			visible: true
+			width: 263
+			height: 171
+			x: 539
+			y: -2
+			image: image_resource(2e958227-46dd-4f4b-b547-5ef1517b9315)
+			{
+				file: "plate1.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfEllipse_template_instance(617e160f-de52-4239-b082-8b88e83f4e84)
+		{
+			name: "NormalButton"
+			template: @d9d94d54-100e-4c5a-99cc-865b7417fb81 (objectref<GtfEllipse_template>)
+			children: children_list []
+			width: 204
+			height: 90
+			text: "Normal"
+			x: x@95dce2a1-28a3-46ab-90d7-716c85515bb5 (propref<int>)
+			y: 175
+			touchShortReleased: function<bool,int,int,int,int>(d5485f9f-45fb-4c09-8924-821456c3e397)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:GoToNormal()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfEllipse_template_instance(95dce2a1-28a3-46ab-90d7-716c85515bb5)
+		{
+			name: "EnergyButton"
+			template: @d9d94d54-100e-4c5a-99cc-865b7417fb81 (objectref<GtfEllipse_template>)
+			children: children_list []
+			width: 204
+			height: 90
+			text: "Energy Save"
+			x: x@a51f76fd-76d5-40bb-bdaa-e502fe15db83 (propref<int>)
+			y: 272
+			touchShortReleased: function<bool,int,int,int,int>(62316396-b9e0-466a-a3cf-35fa4546f872)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:GoToEnergySave()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfEllipse_template_instance(a51f76fd-76d5-40bb-bdaa-e502fe15db83)
+		{
+			name: "IntensiveButton"
+			template: @d9d94d54-100e-4c5a-99cc-865b7417fb81 (objectref<GtfEllipse_template>)
+			children: children_list []
+			width: 204
+			height: 90
+			text: "Intensive"
+			x: 151
+			y: 372
+			touchShortReleased: function<bool,int,int,int,int>(f3a11054-1823-448b-9ab2-55660740c3c2)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:GoToIntensive()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfLabel(f36484f0-a5b5-4665-bc27-331fb2ea2449)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "ProgramLabel"
+			visible: true
+			width: 202
+			height: 76
+			x: 204
+			y: 106
+			text: "Program"
+			textColor: #FFFF00FF
+			font: font_resource(25a95398-c80d-4ee9-b212-df9cb9f0771c)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(8517680d-c6d8-423b-9d14-dfea93ca239e)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "TimerLabel"
+			visible: true
+			width: 125
+			height: 51
+			x: 425
+			y: 119
+			text: "Timer (sec)"
+			textColor: #FFFF00FF
+			font: font_resource(e41f8dd4-9309-4fe2-af6b-4758e9ff4e86)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfRectangle_template_instance(fe7a6023-7918-4e8a-82a9-a199c9a30a6f)
+		{
+			name: "NormalTimerLabel"
+			template: @54190d0b-d89c-40e7-8829-8953b723369f (objectref<GtfRectangle_template>)
+			children: children_list []
+			width: 95
+			height: 75
+			x: x@40266a6d-a1d9-4b80-8f88-dcc90151d1ff (propref<int>)
+			y: y@617e160f-de52-4239-b082-8b88e83f4e84 (propref<int>)
+			textColor: #FFFF00FF
+			font: font_resource(a18a83bb-9976-45fd-b82a-0cbfbb38af4b)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 40
+			}
+			text: "2"
+			fillColor: #1E90FFFF
+		}, 
+		GtfRectangle_template_instance(40266a6d-a1d9-4b80-8f88-dcc90151d1ff)
+		{
+			name: "EnergyTimerLabel"
+			template: @54190d0b-d89c-40e7-8829-8953b723369f (objectref<GtfRectangle_template>)
+			children: children_list []
+			width: 95
+			height: 75
+			x: 443
+			y: y@95dce2a1-28a3-46ab-90d7-716c85515bb5 (propref<int>)
+			textColor: #FFFF00FF
+			font: font@fe7a6023-7918-4e8a-82a9-a199c9a30a6f (propref<font>)
+			text: "1"
+			fillColor: #1E90FFFF
+		}, 
+		GtfRectangle_template_instance(22372cce-62a8-4427-9f29-0fa8206df4be)
+		{
+			name: "IntensiveTimerLabel"
+			template: @54190d0b-d89c-40e7-8829-8953b723369f (objectref<GtfRectangle_template>)
+			children: children_list []
+			width: 95
+			height: 75
+			x: x@40266a6d-a1d9-4b80-8f88-dcc90151d1ff (propref<int>)
+			y: y@a51f76fd-76d5-40bb-bdaa-e502fe15db83 (propref<int>)
+			textColor: #FFFF00FF
+			font: font@40266a6d-a1d9-4b80-8f88-dcc90151d1ff (propref<font>)
+			text: "4"
+			fillColor: #1E90FFFF
+		}, 
+		GtfImage(43ebae2b-9185-41b9-adba-eca9c034d108)
+		{
+			features: feature_list [
+				ScaleMode(f3ed2b1b-7b98-4adb-bb96-cb7055b4d0f3)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "Image 5"
+			visible: true
+			width: 254
+			height: 173
+			x: 0
+			y: 0
+			image: image_resource(8af29403-9321-4160-9b28-afbb54b77842)
+			{
+				file: "plate1.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	text: "Main Menu"
+}
