@@ -1,0 +1,190 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(b6c1566d-a339-4693-8d6b-95e53eeb074d)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(5f81fa89-d60f-4eed-90e9-97ecb12d9760)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "background_meniu_rufe_albe"
+			visible: true
+			width: 800
+			height: 480
+			x: 0
+			y: 0
+			fillColor: #87CEEBFF
+		}, 
+		GtfImage(b051d5e4-996c-4d26-aa30-a378f3f2bb81)
+		{
+			features: feature_list [
+				ScaleMode(6d22b91b-ee52-48fa-a531-e4a640234e99)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "imagine_tricou_alb"
+			visible: true
+			width: 300
+			height: 380
+			x: 0
+			y: 20
+			image: image_resource(98fa4d7b-ee4f-428b-b188-707a7240f363)
+			{
+				file: "alb.png"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(8dcc85e9-a6ec-46fe-8cca-c80c7bf451ca)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Titlu albe"
+			visible: true
+			width: 400
+			height: 100
+			x: 300
+			y: 0
+			text: "TABEL PPROGRAMARE RUFE ALBE"
+			textColor: #FFFFFFFF
+			font: font_resource(a9aab0d6-15bf-4d38-980f-e0fb1e6528a3)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(d72ae008-a017-4ecb-8b4f-660974454ece)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Temperatura"
+			visible: true
+			width: 200
+			height: 50
+			x: 300
+			y: 120
+			text: "Temperatura: 60° C"
+			textColor: #000000FF
+			font: font_resource(9574f781-782d-48e3-a704-460406de76f7)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(f5278754-07ca-40de-9899-19731fa1595f)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Greutate maxima"
+			visible: true
+			width: 300
+			height: 50
+			x: 300
+			y: 160
+			text: "Incarcatura maxima: 6.0 kg"
+			textColor: #000000FF
+			font: font_resource(8d172a79-b860-4f85-a444-35637d8f263c)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfContainer(23c0938f-aa22-4c9e-9a61-ccc89043806c)
+		{
+			features: feature_list [
+				TouchPressed(fdb29c62-3603-4f79-9ee0-d5a4187a3366)
+				{
+					touchPressed: function<bool,int,int,int,int>(1dcb5043-6b44-49e0-85d6-e277f618a678)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    fire_delayed 500, ev:\"rufe_albe_BackTo_main_menu\"()" \
+							"    true" \
+							"}"
+					}
+				}, 
+				StateTouched(5aca22f6-236c-46f9-a1a3-4f8b1132ed9f)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfRectangle(17681f0b-4c6a-4d23-927f-af6b7998a5a0)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "background_buton_inapoi"
+					visible: true
+					width: width@23c0938f-aa22-4c9e-9a61-ccc89043806c (propref<int>)
+					height: height@23c0938f-aa22-4c9e-9a61-ccc89043806c (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #FFFFFFFF
+				}, 
+				GtfLabel(79523f61-2e71-4ff5-9c51-f3f24b8a64c8)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text_back_to_main_menu"
+					visible: true
+					width: 400
+					height: 50
+					x: 70
+					y: 0
+					text: "INAPOI LA MENIUL PRINCIPAL"
+					textColor: #000000FF
+					font: font_resource(4b1a8816-7748-449c-bc5d-9510a9dd1cda)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfImage(cb65c5d5-1930-4879-a730-690140ee0573)
+				{
+					features: feature_list [
+						ScaleMode(55456f1e-94b0-4cfa-8cf1-54ee1b872258)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "Imagine back"
+					visible: true
+					width: 70
+					height: 70
+					x: -8
+					y: -9
+					image: image_resource(f0d5f931-855b-4ff9-a15a-7bbd7afa7bf4)
+					{
+						file: "1991936-200.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Buton_catre_meniu_principal_albe"
+			visible: true
+			width: 400
+			height: 50
+			x: 350
+			y: 300
+		}]
+	name: "view meniu rufe albe"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

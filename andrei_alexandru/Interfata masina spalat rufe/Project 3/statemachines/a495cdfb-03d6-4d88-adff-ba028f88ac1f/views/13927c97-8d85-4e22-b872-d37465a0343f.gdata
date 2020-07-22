@@ -1,0 +1,190 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(13927c97-8d85-4e22-b872-d37465a0343f)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(f39ca8bf-0200-4112-91a5-bb1e8d9fe58d)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "background_rufe_sintetice"
+			visible: true
+			width: 800
+			height: 480
+			x: 0
+			y: 0
+			fillColor: #87CEEBFF
+		}, 
+		GtfImage(3fef92e6-937f-4d3e-af3a-422d04d88fa8)
+		{
+			features: feature_list [
+				ScaleMode(67e00501-df04-4fe9-ae78-a510a4a17c56)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "imagine_rufe_sintetice"
+			visible: true
+			width: 320
+			height: 320
+			x: 0
+			y: 60
+			image: image_resource(647dfe77-0d66-4837-890f-a96d36dde867)
+			{
+				file: "sportika_7461m_010_laos.png"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(21d5968a-0e98-4662-9a3b-0313264fdb2e)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Titlu sintetice"
+			visible: true
+			width: 450
+			height: 100
+			x: 300
+			y: 0
+			text: "TABEL PROGRAMARE RUFE SINTETICE"
+			textColor: #FFFFFFFF
+			font: font_resource(2210e27f-21ac-41af-b397-95432c6b1351)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(11e41663-b141-44cc-af9f-0378871d4891)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Temperatura sintetice"
+			visible: true
+			width: 210
+			height: 50
+			x: 320
+			y: 120
+			text: "Temperatura: 30-40° C"
+			textColor: #000000FF
+			font: font_resource(a2b2ded1-c83e-48bf-9eaf-6e6707fe0381)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(29bb74bb-ee18-49da-a29e-217e217db62b)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Greutate maxima sintetice"
+			visible: true
+			width: 300
+			height: 50
+			x: 320
+			y: 160
+			text: "Incarcatura maxima: 3.0 kg"
+			textColor: #000000FF
+			font: font_resource(e21029c4-9c24-4df4-a285-970465e5ba58)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfContainer(6b49583a-4009-4fe9-9eef-5724e779e613)
+		{
+			features: feature_list [
+				TouchPressed(95492074-99ed-4739-ab5f-2ec605e0d18d)
+				{
+					touchPressed: function<bool,int,int,int,int>(6cf908b3-7ba6-44dc-b99d-0aa2d18d055e)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire_delayed 500, ev:rufe_sintetice_BackTo_main_menu()" \
+							"    true" \
+							"}"
+					}
+				}, 
+				StateTouched(8279d785-3561-48e8-95d5-a1ca19c7e5c1)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfRectangle(d78e41b9-2773-455a-bd35-f38b50bf4d07)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "background_buton_inapoi"
+					visible: true
+					width: width@6b49583a-4009-4fe9-9eef-5724e779e613 (propref<int>)
+					height: height@6b49583a-4009-4fe9-9eef-5724e779e613 (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #FFFFFFFF
+				}, 
+				GtfLabel(64dd43e2-e2ea-4c30-a962-0bffb32413df)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text_back_to_main_menu"
+					visible: true
+					width: 400
+					height: 50
+					x: 70
+					y: 0
+					text: "INAPOI LA MENIUL PRINCIPAL"
+					textColor: #000000FF
+					font: font_resource(9d418d58-e136-4235-993f-5ef3b95cff20)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfImage(88ee255b-7b4c-4e0b-bef7-743051a68e19)
+				{
+					features: feature_list [
+						ScaleMode(eabeaec6-7bfd-49c2-926c-e6e8be639de6)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "Imagine back"
+					visible: true
+					width: 70
+					height: 70
+					x: -8
+					y: -9
+					image: image_resource(e0bf0d88-3dac-4fc8-b344-c2ba90fb4a43)
+					{
+						file: "1991936-200.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Buton_catre_meniu_principal_sintetice"
+			visible: true
+			width: 400
+			height: 50
+			x: 350
+			y: 300
+		}]
+	name: "view meniu rufe sintetice"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

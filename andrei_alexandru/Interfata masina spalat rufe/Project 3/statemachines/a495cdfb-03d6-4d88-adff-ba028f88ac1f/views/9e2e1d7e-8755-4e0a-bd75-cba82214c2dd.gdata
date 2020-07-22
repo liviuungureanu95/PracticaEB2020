@@ -1,0 +1,190 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(9e2e1d7e-8755-4e0a-bd75-cba82214c2dd)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(d477224f-60a8-4abf-a17c-77a1899da152)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "background_meniu_rufe_bumbac"
+			visible: true
+			width: 800
+			height: 480
+			x: 0
+			y: 0
+			fillColor: #87CEEBFF
+		}, 
+		GtfImage(2e55481c-0343-4b95-b9c9-e7c6ca45dd97)
+		{
+			features: feature_list [
+				ScaleMode(7102f105-2e28-417d-99f0-49209d6491e5)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "imagine tricou bumbac"
+			visible: true
+			width: 320
+			height: 320
+			x: 0
+			y: 60
+			image: image_resource(e99914c9-aee2-4120-95ac-688b8541a240)
+			{
+				file: "tricou-galben.png"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 1
+		}, 
+		GtfLabel(b6cd51b4-a15e-4546-a688-8ead2003295c)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Titlu bumbac"
+			visible: true
+			width: 450
+			height: 100
+			x: 300
+			y: 0
+			text: "TABEL PROGRAMARE RUFE BUMBAC"
+			textColor: #FFFFFFFF
+			font: font_resource(440fb1b8-0f28-4250-b181-df453dfe2848)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(587f0efa-f26e-4d27-b6c0-ecbe0abe4788)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Temperatura bumbac"
+			visible: true
+			width: 210
+			height: 50
+			x: 320
+			y: 120
+			text: "Temperatura: 40-60° C"
+			textColor: #000000FF
+			font: font_resource(45c84156-f1aa-4773-bfca-119418ad983e)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(1be07e9d-47fd-4bed-a20c-c3573fca731b)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Greutate maxima bumbac"
+			visible: true
+			width: 300
+			height: 50
+			x: 320
+			y: 160
+			text: "Incarcatura maxima: 6.0 kg"
+			textColor: #000000FF
+			font: font_resource(c3349939-4ba5-4a85-99d3-614718480c4c)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfContainer(2861e706-ed9b-4f52-9e7c-4c8dc9d9a701)
+		{
+			features: feature_list [
+				TouchPressed(35247fc1-f192-4644-abd8-b48e858ad3be)
+				{
+					touchPressed: function<bool,int,int,int,int>(10703d01-9374-4b6e-a55e-b7fae0ca5fb2)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    fire_delayed 500, ev:\"rufe_bumbac_BackTo_main_menu\"()" \
+							"    true" \
+							"}"
+					}
+				}, 
+				StateTouched(1c6b134b-866d-427f-bf30-7823427b02c3)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfRectangle(8d38da0b-15b5-4629-b9e1-f0aee5fccc23)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "background_buton_inapoi"
+					visible: true
+					width: width@2861e706-ed9b-4f52-9e7c-4c8dc9d9a701 (propref<int>)
+					height: height@2861e706-ed9b-4f52-9e7c-4c8dc9d9a701 (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #FFFFFFFF
+				}, 
+				GtfLabel(566a62af-e16c-4597-a0d3-9522c03fe571)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text_back_to_main_menu"
+					visible: true
+					width: 400
+					height: 50
+					x: 70
+					y: 0
+					text: "INAPOI LA MENIUL PRINCIPAL"
+					textColor: #000000FF
+					font: font_resource(3ffce4e9-15a4-469c-b958-35cd0754bc46)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfImage(bd49637e-a6b9-4363-b020-daa785722ce7)
+				{
+					features: feature_list [
+						ScaleMode(2d9cf043-e4bb-4212-b4dd-a80c0dbeaec6)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "Imagine back"
+					visible: true
+					width: 70
+					height: 70
+					x: -8
+					y: -9
+					image: image_resource(e52111bc-9b50-4886-b06d-4b7dbe4a2f2d)
+					{
+						file: "1991936-200.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Buton_catre_meniu_principal_bumbac"
+			visible: true
+			width: 400
+			height: 50
+			x: 350
+			y: 300
+		}]
+	name: "view meniu rufe bumbac"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
