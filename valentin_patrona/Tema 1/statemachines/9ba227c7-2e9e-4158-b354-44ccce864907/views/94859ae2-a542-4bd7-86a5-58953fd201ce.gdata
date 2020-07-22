@@ -1,0 +1,427 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(94859ae2-a542-4bd7-86a5-58953fd201ce)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(18917bb5-a27e-427d-8a1b-1ea43c122223)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "BG"
+			visible: true
+			width: width@94859ae2-a542-4bd7-86a5-58953fd201ce (propref<int>)
+			height: height@94859ae2-a542-4bd7-86a5-58953fd201ce (propref<int>)
+			x: -1
+			y: 0
+			fillColor: #3FAA96FF
+		}, 
+		GtfLabel(4c098270-a800-4d98-96f7-baca2aea5696)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 8"
+			visible: true
+			width: width@18917bb5-a27e-427d-8a1b-1ea43c122223 (propref<int>)
+			height: 100
+			x: 0
+			y: 0
+			text: "Menu"
+			textColor: #FFFFFFFF
+			font: font_resource(31d738db-3998-4b98-bce2-6bc965812322)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 45
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfEllipse(b8ba6ab5-13cc-4b9f-8a83-948e1ada77ab)
+		{
+			features: feature_list [
+				TouchPressed(ddfd6e75-b34b-46c4-a0eb-0201becb323e)
+				{
+					touchPressed: function<bool,int,int,int,int>(effdfb72-89fb-4c06-9dde-d31521871523)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.fillColor= dp:Click_Color" \
+							"    false" \
+							"}"
+					}
+				}, 
+				TouchShortReleased(23e8d707-76a4-423c-a690-876c7eb18587)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(483f3ae0-7ac8-47ca-a064-b8aa986e1d4a)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.fillColor = dp:Regular_Color" \
+							"	dp:Optiune_aleasa= \"15 min\"" \
+							"	fire ev:Go_To_Program()" \
+							"	" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(3e681748-5598-4a4b-95a3-43ee3553369f)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfLabel(11e6e9e0-8eec-48d2-a3f5-ed0cea754dac)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 3"
+					visible: true
+					width: width@b8ba6ab5-13cc-4b9f-8a83-948e1ada77ab (propref<int>)
+					height: height@b8ba6ab5-13cc-4b9f-8a83-948e1ada77ab (propref<int>)
+					x: 0
+					y: 0
+					text: "15 min"
+					textColor: #FFFFFFFF
+					font: font_resource(a747766d-ce43-4a31-a280-4dc53fb325a2)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Button_15_min"
+			visible: true
+			width: 100
+			height: 100
+			x: int_scriptedValue(6b1edf93-9c5c-439f-8e84-c1512a5776fd)
+			{
+				triggerList: trigger_list(02a68082-6c3c-4168-b738-deb11d4021a5)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(a1a1d9bb-7899-4a67-9f54-49f6ee34f6ae)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<int>(2ee4bde4-70f5-4236-8504-a9633a5d598c)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	v:this->^.width/4-v:this.width" \
+						"}"
+				}
+				write: function<bool,int>(5deaac71-62bc-45f9-bfb7-d049871e3657)
+				{
+					script: "function(v:arg0::int)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			y: int_scriptedValue(78974816-0b33-445e-b900-9fb3ffb554d0)
+			{
+				triggerList: trigger_list(3f2ef238-78ea-48a4-95b3-adcaa131838d)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(edf8f5c8-08df-4b55-9be8-ed347a6e480f)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<int>(17369759-7a86-43dc-9f6e-bb9ddaff366d)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	v:this->^.height/2-v:this.height/2" \
+						"}"
+				}
+				write: function<bool,int>(8ad9d191-5e28-4677-bc0b-1c51954a7fe7)
+				{
+					script: "function(v:arg0::int)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			fillColor: #A9A9A9FF
+			arcWidth: 0
+			centralAngle: 360F
+			sectorRotation: 0F
+		}, 
+		GtfEllipse(52fd4168-49a5-498f-90b2-c95e62b2d981)
+		{
+			features: feature_list [
+				TouchPressed(438e31fd-f787-41f0-ace1-447b1557e023)
+				{
+					touchPressed: function<bool,int,int,int,int>(056d2909-5ccb-41c9-8ccc-bf9989de92af)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.fillColor= dp:Click_Color" \
+							"    false" \
+							"}"
+					}
+				}, 
+				TouchShortReleased(2a7e492b-4c3a-42c9-90fa-33a4568e5f31)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(c727a510-c775-4dc3-a700-0d80138b86c7)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.fillColor = dp:Regular_Color" \
+							"	dp:Optiune_aleasa= \"30 min\"" \
+							"	fire ev:Go_To_Program()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(c50f1e8b-740e-48c1-afe4-f045f92d9510)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfLabel(cf2171a2-cbd2-43f5-8abe-e472178617bd)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 4"
+					visible: true
+					width: 100
+					height: 100
+					x: 0
+					y: 0
+					text: "30 min"
+					textColor: #FFFFFFFF
+					font: font_resource(469fd122-05b5-42b4-a047-7baacb4c9ef3)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Button_30_min"
+			visible: true
+			width: 100
+			height: 100
+			x: int_scriptedValue(74100f1e-cde8-4a09-a46a-296c273e6d14)
+			{
+				triggerList: trigger_list(5c3a4c6d-ff23-483a-84f1-ae40bfeed8db)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(56fcfdc3-e2df-4bae-a789-81b7c0bcce6f)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<int>(6051c671-6d8f-4698-926f-85e30333198c)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	v:this->^.width/4+3*v:this.width/2" \
+						"}"
+				}
+				write: function<bool,int>(d5a7bcce-f7fa-4670-925c-b014e7abe198)
+				{
+					script: "function(v:arg0::int)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			y: y@b8ba6ab5-13cc-4b9f-8a83-948e1ada77ab (propref<int>)
+			fillColor: #A9A9A9FF
+			arcWidth: 0
+			centralAngle: 360F
+			sectorRotation: 0F
+		}, 
+		GtfEllipse(34dda530-f521-4930-8e9a-433a33f0080e)
+		{
+			features: feature_list [
+				TouchPressed(d94fe579-fcd3-4b53-a8a6-4249cf687e6a)
+				{
+					touchPressed: function<bool,int,int,int,int>(459db0cd-3b94-4121-91a7-952fd92f8a14)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.fillColor= dp:Click_Color" \
+							"    false" \
+							"}"
+					}
+				}, 
+				TouchShortReleased(48ee7a3f-aa63-4fb0-a77f-54570e171d5d)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(7a323e79-4270-427f-95b3-ef33a6da8a0f)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.fillColor = dp:Regular_Color" \
+							"	dp:Optiune_aleasa= \"1 hour\"" \
+							"	fire ev:Go_To_Program()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(50e49f3e-31e3-4861-8bc0-d9ad38d79c23)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfLabel(eac2558c-018b-41bb-88ef-786d22780e72)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 6"
+					visible: true
+					width: 100
+					height: 100
+					x: 0
+					y: 0
+					text: "1 hour"
+					textColor: #FFFFFFFF
+					font: font_resource(8f170a36-f5b7-4d27-bbba-397ae2636e9b)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Button_1_h"
+			visible: true
+			width: 100
+			height: 100
+			x: int_scriptedValue(b97c34a6-714f-4bc9-b058-0ae9804d1f2f)
+			{
+				triggerList: trigger_list(bf0fa12e-e8a0-47cf-9704-c2cb73cf9808)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(8f778d68-8cfe-4d60-85b3-3b3429d5c1a8)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<int>(ca9de4f1-e923-4ee4-a6d0-60ad57cb506e)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	v:this->^.width/4+8*v:this.width/2" \
+						"}"
+				}
+				write: function<bool,int>(f6d7a31c-556b-463e-b7be-b4236fbdd77c)
+				{
+					script: "function(v:arg0::int)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			y: y@b8ba6ab5-13cc-4b9f-8a83-948e1ada77ab (propref<int>)
+			fillColor: #A9A9A9FF
+			arcWidth: 0
+			centralAngle: 360F
+			sectorRotation: 0F
+		}, 
+		GtfEllipse(fb167dcb-b38d-40d8-8226-740af7498ea7)
+		{
+			features: feature_list [
+				TouchPressed(0eb1235c-cb60-41e6-b9ff-253835c1c0bd)
+				{
+					touchPressed: function<bool,int,int,int,int>(de19becc-b182-4ce0-b438-413c796ce9d8)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    false" \
+							"}"
+					}
+				}, 
+				TouchShortReleased(16a72689-c7de-42b6-903b-84b523b24ba8)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(7c19378b-08df-4e13-aa67-ec1fc534c85b)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:Event_Exit()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(2955274a-4437-48b8-a897-162fe289ed0a)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfLabel(9624b2e6-f7c1-48b0-92f6-69b3b1656188)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 7"
+					visible: true
+					width: 100
+					height: 100
+					x: 0
+					y: 0
+					text: "EXIT"
+					textColor: #FFFFFFFF
+					font: font_resource(1b062518-a0d4-4e9b-8a5b-e4c3d5b3eec5)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Button_Exit"
+			visible: true
+			width: 100
+			height: 100
+			x: x@52fd4168-49a5-498f-90b2-c95e62b2d981 (propref<int>)
+			y: 354
+			fillColor: #FF0000FF
+			arcWidth: 0
+			centralAngle: 360F
+			sectorRotation: 0F
+		}]
+	name: "View 1"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
