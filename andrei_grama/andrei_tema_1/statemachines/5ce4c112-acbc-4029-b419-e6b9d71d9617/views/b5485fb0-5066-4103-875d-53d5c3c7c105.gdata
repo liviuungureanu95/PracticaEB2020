@@ -1,0 +1,118 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(b5485fb0-5066-4103-875d-53d5c3c7c105)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(688974b7-3dd3-45a9-aa2f-3ff0c9999121)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "background"
+			visible: true
+			width: width@b5485fb0-5066-4103-875d-53d5c3c7c105 (propref<int>)
+			height: height@b5485fb0-5066-4103-875d-53d5c3c7c105 (propref<int>)
+			x: 0
+			y: -1
+			fillColor: #808080FF
+		}, 
+		GtfLabel(f8b605f3-b207-4078-a549-d15151e0b55e)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "infoLabel"
+			visible: true
+			width: 250
+			height: 100
+			x: 262
+			y: 167
+			text: "Ati ales mixt"
+			textColor: #FFFFFFFF
+			font: font_resource(5c4c4191-2c00-433a-a95a-88d469741d92)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 40
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer(07b209c9-5141-491c-8852-14c72653d329)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(61703b44-1612-44ff-82c2-e904e50bf698)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "backButtonBackground"
+					visible: true
+					width: width@07b209c9-5141-491c-8852-14c72653d329 (propref<int>)
+					height: height@07b209c9-5141-491c-8852-14c72653d329 (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #00FF00FF
+				}, 
+				GtfLabel(9ac5b760-124d-472b-a6b5-612d65efaeb7)
+				{
+					features: feature_list [
+						TouchPressed(2fac6b7a-8aba-4441-b1f8-dff46a33913a)
+						{
+							touchPressed: function<bool,int,int,int,int>(75fddf49-c636-4088-a5ab-de9d7bff908d)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->backButtonBackground.fillColor=dp:pressedColor" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(cf651f2a-31e2-4bcb-a3e0-0e84e21abcce)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(94f6a6c6-71ae-4ff1-be11-eb4e71dd14bc)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->backButtonBackground.fillColor=dp:releasedColor" \
+									"	fire ev:goToBack()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(60261094-7622-4e7d-a013-deb2d9d5d2ca)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "backButtonLabel"
+					visible: true
+					width: width@07b209c9-5141-491c-8852-14c72653d329 (propref<int>)
+					height: height@07b209c9-5141-491c-8852-14c72653d329 (propref<int>)
+					x: 0
+					y: 0
+					text: "<-"
+					textColor: #000000FF
+					font: font_resource(dcb3a75b-dda1-492e-8a09-20600edd3e63)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "backButton"
+			visible: true
+			width: 100
+			height: 50
+			x: 21
+			y: 18
+		}]
+	name: "p3View"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
