@@ -1,0 +1,273 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(296a827b-2013-42a8-8503-16739f5d0637)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(28fb0a9e-3174-4b14-a0f3-f1bdc49f1206)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "background"
+			visible: true
+			width: width@296a827b-2013-42a8-8503-16739f5d0637 (propref<int>)
+			height: height@296a827b-2013-42a8-8503-16739f5d0637 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #1E90FFFF
+		}, 
+		GtfLabel(71275844-2912-471c-b5d7-9cf425306f7a)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "title"
+			visible: true
+			width: width@296a827b-2013-42a8-8503-16739f5d0637 (propref<int>)
+			height: 100
+			x: 0
+			y: 50
+			text: "Meniu principal"
+			textColor: #000000FF
+			font: font_resource(f176154d-9668-4e87-abf3-da8db7b528b5)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 40
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer(82822e86-01ba-4d33-bfe8-5d000498c988)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(9a82fa95-539a-473f-a81f-62f01e4660ed)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label"
+					visible: true
+					width: 100
+					height: 50
+					x: 290
+					y: 15
+					text: "Eco 50°"
+					textColor: #FFFFFFFF
+					font: font_resource(52fa1993-abe3-4626-a81c-6ba142b68dfe)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfEllipse(134323ce-fecd-4840-af21-b8493b620417)
+				{
+					features: feature_list [
+						TouchPressed(52456443-1135-4b9a-910f-e4567b2841f2)
+						{
+							touchPressed: function<bool,int,int,int,int>(79b397d3-19f5-42be-b6e5-b3ac43e88460)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->clickEllipse.fillColor=dp:pC" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(ceccdb19-718c-480f-b749-85b9d05f1296)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(e0e0b302-fc5b-45cb-a721-5ea5e569c4c8)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->clickEllipse.fillColor=dp:rC" \
+									"	fire ev:goToEco()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(105b3a54-c705-479e-97f6-0dae217523b4)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "clickEllipse"
+					visible: true
+					width: 50
+					height: 50
+					x: 432
+					y: 15
+					fillColor: #808080FF
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+				}]
+			name: "buttonEco"
+			visible: true
+			width: width@296a827b-2013-42a8-8503-16739f5d0637 (propref<int>)
+			height: 80
+			x: 0
+			y: 150
+		}, 
+		GtfContainer(a7120546-e61c-462f-a1ce-026f284394f1)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(634b366b-2e35-421e-90d6-1b05331399a2)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label"
+					visible: true
+					width: 121
+					height: 50
+					x: 268
+					y: 15
+					text: "Normal 60°"
+					textColor: #FFFFFFFF
+					font: font_resource(c255a1cf-111e-49ce-94ab-c16b7dbf43b3)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfEllipse(266b10f7-94de-4a95-b31c-876012db1066)
+				{
+					features: feature_list [
+						TouchPressed(de577981-b6ba-462e-bc2e-11a2ad8677c4)
+						{
+							touchPressed: function<bool,int,int,int,int>(bdb57c76-19ea-47df-952f-45f735fccdec)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->clickEllipse.fillColor=dp:pC" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(0f21a1e8-1f7c-4dad-a470-d2671280054d)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(24f62518-697e-4337-8c1c-c9176994e47f)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->clickEllipse.fillColor=dp:rC" \
+									"	fire ev:goToNormal()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(58e5b69b-d781-4b8a-aceb-ed47146be56a)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "clickEllipse"
+					visible: true
+					width: 50
+					height: 50
+					x: 432
+					y: 15
+					fillColor: #808080FF
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+				}]
+			name: "buttonNormal"
+			visible: true
+			width: width@296a827b-2013-42a8-8503-16739f5d0637 (propref<int>)
+			height: 80
+			x: 0
+			y: 230
+		}, 
+		GtfContainer(f4217cf4-b377-43a3-862f-bca755b625c8)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(63f65edc-4a83-4884-82e5-f56a74a4e780)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label"
+					visible: true
+					width: 130
+					height: 50
+					x: 258
+					y: 15
+					text: "Intensiv 70°"
+					textColor: #FFFFFFFF
+					font: font_resource(062538e6-7268-4a31-89a1-08c939dadced)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfEllipse(de16defb-3027-4c0e-8e5f-674baa090524)
+				{
+					features: feature_list [
+						TouchPressed(9f95d970-6072-455e-9352-bbb5b52c4d59)
+						{
+							touchPressed: function<bool,int,int,int,int>(92dd458d-d5fa-4cc5-89ba-62ebd664304d)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->clickEllipse.fillColor=dp:pC" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(28ce0a35-9c10-4738-a3ab-0ffdb3bb773b)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(c145b727-4aef-4741-b5df-4529a000e49c)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->clickEllipse.fillColor=dp:rC" \
+									"	fire ev:goToIntense()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(baba9721-5f3c-4e42-9e03-a499c1f25eb5)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "clickEllipse"
+					visible: true
+					width: 50
+					height: 50
+					x: 432
+					y: 15
+					fillColor: #808080FF
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+				}]
+			name: "buttonIntense"
+			visible: true
+			width: width@296a827b-2013-42a8-8503-16739f5d0637 (propref<int>)
+			height: 80
+			x: 0
+			y: 310
+		}]
+	name: "MenuView"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
