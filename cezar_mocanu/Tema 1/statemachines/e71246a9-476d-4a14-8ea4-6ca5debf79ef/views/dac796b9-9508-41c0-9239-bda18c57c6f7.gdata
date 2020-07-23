@@ -1,0 +1,278 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(dac796b9-9508-41c0-9239-bda18c57c6f7)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle_template_instance(e6620d20-6edc-4c87-8871-3c2e2424fe71)
+		{
+			name: "MainBackground 1"
+			template: @04eeffcd-a2b1-45f9-8af6-75607ffaf2c1 (objectref<GtfRectangle_template>)
+			children: children_list [
+				GtfContainer_template_instance(7decc7a5-80fa-4a7e-bc37-3d63058bada3)
+				{
+					name: "Back"
+					template: @916d506a-7383-4782-b745-d607e7224fa2 (objectref<GtfContainer_template>)
+					children: children_list []
+					width: 150
+					height: 170
+					x: int_scriptedValue(643e3a54-fb0c-485f-b2a9-9a7bd2770929)
+					{
+						triggerList: trigger_list(5e323049-313c-4fb4-a627-d23d3e5f7553)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(ef8cf722-a760-44cc-b6c4-3dfc39e27f4d)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<int>(6ba1a4ad-b80e-4076-8b7b-0bced8cf3979)
+						{
+							script: "function()" \
+								"{" \
+								"	dp:ScreenDimensions[0] / 2 - v:this.width / 2" \
+								"}"
+						}
+						write: function<bool,int>(1a334c1a-19af-4473-8f27-44c0b7acb707)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					y: int_scriptedValue(7a4b78d7-2743-4e6d-a912-5e1cf49d1b3d)
+					{
+						triggerList: trigger_list(daa00008-d89f-4ba9-837e-bed7cb9f3236)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(54c2a0ea-d6e4-4d0b-95d3-a90363e06642)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<int>(a25a9d1f-71c3-4563-9be6-1d0ad07008c1)
+						{
+							script: "function()" \
+								"{" \
+								"	dp:ScreenDimensions[1] - v:this.height" \
+								"}"
+						}
+						write: function<bool,int>(4a90d4f6-74e2-4dec-8502-0bfeac0e993b)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					text: ""
+					image: image_resource(6bb97190-2851-44c5-bfac-26f9b99711d7)
+					{
+						file: "back.png"
+					}
+					hoverColor: color_element_reference(b0b0c50a-5a12-4427-8acd-957cc0cd1c70)
+					{
+						index: 1
+						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
+					}
+					touchShortReleased: function<bool,int,int,int,int>(e14f1dce-0207-4aec-9a5c-67c500f0ae11)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    fire ev:GoTo_MainMenu()" \
+							"    true" \
+							"}"
+					}
+					fillColor: color_element_reference(5e58f73a-912e-4d09-bdc6-8e06d31361e8)
+					{
+						index: 0
+						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
+					}
+					touchPressed: function<bool,int,int,int,int>(7b86f4e9-a1d9-4b6c-a2b4-ae4f95cac558)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    true" \
+							"}"
+					}
+					baseColor: color_element_reference(91bba613-8655-405e-bb85-d97c6dfb18c9)
+					{
+						index: 0
+						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
+					}
+				}, 
+				GtfLabel(a071d803-8118-4be4-9327-86923385a198)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Selected Text"
+					visible: true
+					width: 350
+					height: 80
+					x: int_scriptedValue(860e0557-a125-41a8-9f8b-3006dd02efe9)
+					{
+						triggerList: trigger_list(68165f48-248c-4498-8e18-d45381ab5267)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(d03657ea-1986-41e9-b302-defcb55641c6)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<int>(2ec026bc-a03b-4781-beb3-764b4b2ca5e1)
+						{
+							script: "function()" \
+								"{" \
+								"	dp:ScreenDimensions[0] / 2 - v:this.width / 2" \
+								"}"
+						}
+						write: function<bool,int>(3b092825-6af3-41be-9812-ce241989cade)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					y: int_scriptedValue(2d46449a-01d9-4bbd-819c-f5600749e919)
+					{
+						triggerList: trigger_list(8a38719b-519e-47b8-93b2-2c94f98f0689)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(831e0012-f17d-4b7a-af4e-b2545166e4d7)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<int>(6b607bd0-c67a-40bd-844a-68c87b659977)
+						{
+							script: "function()" \
+								"{" \
+								"	dp:ScreenDimensions[1] / 2 - v:this.height * 3 / 2" \
+								"}"
+						}
+						write: function<bool,int>(b9f76ef3-a774-4e8c-b8c3-c43b02aea94f)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					text: "You selected"
+					textColor: #000000FF
+					font: font_resource(e6f3aab0-3470-4c77-b63c-53cd4ee11b18)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 80
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(b312b44d-5eea-4234-ab37-8aa7effea986)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Program Name"
+					visible: true
+					width: 350
+					height: 80
+					x: int_scriptedValue(45352704-433f-432d-a641-c9f75c1360bf)
+					{
+						triggerList: trigger_list(bb0499be-7be0-4de3-b033-18eb11126a37)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(385500e8-1cbb-4951-a4bf-8130d6403db2)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<int>(2d4ab8a2-32e2-4b0d-916e-e0ad2fbbf9f1)
+						{
+							script: "function()" \
+								"{" \
+								"	dp:ScreenDimensions[0] / 2 - v:this.width / 2" \
+								"}"
+						}
+						write: function<bool,int>(5ba6beed-c853-4149-becc-3f084f298df0)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					y: int_scriptedValue(00991545-41c3-4132-be87-0ac0e3ca07b5)
+					{
+						triggerList: trigger_list(08fd181f-7721-4a6e-b481-4efcb7c72e94)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(a0cf718a-209b-440a-8f8c-84c57e33443e)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<int>(1b9a28f7-bba8-44ca-9b5b-d34e1068d8f7)
+						{
+							script: "function()" \
+								"{" \
+								"	dp:ScreenDimensions[1] / 2 - v:this.height / 2" \
+								"}"
+						}
+						write: function<bool,int>(71c96272-f63a-44f7-851a-d5d2625df8b0)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					text: @0335c1ac-495c-4de3-aff6-6b2156c4065d (objectref<string>)
+					textColor: #000000FF
+					font: font_resource(74b85ef4-36ac-4866-8782-cb9094210c74)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 80
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+		}]
+	name: "View 6"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

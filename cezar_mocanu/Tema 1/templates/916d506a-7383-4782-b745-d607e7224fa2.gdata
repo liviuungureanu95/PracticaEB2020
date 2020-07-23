@@ -1,0 +1,315 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(916d506a-7383-4782-b745-d607e7224fa2)
+{
+	name: "Button"
+	structure: GtfContainer(09c11c89-6294-4a48-92b8-b23a6df87125)
+	{
+		features: feature_list [
+			TouchPressed(9b98ae08-3b0c-4f0b-8ce2-d4ce7ea0fb13)
+			{
+				touchPressed: function<bool,int,int,int,int>(a29f3cc4-9d27-4b12-a204-0d077b60fa9c)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"   " \
+						"    true" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(70e7a49d-4070-4d00-b8ff-7d041beed156)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(7be1dde9-37a5-4ca7-92b5-4ebfa43940b6)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(859297a3-aad2-45e5-8f15-98f75181de9e)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfEllipse(c8cf7345-7aad-4365-88da-b191589dcb53)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: int_scriptedValue(bc9707c4-f2e6-4249-af6c-2643993ac2dd)
+				{
+					triggerList: trigger_list(c08831cf-1110-41d6-b68e-c6a8558a66f4)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(71089f90-4d22-4764-819b-4c4a8f269396)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(b6024fa4-5bbe-414c-9679-84a36cf37a55)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.width * 75 / 100" \
+							"}"
+					}
+					write: function<bool,int>(6e3e636f-9c44-45d6-928a-b577ce86fc3e)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				height: width@c8cf7345-7aad-4365-88da-b191589dcb53 (propref<int>)
+				x: int_scriptedValue(83a6dea3-adba-426b-9e21-83d7357fc7e8)
+				{
+					triggerList: trigger_list(a941fc31-67a6-4871-a0d8-91d5b421075a)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(ac5c7c61-f5c0-4a24-bd21-010936c1c404)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(c10e07a9-6d25-473c-96b5-a27216822d0c)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.width / 2 - v:this.width / 2" \
+							"}"
+					}
+					write: function<bool,int>(d040bd79-9f6e-4d39-9b2d-d2b06dbe7c6f)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				y: int_scriptedValue(734a5908-7ec8-4ad1-ab72-8b990b689eff)
+				{
+					triggerList: trigger_list(933bd96e-3848-4a0c-bce5-df46521b4f81)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(aee18832-474d-4d0c-91d5-cd65ed2cb77e)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(840c4f52-d6b1-4fb7-b266-7ba60421afee)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:ButtonFontSize / 2" \
+							"}"
+					}
+					write: function<bool,int>(85d64867-47de-4c9a-8566-a194b4bd6b4e)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				fillColor: #000000FF
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}, 
+			GtfLabel(979195ab-679c-4e81-a728-b56efc593eaa)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label"
+				visible: true
+				width: width@09c11c89-6294-4a48-92b8-b23a6df87125 (propref<int>)
+				height: 22
+				x: 0
+				y: int_scriptedValue(96f1b6f4-acfe-43d3-94f7-6f1445852f1c)
+				{
+					triggerList: trigger_list(42901db6-2259-4401-a9a3-157feb32e216)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(ca49b014-ff7e-4c54-9723-eb8c105ec2c2)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(51273c15-2817-402c-8843-1b7da56773d7)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^->Background.height + dp:ButtonFontSize" \
+							"}"
+					}
+					write: function<bool,int>(ebcdccc9-c642-40b3-8b36-062fa5557afa)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				text: "Cotton Coloured"
+				textColor: #000000FF
+				font: font_resource(7fcccc6a-ae03-4de9-822a-c3ba57e3a648)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 22
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfImage(2a7e8662-5b29-44c6-9df9-dba076dede78)
+			{
+				features: feature_list [
+					ScaleMode(0baa7ca8-285e-40c6-9a81-797b7dfc26de)
+					{
+						scaleMode: 2
+					}]
+				children: children_list []
+				name: "Icon"
+				visible: true
+				width: int_scriptedValue(660c2784-9f66-4f7a-89b9-7ac17d939689)
+				{
+					triggerList: trigger_list(5a5b84c3-2daf-41b9-b8a3-c21a11fe8c25)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(435821b2-1280-4acc-ba41-354b65641245)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(b40d459b-8f75-466d-ab6b-24dbf535b242)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^->Background.width * 6 / 10" \
+							"}"
+					}
+					write: function<bool,int>(bcfd8715-d133-4074-84ec-f8dc9ac6c7a3)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				height: width@2a7e8662-5b29-44c6-9df9-dba076dede78 (propref<int>)
+				x: int_scriptedValue(0fb46460-18a0-4280-a87a-38bbfe73f714)
+				{
+					triggerList: trigger_list(8c15debc-d6d0-47f9-b7b2-709bdc3f0bcb)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(ea697ab1-6362-43b8-9816-b9e99ce20ef0)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(d4d9b0f8-3de9-46c8-afb6-0c2f9be17f81)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^->Background.x + v:this->^->Background.width * 2 / 10" \
+							"}"
+					}
+					write: function<bool,int>(3eabe0ff-728b-4253-859f-e07e80438d1a)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				y: int_scriptedValue(2c622c33-9c04-42ff-a19b-8f3071cbc4b1)
+				{
+					triggerList: trigger_list(b1d6d5db-eef1-4f48-a4e9-a2e124a13010)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(175cb00c-9529-4937-9163-573acde60ff8)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(96279769-b496-4216-a957-1d79759d85de)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^->Background.y + v:this->^->Background.height *2 / 10" \
+							"}"
+					}
+					write: function<bool,int>(3edb187f-490a-49d9-9243-723295d1359f)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				image: image_resource(007a04a5-af17-401f-91c4-dd29b08a6fc4)
+				{
+					file: "butterfly.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "Container"
+		visible: true
+		width: 100
+		height: 125
+		x: 0
+		y: 0
+		hoverColor: #A9A9A9FF
+	}
+	width: width@09c11c89-6294-4a48-92b8-b23a6df87125 (propref<int>)
+	height: height@09c11c89-6294-4a48-92b8-b23a6df87125 (propref<int>)
+	x: x@09c11c89-6294-4a48-92b8-b23a6df87125 (propref<int>)
+	y: y@09c11c89-6294-4a48-92b8-b23a6df87125 (propref<int>)
+	text: text@979195ab-679c-4e81-a728-b56efc593eaa (propref<string>)
+	image: image@2a7e8662-5b29-44c6-9df9-dba076dede78 (propref<image>)
+	hoverColor: hoverColor@09c11c89-6294-4a48-92b8-b23a6df87125 (propref<color>)
+	touchShortReleased: touchShortReleased@70e7a49d-4070-4d00-b8ff-7d041beed156 (propref<function<bool,int,int,int,int>>)
+	fillColor: fillColor@c8cf7345-7aad-4365-88da-b191589dcb53 (propref<color>)
+}
