@@ -1,0 +1,187 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_statemachine(e71246a9-476d-4a14-8ea4-6ca5debf79ef)
+{
+	x: 0
+	y: 0
+	width: 1987
+	height: 1932
+	name: "Main"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions []
+	internal_transitions: haptic_internal_transitions []
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(261441b3-da0d-4de5-92ff-699fdbec89ec)
+		{
+			x: 349
+			y: 317
+			width: 100
+			height: 100
+			name: "VS MainMenu"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions [
+				haptic_transition(6c7ca87b-1151-4507-8df7-e5d9bf539b8b)
+				{
+					action: function<void>(none)
+					target_state: @c852a1c8-f1c1-406f-bb62-bbbf5e2c04cc (objectref<haptic_dialog_state>)
+					source_dock: 0.4863042F
+					target_dock: 0.9681465F
+					curveControlXOffset: 0
+					curveControlYOffset: 0
+					labelXOffset: 10
+					labelYOffset: -10
+					labelRotationAngle: 0
+					event: @8363112f-2d50-4971-90e0-3b6d9e1dd348 (objectref<event>)
+					condition: function<bool>(none)
+				}, 
+				haptic_transition(7a525081-f053-401e-917f-650d6e4639e1)
+				{
+					action: function<void>(none)
+					target_state: @573b5e9e-0db7-411b-8fd3-364623aa8cf2 (objectref<haptic_dialog_state>)
+					source_dock: 0.2077109F
+					target_dock: 0.8137302F
+					curveControlXOffset: 0
+					curveControlYOffset: 0
+					labelXOffset: 10
+					labelYOffset: -10
+					labelRotationAngle: 0
+					event: @2d2c7805-1093-4d7e-b66d-18e0bb6c3cdf (objectref<event>)
+					condition: function<bool>(none)
+				}]
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (81f280d0-1c8f-45c3-bc1b-2a273a766bf3)
+			priority_stack: priority_stack(none)
+		}, 
+		haptic_dialog_state(4f4351da-894d-4cee-93f3-978e943c5cc9)
+		{
+			x: 31
+			y: 295
+			width: 100
+			height: 100
+			name: "VS Splashscreen"
+			entry_action: function<void>(0ef2ae1a-68df-4a89-bf83-27128eeef5b7)
+			{
+				script: "function()" \
+					"{" \
+					"	fire_delayed 2000, ev:GoTo_MainMenu()" \
+					"}"
+			}
+			exit_action: function<void>(none)
+			transitions: haptic_transitions [
+				haptic_transition(38f85fe5-cdde-4654-ae55-cff77e078090)
+				{
+					action: function<void>(none)
+					target_state: @261441b3-da0d-4de5-92ff-699fdbec89ec (objectref<haptic_dialog_state>)
+					source_dock: 0.2400037F
+					target_dock: 0.7664763F
+					curveControlXOffset: 0
+					curveControlYOffset: 0
+					labelXOffset: 10
+					labelYOffset: -10
+					labelRotationAngle: 0
+					event: @b87c2f3e-ed35-4fa7-9ea6-a88ab4987c04 (objectref<event>)
+					condition: function<bool>(none)
+				}]
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (1bde52ff-f187-40a0-93f7-f2c6d6cb43e2)
+			priority_stack: priority_stack(none)
+		}, 
+		haptic_dialog_state(c852a1c8-f1c1-406f-bb62-bbbf5e2c04cc)
+		{
+			x: 369
+			y: 579
+			width: 100
+			height: 100
+			name: "VS Bye"
+			entry_action: function<void>(181d578f-29be-41e6-be8c-5a7cd5a97697)
+			{
+				script: "function()" \
+					"{" \
+					"	fire_delayed 2000, ev:GoTo_Final()" \
+					"}"
+			}
+			exit_action: function<void>(none)
+			transitions: haptic_transitions [
+				haptic_transition(f58ad1df-296c-4db3-b10d-8e2e55613f74)
+				{
+					action: function<void>(none)
+					target_state: @c361020c-ef7d-4a07-b379-321c11f03475 (objectref<haptic_final_state>)
+					source_dock: 0.2796499F
+					target_dock: 0.7748072F
+					curveControlXOffset: 0
+					curveControlYOffset: 0
+					labelXOffset: 10
+					labelYOffset: -10
+					labelRotationAngle: 0
+					event: @4080ad7a-4acd-4d28-8a0e-581e80585a92 (objectref<event>)
+					condition: function<bool>(none)
+				}]
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (02b21201-5af8-4f67-b930-fe3f22065112)
+			priority_stack: priority_stack(none)
+		}, 
+		haptic_dialog_state(573b5e9e-0db7-411b-8fd3-364623aa8cf2)
+		{
+			x: 645
+			y: 300
+			width: 100
+			height: 100
+			name: "VS Program"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions [
+				haptic_transition(22f11c83-02d5-45f0-98fc-8cc35ce77b82)
+				{
+					action: function<void>(none)
+					target_state: @261441b3-da0d-4de5-92ff-699fdbec89ec (objectref<haptic_dialog_state>)
+					source_dock: 0.7162145F
+					target_dock: 0.2957084F
+					curveControlXOffset: 0
+					curveControlYOffset: 0
+					labelXOffset: 10
+					labelYOffset: -10
+					labelRotationAngle: 0
+					event: @b87c2f3e-ed35-4fa7-9ea6-a88ab4987c04 (objectref<event>)
+					condition: function<bool>(none)
+				}]
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (dac796b9-9508-41c0-9239-bda18c57c6f7)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(5c219fcc-14b7-4afb-88db-6f2751e2eeb2)
+	{
+		x: 36
+		y: 137
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(1278831a-e5e0-4c90-ab70-716c758651b5)
+		{
+			action: function<void>(none)
+			target_state: @4f4351da-894d-4cee-93f3-978e943c5cc9 (objectref<haptic_dialog_state>)
+			source_dock: 0.2786246F
+			target_dock: 0.9646685F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(c361020c-ef7d-4a07-b379-321c11f03475)
+	{
+		x: 694
+		y: 641
+		width: 100
+		height: 100
+	}
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(none)
+}
