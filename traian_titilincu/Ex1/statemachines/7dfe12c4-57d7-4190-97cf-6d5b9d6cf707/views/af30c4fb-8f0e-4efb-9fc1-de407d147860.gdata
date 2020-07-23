@@ -1,0 +1,134 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(af30c4fb-8f0e-4efb-9fc1-de407d147860)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(ff99a97f-addd-49bd-9898-dc5bc5b2c4a5)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfEllipse(7dbefa28-8cad-48fb-af9e-fef737d8d442)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(d26ba7bd-a78c-4e66-979c-83c59d5e94cf)
+						{
+							features: feature_list [
+								TouchPressed(2e193961-09df-4e21-b673-694f6328ed6b)
+								{
+									touchPressed: function<bool,int,int,int,int>(2f8641d2-4268-4cbf-805c-e7372e6913d9)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"    fire ev:goTo_menu()" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(df108241-53f5-4b3e-b879-0daddf177aa4)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list []
+							name: "Label 3"
+							visible: true
+							width: 100
+							height: 100
+							x: 0
+							y: 0
+							text: "Back"
+							textColor: #000000FF
+							font: font_resource(4ac2739b-65eb-4047-8115-b05f567e4dd9)
+							{
+								file: "HelveticaNowDisplay-ExtraBold.otf"
+								size: 24
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "back_button"
+					visible: true
+					width: 100
+					height: 100
+					x: 27
+					y: 17
+					fillColor: #FFFFFFFF
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+				}, 
+				GtfLabel(d79e4b2e-72df-4eca-a81a-4d32876fb383)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 4"
+					visible: true
+					width: width@af30c4fb-8f0e-4efb-9fc1-de407d147860 (propref<int>)
+					height: 229
+					x: 0
+					y: 129
+					text: string_scriptedValue(3d376311-4385-4c88-bc10-0f8e2510e5bb)
+					{
+						triggerList: trigger_list(e293a9b6-e703-410a-82be-5a3bef9a861e)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(cfe8a5b7-b855-4797-abce-354703bb5aa1)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(629b951e-48cd-4f14-9b16-c4800a042d46)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	\"Dedicat hainelor fabricate din lana.\"" \
+								"}"
+						}
+						write: function<bool,string>(6325bf53-217a-476b-8562-7d8a0c7701a4)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(92fcd429-4156-4e0d-9312-b845da9d5c91)
+					{
+						file: "HelveticaNowDisplay-ExtraBold.otf"
+						size: 24
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "background"
+			visible: true
+			width: 800
+			height: 480
+			x: 2
+			y: 1
+			image: image_resource(bc5a6445-f7f9-4b7c-b0f7-7ac2a0ff9e6f)
+			{
+				file: "background.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "Wool View"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

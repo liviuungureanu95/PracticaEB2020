@@ -1,0 +1,134 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(3e3e4059-8fdd-4ed8-a928-0392d353dbc4)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(938afc56-36cd-43a7-a49a-4a5d561002b5)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfEllipse(131fa207-89dd-43c8-8406-d9e2965e1a2c)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(1953157b-6456-4874-a504-f7281895b1a2)
+						{
+							features: feature_list [
+								TouchPressed(81c5bc7e-05d2-4ccc-bb0f-e580064f2a72)
+								{
+									touchPressed: function<bool,int,int,int,int>(23af0f19-af19-4172-a188-fb996ea22f81)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"    fire ev:goTo_menu()" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(dda2bf6b-34db-4aaf-a8f1-9fa1f23f9fdc)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list []
+							name: "Label 3"
+							visible: true
+							width: 100
+							height: 100
+							x: 0
+							y: 0
+							text: "Back"
+							textColor: #000000FF
+							font: font_resource(7dd7ccdb-bd08-4846-ab2c-7c0c2d8e101c)
+							{
+								file: "HelveticaNowDisplay-ExtraBold.otf"
+								size: 24
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "back_button"
+					visible: true
+					width: 100
+					height: 100
+					x: 27
+					y: 17
+					fillColor: #FFFFFFFF
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+				}, 
+				GtfLabel(1472ab33-da13-44b7-88d5-5a45e514f752)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 4"
+					visible: true
+					width: width@3e3e4059-8fdd-4ed8-a928-0392d353dbc4 (propref<int>)
+					height: 229
+					x: 0
+					y: 129
+					text: string_scriptedValue(b28eb45a-191d-416c-bd55-76d31946274a)
+					{
+						triggerList: trigger_list(8004b48d-fe7d-405d-9409-63302c16afef)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(e8553830-4fbe-4374-84d2-2272a4b37b76)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(e26fedb6-fad8-4278-96fc-961dbfad6013)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	\"Dedicat hainelor murdarite in urma activitatilor sportive.\"" \
+								"}"
+						}
+						write: function<bool,string>(6a4c8943-c629-49ac-9ebb-4d16e4171573)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(9b7a3cc0-f19f-43f8-9e9b-32206d4f0a02)
+					{
+						file: "HelveticaNowDisplay-ExtraBold.otf"
+						size: 24
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "background"
+			visible: true
+			width: 800
+			height: 480
+			x: 2
+			y: 1
+			image: image_resource(e07d591e-4447-470d-b7f9-dc97acfeb398)
+			{
+				file: "background.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "Sport View"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
