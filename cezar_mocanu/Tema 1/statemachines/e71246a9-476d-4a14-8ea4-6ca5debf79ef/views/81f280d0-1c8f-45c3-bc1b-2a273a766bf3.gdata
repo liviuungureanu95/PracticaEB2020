@@ -49,245 +49,191 @@ GtfView(81f280d0-1c8f-45c3-bc1b-2a273a766bf3)
 			name: "MainBackground 1"
 			template: @04eeffcd-a2b1-45f9-8af6-75607ffaf2c1 (objectref<GtfRectangle_template>)
 			children: children_list [
-				GtfContainer_template_instance(31ecc58a-bedf-4a74-a1e3-a1e4e282fa9e)
+				GtfContainer_template_instance(8a9c3107-532f-47a9-a81a-4610c5d07e84)
 				{
-					name: "Program 1"
+					name: "Exit"
 					template: @916d506a-7383-4782-b745-d607e7224fa2 (objectref<GtfContainer_template>)
 					children: children_list []
-					width: 150
-					height: 172
-					x: 215
-					y: -5
-					text: string_element_reference(7715a9f0-4f8b-417e-8d7b-b2e682ae74d8)
+					width: @a6d49113-d54f-4a6d-a81b-a507f626b5c7 (objectref<int>)
+					height: height@916d506a-7383-4782-b745-d607e7224fa2 (propref<int>)
+					x: 361
+					y: 194
+					text: "Exit"
+					image: image_resource(77125b56-7d5f-49ac-9876-6e557102f14d)
+					{
+						file: "off.png"
+					}
+					pressedColor: color_element_reference(f54e6da4-060e-461b-b239-78bed9c21a8c)
+					{
+						index: 2
+						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
+					}
+					pressedAction: pressedAction@916d506a-7383-4782-b745-d607e7224fa2 (propref<function<bool>>)
+					releasedAction: function<bool>(99c0c87f-1d40-48ef-af2d-69433deac129)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:SelectedProgram = dp:Programs[0]" \
+							"    fire_delayed 100, ev:GoTo_Bye()" \
+							"    false" \
+							"}"
+					}
+					releasedColor: color_element_reference(f993fe6d-0e1d-4d42-a1e5-1c4f0d87f106)
+					{
+						index: 3
+						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
+					}
+				}, 
+				GtfContainer_template_instance(82c8535f-b4e3-4aee-8d81-1cbcfadc7451)
+				{
+					name: "Program0"
+					template: @916d506a-7383-4782-b745-d607e7224fa2 (objectref<GtfContainer_template>)
+					children: children_list []
+					width: @a6d49113-d54f-4a6d-a81b-a507f626b5c7 (objectref<int>)
+					height: height@916d506a-7383-4782-b745-d607e7224fa2 (propref<int>)
+					x: 518
+					y: 23
+					text: string_element_reference(10549db8-b309-47c5-a53d-19f1a9197229)
 					{
 						index: 0
 						list: @c419a627-56b3-4c93-b06f-33c6be06e911 (objectref<stringlist>)
 					}
-					image: image_resource(d35886da-fc37-4d8c-a67e-9d4534031a4c)
+					image: image_resource(61502b93-1671-4b6b-8267-f07ebb05dc70)
 					{
 						file: "cotton.png"
 					}
-					hoverColor: color_element_reference(503c521e-32a9-4c24-ae21-814c3e895c1d)
+					pressedColor: color_element_reference(0600fd0f-e634-4726-85fe-267ae6a47736)
+					{
+						index: 0
+						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
+					}
+					pressedAction: pressedAction@916d506a-7383-4782-b745-d607e7224fa2 (propref<function<bool>>)
+					releasedAction: function<bool>(42ecaa0a-4dc4-4a29-b2bd-76e38cc1b431)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:SelectedProgram = dp:Programs[0]" \
+							"    fire_delayed 100, ev:GoTo_Program()" \
+							"    false" \
+							"}"
+					}
+					releasedColor: color_element_reference(8a1fc90d-f187-4baf-a010-27d98f340389)
 					{
 						index: 1
 						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
 					}
-					touchShortReleased: function<bool,int,int,int,int>(235e50ae-2052-4155-b93c-5f7b37ebbd1a)
-					{
-						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
-							"{" \
-							"    dp:SelectedProgram = dp:Programs[0]" \
-							"    fire ev:GoTo_Program()" \
-							"    true" \
-							"}"
-					}
-					fillColor: color_element_reference(ca91b01b-219b-49c9-95e0-1e5ee3bbadb5)
-					{
-						index: 0
-						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
-					}
-					touchPressed: function<bool,int,int,int,int>(c9e65a72-2624-40bc-bb17-7ada19d162dc)
-					{
-						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
-							"{" \
-							"    true" \
-							"}"
-					}
-					baseColor: color_element_reference(88e0c2d7-a288-4553-ba5d-5a171ce78d8b)
-					{
-						index: 0
-						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
-					}
 				}, 
-				GtfContainer_template_instance(33f2075b-e071-4ca1-8651-ca7ea25a0ca2)
+				GtfContainer_template_instance(6a75ee15-088d-4d09-9c9f-c2724395d8a7)
 				{
-					name: "Program 2"
+					name: "Program1"
 					template: @916d506a-7383-4782-b745-d607e7224fa2 (objectref<GtfContainer_template>)
 					children: children_list []
-					width: 150
-					height: 172
-					x: 433
-					y: -2
-					text: string_element_reference(f9ac24f4-3fea-474a-a9be-1ed3dcaffa7e)
+					width: @a6d49113-d54f-4a6d-a81b-a507f626b5c7 (objectref<int>)
+					height: height@916d506a-7383-4782-b745-d607e7224fa2 (propref<int>)
+					x: 186
+					y: 25
+					text: string_element_reference(df5bf8a8-5bc6-49b7-9624-480cbd75d361)
 					{
 						index: 1
 						list: @c419a627-56b3-4c93-b06f-33c6be06e911 (objectref<stringlist>)
 					}
-					image: image_resource(efc2dfcf-e8fc-43e9-abd8-c7efaa92d197)
+					image: image_resource(2aa2b408-230f-4892-93a3-4d40d6df1eff)
 					{
 						file: "green.png"
 					}
-					hoverColor: color_element_reference(36c9aca5-def8-421f-9f93-21f970f39af3)
+					pressedColor: color_element_reference(91f19438-2d19-4f8f-9f71-e81dbda73b35)
+					{
+						index: 0
+						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
+					}
+					pressedAction: pressedAction@916d506a-7383-4782-b745-d607e7224fa2 (propref<function<bool>>)
+					releasedAction: function<bool>(4df4afeb-cf9a-46ba-b10b-2572774fa949)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:SelectedProgram = dp:Programs[1]" \
+							"    fire_delayed 100, ev:GoTo_Program()" \
+							"    false" \
+							"}"
+					}
+					releasedColor: color_element_reference(cce7ec6e-858b-4368-be84-d7173c786da2)
 					{
 						index: 1
 						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
 					}
-					touchShortReleased: function<bool,int,int,int,int>(2e5ed307-b848-4fa3-8fd2-2357b6617a58)
-					{
-						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
-							"{" \
-							"  	dp:SelectedProgram = dp:Programs[1]" \
-							"    fire ev:GoTo_Program()" \
-							"    true" \
-							"}"
-					}
-					fillColor: color_element_reference(e95f75e8-f150-4e27-8b9b-c942d9df4eca)
-					{
-						index: 0
-						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
-					}
-					touchPressed: function<bool,int,int,int,int>(ce087991-cca2-4e5e-9386-37d4c46cff18)
-					{
-						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
-							"{" \
-							"    true" \
-							"}"
-					}
-					baseColor: color_element_reference(f663aa52-96e2-42e7-a9f0-714796207720)
-					{
-						index: 0
-						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
-					}
 				}, 
-				GtfContainer_template_instance(b4b29cfc-99ec-4f78-abb8-af8805d3038b)
+				GtfContainer_template_instance(f43ce5ad-4aae-4cbc-879f-5efa9dee88ae)
 				{
-					name: "Program 3"
+					name: "Program2"
 					template: @916d506a-7383-4782-b745-d607e7224fa2 (objectref<GtfContainer_template>)
 					children: children_list []
-					width: 150
-					height: 172
-					x: 109
-					y: 187
-					text: string_element_reference(88663211-5092-44a4-a89d-cc649022fa72)
+					width: @a6d49113-d54f-4a6d-a81b-a507f626b5c7 (objectref<int>)
+					height: height@916d506a-7383-4782-b745-d607e7224fa2 (propref<int>)
+					x: 526
+					y: 313
+					text: string_element_reference(1d21597f-9b3a-4378-9c6e-cd1d26dbd71a)
 					{
 						index: 2
 						list: @c419a627-56b3-4c93-b06f-33c6be06e911 (objectref<stringlist>)
 					}
 					image: image@916d506a-7383-4782-b745-d607e7224fa2 (propref<image>)
-					hoverColor: color_element_reference(ed1c56c8-b2a6-455f-9ee6-c1be566c38b0)
+					pressedColor: color_element_reference(dd9449f2-0cca-4b22-87a0-396975668c76)
+					{
+						index: 0
+						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
+					}
+					pressedAction: pressedAction@916d506a-7383-4782-b745-d607e7224fa2 (propref<function<bool>>)
+					releasedAction: function<bool>(4e3f7dbd-1a23-479a-8df8-276ebc946529)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:SelectedProgram = dp:Programs[2]" \
+							"    fire_delayed 100, ev:GoTo_Program()" \
+							"    false" \
+							"}"
+					}
+					releasedColor: color_element_reference(3d2401a7-c46b-41fd-81d1-23742a420407)
 					{
 						index: 1
 						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
 					}
-					touchShortReleased: function<bool,int,int,int,int>(09dff144-8017-4c58-8c0d-a0e0fc015c8e)
-					{
-						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
-							"{" \
-							"    dp:SelectedProgram = dp:Programs[2]" \
-							"    fire ev:GoTo_Program()" \
-							"    true" \
-							"}"
-					}
-					fillColor: color_element_reference(3dfb865a-e10e-415b-b089-9a83349e7901)
-					{
-						index: 0
-						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
-					}
-					touchPressed: function<bool,int,int,int,int>(6f41931f-04c2-48a4-8c61-b414a0f1e622)
-					{
-						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
-							"{" \
-							"    true" \
-							"}"
-					}
-					baseColor: color_element_reference(05b4f332-6f0a-4caa-884b-b3c665d80ce4)
-					{
-						index: 0
-						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
-					}
 				}, 
-				GtfContainer_template_instance(0cccf1a7-2503-4452-b85b-085538b9990c)
+				GtfContainer_template_instance(2e69fe80-ad18-4cb9-9ac5-0abd7dedd211)
 				{
-					name: "Program 4"
+					name: "Program3"
 					template: @916d506a-7383-4782-b745-d607e7224fa2 (objectref<GtfContainer_template>)
 					children: children_list []
-					width: 150
-					height: 172
-					x: 524
-					y: 190
-					text: string_element_reference(eb2e5d74-2bbb-468b-84ce-0dd44f0ee355)
+					width: @a6d49113-d54f-4a6d-a81b-a507f626b5c7 (objectref<int>)
+					height: height@916d506a-7383-4782-b745-d607e7224fa2 (propref<int>)
+					x: 185
+					y: 311
+					text: string_element_reference(6fa2113f-cda3-45fc-9f51-459c2847a533)
 					{
 						index: 3
 						list: @c419a627-56b3-4c93-b06f-33c6be06e911 (objectref<stringlist>)
 					}
-					image: image_resource(27469625-b40a-4ec3-9fd8-070eb2d65018)
+					image: image_resource(3a4e0a78-0b7f-46cb-8e27-18ac0bc34db7)
 					{
 						file: "synthetic.png"
 					}
-					hoverColor: color_element_reference(4232fa2a-d544-4e2d-8ca0-ac85b6001f1a)
+					pressedColor: color_element_reference(ee9039ab-fad9-47a9-9142-16444f968199)
+					{
+						index: 0
+						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
+					}
+					pressedAction: pressedAction@916d506a-7383-4782-b745-d607e7224fa2 (propref<function<bool>>)
+					releasedAction: function<bool>(cd71abc2-23d8-4475-afd3-7694ef314d28)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:SelectedProgram = dp:Programs[3]" \
+							"    fire_delayed 100, ev:GoTo_Program()" \
+							"    false" \
+							"}"
+					}
+					releasedColor: color_element_reference(1e1e701b-e127-4ac8-8d59-1629c86af039)
 					{
 						index: 1
-						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
-					}
-					touchShortReleased: function<bool,int,int,int,int>(a819cdbb-2530-40f2-8f91-6d9ac17d5cfe)
-					{
-						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
-							"{" \
-							"   	dp:SelectedProgram = dp:Programs[3]" \
-							"    fire ev:GoTo_Program()" \
-							"    true" \
-							"}"
-					}
-					fillColor: color_element_reference(56bc3092-be57-4364-9f5e-3c0d63e4b5d4)
-					{
-						index: 0
-						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
-					}
-					touchPressed: function<bool,int,int,int,int>(9a47d4c3-3d16-467b-8ae7-be1dfd4ad00b)
-					{
-						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
-							"{" \
-							"    true" \
-							"}"
-					}
-					baseColor: color_element_reference(50061136-c9e2-4ea8-939c-ba1fb94e5c73)
-					{
-						index: 0
-						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
-					}
-				}, 
-				GtfContainer_template_instance(7cf11b31-3d34-48d7-b555-8dd54fe6bfc5)
-				{
-					name: "Exit"
-					template: @916d506a-7383-4782-b745-d607e7224fa2 (objectref<GtfContainer_template>)
-					children: children_list []
-					width: 150
-					height: 172
-					x: 324
-					y: 306
-					text: "Turn Off"
-					image: image_resource(6c494f5c-ccb0-41ac-8639-bc1fc9f8eb5e)
-					{
-						file: "off.png"
-					}
-					hoverColor: color_element_reference(0366e6cc-18f9-4879-985e-db82a75fcf71)
-					{
-						index: 1
-						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
-					}
-					touchShortReleased: function<bool,int,int,int,int>(5505753c-2e9e-4541-8785-c9ff13ec4c86)
-					{
-						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
-							"{" \
-							"    fire_delayed 100, ev:GoTo_Bye()" \
-							"    true" \
-							"}"
-					}
-					fillColor: color_element_reference(18c5515e-cb39-4fcf-b544-2e3bfae31264)
-					{
-						index: 0
-						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
-					}
-					touchPressed: function<bool,int,int,int,int>(7b270c81-e94f-4348-9fd5-f467b5649c0f)
-					{
-						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
-							"{" \
-							"    true" \
-							"}"
-					}
-					baseColor: color_element_reference(3afba23e-631b-45a8-81d9-123b8a2e9db0)
-					{
-						index: 0
 						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
 					}
 				}]

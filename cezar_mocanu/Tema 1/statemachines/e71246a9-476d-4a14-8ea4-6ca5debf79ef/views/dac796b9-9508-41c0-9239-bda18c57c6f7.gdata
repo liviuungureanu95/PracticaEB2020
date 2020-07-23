@@ -81,20 +81,26 @@ GtfView(dac796b9-9508-41c0-9239-bda18c57c6f7)
 					{
 						file: "back.png"
 					}
-					hoverColor: color_element_reference(b0b0c50a-5a12-4427-8acd-957cc0cd1c70)
+					pressedColor: color_element_reference(b0b0c50a-5a12-4427-8acd-957cc0cd1c70)
 					{
 						index: 1
 						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
 					}
-					touchShortReleased: function<bool,int,int,int,int>(e14f1dce-0207-4aec-9a5c-67c500f0ae11)
+					pressedAction: pressedAction@916d506a-7383-4782-b745-d607e7224fa2 (propref<function<bool>>)
+					releasedAction: function<bool>(3eeb55c4-4538-4ac5-a5a8-d26e854a57cd)
 					{
-						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						script: "function()" \
 							"{" \
-							"    fire ev:GoTo_MainMenu()" \
-							"    true" \
+							"	fire_delayed 100, ev:GoTo_MainMenu()" \
+							"	false" \
 							"}"
 					}
-					fillColor: color_element_reference(5e58f73a-912e-4d09-bdc6-8e06d31361e8)
+					releasedColor: color_element_reference(d161ca4e-95ad-47fd-8040-4b9dae369de5)
+					{
+						index: 0
+						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
+					}
+					baseColor: color_element_reference(91bba613-8655-405e-bb85-d97c6dfb18c9)
 					{
 						index: 0
 						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
@@ -106,7 +112,15 @@ GtfView(dac796b9-9508-41c0-9239-bda18c57c6f7)
 							"    true" \
 							"}"
 					}
-					baseColor: color_element_reference(91bba613-8655-405e-bb85-d97c6dfb18c9)
+					touchShortReleased: function<bool,int,int,int,int>(e14f1dce-0207-4aec-9a5c-67c500f0ae11)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    fire ev:GoTo_MainMenu()" \
+							"    true" \
+							"}"
+					}
+					fillColor: color_element_reference(5e58f73a-912e-4d09-bdc6-8e06d31361e8)
 					{
 						index: 0
 						list: @93036153-cdd5-4c7b-b127-4cd925430c23 (objectref<colorlist>)
