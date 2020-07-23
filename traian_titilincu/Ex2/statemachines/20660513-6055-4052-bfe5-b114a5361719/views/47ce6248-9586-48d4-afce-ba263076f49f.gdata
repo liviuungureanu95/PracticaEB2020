@@ -1,0 +1,258 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(47ce6248-9586-48d4-afce-ba263076f49f)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(46a57c08-8e17-4686-82c2-675f6bbc2c81)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(0fa961da-c0a0-4e92-9509-6f11e87b7f0a)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "menu_label"
+					visible: true
+					width: width@47ce6248-9586-48d4-afce-ba263076f49f (propref<int>)
+					height: 100
+					x: x@47ce6248-9586-48d4-afce-ba263076f49f (propref<int>)
+					y: 23
+					text: "Meniu Principal"
+					textColor: #FFFFFFFF
+					font: font_resource(51a32894-af3e-4acb-b8ff-6649668d71e3)
+					{
+						file: "Proxima Nova Extrabold.otf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Rectangle 1"
+			visible: true
+			width: width@47ce6248-9586-48d4-afce-ba263076f49f (propref<int>)
+			height: height@47ce6248-9586-48d4-afce-ba263076f49f (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #000080FF
+		}, 
+		GtfEllipse(e8149c5c-fd95-4818-97e4-f3d63e3f324e)
+		{
+			features: feature_list [
+				TouchPressed(985b5f01-437f-4cb9-8cfc-54aa9d9aa743)
+				{
+					touchPressed: function<bool,int,int,int,int>(b193ed8d-b793-43dc-ac38-9f92eb523ac6)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    fire ev:goTo_standard()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(c92a3055-dc69-44e0-89ff-e102259b03dc)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfImage(2b496baf-e6c4-400d-9851-03d131cf1d60)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "standard_mode_icon"
+					visible: true
+					width: 100
+					height: 100
+					x: 23
+					y: 26
+					image: image_resource(3d830a3a-1e6a-4552-bf7e-00636ae6adc1)
+					{
+						file: "dish.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(f8e9c3d6-4f03-4142-80f2-9f1c5a70c842)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "standard_mode_label"
+					visible: true
+					width: 170
+					height: 100
+					x: -5
+					y: 152
+					text: "Mod Standard"
+					textColor: #FFFFFFFF
+					font: font_resource(53d47270-2384-44f3-a3ae-81943d26fd24)
+					{
+						file: "Proxima Nova Extrabold.otf"
+						size: 24
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "standard_mode_elipse"
+			visible: true
+			width: 150
+			height: 150
+			x: 114
+			y: 148
+			fillColor: #AFEEEEFF
+			arcWidth: 0
+			centralAngle: 360F
+			sectorRotation: 0F
+		}, 
+		GtfEllipse(97aaec15-3f4b-4ebb-960b-eb4439535a8a)
+		{
+			features: feature_list [
+				TouchPressed(d76faf18-4d9a-495c-aecc-bc46d43f7534)
+				{
+					touchPressed: function<bool,int,int,int,int>(a9ed1c48-aac8-4c05-ba22-5cbf06db7877)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    fire ev:goTo_quick()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(d8ef4fc6-cf03-42a9-9614-f102deab0820)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfLabel(50155e03-fe1f-407f-901a-b734544baff9)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "quick_mode_label"
+					visible: true
+					width: 138
+					height: 100
+					x: 4
+					y: 152
+					text: "Mod Rapid"
+					textColor: #FFFFFFFF
+					font: font_resource(05c98569-ab45-4b81-9966-1227e7c63a35)
+					{
+						file: "Proxima Nova Extrabold.otf"
+						size: 24
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfImage(4a62e8ae-cf96-484c-bf13-d5e093259b86)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "quick_mode_icon"
+					visible: true
+					width: 100
+					height: 100
+					x: 23
+					y: 26
+					image: image_resource(004b1998-71b3-449d-a62f-a2378a9fc4d2)
+					{
+						file: "time.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "quick_mode_elipse"
+			visible: true
+			width: 150
+			height: 150
+			x: 330
+			y: y@e8149c5c-fd95-4818-97e4-f3d63e3f324e (propref<int>)
+			fillColor: #AFEEEEFF
+			arcWidth: 0
+			centralAngle: 360F
+			sectorRotation: 0F
+		}, 
+		GtfEllipse(a446b2e7-ccab-433c-839f-e63f1f8bc9d1)
+		{
+			features: feature_list [
+				TouchPressed(6bf6f820-8b6f-4371-94b7-fd6fb78b375f)
+				{
+					touchPressed: function<bool,int,int,int,int>(7392d5ff-0248-4d25-8b06-fe505e4e529f)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    fire ev:goTo_delicate()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(c847861b-48de-4168-9151-8f981079c9ab)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfImage(bb2919ab-f294-45ec-884e-a6f144d7c8e0)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "delicate_icon"
+					visible: true
+					width: 100
+					height: 100
+					x: 23
+					y: 26
+					image: image_resource(7fe3cece-2700-4e05-bc49-0b72a1b44c2a)
+					{
+						file: "feather.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(ac59f898-0e84-46db-92ac-b31d970d8c06)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "delicate_mode_label"
+					visible: true
+					width: 138
+					height: 100
+					x: 4
+					y: 152
+					text: "Mod Delicat"
+					textColor: #FFFFFFFF
+					font: font_resource(34d2558e-75bb-4cfa-ac20-4ccc34b41a37)
+					{
+						file: "Proxima Nova Extrabold.otf"
+						size: 24
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "delicate_mode_elipse"
+			visible: true
+			width: 150
+			height: 150
+			x: 539
+			y: y@e8149c5c-fd95-4818-97e4-f3d63e3f324e (propref<int>)
+			fillColor: #AFEEEEFF
+			arcWidth: 0
+			centralAngle: 360F
+			sectorRotation: 0F
+		}]
+	name: "View 1"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
