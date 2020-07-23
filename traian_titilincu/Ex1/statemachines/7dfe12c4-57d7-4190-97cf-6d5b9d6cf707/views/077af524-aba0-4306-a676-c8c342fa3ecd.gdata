@@ -1,0 +1,134 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(077af524-aba0-4306-a676-c8c342fa3ecd)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(dd4d7ce6-f528-42c2-8b00-670144e8c966)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfEllipse(d89cc8d4-093a-446a-982d-78e62d113fec)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(4d39c514-1fad-4024-80dd-344bd6252564)
+						{
+							features: feature_list [
+								TouchPressed(32fda4cb-acd2-4c3f-a9d0-808f20506f1a)
+								{
+									touchPressed: function<bool,int,int,int,int>(80b3ddbf-32ef-4437-b141-385e21ada1f1)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"    fire ev:goTo_menu()" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(1a97c6cf-9222-4188-be67-93f438301616)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list []
+							name: "Label 3"
+							visible: true
+							width: 100
+							height: 100
+							x: 0
+							y: 0
+							text: "Back"
+							textColor: #000000FF
+							font: font_resource(a47e663c-c8b9-4998-b419-ccc38a47bc98)
+							{
+								file: "HelveticaNowDisplay-ExtraBold.otf"
+								size: 24
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "back_button"
+					visible: true
+					width: 100
+					height: 100
+					x: 27
+					y: 17
+					fillColor: #FFFFFFFF
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+				}, 
+				GtfLabel(077d885b-85f5-445f-b0eb-38db3351831d)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 4"
+					visible: true
+					width: width@077af524-aba0-4306-a676-c8c342fa3ecd (propref<int>)
+					height: 229
+					x: 0
+					y: 129
+					text: string_scriptedValue(ad0315f5-1e72-4325-bdeb-baffd266ec23)
+					{
+						triggerList: trigger_list(46e2697b-316f-4a56-968a-949908b68d1c)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(33d57389-e2e3-450d-b77e-abd16f3ca77c)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(47f47921-78d5-4fa2-8484-b4d10c208bd4)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	\"Modul reduce timpul de spalare la jumatate.\"" \
+								"}"
+						}
+						write: function<bool,string>(0054f214-9731-46da-9c8b-cc1694095a12)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(996e3bb4-20a2-4afe-a0e9-066cb1978cdc)
+					{
+						file: "HelveticaNowDisplay-ExtraBold.otf"
+						size: 24
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "background"
+			visible: true
+			width: 800
+			height: 480
+			x: 2
+			y: 1
+			image: image_resource(dad90c9b-ba40-4fe2-8c28-9a5c29b9f21e)
+			{
+				file: "background.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "Quick Mode View"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
