@@ -1,0 +1,447 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(2ee56f62-caed-48fa-8afb-106e10752f9d)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(7a5cbf76-0028-4fb3-a854-848684f5c419)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(1270610c-041a-45a6-9bbc-333bafe5e092)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfRectangle(2729bfef-e7ee-4372-a1cc-67d2cdb7fb66)
+						{
+							features: feature_list [
+								TouchPressed(32510453-1a90-408b-a687-5f650d839fc2)
+								{
+									touchPressed: function<bool,int,int,int,int>(897589b9-ce92-419e-aa79-1d9b5d72d3a6)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	v:this.fillColor=dp:ButtonPressed" \
+											"    false" \
+											"}"
+									}
+								}, 
+								TouchShortReleased(a208ad55-7cb7-4c21-975c-d7cfefca17c4)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(ae040e3c-5667-49c3-ae65-324ad1d967db)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	dp:Program=dp:Test_Button1" \
+											"	v:this.fillColor=dp:ButtonNormal" \
+											"	dp:Program=dp:Test_Button1" \
+											"	fire ev:GoToView()" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(31f6c532-2b97-4b63-8220-e787ef9dee2a)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list [
+								GtfLabel(14d244c2-5861-4663-b0a3-e3effe097616)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Label 2"
+									visible: true
+									width: 100
+									height: 100
+									x: 0
+									y: 0
+									text: "5 s"
+									textColor: #FFFFFFFF
+									font: font_resource(e66f077d-26d3-48fa-83fa-925cc71caeee)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 30
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+								}]
+							name: "Buton1"
+							visible: true
+							width: 100
+							height: 100
+							x: int_scriptedValue(fc4cb3b9-abd6-4d36-bb78-678afe357421)
+							{
+								triggerList: trigger_list(d3ad55df-7940-49ab-a029-854324bbedcf)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(6f351b02-c6fc-4189-9d3d-f4690595e7fd)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<int>(5fd93d06-8c8f-4a2d-8b17-0e3bf9d925eb)
+								{
+									script: "function()" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	v:this->^.width/12+100" \
+										"}"
+								}
+								write: function<bool,int>(f3e61b70-a8e4-4bc1-9fe1-379a5747e6f2)
+								{
+									script: "function(v:arg0::int)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							y: 222
+							fillColor: color_scriptedValue(75ddc68c-2bf2-4d07-bf78-bada48bd4e1e)
+							{
+								triggerList: trigger_list(d6fd9b54-ce9a-4777-abff-c85e993c48cb)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(fb4156af-467e-4c18-adca-c5187fa8bb63)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<color>(24c0fbea-66d8-4029-bb85-5f9dadcae4f0)
+								{
+									script: "function()" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	dp:ButtonNormal" \
+										"}"
+								}
+								write: function<bool,color>(859e128c-9634-43e2-b527-c2844925935f)
+								{
+									script: "function(v:arg0::color)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+						}, 
+						GtfRectangle(21b1a82c-b7ab-48f5-bb55-db7eff033559)
+						{
+							features: feature_list [
+								TouchPressed(8750ef16-462e-4ee0-8018-7e37454c8d06)
+								{
+									touchPressed: function<bool,int,int,int,int>(fc48a4dc-1a73-49da-97a5-0d0b22eb9ef8)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	v:this.fillColor=dp:ButtonPressed" \
+											"    false" \
+											"}"
+									}
+								}, 
+								TouchShortReleased(9de5c42b-6c33-4af9-a74e-b7a03156c48b)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(a8278d0d-6d2c-49da-892f-62b7452cad65)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	dp:Program=dp:Test_Button2" \
+											"	v:this.fillColor=dp:ButtonNormal" \
+											"	dp:Program=dp:Test_Button2" \
+											"	fire ev:GoToView()" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(f30085e3-5442-4b6b-b64b-86e616ad50ec)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list [
+								GtfLabel(68c92fd5-3f8b-4e9b-abe6-2dd48a4e9f6c)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Label 3"
+									visible: true
+									width: 100
+									height: 100
+									x: 0
+									y: 0
+									text: "15 s"
+									textColor: #FFFFFFFF
+									font: font_resource(d0ea26a5-3950-4d7f-aa88-3ae71c7c6bbe)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 30
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+								}]
+							name: "Buton2"
+							visible: true
+							width: 100
+							height: 100
+							x: int_scriptedValue(b630dd96-14c7-4be7-a858-f810ad61d931)
+							{
+								triggerList: trigger_list(ddab06ab-79f5-4ac9-8651-b8248ae84108)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(54dae10e-4f3d-496d-91d0-5491b0a79166)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<int>(4b80e17f-9abb-4a98-9549-ff932463d7b8)
+								{
+									script: "function()" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	v:this->^.width/12+300" \
+										"}"
+								}
+								write: function<bool,int>(6019c07b-7eb6-49d6-8dd1-de51cc6354be)
+								{
+									script: "function(v:arg0::int)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							y: y@2729bfef-e7ee-4372-a1cc-67d2cdb7fb66 (propref<int>)
+							fillColor: color_scriptedValue(cceea438-b4b7-4da3-b2da-0c9fda97da90)
+							{
+								triggerList: trigger_list(6cd4dc03-b607-4ba6-a82e-8779c405134b)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(7899049b-87f3-4472-8684-29c83ce8b932)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<color>(622aea2c-2ed0-4911-a1bc-d6f9b31722d9)
+								{
+									script: "function()" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	dp:ButtonNormal" \
+										"}"
+								}
+								write: function<bool,color>(b435e1f5-3c43-4579-a8cc-dad63f96cbc1)
+								{
+									script: "function(v:arg0::color)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+						}, 
+						GtfRectangle(21c05002-e70c-4fc3-8374-e5a6dea55c1f)
+						{
+							features: feature_list [
+								TouchPressed(1114a38c-9246-4712-b7ec-11a61fe257df)
+								{
+									touchPressed: function<bool,int,int,int,int>(983bf976-f181-4cc1-8dd4-10ecf101eac0)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	v:this.fillColor=dp:ButtonPressed" \
+											"    false" \
+											"}"
+									}
+								}, 
+								TouchShortReleased(16df9f3e-0b90-4cb5-af24-246331e567ee)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(0f41c853-7c22-4e9e-bed3-e5ba3e568033)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	dp:Program=dp:Test_Button3" \
+											"	v:this.fillColor=dp:ButtonNormal" \
+											"	dp:Program=dp:Test_Button3" \
+											"	fire ev:GoToView()" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(b17f97ac-67f0-420b-8346-47abbbf08e90)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list [
+								GtfLabel(5d09ce60-2ffc-42a0-a81b-06a1fb76ac17)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Label 4"
+									visible: true
+									width: 100
+									height: 100
+									x: 0
+									y: 0
+									text: "30 s"
+									textColor: #FFFFFFFF
+									font: font_resource(636ce635-953c-473e-b0af-d4a6bfeba16f)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 30
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+								}]
+							name: "Buton3"
+							visible: true
+							width: 100
+							height: 100
+							x: int_scriptedValue(0269a38f-5bd5-4221-acab-3024cf225f7a)
+							{
+								triggerList: trigger_list(dc64e020-fcdb-4977-85ae-9348a266dd5b)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(8fef55eb-c158-4626-a7b1-2ef92a59318e)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<int>(ff96ec70-d529-49a9-a82d-aec4c2f7beee)
+								{
+									script: "function()" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	v:this->^.width/12+500" \
+										"}"
+								}
+								write: function<bool,int>(c6688f2b-fb9b-4e52-bd11-a53a348e0ab5)
+								{
+									script: "function(v:arg0::int)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							y: y@21b1a82c-b7ab-48f5-bb55-db7eff033559 (propref<int>)
+							fillColor: color_scriptedValue(74d0539f-008d-46ee-8682-fee195d09347)
+							{
+								triggerList: trigger_list(5154e815-5591-4599-888d-18d43a2626c6)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(2e41f5c3-6c28-43e2-94bb-024643dd10dd)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<color>(55a94615-e619-497f-a2a9-8b317c72dd8b)
+								{
+									script: "function()" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	dp:ButtonNormal" \
+										"}"
+								}
+								write: function<bool,color>(3673ef58-0ee3-4b67-9750-fa6f6b7c355d)
+								{
+									script: "function(v:arg0::color)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "MeniuPrincipal"
+					visible: true
+					width: width@2ee56f62-caed-48fa-8afb-106e10752f9d (propref<int>)
+					height: 100
+					x: 0
+					y: 50
+					text: "Meniu principal"
+					textColor: color_scriptedValue(91f45107-376f-450f-b686-43bae3395dea)
+					{
+						triggerList: trigger_list(15311944-7826-47fc-99a7-637d07ec4683)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(6913f584-60d3-4b36-9131-816f8ad0be60)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<color>(da703927-b804-416f-87e5-8be2e080e301)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	dp:ButtonNormal" \
+								"}"
+						}
+						write: function<bool,color>(7de1df99-3244-48e4-99c6-997a8ce82b1a)
+						{
+							script: "function(v:arg0::color)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					font: font_resource(e18819e5-26eb-4c69-95a2-4fdcd30e7dc7)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 50
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "BG"
+			visible: true
+			width: width@2ee56f62-caed-48fa-8afb-106e10752f9d (propref<int>)
+			height: height@2ee56f62-caed-48fa-8afb-106e10752f9d (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #87CEEBFF
+		}]
+	name: "View 1"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
