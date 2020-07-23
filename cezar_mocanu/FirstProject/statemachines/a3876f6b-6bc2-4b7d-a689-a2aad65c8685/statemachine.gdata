@@ -15,12 +15,18 @@ haptic_statemachine(a3876f6b-6bc2-4b7d-a689-a2aad65c8685)
 	states: haptic_states [
 		haptic_dialog_state(f75a1bcd-a6e5-4fe8-b4c7-67c2ad9c1ba4)
 		{
-			x: 133
-			y: 49
+			x: 103
+			y: 51
 			width: 100
 			height: 100
 			name: "View state"
-			entry_action: function<void>(none)
+			entry_action: function<void>(eab41175-103d-4d4d-a487-4fa0399e64fc)
+			{
+				script: "function()" \
+					"{" \
+					"	fire_delayed 3000, ev:goTo_Ellipse() " \
+					"}"
+			}
 			exit_action: function<void>(none)
 			transitions: haptic_transitions [
 				haptic_transition(666eb5c1-da9b-49d3-b1b9-9b6fae0d6c42)
@@ -29,12 +35,12 @@ haptic_statemachine(a3876f6b-6bc2-4b7d-a689-a2aad65c8685)
 					target_state: @8483e065-e9c8-4e78-84b8-84c4919a40bf (objectref<haptic_dialog_state>)
 					source_dock: 0.2599601F
 					target_dock: 0.7598466F
-					curveControlXOffset: 0
-					curveControlYOffset: 0
+					curveControlXOffset: -10
+					curveControlYOffset: -20
 					labelXOffset: 10
 					labelYOffset: -10
 					labelRotationAngle: 0
-					event: @00000000-0000-0000-0000-000000000000 (objectref<event>)
+					event: @d8d7d13f-ec7d-4589-8a98-9d63c03e8f89 (objectref<event>)
 					condition: function<bool>(none)
 				}]
 			internal_transitions: haptic_internal_transitions []
@@ -56,11 +62,26 @@ haptic_statemachine(a3876f6b-6bc2-4b7d-a689-a2aad65c8685)
 			background_color: #6C6C6CFF
 			dialog: (0368c81e-3481-4d03-a014-5bd2a5c38a6b)
 			priority_stack: priority_stack(none)
+		}, 
+		haptic_dialog_state(5ed49487-d11f-4708-b5ef-d7aa669a645a)
+		{
+			x: 382
+			y: 238
+			width: 100
+			height: 100
+			name: "RadioViewState"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (f508ca59-afce-4b00-a0f2-cf9ff0f83af0)
+			priority_stack: priority_stack(none)
 		}]
 	initial_state: haptic_initial_state(26ebc29f-f56b-42d5-a72c-fe0e8a973715)
 	{
-		x: 18
-		y: 89
+		x: 15
+		y: 56
 		width: 100
 		height: 100
 		default_transition: haptic_default_transition(8b11c59b-88e2-4574-a2cf-d192a795edeb)
