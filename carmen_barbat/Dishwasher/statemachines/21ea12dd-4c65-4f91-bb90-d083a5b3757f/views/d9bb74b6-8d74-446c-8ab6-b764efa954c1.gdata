@@ -1,0 +1,111 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(d9bb74b6-8d74-446c-8ab6-b764efa954c1)
+{
+	name: "View 3"
+	template: @1869e32e-2a57-4c61-9fd1-a077b00ec103 (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(c9d6e827-647e-4b78-b75c-0db1e4025da7)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 6"
+			visible: true
+			width: 797
+			height: 100
+			x: 0
+			y: 0
+			text: "Meniu principal"
+			textColor: #FFFFFFFF
+			font: font_resource(f14225d6-9ac5-41d6-9a60-427eecb047c6)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(50d87909-2ded-492a-a170-129ee909c034)
+		{
+			name: "Normal_BT"
+			template: @0717726d-055e-45ff-9514-c366414db2b0 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 69
+			y: 185
+			width: 150
+			height: height@0717726d-055e-45ff-9514-c366414db2b0 (propref<int>)
+			fillColor: #90EE90FF
+			text: "Normal"
+			touchPressed: function<bool,int,int,int,int>(af97b8b4-7af0-4439-8490-cc3f89e734f9)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:GoToNormal()" \
+					"    false" \
+					"}"
+			}
+			touchShortReleased: touchShortReleased@0717726d-055e-45ff-9514-c366414db2b0 (propref<function<bool,int,int,int,int>>)
+		}, 
+		GtfContainer_template_instance(f5182df8-543c-4e32-861c-d829fdc9f890)
+		{
+			name: "Rapid_BT"
+			template: @0717726d-055e-45ff-9514-c366414db2b0 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 301
+			y: 187
+			width: 150
+			height: height@0717726d-055e-45ff-9514-c366414db2b0 (propref<int>)
+			fillColor: #90EE90FF
+			text: "Rapid"
+			touchPressed: function<bool,int,int,int,int>(1713abe7-71dd-4bbc-9076-32765f4a5376)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:GoToRapid()" \
+					"    false" \
+					"}"
+			}
+			touchShortReleased: touchShortReleased@0717726d-055e-45ff-9514-c366414db2b0 (propref<function<bool,int,int,int,int>>)
+		}, 
+		GtfContainer_template_instance(b41860c1-e571-423b-9bdb-dad3fbc8fb56)
+		{
+			name: "OT_BT"
+			template: @0717726d-055e-45ff-9514-c366414db2b0 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 526
+			y: 185
+			width: 150
+			height: height@0717726d-055e-45ff-9514-c366414db2b0 (propref<int>)
+			fillColor: #90EE90FF
+			text: "Oale si tigai"
+			touchPressed: function<bool,int,int,int,int>(2f49a5cf-f09a-41e0-bb86-2efff55b31ca)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:GoToOaleSiTigai()" \
+					"    false" \
+					"}"
+			}
+			touchShortReleased: touchShortReleased@0717726d-055e-45ff-9514-c366414db2b0 (propref<function<bool,int,int,int,int>>)
+		}, 
+		GtfLabel(c891d039-8cab-4c0e-9e79-9809ed61c5a8)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 7"
+			visible: true
+			width: 800
+			height: 100
+			x: 0
+			y: 379
+			text: "Va rugam selectati unul dintre programele de mai sus"
+			textColor: #FFFFFFFF
+			font: font_resource(dc0d55e1-d870-415d-b184-03b053ef024b)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}]
+}
