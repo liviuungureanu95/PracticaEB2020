@@ -1,0 +1,84 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(6275cb44-8eb5-4c8a-a64d-d0c3813c9b83)
+{
+	name: "RadioButton"
+	structure: GtfContainer(24b902dc-5384-44c6-8748-cf1a3a29ac5d)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(fb983537-4f9e-482f-8f0d-12036671cf19)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "ButtonBackground"
+				visible: true
+				width: width@24b902dc-5384-44c6-8748-cf1a3a29ac5d (propref<int>)
+				height: height@24b902dc-5384-44c6-8748-cf1a3a29ac5d (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #A9A9A9FF
+			}, 
+			GtfImage(6f9dd7c8-2f09-46bf-9bbd-9cdecb8d4fd2)
+			{
+				features: feature_list [
+					ScaleMode(5b46e7e0-6e36-4c79-adbd-5b7151036041)
+					{
+						scaleMode: 1
+					}, 
+					TouchPressed(a3685ba0-ce94-473f-a74c-bc6528ee33ae)
+					{
+						touchPressed: function<bool,int,int,int,int>(139bc36a-a730-473b-aba4-ec623bb60b2e)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    false" \
+								"}"
+						}
+					}, 
+					TouchShortReleased(f0ffc111-ac02-4c3e-8c12-eee62f59c888)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(88b7d7fd-9047-47ae-8f02-87c99b1b7d0a)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(685979f7-841c-4202-9e39-627cce479a1b)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list []
+				name: "ButtonImage"
+				visible: true
+				width: width@24b902dc-5384-44c6-8748-cf1a3a29ac5d (propref<int>)
+				height: height@24b902dc-5384-44c6-8748-cf1a3a29ac5d (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(a7784080-3811-445c-a1e9-0dc3b4ca5052)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "MyContainer"
+		visible: true
+		width: 80
+		height: 80
+		x: 0
+		y: 0
+	}
+	image: image@6f9dd7c8-2f09-46bf-9bbd-9cdecb8d4fd2 (propref<image>)
+	x: x@24b902dc-5384-44c6-8748-cf1a3a29ac5d (propref<int>)
+	y: y@24b902dc-5384-44c6-8748-cf1a3a29ac5d (propref<int>)
+	width: width@24b902dc-5384-44c6-8748-cf1a3a29ac5d (propref<int>)
+	height: height@24b902dc-5384-44c6-8748-cf1a3a29ac5d (propref<int>)
+	touchShortReleased: touchShortReleased@f0ffc111-ac02-4c3e-8c12-eee62f59c888 (propref<function<bool,int,int,int,int>>)
+}
