@@ -1,0 +1,55 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(55e14253-41b9-45cf-9b61-54644610b978)
+{
+	name: "View 2"
+	template: @40d09d9b-7046-4672-9113-94d0cca6beef (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(9cbb23c5-022a-4fd2-af5d-a5f16b9b1a35)
+		{
+			name: "T_ImageButton 1"
+			template: @08463938-ca8c-46ec-8870-404f60d0c9fa (objectref<GtfContainer_template>)
+			children: children_list []
+			image: image_resource(a166ce21-b3e0-4896-9bf3-b87b62237e72)
+			{
+				file: "icon_template.png"
+			}
+			y: 187
+			x: 174
+			width: width@08463938-ca8c-46ec-8870-404f60d0c9fa (propref<int>)
+			height: height@08463938-ca8c-46ec-8870-404f60d0c9fa (propref<int>)
+			touchPressed: touchPressed@08463938-ca8c-46ec-8870-404f60d0c9fa (propref<function<bool,int,int,int,int>>)
+		}, 
+		GtfContainer_template_instance(80a39331-7313-4f28-83b6-1989847b56ea)
+		{
+			name: "T_TextButton 1"
+			template: @ff730383-4237-40d2-9fb4-f1ee0946d131 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 312
+			y: 187
+			width: width@ff730383-4237-40d2-9fb4-f1ee0946d131 (propref<int>)
+			height: height@ff730383-4237-40d2-9fb4-f1ee0946d131 (propref<int>)
+			text: "Radio"
+			touchPressed: function<bool,int,int,int,int>(a9b979d7-6740-4156-ad9d-d378c18a8cb1)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:goToRadio()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(c53de29c-79b5-4c36-afae-950365487b74)
+		{
+			name: "T_ButtonBase 1"
+			template: @27f718f1-60e5-456d-b1e5-d6ea4f35bccb (objectref<GtfContainer_template>)
+			children: children_list []
+			fillColor: fillColor@27f718f1-60e5-456d-b1e5-d6ea4f35bccb (propref<color>)
+			y: 184
+			x: 551
+			height: height@27f718f1-60e5-456d-b1e5-d6ea4f35bccb (propref<int>)
+			width: width@27f718f1-60e5-456d-b1e5-d6ea4f35bccb (propref<int>)
+			touchPressed: touchPressed@27f718f1-60e5-456d-b1e5-d6ea4f35bccb (propref<function<bool,int,int,int,int>>)
+		}]
+	text: "Main Menu"
+}
