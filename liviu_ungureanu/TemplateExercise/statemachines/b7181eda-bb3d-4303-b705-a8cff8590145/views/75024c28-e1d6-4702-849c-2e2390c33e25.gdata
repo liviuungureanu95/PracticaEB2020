@@ -1,0 +1,66 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(75024c28-e1d6-4702-849c-2e2390c33e25)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(b2621f6a-f766-40a3-b488-99f506309f3a)
+		{
+			name: "T_TextButton 2"
+			template: @ff730383-4237-40d2-9fb4-f1ee0946d131 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 65
+			y: 45
+			width: width@ff730383-4237-40d2-9fb4-f1ee0946d131 (propref<int>)
+			height: height@ff730383-4237-40d2-9fb4-f1ee0946d131 (propref<int>)
+			text: text@ff730383-4237-40d2-9fb4-f1ee0946d131 (propref<string>)
+			touchPressed: function<bool,int,int,int,int>(8e22f079-23b4-4855-af6d-c102886c2b7a)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.text = \"Altceva\"" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(30e0c7d6-a25f-43f2-b21d-dac8ccc7ae2a)
+		{
+			name: "T_TextButton 3"
+			template: @ff730383-4237-40d2-9fb4-f1ee0946d131 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 586
+			y: 57
+			width: width@ff730383-4237-40d2-9fb4-f1ee0946d131 (propref<int>)
+			height: height@ff730383-4237-40d2-9fb4-f1ee0946d131 (propref<int>)
+			text: text@ff730383-4237-40d2-9fb4-f1ee0946d131 (propref<string>)
+			touchPressed: touchPressed@ff730383-4237-40d2-9fb4-f1ee0946d131 (propref<function<bool,int,int,int,int>>)
+		}, 
+		GtfContainer_template_instance(de2b2732-ee7b-4e24-801b-8cb00d0e878c)
+		{
+			name: "T_ImageButton 1"
+			template: @08463938-ca8c-46ec-8870-404f60d0c9fa (objectref<GtfContainer_template>)
+			children: children_list []
+			image: image_resource(6967b77a-8ad3-406b-ae82-23a5e8bfb5c8)
+			{
+				file: "EB.png"
+			}
+			y: 214
+			x: 156
+			width: 178
+			height: 154
+			touchPressed: function<bool,int,int,int,int>(e3906e00-884b-4b0f-b855-2c9cae8a1c86)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.image=dp:Icon" \
+					"    false" \
+					"}"
+			}
+		}]
+	name: "View 1"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 2
+}
