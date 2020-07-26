@@ -12,8 +12,9 @@ GtfContainer_template(916d506a-7383-4782-b745-d607e7224fa2)
 				{
 					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 						"{" \
-						"   " \
-						"    true" \
+						"   v:this.changeColorPressed()" \
+						"   v:this.pressedAction()" \
+						"   false" \
 						"}"
 				}
 			}, 
@@ -23,7 +24,9 @@ GtfContainer_template(916d506a-7383-4782-b745-d607e7224fa2)
 				{
 					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 						"{" \
-						"    false" \
+						"   v:this.changeColorReleased()" \
+						"   v:this.releasedAction()" \
+						"   false" \
 						"}"
 				}
 			}, 
@@ -132,10 +135,11 @@ GtfContainer_template(916d506a-7383-4782-b745-d607e7224fa2)
 							"}"
 					}
 				}
-				fillColor: #000000FF
+				fillColor: #FF4500FF
 				arcWidth: 0
 				centralAngle: 360F
 				sectorRotation: 0F
+				baseColor: #A9A9A9FF
 			}, 
 			GtfLabel(979195ab-679c-4e81-a728-b56efc593eaa)
 			{
@@ -301,7 +305,41 @@ GtfContainer_template(916d506a-7383-4782-b745-d607e7224fa2)
 		height: 125
 		x: 0
 		y: 0
-		hoverColor: #A9A9A9FF
+		pressedColor: #A9A9A9FF
+		changeColorPressed: function<bool>(16bb081e-8743-48c3-b83b-0f1902de41f5)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this->Background.fillColor = v:this.pressedColor" \
+				"	false" \
+				"}"
+		}
+		changeColorReleased: function<bool>(e65d88d9-a833-4577-a1eb-afe6afc13297)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this->Background.fillColor = v:this.releasedColor" \
+				"	true" \
+				"	" \
+				"}"
+		}
+		pressedAction: function<bool>(d72f5fbf-cfae-4bbb-8011-37e29ef5104f)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		releasedAction: function<bool>(4e1b8189-95c1-4ad7-998b-9f1f462c18ea)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		releasedColor: #A9A9A9FF
 	}
 	width: width@09c11c89-6294-4a48-92b8-b23a6df87125 (propref<int>)
 	height: height@09c11c89-6294-4a48-92b8-b23a6df87125 (propref<int>)
@@ -309,7 +347,8 @@ GtfContainer_template(916d506a-7383-4782-b745-d607e7224fa2)
 	y: y@09c11c89-6294-4a48-92b8-b23a6df87125 (propref<int>)
 	text: text@979195ab-679c-4e81-a728-b56efc593eaa (propref<string>)
 	image: image@2a7e8662-5b29-44c6-9df9-dba076dede78 (propref<image>)
-	hoverColor: hoverColor@09c11c89-6294-4a48-92b8-b23a6df87125 (propref<color>)
-	touchShortReleased: touchShortReleased@70e7a49d-4070-4d00-b8ff-7d041beed156 (propref<function<bool,int,int,int,int>>)
-	fillColor: fillColor@c8cf7345-7aad-4365-88da-b191589dcb53 (propref<color>)
+	pressedColor: pressedColor@09c11c89-6294-4a48-92b8-b23a6df87125 (propref<color>)
+	pressedAction: pressedAction@09c11c89-6294-4a48-92b8-b23a6df87125 (propref<function<bool>>)
+	releasedAction: releasedAction@09c11c89-6294-4a48-92b8-b23a6df87125 (propref<function<bool>>)
+	releasedColor: releasedColor@09c11c89-6294-4a48-92b8-b23a6df87125 (propref<color>)
 }
