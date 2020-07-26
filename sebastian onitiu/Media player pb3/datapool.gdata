@@ -1,0 +1,129 @@
+EBGUIDE 6.10.0.200602120856;
+
+dp_items(e6bf9c85-6770-47fc-98c1-c3c214fbf5da)
+{
+	items: dp_item_list [
+		dp<stringlist>(3e96a90f-2a16-4970-9c3b-c905eefc4d9d)
+		{
+			value: stringlist ["Rise up Remix", "911", "Baiana Vacantion"]
+			name: "Melodii"
+		}, 
+		dp<image>(4cb31b38-0678-42c6-b21b-4676f985b14c)
+		{
+			value: image_resource(29f2732d-15a9-4aa0-83f6-6a932f9103db)
+			{
+				file: "64-64-3c541556ef22340382e659ac8a579f69.png"
+			}
+			name: "buton_play"
+		}, 
+		dp<int>(51135aec-e058-4b38-887d-a92de8395728)
+		{
+			value: 3
+			name: "SongsNumber"
+		}, 
+		dp<int>(529f411f-3cec-452e-9c25-8fe3a81dad0c)
+		{
+			value: 0
+			name: "IndexPlaylist"
+		}, 
+		dp<imagelist>(68c63e1e-0313-40d4-b599-4330cf543f31)
+		{
+			value: imagelist [
+				image_resource(fdf18c3f-e509-44bd-8da2-1b86a02c6792)
+				{
+					file: "R-13075656-1547622729-5769.jpeg.jpg"
+				}, 
+				image_resource(8932154c-d7a2-44f4-b505-41db18b935f1)
+				{
+					file: "R-15238592-1588514810-3058.jpeg.jpg"
+				}, 
+				image_resource(e0e76162-6c35-405f-b97b-a1d914d2d64b)
+				{
+					file: "R-14210179-1569925485-9850.jpeg.jpg"
+				}]
+			name: "Cover"
+		}, 
+		dp<stringlist>(a55410c7-8ef0-4717-b2f9-5b7a7c987cee)
+		{
+			value: stringlist ["Yves Larock", "Timmy Trumpet", "Bakermat"]
+			name: "Artisti"
+		}, 
+		dp<string>(bcfef858-f0fc-4bda-a59f-060fff021b99)
+		{
+			value: string_scriptedValue(858bb98d-a28d-420e-8655-18caec6accaf)
+			{
+				triggerList: trigger_list(2a925f40-f5e7-4bf2-bab3-27ca1e2f6bae)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(09bd7065-1be0-4316-a296-4eef082d7ffd)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(70df4d4b-a2fa-45b7-aab4-ab870af3f54c)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:Artisti[dp:IndexPlaylist]" \
+						"}"
+				}
+				write: function<bool,string>(b39ac2f8-3c6b-4467-a7dd-4026dd415ae0)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			name: "ArtistPlayingNOW"
+		}, 
+		dp<image>(cc741f17-c902-4408-840c-7bd5e2324c94)
+		{
+			value: image_resource(15d9a2a5-aa75-48dd-a81f-3584ef5f3fe5)
+			{
+				file: "64-64-10d2a30ffdb0715955f657ec78177331.png"
+			}
+			name: "buton_pause"
+		}, 
+		dp<string>(ebe59d8e-2b1d-467b-97b3-7d59848363ac)
+		{
+			value: string_scriptedValue(7f3801ed-984f-4832-9fc1-1870eeffc7b7)
+			{
+				triggerList: trigger_list(9cfd8b7b-d35a-4c32-a30c-b4a58ef567ac)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(b25c5848-a540-4951-81a3-5305c944e7ce)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(dba62048-d023-472a-b99c-61e7cc0c6b36)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:Melodii[dp:IndexPlaylist]" \
+						"}"
+				}
+				write: function<bool,string>(30715e21-d0b4-4fea-9a31-95d230ae18f2)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			name: "PlayingNOW"
+		}]
+}

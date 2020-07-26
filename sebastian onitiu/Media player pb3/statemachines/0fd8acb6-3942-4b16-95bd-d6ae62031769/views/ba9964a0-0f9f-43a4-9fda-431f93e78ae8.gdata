@@ -1,0 +1,296 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(ba9964a0-0f9f-43a4-9fda-431f93e78ae8)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(e53d9f71-7761-4544-bf92-5f462f2e3738)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "fundal player"
+			visible: true
+			width: 481
+			height: 108
+			x: -1
+			y: 211
+			fillColor: #E6E6FAFF
+		}, 
+		GtfRectangle(daf07792-5254-44c4-a75d-6d8f6414f47c)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Rectangle 5"
+			visible: true
+			width: 150
+			height: 5
+			x: 278
+			y: 70
+			fillColor: #40E0D0FF
+		}, 
+		GtfContainer_template_instance(46781e67-190c-4c9e-8bab-f16b6ba56d1e)
+		{
+			name: "play/pause"
+			template: @b1b24aaa-ed18-4551-ae01-b3eac81b1e1e (objectref<GtfContainer_template>)
+			children: children_list []
+			image: image_scriptedValue(724f6067-5712-468f-9548-db84b4ec260b)
+			{
+				triggerList: trigger_list(41188bd5-738e-41f8-ae4f-6e60f4f88ee8)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(2a41fbba-1ae8-419d-9aec-ce0dc3b20af2)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<image>(eda61842-c59f-421c-a1d9-ead04b2e0386)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						" if(v:this.play==false){" \
+						"		dp:buton_play" \
+						"	}" \
+						"	else{" \
+						"		dp:buton_pause" \
+						"	}" \
+						"}"
+				}
+				write: function<bool,image>(971e300b-455e-4daf-b5f1-2e4cd105f3e7)
+				{
+					script: "function(v:arg0::image)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			scaleMode: scaleMode@b1b24aaa-ed18-4551-ae01-b3eac81b1e1e (propref<int>)
+			touchShortReleased: function<bool,int,int,int,int>(0083b4f3-97ba-471a-b222-2cb17f6d9616)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(v:this.play == true){" \
+					"    	v:this.play = false;" \
+					"    	" \
+					"    }" \
+					"    else{" \
+					"    	v:this.play = true;" \
+					"    }" \
+					"    false" \
+					"}"
+			}
+			width: 83
+			height: 78
+			x: 213
+			y: 232
+			play: true
+			"width 2": 84
+			"height 2": 82
+		}, 
+		GtfLabel(98b6551a-7dc7-4a6e-84b0-4a82f55e81b8)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "artist"
+			visible: true
+			width: 188
+			height: 67
+			x: 258
+			y: 22
+			text: string_scriptedValue(bc39a34f-c0e7-42af-acad-7f85f117ce3a)
+			{
+				triggerList: trigger_list(775e89a1-ca64-43f9-8127-6c5ec94273c1)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(466df476-a2f8-4240-bd2b-389336f10001)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(0da4b3cd-bc2d-45b2-98aa-eb5431ba1cd9)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:Melodii[dp:IndexPlaylist]" \
+						"}"
+				}
+				write: function<bool,string>(65de64f1-1ae6-4713-9377-80e627165e85)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #FFFFFFFF
+			font: font_resource(77e09859-34a0-4a81-a35b-552aab384ae9)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(609d7afc-d9a0-4832-98ea-2b2ac2fb61ed)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "melodie"
+			visible: true
+			width: 158
+			height: 66
+			x: 251
+			y: 80
+			text: string_scriptedValue(d414182d-2287-4e9b-a551-96f48e17ec78)
+			{
+				triggerList: trigger_list(186e77b7-3165-412a-9862-0982aafa6566)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(19189873-d694-4f26-89e5-2daeca1d99dd)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(d86bba73-d89b-4f0c-9cfc-cbdbefcc3bed)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:Artisti[dp:IndexPlaylist]" \
+						"}"
+				}
+				write: function<bool,string>(dc51a655-efd0-4ab5-b8dd-24120b62ab06)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #87CEFAFF
+			font: font_resource(06ff157a-9bd1-462f-8e5b-ec53a87a7835)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 25
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(5e34cf0f-32ba-4510-90c1-7aebb1fc3765)
+		{
+			name: "back_button"
+			template: @b1b24aaa-ed18-4551-ae01-b3eac81b1e1e (objectref<GtfContainer_template>)
+			children: children_list []
+			image: image_resource(af6d0568-6fd5-46a6-97f0-77f886c99665)
+			{
+				file: "64-64-64bc67d5893bcfba395f1312affb6d33-Arrow.png"
+			}
+			scaleMode: scaleMode@b1b24aaa-ed18-4551-ae01-b3eac81b1e1e (propref<int>)
+			touchShortReleased: function<bool,int,int,int,int>(6d451821-74e5-4186-8565-dea6c5f12572)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    v:this->^->\"play/pause\".play = true" \
+					"	if(dp:IndexPlaylist == 0){" \
+					"		dp:IndexPlaylist = dp:SongsNumber - 1" \
+					"	}" \
+					"	else{" \
+					"		dp:IndexPlaylist = dp:IndexPlaylist - 1" \
+					"	}" \
+					"    " \
+					"    false" \
+					"}"
+			}
+			width: width@b1b24aaa-ed18-4551-ae01-b3eac81b1e1e (propref<int>)
+			height: height@b1b24aaa-ed18-4551-ae01-b3eac81b1e1e (propref<int>)
+			x: 83
+			y: 223
+		}, 
+		GtfContainer_template_instance(ddbc7b51-b9a1-468e-84fd-049c3bfd34eb)
+		{
+			name: "forward_button"
+			template: @b1b24aaa-ed18-4551-ae01-b3eac81b1e1e (objectref<GtfContainer_template>)
+			children: children_list []
+			image: image_resource(fb6065ba-8014-4586-9060-c86dd7691368)
+			{
+				file: "64-64-b6e74e8653b46d94c820b3609559711e-Arrow.png"
+			}
+			scaleMode: scaleMode@b1b24aaa-ed18-4551-ae01-b3eac81b1e1e (propref<int>)
+			touchShortReleased: function<bool,int,int,int,int>(1db31cf5-c163-4fb2-ba1b-e10e5a84d7b8)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"     v:this->^->\"play/pause\".play = true" \
+					"	dp:IndexPlaylist = (dp:IndexPlaylist + 1) % dp:SongsNumber" \
+					"    false" \
+					"}"
+			}
+			width: width@b1b24aaa-ed18-4551-ae01-b3eac81b1e1e (propref<int>)
+			height: height@b1b24aaa-ed18-4551-ae01-b3eac81b1e1e (propref<int>)
+			x: 336
+			y: 223
+		}, 
+		GtfContainer_template_instance(483e6d4d-d089-4c5f-990b-445de18630e9)
+		{
+			name: "template cover 1"
+			template: @ec0d7397-963c-4b2a-8f1b-a4188f6abdda (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 0
+			y: 0
+			image: image_scriptedValue(194de1d4-8422-45b8-89c9-0394db259b5f)
+			{
+				triggerList: trigger_list(6770f256-9364-42e3-b8f4-5198869d22ac)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(870bf59b-412c-4c1b-94d6-b0210b93b320)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<image>(7114249c-7cb1-47d8-ad37-228e3eb48b86)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"      dp:Cover[dp:IndexPlaylist]" \
+						"}"
+				}
+				write: function<bool,image>(2902cc7d-2ee2-4776-a470-d370e07771fd)
+				{
+					script: "function(v:arg0::image)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			width: 218
+			height: 210
+		}]
+	name: "View 1"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}
