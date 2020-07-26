@@ -1,0 +1,505 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(5325f6c7-da2e-4ab8-9942-cf9ba7e4916a)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(437774cb-be6d-461b-be10-e202fdd9d0b5)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(7c45a2b9-cfe0-4e28-b108-6d4648ff6002)
+				{
+					features: feature_list [
+						ScaleMode(fda42dd5-f19f-43a1-b0fa-b2d824448212)
+						{
+							scaleMode: 1
+						}]
+					children: children_list [
+						GtfImage_template_instance(495f9657-a07c-44b3-ac27-8e303816ff64)
+						{
+							name: "ButtonImg 1"
+							template: @59a1652a-9468-44d8-924a-c3cff56e0090 (objectref<GtfImage_template>)
+							children: children_list []
+							touchPressed: function<bool,int,int,int,int>(5b05f5f1-b847-49bd-a9ce-505126d6776d)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(f:string2int(v:this->^->^->value.text) < 100)" \
+									"		v:this->^->^->value.text = f:int2string(f:string2int(v:this->^->^->value.text) + 1)" \
+									"    false" \
+									"}"
+							}
+							touchShortReleased: touchShortReleased@59a1652a-9468-44d8-924a-c3cff56e0090 (propref<function<bool,int,int,int,int>>)
+							isPlaying: isPlaying@59a1652a-9468-44d8-924a-c3cff56e0090 (propref<bool>)
+							width: 46
+							height: 42
+							x: 295
+							y: 214
+							image: image_resource(7cf4b62c-1683-4a78-bbce-8312934f92a8)
+							{
+								file: "icons8-plus-math-52.png"
+							}
+							Img: Img@59a1652a-9468-44d8-924a-c3cff56e0090 (propref<image>)
+						}]
+					name: "background"
+					visible: true
+					width: width@5325f6c7-da2e-4ab8-9942-cf9ba7e4916a (propref<int>)
+					height: height@5325f6c7-da2e-4ab8-9942-cf9ba7e4916a (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(691b4b44-3f31-466f-a882-133a891d473e)
+					{
+						file: "bg.jpg"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(79d2487c-6198-4c69-a194-b04ac68fd58a)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "previous"
+					visible: true
+					width: 100
+					height: 56
+					x: 43
+					y: 223
+					text: "previous"
+					textColor: #000000FF
+					font: font_resource(03e1a1d6-7007-496c-8a95-bd068896a348)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 20
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(84d6231e-c045-45c6-817c-37cc03a6d6d4)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "volumeUp"
+					visible: true
+					width: 77
+					height: 40
+					x: 295
+					y: 181
+					text: "volume UP"
+					textColor: #000000FF
+					font: font_resource(7a0830fb-f885-4526-89a0-e7669f61af35)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 20
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(3c8ebb75-2b3d-42bd-8953-79c43c270f67)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "next"
+					visible: true
+					width: 100
+					height: 61
+					x: 373
+					y: 219
+					text: "next"
+					textColor: #000000FF
+					font: font_resource(419a5a6f-aa5c-49e1-bab6-88b4bea9029d)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 20
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(21fa000d-19fc-4369-a318-0ba79ea8c9b1)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "volumeDown"
+					visible: true
+					width: 101
+					height: 40
+					x: 87
+					y: 188
+					text: "volume DOWN"
+					textColor: #000000FF
+					font: font_resource(d2ffe7ac-ca73-4272-8d7d-a975b6a1ed07)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 20
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(148d6fcc-da30-48d6-b183-d62b020ffaa4)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfImage_template_instance(cd85da5c-8750-4267-8492-a0ecab44b30d)
+						{
+							name: "ButtonImg 1"
+							template: @59a1652a-9468-44d8-924a-c3cff56e0090 (objectref<GtfImage_template>)
+							children: children_list []
+							touchPressed: function<bool,int,int,int,int>(4e939f4a-0886-4092-9115-57077c8c5b03)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(f:string2int(v:this->^->^->value.text) >0)" \
+									"		v:this->^->^->value.text = f:int2string(f:string2int(v:this->^->^->value.text) - 1)" \
+									"    false" \
+									"}"
+							}
+							touchShortReleased: touchShortReleased@59a1652a-9468-44d8-924a-c3cff56e0090 (propref<function<bool,int,int,int,int>>)
+							isPlaying: isPlaying@59a1652a-9468-44d8-924a-c3cff56e0090 (propref<bool>)
+							width: 38
+							height: 40
+							x: -61
+							y: -10
+							image: image_resource(cc981e09-a0a2-4e90-bdec-c6fa499b60ec)
+							{
+								file: "icons8-subtract-96.png"
+							}
+							Img: Img@59a1652a-9468-44d8-924a-c3cff56e0090 (propref<image>)
+						}]
+					name: "play/pause"
+					visible: true
+					width: 123
+					height: 55
+					x: 200
+					y: 222
+					text: "play/pause"
+					textColor: #000000FF
+					font: font_resource(c062c030-3b14-4539-81eb-652711678732)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 20
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(7dfba025-836a-4826-8d6c-99998fba2dc6)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "volume"
+					visible: true
+					width: 92
+					height: 68
+					x: 6
+					y: -7
+					text: "Volume :"
+					textColor: #000000FF
+					font: font_resource(ff6260b5-4d83-47ea-a76c-00a8696db509)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 25
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(24d34f21-065a-454f-baf4-d4831ada3432)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "value"
+					visible: true
+					width: 100
+					height: 100
+					x: 90
+					y: -22
+					text: "20"
+					textColor: #000000FF
+					font: font_resource(4b75dd6d-971a-42a8-8ef6-098a310d3e97)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 25
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(6a3324d5-f1f7-4af7-93d9-482b5312df3e)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfImage_template_instance(a6052821-abbe-4e90-9363-b66a4f2a11ce)
+						{
+							name: "PlayButton"
+							template: @59a1652a-9468-44d8-924a-c3cff56e0090 (objectref<GtfImage_template>)
+							children: children_list [
+								GtfImage(da8cf0b4-5aeb-4ceb-a7ed-db0257476c6e)
+								{
+									features: feature_list []
+									children: children_list [
+										GtfImage(020e623f-90c6-4c99-82f5-744c2aa9451b)
+										{
+											features: feature_list []
+											children: children_list [
+												GtfParallelAnimation(857aa761-e35e-42d7-a2d5-47a90e5d369d)
+												{
+													features: feature_list []
+													children: children_list [
+														GtfLinearInterpolationS32(812b43e4-2ed4-4b9f-9379-aa74d1d5606d)
+														{
+															features: feature_list []
+															children: children_list []
+															name: "Linear interpolation curve 1"
+															enabled: true
+															delay: 0
+															duration: 500
+															repeat: 1
+															alternating: false
+															relative: false
+															start: -2
+															end: 180
+															target: x@020e623f-90c6-4c99-82f5-744c2aa9451b (propref<int>)
+														}]
+													name: "Animation 2"
+													enabled: true
+													repeat: 1
+													alternating: false
+													scale: 1F
+													onPlay: function<void,int,bool>(89395504-6ccf-413e-9823-694e39776d64)
+													{
+														script: "function(v:animation_time::int, v:forward::bool)" \
+															"{" \
+															"" \
+															"}"
+													}
+													onPause: function<void,int>(64d40508-0e1e-441c-a1ee-55deb7b793f0)
+													{
+														script: "function(v:animation_time::int)" \
+															"{" \
+															"" \
+															"}"
+													}
+													onTerminate: function<void,int,int>(de7d9a1e-4d7e-4abf-915e-e13a94107e01)
+													{
+														script: "function(v:animation_time::int, v:terminate::int)" \
+															"{" \
+															"" \
+															"}"
+													}
+												}]
+											name: "flash"
+											visible: true
+											width: 100
+											height: 100
+											x: 9
+											y: -11
+											image: image_resource(0223e966-58a1-4f09-b527-9e6c98a9d54a)
+											{
+												file: "flash copy.png"
+											}
+											sRGB: false
+											horizontalAlign: 0
+											verticalAlign: 1
+										}]
+									name: "frame"
+									visible: true
+									width: 213
+									height: 213
+									x: -52
+									y: -43
+									image: image_resource(18a87dd5-a495-4452-b3aa-b40ba0af0d19)
+									{
+										file: "main_frame_p.png"
+									}
+									sRGB: false
+									horizontalAlign: 0
+									verticalAlign: 1
+								}]
+							touchPressed: function<bool,int,int,int,int>(edf4f16e-edc3-4c83-8cef-6c7ed1f49e95)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this.isPlaying = !v:this.isPlaying" \
+									"	if(v:this.isPlaying)" \
+									"		v:this->^->^->status.text = \"playing current song: \" + v:this->^.text" \
+									"	else" \
+									"		v:this->^->^->status.text = \"no music playing\"" \
+									"	" \
+									"	if(v:this.isPlaying)" \
+									"		v:this.image = v:this.imageReplace" \
+									"	else" \
+									"		v:this.image= v:this.Img" \
+									"	f:animation_play(v:this->frame->flash->\"Animation 2\")" \
+									"	" \
+									"    false" \
+									"}"
+							}
+							touchShortReleased: touchShortReleased@59a1652a-9468-44d8-924a-c3cff56e0090 (propref<function<bool,int,int,int,int>>)
+							isPlaying: isPlaying@59a1652a-9468-44d8-924a-c3cff56e0090 (propref<bool>)
+							width: 100
+							height: 100
+							x: 185
+							y: 117
+							image: image_resource(f1092973-ef7f-447b-8772-23226639276f)
+							{
+								file: "play.png"
+							}
+							Img: Img@59a1652a-9468-44d8-924a-c3cff56e0090 (propref<image>)
+							imageReplace: image_resource(c36c0026-f13c-44b1-83b9-f2a6272355e0)
+							{
+								file: "stop.png"
+							}
+						}, 
+						GtfImage_template_instance(541df1d7-2616-476a-911f-68dd3b31fdee)
+						{
+							name: "PreviousButton"
+							template: @59a1652a-9468-44d8-924a-c3cff56e0090 (objectref<GtfImage_template>)
+							children: children_list []
+							touchPressed: touchPressed@59a1652a-9468-44d8-924a-c3cff56e0090 (propref<function<bool,int,int,int,int>>)
+							touchShortReleased: function<bool,int,int,int,int>(8f3adee5-c558-4167-9871-8bfe6c6879f8)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(dp:n>0){" \
+									"	dp:CurrentSong = dp:SongTitles[dp:n-1]" \
+									"	dp:n = dp:n -1" \
+									"	v:this->^->\"PlayButton\".image = v:this->^->\"PlayButton\".imageReplace" \
+									"			v:this->^->\"PlayButton\".isPlaying = true" \
+									"	if(v:this->^->\"PlayButton\".isPlaying)" \
+									"				v:this->^->^->status.text =\"playing current song: \" + v:this->^.text " \
+									"			" \
+									"	}" \
+									"	else" \
+									"		dp:n = length dp:SongTitles" \
+									"    false" \
+									"}"
+							}
+							isPlaying: isPlaying@59a1652a-9468-44d8-924a-c3cff56e0090 (propref<bool>)
+							width: 66
+							height: 65
+							x: 29
+							y: 138
+							image: image_resource(da615300-bdd4-4069-ba08-e8d485eebe93)
+							{
+								file: "previous.png"
+							}
+							Img: Img@59a1652a-9468-44d8-924a-c3cff56e0090 (propref<image>)
+							ImgtoReplace: image_resource(b1329ca1-be71-4ce7-9df7-ba5084cec3fa)
+							{
+								file: "play.png"
+							}
+						}, 
+						GtfImage_template_instance(ce148d97-616b-4691-abb7-2b1eb97435d7)
+						{
+							name: "NextButton"
+							template: @59a1652a-9468-44d8-924a-c3cff56e0090 (objectref<GtfImage_template>)
+							children: children_list []
+							touchPressed: touchPressed@59a1652a-9468-44d8-924a-c3cff56e0090 (propref<function<bool,int,int,int,int>>)
+							touchShortReleased: function<bool,int,int,int,int>(8175dc9f-de7f-4404-967a-0fbb790b9638)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	" \
+									"	if(dp:n<length dp:SongTitles)" \
+									"			{" \
+									"			v:this->^->\"PlayButton\".image = v:this->^->\"PlayButton\".imageReplace" \
+									"			v:this->^->\"PlayButton\".isPlaying = true" \
+									"			dp:CurrentSong = dp:SongTitles[dp:n]" \
+									"			dp:n = dp:n + 1" \
+									"			if(v:this->^->\"PlayButton\".isPlaying)" \
+									"				v:this->^->^->status.text =\"playing current song: \" + v:this->^.text " \
+									"			}" \
+									"	else" \
+									"		dp:n = 0" \
+									"			" \
+									"    false" \
+									"}"
+							}
+							isPlaying: isPlaying@59a1652a-9468-44d8-924a-c3cff56e0090 (propref<bool>)
+							width: 66
+							height: 65
+							x: 375
+							y: 130
+							image: image_resource(bfc33e29-e414-43d1-94b2-4ce989d0dbd0)
+							{
+								file: "next.png"
+							}
+							Img: image_resource(ea970c91-e3d6-48ed-a446-14bdde952da5)
+							{
+								file: "stop.png"
+							}
+						}, 
+						GtfImage_template_instance(d374ad5c-ebd3-4497-b9a2-2bb45c418d93)
+						{
+							name: "ButtonImg 1"
+							template: @59a1652a-9468-44d8-924a-c3cff56e0090 (objectref<GtfImage_template>)
+							children: children_list []
+							touchPressed: function<bool,int,int,int,int>(0cd4f721-79c8-4ea0-b40c-04defdafa66d)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire_delayed 1000, ev:shutDown()" \
+									"    false" \
+									"}"
+							}
+							touchShortReleased: touchShortReleased@59a1652a-9468-44d8-924a-c3cff56e0090 (propref<function<bool,int,int,int,int>>)
+							isPlaying: isPlaying@59a1652a-9468-44d8-924a-c3cff56e0090 (propref<bool>)
+							width: 51
+							height: 52
+							x: 404
+							y: 5
+							image: image_resource(9320d4b3-653c-4d24-827b-97fd94406c88)
+							{
+								file: "icons8-hibernate-100.png"
+							}
+							Img: Img@59a1652a-9468-44d8-924a-c3cff56e0090 (propref<image>)
+						}]
+					name: "title"
+					visible: true
+					width: width@5325f6c7-da2e-4ab8-9942-cf9ba7e4916a (propref<int>)
+					height: 100
+					x: 2
+					y: 0
+					text: @7b400e9f-9160-46a7-9e8d-1bf74a379529 (objectref<string>)
+					textColor: #000000FF
+					font: font_resource(6e752ed7-ef4b-4aad-9aec-5906239b3bfe)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(a3e4adaf-5bab-4e48-a409-4f65a71d76a9)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "status"
+					visible: true
+					width: 462
+					height: 33
+					x: 14
+					y: 284
+					text: "no music playing"
+					textColor: #000000FF
+					font: font_resource(e36cc2b3-332a-4d69-9459-1404d940951d)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 20
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "Rectangle 2"
+			visible: true
+			width: width@5325f6c7-da2e-4ab8-9942-cf9ba7e4916a (propref<int>)
+			height: height@5325f6c7-da2e-4ab8-9942-cf9ba7e4916a (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #FFFFFFFF
+		}]
+	name: "View 1"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}

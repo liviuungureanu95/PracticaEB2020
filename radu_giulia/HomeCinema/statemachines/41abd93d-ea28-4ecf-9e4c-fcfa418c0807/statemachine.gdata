@@ -1,0 +1,83 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_statemachine(41abd93d-ea28-4ecf-9e4c-fcfa418c0807)
+{
+	x: 0
+	y: 0
+	width: 689
+	height: 454
+	name: "Main"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions []
+	internal_transitions: haptic_internal_transitions []
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(58cffe64-d858-4773-a52b-2d0faf2e1ec2)
+		{
+			x: 187
+			y: 32
+			width: 100
+			height: 100
+			name: "PlayerState"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions [
+				haptic_transition(4384646e-ea2f-45c8-9036-d8feab197c3f)
+				{
+					action: function<void>(none)
+					target_state: @073e225a-0e75-4d35-8e34-117182d4bf5f (objectref<haptic_dialog_state>)
+					source_dock: 0.2066859F
+					target_dock: 0.7921829F
+					curveControlXOffset: 0
+					curveControlYOffset: 0
+					labelXOffset: 10
+					labelYOffset: -10
+					labelRotationAngle: 0
+					event: @3d20a937-5596-4ada-a9fa-9c019298dda8 (objectref<event>)
+					condition: function<bool>(none)
+				}]
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (5325f6c7-da2e-4ab8-9942-cf9ba7e4916a)
+			priority_stack: priority_stack(none)
+		}, 
+		haptic_dialog_state(073e225a-0e75-4d35-8e34-117182d4bf5f)
+		{
+			x: 415
+			y: 31
+			width: 100
+			height: 100
+			name: "ShutDownState"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (11b1c4de-2b1d-4313-810a-eb76a742f9a4)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(4caf0bcf-4148-4428-a941-04d373ac087a)
+	{
+		x: 38
+		y: 43
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(1d8fcbc1-ffa9-4354-adc1-acb292fb990d)
+		{
+			action: function<void>(none)
+			target_state: @58cffe64-d858-4773-a52b-2d0faf2e1ec2 (objectref<haptic_dialog_state>)
+			source_dock: 0.2150473F
+			target_dock: 0.8237918F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(none)
+}
