@@ -1,0 +1,234 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(925a9af3-6f0d-4e9b-8979-a273382d788b)
+{
+	name: "IconButton"
+	structure: GtfContainer(314da36d-64a8-4724-98bb-a5e9acb457b0)
+	{
+		features: feature_list [
+			TouchShortReleased(60148a2a-a4ea-429c-ba2b-eb74ed5581c9)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(d1a2e969-884b-41c6-a0da-f3253efc4c30)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.OnReleaseAnimation()" \
+						"	v:this.OnReleaseAction()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(90f2b7b3-4659-4fb8-885a-c95593cc47e2)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			TouchPressed(28cb1d4a-55b1-45a2-9580-2a90ee7e2737)
+			{
+				touchPressed: function<bool,int,int,int,int>(6664ba57-e2ad-4c24-8d06-8eb8cf729c84)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.OnPressAnimation()" \
+						"    false" \
+						"}"
+				}
+			}]
+		children: children_list [
+			GtfEllipse(49150d15-9686-4149-b28b-07831419825b)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Ellipse 4"
+				visible: true
+				width: width@314da36d-64a8-4724-98bb-a5e9acb457b0 (propref<int>)
+				height: height@314da36d-64a8-4724-98bb-a5e9acb457b0 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: CurrentColor@314da36d-64a8-4724-98bb-a5e9acb457b0 (propref<color>)
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}, 
+			GtfImage(76ef7d51-9cf6-4b14-8ed2-f57e7d4a2eea)
+			{
+				features: feature_list [
+					ScaleMode(3a2f519b-474f-4c60-8ac4-560119ba8b19)
+					{
+						scaleMode: 2
+					}]
+				children: children_list []
+				name: "Image 4"
+				visible: true
+				width: int_scriptedValue(6e0eceba-96f7-4125-a98f-450184fe68f0)
+				{
+					triggerList: trigger_list(bcf64813-ff0c-49ab-941d-2deb0515a885)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(33317f6a-610d-42df-aa50-e975dc03535c)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(98a10b74-26ce-4459-9ca0-6de88a5a55a1)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.width * 9 / 10" \
+							"}"
+					}
+					write: function<bool,int>(473fb7a6-3446-4999-9e31-b7ffdeceea09)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				height: int_scriptedValue(a558159b-7c1e-4532-bcbb-3ffab48af7dc)
+				{
+					triggerList: trigger_list(ae6d2b50-53bf-409d-b5cd-cb15f01a8831)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(3e828ea9-c790-417b-b852-c50aa0248e4e)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(31666c35-2613-409d-8ae5-25a052fcd1cb)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.height * 9 / 10" \
+							"}"
+					}
+					write: function<bool,int>(1ba25caf-1d11-46e9-80f9-48bbe82a3532)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				x: int_scriptedValue(01bc69ff-d819-4a49-ae4f-f73e7fb36028)
+				{
+					triggerList: trigger_list(ba3a2b74-fb46-4304-b9ae-2357faf0da0d)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(ae0f41de-6daa-4ef1-8424-4596d1d9ee7a)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(40128ca9-ac91-4d18-b4d9-d4bf45387c3b)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.width * 1 / 20" \
+							"}"
+					}
+					write: function<bool,int>(a34041e4-7149-4995-a714-a351162e1860)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				y: int_scriptedValue(050482ad-9bd4-4f2b-acb0-9daa8a0f9e00)
+				{
+					triggerList: trigger_list(8f3acfec-df46-458a-ac20-a32319d51147)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(f3473e66-06fe-430d-9494-8c147d5e4ff5)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(6e577d6b-0f11-4b3d-9a90-cc5a6ee5d7c2)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.height * 1 / 20" \
+							"}"
+					}
+					write: function<bool,int>(702078a5-d7ca-4d46-aa40-f0c084768b23)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				image: image_resource(9abe79d2-5b2f-4fab-97d8-39536023577e)
+				{
+					file: "play.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "Container"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		OnReleaseAction: function<bool>(136dbee0-e919-483c-bf6c-dd522ac04084)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		OnPressAnimation: function<bool>(4a8905e1-7d48-461a-b5d2-cbc4a21f0487)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.CurrentColor = v:this.Colors[1]" \
+				"	false" \
+				"}"
+		}
+		OnReleaseAnimation: function<bool>(805babe8-20b4-48b4-8fc6-41c474744912)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.CurrentColor = v:this.Colors[0]" \
+				"	false" \
+				"}"
+		}
+		Colors: colorlist [#708090FF, #B0C4DEFF, #0000FFFF]
+		CurrentColor: #A9A9A9FF
+	}
+	width: width@314da36d-64a8-4724-98bb-a5e9acb457b0 (propref<int>)
+	x: x@314da36d-64a8-4724-98bb-a5e9acb457b0 (propref<int>)
+	y: y@314da36d-64a8-4724-98bb-a5e9acb457b0 (propref<int>)
+	height: height@314da36d-64a8-4724-98bb-a5e9acb457b0 (propref<int>)
+	OnReleaseAction: OnReleaseAction@314da36d-64a8-4724-98bb-a5e9acb457b0 (propref<function<bool>>)
+	Colors: Colors@314da36d-64a8-4724-98bb-a5e9acb457b0 (propref<colorlist>)
+	CurrentColor: CurrentColor@314da36d-64a8-4724-98bb-a5e9acb457b0 (propref<color>)
+	visible: visible@314da36d-64a8-4724-98bb-a5e9acb457b0 (propref<bool>)
+}

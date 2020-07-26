@@ -1,0 +1,65 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_compound_state(b4d3a777-7d0f-4aa4-b7df-538cb992f5a4)
+{
+	x: 806
+	y: 234
+	width: 600
+	height: 400
+	name: "Programs"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions []
+	internal_transitions: haptic_internal_transitions []
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(07a7451f-ce9b-49fd-a0f3-bef30b9b3e5f)
+		{
+			x: 185
+			y: 83
+			width: 100
+			height: 100
+			name: "View state 5"
+			entry_action: function<void>(49545c1b-3cbc-4dee-be86-912226698fee)
+			{
+				script: "function()" \
+					"{" \
+					"	match_event v:event = ev:goTo_Program in{" \
+					"		dp:SelectedProgramName = v:event.Name" \
+					"		dp:SelectedProgramDuration = v:event.Time" \
+					"		dp:RemainingTime = v:event.Time" \
+					"	}" \
+					"		" \
+					"}"
+			}
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (150d7d55-3ea7-4c02-813f-624917dd3055)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(88aa0a65-76d4-4a09-aa3f-e2f06603a3fe)
+	{
+		x: 37
+		y: 112
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(93b3a250-8bca-48dc-96c5-044265738cd6)
+		{
+			action: function<void>(none)
+			target_state: @07a7451f-ce9b-49fd-a0f3-bef30b9b3e5f (objectref<haptic_dialog_state>)
+			source_dock: 0.235571F
+			target_dock: 0.8053955F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(none)
+}
