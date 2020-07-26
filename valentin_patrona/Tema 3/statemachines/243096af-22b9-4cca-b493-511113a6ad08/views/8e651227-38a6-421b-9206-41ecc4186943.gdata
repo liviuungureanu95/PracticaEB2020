@@ -1,0 +1,98 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(8e651227-38a6-421b-9206-41ecc4186943)
+{
+	name: "View 1"
+	template: @574e06e5-3681-490a-94e9-749d6548dc14 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(6fd90fef-5492-4312-9ab0-43fd88d616ea)
+		{
+			name: "Button_Play_Stop"
+			template: @c7f46314-8f5a-4e30-ad08-23ff2a7d65f0 (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfContainer_template_instance(9bcdc48b-8a13-4f50-8e1c-3fb2c2f1cf5f)
+				{
+					name: "Button_Back"
+					template: @c7f46314-8f5a-4e30-ad08-23ff2a7d65f0 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 129
+					y: y@6fd90fef-5492-4312-9ab0-43fd88d616ea (propref<int>)
+					width: width@c7f46314-8f5a-4e30-ad08-23ff2a7d65f0 (propref<int>)
+					height: height@c7f46314-8f5a-4e30-ad08-23ff2a7d65f0 (propref<int>)
+					"x 2": "x 2"@c7f46314-8f5a-4e30-ad08-23ff2a7d65f0 (propref<int>)
+					"y 2": "y 2"@c7f46314-8f5a-4e30-ad08-23ff2a7d65f0 (propref<int>)
+					image: image_resource(45045ee0-67cf-4551-a732-a9e9403b6ca9)
+					{
+						file: "fast-backwords.png"
+					}
+					touchShortReleased: function<bool,int,int,int,int>(12a4fd90-9d2e-4b60-ae26-6bf4b6f2aa9c)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:Contor<=0)" \
+							"	{" \
+							"		dp:Contor=6;" \
+							"	}" \
+							"	else" \
+							"	{dp:Contor-=1}" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(0bcb3da9-7cc2-4682-918a-8affb50b4d54)
+				{
+					name: "Button_Next"
+					template: @c7f46314-8f5a-4e30-ad08-23ff2a7d65f0 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 302
+					y: y@6fd90fef-5492-4312-9ab0-43fd88d616ea (propref<int>)
+					width: width@c7f46314-8f5a-4e30-ad08-23ff2a7d65f0 (propref<int>)
+					height: height@c7f46314-8f5a-4e30-ad08-23ff2a7d65f0 (propref<int>)
+					"x 2": "x 2"@c7f46314-8f5a-4e30-ad08-23ff2a7d65f0 (propref<int>)
+					"y 2": "y 2"@c7f46314-8f5a-4e30-ad08-23ff2a7d65f0 (propref<int>)
+					image: image_resource(865031b0-4a63-4f19-b873-5b9ce9d616d5)
+					{
+						file: "fast-forward.png"
+					}
+					touchShortReleased: function<bool,int,int,int,int>(bfb69b87-137c-44ce-8f3f-caec51a542ee)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:Contor>=7)" \
+							"	{" \
+							"		dp:Contor=0;" \
+							"	}" \
+							"	else" \
+							"	{dp:Contor+=1}" \
+							"    false" \
+							"}"
+					}
+				}]
+			x: 217
+			y: 254
+			width: width@c7f46314-8f5a-4e30-ad08-23ff2a7d65f0 (propref<int>)
+			height: height@c7f46314-8f5a-4e30-ad08-23ff2a7d65f0 (propref<int>)
+			"x 2": "x 2"@c7f46314-8f5a-4e30-ad08-23ff2a7d65f0 (propref<int>)
+			"y 2": "y 2"@c7f46314-8f5a-4e30-ad08-23ff2a7d65f0 (propref<int>)
+			image: image@c7f46314-8f5a-4e30-ad08-23ff2a7d65f0 (propref<image>)
+			touchShortReleased: function<bool,int,int,int,int>(7d53daae-94e4-4cc3-8d46-36a0286612d1)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(dp:\"Stop/Resume\")" \
+					"	{" \
+					"		v:this.image=dp:Stop" \
+					"		dp:\"Stop/Resume\"=false" \
+					"	}" \
+					"	else" \
+					"	{" \
+					"		v:this.image=dp:Resume" \
+					"		dp:\"Stop/Resume\"=true		" \
+					"	}" \
+					"   false" \
+					"}"
+			}
+		}]
+	width: 480
+	height: 320
+}

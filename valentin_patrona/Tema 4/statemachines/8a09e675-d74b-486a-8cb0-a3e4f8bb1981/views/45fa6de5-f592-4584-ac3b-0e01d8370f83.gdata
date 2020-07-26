@@ -1,0 +1,301 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(45fa6de5-f592-4584-ac3b-0e01d8370f83)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(5ba00920-21a3-46a3-b659-d893cc71d426)
+		{
+			features: feature_list [
+				ScaleMode(40d6134d-13fb-44c4-a237-ae4246d79340)
+				{
+					scaleMode: 1
+				}]
+			children: children_list [
+				GtfContainer_template_instance(02bd6c4c-9823-4d89-ae2f-1e5e630bb70b)
+				{
+					name: "VolumeUp"
+					template: @34f32ef5-4fce-41d3-8d48-67086c0bd383 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 45
+					y: 108
+					image: image_resource(9c8fefd0-48b0-4084-9a50-574e396f9d95)
+					{
+						file: "volume-up.png"
+					}
+					touchShortReleased: function<bool,int,int,int,int>(dc1c4be3-b4af-4f7f-9760-8d2b6e2f8184)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:Volume>=100)" \
+							"	{" \
+							"		dp:Volume=100" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"		dp:Volume+=1" \
+							"	}" \
+							"    false" \
+							"}"
+					}
+					"touchShortReleased 2": function<bool,int,int,int,int>(0e8992e5-21cf-4be2-b0c8-1a53af16adb4)
+					{
+						script: "function(v:arg0::int, v:arg1::int, v:arg2::int, v:arg3::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	if(dp:Volume>=100)" \
+							"	{" \
+							"		dp:Volume=100" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"		dp:Volume+=1" \
+							"	}" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(f293baec-1ea9-4433-b57f-448b5d7804d9)
+				{
+					name: "ShutDown"
+					template: @34f32ef5-4fce-41d3-8d48-67086c0bd383 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 45
+					y: 235
+					image: image@34f32ef5-4fce-41d3-8d48-67086c0bd383 (propref<image>)
+					touchShortReleased: function<bool,int,int,int,int>(e80a4aad-97c2-43ba-a46b-dfa8c243b8ec)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    if(dp:Volume<=0)" \
+							"	{" \
+							"		dp:Volume=0" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"		dp:Volume-=1" \
+							"	}" \
+							"    false" \
+							"}"
+					}
+					"touchShortReleased 2": function<bool,int,int,int,int>(52c74eb3-e606-43e1-b34f-183d60f11155)
+					{
+						script: "function(v:arg0::int, v:arg1::int, v:arg2::int, v:arg3::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	if(dp:Volume<=0)" \
+							"	{" \
+							"		dp:Volume=0" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"		dp:Volume-=1" \
+							"	}" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(f506cd4f-609a-477c-8754-237420522efc)
+				{
+					name: "VolumeDown"
+					template: @34f32ef5-4fce-41d3-8d48-67086c0bd383 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 416
+					y: 20
+					image: image_resource(9c73a7f9-c200-42be-9382-c35ad71e251d)
+					{
+						file: "power-button.png"
+					}
+					touchShortReleased: function<bool,int,int,int,int>(40d10238-09c6-430f-951f-9e53ba4e09e4)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:ShuttingDown()" \
+							"    false" \
+							"}"
+					}
+					"touchShortReleased 2": function<bool,int,int,int,int>(797b2259-bf9f-46ae-a362-b4c5d065513c)
+					{
+						script: "function(v:arg0::int, v:arg1::int, v:arg2::int, v:arg3::int)" \
+							"{" \
+							"	fire ev:ShuttingDown()" \
+							"	false" \
+							"}"
+					}
+				}, 
+				GtfLabel(aa09bca5-455d-474c-980a-2bfbb91f21b9)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(52949ae6-93e1-4492-aa66-bb779987fb0a)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Label_Film"
+							visible: true
+							width: 293
+							height: 100
+							x: 156
+							y: 0
+							text: string_scriptedValue(85230e07-896a-4ae0-9ac5-62405d359734)
+							{
+								triggerList: trigger_list(b41259b3-e53b-435a-98c8-21685c1d32bd)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(656fce65-e572-425f-ab7c-b1ab80a53edf)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<string>(c64c72b8-0b66-4b74-bc83-99746bf08fdc)
+								{
+									script: "function()" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	dp:ListaFilme[dp:Contor]" \
+										"	" \
+										"}"
+								}
+								write: function<bool,string>(d6edc557-91c2-481d-b0a0-cda19b2dd127)
+								{
+									script: "function(v:arg0::string)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							textColor: #FFFFFFFF
+							font: font_resource(69a9f456-c522-4f40-8aef-111bf3ec0e37)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Lable_Volum"
+					visible: true
+					width: 149
+					height: 100
+					x: 30
+					y: 141
+					text: string_scriptedValue(bf5ee095-d6f0-4cfc-9a9a-491ca35accf2)
+					{
+						triggerList: trigger_list(e93cfd3f-e83b-4b59-a784-d46728c3345e)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(5bcbfa04-3fec-4de5-aa94-37ad85038dd0)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(80c1125d-a73c-4d48-b3b1-ec8a4e1b13e3)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	\"Volume: \"+" \
+								"	f:int2string(dp:Volume)" \
+								"	" \
+								"}"
+						}
+						write: function<bool,string>(0841efe9-bcae-442c-92ea-89990858fbe3)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(84198eb4-829f-4141-b978-4451066b569d)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(e5ef5d14-1466-4935-b3d7-1bda62343713)
+				{
+					name: "MovieBack"
+					template: @34f32ef5-4fce-41d3-8d48-67086c0bd383 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 255
+					y: 235
+					image: image_resource(543873fb-b8e1-4d28-99ff-e5aab1325d38)
+					{
+						file: "backward.png"
+					}
+					touchShortReleased: function<bool,int,int,int,int>(7b4389bc-f805-40f3-bf91-99cb71d61d71)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    if(dp:Contor<=0)" \
+							"    {}" \
+							"    else" \
+							"    {" \
+							"    	dp:Contor-=1" \
+							"    }" \
+							"    false" \
+							"}"
+					}
+					"touchShortReleased 2": "touchShortReleased 2"@34f32ef5-4fce-41d3-8d48-67086c0bd383 (propref<function<bool,int,int,int,int>>)
+				}, 
+				GtfContainer_template_instance(e33fff7c-cdfe-4df7-affe-5488f19195fd)
+				{
+					name: "MovieNext"
+					template: @34f32ef5-4fce-41d3-8d48-67086c0bd383 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 373
+					y: 235
+					image: image_resource(cafb3a2f-6505-401e-a4b3-8d3145b49783)
+					{
+						file: "forwards.png"
+					}
+					touchShortReleased: function<bool,int,int,int,int>(6bac4357-a4fd-44ae-906f-45e3ee8e334d)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"     if(dp:Contor>=3)" \
+							"    {}" \
+							"    else" \
+							"    {" \
+							"    	dp:Contor+=1" \
+							"    }" \
+							"    false" \
+							"}"
+					}
+					"touchShortReleased 2": "touchShortReleased 2"@34f32ef5-4fce-41d3-8d48-67086c0bd383 (propref<function<bool,int,int,int,int>>)
+				}]
+			name: "Image 1"
+			visible: true
+			width: width@45fa6de5-f592-4584-ac3b-0e01d8370f83 (propref<int>)
+			height: height@45fa6de5-f592-4584-ac3b-0e01d8370f83 (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(1da2ba69-5283-4c00-9585-0819ef97132a)
+			{
+				file: "2320108.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "View 1"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}
