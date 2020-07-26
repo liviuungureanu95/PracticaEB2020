@@ -1,0 +1,101 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(dc87c67c-7435-416c-a134-d529561a8e8e)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(d7ded1b0-1b79-4949-869e-30523b1b91c0)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "view i. eco"
+			visible: true
+			width: 90
+			height: 74
+			x: 96
+			y: 153
+			image: image_resource(cd6bf5ae-8b14-477d-84e4-dfd579bc904c)
+			{
+				file: "b.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(89566cc0-6176-4aa9-adcb-e281631dbf2b)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "view p. eco"
+			visible: true
+			width: 526
+			height: 100
+			x: 194
+			y: 143
+			text: "Ati selectat programul de spalare econom si bumbac"
+			textColor: #FFFFFFFF
+			font: font_resource(4b3b46ab-a153-4b29-913d-3e4a562957a5)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfRectangle(3a0d3770-c55b-4782-a4f6-68ab741cbe3c)
+		{
+			features: feature_list [
+				TouchPressed(7305fd33-5aaa-46e5-9760-7d1fbca06dad)
+				{
+					touchPressed: function<bool,int,int,int,int>(bfbbfbad-8d6b-4f82-b18f-f981e5244c53)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:go_home()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(404a77dd-62e0-407b-b802-02128d48bdec)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfLabel(0215ebaa-f077-4925-a279-9db5afd966e5)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 8"
+					visible: true
+					width: 169
+					height: 52
+					x: 32
+					y: 4
+					text: "Inapoi In Meniu"
+					textColor: #FFFFFFFF
+					font: font_resource(fffd295e-e5d3-4a49-a318-939d5d437632)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "buton back 2"
+			visible: true
+			width: 219
+			height: 60
+			x: 522
+			y: 398
+			fillColor: #A9A9A9FF
+		}]
+	name: "View 3"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: -1
+}
