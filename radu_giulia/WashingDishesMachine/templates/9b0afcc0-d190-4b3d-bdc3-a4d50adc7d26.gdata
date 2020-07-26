@@ -1,0 +1,89 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(9b0afcc0-d190-4b3d-bdc3-a4d50adc7d26)
+{
+	name: "ButtonP"
+	structure: GtfContainer(b2b149fb-93d7-4061-9d14-b5b5c70d6946)
+	{
+		features: feature_list [
+			TouchPressed(1de7be18-1ee9-4e8a-b9e7-4e06b66ac948)
+			{
+				touchPressed: function<bool,int,int,int,int>(ad85ec84-689f-42f6-a2bb-94b256f58b69)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	fire_delayed 100, ev:quick()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(1219683f-619e-4b4e-96bf-c2aa092b7eb9)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(94fc0097-3562-4111-9b1a-9fd62bcd72ec)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(471f05e4-f09b-4209-87a0-babcb1c62e69)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfEllipse(f807d29a-2d0c-44a3-b221-1a6982a7fb08)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Ellipse 1"
+				visible: true
+				width: 125
+				height: 124
+				x: 0
+				y: 0
+				fillColor: #AFEEEEFF
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}, 
+			GtfImage(22e8dacf-e57c-4a2f-a911-c0ce47fb7113)
+			{
+				features: feature_list [
+					ScaleMode(c5431a91-54e0-4e65-bc87-1c30c2c2d270)
+					{
+						scaleMode: 2
+					}]
+				children: children_list []
+				name: "Image 1"
+				visible: true
+				width: 100
+				height: 100
+				x: 11
+				y: 13
+				image: image_resource(7be0cd43-9efd-4a6d-bb25-7b9178c6e07c)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container 1"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+	}
+	width: width@b2b149fb-93d7-4061-9d14-b5b5c70d6946 (propref<int>)
+	height: height@b2b149fb-93d7-4061-9d14-b5b5c70d6946 (propref<int>)
+	x: x@b2b149fb-93d7-4061-9d14-b5b5c70d6946 (propref<int>)
+	y: y@b2b149fb-93d7-4061-9d14-b5b5c70d6946 (propref<int>)
+	touchPressed: touchPressed@1de7be18-1ee9-4e8a-b9e7-4e06b66ac948 (propref<function<bool,int,int,int,int>>)
+	touchShortReleased: touchShortReleased@1219683f-619e-4b4e-96bf-c2aa092b7eb9 (propref<function<bool,int,int,int,int>>)
+	image: image@22e8dacf-e57c-4a2f-a911-c0ce47fb7113 (propref<image>)
+}
