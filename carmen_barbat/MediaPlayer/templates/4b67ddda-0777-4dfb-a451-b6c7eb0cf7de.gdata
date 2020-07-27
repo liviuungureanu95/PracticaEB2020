@@ -1,0 +1,71 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(4b67ddda-0777-4dfb-a451-b6c7eb0cf7de)
+{
+	name: "Button"
+	structure: GtfContainer(3b9f1447-1c71-4c31-9cbd-80e473b4d76f)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(14c6cb5a-36ce-4170-9978-5708489e8fac)
+			{
+				features: feature_list [
+					TouchShortReleased(174594ba-e0fb-424b-b1b8-7bc71b3a36cb)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(d42c7476-6389-4ebd-9985-6769d0f9abd2)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(b009e0ad-c979-4c95-8371-b491a4da1886)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@3b9f1447-1c71-4c31-9cbd-80e473b4d76f (propref<int>)
+				height: height@3b9f1447-1c71-4c31-9cbd-80e473b4d76f (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+			}, 
+			GtfLabel(43f0320a-e97c-4cdc-9e2d-93b2023834d9)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label 5"
+				visible: true
+				width: width@3b9f1447-1c71-4c31-9cbd-80e473b4d76f (propref<int>)
+				height: 100
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(c3e5b9c9-5e04-421a-a0b8-c565331ee743)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container 1"
+		visible: true
+		width: 150
+		height: 100
+		x: 0
+		y: 0
+	}
+	x: x@3b9f1447-1c71-4c31-9cbd-80e473b4d76f (propref<int>)
+	y: y@3b9f1447-1c71-4c31-9cbd-80e473b4d76f (propref<int>)
+	text: text@43f0320a-e97c-4cdc-9e2d-93b2023834d9 (propref<string>)
+	touchShortReleased: touchShortReleased@174594ba-e0fb-424b-b1b8-7bc71b3a36cb (propref<function<bool,int,int,int,int>>)
+	fillColor: fillColor@14c6cb5a-36ce-4170-9978-5708489e8fac (propref<color>)
+}
