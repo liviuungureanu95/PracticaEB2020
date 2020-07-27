@@ -1,0 +1,155 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(a4ac2f8a-9b99-43e7-837f-b0e48e417d37)
+{
+	name: "view main menu"
+	template: @ac21928c-0a05-4c10-9239-14c3906d76fd (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(12ab7f04-2902-477e-aa33-e46e3cedddc2)
+		{
+			name: "T_Turn Off Button"
+			template: @5f3e5a7a-a2e4-4464-8c81-4905e253980a (objectref<GtfContainer_template>)
+			children: children_list []
+			image: image_resource(b8c9a9c4-9847-476a-9c61-3a57123a0864)
+			{
+				file: "turn_off .png"
+			}
+			x: 420
+			y: 10
+			touchPressed: function<bool,int,int,int,int>(65127b81-845b-4121-8c0f-0169f444db68)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire_delayed 500, ev:turn_off_system()" \
+					"	true" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(dcdd9ce8-3f73-44bb-83c0-124183e6ce40)
+		{
+			name: "T_Play/Pause Button"
+			template: @86df7f52-ab5a-4406-9427-eb6484feea22 (objectref<GtfContainer_template>)
+			children: children_list []
+			image: image_resource(319bb176-df64-4cbd-a301-c4b231f1d652)
+			{
+				file: "play.png"
+			}
+			x: 170
+			y: 200
+			horizontalAlign: horizontalAlign@86df7f52-ab5a-4406-9427-eb6484feea22 (propref<int>)
+			verticalAlign: verticalAlign@86df7f52-ab5a-4406-9427-eb6484feea22 (propref<int>)
+			fillColor: fillColor@86df7f52-ab5a-4406-9427-eb6484feea22 (propref<color>)
+			touchPressed: function<bool,int,int,int,int>(97a10629-d2c0-4325-a8ec-7c55fb917f9d)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"   v:this.image = dp:pause_icon" \
+					"   false" \
+					"}"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(833c3d3c-29b1-46f0-b0d5-ef93fdc950c9)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	dp:pause_icon = dp:play_icon" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(bda50baf-a473-4323-ba4a-8762b38c4a2f)
+		{
+			name: "T_Next Button"
+			template: @f67b791d-cf26-4492-93b2-ff0174cec82e (objectref<GtfContainer_template>)
+			children: children_list []
+			image: image_resource(9ff60983-32f3-457f-a0d9-4cf558711f8a)
+			{
+				file: "nextt.png"
+			}
+			horizontalAlign: horizontalAlign@f67b791d-cf26-4492-93b2-ff0174cec82e (propref<int>)
+			verticalAlign: verticalAlign@f67b791d-cf26-4492-93b2-ff0174cec82e (propref<int>)
+			x: 330
+			y: 200
+			fillColor: @002c4437-bd4b-44ce-8b95-28f17b2f8118 (objectref<color>)
+		}, 
+		GtfContainer_template_instance(59be9feb-9d4e-49dd-9cb2-54dd76637944)
+		{
+			name: "T_Prev Button"
+			template: @1fe8ae27-70b4-4677-aff1-4ec2aa38bda7 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 110
+			y: 200
+			fillColor: @002c4437-bd4b-44ce-8b95-28f17b2f8118 (objectref<color>)
+			verticalAlign: verticalAlign@1fe8ae27-70b4-4677-aff1-4ec2aa38bda7 (propref<int>)
+			horizontalAlign: horizontalAlign@1fe8ae27-70b4-4677-aff1-4ec2aa38bda7 (propref<int>)
+			image: image_resource(4ef51d30-a767-4ae8-8ea4-41fb9242bbcb)
+			{
+				file: "prev.png"
+			}
+		}, 
+		GtfContainer_template_instance(b31c599c-133a-4a3f-9e80-f7930d951228)
+		{
+			name: "T_Volume Button"
+			template: @bcef2ed4-64de-4eed-8ec6-38bedeaa6002 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 170
+			y: 140
+			fillColor: @564d4a9f-ce45-4c39-9372-9ddd6d3b6d46 (objectref<color>)
+			verticalAlign: 0
+			horizontalAlign: 1
+			font: font_resource(2775e34f-4f6b-4a0e-b8cf-a26afaf4b7ec)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 25
+			}
+			textColor: #000000FF
+			text: "VOLUME: 0"
+		}, 
+		GtfContainer_template_instance(3240731e-41b9-4c05-b6b1-458d4c7e3e91)
+		{
+			name: "T_Down Button"
+			template: @5017affb-b8ee-4c88-9c92-ffb4feda662b (objectref<GtfContainer_template>)
+			children: children_list []
+			fillColor: @002c4437-bd4b-44ce-8b95-28f17b2f8118 (objectref<color>)
+			x: 110
+			y: 140
+			image: image_resource(7a07644c-1086-4840-b854-1bbb037e31c0)
+			{
+				file: "minus.png"
+			}
+			horizontalAlign: horizontalAlign@5017affb-b8ee-4c88-9c92-ffb4feda662b (propref<int>)
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(6f59cfa9-4002-4e45-b405-0dea4dab02f4)
+		{
+			name: "T_Up Button"
+			template: @ccce407b-1134-4fc3-a761-299055ffa796 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 330
+			y: 140
+			fillColor: @002c4437-bd4b-44ce-8b95-28f17b2f8118 (objectref<color>)
+			image: image_resource(2e63178d-eddf-4ee4-945d-cc0dbcc95b8e)
+			{
+				file: "plus.png"
+			}
+			verticalAlign: verticalAlign@ccce407b-1134-4fc3-a761-299055ffa796 (propref<int>)
+			horizontalAlign: horizontalAlign@ccce407b-1134-4fc3-a761-299055ffa796 (propref<int>)
+		}, 
+		GtfContainer_template_instance(d42b64fc-834c-4ff1-8450-291ebc9d425b)
+		{
+			name: "T_Music_Name Button"
+			template: @612cb777-db50-4d17-9194-20007ef87d81 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 170
+			y: 80
+			fillColor: @564d4a9f-ce45-4c39-9372-9ddd6d3b6d46 (objectref<color>)
+			horizontalAlign: horizontalAlign@612cb777-db50-4d17-9194-20007ef87d81 (propref<int>)
+			verticalAlign: verticalAlign@612cb777-db50-4d17-9194-20007ef87d81 (propref<int>)
+			font: font_resource(6879f1da-a11b-4e24-aa21-dfd82af08e17)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 25
+			}
+			textColor: #000000FF
+			text: "<Track 1>"
+		}]
+}

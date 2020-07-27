@@ -1,0 +1,82 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(86df7f52-ab5a-4406-9427-eb6484feea22)
+{
+	name: "T_Play/Pause Button"
+	structure: GtfContainer(47f1dd92-17e2-430e-917e-60d88d585e26)
+	{
+		features: feature_list [
+			TouchPressed(385325ec-a722-4a7e-90ac-0fc5f77acd0d)
+			{
+				touchPressed: function<bool,int,int,int,int>(a32773a2-bdba-4ab8-9347-7d1d7212d1e6)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(e661a01c-d56a-4784-88fb-1d67fca9c264)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			TouchShortReleased(a8bd7613-e649-4d59-a796-fd0a15680629)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(5c90da99-2d37-4b3f-9251-2d906b43719f)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}]
+		children: children_list [
+			GtfRectangle(a9b56fa3-8a6e-4e83-800a-b0bee40f381a)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@47f1dd92-17e2-430e-917e-60d88d585e26 (propref<int>)
+				height: height@47f1dd92-17e2-430e-917e-60d88d585e26 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: @564d4a9f-ce45-4c39-9372-9ddd6d3b6d46 (objectref<color>)
+			}, 
+			GtfImage(67340b8f-a348-4203-ba66-24febaa71087)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Logo"
+				visible: true
+				width: width@47f1dd92-17e2-430e-917e-60d88d585e26 (propref<int>)
+				height: height@47f1dd92-17e2-430e-917e-60d88d585e26 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(18829152-1522-4355-988c-cb066cbe5aca)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: @b142b57e-0284-45b7-a877-43da05c298cb (objectref<int>)
+		height: @2d1c31f2-05b1-4cec-9ec1-7dd71ba1b4f4 (objectref<int>)
+		x: 0
+		y: 0
+	}
+	image: image@67340b8f-a348-4203-ba66-24febaa71087 (propref<image>)
+	x: x@47f1dd92-17e2-430e-917e-60d88d585e26 (propref<int>)
+	y: y@47f1dd92-17e2-430e-917e-60d88d585e26 (propref<int>)
+	horizontalAlign: horizontalAlign@67340b8f-a348-4203-ba66-24febaa71087 (propref<int>)
+	verticalAlign: verticalAlign@67340b8f-a348-4203-ba66-24febaa71087 (propref<int>)
+	fillColor: fillColor@a9b56fa3-8a6e-4e83-800a-b0bee40f381a (propref<color>)
+	touchPressed: touchPressed@385325ec-a722-4a7e-90ac-0fc5f77acd0d (propref<function<bool,int,int,int,int>>)
+	touchShortReleased: touchShortReleased@a8bd7613-e649-4d59-a796-fd0a15680629 (propref<function<bool,int,int,int,int>>)
+}
