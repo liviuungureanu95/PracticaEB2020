@@ -1,0 +1,101 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(544986ea-2121-4692-917b-820385b8e115)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(69f865dc-753e-488d-8d7d-a44375bd388a)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "view p. scurt"
+			visible: true
+			width: 88
+			height: 77
+			x: 101
+			y: 133
+			image: image_resource(990ffdc6-a768-405d-996c-5a1a990ec914)
+			{
+				file: "a.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(9952f885-7f75-4da8-be63-3d0c892e8fec)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "view text scurt"
+			visible: true
+			width: 412
+			height: 100
+			x: 218
+			y: 125
+			text: "Ati selectat programul de spalare scurt"
+			textColor: #FFFFFFFF
+			font: font_resource(4abb3105-1482-435e-a8a4-6651d8c80ed5)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfRectangle(5bc299d0-22ac-4be5-996d-b966814dfbfd)
+		{
+			features: feature_list [
+				TouchPressed(3b97b326-bbbc-4a38-9113-40c88dc16ffc)
+				{
+					touchPressed: function<bool,int,int,int,int>(d3cfb0e5-3197-4c91-8237-e50a40ee9ac1)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:go_home()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(5099574d-54de-4a8e-a0df-5790f4cfd210)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfLabel(07766f46-0d6f-4c4a-81f4-31e57608e65c)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 6"
+					visible: true
+					width: 158
+					height: 43
+					x: 29
+					y: 8
+					text: "Inapoi In Meniu"
+					textColor: #FFFFFFFF
+					font: font_resource(ade4ca6b-a535-475a-9e7d-806840597380)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "back button 1"
+			visible: true
+			width: 219
+			height: 60
+			x: 560
+			y: 395
+			fillColor: #A9A9A9FF
+		}]
+	name: "View 2"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: -1
+}

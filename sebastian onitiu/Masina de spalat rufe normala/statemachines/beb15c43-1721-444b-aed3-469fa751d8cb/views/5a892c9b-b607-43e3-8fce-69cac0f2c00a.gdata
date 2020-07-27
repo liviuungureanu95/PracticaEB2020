@@ -1,0 +1,353 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(5a892c9b-b607-43e3-8fce-69cac0f2c00a)
+{
+	features: feature_list []
+	children: children_list [
+		GtfLabel(6e1046ec-2d14-46fa-b3b0-a7da8b099fd8)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "select intro"
+			visible: true
+			width: 383
+			height: 50
+			x: 207
+			y: 1
+			text: "SELECTAȚI UN PROGRAM DE SPĂLARE"
+			textColor: #FFFFFFFF
+			font: font_resource(81aaa911-f398-4033-8b46-c382bf08384b)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfRectangle(9246eda1-6f83-4d52-8623-728678ba4f9d)
+		{
+			features: feature_list [
+				TouchPressed(4528ce5b-ec71-479b-b55e-65b2a3ed2a51)
+				{
+					touchPressed: function<bool,int,int,int,int>(e1724108-3722-4ea6-85bd-a53a5214ed47)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.fillColor = dp:\"culoare apasare\"" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(954cd2a4-587f-45c0-9eb3-4eceb2212b7b)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}, 
+				TouchShortReleased(af39cbca-553d-4284-883e-9c835dc41621)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(7f007aaf-f224-4aec-88d8-157fa947822e)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.fillColor = dp:\"culoare initiala\"" \
+							"	fire ev:go_to_program1()" \
+							"    true" \
+							"}"
+					}
+				}]
+			children: children_list [
+				GtfImage(7793fea4-9e3d-4246-90e4-23c492acf1d2)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "i. scurt"
+					visible: true
+					width: 88
+					height: 76
+					x: 7
+					y: 6
+					image: image_resource(65f0ae11-1344-415e-9548-cbd2fa7a2efc)
+					{
+						file: "a.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(69c4030e-e682-4be9-932c-97a796d83fbe)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "t. scurt "
+					visible: true
+					width: 361
+					height: 49
+					x: 102
+					y: 15
+					text: "Program scurt cu temperatura joasa"
+					textColor: #FFFFFFFF
+					font: font_resource(af62ef02-c43c-432f-a5e4-af7dbb064d26)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "p. scurt"
+			visible: true
+			width: 472
+			height: 86
+			x: 1
+			y: 49
+			fillColor: #4169E1FF
+		}, 
+		GtfRectangle(5c0e66ba-3869-4808-9170-8ecb5d01a7bc)
+		{
+			features: feature_list [
+				TouchPressed(2d2f10de-9571-47d4-b5ab-425bf6deebbf)
+				{
+					touchPressed: function<bool,int,int,int,int>(28a8f55f-f80a-49b8-91ae-4652df3f5640)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.fillColor = dp:\"culoare apasare\"" \
+							"    false" \
+							"}"
+					}
+				}, 
+				TouchShortReleased(9bfd1758-7082-424d-a1c4-e3b368f7df45)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(f9861a1e-ceae-445c-962d-10363ee77376)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.fillColor = dp:\"culoare initiala\"" \
+							"	fire ev:go_to_program2()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(53d9f55b-fa50-4a52-b41e-a50ab172a20c)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfImage(563d0022-48dc-4465-8837-957016d79ce9)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "i. eco"
+					visible: true
+					width: 88
+					height: 76
+					x: 6
+					y: 3
+					image: image_resource(6269ffa2-fe38-4fa4-8d9c-0d2b89d22952)
+					{
+						file: "b.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(e06b1edd-4e0d-44fc-8026-c0e1b251f75a)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "t. eco"
+					visible: true
+					width: 206
+					height: 56
+					x: 104
+					y: 13
+					text: "Mod eco & Bumbac"
+					textColor: #FFFFFFFF
+					font: font_resource(add7f74a-3b9f-45d6-b463-e590369532b1)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "p. eco"
+			visible: true
+			width: width@9246eda1-6f83-4d52-8623-728678ba4f9d (propref<int>)
+			height: height@9246eda1-6f83-4d52-8623-728678ba4f9d (propref<int>)
+			x: 94
+			y: 157
+			fillColor: #4169E1FF
+		}, 
+		GtfRectangle(a74af199-a7c6-4a71-b37b-741b9b11f072)
+		{
+			features: feature_list [
+				TouchPressed(75d9d645-7370-4403-a147-ce0397cb8f9c)
+				{
+					touchPressed: function<bool,int,int,int,int>(72cd8822-fa7d-4b10-8d1d-1d4dcc19a70a)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.fillColor = dp:\"culoare apasare\"" \
+							"    false" \
+							"}"
+					}
+				}, 
+				TouchShortReleased(970695fe-4fbf-4a63-848c-4551c231f135)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(91acfb4a-c8a1-4fe2-b674-5cf9708aad94)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.fillColor = dp:\"culoare initiala\"" \
+							"	fire ev:go_to_program3()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(7dfa6e5f-b5d9-42c1-9e80-55f55401e86e)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfImage(bfa93886-3f1a-4415-baad-45c5744f8736)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "i. rapid"
+					visible: true
+					width: 88
+					height: 76
+					x: 5
+					y: 5
+					image: image_resource(ca84c15d-a9db-44f6-a8e4-3e75028f1b85)
+					{
+						file: "c.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(1b059a13-875a-4f7d-a405-b7445d8b5aac)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "t. rapid"
+					visible: true
+					width: 208
+					height: 66
+					x: 110
+					y: 8
+					text: "Spalare super rapid"
+					textColor: #FFFFFFFF
+					font: font_resource(7f7b3e84-f560-4b9a-9c35-7ae68d06e210)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "p. rapid"
+			visible: true
+			width: width@9246eda1-6f83-4d52-8623-728678ba4f9d (propref<int>)
+			height: height@9246eda1-6f83-4d52-8623-728678ba4f9d (propref<int>)
+			x: 188
+			y: 265
+			fillColor: #4169E1FF
+		}, 
+		GtfRectangle(1c4bac77-48b6-4e6f-bee2-8e6e82f55c31)
+		{
+			features: feature_list [
+				TouchPressed(723add2c-bef1-49a3-a498-35a00b57e398)
+				{
+					touchPressed: function<bool,int,int,int,int>(ca5c6524-1076-45fe-9078-fc89f21a34be)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.fillColor = dp:\"culoare apasare\"" \
+							"    false" \
+							"}"
+					}
+				}, 
+				TouchShortReleased(136ba2aa-a5d2-42bd-8fcc-9aad6e22da84)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(eaeee9ff-90ad-48c2-bf19-ae015fcabce0)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.fillColor = dp:\"culoare initiala\"" \
+							"	fire ev:go_to_program4()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(b9af605d-f86d-4f33-b3b4-4e0397c99121)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfImage(0e13a2f4-be41-416b-b402-892307c22ca5)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "i. mix"
+					visible: true
+					width: width@7793fea4-9e3d-4246-90e4-23c492acf1d2 (propref<int>)
+					height: height@7793fea4-9e3d-4246-90e4-23c492acf1d2 (propref<int>)
+					x: 8
+					y: 6
+					image: image_resource(37dc6da2-0069-46c2-ac9b-c87e2d48c948)
+					{
+						file: "d.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(68ae0f4d-311d-4f1a-939a-742a225a1fef)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "t. mix"
+					visible: true
+					width: 313
+					height: 71
+					x: 113
+					y: 7
+					text: "Spalare haine sintetice & Mix"
+					textColor: #FFFFFFFF
+					font: font_resource(6ed39fc3-031a-4439-99b9-2ab04f6d153a)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "p. mix"
+			visible: true
+			width: width@9246eda1-6f83-4d52-8623-728678ba4f9d (propref<int>)
+			height: height@9246eda1-6f83-4d52-8623-728678ba4f9d (propref<int>)
+			x: 278
+			y: 374
+			fillColor: #4169E1FF
+		}]
+	name: "Meniu Principal"
+	visible: true
+	width: 800
+	height: 480
+	x: 2
+	y: -2
+}
