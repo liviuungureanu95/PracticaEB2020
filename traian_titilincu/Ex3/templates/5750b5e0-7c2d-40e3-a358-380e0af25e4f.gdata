@@ -1,0 +1,93 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(5750b5e0-7c2d-40e3-a358-380e0af25e4f)
+{
+	name: "Button"
+	structure: GtfContainer(f33e98f8-ed90-4963-a134-090c08309e5f)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfEllipse(617239b5-ade7-41e9-8f3d-b91d6a34533f)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Shape"
+				visible: true
+				width: width@f33e98f8-ed90-4963-a134-090c08309e5f (propref<int>)
+				height: height@f33e98f8-ed90-4963-a134-090c08309e5f (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFFFF
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}, 
+			GtfImage(77839bdd-2957-4eed-9d1d-b92fbc3d3555)
+			{
+				features: feature_list [
+					TouchPressed(4903aca8-3913-49f6-83bd-c14a33ef3573)
+					{
+						touchPressed: function<bool,int,int,int,int>(1383efbd-1f29-4bca-bd59-a48272eda15a)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(da323051-7971-4c9a-abae-b99a65e7f679)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list [
+					GtfImage(5b5da253-ffe8-4fc7-8bef-31448c4cba3e)
+					{
+						features: feature_list [
+							ScaleMode(5a8ace97-7a02-472e-91ee-3d508fd3c8dc)
+							{
+								scaleMode: 1
+							}]
+						children: children_list []
+						name: "button"
+						visible: true
+						width: 30
+						height: 30
+						x: 10
+						y: 10
+						image: image_resource(3dc1eb2a-e700-4dc5-81ed-267fe3643ec6)
+						{
+							file: "previous.png"
+						}
+						sRGB: false
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "icon"
+				visible: true
+				width: width@f33e98f8-ed90-4963-a134-090c08309e5f (propref<int>)
+				height: height@f33e98f8-ed90-4963-a134-090c08309e5f (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(fb1315be-874a-4eb1-8eaf-8abb2a2bb351)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "Button"
+		visible: true
+		width: 50
+		height: 50
+		x: 0
+		y: 0
+	}
+	x: x@f33e98f8-ed90-4963-a134-090c08309e5f (propref<int>)
+	y: y@f33e98f8-ed90-4963-a134-090c08309e5f (propref<int>)
+	image: image@5b5da253-ffe8-4fc7-8bef-31448c4cba3e (propref<image>)
+	touchPressed: touchPressed@4903aca8-3913-49f6-83bd-c14a33ef3573 (propref<function<bool,int,int,int,int>>)
+}

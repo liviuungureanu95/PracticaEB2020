@@ -1,0 +1,129 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(ab479386-c980-4060-a762-ffbbdc081d42)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(906318a6-110b-490b-98a0-4eb73d517511)
+		{
+			name: "Menu"
+			template: @9e6db030-6c50-40aa-8507-36fb243446b5 (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfContainer_template_instance(29818cf5-70b6-47ca-a38f-54f14b9a75d0)
+				{
+					name: "Previous"
+					template: @5750b5e0-7c2d-40e3-a358-380e0af25e4f (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 129
+					y: 164
+					image: image@5750b5e0-7c2d-40e3-a358-380e0af25e4f (propref<image>)
+					touchPressed: function<bool,int,int,int,int>(9a81a865-11d5-4329-b546-26a8420b44b1)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    v:this->^->\"Song Title\".song_index -= 1" \
+							"    if (v:this->^->\"Song Title\".song_index == -1) v:this->^->\"Song Title\".song_index = 4 " \
+							"    v:this->^->\"Song Title\".text = v:this->^->\"Song Title\".songs_titles[v:this->^->\"Song Title\".song_index]" \
+							"    v:this->^->\"Play/Pause\".image = v:this->^->\"Play/Pause\".button_states[1]" \
+							"    false" \
+							"}"
+					}
+					"x 2": 0
+					"y 2": 0
+				}, 
+				GtfContainer_template_instance(0940d97c-db38-48df-aee2-4e3cb43c75ab)
+				{
+					name: "Play/Pause"
+					template: @5750b5e0-7c2d-40e3-a358-380e0af25e4f (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 219
+					y: 163
+					image: image_resource(3931ea03-f5db-4e02-851c-1ceacbd49a18)
+					{
+						file: "play.png"
+					}
+					touchPressed: function<bool,int,int,int,int>(1505b5f4-e32c-4114-b0f7-52107c5ced03)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    if (v:this.stateIndex == 1) v:this.stateIndex = 0 else v:this.stateIndex = 1" \
+							"    v:this.image = v:this.button_states[v:this.stateIndex]" \
+							"    false" \
+							"}"
+					}
+					button_states: imagelist [
+						image_resource(ae669a8d-f6d4-4ff1-9cb3-334b5e96aa7c)
+						{
+							file: "play.png"
+						}, 
+						image_resource(070f0154-d1c7-45d7-8cc4-2c257e14cfc0)
+						{
+							file: "pause.png"
+						}]
+					stateIndex: 0
+				}, 
+				GtfContainer_template_instance(c397d6bf-8ec3-477a-9e68-5d7843d6fe92)
+				{
+					name: "Next"
+					template: @5750b5e0-7c2d-40e3-a358-380e0af25e4f (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 303
+					y: 160
+					image: image_resource(b776e9bc-c560-4d67-9f92-90eba40017a8)
+					{
+						file: "next.png"
+					}
+					touchPressed: function<bool,int,int,int,int>(65b4db82-c617-4044-808b-49354a2330dd)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    v:this->^->\"Song Title\".song_index += 1" \
+							"    if (v:this->^->\"Song Title\".song_index == 5) v:this->^->\"Song Title\".song_index = 0 " \
+							"    v:this->^->\"Song Title\".text = v:this->^->\"Song Title\".songs_titles[v:this->^->\"Song Title\".song_index]" \
+							"    v:this->^->\"Play/Pause\".image = v:this->^->\"Play/Pause\".button_states[1]" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfLabel(f8f97baf-0de7-47d0-9c11-3023291fff25)
+				{
+					features: feature_list [
+						StateTouched(0a903324-caf1-4380-b9bc-3073deb59d2a)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "Song Title"
+					visible: true
+					width: width@ab479386-c980-4060-a762-ffbbdc081d42 (propref<int>)
+					height: 100
+					x: 0
+					y: 43
+					text: string_element_reference(a5b3d5a7-4ce6-4a7e-b19d-3bd00c9ce3fc)
+					{
+						index: 0
+						list: songs_titles@f8f97baf-0de7-47d0-9c11-3023291fff25 (propref<stringlist>)
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(ef2024e8-b7e0-4587-b556-c3a2594008dd)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+					songs_titles: stringlist ["Ed Sheeran - Shape of You", "Justin Bieber - Sorry", "Selena Gomez - Back To You", "Ariana Grande - 7 rings", "Billie Eilish, Khalid - lovely"]
+					songs_count: 5
+					song_index: 0
+				}]
+		}]
+	name: "Player View"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}
