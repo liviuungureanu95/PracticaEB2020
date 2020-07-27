@@ -1,0 +1,78 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(cf22c053-5491-4836-8b29-5f85900a01bb)
+{
+	name: "Temp_Button"
+	structure: GtfContainer(07cc2772-5002-424c-9eeb-f96a4b2320ba)
+	{
+		features: feature_list [
+			TouchShortReleased(db8ba1cf-686d-46f6-8a33-56245a66dfca)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(b917cea6-9fc1-40ed-b180-fda95e3dcbb5)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(9e606f3f-40e8-4cb5-96e9-4797dc34a406)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			StateEnabled(d8b7fb4a-8157-41e4-992f-e1240d58eb93)
+			{
+				enabled: true
+			}]
+		children: children_list [
+			GtfRectangle(553426d4-33ca-4398-8b7f-0511ca21867c)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@07cc2772-5002-424c-9eeb-f96a4b2320ba (propref<int>)
+				height: height@07cc2772-5002-424c-9eeb-f96a4b2320ba (propref<int>)
+				x: 6
+				y: -2
+				fillColor: #000000FF
+			}, 
+			GtfImage(0bbeec86-4f05-440a-96df-f2841a5cde8b)
+			{
+				features: feature_list [
+					ScaleMode(d288eef2-dd9b-4306-9b29-ad77e4336266)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "Image 3"
+				visible: true
+				width: width@07cc2772-5002-424c-9eeb-f96a4b2320ba (propref<int>)
+				height: height@07cc2772-5002-424c-9eeb-f96a4b2320ba (propref<int>)
+				x: 5
+				y: -1
+				image: image_resource(a4f30bb7-d825-41b2-b2fd-155d2707b1d3)
+				{
+					file: "Plus.jpg"
+				}
+				sRGB: false
+				horizontalAlign: 1
+				verticalAlign: 1
+			}]
+		name: "Container 2"
+		visible: true
+		width: 60
+		height: 60
+		x: 72
+		y: 86
+	}
+	x: x@07cc2772-5002-424c-9eeb-f96a4b2320ba (propref<int>)
+	y: y@07cc2772-5002-424c-9eeb-f96a4b2320ba (propref<int>)
+	image: image@0bbeec86-4f05-440a-96df-f2841a5cde8b (propref<image>)
+	scaleMode: scaleMode@d288eef2-dd9b-4306-9b29-ad77e4336266 (propref<int>)
+	touchShortReleased: touchShortReleased@db8ba1cf-686d-46f6-8a33-56245a66dfca (propref<function<bool,int,int,int,int>>)
+	enabled: enabled@d8b7fb4a-8157-41e4-992f-e1240d58eb93 (propref<bool>)
+}
