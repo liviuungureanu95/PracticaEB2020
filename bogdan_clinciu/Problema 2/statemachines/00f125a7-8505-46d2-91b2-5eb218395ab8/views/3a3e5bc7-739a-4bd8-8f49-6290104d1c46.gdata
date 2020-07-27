@@ -1,0 +1,74 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(3a3e5bc7-739a-4bd8-8f49-6290104d1c46)
+{
+	name: "View 3"
+	template: @7c330823-cfdc-4090-b5a7-829031a955ed (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(6f86fafb-e9c5-4d4f-9df0-4a5272af9efd)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 6"
+			visible: true
+			width: 300
+			height: 100
+			x: 40
+			y: 125
+			text: "For dishes not very dirty"
+			textColor: #FFFFFFFF
+			font: font_resource(8a2cb545-bf6a-4517-8ce2-1572034277f3)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(52c3a628-7e60-45a3-8284-b1746a0b3abc)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 7"
+			visible: true
+			width: 150
+			height: 100
+			x: 115
+			y: 250
+			text: "Duration 0:13 "
+			textColor: #FFFFFFFF
+			font: font_resource(56631abf-72be-42cc-ac3c-f797c15194fe)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(d0a3508d-c3a5-46fd-a3ee-49ca85f6e43d)
+		{
+			name: "Button 1"
+			template: @1eaff53e-12e2-4dba-9caa-9e2c0f27c7fd (objectref<GtfContainer_template>)
+			children: children_list []
+			width: width@1eaff53e-12e2-4dba-9caa-9e2c0f27c7fd (propref<int>)
+			height: height@1eaff53e-12e2-4dba-9caa-9e2c0f27c7fd (propref<int>)
+			x: 550
+			y: 180
+			fillColor: fillColor@1eaff53e-12e2-4dba-9caa-9e2c0f27c7fd (propref<color>)
+			text: "Start"
+			textColor: #000000FF
+			touchPressed: function<bool,int,int,int,int>(ae886287-b858-4b91-9bea-3d008d6eb168)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.fillColor = dp:Button_Pressed" \
+					"	dp:Prog_Duration = 13000" \
+					"	fire_delayed dp:Prog_Duration, ev:Go_to_Menu()" \
+					"	fire_delayed 500, ev:Start_Program()" \
+					"    false" \
+					"}"
+			}
+		}]
+	text: "Not so dirty"
+	width: 300
+}

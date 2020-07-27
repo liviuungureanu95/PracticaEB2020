@@ -1,0 +1,185 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(7c330823-cfdc-4090-b5a7-829031a955ed)
+{
+	name: "View 1"
+	structure: GtfView(8230cab2-98d6-4dbe-861b-d1a7bb6b89e1)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(e308252a-02db-4040-aebf-b3400fa83dbd)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@8230cab2-98d6-4dbe-861b-d1a7bb6b89e1 (propref<int>)
+				height: height@8230cab2-98d6-4dbe-861b-d1a7bb6b89e1 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #000000FF
+			}, 
+			GtfLabel(02707cf1-b503-498c-9543-11588a1f227e)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label 2"
+				visible: true
+				width: width@8230cab2-98d6-4dbe-861b-d1a7bb6b89e1 (propref<int>)
+				height: int_scriptedValue(7b964d42-45ec-4234-9565-505a72caddcd)
+				{
+					triggerList: trigger_list(e8463539-7f21-4128-a235-e82d11194447)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(9493c56b-5a18-47c4-b36c-1019c8979432)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(bd9256fc-57c2-46d3-9831-e02e7cb36394)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.height/6" \
+							"	" \
+							"}"
+					}
+					write: function<bool,int>(91bd6949-acc2-4e7c-aede-1494554a8295)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				x: 0
+				y: 0
+				text: "<title>"
+				textColor: #FFFFFFFF
+				font: font_resource(4f51b3af-736d-44a4-b44b-f30d466a71d7)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 50
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfRectangle(8f2b4f08-d170-40a2-a5b2-26a2d78ea5f4)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "UInderline"
+				visible: true
+				width: 300
+				height: 3
+				x: int_scriptedValue(70e26094-95d0-4de6-a562-cc24fbc06da0)
+				{
+					triggerList: trigger_list(ea39e1cd-74f5-48f4-ae2a-6374e26907a2)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(07716f3a-4322-4067-bdb9-71f922c4d66b)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(33dc6687-53b0-4374-b4fe-492de40ad502)
+					{
+						script: "function()" \
+							"{" \
+							"	(v:this->^.width - 300)/2" \
+							"}"
+					}
+					write: function<bool,int>(0284b30c-9c38-4ca2-8e61-ca1dcfbb9cf9)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				y: height@02707cf1-b503-498c-9543-11588a1f227e (propref<int>)
+				fillColor: #FFFFFFFF
+			}, 
+			GtfContainer(00a257a0-7d5d-4f60-9667-b7d31d4fef20)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfRectangle(f601a8bd-e811-4195-825d-d5c09f938de3)
+					{
+						features: feature_list [
+							TouchPressed(1392c65a-5469-4601-beea-c76b076049af)
+							{
+								touchPressed: function<bool,int,int,int,int>(f8cbbbea-8a31-428f-8e99-d96cb0ce7c29)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	v:this.fillColor = dp:Button_Pressed" \
+										"	fire_delayed 500, ev:Go_to_Menu()" \
+										"	 " \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(8c51efaf-24ee-4040-b615-cf6c967324f4)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list []
+						name: "Rectangle 5"
+						visible: true
+						width: width@00a257a0-7d5d-4f60-9667-b7d31d4fef20 (propref<int>)
+						height: height@00a257a0-7d5d-4f60-9667-b7d31d4fef20 (propref<int>)
+						x: 0
+						y: 0
+						fillColor: #FFFFFFFF
+					}, 
+					GtfLabel(2de45f98-7359-4869-8a12-a0345f93d7ba)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Label 3"
+						visible: true
+						width: width@f601a8bd-e811-4195-825d-d5c09f938de3 (propref<int>)
+						height: height@f601a8bd-e811-4195-825d-d5c09f938de3 (propref<int>)
+						x: 0
+						y: 0
+						text: "Back"
+						textColor: #000000FF
+						font: font_resource(e0727114-ecdb-4156-b457-cdedbc82d970)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "Container 2"
+				visible: true
+				width: 150
+				height: 60
+				x: 550
+				y: 375
+			}]
+		name: "View 6"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+	}
+	text: text@02707cf1-b503-498c-9543-11588a1f227e (propref<string>)
+	width: width@8f2b4f08-d170-40a2-a5b2-26a2d78ea5f4 (propref<int>)
+}
