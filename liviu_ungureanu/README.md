@@ -12,3 +12,5 @@
 	* Working with templates
 		* Create a view template 
 		* Create button templates
+* [AnimationExercise)(AnimationExercise)
+	*Working with Animations
