@@ -71,8 +71,8 @@ GtfView(a8818e21-cc21-49e5-aa78-2d500d9db2bc)
 					{
 						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 							"{" \
-							"   " \
-							"	if(dp:Index == dp:NrTotal){" \
+							"   f:trace_string(\"Index:\"+f:int2string(dp:Index))" \
+							"	if(dp:Index == length dp:Lista_Muzica){" \
 							"		dp:Index = 0" \
 							"	}" \
 							"	else{" \
@@ -89,7 +89,7 @@ GtfView(a8818e21-cc21-49e5-aa78-2d500d9db2bc)
 					name: "PLAY_BT"
 					template: @4b67ddda-0777-4dfb-a451-b6c7eb0cf7de (objectref<GtfContainer_template>)
 					children: children_list []
-					x: 178
+					x: 167
 					y: 220
 					text: "PLAY"
 					touchShortReleased: function<bool,int,int,int,int>(b3320692-0ec3-4c52-a3dc-729250d6a4b1)
@@ -115,7 +115,7 @@ GtfView(a8818e21-cc21-49e5-aa78-2d500d9db2bc)
 					template: @4b67ddda-0777-4dfb-a451-b6c7eb0cf7de (objectref<GtfContainer_template>)
 					children: children_list []
 					x: 0
-					y: 220
+					y: 221
 					text: "PREVIOUS"
 					touchShortReleased: function<bool,int,int,int,int>(8e0edec8-fce5-4664-b54b-514dee90ff15)
 					{
