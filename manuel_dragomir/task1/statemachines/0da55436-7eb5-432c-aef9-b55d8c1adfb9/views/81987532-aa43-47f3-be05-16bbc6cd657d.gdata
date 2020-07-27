@@ -29,7 +29,8 @@ GtfView(81987532-aa43-47f3-be05-16bbc6cd657d)
 							{
 								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 									"{" \
-									"	fire ev:GoToMenu()" \
+									"	f:animation_play(v:this->^->WMLabel->TextRotating)" \
+									"	fire_delayed 8000, ev:GoToMenu()" \
 									"    false" \
 									"}"
 							}
@@ -155,7 +156,7 @@ GtfView(81987532-aa43-47f3-be05-16bbc6cd657d)
 							enabled: true
 							centerX: 150
 							centerY: 150
-							radius: 100
+							radius: 87
 							direction: 0
 							startingAngle: 180F
 							characterSpacing: 1F
@@ -164,8 +165,23 @@ GtfView(81987532-aa43-47f3-be05-16bbc6cd657d)
 						GtfParallelAnimation(9bbef2c0-bd3d-49f9-8869-3f5e930f74d7)
 						{
 							features: feature_list []
-							children: children_list []
-							name: "Animation 1"
+							children: children_list [
+								GtfLinearInterpolationFloat(e18d8a4a-3d7d-463a-a775-dc449063a14e)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Rotation"
+									enabled: true
+									delay: 0
+									duration: 2000
+									repeat: 0
+									alternating: false
+									relative: false
+									start: 180F
+									end: -180F
+									target: startingAngle@2410315f-f99e-406c-9fcd-f7e4432fa976 (propref<float>)
+								}]
+							name: "TextRotating"
 							enabled: true
 							repeat: 50
 							alternating: false
@@ -194,10 +210,10 @@ GtfView(81987532-aa43-47f3-be05-16bbc6cd657d)
 						}]
 					name: "WMLabel"
 					visible: true
-					width: 294
-					height: 283
-					x: 56
-					y: 94
+					width: 321
+					height: 318
+					x: 53
+					y: 82
 					text: "Manu's Washing Machine"
 					textColor: @7905b149-16a7-43bc-bcbe-ae614d1de939 (objectref<color>)
 					font: font_resource(19343347-6dc1-465c-98e6-8f7abed2f5a7)
