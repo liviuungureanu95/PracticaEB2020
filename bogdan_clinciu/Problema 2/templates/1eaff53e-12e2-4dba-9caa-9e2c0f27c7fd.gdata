@@ -1,0 +1,76 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(1eaff53e-12e2-4dba-9caa-9e2c0f27c7fd)
+{
+	name: "Button"
+	structure: GtfContainer(2a3f1f7d-fe79-4a2a-b326-f9869a63dd7b)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(e1f5d2bc-6c99-4f21-9f2b-7d71c3691514)
+			{
+				features: feature_list [
+					TouchPressed(703aa5d4-ff52-4f0c-a52c-d02b567bcc5e)
+					{
+						touchPressed: function<bool,int,int,int,int>(80e80d42-9357-4f83-a000-6ec5ba890ecf)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.fillColor = dp:Button_Pressed" \
+								"	fire_delayed 500, ev:Go_to_Menu()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(64aea171-d2f0-416a-832a-3c295301250d)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@2a3f1f7d-fe79-4a2a-b326-f9869a63dd7b (propref<int>)
+				height: height@2a3f1f7d-fe79-4a2a-b326-f9869a63dd7b (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFFFF
+			}, 
+			GtfLabel(bbef7d80-535c-40bb-b158-f4186d99f2cb)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Title"
+				visible: true
+				width: width@2a3f1f7d-fe79-4a2a-b326-f9869a63dd7b (propref<int>)
+				height: height@2a3f1f7d-fe79-4a2a-b326-f9869a63dd7b (propref<int>)
+				x: 0
+				y: 0
+				text: "Alo da"
+				textColor: #0000FFFF
+				font: font_resource(2395f0f0-f75a-48b5-a21a-72ec0db8257d)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container 1"
+		visible: true
+		width: 150
+		height: 80
+		x: 77
+		y: 101
+	}
+	width: width@2a3f1f7d-fe79-4a2a-b326-f9869a63dd7b (propref<int>)
+	height: height@2a3f1f7d-fe79-4a2a-b326-f9869a63dd7b (propref<int>)
+	x: x@2a3f1f7d-fe79-4a2a-b326-f9869a63dd7b (propref<int>)
+	y: y@2a3f1f7d-fe79-4a2a-b326-f9869a63dd7b (propref<int>)
+	fillColor: fillColor@e1f5d2bc-6c99-4f21-9f2b-7d71c3691514 (propref<color>)
+	text: text@bbef7d80-535c-40bb-b158-f4186d99f2cb (propref<string>)
+	textColor: textColor@bbef7d80-535c-40bb-b158-f4186d99f2cb (propref<color>)
+	touchPressed: touchPressed@703aa5d4-ff52-4f0c-a52c-d02b567bcc5e (propref<function<bool,int,int,int,int>>)
+}

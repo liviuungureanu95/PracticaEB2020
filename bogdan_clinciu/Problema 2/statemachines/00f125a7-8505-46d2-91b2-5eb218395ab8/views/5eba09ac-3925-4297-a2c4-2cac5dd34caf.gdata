@@ -1,0 +1,132 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(5eba09ac-3925-4297-a2c4-2cac5dd34caf)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(27ffe168-79fb-4fbc-9287-b404599b970b)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(1a923259-88b2-49ec-8df1-3c29a9f30ff3)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 4"
+					visible: true
+					width: 250
+					height: 100
+					x: 275
+					y: 100
+					text: "Main Menu"
+					textColor: #FFFFFFFF
+					font: font_resource(4635c765-5c06-4ea3-8d91-a424e5e30b04)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 60
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(3f4c8907-1d8a-49db-b61b-cb8a4c2487e4)
+				{
+					name: "Button 1"
+					template: @1eaff53e-12e2-4dba-9caa-9e2c0f27c7fd (objectref<GtfContainer_template>)
+					children: children_list []
+					width: width@1eaff53e-12e2-4dba-9caa-9e2c0f27c7fd (propref<int>)
+					height: height@1eaff53e-12e2-4dba-9caa-9e2c0f27c7fd (propref<int>)
+					x: 325
+					y: 300
+					fillColor: #FFFFFFFF
+					text: "Dirty"
+					textColor: #000000FF
+					touchPressed: function<bool,int,int,int,int>(996c95b7-e4b7-4538-be7d-419e53aac4c9)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.fillColor = dp:Button_Pressed" \
+							"	fire_delayed 500, ev:Prog2()" \
+							"    false" \
+							"}"
+					}
+					touchShortReleased: function<bool,int,int,int,int>(e71f346e-cd2e-448e-a455-97b9d488f113)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(10352316-ddd0-425e-bb90-56bb860c9352)
+				{
+					name: "Button 2"
+					template: @1eaff53e-12e2-4dba-9caa-9e2c0f27c7fd (objectref<GtfContainer_template>)
+					children: children_list []
+					width: width@1eaff53e-12e2-4dba-9caa-9e2c0f27c7fd (propref<int>)
+					height: height@1eaff53e-12e2-4dba-9caa-9e2c0f27c7fd (propref<int>)
+					x: 100
+					y: 300
+					fillColor: #FFFFFFFF
+					text: "Not so dirty"
+					textColor: #000000FF
+					touchPressed: function<bool,int,int,int,int>(ff17cc6e-20b0-4326-b6bb-8e7316fc3731)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.fillColor = dp:Button_Pressed" \
+							"	fire_delayed 500, ev:Prog1()" \
+							"    false" \
+							"}"
+					}
+					touchShortReleased: function<bool,int,int,int,int>(1c4a7f69-9b27-4527-b15a-04635f16304d)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(774cab3b-f230-4e6f-975b-a6964ba0cb4c)
+				{
+					name: "Button 3"
+					template: @1eaff53e-12e2-4dba-9caa-9e2c0f27c7fd (objectref<GtfContainer_template>)
+					children: children_list []
+					width: width@1eaff53e-12e2-4dba-9caa-9e2c0f27c7fd (propref<int>)
+					height: height@1eaff53e-12e2-4dba-9caa-9e2c0f27c7fd (propref<int>)
+					x: 550
+					y: 300
+					fillColor: #FFFFFFFF
+					text: "Very dirty"
+					textColor: #000000FF
+					touchPressed: function<bool,int,int,int,int>(53815d6e-f192-4f54-9763-c4cdc4b350b1)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.fillColor = dp:Button_Pressed" \
+							"	fire_delayed 500, ev:Prog3()" \
+							"    false" \
+							"}"
+					}
+					touchShortReleased: function<bool,int,int,int,int>(d269dead-7463-4a95-acef-30ef158a8f05)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    false" \
+							"}"
+					}
+				}]
+			name: "Rectangle 6"
+			visible: true
+			width: width@5eba09ac-3925-4297-a2c4-2cac5dd34caf (propref<int>)
+			height: height@5eba09ac-3925-4297-a2c4-2cac5dd34caf (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #000000FF
+		}]
+	name: "View 7"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
