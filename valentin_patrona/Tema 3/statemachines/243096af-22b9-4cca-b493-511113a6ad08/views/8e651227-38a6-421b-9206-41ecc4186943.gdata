@@ -29,9 +29,9 @@ GtfView_template_instance(8e651227-38a6-421b-9206-41ecc4186943)
 					{
 						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 							"{" \
-							"	if(dp:Contor==0)" \
+							"	if(dp:Contor<=0)" \
 							"	{" \
-							"		dp:Contor=length dp:\"Song List\";" \
+							"		dp:Contor=length dp:\"Song List\"-1;" \
 							"	}" \
 							"	else" \
 							"	{dp:Contor-=1}" \
@@ -61,7 +61,7 @@ GtfView_template_instance(8e651227-38a6-421b-9206-41ecc4186943)
 					{
 						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 							"{" \
-							"	if(dp:Contor==length dp:\"Song List\")" \
+							"	if(dp:Contor==length dp:\"Song List\"-1)" \
 							"	{" \
 							"		dp:Contor=0;" \
 							"	}" \
