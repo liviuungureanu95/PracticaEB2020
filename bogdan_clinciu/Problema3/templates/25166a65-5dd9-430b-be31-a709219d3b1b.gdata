@@ -1,0 +1,107 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(25166a65-5dd9-430b-be31-a709219d3b1b)
+{
+	name: "Button"
+	structure: GtfContainer(d1383b23-7b79-4805-9b50-9e35fe1b8514)
+	{
+		features: feature_list [
+			TouchPressed(1eea1db3-7579-421f-9919-f075ec076560)
+			{
+				touchPressed: function<bool,int,int,int,int>(3f863395-85eb-4b5d-b5a5-0cd163bb3d96)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(c6e185b7-6dda-48e4-ad9d-4c3e41b00605)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			TouchShortReleased(668f9903-d5ce-487d-acab-3cca989bc8e9)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(25fee835-f678-4a97-a577-b14519a7cd60)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}]
+		children: children_list [
+			GtfRectangle(f3374dc2-b39f-40de-aefc-38265b617151)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@d1383b23-7b79-4805-9b50-9e35fe1b8514 (propref<int>)
+				height: height@d1383b23-7b79-4805-9b50-9e35fe1b8514 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #F4A460FF
+			}, 
+			GtfImage(09be3ff8-8af2-4c13-93c7-200dd010c355)
+			{
+				features: feature_list [
+					ScaleMode(508240ca-8fcd-43bc-8aad-ab6aaa238edc)
+					{
+						scaleMode: 2
+					}]
+				children: children_list []
+				name: "Symbol"
+				visible: true
+				width: width@d1383b23-7b79-4805-9b50-9e35fe1b8514 (propref<int>)
+				height: height@d1383b23-7b79-4805-9b50-9e35fe1b8514 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(bd2a0fa4-1ec6-451a-9192-6f9f3a2fdca0)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfLabel(a5d35fe7-730a-4051-853e-9f0d64d2be42)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label 4"
+				visible: true
+				width: width@d1383b23-7b79-4805-9b50-9e35fe1b8514 (propref<int>)
+				height: height@d1383b23-7b79-4805-9b50-9e35fe1b8514 (propref<int>)
+				x: 0
+				y: 0
+				text: ""
+				textColor: #FFFFFFFF
+				font: font_resource(9a717efe-79c4-486d-810b-45b83da13e9e)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container 1"
+		visible: true
+		width: 100
+		height: 60
+		x: 0
+		y: 0
+	}
+	image: image@09be3ff8-8af2-4c13-93c7-200dd010c355 (propref<image>)
+	width: width@d1383b23-7b79-4805-9b50-9e35fe1b8514 (propref<int>)
+	height: height@d1383b23-7b79-4805-9b50-9e35fe1b8514 (propref<int>)
+	x: x@d1383b23-7b79-4805-9b50-9e35fe1b8514 (propref<int>)
+	y: y@d1383b23-7b79-4805-9b50-9e35fe1b8514 (propref<int>)
+	fillColor: fillColor@f3374dc2-b39f-40de-aefc-38265b617151 (propref<color>)
+	touchPressed: touchPressed@1eea1db3-7579-421f-9919-f075ec076560 (propref<function<bool,int,int,int,int>>)
+	text: text@a5d35fe7-730a-4051-853e-9f0d64d2be42 (propref<string>)
+	touchShortReleased: touchShortReleased@668f9903-d5ce-487d-acab-3cca989bc8e9 (propref<function<bool,int,int,int,int>>)
+}

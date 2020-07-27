@@ -1,0 +1,434 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(5cb2994f-5d17-401b-90a2-ea1c14cb3f00)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(8451e591-4eda-43ba-8ee2-0d529f9e811a)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfContainer_template_instance(e01c849c-6f19-4656-ae11-017d506f756b)
+				{
+					name: "Button 1"
+					template: @25166a65-5dd9-430b-be31-a709219d3b1b (objectref<GtfContainer_template>)
+					children: children_list []
+					image: image_resource(c585334e-fffb-47b3-8915-c1fa10cd5454)
+					{
+						file: "prev.png"
+					}
+					width: width@25166a65-5dd9-430b-be31-a709219d3b1b (propref<int>)
+					height: height@25166a65-5dd9-430b-be31-a709219d3b1b (propref<int>)
+					x: 52
+					y: 164
+					fillColor: fillColor@25166a65-5dd9-430b-be31-a709219d3b1b (propref<color>)
+					touchPressed: function<bool,int,int,int,int>(a4b60260-6e04-417f-8737-abc5ac6a4963)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.fillColor = dp:Pressed" \
+							"	dp:pIndex = 0" \
+							"	v:this->^->\"Button 2\".image = dp:\"Play/Pause\"[dp:pIndex]" \
+							"	" \
+							"	if((dp:Index-1)%(length dp:Songs)>=0)" \
+							"	dp:Index = (dp:Index-1)%(length dp:Songs)" \
+							"	else" \
+							"	dp:Index = (length dp:Songs -1)" \
+							"    false" \
+							"}"
+					}
+					text: text@25166a65-5dd9-430b-be31-a709219d3b1b (propref<string>)
+					touchShortReleased: function<bool,int,int,int,int>(e0612bf1-4364-4bd0-a294-8f5f54419671)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.fillColor = dp:Released" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(941cd55d-9656-4f3f-a0fe-d031f4fee4ec)
+				{
+					name: "Button 2"
+					template: @25166a65-5dd9-430b-be31-a709219d3b1b (objectref<GtfContainer_template>)
+					children: children_list []
+					image: image_scriptedValue(42136a52-7ab8-4ebe-81f3-11fe83bacb30)
+					{
+						triggerList: trigger_list(d407bb13-da50-4e91-81ff-4e82b4acb9b1)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(cef51386-230e-46e7-9295-338b3270ed04)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<image>(af05c3fd-6aa4-4b10-85cb-99d0efcada1b)
+						{
+							script: "function()" \
+								"{" \
+								"	dp:\"Play/Pause\"[dp:pIndex]" \
+								"" \
+								"}"
+						}
+						write: function<bool,image>(c1c7cb9f-1cb1-4678-925f-4beb568136f3)
+						{
+							script: "function(v:arg0::image)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					width: width@25166a65-5dd9-430b-be31-a709219d3b1b (propref<int>)
+					height: height@25166a65-5dd9-430b-be31-a709219d3b1b (propref<int>)
+					x: 195
+					y: 165
+					fillColor: fillColor@25166a65-5dd9-430b-be31-a709219d3b1b (propref<color>)
+					touchPressed: function<bool,int,int,int,int>(854b3d58-d3a0-45f9-8c67-91ea22e0d3bf)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:pIndex = (dp:pIndex +1)%2" \
+							"	v:this.image = dp:\"Play/Pause\"[dp:pIndex]" \
+							"	v:this.fillColor = dp:Pressed" \
+							"    false" \
+							"}"
+					}
+					text: text@25166a65-5dd9-430b-be31-a709219d3b1b (propref<string>)
+					touchShortReleased: function<bool,int,int,int,int>(75ee8c56-e8bf-4538-ae85-b0c34ceb6817)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.fillColor = dp:Released" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(e70cf6d7-93f1-49c3-adf1-ddcf3e5111aa)
+				{
+					name: "Button 3"
+					template: @25166a65-5dd9-430b-be31-a709219d3b1b (objectref<GtfContainer_template>)
+					children: children_list []
+					image: image_resource(6a92dbd1-8e1e-4dfb-aaf5-1fa5346d8367)
+					{
+						file: "next.png"
+					}
+					width: width@25166a65-5dd9-430b-be31-a709219d3b1b (propref<int>)
+					height: height@25166a65-5dd9-430b-be31-a709219d3b1b (propref<int>)
+					x: 341
+					y: 164
+					fillColor: fillColor@25166a65-5dd9-430b-be31-a709219d3b1b (propref<color>)
+					touchPressed: function<bool,int,int,int,int>(58d642cf-81ab-45e5-a4fc-56d9c45e4120)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.fillColor = dp:Pressed" \
+							"	dp:pIndex = 0" \
+							"	v:this->^->\"Button 2\".image = dp:\"Play/Pause\"[dp:pIndex]" \
+							"	" \
+							"	dp:Index = (dp:Index+1)%(length dp:Songs)" \
+							"	" \
+							"    false" \
+							"}"
+					}
+					text: text@25166a65-5dd9-430b-be31-a709219d3b1b (propref<string>)
+					touchShortReleased: function<bool,int,int,int,int>(5016a6bd-deea-471a-8beb-ee320265f572)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.fillColor = dp:Released" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfRectangle(63321472-d8a4-4743-8d74-b36ed40d3e23)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(f024b5d7-86c0-4311-9d56-20296f1e1f77)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Label 2"
+							visible: true
+							width: 150
+							height: 50
+							x: 50
+							y: 0
+							text: "Media Player"
+							textColor: #FFFFFFFF
+							font: font_resource(b3da0458-6e66-417d-b548-f0843f0f1556)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 0
+							verticalAlign: 0
+						}, 
+						GtfContainer_template_instance(fdf01faa-c9a6-446d-8768-2eff3676a352)
+						{
+							name: "Button 1"
+							template: @25166a65-5dd9-430b-be31-a709219d3b1b (objectref<GtfContainer_template>)
+							children: children_list []
+							image: image_resource(83849d62-a803-40a0-a406-91c606d2fba7)
+							{
+								file: "set.png"
+							}
+							width: width@25166a65-5dd9-430b-be31-a709219d3b1b (propref<int>)
+							height: height@25166a65-5dd9-430b-be31-a709219d3b1b (propref<int>)
+							x: 360
+							y: 0
+							fillColor: #808080FF
+							touchPressed: function<bool,int,int,int,int>(92c2db6e-dafc-4012-a1cb-75bcc45887bd)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this.fillColor = dp:Pressed" \
+									"	fire_delayed 300, ev:Go_to_Settings()" \
+									"    false" \
+									"}"
+							}
+							text: text@25166a65-5dd9-430b-be31-a709219d3b1b (propref<string>)
+							touchShortReleased: touchShortReleased@25166a65-5dd9-430b-be31-a709219d3b1b (propref<function<bool,int,int,int,int>>)
+						}, 
+						GtfContainer_template_instance(9ff3acec-e0dd-451e-b3f0-d1ccb5f67338)
+						{
+							name: "Button 2"
+							template: @25166a65-5dd9-430b-be31-a709219d3b1b (objectref<GtfContainer_template>)
+							children: children_list []
+							image: image@25166a65-5dd9-430b-be31-a709219d3b1b (propref<image>)
+							width: 40
+							height: 25
+							x: 297
+							y: 260
+							fillColor: #000000FF
+							touchPressed: function<bool,int,int,int,int>(e9ae8307-9277-4f06-bb18-2ee86eb7cd37)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	" \
+									"	v:this.fillColor = v:this.Press" \
+									"     if (dp:Volume +5 >100)" \
+									"     dp:Volume = 100" \
+									"     else" \
+									"     dp:Volume = dp:Volume +5" \
+									"     " \
+									"     " \
+									"    false" \
+									"}"
+							}
+							text: "+"
+							touchShortReleased: function<bool,int,int,int,int>(1bec4e91-4a1b-40ce-97e1-f039e1f6ac32)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	" \
+									"	v:this.fillColor = v:this.Rele" \
+									"    false" \
+									"}"
+							}
+							Press: #A9A9A9FF
+							Rele: #000000FF
+						}, 
+						GtfContainer_template_instance(fc4389b4-707e-4a02-893d-8f2a445ebae9)
+						{
+							name: "Button 3"
+							template: @25166a65-5dd9-430b-be31-a709219d3b1b (objectref<GtfContainer_template>)
+							children: children_list []
+							image: image@25166a65-5dd9-430b-be31-a709219d3b1b (propref<image>)
+							width: 40
+							height: 25
+							x: 152
+							y: 260
+							fillColor: #000000FF
+							touchPressed: function<bool,int,int,int,int>(75294f79-0fb8-4454-bd50-1d5fbe76a0c8)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this.fillColor = v:this.Pressed" \
+									"     if (dp:Volume -5 <0)" \
+									"     dp:Volume = 0" \
+									"     else" \
+									"     dp:Volume = dp:Volume -5" \
+									"     " \
+									"     " \
+									"    false" \
+									"}"
+							}
+							text: "-"
+							touchShortReleased: function<bool,int,int,int,int>(277fab3f-11ab-47bd-bb5b-dad852158a77)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this.fillColor = v:this.Released" \
+									"    false" \
+									"}"
+							}
+							Pressed: #A9A9A9FF
+							Released: #000000FF
+						}]
+					name: "Rectangle 6"
+					visible: true
+					width: 480
+					height: 50
+					x: 0
+					y: 0
+					fillColor: #F4A460FF
+				}, 
+				GtfRectangle(dbd1245f-31d7-4c3e-a5d7-4ba86ae292ee)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Rectangle 7"
+					visible: true
+					width: 130
+					height: 3
+					x: 50
+					y: 40
+					fillColor: #FFFFFFFF
+				}, 
+				GtfLabel(4f8ed6ad-fdb3-4853-a97b-2c7b0e30b7f1)
+				{
+					features: feature_list [
+						LineIndex(a038cca6-b7a2-4886-93d9-ef31d45d76bb)
+						{
+							lineIndex: 0
+						}]
+					children: children_list []
+					name: "Label 3"
+					visible: true
+					width: 400
+					height: 40
+					x: 40
+					y: 95
+					text: string_scriptedValue(3cbe625d-4ddf-40a9-a30e-1301c5c98246)
+					{
+						triggerList: trigger_list(9f15f132-f283-4051-8120-40f1cb02a9fe)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(b682a59f-0d10-4257-b71d-f8440f4edf49)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(169c67c1-79bc-4870-a908-5f5b6fb573ee)
+						{
+							script: "function()" \
+								"{" \
+								"	dp:Songs[dp:Index]" \
+								"}"
+						}
+						write: function<bool,string>(8ddae3a9-f17e-406e-9e73-aa545a2c8962)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(2c529fd7-2174-4727-9da7-0661f3bff293)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfRectangle(2f2fc676-805d-4379-8b32-872a131fef50)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfRectangle(af0e07cb-74a0-453c-816a-bd5312f66a97)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Rectangle 13"
+							visible: true
+							width: @d6672c37-9c5b-4968-bae6-4e23450d3a40 (objectref<int>)
+							height: 25
+							x: 0
+							y: 0
+							fillColor: #F4A460FF
+						}]
+					name: "Rectangle 12"
+					visible: true
+					width: 91
+					height: 25
+					x: 199
+					y: 260
+					fillColor: #A9A9A9FF
+				}, 
+				GtfLabel(0fc9e4d4-2699-4956-bf08-4fd3b1fdf93e)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 9"
+					visible: true
+					width: 91
+					height: 25
+					x: 199
+					y: 290
+					text: string_scriptedValue(ba6aaf3a-d569-4167-bdaa-244e378a2be1)
+					{
+						triggerList: trigger_list(1473b8f7-45d0-49a9-884f-16e9ef2c5887)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(d045e9f1-2c7e-4ae9-9465-e0d31a315279)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(20edf99a-2ea2-4055-9744-f071345ae28b)
+						{
+							script: "function()" \
+								"{" \
+								"	f:int2string(dp:Volume/5)" \
+								"}"
+						}
+						write: function<bool,string>(e518455f-05dc-44b6-80f8-6cfc8c6bbda7)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(3ab0149f-50cd-4609-96cb-acbbb21495a2)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Rectangle 4"
+			visible: true
+			width: width@5cb2994f-5d17-401b-90a2-ea1c14cb3f00 (propref<int>)
+			height: height@5cb2994f-5d17-401b-90a2-ea1c14cb3f00 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #696969FF
+		}]
+	name: "V_MediaPlayer"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}
