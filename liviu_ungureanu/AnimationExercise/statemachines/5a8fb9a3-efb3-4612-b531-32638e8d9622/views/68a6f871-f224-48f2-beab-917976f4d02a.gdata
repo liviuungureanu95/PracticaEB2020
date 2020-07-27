@@ -1,0 +1,414 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(68a6f871-f224-48f2-beab-917976f4d02a)
+{
+	features: feature_list []
+	children: children_list [
+		GtfLabel(cbf83397-e81f-4a39-84bb-13b1c9dfd140)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label_welcome"
+			visible: true
+			width: 205
+			height: 104
+			x: 271
+			y: 48
+			text: "Welcome"
+			textColor: #FFFFFFFF
+			font: font_resource(cd0a3549-a508-4760-970c-712ba2b1d802)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfRectangle(351e4dc8-7927-4f6b-9521-3ba4fa493f23)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfParallelAnimation(da689531-2b7b-46e0-8c3f-d791bbfcc053)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfFastStartS32(44300b2a-392b-49ce-8141-e696b49efc1e)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Fast start curve 1"
+							enabled: true
+							delay: 0
+							duration: 1000
+							repeat: 1
+							alternating: false
+							relative: false
+							start: 0
+							end: 800
+							target: width@351e4dc8-7927-4f6b-9521-3ba4fa493f23 (propref<int>)
+						}]
+					name: "AnimationLoadingBar"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(dca79290-191c-47f6-a634-b214c4d64ab3)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(a8389df6-1fbd-4e78-a2a4-2d74efd0665d)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(f2e19561-6c3c-43e4-8309-59c9b84b5a48)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					StartLoadingBar: conditional_script(157607f3-1add-4ab8-b69c-fa9fb81379ac)
+					{
+						triggerList: trigger_list(2e03e42e-e5fe-402b-8591-80afaf236d9a)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(cb3fc6de-1936-450f-824b-59f2a1922635)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	f:animation_play(v:this)" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "LoadingBar"
+			visible: true
+			width: 0
+			height: 25
+			x: 0
+			y: 190
+			fillColor: #2E8B57FF
+		}, 
+		GtfLabel(0e18804b-7218-4959-8522-f97a4bba6212)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfParallelAnimation(9e8b1e13-8733-4ff2-8e2f-8a3029d9b7b3)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationS32(cbaecc37-3196-4e36-a90f-4fd743a9ad41)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Linear interpolation curve"
+							enabled: true
+							delay: 0
+							duration: 60000
+							repeat: 1
+							alternating: false
+							relative: false
+							start: 60
+							end: 0
+							target: @44da7476-72da-4d88-8099-5ee83e6ba103 (objectref<int>)
+							"Conditional script 3": conditional_script(a653988b-8a9c-4f8e-8095-9bf65ffbd9c4)
+							{
+								triggerList: trigger_list(f64b2c8d-f128-4270-bb13-83f4dd73af6d)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(f1615204-1cdd-4ecb-b153-8442154c1908)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	f:animation_play(v:this)" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "AnimationCounter"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(242246f3-8656-4361-9879-0dcccb6b02c4)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(5604675c-c2ce-44ec-bfe6-d12900453580)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(c5ce0df7-21d0-400f-ae17-a9f3811f6faf)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+				}]
+			name: "Counter"
+			visible: true
+			width: 100
+			height: 100
+			x: 331
+			y: 312
+			text: string_scriptedValue(58a3b7b3-d9a3-4719-9c42-cad52c023378)
+			{
+				triggerList: trigger_list(2ca5aae5-3bb3-4a9b-b21e-2806dde8342d)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(00430ae0-4343-4b4b-a61b-24e9c5311692)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(77f024da-2a2b-4933-b686-0f1659d46c19)
+				{
+					script: "function()" \
+						"{" \
+						"	f:int2string(dp:Counter)" \
+						"}"
+				}
+				write: function<bool,string>(6ddc04fb-0f69-4cad-b28d-fd14134482b6)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #FFFFFFFF
+			font: font_resource(de1f65e7-c9e7-4a54-bd80-3c1c7d38218f)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+			"Color 1": color_scriptedValue(01465489-6f0d-416b-8e90-45640f247990)
+			{
+				triggerList: trigger_list(6cb24c26-f1a7-499d-a286-8c63fa5f405a)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(2a2edad6-2f11-4a57-92fa-b4efa3520797)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<color>(305386ec-48b3-442e-9246-342bf1bad109)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	color:169, 169, 169, 255" \
+						"}"
+				}
+				write: function<bool,color>(cab43844-125a-45c0-9d00-607d4f1ac6b2)
+				{
+					script: "function(v:arg0::color)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfImage(6e963c47-dcfc-4b71-bf2c-ea11c8116b2b)
+		{
+			features: feature_list [
+				Rotation(8f8ae410-1217-474a-8e19-cc128b58afd0)
+				{
+					rotationEnabled: true
+					rotationAngleX: 0F
+					rotationAngleY: 0F
+					rotationAngleZ: 0F
+				}, 
+				Scaling(b269941f-a2dd-41dd-9547-32956bd89a2a)
+				{
+					scalingEnabled: true
+					scalingX: 100F
+					scalingY: 100F
+					scalingZ: 100F
+				}, 
+				Shearing(376077c9-326e-4559-9295-bb27af45994d)
+				{
+					shearingEnabled: false
+					shearingXbyY: 0F
+					shearingXbyZ: 0F
+					shearingYbyX: 0F
+					shearingYbyZ: 0F
+					shearingZbyX: 0F
+					shearingZbyY: 0F
+				}, 
+				Pivot(16b241c7-879f-4007-9bdd-5f4d2ded5c3f)
+				{
+					pivotX: float_scriptedValue(ded62fcf-3def-46cc-99ae-4e2d7a9a827c)
+					{
+						triggerList: trigger_list(c57cc425-16b9-4e59-9c40-795f6b8268d5)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(d0cfab08-364b-485c-ab07-8d30668ac48a)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<float>(d1b6de87-e95f-484f-8393-f2a949d49cb2)
+						{
+							script: "function()" \
+								"{" \
+								"	f:int2float(v:this.width/2)" \
+								"}"
+						}
+						write: function<bool,float>(fe8bcb00-38cd-493f-a6fe-4f3770d79002)
+						{
+							script: "function(v:arg0::float)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					pivotY: float_scriptedValue(532865f9-d02c-4934-a5df-aebca82eca68)
+					{
+						triggerList: trigger_list(eeed971a-9ddf-4226-a816-d2b0d175bf9d)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(b43c8297-1770-4acc-af91-fe8d8d837be9)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<float>(707ca345-c116-48d9-bffc-cdbb0fae8c24)
+						{
+							script: "function()" \
+								"{" \
+								"	f:int2float(v:this.height/2)" \
+								"}"
+						}
+						write: function<bool,float>(2edee6e6-80a8-4381-8644-ec2a64748396)
+						{
+							script: "function(v:arg0::float)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					pivotZ: 0F
+				}]
+			children: children_list [
+				GtfParallelAnimation(7779efed-e7a7-4e8f-8bb8-7ac537c05a04)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationFloat(9225bc4b-d0b6-4d3c-9918-4213bba3e3e3)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Linear interpolation curve 1"
+							enabled: true
+							delay: 0
+							duration: 1000
+							repeat: 0
+							alternating: false
+							relative: false
+							start: 0F
+							end: -360F
+							target: rotationAngleZ@8f8ae410-1217-474a-8e19-cc128b58afd0 (propref<float>)
+						}]
+					name: "AnimationSpinning"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(7370861b-3d57-45b1-9273-2c371cceb9ae)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(93552ce0-957b-43c4-b180-edc6e8adf67f)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(076a6e2d-a35c-4490-83d1-e4800f8ac8a7)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					startSpinning: conditional_script(e1210c97-865c-427d-bb3e-4c59ba2be5fa)
+					{
+						triggerList: trigger_list(d2ce1337-2ae1-45b3-84de-9287ac284413)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(bf3cc5a9-023f-4ac5-8427-1619a774923d)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	f:animation_play(v:this)" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "SpinningWheel"
+			visible: true
+			width: 70
+			height: 70
+			x: 339
+			y: 183
+			image: image_resource(3c9b2190-191e-4614-91da-28dd772be8da)
+			{
+				file: "SpinningWheel.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "SplashScreen"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 1
+}
