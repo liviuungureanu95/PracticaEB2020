@@ -1,0 +1,97 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(d17fcba7-ecf1-410c-85c0-915dc6804cd8)
+{
+	name: "ShutDown"
+	structure: GtfContainer(9d5f0a59-bd6f-48b1-83ff-79ec625abfeb)
+	{
+		features: feature_list [
+			TouchShortReleased(f7a52e19-dab5-445e-b78d-495791965636)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(76aaafcf-7738-4d94-afa7-89fccd201f30)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(3cffc1ff-a7bf-4a78-9a2b-4b959403fc68)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(a642ac20-72dd-499d-8861-f156da516ad9)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@9d5f0a59-bd6f-48b1-83ff-79ec625abfeb (propref<int>)
+				height: height@9d5f0a59-bd6f-48b1-83ff-79ec625abfeb (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #A9A9A9FF
+			}, 
+			GtfEllipse(0d334d05-66e5-4633-bd2a-af908104150c)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "ExternalCircle"
+				visible: true
+				width: width@9d5f0a59-bd6f-48b1-83ff-79ec625abfeb (propref<int>)
+				height: height@9d5f0a59-bd6f-48b1-83ff-79ec625abfeb (propref<int>)
+				x: 0
+				y: 0
+				fillColor: LineColors@9d5f0a59-bd6f-48b1-83ff-79ec625abfeb (propref<color>)
+				arcWidth: 2
+				centralAngle: 360F
+				sectorRotation: 0F
+			}, 
+			GtfEllipse(74f0edc5-35ef-4d17-ac6c-faa67aed79bc)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "InternalCircle"
+				visible: true
+				width: height@74f0edc5-35ef-4d17-ac6c-faa67aed79bc (propref<int>)
+				height: 31
+				x: 10
+				y: 11
+				fillColor: LineColors@9d5f0a59-bd6f-48b1-83ff-79ec625abfeb (propref<color>)
+				arcWidth: 2
+				centralAngle: 300F
+				sectorRotation: 120F
+			}, 
+			GtfRectangle(2b90ae36-4cca-4341-8392-a549f1fc3403)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Line"
+				visible: true
+				width: 4
+				height: 16
+				x: 23
+				y: 9
+				fillColor: LineColors@9d5f0a59-bd6f-48b1-83ff-79ec625abfeb (propref<color>)
+			}]
+		name: "Container"
+		visible: true
+		width: 50
+		height: width@9d5f0a59-bd6f-48b1-83ff-79ec625abfeb (propref<int>)
+		x: 0
+		y: 0
+		LineColors: #6495EDFF
+		"On/Off": true
+	}
+	LineColors: LineColors@9d5f0a59-bd6f-48b1-83ff-79ec625abfeb (propref<color>)
+	fillColor: fillColor@a642ac20-72dd-499d-8861-f156da516ad9 (propref<color>)
+	x: x@9d5f0a59-bd6f-48b1-83ff-79ec625abfeb (propref<int>)
+	y: y@9d5f0a59-bd6f-48b1-83ff-79ec625abfeb (propref<int>)
+	width: width@9d5f0a59-bd6f-48b1-83ff-79ec625abfeb (propref<int>)
+	touchShortReleased: touchShortReleased@f7a52e19-dab5-445e-b78d-495791965636 (propref<function<bool,int,int,int,int>>)
+	"On/Off": "On/Off"@9d5f0a59-bd6f-48b1-83ff-79ec625abfeb (propref<bool>)
+}
