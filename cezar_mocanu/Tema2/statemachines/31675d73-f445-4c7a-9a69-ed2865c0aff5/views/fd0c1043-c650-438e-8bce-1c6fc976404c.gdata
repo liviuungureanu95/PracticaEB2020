@@ -1,0 +1,166 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(fd0c1043-c650-438e-8bce-1c6fc976404c)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle_template_instance(fefbab6f-cdae-4f0a-9c70-f9dee50def97)
+		{
+			name: "Background"
+			template: @e98c6793-b0b9-4103-a80b-8eafa7555c17 (objectref<GtfRectangle_template>)
+			children: children_list []
+			fillColor: fillColor@e98c6793-b0b9-4103-a80b-8eafa7555c17 (propref<color>)
+		}, 
+		GtfContainer_template_instance(09c064ea-e785-41b3-961a-8a875c1a6ea2)
+		{
+			name: "Fastwash"
+			template: @cc53b417-89a5-4029-adf0-e4e007b769e1 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: 250
+			Duration: 5
+			ProgramName: "Fast Wash"
+			x: 0
+			y: 25
+			height: 100
+			OnReleaseAction: function<bool>(d8230aa9-1261-427e-a6f1-cb41860f1cba)
+			{
+				script: "function()" \
+					"{" \
+					"	fire_delayed 1000, ev:goTo_Program(v:this.Duration,v:this.ProgramName)" \
+					"	dp:VisibleButtons[1] = false" \
+					"	dp:VisibleButtons[2] = false" \
+					"	dp:VisibleButtons[3] = false" \
+					"	false" \
+					"}"
+			}
+			Colors: @8c0885c7-b6c5-4767-b0f4-7442c04cf020 (objectref<colorlist>)
+			CurrentColor: #66CDAAFF
+			HasTime: HasTime@cc53b417-89a5-4029-adf0-e4e007b769e1 (propref<bool>)
+			visible: bool_element_reference(1c9e3bb3-3b29-4498-b216-cb8c4c03334a)
+			{
+				index: 0
+				list: @622323c8-4317-4440-ab55-4bd3a3fd005a (objectref<boollist>)
+			}
+		}, 
+		GtfContainer_template_instance(af308ee9-259f-4f43-a44d-599e9899055d)
+		{
+			name: "Glassware"
+			template: @cc53b417-89a5-4029-adf0-e4e007b769e1 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: 250
+			Duration: 7
+			ProgramName: "Glassware"
+			x: 0
+			y: 150
+			height: 100
+			OnReleaseAction: function<bool>(c0e4048a-2aaa-4e72-9abd-0e2e6ef21361)
+			{
+				script: "function()" \
+					"{" \
+					"	fire_delayed 1000, ev:goTo_Program(v:this.Duration,v:this.ProgramName)" \
+					"	dp:VisibleButtons[0] = false" \
+					"	dp:VisibleButtons[2] = false" \
+					"	dp:VisibleButtons[3] = false" \
+					"	false" \
+					"}"
+			}
+			Colors: @8c0885c7-b6c5-4767-b0f4-7442c04cf020 (objectref<colorlist>)
+			CurrentColor: #66CDAAFF
+			HasTime: HasTime@cc53b417-89a5-4029-adf0-e4e007b769e1 (propref<bool>)
+			visible: bool_element_reference(fdf9ad6e-2a57-4074-801c-99176062dd3e)
+			{
+				index: 1
+				list: @622323c8-4317-4440-ab55-4bd3a3fd005a (objectref<boollist>)
+			}
+		}, 
+		GtfContainer_template_instance(53d3ef54-a669-4723-b369-47233513aace)
+		{
+			name: "ThoroughWash"
+			template: @cc53b417-89a5-4029-adf0-e4e007b769e1 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: 250
+			Duration: 11
+			ProgramName: "Thorough Wash"
+			x: 1
+			y: 275
+			height: 100
+			OnReleaseAction: function<bool>(18874c4a-705e-4064-837c-1dbe5144e2ff)
+			{
+				script: "function()" \
+					"{" \
+					"	fire_delayed 1000, ev:goTo_Program(v:this.Duration,v:this.ProgramName)" \
+					"	dp:VisibleButtons[0] = false" \
+					"	dp:VisibleButtons[1] = false" \
+					"	dp:VisibleButtons[3] = false" \
+					"	false" \
+					"}"
+			}
+			Colors: @8c0885c7-b6c5-4767-b0f4-7442c04cf020 (objectref<colorlist>)
+			CurrentColor: #66CDAAFF
+			HasTime: HasTime@cc53b417-89a5-4029-adf0-e4e007b769e1 (propref<bool>)
+			visible: bool_element_reference(3d22b58a-70ff-4bd1-b707-0f961c183047)
+			{
+				index: 2
+				list: @622323c8-4317-4440-ab55-4bd3a3fd005a (objectref<boollist>)
+			}
+		}, 
+		GtfContainer_template_instance(c1b17989-d05a-40b6-aec2-f251dd8a4e91)
+		{
+			name: "Exit"
+			template: @cc53b417-89a5-4029-adf0-e4e007b769e1 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: 250
+			Duration: 0
+			ProgramName: "Exit"
+			x: 0
+			y: 400
+			height: 66
+			OnReleaseAction: function<bool>(3035ea7d-d721-45eb-9702-a31febf3363d)
+			{
+				script: "function()" \
+					"{" \
+					"	fire_delayed 1000, ev:goTo_Bye()" \
+					"	dp:VisibleButtons[0] = false" \
+					"	dp:VisibleButtons[1] = false" \
+					"	dp:VisibleButtons[2] = false" \
+					"	false" \
+					"}"
+			}
+			Colors: @8c0885c7-b6c5-4767-b0f4-7442c04cf020 (objectref<colorlist>)
+			CurrentColor: #66CDAAFF
+			HasTime: false
+			visible: bool_element_reference(0aaf2837-5194-4bac-aac7-75f09d5b1e80)
+			{
+				index: 3
+				list: @622323c8-4317-4440-ab55-4bd3a3fd005a (objectref<boollist>)
+			}
+		}, 
+		GtfImage(e9aa35b9-636a-44ab-9ea3-ead22914193b)
+		{
+			features: feature_list [
+				ScaleMode(60dcbcfc-acbb-4be4-91eb-0ad2cae3acb8)
+				{
+					scaleMode: 2
+				}]
+			children: children_list []
+			name: "Spash"
+			visible: true
+			width: 300
+			height: 300
+			x: 400
+			y: 100
+			image: image_resource(11075633-b8b0-433b-9cb2-500783e3d396)
+			{
+				file: "clean.png"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+	name: "View 4"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
