@@ -1,0 +1,159 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(a8818e21-cc21-49e5-aa78-2d500d9db2bc)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(238ab126-99bb-49b5-b118-cef34eb42193)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(2d5974a8-bc10-4388-bb57-e115847491b7)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 4"
+					visible: true
+					width: width@a8818e21-cc21-49e5-aa78-2d500d9db2bc (propref<int>)
+					height: 93
+					x: -2
+					y: 88
+					text: string_scriptedValue(abec24a6-bbbd-49bd-b8b9-fd97cdf80435)
+					{
+						triggerList: trigger_list(a5217095-5815-4027-baf8-044e43e3c10c)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(bc3787c8-3fb8-4ebe-bc6a-c04934bb188a)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(b34a1546-817c-4f03-9814-c4cb7bf7ecba)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	dp:Lista_Muzica[dp:Index]" \
+								"	" \
+								"}"
+						}
+						write: function<bool,string>(8c81ffa3-1252-4f29-815c-2f94ed6a52a4)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(dd199e60-bc24-40c5-9160-4a759be38e34)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 40
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(eaa18e4a-f747-46c8-9c0e-6ca355d355d4)
+				{
+					name: "NEXT_BT"
+					template: @4b67ddda-0777-4dfb-a451-b6c7eb0cf7de (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 330
+					y: 220
+					text: "NEXT"
+					touchShortReleased: function<bool,int,int,int,int>(5b136dbe-eff5-4d84-bd3c-bee59a04900e)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"   " \
+							"	if(dp:Index == dp:NrTotal){" \
+							"		dp:Index = 0" \
+							"	}" \
+							"	else{" \
+							"		dp:Index = dp:Index + 1" \
+							"	}" \
+							"	v:this->^->PLAY_BT.text=\"PAUSE\"" \
+							"    false" \
+							"}"
+					}
+					fillColor: fillColor@4b67ddda-0777-4dfb-a451-b6c7eb0cf7de (propref<color>)
+				}, 
+				GtfContainer_template_instance(b8b37939-eb5d-48a7-ba21-f3e8422090ec)
+				{
+					name: "PLAY_BT"
+					template: @4b67ddda-0777-4dfb-a451-b6c7eb0cf7de (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 178
+					y: 220
+					text: "PLAY"
+					touchShortReleased: function<bool,int,int,int,int>(b3320692-0ec3-4c52-a3dc-729250d6a4b1)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    if(v:this.text==\"PAUSE\")" \
+							"    {" \
+							"    	v:this.text=\"PLAY\"" \
+							"    } " \
+							"    else" \
+							"    {" \
+							"    	v:this.text=\"PAUSE\"" \
+							"    }" \
+							"    false" \
+							"}"
+					}
+					fillColor: fillColor@4b67ddda-0777-4dfb-a451-b6c7eb0cf7de (propref<color>)
+				}, 
+				GtfContainer_template_instance(4d095612-3ae7-4ccf-85fe-a93bcb16fea3)
+				{
+					name: "PREVIOUS_BT"
+					template: @4b67ddda-0777-4dfb-a451-b6c7eb0cf7de (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 0
+					y: 220
+					text: "PREVIOUS"
+					touchShortReleased: function<bool,int,int,int,int>(8e0edec8-fce5-4664-b54b-514dee90ff15)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"   " \
+							"	if(dp:Index == 0)" \
+							"	{" \
+							"		" \
+							"		dp:Index = dp:NrTotal - 1" \
+							"	}" \
+							"	else{" \
+							"		dp:Index = dp:Index - 1" \
+							"	}" \
+							"	v:this->^->PLAY_BT.text=\"PAUSE\"" \
+							"    false" \
+							"}"
+					}
+					fillColor: fillColor@4b67ddda-0777-4dfb-a451-b6c7eb0cf7de (propref<color>)
+				}]
+			name: "Image 8"
+			visible: true
+			width: width@a8818e21-cc21-49e5-aa78-2d500d9db2bc (propref<int>)
+			height: height@a8818e21-cc21-49e5-aa78-2d500d9db2bc (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(6d90cb10-fb1d-4e75-baea-4c788309aa09)
+			{
+				file: "BackSong.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+	name: "Song"
+	visible: true
+	width: @690a21af-67ed-4c7d-97c6-1c17e7362c2e (objectref<int>)
+	height: @17d1f4e5-aaf0-48eb-ba18-d891ac6f003b (objectref<int>)
+	x: 0
+	y: 0
+}
