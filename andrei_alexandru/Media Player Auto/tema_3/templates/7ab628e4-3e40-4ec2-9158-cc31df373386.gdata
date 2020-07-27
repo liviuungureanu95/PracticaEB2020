@@ -1,0 +1,68 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(7ab628e4-3e40-4ec2-9158-cc31df373386)
+{
+	name: "T_Previous_Button"
+	structure: GtfContainer(bbf2ea74-89e0-4b94-9e28-125569e76e2f)
+	{
+		features: feature_list [
+			TouchPressed(c382ad1e-ee3f-4fae-8f41-328ae7acfa7d)
+			{
+				touchPressed: function<bool,int,int,int,int>(b83d83d9-f23b-4295-979b-3520e2fe2313)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(673550b8-c075-451b-896c-7a6b00f5d7fa)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(3de40929-fbfb-40c6-a687-3a706dd632b5)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@bbf2ea74-89e0-4b94-9e28-125569e76e2f (propref<int>)
+				height: height@bbf2ea74-89e0-4b94-9e28-125569e76e2f (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #F0FFFFFF
+			}, 
+			GtfImage(2bd05966-0bd1-43ab-9088-aad5be558139)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Logo"
+				visible: true
+				width: width@bbf2ea74-89e0-4b94-9e28-125569e76e2f (propref<int>)
+				height: height@bbf2ea74-89e0-4b94-9e28-125569e76e2f (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(bda93f2a-0257-4798-b025-9ebde7a67661)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: @d18eb447-476d-4fe7-95ba-ed285b2d08a6 (objectref<int>)
+		height: @af493180-3e1d-44b0-9a95-1f8633d3be26 (objectref<int>)
+		x: 0
+		y: 0
+	}
+	x: x@bbf2ea74-89e0-4b94-9e28-125569e76e2f (propref<int>)
+	y: y@bbf2ea74-89e0-4b94-9e28-125569e76e2f (propref<int>)
+	image: image@2bd05966-0bd1-43ab-9088-aad5be558139 (propref<image>)
+	touchPressed: touchPressed@c382ad1e-ee3f-4fae-8f41-328ae7acfa7d (propref<function<bool,int,int,int,int>>)
+}

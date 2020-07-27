@@ -1,0 +1,54 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_statemachine(05c107d6-3bc4-479d-96e7-caca77aa6709)
+{
+	x: 0
+	y: 0
+	width: 600
+	height: 400
+	name: "Main"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions []
+	internal_transitions: haptic_internal_transitions []
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(07f17db3-718a-41de-8878-c83b22f63e5a)
+		{
+			x: 99
+			y: 43
+			width: 100
+			height: 100
+			name: "Meniu_princpial"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (54628933-5e47-4222-9ec5-3e91be696511)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(f0d9f7f5-22bd-4959-bc2e-c795e7c4f7ae)
+	{
+		x: 32
+		y: 52
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(0c5c2eb1-5286-4792-923b-7a5adf21051b)
+		{
+			action: function<void>(none)
+			target_state: @07f17db3-718a-41de-8878-c83b22f63e5a (objectref<haptic_dialog_state>)
+			source_dock: 0.220857F
+			target_dock: 0.833079F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(none)
+}

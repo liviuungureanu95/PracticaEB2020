@@ -1,0 +1,88 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(54628933-5e47-4222-9ec5-3e91be696511)
+{
+	name: "View meniu_principal"
+	template: @91405440-ce3d-4f71-bd31-6219120a62b3 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(1bee9e8d-f456-4c0a-841d-5104f5868573)
+		{
+			name: "T_Play/Pause_Button"
+			template: @ae749e61-332a-42e9-b9ce-9bf3e414b175 (objectref<GtfContainer_template>)
+			children: children_list []
+			fillColor: fillColor@ae749e61-332a-42e9-b9ce-9bf3e414b175 (propref<color>)
+			y: 260
+			x: 140
+			image: image_resource(34967c72-9333-4870-bb2b-f852a25c06ca)
+			{
+				file: "play.png"
+			}
+			touchPressed: function<bool,int,int,int,int>(7fa35677-d091-4e90-850a-3e770434892e)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.text = \"<Track 1>\"" \
+					"	v:this.image = dp:pause_button" \
+					"    false" \
+					"}"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(b16d0eb1-99c7-4725-bdf7-a9f16a245eac)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"   v:this dp:pause_button = dp:play_button" \
+					"   false" \
+					"}"
+			}
+			font: font_resource(4701bff7-2b28-4625-8a67-af4ef793c9a3)
+			{
+				file: "timesi.ttf"
+				size: 25
+			}
+			textColor: textColor@ae749e61-332a-42e9-b9ce-9bf3e414b175 (propref<color>)
+			text: ""
+			"y 2": "y 2"@ae749e61-332a-42e9-b9ce-9bf3e414b175 (propref<int>)
+			"x 2": "x 2"@ae749e61-332a-42e9-b9ce-9bf3e414b175 (propref<int>)
+		}, 
+		GtfContainer_template_instance(49741f4e-75e6-41a3-8c92-5cd158856753)
+		{
+			name: "T_Next_Button"
+			template: @f0cd2860-134d-40cb-bb14-1c520a04b333 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 350
+			y: 260
+			image: image_resource(93665afe-d874-40fa-a710-ced29788167e)
+			{
+				file: "next.png"
+			}
+			touchPressed: function<bool,int,int,int,int>(d0a30b72-ba79-4f9a-be8e-b7c562da26be)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(8c67cb6a-d2ed-4793-ac85-62266e498a7c)
+		{
+			name: "T_Previous_Button"
+			template: @7ab628e4-3e40-4ec2-9158-cc31df373386 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 80
+			y: 260
+			image: image_resource(a96eee29-8c30-4e5f-9e2c-45f82731b122)
+			{
+				file: "back.png"
+			}
+			touchPressed: touchPressed@7ab628e4-3e40-4ec2-9158-cc31df373386 (propref<function<bool,int,int,int,int>>)
+		}]
+	y: y@91405440-ce3d-4f71-bd31-6219120a62b3 (propref<int>)
+	fillColor: fillColor@91405440-ce3d-4f71-bd31-6219120a62b3 (propref<color>)
+	font: font_resource(612e7bb9-ee0d-429d-8ceb-9709a5d8b9a7)
+	{
+		file: "operational amplifier.ttf"
+		size: 25
+	}
+	textColor: #E0FFFFFF
+	text: "<Track 1>"
+}

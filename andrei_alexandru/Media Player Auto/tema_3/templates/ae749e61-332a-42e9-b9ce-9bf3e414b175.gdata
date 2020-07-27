@@ -1,0 +1,105 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(ae749e61-332a-42e9-b9ce-9bf3e414b175)
+{
+	name: "T_Play/Pause_Button"
+	structure: GtfContainer(34c9e005-756b-42c4-a082-682a6457d255)
+	{
+		features: feature_list [
+			StateTouched(13b992f3-faa3-45dd-aa4e-918ec7b7264b)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			TouchPressed(4bc9df29-be6e-4530-b159-b7935b492f93)
+			{
+				touchPressed: function<bool,int,int,int,int>(138c0467-8c49-48d5-9f8c-7d525e27fa4a)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(d6e0ccce-c923-44a2-ab28-f90fd28cafc1)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(c1f9920f-1ce3-47dd-98f2-3b49c7dd063e)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}]
+		children: children_list [
+			GtfRectangle(bd4ddab2-8460-44c5-8941-9aaf2bf6782a)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@34c9e005-756b-42c4-a082-682a6457d255 (propref<int>)
+				height: height@34c9e005-756b-42c4-a082-682a6457d255 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #F0FFFFFF
+			}, 
+			GtfImage(22458b00-aa99-40be-baf6-359c5b657c78)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Logo Play"
+				visible: true
+				width: width@34c9e005-756b-42c4-a082-682a6457d255 (propref<int>)
+				height: height@34c9e005-756b-42c4-a082-682a6457d255 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(e0b1b571-2910-4b3c-9529-01c99c4b2358)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfLabel(85e71d91-9086-47a8-b585-69d5d79a298a)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Music Name"
+				visible: true
+				width: 200
+				height: 50
+				x: 0
+				y: -60
+				text: "<Music name>"
+				textColor: #E0FFFFFF
+				font: font_resource(72da6040-e660-46df-8332-2c905e83a68c)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 25
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: @c0efbce7-036a-45cd-814e-c4a7e90ee339 (objectref<int>)
+		height: @ae5ec8c5-8bac-4c50-ae38-5be24e5ce3af (objectref<int>)
+		x: 0
+		y: 0
+	}
+	fillColor: fillColor@bd4ddab2-8460-44c5-8941-9aaf2bf6782a (propref<color>)
+	y: y@34c9e005-756b-42c4-a082-682a6457d255 (propref<int>)
+	x: x@34c9e005-756b-42c4-a082-682a6457d255 (propref<int>)
+	image: image@22458b00-aa99-40be-baf6-359c5b657c78 (propref<image>)
+	touchPressed: touchPressed@4bc9df29-be6e-4530-b159-b7935b492f93 (propref<function<bool,int,int,int,int>>)
+	touchShortReleased: touchShortReleased@d6e0ccce-c923-44a2-ab28-f90fd28cafc1 (propref<function<bool,int,int,int,int>>)
+	font: font@85e71d91-9086-47a8-b585-69d5d79a298a (propref<font>)
+	textColor: textColor@85e71d91-9086-47a8-b585-69d5d79a298a (propref<color>)
+	text: text@85e71d91-9086-47a8-b585-69d5d79a298a (propref<string>)
+	"y 2": y@85e71d91-9086-47a8-b585-69d5d79a298a (propref<int>)
+	"x 2": x@85e71d91-9086-47a8-b585-69d5d79a298a (propref<int>)
+}
