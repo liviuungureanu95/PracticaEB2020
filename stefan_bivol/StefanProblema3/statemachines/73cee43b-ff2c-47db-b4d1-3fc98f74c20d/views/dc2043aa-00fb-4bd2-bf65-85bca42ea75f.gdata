@@ -1,0 +1,206 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(dc2043aa-00fb-4bd2-bf65-85bca42ea75f)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(72383b69-5663-41b5-9d78-724ba34c2c74)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfContainer(20d814e9-aa7e-402b-a8e8-2e34ba04f5ff)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfRectangle(94aa66ef-4b0a-414a-8d78-cf4a8c950d72)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "LineMenu"
+							visible: true
+							width: 450
+							height: 3
+							x: 10
+							y: 60
+							fillColor: #FFE4C4FF
+						}, 
+						GtfLabel(9123a0e3-9216-49e0-855b-2fd69db7fa49)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "LabelText"
+							visible: true
+							width: 150
+							height: 50
+							x: 10
+							y: 15
+							text: "Menu Player"
+							textColor: #FFFFFFFF
+							font: font_resource(24756100-6653-4167-95a6-be51f2fb8008)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 0
+							verticalAlign: 0
+						}]
+					name: "LabelMenu"
+					visible: true
+					width: 100
+					height: 100
+					x: 0
+					y: 0
+				}, 
+				GtfLabel(b6b4639c-c35c-495f-8db6-f73a563a90be)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "LabelMusic"
+					visible: true
+					width: 410
+					height: 50
+					x: 40
+					y: 210
+					text: string_scriptedValue(6aad6a85-d765-4d8f-bda9-84f676cbd981)
+					{
+						triggerList: trigger_list(5072a3c7-b4fb-4d2e-a523-2272ff3a8179)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(1c32b82e-f1ef-499d-877c-3559de4ac37e)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(e942625d-57c8-4dcf-8563-d4721597eff4)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	dp:MusicList[dp:IndexMusicList]" \
+								"}"
+						}
+						write: function<bool,string>(01009835-ce91-486f-8306-fdc1dd568ea4)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(0a5c5f86-26f0-462b-983a-400b72991164)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(830207d5-2e82-4735-a033-88254bb62d20)
+				{
+					name: "ButtonPlayPause"
+					template: @c52579cf-1772-4e8d-aa7b-a0600ba9a2b7 (objectref<GtfContainer_template>)
+					children: children_list []
+					image: image_resource(2321d8c6-dfa1-4344-8b71-6f016c61b452)
+					{
+						file: "Play_Button.png"
+					}
+					x: 224
+					y: 260
+					touchPressed: function<bool,int,int,int,int>(de72f8ae-478b-4ba1-9d64-6cb3bb13c86a)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(v:this.play == false)" \
+							"		{" \
+							"			v:this.image = dp:PauseImage	" \
+							"			v:this.play = true" \
+							"		}" \
+							"    else" \
+							"    	{" \
+							"    	v:this.image = dp:PlayImage" \
+							"    	v:this.play = false" \
+							"    	}" \
+							"    false" \
+							"}"
+					}
+					play: false
+				}, 
+				GtfContainer_template_instance(45d6a68d-2a27-40f0-b9c0-ff3205c33e25)
+				{
+					name: "ButtonBack"
+					template: @c52579cf-1772-4e8d-aa7b-a0600ba9a2b7 (objectref<GtfContainer_template>)
+					children: children_list []
+					image: image_resource(8a18b0e2-777d-4ce5-a271-6fd2d89609c8)
+					{
+						file: "Back_Button.png"
+					}
+					x: 154
+					y: 262
+					touchPressed: function<bool,int,int,int,int>(25171ad5-b40c-40b0-baaa-2927f1677f1c)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:IndexMusicList > 0)" \
+							"		dp:IndexMusicList -= 1" \
+							"    else " \
+							"    	dp:IndexMusicList = 8" \
+							"    v:this->^->ButtonPlayPause.image = dp:PlayImage" \
+							"    v:this->^->ButtonPlayPause.play = false" \
+							"    false" \
+							"}"
+					}
+					play: false
+				}, 
+				GtfContainer_template_instance(1d8aee81-2410-424f-8e4f-b1b77f496b33)
+				{
+					name: "ButtonNext"
+					template: @c52579cf-1772-4e8d-aa7b-a0600ba9a2b7 (objectref<GtfContainer_template>)
+					children: children_list []
+					image: image_resource(f01f4f45-f459-4ca3-bce5-5d9e841572be)
+					{
+						file: "Next_Button.png"
+					}
+					x: 296
+					y: 260
+					touchPressed: function<bool,int,int,int,int>(95a7a03d-5537-4799-af6b-a6a6313c2c8a)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:IndexMusicList < 8)" \
+							"		dp:IndexMusicList += 1" \
+							"    else " \
+							"    	dp:IndexMusicList = 0" \
+							"    v:this->^->ButtonPlayPause.image = dp:PlayImage" \
+							"    v:this->^->ButtonPlayPause.play = false" \
+							"    false" \
+							"}"
+					}
+					play: false
+				}]
+			name: "ImageBackgroundMenu"
+			visible: true
+			width: 480
+			height: 320
+			x: -2
+			y: 0
+			image: image_resource(a55d95f1-5458-4545-8792-fe26dfe1c0fb)
+			{
+				file: "Background_App.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "Menu_View"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}
