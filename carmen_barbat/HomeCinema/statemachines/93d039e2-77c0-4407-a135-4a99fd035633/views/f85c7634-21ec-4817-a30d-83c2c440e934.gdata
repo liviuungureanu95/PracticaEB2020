@@ -1,0 +1,327 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(f85c7634-21ec-4817-a30d-83c2c440e934)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(a23e7c53-2b90-4dcc-a8cb-6337d9fb7050)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(201a8654-74c0-4298-87eb-21762ee77b8b)
+				{
+					features: feature_list [
+						ScaleMode(6e0f7619-5d31-4261-a8bb-83da83b5ffa5)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "Image 1"
+					visible: true
+					width: width@f85c7634-21ec-4817-a30d-83c2c440e934 (propref<int>)
+					height: 260
+					x: 0
+					y: 0
+					image: image_scriptedValue(2beafb2a-8b0a-4b7c-9531-32e72d4c96e0)
+					{
+						triggerList: trigger_list(d21cefc1-e23e-4123-8964-c64b332e812b)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(b1224db2-dea3-4d79-a848-cc617cb52cef)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<image>(07eba9c5-fb4d-4abc-ba77-5f78b3a927b1)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"dp:Lista_Film[dp:Index]" \
+								"}"
+						}
+						write: function<bool,image>(68a52d0e-5f61-46c9-abf6-374b95ec844f)
+						{
+							script: "function(v:arg0::image)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(15a72e73-878e-4511-a3a1-804628fadb77)
+				{
+					features: feature_list [
+						StateEnabled(35ff5763-9e7c-4505-a0df-dcbc7f7367b1)
+						{
+							enabled: true
+						}]
+					children: children_list []
+					name: "Label 2"
+					visible: true
+					width: width@f85c7634-21ec-4817-a30d-83c2c440e934 (propref<int>)
+					height: 27
+					x: 0
+					y: -1
+					text: string_scriptedValue(4d9dc68c-4b23-43a5-a235-4a2a3c2183a6)
+					{
+						triggerList: trigger_list(c7ccb49e-b30b-4228-b9cd-d3ff96a16c77)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(ed9a3fe8-2ad8-43bf-80d4-338b50dffe98)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(8d92cb82-94db-4e6f-b286-1a94e198044a)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	dp:Titlu_film[dp:Index]" \
+								"}"
+						}
+						write: function<bool,string>(6961738b-c7f9-4d19-93a0-3b6f6f85b71f)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFF0F5FF
+					font: font_resource(39262d33-2897-4585-a35e-6a2f85e0ce7c)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 20
+					}
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfContainer_template_instance(7163715f-c6ae-4363-8913-fb731724ec7e)
+				{
+					name: "PLUS_BT"
+					template: @cf22c053-5491-4836-8b29-5f85900a01bb (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 63
+					y: 260
+					image: image@cf22c053-5491-4836-8b29-5f85900a01bb (propref<image>)
+					scaleMode: scaleMode@cf22c053-5491-4836-8b29-5f85900a01bb (propref<int>)
+					touchShortReleased: function<bool,int,int,int,int>(d7ef1461-7634-413f-82db-7576202299a4)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    if(dp:Volum<100)" \
+							"    {" \
+							"    	dp:Volum=dp:Volum+10;" \
+							"    }" \
+							"    else" \
+							"    {" \
+							"    	dp:Volum=100;" \
+							"    }" \
+							"    " \
+							"    false" \
+							"}"
+					}
+					enabled: enabled@cf22c053-5491-4836-8b29-5f85900a01bb (propref<bool>)
+				}, 
+				GtfContainer_template_instance(86035dab-10cf-4502-834f-518fed05743a)
+				{
+					name: "MINUS_BT"
+					template: @cf22c053-5491-4836-8b29-5f85900a01bb (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 123
+					y: 260
+					image: image_resource(a201a7e8-dd0d-4c12-8608-b8a47c43c8b0)
+					{
+						file: "minus.png"
+					}
+					scaleMode: 1
+					touchShortReleased: function<bool,int,int,int,int>(a091faf6-7601-438c-9e94-9625e69f5c27)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:Volum>0)" \
+							"    {" \
+							"    	dp:Volum=dp:Volum-10;" \
+							"    }" \
+							"    else" \
+							"    {" \
+							"    	dp:Volum=0;" \
+							"    }   " \
+							"   false" \
+							"}"
+					}
+					enabled: enabled@cf22c053-5491-4836-8b29-5f85900a01bb (propref<bool>)
+				}, 
+				GtfContainer_template_instance(6ed4a37c-ba20-4898-9bb8-7ddadf7ee5c5)
+				{
+					name: "PREV_BT"
+					template: @cf22c053-5491-4836-8b29-5f85900a01bb (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 209
+					y: 259
+					image: image_resource(2d39f3cc-1acc-4071-b7b4-4b4e48022b0e)
+					{
+						file: "prev1.jpg"
+					}
+					scaleMode: scaleMode@cf22c053-5491-4836-8b29-5f85900a01bb (propref<int>)
+					touchShortReleased: function<bool,int,int,int,int>(01ba6f94-37c7-4ff4-9fc9-07d1640006b1)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:Index == 0)" \
+							"	{" \
+							"		" \
+							"		dp:Index = length dp:Lista_Film - 2 //in lista de filme am si imaginea pentru oprire (e ultima, de aceea am pus -2)" \
+							"	}" \
+							"	else{" \
+							"		dp:Index = dp:Index - 1" \
+							"	}" \
+							"    false" \
+							"}"
+					}
+					enabled: enabled@cf22c053-5491-4836-8b29-5f85900a01bb (propref<bool>)
+				}, 
+				GtfContainer_template_instance(eefe722c-5242-43de-8596-0aef92f166e3)
+				{
+					name: "NEXT_BT"
+					template: @cf22c053-5491-4836-8b29-5f85900a01bb (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 276
+					y: 260
+					image: image_resource(ae61e54d-723f-4331-9d84-61de46c2910d)
+					{
+						file: "next.jpg"
+					}
+					scaleMode: scaleMode@cf22c053-5491-4836-8b29-5f85900a01bb (propref<int>)
+					touchShortReleased: function<bool,int,int,int,int>(4b610f8b-3ed5-4ec3-8b98-48a1899250c7)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:Index == length dp:Lista_Film-2)//in lista de filme am si imaginea pentru oprire (e ultima, de aceea am pus -2)" \
+							"	{" \
+							"		dp:Index = 0" \
+							"	}" \
+							"	else{" \
+							"		dp:Index = dp:Index + 1" \
+							"	}" \
+							"    false" \
+							"}"
+					}
+					enabled: enabled@cf22c053-5491-4836-8b29-5f85900a01bb (propref<bool>)
+				}, 
+				GtfLabel(1f23ed2d-873c-4ed6-b0b5-dad549d27653)
+				{
+					features: feature_list [
+						StateEnabled(a24417ca-0a02-49b4-9bc3-705e11569408)
+						{
+							enabled: true
+						}]
+					children: children_list []
+					name: "Label 3"
+					visible: true
+					width: 60
+					height: 60
+					x: 0
+					y: 260
+					text: string_scriptedValue(513933cd-b0b6-47d8-89dc-0d07c2bd8fc5)
+					{
+						triggerList: trigger_list(74a1bf81-594e-4c13-91b6-8c9dd6a10598)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(16443f31-f885-493b-a6ad-e3a99e5795d1)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(4a3e5a52-fd25-494a-a5ff-e44c61e0a2a1)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:int2string(dp:Volum)" \
+								"	" \
+								"		" \
+								"}"
+						}
+						write: function<bool,string>(edf6daa8-9f95-4b6d-a0c4-15e4c16937d1)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(19cde309-87d1-465c-ba3c-e16880d728da)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(3e5238d8-093c-41e0-be0a-f95e52622224)
+				{
+					name: "STOP_BT"
+					template: @cf22c053-5491-4836-8b29-5f85900a01bb (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 419
+					y: 260
+					image: image_resource(ceba9a25-973b-491e-89df-ecd7248f7ed3)
+					{
+						file: "op.png"
+					}
+					scaleMode: scaleMode@cf22c053-5491-4836-8b29-5f85900a01bb (propref<int>)
+					touchShortReleased: function<bool,int,int,int,int>(e84f30f3-0380-4a2d-885d-bfcc62293191)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:Index=3" \
+							"	" \
+							"	v:this->^->PLUS_BT.enabled=false " \
+							"	v:this->^->MINUS_BT.enabled=false " \
+							"	v:this->^->PREV_BT.enabled=false " \
+							"	v:this->^->NEXT_BT.enabled=false " \
+							"	v:this->^->\"Label 2\".visible=false" \
+							"	v:this->^->\"Label 3\".visible=false" \
+							"	" \
+							"    false" \
+							"}"
+					}
+					enabled: enabled@cf22c053-5491-4836-8b29-5f85900a01bb (propref<bool>)
+				}]
+			name: "Background"
+			visible: true
+			width: width@f85c7634-21ec-4817-a30d-83c2c440e934 (propref<int>)
+			height: height@f85c7634-21ec-4817-a30d-83c2c440e934 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #000000FF
+		}]
+	name: "View 1"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}
