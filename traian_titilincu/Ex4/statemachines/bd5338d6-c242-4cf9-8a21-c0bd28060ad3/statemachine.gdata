@@ -1,0 +1,54 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_statemachine(bd5338d6-c242-4cf9-8a21-c0bd28060ad3)
+{
+	x: 0
+	y: 0
+	width: 600
+	height: 400
+	name: "Main"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions []
+	internal_transitions: haptic_internal_transitions []
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(bf6809a4-f4bf-4808-bc3c-a48955bddeb1)
+		{
+			x: 191
+			y: 84
+			width: 100
+			height: 100
+			name: "Home Cinema View State"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (2711ee08-03c4-4ecc-ab06-a403bb3cc2d2)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(eaa46b18-741c-4051-982b-8b3a57a61384)
+	{
+		x: 62
+		y: 108
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(8430e56f-2bac-4f7b-9f6f-9251b70c6a11)
+		{
+			action: function<void>(none)
+			target_state: @bf6809a4-f4bf-4808-bc3c-a48955bddeb1 (objectref<haptic_dialog_state>)
+			source_dock: 0.2736966F
+			target_dock: 0.7814165F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(none)
+}
