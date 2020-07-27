@@ -1,0 +1,64 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(da13cf6a-7ada-46f6-bc56-553ef2e1b3fd)
+{
+	name: "Home Cinema Image Button"
+	structure: GtfContainer(06199700-24d2-4ad2-9e3c-95b13e1fba1d)
+	{
+		features: feature_list [
+			TouchPressed(133d715a-fe97-4d6d-929c-417c940352b4)
+			{
+				touchPressed: function<bool,int,int,int,int>(563cfb10-7b0b-4a48-aefe-4427ff705383)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(176a88f5-7ce1-4d63-bdca-a1f4cbf624a3)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfImage(e6ff0c85-9185-4fc8-8437-f118f0741a22)
+			{
+				features: feature_list [
+					StateTouched(d1bcd98c-1f04-4cab-92d0-07e96c9b6199)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list []
+				name: "Image"
+				visible: true
+				width: 40
+				height: 40
+				x: 0
+				y: 0
+				image: image_resource(a3ac9a78-b5d6-4d48-86b5-b3ea0d8128f7)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "ImageButton"
+		visible: true
+		width: 35
+		height: 35
+		x: 0
+		y: 0
+	}
+	x: x@06199700-24d2-4ad2-9e3c-95b13e1fba1d (propref<int>)
+	y: y@06199700-24d2-4ad2-9e3c-95b13e1fba1d (propref<int>)
+	image: image@e6ff0c85-9185-4fc8-8437-f118f0741a22 (propref<image>)
+	touchPressed: touchPressed@133d715a-fe97-4d6d-929c-417c940352b4 (propref<function<bool,int,int,int,int>>)
+	touchable: touchable@176a88f5-7ce1-4d63-bdca-a1f4cbf624a3 (propref<bool>)
+}

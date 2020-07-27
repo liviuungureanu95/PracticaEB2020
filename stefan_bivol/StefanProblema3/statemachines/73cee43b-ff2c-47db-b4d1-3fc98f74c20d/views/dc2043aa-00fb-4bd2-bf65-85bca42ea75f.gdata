@@ -149,7 +149,7 @@ GtfView(dc2043aa-00fb-4bd2-bf65-85bca42ea75f)
 							"	if(dp:IndexMusicList > 0)" \
 							"		dp:IndexMusicList -= 1" \
 							"    else " \
-							"    	dp:IndexMusicList = 8" \
+							"    	dp:IndexMusicList = length dp:MusicList - 1" \
 							"    v:this->^->ButtonPlayPause.image = dp:PlayImage" \
 							"    v:this->^->ButtonPlayPause.play = false" \
 							"    false" \
@@ -172,7 +172,7 @@ GtfView(dc2043aa-00fb-4bd2-bf65-85bca42ea75f)
 					{
 						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 							"{" \
-							"	if(dp:IndexMusicList < 8)" \
+							"	if(dp:IndexMusicList < length dp:MusicList - 1)" \
 							"		dp:IndexMusicList += 1" \
 							"    else " \
 							"    	dp:IndexMusicList = 0" \
