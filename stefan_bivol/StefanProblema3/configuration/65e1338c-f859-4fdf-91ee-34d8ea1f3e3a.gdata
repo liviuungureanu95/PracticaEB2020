@@ -1,19 +1,19 @@
 EBGUIDE 6.10.0.200602120856;
 
-configuration_profile(d86c8ddb-cc56-46af-8e73-888ca443510d)
+configuration_profile(65e1338c-f859-4fdf-91ee-34d8ea1f3e3a)
 {
-	name: "Edit"
-	isDefault: true
+	name: "Simulation(480x320)"
+	isDefault: false
 	scene_configurations: scene_configurations [
-		scene_configuration(753c7737-196e-4730-bf18-80920eb69cc1)
+		scene_configuration(0eb3d902-1fcc-435e-8e06-554f70d9a265)
 		{
 			context: @31dfb6eb-945b-4343-970d-9dc4576b9c37 (objectref<context>)
 			statemachine: @73cee43b-ff2c-47db-b4d1-3fc98f74c20d (objectref<haptic_statemachine>)
 			enabled: true
-			scene: GtfVisualScene(098bf7cc-2fe6-4d36-a9e6-6d479bb12a50)
+			scene: GtfVisualScene(ca41c939-8cf1-47a0-be53-811ac876a687)
 			{
 				features: feature_list [
-					OpenGL3Renderer(4fe1e377-d176-438d-9a13-622dd2bb963e)
+					OpenGL3Renderer(735949dc-4d8b-4514-8b83-583b15a016ac)
 					{
 					}]
 				children: children_list []
@@ -26,13 +26,13 @@ configuration_profile(d86c8ddb-cc56-46af-8e73-888ca443510d)
 				projectName: "project"
 				windowCaption: "EB GUIDE 6 model"
 				sceneId: 0
-				maxFPS: 0
+				maxFPS: 60
 				hwLayerId: 0
 				colorMode: 1
 				antiAliasing: 0
-				enableRemoteFramebuffer: true
-				showWindowFrame: false
-				showWindow: false
+				enableRemoteFramebuffer: false
+				showWindowFrame: true
+				showWindow: true
 				disableVSync: false
 				showFPS: 0
 			}
@@ -40,6 +40,11 @@ configuration_profile(d86c8ddb-cc56-46af-8e73-888ca443510d)
 		}]
 	platform_configuration: "{" \
 		"  \"gtf\": {" \
+		"    \"core\": {" \
+		"      \"pluginstoload\": [" \
+		"        \"GtfService\"" \
+		"      ]" \
+		"    }," \
 		"    \"resourcesystem\": {" \
 		"      \"defaultdecoding\": [" \
 		"        {" \
@@ -85,6 +90,9 @@ configuration_profile(d86c8ddb-cc56-46af-8e73-888ca443510d)
 		"        \"gtf::decoder::ImagePath\"," \
 		"        \"gtf::decoder::MeshPath\"" \
 		"      ]" \
+		"    }," \
+		"    \"servicemapper\": {" \
+		"      \"port\": 60000" \
 		"    }" \
 		"  }" \
 		"}"
