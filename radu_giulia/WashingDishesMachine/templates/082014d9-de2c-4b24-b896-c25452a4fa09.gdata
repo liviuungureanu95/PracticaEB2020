@@ -1,0 +1,351 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(082014d9-de2c-4b24-b896-c25452a4fa09)
+{
+	name: "ProgrammState"
+	structure: GtfView(aee87092-cfa3-4a17-85f1-99503db4fc30)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(751791cf-f131-418e-bf61-d85c8d749109)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfImage(b750fc54-4a21-4e1e-a25d-e58beec0bcde)
+					{
+						features: feature_list [
+							ScaleMode(2efac14d-50d6-4b27-912d-78dd46d430e8)
+							{
+								scaleMode: 2
+							}]
+						children: children_list []
+						name: "Image 3"
+						visible: true
+						width: 208
+						height: 177
+						x: 40
+						y: 168
+						image: image_resource(fb893879-8f1d-4647-8b6a-472c3bb23a8a)
+						{
+							file: "clipart1115761.png"
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+					}]
+				name: "Rectangle 3"
+				visible: true
+				width: 800
+				height: 480
+				x: 0
+				y: 0
+				fillColor: #FFFFFFFF
+			}, 
+			GtfImage(8dcf4599-5748-489a-84e8-400bcf1ce925)
+			{
+				features: feature_list [
+					ScaleMode(dbe7b3db-7137-47b3-abef-20a7e0827294)
+					{
+						scaleMode: 1
+					}, 
+					TouchPressed(973398a0-d38c-4fd1-b15c-32bde4e72b81)
+					{
+						touchPressed: function<bool,int,int,int,int>(f7907de8-3142-442a-a778-51f5f9b1f28b)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	" \
+								"    false" \
+								"}"
+						}
+					}, 
+					TouchShortReleased(6a2647fb-11da-407b-a357-234d77ae6a8b)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(e72a4e31-7a36-4c97-9eec-c9dc9fb9c2f6)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this->^->\"Image 1\".visible = false" \
+								"	f:animation_play(v:this->^->change->\"Animation 1\")" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(616e1106-6315-4542-8374-678fea5e8920)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list []
+				name: "Image 2"
+				visible: true
+				width: 105
+				height: 106
+				x: 674
+				y: 351
+				image: image_resource(1ef3cc40-91b2-4511-ad52-170bdd99d7d6)
+				{
+					file: "start.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfImage(4954c6e7-df68-4c88-ae82-fbeb1ba561b0)
+			{
+				features: feature_list [
+					ScaleMode(38884d19-6389-4d08-90bf-e56ee9f79fb6)
+					{
+						scaleMode: 2
+					}, 
+					TouchPressed(b3b347e6-b03c-4525-b99b-b993f3d8ce80)
+					{
+						touchPressed: function<bool,int,int,int,int>(609c02d1-1dc0-420c-b02e-67e7d795db54)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	fire_delayed 100,ev:\"back\"()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					TouchShortReleased(1cd1b174-974e-475f-8bb5-8b5cb2912e36)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(d4fcbdac-d10f-4696-9740-d59868a0ccf5)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(8e64ca83-822d-43d3-991e-1d5786d49198)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list []
+				name: "Image 1"
+				visible: true
+				width: 95
+				height: 69
+				x: 22
+				y: 20
+				image: image_resource(394d5173-e80d-487c-a793-16ea1b0c77f0)
+				{
+					file: "back.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(7b7c6737-d1aa-4ad1-902a-6033431af606)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfParallelAnimation(63eb7aa3-927f-4d07-b617-d64d62437b9f)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLinearInterpolationS32(c4f742af-b77f-4173-8478-fab98cd7343a)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Linear interpolation curve 5"
+								enabled: true
+								delay: 0
+								duration: int_scriptedValue(17dc4c4f-05f7-4057-b5a1-b29dfcf864b5)
+								{
+									triggerList: trigger_list(ae93ba4c-eddd-492b-b671-323dd3d1682d)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(23e05a81-f2ac-47e0-8aef-c5846b615152)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<int>(cbfd1dcb-e444-497f-a02d-679adf326033)
+									{
+										script: "function()" \
+											"{" \
+											"	v:this->^->^.start_time * 1000" \
+											"}"
+									}
+									write: function<bool,int>(59022b9c-76ba-4eaf-841e-86547c4b3583)
+									{
+										script: "function(v:arg0::int)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								repeat: 1
+								alternating: false
+								relative: false
+								start: start_time@7b7c6737-d1aa-4ad1-902a-6033431af606 (propref<int>)
+								end: 0
+								target: time@7b7c6737-d1aa-4ad1-902a-6033431af606 (propref<int>)
+							}]
+						name: "Animation 1"
+						enabled: true
+						repeat: 1
+						alternating: false
+						scale: 1F
+						onPlay: function<void,int,bool>(e0edd36a-acc8-4d46-9938-e0734e562a23)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(2ceb074e-220b-4f04-8b0d-a95f472920e7)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(67185faf-a292-4943-acbb-214b888d2f69)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"	v:this->^->^->\"Image 1\".visible = true" \
+								"	fire ev:back()" \
+								"}"
+						}
+						start: 10
+					}]
+				name: "change"
+				visible: true
+				width: 100
+				height: 100
+				x: 575
+				y: 206
+				text: string_scriptedValue(7cf408ed-72ff-4a5e-8ea4-42cf4f4c0cde)
+				{
+					triggerList: trigger_list(e98b5779-6c45-4f91-bc17-07987ab5b73d)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(827c0fd0-44f4-4079-99e8-7b9183442a68)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<string>(b7763094-fde4-4662-9083-d92f00e6c481)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	 f:int2string(v:this.time)" \
+							"}"
+					}
+					write: function<bool,string>(0eb2c8da-ee52-476f-ab7b-61c58b4d22cb)
+					{
+						script: "function(v:arg0::string)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				textColor: #8A2BE2FF
+				font: font_resource(ee3fbc02-ef2a-4094-9d17-ce64e231c464)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+				time: 10
+				start_time: 10
+			}, 
+			GtfLabel(f1e555f0-f53a-445e-aba2-35b12353d327)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label 4"
+				visible: true
+				width: width@751791cf-f131-418e-bf61-d85c8d749109 (propref<int>)
+				height: 100
+				x: 0
+				y: 0
+				text: "Programul \"Fast+\""
+				textColor: #000000FF
+				font: font_resource(10ea5733-959e-41ab-b596-7313f4eb812a)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 50
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfLabel(4fe24d26-51be-4d0e-a9c7-7c7530ca3bf3)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label 2"
+				visible: true
+				width: 482
+				height: 100
+				x: 268
+				y: 352
+				text: "Apasa play pentru a incepe programul"
+				textColor: #000000FF
+				font: font_resource(7b8964e7-24eb-4ef3-bbad-62fae4aa31f9)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}, 
+			GtfLabel(da90bdd8-6c41-4085-9b7e-bd2171cdf4c1)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label 3"
+				visible: true
+				width: 271
+				height: 100
+				x: 352
+				y: 205
+				text: "Durata programului:"
+				textColor: #000000FF
+				font: font_resource(6fcd9574-2750-4923-ad50-5b48532b0eaa)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}]
+		name: "View 3"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+	}
+	height: height@b750fc54-4a21-4e1e-a25d-e58beec0bcde (propref<int>)
+	x: x@b750fc54-4a21-4e1e-a25d-e58beec0bcde (propref<int>)
+	y: y@b750fc54-4a21-4e1e-a25d-e58beec0bcde (propref<int>)
+	width: width@b750fc54-4a21-4e1e-a25d-e58beec0bcde (propref<int>)
+	image: image@b750fc54-4a21-4e1e-a25d-e58beec0bcde (propref<image>)
+	time: time@7b7c6737-d1aa-4ad1-902a-6033431af606 (propref<int>)
+	text: text@f1e555f0-f53a-445e-aba2-35b12353d327 (propref<string>)
+	start: start@63eb7aa3-927f-4d07-b617-d64d62437b9f (propref<int>)
+	start_time: start_time@7b7c6737-d1aa-4ad1-902a-6033431af606 (propref<int>)
+}
