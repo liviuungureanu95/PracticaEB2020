@@ -1,0 +1,123 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(c3ceb287-0b4d-477d-a741-2077ba9a54bd)
+{
+	name: "welcome_view"
+	template: @f207e56c-efea-42f7-8076-aae2eb0071e6 (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(767f67f0-3c16-4695-9852-6e94429a7c9f)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Title"
+			visible: true
+			width: 480
+			height: 50
+			x: 0
+			y: 0
+			text: "Welcome to Home Cinema"
+			textColor: #000000FF
+			font: font_resource(e4d4ec91-cb66-438e-b9dc-b0f2bdf7a7e9)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfRectangle(f40ef1f9-4cae-465a-b10a-699933015b97)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfParallelAnimation(9266fb7c-e71f-48a8-9e33-b52fe4f61321)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationS32(4b1159b7-8b40-44d0-a310-15e48f98434e)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Linear interpolation curve"
+							enabled: true
+							delay: 0
+							duration: 1500
+							repeat: 1
+							alternating: false
+							relative: false
+							start: 0
+							end: 480
+							target: width@f40ef1f9-4cae-465a-b10a-699933015b97 (propref<int>)
+						}]
+					name: "LoadingBarAnimation"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(7d0cb79c-1341-4676-ada9-a553d66bbd34)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(6d6f4353-3271-4ccb-aa22-01719a9e3077)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(58ba66f2-1cf9-406f-b9e8-2abd76525029)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					Play_LoadingBar: conditional_script(2531a00d-5191-42e4-8712-393af931f24f)
+					{
+						triggerList: trigger_list(9ba2be98-fd43-4280-ba38-f1b3815336fb)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(2c828ac8-b0a9-418c-847e-5c9953df86b1)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	f:animation_play(v:this)" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "LoadingBar"
+			visible: true
+			width: 0
+			height: 10
+			x: 0
+			y: 50
+			fillColor: #87CEEBFF
+		}, 
+		GtfImage(51d8056e-4612-4908-a2f5-af4777a5308d)
+		{
+			features: feature_list [
+				ScaleMode(04913955-2ee9-46ab-8e9b-2dc9320a693c)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "Music Image"
+			visible: true
+			width: 480
+			height: 220
+			x: 0
+			y: 100
+			image: image_resource(9ae6cb27-5d59-4faf-9b9a-a60602434a55)
+			{
+				file: "music_image.png"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+}

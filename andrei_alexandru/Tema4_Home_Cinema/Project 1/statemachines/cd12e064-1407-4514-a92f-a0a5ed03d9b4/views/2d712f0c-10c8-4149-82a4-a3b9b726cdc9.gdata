@@ -1,0 +1,275 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(2d712f0c-10c8-4149-82a4-a3b9b726cdc9)
+{
+	name: "menu_view"
+	template: @f207e56c-efea-42f7-8076-aae2eb0071e6 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(8eb66601-a9c1-4d82-8112-5fa225b5e526)
+		{
+			name: "Play/Pause Button"
+			template: @5e5866da-ad3e-47aa-a52b-d996d0b26905 (objectref<GtfContainer_template>)
+			children: children_list []
+			image: image_resource(4e1bd091-0ebd-4c61-bba0-a91eb85ba1ff)
+			{
+				file: "pause_button.png"
+			}
+			y: 150
+			x: 160
+			touchPressed: function<bool,int,int,int,int>(aec48c2b-675b-4a98-9d8c-8df08491805e)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if (v:this.play == false) " \
+					"	{" \
+					"		v:this.image = dp:Play_Button" \
+					"		v:this.play = true" \
+					"	}" \
+					"	else" \
+					"	{" \
+					"		v:this.image = dp:Pause_Button" \
+					"		v:this.play = false" \
+					"	}" \
+					"	" \
+					"    false" \
+					"}"
+			}
+			play: play@5e5866da-ad3e-47aa-a52b-d996d0b26905 (propref<bool>)
+		}, 
+		GtfContainer_template_instance(1d162dec-5813-49e7-bac6-d2970afecdf9)
+		{
+			name: "Next Button"
+			template: @44b1bef3-e336-4e0a-ac35-24a663be2aa3 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 320
+			y: 150
+			textColor: textColor@44b1bef3-e336-4e0a-ac35-24a663be2aa3 (propref<color>)
+			text: text@44b1bef3-e336-4e0a-ac35-24a663be2aa3 (propref<string>)
+			font: font@44b1bef3-e336-4e0a-ac35-24a663be2aa3 (propref<font>)
+			touchPressed: function<bool,int,int,int,int>(f4d81db9-fb5d-4b09-9fc0-6f79848838bd)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(dp:IndexMovies_List < length dp:MoviesList -1)" \
+					"		dp:IndexMovies_List = dp:IndexMovies_List +1" \
+					"	else" \
+					"		dp:IndexMovies_List = 0" \
+					"		" \
+					"	v:this->^->\"Play/Pause Button\".image = dp:Pause_Button" \
+					"	" \
+					"    false" \
+					"}"
+			}
+			play: play@44b1bef3-e336-4e0a-ac35-24a663be2aa3 (propref<bool>)
+		}, 
+		GtfContainer_template_instance(60b65238-c545-48fb-8405-33948fbc5b37)
+		{
+			name: "Previous Button"
+			template: @44b1bef3-e336-4e0a-ac35-24a663be2aa3 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 100
+			y: 150
+			textColor: textColor@44b1bef3-e336-4e0a-ac35-24a663be2aa3 (propref<color>)
+			text: "<<"
+			font: font@44b1bef3-e336-4e0a-ac35-24a663be2aa3 (propref<font>)
+			touchPressed: function<bool,int,int,int,int>(13c68157-f3ac-41a6-a54c-de58acc65ca6)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(dp:IndexMovies_List > 0)" \
+					"		dp:IndexMovies_List = dp:IndexMovies_List -1" \
+					"	else" \
+					"		dp:IndexMovies_List = length dp:MoviesList -1" \
+					"	" \
+					"	v:this->^->\"Play/Pause Button\".image = dp:Pause_Button" \
+					"		" \
+					"    false" \
+					"}"
+			}
+			play: play@44b1bef3-e336-4e0a-ac35-24a663be2aa3 (propref<bool>)
+		}, 
+		GtfLabel(30fc0905-6b54-456f-b43d-3ee84c03603e)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Movies List"
+			visible: true
+			width: 480
+			height: 50
+			x: 0
+			y: 100
+			text: string_scriptedValue(58921906-c2f9-4f08-a9e2-bbf141bb4b3f)
+			{
+				triggerList: trigger_list(152d3db4-fb30-4aa9-af7e-dd6f792a1a02)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(d1560223-cfe1-47a1-ae61-ea85d96b4cf4)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(9611e9ca-9945-4967-a2fe-d13a537cb1ad)
+				{
+					script: "function()" \
+						"{" \
+						"	 dp:MoviesList[dp:IndexMovies_List]" \
+						"}"
+				}
+				write: function<bool,string>(e91b90ad-7ecf-4b1a-8b75-f033cf773843)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #000000FF
+			font: font_resource(f26e695d-4e40-403b-ac71-be33b9cc991f)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(c13f96c5-6db1-47ba-b483-d521e6c39785)
+		{
+			name: "- Button"
+			template: @44b1bef3-e336-4e0a-ac35-24a663be2aa3 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 40
+			y: 150
+			textColor: #FF0000FF
+			text: "-"
+			font: font_resource(f3931a06-c9d6-4969-94f6-57ec207c6191)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 40
+			}
+			touchPressed: function<bool,int,int,int,int>(6eed004b-e43d-4633-8de8-8baff31679ff)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(dp:IndexVolume > 0)" \
+					"		dp:IndexVolume = dp:IndexVolume -1" \
+					"		" \
+					"    false" \
+					"}"
+			}
+			play: play@44b1bef3-e336-4e0a-ac35-24a663be2aa3 (propref<bool>)
+		}, 
+		GtfContainer_template_instance(98b3fcf2-9e19-49b4-a3fd-74221f387097)
+		{
+			name: "+ Button"
+			template: @44b1bef3-e336-4e0a-ac35-24a663be2aa3 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 380
+			y: 150
+			textColor: #FF0000FF
+			text: "+"
+			font: font@44b1bef3-e336-4e0a-ac35-24a663be2aa3 (propref<font>)
+			touchPressed: function<bool,int,int,int,int>(6f455590-0fec-48e5-99a5-94d4b777601f)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(dp:IndexVolume < length dp:VolumeList -1)" \
+					"		dp:IndexVolume = dp:IndexVolume +1" \
+					"" \
+					"    false" \
+					"}"
+			}
+			play: play@44b1bef3-e336-4e0a-ac35-24a663be2aa3 (propref<bool>)
+		}, 
+		GtfLabel(d2848d70-42e9-4444-ae12-ff629e340129)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Volume List"
+			visible: true
+			width: 480
+			height: 50
+			x: 0
+			y: 200
+			text: string_scriptedValue(6733614a-b48c-4c33-bf85-a63ef91a0d58)
+			{
+				triggerList: trigger_list(c3447632-56e8-419a-a420-bc2c7a386985)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(1c7a6691-d2d7-4fe0-a21e-3ace3b2cfedd)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(3efe808f-0ceb-4d4a-8c69-0d7b8b108f4a)
+				{
+					script: "function()" \
+						"{" \
+						"	Volume + \": \" + f:int2string(dp:VolumeList[dp:IndexVolume])" \
+						"}"
+				}
+				write: function<bool,string>(a6ad39e5-9c08-4b5c-99d9-1645d2134a7e)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #000000FF
+			font: font_resource(8a10c333-a56e-45eb-9a9b-42f7cd583b88)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(8c918015-a943-4818-beb8-82f1837d700b)
+		{
+			name: "T_TurnOff_Button 1"
+			template: @65816210-2c8d-4af3-be1c-e0adba284481 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 430
+			y: y@65816210-2c8d-4af3-be1c-e0adba284481 (propref<int>)
+			image: image_resource(bab80d1c-a326-42d7-a2ee-e07bfaed5b80)
+			{
+				file: "turn_off .png"
+			}
+			touchPressed: function<bool,int,int,int,int>(34a5c1a8-8437-4443-a5db-f41f73316a9f)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire_delayed 100, ev:TurnOff_Sistem()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfImage(beae157f-46a2-41e5-b445-a40d72eff6a5)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Music Image"
+			visible: true
+			width: 400
+			height: 100
+			x: 0
+			y: 0
+			image: image_resource(085ff40b-f5ee-49e5-abb3-e8d000a780e6)
+			{
+				file: "music_image.png"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 1
+		}]
+}
