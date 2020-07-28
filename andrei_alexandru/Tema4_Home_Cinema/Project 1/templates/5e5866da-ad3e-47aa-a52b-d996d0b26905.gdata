@@ -1,0 +1,80 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(5e5866da-ad3e-47aa-a52b-d996d0b26905)
+{
+	name: "T_Play/Pause Button"
+	structure: GtfContainer(5d177226-3ca0-4a16-939b-b0e5b42c06dc)
+	{
+		features: feature_list [
+			TouchPressed(31efae77-8da8-4557-bfef-751e59ab4614)
+			{
+				touchPressed: function<bool,int,int,int,int>(e3a41317-2d9b-4464-9e52-f1f2050c5296)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(630c6038-c229-45e9-9354-cbc46fda22ab)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(028746c5-03b0-499a-ae64-631fc28f46f2)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(d3baec61-2136-42f9-898f-6c630bb564b6)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(59fcaef1-aa76-458b-88a9-8d80c2550228)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@5d177226-3ca0-4a16-939b-b0e5b42c06dc (propref<int>)
+				height: height@5d177226-3ca0-4a16-939b-b0e5b42c06dc (propref<int>)
+				x: 0
+				y: 0
+				fillColor: @7f16f901-2c88-43d5-8576-0aaa1293c64a (objectref<color>)
+			}, 
+			GtfImage(bc606cd5-b2a0-4580-b7a8-74b4ba46dcd3)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Logo"
+				visible: true
+				width: 150
+				height: 50
+				x: 0
+				y: 0
+				image: image_resource(d0782d4f-2ff4-4745-abb4-2abbd0db0808)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container "
+		visible: true
+		width: 150
+		height: 50
+		x: 0
+		y: 0
+		play: false
+	}
+	image: image@bc606cd5-b2a0-4580-b7a8-74b4ba46dcd3 (propref<image>)
+	y: y@5d177226-3ca0-4a16-939b-b0e5b42c06dc (propref<int>)
+	x: x@5d177226-3ca0-4a16-939b-b0e5b42c06dc (propref<int>)
+	touchPressed: touchPressed@31efae77-8da8-4557-bfef-751e59ab4614 (propref<function<bool,int,int,int,int>>)
+	play: play@5d177226-3ca0-4a16-939b-b0e5b42c06dc (propref<bool>)
+}

@@ -1,0 +1,56 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(65816210-2c8d-4af3-be1c-e0adba284481)
+{
+	name: "T_TurnOff_Button"
+	structure: GtfContainer(49f3fdf0-cc1f-491a-b565-5522b0e88d8d)
+	{
+		features: feature_list [
+			TouchPressed(701f889a-edd9-4959-8a48-6f7c6a1b8e65)
+			{
+				touchPressed: function<bool,int,int,int,int>(84675b55-4ae8-43c4-a1f6-cbc4c54d8f87)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(5faa107a-afb7-48ce-afd8-933b1092ce35)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfImage(e425581c-ae3d-4b0e-b6ea-0f8fb181ba39)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Logo"
+				visible: true
+				width: width@49f3fdf0-cc1f-491a-b565-5522b0e88d8d (propref<int>)
+				height: height@49f3fdf0-cc1f-491a-b565-5522b0e88d8d (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(43e2a486-a07b-4077-ac89-807fc40e236e)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 50
+		height: 50
+		x: 0
+		y: 0
+	}
+	x: x@49f3fdf0-cc1f-491a-b565-5522b0e88d8d (propref<int>)
+	y: y@49f3fdf0-cc1f-491a-b565-5522b0e88d8d (propref<int>)
+	image: image@e425581c-ae3d-4b0e-b6ea-0f8fb181ba39 (propref<image>)
+	touchPressed: touchPressed@701f889a-edd9-4959-8a48-6f7c6a1b8e65 (propref<function<bool,int,int,int,int>>)
+}
