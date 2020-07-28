@@ -1,0 +1,427 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(8d67b939-dbf4-4b31-a1e4-141f23b7c1c4)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(f87f43c4-659e-4e80-ae2f-369d6c4e0812)
+		{
+			name: "STOP-BUTTON"
+			template: @511625cd-2531-4ad9-abcb-2b9fd1ad2430 (objectref<GtfContainer_template>)
+			children: children_list []
+			scaleMode: scaleMode@511625cd-2531-4ad9-abcb-2b9fd1ad2430 (propref<int>)
+			touchShortReleased: function<bool,int,int,int,int>(db645a96-a222-4a07-8ecc-421570fc5bb9)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->tot.visible = false" \
+					"	v:this->^->\"Label 4\".visible = true" \
+					"    false" \
+					"}"
+			}
+			image: image_resource(5669b170-7540-4118-b624-3dd9dd88480b)
+			{
+				file: "stop-b.png"
+			}
+			width: width@511625cd-2531-4ad9-abcb-2b9fd1ad2430 (propref<int>)
+			height: height@511625cd-2531-4ad9-abcb-2b9fd1ad2430 (propref<int>)
+			x: 410
+			y: 4
+			visible: visible@511625cd-2531-4ad9-abcb-2b9fd1ad2430 (propref<bool>)
+		}, 
+		GtfLabel(0903be88-a24e-4807-9085-1da7823ce33d)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 4"
+			visible: false
+			width: 455
+			height: 100
+			x: 22
+			y: 50
+			text: "DISPOZITIVUL DUMNEAVOASTRA ESTE OPRIT"
+			textColor: #FFFFFFFF
+			font: font_resource(21ae1657-4c02-4ad6-b4a2-e209986f503b)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfContainer(87a9e9c4-b47b-433a-8f92-eb16f49490f5)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(0c82491f-7113-49c0-bc31-4d2224702c1d)
+				{
+					features: feature_list [
+						ScaleMode(4a624166-86a7-4798-9e41-631144b0e147)
+						{
+							scaleMode: 1
+						}, 
+						TouchPressed(6251e3be-b6cd-4313-922f-22bf0d79f9a8)
+						{
+							touchPressed: function<bool,int,int,int,int>(4ccb2025-fd4a-4c84-b910-61edbc3a9acf)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(v:this->^->\"volum curent\".width < 200)" \
+									"	{" \
+									"		v:this->^->\"volum curent\".width = v:this->^->\"volum curent\".width + 20" \
+									"		v:this->^->volum.text = f:int2string(v:this->^->\"volum curent\".width/2)" \
+									"	}" \
+									"	else" \
+									"	{" \
+									"		v:this->^->\"volum curent\".width = 200" \
+									"    }" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(6ed89187-5e3e-4502-8bba-84b0f1074b5c)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "plus-b"
+					visible: true
+					width: 35
+					height: 35
+					x: 358
+					y: 261
+					image: image_resource(3b2f3716-7fb5-4ecb-9881-62900fc1ef0f)
+					{
+						file: "plus-b.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(bed719bc-33ee-4320-9b22-cea74a166976)
+				{
+					features: feature_list [
+						ScaleMode(974f6f1e-8618-419c-9519-cec616816255)
+						{
+							scaleMode: 1
+						}, 
+						TouchPressed(25d66791-521d-40d2-9b54-7fa0540f483a)
+						{
+							touchPressed: function<bool,int,int,int,int>(2d11f349-e2e9-4dd9-845d-abfa2fbbb23c)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(v:this->^->\"volum curent\".width > 0)" \
+									"	{" \
+									"		v:this->^->\"volum curent\".width = v:this->^->\"volum curent\".width - 20;" \
+									"	}" \
+									"	else" \
+									"	{" \
+									"		v:this->^->\"volum curent\".width = 0;" \
+									"    }" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(174e3683-f894-43fd-8bd5-4038001a91c3)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "minus-b"
+					visible: true
+					width: 35
+					height: 35
+					x: 85
+					y: 259
+					image: image_resource(cc5e1384-46ca-457c-94a9-1ffbb99df28b)
+					{
+						file: "minus-b.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfContainer_template_instance(107f2842-91cc-4461-ae3e-7948d80493ff)
+				{
+					name: "play/pause"
+					template: @511625cd-2531-4ad9-abcb-2b9fd1ad2430 (objectref<GtfContainer_template>)
+					children: children_list []
+					scaleMode: scaleMode@511625cd-2531-4ad9-abcb-2b9fd1ad2430 (propref<int>)
+					touchShortReleased: function<bool,int,int,int,int>(623b0f79-d4b0-421c-b0fa-3da62e9b4581)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(v:this.\"act/dezact\" == true)" \
+							"	{" \
+							"		v:this.\"act/dezact\" = false;" \
+							"	}" \
+							"		" \
+							"		else" \
+							"	{	" \
+							"		v:this.\"act/dezact\" = true;" \
+							"	}" \
+							"    false" \
+							"}"
+					}
+					image: image_scriptedValue(afea97d1-4d3c-473a-a560-50377aa23312)
+					{
+						triggerList: trigger_list(b7790727-e107-4384-9c92-bcf627de53f9)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(221448a3-97a6-4e10-b034-b6688b4fe296)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<image>(a837e3aa-3ff6-43e4-a404-682ff0d2ae49)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"    if(v:this.\"act/dezact\" == false)" \
+								"    {dp:pause" \
+								"    }" \
+								"    else{" \
+								"    dp:play	" \
+								"    }" \
+								"}"
+						}
+						write: function<bool,image>(b36b11dc-c1d8-4402-b92b-32a97e2b04a8)
+						{
+							script: "function(v:arg0::image)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					width: 60
+					height: 60
+					x: 207
+					y: 161
+					visible: visible@511625cd-2531-4ad9-abcb-2b9fd1ad2430 (propref<bool>)
+					"act/dezact": true
+				}, 
+				GtfLabel(b759080c-c52b-4af5-ba93-28211327dee0)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "melodie"
+					visible: true
+					width: 361
+					height: 60
+					x: 53
+					y: 12
+					text: string_scriptedValue(c6ae9873-74cd-484c-abb7-dc1ca8e6f8ae)
+					{
+						triggerList: trigger_list(6f26f6a4-0134-47ce-93b6-19ef654176d7)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(1aa14099-8d35-49d9-9f40-6f18d9305f2e)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(7dbb3be0-d302-42b7-b56a-59728f57a520)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	dp:song[dp:\"index playlist\"]" \
+								"}"
+						}
+						write: function<bool,string>(051619d7-220f-46f0-90ef-af0ad2022cf1)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #00FF00FF
+					font: font_resource(d896b6c1-8596-4462-a351-a0f213ac260d)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 55
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(fa677b03-3b62-429f-bca5-7d24dcc0909f)
+				{
+					name: "next"
+					template: @511625cd-2531-4ad9-abcb-2b9fd1ad2430 (objectref<GtfContainer_template>)
+					children: children_list []
+					scaleMode: scaleMode@511625cd-2531-4ad9-abcb-2b9fd1ad2430 (propref<int>)
+					touchShortReleased: function<bool,int,int,int,int>(bad4a469-fe72-4234-9f35-fb709cff1d36)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->\"play/pause\".\"act/dezact\" = false;" \
+							"	dp:\"index playlist\" = (dp:\"index playlist\" + 1) % length dp:song;" \
+							"    false" \
+							"}"
+					}
+					image: image_resource(8e84cee2-2947-4eab-a975-c6d33abd5ab8)
+					{
+						file: "64-64-b6e74e8653b46d94c820b3609559711e-Arrow.png"
+					}
+					width: width@511625cd-2531-4ad9-abcb-2b9fd1ad2430 (propref<int>)
+					height: height@511625cd-2531-4ad9-abcb-2b9fd1ad2430 (propref<int>)
+					x: 326
+					y: 160
+					visible: visible@511625cd-2531-4ad9-abcb-2b9fd1ad2430 (propref<bool>)
+				}, 
+				GtfContainer_template_instance(31e7f8b9-baf7-4f5e-8e86-d35e10cf1f34)
+				{
+					name: "template buton 1"
+					template: @511625cd-2531-4ad9-abcb-2b9fd1ad2430 (objectref<GtfContainer_template>)
+					children: children_list []
+					scaleMode: scaleMode@511625cd-2531-4ad9-abcb-2b9fd1ad2430 (propref<int>)
+					touchShortReleased: function<bool,int,int,int,int>(e44e3efe-bec7-4af1-bece-571868ae3c5c)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->\"play/pause\".\"act/dezact\"=false;" \
+							"	if(dp:\"index playlist\" == 0)" \
+							"	{dp:\"index playlist\" = length dp:song -1 }" \
+							"	else" \
+							"	{dp:\"index playlist\" = dp:\"index playlist\" -1}" \
+							"    false" \
+							"}"
+					}
+					image: image_resource(a1ca2d7a-3d31-4d08-b891-5161ddacf35f)
+					{
+						file: "64-64-64bc67d5893bcfba395f1312affb6d33-Arrow.png"
+					}
+					width: 60
+					height: 60
+					x: 92
+					y: 161
+					visible: true
+				}, 
+				GtfLabel(bb56f733-9671-4944-9024-bb5a4da39beb)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "artistul"
+					visible: true
+					width: 211
+					height: 72
+					x: 50
+					y: 74
+					text: string_scriptedValue(580b05ae-9dcc-4f1a-b79c-3e6a463248dd)
+					{
+						triggerList: trigger_list(6dc80ded-056a-4ad5-ba0a-43f9cd39871c)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(b929ff9b-7f64-47aa-acda-403d8df36c4b)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(e98a7f9a-95b4-4c4f-9afe-6adc36eefb51)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	dp:artist[dp:\"index playlist\"]" \
+								"}"
+						}
+						write: function<bool,string>(87bcbabc-ee94-46c8-afa3-3999cf717e6c)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #00FF7FFF
+					font: font_resource(0842dc90-42e5-4349-bb03-ff4d395061cf)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfRectangle(626ca8ad-0463-4aac-ab21-568a895cb667)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "bara volum"
+					visible: true
+					width: 200
+					height: 20
+					x: 139
+					y: 269
+					fillColor: #A9A9A9FF
+				}, 
+				GtfLabel(9408924a-d3c1-48d6-b851-dceaff38dfd0)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "volum"
+					visible: true
+					width: 60
+					height: 24
+					x: 222
+					y: 292
+					text: ""
+					textColor: #A9A9A9FF
+					font: font_resource(f53877fc-5da6-4926-b10b-d3e2e8718f9f)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfRectangle(79512325-6102-4c06-9797-2a64846b9f74)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "volum curent"
+					visible: true
+					width: 0
+					height: 20
+					x: 136
+					y: 269
+					fillColor: #32CD32FF
+					valoare: width@79512325-6102-4c06-9797-2a64846b9f74 (propref<int>)
+				}]
+			name: "tot"
+			visible: true
+			width: 403
+			height: 234
+			x: 13
+			y: -4
+		}]
+	name: "View 1"
+	visible: true
+	width: 480
+	height: 320
+	x: 1
+	y: 0
+}
