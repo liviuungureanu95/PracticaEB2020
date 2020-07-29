@@ -1,0 +1,140 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(8358ae0a-f20a-472b-bbb3-3d2026d4e357)
+{
+	name: "Button"
+	structure: GtfContainer(5a04a9ac-35c3-4908-9031-3f5850782f7e)
+	{
+		features: feature_list [
+			TouchShortReleased(6723f520-13eb-440e-9c1e-085f527aee10)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(a32f5925-92c2-4924-9b33-a830ea4ac814)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(3250fcf3-2d58-46a5-96f6-9ed96b674323)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfEllipse(dd930d48-3b79-4a57-8679-b4700a8254f4)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "ButtonBack"
+				visible: true
+				width: width@5a04a9ac-35c3-4908-9031-3f5850782f7e (propref<int>)
+				height: height@5a04a9ac-35c3-4908-9031-3f5850782f7e (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #A9A9A9FF
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}, 
+			GtfImage(a8df0c10-57a1-43e8-929c-956cfdf9a8bb)
+			{
+				features: feature_list [
+					ScaleMode(6772faf3-8246-404a-bd09-3b80761891a2)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "Image"
+				visible: true
+				width: int_scriptedValue(285e71cd-3cb6-4b85-a60e-56c7775a94cd)
+				{
+					triggerList: trigger_list(e952eb60-0e71-44af-a1fc-fc20ed0a0c3a)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(33e93900-d380-4964-8d7e-7581fe039dc4)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(a871fd5c-a316-444c-a28a-375de816965c)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	4 * v:this->^.width / 5" \
+							"}"
+					}
+					write: function<bool,int>(cbf88e90-da3e-41d5-94cf-84e27488df5b)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				height: int_scriptedValue(afd30640-c9a8-4fd2-86e3-23dea18a8c27)
+				{
+					triggerList: trigger_list(72777dbd-abbd-45a1-b7d6-7ee53d525f8b)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(c438e043-b4fe-4da9-9615-eee9c0c68034)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(633971d3-f475-4b5d-8d55-08021d1e100c)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	4 * v:this->^.height / 5" \
+							"}"
+					}
+					write: function<bool,int>(1428ed1b-0c93-49fe-8fb5-bd19115c740b)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				x: 24
+				y: 27
+				image: image_resource(ff18ec90-4980-4cae-908b-ec8892e24e6d)
+				{
+					file: "back.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "Container"
+		visible: true
+		width: 229
+		height: 213
+		x: 0
+		y: 0
+	}
+	x: x@5a04a9ac-35c3-4908-9031-3f5850782f7e (propref<int>)
+	y: y@5a04a9ac-35c3-4908-9031-3f5850782f7e (propref<int>)
+	width: width@5a04a9ac-35c3-4908-9031-3f5850782f7e (propref<int>)
+	height: height@5a04a9ac-35c3-4908-9031-3f5850782f7e (propref<int>)
+	touchShortReleased: touchShortReleased@6723f520-13eb-440e-9c1e-085f527aee10 (propref<function<bool,int,int,int,int>>)
+	fillColor: fillColor@dd930d48-3b79-4a57-8679-b4700a8254f4 (propref<color>)
+	image: image@a8df0c10-57a1-43e8-929c-956cfdf9a8bb (propref<image>)
+	"x 2": x@a8df0c10-57a1-43e8-929c-956cfdf9a8bb (propref<int>)
+	"y 2": y@a8df0c10-57a1-43e8-929c-956cfdf9a8bb (propref<int>)
+}
