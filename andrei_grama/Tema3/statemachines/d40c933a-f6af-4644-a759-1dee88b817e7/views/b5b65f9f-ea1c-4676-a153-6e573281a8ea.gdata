@@ -1,0 +1,212 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(b5b65f9f-ea1c-4676-a153-6e573281a8ea)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(e0c526f0-6317-42e9-9c19-c7480a63de31)
+		{
+			features: feature_list [
+				ScaleMode(84a73261-971e-4b0d-9ebe-b09df301408b)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "backgroundImage"
+			visible: true
+			width: width@b5b65f9f-ea1c-4676-a153-6e573281a8ea (propref<int>)
+			height: height@b5b65f9f-ea1c-4676-a153-6e573281a8ea (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(6fd045f1-096d-4905-aa45-0eb7a1cb395a)
+			{
+				file: "namroud-gorguis-FZWivbri0Xk-unsplash.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(8d6638f3-e31d-420c-84a2-ff5b81f77160)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "titleLabel"
+			visible: true
+			width: 160
+			height: 50
+			x: 160
+			y: -7
+			text: "Media player"
+			textColor: #000000FF
+			font: font_resource(ffbee548-82ee-49cb-bf33-e52a460cc246)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(f092503f-55de-4be2-b32b-c7cad80e0e1d)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "musicLabel"
+			visible: true
+			width: width@b5b65f9f-ea1c-4676-a153-6e573281a8ea (propref<int>)
+			height: 50
+			x: 0
+			y: 54
+			text: string_scriptedValue(fc0624fd-f239-426b-a02a-b01c7847f294)
+			{
+				triggerList: trigger_list(7def3b27-8eb3-4337-a96a-616a6be4692d)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(949c213b-efc4-4288-8e90-5ac82c1b211c)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(568ef291-2b4c-4247-9e21-99cc7bf32936)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	\"\"" \
+						"	dp:Songs[dp:musicIndex]" \
+						"}"
+				}
+				write: function<bool,string>(543ae66f-a1b3-4e9f-8b37-462e1d1d3ab3)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #000000FF
+			font: font_resource(e0678134-ce8d-4130-9fe8-68bc588a969f)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfRectangle_template_instance(a54a3ef0-f486-4891-ac4c-822613959273)
+		{
+			name: "play/pauseButton"
+			template: @2076d2dd-3280-4793-b605-ba59632894a7 (objectref<GtfRectangle_template>)
+			children: children_list []
+			x: 210
+			y: 230
+			image: image_resource(a47af66c-d27e-4524-a564-c9f21f406cba)
+			{
+				file: "icons8-play-48.png"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(f829e821-8718-43de-8cc8-aaf1ac6796a8)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    if(v:this.playing == false)" \
+					"		{" \
+					"			v:this.image = dp:pauseImage" \
+					"			v:this.playing = true" \
+					"		}" \
+					"    else" \
+					"    	{" \
+					"    	v:this.image = dp:playImage" \
+					"    	v:this.playing = false" \
+					"    	}" \
+					"    false" \
+					"}"
+			}
+			playing: playing@2076d2dd-3280-4793-b605-ba59632894a7 (propref<bool>)
+			touchPressed: function<bool,int,int,int,int>(a36cdad9-868f-445f-b894-bb90c04080b2)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    false" \
+					"}"
+			}
+			play: false
+		}, 
+		GtfRectangle_template_instance(a1c7bade-cb33-4b34-af6a-04a1a946caad)
+		{
+			name: "rewindButton"
+			template: @2076d2dd-3280-4793-b605-ba59632894a7 (objectref<GtfRectangle_template>)
+			children: children_list []
+			x: 100
+			y: 230
+			image: image_resource(2cc96531-8b09-467d-90c3-75256c1bafe0)
+			{
+				file: "icons8-rewind-48.png"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(74bcb05b-b5e6-4a65-ab59-bed1c8eb8dc1)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(dp:musicIndex > 0)" \
+					"		dp:musicIndex -= 1" \
+					"    else " \
+					"    	dp:musicIndex = length dp:Songs - 1" \
+					"    v:this->^->\"play/pauseButton\".image = dp:playImage" \
+					"    v:this->^->\"play/pauseButton\".playing = false" \
+					"    false" \
+					"}"
+			}
+			playing: playing@2076d2dd-3280-4793-b605-ba59632894a7 (propref<bool>)
+			touchPressed: function<bool,int,int,int,int>(52d28f10-ba67-4a34-a815-acae3d4d2ec8)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    false" \
+					"}"
+			}
+			play: false
+		}, 
+		GtfRectangle_template_instance(1611fc06-e54e-4b3b-b38c-8a2e7929665f)
+		{
+			name: "forwardButton"
+			template: @2076d2dd-3280-4793-b605-ba59632894a7 (objectref<GtfRectangle_template>)
+			children: children_list []
+			x: 310
+			y: 230
+			image: image_resource(e5e0bcb3-1b27-41b5-b97f-4b8818dc3e4b)
+			{
+				file: "icons8-fast-forward-48.png"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(2da950d9-ad21-4616-865d-f8752dbc13e3)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(dp:musicIndex < length dp:Songs - 1)" \
+					"		dp:musicIndex += 1" \
+					"    else " \
+					"    	dp:musicIndex = 0" \
+					"    v:this->^->\"play/pauseButton\".image = dp:playImage" \
+					"    v:this->^->\"play/pauseButton\".playing = false" \
+					"    false" \
+					"}"
+			}
+			playing: playing@2076d2dd-3280-4793-b605-ba59632894a7 (propref<bool>)
+			touchPressed: function<bool,int,int,int,int>(fb6dcf12-7391-4f53-8dbe-015694641c0f)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    false" \
+					"}"
+			}
+			play: false
+		}]
+	name: "Main View"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}
