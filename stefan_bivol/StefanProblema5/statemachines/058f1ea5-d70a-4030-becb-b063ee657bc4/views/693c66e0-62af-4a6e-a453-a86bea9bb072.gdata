@@ -1,0 +1,317 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(693c66e0-62af-4a6e-a453-a86bea9bb072)
+{
+	name: "Radio_View"
+	template: @795cc315-8513-4f86-b0e9-18d89134ce93 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(c7d43ac7-a6c0-4970-8387-2802c91821fc)
+		{
+			name: "Main_Menu_Button"
+			template: @9f43b90a-2e5f-423d-86eb-373428e7d9f7 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Main Menu"
+			textColor: textColor@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			fillColor: fillColor@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			"fillColor 2": "fillColor 2"@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			x: 25
+			y: 150
+			touchPressed: function<bool,int,int,int,int>(705d8568-e126-46f6-87b1-99b9823330b4)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.fillColor = dp:ColorsButton[0]" \
+					"	v:this.\"fillColor 2\" = dp:ColorsButton[0]" \
+					"	v:this.textColor = dp:ColorsButton[0]" \
+					"	" \
+					"    false" \
+					"}"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(134e6364-8994-4764-9631-e9130b5c61e5)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{ 	" \
+					"	v:this.fillColor = dp:ColorsButton[1]" \
+					"	v:this.\"fillColor 2\" = dp:ColorsButton[1]" \
+					"	v:this.textColor = dp:ColorsButton[1]" \
+					"	fire_delayed 500, ev:goToMenu()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(237f1543-26ad-4321-b463-e476477ba711)
+		{
+			name: "Navigation_Button"
+			template: @9f43b90a-2e5f-423d-86eb-373428e7d9f7 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Navigation"
+			textColor: textColor@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			fillColor: fillColor@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			"fillColor 2": "fillColor 2"@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			x: 24
+			y: 225
+			touchPressed: function<bool,int,int,int,int>(d3455e46-7570-4be6-8b27-5d14556ccec7)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.fillColor = dp:ColorsButton[0]" \
+					"	v:this.\"fillColor 2\" = dp:ColorsButton[0]" \
+					"	v:this.textColor = dp:ColorsButton[0]" \
+					"    false" \
+					"}"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(ff59459e-1027-48e1-b8cf-bbe51dc24800)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.fillColor = dp:ColorsButton[1]" \
+					"	v:this.\"fillColor 2\" = dp:ColorsButton[1]" \
+					"	v:this.textColor = dp:ColorsButton[1]" \
+					"	fire_delayed 500, ev:goToNavigation()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(7291359f-a7e7-4d8c-9442-924526a27ca7)
+		{
+			name: "Media_Player_Button"
+			template: @9f43b90a-2e5f-423d-86eb-373428e7d9f7 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Media Player"
+			textColor: textColor@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			fillColor: fillColor@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			"fillColor 2": "fillColor 2"@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			x: 24
+			y: 300
+			touchPressed: function<bool,int,int,int,int>(95424474-6115-4767-9d9c-d7b87ccfe42b)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.fillColor = dp:ColorsButton[0]" \
+					"	v:this.\"fillColor 2\" = dp:ColorsButton[0]" \
+					"	v:this.textColor = dp:ColorsButton[0]" \
+					"    false" \
+					"}"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(9f2d0c29-c326-462b-a1c6-4ec5638609c5)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.fillColor = dp:ColorsButton[1]" \
+					"	v:this.\"fillColor 2\" = dp:ColorsButton[1]" \
+					"	v:this.textColor = dp:ColorsButton[1]" \
+					"	fire_delayed 500, ev:goToMediaPlayer()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(a8010bad-dc0b-4494-8916-6883dbc326bf)
+		{
+			name: "Help_Button"
+			template: @9f43b90a-2e5f-423d-86eb-373428e7d9f7 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Help"
+			textColor: textColor@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			fillColor: fillColor@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			"fillColor 2": "fillColor 2"@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			x: 24
+			y: 375
+			touchPressed: function<bool,int,int,int,int>(084f8dbf-3500-4242-8c72-9f2f2775bee8)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.fillColor = dp:ColorsButton[0]" \
+					"	v:this.\"fillColor 2\" = dp:ColorsButton[0]" \
+					"	v:this.textColor = dp:ColorsButton[0]" \
+					"    false" \
+					"}"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(941be386-bff5-44ea-ae49-268f49a44458)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.fillColor = dp:ColorsButton[1]" \
+					"	v:this.\"fillColor 2\" = dp:ColorsButton[1]" \
+					"	v:this.textColor = dp:ColorsButton[1]" \
+					"	fire_delayed 500, ev:goToHelp()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfImage(5840b8ab-8810-4a1d-847a-803cbd138ede)
+		{
+			features: feature_list [
+				TouchShortReleased(5dc779d9-2109-44e1-87c1-88cce167f567)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(58a7036b-7358-47ec-9639-a9c3ee10aef8)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:IndexRadio > 0)" \
+							"		dp:IndexRadio -= 1" \
+							"	else" \
+							"		dp:IndexRadio = length dp:RadioList - 1" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(59cfbbd1-842f-4c9f-9025-d5136c1e772f)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "Back_Button"
+			visible: true
+			width: 64
+			height: 64
+			x: 355
+			y: 379
+			image: image_resource(f2c667e6-d832-4d8d-8c28-dfb0b204c34a)
+			{
+				file: "Left.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(8f2ecdca-a0e3-4037-91df-2bc682d7fec1)
+		{
+			features: feature_list [
+				TouchShortReleased(01fb7e20-50a9-4eb7-90ee-fe03480453b1)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(ffda88db-7b6a-4cc1-9fa0-d82a5c424955)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:IndexRadio < length dp:RadioList - 1)" \
+							"		dp:IndexRadio += 1" \
+							"	else" \
+							"		dp:IndexRadio = 0;" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(668f8e02-0861-4979-bf36-0247d8155392)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "Next_Button"
+			visible: true
+			width: 64
+			height: 64
+			x: 555
+			y: 380
+			image: image_resource(d22324ce-76b4-467f-88f6-120a63953455)
+			{
+				file: "Right.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(3ffd7c4c-5dfc-4b92-8df7-bc72802f0aa3)
+		{
+			features: feature_list [
+				TouchShortReleased(8750d00e-f0b8-47dd-a9b2-a318c8978138)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(b1014886-aa66-4a61-a392-0616a47c640e)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(v:this.Play == false)" \
+							"		{" \
+							"		 v:this.image = v:this.Images[1]" \
+							"		 v:this.Play = true" \
+							"		}" \
+							"	else" \
+							"		{" \
+							"		 v:this.image = v:this.Images[0]" \
+							"    	 v:this.Play = false" \
+							"    	}" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(6494207b-5fe6-4a62-a426-f347d5ad6361)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "Play_Pause_Button"
+			visible: true
+			width: 64
+			height: 64
+			x: 455
+			y: 380
+			image: image_resource(1f3277cf-5937-4f33-a872-ec4354d3adb6)
+			{
+				file: "Play.png"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 0
+			Images: imagelist [
+				image_resource(18a491a4-9b9b-4714-ae00-f7055dfa6732)
+				{
+					file: "Play.png"
+				}, 
+				image_resource(9ea15247-26b0-4af8-9cc9-5ae4d534c3d8)
+				{
+					file: "Pause.png"
+				}]
+			Play: false
+		}, 
+		GtfLabel(ea3bfdbf-b21c-4e3d-a18f-c6f13e1f277c)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Play_List_Label"
+			visible: true
+			width: 450
+			height: 50
+			x: 265
+			y: 310
+			text: string_element_reference(bab91cda-cd71-4aef-8957-92e257eefb44)
+			{
+				index: @71865bcd-4c35-4f94-b6fb-869dace25e62 (objectref<int>)
+				list: @8c5d0ffe-a00a-474d-85dd-753a22c40267 (objectref<stringlist>)
+			}
+			textColor: #FFFFFFFF
+			font: font_resource(1bd8d2d8-4583-4d2e-9e51-37c6d248c7ed)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 40
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfImage(53c7b79e-831c-4fa9-a4b6-9c9661d80b9d)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Radio_Icon"
+			visible: true
+			width: 128
+			height: 128
+			x: 420
+			y: 160
+			image: image_resource(2fbfd9a8-d92a-446a-a490-8f9b8afa1345)
+			{
+				file: "Radio_Icon.png"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 1
+		}]
+	text: "Radio"
+}

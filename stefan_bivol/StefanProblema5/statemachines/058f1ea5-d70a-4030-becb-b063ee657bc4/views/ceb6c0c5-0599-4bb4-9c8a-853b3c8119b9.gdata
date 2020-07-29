@@ -1,0 +1,179 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(ceb6c0c5-0599-4bb4-9c8a-853b3c8119b9)
+{
+	name: "Help_View"
+	template: @795cc315-8513-4f86-b0e9-18d89134ce93 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(734920f6-c71e-4efb-9f98-35f23587b7f6)
+		{
+			name: "Main_Menu_Button"
+			template: @9f43b90a-2e5f-423d-86eb-373428e7d9f7 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Main Menu"
+			textColor: textColor@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			fillColor: fillColor@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			"fillColor 2": "fillColor 2"@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			x: 25
+			y: 150
+			touchPressed: function<bool,int,int,int,int>(848e3868-5c54-4999-880a-e40e302f0fd5)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.fillColor = dp:ColorsButton[0]" \
+					"	v:this.\"fillColor 2\" = dp:ColorsButton[0]" \
+					"	v:this.textColor = dp:ColorsButton[0]" \
+					"    false" \
+					"}"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(8c553b24-e24f-4646-9ad3-1c3eb0f2376e)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.fillColor = dp:ColorsButton[1]" \
+					"	v:this.\"fillColor 2\" = dp:ColorsButton[1]" \
+					"	v:this.textColor = dp:ColorsButton[1]" \
+					"	fire_delayed 500, ev:goToMenu()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(c8aa963b-5726-49df-95c3-f48b706a3718)
+		{
+			name: "Navigation_Button"
+			template: @9f43b90a-2e5f-423d-86eb-373428e7d9f7 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Navigation"
+			textColor: textColor@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			fillColor: fillColor@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			"fillColor 2": "fillColor 2"@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			x: 23
+			y: 223
+			touchPressed: function<bool,int,int,int,int>(2223be38-94bb-4b22-afeb-ab7ca0955f7f)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.fillColor = dp:ColorsButton[0]" \
+					"	v:this.\"fillColor 2\" = dp:ColorsButton[0]" \
+					"	v:this.textColor = dp:ColorsButton[0]" \
+					"    false" \
+					"}"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(8f8b8d0c-5d5b-4d34-9335-f138e98d0a96)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.fillColor = dp:ColorsButton[1]" \
+					"	v:this.\"fillColor 2\" = dp:ColorsButton[1]" \
+					"	v:this.textColor = dp:ColorsButton[1]" \
+					"	fire_delayed 500, ev:goToNavigation()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(018d4a5c-dcc2-400b-90ed-6e6f3d31e530)
+		{
+			name: "Radio_Button"
+			template: @9f43b90a-2e5f-423d-86eb-373428e7d9f7 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Radio"
+			textColor: textColor@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			fillColor: fillColor@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			"fillColor 2": "fillColor 2"@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			x: 25
+			y: 300
+			touchPressed: function<bool,int,int,int,int>(1838252a-32db-4f25-bd7c-0d16ddfdf0b5)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.fillColor = dp:ColorsButton[0]" \
+					"	v:this.\"fillColor 2\" = dp:ColorsButton[0]" \
+					"	v:this.textColor = dp:ColorsButton[0]" \
+					"    false" \
+					"}"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(1194f57f-a1c2-43ee-a9bd-f52fbf003df6)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.fillColor = dp:ColorsButton[1]" \
+					"	v:this.\"fillColor 2\" = dp:ColorsButton[1]" \
+					"	v:this.textColor = dp:ColorsButton[1]" \
+					"	fire_delayed 500, ev:goToRadio()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(413428f1-e757-4f23-bffd-9f3583a4a51c)
+		{
+			name: "Media_Player_Button"
+			template: @9f43b90a-2e5f-423d-86eb-373428e7d9f7 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Media Player"
+			textColor: textColor@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			fillColor: fillColor@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			"fillColor 2": "fillColor 2"@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			x: 24
+			y: 375
+			touchPressed: function<bool,int,int,int,int>(4c85c886-b195-4ed6-9e5d-84891dff6d05)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.fillColor = dp:ColorsButton[0]" \
+					"	v:this.\"fillColor 2\" = dp:ColorsButton[0]" \
+					"	v:this.textColor = dp:ColorsButton[0]" \
+					"    false" \
+					"}"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(d31fecc2-cded-4f32-950a-9f20d101d0a9)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.fillColor = dp:ColorsButton[1]" \
+					"	v:this.\"fillColor 2\" = dp:ColorsButton[1]" \
+					"	v:this.textColor = dp:ColorsButton[1]" \
+					"	fire_delayed 500, ev:goToMediaPlayer()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfLabel(159ff14e-6518-4dc1-9c00-1aafb0c81356)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Info"
+			visible: true
+			width: 500
+			height: 100
+			x: 225
+			y: 350
+			text: "Application version is 1.0"
+			textColor: #FFFFFFFF
+			font: font_resource(af31a080-c884-4307-8482-62cb3acc34b4)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfImage(2e26ed2f-c850-40bf-9140-fe49523a6983)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Help_Icon"
+			visible: true
+			width: 256
+			height: 256
+			x: 350
+			y: 115
+			image: image_resource(49b27424-b50f-4d4f-9980-0c27ecbb7d9c)
+			{
+				file: "Help_Icon.png"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 1
+		}]
+	text: "Help"
+}

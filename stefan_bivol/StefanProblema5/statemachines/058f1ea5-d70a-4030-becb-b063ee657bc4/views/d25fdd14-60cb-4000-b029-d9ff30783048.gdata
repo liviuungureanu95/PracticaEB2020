@@ -1,0 +1,159 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(d25fdd14-60cb-4000-b029-d9ff30783048)
+{
+	name: "Main_Menu_View"
+	template: @795cc315-8513-4f86-b0e9-18d89134ce93 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(99060625-0f72-4e7d-bc31-26c9d9453eb2)
+		{
+			name: "Navigation_Button"
+			template: @9f43b90a-2e5f-423d-86eb-373428e7d9f7 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Navigation"
+			textColor: textColor@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			fillColor: fillColor@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			"fillColor 2": "fillColor 2"@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			x: 25
+			y: 150
+			touchPressed: function<bool,int,int,int,int>(bad809d8-c788-49ac-a657-d218a79712f2)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.fillColor = dp:ColorsButton[0]" \
+					"	v:this.\"fillColor 2\" = dp:ColorsButton[0]" \
+					"	v:this.textColor = dp:ColorsButton[0]" \
+					"    false" \
+					"}"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(c2d99d88-33a1-4668-baa9-08315f3ed900)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.fillColor = dp:ColorsButton[1]" \
+					"	v:this.\"fillColor 2\" = dp:ColorsButton[1]" \
+					"	v:this.textColor = dp:ColorsButton[1]" \
+					"	fire_delayed 500, ev:goToNavigation();" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(44285213-af74-4a85-bf83-0a7ac36ec319)
+		{
+			name: "Radio_Button"
+			template: @9f43b90a-2e5f-423d-86eb-373428e7d9f7 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Radio"
+			textColor: textColor@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			fillColor: fillColor@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			"fillColor 2": "fillColor 2"@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			x: 25
+			y: 225
+			touchPressed: function<bool,int,int,int,int>(f822bb46-a8d9-4703-a14f-0177801a26e1)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.fillColor = dp:ColorsButton[0]" \
+					"	v:this.\"fillColor 2\" = dp:ColorsButton[0]" \
+					"	v:this.textColor = dp:ColorsButton[0]" \
+					"    false" \
+					"}"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(62ce3b6a-f92d-4d9a-a5b1-6979f49b74af)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.fillColor = dp:ColorsButton[1]" \
+					"	v:this.\"fillColor 2\" = dp:ColorsButton[1]" \
+					"	v:this.textColor = dp:ColorsButton[1]" \
+					"	fire_delayed 500, ev:goToRadio()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(2cb14555-8f9c-44a5-a7bd-b9b31c6f5cd2)
+		{
+			name: "Media_Player_Button"
+			template: @9f43b90a-2e5f-423d-86eb-373428e7d9f7 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Media Player"
+			textColor: textColor@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			fillColor: fillColor@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			"fillColor 2": "fillColor 2"@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			x: 23
+			y: 300
+			touchPressed: function<bool,int,int,int,int>(03b280e0-0764-4a19-b69b-833cd1c01994)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.fillColor = dp:ColorsButton[0]" \
+					"	v:this.\"fillColor 2\" = dp:ColorsButton[0]" \
+					"	v:this.textColor = dp:ColorsButton[0]" \
+					"    false" \
+					"}"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(ca0cdfa2-ef94-43b5-8dcd-6a740f801eea)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.fillColor = dp:ColorsButton[1]" \
+					"	v:this.\"fillColor 2\" = dp:ColorsButton[1]" \
+					"	v:this.textColor = dp:ColorsButton[1]" \
+					"	fire_delayed 500, ev:goToMediaPlayer()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(f80d4e71-0c9c-46e6-b7bb-84c96f5575c6)
+		{
+			name: "Help_Button"
+			template: @9f43b90a-2e5f-423d-86eb-373428e7d9f7 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Help"
+			textColor: textColor@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			fillColor: fillColor@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			"fillColor 2": "fillColor 2"@9f43b90a-2e5f-423d-86eb-373428e7d9f7 (propref<color>)
+			x: 24
+			y: 375
+			touchPressed: function<bool,int,int,int,int>(4061505c-1803-4aa5-ae30-988d8e73eb23)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.fillColor = dp:ColorsButton[0]" \
+					"	v:this.\"fillColor 2\" = dp:ColorsButton[0]" \
+					"	v:this.textColor = dp:ColorsButton[0]" \
+					"    false" \
+					"}"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(ebeb567e-6184-437e-bcff-fec1dc85baa8)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.fillColor = dp:ColorsButton[1]" \
+					"	v:this.\"fillColor 2\" = dp:ColorsButton[1]" \
+					"	v:this.textColor = dp:ColorsButton[1]" \
+					"	fire_delayed 500, ev:goToHelp()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfImage(1820af76-8e27-4fa1-b70d-bc1072154361)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Car_Icon"
+			visible: true
+			width: 512
+			height: 300
+			x: 230
+			y: 140
+			image: image_resource(e11ea3d1-a66a-4b49-bddb-79d4039d4334)
+			{
+				file: "Car_Icon.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 0
+		}]
+	text: "Main Menu"
+}

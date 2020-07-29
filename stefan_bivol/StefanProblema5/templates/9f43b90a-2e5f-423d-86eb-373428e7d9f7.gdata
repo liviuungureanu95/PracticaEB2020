@@ -1,0 +1,193 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(9f43b90a-2e5f-423d-86eb-373428e7d9f7)
+{
+	name: "Text Button"
+	structure: GtfContainer(4a8b0e87-ab5e-4c2c-860c-344853550c10)
+	{
+		features: feature_list [
+			TouchPressed(69c08bab-a6a6-4160-ac49-e9b7ba8c986a)
+			{
+				touchPressed: function<bool,int,int,int,int>(f59fb615-510b-4153-aec4-17bf212535b3)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	f:animation_play(v:this->Loading_Elipse->Loading)" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(06ea7557-d418-42f6-94d0-07de84ef5872)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(287e3d03-405c-4f5d-ae6f-6a9d000f931f)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	f:animation_play(v:this->Loading_Elipse->Loading)" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(3ef55c82-ec01-4da6-bc68-cfa4fb967eae)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfLabel(c99dfa34-af48-4991-a1d7-5076790c8389)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Text"
+				visible: true
+				width: 150
+				height: 70
+				x: 0
+				y: 0
+				text: "Text"
+				textColor: #FFFFFFFF
+				font: font_resource(00996e5e-7773-4003-a163-53390c56f8e7)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfRectangle(29052db0-3ecf-4f66-badb-a692aa3c7362)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Line_Down"
+				visible: true
+				width: 140
+				height: 3
+				x: 5
+				y: 65
+				fillColor: #FFFFFFFF
+			}, 
+			GtfRectangle(f85b3f7e-e729-45e2-bb45-c0fdd9d60ed5)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Line_Right"
+				visible: true
+				width: 3
+				height: 63
+				x: 143
+				y: 5
+				fillColor: #FFFFFFFF
+			}, 
+			GtfEllipse(811f6eec-0754-4657-8d2a-cfb8b487af3d)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfParallelAnimation(d4974fb0-f9c7-42d7-ac91-0bb80916b53b)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLinearInterpolationS32(09aae4d5-b19b-4cba-865f-1c7f5b885500)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "RightX"
+								enabled: true
+								delay: 0
+								duration: 250
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 4
+								end: 139
+								target: x@811f6eec-0754-4657-8d2a-cfb8b487af3d (propref<int>)
+							}, 
+							GtfLinearInterpolationS32(a8760c1a-df49-4bbe-bc25-8a1c3b8fbb5a)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "UpY"
+								enabled: true
+								delay: 250
+								duration: 250
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 61
+								end: 4
+								target: y@811f6eec-0754-4657-8d2a-cfb8b487af3d (propref<int>)
+							}]
+						name: "Loading"
+						enabled: true
+						repeat: 1
+						alternating: false
+						scale: 1F
+						onPlay: function<void,int,bool>(b63f3924-d262-4448-ab89-bb45f468e4f0)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(3b8880e7-8242-4a34-9dce-069f4353ee9e)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(92b6199c-cb9d-4337-baf6-cc4ccfb2b5e4)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+					}]
+				name: "Loading_Elipse"
+				visible: true
+				width: 10
+				height: 10
+				x: 4
+				y: 61
+				fillColor: #FFFFFFFF
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}]
+		name: "Text_Button"
+		visible: true
+		width: 150
+		height: 70
+		x: 0
+		y: 0
+		PlayAnimation: conditional_script(3d241023-742e-4112-ac5e-acfede986f49)
+		{
+			triggerList: trigger_list(76d08d81-93df-408b-ba94-80329e825ba6)
+			{
+				script: "v:this.touched" \
+					""
+			}
+			onTrigger: function<bool,bool>(5be2df53-f7bc-45c4-8d3b-9990c75e7b16)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	if(v:this.touched)" \
+					"	{	" \
+					"		f:animation_play(v:this->Loading_Elipse->Loading)" \
+					"	}" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+	text: text@c99dfa34-af48-4991-a1d7-5076790c8389 (propref<string>)
+	textColor: textColor@c99dfa34-af48-4991-a1d7-5076790c8389 (propref<color>)
+	fillColor: fillColor@29052db0-3ecf-4f66-badb-a692aa3c7362 (propref<color>)
+	"fillColor 2": fillColor@f85b3f7e-e729-45e2-bb45-c0fdd9d60ed5 (propref<color>)
+	x: x@4a8b0e87-ab5e-4c2c-860c-344853550c10 (propref<int>)
+	y: y@4a8b0e87-ab5e-4c2c-860c-344853550c10 (propref<int>)
+	touchPressed: touchPressed@69c08bab-a6a6-4160-ac49-e9b7ba8c986a (propref<function<bool,int,int,int,int>>)
+	touchShortReleased: touchShortReleased@06ea7557-d418-42f6-94d0-07de84ef5872 (propref<function<bool,int,int,int,int>>)
+}
