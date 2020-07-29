@@ -1,0 +1,141 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(af135cb0-7941-4ad5-8c55-315ab2433942)
+{
+	name: "view radio menu"
+	template: @5b8ab2b8-cbeb-4172-8ff0-b8648dc3ed6c (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(271ce290-06f7-4a7e-9de5-9146e66810e1)
+		{
+			name: "Navigation Button"
+			template: @f2a8f883-b12e-41cb-bb20-c6e03362529a (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 100
+			y: 320
+			image: image_resource(02dafc41-97af-4973-af5a-2c24eeb0ada8)
+			{
+				file: "navigation.png"
+			}
+			touchPressed: function<bool,int,int,int,int>(cb032d10-496b-4b55-a81c-943b417076b3)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire_delayed 200, ev:\"radio-nav_backTo_nav_menu\"()" \
+					"    true" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(96e13fd6-8ee3-4e78-8d5b-1ba39fa516b3)
+		{
+			name: "Media Player Button"
+			template: @f2a8f883-b12e-41cb-bb20-c6e03362529a (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 350
+			y: 320
+			image: image_resource(5eb05b89-c568-4c48-9169-a050326b1a1e)
+			{
+				file: "media_player.png"
+			}
+			touchPressed: function<bool,int,int,int,int>(5ea30ffc-6f89-417e-8655-d334a6e09fa3)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire_delayed 200, ev:\"radio-media_goTo_media_menu\"()" \
+					"    true" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(001ea9c9-7201-4b13-965f-89d398c6dac4)
+		{
+			name: "Help Button"
+			template: @f2a8f883-b12e-41cb-bb20-c6e03362529a (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 600
+			y: 320
+			image: image_resource(af8a73d6-86ac-4457-8b7f-9ae4c3992fa3)
+			{
+				file: "help.png"
+			}
+			touchPressed: function<bool,int,int,int,int>(168303da-9398-451e-ae62-d74ecbce8569)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire_delayed 200, ev:\"radio-info_goTo_info_menu\"()" \
+					"    true" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(4af9238f-c2c6-4b39-8247-59a59d5325ac)
+		{
+			name: "Radio 1"
+			template: @12724351-9039-4c75-ac1b-b3b72fba36fa (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 0
+			y: 170
+			text: "Kiss FM"
+			textColor: textColor@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<color>)
+			font: font@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<font>)
+		}, 
+		GtfContainer_template_instance(e513442b-77d7-49fc-8fda-aa3190e66b67)
+		{
+			name: "Radio 2"
+			template: @12724351-9039-4c75-ac1b-b3b72fba36fa (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 300
+			y: 170
+			text: "Digi FM"
+			textColor: textColor@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<color>)
+			font: font@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<font>)
+		}, 
+		GtfContainer_template_instance(e9845d7c-29db-4c22-97c3-ac0d7e155654)
+		{
+			name: "Radio 3"
+			template: @12724351-9039-4c75-ac1b-b3b72fba36fa (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 600
+			y: 170
+			text: "Radio ZU"
+			textColor: textColor@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<color>)
+			font: font@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<font>)
+		}, 
+		GtfContainer_template_instance(5268bd28-9c99-4d27-b13e-b5f9843294e8)
+		{
+			name: "Radio 4"
+			template: @12724351-9039-4c75-ac1b-b3b72fba36fa (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 0
+			y: 270
+			text: "Pro FM"
+			textColor: textColor@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<color>)
+			font: font@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<font>)
+		}, 
+		GtfContainer_template_instance(db6d01f6-8e6b-477e-9180-7dc17c98eabc)
+		{
+			name: "Radio 5"
+			template: @12724351-9039-4c75-ac1b-b3b72fba36fa (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 300
+			y: 270
+			text: "Europa FM"
+			textColor: textColor@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<color>)
+			font: font@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<font>)
+		}, 
+		GtfContainer_template_instance(8612a21f-3b92-4f5a-aeb2-de0209207997)
+		{
+			name: "Radio 6"
+			template: @12724351-9039-4c75-ac1b-b3b72fba36fa (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 600
+			y: 270
+			text: "Virgin Radio"
+			textColor: textColor@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<color>)
+			font: font@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<font>)
+		}]
+	text: "Radio"
+	font: font_resource(9062b59d-88a6-444b-83e4-396521a9c0ec)
+	{
+		file: "PT_Sans_Narrow.ttf"
+		size: 40
+	}
+	textColor: textColor@5b8ab2b8-cbeb-4172-8ff0-b8648dc3ed6c (propref<color>)
+}

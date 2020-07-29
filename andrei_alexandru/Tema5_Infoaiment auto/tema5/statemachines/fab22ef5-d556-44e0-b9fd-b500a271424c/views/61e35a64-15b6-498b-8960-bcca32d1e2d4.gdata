@@ -1,0 +1,86 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(61e35a64-15b6-498b-8960-bcca32d1e2d4)
+{
+	name: "view info menu"
+	template: @5b8ab2b8-cbeb-4172-8ff0-b8648dc3ed6c (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(df546331-9d15-4bb4-bf7c-be6564dde695)
+		{
+			name: "Navigation Button"
+			template: @f2a8f883-b12e-41cb-bb20-c6e03362529a (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 70
+			y: 320
+			image: image_resource(169f49be-058e-452d-a51c-2e00a429b0cf)
+			{
+				file: "navigation.png"
+			}
+			touchPressed: function<bool,int,int,int,int>(ad797b22-38fe-4495-af65-52585cdc712a)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire_delayed 200, ev:\"info-nav-backTo_nav_menu\"()" \
+					"    true" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(b911ee80-62fb-45d9-940e-b79b5a5593ea)
+		{
+			name: "Radio Button"
+			template: @f2a8f883-b12e-41cb-bb20-c6e03362529a (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 320
+			y: 320
+			image: image_resource(d185b305-9053-439a-b411-c4265d055b63)
+			{
+				file: "radio.png"
+			}
+			touchPressed: function<bool,int,int,int,int>(edf2a33d-a60f-47d3-bef4-66f7cce78553)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    fire_delayed 200, ev:\"info-radio_backTo_radio_menu\"()" \
+					"    true" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(22bb0f28-45ff-4aaf-9542-bc14de47a795)
+		{
+			name: "Media Player Button"
+			template: @f2a8f883-b12e-41cb-bb20-c6e03362529a (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 570
+			y: 320
+			image: image_resource(515097f2-a4e3-4442-9fac-9755cc23c625)
+			{
+				file: "media_player.png"
+			}
+			touchPressed: function<bool,int,int,int,int>(c4caa2fe-7a23-4d64-a590-aa4194f1542f)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire_delayed 200, ev:\"info-media_backTo_media_menu\"()" \
+					"	true" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(6431ebf5-28c9-49b4-9ade-62a4cb3472f1)
+		{
+			name: "Button1"
+			template: @12724351-9039-4c75-ac1b-b3b72fba36fa (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 0
+			y: 220
+			text: "Car Details..."
+			textColor: textColor@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<color>)
+			font: font@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<font>)
+		}]
+	text: "Info"
+	font: font_resource(e4446922-183d-46b7-92bb-2839358dc73e)
+	{
+		file: "PT_Sans_Narrow.ttf"
+		size: 40
+	}
+	textColor: textColor@5b8ab2b8-cbeb-4172-8ff0-b8648dc3ed6c (propref<color>)
+}
