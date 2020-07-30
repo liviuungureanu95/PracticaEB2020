@@ -1,0 +1,80 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(f0a4a22c-05ba-4b12-a7d1-84c7282bcb33)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(12ddb64a-7ce8-43f2-87e9-35c393c98ffe)
+		{
+			name: "T_BG 1"
+			template: @c97ef213-f3f2-4555-8faa-cf30dc387a30 (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfLabel(809f1768-6eec-445a-b845-67e5692f22a7)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 2"
+					visible: true
+					width: 100
+					height: 100
+					x: 445
+					y: 113
+					text: "radio"
+					textColor: #FFFFFFFF
+					font: font_resource(dcce855a-b3ef-42e2-a23f-b5abb685dcca)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(bb1f180a-0507-4979-8fd6-553528c41481)
+				{
+					name: "T_Choose 1"
+					template: @82de4025-29ff-4c3d-b8b9-c92d34b5b816 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: x@82de4025-29ff-4c3d-b8b9-c92d34b5b816 (propref<int>)
+					y: y@82de4025-29ff-4c3d-b8b9-c92d34b5b816 (propref<int>)
+					image: image_resource(f1dbab1f-c5b3-403d-b4b9-b78dc0032ace)
+					{
+						file: "cursor.png"
+					}
+					touchShortReleased: function<bool,int,int,int,int>(aec0ca32-41f2-49db-a190-09b2c5f66461)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:GoToNavigation()" \
+							"    false" \
+							"}"
+					}
+					"image 2": "image 2"@82de4025-29ff-4c3d-b8b9-c92d34b5b816 (propref<image>)
+					"touchShortReleased 2": function<bool,int,int,int,int>(450fd1a5-a7f0-40ae-8e33-8f853f61ba58)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:GoToHelp()" \
+							"    false" \
+							"}"
+					}
+					"image 3": image_resource(715f3b40-9ba6-422d-b1d5-2b8162e57e91)
+					{
+						file: "video.png"
+					}
+					"touchShortReleased 3": function<bool,int,int,int,int>(fb7df440-3460-4349-9b0d-eda227e5df4c)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:GoToPlayer()" \
+							"    false" \
+							"}"
+					}
+				}]
+		}]
+	name: "View 3"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

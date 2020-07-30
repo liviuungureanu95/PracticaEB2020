@@ -1,0 +1,132 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(d3858771-9bda-4585-b904-eed442748d3b)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(c5107375-a647-429a-acbc-8e20c98bb933)
+		{
+			name: "TOP BAR 1"
+			template: @c97ef213-f3f2-4555-8faa-cf30dc387a30 (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfContainer_template_instance(5fa6590c-00c6-427b-9599-9c22d4e32161)
+				{
+					name: "Menu_To_nav"
+					template: @dab2c966-48c0-4875-8046-3ff7a33db829 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 33
+					y: 180
+					image: image_resource(a1ecca47-dfa0-485b-b24e-53146e0c4eb7)
+					{
+						file: "cursor.png"
+					}
+					touchShortReleased: function<bool,int,int,int,int>(b71c53c9-ee1b-49ab-aa1f-129200e06463)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:GoToNavigation()" \
+							"    false" \
+							"}"
+					}
+					width: width@dab2c966-48c0-4875-8046-3ff7a33db829 (propref<int>)
+					height: height@dab2c966-48c0-4875-8046-3ff7a33db829 (propref<int>)
+				}, 
+				GtfContainer_template_instance(0ab1e574-f60d-4c79-9415-0c987ceb3b11)
+				{
+					name: "Menu_To_Radio"
+					template: @dab2c966-48c0-4875-8046-3ff7a33db829 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 221
+					y: 180
+					image: image_resource(66a5ff9c-c87a-4b74-8853-4de0965dc883)
+					{
+						file: "radio.png"
+					}
+					touchShortReleased: function<bool,int,int,int,int>(bdb35cfe-267e-4570-a5a1-ae4ea794f73d)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:GoToRadio()" \
+							"    false" \
+							"}"
+					}
+					width: width@dab2c966-48c0-4875-8046-3ff7a33db829 (propref<int>)
+					height: height@dab2c966-48c0-4875-8046-3ff7a33db829 (propref<int>)
+				}, 
+				GtfContainer_template_instance(f043648d-33e0-481d-91de-eb51350b2019)
+				{
+					name: "Menu_to_Player"
+					template: @dab2c966-48c0-4875-8046-3ff7a33db829 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 415
+					y: 180
+					image: image_resource(80ea895b-7864-4037-92c7-71ca87fcb84d)
+					{
+						file: "video.png"
+					}
+					touchShortReleased: function<bool,int,int,int,int>(367145c5-5fd0-4393-8908-1730d42fe75c)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:GoToPlayer()" \
+							"    false" \
+							"}"
+					}
+					width: width@dab2c966-48c0-4875-8046-3ff7a33db829 (propref<int>)
+					height: height@dab2c966-48c0-4875-8046-3ff7a33db829 (propref<int>)
+				}, 
+				GtfContainer_template_instance(e80cabe6-4f90-4e88-b842-1260c475ca94)
+				{
+					name: "Menu_To_Help"
+					template: @dab2c966-48c0-4875-8046-3ff7a33db829 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 601
+					y: 180
+					image: image@dab2c966-48c0-4875-8046-3ff7a33db829 (propref<image>)
+					touchShortReleased: function<bool,int,int,int,int>(1f961cee-7db0-40c0-8408-01483679c409)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:GoToHelp()" \
+							"    false" \
+							"}"
+					}
+					width: width@dab2c966-48c0-4875-8046-3ff7a33db829 (propref<int>)
+					height: height@dab2c966-48c0-4875-8046-3ff7a33db829 (propref<int>)
+				}, 
+				GtfLabel(f6d13bb9-714f-4660-9a17-9ed8103af55f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 1"
+					visible: true
+					width: 226
+					height: 100
+					x: 277
+					y: 54
+					text: "Menu"
+					textColor: #000000FF
+					font: font_resource(44f4cfc3-c0fc-423a-bf88-e4c387d05958)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 90
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			touchShortReleased: function<bool,int,int,int,int>(5543a0c3-ee57-4ddb-abb6-946109429809)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	" \
+					"    false" \
+					"}"
+			}
+		}]
+	name: "View 1"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
