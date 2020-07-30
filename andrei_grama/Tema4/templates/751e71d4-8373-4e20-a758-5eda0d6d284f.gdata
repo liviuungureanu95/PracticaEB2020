@@ -1,0 +1,165 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(751e71d4-8373-4e20-a758-5eda0d6d284f)
+{
+	name: "bar"
+	structure: GtfContainer(2368d482-7531-4b9d-986b-fdb21719e920)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(043b07be-cd59-4069-9f56-d260ac47725a)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "background"
+				visible: true
+				width: width@2368d482-7531-4b9d-986b-fdb21719e920 (propref<int>)
+				height: height@2368d482-7531-4b9d-986b-fdb21719e920 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #000000FF
+			}, 
+			GtfRectangle_template_instance(03a0a368-c574-44b5-8abe-488edf3efa4f)
+			{
+				name: "powerButton"
+				template: @974afc16-10dd-4cdf-9ef7-71145966f227 (objectref<GtfRectangle_template>)
+				children: children_list []
+				image: image_resource(a0d4e97d-bf25-4d2b-9436-df1a9b387d1f)
+				{
+					file: "icons8-shutdown-64.png"
+				}
+				x: 0
+				y: 6
+				touchable: touchable@974afc16-10dd-4cdf-9ef7-71145966f227 (propref<bool>)
+				touchShortReleased: touchShortReleased@974afc16-10dd-4cdf-9ef7-71145966f227 (propref<function<bool,int,int,int,int>>)
+				width: width@974afc16-10dd-4cdf-9ef7-71145966f227 (propref<int>)
+				height: height@974afc16-10dd-4cdf-9ef7-71145966f227 (propref<int>)
+			}, 
+			GtfRectangle_template_instance(0237e708-6b55-4bcc-87c8-f1798fb5d993)
+			{
+				name: "volumeUP"
+				template: @974afc16-10dd-4cdf-9ef7-71145966f227 (objectref<GtfRectangle_template>)
+				children: children_list []
+				image: image_resource(daf78081-a201-4d4b-8789-c34194ccf517)
+				{
+					file: "icons8-audio-64.png"
+				}
+				x: 13
+				y: 100
+				touchable: touchable@974afc16-10dd-4cdf-9ef7-71145966f227 (propref<bool>)
+				touchShortReleased: function<bool,int,int,int,int>(be857f4e-f47b-4a20-bb15-3f84327257fd)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	if(v:this->^->volumeBar.height<100){" \
+						"		v:this->^->volumeBar.height+=10" \
+						"		v:this->^->volumeBar.y-=10" \
+						"	}" \
+						"		" \
+						"    false" \
+						"}"
+				}
+				width: 34
+				height: 34
+			}, 
+			GtfRectangle_template_instance(a0b1326e-bf11-449a-b048-ec82ea142d82)
+			{
+				name: "volumeDOWN"
+				template: @974afc16-10dd-4cdf-9ef7-71145966f227 (objectref<GtfRectangle_template>)
+				children: children_list []
+				image: image_resource(0a01d83b-f46f-483b-9b4f-45a4200c2ee0)
+				{
+					file: "icons8-low-volume-64.png"
+				}
+				x: 13
+				y: 270
+				touchable: touchable@974afc16-10dd-4cdf-9ef7-71145966f227 (propref<bool>)
+				touchShortReleased: function<bool,int,int,int,int>(7e823bdb-c9f8-48c0-a8f8-4b5300857a34)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	if(v:this->^->volumeBar.height>0){" \
+						"		v:this->^->volumeBar.height-=10" \
+						"		v:this->^->volumeBar.y+=10" \
+						"	}" \
+						"    false" \
+						"}"
+				}
+				width: 34
+				height: 34
+			}, 
+			GtfRectangle(493eb3c7-be27-4826-af7a-b3c08ee0d9b1)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "volumeBar"
+				visible: true
+				width: 30
+				height: 50
+				x: 15
+				y: 202
+				fillColor: #1E90FFFF
+			}, 
+			GtfLabel(f1735eab-4bd3-4abe-832b-e4db360e5382)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "volumeLabel"
+				visible: true
+				width: 40
+				height: 30
+				x: 10
+				y: 187
+				text: string_scriptedValue(c1289a6a-8c66-4cb7-8bc0-eb1fc66908b2)
+				{
+					triggerList: trigger_list(44aba1ec-6d5f-46ee-a2f2-bbd5c207a7a7)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(089cc421-7050-4272-99f1-08d4d6349d69)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<string>(ca9da9ad-02f6-458a-8eac-f2d1401ade81)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	f:int2string(v:this->^->volumeBar.height)+\"%\"" \
+							"}"
+					}
+					write: function<bool,string>(00dab877-fca6-4133-a2d9-bab6b2d2f8a7)
+					{
+						script: "function(v:arg0::string)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				textColor: #FFFFFFFF
+				font: font_resource(e2a31a27-36d2-4882-98de-dcfe5cd373a0)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 15
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 60
+		height: 320
+		x: 0
+		y: 0
+	}
+	touchShortReleased: touchShortReleased@03a0a368-c574-44b5-8abe-488edf3efa4f (propref<function<bool,int,int,int,int>>)
+	touchable: touchable@0237e708-6b55-4bcc-87c8-f1798fb5d993 (propref<bool>)
+	"touchable 2": touchable@a0b1326e-bf11-449a-b048-ec82ea142d82 (propref<bool>)
+	visible: visible@493eb3c7-be27-4826-af7a-b3c08ee0d9b1 (propref<bool>)
+	"visible 2": visible@f1735eab-4bd3-4abe-832b-e4db360e5382 (propref<bool>)
+}
