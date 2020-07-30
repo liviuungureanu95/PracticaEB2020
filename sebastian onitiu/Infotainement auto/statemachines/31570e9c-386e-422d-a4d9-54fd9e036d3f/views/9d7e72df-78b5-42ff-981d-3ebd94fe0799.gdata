@@ -1,0 +1,277 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(9d7e72df-78b5-42ff-981d-3ebd94fe0799)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(7fd13299-1fe3-460b-adbb-ac8203de4cc1)
+		{
+			features: feature_list [
+				ScaleMode(caa2caa2-6e06-466f-afb8-33cbb8882c28)
+				{
+					scaleMode: 1
+				}]
+			children: children_list [
+				GtfImage(9282ac0d-bdb9-40b5-9c0e-1e90159f0b4e)
+				{
+					features: feature_list [
+						ScaleMode(9f10f95a-1d64-48a1-b9dd-3c38c8e0765d)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "tesla"
+					visible: true
+					width: 395
+					height: 167
+					x: 305
+					y: 254
+					image: image_resource(c85ec18d-192e-4b25-b446-97b249810556)
+					{
+						file: "tesla.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(12142ae1-fa17-4df5-9b48-ed1172955a6a)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 1"
+					visible: true
+					width: 170
+					height: 89
+					x: 563
+					y: 3
+					text: "Principal Menu"
+					textColor: #FFFFFFFF
+					font: font_resource(f36a3304-3196-4bb1-93d1-877eed16788e)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(872c0937-32c4-4e27-b28b-99b0a0f8af38)
+				{
+					name: "player-b"
+					template: @1a929398-fcd5-4e9c-a718-4dfd8487df24 (objectref<GtfContainer_template>)
+					children: children_list []
+					width: 70
+					height: 70
+					x: 50
+					y: 110
+					image: image_resource(5c53f34a-982a-4b82-a84e-823053e540e1)
+					{
+						file: "mediaplayer_icon.png"
+					}
+					scaleMode: scaleMode@1a929398-fcd5-4e9c-a718-4dfd8487df24 (propref<int>)
+					touchShortReleased: function<bool,int,int,int,int>(de4d1887-ab29-4e5d-a41f-758c7018bb71)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goMedia()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(98be8017-5b47-43ef-b563-dd0b601f8ecc)
+				{
+					name: "help-b"
+					template: @1a929398-fcd5-4e9c-a718-4dfd8487df24 (objectref<GtfContainer_template>)
+					children: children_list []
+					width: width@1a929398-fcd5-4e9c-a718-4dfd8487df24 (propref<int>)
+					height: height@1a929398-fcd5-4e9c-a718-4dfd8487df24 (propref<int>)
+					x: 98
+					y: 360
+					image: image_resource(4feec032-48b7-4a1e-8e2e-2a0394e28bc3)
+					{
+						file: "help_icon.png"
+					}
+					scaleMode: scaleMode@1a929398-fcd5-4e9c-a718-4dfd8487df24 (propref<int>)
+					touchShortReleased: function<bool,int,int,int,int>(11ee6b33-2506-48cf-b256-4ed2468133cb)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goHelp()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(e3b5f8cf-aec0-4d8c-b998-a5de7c616122)
+				{
+					name: "navigatiion-b"
+					template: @1a929398-fcd5-4e9c-a718-4dfd8487df24 (objectref<GtfContainer_template>)
+					children: children_list []
+					width: width@1a929398-fcd5-4e9c-a718-4dfd8487df24 (propref<int>)
+					height: height@1a929398-fcd5-4e9c-a718-4dfd8487df24 (propref<int>)
+					x: 30
+					y: 196
+					image: image_resource(173b5c19-efd7-4f21-a7bb-798fb407f19e)
+					{
+						file: "navigation_icon.png"
+					}
+					scaleMode: scaleMode@1a929398-fcd5-4e9c-a718-4dfd8487df24 (propref<int>)
+					touchShortReleased: function<bool,int,int,int,int>(f4d27f73-588e-447d-855a-e91e48fe7cea)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goNavigation()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(77209d9e-6052-4136-abac-54f17e7168f9)
+				{
+					name: "radio-b"
+					template: @1a929398-fcd5-4e9c-a718-4dfd8487df24 (objectref<GtfContainer_template>)
+					children: children_list []
+					width: 72
+					height: height@1a929398-fcd5-4e9c-a718-4dfd8487df24 (propref<int>)
+					x: 47
+					y: 285
+					image: image_resource(14d9faf9-0baa-480b-aadc-19356357eeaf)
+					{
+						file: "radio_icon.png"
+					}
+					scaleMode: scaleMode@1a929398-fcd5-4e9c-a718-4dfd8487df24 (propref<int>)
+					touchShortReleased: function<bool,int,int,int,int>(c21cf8ab-6705-42aa-af93-04c250969bc4)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goRadio()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(741dd7d6-3c1e-4c1d-9ace-740e06261abd)
+				{
+					name: "menu-b"
+					template: @1a929398-fcd5-4e9c-a718-4dfd8487df24 (objectref<GtfContainer_template>)
+					children: children_list []
+					width: width@1a929398-fcd5-4e9c-a718-4dfd8487df24 (propref<int>)
+					height: height@1a929398-fcd5-4e9c-a718-4dfd8487df24 (propref<int>)
+					x: 722
+					y: 5
+					image: image_resource(8e877cff-6297-4e0c-b04f-54f8f2bda579)
+					{
+						file: "menu_icon.png"
+					}
+					scaleMode: scaleMode@1a929398-fcd5-4e9c-a718-4dfd8487df24 (propref<int>)
+					touchShortReleased: touchShortReleased@1a929398-fcd5-4e9c-a718-4dfd8487df24 (propref<function<bool,int,int,int,int>>)
+				}, 
+				GtfRectangle(eb172926-a5ed-4aa5-af35-20f3f9f7d16e)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Rectangle 1"
+					visible: true
+					width: 260
+					height: 8
+					x: 521
+					y: 74
+					fillColor: #7B68EEFF
+				}, 
+				GtfLabel(df259d45-9644-4541-8dfc-d8b0e0789051)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 2"
+					visible: true
+					width: 198
+					height: 100
+					x: 146
+					y: 102
+					text: "Music Player"
+					textColor: #00FF00FF
+					font: font_resource(146e0da0-4702-4d08-861d-26d3e2e2da5a)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(156fa690-00dc-4451-9b6b-0e0cca7405a8)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 3"
+					visible: true
+					width: 115
+					height: 55
+					x: 135
+					y: 202
+					text: "Navigation"
+					textColor: #00FF00FF
+					font: font_resource(af7c0c77-12ec-4ae6-8c07-03a3a13bc908)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(16897a9e-2009-4daf-bfe9-3e4780372a6f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 4"
+					visible: true
+					width: 100
+					height: 72
+					x: 169
+					y: 271
+					text: "Radio"
+					textColor: #00FF00FF
+					font: font_resource(d0e24b38-c932-4da3-8ebf-5da9ffcabc4f)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(23f8fce9-d7e1-4166-b297-df6e8d2b7b7d)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 5"
+					visible: true
+					width: 177
+					height: 62
+					x: 183
+					y: 368
+					text: "Assistance"
+					textColor: #00FF00FF
+					font: font_resource(e6842caa-be8e-4710-839a-9a492e949883)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "background"
+			visible: true
+			width: 800
+			height: 480
+			x: 0
+			y: 0
+			image: image_resource(74532217-748a-47b2-b1ab-e2329d123697)
+			{
+				file: "background.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "View 1"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

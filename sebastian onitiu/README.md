@@ -1,1 +1,1 @@
-grlgn gkqnklny  tf
+SA NU UITI SA COMPLETEZI READ.ME
