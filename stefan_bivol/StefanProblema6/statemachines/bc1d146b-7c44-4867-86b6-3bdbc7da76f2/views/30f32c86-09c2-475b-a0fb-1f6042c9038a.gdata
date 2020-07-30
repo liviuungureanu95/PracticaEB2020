@@ -1,0 +1,351 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(30f32c86-09c2-475b-a0fb-1f6042c9038a)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(3441bf9e-aeee-4fab-94a0-bf9321a46354)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(14bcf1ce-438f-472d-833d-187c3663d381)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Country_Text"
+					visible: true
+					width: 100
+					height: 30
+					x: 180
+					y: 155
+					text: "Country: "
+					textColor: #000000FF
+					font: font_resource(df8218f8-10e3-439a-a829-1ec0f0d78831)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 2
+					verticalAlign: 0
+				}, 
+				GtfLabel(6bd068c7-ab09-4793-a720-8dc1f067cfef)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "City_Text"
+					visible: true
+					width: 100
+					height: 30
+					x: 180
+					y: 205
+					text: "City: "
+					textColor: #000000FF
+					font: font_resource(3f0a8eb1-77c7-4b63-a19d-ee93e601fb32)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 2
+					verticalAlign: 0
+				}, 
+				GtfLabel(3c51977b-d9ea-45bd-97e1-ffdc797094d0)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Street_Text"
+					visible: true
+					width: 100
+					height: 30
+					x: 180
+					y: 255
+					text: "Street: "
+					textColor: #000000FF
+					font: font_resource(0cbdd2ae-899f-4531-89ac-b7114e46f3b3)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 2
+					verticalAlign: 0
+				}, 
+				GtfLabel(7bc16bbd-270f-4c7b-ae54-0cadc3607bc1)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Number_Text"
+					visible: true
+					width: 100
+					height: 30
+					x: 180
+					y: 305
+					text: "Number: "
+					textColor: #000000FF
+					font: font_resource(c1d329c4-2f47-4b1c-9193-aa8a85e1f524)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 2
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(b7fd0cb2-1104-4c33-8996-693bf468e028)
+				{
+					name: "Country_Name"
+					template: @1feab3f3-e0f1-49da-ac97-796f36d28ffb (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 290
+					y: 150
+					text: string_scriptedValue(37b70c09-1e2b-4e83-9cbf-ba756ba7f3e1)
+					{
+						triggerList: trigger_list(06576f2c-a287-4975-91d1-9721cb61e528)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(9c4cf0d9-dacd-443c-8d0f-e05ef5dc8b2e)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(829855bb-29da-4098-b699-bf63ea093505)
+						{
+							script: "function()" \
+								"{" \
+								"	if(f:getTextLength(dp:Country) > 0)" \
+								"		dp:Completed[0] = true" \
+								"	else " \
+								"		dp:Country = \"\"" \
+								"	" \
+								"	dp:Country" \
+								"}"
+						}
+						write: function<bool,string>(1e5e879d-80f9-4db2-a7d4-32058ccc45ff)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfContainer_template_instance(62ad29c3-ed84-4a29-9637-32cf5b7fbef0)
+				{
+					name: "City_Name"
+					template: @1feab3f3-e0f1-49da-ac97-796f36d28ffb (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 290
+					y: 201
+					text: string_scriptedValue(e3609ecd-dbe5-4cce-9884-bcbe469644d7)
+					{
+						triggerList: trigger_list(3daa91a6-5539-4c22-862e-5e0c270821a3)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(621192a0-40f2-40a4-aeff-ae2c956b7256)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(c7d1390a-3508-4ced-82a3-bdedb7430b95)
+						{
+							script: "function()" \
+								"{" \
+								"	if(f:getTextLength(dp:City) > 0 && dp:Completed[0] == true)" \
+								"		dp:Completed[1] = true" \
+								"	else" \
+								"		dp:City = \"\"" \
+								"	" \
+								"	dp:City" \
+								"}"
+						}
+						write: function<bool,string>(71a31830-64fc-4906-9c9a-7065bdac6cd0)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfContainer_template_instance(51b16d0f-acac-4568-b55c-dd6f7edf9d5a)
+				{
+					name: "Street_Name"
+					template: @1feab3f3-e0f1-49da-ac97-796f36d28ffb (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 290
+					y: 250
+					text: string_scriptedValue(8c86cce3-72b4-4084-9bd3-7a6a4b1e920e)
+					{
+						triggerList: trigger_list(2a0c76bf-c8b5-4ff6-a2d9-ca379489a691)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(2f002885-eeec-4162-96b9-ff5ad70a17ab)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(cd72ddb8-e0a7-4304-ae6b-c104efe9f46c)
+						{
+							script: "function()" \
+								"{" \
+								"	if(f:getTextLength(dp:Street) > 0 && dp:Completed[1] == true)" \
+								"		dp:Completed[2] = true" \
+								"	else" \
+								"		dp:Street = \"\"" \
+								"	" \
+								"	dp:Street" \
+								"}"
+						}
+						write: function<bool,string>(a0e5682e-f931-4d4c-add3-08d73e2502db)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfContainer_template_instance(e14f7192-c623-4817-b2f7-688113e69786)
+				{
+					name: "Number"
+					template: @1feab3f3-e0f1-49da-ac97-796f36d28ffb (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 290
+					y: 300
+					text: string_scriptedValue(acf44d1c-9bb1-48c6-95d6-4689185ace62)
+					{
+						triggerList: trigger_list(a031ffc6-a981-4d6f-bed1-985dab73ee4e)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(11cd1bc5-37dd-4de4-b38a-fa019de82c32)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(f5c2495f-d75f-42d7-b50e-843bcc26567a)
+						{
+							script: "function()" \
+								"{" \
+								"	if(f:getTextLength(dp:Number) > 0 && dp:Completed[2] == true)" \
+								"		dp:Completed[3] = true" \
+								"	else" \
+								"		dp:Number = \"\"" \
+								"" \
+								"	dp:Number" \
+								"}"
+						}
+						write: function<bool,string>(c83184f4-82c8-40ca-9920-43f4d3557257)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfLabel(c2930c63-dced-4848-80de-fced30e6ffe5)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Final_Message"
+					visible: true
+					width: 300
+					height: 30
+					x: 250
+					y: 400
+					text: string_scriptedValue(252c5e39-add2-4ed8-87dc-cbd53a874395)
+					{
+						triggerList: trigger_list(4487285e-42f3-40eb-9fb2-e3868f015320)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(d45050d6-57e5-4935-a5ec-ca19c3358402)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(78156f1f-accc-4436-aac2-affc9733c054)
+						{
+							script: "function()" \
+								"{" \
+								"	if(dp:Completed[3] == true)" \
+								"	 	v:this.Message = \"All fields are completed!\"" \
+								"	" \
+								"	v:this.Message" \
+								"}"
+						}
+						write: function<bool,string>(2efcac3d-2d50-4f5d-9a72-96663a89587b)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(b180ea2c-1eb9-4003-a111-417ea45e180b)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+					Message: ""
+				}, 
+				GtfLabel(a4deb8b0-b375-4d57-9346-d0c3f84f315b)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Adress_Label"
+					visible: true
+					width: 300
+					height: 50
+					x: 260
+					y: 50
+					text: "Address"
+					textColor: #000000FF
+					font: font_resource(0ed794a1-1220-48bd-b95e-757d5302c11f)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 50
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+					Message: ""
+				}]
+			name: "Background_Navigatie"
+			visible: true
+			width: 800
+			height: 480
+			x: 1
+			y: 0
+			fillColor: #D3D3D3FF
+		}]
+	name: "Navigatie_View"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
