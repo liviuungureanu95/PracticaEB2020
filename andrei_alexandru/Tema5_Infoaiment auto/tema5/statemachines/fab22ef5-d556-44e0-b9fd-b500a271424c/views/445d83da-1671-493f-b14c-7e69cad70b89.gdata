@@ -1,0 +1,141 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(445d83da-1671-493f-b14c-7e69cad70b89)
+{
+	name: "view media player"
+	template: @5b8ab2b8-cbeb-4172-8ff0-b8648dc3ed6c (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(753f9d9a-02f4-4945-aea6-5a62371e4f07)
+		{
+			name: "Navigation Button"
+			template: @f2a8f883-b12e-41cb-bb20-c6e03362529a (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 100
+			y: 320
+			image: image_resource(097deacf-9912-42d1-b198-7faf153c306a)
+			{
+				file: "navigation.png"
+			}
+			touchPressed: function<bool,int,int,int,int>(3d30941f-c0b0-4345-ae71-21d4c0dbbb92)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:m_m_goTo_Nav_menu()" \
+					"    true" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(276212cd-e0e4-4e0d-92ea-f20d3a4ebdb1)
+		{
+			name: "Radio Buton"
+			template: @f2a8f883-b12e-41cb-bb20-c6e03362529a (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 350
+			y: 320
+			image: image_resource(0ae9c41d-8c7d-450f-bc8f-024b25e6a5c9)
+			{
+				file: "radio.png"
+			}
+			touchPressed: function<bool,int,int,int,int>(f298b4f2-8121-401e-a0f9-3d234441171f)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    fire ev:m_m_goTo_Radio_menu()" \
+					"    true" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(b0de01c0-4ea0-4c5c-8329-1fa5448aaf79)
+		{
+			name: "Help Button"
+			template: @f2a8f883-b12e-41cb-bb20-c6e03362529a (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 600
+			y: 320
+			image: image_resource(b312c6e3-3309-432c-9a9a-4f15f257dbe0)
+			{
+				file: "help.png"
+			}
+			touchPressed: function<bool,int,int,int,int>(47b7e112-bae1-4743-81ca-cff17d398e46)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    fire ev:m_m_goTo_Info_menu()" \
+					"    true" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(cda94143-bc75-4c55-bd57-f6486229cb6f)
+		{
+			name: "CD Button"
+			template: @12724351-9039-4c75-ac1b-b3b72fba36fa (objectref<GtfContainer_template>)
+			children: children_list []
+			x: x@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<int>)
+			y: 170
+			text: "CD"
+			textColor: textColor@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<color>)
+			font: font@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<font>)
+		}, 
+		GtfContainer_template_instance(b9819018-b8c3-4836-9cf2-18b62671917e)
+		{
+			name: "Bluetooth Button"
+			template: @12724351-9039-4c75-ac1b-b3b72fba36fa (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 300
+			y: 170
+			text: "USB"
+			textColor: textColor@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<color>)
+			font: font@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<font>)
+		}, 
+		GtfContainer_template_instance(fe5e1c73-4f6b-425e-af71-1a4783f5dc0f)
+		{
+			name: "AUX Button"
+			template: @12724351-9039-4c75-ac1b-b3b72fba36fa (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 600
+			y: 170
+			text: "AUX"
+			textColor: textColor@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<color>)
+			font: font@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<font>)
+		}, 
+		GtfContainer_template_instance(8e7a1791-47cc-44fa-ba25-220dae11f052)
+		{
+			name: "USB Button"
+			template: @12724351-9039-4c75-ac1b-b3b72fba36fa (objectref<GtfContainer_template>)
+			children: children_list []
+			x: x@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<int>)
+			y: 270
+			text: "Bluetooth"
+			textColor: textColor@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<color>)
+			font: font@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<font>)
+		}, 
+		GtfContainer_template_instance(3e9d6e16-df98-4c9e-b0a5-9a2de7fbc984)
+		{
+			name: "Phone Button"
+			template: @12724351-9039-4c75-ac1b-b3b72fba36fa (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 300
+			y: 270
+			text: "Phone"
+			textColor: textColor@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<color>)
+			font: font@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<font>)
+		}, 
+		GtfContainer_template_instance(2f7ca317-458b-4265-b4bc-967ccfd02166)
+		{
+			name: "Line In Button"
+			template: @12724351-9039-4c75-ac1b-b3b72fba36fa (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 600
+			y: 270
+			text: "Line In"
+			textColor: textColor@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<color>)
+			font: font@12724351-9039-4c75-ac1b-b3b72fba36fa (propref<font>)
+		}]
+	text: "Media Player "
+	font: font_resource(7f30bf37-9be6-4563-b669-5ce0906ff3b7)
+	{
+		file: "PT_Sans_Narrow.ttf"
+		size: 40
+	}
+	textColor: textColor@5b8ab2b8-cbeb-4172-8ff0-b8648dc3ed6c (propref<color>)
+}

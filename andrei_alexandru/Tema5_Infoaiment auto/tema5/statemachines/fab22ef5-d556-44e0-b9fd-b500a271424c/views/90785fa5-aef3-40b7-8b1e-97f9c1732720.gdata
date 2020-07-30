@@ -1,0 +1,88 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(90785fa5-aef3-40b7-8b1e-97f9c1732720)
+{
+	name: "view main menu"
+	template: @756ec4df-de80-4432-8f68-2dba46d8b317 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(9bf73c32-b16e-4953-ad9b-ff70c358326c)
+		{
+			name: "Navigation Button"
+			template: @f2a8f883-b12e-41cb-bb20-c6e03362529a (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 50
+			y: 250
+			image: image_resource(1f54d762-e4d6-4365-b8e4-e003087f531e)
+			{
+				file: "navigation.png"
+			}
+			touchPressed: function<bool,int,int,int,int>(27c3fc2a-31b2-4e97-83ff-5ac506389ebb)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:m_m_goTo_Nav_menu()" \
+					"    true" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(2e1df1d8-436f-45e4-8ce1-125a1c746d11)
+		{
+			name: "Radio Button"
+			template: @f2a8f883-b12e-41cb-bb20-c6e03362529a (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 250
+			y: 250
+			image: image_resource(6df91ff1-5787-4945-984a-1cdc374d1fa8)
+			{
+				file: "radio.png"
+			}
+			touchPressed: function<bool,int,int,int,int>(f762dc67-ff0c-41c2-a499-c1f0eb58e8cf)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:m_m_goTo_Radio_menu()" \
+					"	true" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(f454a056-9deb-4f3f-8db3-eff5d4e7ba21)
+		{
+			name: "Media Player Button"
+			template: @f2a8f883-b12e-41cb-bb20-c6e03362529a (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 450
+			y: 250
+			image: image_resource(7c2f38ba-4bdb-4fbc-bf24-fe7f7d51aa6f)
+			{
+				file: "media_player.png"
+			}
+			touchPressed: function<bool,int,int,int,int>(0d39a1ab-f82a-4912-8123-f56daf350c1e)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    fire ev:m_m_goTo_Media_menu()" \
+					"    true" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(5c022b63-fc56-4bb6-9666-431806b0c1bb)
+		{
+			name: "Help Button"
+			template: @f2a8f883-b12e-41cb-bb20-c6e03362529a (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 650
+			y: 250
+			image: image_resource(7cbf9a1a-b755-4ad3-afb6-030519c5fad5)
+			{
+				file: "help.png"
+			}
+			touchPressed: function<bool,int,int,int,int>(0b7f2df0-12b7-4a47-be37-f88f75b3baef)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    fire ev:m_m_goTo_Info_menu()" \
+					"    true" \
+					"}"
+			}
+		}]
+}
