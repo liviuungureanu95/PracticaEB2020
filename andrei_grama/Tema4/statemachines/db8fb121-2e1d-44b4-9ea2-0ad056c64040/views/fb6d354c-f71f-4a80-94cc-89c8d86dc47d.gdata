@@ -1,0 +1,253 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(fb6d354c-f71f-4a80-94cc-89c8d86dc47d)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(2150e4ef-1bcb-4010-84c7-8d8ab66c1e16)
+		{
+			features: feature_list [
+				ScaleMode(7f70d8eb-1f6a-46c3-9da5-928850a75831)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "backgroundImage"
+			visible: true
+			width: width@fb6d354c-f71f-4a80-94cc-89c8d86dc47d (propref<int>)
+			height: height@fb6d354c-f71f-4a80-94cc-89c8d86dc47d (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(862a3790-a067-4fdf-913c-278b848a0116)
+			{
+				file: "67511711-watching-movie-with-popcorn-on-gray-background-close-up-.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfContainer_template_instance(27362e52-6410-4ee8-b92e-872b3f4537bd)
+		{
+			name: "bar"
+			template: @751e71d4-8373-4e20-a758-5eda0d6d284f (objectref<GtfContainer_template>)
+			children: children_list []
+			touchShortReleased: function<bool,int,int,int,int>(74f12a0b-986a-411a-8ead-9693c17867d5)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(v:this.power==true){" \
+					"		v:this.touchable=false" \
+					"		v:this.\"touchable 2\"=false" \
+					"		v:this.visible=false" \
+					"		v:this.\"visible 2\"=false" \
+					"		v:this->^->forwardButton.touchable=false" \
+					"		v:this->^->\"play/pauseButton\".touchable=false" \
+					"		v:this->^->musicImage.visible=false" \
+					"		v:this->^->musicLabel.visible=false" \
+					"		v:this->^->powerLabel.visible=true" \
+					"		v:this.power=false" \
+					"	}" \
+					"	else{" \
+					"		v:this.touchable=true" \
+					"		v:this.\"touchable 2\"=true" \
+					"		v:this.visible=true" \
+					"		v:this.\"visible 2\"=true" \
+					"		v:this->^->forwardButton.touchable=true" \
+					"		v:this->^->\"play/pauseButton\".touchable=true" \
+					"		v:this->^->musicImage.visible=true" \
+					"		v:this->^->musicLabel.visible=true" \
+					"		v:this->^->powerLabel.visible=false" \
+					"		v:this.power=true" \
+					"	}" \
+					"    false" \
+					"}"
+			}
+			touchable: touchable@751e71d4-8373-4e20-a758-5eda0d6d284f (propref<bool>)
+			"touchable 2": "touchable 2"@751e71d4-8373-4e20-a758-5eda0d6d284f (propref<bool>)
+			visible: visible@751e71d4-8373-4e20-a758-5eda0d6d284f (propref<bool>)
+			"visible 2": "visible 2"@751e71d4-8373-4e20-a758-5eda0d6d284f (propref<bool>)
+			power: true
+		}, 
+		GtfRectangle_template_instance(cdd2d929-30ee-4ae0-b74f-41d55b178f40)
+		{
+			name: "play/pauseButton"
+			template: @974afc16-10dd-4cdf-9ef7-71145966f227 (objectref<GtfRectangle_template>)
+			children: children_list []
+			image: image_resource(37dc4a0d-714a-4c32-9a6b-aabe8104a34c)
+			{
+				file: "icons8-circled-play-64.png"
+			}
+			x: 210
+			y: 240
+			touchable: touchable@974afc16-10dd-4cdf-9ef7-71145966f227 (propref<bool>)
+			touchShortReleased: function<bool,int,int,int,int>(2d89525c-ec8d-46ee-9ab9-205957182820)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(v:this.playing==false){" \
+					"		v:this.image=dp:pauseImage" \
+					"		v:this.playing=true" \
+					"	}" \
+					"	else{" \
+					"		v:this.image=dp:playImage" \
+					"		v:this.playing=false" \
+					"	}" \
+					"    false" \
+					"}"
+			}
+			width: 50
+			height: 50
+			playing: true
+		}, 
+		GtfRectangle_template_instance(c3c5066a-498d-445f-9009-f3ed1506aa98)
+		{
+			name: "forwardButton"
+			template: @974afc16-10dd-4cdf-9ef7-71145966f227 (objectref<GtfRectangle_template>)
+			children: children_list []
+			image: image_resource(1a3911d3-4d29-4465-9672-6f78fef73994)
+			{
+				file: "icons8-fast-forward-64.png"
+			}
+			x: 280
+			y: 240
+			touchable: touchable@974afc16-10dd-4cdf-9ef7-71145966f227 (propref<bool>)
+			touchShortReleased: function<bool,int,int,int,int>(779cb876-b036-4a70-a495-0ed172592bd4)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(dp:musicIndex<length dp:Songs-1)" \
+					"		dp:musicIndex+=1" \
+					"	else" \
+					"		dp:musicIndex=0" \
+					"    false" \
+					"}"
+			}
+			width: 50
+			height: 50
+		}, 
+		GtfImage(85456372-a3a3-4631-81c3-c80aecf12fe1)
+		{
+			features: feature_list [
+				ScaleMode(abfc4aae-dab4-4c13-98ce-b469788a317b)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "musicImage"
+			visible: true
+			width: 300
+			height: 200
+			x: 120
+			y: 30
+			image: image_scriptedValue(611a1c58-ecfd-484e-b2c5-b69df440c4c1)
+			{
+				triggerList: trigger_list(47160144-3196-49f0-aaff-8153c6c82741)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(1b7b2c26-25af-4018-b5e6-27d6b2cc4d41)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<image>(051f7e31-118f-4b3d-9f3b-c48a1dba4227)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:SongsImages[dp:musicIndex]" \
+						"}"
+				}
+				write: function<bool,image>(7a0278eb-5a60-4895-bca3-986640cefb9c)
+				{
+					script: "function(v:arg0::image)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(879061e0-a3c7-4e69-a8dd-f51488c9f958)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "musicLabel"
+			visible: true
+			width: 300
+			height: 40
+			x: 120
+			y: 100
+			text: string_scriptedValue(720a9b09-6f55-4e3c-9e02-5eb54c473081)
+			{
+				triggerList: trigger_list(e458d86a-fd4d-4c68-ac11-7279f8e1119d)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(a6ad9c30-4ee8-4b38-bb46-8e2c6aab1727)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(49a2a1b9-49f9-492e-b61f-6b76f36bf404)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:Songs[dp:musicIndex]" \
+						"}"
+				}
+				write: function<bool,string>(bdb647b6-28de-491c-bd8d-4768965b9db7)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #FFF0F5FF
+			font: font_resource(d481a03a-9b2f-4b11-9624-da77be958c2b)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 25
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(3451ea39-1403-4ccc-a189-66dac530c207)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "powerLabel"
+			visible: false
+			width: 420
+			height: 46
+			x: 60
+			y: 0
+			text: "Sistemul este oprit"
+			textColor: #000000FF
+			font: font_resource(121215ab-1cc9-462f-83c1-e6cb831a8f78)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 40
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+	name: "Main View"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}
