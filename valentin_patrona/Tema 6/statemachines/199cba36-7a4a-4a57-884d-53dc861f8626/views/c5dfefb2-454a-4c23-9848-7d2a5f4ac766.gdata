@@ -1,0 +1,395 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(c5dfefb2-454a-4c23-9848-7d2a5f4ac766)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(bdbb7f52-fa5d-4540-8df9-5d2d32424ba0)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(425e976b-25aa-4cbd-8566-00069029f140)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfRectangle(8df82f08-1221-40af-8c7b-437be23f0c2f)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfParallelAnimation(25db937f-bf04-46a0-a50c-c85f1fedb41d)
+								{
+									features: feature_list []
+									children: children_list [
+										GtfLinearInterpolationS32(820f3172-4080-4f31-9763-a3cf91128528)
+										{
+											features: feature_list []
+											children: children_list []
+											name: "Linear interpolation curve 1"
+											enabled: true
+											delay: 0
+											duration: 1000
+											repeat: 1
+											alternating: false
+											relative: false
+											start: 0
+											end: 155
+											target: height@8df82f08-1221-40af-8c7b-437be23f0c2f (propref<int>)
+										}]
+									name: "Animation 1"
+									enabled: bool_scriptedValue(e9131ce1-838d-4799-8326-f575a3171544)
+									{
+										triggerList: trigger_list(1b73725a-7169-4022-871f-01cbadac472c)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(7acda98e-7cc9-44a7-9ce3-d12c65c01b87)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+										read: function<bool>(754991c4-b044-4e55-b90c-6851447bcd9c)
+										{
+											script: "function()" \
+												"{" \
+												"	if(dp:Maze3==true)" \
+												"	{true}" \
+												"	else" \
+												"	{false}" \
+												"}"
+										}
+										write: function<bool,bool>(d1077783-bee9-4f3d-8f66-3dc2d2d7d7ac)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+									}
+									repeat: 1
+									alternating: false
+									scale: 1F
+									onPlay: function<void,int,bool>(64414ba7-71f5-402d-bb51-15766830b1aa)
+									{
+										script: "function(v:animation_time::int, v:forward::bool)" \
+											"{" \
+											"" \
+											"}"
+									}
+									onPause: function<void,int>(b58fe231-a693-4892-a0f7-22c687891b52)
+									{
+										script: "function(v:animation_time::int)" \
+											"{" \
+											"" \
+											"}"
+									}
+									onTerminate: function<void,int,int>(8bedcb9f-9726-4253-acaa-3bb88abfcd4c)
+									{
+										script: "function(v:animation_time::int, v:terminate::int)" \
+											"{" \
+											"	v:this.enabled=false" \
+											"}"
+									}
+								}]
+							name: "Animation"
+							visible: true
+							width: 23
+							height: 0
+							x: -37
+							y: -110
+							fillColor: #32CD32FF
+						}, 
+						GtfRectangle(7311b095-38ed-429c-a665-076bd857d99d)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfParallelAnimation(eeb591b6-a133-4aef-a36e-88e5ec0318d5)
+								{
+									features: feature_list []
+									children: children_list [
+										GtfLinearInterpolationS32(285c3969-a8ee-4fb2-87cd-3c07ea952f7d)
+										{
+											features: feature_list []
+											children: children_list []
+											name: "Linear interpolation curve 1"
+											enabled: true
+											delay: 0
+											duration: 1000
+											repeat: 1
+											alternating: false
+											relative: false
+											start: 0
+											end: 1
+											target: width@7311b095-38ed-429c-a665-076bd857d99d (propref<int>)
+										}]
+									name: "Animation 1"
+									enabled: true
+									repeat: 1
+									alternating: false
+									scale: 1F
+									onPlay: function<void,int,bool>(b79e2727-7f58-4c62-a186-4e3dac9b52bd)
+									{
+										script: "function(v:animation_time::int, v:forward::bool)" \
+											"{" \
+											"" \
+											"}"
+									}
+									onPause: function<void,int>(51e4b5d6-4721-4c40-9e54-68935784a9b2)
+									{
+										script: "function(v:animation_time::int)" \
+											"{" \
+											"" \
+											"}"
+									}
+									onTerminate: function<void,int,int>(5432e774-fb14-483a-b204-f3ee7b54b438)
+									{
+										script: "function(v:animation_time::int, v:terminate::int)" \
+											"{" \
+											"" \
+											"}"
+									}
+								}]
+							name: "Animation2"
+							visible: true
+							width: 0
+							height: 23
+							x: 0
+							y: 0
+							fillColor: #A9A9A9FF
+						}]
+					name: "Label 1"
+					visible: true
+					width: 649
+					height: 100
+					x: 65
+					y: 149
+					text: string_scriptedValue(cd8238e9-8c99-4702-9b80-9dde6f685910)
+					{
+						triggerList: trigger_list(81012d9a-4bc3-48b5-b598-d791101c0c3b)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(bca7b9a6-e8e9-4452-9227-6f5c69d82538)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(e23d0d80-30b1-4a4c-a16d-a591725c39a5)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	" \
+								"	if(dp:\"1_Tara\"!=\"null\")" \
+								"	{" \
+								"		dp:Maze1=true" \
+								"		if(dp:\"2_Oras\"!=\"null\")" \
+								"		{ " \
+								"			dp:Maze2=true" \
+								"			" \
+								"			if(dp:\"3_Strada\"!=\"null\")" \
+								"			{" \
+								"				dp:Maze3=true" \
+								"				f:animation_play(v:this->Animation->\"Animation 1\")" \
+								"				if(dp:\"4_Numar\"!=\"null\")" \
+								"				{" \
+								"					" \
+								"					" \
+								"					\"S'all good man. And away we go...\"" \
+								"				}" \
+								"				else" \
+								"				{dp:R_4}" \
+								"			}" \
+								"			else" \
+								"			{dp:R_3}" \
+								"		}" \
+								"		else" \
+								"		{dp:R_2}" \
+								"	}" \
+								"	else" \
+								"	{dp:R_1}" \
+								"	" \
+								"	" \
+								"}"
+						}
+						write: function<bool,string>(261d2c90-6468-4738-8ffd-45a8ffd2085d)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(5fe2a0c9-be70-42c3-a614-3ed04744c2e0)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 40
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+					StartAnimation: conditional_script(86401343-3555-4498-ac7c-35f994b4281f)
+					{
+						triggerList: trigger_list(ec3e400a-8deb-4bd4-ad53-7f044066c2c9)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(bba1d041-c660-41f0-bc94-1672c36c1495)
+						{
+							script: "function(v:arg0::bool)" \
+								"{	" \
+								"	f:animation_play(v:this->Animation->\"Animation 1\")" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfContainer_template_instance(0cf3af54-379d-44fd-afcd-27b52bed429a)
+				{
+					name: "Maze 1"
+					template: @c3ec3e71-ebaf-4bef-9bb0-bb3a10b8e195 (objectref<GtfContainer_template>)
+					children: children_list []
+					visible: bool_scriptedValue(3883607a-a5f2-41dd-8430-319ff05af05f)
+					{
+						triggerList: trigger_list(41c38f72-4815-4da4-be2d-a35ec0c632c6)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(fccc48d6-305f-4d3a-9aaa-e0e04d3c6573)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<bool>(e61c6dd9-08a2-429d-b3a6-0654021cf0e6)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	" \
+								"	dp:Maze1" \
+								"}"
+						}
+						write: function<bool,bool>(e6ea008e-10fc-4ea2-b36f-8009fa71dbec)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfContainer_template_instance(2404d164-d0b9-4c3c-86e7-2770fe847078)
+				{
+					name: "Maze 2"
+					template: @9f5a7d59-57cc-48b1-a088-d6655ebec96f (objectref<GtfContainer_template>)
+					children: children_list []
+					visible: bool_scriptedValue(12d0e47b-9592-4328-adbd-7a4b094bc293)
+					{
+						triggerList: trigger_list(64325dfd-8b04-49b1-93c0-eab1334b2c81)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(9f74bf04-b402-4c00-91a2-427738697c32)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<bool>(e0cf9445-d6aa-4fa2-80c7-687e4e65f7b7)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	dp:Maze2" \
+								"}"
+						}
+						write: function<bool,bool>(74c9446f-466f-4dbc-b943-dce4374cf271)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfContainer_template_instance(c0b3f66c-337c-4f06-9864-1efb0839ae3f)
+				{
+					name: "Maze 3"
+					template: @c85543f5-e244-4dad-888e-460f3fa0ae5d (objectref<GtfContainer_template>)
+					children: children_list []
+					visible: bool_scriptedValue(943c0dc1-8e19-4fa1-86f9-bf82eab41071)
+					{
+						triggerList: trigger_list(ab17439d-050d-48e1-9961-1231f22aa9eb)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(657317aa-ca8e-415d-a965-11ce79165284)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<bool>(add969f4-d055-4e98-88ac-d8690954f16c)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	dp:Maze3" \
+								"}"
+						}
+						write: function<bool,bool>(1a9efe65-3036-4158-9eab-dedff083e485)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "BG"
+			visible: true
+			width: width@c5dfefb2-454a-4c23-9848-7d2a5f4ac766 (propref<int>)
+			height: height@c5dfefb2-454a-4c23-9848-7d2a5f4ac766 (propref<int>)
+			x: -2
+			y: 0
+			fillColor: #F5DEB3FF
+		}]
+	name: "View 1"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+	StartAnimation: conditional_script(74f52ab8-3f04-4217-914e-72e4cb9fadb3)
+	{
+		triggerList: trigger_list(5e20161e-0afa-4a7b-ba4f-ae7f221039f1)
+		{
+			script: ""
+		}
+		onTrigger: function<bool,bool>(f8f43f29-4856-43ac-a54e-d4bd81c2c2a7)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	f:animation_play(v:this->BG->\"Label 1\"->Animation->\"Animation 1\")" \
+				"	false" \
+				"}"
+		}
+	}
+}
