@@ -1,0 +1,455 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(d90f749e-0557-4419-b5bf-cf6b4b7eca5f)
+{
+	features: feature_list [
+		StateFocused(9ad04ea0-657b-4c81-9026-d9987dcdb9b8)
+		{
+			focusable: 3
+			focused: false
+		}, 
+		AutoFocus(e5970dce-6c28-4d2e-a681-212c262114e7)
+		{
+			initFocus: 0
+			focusedIndex: 0
+			focusNext: false
+			focusPrev: false
+			focusFlow: 1
+		}]
+	children: children_list [
+		GtfRectangle(789ee556-8412-41db-9fc1-4d174200c576)
+		{
+			features: feature_list [
+				StateFocused(6ca62e47-630f-4b1e-8bff-8ff6e38953a3)
+				{
+					focusable: 3
+					focused: false
+				}, 
+				AutoFocus(c2a3142c-c17b-412e-a8da-8e5994e7e96a)
+				{
+					initFocus: 0
+					focusedIndex: 0
+					focusNext: false
+					focusPrev: false
+					focusFlow: 1
+				}]
+			children: children_list [
+				GtfRectangle_template_instance(17a4d334-c678-4416-a17d-86f54d51163a)
+				{
+					name: "CountryInputLabel"
+					template: @049b9125-ba2a-4eae-93cd-88c2c38ae9a3 (objectref<GtfRectangle_template>)
+					children: children_list [
+						GtfContainer_template_instance(df7fabe2-038d-49b4-a026-26a101b41934)
+						{
+							name: "ButtonOkCountry"
+							template: @879f4669-9794-4919-813d-ab9596ee58ab (objectref<GtfContainer_template>)
+							children: children_list []
+							x: 244
+							y: 0
+							fillColor: @c72e91f5-b8b9-4faf-a8f3-a583bbca4e3a (objectref<color>)
+							touchShortReleased: function<bool,int,int,int,int>(0ec6cc2b-be24-48d4-ade4-4bed0809c9c7)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"    v:this->^.Completed = true;" \
+									"    v:this->^->^->CityInputLabel.fillColor = dp:Active;" \
+									"    v:this->^->^->CityInputLabel.text = \"Click to edit...\";" \
+									"    false" \
+									"}"
+							}
+							visible: false
+						}]
+					x: @0dde400f-515c-4a7b-b5b2-c87d295c93c9 (objectref<int>)
+					y: 97
+					text: text@049b9125-ba2a-4eae-93cd-88c2c38ae9a3 (propref<string>)
+					width: width@1caf3d8e-2e8e-497c-8aec-cc98410dcd05 (propref<int>)
+					height: height@1caf3d8e-2e8e-497c-8aec-cc98410dcd05 (propref<int>)
+					fillColor: #FFA500FF
+					textColor: textColor@049b9125-ba2a-4eae-93cd-88c2c38ae9a3 (propref<color>)
+					font: font@049b9125-ba2a-4eae-93cd-88c2c38ae9a3 (propref<font>)
+					Completed: false
+					OkFunction: function<bool>(963228f2-eccd-4595-a054-64fa1a66761f)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	true" \
+							"}"
+					}
+					CurrentCompleting: CurrentCompleting@049b9125-ba2a-4eae-93cd-88c2c38ae9a3 (propref<bool>)
+					focusedIndex: 0
+					Conditional: conditional_script(157e2295-8f22-4643-b66e-1cb2bc066b56)
+					{
+						triggerList: trigger_list(c5671690-df42-4bb9-88d9-9488080ec154)
+						{
+							script: "v:this.CurrentCompleting"
+						}
+						onTrigger: function<bool,bool>(e76f893a-2ea3-4efe-a24c-9a492681fc46)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	if(v:arg0 == false){" \
+								"		if(v:this.CurrentCompleting == true){" \
+								"			v:this->ButtonOkCountry.visible = true;" \
+								"			v:this->ButtonOkCountry.fillColor = dp:Active;" \
+								"		}" \
+								"	}" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfRectangle_template_instance(1caf3d8e-2e8e-497c-8aec-cc98410dcd05)
+				{
+					name: "CityInputLabel"
+					template: @049b9125-ba2a-4eae-93cd-88c2c38ae9a3 (objectref<GtfRectangle_template>)
+					children: children_list [
+						GtfContainer_template_instance(ecee833b-e65e-45ac-972e-b56db2c43ee4)
+						{
+							name: "ButtonOkCity"
+							template: @879f4669-9794-4919-813d-ab9596ee58ab (objectref<GtfContainer_template>)
+							children: children_list []
+							x: 246
+							y: 0
+							fillColor: fillColor@879f4669-9794-4919-813d-ab9596ee58ab (propref<color>)
+							touchShortReleased: function<bool,int,int,int,int>(fab24087-338c-491c-8761-7b08d3eae1cb)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^.Completed = true;" \
+									"    v:this->^->^->StreetInputLabel.fillColor = dp:Active;" \
+									"    v:this->^->^->StreetInputLabel.text = \"Click to edit...\";" \
+									"    false" \
+									"}"
+							}
+							visible: false
+						}]
+					x: @0dde400f-515c-4a7b-b5b2-c87d295c93c9 (objectref<int>)
+					y: 187
+					text: @7bfb54bb-934b-478d-8bac-43ee6edfcc3f (objectref<string>)
+					width: width@687a133d-643b-4f14-9a92-3d1d81d23272 (propref<int>)
+					height: 62
+					fillColor: #A9A9A9FF
+					textColor: textColor@049b9125-ba2a-4eae-93cd-88c2c38ae9a3 (propref<color>)
+					font: font@049b9125-ba2a-4eae-93cd-88c2c38ae9a3 (propref<font>)
+					Completed: Completed@049b9125-ba2a-4eae-93cd-88c2c38ae9a3 (propref<bool>)
+					OkFunction: function<bool>(e9d88a72-be56-4d2f-bfd3-c820d2479850)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	v:this->^->CountryInputLabel.Completed" \
+							"}"
+					}
+					CurrentCompleting: CurrentCompleting@049b9125-ba2a-4eae-93cd-88c2c38ae9a3 (propref<bool>)
+					focusedIndex: 1
+					Conditional: conditional_script(4f5e6aea-3d75-46ef-afd5-f51b2a9655d5)
+					{
+						triggerList: trigger_list(be9fa5d6-fe2b-4f9d-8462-9156c078e7d6)
+						{
+							script: "v:this.CurrentCompleting"
+						}
+						onTrigger: function<bool,bool>(75be8ff3-d998-44c9-afc5-2ea9d4f67aa9)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	if(v:arg0 == false){" \
+								"		if(v:this.CurrentCompleting == true){" \
+								"			v:this->ButtonOkCity.visible = true;" \
+								"			v:this->ButtonOkCity.fillColor = dp:Active;" \
+								"		}" \
+								"	}" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfRectangle_template_instance(687a133d-643b-4f14-9a92-3d1d81d23272)
+				{
+					name: "StreetInputLabel"
+					template: @049b9125-ba2a-4eae-93cd-88c2c38ae9a3 (objectref<GtfRectangle_template>)
+					children: children_list [
+						GtfContainer_template_instance(9456a751-ad6f-4543-9ce3-01a9a7287132)
+						{
+							name: "ButtonOkStreet"
+							template: @879f4669-9794-4919-813d-ab9596ee58ab (objectref<GtfContainer_template>)
+							children: children_list []
+							x: 247
+							y: -3
+							fillColor: fillColor@879f4669-9794-4919-813d-ab9596ee58ab (propref<color>)
+							touchShortReleased: function<bool,int,int,int,int>(575d896b-0171-4b6b-8e70-f41d0430fa02)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^.Completed = true;" \
+									"    v:this->^->^->NumberInputLabel.fillColor = dp:Active;" \
+									"    v:this->^->^->NumberInputLabel.text = \"Click to edit...\";" \
+									"    false" \
+									"}"
+							}
+							visible: false
+						}]
+					x: @0dde400f-515c-4a7b-b5b2-c87d295c93c9 (objectref<int>)
+					y: 285
+					text: "City must be completed"
+					width: width@0a2ead2a-1b10-4793-8877-cfcc6bfbcd2c (propref<int>)
+					height: height@1caf3d8e-2e8e-497c-8aec-cc98410dcd05 (propref<int>)
+					fillColor: #A9A9A9FF
+					textColor: textColor@049b9125-ba2a-4eae-93cd-88c2c38ae9a3 (propref<color>)
+					font: font@049b9125-ba2a-4eae-93cd-88c2c38ae9a3 (propref<font>)
+					Completed: Completed@049b9125-ba2a-4eae-93cd-88c2c38ae9a3 (propref<bool>)
+					OkFunction: function<bool>(8a6b4350-37fb-4805-9814-4ccae9efb268)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	v:this->^->CityInputLabel.Completed" \
+							"}"
+					}
+					CurrentCompleting: CurrentCompleting@049b9125-ba2a-4eae-93cd-88c2c38ae9a3 (propref<bool>)
+					focusedIndex: 2
+					Conditional: conditional_script(5d5c0b4b-262d-4700-8814-28ee5a1ad175)
+					{
+						triggerList: trigger_list(fb1fd547-e6cc-40a4-866a-3aafe6191ae8)
+						{
+							script: "v:this.CurrentCompleting"
+						}
+						onTrigger: function<bool,bool>(06e4beeb-a6ea-4c79-b2e1-e99d0ae30527)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	if(v:arg0 == false){" \
+								"		if(v:this.CurrentCompleting == true){" \
+								"			v:this->ButtonOkStreet.visible = true;" \
+								"			v:this->ButtonOkStreet.fillColor = dp:Active;" \
+								"		}" \
+								"	}" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfRectangle_template_instance(0a2ead2a-1b10-4793-8877-cfcc6bfbcd2c)
+				{
+					name: "NumberInputLabel"
+					template: @049b9125-ba2a-4eae-93cd-88c2c38ae9a3 (objectref<GtfRectangle_template>)
+					children: children_list [
+						GtfContainer_template_instance(b02a960f-4a83-49c0-91d7-e50feba2fe1f)
+						{
+							name: "ButtonOkNumber"
+							template: @879f4669-9794-4919-813d-ab9596ee58ab (objectref<GtfContainer_template>)
+							children: children_list []
+							x: 248
+							y: 0
+							fillColor: fillColor@879f4669-9794-4919-813d-ab9596ee58ab (propref<color>)
+							touchShortReleased: function<bool,int,int,int,int>(9d3a8d12-23db-400a-8578-90bb4ce20812)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->^->SearchingLabel.visible = true;" \
+									"    false" \
+									"}"
+							}
+							visible: false
+						}]
+					x: @0dde400f-515c-4a7b-b5b2-c87d295c93c9 (objectref<int>)
+					y: 379
+					text: "Street must be completed"
+					width: 232
+					height: height@687a133d-643b-4f14-9a92-3d1d81d23272 (propref<int>)
+					fillColor: #A9A9A9FF
+					textColor: textColor@049b9125-ba2a-4eae-93cd-88c2c38ae9a3 (propref<color>)
+					font: font@049b9125-ba2a-4eae-93cd-88c2c38ae9a3 (propref<font>)
+					Completed: false
+					OkFunction: function<bool>(d6705ae0-e54f-4388-993c-8e729489dea2)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	v:this->^->StreetInputLabel.Completed" \
+							"}"
+					}
+					CurrentCompleting: CurrentCompleting@049b9125-ba2a-4eae-93cd-88c2c38ae9a3 (propref<bool>)
+					focusedIndex: 3
+					Conditional: conditional_script(8ecc85a8-bf55-419d-ab3e-d8ed89bb0e4d)
+					{
+						triggerList: trigger_list(61bdfc91-7afd-4052-966e-b2fc89ae486e)
+						{
+							script: "v:this.CurrentCompleting"
+						}
+						onTrigger: function<bool,bool>(60312e55-65db-45b7-a171-a2f58c828d1a)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	if(v:arg0 == false){" \
+								"		if(v:this.CurrentCompleting == true){" \
+								"			v:this->ButtonOkNumber.visible = true;" \
+								"			v:this->ButtonOkNumber.fillColor = dp:Active;" \
+								"		}" \
+								"	}" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfLabel(99b7c52f-efe7-4497-bebe-a709f19029e9)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "TitleLabel"
+					visible: true
+					width: 518
+					height: 90
+					x: 27
+					y: 0
+					text: "Choose your next destination"
+					textColor: #000000FF
+					font: font_resource(70bfd037-697c-4f61-84bd-03a2f722e610)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 50
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfImage(5fb2051a-f4a8-4a1e-8ada-360dbc8f0664)
+				{
+					features: feature_list [
+						ScaleMode(ae5929f0-bef2-454a-b7cc-95a118dc8948)
+						{
+							scaleMode: 2
+						}]
+					children: children_list []
+					name: "Image"
+					visible: true
+					width: 384
+					height: 380
+					x: -7
+					y: 71
+					image: image_resource(6a4f2f95-ff6b-4573-9851-64a9357aaa2a)
+					{
+						file: "kisspng-google-maps-computer-icons-location-google-map-mak-location-5ab9a1199370e4.6922165415221148416039.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(0836bed4-c0b1-4b13-ac23-6d17e1dd805a)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "CountryLabel"
+					visible: true
+					width: 99
+					height: height@17a4d334-c678-4416-a17d-86f54d51163a (propref<int>)
+					x: x@fb064c44-b3d7-40df-9d18-d31a253f473e (propref<int>)
+					y: 96
+					text: "Country:"
+					textColor: @38102fad-b37e-4766-97ce-b3c6c0362564 (objectref<color>)
+					font: font_resource(fc65bc3f-ad5a-49d0-a4be-5d8d6d3004a0)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 35
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(fb064c44-b3d7-40df-9d18-d31a253f473e)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "CityLabel"
+					visible: true
+					width: 100
+					height: height@1caf3d8e-2e8e-497c-8aec-cc98410dcd05 (propref<int>)
+					x: x@cf8dc701-3ba7-412b-9965-92b3fde02517 (propref<int>)
+					y: 190
+					text: "City:"
+					textColor: @38102fad-b37e-4766-97ce-b3c6c0362564 (objectref<color>)
+					font: font_resource(1b3294dc-a654-4cef-aa87-8e272bc0bb3b)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 35
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(cf8dc701-3ba7-412b-9965-92b3fde02517)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "StreetLabel"
+					visible: true
+					width: 100
+					height: height@687a133d-643b-4f14-9a92-3d1d81d23272 (propref<int>)
+					x: x@e4683aa9-121a-4755-b806-b4273479524c (propref<int>)
+					y: 284
+					text: "Street:"
+					textColor: @38102fad-b37e-4766-97ce-b3c6c0362564 (objectref<color>)
+					font: font_resource(f6abbb99-11d9-42a8-9359-736791fa5ca6)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 35
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(e4683aa9-121a-4755-b806-b4273479524c)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "NumberLabel"
+					visible: true
+					width: 100
+					height: height@0a2ead2a-1b10-4793-8877-cfcc6bfbcd2c (propref<int>)
+					x: 359
+					y: 380
+					text: "Number:"
+					textColor: @38102fad-b37e-4766-97ce-b3c6c0362564 (objectref<color>)
+					font: font_resource(94c6e02c-6cd8-4fcb-a68e-1cd14ff3c972)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 35
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(29c5c2a9-0e5e-43e9-a899-9a72abfcf915)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "SearchingLabel"
+					visible: false
+					width: 309
+					height: 67
+					x: 31
+					y: 415
+					text: "Searching for the best route..."
+					textColor: #000000FF
+					font: font_resource(1ea07446-cc50-4336-8b99-cd63511fa5bd)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "Background"
+			visible: true
+			width: 800
+			height: 480
+			x: 0
+			y: 0
+			fillColor: #ADD8E6FF
+		}]
+	name: "NaviView"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
