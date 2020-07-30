@@ -1,0 +1,174 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfRectangle_template(9007d207-ab37-4779-bc77-3af07f547269)
+{
+	name: "MenuElement"
+	structure: GtfRectangle(546586e5-d080-41f8-9cfb-caa650a6d2c6)
+	{
+		features: feature_list [
+			StateTouched(9b0ff5d7-a1f3-4ce6-8e9c-0fe1a1f930ef)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			MoveOut(1044366d-83ff-44f1-a85c-4432ac01ce5b)
+			{
+				moveOut: function<bool,int,int,int,int>(91fb0f57-3c08-4ffd-89b8-3a18b1d31916)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->Label.textColor = color:255, 255, 255, 255;" \
+						"	v:this.whenMoveOut();" \
+						"    false" \
+						"}"
+				}
+			}, 
+			MoveIn(0459c77c-0fad-4554-9f35-5ef51e74c7fa)
+			{
+				moveIn: function<bool,int,int,int,int>(52763887-0fd6-41e9-af07-135e538dcc23)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.whenMoveIn();" \
+						"	v:this->Label.textColor = color:0, 0, 0, 255;" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(85d4d1e5-e1d2-4b2b-a66e-348707745174)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(2b78ac05-fd1f-4f60-80b4-bfb73a660de8)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}]
+		children: children_list [
+			GtfLabel(e77a5a5f-b971-4023-a3dd-d9d0eb70a562)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label"
+				visible: true
+				width: width@546586e5-d080-41f8-9cfb-caa650a6d2c6 (propref<int>)
+				height: 56
+				x: 0
+				y: 155
+				text: "Navigation"
+				textColor: #FFFFFFFF
+				font: font_resource(3736eece-f3ee-416a-87a2-a82fc6858822)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 35
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfImage(a7bd7d89-7c86-4d06-995c-5db791dc645a)
+			{
+				features: feature_list [
+					ScaleMode(c5c307f1-862a-4cc4-a427-990fc8b12428)
+					{
+						scaleMode: 2
+					}, 
+					Rotation(9fc3a473-ffd0-4175-84f5-cfc649bfb465)
+					{
+						rotationEnabled: true
+						rotationAngleX: 0F
+						rotationAngleY: 0F
+						rotationAngleZ: 0F
+					}, 
+					Scaling(93ce47a5-ba18-4977-b601-61d2e7476389)
+					{
+						scalingEnabled: false
+						scalingX: 100F
+						scalingY: 100F
+						scalingZ: 100F
+					}, 
+					Shearing(e3510d65-5906-41d4-88cf-1741853e2e16)
+					{
+						shearingEnabled: false
+						shearingXbyY: 0F
+						shearingXbyZ: 0F
+						shearingYbyX: 0F
+						shearingYbyZ: 0F
+						shearingZbyX: 0F
+						shearingZbyY: 0F
+					}, 
+					Pivot(9e4031a0-27b6-4dec-b815-ec869bdbd62d)
+					{
+						pivotX: 76F
+						pivotY: 75F
+						pivotZ: 0F
+					}, 
+					Translation(11203cbd-ee16-494a-aeff-b750fc925464)
+					{
+						translationEnabled: true
+						translationX: 0F
+						translationY: 0F
+						translationZ: 0F
+					}]
+				children: children_list []
+				name: "Image"
+				visible: true
+				width: 156
+				height: 154
+				x: 59
+				y: 9
+				image: image_resource(7c11ddc1-80d8-4504-8f51-a230358a424a)
+				{
+					file: "navi.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "Background"
+		visible: true
+		width: 270
+		height: 211
+		x: 174
+		y: 14
+		fillColor: #FFA500FF
+		whenMoveIn: function<bool>(24d08464-aaaa-4226-b4dd-52f56c50e707)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		whenMoveOut: function<bool>(29336854-c43e-44f9-a812-52c4eb68bd17)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	text: text@e77a5a5f-b971-4023-a3dd-d9d0eb70a562 (propref<string>)
+	textColor: textColor@e77a5a5f-b971-4023-a3dd-d9d0eb70a562 (propref<color>)
+	font: font@e77a5a5f-b971-4023-a3dd-d9d0eb70a562 (propref<font>)
+	x: x@546586e5-d080-41f8-9cfb-caa650a6d2c6 (propref<int>)
+	y: y@546586e5-d080-41f8-9cfb-caa650a6d2c6 (propref<int>)
+	width: width@546586e5-d080-41f8-9cfb-caa650a6d2c6 (propref<int>)
+	height: height@546586e5-d080-41f8-9cfb-caa650a6d2c6 (propref<int>)
+	image: image@a7bd7d89-7c86-4d06-995c-5db791dc645a (propref<image>)
+	"width 2": width@a7bd7d89-7c86-4d06-995c-5db791dc645a (propref<int>)
+	"height 2": height@a7bd7d89-7c86-4d06-995c-5db791dc645a (propref<int>)
+	scaleMode: scaleMode@c5c307f1-862a-4cc4-a427-990fc8b12428 (propref<int>)
+	rotationAngleZ: rotationAngleZ@9fc3a473-ffd0-4175-84f5-cfc649bfb465 (propref<float>)
+	fillColor: fillColor@546586e5-d080-41f8-9cfb-caa650a6d2c6 (propref<color>)
+	pivotX: pivotX@9e4031a0-27b6-4dec-b815-ec869bdbd62d (propref<float>)
+	pivotY: pivotY@9e4031a0-27b6-4dec-b815-ec869bdbd62d (propref<float>)
+	whenMoveIn: whenMoveIn@546586e5-d080-41f8-9cfb-caa650a6d2c6 (propref<function<bool>>)
+	whenMoveOut: whenMoveOut@546586e5-d080-41f8-9cfb-caa650a6d2c6 (propref<function<bool>>)
+	touchShortReleased: touchShortReleased@85d4d1e5-e1d2-4b2b-a66e-348707745174 (propref<function<bool,int,int,int,int>>)
+	translationX: translationX@11203cbd-ee16-494a-aeff-b750fc925464 (propref<float>)
+	translationY: translationY@11203cbd-ee16-494a-aeff-b750fc925464 (propref<float>)
+}

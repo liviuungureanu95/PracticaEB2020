@@ -1,0 +1,418 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(5682d2d4-483a-4675-b65b-1a890a4fc97c)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(a088faec-61a4-4202-aebe-9a524c79036d)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(3c9d22cf-2e30-4516-b78c-40701c50fa67)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(83a26f73-212b-4504-b89b-a4f4efb88bf7)
+						{
+							features: feature_list [
+								MultiLine(1bcb6b0d-2c71-4abf-a545-f33c113bbc1f)
+								{
+									lineOffset: -20
+									maxLineCount: 0
+								}]
+							children: children_list []
+							name: "MenuLabel"
+							visible: true
+							width: width@3c9d22cf-2e30-4516-b78c-40701c50fa67 (propref<int>)
+							height: height@3c9d22cf-2e30-4516-b78c-40701c50fa67 (propref<int>)
+							x: 0
+							y: 0
+							text: "M\\nA\\nI\\nN\\n\\nM\\nE\\nN\\nU"
+							textColor: #FFFFFFFF
+							font: font_resource(e114fbae-2a00-4991-94d7-27f0ff4c439f)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 50
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "MenuBackground"
+					visible: true
+					width: 120
+					height: height@a088faec-61a4-4202-aebe-9a524c79036d (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #4B0082FF
+				}, 
+				GtfRectangle_template_instance(a598d9b4-0e79-4364-8dfe-d1115b866dbc)
+				{
+					name: "NavigationElement"
+					template: @9007d207-ab37-4779-bc77-3af07f547269 (objectref<GtfRectangle_template>)
+					children: children_list [
+						GtfParallelAnimation(0e671813-ddef-493c-b9d3-068e2a837a8e)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfSinusCurveFloat(bd4ffce6-2092-44ea-bfa8-a632f213d105)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Sinus curve 1"
+									enabled: true
+									delay: 0
+									duration: 1000
+									repeat: 1
+									alternating: false
+									relative: false
+									amplitude: 100F
+									constant: 0F
+									frequency: 1F
+									phase: 0F
+									target: rotationAngleZ@a598d9b4-0e79-4364-8dfe-d1115b866dbc (propref<float>)
+								}]
+							name: "NavigationIconAnimated"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(8e202ba9-3d0d-4552-8e52-c9598278178c)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(8b7c096e-c80f-4805-bbfc-6cc1aecbe11b)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(2fc4b637-6741-40a7-a52f-25252515e038)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}]
+					text: text@9007d207-ab37-4779-bc77-3af07f547269 (propref<string>)
+					textColor: textColor@9007d207-ab37-4779-bc77-3af07f547269 (propref<color>)
+					font: font@9007d207-ab37-4779-bc77-3af07f547269 (propref<font>)
+					x: 161
+					y: 20
+					width: width@9007d207-ab37-4779-bc77-3af07f547269 (propref<int>)
+					height: height@9007d207-ab37-4779-bc77-3af07f547269 (propref<int>)
+					image: @7fc7ef19-5906-4070-b225-7dd8bb6c0ce0 (objectref<image>)
+					"width 2": "width 2"@9007d207-ab37-4779-bc77-3af07f547269 (propref<int>)
+					"height 2": "height 2"@9007d207-ab37-4779-bc77-3af07f547269 (propref<int>)
+					scaleMode: scaleMode@9007d207-ab37-4779-bc77-3af07f547269 (propref<int>)
+					rotationAngleZ: rotationAngleZ@9007d207-ab37-4779-bc77-3af07f547269 (propref<float>)
+					fillColor: @386b5b9f-d782-4c24-9c79-3137eb5170ac (objectref<color>)
+					pivotX: pivotX@9007d207-ab37-4779-bc77-3af07f547269 (propref<float>)
+					pivotY: pivotY@9007d207-ab37-4779-bc77-3af07f547269 (propref<float>)
+					whenMoveIn: function<bool>(2471762e-520d-4a01-b4ac-3753ac9baf72)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	f:animation_play(v:this->NavigationIconAnimated)" \
+							"	false" \
+							"}"
+					}
+					whenMoveOut: whenMoveOut@9007d207-ab37-4779-bc77-3af07f547269 (propref<function<bool>>)
+					touchShortReleased: function<bool,int,int,int,int>(76878ab5-153c-4abb-ba24-d2d5892f1dd8)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:GoToNavigation()" \
+							"    false" \
+							"}"
+					}
+					translationX: translationX@9007d207-ab37-4779-bc77-3af07f547269 (propref<float>)
+					translationY: translationY@9007d207-ab37-4779-bc77-3af07f547269 (propref<float>)
+				}, 
+				GtfRectangle_template_instance(d2736380-9b72-4331-9e7c-592d2f0a9e13)
+				{
+					name: "RadioElement"
+					template: @9007d207-ab37-4779-bc77-3af07f547269 (objectref<GtfRectangle_template>)
+					children: children_list [
+						GtfParallelAnimation(dce4635a-b17a-4a20-8f79-fcd559c0c007)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfSinusCurveS32(d62adc6c-81a1-445e-aaad-75c460abdb02)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Sinus curve 2"
+									enabled: true
+									delay: 0
+									duration: 1000
+									repeat: 1
+									alternating: false
+									relative: false
+									amplitude: 100
+									constant: 155
+									frequency: 1F
+									phase: 0F
+									target: "width 2"@d2736380-9b72-4331-9e7c-592d2f0a9e13 (propref<int>)
+								}]
+							name: "RadioIconAnimated"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(bc3ea3da-d922-4647-99f4-2fed6a481324)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(4c154904-da02-4e95-a618-21be61574956)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(d3b3bc3c-a85c-4ac0-b7ce-785e482aab7a)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}]
+					text: "Radio"
+					textColor: textColor@9007d207-ab37-4779-bc77-3af07f547269 (propref<color>)
+					font: font@9007d207-ab37-4779-bc77-3af07f547269 (propref<font>)
+					x: 487
+					y: 21
+					width: width@9007d207-ab37-4779-bc77-3af07f547269 (propref<int>)
+					height: height@9007d207-ab37-4779-bc77-3af07f547269 (propref<int>)
+					image: @35949200-ba19-4327-a21c-22684810d350 (objectref<image>)
+					"width 2": "width 2"@9007d207-ab37-4779-bc77-3af07f547269 (propref<int>)
+					"height 2": "height 2"@9007d207-ab37-4779-bc77-3af07f547269 (propref<int>)
+					scaleMode: scaleMode@9007d207-ab37-4779-bc77-3af07f547269 (propref<int>)
+					rotationAngleZ: rotationAngleZ@9007d207-ab37-4779-bc77-3af07f547269 (propref<float>)
+					fillColor: @97b01d2b-2ca6-4b86-92f9-cfb6165b4492 (objectref<color>)
+					pivotX: pivotX@9007d207-ab37-4779-bc77-3af07f547269 (propref<float>)
+					pivotY: pivotY@9007d207-ab37-4779-bc77-3af07f547269 (propref<float>)
+					whenMoveIn: function<bool>(c0ff74ff-e06b-4fe6-af53-9586489b24c4)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	f:animation_play(v:this->RadioIconAnimated)" \
+							"	false" \
+							"}"
+					}
+					whenMoveOut: whenMoveOut@9007d207-ab37-4779-bc77-3af07f547269 (propref<function<bool>>)
+					touchShortReleased: function<bool,int,int,int,int>(61a60ba5-29a3-43b1-b305-04d5a7a6d845)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:GoToRadio()" \
+							"    false" \
+							"}"
+					}
+					translationX: translationX@9007d207-ab37-4779-bc77-3af07f547269 (propref<float>)
+					translationY: translationY@9007d207-ab37-4779-bc77-3af07f547269 (propref<float>)
+				}, 
+				GtfRectangle_template_instance(e6b6f817-7579-404f-adf7-614985d727ed)
+				{
+					name: "MediaElement"
+					template: @9007d207-ab37-4779-bc77-3af07f547269 (objectref<GtfRectangle_template>)
+					children: children_list [
+						GtfParallelAnimation(7da84148-4440-49e1-9b8a-ca8ccef04931)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfSinusCurveFloat(f6d1b2d0-9615-4d7e-b5b6-a88e7e64cd15)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Sinus curve 2"
+									enabled: true
+									delay: 0
+									duration: 1000
+									repeat: 1
+									alternating: false
+									relative: false
+									amplitude: 20F
+									constant: 0F
+									frequency: 1F
+									phase: 0F
+									target: translationY@e6b6f817-7579-404f-adf7-614985d727ed (propref<float>)
+								}]
+							name: "MediaIconAnimated"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(b08f7962-efc3-4434-a60e-1f6f25cf217e)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(3a4726e6-5069-4171-8e09-3c0d68356310)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(25ea204e-79bb-4de0-8e54-bb03c8731916)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}]
+					text: "Media Player"
+					textColor: textColor@9007d207-ab37-4779-bc77-3af07f547269 (propref<color>)
+					font: font@9007d207-ab37-4779-bc77-3af07f547269 (propref<font>)
+					x: 160
+					y: 254
+					width: width@9007d207-ab37-4779-bc77-3af07f547269 (propref<int>)
+					height: height@9007d207-ab37-4779-bc77-3af07f547269 (propref<int>)
+					image: @30179176-2528-4a36-a48d-3204accc9a13 (objectref<image>)
+					"width 2": "width 2"@9007d207-ab37-4779-bc77-3af07f547269 (propref<int>)
+					"height 2": "height 2"@9007d207-ab37-4779-bc77-3af07f547269 (propref<int>)
+					scaleMode: 2
+					rotationAngleZ: rotationAngleZ@9007d207-ab37-4779-bc77-3af07f547269 (propref<float>)
+					fillColor: @ba864397-3fd0-41d3-88dc-c061d985c38f (objectref<color>)
+					pivotX: pivotX@9007d207-ab37-4779-bc77-3af07f547269 (propref<float>)
+					pivotY: pivotY@9007d207-ab37-4779-bc77-3af07f547269 (propref<float>)
+					whenMoveIn: function<bool>(5d1e80e0-800c-40f4-97e6-fe16c2a0b65d)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	f:animation_play(v:this->MediaIconAnimated)" \
+							"	false" \
+							"}"
+					}
+					whenMoveOut: whenMoveOut@9007d207-ab37-4779-bc77-3af07f547269 (propref<function<bool>>)
+					touchShortReleased: function<bool,int,int,int,int>(63a05031-b2e2-4310-90ec-6dfc88e1f8ac)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:GoToMedia()" \
+							"    false" \
+							"}"
+					}
+					translationX: translationX@9007d207-ab37-4779-bc77-3af07f547269 (propref<float>)
+					translationY: 0F
+				}, 
+				GtfRectangle_template_instance(772a60cc-6b91-402a-89e9-445b6bab2b79)
+				{
+					name: "HelpElement"
+					template: @9007d207-ab37-4779-bc77-3af07f547269 (objectref<GtfRectangle_template>)
+					children: children_list [
+						GtfParallelAnimation(99340f6d-0f3e-44d5-93d8-19030725f343)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfSinusCurveFloat(c52dd00b-f3ef-45bf-8c73-5786ba330b98)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Sinus curve 3"
+									enabled: true
+									delay: 0
+									duration: 1000
+									repeat: 1
+									alternating: false
+									relative: false
+									amplitude: 40F
+									constant: 0F
+									frequency: 1F
+									phase: 0F
+									target: translationX@772a60cc-6b91-402a-89e9-445b6bab2b79 (propref<float>)
+								}]
+							name: "HelpIconAnimated"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(78b0b53b-008b-4b99-a6bf-e22345d3203d)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(aea81a3a-8015-4299-bc1c-517048d1674e)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(e5f6756f-3683-4b48-9229-90ba4af47edb)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}]
+					text: "Help"
+					textColor: textColor@9007d207-ab37-4779-bc77-3af07f547269 (propref<color>)
+					font: font@9007d207-ab37-4779-bc77-3af07f547269 (propref<font>)
+					x: 487
+					y: 253
+					width: width@9007d207-ab37-4779-bc77-3af07f547269 (propref<int>)
+					height: height@9007d207-ab37-4779-bc77-3af07f547269 (propref<int>)
+					image: @b580e881-09ad-4cd9-af68-f0d11885ae3f (objectref<image>)
+					"width 2": "width 2"@9007d207-ab37-4779-bc77-3af07f547269 (propref<int>)
+					"height 2": "height 2"@9007d207-ab37-4779-bc77-3af07f547269 (propref<int>)
+					scaleMode: scaleMode@9007d207-ab37-4779-bc77-3af07f547269 (propref<int>)
+					rotationAngleZ: rotationAngleZ@9007d207-ab37-4779-bc77-3af07f547269 (propref<float>)
+					fillColor: @8f0553c7-4ad9-41b7-bb04-6b43864732cc (objectref<color>)
+					pivotX: pivotX@9007d207-ab37-4779-bc77-3af07f547269 (propref<float>)
+					pivotY: pivotY@9007d207-ab37-4779-bc77-3af07f547269 (propref<float>)
+					whenMoveIn: function<bool>(cfc0cce5-6384-4a6c-995f-415a012fcb89)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	f:animation_play(v:this->HelpIconAnimated)" \
+							"	false" \
+							"}"
+					}
+					whenMoveOut: whenMoveOut@9007d207-ab37-4779-bc77-3af07f547269 (propref<function<bool>>)
+					touchShortReleased: function<bool,int,int,int,int>(25769334-5795-4bc6-87a0-2438942fbff7)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:GoToHelp()" \
+							"    false" \
+							"}"
+					}
+					translationX: 0F
+					translationY: translationY@9007d207-ab37-4779-bc77-3af07f547269 (propref<float>)
+				}]
+			name: "Background"
+			visible: true
+			width: width@5682d2d4-483a-4675-b65b-1a890a4fc97c (propref<int>)
+			height: height@5682d2d4-483a-4675-b65b-1a890a4fc97c (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #FFDEADFF
+		}]
+	name: "MainView"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
