@@ -1,0 +1,83 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(51272889-a60a-43bf-87fc-a74155f5863c)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(b1c067cc-689b-4b60-863b-9fa2b57cd53c)
+		{
+			name: "T_BG 1"
+			template: @c97ef213-f3f2-4555-8faa-cf30dc387a30 (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfLabel(d87494ab-15e8-41f1-84f3-0d754b06f75f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 4"
+					visible: true
+					width: 100
+					height: 100
+					x: 380
+					y: 145
+					text: "help"
+					textColor: #FFFFFFFF
+					font: font_resource(c856cae2-5212-49c9-b476-23e7bec5878e)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(c410e9d6-a906-4c22-8325-28d4a9da155e)
+				{
+					name: "T_Choose 1"
+					template: @82de4025-29ff-4c3d-b8b9-c92d34b5b816 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: x@82de4025-29ff-4c3d-b8b9-c92d34b5b816 (propref<int>)
+					y: y@82de4025-29ff-4c3d-b8b9-c92d34b5b816 (propref<int>)
+					image: image_resource(c79a6c25-a249-4d12-b028-bc0a9cd957a9)
+					{
+						file: "cursor.png"
+					}
+					touchShortReleased: function<bool,int,int,int,int>(50c14fc5-e475-441a-b48d-5a257574ce80)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:GoToNavigation()" \
+							"    false" \
+							"}"
+					}
+					"image 2": image_resource(f4f4b1c4-0009-4766-8b17-c4f43e88c851)
+					{
+						file: "video.png"
+					}
+					"touchShortReleased 2": function<bool,int,int,int,int>(0b3c275e-e6a4-4493-bbe2-eb61084bd210)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:GoToPlayer()" \
+							"    false" \
+							"}"
+					}
+					"image 3": image_resource(76ed55e0-4d47-447f-970b-e64ce0e027a6)
+					{
+						file: "radio.png"
+					}
+					"touchShortReleased 3": function<bool,int,int,int,int>(bca9720c-e9cf-4848-9fb9-ed86d53d2a22)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:GoToRadio()" \
+							"    false" \
+							"}"
+					}
+				}]
+		}]
+	name: "View 5"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
