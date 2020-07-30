@@ -1,0 +1,67 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(a2b1a966-60f0-4056-9e9e-4a906d5eb68f)
+{
+	name: "Image Button"
+	structure: GtfContainer(c90ef30e-904b-47db-8774-d056ea2b4922)
+	{
+		features: feature_list [
+			TouchPressed(a09a70d4-8897-40d8-9e88-b6d80adc7768)
+			{
+				touchPressed: function<bool,int,int,int,int>(18282cdd-b707-4608-89c6-7a90da87c0b3)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(98a1dfca-77dc-4013-bcbf-8463d9fcbae1)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(30c71785-4ecf-451c-bc89-71bd072b3e4c)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(00ae835a-2ad3-4298-9a06-25e7ff397716)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfImage(e86872bf-e791-4684-8a11-c6346436e6e6)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Image"
+				visible: true
+				width: 256
+				height: 256
+				x: 0
+				y: 0
+				image: image_resource(ee9e07e9-f261-4479-8589-885f5ef5775d)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Image Button"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+	}
+	touchPressed: touchPressed@a09a70d4-8897-40d8-9e88-b6d80adc7768 (propref<function<bool,int,int,int,int>>)
+	touchShortReleased: touchShortReleased@98a1dfca-77dc-4013-bcbf-8463d9fcbae1 (propref<function<bool,int,int,int,int>>)
+	x: x@c90ef30e-904b-47db-8774-d056ea2b4922 (propref<int>)
+	y: y@c90ef30e-904b-47db-8774-d056ea2b4922 (propref<int>)
+	image: image@e86872bf-e791-4684-8a11-c6346436e6e6 (propref<image>)
+}

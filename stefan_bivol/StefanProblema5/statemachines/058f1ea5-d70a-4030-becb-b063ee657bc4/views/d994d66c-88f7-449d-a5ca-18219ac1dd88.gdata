@@ -1,0 +1,330 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(d994d66c-88f7-449d-a5ca-18219ac1dd88)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(40ac141c-2ae6-4ca0-9eda-0aefe109321a)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(05040dc0-359c-4d90-aed6-182868cc3f7c)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Message"
+					visible: true
+					width: 300
+					height: 100
+					x: 250
+					y: 100
+					text: "Welcome"
+					textColor: #FFFFFFFF
+					font: font_resource(9f0c6fca-37fd-4c54-b59c-962558c9c134)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 70
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfImage(a3597e88-8c17-4c6c-9826-4929987a9ab7)
+				{
+					features: feature_list [
+						Rotation(d67cfd71-2c28-4a72-b1d9-bc58c4bbaa6f)
+						{
+							rotationEnabled: true
+							rotationAngleX: 0F
+							rotationAngleY: 0F
+							rotationAngleZ: 0F
+						}, 
+						Scaling(d9e177e0-c3bf-4856-a6fe-dfa06d82ed6c)
+						{
+							scalingEnabled: true
+							scalingX: 100F
+							scalingY: 100F
+							scalingZ: 100F
+						}, 
+						Shearing(b14031ca-da4b-4a1e-b913-377824b4ddeb)
+						{
+							shearingEnabled: false
+							shearingXbyY: 0F
+							shearingXbyZ: 0F
+							shearingYbyX: 0F
+							shearingYbyZ: 0F
+							shearingZbyX: 0F
+							shearingZbyY: 0F
+						}, 
+						Pivot(8bacc36f-a3d5-4220-82c6-5783190e67e0)
+						{
+							pivotX: float_scriptedValue(95b8dff2-c80a-49bf-8aeb-6b0fa96b93cf)
+							{
+								triggerList: trigger_list(4a9955fe-4ad7-41d3-8846-39e988c16bda)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(289b9e68-0cdc-4fd7-b93c-ca494d1944dc)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<float>(c2e46b5c-702c-43b0-bc01-88e121bd1657)
+								{
+									script: "function()" \
+										"{" \
+										"	f:int2float(v:this.height/2)" \
+										"}"
+								}
+								write: function<bool,float>(5619b5d6-9a83-4a21-8515-b710895a3dd6)
+								{
+									script: "function(v:arg0::float)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							pivotY: float_scriptedValue(880725f6-cdc7-468c-b420-416ecc7beac5)
+							{
+								triggerList: trigger_list(e6695878-9b31-4355-b5a9-e0a1abec4c8c)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(dafec33c-6eaa-4eac-ac12-686c61725bc1)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<float>(08063573-e173-40a8-a3ea-cd9a0a766aec)
+								{
+									script: "function()" \
+										"{" \
+										"	f:int2float(v:this.width/2)" \
+										"}"
+								}
+								write: function<bool,float>(a85d2de4-ad0d-408d-a063-076fe6aebd1d)
+								{
+									script: "function(v:arg0::float)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							pivotZ: 0F
+						}]
+					children: children_list [
+						GtfParallelAnimation(dab23602-bbe2-45d8-8de2-d53d0036e622)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationFloat(4f73300c-bcfa-480b-acaf-86edc03d839d)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Rotation360"
+									enabled: true
+									delay: 0
+									duration: 1500
+									repeat: 0
+									alternating: false
+									relative: false
+									start: 0F
+									end: -360F
+									target: rotationAngleZ@d67cfd71-2c28-4a72-b1d9-bc58c4bbaa6f (propref<float>)
+								}]
+							name: "Rotate_Loading"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(ec6cd9b7-7277-40f3-b173-90055407dc7a)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(692918e5-923c-4a45-ab5b-2ea8d61e1fb1)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(27c44680-cbaa-40ee-be16-bc9b07658b0a)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							Play: conditional_script(45b5cd92-3df5-4b7a-814e-9f9774ead0d7)
+							{
+								triggerList: trigger_list(ed942c14-1dc8-43cc-bbbf-354e447ffc22)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(205e623b-e04d-455d-9d21-e8d207dd8b6f)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	f:animation_play(v:this)" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "Image_Loading"
+					visible: true
+					width: 70
+					height: 70
+					x: 365
+					y: 220
+					image: image_resource(6c45ad33-7de7-48cf-9d98-bec12e20bc36)
+					{
+						file: "Loading_Image.png"
+					}
+					sRGB: false
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(3ff6c88c-9fe5-4458-804b-e8c2241908df)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfParallelAnimation(92f8d5e4-d8c4-4f30-8a4b-ad2a2e9a05fd)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(2a1d20de-13d0-44de-96dc-40f6ca7d3d83)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "CountSeconds"
+									enabled: true
+									delay: 0
+									duration: 5000
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 5
+									end: 0
+									target: Seconds@3ff6c88c-9fe5-4458-804b-e8c2241908df (propref<int>)
+								}]
+							name: "Count_Seconds"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(d9ac87fd-15b5-4651-9806-ce47b38a1adb)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(53e2605d-4ac8-4e90-858c-bb8ce729fb00)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(fb837bdc-2269-44c0-8796-b31f488f5cc2)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							Play: conditional_script(ad48901c-6e79-4904-a491-5c7e38c711fc)
+							{
+								triggerList: trigger_list(1c28bd0d-47a1-44cc-bb7b-544b0ddae2ff)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(5976fb46-038a-46c9-8c25-f04b5e85ec3b)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	f:animation_play(v:this)" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "Seconds"
+					visible: true
+					width: 300
+					height: 100
+					x: 249
+					y: 300
+					text: string_scriptedValue(16248848-9a90-4266-a94d-9409cbdaf6b5)
+					{
+						triggerList: trigger_list(75a9e4ce-8324-4473-85d7-a6bdc158aed2)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(0ae0d4aa-ec56-4068-ba86-c8f2744a3a98)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(035e6574-e2e6-4055-b58f-71e7cb845a73)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:int2string(v:this->^->Seconds.Seconds)" \
+								"}"
+						}
+						write: function<bool,string>(7a13343f-4d60-4ebb-babf-246d498f3825)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(8697ee6d-6459-4dce-8641-1b283fed07bd)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 45
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+					Seconds: 0
+				}]
+			name: "Background_Welcome"
+			visible: true
+			width: 800
+			height: 480
+			x: 0
+			y: 0
+			image: image_resource(a7851f80-49e9-4281-9c71-e26c5654583f)
+			{
+				file: "Background.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "Welcome_View"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
