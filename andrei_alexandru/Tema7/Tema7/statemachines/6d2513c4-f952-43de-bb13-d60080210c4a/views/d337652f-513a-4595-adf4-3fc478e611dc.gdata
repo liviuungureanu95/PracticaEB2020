@@ -1,0 +1,108 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(d337652f-513a-4595-adf4-3fc478e611dc)
+{
+	name: "Romania View"
+	template: @9b1f47c4-aefe-44cf-b46d-89d9974ef8ba (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(f85ec1e8-3db1-4de3-bf91-70d07ce13924)
+		{
+			name: "T_BackButton"
+			template: @d5a22e61-ce76-4d7f-aee3-50be92bf3d7d (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 720
+			y: 400
+			touchPressed: function<bool,int,int,int,int>(c6b99d7f-0374-429f-95b9-8e802e712e7e)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:back()" \
+					"	true" \
+					"}"
+			}
+		}, 
+		GtfInstantiator(ce7f0875-0c4a-44fa-aeb1-c011454cd015)
+		{
+			features: feature_list [
+				LayoutPolicyBox(a8305029-f5ff-446c-a7c9-e0da8d60ba79)
+				{
+					gap: 5
+					layoutDirection: 1
+				}]
+			children: children_list [
+				GtfRectangle(57f5a19c-bc52-4d90-a9eb-83f2b0ed2cfa)
+				{
+					features: feature_list [
+						LineIndex(09f9d221-b04d-4056-9065-74f067b42f43)
+						{
+							lineIndex: 0
+						}]
+					children: children_list [
+						GtfLabel(707cebf2-4334-4c21-9e13-6ff72a2d2072)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "MyLabel"
+							visible: true
+							width: width@57f5a19c-bc52-4d90-a9eb-83f2b0ed2cfa (propref<int>)
+							height: height@57f5a19c-bc52-4d90-a9eb-83f2b0ed2cfa (propref<int>)
+							x: 0
+							y: 0
+							text: "label"
+							textColor: #000000FF
+							font: font_resource(a3309e96-6e83-4c45-b386-7a210d96e219)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "MyRectangle"
+					visible: true
+					width: width@ce7f0875-0c4a-44fa-aeb1-c011454cd015 (propref<int>)
+					height: 50
+					x: 0
+					y: 0
+					fillColor: #FFFFFFFF
+					setText: conditional_script(1c41b201-7144-48ac-a10b-e02d52498184)
+					{
+						triggerList: trigger_list(26c4e42a-0503-4957-b4c9-b9d549bf86e3)
+						{
+							script: "v:this.lineIndex dp:Romania_StringList"
+						}
+						onTrigger: function<bool,bool>(a69f4339-0ead-4399-b4a5-66b7ca6c8de8)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this->MyLabel.text = dp:Romania_StringList[v:this.lineIndex]" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "MyInstantiator_Romania"
+			visible: true
+			width: 300
+			height: 300
+			x: 250
+			y: 100
+			numItems: 0
+			lineMapping: intlist []
+			calculateNumItems: conditional_script(067170ef-50ca-4d94-93d6-3158d21f0b9f)
+			{
+				triggerList: trigger_list(a27f43dd-c573-4943-a6aa-f45207a6fb70)
+				{
+					script: "dp:Romania_StringList"
+				}
+				onTrigger: function<bool,bool>(a75d4e6b-11df-43db-b726-6ed66335451c)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	v:this.numItems = length dp:Romania_StringList" \
+						"	false" \
+						"}"
+				}
+			}
+		}]
+}

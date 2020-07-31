@@ -1,0 +1,72 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(b3d04ad7-1dc3-442e-a2b1-f198e44e227a)
+{
+	name: "T_Buttons"
+	structure: GtfContainer(edfbb00e-28d8-4063-aa46-c89eb3534c9f)
+	{
+		features: feature_list [
+			TouchPressed(61640380-0c54-455b-af0d-c37e5e37a9ea)
+			{
+				touchPressed: function<bool,int,int,int,int>(fcb1d734-5b05-4eb5-9d22-2fa64f832581)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(a3e5b159-1b8f-43b1-83f8-c6497231a31e)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(8911614e-cfe9-4af0-9095-233fe90f20c0)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@edfbb00e-28d8-4063-aa46-c89eb3534c9f (propref<int>)
+				height: height@edfbb00e-28d8-4063-aa46-c89eb3534c9f (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFFFF
+			}, 
+			GtfLabel(a0883596-d581-4fdb-ba5e-ae2b4edbea40)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Text"
+				visible: true
+				width: width@edfbb00e-28d8-4063-aa46-c89eb3534c9f (propref<int>)
+				height: height@edfbb00e-28d8-4063-aa46-c89eb3534c9f (propref<int>)
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #000000FF
+				font: font_resource(e6a0be19-f7fc-4fab-8d2e-173bd905b6e1)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 250
+		height: 50
+		x: 0
+		y: 0
+	}
+	font: font@a0883596-d581-4fdb-ba5e-ae2b4edbea40 (propref<font>)
+	textColor: textColor@a0883596-d581-4fdb-ba5e-ae2b4edbea40 (propref<color>)
+	text: text@a0883596-d581-4fdb-ba5e-ae2b4edbea40 (propref<string>)
+	x: x@edfbb00e-28d8-4063-aa46-c89eb3534c9f (propref<int>)
+	y: y@edfbb00e-28d8-4063-aa46-c89eb3534c9f (propref<int>)
+	touchPressed: touchPressed@61640380-0c54-455b-af0d-c37e5e37a9ea (propref<function<bool,int,int,int,int>>)
+}

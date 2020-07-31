@@ -1,0 +1,108 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(a1ba15cc-b49b-4833-91a3-93140785fff2)
+{
+	name: "Italia View"
+	template: @9b1f47c4-aefe-44cf-b46d-89d9974ef8ba (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(7f3fbef4-c481-47a6-893e-c33a279548dc)
+		{
+			name: "T_BackButton"
+			template: @d5a22e61-ce76-4d7f-aee3-50be92bf3d7d (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 720
+			y: 400
+			touchPressed: function<bool,int,int,int,int>(973c437b-6433-4869-aeb4-2088f705b83d)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    fire ev:back()" \
+					"    true" \
+					"}"
+			}
+		}, 
+		GtfInstantiator(0e1f05de-57a1-4e61-a89f-c8b0f4359c74)
+		{
+			features: feature_list [
+				LayoutPolicyBox(f28a4657-82d8-449b-82aa-5a12fa2c5064)
+				{
+					gap: 5
+					layoutDirection: 1
+				}]
+			children: children_list [
+				GtfRectangle(b9ad76fb-3457-4029-935a-df3f50721d7a)
+				{
+					features: feature_list [
+						LineIndex(d8233dbd-ec13-4b10-a6e9-65bc82e4ed48)
+						{
+							lineIndex: 0
+						}]
+					children: children_list [
+						GtfLabel(f07b2fff-2cc2-4db5-87cf-dd0ec0aa4995)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "MyLabel"
+							visible: true
+							width: width@b9ad76fb-3457-4029-935a-df3f50721d7a (propref<int>)
+							height: height@b9ad76fb-3457-4029-935a-df3f50721d7a (propref<int>)
+							x: 0
+							y: 0
+							text: "label"
+							textColor: #000000FF
+							font: font_resource(de0a6f52-9f7d-4737-a6cd-606d12b33fe4)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "MyRectangle"
+					visible: true
+					width: width@0e1f05de-57a1-4e61-a89f-c8b0f4359c74 (propref<int>)
+					height: 50
+					x: 0
+					y: 0
+					fillColor: #FFFFFFFF
+					setText: conditional_script(8840fcf8-8ce0-4d44-80de-ae652dd13434)
+					{
+						triggerList: trigger_list(7a5311c6-2ad0-491f-9340-568f80847ccb)
+						{
+							script: "v:this.lineIndex dp:Italy_StringList"
+						}
+						onTrigger: function<bool,bool>(99e003a8-4715-4879-96af-e1cb84495ef5)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this->MyLabel.text = dp:Italy_StringList[v:this.lineIndex]" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "MyInstantiator_Italy"
+			visible: true
+			width: 300
+			height: 300
+			x: 250
+			y: 100
+			numItems: 0
+			lineMapping: intlist []
+			calculateNumItems: conditional_script(71f5bc58-696b-4417-b348-3c62b0c32a79)
+			{
+				triggerList: trigger_list(17bf6bcd-2967-4fc2-bd93-e7a87566ca56)
+				{
+					script: "dp:Italy_StringList"
+				}
+				onTrigger: function<bool,bool>(c4d06259-ea11-420e-8c0b-5b5792950468)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	v:this.numItems = length dp:Italy_StringList" \
+						"	false" \
+						"}"
+				}
+			}
+		}]
+}

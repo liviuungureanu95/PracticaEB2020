@@ -1,0 +1,108 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(c2925618-c7fb-4ce2-a4d2-e124930b9e5e)
+{
+	name: "Germania View"
+	template: @9b1f47c4-aefe-44cf-b46d-89d9974ef8ba (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(c09a2f96-e3dd-4222-8297-26efd28026ff)
+		{
+			name: "T_BackButton"
+			template: @d5a22e61-ce76-4d7f-aee3-50be92bf3d7d (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 720
+			y: 400
+			touchPressed: function<bool,int,int,int,int>(56b7d01b-2448-44f4-a9d9-9f438f81cfe4)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    fire ev:back()" \
+					"    true" \
+					"}"
+			}
+		}, 
+		GtfInstantiator(3c25cce9-21dc-4b3d-a7d3-d01eb8834e41)
+		{
+			features: feature_list [
+				LayoutPolicyBox(7a4eb9f4-296e-4dd5-8265-d8a4592c18d1)
+				{
+					gap: 5
+					layoutDirection: 1
+				}]
+			children: children_list [
+				GtfRectangle(6407f0a9-43c7-48b5-b07d-a69d7c35e72d)
+				{
+					features: feature_list [
+						LineIndex(3b9fe037-2c3b-4cf9-9da9-d11107a508a8)
+						{
+							lineIndex: 0
+						}]
+					children: children_list [
+						GtfLabel(045a20df-5a1e-499a-9f4e-667eba3daa6b)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "MyLabel"
+							visible: true
+							width: width@6407f0a9-43c7-48b5-b07d-a69d7c35e72d (propref<int>)
+							height: height@6407f0a9-43c7-48b5-b07d-a69d7c35e72d (propref<int>)
+							x: 0
+							y: 0
+							text: "label"
+							textColor: #000000FF
+							font: font_resource(2de59099-9eda-4977-afe1-bbb7f60dbe26)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "MyRectangle"
+					visible: true
+					width: width@3c25cce9-21dc-4b3d-a7d3-d01eb8834e41 (propref<int>)
+					height: 50
+					x: 0
+					y: 0
+					fillColor: #FFFFFFFF
+					setText: conditional_script(fca449f3-6921-4568-addf-c75cd658cb97)
+					{
+						triggerList: trigger_list(7e64d1dc-4cfe-4064-89e1-65cc99a79b42)
+						{
+							script: "v:this.lineIndex dp:Germany_StringList"
+						}
+						onTrigger: function<bool,bool>(0e1290d0-85b7-47db-9e0a-0ae45242a5ff)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this->MyLabel.text = dp:Germany_StringList[v:this.lineIndex]" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "MyInstantiator_Germany"
+			visible: true
+			width: 300
+			height: 300
+			x: 250
+			y: 100
+			numItems: 0
+			lineMapping: intlist []
+			calculateNumItems: conditional_script(178d01ae-866d-46b4-b167-4c6c7e8dcc40)
+			{
+				triggerList: trigger_list(9652811d-5011-4efa-b42e-855d21f87e5b)
+				{
+					script: "dp:Germany_StringList"
+				}
+				onTrigger: function<bool,bool>(0b045051-4b7e-46b0-ac66-c236112348e2)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	v:this.numItems = length dp:Germany_StringList" \
+						"	false" \
+						"}"
+				}
+			}
+		}]
+}
