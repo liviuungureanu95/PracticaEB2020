@@ -1,0 +1,55 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(6818749e-e81e-4762-b28e-e95b131cd88c)
+{
+	features: feature_list []
+	children: children_list [
+		GtfEllipse(c5bacf74-40a2-48c5-b3cd-6ad1110f45af)
+		{
+			features: feature_list [
+				StateFocused(57a80ef2-bcde-4cce-bf81-4dff844f0432)
+				{
+					focusable: 3
+					focused: false
+				}, 
+				StatePressed(f751b522-05ca-4105-95dd-900945f79d76)
+				{
+					pressed: false
+				}, 
+				TouchPressed(85a90a62-c2ce-41c0-aeb6-6c0fcf9b272a)
+				{
+					touchPressed: function<bool,int,int,int,int>(a6ec8eff-7ab9-4168-ba15-15c805fec484)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:Press()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(f68340c8-0cc8-4cd6-9ee2-e976c34bc87e)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "Ellipse 1"
+			visible: true
+			width: 100
+			height: 100
+			x: 236
+			y: 146
+			fillColor: #A9A9A9FF
+			arcWidth: 0
+			centralAngle: 360F
+			sectorRotation: 0F
+		}]
+	name: "View 2"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
