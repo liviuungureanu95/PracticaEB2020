@@ -1,0 +1,144 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(da082752-f757-4392-999b-e7888f323914)
+{
+	name: "View Navigation Menu"
+	template: @5e45183b-bb71-4587-b665-02137402df3b (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(ed045597-86f0-4334-a1cc-f03b8b4692e1)
+		{
+			name: "Country Button"
+			template: @e43beaf3-61bd-4828-8a9a-d3f6bdf0f78d (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 50
+			y: 80
+			text: "Country"
+			font: font@e43beaf3-61bd-4828-8a9a-d3f6bdf0f78d (propref<font>)
+			textColor: textColor@e43beaf3-61bd-4828-8a9a-d3f6bdf0f78d (propref<color>)
+			touchPressed: touchPressed@e43beaf3-61bd-4828-8a9a-d3f6bdf0f78d (propref<function<bool,int,int,int,int>>)
+		}, 
+		GtfContainer_template_instance(b1699301-9909-48fc-ae05-4691a9e1efe9)
+		{
+			name: "City Button"
+			template: @e43beaf3-61bd-4828-8a9a-d3f6bdf0f78d (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 50
+			y: 170
+			text: "City"
+			font: font@e43beaf3-61bd-4828-8a9a-d3f6bdf0f78d (propref<font>)
+			textColor: textColor@e43beaf3-61bd-4828-8a9a-d3f6bdf0f78d (propref<color>)
+			touchPressed: touchPressed@e43beaf3-61bd-4828-8a9a-d3f6bdf0f78d (propref<function<bool,int,int,int,int>>)
+		}, 
+		GtfContainer_template_instance(500b0aff-35e2-402c-9b1f-a0b1bb2ef292)
+		{
+			name: "Street Button"
+			template: @e43beaf3-61bd-4828-8a9a-d3f6bdf0f78d (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 50
+			y: 270
+			text: "Street"
+			font: font@e43beaf3-61bd-4828-8a9a-d3f6bdf0f78d (propref<font>)
+			textColor: textColor@e43beaf3-61bd-4828-8a9a-d3f6bdf0f78d (propref<color>)
+			touchPressed: touchPressed@e43beaf3-61bd-4828-8a9a-d3f6bdf0f78d (propref<function<bool,int,int,int,int>>)
+		}, 
+		GtfContainer_template_instance(652b1265-d449-4198-a83a-7d4656bb5962)
+		{
+			name: "Number Button"
+			template: @e43beaf3-61bd-4828-8a9a-d3f6bdf0f78d (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 50
+			y: 370
+			text: "Street Number"
+			font: font@e43beaf3-61bd-4828-8a9a-d3f6bdf0f78d (propref<font>)
+			textColor: textColor@e43beaf3-61bd-4828-8a9a-d3f6bdf0f78d (propref<color>)
+			touchPressed: touchPressed@e43beaf3-61bd-4828-8a9a-d3f6bdf0f78d (propref<function<bool,int,int,int,int>>)
+		}, 
+		GtfContainer_template_instance(7201518f-629e-469f-b761-15967b713cdd)
+		{
+			name: "Country_Input Button"
+			template: @2cca83da-8682-483a-a3e0-23cc346c3be4 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 350
+			y: 80
+			text: text@2cca83da-8682-483a-a3e0-23cc346c3be4 (propref<string>)
+			textColor: #000000FF
+			touchPressed: function<bool,int,int,int,int>(ce54cdd0-e1fe-428c-a83b-a4559781f996)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.text = dp:Country" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(bfac583f-cfb5-48c0-a05c-84bd2edf18e5)
+		{
+			name: "City_Input Button"
+			template: @2cca83da-8682-483a-a3e0-23cc346c3be4 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 350
+			y: 170
+			text: text@2cca83da-8682-483a-a3e0-23cc346c3be4 (propref<string>)
+			textColor: #000000FF
+			touchPressed: function<bool,int,int,int,int>(3445f197-5a0b-40cd-a744-ebd52fcdb632)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.text = dp:City" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(eaa1ef08-d086-47aa-b1b3-cfe46fdd73b8)
+		{
+			name: "Street_Input Button"
+			template: @2cca83da-8682-483a-a3e0-23cc346c3be4 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 350
+			y: 270
+			text: text@2cca83da-8682-483a-a3e0-23cc346c3be4 (propref<string>)
+			textColor: #000000FF
+			touchPressed: function<bool,int,int,int,int>(33052554-ff03-4447-ac50-ad8e1717af93)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.text = dp:Street" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(d372f421-81f0-41ad-84d7-565d9738fff9)
+		{
+			name: "StreetNr_Input Button"
+			template: @2cca83da-8682-483a-a3e0-23cc346c3be4 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 350
+			y: 370
+			text: text@2cca83da-8682-483a-a3e0-23cc346c3be4 (propref<string>)
+			textColor: #000000FF
+			touchPressed: function<bool,int,int,int,int>(5f80ec56-8b85-46aa-9280-4a957724a6ef)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.text = f:int2string(dp:StreetNumber)" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(35d9f684-9501-4acb-82f8-582176662328)
+		{
+			name: "Start Navigation Button"
+			template: @7b75cbf9-bf6e-47e0-b0f5-3e6e4e2334e2 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 690
+			y: 435
+			touchPressed: function<bool,int,int,int,int>(61962e63-8fea-411a-a589-d85c5201eaa8)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:start_nav()" \
+					"    true" \
+					"}"
+			}
+		}]
+}

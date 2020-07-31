@@ -1,0 +1,72 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(e43beaf3-61bd-4828-8a9a-d3f6bdf0f78d)
+{
+	name: "T_Menu_Buttons"
+	structure: GtfContainer(0cb790d3-c0da-4ecf-8027-9203ec7a8d46)
+	{
+		features: feature_list [
+			TouchPressed(288a76ed-54d9-422d-9f0a-44980e4eef8f)
+			{
+				touchPressed: function<bool,int,int,int,int>(8aa0c667-15a3-488a-9650-00c0485f1e49)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(6f3bcd37-d36e-4f2d-8710-1e21e62da44c)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(3079ca84-c18c-4325-a25a-fbfa5c1ca454)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@0cb790d3-c0da-4ecf-8027-9203ec7a8d46 (propref<int>)
+				height: height@0cb790d3-c0da-4ecf-8027-9203ec7a8d46 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: @9200c7c7-0744-4b64-b694-b8a26e5daba3 (objectref<color>)
+			}, 
+			GtfLabel(e0e5bd37-903f-4090-a78f-61a3ccd77161)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Text"
+				visible: true
+				width: @b09fc049-9409-43cb-90fb-be4b9b0dbd76 (objectref<int>)
+				height: @19cad8aa-c896-4384-a591-f509431bd708 (objectref<int>)
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #000000FF
+				font: font_resource(2007cc31-0f1d-4b97-bb13-3c6081d8533c)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: @b09fc049-9409-43cb-90fb-be4b9b0dbd76 (objectref<int>)
+		height: @19cad8aa-c896-4384-a591-f509431bd708 (objectref<int>)
+		x: 0
+		y: 0
+	}
+	x: x@0cb790d3-c0da-4ecf-8027-9203ec7a8d46 (propref<int>)
+	y: y@0cb790d3-c0da-4ecf-8027-9203ec7a8d46 (propref<int>)
+	text: text@e0e5bd37-903f-4090-a78f-61a3ccd77161 (propref<string>)
+	font: font@e0e5bd37-903f-4090-a78f-61a3ccd77161 (propref<font>)
+	textColor: textColor@e0e5bd37-903f-4090-a78f-61a3ccd77161 (propref<color>)
+	touchPressed: touchPressed@288a76ed-54d9-422d-9f0a-44980e4eef8f (propref<function<bool,int,int,int,int>>)
+}
