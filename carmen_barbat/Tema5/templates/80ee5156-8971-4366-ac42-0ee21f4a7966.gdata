@@ -1,0 +1,60 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(80ee5156-8971-4366-ac42-0ee21f4a7966)
+{
+	name: "Temp_Button"
+	structure: GtfContainer(dad08c66-783e-4938-be5f-52f1d0ef8118)
+	{
+		features: feature_list [
+			TouchShortReleased(701200c0-1242-4be0-83f6-e8f28474fae2)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(61b7b308-2067-4db9-8663-a908f2c8249f)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(20755345-94f3-4ca7-bf38-a54bb72170f5)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfLabel(65b5a501-a5f3-4b7b-bd8a-2153048db0f2)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label 3"
+				visible: true
+				width: 200
+				height: 100
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(d4f1df7c-f0c7-4f42-94d4-c067719fadd9)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 40
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}]
+		name: "Button"
+		visible: true
+		width: 200
+		height: 100
+		x: 0
+		y: 0
+	}
+	text: text@65b5a501-a5f3-4b7b-bd8a-2153048db0f2 (propref<string>)
+	x: x@65b5a501-a5f3-4b7b-bd8a-2153048db0f2 (propref<int>)
+	y: y@65b5a501-a5f3-4b7b-bd8a-2153048db0f2 (propref<int>)
+	"x 2": x@dad08c66-783e-4938-be5f-52f1d0ef8118 (propref<int>)
+	"y 2": y@dad08c66-783e-4938-be5f-52f1d0ef8118 (propref<int>)
+	touchShortReleased: touchShortReleased@701200c0-1242-4be0-83f6-e8f28474fae2 (propref<function<bool,int,int,int,int>>)
+}
