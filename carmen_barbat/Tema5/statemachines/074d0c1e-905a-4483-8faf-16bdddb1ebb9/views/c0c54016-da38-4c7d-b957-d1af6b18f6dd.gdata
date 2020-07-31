@@ -1,0 +1,227 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(c0c54016-da38-4c7d-b957-d1af6b18f6dd)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(e6dc7397-3c38-41f2-bd31-419003d92448)
+		{
+			features: feature_list [
+				ScaleMode(97c5dacf-834a-4dbf-a940-b427d27441a9)
+				{
+					scaleMode: 1
+				}]
+			children: children_list [
+				GtfLabel(658f77ff-c0a8-40c9-8322-32d7c1b10b17)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 1"
+					visible: true
+					width: width@c0c54016-da38-4c7d-b957-d1af6b18f6dd (propref<int>)
+					height: 100
+					x: 0
+					y: 142
+					text: "WELCOME"
+					textColor: #FFFFFFFF
+					font: font_resource(3a2818bd-7710-478b-bdd2-da1d675a84bf)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 90
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfImage(8e9d7434-5ee1-46f4-868c-1ec905d87645)
+				{
+					features: feature_list [
+						ScaleMode(4eb8707a-98c2-4c9a-86ea-ec60e5125348)
+						{
+							scaleMode: 1
+						}, 
+						Rotation(fc6927e8-6edb-4cf7-8ed5-a2540d2c2d0e)
+						{
+							rotationEnabled: true
+							rotationAngleX: 0F
+							rotationAngleY: 0F
+							rotationAngleZ: 0F
+						}, 
+						Scaling(0995a69e-a398-4be9-b67c-35723ed87865)
+						{
+							scalingEnabled: true
+							scalingX: 100F
+							scalingY: 100F
+							scalingZ: 100F
+						}, 
+						Shearing(43a6e806-d96b-4579-8bb2-9477b307aae1)
+						{
+							shearingEnabled: false
+							shearingXbyY: 0F
+							shearingXbyZ: 0F
+							shearingYbyX: 0F
+							shearingYbyZ: 0F
+							shearingZbyX: 0F
+							shearingZbyY: 0F
+						}, 
+						Pivot(096e80f3-d702-45de-a8d7-3eeaec84834a)
+						{
+							pivotX: float_scriptedValue(3b047dcd-bedb-4052-bdd6-f8b224c0662d)
+							{
+								triggerList: trigger_list(17ed4c5f-f583-4f8f-ac50-bbe44cfcd4ce)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(6a92903e-d97b-4526-9faf-8cd25e68123e)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<float>(0fd70ff5-8149-44ff-8b98-c6019d3c3823)
+								{
+									script: "function()" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	f:int2float(v:this.width/2)" \
+										"}"
+								}
+								write: function<bool,float>(85d766ac-0067-460a-a569-e88e673f29a7)
+								{
+									script: "function(v:arg0::float)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							pivotY: float_scriptedValue(3101e5ed-4e36-4dfc-a577-4fa76cdff03c)
+							{
+								triggerList: trigger_list(f39d30bc-8fe4-4141-bac5-98a62244d992)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(e0232d33-2fa9-4a67-ba5e-4fd198961b61)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<float>(694540b9-0dc2-40c2-9968-f6abac9b5868)
+								{
+									script: "function()" \
+										"{" \
+										"	f:int2float(v:this.height/2)" \
+										"}"
+								}
+								write: function<bool,float>(48b4add9-b264-4960-9add-21d24b36ffef)
+								{
+									script: "function(v:arg0::float)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							pivotZ: 0F
+						}]
+					children: children_list [
+						GtfParallelAnimation(a584864c-0251-4d59-a2b1-ecc74b3db9fe)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationFloat(e0150043-7eb6-4d6a-9996-c9d49192cd25)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve 1"
+									enabled: true
+									delay: 0
+									duration: 1000
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 0F
+									end: -360F
+									target: rotationAngleZ@fc6927e8-6edb-4cf7-8ed5-a2540d2c2d0e (propref<float>)
+								}]
+							name: "SpinningWheel_Animation"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(8e30cf9b-f610-461d-8b0e-df5d39211eb0)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(a0d9e079-1516-41a4-9216-c048671262be)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(1ff9513c-840e-48a8-98db-276cce293d97)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							startSpinning: conditional_script(c367bfae-f8ef-4393-8abc-996e429611ac)
+							{
+								triggerList: trigger_list(873bacb7-7192-44bb-ad58-097a25f1c5ac)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(cd873afc-df59-433f-a815-fd980dd22dc5)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	f:animation_play(v:this)" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "SpinningWheel"
+					visible: true
+					width: 75
+					height: 75
+					x: 356
+					y: 317
+					image: image_resource(b7425e50-9307-4e89-845b-b5c77ac0ec12)
+					{
+						file: "wheel.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Background"
+			visible: true
+			width: width@c0c54016-da38-4c7d-b957-d1af6b18f6dd (propref<int>)
+			height: height@c0c54016-da38-4c7d-b957-d1af6b18f6dd (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(95a40f5f-391e-4004-85cf-3982bd00b60d)
+			{
+				file: "back1.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 1
+		}]
+	name: "Welcome_View"
+	visible: true
+	width: 802
+	height: 480
+	x: 0
+	y: 0
+}
