@@ -1,0 +1,144 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(899fb803-539c-4fa9-8eab-c3db6102a895)
+{
+	name: "RadioButtonInstance"
+	structure: GtfContainer(20d4ebee-a74e-4884-aa4b-8d21c3225189)
+	{
+		features: feature_list [
+			MoveOut(70be1054-830c-43dd-a44f-80bcc2f6b9f1)
+			{
+				moveOut: function<bool,int,int,int,int>(84e17f93-9c08-4eae-9269-9c8dead135a1)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->Background.borderThickness = 0;" \
+						"    false" \
+						"}"
+				}
+			}, 
+			MoveIn(934c107f-d274-43ba-a1fb-19c9303f1dc1)
+			{
+				moveIn: function<bool,int,int,int,int>(3b186eeb-fb62-470c-98ea-8af6eaef80da)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->Background.borderThickness = 2;" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(eaf25b28-72b8-4156-92dc-07728431d316)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(a5443f93-9138-48c7-8d89-dc0c2c135f1b)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(3c293cea-ddbb-4447-b7f3-7883a1cf377a)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			StateSelected(6208895b-145f-4a61-9bf0-f578d6095f95)
+			{
+				selected: false
+			}, 
+			Buttongroup(2aef51e0-e597-449c-bf61-bde4c9bf68ac)
+			{
+				buttonId: 0
+				buttonValue: 0
+			}]
+		children: children_list [
+			GtfEllipse(3e73f59b-c69d-4b9c-995e-99e21a55f6da)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfEllipse(70b06c57-3d5a-40ba-b812-bc613e658dab)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Check"
+						visible: Check@70b06c57-3d5a-40ba-b812-bc613e658dab (propref<bool>)
+						width: 25
+						height: 25
+						x: 8
+						y: 8
+						fillColor: #000000FF
+						arcWidth: 0
+						centralAngle: 360F
+						sectorRotation: 0F
+						Check: false
+					}]
+				name: "Checker"
+				visible: true
+				width: 40
+				height: height@6b67cec4-ad64-4cb3-8dc4-6ed6c4f05a86 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: fillColor@6b67cec4-ad64-4cb3-8dc4-6ed6c4f05a86 (propref<color>)
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}, 
+			GtfRectangle(6b67cec4-ad64-4cb3-8dc4-6ed6c4f05a86)
+			{
+				features: feature_list [
+					Border(f3f800ee-90eb-4686-bf6b-90bfdd0dab83)
+					{
+						borderThickness: 0
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: 207
+				height: height@20d4ebee-a74e-4884-aa4b-8d21c3225189 (propref<int>)
+				x: 60
+				y: 0
+				fillColor: #A9A9A9FF
+			}, 
+			GtfLabel(ae25b45a-dcd5-499c-9679-1db47a5b5409)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "TextLabel"
+				visible: true
+				width: 206
+				height: height@6b67cec4-ad64-4cb3-8dc4-6ed6c4f05a86 (propref<int>)
+				x: 61
+				y: 0
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(14eed249-9921-4fce-af92-c2b00a096c8a)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container 1"
+		visible: true
+		width: 268
+		height: 40
+		x: 1
+		y: 3
+	}
+	fillColor: fillColor@6b67cec4-ad64-4cb3-8dc4-6ed6c4f05a86 (propref<color>)
+	x: x@20d4ebee-a74e-4884-aa4b-8d21c3225189 (propref<int>)
+	y: y@20d4ebee-a74e-4884-aa4b-8d21c3225189 (propref<int>)
+	text: text@ae25b45a-dcd5-499c-9679-1db47a5b5409 (propref<string>)
+	textColor: textColor@ae25b45a-dcd5-499c-9679-1db47a5b5409 (propref<color>)
+	touchShortReleased: touchShortReleased@eaf25b28-72b8-4156-92dc-07728431d316 (propref<function<bool,int,int,int,int>>)
+	Check: Check@70b06c57-3d5a-40ba-b812-bc613e658dab (propref<bool>)
+	buttonId: buttonId@2aef51e0-e597-449c-bf61-bde4c9bf68ac (propref<int>)
+	buttonValue: buttonValue@2aef51e0-e597-449c-bf61-bde4c9bf68ac (propref<int>)
+	selected: selected@6208895b-145f-4a61-9bf0-f578d6095f95 (propref<bool>)
+}

@@ -1,0 +1,342 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(9b6520a1-2ae3-4083-af50-cd27a30aaff5)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(810a81cb-b973-486d-b354-d56d943eab1b)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(358b73a7-e1da-463c-8e50-eb5f887e39ae)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "ChooseLabel"
+					visible: true
+					width: 341
+					height: 76
+					x: 36
+					y: 19
+					text: "Choose your destination"
+					textColor: #000000FF
+					font: font_resource(96b53dfc-6f7c-4d92-a728-2d4ebf51ae6c)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 40
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfContainer(3e59d97f-96e5-4990-aa81-7689107481d8)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfContainer_template_instance(1a6e585f-a673-45c2-8f67-c9f97e5ed0bc)
+						{
+							name: "GermanyRadioButton"
+							template: @899fb803-539c-4fa9-8eab-c3db6102a895 (objectref<GtfContainer_template>)
+							children: children_list []
+							fillColor: @bc9a1888-e72c-4a59-b1ab-e995c30647b4 (objectref<color>)
+							x: 0
+							y: 0
+							text: "Germany"
+							textColor: #000000FF
+							touchShortReleased: function<bool,int,int,int,int>(001a9c3a-1dd8-4572-af1c-c3002224e302)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this.buttonValue = v:this.buttonId;" \
+									"	fire ev:FireCountry(v:this.text);" \
+									"    false" \
+									"}"
+							}
+							Check: selected@1a6e585f-a673-45c2-8f67-c9f97e5ed0bc (propref<bool>)
+							buttonId: 0
+							buttonValue: @75dd31fb-52c9-4b2a-a6ca-b7f70f320733 (objectref<int>)
+							selected: false
+						}, 
+						GtfContainer_template_instance(3fd8fa53-d0cb-4854-a342-fe044cfe8f06)
+						{
+							name: "FranceRadioButton"
+							template: @899fb803-539c-4fa9-8eab-c3db6102a895 (objectref<GtfContainer_template>)
+							children: children_list []
+							fillColor: @bc9a1888-e72c-4a59-b1ab-e995c30647b4 (objectref<color>)
+							x: x@1a6e585f-a673-45c2-8f67-c9f97e5ed0bc (propref<int>)
+							y: 72
+							text: "France"
+							textColor: #000000FF
+							touchShortReleased: function<bool,int,int,int,int>(00a73eb5-c92e-4da3-bf52-c25f96f3770b)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this.buttonValue = v:this.buttonId;" \
+									"	fire ev:FireCountry(v:this.text);" \
+									"    false" \
+									"}"
+							}
+							Check: selected@3fd8fa53-d0cb-4854-a342-fe044cfe8f06 (propref<bool>)
+							buttonId: 1
+							buttonValue: @75dd31fb-52c9-4b2a-a6ca-b7f70f320733 (objectref<int>)
+							selected: selected@899fb803-539c-4fa9-8eab-c3db6102a895 (propref<bool>)
+						}, 
+						GtfContainer_template_instance(a81a76bd-2a28-41d9-8c48-62967a2a732e)
+						{
+							name: "RomaniaRadioButton"
+							template: @899fb803-539c-4fa9-8eab-c3db6102a895 (objectref<GtfContainer_template>)
+							children: children_list []
+							fillColor: @bc9a1888-e72c-4a59-b1ab-e995c30647b4 (objectref<color>)
+							x: x@3fd8fa53-d0cb-4854-a342-fe044cfe8f06 (propref<int>)
+							y: 149
+							text: "Romania"
+							textColor: #000000FF
+							touchShortReleased: function<bool,int,int,int,int>(5de44a76-3ebe-491e-a91c-09e6303130b1)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this.buttonValue = v:this.buttonId;" \
+									"	fire ev:FireCountry(v:this.text);" \
+									"    false" \
+									"}"
+							}
+							Check: selected@a81a76bd-2a28-41d9-8c48-62967a2a732e (propref<bool>)
+							buttonId: 2
+							buttonValue: @75dd31fb-52c9-4b2a-a6ca-b7f70f320733 (objectref<int>)
+							selected: selected@899fb803-539c-4fa9-8eab-c3db6102a895 (propref<bool>)
+						}, 
+						GtfContainer_template_instance(73082b4f-ce52-4695-93ed-0f26490131ad)
+						{
+							name: "ItalyRadioButton"
+							template: @899fb803-539c-4fa9-8eab-c3db6102a895 (objectref<GtfContainer_template>)
+							children: children_list []
+							fillColor: @bc9a1888-e72c-4a59-b1ab-e995c30647b4 (objectref<color>)
+							x: x@a81a76bd-2a28-41d9-8c48-62967a2a732e (propref<int>)
+							y: 231
+							text: "Italy"
+							textColor: #000000FF
+							touchShortReleased: function<bool,int,int,int,int>(16ac4a7e-ee16-458b-a0e4-7834a8bca2a6)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this.buttonValue = v:this.buttonId;" \
+									"	fire ev:FireCountry(v:this.text);" \
+									"    false" \
+									"}"
+							}
+							Check: selected@73082b4f-ce52-4695-93ed-0f26490131ad (propref<bool>)
+							buttonId: 3
+							buttonValue: @75dd31fb-52c9-4b2a-a6ca-b7f70f320733 (objectref<int>)
+							selected: selected@899fb803-539c-4fa9-8eab-c3db6102a895 (propref<bool>)
+						}]
+					name: "ContainerCountries"
+					visible: true
+					width: 270
+					height: 274
+					x: 53
+					y: 132
+				}, 
+				GtfLabel(5161a212-ed92-4e39-834f-c5802adffd3c)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "RecommendationLabel"
+					visible: true
+					width: 206
+					height: 68
+					x: 431
+					y: 21
+					text: "Our suggestions for"
+					textColor: #000000FF
+					font: font_resource(102471aa-0fd4-4124-b22d-73d0142ff796)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfRectangle(8b01d440-9d3e-4a3f-bec4-3fcbc2b3deff)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Break"
+					visible: true
+					width: 10
+					height: height@9b6520a1-2ae3-4083-af50-cd27a30aaff5 (propref<int>)
+					x: 403
+					y: 0
+					fillColor: #A9A9A9FF
+				}, 
+				GtfLabel(8f1421f3-a8bc-49bf-8320-942925a1fd17)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "CountryLabel"
+					visible: true
+					width: 217
+					height: 66
+					x: 583
+					y: 70
+					text: "Choose country"
+					textColor: #000000FF
+					font: font_resource(39f8d379-0a64-4a7e-9468-3bfa4d14671b)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 40
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+					ChangeCountry: conditional_script(21f3685f-fd17-4a5f-93b7-f1f1acf98c9a)
+					{
+						triggerList: trigger_list(6e0a13f1-109c-4b98-9b43-c9a2bfcae2c4)
+						{
+							script: "ev:FireCountry"
+						}
+						onTrigger: function<bool,bool>(796917db-b8e3-4145-9322-9e3bd4277280)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	match_event v:event = ev:FireCountry in" \
+								"	{" \
+								"		v:this.text = v:event.country;" \
+								"	}" \
+								"" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfInstantiator(133be818-eaf8-48e4-bee6-9e5d4892e58b)
+				{
+					features: feature_list [
+						LayoutPolicyBox(640128b5-c1c8-4c27-a8c9-81e1b78dc40f)
+						{
+							gap: 5
+							layoutDirection: 1
+						}]
+					children: children_list [
+						GtfRectangle(4e659560-ae8d-46da-bb60-1079c92c1567)
+						{
+							features: feature_list [
+								LineIndex(0b1243f1-0f5a-452c-92cd-10b03972b313)
+								{
+									lineIndex: 0
+								}]
+							children: children_list [
+								GtfLabel(ea408327-f282-4531-b56b-271fb6ec3c81)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Label"
+									visible: true
+									width: width@4e659560-ae8d-46da-bb60-1079c92c1567 (propref<int>)
+									height: height@4e659560-ae8d-46da-bb60-1079c92c1567 (propref<int>)
+									x: 0
+									y: 0
+									text: "label"
+									textColor: #FFFF00FF
+									font: font_resource(f63b1b81-4038-40db-a74d-7bfe163a10c4)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 25
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+								}]
+							name: "Rectangle"
+							visible: true
+							width: 250
+							height: 50
+							x: -90
+							y: 9
+							fillColor: #FF0000FF
+							setText: conditional_script(16b1ad48-0277-4e91-ad6b-26b3ee7f41c0)
+							{
+								triggerList: trigger_list(42c9c288-43d5-42ba-9297-fbe19e534c6f)
+								{
+									script: "v:this.lineIndex" \
+										"v:this->^.stringList"
+								}
+								onTrigger: function<bool,bool>(f1f10d65-5f6c-41c9-a178-5f32785c9fdd)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	v:this->Label.text = v:this->^.stringList[v:this.lineIndex];" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "MyInstantiator"
+					visible: true
+					width: 304
+					height: 329
+					x: 469
+					y: 138
+					numItems: 5
+					lineMapping: intlist []
+					changeList: conditional_script(576d49a9-abd1-46c0-bab2-c57a9329b2b5)
+					{
+						triggerList: trigger_list(f76f49e1-b19d-455d-964b-9d8d072239df)
+						{
+							script: "ev:FireCountry"
+						}
+						onTrigger: function<bool,bool>(a7483250-2e1d-461d-ad5a-c1b96671873a)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	match_event v:event = ev:FireCountry in" \
+								"	{" \
+								"		if(v:event.country == \"Germany\"){" \
+								"			dp:ChosenList = dp:CitiesOfGermany" \
+								"		}" \
+								"		else if(v:event.country == \"France\"){" \
+								"			dp:ChosenList = dp:CitiesOfFrance;" \
+								"		}" \
+								"		else if(v:event.country == \"Italy\"){" \
+								"			dp:ChosenList = dp:CitiesOfItaly;" \
+								"		}" \
+								"		else if(v:event.country == \"Romania\"){" \
+								"			dp:ChosenList = dp:CitiesOfRomania;" \
+								"		}" \
+								"	}" \
+								"	false" \
+								"}"
+						}
+					}
+					stringList: @fb7b1a5f-8d42-4caf-95b6-33f16f9ce30a (objectref<stringlist>)
+					changeNumListItems: conditional_script(81b16c01-76cc-4e95-aee0-cea5882d6a17)
+					{
+						triggerList: trigger_list(a199759e-4468-47c1-9c42-8b1613bc89cd)
+						{
+							script: "v:this.stringList" \
+								""
+						}
+						onTrigger: function<bool,bool>(09dcff0f-2246-4dcd-9cc0-626c477168be)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	v:this.numItems = length v:this.stringList;" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "Background"
+			visible: true
+			width: width@9b6520a1-2ae3-4083-af50-cd27a30aaff5 (propref<int>)
+			height: height@9b6520a1-2ae3-4083-af50-cd27a30aaff5 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #FFFACDFF
+		}]
+	name: "MainView"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
