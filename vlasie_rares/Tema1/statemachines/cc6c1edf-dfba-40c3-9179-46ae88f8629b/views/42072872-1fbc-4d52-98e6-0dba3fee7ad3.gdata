@@ -1,0 +1,119 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(42072872-1fbc-4d52-98e6-0dba3fee7ad3)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(26614a27-ef39-4942-950b-3700cb88f3f8)
+		{
+			name: "Background 1"
+			template: @571974f5-231a-4949-9970-8d236c559468 (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfLabel(2efb56c2-62ab-43ec-8bc4-9c426fa702c2)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 3"
+					visible: true
+					width: 450
+					height: 100
+					x: 200
+					y: 50
+					text: "Va rugam asteptati sfarsitul programului"
+					textColor: #000000FF
+					font: font_resource(0bcfe34a-5e00-495c-ab2c-7aae876ae61e)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfImage(40ba3cd6-64d0-42f5-80ec-f0266d870dd0)
+				{
+					features: feature_list [
+						TouchPressed(8a0a2b11-19b5-450c-8a30-23f099448951)
+						{
+							touchPressed: function<bool,int,int,int,int>(6ebcfd3f-5fcd-4c87-863f-9fc5db7f7a69)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:goTo_menu()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(6630d404-1d4f-4400-bef0-616d6ec07a37)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}, 
+						ScaleMode(593af790-ac67-4562-b862-f7bbabd00d82)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "Image 4"
+					visible: true
+					width: 100
+					height: 100
+					x: 250
+					y: 250
+					image: image_resource(3098f4d1-e596-4a41-a339-2da42342256f)
+					{
+						file: "icons8-washing-machine-50.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(a845f5a7-bba2-4985-be4d-4d63a8ee141f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 4"
+					visible: true
+					width: 400
+					height: 100
+					x: 400
+					y: 250
+					text: "Va puteti intoarce oricand la meniu"
+					textColor: #000000FF
+					font: font_resource(febd417c-c5b7-40a2-a381-3a65bf5d0182)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(69a728e1-4c31-4df1-b29f-daf0f0289802)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 5"
+					visible: true
+					width: 500
+					height: 100
+					x: 200
+					y: 135
+					text: "Ati ales programul de uscare"
+					textColor: #000000FF
+					font: font_resource(6526f1f1-5814-4201-84b3-abc1377436b0)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+		}]
+	name: "View 2"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

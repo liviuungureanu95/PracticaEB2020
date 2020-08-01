@@ -1,0 +1,117 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(2441554a-acf0-4e5c-9eef-2db458123ee5)
+{
+	features: feature_list [
+		TouchStatusChanged(538d97f7-3384-4083-bf17-7439f4da18b9)
+		{
+			touchStatusChanged: function<bool,int,int,int,int,int>(81cd1e1b-0d81-48a6-b821-3a0e980ecf72)
+			{
+				script: "function(v:touchId::int, v:touchStatus::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire_delayed 1000, ev:goTo_menuBasic()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		StateTouched(06c91177-90d8-4c55-bcc4-c4864497b212)
+		{
+			touchable: true
+			touched: false
+			touchPolicy: 0
+			touchBehavior: 0
+		}]
+	children: children_list [
+		GtfContainer_template_instance(4f2f0115-d85d-4781-8d17-d907ddd581bc)
+		{
+			name: "Program_back 1"
+			template: @fcb362bf-7429-4ef9-add5-10a70927f2b8 (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfLabel(661aa38b-7da1-43b8-9fc3-b83995335a46)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 4"
+					visible: true
+					width: 400
+					height: 100
+					x: 200
+					y: 0
+					text: "Program Spalare Normala"
+					textColor: #000000FF
+					font: font_resource(0c95301e-3953-43ab-9db5-dde6e1a54fb3)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(67aa13fb-3ab9-4492-8a0f-4bfce5cd4db3)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 5"
+					visible: true
+					width: 3000
+					height: 100
+					x: 100
+					y: 100
+					text: "Temperatura :60 de grade"
+					textColor: #000000FF
+					font: font_resource(6250a947-f307-439c-a9b0-3ae9c5657535)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(93c26b19-9778-4083-84b5-4892663d96f7)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 6"
+					visible: true
+					width: 300
+					height: 100
+					x: 100
+					y: 200
+					text: "Timp de executie: 10 minute"
+					textColor: #000000FF
+					font: font_resource(22e81162-0322-4aef-b231-db8ae2f29439)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(0a62144b-04d2-4671-98bf-8d812e5f8189)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 7"
+					visible: true
+					width: 800
+					height: 100
+					x: 0
+					y: 350
+					text: "Dupa incheierea programului, aplicatia se va intoarce la meniul principal"
+					textColor: #000000FF
+					font: font_resource(d635a1e0-94c1-4a76-9bf1-68f8bb974f67)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+		}]
+	name: "View 2"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
