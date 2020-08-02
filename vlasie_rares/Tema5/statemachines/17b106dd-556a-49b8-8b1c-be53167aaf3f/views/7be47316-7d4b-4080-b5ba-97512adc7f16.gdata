@@ -1,0 +1,205 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(7be47316-7d4b-4080-b5ba-97512adc7f16)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(d6cac04e-7a38-4fac-9cfe-2ab469218f19)
+		{
+			name: "Template_State 1"
+			template: @637c1b26-580c-4ecf-92cb-8be2659db7fe (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfRectangle(f6a2980d-ca25-43da-947b-c567196dbbb6)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "StyleLine"
+					visible: true
+					width: 750
+					height: 5
+					x: 50
+					y: 100
+					fillColor: #0000FFFF
+				}, 
+				GtfLabel(3b22ef8d-da36-4b60-83e4-ccbe6e0d3714)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Menu_Label"
+					visible: true
+					width: 300
+					height: 100
+					x: 80
+					y: 10
+					text: "Help "
+					textColor: #F5F5F5FF
+					font: font_resource(267f7d39-c70c-4aef-ac89-062e984f781a)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 50
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfImage(add6b56e-865e-4ea6-a16f-29439c751445)
+				{
+					features: feature_list [
+						ScaleMode(97284fa0-af72-4c78-a8ea-cf8a0bc02c73)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "Car_Image"
+					visible: true
+					width: 250
+					height: 250
+					x: 400
+					y: 150
+					image: image_resource(3ad04712-ffd8-4c14-a1ef-aa6bd7fad5e9)
+					{
+						file: "help.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfContainer_template_instance(75e3e76a-5454-4fe3-b246-097d4b37ef5e)
+				{
+					name: "Radio_btn"
+					template: @874c07d4-8bc4-48b6-9d67-8ff88f38655a (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 35
+					y: 160
+					text: "Radio"
+					textColor: textColor@874c07d4-8bc4-48b6-9d67-8ff88f38655a (propref<color>)
+					font: font_resource(ca69b57f-e86e-4e7f-adc5-9617f29120e8)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 40
+					}
+					touchPressed: function<bool,int,int,int,int>(dfff5bfb-945d-4e2f-9d62-8fd57af65142)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goTo_Radio()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(c1d2bde0-4c4f-4f97-b3dc-f888325a39e0)
+				{
+					name: "Media_btn"
+					template: @874c07d4-8bc4-48b6-9d67-8ff88f38655a (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 35
+					y: 230
+					text: "Media Player"
+					textColor: textColor@874c07d4-8bc4-48b6-9d67-8ff88f38655a (propref<color>)
+					font: font_resource(d8413198-228f-4624-8312-f5c22cf5b7a7)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 40
+					}
+					touchPressed: function<bool,int,int,int,int>(5b7a0182-d12d-432d-82eb-ad9a36ffc4ae)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goTo_Media()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfLabel(2334e564-221a-412d-880e-b4298fa9e356)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Branding"
+					visible: true
+					width: 350
+					height: 100
+					x: 420
+					y: 10
+					text: "A Better Car Today"
+					textColor: #F5F5F5FF
+					font: font_resource(29b129af-5222-4c33-b7b0-be8288b37521)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 50
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(dd92de77-5439-4c63-97e2-b06800a6ad7e)
+				{
+					name: "Nav_btn"
+					template: @874c07d4-8bc4-48b6-9d67-8ff88f38655a (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 35
+					y: 295
+					text: "Navigation"
+					textColor: textColor@874c07d4-8bc4-48b6-9d67-8ff88f38655a (propref<color>)
+					font: font_resource(f8a2ec4f-fb19-4d4c-8162-c0486e149572)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 40
+					}
+					touchPressed: function<bool,int,int,int,int>(64793806-8533-4545-9d4b-f3373a3c3d7a)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goTo_Nav()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(280e4246-9b41-4481-9d0d-3a4d74cf685b)
+				{
+					name: "Help_btn"
+					template: @874c07d4-8bc4-48b6-9d67-8ff88f38655a (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 35
+					y: 370
+					text: "Help"
+					textColor: textColor@874c07d4-8bc4-48b6-9d67-8ff88f38655a (propref<color>)
+					font: font_resource(12e6780d-1f27-46a9-b202-e40b50e58676)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 40
+					}
+					touchPressed: function<bool,int,int,int,int>(963d3406-1678-436e-a2b0-862f47e1741e)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goTo_Help()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfLabel(886db6e4-c7de-4c25-abb0-eaeaa09f8f51)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 5"
+					visible: true
+					width: 324
+					height: 86
+					x: 370
+					y: 390
+					text: "App version 2.5"
+					textColor: #FFA500FF
+					font: font_resource(a8d97805-6bac-41c6-9cd8-2cc9f1ce4f1b)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+		}]
+	name: "View 4"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
