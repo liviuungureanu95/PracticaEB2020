@@ -1,0 +1,81 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(43c61ac2-0cd5-4073-9f0f-76aa2b4d2e3c)
+{
+	name: "Introdu_text"
+	structure: GtfContainer(fbe034b8-02dd-4f30-855b-50cfc7b1904e)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(3f8570c3-b0b3-4db8-b4e6-fc75e8dd0cd2)
+			{
+				features: feature_list [
+					StateFocused(cf6e53bd-bcc9-42e3-9bfe-56093657882e)
+					{
+						focusable: 3
+						focused: false
+					}, 
+					KeyShortReleased(7b00ddd2-90d4-4537-bf11-cb6504f55a5f)
+					{
+						keyShortReleased: function<bool,int>(fffd61f0-9735-4392-9f79-ed1a324175ce)
+						{
+							script: "function(v:keyId::int)" \
+								"{" \
+								"			f:trace_string(f:int2string(v:keyId));" \
+								"		" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StatePressed(0ec6ad27-d99b-48a0-911b-85e1ae049ec8)
+					{
+						pressed: false
+					}]
+				children: children_list [
+					GtfLabel(6979b25d-b96d-4858-92c8-243d1b67db03)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Text"
+						visible: true
+						width: width@fbe034b8-02dd-4f30-855b-50cfc7b1904e (propref<int>)
+						height: height@fbe034b8-02dd-4f30-855b-50cfc7b1904e (propref<int>)
+						x: 0
+						y: 0
+						text: "label"
+						textColor: #FFFFFFFF
+						font: font_resource(f9b962a3-54a7-443c-a857-62b3c5758549)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}]
+				name: "Background"
+				visible: true
+				width: width@fbe034b8-02dd-4f30-855b-50cfc7b1904e (propref<int>)
+				height: height@fbe034b8-02dd-4f30-855b-50cfc7b1904e (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #5F9EA0FF
+			}]
+		name: "IntroduText_Container"
+		visible: true
+		width: 300
+		height: 95
+		x: 0
+		y: 0
+	}
+	x: x@3f8570c3-b0b3-4db8-b4e6-fc75e8dd0cd2 (propref<int>)
+	y: y@3f8570c3-b0b3-4db8-b4e6-fc75e8dd0cd2 (propref<int>)
+	fillColor: fillColor@3f8570c3-b0b3-4db8-b4e6-fc75e8dd0cd2 (propref<color>)
+	"x 2": x@6979b25d-b96d-4858-92c8-243d1b67db03 (propref<int>)
+	"y 2": y@6979b25d-b96d-4858-92c8-243d1b67db03 (propref<int>)
+	text: text@6979b25d-b96d-4858-92c8-243d1b67db03 (propref<string>)
+	textColor: textColor@6979b25d-b96d-4858-92c8-243d1b67db03 (propref<color>)
+	"x 3": x@fbe034b8-02dd-4f30-855b-50cfc7b1904e (propref<int>)
+	"y 3": y@fbe034b8-02dd-4f30-855b-50cfc7b1904e (propref<int>)
+	width: width@fbe034b8-02dd-4f30-855b-50cfc7b1904e (propref<int>)
+	height: height@fbe034b8-02dd-4f30-855b-50cfc7b1904e (propref<int>)
+}
