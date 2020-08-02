@@ -1,0 +1,20 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(d66fcf44-0ad0-4447-89d8-4fef9676c89f)
+{
+	name: "View 4"
+	template: @680a8e04-122f-44bc-87f9-6bd82ad45e6a (objectref<GtfView_template>)
+	children: children_list []
+	text: "Type in the street"
+	touchPressed: function<bool,int,int,int,int>(4ef6b5ba-8fe2-4cb0-b314-2191e59b1f3b)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"	fire ev:goToNumber()" \
+			"	v:this.\"text 2\"=\"\"" \
+			"    false" \
+			"}"
+	}
+	"text 2": @c012d907-6777-4e81-83e2-13709562e6e5 (objectref<string>)
+	visible: visible@680a8e04-122f-44bc-87f9-6bd82ad45e6a (propref<bool>)
+}

@@ -1,0 +1,91 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(3ed2ca8e-9c06-47a7-8c15-90e95778a8b0)
+{
+	name: "View 7"
+	template: @3355d839-8d4a-4d61-afdd-1ca3eabfe1ce (objectref<GtfView_template>)
+	children: children_list [
+		GtfImage(1ad78e82-8fc2-4891-8773-5908d4fec3a2)
+		{
+			features: feature_list [
+				ScaleMode(b48ab280-601b-43cd-8d1f-843996a0d7f1)
+				{
+					scaleMode: 2
+				}]
+			children: children_list [
+				GtfParallelAnimation(f90d582a-e8d1-472b-a2f3-cfb2e6c3c2f6)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationS32(3f936189-1aae-4cd6-a82d-88c546b085ee)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Linear interpolation curve 1"
+							enabled: true
+							delay: 1
+							duration: 3000
+							repeat: 0
+							alternating: false
+							relative: false
+							start: 0
+							end: 650
+							target: x@1ad78e82-8fc2-4891-8773-5908d4fec3a2 (propref<int>)
+						}]
+					name: "Animation 1"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(cacf48bf-614d-4f7c-bb76-bf62899ad3b4)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(4615ca00-7eb6-442e-95e5-bdf0b710b563)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(499f6255-d99d-4f35-b1ea-6f662560f2f9)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					play: conditional_script(1af234ea-82f9-4d3b-a8ba-12649e083fa2)
+					{
+						triggerList: trigger_list(f3b9d38e-e38e-42fd-a42e-ee6c58257369)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(ebe27c98-9b05-4073-91e9-f66b6ba710e8)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	f:animation_play(v:this)" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "Image 5"
+			visible: true
+			width: 177
+			height: 139
+			x: 0
+			y: 317
+			image: image_resource(8adcaf33-6978-4622-9cc9-1a71d1389e57)
+			{
+				file: "285810-64.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+}

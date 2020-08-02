@@ -1,0 +1,87 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(585f0b80-e1aa-4c89-a898-80ab243d3dfa)
+{
+	name: "Button"
+	structure: GtfContainer(b049f50e-546d-410e-993a-c728033c8cc5)
+	{
+		features: feature_list [
+			TouchPressed(1089465c-079f-4b13-99c2-43535f6ad191)
+			{
+				touchPressed: function<bool,int,int,int,int>(cb3cedd7-0646-44a6-a264-b36a3855918d)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	//" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(997e433c-e668-4a24-b7c8-50c8b084d908)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(6ba7e21c-9d08-4663-8900-d99fb114f935)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(84b4403d-8bc9-4c20-8d52-dd5b0cc92c27)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(3e434062-b21a-47f1-b264-fffe0c863ff6)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Rectangle 2"
+				visible: true
+				width: 100
+				height: 100
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+			}, 
+			GtfImage(9bf26462-637c-4176-836d-70f1a07f3fd7)
+			{
+				features: feature_list [
+					ScaleMode(45cc8a49-184d-408e-898b-4f53a6c76b07)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "Image 3"
+				visible: true
+				width: 100
+				height: 100
+				x: 0
+				y: 0
+				image: image_resource(e1a8b48f-08ad-458f-b631-f9099c55a761)
+				{
+					file: "285810-64.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "Container 1"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+	}
+	image: image@9bf26462-637c-4176-836d-70f1a07f3fd7 (propref<image>)
+	fillColor: fillColor@3e434062-b21a-47f1-b264-fffe0c863ff6 (propref<color>)
+	x: x@b049f50e-546d-410e-993a-c728033c8cc5 (propref<int>)
+	y: y@b049f50e-546d-410e-993a-c728033c8cc5 (propref<int>)
+	width: width@b049f50e-546d-410e-993a-c728033c8cc5 (propref<int>)
+	height: height@b049f50e-546d-410e-993a-c728033c8cc5 (propref<int>)
+	visible: visible@b049f50e-546d-410e-993a-c728033c8cc5 (propref<bool>)
+	touchPressed: touchPressed@1089465c-079f-4b13-99c2-43535f6ad191 (propref<function<bool,int,int,int,int>>)
+}
