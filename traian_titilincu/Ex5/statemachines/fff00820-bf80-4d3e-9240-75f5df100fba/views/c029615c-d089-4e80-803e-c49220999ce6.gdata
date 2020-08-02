@@ -1,0 +1,272 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(c029615c-d089-4e80-803e-c49220999ce6)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(0bd97bd3-21ba-44fe-ab7d-60bba65001e7)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(925d6680-4c58-402a-adeb-6aea78d83ad3)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfParallelAnimation(d3c8bef6-22a3-4fbb-9916-daa4a39d7543)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfSlowStartS32(0583f2e9-c08c-45a1-896f-ca540269a35a)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Slow start curve 1"
+									enabled: true
+									delay: 0
+									duration: 1000
+									repeat: 1
+									alternating: false
+									relative: false
+									start: -100
+									end: 100
+									target: y@925d6680-4c58-402a-adeb-6aea78d83ad3 (propref<int>)
+								}]
+							name: "Animation 1"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(9398db8a-ba79-4a17-abcd-5ca38e8cce39)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(29aa3ad7-1e84-427d-bbfb-d0a4a6daa419)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(fb062b22-0285-4e3b-85ee-7c80d44ff4e9)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							start: conditional_script(01d392d0-dc14-4f75-a4b4-960861e86385)
+							{
+								triggerList: trigger_list(1de1abd3-055c-4a6a-8084-25d7dbe6d503)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(5082ccb2-83e9-46f1-9332-b7da29328cc3)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	f:animation_play(v:this)" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "Main Menu Label"
+					visible: true
+					width: width@c029615c-d089-4e80-803e-c49220999ce6 (propref<int>)
+					height: 100
+					x: 0
+					y: -100
+					text: "Main Menu"
+					textColor: #FFFFFFFF
+					font: font_resource(344dc422-4182-4f19-a9c9-1845047a1145)
+					{
+						file: "Bison-Bold.ttf"
+						size: 60
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfImage(b1722062-968e-4274-8dd7-aa5681833cef)
+				{
+					features: feature_list [
+						ScaleMode(8bd4a3ea-41e5-4fac-a570-276565053518)
+						{
+							scaleMode: 1
+						}, 
+						TouchShortReleased(9a740bf0-d2f7-4486-81fe-9cd2f217b060)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(c98353cf-b214-4d03-9067-c4314903948d)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"    fire ev:goTo_radio()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(8e2e6faf-2ec5-449b-bd2c-d358528224ae)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfImage(27670fb5-a168-4061-bf41-fbccf8ca92db)
+						{
+							features: feature_list [
+								ScaleMode(983831b8-74e5-4927-bd70-663442a5afff)
+								{
+									scaleMode: 1
+								}, 
+								TouchShortReleased(31df33ea-2276-4412-900d-b9e5980245cb)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(8cbc746a-5841-4d0a-84a5-ef35e54c7fde)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"    fire ev:goTo_mediaPlayer()" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(ed19c510-84c8-429f-86da-b318af22ade2)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list [
+								GtfImage(2f9f81f6-5823-4929-8283-ca5f33fb1eaa)
+								{
+									features: feature_list [
+										ScaleMode(4e51cc57-42c9-46a1-9965-e63de3787c6b)
+										{
+											scaleMode: 1
+										}, 
+										TouchPressed(32ed7020-1900-4c15-bce2-438688aa58d2)
+										{
+											touchPressed: function<bool,int,int,int,int>(f0b0e757-122f-4051-8c37-5e86c220bafb)
+											{
+												script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+													"{" \
+													"    fire ev:goTo_navigation()" \
+													"    false" \
+													"}"
+											}
+										}, 
+										StateTouched(9a1bd251-e67c-447a-8957-fae872353b22)
+										{
+											touchable: true
+											touched: false
+											touchPolicy: 0
+											touchBehavior: 0
+										}]
+									children: children_list [
+										GtfImage(a888723c-5acb-4684-95da-539ebc4f4723)
+										{
+											features: feature_list [
+												ScaleMode(b8e952bd-5fc0-4207-a279-dad3cb933095)
+												{
+													scaleMode: 1
+												}, 
+												TouchShortReleased(71fde7f9-8c99-4726-876d-8762e7cdc668)
+												{
+													touchShortReleased: function<bool,int,int,int,int>(62f07c58-500e-484d-82f7-468d45e6a425)
+													{
+														script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+															"{" \
+															"    fire  ev:goTo_help()" \
+															"    false" \
+															"}"
+													}
+												}, 
+												StateTouched(f79aaa7f-3e8d-4e77-b96e-fbdd8689ead6)
+												{
+													touchable: true
+													touched: false
+													touchPolicy: 0
+													touchBehavior: 0
+												}]
+											children: children_list []
+											name: "Radio copy 1"
+											visible: true
+											width: 100
+											height: 100
+											x: 129
+											y: -2
+											image: image_resource(53998908-005c-47e8-966a-c03b6b6f1014)
+											{
+												file: "help.png"
+											}
+											sRGB: false
+											horizontalAlign: 0
+											verticalAlign: 1
+										}]
+									name: "Radio copy 1"
+									visible: true
+									width: 100
+									height: 100
+									x: 133
+									y: 3
+									image: image_resource(f00cb956-a4fb-4cce-beb7-d95d7b37a4d0)
+									{
+										file: "navigation.png"
+									}
+									sRGB: false
+									horizontalAlign: 0
+									verticalAlign: 1
+								}]
+							name: "Radio copy 1"
+							visible: true
+							width: 100
+							height: 100
+							x: 133
+							y: 2
+							image: image_resource(6ad084eb-8ddd-401d-ab3f-d0ccbe2e311d)
+							{
+								file: "media player.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}]
+					name: "Radio"
+					visible: true
+					width: 100
+					height: 100
+					x: 151
+					y: 232
+					image: image_resource(f9662c6d-5000-4b3d-8211-7c205cda8687)
+					{
+						file: "radio.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "BG"
+			visible: true
+			width: width@c029615c-d089-4e80-803e-c49220999ce6 (propref<int>)
+			height: height@c029615c-d089-4e80-803e-c49220999ce6 (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(af2c3da1-8f88-426a-a855-a710574e0521)
+			{
+				file: "background.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "Menu View"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
