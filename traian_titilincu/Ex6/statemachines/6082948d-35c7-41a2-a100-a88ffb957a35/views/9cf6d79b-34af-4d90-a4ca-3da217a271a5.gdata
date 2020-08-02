@@ -1,0 +1,40 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(9cf6d79b-34af-4d90-a4ca-3da217a271a5)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(2d21aa86-8419-4313-8eca-5ef74d03d040)
+		{
+			name: "Background 1"
+			template: @86f1b7f7-dfb8-4542-bce2-19f5181df92d (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "oras:"
+			"text 2": @8d7853b3-b723-454e-9c87-0fd9144938c7 (objectref<string>)
+			visible: true
+			touchShortReleased: function<bool,int,int,int,int>(f2954971-9b59-4c12-9e40-7cde8be97ca2)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    if(dp:city != \"\") fire ev:goTo_street()" \
+					"    false" \
+					"}"
+			}
+			fillColor: fillColor@86f1b7f7-dfb8-4542-bce2-19f5181df92d (propref<color>)
+			"visible 2": true
+			"touchShortReleased 2": function<bool,int,int,int,int>(235c83e8-050e-4158-baa7-54cc29cbc337)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    fire ev:goTo_country()" \
+					"    false" \
+					"}"
+			}
+		}]
+	name: "City View"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
