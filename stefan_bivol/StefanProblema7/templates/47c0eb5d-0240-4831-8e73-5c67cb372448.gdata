@@ -1,0 +1,94 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(47c0eb5d-0240-4831-8e73-5c67cb372448)
+{
+	name: "List"
+	structure: GtfContainer(efe2c79e-64bf-4022-b7d9-531ce27e9e3e)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfInstantiator(04048812-801b-40a4-922f-a8a5a769a033)
+			{
+				features: feature_list [
+					LayoutPolicyGrid(464b3456-c602-448e-9910-245637dc51d8)
+					{
+						horizontalGap: 0
+						verticalGap: 5
+						numRows: 5
+						numColumns: -1
+					}]
+				children: children_list [
+					GtfLabel(ff29c9dc-de5c-4cb0-9b8c-30f440102308)
+					{
+						features: feature_list [
+							LineIndex(fc2caa9a-c5b2-4fcd-bbbc-81fe49dca8c1)
+							{
+								lineIndex: 0
+							}]
+						children: children_list []
+						name: "Name"
+						visible: true
+						width: width@efe2c79e-64bf-4022-b7d9-531ce27e9e3e (propref<int>)
+						height: 30
+						x: 0
+						y: 0
+						text: "-"
+						textColor: #808080FF
+						font: font_resource(0d2245f8-eb66-44df-bafe-ca5c268c51e1)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+						setText: conditional_script(b8c95d47-4f02-46db-b621-33ad9d5a1075)
+						{
+							triggerList: trigger_list(91537970-edcd-4167-a00d-f7a4321d1073)
+							{
+								script: "v:this.lineIndex" \
+									"dp:Romania_Cities" \
+									"dp:Germania_Cities" \
+									"dp:Franta_Cities" \
+									"dp:Italia_Cities" \
+									"dp:Selected_Country"
+							}
+							onTrigger: function<bool,bool>(c96a714d-1cb4-4b2b-9ea8-9a18614eaf8b)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	if(dp:Selected_Country == \"Romania\")" \
+									"		v:this.text = dp:Romania_Cities[v:this.lineIndex]" \
+									"	else" \
+									"		if(dp:Selected_Country == \"Germania\")" \
+									"			v:this.text = dp:Germania_Cities[v:this.lineIndex]" \
+									"		else" \
+									"			if(dp:Selected_Country == \"Franta\")" \
+									"				v:this.text = dp:Franta_Cities[v:this.lineIndex]" \
+									"			else" \
+									"				if(dp:Selected_Country == \"Italia\")" \
+									"					v:this.text = dp:Italia_Cities[v:this.lineIndex]" \
+									"	false" \
+									"}"
+							}
+						}
+					}]
+				name: "City_List"
+				visible: true
+				width: width@efe2c79e-64bf-4022-b7d9-531ce27e9e3e (propref<int>)
+				height: height@efe2c79e-64bf-4022-b7d9-531ce27e9e3e (propref<int>)
+				x: 0
+				y: 0
+				numItems: 5
+				lineMapping: intlist []
+			}]
+		name: "List"
+		visible: true
+		width: 200
+		height: 175
+		x: 0
+		y: 0
+	}
+	x: x@efe2c79e-64bf-4022-b7d9-531ce27e9e3e (propref<int>)
+	y: y@efe2c79e-64bf-4022-b7d9-531ce27e9e3e (propref<int>)
+	visible: visible@efe2c79e-64bf-4022-b7d9-531ce27e9e3e (propref<bool>)
+}
