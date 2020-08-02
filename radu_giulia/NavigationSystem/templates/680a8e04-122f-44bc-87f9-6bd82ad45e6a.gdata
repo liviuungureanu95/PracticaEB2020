@@ -1,0 +1,175 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(680a8e04-122f-44bc-87f9-6bd82ad45e6a)
+{
+	name: "BasicView"
+	structure: GtfView(8daceda1-9e13-48f8-b048-72556d8c59cc)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfImage(9b0929ce-65b7-49a8-b769-1e2c199559b8)
+			{
+				features: feature_list [
+					ScaleMode(89c27193-0fc1-42d0-afe7-349e92d0fa93)
+					{
+						scaleMode: 1
+					}]
+				children: children_list [
+					GtfContainer_template_instance(8cc3c239-84da-4a0e-b1c9-9eee0b819e63)
+					{
+						name: "Button 1"
+						template: @585f0b80-e1aa-4c89-a898-80ab243d3dfa (objectref<GtfContainer_template>)
+						children: children_list []
+						image: image_resource(75a87579-a5d0-44c2-950a-4e61795d57a8)
+						{
+							file: "back.png"
+						}
+						fillColor: fillColor@585f0b80-e1aa-4c89-a898-80ab243d3dfa (propref<color>)
+						x: 0
+						y: 370
+						width: width@585f0b80-e1aa-4c89-a898-80ab243d3dfa (propref<int>)
+						height: height@585f0b80-e1aa-4c89-a898-80ab243d3dfa (propref<int>)
+						visible: visible@585f0b80-e1aa-4c89-a898-80ab243d3dfa (propref<bool>)
+						touchPressed: function<bool,int,int,int,int>(2251d06c-b80a-44c1-95cb-7cbacdbd9e59)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	fire ev:\"goBack\"()" \
+								"    false" \
+								"}"
+						}
+					}]
+				name: "Image 1"
+				visible: true
+				width: width@8daceda1-9e13-48f8-b048-72556d8c59cc (propref<int>)
+				height: height@8daceda1-9e13-48f8-b048-72556d8c59cc (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(b528e234-00a7-4cc4-bdce-ee4f2ccdc7b8)
+				{
+					file: "map.jpg"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(07c3dcb6-cb4c-4729-84b2-53783f282c90)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "title"
+				visible: true
+				width: width@8daceda1-9e13-48f8-b048-72556d8c59cc (propref<int>)
+				height: 100
+				x: 0
+				y: -1
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(7f03ad08-52fa-4410-85ee-85835f6dea9b)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 50
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfRectangle(d6dfabd9-e877-45d6-83cf-b57ab33370b9)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLabel(7ca50d19-3cb5-4be7-a41a-0e8ff1c22032)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Label 3"
+						visible: true
+						width: 100
+						height: 100
+						x: 22
+						y: -22
+						text: @c012d907-6777-4e81-83e2-13709562e6e5 (objectref<string>)
+						textColor: #000000FF
+						font: font_resource(b84edf56-29a3-4c73-bc67-a96a14d04ccd)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}]
+				name: "Rectangle 1"
+				visible: true
+				width: 593
+				height: 58
+				x: 109
+				y: 297
+				fillColor: #DCDCDCFF
+			}, 
+			GtfContainer_template_instance(b8d16363-2ef9-4faf-b0ce-b89a452bf77b)
+			{
+				name: "Button 1"
+				template: @585f0b80-e1aa-4c89-a898-80ab243d3dfa (objectref<GtfContainer_template>)
+				children: children_list []
+				image: image_resource(340a54d5-3210-496c-8a5b-16128a1b3583)
+				{
+					file: "forward.png"
+				}
+				fillColor: #FFFFFF00
+				x: 691
+				y: 375
+				width: width@585f0b80-e1aa-4c89-a898-80ab243d3dfa (propref<int>)
+				height: height@585f0b80-e1aa-4c89-a898-80ab243d3dfa (propref<int>)
+				visible: bool_scriptedValue(b9851f0c-c038-4b98-9911-62b44d6da106)
+				{
+					triggerList: trigger_list(dae662ff-ed98-47e8-a279-18881240eb70)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(0c960e82-244a-442d-8615-7848d5582a2f)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<bool>(ac3b70ea-16d0-4bd2-8b27-810e24109025)
+					{
+						script: "function()" \
+							"{" \
+							"	if(v:this->^->\"Rectangle 1\"->\"Label 3\".text != \"\")" \
+							"		 true" \
+							"	else" \
+							"		 false" \
+							"}"
+					}
+					write: function<bool,bool>(f45588c2-27d7-4265-8d76-0e10692a3ab9)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				touchPressed: function<bool,int,int,int,int>(654af225-2e09-40f6-b2d7-1a6bbacb70d3)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	fire_delayed 500, ev:goToCity()" \
+						"    false" \
+						"}"
+				}
+			}]
+		name: "View 2"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+	}
+	text: text@07c3dcb6-cb4c-4729-84b2-53783f282c90 (propref<string>)
+	touchPressed: touchPressed@b8d16363-2ef9-4faf-b0ce-b89a452bf77b (propref<function<bool,int,int,int,int>>)
+	"text 2": text@7ca50d19-3cb5-4be7-a41a-0e8ff1c22032 (propref<string>)
+	visible: visible@8cc3c239-84da-4a0e-b1c9-9eee0b819e63 (propref<bool>)
+}
