@@ -1,0 +1,428 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(eb921c31-9f18-4260-9223-4ae84467c304)
+{
+	name: "DoubleButton"
+	structure: GtfContainer(9ef37ed5-da8a-4205-8dfe-c4482a288c0f)
+	{
+		features: feature_list [
+			TouchPressed(4aa45cbf-79b0-4b40-a865-c71253bca813)
+			{
+				touchPressed: function<bool,int,int,int,int>(ace32f3f-7d60-435d-95a3-82cffc7d615e)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.AnimationPress()" \
+						"	v:this.ActionPress()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(4fb72c11-d1ce-4782-b035-c213ae4b3155)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(7b342fdf-3c31-4477-9c1c-7bc4df3b8d69)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	" \
+						"	v:this.AnimationRelease()" \
+						"	if(v:this.Active)" \
+						"		v:this.ActionRelease()" \
+						"	else" \
+						"		v:this.ActionRelease2()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(1ab2697b-8bee-4bd3-a528-7c1360985883)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfEllipse(42520fd8-3653-4a1a-bcf2-c42ca88a09bb)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfImage(aeb70321-aada-45db-b7d5-bbf6ebb6931a)
+					{
+						features: feature_list [
+							ScaleMode(aaf26619-0f00-4b45-a8df-9091c17ad7c7)
+							{
+								scaleMode: 2
+							}]
+						children: children_list []
+						name: "Image1"
+						visible: Active@9ef37ed5-da8a-4205-8dfe-c4482a288c0f (propref<bool>)
+						width: int_scriptedValue(bafa90da-062f-4cd9-a74f-7a44fac752bb)
+						{
+							triggerList: trigger_list(01da2dac-ff23-4651-8325-47704e833f8c)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(62891342-2b20-414b-8de6-6a44e96f6390)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<int>(b43507b0-171d-4b89-9be9-430287fba6e1)
+							{
+								script: "function()" \
+									"{" \
+									"	v:this->^.width * 70 / 100" \
+									"}"
+							}
+							write: function<bool,int>(59609459-f7fc-4660-bc33-b59fa9b7f743)
+							{
+								script: "function(v:arg0::int)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						height: int_scriptedValue(87833711-eece-4a84-b8c4-09517bba7366)
+						{
+							triggerList: trigger_list(87305680-8c62-409f-b9a4-9709a0f07830)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(70ff77e3-9587-44a8-93f4-5db8d64d0126)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<int>(829a2162-5f69-4aca-bc05-957c3f82ddaa)
+							{
+								script: "function()" \
+									"{" \
+									"	v:this->^.height * 70 / 100" \
+									"}"
+							}
+							write: function<bool,int>(28c93fca-31b8-4d7a-a5d8-a312e178b56e)
+							{
+								script: "function(v:arg0::int)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						x: int_scriptedValue(8ab2f8ab-5b42-450e-b53b-59bfe10c2e9f)
+						{
+							triggerList: trigger_list(b36bdbf8-945c-495c-9731-556fecfcde5d)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(1598f039-e072-48a1-9bca-b553426950b8)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<int>(001a5e49-501b-4a10-802a-bc04f6fea5a9)
+							{
+								script: "function()" \
+									"{" \
+									"	v:this->^.width * 15 / 100" \
+									"}"
+							}
+							write: function<bool,int>(dcbbece7-562c-4a52-b91a-be4c279a02c3)
+							{
+								script: "function(v:arg0::int)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						y: int_scriptedValue(91257881-6166-4e14-8299-b49ee9e62e08)
+						{
+							triggerList: trigger_list(d2260e9a-c7fb-4541-95f2-7a01d2fd7073)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(2f79129c-bdac-477b-be3f-ed10b8066bf6)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<int>(e3191ae1-e867-4a4e-b0b1-f40252108fd7)
+							{
+								script: "function()" \
+									"{" \
+									"	v:this->^.height * 15 / 100" \
+									"}"
+							}
+							write: function<bool,int>(4744d0dc-41fa-4c20-af1b-c88c361fc130)
+							{
+								script: "function(v:arg0::int)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						image: image_resource(d1a56792-6629-4b01-aa48-2bfe6dbf66fb)
+						{
+							file: "play-button.png"
+						}
+						sRGB: false
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfImage(df2bdc95-8e0c-4fe6-a2db-679daeee9e2a)
+					{
+						features: feature_list [
+							ScaleMode(2c0150c2-1721-4edb-9c28-10470120cce0)
+							{
+								scaleMode: 2
+							}]
+						children: children_list []
+						name: "Image2"
+						visible: bool_scriptedValue(9f2c4dc0-088c-4e49-92c1-66ccb0ca3ac2)
+						{
+							triggerList: trigger_list(1b045fff-a554-4c53-8cb1-ee7787f2a1d8)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(e55ba513-eaf8-43cd-9079-aa4721a73eee)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<bool>(81c322a4-fd7d-47d7-92b7-411b9dcb558b)
+							{
+								script: "function()" \
+									"{" \
+									"	!v:this->^->^.Active" \
+									"}"
+							}
+							write: function<bool,bool>(96d87b8a-208f-4166-b020-3cbe302dc818)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						width: int_scriptedValue(d535c48f-9e8d-4146-acbb-adaf191f32bb)
+						{
+							triggerList: trigger_list(0e78f92b-4aee-4673-b9b0-776807794250)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(8dd0e36a-f932-47bb-862e-248d3a90c67a)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<int>(caef27af-53bf-4593-a006-8d906953aef7)
+							{
+								script: "function()" \
+									"{" \
+									"	v:this->^.width * 70 / 100" \
+									"}"
+							}
+							write: function<bool,int>(06d774f4-0750-4c97-8bc6-6077d93335df)
+							{
+								script: "function(v:arg0::int)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						height: int_scriptedValue(7d1d2982-3f6d-41d3-a163-85f0d7c58d76)
+						{
+							triggerList: trigger_list(34867c9c-a7c7-44a3-9beb-4df3f2ea93da)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(1843a081-d573-4d10-b35b-a61a378a6e27)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<int>(8773e799-f049-4998-9a35-42e37c15ffaf)
+							{
+								script: "function()" \
+									"{" \
+									"	v:this->^.height * 70 / 100" \
+									"}"
+							}
+							write: function<bool,int>(8f2e503a-b147-488e-a786-b87e04266dfc)
+							{
+								script: "function(v:arg0::int)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						x: int_scriptedValue(89f8c56e-83a1-418a-8a77-2931e5c1a20e)
+						{
+							triggerList: trigger_list(84d73c46-315b-4988-9608-a3faae7849c4)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(00b9c3a8-34e6-4998-bb8f-9ca83d75be8d)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<int>(c3f5d502-d482-4c7e-96ba-7f007c51d37e)
+							{
+								script: "function()" \
+									"{" \
+									"	v:this->^.width * 15 / 100" \
+									"}"
+							}
+							write: function<bool,int>(68538559-89e0-4700-a34d-d521b3d771ce)
+							{
+								script: "function(v:arg0::int)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						y: int_scriptedValue(0946e347-a960-462f-8351-fd5bef792a65)
+						{
+							triggerList: trigger_list(3f759603-4a1a-4651-b4bf-7bc6b9dcaa30)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(0ddd89ce-8d68-4807-adff-12cf2d55ee1e)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<int>(5be54ace-f437-4251-9469-8a2b19d8a8bd)
+							{
+								script: "function()" \
+									"{" \
+									"	v:this->^.height * 15 / 100" \
+									"}"
+							}
+							write: function<bool,int>(0c709030-f493-462b-b729-b946be28a787)
+							{
+								script: "function(v:arg0::int)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						image: image_resource(8398fee8-024e-44a4-8676-b02be4358db2)
+						{
+							file: "pause.png"
+						}
+						sRGB: false
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "Background"
+				visible: true
+				width: width@9ef37ed5-da8a-4205-8dfe-c4482a288c0f (propref<int>)
+				height: height@9ef37ed5-da8a-4205-8dfe-c4482a288c0f (propref<int>)
+				x: 0
+				y: 0
+				fillColor: CurrentColor@9ef37ed5-da8a-4205-8dfe-c4482a288c0f (propref<color>)
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}]
+		name: "Container"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		Colors: colorlist [#FF554DFF, #FF342AFF]
+		CurrentColor: #FF554DFF
+		AnimationPress: function<bool>(a8ac2508-1f9a-4e2e-a289-c2111f302ae6)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.CurrentColor = v:this.Colors[1]" \
+				"	false" \
+				"}"
+		}
+		AnimationRelease: function<bool>(87f1676e-ba27-4c90-adc7-d8ff0746ba95)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.CurrentColor = v:this.Colors[0]" \
+				"	v:this.Active = !v:this.Active" \
+				"	false" \
+				"}"
+		}
+		ActionPress: function<bool>(de39c4a1-250a-405f-ae1c-ddc245c503f6)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		ActionRelease: function<bool>(e1499fa0-4b8d-4b09-8f7e-ad851c44121a)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		Active: true
+		ActionRelease2: function<bool>(3934b653-a179-474d-9d0a-40fee4924bff)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	image: image@df2bdc95-8e0c-4fe6-a2db-679daeee9e2a (propref<image>)
+	ActionRelease: ActionRelease@9ef37ed5-da8a-4205-8dfe-c4482a288c0f (propref<function<bool>>)
+	ActionPress: ActionPress@9ef37ed5-da8a-4205-8dfe-c4482a288c0f (propref<function<bool>>)
+	Colors: Colors@9ef37ed5-da8a-4205-8dfe-c4482a288c0f (propref<colorlist>)
+	CurrentColor: CurrentColor@9ef37ed5-da8a-4205-8dfe-c4482a288c0f (propref<color>)
+	x: x@9ef37ed5-da8a-4205-8dfe-c4482a288c0f (propref<int>)
+	y: y@9ef37ed5-da8a-4205-8dfe-c4482a288c0f (propref<int>)
+	width: width@9ef37ed5-da8a-4205-8dfe-c4482a288c0f (propref<int>)
+	height: height@9ef37ed5-da8a-4205-8dfe-c4482a288c0f (propref<int>)
+	"image 2": image@aeb70321-aada-45db-b7d5-bbf6ebb6931a (propref<image>)
+	Active: Active@9ef37ed5-da8a-4205-8dfe-c4482a288c0f (propref<bool>)
+	ActionRelease2: ActionRelease2@9ef37ed5-da8a-4205-8dfe-c4482a288c0f (propref<function<bool>>)
+}

@@ -1,0 +1,232 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(fd8c2235-c05b-4f30-a390-0b84d14f34b7)
+{
+	name: "LoadingBar"
+	structure: GtfContainer(25a6452d-df1a-4497-8c16-35c0a2e9d762)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(7dcba8a8-cc8e-49f5-8ef1-e8968ab364a7)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: 480
+				height: 10
+				x: 0
+				y: 0
+				fillColor: #070707FF
+			}, 
+			GtfRectangle(052f32af-0566-4961-8c11-a35ab2913cc1)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfEllipse(c9ccadf9-8ad7-4e17-a598-d86ffb167777)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Marker"
+						visible: true
+						width: 14
+						height: 14
+						x: int_scriptedValue(8c30d8cb-fe73-4b8e-890f-e9b8541e754f)
+						{
+							triggerList: trigger_list(888fe30d-1b7c-48c2-9c67-a53fdb3e98c0)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(49bcd22e-a2a9-40f4-b81d-79c6c01bd0e1)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<int>(6fe8878d-df2d-410a-9d33-bba88c343c4b)
+							{
+								script: "function()" \
+									"{" \
+									"	v:this->^.x + v:this->^.width - v:this.width/2" \
+									"}"
+							}
+							write: function<bool,int>(d5394abd-5951-4cf6-899c-bfff7c4bcf34)
+							{
+								script: "function(v:arg0::int)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						y: -2
+						fillColor: #FC332AFF
+						arcWidth: 0
+						centralAngle: 360F
+						sectorRotation: 0F
+					}, 
+					GtfParallelAnimation(ad9a9a7f-4730-4935-a5d6-3cb87dfdd6e2)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLinearInterpolationS32(e0f0d9b9-8859-4908-99b4-786d36ea6679)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Linear interpolation curve 1"
+								enabled: true
+								delay: 0
+								duration: int_scriptedValue(29e93c62-a907-4376-a987-6d89de99b07c)
+								{
+									triggerList: trigger_list(4639afbd-07b3-4553-92ff-5e6026797fc4)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(262b2fd4-16e5-463b-9ce3-928f3006868f)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<int>(c364f8c3-d0e6-4ac7-ac93-584636c0e921)
+									{
+										script: "function()" \
+											"{" \
+											"	v:this->^->^->^.Length * 1000" \
+											"}"
+									}
+									write: function<bool,int>(53e7e675-ab03-4dca-90f0-78cbfca64ce4)
+									{
+										script: "function(v:arg0::int)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 0
+								end: Length@25a6452d-df1a-4497-8c16-35c0a2e9d762 (propref<int>)
+								target: Current@25a6452d-df1a-4497-8c16-35c0a2e9d762 (propref<int>)
+							}]
+						name: "Loading"
+						enabled: true
+						repeat: 1
+						alternating: false
+						scale: 1F
+						onPlay: function<void,int,bool>(d0b13ea0-22fb-4e9c-a31f-c9c1fe948ad9)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(e3455752-c416-48b5-bee0-59cc1246a19a)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(5b7785fc-3303-42f9-b42f-fd20cf944e5a)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"	" \
+								"}"
+						}
+					}]
+				name: "Foreground"
+				visible: true
+				width: int_scriptedValue(09972247-eb82-444e-8827-bffc9e0a47d1)
+				{
+					triggerList: trigger_list(b58065ff-3d1d-46f6-9787-105632680cfb)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(4772e767-bb03-4168-9366-959b75c7cca6)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(37a1fcdb-7639-479a-aedf-10cae385c799)
+					{
+						script: "function()" \
+							"{" \
+							"	let v:procent = v:this->^.Current * 100 / v:this->^.Length in" \
+							"		v:this->^.width * v:procent / 100" \
+							"}"
+					}
+					write: function<bool,int>(35f3f803-5c62-4433-8fa4-996e3c1e7d86)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				height: 10
+				x: 0
+				y: 0
+				fillColor: #FF554DFF
+			}]
+		name: "Container"
+		visible: true
+		width: 480
+		height: 10
+		x: 0
+		y: 0
+		Length: 0
+		Current: 0
+		OnFinish: function<bool>(30f2d95d-cc03-458c-82da-d3e478eed730)
+		{
+			script: "function()" \
+				"{" \
+				"	false" \
+				"}"
+		}
+		PlayAnimation: function<bool>(8be2a5ce-7395-4b96-88b4-7a192616ec95)
+		{
+			script: "function()" \
+				"{" \
+				"	f:animation_play(v:this->Foreground->Loading)" \
+				"	false" \
+				"}"
+		}
+		PauseAnimation: function<bool>(f5923cca-9224-47f7-bbff-87f5053de37d)
+		{
+			script: "function()" \
+				"{" \
+				"	f:animation_pause(v:this->Foreground->Loading)" \
+				"	false" \
+				"}"
+		}
+		ResetAnimation: function<bool>(3fce4e6b-bb65-48ed-80db-cab2be93b28d)
+		{
+			script: "function()" \
+				"{" \
+				"	f:animation_cancel_reset(v:this->Foreground->Loading)" \
+				"	false" \
+				"}"
+		}
+	}
+	y: y@25a6452d-df1a-4497-8c16-35c0a2e9d762 (propref<int>)
+	x: x@25a6452d-df1a-4497-8c16-35c0a2e9d762 (propref<int>)
+	"width 2": width@25a6452d-df1a-4497-8c16-35c0a2e9d762 (propref<int>)
+	OnFinish: OnFinish@25a6452d-df1a-4497-8c16-35c0a2e9d762 (propref<function<bool>>)
+	Length: Length@25a6452d-df1a-4497-8c16-35c0a2e9d762 (propref<int>)
+	Current: Current@25a6452d-df1a-4497-8c16-35c0a2e9d762 (propref<int>)
+	PlayAnimation: PlayAnimation@25a6452d-df1a-4497-8c16-35c0a2e9d762 (propref<function<bool>>)
+	PauseAnimation: PauseAnimation@25a6452d-df1a-4497-8c16-35c0a2e9d762 (propref<function<bool>>)
+	ResetAnimation: ResetAnimation@25a6452d-df1a-4497-8c16-35c0a2e9d762 (propref<function<bool>>)
+}

@@ -1,0 +1,173 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(5caaf4f8-7e07-42a3-b25a-b557e04a85fa)
+{
+	name: "View 2"
+	template: @7fcceefe-184c-4e8f-a86b-e5fe2c29291a (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(1e77a4f8-3e5f-4d8f-a6e7-519aacfb536b)
+		{
+			name: "DoubleBg 1"
+			template: @f6d07666-5c17-46c9-b51f-ad1378be7a7c (objectref<GtfContainer_template>)
+			children: children_list []
+		}, 
+		GtfContainer_template_instance(6eeed2bf-bd36-440b-8a99-cf434d252c9d)
+		{
+			name: "Backward"
+			template: @948c0248-ddbd-48f0-9110-ff25b3621326 (objectref<GtfContainer_template>)
+			children: children_list []
+			image: image_resource(0b594500-99e5-4785-9ce2-31567f0c0435)
+			{
+				file: "fast-backward.png"
+			}
+			ActionRelease: function<bool>(0bdb02ab-a290-4633-9c0c-ebe6112b69ec)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:CurrentMusicIndex -= 1" \
+					"	if(dp:CurrentMusicIndex < 0)" \
+					"		dp:CurrentMusicIndex += length dp:Music" \
+					"	v:this->^->PlayPause.Active = true" \
+					"	v:this->^->Loading.ResetAnimation()" \
+					"	" \
+					"	false" \
+					"}"
+			}
+			ActionPress: ActionPress@948c0248-ddbd-48f0-9110-ff25b3621326 (propref<function<bool>>)
+			Colors: Colors@948c0248-ddbd-48f0-9110-ff25b3621326 (propref<colorlist>)
+			CurrentColor: CurrentColor@948c0248-ddbd-48f0-9110-ff25b3621326 (propref<color>)
+			x: 30
+			y: 230
+			width: 70
+			height: 70
+		}, 
+		GtfContainer_template_instance(94761fea-fb47-48ea-8339-480f5ed96d5f)
+		{
+			name: "Forward"
+			template: @948c0248-ddbd-48f0-9110-ff25b3621326 (objectref<GtfContainer_template>)
+			children: children_list []
+			image: image@948c0248-ddbd-48f0-9110-ff25b3621326 (propref<image>)
+			ActionRelease: function<bool>(51b9c3ef-8eff-47f4-9adc-55c5b36d064b)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:CurrentMusicIndex = (dp:CurrentMusicIndex + 1)% length dp:Music" \
+					"	v:this->^->PlayPause.Active = true" \
+					"	v:this->^->Loading.ResetAnimation()" \
+					"	false" \
+					"}"
+			}
+			ActionPress: ActionPress@948c0248-ddbd-48f0-9110-ff25b3621326 (propref<function<bool>>)
+			Colors: Colors@948c0248-ddbd-48f0-9110-ff25b3621326 (propref<colorlist>)
+			CurrentColor: CurrentColor@948c0248-ddbd-48f0-9110-ff25b3621326 (propref<color>)
+			x: 380
+			y: 230
+			width: 70
+			height: 70
+		}, 
+		GtfLabel(8b6487c5-8137-406e-8f05-a0863f15fa26)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Title"
+			visible: true
+			width: int_element_reference(f9be505c-83c5-431a-a896-72eec3adac33)
+			{
+				index: 0
+				list: @81a31e48-0f6a-46af-9d71-2d7c936d48b7 (objectref<intlist>)
+			}
+			height: 100
+			x: -1
+			y: 65
+			text: @19d5eef8-2ed2-4544-a3a5-5ec4143c4b50 (objectref<string>)
+			textColor: #FFFFFFFF
+			font: font_resource(fc76ac54-1d37-4d44-8b3c-b09f2ecb4228)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(0b59ab21-d84f-4897-adf3-e9700e931009)
+		{
+			name: "Loading"
+			template: @fd8c2235-c05b-4f30-a390-0b84d14f34b7 (objectref<GtfContainer_template>)
+			children: children_list []
+			y: 199
+			x: 0
+			"width 2": int_element_reference(554cc08e-1ef0-41da-9004-9b6dcec85051)
+			{
+				index: 0
+				list: @81a31e48-0f6a-46af-9d71-2d7c936d48b7 (objectref<intlist>)
+			}
+			OnFinish: OnFinish@fd8c2235-c05b-4f30-a390-0b84d14f34b7 (propref<function<bool>>)
+			Length: 25
+			Current: 0
+			PlayAnimation: PlayAnimation@fd8c2235-c05b-4f30-a390-0b84d14f34b7 (propref<function<bool>>)
+			PauseAnimation: PauseAnimation@fd8c2235-c05b-4f30-a390-0b84d14f34b7 (propref<function<bool>>)
+			ResetAnimation: ResetAnimation@fd8c2235-c05b-4f30-a390-0b84d14f34b7 (propref<function<bool>>)
+		}, 
+		GtfContainer_template_instance(39c7259c-c5d2-46d0-bccd-1290103b3d53)
+		{
+			name: "PlayPause"
+			template: @eb921c31-9f18-4260-9223-4ae84467c304 (objectref<GtfContainer_template>)
+			children: children_list []
+			image: image@eb921c31-9f18-4260-9223-4ae84467c304 (propref<image>)
+			ActionRelease: function<bool>(de893389-4f92-4efb-9c49-f970f8cbe09b)
+			{
+				script: "function()" \
+					"{" \
+					"	" \
+					"	v:this->^->Loading.PauseAnimation()" \
+					"	false" \
+					"}"
+			}
+			ActionPress: ActionPress@eb921c31-9f18-4260-9223-4ae84467c304 (propref<function<bool>>)
+			Colors: Colors@eb921c31-9f18-4260-9223-4ae84467c304 (propref<colorlist>)
+			CurrentColor: CurrentColor@eb921c31-9f18-4260-9223-4ae84467c304 (propref<color>)
+			x: int_scriptedValue(6bf96399-7be0-44d7-84ab-2aee83216db3)
+			{
+				triggerList: trigger_list(aa85a4ac-09b2-477e-bbb1-eabfacf3f1ab)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(97e93bd3-2fb4-4a3c-9fee-89500016c76b)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<int>(9625184c-5efe-41e1-8439-148b2afc3cc9)
+				{
+					script: "function()" \
+						"{" \
+						"	dp:ScreenSize[0] / 2 - v:this.width / 2" \
+						"}"
+				}
+				write: function<bool,int>(9f81fd69-db47-4107-b410-48768d6455c4)
+				{
+					script: "function(v:arg0::int)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			y: 230
+			width: 70
+			height: 70
+			"image 2": "image 2"@eb921c31-9f18-4260-9223-4ae84467c304 (propref<image>)
+			Active: Active@eb921c31-9f18-4260-9223-4ae84467c304 (propref<bool>)
+			ActionRelease2: function<bool>(0802f8b9-02da-44fa-8af1-ff1bbd54d770)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this->^->Loading.PlayAnimation()" \
+					"	false" \
+					"}"
+			}
+		}]
+}
