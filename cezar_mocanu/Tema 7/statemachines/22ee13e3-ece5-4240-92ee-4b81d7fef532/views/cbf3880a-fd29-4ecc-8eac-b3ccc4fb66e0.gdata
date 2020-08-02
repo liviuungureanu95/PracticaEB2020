@@ -1,0 +1,153 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(cbf3880a-fd29-4ecc-8eac-b3ccc4fb66e0)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle_template_instance(61980c9f-a52e-4d8c-b360-fccdec5a6292)
+		{
+			name: "Background 1"
+			template: @dbdfdcf7-b636-4e41-9691-2f20bf91cd3e (objectref<GtfRectangle_template>)
+			children: children_list []
+		}, 
+		GtfInstantiator(8009448a-50c9-4bb4-bbb8-52d148deb1be)
+		{
+			features: feature_list [
+				LayoutPolicyFlow(3e8e5ea0-4d46-448d-bce1-03f40efcbcc5)
+				{
+					horizontalGap: 0
+					verticalGap: 10
+					layoutDirection: 0
+					horizontalChildAlign: 0
+					verticalChildAlign: 0
+				}]
+			children: children_list [
+				GtfContainer(366c08d0-9af9-4186-88ab-3d7b4a9cacc7)
+				{
+					features: feature_list [
+						LineIndex(ed298580-d199-49dd-9b71-f86a96432292)
+						{
+							lineIndex: 0
+						}]
+					children: children_list [
+						GtfContainer_template_instance(0fc7fca3-5a62-499e-a83b-ac8c65227daa)
+						{
+							name: "Button"
+							template: @9933a8d8-0cc1-4b87-8a9f-481413b6a119 (objectref<GtfContainer_template>)
+							children: children_list []
+							x: 0
+							y: 0
+							width: width@366c08d0-9af9-4186-88ab-3d7b4a9cacc7 (propref<int>)
+							height: height@366c08d0-9af9-4186-88ab-3d7b4a9cacc7 (propref<int>)
+							onReleaseAction: function<bool>(c4c5453b-a3f2-47c5-b170-4a2963cb003a)
+							{
+								script: "function()" \
+									"{" \
+									"	v:this->^.selectCity()" \
+									"	false" \
+									"}"
+							}
+							text: text@9933a8d8-0cc1-4b87-8a9f-481413b6a119 (propref<string>)
+						}]
+					name: "ButtonContainer"
+					visible: true
+					width: width@8009448a-50c9-4bb4-bbb8-52d148deb1be (propref<int>)
+					height: 50
+					x: 0
+					y: 0
+					setItems: conditional_script(ff3a7481-4811-4a9f-aee2-0a00f75a093d)
+					{
+						triggerList: trigger_list(2d58f05f-d94a-4e0d-9bb4-b5d85ea14592)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(b01e6222-6153-44a4-a305-ba692a94a68f)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this->Button.text = dp:Italy[v:this.lineIndex]" \
+								"	false" \
+								"}"
+						}
+					}
+					selectCity: function<bool>(adc77d53-e818-4fc9-9420-cdc7f6a761c9)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:currentCity = dp:Italy[v:this.lineIndex]" \
+							"	fire ev:goTo_Final()" \
+							"	false" \
+							"}"
+					}
+				}]
+			name: "Instantiator"
+			visible: true
+			width: 300
+			height: 287
+			x: 250
+			y: 150
+			numItems: 0
+			lineMapping: intlist []
+			onInit: conditional_script(fc7ed62c-c07e-413e-a1b8-58375d2c8cd1)
+			{
+				triggerList: trigger_list(91be28b1-0f58-45f2-9d1f-f8860f0aa503)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(be4420f2-464d-43b0-bfb6-9efaf9db2303)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	v:this.numItems = length dp:Italy" \
+						"	" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfLabel(effffe9c-9aa4-438c-88d1-0c22520aeb2b)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Text"
+			visible: true
+			width: 234
+			height: 100
+			x: 282
+			y: 44
+			text: "Choose a city"
+			textColor: #FFFFFFFF
+			font: font_resource(fe346930-809c-4041-8c81-acf60985e7c2)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(7618b816-1334-4e54-bae1-66db0e5f5a3d)
+		{
+			name: "Back"
+			template: @9933a8d8-0cc1-4b87-8a9f-481413b6a119 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 0
+			y: 0
+			width: 100
+			height: 50
+			onReleaseAction: function<bool>(0c8b2261-487c-47b7-9f49-0a139ac4e277)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_SelectCountry()" \
+					"	false" \
+					"}"
+			}
+			text: "BACK"
+		}]
+	name: "View 4"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

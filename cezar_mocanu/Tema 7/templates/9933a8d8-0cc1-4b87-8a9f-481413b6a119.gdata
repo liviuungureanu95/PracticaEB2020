@@ -1,0 +1,127 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(9933a8d8-0cc1-4b87-8a9f-481413b6a119)
+{
+	name: "LabelButton"
+	structure: GtfContainer(b3f9927a-5a6d-46ef-947d-fb8b12a3f9c9)
+	{
+		features: feature_list [
+			TouchPressed(beed7ab8-0533-4553-8bb2-f316e1d0f99f)
+			{
+				touchPressed: function<bool,int,int,int,int>(4335e120-e9b2-4ea5-8026-7bc1b7e1f978)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.onPressStyle()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(7824b72c-9f3f-47cc-8de6-a2569da6c127)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(fe293736-0b99-44e1-954c-1f0337131073)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.onReleaseStyle()" \
+						"	v:this.onReleaseAction()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(a5f42377-355e-4782-b53f-1da5cb52bf61)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(2fdb6f0e-2b24-4cda-8752-61109b5b9082)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@b3f9927a-5a6d-46ef-947d-fb8b12a3f9c9 (propref<int>)
+				height: height@b3f9927a-5a6d-46ef-947d-fb8b12a3f9c9 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: curent@b3f9927a-5a6d-46ef-947d-fb8b12a3f9c9 (propref<color>)
+			}, 
+			GtfLabel(ffc18306-9dc7-4828-b942-9c09bc90a94d)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label"
+				visible: true
+				width: width@b3f9927a-5a6d-46ef-947d-fb8b12a3f9c9 (propref<int>)
+				height: height@b3f9927a-5a6d-46ef-947d-fb8b12a3f9c9 (propref<int>)
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(d9c0521c-07a1-4bb7-b690-0d3aa8576aac)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 180
+		height: 60
+		x: 0
+		y: 0
+		curent: #A9A9A9FF
+		base: #2E2E2EFF
+		pressed: #4F4F4FFF
+		onInit: conditional_script(561bcf65-bec8-49c4-932b-620e39ef3168)
+		{
+			triggerList: trigger_list(769d5eea-7757-46e2-a8c7-ace094e42059)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(34a61724-17b0-410d-b2a1-8c249e2e22c3)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	v:this.curent = v:this.base" \
+					"	false" \
+					"}"
+			}
+		}
+		onPressStyle: function<bool>(eab1a131-e6a5-4666-9d1f-b0acf1903345)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.curent = v:this.pressed" \
+				"	false" \
+				"}"
+		}
+		onReleaseStyle: function<bool>(53b9cddc-ba10-423f-bf0f-7b7031f69cb9)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.curent = v:this.base" \
+				"	false" \
+				"}"
+		}
+		onReleaseAction: function<bool>(a716f54c-1804-4ebd-9ad4-b11ea6301be5)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	x: x@b3f9927a-5a6d-46ef-947d-fb8b12a3f9c9 (propref<int>)
+	y: y@b3f9927a-5a6d-46ef-947d-fb8b12a3f9c9 (propref<int>)
+	width: width@b3f9927a-5a6d-46ef-947d-fb8b12a3f9c9 (propref<int>)
+	height: height@b3f9927a-5a6d-46ef-947d-fb8b12a3f9c9 (propref<int>)
+	onReleaseAction: onReleaseAction@b3f9927a-5a6d-46ef-947d-fb8b12a3f9c9 (propref<function<bool>>)
+	text: text@ffc18306-9dc7-4828-b942-9c09bc90a94d (propref<string>)
+}

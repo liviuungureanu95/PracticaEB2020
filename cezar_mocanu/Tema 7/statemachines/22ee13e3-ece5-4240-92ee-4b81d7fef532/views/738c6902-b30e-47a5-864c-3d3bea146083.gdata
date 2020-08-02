@@ -1,0 +1,139 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(738c6902-b30e-47a5-864c-3d3bea146083)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(23262802-e0a8-469b-86d1-b27009749c1b)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Background"
+			visible: true
+			width: 800
+			height: 480
+			x: 0
+			y: 0
+			fillColor: #1B1B1BFF
+		}, 
+		GtfInstantiator(0ec19980-4259-4574-943e-53a4c71a9895)
+		{
+			features: feature_list [
+				LayoutPolicyFlow(7bb2910e-a778-443a-b81e-61a5b4834585)
+				{
+					horizontalGap: 0
+					verticalGap: 10
+					layoutDirection: 0
+					horizontalChildAlign: 0
+					verticalChildAlign: 0
+				}]
+			children: children_list [
+				GtfContainer(c1c8fd59-31c3-489f-98e2-d2a488454d51)
+				{
+					features: feature_list [
+						LineIndex(2b47547d-abff-4826-855f-ebaa80a31b16)
+						{
+							lineIndex: 0
+						}]
+					children: children_list [
+						GtfContainer_template_instance(0de8d2c7-2057-458c-ac29-0df6ca011385)
+						{
+							name: "Button"
+							template: @9933a8d8-0cc1-4b87-8a9f-481413b6a119 (objectref<GtfContainer_template>)
+							children: children_list []
+							x: 0
+							y: 0
+							width: width@c1c8fd59-31c3-489f-98e2-d2a488454d51 (propref<int>)
+							height: height@c1c8fd59-31c3-489f-98e2-d2a488454d51 (propref<int>)
+							onReleaseAction: function<bool>(9de98c40-1b1e-4cba-9246-f02676e6a6fe)
+							{
+								script: "function()" \
+									"{" \
+									"	v:this->^.fireGoToCity()" \
+									"	false" \
+									"}"
+							}
+							text: text@9933a8d8-0cc1-4b87-8a9f-481413b6a119 (propref<string>)
+						}]
+					name: "ButtonContainer"
+					visible: true
+					width: width@0ec19980-4259-4574-943e-53a4c71a9895 (propref<int>)
+					height: 50
+					x: 0
+					y: 0
+					setItems: conditional_script(1417b4da-fc8a-440e-bae7-e7506fc5ac67)
+					{
+						triggerList: trigger_list(d414b199-32b5-47c8-94a5-784803849162)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(a05e1943-c88b-40f4-a0d7-8c16cf1e9756)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this->Button.text = dp:Countries[v:this.lineIndex]" \
+								"	false" \
+								"}"
+						}
+					}
+					fireGoToCity: function<bool>(8c7bb315-427a-417b-a615-6c65edd8fb94)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:currentCountry = dp:Countries[v:this.lineIndex]" \
+							"	fire ev:goTo_Cities()" \
+							"	false" \
+							"}"
+					}
+				}]
+			name: "Instantiator"
+			visible: true
+			width: 300
+			height: 287
+			x: 250
+			y: 174
+			numItems: 0
+			lineMapping: intlist []
+			onInit: conditional_script(264aaadb-fb5a-4ac6-ae06-6afaea297628)
+			{
+				triggerList: trigger_list(0c94f81e-291e-4cae-90a8-8bb8e24433f4)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(20f23256-3a15-49fb-a2e2-f5e7db5b2d02)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	v:this.numItems = length dp:Countries" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfLabel(9e508496-e773-4942-b567-8d005c388889)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Text"
+			visible: true
+			width: 234
+			height: 100
+			x: 282
+			y: 44
+			text: "Choose a country"
+			textColor: #FFFFFFFF
+			font: font_resource(a56b1f59-6602-47fa-862b-7b0a358621fa)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+	name: "View 1"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

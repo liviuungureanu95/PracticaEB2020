@@ -1,0 +1,98 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(66b77749-0113-48e7-ac37-a756a0ae0554)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle_template_instance(9b9cbc76-aaf1-4998-8f9a-f632087fc348)
+		{
+			name: "Background 1"
+			template: @dbdfdcf7-b636-4e41-9691-2f20bf91cd3e (objectref<GtfRectangle_template>)
+			children: children_list []
+		}, 
+		GtfLabel(a9c5a53d-e29b-4bc7-9441-7651e36beb2a)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Text"
+			visible: true
+			width: 234
+			height: 100
+			x: 282
+			y: 44
+			text: "You are going to :"
+			textColor: #FFFFFFFF
+			font: font_resource(5ed453d1-f589-43ea-968d-94a1215d3998)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(facd00db-1349-463d-8009-7e54f4b3fba5)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Country"
+			visible: true
+			width: 234
+			height: 71
+			x: 282
+			y: 150
+			text: @1bfcbbbe-32dc-4662-8e6e-019c722102b6 (objectref<string>)
+			textColor: #FFFFFFFF
+			font: font_resource(345c28de-622f-4eaf-8161-ebf863c0269f)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(50908161-ca00-4ad5-9eb6-cc9060343ecf)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "City"
+			visible: true
+			width: 234
+			height: 61
+			x: 282
+			y: 239
+			text: @a4e312dc-9c6c-47f9-8a2f-f6cf40b02648 (objectref<string>)
+			textColor: #FFFFFFFF
+			font: font_resource(325c1700-ea5b-450b-a627-4122fc7d14cc)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(6d2d1f34-6c93-4ca1-9b48-3c7327541c5a)
+		{
+			name: "Back"
+			template: @9933a8d8-0cc1-4b87-8a9f-481413b6a119 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 0
+			y: 0
+			width: 100
+			height: 50
+			onReleaseAction: function<bool>(b3b4a0ee-db07-4462-a9ac-b51771c6cfa6)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_SelectCity()" \
+					"	false" \
+					"}"
+			}
+			text: "BACK"
+		}]
+	name: "View 6"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
