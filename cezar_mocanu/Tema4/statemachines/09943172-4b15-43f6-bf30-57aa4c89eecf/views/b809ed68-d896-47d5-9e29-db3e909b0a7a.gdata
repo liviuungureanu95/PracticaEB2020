@@ -1,0 +1,315 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(b809ed68-d896-47d5-9e29-db3e909b0a7a)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(599a87a5-4622-4136-962e-134e4a18407f)
+		{
+			name: "Background"
+			template: @427f004b-e023-4c57-9f57-23d6a6fd568f (objectref<GtfContainer_template>)
+			children: children_list []
+		}, 
+		GtfContainer_template_instance(1f35d658-9cf7-4690-b956-ce741fce95d7)
+		{
+			name: "Back"
+			template: @5122c599-6a1f-4117-bab0-469beb8abd1b (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 130
+			y: 180
+			width: 50
+			height: 50
+			releaseAction: function<bool>(1dc7ef41-37b3-4866-a16b-4ea787135d0b)
+			{
+				script: "function()" \
+					"{" \
+					"" \
+					"	dp:CurrentIndex = dp:CurrentIndex - 1" \
+					"	if(dp:CurrentIndex < 0)" \
+					"		dp:CurrentIndex = length dp:Music - 1" \
+					"	false" \
+					"}"
+			}
+			onPressAction: onPressAction@5122c599-6a1f-4117-bab0-469beb8abd1b (propref<function<bool>>)
+			image: image_resource(ea110cec-83f7-46af-a49d-c1d6aba3b2cb)
+			{
+				file: "fast-backward.png"
+			}
+			baseColor: color_element_reference(a9910499-26ca-42ec-8d85-4289a7c1d127)
+			{
+				index: 0
+				list: @06db87e6-1280-4a8f-8117-434c97b51233 (objectref<colorlist>)
+			}
+			pressedColor: color_element_reference(97d701b9-3b40-42a0-b595-57662f37572f)
+			{
+				index: 1
+				list: @06db87e6-1280-4a8f-8117-434c97b51233 (objectref<colorlist>)
+			}
+			visible: visible@5122c599-6a1f-4117-bab0-469beb8abd1b (propref<bool>)
+		}, 
+		GtfContainer_template_instance(8ce0f780-7573-473d-9770-05c44fc98685)
+		{
+			name: "Next"
+			template: @5122c599-6a1f-4117-bab0-469beb8abd1b (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 270
+			y: 180
+			width: 50
+			height: 50
+			releaseAction: function<bool>(46c9b284-0f01-45e9-8b04-1fddda132b6b)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:CurrentIndex = (dp:CurrentIndex + 1) % length dp:Music " \
+					"	false" \
+					"}"
+			}
+			onPressAction: onPressAction@5122c599-6a1f-4117-bab0-469beb8abd1b (propref<function<bool>>)
+			image: image_resource(d222babe-f684-4894-81e9-92008382eff6)
+			{
+				file: "fast-forward.png"
+			}
+			baseColor: color_element_reference(63c7903e-1eb9-443a-914d-fd4d64fed846)
+			{
+				index: 0
+				list: @06db87e6-1280-4a8f-8117-434c97b51233 (objectref<colorlist>)
+			}
+			pressedColor: color_element_reference(006d37b9-2cfa-463f-b671-2052d7770527)
+			{
+				index: 1
+				list: @06db87e6-1280-4a8f-8117-434c97b51233 (objectref<colorlist>)
+			}
+			visible: visible@5122c599-6a1f-4117-bab0-469beb8abd1b (propref<bool>)
+		}, 
+		GtfContainer_template_instance(96123687-4b4f-4082-8bf9-29ff4cc09ad4)
+		{
+			name: "VolumeDown"
+			template: @5122c599-6a1f-4117-bab0-469beb8abd1b (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 140
+			y: 250
+			width: 30
+			height: 30
+			releaseAction: function<bool>(777ec309-24d2-410e-a02a-ee74fe34ea21)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:CurrentVolume -= 1" \
+					"	if(dp:CurrentVolume < 0)" \
+					"		dp:CurrentVolume = 0" \
+					"	false" \
+					"}"
+			}
+			onPressAction: function<bool>(4f9fc19b-ef8c-4831-b154-7b00fdafe7a1)
+			{
+				script: "function()" \
+					"{" \
+					"	" \
+					"	false" \
+					"}"
+			}
+			image: image_resource(b97a4c1f-8e3b-42d3-a011-abdc1e8742f7)
+			{
+				file: "vdown.png"
+			}
+			baseColor: color_element_reference(433491bc-49a8-49e9-a033-906b5d9f5a0d)
+			{
+				index: 0
+				list: @06db87e6-1280-4a8f-8117-434c97b51233 (objectref<colorlist>)
+			}
+			pressedColor: color_element_reference(20487cc9-b7ef-4010-9f23-14250a30dc55)
+			{
+				index: 1
+				list: @06db87e6-1280-4a8f-8117-434c97b51233 (objectref<colorlist>)
+			}
+			visible: visible@5122c599-6a1f-4117-bab0-469beb8abd1b (propref<bool>)
+		}, 
+		GtfContainer_template_instance(918965ea-8cc2-4b6d-9c7f-20cfa96a25d4)
+		{
+			name: "VolumeUp"
+			template: @5122c599-6a1f-4117-bab0-469beb8abd1b (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 280
+			y: 250
+			width: 30
+			height: 30
+			releaseAction: function<bool>(9c1e58f8-eed7-4cbe-9661-61f96c4affe5)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:CurrentVolume += 1" \
+					"	if(dp:CurrentVolume > dp:MaxVolume)" \
+					"		dp:CurrentVolume = dp:MaxVolume" \
+					"	false" \
+					"}"
+			}
+			onPressAction: onPressAction@5122c599-6a1f-4117-bab0-469beb8abd1b (propref<function<bool>>)
+			image: image_resource(6dfbe53d-2c2d-483f-9e58-b7ea10d3f3bf)
+			{
+				file: "vup.png"
+			}
+			baseColor: color_element_reference(633132e3-d3f6-41f3-b294-04d87dd68511)
+			{
+				index: 0
+				list: @06db87e6-1280-4a8f-8117-434c97b51233 (objectref<colorlist>)
+			}
+			pressedColor: color_element_reference(752f713e-4d15-4fe1-b9c2-107c8441c78e)
+			{
+				index: 1
+				list: @06db87e6-1280-4a8f-8117-434c97b51233 (objectref<colorlist>)
+			}
+			visible: visible@5122c599-6a1f-4117-bab0-469beb8abd1b (propref<bool>)
+		}, 
+		GtfLabel(fe5a9d01-66cc-4a23-8cc7-1f108fb141d0)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "MusicLabel"
+			visible: true
+			width: 250
+			height: 100
+			x: 100
+			y: 50
+			text: string_element_reference(d16b6cee-06c2-4cc2-9fa1-544fdfccafba)
+			{
+				index: @781ff118-a651-4c06-ae64-fae781eb0d98 (objectref<int>)
+				list: @93bac7d8-3d74-42e1-915f-61ca967dcf0a (objectref<stringlist>)
+			}
+			textColor: #FFFFFFFF
+			font: font_resource(0cb70792-5f92-4c24-b468-b62d284464f6)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(913eebd9-fa38-49c9-8550-5a30c4e48be6)
+		{
+			name: "Exit"
+			template: @5122c599-6a1f-4117-bab0-469beb8abd1b (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 10
+			y: 260
+			width: 50
+			height: 50
+			releaseAction: function<bool>(baeaf44f-d270-4fa4-ac2b-9bf651b6670e)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_Bye()" \
+					"	false" \
+					"}"
+			}
+			onPressAction: onPressAction@5122c599-6a1f-4117-bab0-469beb8abd1b (propref<function<bool>>)
+			image: image_resource(5db93687-82c0-49e1-b5b8-de2c26fab96d)
+			{
+				file: "turn-off.png"
+			}
+			baseColor: color_element_reference(2bb0766d-c5b4-4eab-981f-26e10fa66d17)
+			{
+				index: 0
+				list: @06db87e6-1280-4a8f-8117-434c97b51233 (objectref<colorlist>)
+			}
+			pressedColor: color_element_reference(9f77adcc-fc50-417d-82fe-06dd553e287a)
+			{
+				index: 1
+				list: @06db87e6-1280-4a8f-8117-434c97b51233 (objectref<colorlist>)
+			}
+			visible: visible@5122c599-6a1f-4117-bab0-469beb8abd1b (propref<bool>)
+		}, 
+		GtfContainer_template_instance(ea6cf373-6cc7-4a71-8f31-f3ad88db1cfb)
+		{
+			name: "Play"
+			template: @5122c599-6a1f-4117-bab0-469beb8abd1b (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 200
+			y: 180
+			width: 50
+			height: 50
+			releaseAction: function<bool>(21e6c1dc-6135-4f13-8371-dfc1e028477d)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this.visible = false" \
+					"	v:this->^->Pause.visible = true" \
+					"	false" \
+					"}"
+			}
+			onPressAction: onPressAction@5122c599-6a1f-4117-bab0-469beb8abd1b (propref<function<bool>>)
+			image: image_resource(a4518313-88b7-4c92-a13b-ec4b0fdc055d)
+			{
+				file: "play-button.png"
+			}
+			baseColor: color_element_reference(54aef5b6-710d-4722-b953-ebd4a4f5b16a)
+			{
+				index: 0
+				list: @06db87e6-1280-4a8f-8117-434c97b51233 (objectref<colorlist>)
+			}
+			pressedColor: color_element_reference(4000fdb7-b7ea-4803-a8e2-73a0b514c865)
+			{
+				index: 1
+				list: @06db87e6-1280-4a8f-8117-434c97b51233 (objectref<colorlist>)
+			}
+			visible: visible@5122c599-6a1f-4117-bab0-469beb8abd1b (propref<bool>)
+		}, 
+		GtfContainer_template_instance(554bde13-9c47-4bc4-aa85-b03c64aff13f)
+		{
+			name: "Pause"
+			template: @5122c599-6a1f-4117-bab0-469beb8abd1b (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 200
+			y: 180
+			width: 50
+			height: 50
+			releaseAction: function<bool>(e8956377-767b-4b92-8615-edc1f18ae489)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this.visible = false" \
+					"	v:this->^->Play.visible = true " \
+					"	false" \
+					"}"
+			}
+			onPressAction: onPressAction@5122c599-6a1f-4117-bab0-469beb8abd1b (propref<function<bool>>)
+			image: image_resource(914702dd-caf8-4b42-94e5-9b856a044ae0)
+			{
+				file: "pause.png"
+			}
+			baseColor: color_element_reference(3f2cdc90-2ae7-4f64-a35d-ee10e3229195)
+			{
+				index: 0
+				list: @06db87e6-1280-4a8f-8117-434c97b51233 (objectref<colorlist>)
+			}
+			pressedColor: color_element_reference(21447fb5-0f17-4d52-9d71-f104fd39d587)
+			{
+				index: 1
+				list: @06db87e6-1280-4a8f-8117-434c97b51233 (objectref<colorlist>)
+			}
+			visible: false
+		}, 
+		GtfContainer_template_instance(0da335d3-eaa4-43b8-bbb3-5a67e0af2695)
+		{
+			name: "VolumeBar 1"
+			template: @c54a643c-821d-4f19-8fac-3ef07e289b49 (objectref<GtfContainer_template>)
+			children: children_list []
+			bars: @0cb55c75-5f19-48d4-ade8-23b531d94b87 (objectref<int>)
+			currentBars: @4c987819-8602-4f8b-86d9-1e0d6d85e6da (objectref<int>)
+			y: 256
+			x: 175
+			height: 20
+			width: 100
+			color: color_element_reference(28c054b0-63d2-43cd-bcfa-43765d75baf8)
+			{
+				index: 1
+				list: @06db87e6-1280-4a8f-8117-434c97b51233 (objectref<colorlist>)
+			}
+			visible: visible@c54a643c-821d-4f19-8fac-3ef07e289b49 (propref<bool>)
+		}]
+	name: "v_Main"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

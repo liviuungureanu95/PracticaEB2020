@@ -1,0 +1,90 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(c54a643c-821d-4f19-8fac-3ef07e289b49)
+{
+	name: "VolumeBar"
+	structure: GtfContainer(5f153a5d-46d2-420f-81b0-07cea396fcde)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfInstantiator(28c6d748-70c3-42fd-ae0b-5c35fbe10d8b)
+			{
+				features: feature_list [
+					LayoutPolicyFlow(63c7d04d-9446-46bf-b461-0f666f24dad2)
+					{
+						horizontalGap: 2
+						verticalGap: 0
+						layoutDirection: 0
+						horizontalChildAlign: 0
+						verticalChildAlign: 0
+					}]
+				children: children_list [
+					GtfRectangle(3b216c08-4cc3-4a5e-acfa-46e22245d905)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Bar"
+						visible: true
+						width: int_scriptedValue(ace15cf1-986a-4d67-8a08-760e5de73ea2)
+						{
+							triggerList: trigger_list(7328a618-17f2-42aa-a980-efca35225337)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(1f7da6ee-0273-44ef-9c11-4ebe3454b5c3)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<int>(3713b894-e7db-4df4-81dc-d9207bff1d14)
+							{
+								script: "function()" \
+									"{" \
+									"	v:this->^->^.width / v:this->^->^.bars - 2" \
+									"}"
+							}
+							write: function<bool,int>(6b7ece5a-552e-413d-a5b9-e8223dc7bcdc)
+							{
+								script: "function(v:arg0::int)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						height: height@5f153a5d-46d2-420f-81b0-07cea396fcde (propref<int>)
+						x: 0
+						y: 0
+						fillColor: color@5f153a5d-46d2-420f-81b0-07cea396fcde (propref<color>)
+					}]
+				name: "Instantiator 1"
+				visible: true
+				width: width@5f153a5d-46d2-420f-81b0-07cea396fcde (propref<int>)
+				height: height@5f153a5d-46d2-420f-81b0-07cea396fcde (propref<int>)
+				x: 0
+				y: 0
+				numItems: currentBars@5f153a5d-46d2-420f-81b0-07cea396fcde (propref<int>)
+				lineMapping: intlist []
+			}]
+		name: "Container"
+		visible: true
+		width: 100
+		height: 20
+		x: 0
+		y: 0
+		bars: 10
+		currentBars: 5
+		color: #A9A9A9FF
+	}
+	bars: bars@5f153a5d-46d2-420f-81b0-07cea396fcde (propref<int>)
+	currentBars: currentBars@5f153a5d-46d2-420f-81b0-07cea396fcde (propref<int>)
+	y: y@5f153a5d-46d2-420f-81b0-07cea396fcde (propref<int>)
+	x: x@5f153a5d-46d2-420f-81b0-07cea396fcde (propref<int>)
+	height: height@5f153a5d-46d2-420f-81b0-07cea396fcde (propref<int>)
+	width: width@5f153a5d-46d2-420f-81b0-07cea396fcde (propref<int>)
+	color: color@5f153a5d-46d2-420f-81b0-07cea396fcde (propref<color>)
+	visible: visible@5f153a5d-46d2-420f-81b0-07cea396fcde (propref<bool>)
+}
