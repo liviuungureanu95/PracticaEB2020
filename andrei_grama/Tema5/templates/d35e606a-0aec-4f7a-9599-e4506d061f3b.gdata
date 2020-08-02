@@ -1,0 +1,172 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(d35e606a-0aec-4f7a-9599-e4506d061f3b)
+{
+	name: "Car View"
+	structure: GtfView(933f7e33-7313-4d16-b02e-eea7e67030ee)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfImage(bd596e1c-ec43-4dd0-aaa7-95839a225ed1)
+			{
+				features: feature_list [
+					ScaleMode(e7538783-6a05-4f4e-969d-97faf5fe9599)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "background"
+				visible: true
+				width: width@933f7e33-7313-4d16-b02e-eea7e67030ee (propref<int>)
+				height: height@933f7e33-7313-4d16-b02e-eea7e67030ee (propref<int>)
+				x: 0
+				y: 1
+				image: image_resource(cd969cd1-f032-4cdd-a15a-ac93772eabf4)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(b783b741-862f-4847-938a-12ec33030ac5)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Text"
+				visible: true
+				width: width@933f7e33-7313-4d16-b02e-eea7e67030ee (propref<int>)
+				height: 100
+				x: 0
+				y: 190
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(3bc71179-1c17-46b1-8a88-e44eececa9fd)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfRectangle_template_instance(a4d3c153-f6ef-4df9-9481-7c068dbb8da1)
+			{
+				name: "menuButton"
+				template: @3940edcc-0e0f-430c-919e-7c9f2d7f23d6 (objectref<GtfRectangle_template>)
+				children: children_list []
+				width: 70
+				height: 70
+				x: 125
+				y: 10
+				image: image_resource(1c634dca-73f6-432a-9465-79793e4e760a)
+				{
+					file: "icons8-squared-menu-50.png"
+				}
+				touchShortReleased: function<bool,int,int,int,int>(a7928960-0877-4132-ab5d-851b6cb97e30)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	fire ev:goToMenu()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			GtfRectangle_template_instance(fcc4458a-52c8-43a2-8bbe-aa357fc2244a)
+			{
+				name: "mapsButton"
+				template: @3940edcc-0e0f-430c-919e-7c9f2d7f23d6 (objectref<GtfRectangle_template>)
+				children: children_list []
+				width: 70
+				height: 70
+				x: 245
+				y: 10
+				image: image_resource(e15bb21b-006d-4b8f-a0a2-c3dcac691391)
+				{
+					file: "icons8-apple-maps-50.png"
+				}
+				touchShortReleased: function<bool,int,int,int,int>(e92d5f5d-3b6c-4a64-84de-1e4d9f9594f3)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	fire ev:goToMaps()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			GtfRectangle_template_instance(cbdd9427-0e31-4889-93a5-84c282c0ebda)
+			{
+				name: "radioButton"
+				template: @3940edcc-0e0f-430c-919e-7c9f2d7f23d6 (objectref<GtfRectangle_template>)
+				children: children_list []
+				width: 70
+				height: 70
+				x: 365
+				y: 10
+				image: image_resource(fd6cf808-5d8b-4800-bef6-53298dbfa925)
+				{
+					file: "icons8-radio-64.png"
+				}
+				touchShortReleased: function<bool,int,int,int,int>(10b02720-b754-4313-99f8-bb503df2d830)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	fire ev:goToRadio()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			GtfRectangle_template_instance(9ea7ab44-96bd-4f88-9fc6-7ab74cbb29fa)
+			{
+				name: "mediaButton"
+				template: @3940edcc-0e0f-430c-919e-7c9f2d7f23d6 (objectref<GtfRectangle_template>)
+				children: children_list []
+				width: 70
+				height: 70
+				x: 485
+				y: 10
+				image: image_resource(8273efcd-648f-4724-9091-429635a016ee)
+				{
+					file: "icons8-circled-play-64.png"
+				}
+				touchShortReleased: function<bool,int,int,int,int>(be9bec8e-ce35-4826-b53a-12a5457690cf)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	fire ev:goToMedia()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			GtfRectangle_template_instance(b3fb0fdc-2d84-4ba4-b6b5-b711cdfcfdda)
+			{
+				name: "helpButton"
+				template: @3940edcc-0e0f-430c-919e-7c9f2d7f23d6 (objectref<GtfRectangle_template>)
+				children: children_list []
+				width: 70
+				height: 70
+				x: 605
+				y: 10
+				image: image_resource(6d3a1c81-27d2-4e06-b99c-cfe0beaa1041)
+				{
+					file: "icons8-help-50.png"
+				}
+				touchShortReleased: function<bool,int,int,int,int>(e26ca830-fc10-4392-88ed-9e0d57274d00)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	fire ev:goToHelp()" \
+						"    false" \
+						"}"
+				}
+			}]
+		name: "carView"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+	}
+	text: text@b783b741-862f-4847-938a-12ec33030ac5 (propref<string>)
+	image: image@bd596e1c-ec43-4dd0-aaa7-95839a225ed1 (propref<image>)
+	textColor: textColor@b783b741-862f-4847-938a-12ec33030ac5 (propref<color>)
+}

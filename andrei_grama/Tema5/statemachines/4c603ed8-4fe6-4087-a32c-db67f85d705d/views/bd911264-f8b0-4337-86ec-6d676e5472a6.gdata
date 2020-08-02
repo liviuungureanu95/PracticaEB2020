@@ -1,0 +1,143 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(bd911264-f8b0-4337-86ec-6d676e5472a6)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(da0c7187-37b8-4d56-8930-43f9d68b8e1f)
+		{
+			features: feature_list [
+				ScaleMode(255ea7b3-3965-4151-964b-1ec5251faf46)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "background"
+			visible: true
+			width: width@bd911264-f8b0-4337-86ec-6d676e5472a6 (propref<int>)
+			height: height@bd911264-f8b0-4337-86ec-6d676e5472a6 (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(5d19364d-299e-45ae-bc7d-42ce65e2ecea)
+			{
+				file: "andrew-buchanan-EF-ZhImnQc8-unsplash.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(dc5ca56a-1541-496e-b649-92dd780511ad)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "title"
+			visible: true
+			width: 226
+			height: 100
+			x: 0
+			y: 0
+			text: "Main menu"
+			textColor: #000000FF
+			font: font_resource(ab188a35-f0e4-411b-b88a-2f6b8f7cc8cf)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 40
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfRectangle_template_instance(6a717b89-a83e-448f-8217-b248f9938a42)
+		{
+			name: "mapsButton"
+			template: @3940edcc-0e0f-430c-919e-7c9f2d7f23d6 (objectref<GtfRectangle_template>)
+			children: children_list []
+			width: 100
+			height: 100
+			x: 80
+			y: 190
+			image: image_resource(e7fbd718-2285-4b7b-931f-f9a1323c0a8b)
+			{
+				file: "icons8-apple-maps-50.png"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(8babd7d9-a209-40b5-a241-566cbe0832aa)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:goToMaps()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfRectangle_template_instance(2c5674cb-3f71-470e-9013-3c58e8bd0608)
+		{
+			name: "radioButton"
+			template: @3940edcc-0e0f-430c-919e-7c9f2d7f23d6 (objectref<GtfRectangle_template>)
+			children: children_list []
+			width: width@3940edcc-0e0f-430c-919e-7c9f2d7f23d6 (propref<int>)
+			height: height@3940edcc-0e0f-430c-919e-7c9f2d7f23d6 (propref<int>)
+			x: 260
+			y: 190
+			image: image_resource(345d8a23-3ef6-4326-b85b-1cf84da01454)
+			{
+				file: "icons8-radio-64.png"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(d946d302-fdb7-4ca4-841b-2bfbe93757f5)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:goToRadio()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfRectangle_template_instance(d32d40c3-681b-4dcc-b874-21a53d655419)
+		{
+			name: "mediaButton"
+			template: @3940edcc-0e0f-430c-919e-7c9f2d7f23d6 (objectref<GtfRectangle_template>)
+			children: children_list []
+			width: width@3940edcc-0e0f-430c-919e-7c9f2d7f23d6 (propref<int>)
+			height: height@3940edcc-0e0f-430c-919e-7c9f2d7f23d6 (propref<int>)
+			x: 440
+			y: 190
+			image: image_resource(3c12ce02-7516-48e4-8640-a42fe89dfc0e)
+			{
+				file: "icons8-circled-play-64.png"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(6ed9f84e-8cf3-486f-9dd8-36ba35c45c20)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:goToMedia()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfRectangle_template_instance(58bfc535-c8ab-425f-b9a2-bbc99752ac39)
+		{
+			name: "helpButton"
+			template: @3940edcc-0e0f-430c-919e-7c9f2d7f23d6 (objectref<GtfRectangle_template>)
+			children: children_list []
+			width: width@3940edcc-0e0f-430c-919e-7c9f2d7f23d6 (propref<int>)
+			height: height@3940edcc-0e0f-430c-919e-7c9f2d7f23d6 (propref<int>)
+			x: 620
+			y: 190
+			image: image_resource(c4f1a97b-0342-4799-b701-6cdd143d2d03)
+			{
+				file: "icons8-help-50.png"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(ed402032-1ebe-4338-90f8-a60b3aa52abf)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:goToHelp()" \
+					"    false" \
+					"}"
+			}
+		}]
+	name: "mainView"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
