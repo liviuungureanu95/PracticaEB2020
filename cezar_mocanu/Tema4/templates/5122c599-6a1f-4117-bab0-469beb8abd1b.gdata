@@ -1,0 +1,261 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(5122c599-6a1f-4117-bab0-469beb8abd1b)
+{
+	name: "Button"
+	structure: GtfContainer(3c4d9300-f2b7-4c04-8946-6b31f3f0aa0b)
+	{
+		features: feature_list [
+			TouchPressed(66b61781-b3e4-414d-b66c-e1a9a2a2de20)
+			{
+				touchPressed: function<bool,int,int,int,int>(bd8b4b8d-c302-4f9a-b86a-56c68d300dd8)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.onPressVisual()" \
+						"	v:this.onPressAction()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(4b325164-9429-4752-9616-e8366b4eaa57)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(e3a9b9ba-3061-4e70-a7da-b50ba0d86bc4)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.onReleaseVisual()" \
+						"	v:this.onReleaseAction()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(3ce53574-3453-412d-b5f4-7a73d32f1b79)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfEllipse(1f795521-9179-456f-915a-b4b3ccf3cf83)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@3c4d9300-f2b7-4c04-8946-6b31f3f0aa0b (propref<int>)
+				height: height@3c4d9300-f2b7-4c04-8946-6b31f3f0aa0b (propref<int>)
+				x: 0
+				y: 0
+				fillColor: currentColor@3c4d9300-f2b7-4c04-8946-6b31f3f0aa0b (propref<color>)
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}, 
+			GtfImage(9a598e12-9540-4897-a5f2-c88a6e746d93)
+			{
+				features: feature_list [
+					ScaleMode(bee3a475-e042-4987-89a7-a7b07f2a8e96)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "Image"
+				visible: true
+				width: int_scriptedValue(578516ea-ca8e-42dc-a967-1b29233b5d8e)
+				{
+					triggerList: trigger_list(9d0cd5a2-ac08-4096-b0f5-52c1b6b42d7d)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(b2e4a280-77a0-4f12-a493-596ca3844a05)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(337e9aae-b41c-4419-a729-9782fb35df69)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.width * 60 / 100" \
+							"}"
+					}
+					write: function<bool,int>(a5123ac8-2ffa-43b7-9d8e-600f98c95f65)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				height: int_scriptedValue(612612a8-6193-4974-bf14-b8a2778f1f35)
+				{
+					triggerList: trigger_list(33f761be-3a96-46d6-9168-2260c9a20e7c)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(45926cc5-338c-4e2f-9eac-7a9f4a9a9fe9)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(26f5880b-4720-4140-ad1f-37deca08a9c3)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.height * 60 / 100" \
+							"}"
+					}
+					write: function<bool,int>(395a6ab3-bfa4-4685-ba48-928bbf4a5096)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				x: int_scriptedValue(705c2ece-9190-4e43-bbc6-20e2f667b81e)
+				{
+					triggerList: trigger_list(47ae7337-d398-4bd9-a38e-c0ec413bac8d)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(1985ed12-1143-41ba-b15f-03c2b8603d2f)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(ed243806-ca70-46ac-846b-5f9152cf3cd3)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.width * 20 / 100" \
+							"}"
+					}
+					write: function<bool,int>(08460d4a-a700-45c8-9ff4-203921c85b0f)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				y: int_scriptedValue(67977d00-5750-44d8-b1e5-6367d3287d59)
+				{
+					triggerList: trigger_list(9831c0aa-8fef-4f8d-837d-a35cadab5dc8)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(01ab8001-4d4a-4d97-bacf-0647bff7ee2c)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(f039ef3f-eeea-4406-b53e-89756b6dc03e)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.height * 20 / 100" \
+							"}"
+					}
+					write: function<bool,int>(096a4b1c-f6fc-4f30-8b1c-06d857301031)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				image: image_resource(a3bf608e-5e86-4374-a0e4-a53643e03b9e)
+				{
+					file: "play-button.png"
+				}
+				sRGB: false
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		baseColor: #FFA500FF
+		pressedColor: #FFE4B5FF
+		currentColor: #A9A9A9FF
+		initialize: conditional_script(71d6a5be-a2a4-4505-8a84-9636b8ba0c9e)
+		{
+			triggerList: trigger_list(59f579db-eeb7-4c72-b1f0-068eebd31c63)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(33fbb071-0c31-4cb2-8419-8518bce4587b)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	v:this.currentColor = v:this.baseColor" \
+					"	false" \
+					"}"
+			}
+		}
+		onPressVisual: function<bool>(a7aeb023-50ee-46e7-a959-f977cb5014f2)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.currentColor = v:this.pressedColor" \
+				"	false" \
+				"}"
+		}
+		onReleaseVisual: function<bool>(12f53aae-a063-41dd-b33a-94e78e828d53)
+		{
+			script: "function()" \
+				"{" \
+				"		v:this.currentColor = v:this.baseColor" \
+				"	false" \
+				"}"
+		}
+		onPressAction: function<bool>(e3a91f4e-d55d-425c-8e59-d0227ae253be)
+		{
+			script: "function()" \
+				"{" \
+				"	" \
+				"	false" \
+				"}"
+		}
+		onReleaseAction: function<bool>(b8d6efc0-befd-4c22-a90c-3b4f02ce7afb)
+		{
+			script: "function()" \
+				"{" \
+				"" \
+				"	false" \
+				"}"
+		}
+	}
+	x: x@3c4d9300-f2b7-4c04-8946-6b31f3f0aa0b (propref<int>)
+	y: y@3c4d9300-f2b7-4c04-8946-6b31f3f0aa0b (propref<int>)
+	width: width@3c4d9300-f2b7-4c04-8946-6b31f3f0aa0b (propref<int>)
+	height: height@3c4d9300-f2b7-4c04-8946-6b31f3f0aa0b (propref<int>)
+	releaseAction: onReleaseAction@3c4d9300-f2b7-4c04-8946-6b31f3f0aa0b (propref<function<bool>>)
+	onPressAction: onPressAction@3c4d9300-f2b7-4c04-8946-6b31f3f0aa0b (propref<function<bool>>)
+	image: image@9a598e12-9540-4897-a5f2-c88a6e746d93 (propref<image>)
+	baseColor: baseColor@3c4d9300-f2b7-4c04-8946-6b31f3f0aa0b (propref<color>)
+	pressedColor: pressedColor@3c4d9300-f2b7-4c04-8946-6b31f3f0aa0b (propref<color>)
+	visible: visible@3c4d9300-f2b7-4c04-8946-6b31f3f0aa0b (propref<bool>)
+}
