@@ -1,0 +1,139 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(5572b56d-9218-48e8-b585-ff356656e7bd)
+{
+	name: "Button"
+	structure: GtfContainer(915a4b12-ff93-48e2-8f75-9fc444c890c3)
+	{
+		features: feature_list [
+			TouchPressed(d83ca70f-f09b-4a48-b876-40d4ca7c062f)
+			{
+				touchPressed: function<bool,int,int,int,int>(aa7f8c62-33d3-4c36-85c9-e0eeb01134db)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.onPressStyle()" \
+						"	v:this.onPressAction()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(0da1c4c4-a375-4f0a-8c21-d31c616b7ef6)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(66da862a-dae9-4d78-b857-98ab116e611d)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.onReleaseStyle()" \
+						"	v:this.onReleaseAction()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(e50efbef-0f68-48e6-ac10-59322e2b7e2a)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(23eddba3-50a4-477c-bfc4-a2f904aec49c)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "ButtonBgColor"
+				visible: true
+				width: width@915a4b12-ff93-48e2-8f75-9fc444c890c3 (propref<int>)
+				height: height@915a4b12-ff93-48e2-8f75-9fc444c890c3 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: currentColor@915a4b12-ff93-48e2-8f75-9fc444c890c3 (propref<color>)
+			}, 
+			GtfLabel(344b5f4b-1b08-45dc-bd85-a590ebb125b1)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "ButtonLabel"
+				visible: true
+				width: width@915a4b12-ff93-48e2-8f75-9fc444c890c3 (propref<int>)
+				height: height@915a4b12-ff93-48e2-8f75-9fc444c890c3 (propref<int>)
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #000000FF
+				font: font_resource(83d93570-658d-4ad8-8e26-0fb8deab470f)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "ButtonContainer"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		onPressStyle: function<bool>(8d960b11-a51c-4e37-a4b3-489b1794a032)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.currentColor = v:this.pressedColor" \
+				"	false" \
+				"}"
+		}
+		onReleaseStyle: function<bool>(987fe93f-c592-42a5-afc5-a1e0ce18dae2)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.currentColor = v:this.baseColor" \
+				"	false" \
+				"}"
+		}
+		baseColor: #008000FF
+		pressedColor: #FF0000FF
+		currentColor: #A9A9A9FF
+		onInitialize: conditional_script(554d5e2c-9090-45c1-b34e-1acca06c95fb)
+		{
+			triggerList: trigger_list(a8fd4e6a-3e1f-467b-99ac-1181bec41758)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(26f49e3b-997c-481c-94d8-3c0f10afc81a)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	v:this.currentColor = v:this.baseColor" \
+					"	false" \
+					"}"
+			}
+		}
+		onPressAction: function<bool>(b2097f8d-29e7-4390-b255-6323765edf9b)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		onReleaseAction: function<bool>(6cd5a44d-7910-49f4-842c-1af1be0e6815)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	x: x@915a4b12-ff93-48e2-8f75-9fc444c890c3 (propref<int>)
+	y: y@915a4b12-ff93-48e2-8f75-9fc444c890c3 (propref<int>)
+	width: width@915a4b12-ff93-48e2-8f75-9fc444c890c3 (propref<int>)
+	height: height@915a4b12-ff93-48e2-8f75-9fc444c890c3 (propref<int>)
+	onReleaseAction: onReleaseAction@915a4b12-ff93-48e2-8f75-9fc444c890c3 (propref<function<bool>>)
+	onPressAction: onPressAction@915a4b12-ff93-48e2-8f75-9fc444c890c3 (propref<function<bool>>)
+	pressedColor: pressedColor@915a4b12-ff93-48e2-8f75-9fc444c890c3 (propref<color>)
+	baseColor: baseColor@915a4b12-ff93-48e2-8f75-9fc444c890c3 (propref<color>)
+	text: text@344b5f4b-1b08-45dc-bd85-a590ebb125b1 (propref<string>)
+}

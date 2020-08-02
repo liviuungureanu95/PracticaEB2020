@@ -1,0 +1,162 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(47a3a8b2-e057-492d-9612-bc1ced79f8bd)
+{
+	name: "ButtonImage"
+	structure: GtfContainer(4f69bb35-c81f-4293-909f-9c3c2f444904)
+	{
+		features: feature_list [
+			TouchPressed(6ed0e764-3608-47c1-95d4-3ed25940db67)
+			{
+				touchPressed: function<bool,int,int,int,int>(0bcc1718-ecbc-4860-a8cd-482d39c50c76)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.onPressStyle()" \
+						"	v:this.onPressAction()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(aea2e731-2490-4196-b219-629ab6963df6)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(8a8e018a-ef9e-411f-b8db-5630e169d858)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.onReleaseStyle()" \
+						"	v:this.onReleaseAction()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(d90c31c8-2527-47ce-a044-5a836b21a333)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(44be013b-1c71-4f3c-9f66-a0f4b0386d3a)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "ButtonBgColor"
+				visible: true
+				width: width@4f69bb35-c81f-4293-909f-9c3c2f444904 (propref<int>)
+				height: height@4f69bb35-c81f-4293-909f-9c3c2f444904 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: currentColor@4f69bb35-c81f-4293-909f-9c3c2f444904 (propref<color>)
+			}, 
+			GtfImage(bcb12539-ec21-4038-bba6-f4a8c6572157)
+			{
+				features: feature_list [
+					ScaleMode(074b11a3-3b3a-4230-a1a4-201585f6ad8c)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "ButtonImage"
+				visible: true
+				width: width@4f69bb35-c81f-4293-909f-9c3c2f444904 (propref<int>)
+				height: height@4f69bb35-c81f-4293-909f-9c3c2f444904 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(fc4ddbe9-64a4-4236-bc98-e4294562199f)
+				{
+					file: "back.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(37f2fe03-974a-4cb0-9889-1dbba7fc51b2)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "ButtonLabel"
+				visible: false
+				width: width@4f69bb35-c81f-4293-909f-9c3c2f444904 (propref<int>)
+				height: height@4f69bb35-c81f-4293-909f-9c3c2f444904 (propref<int>)
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #000000FF
+				font: font_resource(3fd23af3-6608-4af2-90cf-3f3ad8478c53)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "ButtonContainer"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		onPressStyle: function<bool>(351667c2-a280-41df-93c3-87cc1060bc31)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.currentColor = v:this.pressedColor" \
+				"	false" \
+				"}"
+		}
+		onReleaseStyle: function<bool>(d93aeb83-cad8-4f27-aeee-45cd05d3f972)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.currentColor = v:this.baseColor" \
+				"	false" \
+				"}"
+		}
+		baseColor: #FFFFFF00
+		pressedColor: #FF0000FF
+		currentColor: #A9A9A9FF
+		onInitialize: conditional_script(a5aeb5ec-3045-4aee-abd0-1c9f8daceb22)
+		{
+			triggerList: trigger_list(d887c2a0-f820-4cf3-a946-bc7176a0edb7)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(c40eea95-b9f9-483a-ab33-c9d8b8f6e0a6)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	v:this.currentColor = v:this.baseColor" \
+					"	false" \
+					"}"
+			}
+		}
+		onPressAction: function<bool>(9a5f1854-6dd9-4444-bca9-0c0b3ed74515)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		onReleaseAction: function<bool>(35455db1-f2dc-45b6-bddb-4c759aebdab7)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	x: x@4f69bb35-c81f-4293-909f-9c3c2f444904 (propref<int>)
+	y: y@4f69bb35-c81f-4293-909f-9c3c2f444904 (propref<int>)
+	width: width@4f69bb35-c81f-4293-909f-9c3c2f444904 (propref<int>)
+	height: height@4f69bb35-c81f-4293-909f-9c3c2f444904 (propref<int>)
+	onReleaseAction: onReleaseAction@4f69bb35-c81f-4293-909f-9c3c2f444904 (propref<function<bool>>)
+	onPressAction: onPressAction@4f69bb35-c81f-4293-909f-9c3c2f444904 (propref<function<bool>>)
+	pressedColor: pressedColor@4f69bb35-c81f-4293-909f-9c3c2f444904 (propref<color>)
+	baseColor: baseColor@4f69bb35-c81f-4293-909f-9c3c2f444904 (propref<color>)
+	text: text@37f2fe03-974a-4cb0-9889-1dbba7fc51b2 (propref<string>)
+	image: image@bcb12539-ec21-4038-bba6-f4a8c6572157 (propref<image>)
+}
