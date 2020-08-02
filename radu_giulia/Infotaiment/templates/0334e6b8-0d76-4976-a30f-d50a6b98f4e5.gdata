@@ -1,0 +1,247 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(0334e6b8-0d76-4976-a30f-d50a6b98f4e5)
+{
+	name: "RadioButton"
+	structure: GtfContainer(b32efc17-c9cb-4b40-807f-b428d2ef4dd1)
+	{
+		features: feature_list [
+			TouchPressed(1fa74c48-b4ce-4c2e-b968-6183ea362782)
+			{
+				touchPressed: function<bool,int,int,int,int>(230e928d-fc05-4fff-a8d4-be2c393974c2)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	" \
+						"	f:animation_play(v:this->\"Image 8\"->\"Animation 2\")" \
+						"	fire_delayed 1000, ev:goToRadio()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(0c9021c0-1898-4595-a0f6-75b43fb5c0b7)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(f14539dd-c0ed-4805-8e66-7cb772eae33a)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(fe9668f8-19f9-484e-8659-43127a357482)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			MoveIn(bb1d803d-5369-45f6-a96e-740befa54d03)
+			{
+				moveIn: function<bool,int,int,int,int>(ca0da57f-6268-4aad-8b1f-7003c54f58b0)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}]
+		children: children_list [
+			GtfRectangle(4ceb9d73-bc8b-4a9b-8d0c-ccbd6e00184b)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Rectangle 5"
+				visible: true
+				width: 100
+				height: 100
+				x: 0
+				y: 0
+				fillColor: #FFA500FF
+			}, 
+			GtfImage(c14d1bba-c8d9-4efc-a2d3-efadca2d77c9)
+			{
+				features: feature_list [
+					ScaleMode(092f07e2-633d-4884-9ab2-5fa12e3e5461)
+					{
+						scaleMode: 1
+					}, 
+					Rotation(310e157c-a1fd-4048-85ee-66e67ad68436)
+					{
+						rotationEnabled: true
+						rotationAngleX: 0F
+						rotationAngleY: 0F
+						rotationAngleZ: 0F
+					}, 
+					Scaling(de315a32-be71-4f85-b932-3cf78dce187f)
+					{
+						scalingEnabled: true
+						scalingX: 100F
+						scalingY: 100F
+						scalingZ: 100F
+					}, 
+					Shearing(897446bb-5a4e-4587-ab9e-47a406df68ad)
+					{
+						shearingEnabled: true
+						shearingXbyY: 0F
+						shearingXbyZ: 0F
+						shearingYbyX: 0F
+						shearingYbyZ: 0F
+						shearingZbyX: 0F
+						shearingZbyY: 0F
+					}, 
+					Pivot(f247db2c-968d-4d60-a5f8-94594f691b3e)
+					{
+						pivotX: float_scriptedValue(d2b0bbba-4b53-400c-851b-0874ce9def2d)
+						{
+							triggerList: trigger_list(83fb757d-5e18-4615-b6cc-a7aff9f79977)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(0f589e27-41b6-485b-a498-2cb09c1b2f65)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<float>(743868d8-b412-4040-982c-7fbfdc5c2aa5)
+							{
+								script: "function()" \
+									"{" \
+									"	f:int2float(v:this.width/2)" \
+									"}"
+							}
+							write: function<bool,float>(54e26e71-a145-4ea6-a026-df1689cd03e3)
+							{
+								script: "function(v:arg0::float)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						pivotY: float_scriptedValue(44d43904-23c5-4cd6-9ae0-e4b2e642a0e7)
+						{
+							triggerList: trigger_list(993ecf69-0198-4b3e-853c-4143451f1d41)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(6e8f71af-aa8a-44c2-aa9a-2bd0203c5cc1)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<float>(8c2d4adb-4d88-40e0-b37a-feac6dd4f1e7)
+							{
+								script: "function()" \
+									"{" \
+									"	f:int2float(v:this.height/2)" \
+									"}"
+							}
+							write: function<bool,float>(51f7f6d3-30d4-4539-9d31-cb532726f147)
+							{
+								script: "function(v:arg0::float)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						pivotZ: 0F
+					}]
+				children: children_list [
+					GtfParallelAnimation(b0d31564-4e7d-4dd5-a9b2-746d5102c749)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLinearInterpolationFloat(ee7cbdd4-63cc-45a8-9eb8-d2f14c286d5b)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Linear interpolation curve 1"
+								enabled: true
+								delay: 0
+								duration: 1000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 0F
+								end: -360F
+								target: rotationAngleZ@310e157c-a1fd-4048-85ee-66e67ad68436 (propref<float>)
+							}]
+						name: "Animation 2"
+						enabled: true
+						repeat: 1
+						alternating: false
+						scale: 1F
+						onPlay: function<void,int,bool>(fc8634aa-0d49-45d5-ae62-7e9b6a97a11e)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(cc77ec95-088e-4262-b290-051b39c9275e)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(a582a24e-5397-4991-87ef-a003b52d7f36)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+					}]
+				name: "Image 8"
+				visible: true
+				width: 100
+				height: 100
+				x: 0
+				y: 0
+				image: image_resource(3aa54f9a-13ac-48ea-ad70-2fa571c12373)
+				{
+					file: "radio.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(62518997-c328-4a14-833b-1c17b766406f)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label 4"
+				visible: true
+				width: 100
+				height: 45
+				x: 0
+				y: 98
+				text: "Radio"
+				textColor: #FFFFFFFF
+				font: font_resource(e646313e-3b7e-4814-be23-7c4cc3b37964)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container 4"
+		visible: true
+		width: 100
+		height: 143
+		x: 0
+		y: 0
+	}
+	x: x@b32efc17-c9cb-4b40-807f-b428d2ef4dd1 (propref<int>)
+	y: y@b32efc17-c9cb-4b40-807f-b428d2ef4dd1 (propref<int>)
+}

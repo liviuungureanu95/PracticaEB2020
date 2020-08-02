@@ -1,0 +1,251 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(d2e8ec33-bda6-4839-86b8-0faa346195eb)
+{
+	name: "NavigationButton"
+	structure: GtfContainer(0571f8ea-4ff5-40db-ad68-2404b088912d)
+	{
+		features: feature_list [
+			TouchPressed(d39e1b7e-e993-4b3f-9653-b77012ad8880)
+			{
+				touchPressed: function<bool,int,int,int,int>(015de040-75b7-404c-9c50-b1418d22b951)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	f:animation_play(v:this->\"Image 6\"->\"Animation 2 \")" \
+						"	fire_delayed 1000, ev:goToNavigation()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(412dfe13-b3b5-4057-8f3b-3dc1672359e1)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(48a2d870-0157-4667-9f02-5b22da2e5e7d)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(96b8f006-5426-4d34-904d-fff2aa5ce396)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			MoveIn(7efa7939-a5e7-47b7-acd2-5ff620d5ceb6)
+			{
+				moveIn: function<bool,int,int,int,int>(e988ff5d-325c-470b-9e80-457b58abec80)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}]
+		children: children_list [
+			GtfRectangle(a3d7951c-d3ba-4ac4-b0f1-f1d8b0f33f09)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Rectangle 3"
+				visible: true
+				width: 100
+				height: 100
+				x: 0
+				y: 0
+				fillColor: color_element_reference(a074d922-ef94-4391-9fad-369d95f90985)
+				{
+					index: 2
+					list: @0d92ea5f-5b0f-4e21-81d8-114a3d4d9dba (objectref<colorlist>)
+				}
+			}, 
+			GtfImage(3abadd2d-26e7-4f01-8aad-fc1e46fa9221)
+			{
+				features: feature_list [
+					ScaleMode(c6c1295a-4cd7-44f4-bb73-b0a5ba463757)
+					{
+						scaleMode: 1
+					}, 
+					Rotation(b4c106b1-72ae-4009-a27a-2e51ed716738)
+					{
+						rotationEnabled: true
+						rotationAngleX: 0F
+						rotationAngleY: 0F
+						rotationAngleZ: 0F
+					}, 
+					Scaling(38b6148d-8192-4089-9299-91b32fb2a3c5)
+					{
+						scalingEnabled: true
+						scalingX: 100F
+						scalingY: 100F
+						scalingZ: 100F
+					}, 
+					Shearing(ef972b98-cd9f-4823-a860-52723b3a3fcd)
+					{
+						shearingEnabled: true
+						shearingXbyY: 0F
+						shearingXbyZ: 0F
+						shearingYbyX: 0F
+						shearingYbyZ: 0F
+						shearingZbyX: 0F
+						shearingZbyY: 0F
+					}, 
+					Pivot(0d9c5890-57e7-42d2-b724-09b2794c95e1)
+					{
+						pivotX: float_scriptedValue(b26e424a-96fb-4cb4-8235-48d2f1c15cd9)
+						{
+							triggerList: trigger_list(3f1a0f16-72f8-464e-ab79-d52abbb744f1)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(fb10c9b6-eae5-4f5c-88be-b72b0a69b383)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<float>(f4166fcb-651b-42e9-bece-8642d8b21e87)
+							{
+								script: "function()" \
+									"{" \
+									"	f:int2float(v:this.width/2)" \
+									"}"
+							}
+							write: function<bool,float>(cd08d0e5-052b-4bb8-88aa-1423f8790291)
+							{
+								script: "function(v:arg0::float)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						pivotY: float_scriptedValue(248ca022-fa3b-495e-b3d0-a0c7708d0d59)
+						{
+							triggerList: trigger_list(e37ff622-0264-4ce0-9123-2742a9f6a65a)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(6e5dfd5e-d02b-477d-bcbc-db2d3bd1fa3a)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<float>(c62fa4d5-b983-40fb-97c2-dbc8e34ec60e)
+							{
+								script: "function()" \
+									"{" \
+									"		f:int2float(v:this.height/2)" \
+									"}"
+							}
+							write: function<bool,float>(5654f153-47e9-401a-a67b-c99d75dcb7bf)
+							{
+								script: "function(v:arg0::float)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						pivotZ: 0F
+					}]
+				children: children_list [
+					GtfParallelAnimation(f52f8924-2477-4ffb-8674-032f7bd5ad32)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLinearInterpolationFloat(43aa40cb-7d4a-40b6-83dd-df71ae3f128f)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Linear interpolation curve 1"
+								enabled: true
+								delay: 0
+								duration: 1000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 0F
+								end: -360F
+								target: rotationAngleZ@b4c106b1-72ae-4009-a27a-2e51ed716738 (propref<float>)
+							}]
+						name: "Animation 2 "
+						enabled: true
+						repeat: 1
+						alternating: false
+						scale: 1F
+						onPlay: function<void,int,bool>(853db8d3-98f8-4f88-a409-229242301d98)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(9db67e6d-1888-4fcf-9db5-df55e9fe8897)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(6644202d-168d-4861-b3a6-6a976cf529a5)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+					}]
+				name: "Image 6"
+				visible: true
+				width: 100
+				height: 100
+				x: 0
+				y: 0
+				image: image_resource(76e8da35-5edf-46ce-a1bc-7ddd978c9372)
+				{
+					file: "Compass-PNG-Photo.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(bb01bfc9-fcc4-46be-819f-baeb42ecd7d5)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label 6"
+				visible: true
+				width: 100
+				height: 47
+				x: 0
+				y: 98
+				text: "Maps"
+				textColor: #FFFFFFFF
+				font: font_resource(23bb32d7-209d-489f-a5cb-cfc311d289de)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container 6"
+		visible: true
+		width: 100
+		height: 143
+		x: 0
+		y: 0
+	}
+	x: x@0571f8ea-4ff5-40db-ad68-2404b088912d (propref<int>)
+	y: y@0571f8ea-4ff5-40db-ad68-2404b088912d (propref<int>)
+	moveIn: moveIn@7efa7939-a5e7-47b7-acd2-5ff620d5ceb6 (propref<function<bool,int,int,int,int>>)
+}

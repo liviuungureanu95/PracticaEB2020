@@ -1,0 +1,236 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(b7e7cc57-11f9-46a8-927d-1a92080c20cc)
+{
+	name: "PlayButton"
+	structure: GtfContainer(dc83017a-f4c9-4a85-82e6-36134acab3ef)
+	{
+		features: feature_list [
+			TouchPressed(316dea95-92ab-4c39-bc9e-b89999cc0943)
+			{
+				touchPressed: function<bool,int,int,int,int>(eed46040-e8a3-4d2b-8c08-0d743aa5a8dc)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	f:animation_play(v:this->\"Image 7\"->\"Animation 2\")" \
+						"	fire_delayed 1000, ev:goToMedia()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(cce1d455-8c7d-4ffc-a83a-bcc14328274d)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(2ace9393-8809-4680-af0d-32fe1728dd45)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(9956742f-8ae6-4cf2-8d2b-8fb23c98b345)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(2eb7b27f-e640-4245-ab1c-2e8738af155d)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Rectangle 4"
+				visible: true
+				width: 100
+				height: 100
+				x: 0
+				y: 0
+				fillColor: #ADFF2FFF
+			}, 
+			GtfImage(6d658a90-5b88-4106-ad7d-d522df160d88)
+			{
+				features: feature_list [
+					ScaleMode(a4a1abde-dbd5-4ef2-a286-9848a9745d3b)
+					{
+						scaleMode: 1
+					}, 
+					Rotation(2812fc5f-ade6-470e-9c50-7d522d754374)
+					{
+						rotationEnabled: true
+						rotationAngleX: 0F
+						rotationAngleY: 0F
+						rotationAngleZ: 0F
+					}, 
+					Scaling(daf43eb1-35dd-4bcb-9182-55de37058173)
+					{
+						scalingEnabled: true
+						scalingX: 100F
+						scalingY: 100F
+						scalingZ: 100F
+					}, 
+					Shearing(c4072b43-9583-4d64-8233-a675db181c2e)
+					{
+						shearingEnabled: true
+						shearingXbyY: 0F
+						shearingXbyZ: 0F
+						shearingYbyX: 0F
+						shearingYbyZ: 0F
+						shearingZbyX: 0F
+						shearingZbyY: 0F
+					}, 
+					Pivot(a449b8f7-77d6-4090-97e2-6c55b7b2aad9)
+					{
+						pivotX: float_scriptedValue(ad4328fa-245b-48e4-a92b-7826bfa8834d)
+						{
+							triggerList: trigger_list(f74ea168-fe1f-4d67-8933-b718f8647091)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(0a631588-4b96-4aae-b5b0-a8fc6243ceba)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<float>(da2b2dac-5bed-423f-b132-910e33894a43)
+							{
+								script: "function()" \
+									"{" \
+									"	f:int2float(v:this.width/2)" \
+									"}"
+							}
+							write: function<bool,float>(7af5e6f9-66b8-4862-a10e-161b96bdf496)
+							{
+								script: "function(v:arg0::float)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						pivotY: float_scriptedValue(6c4116c5-5d23-4998-b3db-738d9ce023ca)
+						{
+							triggerList: trigger_list(d9cb9ba1-7082-4d93-a506-8e929022649f)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(f0452eb8-f666-40f9-b0c8-68a296fc9966)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<float>(ac443205-cc03-4505-afb0-bfffa1179ac5)
+							{
+								script: "function()" \
+									"{" \
+									"	f:int2float(v:this.height/2)" \
+									"}"
+							}
+							write: function<bool,float>(26e49c0a-9543-44e2-a347-5b7671e656bb)
+							{
+								script: "function(v:arg0::float)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						pivotZ: 0F
+					}]
+				children: children_list [
+					GtfParallelAnimation(411536d7-9e36-4eb6-adf2-11fa6b593120)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLinearInterpolationFloat(a6ae4f35-cf94-4687-b4e5-ccb374668124)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Linear interpolation curve 1"
+								enabled: true
+								delay: 0
+								duration: 1000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 0F
+								end: -360F
+								target: rotationAngleZ@2812fc5f-ade6-470e-9c50-7d522d754374 (propref<float>)
+							}]
+						name: "Animation 2"
+						enabled: true
+						repeat: 1
+						alternating: false
+						scale: 1F
+						onPlay: function<void,int,bool>(dbcfeea2-3a28-4b3d-be2c-0aa8d10d3b64)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(ece6c277-1f89-4461-9a7f-27e59778a24a)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(6045ee5b-0850-4235-935a-1238452427ce)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+					}]
+				name: "Image 7"
+				visible: true
+				width: 100
+				height: 100
+				x: 0
+				y: 0
+				image: image_resource(16abc4c3-fc6d-4160-bbec-13284b9cb17c)
+				{
+					file: "play.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(dfaeae09-6afd-47a7-8d8c-ea3c14e19c96)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label 5"
+				visible: true
+				width: 100
+				height: 43
+				x: -1
+				y: 100
+				text: "Media"
+				textColor: #FFFFFFFF
+				font: font_resource(be9a22d1-652b-4920-a9ae-1bbc588cdf09)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container 5"
+		visible: true
+		width: 100
+		height: 143
+		x: 0
+		y: 0
+	}
+	x: x@dc83017a-f4c9-4a85-82e6-36134acab3ef (propref<int>)
+	y: y@dc83017a-f4c9-4a85-82e6-36134acab3ef (propref<int>)
+}
