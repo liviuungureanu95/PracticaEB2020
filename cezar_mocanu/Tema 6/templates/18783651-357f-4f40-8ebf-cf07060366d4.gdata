@@ -1,0 +1,130 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(18783651-357f-4f40-8ebf-cf07060366d4)
+{
+	name: "Button"
+	structure: GtfContainer(e051f246-237b-49e6-9c6e-5d7d581b6c54)
+	{
+		features: feature_list [
+			TouchPressed(ee4205e6-4b62-4c33-b9f6-57c0379c8ec0)
+			{
+				touchPressed: function<bool,int,int,int,int>(294485b7-c07c-496b-83c1-c91987c302da)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.onPressStyle()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(18aae81b-6ca0-437d-a00c-b86e78bee5da)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(158c450d-436a-4cc9-81e0-bf93f2a64e2a)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.onReleaseStyle()" \
+						"	v:this.onReleaseAction()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(72c63c52-fe92-47b2-b2e0-adcc3ee717e8)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(ddcc4e4f-4b74-4c8e-be89-46429977532d)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@e051f246-237b-49e6-9c6e-5d7d581b6c54 (propref<int>)
+				height: height@e051f246-237b-49e6-9c6e-5d7d581b6c54 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: curentColor@e051f246-237b-49e6-9c6e-5d7d581b6c54 (propref<color>)
+			}, 
+			GtfLabel(5f5b64d5-0d03-4dff-a224-5220a305fb8f)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label"
+				visible: true
+				width: width@e051f246-237b-49e6-9c6e-5d7d581b6c54 (propref<int>)
+				height: height@e051f246-237b-49e6-9c6e-5d7d581b6c54 (propref<int>)
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(941e9afa-9405-41bf-8575-fc800ddccbfb)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		baseColor: #FF00FFFF
+		curentColor: #A9A9A9FF
+		pressColor: #7FFF00FF
+		onPressStyle: function<bool>(80a98883-bb6d-46c8-84b1-e2aac060c5a2)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.curentColor = v:this.pressColor" \
+				"	false" \
+				"}"
+		}
+		onReleaseStyle: function<bool>(60ef4447-a718-465a-bfdb-08ae38fe46a1)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.curentColor = v:this.baseColor" \
+				"	false" \
+				"}"
+		}
+		onReleaseAction: function<bool>(21dd9566-d27b-4d33-93a6-b95910907e08)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		onInitialize: conditional_script(37b0c210-17bb-4fa2-92ec-f579a84968df)
+		{
+			triggerList: trigger_list(939dfa2a-6fa5-443b-b351-2ffb949cb465)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(6a9bc540-a98a-4df3-b309-7e41e5140a09)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	v:this.curentColor = v:this.baseColor" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+	onReleaseAction: onReleaseAction@e051f246-237b-49e6-9c6e-5d7d581b6c54 (propref<function<bool>>)
+	x: x@e051f246-237b-49e6-9c6e-5d7d581b6c54 (propref<int>)
+	y: y@e051f246-237b-49e6-9c6e-5d7d581b6c54 (propref<int>)
+	width: width@e051f246-237b-49e6-9c6e-5d7d581b6c54 (propref<int>)
+	height: height@e051f246-237b-49e6-9c6e-5d7d581b6c54 (propref<int>)
+	baseColor: baseColor@e051f246-237b-49e6-9c6e-5d7d581b6c54 (propref<color>)
+	pressColor: pressColor@e051f246-237b-49e6-9c6e-5d7d581b6c54 (propref<color>)
+	text: text@5f5b64d5-0d03-4dff-a224-5220a305fb8f (propref<string>)
+	visible: visible@e051f246-237b-49e6-9c6e-5d7d581b6c54 (propref<bool>)
+}

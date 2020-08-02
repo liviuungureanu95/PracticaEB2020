@@ -1,0 +1,132 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(96e13ed3-2792-427c-9792-6c00ea39e975)
+{
+	name: "View 2"
+	template: @4d6de6d0-1eea-4742-a404-c4ae12fd6e92 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(7fb07039-d99f-4fc6-a1e2-66b5e0101ca9)
+		{
+			name: "nextButton"
+			template: @18783651-357f-4f40-8ebf-cf07060366d4 (objectref<GtfContainer_template>)
+			children: children_list []
+			onReleaseAction: function<bool>(ba5dfaac-bc65-4798-ac4a-518d7e5feb8d)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_City()" \
+					"	false" \
+					"}"
+			}
+			x: 700
+			y: 0
+			width: 100
+			height: 63
+			baseColor: color_element_reference(4be7e9b9-7907-4b33-96d6-e129d8194d43)
+			{
+				index: 0
+				list: @34ac87d6-27cd-42bd-bf91-b9430e309c90 (objectref<colorlist>)
+			}
+			pressColor: color_element_reference(52f2edc2-3bd6-4f75-a9b7-1d944f5ac2b7)
+			{
+				index: 1
+				list: @34ac87d6-27cd-42bd-bf91-b9430e309c90 (objectref<colorlist>)
+			}
+			text: "NEXT"
+			visible: bool_scriptedValue(f43bf9f7-2100-422c-9d53-b8fe517f98f2)
+			{
+				triggerList: trigger_list(8808423a-d3e8-43a9-a196-2db2a2cad372)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(8f748a93-7e27-45a9-bb03-1d9af4283902)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<bool>(44e0e27e-a7be-49db-a4ed-07ebbd1b892b)
+				{
+					script: "function()" \
+						"{" \
+						"	if(dp:Country != \"\")" \
+						"		true" \
+						"	else" \
+						"		false" \
+						"}"
+				}
+				write: function<bool,bool>(ec56a48c-1b8d-4b4e-8038-792d556ba2e7)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfLabel(d9cd5a2d-bbe3-4ae1-a5c8-0ad531940076)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "labelName"
+			visible: true
+			width: 129
+			height: 63
+			x: 0
+			y: 0
+			text: "COUNTRY:"
+			textColor: #FFFFFFFF
+			font: font_resource(66687256-dea6-40cf-a08c-872914e434b1)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(65b7fd8b-961f-4c0b-a485-08ed8d45c430)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "textInput"
+			visible: true
+			width: 549
+			height: 63
+			x: 150
+			y: 0
+			text: @61d87fb5-b358-424b-9959-a31a319d7421 (objectref<string>)
+			textColor: #FFFFFFFF
+			font: font_resource(d3f36cb4-dd2b-45b4-ad7d-392d2a1b3114)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+			inputScript: conditional_script(d018587b-ff44-4be5-bced-4fec40fbb2c7)
+			{
+				triggerList: trigger_list(492680e9-e1e0-4501-989d-e84fe1a221c8)
+				{
+					script: "ev:keypadPress"
+				}
+				onTrigger: function<bool,bool>(a2b4c091-3c95-4f98-84e8-d2fbcdfe89b8)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	match_event v:e = ev:keypadPress in " \
+						"		let v:val = v:e.Value in " \
+						"			if(v:val == \"space\")" \
+						"				dp:Country += \" \"" \
+						"			else if(v:val == \"delete\")" \
+						"				dp:Country = \"\"" \
+						"			else" \
+						"				dp:Country += v:val			" \
+						"	false" \
+						"}"
+				}
+			}
+		}]
+}

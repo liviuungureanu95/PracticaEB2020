@@ -1,0 +1,162 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(dadbd14e-30a1-4019-8267-52cda48d5cb8)
+{
+	name: "View 2"
+	template: @4d6de6d0-1eea-4742-a404-c4ae12fd6e92 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(a0533d9b-407f-471d-b478-536fb6b59dca)
+		{
+			name: "nextButton"
+			template: @18783651-357f-4f40-8ebf-cf07060366d4 (objectref<GtfContainer_template>)
+			children: children_list []
+			onReleaseAction: function<bool>(ac5bf7c3-3036-4d3a-aa7c-1b8fbd14e578)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_Final()" \
+					"	false" \
+					"}"
+			}
+			x: 700
+			y: 0
+			width: 100
+			height: 63
+			baseColor: color_element_reference(91e1b2e9-2dcb-47b2-87a8-da8ff2c82e0a)
+			{
+				index: 0
+				list: @34ac87d6-27cd-42bd-bf91-b9430e309c90 (objectref<colorlist>)
+			}
+			pressColor: color_element_reference(5fc26cf5-00d2-49a3-b752-5595d94ae737)
+			{
+				index: 1
+				list: @34ac87d6-27cd-42bd-bf91-b9430e309c90 (objectref<colorlist>)
+			}
+			text: "NEXT"
+			visible: bool_scriptedValue(cfd39cc7-76ef-4429-8d11-1bc81e136661)
+			{
+				triggerList: trigger_list(8f5fc036-cd55-4dab-917a-c5f5f264e85d)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(77b26d05-fe25-425f-90ac-80c167007012)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<bool>(27fa2ebf-ff07-42ff-8645-01d292a342fd)
+				{
+					script: "function()" \
+						"{" \
+						"	if(dp:Street != \"\")" \
+						"		true" \
+						"	else" \
+						"		false" \
+						"}"
+				}
+				write: function<bool,bool>(9193b560-45af-4eb9-a79f-ec1a76237176)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfLabel(8a4bd0be-7b3e-4933-92a3-c221c0a31f21)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "labelName"
+			visible: true
+			width: 129
+			height: 63
+			x: 0
+			y: 0
+			text: "STREET:"
+			textColor: #FFFFFFFF
+			font: font_resource(7cf53606-d9dd-42de-98e4-e322a0071379)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(9482c960-3cb4-453e-a7fd-b665896465ed)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "textInput"
+			visible: true
+			width: 549
+			height: 63
+			x: 150
+			y: 0
+			text: @6a0320c4-e23f-4ad9-865a-cf79127e5ed0 (objectref<string>)
+			textColor: #FFFFFFFF
+			font: font_resource(f71a245d-7535-4fc3-933d-05f44b864100)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+			inputScript: conditional_script(18079867-8dc3-43c3-b591-06eda6e6a814)
+			{
+				triggerList: trigger_list(1ed5289e-d40e-4f5b-b33d-1f7cd8538d8c)
+				{
+					script: "ev:keypadPress"
+				}
+				onTrigger: function<bool,bool>(66f2a479-030f-4cb0-9624-a36d745db74c)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	match_event v:e = ev:keypadPress in " \
+						"		let v:val = v:e.Value in " \
+						"			if(v:val == \"space\")" \
+						"				dp:Street += \" \"" \
+						"			else if(v:val == \"delete\")" \
+						"				dp:Street = \"\"" \
+						"			else" \
+						"				dp:Street += v:val			" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfContainer_template_instance(13cdd8bb-1cdf-4c54-b380-4c0ffba56d04)
+		{
+			name: "backButton"
+			template: @18783651-357f-4f40-8ebf-cf07060366d4 (objectref<GtfContainer_template>)
+			children: children_list []
+			onReleaseAction: function<bool>(8226938f-9fe5-4318-9e9b-9d1f44987ce4)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_City()" \
+					"	false" \
+					"}"
+			}
+			x: 700
+			y: 63
+			width: 100
+			height: 63
+			baseColor: color_element_reference(423556db-03cc-4a08-a50e-98b2f947ad58)
+			{
+				index: 0
+				list: @34ac87d6-27cd-42bd-bf91-b9430e309c90 (objectref<colorlist>)
+			}
+			pressColor: color_element_reference(1914ad83-e8a4-4d65-a22c-ff007d2a2122)
+			{
+				index: 1
+				list: @34ac87d6-27cd-42bd-bf91-b9430e309c90 (objectref<colorlist>)
+			}
+			text: "BACK"
+			visible: visible@18783651-357f-4f40-8ebf-cf07060366d4 (propref<bool>)
+		}]
+}
