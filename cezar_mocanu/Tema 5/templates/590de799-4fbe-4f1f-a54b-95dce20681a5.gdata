@@ -1,0 +1,167 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(590de799-4fbe-4f1f-a54b-95dce20681a5)
+{
+	name: "MenuTemplate"
+	structure: GtfView(2619d730-a66a-40bf-bfe4-6c892f8a23c7)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfImage(aa7280a8-bc20-4add-9c7b-58607001cb4d)
+			{
+				features: feature_list [
+					ScaleMode(c8e23b94-ce52-4ed7-8b53-1ad85c65c646)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: 540
+				height: int_element_reference(db6662f6-77c1-4a0f-9d97-f98bc9e75f37)
+				{
+					index: 1
+					list: @10a470c0-fc9e-42a4-9c90-78303e699254 (objectref<intlist>)
+				}
+				x: 260
+				y: 0
+				image: image_resource(e50054d3-686c-44e5-94a1-f7fe3971159b)
+				{
+					file: "background.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfRectangle(d16fcc88-8eef-409c-8f74-09dc21d8d69b)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "BackgroundItems"
+				visible: true
+				width: 260
+				height: int_element_reference(8eec83f5-a060-4b0d-ba4f-a87fb249a98a)
+				{
+					index: 1
+					list: @10a470c0-fc9e-42a4-9c90-78303e699254 (objectref<intlist>)
+				}
+				x: 0
+				y: 0
+				fillColor: #2E2E2EFF
+			}, 
+			GtfInstantiator(21f01fbf-713f-4bfc-b065-956a00d90957)
+			{
+				features: feature_list [
+					LayoutPolicyFlow(5af28a72-e604-4333-8eb1-52c87cd598c2)
+					{
+						horizontalGap: 0
+						verticalGap: 5
+						layoutDirection: 0
+						horizontalChildAlign: 0
+						verticalChildAlign: 0
+					}]
+				children: children_list [
+					GtfContainer(57068332-c4c6-4164-a48b-f93896f02e26)
+					{
+						features: feature_list [
+							LineIndex(ec3850b3-fd1c-4404-859b-dfd5caa768ce)
+							{
+								lineIndex: 0
+							}]
+						children: children_list [
+							GtfContainer_template_instance(0567bf27-e5f0-4b6f-840a-42067afd954e)
+							{
+								name: "LabelButton"
+								template: @a4611a4f-de58-49a7-8735-fd201bd0494f (objectref<GtfContainer_template>)
+								children: children_list []
+								text: text@a4611a4f-de58-49a7-8735-fd201bd0494f (propref<string>)
+								iconBase: #7FFFD4FF
+								iconPress: #7FFFD4FF
+								textBase: #66CDAAFF
+								textPress: #7FFFD4FF
+								y: 0
+								x: 0
+								height: height@57068332-c4c6-4164-a48b-f93896f02e26 (propref<int>)
+								width: width@57068332-c4c6-4164-a48b-f93896f02e26 (propref<int>)
+								onReleaseAction: function<bool>(16373c65-835d-401c-8f83-ea83e5de84ab)
+								{
+									script: "function()" \
+										"{" \
+										"	v:this->^.GoTo()" \
+										"	false" \
+										"}"
+								}
+								onPressAction: onPressAction@a4611a4f-de58-49a7-8735-fd201bd0494f (propref<function<bool>>)
+								lineIndex: lineIndex@a4611a4f-de58-49a7-8735-fd201bd0494f (propref<int>)
+							}]
+						name: "Button"
+						visible: true
+						width: 250
+						height: 50
+						x: 0
+						y: 0
+						SetValues: conditional_script(be1c20f5-d1db-477a-9826-022a7fc6203d)
+						{
+							triggerList: trigger_list(3cd2dc73-d374-40b6-aa2c-ea309aff8ba5)
+							{
+								script: "dp:Strings" \
+									"v:this.lineIndex"
+							}
+							onTrigger: function<bool,bool>(c7ec48c4-385f-4d8b-9954-3d620e1ced3d)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	v:this->LabelButton.text = dp:Strings[v:this.lineIndex]" \
+									"	false" \
+									"}"
+							}
+						}
+						GoTo: function<bool>(99f97618-69ed-402b-b441-ee29b1d946b0)
+						{
+							script: "function()" \
+								"{" \
+								"	fire ev:goTo(dp:Strings[v:this.lineIndex])" \
+								"	false" \
+								"}"
+						}
+					}]
+				name: "Instantiator"
+				visible: true
+				width: 100
+				height: 100
+				x: 5
+				y: 5
+				numItems: 2
+				lineMapping: intlist [0]
+				setListSize: conditional_script(9476e2b5-6dc1-43d9-b28b-eec4e85933f9)
+				{
+					triggerList: trigger_list(234bb9cc-3677-460a-9a35-2e43970726d0)
+					{
+						script: "dp:Strings"
+					}
+					onTrigger: function<bool,bool>(b98b4232-8deb-42f7-9280-4d8aaf11c506)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	v:this.numItems = length dp:Strings" \
+							"	false" \
+							"}"
+					}
+				}
+			}]
+		name: "View"
+		visible: true
+		width: int_element_reference(eef3efe3-d8e4-49ca-affa-2f77526ca5fd)
+		{
+			index: 0
+			list: @10a470c0-fc9e-42a4-9c90-78303e699254 (objectref<intlist>)
+		}
+		height: int_element_reference(782ca317-b95b-4f1d-9f50-6733d4a1c51b)
+		{
+			index: 1
+			list: @10a470c0-fc9e-42a4-9c90-78303e699254 (objectref<intlist>)
+		}
+		x: 0
+		y: 0
+	}
+}
