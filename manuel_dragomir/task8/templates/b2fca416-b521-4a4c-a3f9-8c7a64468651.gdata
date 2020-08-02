@@ -1,0 +1,145 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(b2fca416-b521-4a4c-a3f9-8c7a64468651)
+{
+	name: "ButtonCoffeeOption"
+	structure: GtfContainer(2598b4f4-211a-48d6-aab2-ab9788f352b2)
+	{
+		features: feature_list [
+			StateSelected(ee74c7c7-5ef4-489f-81b4-9e47b0c4e77b)
+			{
+				selected: false
+			}, 
+			Buttongroup(f4cb442d-0eff-4a91-9d1f-44c92b5a6920)
+			{
+				buttonId: 0
+				buttonValue: @971f1ff6-eb43-4829-9b32-9aa5bd81ee20 (objectref<int>)
+			}, 
+			TouchShortReleased(bf85ba77-1ceb-49f5-ba2a-150173e16732)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(af9e3e05-e1be-4b2b-93d8-c766b0e2a994)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.buttonValue = v:this.buttonId;" \
+						"	dp:Choosing = false;" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(ddec2cef-fa9b-4e8c-ab91-cb2ec0e0bf60)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfEllipse(0b7f0d04-ec38-4c09-bf8d-2ecacc538c49)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@2598b4f4-211a-48d6-aab2-ab9788f352b2 (propref<int>)
+				height: height@2598b4f4-211a-48d6-aab2-ab9788f352b2 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #D3BDB0FF
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}, 
+			GtfImage(c98fd177-b949-480c-894e-8ded30911e3e)
+			{
+				features: feature_list [
+					ScaleMode(25bb1a06-629c-4503-84aa-715d6cb5b8b7)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "Image"
+				visible: true
+				width: 120
+				height: 100
+				x: 50
+				y: 14
+				image: image_resource(da27ed7f-4660-4d83-b085-4f7d827ee9fe)
+				{
+					file: "cappu.PNG"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(520a9287-eff4-4f19-8e7f-e0f5c953832e)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label"
+				visible: true
+				width: 224
+				height: 45
+				x: 0
+				y: 103
+				text: "Cappuccino"
+				textColor: #8B4513FF
+				font: font_resource(8720cd01-8d38-497e-82b7-6e2ffbe955eb)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfEllipse(cd069b2a-946f-4368-852b-b8aee0aa18cc)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Disc"
+				visible: false
+				width: width@0b7f0d04-ec38-4c09-bf8d-2ecacc538c49 (propref<int>)
+				height: height@0b7f0d04-ec38-4c09-bf8d-2ecacc538c49 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFD700FF
+				arcWidth: 5
+				centralAngle: 360F
+				sectorRotation: 0F
+			}]
+		name: "Container"
+		visible: true
+		width: 222
+		height: 163
+		x: 0
+		y: 0
+		onSelected: conditional_script(12807777-9a8c-42ce-917b-db0b07a4c545)
+		{
+			triggerList: trigger_list(999561fc-c4d7-413c-bae9-7c0c3250a83b)
+			{
+				script: "v:this.selected" \
+					""
+			}
+			onTrigger: function<bool,bool>(d54cd07d-e697-4c88-b84c-0b9662f16891)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	if(v:this.selected){" \
+					"		v:this->Disc.visible = true;" \
+					"	}" \
+					"	else{" \
+					"		v:this->Disc.visible = false;" \
+					"	}" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+	x: x@2598b4f4-211a-48d6-aab2-ab9788f352b2 (propref<int>)
+	y: y@2598b4f4-211a-48d6-aab2-ab9788f352b2 (propref<int>)
+	width: width@2598b4f4-211a-48d6-aab2-ab9788f352b2 (propref<int>)
+	height: height@2598b4f4-211a-48d6-aab2-ab9788f352b2 (propref<int>)
+	image: image@c98fd177-b949-480c-894e-8ded30911e3e (propref<image>)
+	text: text@520a9287-eff4-4f19-8e7f-e0f5c953832e (propref<string>)
+	buttonId: buttonId@f4cb442d-0eff-4a91-9d1f-44c92b5a6920 (propref<int>)
+}

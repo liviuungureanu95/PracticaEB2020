@@ -1,0 +1,324 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(abf46808-0f58-450a-bbc0-42c30fc077aa)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(3663d1ec-96f7-4563-98d6-eda0bd6d9011)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(5b702833-f14a-4b4b-ae5b-2a974f00aa1c)
+				{
+					features: feature_list [
+						MultiLine(ee0f744d-cbec-4ab6-9e5f-335c62892b59)
+						{
+							lineOffset: 0
+							maxLineCount: 0
+						}]
+					children: children_list []
+					name: "PickLabel"
+					visible: bool_scriptedValue(fe084e2f-fa93-483a-933d-880050b2da26)
+					{
+						triggerList: trigger_list(c4cef1d9-e2a5-4fa1-875b-1cc7fee3e3d0)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(4424b995-5c07-40f5-acb4-f122b3fc9746)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<bool>(ec45cbd8-ba17-4ead-bafe-6ee447b3e6c9)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	dp:Choosing" \
+								"}"
+						}
+						write: function<bool,bool>(15d2ee3f-4711-4be3-87ec-6e920f31432b)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					width: 182
+					height: 111
+					x: 310
+					y: 175
+					text: "Choose\\n your flavour"
+					textColor: #FFFF00FF
+					font: font_resource(e9621d9d-d34f-48af-9c61-0005a2d615eb)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 40
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(d898a279-1e46-4d11-a3be-195392c04963)
+				{
+					name: "CappuccinoButton"
+					template: @b2fca416-b521-4a4c-a3f9-8c7a64468651 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 288
+					y: 0
+					width: width@b2fca416-b521-4a4c-a3f9-8c7a64468651 (propref<int>)
+					height: height@b2fca416-b521-4a4c-a3f9-8c7a64468651 (propref<int>)
+					image: image@b2fca416-b521-4a4c-a3f9-8c7a64468651 (propref<image>)
+					text: text@b2fca416-b521-4a4c-a3f9-8c7a64468651 (propref<string>)
+					buttonId: buttonId@b2fca416-b521-4a4c-a3f9-8c7a64468651 (propref<int>)
+					visible: false
+				}, 
+				GtfContainer_template_instance(55e8d66a-f90c-4d29-a9b3-07e5fdbe18f5)
+				{
+					name: "ShortEspressoButton"
+					template: @b2fca416-b521-4a4c-a3f9-8c7a64468651 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 49
+					y: 81
+					width: width@b2fca416-b521-4a4c-a3f9-8c7a64468651 (propref<int>)
+					height: height@b2fca416-b521-4a4c-a3f9-8c7a64468651 (propref<int>)
+					image: image_resource(670396e2-1bbd-4b8f-a3a9-0a61de9b48c6)
+					{
+						file: "short_espresso.png"
+					}
+					text: "Short Espresso"
+					buttonId: 1
+					visible: false
+				}, 
+				GtfContainer_template_instance(211b165f-993b-4fa6-bae2-43a358e11514)
+				{
+					name: "MochaButton"
+					template: @b2fca416-b521-4a4c-a3f9-8c7a64468651 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 48
+					y: 262
+					width: width@b2fca416-b521-4a4c-a3f9-8c7a64468651 (propref<int>)
+					height: height@b2fca416-b521-4a4c-a3f9-8c7a64468651 (propref<int>)
+					image: image_resource(5ead9fb7-e10b-492e-8af4-8406f8b81aaa)
+					{
+						file: "mocha.png"
+					}
+					text: "Mocha"
+					buttonId: 2
+					buttonValue: 0
+					visible: false
+				}, 
+				GtfContainer_template_instance(4f68d7a5-6cb6-4e99-8c59-cbb316abbeeb)
+				{
+					name: "AmericanoButton"
+					template: @b2fca416-b521-4a4c-a3f9-8c7a64468651 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 291
+					y: 319
+					width: width@b2fca416-b521-4a4c-a3f9-8c7a64468651 (propref<int>)
+					height: height@b2fca416-b521-4a4c-a3f9-8c7a64468651 (propref<int>)
+					image: image_resource(4a28d56d-4e53-47ab-8f01-26c363ab121a)
+					{
+						file: "americano.png"
+					}
+					text: "Americano"
+					buttonId: 3
+					buttonValue: 0
+					visible: false
+				}, 
+				GtfContainer_template_instance(d63304ec-9940-4f3b-809c-ff0b06023b6b)
+				{
+					name: "LatteButton"
+					template: @b2fca416-b521-4a4c-a3f9-8c7a64468651 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 538
+					y: 255
+					width: width@b2fca416-b521-4a4c-a3f9-8c7a64468651 (propref<int>)
+					height: height@b2fca416-b521-4a4c-a3f9-8c7a64468651 (propref<int>)
+					image: image_resource(5da3ec6b-7e15-4e0d-ab0f-1c9f35228691)
+					{
+						file: "latte.png"
+					}
+					text: "Caffe Latte"
+					buttonId: 4
+					buttonValue: 0
+					visible: false
+				}, 
+				GtfContainer_template_instance(c8775760-cc67-4478-b430-b540d98363d9)
+				{
+					name: "LongEspressoButton"
+					template: @b2fca416-b521-4a4c-a3f9-8c7a64468651 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 540
+					y: 76
+					width: width@b2fca416-b521-4a4c-a3f9-8c7a64468651 (propref<int>)
+					height: height@b2fca416-b521-4a4c-a3f9-8c7a64468651 (propref<int>)
+					image: image_resource(f8710229-aff8-47da-affe-133509319b09)
+					{
+						file: "long_espresso.png"
+					}
+					text: "Long Espresso"
+					buttonId: 5
+					buttonValue: 0
+					visible: false
+				}, 
+				GtfEllipse(932a546d-d744-4e71-b286-c4624e580b97)
+				{
+					features: feature_list [
+						TouchShortReleased(ce2679f7-1e23-4440-bd93-ce30ac4c6727)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(512ce96e-e98c-4535-ba1e-c6de073a48d5)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	let v:var = \"Cappuccino\" in " \
+									"	{" \
+									"		if(v:this->^->ShortEspressoButton.buttonId == dp:idGroup){" \
+									"			v:var = \"Short Espresso\";" \
+									"		}else if(v:this->^->MochaButton.buttonId == dp:idGroup){" \
+									"			v:var = \"Mocha\"" \
+									"		}else if(v:this->^->AmericanoButton.buttonId == dp:idGroup){" \
+									"			v:var = \"Americano\"" \
+									"		}else if(v:this->^->LatteButton.buttonId == dp:idGroup){" \
+									"			v:var = \"Caffe Latte\"" \
+									"		}" \
+									"		else if(v:this->^->LongEspressoButton.buttonId == dp:idGroup){" \
+									"			v:var = \"Long Espresso\";" \
+									"		}" \
+									"		fire ev:ShowPopUp(v:var);" \
+									"	}" \
+									"	" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(987e936f-3fea-4263-b429-cc802e5f4821)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(fc3635eb-9617-47ab-9809-2542e1c0ec2c)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "OrderLabel"
+							visible: true
+							width: 140
+							height: 100
+							x: 0
+							y: 0
+							text: "Order"
+							textColor: #000000FF
+							font: font_resource(c8035fac-207a-4c35-b2ab-9c11db38b61b)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "OrderButton"
+					visible: bool_scriptedValue(6f6ce6d0-ea42-4157-9fde-33db114e65c0)
+					{
+						triggerList: trigger_list(e1859db2-1c9b-424b-9e0b-eeaf0fa501b9)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(547d2311-5d3d-4cd0-9ae5-c881b30a7aef)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<bool>(c6559d2e-dccf-441c-9be1-3e281d7ae38c)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	!dp:Choosing" \
+								"}"
+						}
+						write: function<bool,bool>(99e1f3cb-4e92-41c0-a428-047ba5007ad9)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					width: 140
+					height: 100
+					x: 329
+					y: 183
+					fillColor: #FFE4B5FF
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+				}]
+			name: "Background"
+			visible: true
+			width: width@abf46808-0f58-450a-bbc0-42c30fc077aa (propref<int>)
+			height: height@abf46808-0f58-450a-bbc0-42c30fc077aa (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #8B4513FF
+			OnFirstSelection: conditional_script(e1a437ca-69f5-40fd-8922-db9ec8a2b3f9)
+			{
+				triggerList: trigger_list(fdc05490-e9e3-44cf-ac5a-ea4b26e2f4c0)
+				{
+					script: "ev:Chosen"
+				}
+				onTrigger: function<bool,bool>(44493424-9495-4668-bcc5-bd8923ddbdf0)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	if(v:arg0 == false){" \
+						"		v:this->PickLabel.visible = false;" \
+						"		v:this->OrderButton.visible = true;" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+			}
+		}]
+	name: "MainView"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+	ShowPopUpEvent: conditional_script(a1ad6615-0a78-4976-bace-87f6014ca359)
+	{
+		triggerList: trigger_list(4462ea2b-ff83-4204-9d47-ba71541cdd9b)
+		{
+			script: "ev:ShowPopUp"
+		}
+		onTrigger: function<bool,bool>(8125eb1a-1891-4157-affc-ca1717566347)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	match_event v:event = ev:ShowPopUp in" \
+				"	{" \
+				"		// Configure the following parameters:" \
+				"//   - popup_stack - the state with dynamic state list" \
+				"//   - sm - the dynamic state machine" \
+				"//   - priority - priority of the dynamic state machine" \
+				"		dp:CoffeeFlavour = v:event.CoffeeType;" \
+				"		f:pushDynamicStateMachine(popup_stack:Main, sm:PopUp, 0)" \
+				"	}" \
+				"	false" \
+				"}"
+		}
+	}
+}

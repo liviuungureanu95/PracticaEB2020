@@ -1,0 +1,308 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(aed6e85e-c639-4c25-8d2b-cdfeefe8945e)
+{
+	name: "PopUpDialogBox"
+	structure: GtfView(f8057aff-b37b-4d18-a73d-5f827beaeb25)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(64cb74cc-dc05-46c0-86b8-06466526436b)
+			{
+				features: feature_list [
+					Border(a530df65-7c0c-4cd8-bb62-eecd030f9bfd)
+					{
+						borderThickness: 100
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list [
+					GtfRectangle(213ee280-9e62-4799-ac6b-c6c76f39de37)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLabel(e7fa967f-fc45-4cf2-a4e0-c478902d79d9)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "PreparingLabel"
+								visible: true
+								width: 233
+								height: 87
+								x: 0
+								y: 0
+								text: "Preparing..."
+								textColor: #000000FF
+								font: font_resource(e2d8a4ba-a670-4c6a-b7a8-ea4110ac6c62)
+								{
+									file: "PT_Sans_Narrow.ttf"
+									size: 40
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}, 
+							GtfLabel(7d7704de-a4a5-4c08-9239-6a62762bc904)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "FlavourLabel"
+								visible: true
+								width: 257
+								height: 86
+								x: 191
+								y: 0
+								text: "<flavour>"
+								textColor: #000000FF
+								font: font_resource(be017e1b-8705-4a6f-9092-5d5d9c7e233b)
+								{
+									file: "PT_Sans_Narrow.ttf"
+									size: 40
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}]
+						name: "UpperRectangle"
+						visible: true
+						width: width@64cb74cc-dc05-46c0-86b8-06466526436b (propref<int>)
+						height: 82
+						x: 0
+						y: 0
+						fillColor: #FFA500FF
+					}, 
+					GtfRectangle(dd80af18-b1d8-492e-ae5d-16abc539507a)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfRectangle(4bc358ac-5274-4bf0-b7e8-259de669b6ee)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "LineBreak"
+								visible: true
+								width: width@64cb74cc-dc05-46c0-86b8-06466526436b (propref<int>)
+								height: 7
+								x: 0
+								y: 0
+								fillColor: #A9A9A9FF
+							}, 
+							GtfRectangle(8d833302-c385-46d6-a81c-bd195bdcc935)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "CupRectangle"
+								visible: true
+								width: 132
+								height: 141
+								x: 151
+								y: 51
+								fillColor: #A9A9A9FF
+							}, 
+							GtfEllipse(28fef0f9-fc62-4535-a831-7973ca143bd4)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Toarta"
+								visible: true
+								width: 100
+								height: 100
+								x: 229
+								y: 69
+								fillColor: #A9A9A9FF
+								arcWidth: 20
+								centralAngle: 360F
+								sectorRotation: 0F
+							}, 
+							GtfRectangle(84c97678-b95b-48f1-944c-81bfbcb38e50)
+							{
+								features: feature_list []
+								children: children_list [
+									GtfParallelAnimation(5a93c41b-a13a-453a-97e5-aa1517ac9428)
+									{
+										features: feature_list []
+										children: children_list [
+											GtfLinearInterpolationS32(a5f311cf-efb8-4f9d-8f40-ed8227132ab7)
+											{
+												features: feature_list []
+												children: children_list []
+												name: "IncreaseHeight"
+												enabled: true
+												delay: 0
+												duration: 3000
+												repeat: 1
+												alternating: false
+												relative: false
+												start: 0
+												end: 113
+												target: height@84c97678-b95b-48f1-944c-81bfbcb38e50 (propref<int>)
+											}, 
+											GtfLinearInterpolationS32(67a4b90e-9643-47ba-a372-6f7f672427b6)
+											{
+												features: feature_list []
+												children: children_list []
+												name: "IncreaseY"
+												enabled: true
+												delay: 0
+												duration: duration@a5f311cf-efb8-4f9d-8f40-ed8227132ab7 (propref<int>)
+												repeat: 1
+												alternating: false
+												relative: false
+												start: 178
+												end: 66
+												target: y@84c97678-b95b-48f1-944c-81bfbcb38e50 (propref<int>)
+											}]
+										name: "CoffeePreparing"
+										enabled: true
+										repeat: 1
+										alternating: false
+										scale: 1F
+										onPlay: function<void,int,bool>(deb6d26a-864e-4cd3-a52b-f5ec0bc415ec)
+										{
+											script: "function(v:animation_time::int, v:forward::bool)" \
+												"{" \
+												"" \
+												"}"
+										}
+										onPause: function<void,int>(3cc2be9a-3a52-420c-9925-3e28146e1801)
+										{
+											script: "function(v:animation_time::int)" \
+												"{" \
+												"" \
+												"}"
+										}
+										onTerminate: function<void,int,int>(93228111-7cfc-431d-972d-afef1ca8bfdf)
+										{
+											script: "function(v:animation_time::int, v:terminate::int)" \
+												"{" \
+												"	dp:ReadyCoffee = true;" \
+												"	fire_delayed 5000, ev:ClosePopUp();" \
+												"	v:this->^->^->^->UpperRectangle->PreparingLabel.text = \"DONE\";" \
+												"}"
+										}
+									}]
+								name: "CoffeeContent"
+								visible: true
+								width: 105
+								height: 0
+								x: 165
+								y: 66
+								fillColor: #8B4513FF
+								startAnimation: function<bool>(6ade5bef-162d-4f0d-908c-15b38180f76d)
+								{
+									script: "function()" \
+										"{" \
+										"	f:animation_play(v:this->CoffeePreparing);" \
+										"	false" \
+										"}"
+								}
+								startOnReady: conditional_script(cd5c36be-dd39-4659-bca8-64668ad746f6)
+								{
+									triggerList: trigger_list(d6cb4a43-9761-4519-a786-2cf4e8b478b9)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(e8bfe6b8-7442-4d90-b9af-fffb09e2e57c)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	if(v:arg0 == true){" \
+											"		v:this.startAnimation();" \
+											"	}" \
+											"	false" \
+											"}"
+									}
+								}
+							}, 
+							GtfLabel(2da754d0-aa85-44df-9480-7093ec0aa595)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "ReadyLabel"
+								visible: @a82e1205-fbfb-4601-adfa-3516f2e7bcbe (objectref<bool>)
+								width: 212
+								height: 53
+								x: 120
+								y: 197
+								text: "Your coffee is ready!"
+								textColor: #FFFFFFFF
+								font: font_resource(9b398fe1-f084-47e6-9c8c-a213fee876cd)
+								{
+									file: "PT_Sans_Narrow.ttf"
+									size: 30
+								}
+								horizontalAlign: 0
+								verticalAlign: 0
+							}, 
+							GtfContainer(bb151fc8-d7b6-4172-bdd1-65a5003cf175)
+							{
+								features: feature_list []
+								children: children_list [
+									GtfRectangle(c64f50c9-4de9-4b0e-9e64-bb29c4bf29f6)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "Hot1"
+										visible: true
+										width: 7
+										height: 23
+										x: 23
+										y: 0
+										fillColor: #A9A9A9FF
+									}, 
+									GtfRectangle(6e0d4cbc-8e45-42bd-af3b-d99713046634)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "Hot2"
+										visible: true
+										width: 7
+										height: 23
+										x: 61
+										y: 0
+										fillColor: #A9A9A9FF
+									}, 
+									GtfRectangle(3427f07e-22b7-45d4-b444-06820ea87e32)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "Hot3"
+										visible: true
+										width: 7
+										height: 23
+										x: 96
+										y: 0
+										fillColor: #A9A9A9FF
+									}]
+								name: "SomeLines"
+								visible: @a82e1205-fbfb-4601-adfa-3516f2e7bcbe (objectref<bool>)
+								width: 133
+								height: 23
+								x: 154
+								y: 20
+							}]
+						name: "DownRectangle"
+						visible: true
+						width: width@64cb74cc-dc05-46c0-86b8-06466526436b (propref<int>)
+						height: 247
+						x: 0
+						y: height@213ee280-9e62-4799-ac6b-c6c76f39de37 (propref<int>)
+						fillColor: #000000FF
+					}]
+				name: "Background"
+				visible: true
+				width: 448
+				height: 328
+				x: 183
+				y: 64
+				fillColor: #A9A9A9FF
+			}]
+		name: "View"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+	}
+	text: text@7d7704de-a4a5-4c08-9239-6a62762bc904 (propref<string>)
+	startAnimation: startAnimation@84c97678-b95b-48f1-944c-81bfbcb38e50 (propref<function<bool>>)
+	textLeft: text@e7fa967f-fc45-4cf2-a4e0-c478902d79d9 (propref<string>)
+}
