@@ -1,0 +1,93 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(d70fe6ac-362f-4ecb-87cb-323d149d5632)
+{
+	name: "InAppView"
+	structure: GtfView(815e0cd6-3590-4da4-88c4-e3a8b947230b)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfImage(b82d648e-9e64-4dc6-bd2f-884b52bcee60)
+			{
+				features: feature_list [
+					ScaleMode(1635b6d4-b977-4132-8751-11a0da3cf978)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "Image 2"
+				visible: true
+				width: width@815e0cd6-3590-4da4-88c4-e3a8b947230b (propref<int>)
+				height: height@815e0cd6-3590-4da4-88c4-e3a8b947230b (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(1dd3be57-03d4-48de-aad4-d446a5443617)
+				{
+					file: "Origami-black-background-vectors.jpg"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(6e0697af-1e7b-4d6f-bd90-6e353223dfcd)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label 2"
+				visible: true
+				width: width@815e0cd6-3590-4da4-88c4-e3a8b947230b (propref<int>)
+				height: 100
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(088ae362-aeb5-4e1c-806a-0137c57cd55a)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfContainer_template_instance(db9ba49f-578c-4492-ad9b-70d9ebe84500)
+			{
+				name: "ImageButton 1"
+				template: @5aa223d3-a437-4764-bed3-ea9389e30e5b (objectref<GtfContainer_template>)
+				children: children_list []
+				fillColor: #FFFFFF00
+				image: image_resource(015121cd-c986-4d87-bc58-f8d8f2d9aac2)
+				{
+					file: "menu.png"
+				}
+				x: 679
+				y: 18
+				touchPressed: function<bool,int,int,int,int>(3427006d-24f6-46d9-905a-99e1e61aaecc)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	if(v:this->^.hasMenu)" \
+						"	{" \
+						"		v:this.fillColor = #6600ff" \
+						"		fire_delayed 1000, ev:goBack()" \
+						"	}" \
+						"	" \
+						"    false" \
+						"}"
+				}
+				touchShortReleased: touchShortReleased@5aa223d3-a437-4764-bed3-ea9389e30e5b (propref<function<bool,int,int,int,int>>)
+				width: 100
+				height: 100
+				visible: true
+			}]
+		name: "View 2"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+		hasMenu: true
+	}
+	text: text@6e0697af-1e7b-4d6f-bd90-6e353223dfcd (propref<string>)
+	hasMenu: hasMenu@815e0cd6-3590-4da4-88c4-e3a8b947230b (propref<bool>)
+	visible: visible@db9ba49f-578c-4492-ad9b-70d9ebe84500 (propref<bool>)
+}
