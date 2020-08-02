@@ -1,0 +1,50 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(a1a7bec0-5294-4a0a-a6c8-793670aab3ee)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(afd71750-4472-4d9c-8115-bf7d11076e78)
+		{
+			name: "Menu 1"
+			template: @bdc67644-5772-4a1a-924a-d2cf18516330 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Navigation"
+			image: image@bdc67644-5772-4a1a-924a-d2cf18516330 (propref<image>)
+			"image 2": image_resource(c4c91c70-cc69-407a-95cc-d38d3ca01eb1)
+			{
+				file: "radio.png"
+			}
+			"image 3": "image 3"@bdc67644-5772-4a1a-924a-d2cf18516330 (propref<image>)
+			touchShortReleased: function<bool,int,int,int,int>(fef81ecc-6529-4117-8d9c-265be79ad813)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    fire ev:goTo_mediaPlayer()" \
+					"    false" \
+					"}"
+			}
+			"touchShortReleased 2": function<bool,int,int,int,int>(16b96acf-b899-410e-8356-772706a5b63b)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    fire ev:goTo_radio()" \
+					"    false" \
+					"}"
+			}
+			"touchShortReleased 3": function<bool,int,int,int,int>(a898115f-c456-4034-8311-ec023ca76de7)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    fire ev:goTo_help()" \
+					"    false" \
+					"}"
+			}
+		}]
+	name: "Navigation View"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
