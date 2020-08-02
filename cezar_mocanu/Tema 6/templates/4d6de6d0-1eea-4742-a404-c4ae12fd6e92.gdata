@@ -1,0 +1,88 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(4d6de6d0-1eea-4742-a404-c4ae12fd6e92)
+{
+	name: "KeyboardView"
+	structure: GtfView(cb5f187d-4d33-4256-b9b6-d2b15c85aef4)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(af66501e-b6a3-41a9-ac39-20cc03622879)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@cb5f187d-4d33-4256-b9b6-d2b15c85aef4 (propref<int>)
+				height: 220
+				x: 0
+				y: 260
+				fillColor: #111111FF
+			}, 
+			GtfContainer_template_instance(bcbc2fd2-f581-4e3c-8505-a51751c928de)
+			{
+				name: "Keypad"
+				template: @86b6d205-f517-4e16-b042-021ab971e743 (objectref<GtfContainer_template>)
+				children: children_list []
+				x: int_scriptedValue(b23ad510-8b51-4f57-9c77-17cad1e27f5d)
+				{
+					triggerList: trigger_list(fb8f8f98-9993-4c8d-9a15-50cb96453857)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(229e5a77-a433-4007-80b8-46ac99587cbd)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(66a82da8-744e-4fe8-98ab-5c89644a060d)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.width / 2 - 300 " \
+							"}"
+					}
+					write: function<bool,int>(95c2aa35-e67d-4c29-b0fa-d8d4d9c229d7)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				y: 270
+			}, 
+			GtfImage(2b1a0fae-2a4e-44b8-ae78-6cffecbaa787)
+			{
+				features: feature_list [
+					ScaleMode(0c4ec40a-09db-496d-8550-92e3e3a4af24)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "Gradient"
+				visible: true
+				width: width@cb5f187d-4d33-4256-b9b6-d2b15c85aef4 (propref<int>)
+				height: 260
+				x: 0
+				y: 0
+				image: image_resource(0166bcd4-3abe-4735-8a93-ff563c03803b)
+				{
+					file: "background.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "View"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+	}
+}

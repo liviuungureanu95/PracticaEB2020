@@ -1,0 +1,165 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(9b76ab36-6b1d-4814-9d9f-35fdb73cff3b)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(058da794-3f33-4835-bee7-4b056d3fda9a)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Background"
+			visible: true
+			width: width@9b76ab36-6b1d-4814-9d9f-35fdb73cff3b (propref<int>)
+			height: height@9b76ab36-6b1d-4814-9d9f-35fdb73cff3b (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #111111FF
+		}, 
+		GtfLabel(3df330f5-df27-4f09-aee1-d11b2b19c6c0)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Question"
+			visible: true
+			width: 451
+			height: 53
+			x: 145
+			y: 66
+			text: "Is this right?"
+			textColor: #FFFFFFFF
+			font: font_resource(aaddbe71-0961-4aa5-9d5a-8b234e48b83d)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(fce5e3ae-41d7-4905-94bc-dff70954e109)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Country"
+			visible: true
+			width: 451
+			height: 53
+			x: 145
+			y: 110
+			text: @61d87fb5-b358-424b-9959-a31a319d7421 (objectref<string>)
+			textColor: #FFFFFFFF
+			font: font_resource(f144bff7-f986-4c6e-9299-cb95bfc74c14)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(1dc8275c-357f-4959-a6da-aef9615e2bb9)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "City"
+			visible: true
+			width: 451
+			height: 53
+			x: 145
+			y: 150
+			text: @eb1f46d8-eef2-414c-a2e4-377243020cd2 (objectref<string>)
+			textColor: #FFFFFFFF
+			font: font_resource(06633e36-e507-4eb5-96c1-4c2204540526)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(64771522-ca2c-4e9f-bd75-09cbf42d0f14)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Street"
+			visible: true
+			width: 451
+			height: 53
+			x: 145
+			y: 190
+			text: @6a0320c4-e23f-4ad9-865a-cf79127e5ed0 (objectref<string>)
+			textColor: #FFFFFFFF
+			font: font_resource(2d3321a6-d2ea-4d78-8f80-dc87254d38b1)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(70ea35f2-e6e9-4fb4-b464-95d510eec480)
+		{
+			name: "Yes"
+			template: @18783651-357f-4f40-8ebf-cf07060366d4 (objectref<GtfContainer_template>)
+			children: children_list []
+			onReleaseAction: function<bool>(8c10e752-ec8c-4438-9f7f-f06801e71afa)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_DriveSafe()" \
+					"	false" \
+					"}"
+			}
+			x: 400
+			y: 300
+			width: 100
+			height: 63
+			baseColor: color_element_reference(f85d3d88-ae19-47de-a4c0-bfab2ddd9e91)
+			{
+				index: 0
+				list: @34ac87d6-27cd-42bd-bf91-b9430e309c90 (objectref<colorlist>)
+			}
+			pressColor: color_element_reference(7300df36-876e-45e7-98eb-2dbf0b36609e)
+			{
+				index: 1
+				list: @34ac87d6-27cd-42bd-bf91-b9430e309c90 (objectref<colorlist>)
+			}
+			text: "YES"
+			visible: visible@18783651-357f-4f40-8ebf-cf07060366d4 (propref<bool>)
+		}, 
+		GtfContainer_template_instance(2337df33-5204-40f3-baea-ef8b889439e3)
+		{
+			name: "No"
+			template: @18783651-357f-4f40-8ebf-cf07060366d4 (objectref<GtfContainer_template>)
+			children: children_list []
+			onReleaseAction: function<bool>(30ace32b-c251-49f5-8104-846363eca4b4)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_Country()" \
+					"	false" \
+					"}"
+			}
+			x: 235
+			y: 300
+			width: 100
+			height: 63
+			baseColor: color_element_reference(17e6db41-39a3-4d9b-b1fc-5ce8c41caf88)
+			{
+				index: 0
+				list: @34ac87d6-27cd-42bd-bf91-b9430e309c90 (objectref<colorlist>)
+			}
+			pressColor: color_element_reference(1f6bb44d-eda7-4d94-aec3-94259784d295)
+			{
+				index: 1
+				list: @34ac87d6-27cd-42bd-bf91-b9430e309c90 (objectref<colorlist>)
+			}
+			text: "NO"
+			visible: visible@18783651-357f-4f40-8ebf-cf07060366d4 (propref<bool>)
+		}]
+	name: "View 3"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

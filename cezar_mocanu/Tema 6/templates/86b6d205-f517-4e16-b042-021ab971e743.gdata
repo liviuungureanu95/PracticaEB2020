@@ -1,0 +1,197 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(86b6d205-f517-4e16-b042-021ab971e743)
+{
+	name: "Keypad"
+	structure: GtfContainer(d0cb67ac-1b22-45a2-a715-9fc5891dab9f)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(9bac7dc5-abba-4863-9f9b-e66273c1201b)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@d0cb67ac-1b22-45a2-a715-9fc5891dab9f (propref<int>)
+				height: height@d0cb67ac-1b22-45a2-a715-9fc5891dab9f (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #111111FF
+			}, 
+			GtfInstantiator(d711e12e-7d75-4e89-9eec-f5b24360875b)
+			{
+				features: feature_list [
+					LayoutPolicyFlow(9bc1a0da-76c8-4ca5-a0cc-503f0ceb3efb)
+					{
+						horizontalGap: 8
+						verticalGap: 4
+						layoutDirection: 0
+						horizontalChildAlign: 1
+						verticalChildAlign: 0
+					}]
+				children: children_list [
+					GtfContainer(15cd75cb-fad0-4c30-ad07-86eaf01b2f50)
+					{
+						features: feature_list [
+							LineIndex(08714595-3c57-4519-8e48-77c2e3a4539f)
+							{
+								lineIndex: 0
+							}]
+						children: children_list [
+							GtfContainer_template_instance(bffa0a0d-3fdc-4d6c-8251-ec3b28e408db)
+							{
+								name: "KeyButton"
+								template: @18783651-357f-4f40-8ebf-cf07060366d4 (objectref<GtfContainer_template>)
+								children: children_list []
+								onReleaseAction: function<bool>(efbdfd6d-bf24-409c-bd2f-1f661a1b7aa2)
+								{
+									script: "function()" \
+										"{" \
+										"	v:this->^.keyAction()" \
+										"	false" \
+										"}"
+								}
+								x: x@18783651-357f-4f40-8ebf-cf07060366d4 (propref<int>)
+								y: y@18783651-357f-4f40-8ebf-cf07060366d4 (propref<int>)
+								width: 50
+								height: 50
+								baseColor: color_element_reference(24ccf4ba-c94d-484d-bb0c-bea1915a25f9)
+								{
+									index: 0
+									list: @34ac87d6-27cd-42bd-bf91-b9430e309c90 (objectref<colorlist>)
+								}
+								pressColor: color_element_reference(81a3b84d-3248-4fe8-a7e4-c1721f43d513)
+								{
+									index: 1
+									list: @34ac87d6-27cd-42bd-bf91-b9430e309c90 (objectref<colorlist>)
+								}
+								text: text@18783651-357f-4f40-8ebf-cf07060366d4 (propref<string>)
+								visible: visible@18783651-357f-4f40-8ebf-cf07060366d4 (propref<bool>)
+							}]
+						name: "KeyContainer"
+						visible: true
+						width: 50
+						height: 50
+						x: 0
+						y: 0
+						setKeys: conditional_script(005f88f1-a567-4a63-a2bb-78d7ff4ee38d)
+						{
+							triggerList: trigger_list(faa66c9e-be90-4980-93af-148101db21a5)
+							{
+								script: "v:this.lineIndex" \
+									"dp:Keys" \
+									""
+							}
+							onTrigger: function<bool,bool>(fe841da0-d635-4e19-8f95-de45bece14f2)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	v:this->KeyButton.text = dp:Keys[v:this.lineIndex]" \
+									"	false" \
+									"}"
+							}
+						}
+						keyAction: function<bool>(84aee0e7-4f1f-466f-8789-4216aa45ea06)
+						{
+							script: "function()" \
+								"{" \
+								"	fire ev:keypadPress(dp:Keys[v:this.lineIndex])" \
+								"	false" \
+								"}"
+						}
+					}]
+				name: "KeyInstantiator"
+				visible: true
+				width: width@d0cb67ac-1b22-45a2-a715-9fc5891dab9f (propref<int>)
+				height: height@d0cb67ac-1b22-45a2-a715-9fc5891dab9f (propref<int>)
+				x: 0
+				y: 0
+				numItems: 0
+				lineMapping: intlist []
+				onInitialize: conditional_script(89532181-f0de-4e7b-8ec9-4e47b263b5d6)
+				{
+					triggerList: trigger_list(9bc02876-07bc-49cb-af29-0f90267e6eb5)
+					{
+						script: "dp:Keys"
+					}
+					onTrigger: function<bool,bool>(cd72b6b8-dc5d-4879-92f4-1b4dbbfa3f5a)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	v:this.numItems = length dp:Keys" \
+							"	false" \
+							"}"
+					}
+				}
+			}, 
+			GtfContainer_template_instance(ae3290b1-ebd7-42a1-8513-d6ef841bdeb8)
+			{
+				name: "Space"
+				template: @18783651-357f-4f40-8ebf-cf07060366d4 (objectref<GtfContainer_template>)
+				children: children_list []
+				onReleaseAction: function<bool>(107f5268-3d52-4931-ae74-8279f188aa63)
+				{
+					script: "function()" \
+						"{" \
+						"	fire ev:keypadPress(\"space\")" \
+						"	false" \
+						"}"
+				}
+				x: 14
+				y: 162
+				width: 80
+				height: 50
+				baseColor: color_element_reference(1e4ca0a4-e5ba-4d69-9e95-c527f868e563)
+				{
+					index: 0
+					list: @34ac87d6-27cd-42bd-bf91-b9430e309c90 (objectref<colorlist>)
+				}
+				pressColor: color_element_reference(c06f9be1-79d8-4101-82eb-a0b0480e2737)
+				{
+					index: 1
+					list: @34ac87d6-27cd-42bd-bf91-b9430e309c90 (objectref<colorlist>)
+				}
+				text: "SPACE"
+				visible: visible@18783651-357f-4f40-8ebf-cf07060366d4 (propref<bool>)
+			}, 
+			GtfContainer_template_instance(41a72f7b-ebac-4df1-ae07-5fc81454d0ca)
+			{
+				name: "BackSpace"
+				template: @18783651-357f-4f40-8ebf-cf07060366d4 (objectref<GtfContainer_template>)
+				children: children_list []
+				onReleaseAction: function<bool>(0f369925-fb1c-4ef6-91c0-dee8ee99e693)
+				{
+					script: "function()" \
+						"{" \
+						"	fire ev:keypadPress(\"delete\")" \
+						"	false" \
+						"}"
+				}
+				x: 508
+				y: 162
+				width: 80
+				height: 50
+				baseColor: color_element_reference(36cfe58c-8639-4d06-bd13-2626c51f63f7)
+				{
+					index: 0
+					list: @34ac87d6-27cd-42bd-bf91-b9430e309c90 (objectref<colorlist>)
+				}
+				pressColor: color_element_reference(e807f8ba-7ea6-4ee0-9378-5fc6860c0b5c)
+				{
+					index: 1
+					list: @34ac87d6-27cd-42bd-bf91-b9430e309c90 (objectref<colorlist>)
+				}
+				text: "DEL"
+				visible: visible@18783651-357f-4f40-8ebf-cf07060366d4 (propref<bool>)
+			}]
+		name: "Container"
+		visible: true
+		width: 600
+		height: 200
+		x: 0
+		y: 0
+	}
+	x: x@d0cb67ac-1b22-45a2-a715-9fc5891dab9f (propref<int>)
+	y: y@d0cb67ac-1b22-45a2-a715-9fc5891dab9f (propref<int>)
+}

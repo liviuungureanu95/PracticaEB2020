@@ -1,0 +1,218 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(a86732be-9aaf-43eb-8375-58278edc2d4c)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(674b0a10-2a96-4d7d-be2f-087f61a1cb17)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Background"
+			visible: true
+			width: width@a86732be-9aaf-43eb-8375-58278edc2d4c (propref<int>)
+			height: height@a86732be-9aaf-43eb-8375-58278edc2d4c (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #5F5F5FFF
+		}, 
+		GtfImage(dc5ccd56-07f9-4ae8-8621-2cd270a45efe)
+		{
+			features: feature_list [
+				ScaleMode(d0af9ec6-85e4-4deb-9985-ec3bbfe55698)
+				{
+					scaleMode: 1
+				}, 
+				Rotation(a9089555-d2e0-4ccc-951e-f9b56be48f88)
+				{
+					rotationEnabled: true
+					rotationAngleX: 0F
+					rotationAngleY: 0F
+					rotationAngleZ: 90F
+				}, 
+				Scaling(d59a9118-e543-4648-b8ab-f9d002415987)
+				{
+					scalingEnabled: true
+					scalingX: 100F
+					scalingY: 100F
+					scalingZ: 100F
+				}, 
+				Shearing(0391d158-e5ed-4eb0-83d2-2150c06dcd4f)
+				{
+					shearingEnabled: true
+					shearingXbyY: 0F
+					shearingXbyZ: 0F
+					shearingYbyX: 0F
+					shearingYbyZ: 0F
+					shearingZbyX: 0F
+					shearingZbyY: 0F
+				}, 
+				Pivot(9a387d41-8dc3-4579-9a79-db90563881c1)
+				{
+					pivotX: float_scriptedValue(7c6b8a66-6e91-4528-9007-fa794ed140a8)
+					{
+						triggerList: trigger_list(3f365f5e-5efe-45f8-bc1e-acf636f1fcc3)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(5dfaabf4-2baf-4a0b-bd3b-34ee3d21286d)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<float>(47e2eb35-f259-4bcb-9f0f-f4b97c582a0d)
+						{
+							script: "function()" \
+								"{" \
+								"	f:int2float(v:this.width / 2)" \
+								"}"
+						}
+						write: function<bool,float>(8d9fc898-167a-459c-b64c-83156621eec3)
+						{
+							script: "function(v:arg0::float)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					pivotY: float_scriptedValue(7e0c29c9-9d67-4f5f-9afd-f967dfc65f73)
+					{
+						triggerList: trigger_list(5fba1f8c-0930-4078-918c-36efb7e9bbbc)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(22a8636e-9e6e-4a1f-86d1-ff9b32bb25e6)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<float>(48eb2f94-3fa0-420f-bdf4-7247a71f7615)
+						{
+							script: "function()" \
+								"{" \
+								"	f:int2float(v:this.height / 2)" \
+								"}"
+						}
+						write: function<bool,float>(ebd9fd3d-d728-41b5-bff3-e646f8ec5178)
+						{
+							script: "function(v:arg0::float)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					pivotZ: 0F
+				}]
+			children: children_list [
+				GtfParallelAnimation(3718e879-3347-470a-97f8-b3d3ab1bd777)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfSinusCurveFloat(7419d4df-880d-484f-bcc3-3e15920310af)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Sinus curve 1"
+							enabled: true
+							delay: 0
+							duration: 3000
+							repeat: 0
+							alternating: false
+							relative: false
+							amplitude: 360F
+							constant: 0F
+							frequency: 0.4F
+							phase: 0F
+							target: rotationAngleZ@a9089555-d2e0-4ccc-951e-f9b56be48f88 (propref<float>)
+						}]
+					name: "Spin"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(eaeb2886-79af-42ee-bd58-7bedddcb0ab7)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(f1511bf7-529c-4be2-a461-405df9b3829a)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(9f0889e7-3388-4ef3-b7d0-bd55dc9679e1)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+				}]
+			name: "SpiningWheel"
+			visible: true
+			width: 100
+			height: 100
+			x: 330
+			y: 170
+			image: image_resource(6f67a2f4-5c49-449e-9a15-e05ff05878e5)
+			{
+				file: "tire.png"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 2
+			onInitialize: conditional_script(d8ff9d59-ed53-4fdc-805a-ec223773c878)
+			{
+				triggerList: trigger_list(1d99ca83-d654-4d3b-a958-b3826fb096cb)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(c986b550-13bf-43d8-9607-f76b08dfea04)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	f:animation_play(v:this->Spin)" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfLabel(a306a8b7-e588-413a-8829-7b3561307713)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "DriveSafe"
+			visible: true
+			width: 451
+			height: 53
+			x: 155
+			y: 66
+			text: "Drive Safe"
+			textColor: #FFFFFFFF
+			font: font_resource(6a1bb82c-eec5-441d-baa9-a89a356f4f5c)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+	name: "View 3"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
