@@ -1,0 +1,290 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(d7a3d81c-e231-44df-9b82-b43603b7ed61)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(36b187b3-5957-49c6-b512-424dcec015ce)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Background"
+			visible: true
+			width: width@d7a3d81c-e231-44df-9b82-b43603b7ed61 (propref<int>)
+			height: height@d7a3d81c-e231-44df-9b82-b43603b7ed61 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #000000FF
+		}, 
+		GtfImage(6c2e9f54-3476-4ebe-9000-c6f2961c46be)
+		{
+			features: feature_list [
+				ScaleMode(33a3c3e7-ded0-4857-8b9f-1da3d24ec9c0)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "Background_Image"
+			visible: true
+			width: width@d7a3d81c-e231-44df-9b82-b43603b7ed61 (propref<int>)
+			height: height@d7a3d81c-e231-44df-9b82-b43603b7ed61 (propref<int>)
+			x: 2
+			y: -1
+			image: image_resource(8e1d2e6b-1bda-4090-8e48-aa856caf24ca)
+			{
+				file: "harta.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(39f1ef1d-3f37-4ee9-ab0c-e437c55cf165)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Titlu_label"
+			visible: true
+			width: width@d7a3d81c-e231-44df-9b82-b43603b7ed61 (propref<int>)
+			height: 100
+			x: 0
+			y: 0
+			text: "Choose the country"
+			textColor: #FFFFFFFF
+			font: font_resource(d39f0465-43f8-45cf-8416-3026e987e6b4)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 60
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(93eeb243-a001-4344-86bf-73c64445c5b7)
+		{
+			name: "Romania_btn"
+			template: @3ed20842-63df-4699-b70f-144bb2ae4ff2 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Romania"
+			x: 28
+			y: 99
+			"x 2": "x 2"@3ed20842-63df-4699-b70f-144bb2ae4ff2 (propref<int>)
+			"y 2": "y 2"@3ed20842-63df-4699-b70f-144bb2ae4ff2 (propref<int>)
+			"x 3": "x 3"@3ed20842-63df-4699-b70f-144bb2ae4ff2 (propref<int>)
+			"y 3": "y 3"@3ed20842-63df-4699-b70f-144bb2ae4ff2 (propref<int>)
+			touchShortReleased: function<bool,int,int,int,int>(19e599e2-a02c-4362-9b4f-45f1bde393b1)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	//ne asiguram ca incepem de la 0" \
+					"	dp:OK[0]=false" \
+					"	dp:OK[1]=false" \
+					"	dp:OK[2]=false" \
+					"	dp:OK[3]=false" \
+					"	//in momentul apasarii butonului semaforul se face 1, ceea ce inseamna ca trebuie sa afiseze o lista de orase" \
+					"	dp:OK[0]=true" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(7ce2a41e-faef-4af5-b4cd-db5aed741906)
+		{
+			name: "Germany_btn"
+			template: @3ed20842-63df-4699-b70f-144bb2ae4ff2 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Germany"
+			x: 28
+			y: 180
+			"x 2": "x 2"@3ed20842-63df-4699-b70f-144bb2ae4ff2 (propref<int>)
+			"y 2": "y 2"@3ed20842-63df-4699-b70f-144bb2ae4ff2 (propref<int>)
+			"x 3": "x 3"@3ed20842-63df-4699-b70f-144bb2ae4ff2 (propref<int>)
+			"y 3": "y 3"@3ed20842-63df-4699-b70f-144bb2ae4ff2 (propref<int>)
+			touchShortReleased: function<bool,int,int,int,int>(4021acf5-89b3-48d7-a0f6-409ef01a7780)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	//ne asiguram ca incepem de la 0" \
+					"	dp:OK[0]=false" \
+					"	dp:OK[1]=false" \
+					"	dp:OK[2]=false" \
+					"	dp:OK[3]=false" \
+					"	//in momentul apasarii butonului semaforul se face 1, ceea ce inseamna ca trebuie sa afiseze o lista de orase" \
+					"	dp:OK[1]=true" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(3e2d8faa-243b-4158-a964-848248f515cd)
+		{
+			name: "Italy_btn"
+			template: @3ed20842-63df-4699-b70f-144bb2ae4ff2 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Italy"
+			x: 28
+			y: 260
+			"x 2": "x 2"@3ed20842-63df-4699-b70f-144bb2ae4ff2 (propref<int>)
+			"y 2": "y 2"@3ed20842-63df-4699-b70f-144bb2ae4ff2 (propref<int>)
+			"x 3": "x 3"@3ed20842-63df-4699-b70f-144bb2ae4ff2 (propref<int>)
+			"y 3": "y 3"@3ed20842-63df-4699-b70f-144bb2ae4ff2 (propref<int>)
+			touchShortReleased: function<bool,int,int,int,int>(dfe5201b-f9be-471a-98b3-2608ac5686e2)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	//ne asiguram ca incepem de la 0" \
+					"	dp:OK[0]=false" \
+					"	dp:OK[1]=false" \
+					"	dp:OK[2]=false" \
+					"	dp:OK[3]=false" \
+					"	//in momentul apasarii butonului semaforul se face 1, ceea ce inseamna ca trebuie sa afiseze o lista de orase" \
+					"	dp:OK[2]=true" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(cba6621d-558c-4753-996e-50698423b325)
+		{
+			name: "France_btn"
+			template: @3ed20842-63df-4699-b70f-144bb2ae4ff2 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "France"
+			x: 28
+			y: 340
+			"x 2": "x 2"@3ed20842-63df-4699-b70f-144bb2ae4ff2 (propref<int>)
+			"y 2": "y 2"@3ed20842-63df-4699-b70f-144bb2ae4ff2 (propref<int>)
+			"x 3": "x 3"@3ed20842-63df-4699-b70f-144bb2ae4ff2 (propref<int>)
+			"y 3": "y 3"@3ed20842-63df-4699-b70f-144bb2ae4ff2 (propref<int>)
+			touchShortReleased: function<bool,int,int,int,int>(c22d4801-d43e-4f7b-9ba6-ed32d37cb0b9)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	//ne asiguram ca incepem de la 0" \
+					"	dp:OK[0]=false" \
+					"	dp:OK[1]=false" \
+					"	dp:OK[2]=false" \
+					"	dp:OK[3]=false" \
+					"	//in momentul apasarii butonului semaforul se face 1, ceea ce inseamna ca trebuie sa afiseze o lista de orase" \
+					"	dp:OK[3]=true" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfInstantiator(86dbf569-fa29-4910-b758-3f1ba5d0540e)
+		{
+			features: feature_list [
+				LayoutPolicyBox(6e73c9c2-47ea-456c-9155-bf9c15705f24)
+				{
+					gap: 8
+					layoutDirection: 1
+				}]
+			children: children_list [
+				GtfRectangle(5822b288-b6a7-438a-ae1f-ce9a5f48f9e1)
+				{
+					features: feature_list [
+						LineIndex(2939ed13-0808-4471-bfe3-94acfb2e3371)
+						{
+							lineIndex: 0
+						}]
+					children: children_list [
+						GtfLabel(c6e0cf38-62bb-4471-8c69-c060f54bfd85)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "City_label"
+							visible: true
+							width: width@5822b288-b6a7-438a-ae1f-ce9a5f48f9e1 (propref<int>)
+							height: height@5822b288-b6a7-438a-ae1f-ce9a5f48f9e1 (propref<int>)
+							x: 0
+							y: 0
+							text: "aaa"
+							textColor: #FFFFFFFF
+							font: font_resource(f930c3f3-1f10-41b4-a0b6-f2f0b103696d)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Background"
+					visible: true
+					width: 300
+					height: 70
+					x: 0
+					y: 0
+					fillColor: #6495EDFF
+					setText: conditional_script(b2b89a52-9871-407e-892b-d44ba29e0773)
+					{
+						triggerList: trigger_list(024b267a-a504-470c-86c9-5e60d055caa8)
+						{
+							script: "v:this.lineIndex" \
+								"dp:MyCityList"
+						}
+						onTrigger: function<bool,bool>(8bfe97f5-64cb-4c1b-9d1d-eaba1ba789aa)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this->City_label.text=dp:MyCityList[v:this.lineIndex];" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "CityInstantiator"
+			visible: true
+			width: 300
+			height: 70
+			x: 250
+			y: 100
+			numItems: 5
+			lineMapping: intlist []
+			CalculateNumItems: conditional_script(7cfa7e5a-1728-46a8-b077-25dda8601fca)
+			{
+				triggerList: trigger_list(bc755a2d-1c4a-42b9-8bee-147225053501)
+				{
+					script: "dp:MyCityList"
+				}
+				onTrigger: function<bool,bool>(52497e49-a353-4fd7-93e6-2bb0403190c3)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	v:this.numItems = length dp:MyCityList;" \
+						"	false" \
+						"}"
+				}
+			}
+			Alege_lista: conditional_script(a3bd6a44-0217-47c1-b25a-c823984c7f15)
+			{
+				triggerList: trigger_list(4b801328-5168-45b6-a78c-fc60712858fb)
+				{
+					script: "dp:Romania" \
+						"dp:Germany" \
+						"dp:Italy" \
+						"dp:France" \
+						"dp:OK"
+				}
+				onTrigger: function<bool,bool>(ffaf755f-abb7-4f4c-822c-8cb752122bfb)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(dp:OK[0]==true)" \
+						"		dp:MyCityList=dp:Romania" \
+						"		" \
+						"	if(dp:OK[1]==true)" \
+						"		dp:MyCityList=dp:Germany" \
+						"		" \
+						"	if(dp:OK[2]==true)" \
+						"		dp:MyCityList=dp:Italy" \
+						"		" \
+						"	if(dp:OK[3]==true)" \
+						"		dp:MyCityList=dp:France" \
+						"	false" \
+						"}"
+				}
+			}
+			Lista_orase: @9fdce3a9-586c-404e-912f-fe4c67a76bae (objectref<stringlist>)
+		}]
+	name: "Country"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
