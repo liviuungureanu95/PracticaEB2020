@@ -1,0 +1,174 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(dcfb509b-7fc9-4265-8d2c-dabb0ce121a0)
+{
+	features: feature_list []
+	children: children_list [
+		GtfLabel(46c6c0e5-e3d0-4a69-885b-4fff8c2425bf)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "title"
+			visible: true
+			width: width@dcfb509b-7fc9-4265-8d2c-dabb0ce121a0 (propref<int>)
+			height: 100
+			x: 0
+			y: 0
+			text: @1fc66ff1-281b-4f23-abe9-a0830eda4755 (objectref<string>)
+			textColor: #FFFFFFFF
+			font: font_resource(f95a3ce7-3d0c-4047-a927-23c476e2c643)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfInstantiator(5efe482a-4c66-4b6f-b43a-bf4ce6b11d90)
+		{
+			features: feature_list [
+				LayoutPolicyFlow(fadcc86a-a81e-40e7-8e41-3bba3c747b6f)
+				{
+					horizontalGap: 0
+					verticalGap: 0
+					layoutDirection: 0
+					horizontalChildAlign: 0
+					verticalChildAlign: 0
+				}]
+			children: children_list [
+				GtfContainer(b19faaa8-347b-499d-a800-30b08e20fa3e)
+				{
+					features: feature_list [
+						LineIndex(ae764c64-8be4-46ab-ba8d-482f1e5f6b61)
+						{
+							lineIndex: 0
+						}]
+					children: children_list [
+						GtfLabel(24f527db-af53-49e9-92a9-3cb371b5aa49)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Label 9"
+							visible: true
+							width: 100
+							height: 50
+							x: 94
+							y: -16
+							text: "label"
+							textColor: #FFFFFFFF
+							font: font_resource(6f42da76-2537-4fd5-aa34-2f061bb42f05)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Item"
+					visible: true
+					width: 100
+					height: 50
+					x: 242
+					y: -26
+					"Conditional script 9": conditional_script(8cf76e22-3efc-4d98-b340-1701a6bc3ede)
+					{
+						triggerList: trigger_list(73e9bacb-2a48-484d-9961-55a0901f1e96)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(2f45edbf-cb98-4ad1-81dc-0448c5cc95ca)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(dp:selectedCountry == dp:countries[0])" \
+								"		v:this->\"Label 9\".text = dp:citiesInRo[v:this.lineIndex]" \
+								"	else" \
+								"		if(dp:selectedCountry == dp:countries[1])" \
+								"		v:this->\"Label 9\".text = dp:citiesInDe[v:this.lineIndex]" \
+								"	else" \
+								"		if(dp:selectedCountry == dp:countries[2])" \
+								"		v:this->\"Label 9\".text = dp:citiesInFr[v:this.lineIndex]" \
+								"	else" \
+								"		if(dp:selectedCountry == dp:countries[3])" \
+								"		v:this->\"Label 9\".text = dp:citiesInIt[v:this.lineIndex]" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "Instantiator2"
+			visible: true
+			width: 150
+			height: 228
+			x: 250
+			y: 148
+			numItems: 0
+			lineMapping: intlist []
+			"Conditional script 8": conditional_script(646e84db-42b0-43c7-9d52-17453be0ed46)
+			{
+				triggerList: trigger_list(8c76d0c1-dc0c-4fda-bc07-8bf1b6cceeb1)
+				{
+					script: "dp:citiesInRo"
+				}
+				onTrigger: function<bool,bool>(241add1f-a0b2-4e46-ba59-55edec18c1d9)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	v:this.numItems = length dp:citiesInRo" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfContainer_template_instance(ebc51e1e-df19-4f9b-8c99-441af100baa9)
+		{
+			name: "BackButton"
+			template: @47a3a8b2-e057-492d-9612-bc1ced79f8bd (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 686
+			y: 7
+			width: width@47a3a8b2-e057-492d-9612-bc1ced79f8bd (propref<int>)
+			height: height@47a3a8b2-e057-492d-9612-bc1ced79f8bd (propref<int>)
+			onReleaseAction: function<bool>(72e33e68-95c2-4e7c-bd61-7b14fc70b4cd)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goBack()" \
+					"	false" \
+					"}"
+			}
+			onPressAction: function<bool>(b730e11c-959e-47eb-8e02-8729e777f707)
+			{
+				script: "function()" \
+					"{" \
+					"	" \
+					"	false" \
+					"}"
+			}
+			pressedColor: pressedColor@47a3a8b2-e057-492d-9612-bc1ced79f8bd (propref<color>)
+			baseColor: #C0C0C0FF
+			text: text@47a3a8b2-e057-492d-9612-bc1ced79f8bd (propref<string>)
+			image: image@47a3a8b2-e057-492d-9612-bc1ced79f8bd (propref<image>)
+		}]
+	name: "View 2"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+	showCities: conditional_script(7bf67633-b147-4f20-97bf-92c2292eb71e)
+	{
+		triggerList: trigger_list(9c518c0e-91fe-428d-9633-3f9303d34fe1)
+		{
+			script: ""
+		}
+		onTrigger: function<bool,bool>(8e4c5901-fc37-40e1-8887-4949ad241088)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+}

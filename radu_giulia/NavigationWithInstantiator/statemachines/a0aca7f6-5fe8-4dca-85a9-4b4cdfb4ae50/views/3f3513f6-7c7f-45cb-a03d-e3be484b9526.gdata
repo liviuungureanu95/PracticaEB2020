@@ -1,0 +1,161 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(3f3513f6-7c7f-45cb-a03d-e3be484b9526)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(06286ae8-930c-4faf-950f-ae2465d1dc22)
+		{
+			features: feature_list [
+				ScaleMode(d0690882-9f78-4dbd-b69e-80cd86aa764c)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "Background"
+			visible: true
+			width: 800
+			height: 480
+			x: 0
+			y: 0
+			image: image_resource(c7b4cdcb-d9d2-4e86-a96b-8d35f1da996d)
+			{
+				file: "map.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfInstantiator(f0874e7a-be44-4f18-a14a-277c874fc069)
+		{
+			features: feature_list [
+				LayoutPolicyFlow(f49a2f1a-db99-4863-bcc4-3b20f18ffb6a)
+				{
+					horizontalGap: 50
+					verticalGap: 50
+					layoutDirection: 0
+					horizontalChildAlign: 0
+					verticalChildAlign: 0
+				}]
+			children: children_list [
+				GtfContainer(fd9f104d-7e8b-46d6-918d-d20b132a4253)
+				{
+					features: feature_list [
+						LineIndex(2a230a13-bb02-4ef4-a8cc-02a41edafdb6)
+						{
+							lineIndex: 0
+						}]
+					children: children_list [
+						GtfContainer_template_instance(39cdeac7-a3ff-4a74-be2c-38d9caad86f6)
+						{
+							name: "Button"
+							template: @5572b56d-9218-48e8-b585-ff356656e7bd (objectref<GtfContainer_template>)
+							children: children_list []
+							x: 191
+							y: -10
+							width: 150
+							height: 150
+							onReleaseAction: function<bool>(c35033ed-e082-4640-90f3-0dc67a9f15a7)
+							{
+								script: "function()" \
+									"{" \
+									"	v:this->^.selectCountry()" \
+									"	false" \
+									"}"
+							}
+							onPressAction: function<bool>(ff0b28ec-8f90-4526-b3c9-acf8acfa6ecd)
+							{
+								script: "function()" \
+									"{" \
+									"	" \
+									"	false" \
+									"}"
+							}
+							pressedColor: #7CFC00FF
+							baseColor: #90EE90FF
+							text: text@5572b56d-9218-48e8-b585-ff356656e7bd (propref<string>)
+							image: image_resource(83d4df30-b716-4fb0-a134-2926853cc8df)
+							{
+								file: ""
+							}
+						}]
+					name: "Item"
+					visible: true
+					width: 150
+					height: 150
+					x: 25
+					y: 20
+					showLabel: conditional_script(7140f502-5b67-4f3d-a8fe-51b2ad223240)
+					{
+						triggerList: trigger_list(f3782032-087a-4c5d-99a9-cbbe34027e96)
+						{
+							script: "dp:countries" \
+								"v:this.lineIndex"
+						}
+						onTrigger: function<bool,bool>(db35d3e5-cdb5-4766-83a8-537cd33a483c)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this->Button.text  = dp:countries[v:this.lineIndex]" \
+								"	false" \
+								"}"
+						}
+					}
+					selectCountry: function<bool>(d17f0b82-589b-402b-862f-e7418370873a)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:selectedCountry = dp:countries[v:this.lineIndex]" \
+							"	//if(dp:selectedCountry == dp:countries[0] )" \
+							"	fire ev: goToCities()" \
+							"	false" \
+							"}"
+					}
+					showImage: conditional_script(f8d45d68-08eb-4091-ac75-332c72e2f249)
+					{
+						triggerList: trigger_list(9e0cff3a-59ca-4a12-a0d6-2644b050669e)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(5fdee42d-8c1f-43a8-b898-4a380edcfa2e)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this->Button.image = dp:countriesImages[v:this.lineIndex]" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "Instantiator"
+			visible: true
+			width: 534
+			height: 246
+			x: 33
+			y: 87
+			numItems: 0
+			lineMapping: intlist []
+			"Conditional script 5": conditional_script(9ae16d70-07c4-49a3-a50f-17b280c8acba)
+			{
+				triggerList: trigger_list(302af64c-0234-4691-a40e-7b3b5ea876eb)
+				{
+					script: "dp:countries"
+				}
+				onTrigger: function<bool,bool>(7e5a997c-1d3f-4f0a-8d0e-d5e9a3a76b73)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	v:this.numItems = length dp:countries" \
+						"	false" \
+						"	" \
+						"}"
+				}
+			}
+		}]
+	name: "View 1"
+	visible: true
+	width: 800
+	height: 480
+	x: 2
+	y: 0
+}
