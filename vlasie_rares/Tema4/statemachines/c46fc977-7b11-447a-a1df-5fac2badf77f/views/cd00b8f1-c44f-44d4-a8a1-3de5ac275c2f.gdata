@@ -1,0 +1,327 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(cd00b8f1-c44f-44d4-a8a1-3de5ac275c2f)
+{
+	features: feature_list [
+		Scaling(134622dd-aff0-4915-89a5-8bf9c8d79288)
+		{
+			scalingEnabled: true
+			scalingX: 165F
+			scalingY: 150F
+			scalingZ: 100F
+		}]
+	children: children_list [
+		GtfContainer_template_instance(d8d06652-ff8c-431c-bf82-4e7b24fc2a3f)
+		{
+			name: "HomeCinema_Background 1"
+			template: @f4e7b708-887c-4b5d-a901-1bedbec5e277 (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfContainer_template_instance(8e87eac8-53f5-481d-93eb-e0e176b619d2)
+				{
+					name: "BasicPrev"
+					template: @69493f06-65ee-4594-87d2-a4b843515ae6 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 120
+					y: 25
+					image: image_resource(d1dfc567-77d1-44ae-9600-210618cba8c8)
+					{
+						file: "prev.png"
+					}
+					touchPressed: function<bool,int,int,int,int>(da29bfb7-857b-4f13-8e6e-02b743b6f2cc)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:Media_Index > 0)" \
+							"		dp:Media_Index -= 1" \
+							"	else" \
+							"		dp:Media_Index = length dp:Media_List - 1" \
+							"	" \
+							"	v:this->^->\"BasicPlay\".Pause = false" \
+							"	v:this->^->\"BasicPlay\".image = dp:\"Play/Pause_Image\"[0]" \
+							"" \
+							"    false" \
+							"}"
+					}
+					touchable: touchable@69493f06-65ee-4594-87d2-a4b843515ae6 (propref<bool>)
+				}, 
+				GtfContainer_template_instance(3b600d52-b8aa-4046-a72f-78ec5f5a8e3c)
+				{
+					name: "BasicNext"
+					template: @69493f06-65ee-4594-87d2-a4b843515ae6 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 320
+					y: 27
+					image: image_resource(e7056ce9-1e0f-446c-a97b-b655e7d5fc96)
+					{
+						file: "next.png"
+					}
+					touchPressed: function<bool,int,int,int,int>(10a354aa-a5c3-463e-b4e7-40806254bbf9)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:Media_Index < length dp:Media_List - 1)" \
+							"		dp:Media_Index += 1" \
+							"	else" \
+							"		dp:Media_Index = 0" \
+							"		" \
+							"	v:this->^->\"BasicPlay\".Pause = false" \
+							"	v:this->^->\"BasicPlay\".image = dp:\"Play/Pause_Image\"[0]" \
+							"    false" \
+							"}"
+					}
+					touchable: touchable@69493f06-65ee-4594-87d2-a4b843515ae6 (propref<bool>)
+				}, 
+				GtfContainer_template_instance(ba98680c-02a6-49c8-9d4d-e12656723551)
+				{
+					name: "BasicPlay"
+					template: @69493f06-65ee-4594-87d2-a4b843515ae6 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 220
+					y: 25
+					image: image_resource(c9e61fb6-5ee4-4f6e-9655-edbdf198303b)
+					{
+						file: "play.png"
+					}
+					touchPressed: function<bool,int,int,int,int>(16c29096-92bc-4548-9b9e-6176db97d7e9)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(v:this.Pause == false)" \
+							"		{" \
+							"			v:this.image = dp:\"Play/Pause_Image\"[1]" \
+							"			v:this.Pause = true" \
+							"		}" \
+							"		else" \
+							"		{" \
+							"			v:this.image = dp:\"Play/Pause_Image\"[0]" \
+							"			v:this.Pause = false" \
+							"		}" \
+							"" \
+							"    false" \
+							"}"
+					}
+					touchable: touchable@69493f06-65ee-4594-87d2-a4b843515ae6 (propref<bool>)
+					Pause: false
+				}, 
+				GtfContainer_template_instance(d49c2265-bd6f-4135-9b4f-82e3d60a0dd3)
+				{
+					name: "BasicDown"
+					template: @69493f06-65ee-4594-87d2-a4b843515ae6 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 100
+					y: 160
+					image: image_resource(581ccde1-d3b3-4260-bf10-91cdd2827c69)
+					{
+						file: "dwon.png"
+					}
+					touchPressed: function<bool,int,int,int,int>(5913b9e7-bb31-4b51-a054-26a45aead3d9)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:Volume>0)" \
+							"		dp:Volume-= 10" \
+							"    false" \
+							"}"
+					}
+					touchable: touchable@69493f06-65ee-4594-87d2-a4b843515ae6 (propref<bool>)
+				}, 
+				GtfContainer_template_instance(70c83d3b-bbe3-4ed4-b1df-262cdf2e09c0)
+				{
+					name: "BasicUp"
+					template: @69493f06-65ee-4594-87d2-a4b843515ae6 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 300
+					y: 160
+					image: image_resource(13d87d34-cb2d-45fa-a1a1-06a113adcf33)
+					{
+						file: "up.png"
+					}
+					touchPressed: function<bool,int,int,int,int>(22c71082-ec85-46b4-9349-31da90f0acae)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:Volume<100)" \
+							"		dp:Volume+= 10" \
+							"    false" \
+							"}"
+					}
+					touchable: touchable@69493f06-65ee-4594-87d2-a4b843515ae6 (propref<bool>)
+				}, 
+				GtfRectangle(581c447d-46c6-4218-8d37-89f8450305f0)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Volume"
+					visible: true
+					width: @24edb300-6367-4350-95ed-49fc8a67a66d (objectref<int>)
+					height: 10
+					x: 170
+					y: 170
+					fillColor: #FF0000FF
+				}, 
+				GtfLabel(80bcb13d-1c73-4304-8418-97f3efecafca)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "VolumeLabel"
+					visible: true
+					width: 70
+					height: 40
+					x: 170
+					y: 200
+					text: string_scriptedValue(dce112fe-aa48-48fc-be35-fc9ca974ecb0)
+					{
+						triggerList: trigger_list(16e6b922-3c05-4091-ac46-7b89a9df8947)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(9c7f03f9-b077-41d3-952b-e083b185450c)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(2186a49a-709a-4891-8bdd-27cded041ca4)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:int2string(dp:Volume) + \"%\"" \
+								"}"
+						}
+						write: function<bool,string>(440fa0a4-694d-4ad8-b11e-da499aee369b)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #B22222FF
+					font: font_resource(f23faa90-22b8-4e45-8c66-c38b727bcd60)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(a4416a88-f642-4620-adda-fa3a85ed3f55)
+				{
+					name: "BasicStop"
+					template: @69493f06-65ee-4594-87d2-a4b843515ae6 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 350
+					y: 200
+					image: image_resource(25fc48cc-9cf7-472a-8fef-5dcd77dedde3)
+					{
+						file: "stop.png"
+					}
+					touchPressed: function<bool,int,int,int,int>(feff741c-5b8b-4fa7-9e50-3142248b526a)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(v:this.Off == false)" \
+							"	{" \
+							"		v:this->^->Title.visible = false" \
+							"		v:this->^->Volume.visible = false" \
+							"		v:this->^->BasicPrev.touchable = false" \
+							"		v:this->^->BasicNext.touchable = false" \
+							"		v:this->^->BasicPlay.touchable = false" \
+							"		v:this->^->BasicUp.touchable = false" \
+							"		v:this->^->BasicDown.touchable = false" \
+							"		v:this->^->VolumeLabel.visible = false" \
+							"		v:this->^->Volume.visible = false" \
+							"		v:this->^->OffMsg.visible=true" \
+							"		v:this.Off = true" \
+							"	}" \
+							"" \
+							"    false" \
+							"}"
+					}
+					touchable: touchable@69493f06-65ee-4594-87d2-a4b843515ae6 (propref<bool>)
+					Off: false
+				}, 
+				GtfLabel(1eaf3778-be79-4f1d-ab4b-72b095147540)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Title"
+					visible: true
+					width: 330
+					height: 100
+					x: 80
+					y: 70
+					text: string_scriptedValue(d41f8650-0aec-4c78-ac74-dd4e5363fed9)
+					{
+						triggerList: trigger_list(852eaa73-a7c3-470a-a3fa-3dc05208bf26)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(f9cec9d3-ec5c-4516-8344-901b6311565d)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(78dd0224-1063-458a-8c25-99d41e6c9062)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	dp:Media_List[dp:Media_Index]" \
+								"}"
+						}
+						write: function<bool,string>(c1d6a4b9-e15f-4752-99d9-8ba464fbd9aa)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(6f028d29-e996-4cb1-b7aa-2212896c94d2)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(15a52bb6-7d18-4471-93b5-ab8cfa2d5344)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "OffMsg"
+					visible: false
+					width: 350
+					height: 100
+					x: 70
+					y: 45
+					text: "The System is off, please turn it on"
+					textColor: #000000FF
+					font: font_resource(7079523f-3b95-4859-871f-f0819e8bb144)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			width: width@f4e7b708-887c-4b5d-a901-1bedbec5e277 (propref<int>)
+			height: height@f4e7b708-887c-4b5d-a901-1bedbec5e277 (propref<int>)
+		}]
+	name: "View 2"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}
