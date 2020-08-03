@@ -1,0 +1,173 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(c662acac-e649-43fb-b406-968ace707065)
+{
+	name: "Country"
+	structure: GtfContainer(cc6d6ad4-9ce2-47ed-be44-58d36bf26674)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfImage(f1d6e723-c18f-4a0b-831c-89e6b823f64a)
+			{
+				features: feature_list [
+					ScaleMode(fd1731d1-3d76-4569-b16c-b4eb8d0d8d06)
+					{
+						scaleMode: 1
+					}]
+				children: children_list [
+					GtfInstantiator(b104cf13-f74f-4b86-bd13-95031aa752a5)
+					{
+						features: feature_list [
+							LayoutPolicyBox(4c191140-c016-4406-a251-4dd21b9946a2)
+							{
+								gap: 15
+								layoutDirection: 1
+							}]
+						children: children_list [
+							GtfRectangle(cd84a781-5d60-4393-8995-337b60bfc0f4)
+							{
+								features: feature_list [
+									LineIndex(0ccb4c7b-3c25-4ee1-8b6e-2f4e06cbb7dd)
+									{
+										lineIndex: 0
+									}, 
+									TouchShortReleased(c321507e-be5d-4dbe-8454-775439dae1cb)
+									{
+										touchShortReleased: function<bool,int,int,int,int>(1e570ab0-4c4c-45d5-bdd6-5677e6a1b205)
+										{
+											script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+												"{" \
+												"    dp:country_index = v:this.lineIndex " \
+												"    false" \
+												"}"
+										}
+									}, 
+									StateTouched(cf0ab9b7-6610-47a0-9d89-0303e3e5c6cf)
+									{
+										touchable: true
+										touched: false
+										touchPolicy: 0
+										touchBehavior: 0
+									}]
+								children: children_list [
+									GtfLabel(4fd5ba33-9d02-435b-a038-855c5a14c1be)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "Label 2"
+										visible: true
+										width: width@cd84a781-5d60-4393-8995-337b60bfc0f4 (propref<int>)
+										height: 100
+										x: 1
+										y: -32
+										text: ""
+										textColor: #000000FF
+										font: font_resource(b944cbe2-6d33-4e6d-a428-3bf778271464)
+										{
+											file: "PT_Sans_Narrow.ttf"
+											size: 30
+										}
+										horizontalAlign: 1
+										verticalAlign: 0
+									}]
+								name: "Rectangle 1"
+								visible: true
+								width: 306
+								height: 40
+								x: -399
+								y: 243
+								fillColor: #FFFFFFFF
+								setText: conditional_script(53d6e918-8da2-49fc-9fc4-7770519d7182)
+								{
+									triggerList: trigger_list(4492dfba-3018-48f7-bbb8-69546a211e6a)
+									{
+										script: "v:this.lineIndex" \
+											"dp:countries_list"
+									}
+									onTrigger: function<bool,bool>(1d07ed75-10e3-46f9-90ed-adcc946a11cb)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	if (dp:country_index == 0)" \
+											"		v:this->\"Label 2\".text = dp:ro_cities[v:this.lineIndex]" \
+											"	else if (dp:country_index == 1)" \
+											"			v:this->\"Label 2\".text = dp:de_cities[v:this.lineIndex]" \
+											"			else if (dp:country_index == 2)" \
+											"				v:this->\"Label 2\".text = dp:fr_cities[v:this.lineIndex]" \
+											"				else if (dp:country_index == 3)" \
+											"					v:this->\"Label 2\".text = dp:it_cities[v:this.lineIndex]" \
+											"	false" \
+											"}"
+									}
+								}
+							}]
+						name: "Categories Selection"
+						visible: true
+						width: width@cc6d6ad4-9ce2-47ed-be44-58d36bf26674 (propref<int>)
+						height: height@cc6d6ad4-9ce2-47ed-be44-58d36bf26674 (propref<int>)
+						x: 240
+						y: 100
+						numItems: 5
+						lineMapping: intlist []
+					}, 
+					GtfLabel(19d0bb73-28fe-4616-a73c-257c1c80152b)
+					{
+						features: feature_list [
+							TouchShortReleased(e73fb1e2-3d19-4129-9e3b-1b47cf8f416b)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(1936e3f4-76fc-4984-b3ae-a77eecf6267a)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    fire ev:goTo_country()" \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(8a11c69d-3f38-41fa-b4d6-77f6ddbdcf9d)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list []
+						name: "Label 5"
+						visible: true
+						width: 100
+						height: 58
+						x: 25
+						y: 0
+						text: "Back"
+						textColor: #FFFFFFFF
+						font: font_resource(febd5d12-f32d-4a9e-bd2c-e4cc3412b0fc)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}]
+				name: "Background Image"
+				visible: true
+				width: 800
+				height: 480
+				x: 0
+				y: 0
+				image: image_resource(abd74c60-04ee-4d7a-9a7a-97781704c462)
+				{
+					file: "background.jpg"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "BG"
+		visible: true
+		width: 434
+		height: 480
+		x: 0
+		y: 0
+	}
+	visible: visible@b104cf13-f74f-4b86-bd13-95031aa752a5 (propref<bool>)
+}
