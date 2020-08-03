@@ -1,0 +1,77 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(ffb6e796-385d-4c67-977b-61b810d52bf2)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(e498ad7f-43f1-434a-b1f8-bcb90437d3ad)
+		{
+			features: feature_list [
+				TouchShortReleased(021caa56-6b2d-4bab-bf27-590304233aa4)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(2153aabb-3c84-421c-8852-d0640e3d41e3)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goCdPlayer()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(da79fcec-033f-49f7-ad86-61e222458f03)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "Image 3"
+			visible: true
+			width: 69
+			height: 59
+			x: 354
+			y: 217
+			image: image_resource(a3a08581-8d19-495a-a04a-a04bd782255f)
+			{
+				file: "button_main_enabled.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfContainer_template_instance(e29c1bd1-b122-411a-bbed-48ee7c27613d)
+		{
+			name: "back_buttons 1 1"
+			template: @bd395935-e736-4058-af76-1630fafedad4 (objectref<GtfContainer_template>)
+			children: children_list []
+			visible_Main: visible_Main@bd395935-e736-4058-af76-1630fafedad4 (propref<bool>)
+			visible_Back: visible_Back@bd395935-e736-4058-af76-1630fafedad4 (propref<bool>)
+		}, 
+		GtfLabel(4ae05ccb-bfc7-4f24-bc14-ec3da4a44a4a)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 3"
+			visible: true
+			width: 100
+			height: 100
+			x: 218
+			y: 187
+			text: "library"
+			textColor: #FFFFFFFF
+			font: font_resource(e64bf4f2-ccba-4975-8cb3-17a614ab33e4)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}]
+	name: "cd_library_state"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

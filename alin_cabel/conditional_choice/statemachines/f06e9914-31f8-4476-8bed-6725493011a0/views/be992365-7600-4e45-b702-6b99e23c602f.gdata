@@ -1,0 +1,64 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(be992365-7600-4e45-b702-6b99e23c602f)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(2a18d86d-780a-4aee-80ae-3262e8503aaa)
+		{
+			name: "groupButton 1"
+			template: @3c864909-5e0a-48a5-9946-f0eab0b08711 (objectref<GtfContainer_template>)
+			children: children_list []
+			visible_main: visible_main@3c864909-5e0a-48a5-9946-f0eab0b08711 (propref<bool>)
+			text_Main: text_Main@3c864909-5e0a-48a5-9946-f0eab0b08711 (propref<string>)
+			buttonEventMain: buttonEventMain@3c864909-5e0a-48a5-9946-f0eab0b08711 (propref<function<bool>>)
+			buttonEventBack: buttonEventBack@3c864909-5e0a-48a5-9946-f0eab0b08711 (propref<function<bool>>)
+			text_Back: text_Back@3c864909-5e0a-48a5-9946-f0eab0b08711 (propref<string>)
+			visible_back: visible_back@3c864909-5e0a-48a5-9946-f0eab0b08711 (propref<bool>)
+		}, 
+		GtfLabel(aa868998-29f2-49b1-aad8-78dfbff003d8)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 4"
+			visible: true
+			width: 100
+			height: 100
+			x: 373
+			y: 206
+			text: "lista"
+			textColor: #FFFFFFFF
+			font: font_resource(edf516fc-01f5-4aac-bd17-d201ed019885)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(ed386082-83e0-4dbb-bfae-1e47cd13be7a)
+		{
+			name: "simpleButton 1"
+			template: @e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "play"
+			visible: visible@e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (propref<bool>)
+			x: 357
+			y: 302
+			buttonEvent: function<bool>(fb22c012-6fcc-4723-838f-499b1e4cafcd)
+			{
+				script: "function()" \
+					"{" \
+					"    fire ev:play_song();" \
+					"	false" \
+					"}"
+			}
+			touchShortReleased: touchShortReleased@e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (propref<function<bool,int,int,int,int>>)
+		}]
+	name: "cd_player_view"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

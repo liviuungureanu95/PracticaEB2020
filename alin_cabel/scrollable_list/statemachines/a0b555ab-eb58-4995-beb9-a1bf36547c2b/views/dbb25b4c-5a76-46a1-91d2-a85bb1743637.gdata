@@ -1,0 +1,317 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(dbb25b4c-5a76-46a1-91d2-a85bb1743637)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer(26d49789-6238-4302-bde1-ed48b5636624)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfInstantiator(b09fbfaf-8bfe-46be-8dcf-dc3b71241e56)
+				{
+					features: feature_list [
+						LayoutPolicyFlow(b916f876-e4cd-474b-aba4-fa53362a7f22)
+						{
+							horizontalGap: 0
+							verticalGap: 0
+							layoutDirection: 0
+							horizontalChildAlign: 0
+							verticalChildAlign: 0
+						}, 
+						ViewPort(01e7ce80-296c-45e7-a7ee-f2e0ce0d3007)
+						{
+							xOffset: 0
+							yOffset: 0
+						}]
+					children: children_list [
+						GtfContainer(f0e38f7b-9b11-44e2-831c-758605de8fd3)
+						{
+							features: feature_list [
+								LineIndex(8e819f2b-eaca-421a-861f-7fc9fe54be59)
+								{
+									lineIndex: 0
+								}]
+							children: children_list [
+								GtfRectangle(56ad499a-cd27-400d-9ec0-893755e2dc61)
+								{
+									features: feature_list [
+										Border(f9256135-7260-4ec5-b367-76bf76b277ea)
+										{
+											borderThickness: 5
+											borderColor: #FF0000FF
+											borderStyle: 0
+										}]
+									children: children_list []
+									name: "button_background"
+									visible: true
+									width: width@f0e38f7b-9b11-44e2-831c-758605de8fd3 (propref<int>)
+									height: height@f0e38f7b-9b11-44e2-831c-758605de8fd3 (propref<int>)
+									x: 0
+									y: 0
+									fillColor: #A9A9A9FF
+								}, 
+								GtfLabel(bf533fab-7143-4302-876c-e3f3823b91f5)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "button_label"
+									visible: true
+									width: width@f0e38f7b-9b11-44e2-831c-758605de8fd3 (propref<int>)
+									height: height@f0e38f7b-9b11-44e2-831c-758605de8fd3 (propref<int>)
+									x: 0
+									y: 0
+									text: "label"
+									textColor: #FFFFFFFF
+									font: font_resource(5f56a779-9989-4030-b020-dc73b9afb4bf)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 30
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+									setText: conditional_script(1394cfb7-c213-4ef0-aae2-eb9d76ad74b1)
+									{
+										triggerList: trigger_list(0774f6b3-0cf1-4ddd-bd50-fa3ee73c4f91)
+										{
+											script: "v:this->^->^->^.inputList" \
+												"v:this->^.lineIndex"
+										}
+										onTrigger: function<bool,bool>(a63f4606-071c-4374-a54b-58dfe549ceb5)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	v:this.text = v:this->^->^->^.inputList[v:this->^.lineIndex]" \
+												"	false" \
+												"}"
+										}
+									}
+								}]
+							name: "list_button"
+							visible: true
+							width: width@b09fbfaf-8bfe-46be-8dcf-dc3b71241e56 (propref<int>)
+							height: listButtonHeight@b09fbfaf-8bfe-46be-8dcf-dc3b71241e56 (propref<int>)
+							x: 0
+							y: 0
+						}]
+					name: "button_instantiator"
+					visible: true
+					width: width@26d49789-6238-4302-bde1-ed48b5636624 (propref<int>)
+					height: height@26d49789-6238-4302-bde1-ed48b5636624 (propref<int>)
+					x: 0
+					y: 0
+					numItems: int_scriptedValue(11dd943b-4663-431a-9b93-32609e84320f)
+					{
+						triggerList: trigger_list(cd05c4f6-09a6-4546-9a0c-151c0311d4be)
+						{
+							script: "v:this->^.inputList"
+						}
+						onTrigger: function<bool,bool>(329c6f13-eb07-425e-9d99-52a39b1df5fe)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	true" \
+								"}"
+						}
+						read: function<int>(4313d12d-057a-49d9-b27f-238041d20aac)
+						{
+							script: "function()" \
+								"{" \
+								"	length v:this->^.inputList" \
+								"}"
+						}
+						write: function<bool,int>(8b60e8fe-8314-4294-a32d-86ef53df840c)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"	" \
+								"	false" \
+								"}"
+						}
+					}
+					lineMapping: intlist []
+					listButtonHeight: 50
+					moveUpDown: conditional_script(f70131d4-5001-48b2-b618-4d7caf665ea2)
+					{
+						triggerList: trigger_list(e2bbd231-ec89-4bed-b064-d292d8cda311)
+						{
+							script: "ev:scrollDown" \
+								"ev:scrollUp" \
+								"v:this.listButtonHeight"
+						}
+						onTrigger: function<bool,bool>(30a7749b-c0b5-4b4e-aae6-0e4745924af5)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"match_event v:event = ev:scrollUp in" \
+								"{" \
+								"	v:this.yOffset += v:this.listButtonHeight / 2" \
+								"}" \
+								"match_event v:event = ev:scrollDown in" \
+								"{" \
+								"	v:this.yOffset -= v:this.listButtonHeight / 2" \
+								"}" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "scroll_list"
+			visible: true
+			width: 370
+			height: 400
+			x: 0
+			y: 0
+			inputList: stringlist ["albania", "bulgaria", "croatia", "danemarca", "elvetia", "italia", "jamaica", "anglia", "germania", "portugalia", "grecia", "romania", "suedia"]
+			limitYMovement: conditional_script(9f7176b7-b9ad-4f44-a0ee-d65e9191e810)
+			{
+				triggerList: trigger_list(cbb5dbad-49dd-44db-b7ee-02ac33315669)
+				{
+					script: "v:this.inputList" \
+						"v:this->button_instantiator.listButtonHeight" \
+						"v:this->button_instantiator.yOffset"
+				}
+				onTrigger: function<bool,bool>(3b16f5fd-1833-4799-b4be-e62c73647c23)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"let v:maximumOffset = length v:this.inputList * v:this->button_instantiator.listButtonHeight - v:this.height in" \
+						"{" \
+						"	if (v:this->button_instantiator.yOffset > 0)" \
+						"	{" \
+						"		v:this->button_instantiator.yOffset = 0" \
+						"	}" \
+						"	else if (v:this->button_instantiator.yOffset < -v:maximumOffset)" \
+						"	{" \
+						"		v:this->button_instantiator.yOffset = -v:maximumOffset" \
+						"	}" \
+						"}" \
+						"" \
+						"false" \
+						"}"
+				}
+			}
+		}, 
+		GtfRectangle(669ea252-ba64-49e5-a187-88c102ab0e4e)
+		{
+			features: feature_list [
+				TouchShortReleased(7c6621d4-1f6e-4186-baa3-c0a1e59a82b5)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(220fc636-ddb6-43f6-aa92-76a40abf1f7b)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonEvent();" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(6ac13025-c2d2-4180-9fe4-5cccec1ddd31)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfLabel(0c1c55eb-96d8-4277-8b6b-ed16c40f5aef)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "up"
+					visible: true
+					width: width@669ea252-ba64-49e5-a187-88c102ab0e4e (propref<int>)
+					height: height@669ea252-ba64-49e5-a187-88c102ab0e4e (propref<int>)
+					x: 0
+					y: 0
+					text: "up"
+					textColor: #FFFFFFFF
+					font: font_resource(4ddc029c-e89e-440e-8bd7-1ea90bbe78d2)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "button_up"
+			visible: true
+			width: 100
+			height: 50
+			x: 500
+			y: 100
+			fillColor: #A9A9A9FF
+			buttonEvent: function<bool>(d3d776e3-fb74-463e-98ba-32e4915a89c9)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:scrollUp();" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfRectangle(9a48061d-f4d3-4711-b0a8-ee35113f374d)
+		{
+			features: feature_list [
+				TouchShortReleased(a13e18b2-883e-47d3-9adf-778d61c5b490)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(d67ec1eb-cc0d-42f5-a402-60f7712e3466)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonEvent()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(cd8d4662-c213-4b03-bfa3-3063c8c515ff)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfLabel(751697f6-494b-4796-89f9-8238d05e2881)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "down"
+					visible: true
+					width: width@9a48061d-f4d3-4711-b0a8-ee35113f374d (propref<int>)
+					height: height@9a48061d-f4d3-4711-b0a8-ee35113f374d (propref<int>)
+					x: 0
+					y: 0
+					text: "down"
+					textColor: #FFFFFFFF
+					font: font_resource(b31e6a7b-27ff-4390-a000-62a98bb3e81c)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "button_down"
+			visible: true
+			width: 100
+			height: 50
+			x: 500
+			y: 160
+			fillColor: #A9A9A9FF
+			buttonEvent: function<bool>(8ace2913-3593-4f2c-9710-fdf59de919c6)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:scrollDown();" \
+					"false" \
+					"}"
+			}
+		}]
+	name: "main_View"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

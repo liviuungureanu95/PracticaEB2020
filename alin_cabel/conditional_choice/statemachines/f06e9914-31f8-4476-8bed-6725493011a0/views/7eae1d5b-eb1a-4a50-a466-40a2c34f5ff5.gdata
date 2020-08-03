@@ -1,0 +1,44 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(7eae1d5b-eb1a-4a50-a466-40a2c34f5ff5)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(c79d1e68-1b40-4d59-bbc6-24b7a9ccf9a9)
+		{
+			name: "groupButton 1"
+			template: @3c864909-5e0a-48a5-9946-f0eab0b08711 (objectref<GtfContainer_template>)
+			children: children_list []
+			visible_main: visible_main@3c864909-5e0a-48a5-9946-f0eab0b08711 (propref<bool>)
+			text_Main: text_Main@3c864909-5e0a-48a5-9946-f0eab0b08711 (propref<string>)
+			buttonEventMain: buttonEventMain@3c864909-5e0a-48a5-9946-f0eab0b08711 (propref<function<bool>>)
+			buttonEventBack: buttonEventBack@3c864909-5e0a-48a5-9946-f0eab0b08711 (propref<function<bool>>)
+			text_Back: text_Back@3c864909-5e0a-48a5-9946-f0eab0b08711 (propref<string>)
+			visible_back: visible_back@3c864909-5e0a-48a5-9946-f0eab0b08711 (propref<bool>)
+		}, 
+		GtfContainer_template_instance(c11f77a5-ae49-4ef1-a35e-df4f682dabb9)
+		{
+			name: "simpleButton 1"
+			template: @e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "cd_player"
+			visible: visible@e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (propref<bool>)
+			x: 366
+			y: 207
+			buttonEvent: function<bool>(b4f7e57e-05c8-4dc5-9066-8712b0ad5ae8)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goto_CDPlayer();" \
+					"	false" \
+					"}"
+			}
+			touchShortReleased: touchShortReleased@e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (propref<function<bool,int,int,int,int>>)
+		}]
+	name: "library_view"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

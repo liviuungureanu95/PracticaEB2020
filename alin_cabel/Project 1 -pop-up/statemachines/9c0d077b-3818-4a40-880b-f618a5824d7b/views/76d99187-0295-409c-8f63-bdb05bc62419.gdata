@@ -1,0 +1,112 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(76d99187-0295-409c-8f63-bdb05bc62419)
+{
+	features: feature_list [
+		TouchShortReleased(879ac42f-85f3-45c9-8014-e16119def6d0)
+		{
+			touchShortReleased: function<bool,int,int,int,int>(0f69990c-295c-4337-bb1e-264e687a8ca0)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    false" \
+					"}"
+			}
+		}, 
+		StateTouched(64fc93ab-1bf4-4907-8792-1408ff02deed)
+		{
+			touchable: true
+			touched: false
+			touchPolicy: 0
+			touchBehavior: 0
+		}]
+	children: children_list [
+		GtfImage(0ba81355-195d-489e-aab8-66b834ea83c6)
+		{
+			features: feature_list [
+				TouchShortReleased(5a03caf5-3251-48ff-b7bf-7e07b3be4431)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(54ea72e0-629c-4f75-a23f-1c38bf1fe243)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	  v:this.buttonEvent();" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(3deca92e-80d7-4132-a4c4-44ddb86aec38)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "Image 4"
+			visible: true
+			width: 69
+			height: 59
+			x: 306
+			y: 255
+			image: image_resource(3455a798-cd7e-40c6-b97c-685f3c1195da)
+			{
+				file: "button_main_enabled.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+			buttonEvent: function<bool>(7718478e-cca7-48e5-855f-73b016513b0c)
+			{
+				script: "function()" \
+					"{" \
+					"	// todo: auto generated return value, please adapt" \
+					"	fire ev:playSong()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(8749eb2c-b2a9-4b8a-9b9c-0610598a6da1)
+		{
+			name: "back_buttons 1 1"
+			template: @bd395935-e736-4058-af76-1630fafedad4 (objectref<GtfContainer_template>)
+			children: children_list []
+			visible_Main: visible_Main@bd395935-e736-4058-af76-1630fafedad4 (propref<bool>)
+			visible_Back: visible_Back@bd395935-e736-4058-af76-1630fafedad4 (propref<bool>)
+		}, 
+		GtfLabel(ad8bd484-68dd-4513-80ed-f5b206553d99)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 1"
+			visible: true
+			width: 192
+			height: 100
+			x: 287
+			y: 137
+			text: "cdPlayerState"
+			textColor: #FFFFFFFF
+			font: font_resource(e885b392-e965-4a4c-8c7a-e151f18ea2f7)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}]
+	name: "cd_player_state"
+	visible: true
+	width: 800
+	height: 480
+	x: 1
+	y: 0
+	button_event: function<bool>(9163a6c0-0a6b-4eea-b508-3cd23b0b36a7)
+	{
+		script: "function()" \
+			"{" \
+			"	// todo: auto generated return value, please adapt" \
+			"	fire ev:playSong()" \
+			"false" \
+			"}"
+	}
+}

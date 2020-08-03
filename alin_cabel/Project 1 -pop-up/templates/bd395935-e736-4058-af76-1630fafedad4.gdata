@@ -1,0 +1,73 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(bd395935-e736-4058-af76-1630fafedad4)
+{
+	name: "back_buttons 1"
+	structure: GtfContainer(b73a8976-2694-4793-896f-e5c8cfb35855)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle_template_instance(f2c6b675-fe55-4d73-9331-f505722a64d8)
+			{
+				name: "back_button"
+				template: @3e11272b-1326-4bb9-b521-66a3394033e3 (objectref<GtfRectangle_template>)
+				children: children_list []
+				x: 647
+				y: 13
+				touchShortReleased: function<bool,int,int,int,int>(84a3d3f4-71ff-4ae2-9b91-8a18d7488217)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	  v:this.buttonEvent();" \
+						"    false" \
+						"}"
+				}
+				text: "back"
+				buttonEvent: function<bool>(d4c45ddc-e809-47c3-97a2-a660803a340d)
+				{
+					script: "function()" \
+						"{" \
+						"	fire ev:goBack()" \
+						"	false" \
+						"}"
+				}
+				visible: visible@3e11272b-1326-4bb9-b521-66a3394033e3 (propref<bool>)
+				height: height@3e11272b-1326-4bb9-b521-66a3394033e3 (propref<int>)
+			}, 
+			GtfRectangle_template_instance(74d9b813-3f6b-46bc-ad5d-62f2a811262a)
+			{
+				name: "main_button"
+				template: @3e11272b-1326-4bb9-b521-66a3394033e3 (objectref<GtfRectangle_template>)
+				children: children_list []
+				x: 528
+				y: 13
+				touchShortReleased: function<bool,int,int,int,int>(2a305131-fc7f-4027-abe4-c93d143e30c6)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	  v:this.buttonEvent();" \
+						"    false" \
+						"}"
+				}
+				text: "main"
+				buttonEvent: function<bool>(a977cef4-1d98-47f1-9ef8-4ba50dbbcc78)
+				{
+					script: "function()" \
+						"{" \
+						"	fire ev:goToMain()" \
+						"false" \
+						"}"
+				}
+				visible: visible@3e11272b-1326-4bb9-b521-66a3394033e3 (propref<bool>)
+				height: height@3e11272b-1326-4bb9-b521-66a3394033e3 (propref<int>)
+			}]
+		name: "back_buttons"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+	}
+	visible_Main: visible@74d9b813-3f6b-46bc-ad5d-62f2a811262a (propref<bool>)
+	visible_Back: visible@f2c6b675-fe55-4d73-9331-f505722a64d8 (propref<bool>)
+}

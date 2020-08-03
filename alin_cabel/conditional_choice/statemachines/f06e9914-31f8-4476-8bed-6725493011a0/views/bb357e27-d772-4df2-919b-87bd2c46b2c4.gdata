@@ -1,0 +1,32 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(bb357e27-d772-4df2-919b-87bd2c46b2c4)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(c2e4e7de-204e-43df-b714-32102284584d)
+		{
+			name: "media_button"
+			template: @e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "media"
+			visible: visible@e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (propref<bool>)
+			x: 324
+			y: 184
+			buttonEvent: function<bool>(c3888fa8-1fa4-4b66-91cb-90bc4c8c04a0)
+			{
+				script: "function()" \
+					"{" \
+					"    fire ev:goto_MediaPlayer();" \
+					"	false" \
+					"}"
+			}
+			touchShortReleased: touchShortReleased@e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (propref<function<bool,int,int,int,int>>)
+		}]
+	name: "main_view"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

@@ -1,0 +1,108 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(67cba238-c0cc-478c-ab5c-12014e3aa6a4)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(15263e51-c04c-4ffd-b964-81c36e3c065b)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle_template_instance(e893d406-fe2b-46d3-b27f-d128cdad50ba)
+				{
+					name: "ok_button"
+					template: @3e11272b-1326-4bb9-b521-66a3394033e3 (objectref<GtfRectangle_template>)
+					children: children_list []
+					x: 80
+					y: 150
+					touchShortReleased: touchShortReleased@3e11272b-1326-4bb9-b521-66a3394033e3 (propref<function<bool,int,int,int,int>>)
+					text: "ok"
+					buttonEvent: function<bool>(fda0b229-4167-4121-967c-a5c80d4e9a8e)
+					{
+						script: "function()" \
+							"{" \
+							"	fire ev:dismiss_usb_error();" \
+							"	false" \
+							"}"
+					}
+					visible: visible@3e11272b-1326-4bb9-b521-66a3394033e3 (propref<bool>)
+					height: 40
+				}, 
+				GtfRectangle_template_instance(289d3068-9c5c-4bfd-b65f-0dcc92eeec46)
+				{
+					name: "retry_button"
+					template: @3e11272b-1326-4bb9-b521-66a3394033e3 (objectref<GtfRectangle_template>)
+					children: children_list []
+					x: 220
+					y: 150
+					touchShortReleased: touchShortReleased@3e11272b-1326-4bb9-b521-66a3394033e3 (propref<function<bool,int,int,int,int>>)
+					text: "retry"
+					buttonEvent: function<bool>(4045513b-e49b-4ee6-916a-1e06d6e3ee4b)
+					{
+						script: "function()" \
+							"{" \
+							"	fire ev:dismiss_usb_error();" \
+							"	fire ev:goToUsb();" \
+							"	false" \
+							"}"
+					}
+					visible: visible@3e11272b-1326-4bb9-b521-66a3394033e3 (propref<bool>)
+					height: 40
+				}, 
+				GtfLabel(4d332fa3-002b-4d3d-93ea-142f8e72578c)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "warning_text"
+					visible: true
+					width: width@15263e51-c04c-4ffd-b964-81c36e3c065b (propref<int>)
+					height: 40
+					x: 0
+					y: 100
+					text: "no usb device detected"
+					textColor: #FFFFFFFF
+					font: font_resource(05b2986d-a551-4c40-9e30-96ef1f67d97f)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfImage(c8c832a1-c2ba-4326-90e7-532f2ca3af5d)
+				{
+					features: feature_list [
+						ScaleMode(254adf5f-3ef7-4d60-a9da-c1ee722358a1)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "warning_image"
+					visible: true
+					width: 80
+					height: 80
+					x: 160
+					y: 10
+					image: image_resource(d03432aa-9749-43a7-b3ad-d7830083e161)
+					{
+						file: "EB.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "background"
+			visible: true
+			width: width@67cba238-c0cc-478c-ab5c-12014e3aa6a4 (propref<int>)
+			height: height@67cba238-c0cc-478c-ab5c-12014e3aa6a4 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #90EE90FF
+		}]
+	name: "pop-up_view"
+	visible: true
+	width: 400
+	height: 200
+	x: 200
+	y: 140
+}
