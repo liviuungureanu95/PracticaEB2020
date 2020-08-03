@@ -1,0 +1,144 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfRectangle_template(9558e0c2-38af-459d-8d2a-0004ab31d270)
+{
+	name: "Input_label"
+	structure: GtfRectangle(31267e11-85ac-4c58-8670-427012caa631)
+	{
+		features: feature_list [
+			StateFocused(b1124772-9c50-4746-baf6-bfca3df3c5b9)
+			{
+				focusable: 3
+				focused: true
+			}, 
+			TouchPressed(0e04e1b9-3d67-4f35-a6e0-a1a228af98dd)
+			{
+				touchPressed: function<bool,int,int,int,int>(2b3cbc5d-81ca-426d-a3f6-891ef8f874fd)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	if(v:this.Okfunction ()  && v:this.Current == false){" \
+						"		v:this->Basic_Label.text = \"\";" \
+						"	}" \
+						"	if(v:this.Okfunction()){" \
+						"		f:focusMoveTo(v:this);" \
+						"		v:this.borderThickness = 1;" \
+						"	}" \
+						"	" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchGrabLost(14133e40-fdbd-4073-b962-69acf6745d4f)
+			{
+				onTouchGrabLost: function<bool,int,int,int,int>(0ec6e69c-5f19-470e-951b-0f2af88d8836)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.borderThickness = 0;" \
+						"    false" \
+						"}"
+				}
+			}, 
+			KeyShortReleased(79940be7-1569-4ee9-a734-abe1b749ba9b)
+			{
+				keyShortReleased: function<bool,int>(e4b40f63-f53c-432e-9b2d-d4e4bcdf42dd)
+				{
+					script: "function(v:keyId::int)" \
+						"{" \
+						"	if(v:this.borderThickness == 1){" \
+						"			f:trace_string(f:int2string(v:keyId));" \
+						"		if(v:keyId == 128){" \
+						"			//backspace" \
+						"			v:this->Basic_Label.text = f:substring(v:this->Basic_Label.text, 0, f:getTextLength(v:this->Basic_Label.text) - 1)	" \
+						"		}" \
+						"		else if(v:keyId == 32){" \
+						"			//space" \
+						"			v:this->Basic_Label.text = v:this->Basic_Label.text + \" \";" \
+						"		}" \
+						"		else if(v:keyId >= 48 && v:keyId <= 57){" \
+						"			v:this->Basic_Label.text = v:this->Basic_Label.text + f:substring(dp:numberList, v:keyId - 48, v:keyId - 48 + 1)	" \
+						"		}" \
+						"		else{" \
+						"			v:this->Basic_Label.text = v:this->Basic_Label.text + f:substring(dp:stringList, v:keyId - 97, v:keyId - 97 + 1)	" \
+						"		}" \
+						"    	if(f:getTextLength(v:this->Basic_Label.text) > 0){" \
+						"			v:this.Current = true;" \
+						"		}		" \
+						"	}" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StatePressed(31695e39-54d7-4299-b08f-965bcbecb174)
+			{
+				pressed: false
+			}, 
+			StateTouched(205a1ab6-c0e4-4d96-8c67-814b86687f74)
+			{
+				touchable: true
+				touched: true
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			Border(d4234ca6-a229-4b99-9625-95995b47858d)
+			{
+				borderThickness: 1
+				borderColor: #000000FF
+				borderStyle: 0
+			}, 
+			StateEnabled(cc6b563b-cf26-4cde-80ba-19ba8349c23d)
+			{
+				enabled: true
+			}]
+		children: children_list [
+			GtfLabel(31c90de7-4945-4fa8-8f3a-9c6bf854622b)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Basic_Label"
+				visible: true
+				width: width@31267e11-85ac-4c58-8670-427012caa631 (propref<int>)
+				height: height@31267e11-85ac-4c58-8670-427012caa631 (propref<int>)
+				x: 4
+				y: 5
+				text: "label"
+				textColor: #A9A9A9FF
+				font: font_resource(edbd7f57-aa8a-4318-8ab7-1f2d0339af12)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Input_Rectangle"
+		visible: true
+		width: 200
+		height: 110
+		x: 110
+		y: 40
+		fillColor: #FFFFE0FF
+		Completed: false
+		Current: false
+		Okfunction: function<bool>(d17e8deb-1419-4ccc-b191-32268c9aae8c)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	width: width@31267e11-85ac-4c58-8670-427012caa631 (propref<int>)
+	height: height@31267e11-85ac-4c58-8670-427012caa631 (propref<int>)
+	x: x@31267e11-85ac-4c58-8670-427012caa631 (propref<int>)
+	y: y@31267e11-85ac-4c58-8670-427012caa631 (propref<int>)
+	fillColor: fillColor@31267e11-85ac-4c58-8670-427012caa631 (propref<color>)
+	Completed: Completed@31267e11-85ac-4c58-8670-427012caa631 (propref<bool>)
+	Current: Current@31267e11-85ac-4c58-8670-427012caa631 (propref<bool>)
+	text: text@31c90de7-4945-4fa8-8f3a-9c6bf854622b (propref<string>)
+	textColor: textColor@31c90de7-4945-4fa8-8f3a-9c6bf854622b (propref<color>)
+	font: font@31c90de7-4945-4fa8-8f3a-9c6bf854622b (propref<font>)
+	Okfunction: Okfunction@31267e11-85ac-4c58-8670-427012caa631 (propref<function<bool>>)
+}
