@@ -1,0 +1,75 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(34f71a21-8029-4fe2-b992-1fe44b3eb881)
+{
+	name: "T_PopUp_OkButton"
+	structure: GtfContainer(7baa9766-e16a-4bc2-b199-88065cd76625)
+	{
+		features: feature_list [
+			TouchPressed(7e690d9b-76a9-4712-9765-b6eb9d18e7d1)
+			{
+				touchPressed: function<bool,int,int,int,int>(27b4355c-e7ec-4da3-8b36-de09997e6727)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(99f47683-7276-4eff-9297-b44d7db0caef)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(a363fd20-cf43-4681-9852-498656d2c607)
+			{
+				features: feature_list [
+					Border(4ab86c39-1249-43ed-b5dd-d90c427dd0a9)
+					{
+						borderThickness: 3
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@7baa9766-e16a-4bc2-b199-88065cd76625 (propref<int>)
+				height: height@7baa9766-e16a-4bc2-b199-88065cd76625 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #3CB371FF
+			}, 
+			GtfLabel(b9e7edbf-442a-4cf3-9f9b-e7666259b807)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Text"
+				visible: true
+				width: width@7baa9766-e16a-4bc2-b199-88065cd76625 (propref<int>)
+				height: height@7baa9766-e16a-4bc2-b199-88065cd76625 (propref<int>)
+				x: 0
+				y: 0
+				text: "OK"
+				textColor: #FFFFFFFF
+				font: font_resource(5294cb12-7837-4251-9955-108f30b26f70)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 100
+		height: 50
+		x: 0
+		y: 0
+	}
+	x: x@7baa9766-e16a-4bc2-b199-88065cd76625 (propref<int>)
+	y: y@7baa9766-e16a-4bc2-b199-88065cd76625 (propref<int>)
+	touchPressed: touchPressed@7e690d9b-76a9-4712-9765-b6eb9d18e7d1 (propref<function<bool,int,int,int,int>>)
+}
