@@ -1,0 +1,98 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(fa62869b-f75a-4997-93c2-a98e1ef9e3ef)
+{
+	name: "Countries_Button"
+	structure: GtfContainer(bad39164-0442-4253-8b40-41c087f11ebc)
+	{
+		features: feature_list [
+			LayoutPolicyFlow(394f889c-9eba-4d10-91a6-02202a036906)
+			{
+				horizontalGap: 30
+				verticalGap: 30
+				layoutDirection: 0
+				horizontalChildAlign: 0
+				verticalChildAlign: 0
+			}]
+		children: children_list [
+			GtfContainer_template_instance(aaca88e8-6edb-445b-8f94-0dc9ecf5e81f)
+			{
+				name: "CountrieButton 1"
+				template: @808dcca7-25fb-4621-8bce-bd9ed666cf88 (objectref<GtfContainer_template>)
+				children: children_list []
+				image: image@808dcca7-25fb-4621-8bce-bd9ed666cf88 (propref<image>)
+				text: text@808dcca7-25fb-4621-8bce-bd9ed666cf88 (propref<string>)
+				touchShortReleased: function<bool,int,int,int,int>(958b1c43-d42d-4420-9c82-60ddd15db34a)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	fire ev:GoTo_Romania()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			GtfContainer_template_instance(ed9affb8-d981-4a17-bf7d-fdc3e35d4cfd)
+			{
+				name: "CountrieButton 2"
+				template: @808dcca7-25fb-4621-8bce-bd9ed666cf88 (objectref<GtfContainer_template>)
+				children: children_list []
+				image: image_resource(91416925-1d4c-42f6-bfbe-e444df1d91b2)
+				{
+					file: "Germania_Background.jpg"
+				}
+				text: "GERMANIA"
+				touchShortReleased: function<bool,int,int,int,int>(7e236a22-93f1-4a5a-a577-d40ee8cf2a67)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	fire ev:GoTo_Germania()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			GtfContainer_template_instance(c906d7db-948f-414b-8e30-f8db7756776d)
+			{
+				name: "CountrieButton 3"
+				template: @808dcca7-25fb-4621-8bce-bd9ed666cf88 (objectref<GtfContainer_template>)
+				children: children_list []
+				image: image_resource(94165aa5-f135-4606-b937-7e12a4377cd1)
+				{
+					file: "Franta_Background.jpg"
+				}
+				text: "FRANTA"
+				touchShortReleased: function<bool,int,int,int,int>(fce7e852-079e-4680-bf51-296f854d774e)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	fire ev:GoTo_Franta()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			GtfContainer_template_instance(0de06ba9-c028-4a54-9f7d-9912ce391fed)
+			{
+				name: "CountrieButton 4"
+				template: @808dcca7-25fb-4621-8bce-bd9ed666cf88 (objectref<GtfContainer_template>)
+				children: children_list []
+				image: image_resource(51a6eab1-4cd2-4b1d-8a55-89291bd65b43)
+				{
+					file: "Italia_Background.jpg"
+				}
+				text: "ITALIA"
+				touchShortReleased: function<bool,int,int,int,int>(79551eac-13e4-4af2-a932-9363060f9e1c)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	fire ev:GoTo_Italia()" \
+						"    false" \
+						"}"
+				}
+			}]
+		name: "Container"
+		visible: true
+		width: 430
+		height: 430
+		x: 25
+		y: 320
+	}
+}
