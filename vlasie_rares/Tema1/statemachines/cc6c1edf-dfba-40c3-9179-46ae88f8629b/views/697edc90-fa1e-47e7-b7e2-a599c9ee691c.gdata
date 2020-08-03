@@ -1,0 +1,119 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(697edc90-fa1e-47e7-b7e2-a599c9ee691c)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(76817767-3283-406d-8370-4a5d3462d11a)
+		{
+			name: "Background 1"
+			template: @571974f5-231a-4949-9970-8d236c559468 (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfLabel(630b5223-41ce-4c2c-8fdc-0aada2f5b4f6)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 3"
+					visible: true
+					width: 450
+					height: 100
+					x: 200
+					y: 50
+					text: "Va rugam asteptati sfarsitul programului"
+					textColor: #000000FF
+					font: font_resource(b2758c0a-05d0-4354-9749-45c58f8bbd9a)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfImage(5b879e47-2215-44b1-90ac-1be5994fe61e)
+				{
+					features: feature_list [
+						TouchPressed(408c4f8b-2f67-4c89-8f52-910307ef7fc8)
+						{
+							touchPressed: function<bool,int,int,int,int>(2fd063e6-4635-46d6-8272-1aa14e718801)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:goTo_menu()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(0f336645-a0ff-4eca-95fe-f21b0521f11e)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}, 
+						ScaleMode(5dbf9587-9d64-4e07-8f48-d49d851c6e86)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "Image 4"
+					visible: true
+					width: 100
+					height: 100
+					x: 250
+					y: 250
+					image: image_resource(d8e66efe-0070-43a4-99eb-f9bd3ef57948)
+					{
+						file: "icons8-washing-machine-50.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(2f4ec60c-0b80-48c2-a54d-1165023762fa)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 4"
+					visible: true
+					width: 400
+					height: 100
+					x: 400
+					y: 250
+					text: "Va puteti intoarce oricand la meniu"
+					textColor: #000000FF
+					font: font_resource(039da157-55bd-458f-9e3b-95411923f829)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(733ba201-30a9-4ff4-b475-e5bd7562bbd0)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 5"
+					visible: true
+					width: 500
+					height: 100
+					x: 200
+					y: 135
+					text: "Ati ales programul de spalare al rufelor delicate"
+					textColor: #000000FF
+					font: font_resource(584395b5-8062-48e9-ba9e-2d81a27d4d72)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+		}]
+	name: "View 4"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
