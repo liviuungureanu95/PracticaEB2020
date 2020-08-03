@@ -1,0 +1,79 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(779e933e-8078-4d48-9df9-002804844a71)
+{
+	name: "Button"
+	structure: GtfContainer(632b47e4-c360-4276-92a4-83ccac579e9e)
+	{
+		features: feature_list [
+			TouchPressed(e071d8ec-5321-44ee-a5df-e12fbacfa352)
+			{
+				touchPressed: function<bool,int,int,int,int>(7e12301b-0547-4369-9b07-353f38134161)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->\"Label 3\".textColor = dp:PressColor" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(16c0dedd-d97c-4307-af2d-7a4ce9f4679d)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(3b3a5f69-ff8a-4278-9dfa-78a2ee1cce66)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(e3eab8fc-fdda-4f24-b9f6-195b64becd92)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(99af23a1-dd71-4330-9e7a-0c599b21cd85)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Rectangle 2"
+				visible: true
+				width: width@632b47e4-c360-4276-92a4-83ccac579e9e (propref<int>)
+				height: height@632b47e4-c360-4276-92a4-83ccac579e9e (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #000000FF
+			}, 
+			GtfLabel(73002692-fb89-482f-8288-7800577560ed)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label 3"
+				visible: true
+				width: width@632b47e4-c360-4276-92a4-83ccac579e9e (propref<int>)
+				height: height@632b47e4-c360-4276-92a4-83ccac579e9e (propref<int>)
+				x: 0
+				y: 0
+				text: "NEXT"
+				textColor: #FFFFFFFF
+				font: font_resource(c9998de6-9fd6-4735-a7c3-4bd2434f18b4)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 50
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 120
+		height: 70
+		x: 180
+		y: 550
+	}
+	visible: visible@632b47e4-c360-4276-92a4-83ccac579e9e (propref<bool>)
+	touchShortReleased: touchShortReleased@16c0dedd-d97c-4307-af2d-7a4ce9f4679d (propref<function<bool,int,int,int,int>>)
+}
