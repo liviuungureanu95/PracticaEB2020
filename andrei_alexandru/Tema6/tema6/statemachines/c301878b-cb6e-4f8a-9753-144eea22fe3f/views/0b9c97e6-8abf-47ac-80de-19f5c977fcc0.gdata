@@ -1,0 +1,248 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(0b9c97e6-8abf-47ac-80de-19f5c977fcc0)
+{
+	name: "View Welcome Screen"
+	template: @ae8f8070-c65d-41f2-95e4-4a0ed762259e (objectref<GtfView_template>)
+	children: children_list [
+		GtfRectangle(768408d2-c72e-466f-9ff9-e0be09bd229c)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfParallelAnimation(b19e5904-ad13-45fa-bc1f-612a2f2cc4d7)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationS32(0f5a85f5-e2cc-437a-bffa-82c880ec05d3)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Linear interpolation curve"
+							enabled: true
+							delay: 0
+							duration: 5000
+							repeat: 1
+							alternating: false
+							relative: false
+							start: 0
+							end: 800
+							target: width@768408d2-c72e-466f-9ff9-e0be09bd229c (propref<int>)
+						}]
+					name: "LoadingAnimation"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(58f3d449-c222-426a-a215-4df8335a2c9f)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(47823a01-3491-421b-a4d7-c3c92e2d51cf)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(23e3742e-89af-43c3-afb0-878fa6b48ba2)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					startLoadingBar: conditional_script(280c523d-7ac3-4384-a5bf-6d7a4da08bb4)
+					{
+						triggerList: trigger_list(deadc021-45dd-4cee-ab84-5c06e9a5e5d1)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(0c4a947d-6f68-4067-a3c5-c42d61f321cf)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	f:animation_play(v:this)" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "LoadingBar"
+			visible: true
+			width: 0
+			height: 10
+			x: 0
+			y: 360
+			fillColor: #F0F8FFFF
+		}, 
+		GtfImage(ff9d5e57-8324-42fc-af3b-d440f938edef)
+		{
+			features: feature_list [
+				Rotation(80c3973e-1dbc-464f-bc01-705269bbae23)
+				{
+					rotationEnabled: true
+					rotationAngleX: 0F
+					rotationAngleY: 0F
+					rotationAngleZ: 0F
+				}, 
+				Scaling(83d19479-169d-46da-8d03-cd9ba908bdcd)
+				{
+					scalingEnabled: true
+					scalingX: 100F
+					scalingY: 100F
+					scalingZ: 100F
+				}, 
+				Shearing(b11a8652-95b2-465e-8294-b16e2a9d87de)
+				{
+					shearingEnabled: true
+					shearingXbyY: 0F
+					shearingXbyZ: 0F
+					shearingYbyX: 0F
+					shearingYbyZ: 0F
+					shearingZbyX: 0F
+					shearingZbyY: 0F
+				}, 
+				Pivot(46b0630c-fad8-4573-9542-b6f2f8a304c8)
+				{
+					pivotX: float_scriptedValue(90cfd06e-566e-4787-b91d-a117f242d35d)
+					{
+						triggerList: trigger_list(060d8026-2407-472f-b422-925d5d5f0afc)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(1372f5a9-a58f-4b0b-94b3-f6f5d68d3fa4)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<float>(7e8a3158-0576-438b-835d-4afdc5cd2fa5)
+						{
+							script: "function()" \
+								"{" \
+								"	f:int2float(v:this.width/2)" \
+								"}"
+						}
+						write: function<bool,float>(ff90312b-0a99-4b66-9876-c7cf13e1aefc)
+						{
+							script: "function(v:arg0::float)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					pivotY: float_scriptedValue(2c473cbc-a4ed-46b5-b12c-22047c0e5b8f)
+					{
+						triggerList: trigger_list(d5f9b589-919b-4770-8013-3e22092bf934)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(1cbd1e51-eabc-4bd5-aa54-8594503d56da)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<float>(52441ea0-c00d-45a1-85da-e733148f47c3)
+						{
+							script: "function()" \
+								"{" \
+								"	f:int2float(v:this.width/2)" \
+								"}"
+						}
+						write: function<bool,float>(9f4c6c1b-247c-451c-93ce-7db49d553294)
+						{
+							script: "function(v:arg0::float)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					pivotZ: 0F
+				}]
+			children: children_list [
+				GtfParallelAnimation(d02e501c-9644-4831-b455-0d05b50dc187)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationFloat(bf4a9ebf-c2c5-44d8-8b34-b2befb7965b7)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Linear interpolation curve"
+							enabled: true
+							delay: 0
+							duration: 5000
+							repeat: 1
+							alternating: false
+							relative: false
+							start: 0F
+							end: -360F
+							target: rotationAngleZ@80c3973e-1dbc-464f-bc01-705269bbae23 (propref<float>)
+						}]
+					name: "LogoAnimation"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(c28ce415-7a1c-4ef1-a8a5-ae39f7ee0dfa)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(f5dba3bb-20b3-4676-858b-fabb1aad8813)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(a410e86b-86a5-449b-92c7-975e4160700f)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					startLoadingLogo: conditional_script(d1434830-6962-4b4f-bf77-0747f2d7efcf)
+					{
+						triggerList: trigger_list(3dc9a49f-f671-45cf-9c5d-67bb7fb56485)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(0a175a83-a51b-458a-b76c-4d787d46cdfa)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	f:animation_play(v:this)" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "LogoLoading"
+			visible: true
+			width: 50
+			height: 50
+			x: 380
+			y: 300
+			image: image_resource(0dd86208-0a4d-414a-a215-3afd1116d763)
+			{
+				file: "loading icon.png"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+}
