@@ -1,0 +1,308 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(c958ffd4-b382-4ad8-94ae-11b671100ffd)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(da97e85c-929b-4176-9beb-40f65c5b7d26)
+		{
+			features: feature_list [
+				ScaleMode(f55bc142-ffc8-4f58-91ca-300ce91d1e02)
+				{
+					scaleMode: 1
+				}]
+			children: children_list [
+				GtfContainer_template_instance(6c6002d5-b18d-47e8-b5fd-98efca819835)
+				{
+					name: "franta"
+					template: @563cd360-265a-4f15-8f15-1a56c9ad87a3 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 57
+					y: 99
+					text: "Franta"
+					touchShortReleased: function<bool,int,int,int,int>(7afe5454-63c1-4b77-a3ca-92186e003376)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:Checker[0]=false" \
+							"	dp:Checker[1]=false" \
+							"	dp:Checker[2]=false" \
+							"	dp:Checker[3]=false" \
+							"	//in momentul apasarii butonului semaforul se face 1, ceea ce inseamna ca trebuie sa afiseze o lista de orase" \
+							"    dp:Checker[0]=true" \
+							"	" \
+							"		v:this.fillColor = dp:selectcolor" \
+							"		v:this->^->germania.fillColor = dp:unselectcolor" \
+							"		v:this->^->italia.fillColor = dp:unselectcolor" \
+							"		v:this->^->romania.fillColor = dp:unselectcolor" \
+							"	" \
+							"    false" \
+							"}"
+					}
+					fillColor: #FFFFFFFF
+				}, 
+				GtfContainer_template_instance(e66e5a13-741b-4a1f-bfcb-c352b3d39c08)
+				{
+					name: "germania"
+					template: @563cd360-265a-4f15-8f15-1a56c9ad87a3 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 56
+					y: 183
+					text: "Germania"
+					touchShortReleased: function<bool,int,int,int,int>(5af75f3e-2ce4-4fff-85c5-68f22c56711a)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:Checker[0]=false" \
+							"	dp:Checker[1]=false" \
+							"	dp:Checker[2]=false" \
+							"	dp:Checker[3]=false" \
+							"	//in momentul apasarii butonului semaforul se face 1, ceea ce inseamna ca trebuie sa afiseze o lista de orase" \
+							"	dp:Checker[1]=true" \
+							"" \
+							"		v:this.fillColor = dp:selectcolor" \
+							"		v:this->^->franta.fillColor = dp:unselectcolor" \
+							"		v:this->^->italia.fillColor = dp:unselectcolor" \
+							"		v:this->^->romania.fillColor = dp:unselectcolor" \
+							"	" \
+							"    false" \
+							"}"
+					}
+					fillColor: #FFFFFFFF
+				}, 
+				GtfContainer_template_instance(d2bdb45d-9e48-415e-97ea-724689eb857c)
+				{
+					name: "italia"
+					template: @563cd360-265a-4f15-8f15-1a56c9ad87a3 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 57
+					y: 266
+					text: "Italia"
+					touchShortReleased: function<bool,int,int,int,int>(5c83eb1a-8476-442e-9eb5-6c52cce06c9f)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:Checker[0]=false" \
+							"	dp:Checker[1]=false" \
+							"	dp:Checker[2]=false" \
+							"	dp:Checker[3]=false" \
+							"	//in momentul apasarii butonului semaforul se face 1, ceea ce inseamna ca trebuie sa afiseze o lista de orase" \
+							"	dp:Checker[2]=true" \
+							"		v:this.fillColor = dp:selectcolor" \
+							"		v:this->^->germania.fillColor = dp:unselectcolor" \
+							"		v:this->^->franta.fillColor = dp:unselectcolor" \
+							"		v:this->^->romania.fillColor = dp:unselectcolor" \
+							"    false" \
+							"}"
+					}
+					fillColor: fillColor@563cd360-265a-4f15-8f15-1a56c9ad87a3 (propref<color>)
+				}, 
+				GtfContainer_template_instance(0021e3f1-8487-4672-95ce-fdbaa784f85b)
+				{
+					name: "romania"
+					template: @563cd360-265a-4f15-8f15-1a56c9ad87a3 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 57
+					y: 354
+					text: "Romania"
+					touchShortReleased: function<bool,int,int,int,int>(6593dd2a-060e-4891-bf22-388c0abb50d0)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:Checker[0]=false" \
+							"	dp:Checker[1]=false" \
+							"	dp:Checker[2]=false" \
+							"	dp:Checker[3]=false" \
+							"	//in momentul apasarii butonului semaforul se face 1, ceea ce inseamna ca trebuie sa afiseze o lista de orase" \
+							"	dp:Checker[3]=true" \
+							"" \
+							"		v:this.fillColor = dp:selectcolor" \
+							"		v:this->^->germania.fillColor = dp:unselectcolor" \
+							"		v:this->^->italia.fillColor = dp:unselectcolor" \
+							"		v:this->^->franta.fillColor = dp:unselectcolor" \
+							"" \
+							"    false" \
+							"}"
+					}
+					fillColor: fillColor@563cd360-265a-4f15-8f15-1a56c9ad87a3 (propref<color>)
+				}]
+			name: "Image 6"
+			visible: true
+			width: 800
+			height: 480
+			x: -1
+			y: 2
+			image: image_resource(59eed215-8838-4ea4-a83f-805d40d79d01)
+			{
+				file: "background.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(59fca781-ddd5-43eb-ad3d-98ac2d6736fb)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "title 1"
+			visible: true
+			width: 171
+			height: 47
+			x: 63
+			y: 11
+			text: "Select a country:"
+			textColor: #FFFFFFFF
+			font: font_resource(76bff797-946a-405a-8295-9ae98292e206)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(05cf012e-bcc4-42bb-a3bc-5b8313e68c82)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "title2"
+			visible: true
+			width: 312
+			height: 50
+			x: 369
+			y: 11
+			text: "Select a favourite city to start :"
+			textColor: #FFFFFFFF
+			font: font_resource(b0f14b6b-f94a-41c7-abba-d36e0521fe20)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfInstantiator(1882d205-3e8c-4e69-a6cd-ff4b78adecb1)
+		{
+			features: feature_list [
+				LayoutPolicyBox(d08b4de0-a765-433f-9443-8201a6d62660)
+				{
+					gap: 10
+					layoutDirection: 1
+				}]
+			children: children_list [
+				GtfRectangle(e12b884b-37b9-42d2-9910-05227e7509cb)
+				{
+					features: feature_list [
+						LayoutPolicyBox(793e81b4-b263-4bdc-9bc1-2fc7a7b07af5)
+						{
+							gap: 0
+							layoutDirection: 0
+						}, 
+						LineIndex(ce0f6e69-296b-4e8b-9afc-b0d5e2c1c27b)
+						{
+							lineIndex: 0
+						}]
+					children: children_list [
+						GtfLabel(7aeabfd6-091c-4837-ad3d-4131154509b8)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "LabelCity"
+							visible: true
+							width: 268
+							height: 60
+							x: 221
+							y: 75
+							text: "label"
+							textColor: #FFFFFFFF
+							font: font_resource(3fd167ec-1e99-4af3-a7a6-373b784badbb)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 0
+							verticalAlign: 0
+						}]
+					name: "Rectangle 1"
+					visible: true
+					width: 100
+					height: 100
+					x: 250
+					y: 150
+					fillColor: #A9A9A9FF
+					setText: conditional_script(ed24e306-1e40-49a3-b59e-d4755e1c64e1)
+					{
+						triggerList: trigger_list(41f31bea-1629-44e5-9306-1aaacc79fd3f)
+						{
+							script: "v:this.lineIndex" \
+								"dp:NewListCities"
+						}
+						onTrigger: function<bool,bool>(048d4aa7-b2d6-4e87-a79d-e3cff5ee3831)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this->LabelCity.text=dp:NewListCities[v:this.lineIndex];" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "Instantiator 1"
+			visible: true
+			width: 100
+			height: 100
+			x: 384
+			y: 86
+			numItems: 5
+			lineMapping: intlist []
+			CalculateNumItems: conditional_script(89c21176-5b88-4c6a-a456-95cf32af1d7b)
+			{
+				triggerList: trigger_list(d34e6278-036b-49f1-8132-cfa5d0f997e4)
+				{
+					script: "dp:NewListCities"
+				}
+				onTrigger: function<bool,bool>(63163c99-70a6-42f5-984d-307380268265)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	v:this.numItems = length dp:NewListCities;" \
+						"	false" \
+						"}"
+				}
+			}
+			SelectListCity: conditional_script(da61809b-aae4-4be0-b29e-d29f938be663)
+			{
+				triggerList: trigger_list(688a4318-4085-453b-b654-8fd73e68a7da)
+				{
+					script: "dp:Checker" \
+						"dp:OraseFranta" \
+						"dp:OraseGermania" \
+						"dp:OraseItalia" \
+						"dp:OraseRomania"
+				}
+				onTrigger: function<bool,bool>(7042b186-c6ae-4537-a49a-00ddcbdb2fb7)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(dp:Checker[0]==true)" \
+						"		dp:NewListCities=dp:OraseFranta" \
+						"		" \
+						"	if(dp:Checker[1]==true)" \
+						"		dp:NewListCities=dp:OraseGermania" \
+						"		" \
+						"	if(dp:Checker[2]==true)" \
+						"		dp:NewListCities=dp:OraseItalia" \
+						"		" \
+						"	if(dp:Checker[3]==true)" \
+						"		dp:NewListCities=dp:OraseRomania" \
+						"	false" \
+						"}"
+				}
+			}
+		}]
+	name: "View 1"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: -2
+}
