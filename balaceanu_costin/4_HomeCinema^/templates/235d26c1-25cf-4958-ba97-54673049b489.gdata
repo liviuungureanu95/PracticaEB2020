@@ -1,0 +1,67 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(235d26c1-25cf-4958-ba97-54673049b489)
+{
+	name: "GroupButton"
+	structure: GtfContainer(6ffdd16d-0f2f-4edd-9455-ae8ba449b091)
+	{
+		features: feature_list [
+			LayoutPolicyFlow(310f6989-1afc-43e1-bde0-244e5f4ff7b1)
+			{
+				horizontalGap: 30
+				verticalGap: 0
+				layoutDirection: 0
+				horizontalChildAlign: 0
+				verticalChildAlign: 0
+			}]
+		children: children_list [
+			GtfContainer_template_instance(1eb132b4-be7a-478a-bc44-feacc21f402a)
+			{
+				name: "BackTo_M"
+				template: @e68b5529-90d2-4a2e-b14e-c315fa7834b7 (objectref<GtfContainer_template>)
+				children: children_list []
+				x: x@e68b5529-90d2-4a2e-b14e-c315fa7834b7 (propref<int>)
+				y: y@e68b5529-90d2-4a2e-b14e-c315fa7834b7 (propref<int>)
+				Activate: Activate@e68b5529-90d2-4a2e-b14e-c315fa7834b7 (propref<bool>)
+				touchShortReleased: function<bool,int,int,int,int>(f7468f39-ef24-4262-945f-1abfb9384ef8)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	fire ev:GoTo_M()" \
+						"    false" \
+						"}"
+				}
+				image: image_resource(3379bf0b-8745-490e-9694-cb18bdf14e6e)
+				{
+					file: "Back.png"
+				}
+			}, 
+			GtfContainer_template_instance(1d4b4b4b-40c2-4455-bfe6-c2f4f1c43196)
+			{
+				name: "Back"
+				template: @e68b5529-90d2-4a2e-b14e-c315fa7834b7 (objectref<GtfContainer_template>)
+				children: children_list []
+				x: x@e68b5529-90d2-4a2e-b14e-c315fa7834b7 (propref<int>)
+				y: y@e68b5529-90d2-4a2e-b14e-c315fa7834b7 (propref<int>)
+				Activate: Activate@e68b5529-90d2-4a2e-b14e-c315fa7834b7 (propref<bool>)
+				touchShortReleased: function<bool,int,int,int,int>(5276ed03-8d35-40d7-b35e-f950e1ecdc00)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	fire ev:GoTo_Connections()" \
+						"    false" \
+						"}"
+				}
+				image: image_resource(c46f1750-2310-4fbe-8a0c-4dad62fd1238)
+				{
+					file: "BackTo_M.jpg"
+				}
+			}]
+		name: "Group_Buttons"
+		visible: true
+		width: 170
+		height: 70
+		x: 75
+		y: 390
+	}
+}
