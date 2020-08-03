@@ -1,0 +1,315 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(2ebda743-0f2f-4b84-b9f7-1af444aab985)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(8166d3fd-57e1-49e3-8baf-68fe3aebcdc8)
+		{
+			features: feature_list [
+				ScaleMode(f497af42-c20e-45d9-8a64-abefe1d503c5)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "background"
+			visible: true
+			width: width@2ebda743-0f2f-4b84-b9f7-1af444aab985 (propref<int>)
+			height: height@2ebda743-0f2f-4b84-b9f7-1af444aab985 (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(e9fdff5a-7172-4d85-a38e-68fa19f54f30)
+			{
+				file: "andrew-buchanan-s6GmUf009os-unsplash.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(2808dc75-3f8d-48da-bccc-ed9eeaaea636)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "title"
+			visible: true
+			width: 200
+			height: 80
+			x: 89
+			y: 7
+			text: "Destinatia:"
+			textColor: #000000FF
+			font: font_resource(bd7b70f3-7545-4c65-ba05-ea43632d934e)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(3d84e7c0-dde6-4fdc-a95d-448390df6fad)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "countryLabel"
+			visible: true
+			width: 150
+			height: 40
+			x: 0
+			y: 101
+			text: "Tara:"
+			textColor: #000000FF
+			font: font_resource(ec2cf35c-af92-49f2-97fb-3ddefebb1680)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 2
+			verticalAlign: 0
+		}, 
+		GtfRectangle_template_instance(2984eb9f-5a7a-4730-b3be-723063b74e33)
+		{
+			name: "countryTextBox"
+			template: @e3500a66-3145-4820-a57d-80f6b1f9e81c (objectref<GtfRectangle_template>)
+			children: children_list []
+			x: 160
+			y: 100
+			width: width@e3500a66-3145-4820-a57d-80f6b1f9e81c (propref<int>)
+			text: string_scriptedValue(7ed37292-f78c-4972-8082-4a4f847e31ba)
+			{
+				triggerList: trigger_list(6bc89d94-240a-4bac-a2d0-8f0a700735f9)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(699ffea1-1022-455f-b2f3-3e0e3eabccbc)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(c30eb386-2276-4b03-8904-a5915f3c1ecb)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	" \
+						"	if(f:getTextLength(dp:Country)>0)" \
+						"		dp:okList[0]=true" \
+						"	" \
+						"	dp:Country" \
+						"}"
+				}
+				write: function<bool,string>(fd2a019e-2654-4f83-8be6-6506e43c141b)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfLabel(04852a55-9f3b-4518-bcec-16307bca3edc)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "cityLabel"
+			visible: true
+			width: 150
+			height: 40
+			x: 0
+			y: 180
+			text: "Oras:"
+			textColor: #000000FF
+			font: font_resource(1c4cfed4-13e5-4c5f-8638-1b4947976067)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 2
+			verticalAlign: 0
+		}, 
+		GtfRectangle_template_instance(dcdd0239-367d-40b6-8152-9d3894eef4bb)
+		{
+			name: "cityTextBox"
+			template: @e3500a66-3145-4820-a57d-80f6b1f9e81c (objectref<GtfRectangle_template>)
+			children: children_list []
+			x: 160
+			y: 180
+			width: width@e3500a66-3145-4820-a57d-80f6b1f9e81c (propref<int>)
+			text: string_scriptedValue(183f0dd9-ebe9-4222-b137-cf62a91c42f6)
+			{
+				triggerList: trigger_list(66259871-01b0-40e4-a615-7a807dfacade)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(708262f4-f178-497a-b36b-4b9ae44ded16)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(c0616010-3565-4665-9acc-03ff0898b99b)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	" \
+						"	if(dp:okList[0]==true && f:getTextLength(dp:City)>0)" \
+						"		dp:okList[1]=true" \
+						"	else" \
+						"	dp:City=\"\"" \
+						"	" \
+						"	dp:City" \
+						"	" \
+						"}"
+				}
+				write: function<bool,string>(0cf082d0-cba1-472a-a841-6e4637c2bed9)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfLabel(0f483181-dceb-4720-a916-1b17b5f05551)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "streetLabel"
+			visible: true
+			width: 150
+			height: 40
+			x: 0
+			y: 260
+			text: "Strada:"
+			textColor: #000000FF
+			font: font_resource(9e2d40fa-537a-44c4-9f63-6bbd8b0a607c)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 2
+			verticalAlign: 0
+		}, 
+		GtfRectangle_template_instance(faecdb1e-d785-4b6f-976d-8b1560f5ee39)
+		{
+			name: "streetTextBox"
+			template: @e3500a66-3145-4820-a57d-80f6b1f9e81c (objectref<GtfRectangle_template>)
+			children: children_list []
+			x: 160
+			y: 260
+			width: width@e3500a66-3145-4820-a57d-80f6b1f9e81c (propref<int>)
+			text: string_scriptedValue(91cb51d3-b517-4b32-95ed-72a4837c3730)
+			{
+				triggerList: trigger_list(6ba4f45b-ca13-4d06-b252-87bc5681ddfb)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(d689c545-03c4-402f-9aa6-3a6769dea598)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(1013c946-0bb3-4c3f-ae54-add859f2891b)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	if(dp:okList[1]==true && f:getTextLength(dp:Street)>0)" \
+						"	dp:okList[2]=true" \
+						"	else" \
+						"		dp:Street=\"\"" \
+						"" \
+						"	" \
+						"	dp:Street" \
+						"}"
+				}
+				write: function<bool,string>(0c28b552-4e4d-4ade-8a10-54c50928250c)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfLabel(3be1600f-f065-4aa7-8440-91761c39537b)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "numberLabel"
+			visible: true
+			width: 150
+			height: 40
+			x: 0
+			y: 340
+			text: "Nr:"
+			textColor: #000000FF
+			font: font_resource(b876c50a-5c45-4b64-9423-31c8680bbdc6)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 2
+			verticalAlign: 0
+		}, 
+		GtfRectangle_template_instance(766776d3-c052-4f8d-aff4-76c62b6c3160)
+		{
+			name: "numberTextBox"
+			template: @e3500a66-3145-4820-a57d-80f6b1f9e81c (objectref<GtfRectangle_template>)
+			children: children_list []
+			x: 160
+			y: 340
+			width: 100
+			text: string_scriptedValue(a7fdc6be-5780-41cc-a663-819990d6021e)
+			{
+				triggerList: trigger_list(2838cefb-e9df-49c9-988e-febb5a325ffc)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(e6d4d515-53c3-453e-8c2b-56a48cdc86ff)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(164b4792-649d-4c4d-bc91-62d1137ee6ab)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	if(dp:okList[2]==false || f:getTextLength(dp:Number)==0)" \
+						"	dp:Number=\"\"" \
+						"	" \
+						"	dp:Number" \
+						"}"
+				}
+				write: function<bool,string>(157797f5-9734-401f-9e3b-d5e3f6b40876)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+		}]
+	name: "mainView"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
