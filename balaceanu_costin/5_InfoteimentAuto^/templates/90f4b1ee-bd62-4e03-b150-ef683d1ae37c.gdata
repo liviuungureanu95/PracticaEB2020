@@ -1,0 +1,75 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(90f4b1ee-bd62-4e03-b150-ef683d1ae37c)
+{
+	name: "Button"
+	structure: GtfContainer(8e499951-c05d-4d3f-8daa-990208a05c00)
+	{
+		features: feature_list [
+			TouchShortReleased(92b331f3-6b4f-4985-a8ab-d0522dc5e4a4)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(3867705d-71b9-4949-977a-8bd8a66a8c4d)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(b7f4137e-4017-48a1-85a7-51cd15fa98f3)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfImage(28637863-4ca0-4ebb-ba82-bfb0b012213a)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@8e499951-c05d-4d3f-8daa-990208a05c00 (propref<int>)
+				height: height@8e499951-c05d-4d3f-8daa-990208a05c00 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(ff5012ff-d4a7-41ac-9989-5b9ad66bd60b)
+				{
+					file: "Button_Back.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(c9885d34-dd4f-4761-a797-cd1e7a73ba4a)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Text"
+				visible: true
+				width: width@8e499951-c05d-4d3f-8daa-990208a05c00 (propref<int>)
+				height: 35
+				x: 0
+				y: 75
+				text: "Navigation"
+				textColor: #14FF00FF
+				font: font_resource(ab5b0519-48eb-4ef7-9abb-25c75c7eb6ee)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 20
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 80
+		height: 80
+		x: 358
+		y: 202
+	}
+	image: image@28637863-4ca0-4ebb-ba82-bfb0b012213a (propref<image>)
+	text: text@c9885d34-dd4f-4761-a797-cd1e7a73ba4a (propref<string>)
+	touchShortReleased: touchShortReleased@92b331f3-6b4f-4985-a8ab-d0522dc5e4a4 (propref<function<bool,int,int,int,int>>)
+}

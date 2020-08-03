@@ -1,0 +1,117 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(345dac4e-d7d3-44d2-88e2-a7956bbad9ff)
+{
+	name: "Street_View"
+	template: @2dc7a6a6-aa12-465c-9386-695f9993168a (objectref<GtfView_template>)
+	children: children_list []
+	text: "Write the STREET name :"
+	touchShortReleased: function<bool,int,int,int,int>(5fe64daa-ea1c-4deb-ac5f-f3f68125729f)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"	fire ev:GoTo_StreetNumb()" \
+			"    false" \
+			"}"
+	}
+	Complete: Complete@2dc7a6a6-aa12-465c-9386-695f9993168a (propref<bool>)
+	visible: bool_scriptedValue(d8a6203b-6f85-4cc0-9e8f-2f6081a12afd)
+	{
+		triggerList: trigger_list(2da42b5d-85bc-4be7-84e0-fd05666b6775)
+		{
+			script: ""
+		}
+		onTrigger: function<bool,bool>(4c0df280-0ae9-4b55-9e01-4a791343f492)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		read: function<bool>(d9b5089f-b235-46df-83f1-5e3dbc5ce12a)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	if(dp:Street !=\"\")" \
+				"		true" \
+				"	else" \
+				"	false" \
+				"}"
+		}
+		write: function<bool,bool>(47a254c8-42cd-4d12-baab-02c8f8484f12)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	"text 2": string_scriptedValue(d98257dd-a6b8-431f-9e0e-99c0942feb8f)
+	{
+		triggerList: trigger_list(7693ce5b-5ab7-485b-8ebc-24d32833ff31)
+		{
+			script: ""
+		}
+		onTrigger: function<bool,bool>(1c64d80d-2c29-41b3-a326-9a8a07cab5fa)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		read: function<string>(54abee47-22f9-4c9e-9eed-19b1a028f583)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	dp:Street" \
+				"}"
+		}
+		write: function<bool,string>(3236cedb-d499-4d34-a2d5-e0f1298b7069)
+		{
+			script: "function(v:arg0::string)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	"visible 2": bool_scriptedValue(97557f4f-8df3-4f3c-b550-0c8c8a66c450)
+	{
+		triggerList: trigger_list(db7f13cf-dd49-4ffc-ac74-47b42aa8bcdc)
+		{
+			script: ""
+		}
+		onTrigger: function<bool,bool>(ef26e477-a9f2-40ff-9802-5c6b031f4397)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		read: function<bool>(c2c8f399-79aa-4ec5-9d4f-49b9399e680f)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	if(dp:Street !=\"\")" \
+				"		false" \
+				"	else" \
+				"		true" \
+				"}"
+		}
+		write: function<bool,bool>(dd4cd144-97d7-4eeb-997c-80d70986467f)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+}

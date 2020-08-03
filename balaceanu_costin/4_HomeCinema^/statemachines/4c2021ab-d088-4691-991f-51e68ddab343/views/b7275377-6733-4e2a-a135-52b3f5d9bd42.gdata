@@ -1,0 +1,348 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(b7275377-6733-4e2a-a135-52b3f5d9bd42)
+{
+	name: "Principal_Menu"
+	template: @749a5712-2ef0-4253-aaa1-871949a645b4 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(141df50b-ccc8-4bec-ba6e-a2eb072b23b6)
+		{
+			name: "Connections_Button"
+			template: @e68b5529-90d2-4a2e-b14e-c315fa7834b7 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 225
+			y: 90
+			Activate: Activate@e68b5529-90d2-4a2e-b14e-c315fa7834b7 (propref<bool>)
+			touchShortReleased: function<bool,int,int,int,int>(edf4fdf4-53ea-4709-b322-cc22f89e3315)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:GoTo_Connections()" \
+					"    false" \
+					"}"
+			}
+			image: image_resource(7df9a735-6bc2-42b7-896b-68fc74b8fee3)
+			{
+				file: "Connect.png"
+			}
+		}, 
+		GtfContainer_template_instance(a74d603d-1686-4cbc-afaf-11170c201063)
+		{
+			name: "Settings_Button"
+			template: @e68b5529-90d2-4a2e-b14e-c315fa7834b7 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 225
+			y: 175
+			Activate: Activate@e68b5529-90d2-4a2e-b14e-c315fa7834b7 (propref<bool>)
+			touchShortReleased: function<bool,int,int,int,int>(2b9c2b14-9a0a-4413-938a-974a1ba7fa54)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:GoTo_Settings()" \
+					"    false" \
+					"}"
+			}
+			image: image_resource(38689e77-5092-4e9b-9c84-5acc54d824fd)
+			{
+				file: "Settings.png"
+			}
+		}, 
+		GtfContainer_template_instance(70061077-a741-4a4f-8c93-283b9330a99e)
+		{
+			name: "Preview_Button"
+			template: @e68b5529-90d2-4a2e-b14e-c315fa7834b7 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 25
+			y: 390
+			Activate: Activate@e68b5529-90d2-4a2e-b14e-c315fa7834b7 (propref<bool>)
+			touchShortReleased: function<bool,int,int,int,int>(e0ae8cbe-88e9-4aed-baee-4ad07fa83a16)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->Play_Button.Activate = true" \
+					"	if(dp:ArtistsInd == 0)" \
+					"	{" \
+					"		dp:ArtistsInd = dp:SongNumber -1" \
+					"	}" \
+					"	else" \
+					"	{" \
+					"		dp:ArtistsInd = dp:ArtistsInd -1" \
+					"	}" \
+					"    false" \
+					"}"
+			}
+			image: image_resource(af0649f1-b200-47fa-ab40-751307676e33)
+			{
+				file: "Preview.png"
+			}
+		}, 
+		GtfContainer_template_instance(431796db-6f9d-49c3-bbd0-5e2d6883d9b1)
+		{
+			name: "Next_Button"
+			template: @e68b5529-90d2-4a2e-b14e-c315fa7834b7 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 225
+			y: 390
+			Activate: Activate@e68b5529-90d2-4a2e-b14e-c315fa7834b7 (propref<bool>)
+			touchShortReleased: function<bool,int,int,int,int>(8082a71e-84d7-4091-b094-61627bf3bc2a)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->Play_Button.Activate = true" \
+					"	dp:ArtistsInd = (dp:ArtistsInd + 1) % dp:SongNumber" \
+					"    false" \
+					"}"
+			}
+			image: image_resource(55b47ef0-6d11-4d5f-b818-86f7ad70108d)
+			{
+				file: "Next.png"
+			}
+		}, 
+		GtfImage(6bd9eaf6-b579-40b4-80ff-f95e45a31a96)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(015b4004-e6b2-4cb5-bcb5-53ecd2ca9b32)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "ArtistName_Txt"
+					visible: true
+					width: 260
+					height: 40
+					x: 20
+					y: 3
+					text: string_scriptedValue(e0584ec3-7b2e-4405-9389-2d564ddec08e)
+					{
+						triggerList: trigger_list(4fab9165-835c-4b9d-977f-5e7d4051d9da)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(29edf0af-7d64-4552-b548-7e540ad7e9ea)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(ac60bace-205c-493b-bf55-03a76ea6f96f)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	dp:Artists[dp:ArtistsInd]" \
+								"}"
+						}
+						write: function<bool,string>(444551e5-944c-40ed-b12f-bc8bd60c02ef)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FF9300FF
+					font: font_resource(bb7f0e76-cbf2-48bf-bc3e-90e374cd7b76)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(618f8258-4c17-46fc-9d7d-eb79a0ec2645)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Song_Txt"
+					visible: true
+					width: 260
+					height: 50
+					x: 20
+					y: 40
+					text: string_scriptedValue(e0d08367-fb32-4cc5-8dc8-e3a4cf2551a8)
+					{
+						triggerList: trigger_list(fe9ec616-1b40-4f60-b5eb-0847e6c133ee)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(2ac29cd1-0c21-4560-a47d-75b4f63250a2)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(b663c90f-1b77-484b-8e44-dd7b10741836)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	dp:Song[dp:ArtistsInd]" \
+								"}"
+						}
+						write: function<bool,string>(d718f8c6-3e93-49a1-a751-0300651fe3d0)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFF500FF
+					font: font_resource(785bd5c6-03da-443a-bde1-6bf18324513e)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "MusicShow"
+			visible: true
+			width: 300
+			height: 100
+			x: 10
+			y: 290
+			image: image_resource(aaad38fb-1f8d-4e42-8d86-e9b05c47ea56)
+			{
+				file: "ShowMusic.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfContainer_template_instance(de712279-2923-4a1f-b795-c92d679e1848)
+		{
+			name: "Play_Button"
+			template: @e68b5529-90d2-4a2e-b14e-c315fa7834b7 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 125
+			y: 390
+			Activate: Activate@e68b5529-90d2-4a2e-b14e-c315fa7834b7 (propref<bool>)
+			touchShortReleased: function<bool,int,int,int,int>(046d6279-0e03-4114-a2f4-c913306bf9da)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if (v:this.Activate == true)" \
+					"	{" \
+					"		v:this.Activate = false;" \
+					"	}" \
+					"	else" \
+					"	{" \
+					"		v:this.Activate = true;" \
+					"	}" \
+					"    false" \
+					"}"
+			}
+			image: image_scriptedValue(ca579b8a-7939-44ae-9ba6-48f7c89ee3ab)
+			{
+				triggerList: trigger_list(835bed76-c176-472b-a631-35c6d9be9a02)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(366af002-56d5-4062-826c-2ffb06168c60)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<image>(617c8430-a4df-462d-b951-6fe0df4a9443)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	if(v:this.Activate == false)" \
+						"	{" \
+						"		dp:Play" \
+						"	}" \
+						"	else" \
+						"	{" \
+						"		dp:Pause" \
+						"	}" \
+						"}"
+				}
+				write: function<bool,image>(ef9438b9-f5af-4aa8-be34-c9be2b8d2b02)
+				{
+					script: "function(v:arg0::image)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+		}]
+	text: text@749a5712-2ef0-4253-aaa1-871949a645b4 (propref<string>)
+	TurnOff: image_resource(188ed0d2-63e6-462f-b25f-86600b282a84)
+	{
+		file: "TurnOff.png"
+	}
+	"touchShortReleased 2": function<bool,int,int,int,int>(fabd0a1f-e6aa-424c-8ed2-1d272eb19406)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"	fire ev:GoTo_TurnOff()" \
+			"    false" \
+			"}"
+	}
+	Activate: false
+	image: image_scriptedValue(e6b3eba2-e54b-4283-8ded-817dcfa38153)
+	{
+		triggerList: trigger_list(c6251932-a7cc-44c7-abdb-dc6b9abd4f99)
+		{
+			script: ""
+		}
+		onTrigger: function<bool,bool>(4eeb7087-21bf-4a1f-ba4e-09437fd59530)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		read: function<image>(1db02ef4-afae-4f25-9d7a-c6b6970719fb)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"		if(v:this.Activate == false)" \
+				"	{" \
+				"		dp:Play" \
+				"	}" \
+				"	else" \
+				"	{" \
+				"		dp:Pause" \
+				"	}" \
+				"}"
+		}
+		write: function<bool,image>(d50aac84-1f0d-4bc8-b117-6b0b593ef230)
+		{
+			script: "function(v:arg0::image)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	touchShortReleased: function<bool,int,int,int,int>(4e7d5d8c-35b0-4b6b-9012-0980b931be32)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"		if(v:this.Activate == true)" \
+			"	{" \
+			"		v:this.Activate = false" \
+			"	}" \
+			"	else" \
+			"	{" \
+			"		v:this.Activate = true" \
+			"	}" \
+			"    false    " \
+			"}"
+	}
+}

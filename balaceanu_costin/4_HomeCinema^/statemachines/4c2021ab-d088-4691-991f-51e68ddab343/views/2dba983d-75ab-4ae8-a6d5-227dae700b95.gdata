@@ -1,0 +1,228 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(2dba983d-75ab-4ae8-a6d5-227dae700b95)
+{
+	name: "Settings"
+	template: @749a5712-2ef0-4253-aaa1-871949a645b4 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(45c95231-a645-46a2-a266-8dc1cc0c8eab)
+		{
+			name: "Vminus_Button"
+			template: @e68b5529-90d2-4a2e-b14e-c315fa7834b7 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 20
+			y: 180
+			Activate: Activate@e68b5529-90d2-4a2e-b14e-c315fa7834b7 (propref<bool>)
+			touchShortReleased: function<bool,int,int,int,int>(9b117638-c896-486d-8bf3-2b6bb86491e0)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if (dp:VolumeInd > 0)" \
+					"	dp:VolumeInd = dp:VolumeInd -1" \
+					"    false" \
+					"}"
+			}
+			image: image_resource(d2fca55b-1668-4951-84b5-bfa34652da43)
+			{
+				file: "Vminus.png"
+			}
+		}, 
+		GtfContainer_template_instance(be113645-eb3b-4c54-9fca-f3704f39f0f6)
+		{
+			name: "Vplus_Button"
+			template: @e68b5529-90d2-4a2e-b14e-c315fa7834b7 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 230
+			y: 180
+			Activate: Activate@e68b5529-90d2-4a2e-b14e-c315fa7834b7 (propref<bool>)
+			touchShortReleased: function<bool,int,int,int,int>(646f3520-8f1b-47d3-9696-cb6c4b496857)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(dp:VolumeInd < length dp:VolumeList -1)" \
+					"	dp:VolumeInd = dp:VolumeInd +1" \
+					"    false" \
+					"}"
+			}
+			image: image_resource(7db2a7f4-e86d-43b8-8219-a5bd4e7b4cce)
+			{
+				file: "Vplus.png"
+			}
+		}, 
+		GtfContainer(b2712694-fb7c-4483-9636-f77e39ab082e)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(7526dade-1995-4dce-91de-80b0272875d3)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(00449c4f-91d5-447b-9824-ebb59babf635)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Volume_Txt"
+							visible: true
+							width: 120
+							height: 50
+							x: 10
+							y: 10
+							text: string_scriptedValue(67ee50e7-01ff-4540-8f20-b8ad71162a84)
+							{
+								triggerList: trigger_list(ce09491e-9004-4a5f-8e8e-41d946c21cf5)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(6038e251-36c7-4e3b-8b1c-12270ebce337)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<string>(18438422-928d-40b6-86c4-bea23ffe98df)
+								{
+									script: "function()" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	dp:VolumeList[dp:VolumeInd]" \
+										"}"
+								}
+								write: function<bool,string>(63bbb546-6785-46f6-a1ea-b8cfe38c68c8)
+								{
+									script: "function(v:arg0::string)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							textColor: #FF9300FF
+							font: font_resource(7f0f0075-ecdb-44ba-8573-53cdbcd149d9)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 45
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Background"
+					visible: true
+					width: width@b2712694-fb7c-4483-9636-f77e39ab082e (propref<int>)
+					height: height@b2712694-fb7c-4483-9636-f77e39ab082e (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(eb5fe6d2-f567-405c-a6cb-9cf3078bcfd2)
+					{
+						file: "ShowVolume.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Volume"
+			visible: true
+			width: 140
+			height: 70
+			x: 90
+			y: 180
+		}, 
+		GtfContainer_template_instance(972cc981-c55e-40b1-920f-5a023869318c)
+		{
+			name: "Back"
+			template: @e68b5529-90d2-4a2e-b14e-c315fa7834b7 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 125
+			y: 260
+			Activate: Activate@e68b5529-90d2-4a2e-b14e-c315fa7834b7 (propref<bool>)
+			touchShortReleased: function<bool,int,int,int,int>(f87e3b23-ad69-48f8-92c9-09f65e382424)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(v:this.Activate == true)" \
+					"	{" \
+					"		v:this.Activate = false" \
+					"	}" \
+					"	else" \
+					"	{" \
+					"		v:this.Activate = true" \
+					"	}" \
+					"    false" \
+					"}"
+			}
+			image: image_scriptedValue(d834731a-c4d8-4087-8143-55d07ee03430)
+			{
+				triggerList: trigger_list(4ed6da7d-3f13-41b0-84d4-3b0a40427aed)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(da32c1bd-4db1-41b5-bdc1-c66c3dc49ce0)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<image>(c589b94e-b1f9-41e5-8d8d-f180c4944c42)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	if(v:this.Activate == false)" \
+						"	{" \
+						"		dp:Mute" \
+						"	}" \
+						"	else" \
+						"	{" \
+						"		dp:UnMute" \
+						"	}" \
+						"}"
+				}
+				write: function<bool,image>(af2dc425-7c7c-4d14-a7b4-4da2f1b94e56)
+				{
+					script: "function(v:arg0::image)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfContainer_template_instance(3a89e983-a797-44c4-a2a9-55b32b813c2c)
+		{
+			name: "Button 2"
+			template: @e68b5529-90d2-4a2e-b14e-c315fa7834b7 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 125
+			y: 390
+			Activate: Activate@e68b5529-90d2-4a2e-b14e-c315fa7834b7 (propref<bool>)
+			touchShortReleased: function<bool,int,int,int,int>(87b70ae0-c0a4-4b2b-a085-7e53b8d187e2)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:GoTo_M()" \
+					"    false" \
+					"}"
+			}
+			image: image_resource(87409d96-3731-44ec-8db5-b52ecc01f48a)
+			{
+				file: "Back.png"
+			}
+		}]
+	text: "---- < [ SETTINGS MENU ] > ----"
+	Activate: false
+	image: image_resource(5c697113-7a5c-4eb3-ab41-feb2ad59916b)
+	{
+		file: "Back.png"
+	}
+	touchShortReleased: function<bool,int,int,int,int>(a0d8f9c2-5a92-452d-b43a-8b0cde38a749)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"	fire ev:GoTo_M()" \
+			"    false" \
+			"}"
+	}
+}

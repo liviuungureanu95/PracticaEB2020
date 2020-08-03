@@ -1,0 +1,107 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(6e406e35-0663-4192-9a8b-febfb665a8cf)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(aeec5a6f-a478-4791-8b49-e8701ddabfbe)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Background"
+			visible: true
+			width: 480
+			height: 800
+			x: 0
+			y: 0
+			image: image_resource(e556ed8d-2966-4fce-9ce1-beec300a2303)
+			{
+				file: "Navigation_Background.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfContainer(384006f8-6b12-4f56-a666-059370d0839d)
+		{
+			features: feature_list [
+				TouchPressed(cf62dc6a-592c-42e5-a840-6f22d8f0c339)
+				{
+					touchPressed: function<bool,int,int,int,int>(6aeef599-9342-488b-992b-cee4b7dddcf0)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->Background->Txt.textColor = dp:PressColor" \
+							"    false" \
+							"}"
+					}
+				}, 
+				TouchShortReleased(1b619e81-a2fb-4c2a-99b3-146e18fe0d20)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(d55e14c7-84f4-4a1a-8f8b-38cfdfd2bcf2)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:GoTo_Country()" \
+							"	dp:Country = \"\"" \
+							"	dp:City = \"\"" \
+							"	dp:Street = \"\"" \
+							"	dp:StreetNumber = \"\"" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(b6e3c5d3-8e00-42db-aa70-62596b9d326e)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfRectangle(df1a207d-06ed-4f0c-b81e-a47cfd620aec)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(3a303c5f-d5f5-4160-9378-179722a6d978)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Txt"
+							visible: true
+							width: width@df1a207d-06ed-4f0c-b81e-a47cfd620aec (propref<int>)
+							height: height@df1a207d-06ed-4f0c-b81e-a47cfd620aec (propref<int>)
+							x: 0
+							y: 0
+							text: "Back to Country"
+							textColor: #FFFFFFFF
+							font: font_resource(1686d000-70ee-4721-a784-df85509357f8)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 0
+							verticalAlign: 0
+						}]
+					name: "Background"
+					visible: true
+					width: 160
+					height: 60
+					x: 0
+					y: 0
+					fillColor: #000000FF
+				}]
+			name: "BackButton"
+			visible: true
+			width: 160
+			height: 60
+			x: 310
+			y: 190
+		}]
+	name: "GPS_View"
+	visible: true
+	width: 480
+	height: 800
+	x: 0
+	y: 0
+}

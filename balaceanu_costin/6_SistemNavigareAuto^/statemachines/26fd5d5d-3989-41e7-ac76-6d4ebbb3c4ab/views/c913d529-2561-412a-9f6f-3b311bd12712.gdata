@@ -1,0 +1,121 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(c913d529-2561-412a-9f6f-3b311bd12712)
+{
+	name: "Country_View"
+	template: @2dc7a6a6-aa12-465c-9386-695f9993168a (objectref<GtfView_template>)
+	children: children_list []
+	text: "Write the COUNTRY, where you want to go :"
+	touchShortReleased: function<bool,int,int,int,int>(5d2953da-7bbc-43bb-8559-cef3c6c01cf2)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"	fire ev:GoTo_City()" \
+			"    false" \
+			"}"
+	}
+	Complete: Complete@2dc7a6a6-aa12-465c-9386-695f9993168a (propref<bool>)
+	visible: bool_scriptedValue(08f536c4-4d6d-471e-95fd-09a9de5fc3ab)
+	{
+		triggerList: trigger_list(c54a576e-e51f-431c-a508-caf70817cca4)
+		{
+			script: ""
+		}
+		onTrigger: function<bool,bool>(70ff500d-5b91-48eb-9665-05e5b7ca6199)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		read: function<bool>(dd765831-2f87-4b9e-94c4-bdf3cc6ce7ba)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	if(dp:Country !=\"\")" \
+				"		true" \
+				"	else" \
+				"		false" \
+				"}"
+		}
+		write: function<bool,bool>(89abffb4-22b3-4c41-be4b-ab090a562230)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	"text 2": string_scriptedValue(dbebd734-7280-4785-8dc3-a190b449e436)
+	{
+		triggerList: trigger_list(585fb867-4ff1-47c3-96ca-b60350f2dc84)
+		{
+			script: "" \
+				""
+		}
+		onTrigger: function<bool,bool>(d2e960f1-3587-4eeb-92f1-eb5e71c87b9f)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"false" \
+				"}"
+		}
+		read: function<string>(4011efc5-d0b1-4af7-be4b-ed2874a323b7)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	dp:Country" \
+				"	" \
+				"	" \
+				"" \
+				"}"
+		}
+		write: function<bool,string>(63fd5bb4-c654-4847-a0a3-d85e374535b9)
+		{
+			script: "function(v:arg0::string)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	"visible 2": bool_scriptedValue(8af946e4-0da7-4ef3-b6d4-570503bf3ef6)
+	{
+		triggerList: trigger_list(262de9fc-68a3-4a33-82c9-4f53ebf29a0e)
+		{
+			script: ""
+		}
+		onTrigger: function<bool,bool>(c99a6147-780f-4bcc-82a8-5338b8ab707f)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		read: function<bool>(f555f0ac-75c1-4276-88ea-01d0be260f61)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	if(dp:Country !=\"\")" \
+				"		false" \
+				"	else" \
+				"		true" \
+				"}"
+		}
+		write: function<bool,bool>(ed4d019e-8f85-423f-9641-4faaab7b9b0d)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+}

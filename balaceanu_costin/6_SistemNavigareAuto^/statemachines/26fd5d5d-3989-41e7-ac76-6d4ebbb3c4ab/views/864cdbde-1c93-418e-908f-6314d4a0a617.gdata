@@ -1,0 +1,118 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(864cdbde-1c93-418e-908f-6314d4a0a617)
+{
+	name: "City_View"
+	template: @2dc7a6a6-aa12-465c-9386-695f9993168a (objectref<GtfView_template>)
+	children: children_list []
+	text: "Write the CITY name :"
+	touchShortReleased: function<bool,int,int,int,int>(99e8a0bc-9d30-4c49-983e-a49088a98d0e)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"	fire ev:GoTo_Street()" \
+			"    false" \
+			"}"
+	}
+	Complete: Complete@2dc7a6a6-aa12-465c-9386-695f9993168a (propref<bool>)
+	visible: bool_scriptedValue(8c069e3a-549d-4517-ad1c-fcd183a43a98)
+	{
+		triggerList: trigger_list(904cb203-6938-47a5-8e25-6a03dcc80ceb)
+		{
+			script: ""
+		}
+		onTrigger: function<bool,bool>(3f509636-3230-4aac-9f1b-79392e255c47)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		read: function<bool>(d02c065a-7228-4b10-9d20-c297f45c079b)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"		if(dp:City !=\"\")" \
+				"		true" \
+				"	else" \
+				"		false" \
+				"	" \
+				"}"
+		}
+		write: function<bool,bool>(f9e0c983-280e-45eb-a5ff-c27a77657214)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	"text 2": string_scriptedValue(76ef184a-2b30-4741-a2b0-4320648eb12b)
+	{
+		triggerList: trigger_list(1234b509-a2f0-45ad-8920-29f4a72bc5c3)
+		{
+			script: ""
+		}
+		onTrigger: function<bool,bool>(e84bd521-53ce-4d3c-ac58-bb56a19e2932)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		read: function<string>(267e85c1-bc52-4eae-ae02-20bbb0e1dd64)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	dp:City" \
+				"}"
+		}
+		write: function<bool,string>(5b6791e7-7894-4baf-ab82-0df6483e398c)
+		{
+			script: "function(v:arg0::string)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	"visible 2": bool_scriptedValue(53680595-c5f9-4a44-bc72-e60fcdf8b489)
+	{
+		triggerList: trigger_list(5f05d3f2-3571-4c25-ba38-df7032083152)
+		{
+			script: ""
+		}
+		onTrigger: function<bool,bool>(52123842-a5c6-4611-be52-4586e97aff05)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		read: function<bool>(d490bad1-88cd-442f-8217-f93abfcf7820)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	if(dp:City !=\"\")" \
+				"		false" \
+				"	else" \
+				"		true" \
+				"}"
+		}
+		write: function<bool,bool>(554a4780-28ce-45d3-bd12-02cb853a0101)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+}
