@@ -1,0 +1,210 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(e9d89602-585b-4ca1-aeeb-be20596c306b)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(31c45919-e2dd-47b0-81de-3401fb6667b7)
+		{
+			name: "Template_State 1"
+			template: @637c1b26-580c-4ecf-92cb-8be2659db7fe (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfLabel(52338d35-a2a7-426c-80e5-db9cd00d7218)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label_Welcome"
+					visible: true
+					width: 300
+					height: 100
+					x: 230
+					y: 50
+					text: "Welcome "
+					textColor: #FFFFFFFF
+					font: font_resource(fe44c347-730f-4bba-a0dc-45d570236f9a)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 50
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfImage(bc271fe5-ea3a-421d-9a1c-9e97e1ba6c15)
+				{
+					features: feature_list [
+						ScaleMode(bf102e4a-447b-4dfe-9088-c0e1767b9aac)
+						{
+							scaleMode: 1
+						}, 
+						Rotation(7e671d52-3454-4f20-bcd8-9ed3cc916816)
+						{
+							rotationEnabled: true
+							rotationAngleX: 0F
+							rotationAngleY: 0F
+							rotationAngleZ: 0F
+						}, 
+						Scaling(37756c10-3e84-491d-a4ca-34ab4e6a246a)
+						{
+							scalingEnabled: true
+							scalingX: 100F
+							scalingY: 100F
+							scalingZ: 100F
+						}, 
+						Shearing(728f6347-93e7-42d6-9686-27e0d416dee4)
+						{
+							shearingEnabled: true
+							shearingXbyY: 0F
+							shearingXbyZ: 0F
+							shearingYbyX: 0F
+							shearingYbyZ: 0F
+							shearingZbyX: 0F
+							shearingZbyY: 0F
+						}, 
+						Pivot(4986a69c-7713-476c-9b72-829b9e3250bc)
+						{
+							pivotX: float_scriptedValue(15a2be2d-9d94-4d12-8523-83ee02146136)
+							{
+								triggerList: trigger_list(f17504d7-2422-49c7-8b6b-9a095e9c6eef)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(1edf61c1-52ff-4844-8e00-bfc92e6d2885)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<float>(b6d7f7e1-0c52-4111-a2af-3f0ec4d841dc)
+								{
+									script: "function()" \
+										"{" \
+										"	f:int2float(v:this.height/2)" \
+										"}"
+								}
+								write: function<bool,float>(3ca2fb0b-5626-492d-b718-c163ff1be36c)
+								{
+									script: "function(v:arg0::float)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							pivotY: float_scriptedValue(0f65cd9b-c4ee-4283-9ddf-88f503a8daaf)
+							{
+								triggerList: trigger_list(5251d0c7-fbc7-4c1e-bdf2-2e3db51ca895)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(68c8efdc-0926-4058-b82f-f1d119bc4cfd)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<float>(231498d1-9831-4f85-9988-78f48a3f9752)
+								{
+									script: "function()" \
+										"{" \
+										"	f:int2float(v:this.width/2)" \
+										"}"
+								}
+								write: function<bool,float>(2fc6060b-f5d2-46b6-9d54-e8186e4770b8)
+								{
+									script: "function(v:arg0::float)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							pivotZ: 0F
+						}]
+					children: children_list [
+						GtfParallelAnimation(5f232662-b36c-4709-b3c2-ad110d549d45)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationFloat(d3dffbb0-88d2-47aa-bda8-7ac3616cfd89)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "360 rotation"
+									enabled: true
+									delay: 0
+									duration: 1500
+									repeat: 0
+									alternating: false
+									relative: false
+									start: 0F
+									end: -360F
+									target: rotationAngleZ@7e671d52-3454-4f20-bcd8-9ed3cc916816 (propref<float>)
+								}]
+							name: "Loading_Animation"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(f5432961-beb6-46cc-9118-cc35bb5d08d4)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(d82e6f01-1393-4ed4-953a-93b4449c0961)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(f18ca67f-b7f9-499d-aea9-88c106553fd4)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							Play: conditional_script(0a76daba-c3ef-418e-86d3-f90e2447847f)
+							{
+								triggerList: trigger_list(503e87cf-31f4-425b-94f5-22e645048752)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(0e4a29d9-34e7-493c-bb51-01263968dc40)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	f:animation_play(v:this)" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "Image_loading"
+					visible: true
+					width: 100
+					height: 100
+					x: 320
+					y: 240
+					image: image_resource(8ccdda12-8176-4d80-8757-97b8a711e771)
+					{
+						file: "loading.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+		}]
+	name: "Welcome VIew"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

@@ -1,0 +1,324 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(c3a49e65-6b74-4d44-ba56-9c51e89163f1)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(4d1cdc3c-ff70-4414-90c9-3e042654f88a)
+		{
+			name: "Template_State 1"
+			template: @637c1b26-580c-4ecf-92cb-8be2659db7fe (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfRectangle(ba9f2a40-00c2-42b2-afbc-d0f117ef3b9b)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "StyleLine"
+					visible: true
+					width: 750
+					height: 5
+					x: 50
+					y: 100
+					fillColor: #0000FFFF
+				}, 
+				GtfLabel(5fb6b3bd-5ad0-4c3b-831e-e4c0a96d8c3c)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Menu_Label"
+					visible: true
+					width: 300
+					height: 100
+					x: 80
+					y: 10
+					text: "Media Player"
+					textColor: #F5F5F5FF
+					font: font_resource(fd77d2ee-200c-4453-a743-2604b0e41697)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 50
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfImage(3551ac9e-be94-4bf7-adc2-700bf37e2ebc)
+				{
+					features: feature_list [
+						ScaleMode(09c30c75-dcb9-4983-b5ac-4afe035f2b4e)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "Car_Image"
+					visible: true
+					width: 150
+					height: 150
+					x: 600
+					y: 150
+					image: image_resource(33eabc91-23fa-478d-9be8-6cd3d1c5e2db)
+					{
+						file: "music.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfContainer_template_instance(5d73a04b-9016-46e1-95d5-95ca8d72abbb)
+				{
+					name: "Radio_btn"
+					template: @874c07d4-8bc4-48b6-9d67-8ff88f38655a (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 35
+					y: 160
+					text: "Radio"
+					textColor: textColor@874c07d4-8bc4-48b6-9d67-8ff88f38655a (propref<color>)
+					font: font_resource(3ef1b480-4ae4-4a40-8229-c4ade15db780)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 40
+					}
+					touchPressed: function<bool,int,int,int,int>(1abf92a0-5af3-4465-858a-fe02c5cec62e)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goTo_Radio()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(e1c859e4-3244-4fe6-ab96-78f9805686f4)
+				{
+					name: "Media_btn"
+					template: @874c07d4-8bc4-48b6-9d67-8ff88f38655a (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 35
+					y: 230
+					text: "Media Player"
+					textColor: textColor@874c07d4-8bc4-48b6-9d67-8ff88f38655a (propref<color>)
+					font: font_resource(ff204a43-43aa-4c92-baaf-6313671367e6)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 40
+					}
+					touchPressed: function<bool,int,int,int,int>(3cd6a48c-b0cc-41c0-88be-9a2dbb1a74e1)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goTo_Media()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfLabel(78b23bda-d553-4ad6-968d-75caec80d115)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Branding"
+					visible: true
+					width: 350
+					height: 100
+					x: 420
+					y: 10
+					text: "A Better Car Today"
+					textColor: #F5F5F5FF
+					font: font_resource(241abef5-014a-4e7d-a349-a8e6f814cb07)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 50
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(377848cf-d583-4cae-b563-a4b8196ab3a2)
+				{
+					name: "Nav_btn"
+					template: @874c07d4-8bc4-48b6-9d67-8ff88f38655a (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 35
+					y: 295
+					text: "Navigation"
+					textColor: textColor@874c07d4-8bc4-48b6-9d67-8ff88f38655a (propref<color>)
+					font: font_resource(8983d72e-201d-4316-b53b-98b94581e0c3)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 40
+					}
+					touchPressed: function<bool,int,int,int,int>(deaa1d53-ec1c-4f56-909b-ff9ef5549918)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goTo_Nav()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(c66df1ac-949c-47f9-a0d1-37c31f5b142b)
+				{
+					name: "Help_btn"
+					template: @874c07d4-8bc4-48b6-9d67-8ff88f38655a (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 35
+					y: 370
+					text: "Help"
+					textColor: textColor@874c07d4-8bc4-48b6-9d67-8ff88f38655a (propref<color>)
+					font: font_resource(c7977cce-f4c9-4991-aaac-b5220a8abe0b)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 40
+					}
+					touchPressed: function<bool,int,int,int,int>(24413eb5-7036-49b3-bf4d-cc206bcd369c)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goTo_Help()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfLabel(5a75f6d6-ec34-4a36-8a3f-4e782ea8bafd)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Song_Label"
+					visible: true
+					width: 220
+					height: 100
+					x: 300
+					y: 152
+					text: string_scriptedValue(8d7d559f-d237-4080-85e0-1e839391434a)
+					{
+						triggerList: trigger_list(ff06bac4-eb76-410a-bf0e-59fa2dede728)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(10f4e3c7-37e1-413c-92fb-c508dc2495fd)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(f4681030-df51-43f1-9823-3945708a96bb)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	dp:Song_List[dp:Song_index]" \
+								"}"
+						}
+						write: function<bool,string>(97692f74-f419-45ae-89d6-74003a53d102)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #191970FF
+					font: font_resource(f9aab19c-378c-44ca-8e84-23f30f7feedf)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(f6b8c43a-396a-4342-b5a0-3f16397aa709)
+				{
+					name: "Button_prev"
+					template: @349085f0-8fff-47bb-afda-f42126ac05ac (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 260
+					y: 240
+					touchPressed: function<bool,int,int,int,int>(d6388814-f323-4ef4-8531-28210a2c9eef)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    if(dp:Song_index> 0)" \
+							"		dp:Song_index-= 1" \
+							"    else " \
+							"    	dp:Song_index= length dp:Song_List - 1" \
+							"    v:this->^->Button_play.image = dp:PlayButton" \
+							"    v:this->^->Button_play.play = false" \
+							"    false" \
+							"}"
+					}
+					image: image_resource(379c0f0c-0d27-4282-a590-d5ff2b43919d)
+					{
+						file: "prev.png"
+					}
+					scaleMode: 1
+					play: play@349085f0-8fff-47bb-afda-f42126ac05ac (propref<bool>)
+					visible: visible@349085f0-8fff-47bb-afda-f42126ac05ac (propref<bool>)
+				}, 
+				GtfContainer_template_instance(d37a7240-808a-4903-87d6-87484dd52518)
+				{
+					name: "Button_play"
+					template: @349085f0-8fff-47bb-afda-f42126ac05ac (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 355
+					y: 240
+					touchPressed: function<bool,int,int,int,int>(d378b0c6-5366-434a-8ee4-678ba6e1d27e)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(v:this.play == false)" \
+							"		{" \
+							"			v:this.image = dp:PauseButton" \
+							"			v:this.play = true" \
+							"		}" \
+							"    else" \
+							"    	{" \
+							"    	v:this.image = dp:PlayButton" \
+							"    	v:this.play = false" \
+							"    	}" \
+							"    false" \
+							"}"
+					}
+					image: image_resource(c2d9a2d3-de13-40b9-8b56-a3d2e23d46d3)
+					{
+						file: "play.png"
+					}
+					scaleMode: 1
+					play: play@349085f0-8fff-47bb-afda-f42126ac05ac (propref<bool>)
+					visible: visible@349085f0-8fff-47bb-afda-f42126ac05ac (propref<bool>)
+				}, 
+				GtfContainer_template_instance(ddd3061a-b34c-462d-af0f-473a5b1814d8)
+				{
+					name: "Button_next"
+					template: @349085f0-8fff-47bb-afda-f42126ac05ac (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 455
+					y: 235
+					touchPressed: function<bool,int,int,int,int>(71210f07-aa9a-48e1-a2ad-a51fcef8a159)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	" \
+							"	if(dp:Song_index< length dp:Song_List - 1)" \
+							"		dp:Song_index+= 1" \
+							"    else " \
+							"    	dp:Song_index = 0" \
+							"    v:this->^->Button_play.image = dp:PlayButton" \
+							"    v:this->^->Button_play.play = false" \
+							"    false" \
+							"}"
+					}
+					image: image_resource(7bf01d0c-c1fd-4dc0-9213-9b7d900972cb)
+					{
+						file: "next.png"
+					}
+					scaleMode: 1
+					play: play@349085f0-8fff-47bb-afda-f42126ac05ac (propref<bool>)
+					visible: visible@349085f0-8fff-47bb-afda-f42126ac05ac (propref<bool>)
+				}]
+		}]
+	name: "View 4"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

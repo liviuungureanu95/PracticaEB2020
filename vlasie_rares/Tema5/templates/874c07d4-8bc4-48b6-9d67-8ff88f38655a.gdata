@@ -1,0 +1,60 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(874c07d4-8bc4-48b6-9d67-8ff88f38655a)
+{
+	name: "Text_Button"
+	structure: GtfContainer(bc577bd0-4519-4e4a-9daf-5c5256a1596d)
+	{
+		features: feature_list [
+			TouchPressed(50150add-8050-4670-a21b-fdb02c083d8e)
+			{
+				touchPressed: function<bool,int,int,int,int>(1aaf712e-3b04-4a2f-90d8-3789d42ecf6a)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(f3307beb-6d96-4015-9bb8-0c77039c37dd)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfLabel(c5c19d47-c917-45ce-b37b-b44afe5c0e29)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Text"
+				visible: true
+				width: 200
+				height: 80
+				x: 0
+				y: 0
+				text: "Text"
+				textColor: #FFFFFFFF
+				font: font_resource(866cea7c-e200-4d12-8bc8-973e5a53b43b)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Text_btn"
+		visible: true
+		width: 150
+		height: 80
+		x: 0
+		y: 0
+	}
+	x: x@bc577bd0-4519-4e4a-9daf-5c5256a1596d (propref<int>)
+	y: y@bc577bd0-4519-4e4a-9daf-5c5256a1596d (propref<int>)
+	text: text@c5c19d47-c917-45ce-b37b-b44afe5c0e29 (propref<string>)
+	textColor: textColor@c5c19d47-c917-45ce-b37b-b44afe5c0e29 (propref<color>)
+	font: font@c5c19d47-c917-45ce-b37b-b44afe5c0e29 (propref<font>)
+	touchPressed: touchPressed@50150add-8050-4670-a21b-fdb02c083d8e (propref<function<bool,int,int,int,int>>)
+}
