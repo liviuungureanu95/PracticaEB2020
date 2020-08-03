@@ -1,0 +1,90 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(1d45e35b-c5b9-4c6a-bc13-bbc62442dae1)
+{
+	name: "Help_View"
+	template: @da628593-7414-45c3-9140-f2ef51e11b5e (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(6a15181f-9b82-4696-80e5-5d33e5895e2b)
+		{
+			features: feature_list [
+				MultiLine(a0de9cd3-5aae-4019-8ab4-585a42182965)
+				{
+					lineOffset: 0
+					maxLineCount: 0
+				}]
+			children: children_list []
+			name: "Label 2"
+			visible: true
+			width: 324
+			height: 600
+			x: 25
+			y: 100
+			text: "Welcome to our HELP / INFO MENU . In the right, you have 4 buttons : \"Main Menu\" , \"Navigation\" , \"Media Player\" and \"Radio\" . You can select one of these buttons to go in that menu you want. Hope we helped !"
+			textColor: #FFFFFFFF
+			font: font_resource(e2469e17-b727-4c19-a8ce-31d298f0a6cc)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 35
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}]
+	Background_IMG: image_resource(25d0a183-dc4e-487f-8170-41f4fd9dc66c)
+	{
+		file: "MainMenu_Help_Background.jpg"
+	}
+	img_button1: image_resource(fe29fc67-bd45-4b53-be61-f6917fc120d9)
+	{
+		file: "MainMenu_Buttom.png"
+	}
+	img_button2: image_resource(ac6c3c2b-040f-48a3-b58c-5b6619c37153)
+	{
+		file: "Navigation_Button.jpg"
+	}
+	img_button3: image_resource(0370d7a0-c518-4830-8557-2bff49845ea9)
+	{
+		file: "MediaPlayer_Button.jpeg"
+	}
+	img_button4: image_resource(6c7276f9-a295-432c-9a3d-d111d6b0df32)
+	{
+		file: "Radio_Button.png"
+	}
+	text_button1: "Main Menu"
+	text_button2: text_button2@da628593-7414-45c3-9140-f2ef51e11b5e (propref<string>)
+	text_button3: "MediaPlay"
+	text_button4: "Radio"
+	"touchShortReleased 1": function<bool,int,int,int,int>(b73522d8-5760-4d3f-851e-c1507233cd0e)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"	fire ev:GoTo_M()" \
+			"    false" \
+			"}"
+	}
+	"touchShortReleased 2": function<bool,int,int,int,int>(c0a29de8-122e-47ac-8767-03473a26f4f9)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"	fire ev:GoTo_Navigation()" \
+			"    false" \
+			"}"
+	}
+	"touchShortReleased 3": function<bool,int,int,int,int>(d455569e-e82e-489e-a5b6-2dbb5106cfb4)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"	fire ev:GoTo_MediaPlayer()" \
+			"    false" \
+			"}"
+	}
+	"touchShortReleased 4": function<bool,int,int,int,int>(8ff6fff2-cd1d-4e48-95d6-e0b6d9499c75)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"	fire ev:GoTo_Radio()" \
+			"    false" \
+			"}"
+	}
+	Background_TXT: "HELP MENU"
+}

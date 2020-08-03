@@ -1,0 +1,65 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(7e152762-7134-4cb8-9f0a-829c1f83370f)
+{
+	name: "MediaPlayer_View"
+	template: @da628593-7414-45c3-9140-f2ef51e11b5e (objectref<GtfView_template>)
+	children: children_list []
+	Background_IMG: image_resource(13926b54-40ce-4efc-a9fa-3f4b70817bcd)
+	{
+		file: "MediaPlayer_Background.jpg"
+	}
+	img_button1: image_resource(367337c0-b2a5-468f-8ad5-4889b285fbb3)
+	{
+		file: "MainMenu_Buttom.png"
+	}
+	img_button2: image_resource(43a5bcea-3cb6-4b85-9c68-208f904c7773)
+	{
+		file: "Navigation_Button.jpg"
+	}
+	img_button3: image_resource(a6c7c0c6-a830-4279-a9d2-e20861b252c0)
+	{
+		file: "Radio_Button.png"
+	}
+	img_button4: image_resource(189cfca7-535d-4dd2-823f-112c3c88fac8)
+	{
+		file: "Help_Button.png"
+	}
+	text_button1: "Main Menu"
+	text_button2: text_button2@da628593-7414-45c3-9140-f2ef51e11b5e (propref<string>)
+	text_button3: "Radio"
+	text_button4: "Help !"
+	"touchShortReleased 1": function<bool,int,int,int,int>(ec2bd6dc-d830-4162-b049-fd391bcc6b1b)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"	fire ev:GoTo_M()" \
+			"    false" \
+			"}"
+	}
+	"touchShortReleased 2": function<bool,int,int,int,int>(92382c99-538c-4b24-a958-59f75de1fe37)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"	fire ev:GoTo_Navigation()" \
+			"    false" \
+			"}"
+	}
+	"touchShortReleased 3": function<bool,int,int,int,int>(287378ff-7a81-4636-a226-09e8965c3ccf)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"	fire ev:GoTo_Radio()" \
+			"    false" \
+			"}"
+	}
+	"touchShortReleased 4": function<bool,int,int,int,int>(5f759718-d272-4494-a375-854a0168a12f)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"	fire ev:GoTo_Help()" \
+			"    false" \
+			"}"
+	}
+	Background_TXT: "Media Player MENU"
+}
