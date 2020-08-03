@@ -1,0 +1,91 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(3ddf7331-b056-499b-b39b-0e838f938cf3)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle_template_instance(12582d15-453c-432c-94e1-1dc31f8fddf4)
+		{
+			name: "setup_button"
+			template: @3e11272b-1326-4bb9-b521-66a3394033e3 (objectref<GtfRectangle_template>)
+			children: children_list []
+			x: x@3e11272b-1326-4bb9-b521-66a3394033e3 (propref<int>)
+			y: y@3e11272b-1326-4bb9-b521-66a3394033e3 (propref<int>)
+			touchShortReleased: function<bool,int,int,int,int>(928edbd6-38a9-438a-b678-b64fa435ab9d)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:goToSetup()" \
+					"    false" \
+					"}"
+			}
+			text: "setup"
+			buttonEvent: function<bool>(59ce1124-541d-413e-81a5-e4dce9ea47e0)
+			{
+				script: "function()" \
+					"{" \
+					"	// todo: auto generated return value, please adapt" \
+					"	fire ev:goToSetup()" \
+					"	false" \
+					"}"
+			}
+			visible: visible@3e11272b-1326-4bb9-b521-66a3394033e3 (propref<bool>)
+			height: height@3e11272b-1326-4bb9-b521-66a3394033e3 (propref<int>)
+		}, 
+		GtfRectangle_template_instance(bd36e791-91ce-47e4-a872-d8288aa2c28d)
+		{
+			name: "cd_button"
+			template: @3e11272b-1326-4bb9-b521-66a3394033e3 (objectref<GtfRectangle_template>)
+			children: children_list []
+			x: 111
+			y: 153
+			touchShortReleased: touchShortReleased@3e11272b-1326-4bb9-b521-66a3394033e3 (propref<function<bool,int,int,int,int>>)
+			text: "cd"
+			buttonEvent: function<bool>(c5f1fda6-8bab-436b-b94e-7f1ebf441517)
+			{
+				script: "function()" \
+					"{" \
+					"	// todo: auto generated return value, please adapt" \
+					"	fire ev:goToCd()" \
+					"	false" \
+					"}"
+			}
+			visible: visible@3e11272b-1326-4bb9-b521-66a3394033e3 (propref<bool>)
+			height: height@3e11272b-1326-4bb9-b521-66a3394033e3 (propref<int>)
+		}, 
+		GtfRectangle_template_instance(41ec98ae-6b45-46a7-8ae2-322b756bab87)
+		{
+			name: "usb_button"
+			template: @3e11272b-1326-4bb9-b521-66a3394033e3 (objectref<GtfRectangle_template>)
+			children: children_list []
+			x: 350
+			y: 154
+			touchShortReleased: touchShortReleased@3e11272b-1326-4bb9-b521-66a3394033e3 (propref<function<bool,int,int,int,int>>)
+			text: "usb"
+			buttonEvent: function<bool>(33e4c703-7d85-4271-b5b8-a5eb13847e4d)
+			{
+				script: "function()" \
+					"{" \
+					"	// todo: auto generated return value, please adapt" \
+					"	fire ev:goToUsb();" \
+					"	false" \
+					"}"
+			}
+			visible: visible@3e11272b-1326-4bb9-b521-66a3394033e3 (propref<bool>)
+			height: height@3e11272b-1326-4bb9-b521-66a3394033e3 (propref<int>)
+		}, 
+		GtfContainer_template_instance(074e3894-cbfe-4aaf-bd67-ef8b2d444af1)
+		{
+			name: "back_buttons 1 1"
+			template: @bd395935-e736-4058-af76-1630fafedad4 (objectref<GtfContainer_template>)
+			children: children_list []
+			visible_Main: true
+			visible_Back: false
+		}]
+	name: "media_player_view"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

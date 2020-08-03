@@ -1,0 +1,82 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(5962fffd-7950-4bbc-9cc2-84f90d1af054)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(5349c9fc-5adf-4c92-a361-043d01a5f81d)
+		{
+			name: "CD_button"
+			template: @e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "CD"
+			visible: visible@e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (propref<bool>)
+			x: 167
+			y: 189
+			buttonEvent: function<bool>(d8f948dd-dca7-4c23-81c1-9e51a8d0a1e8)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goto_CD();" \
+					"	false" \
+					"}"
+			}
+			touchShortReleased: touchShortReleased@e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (propref<function<bool,int,int,int,int>>)
+		}, 
+		GtfContainer_template_instance(f694e890-5b3a-4d77-aa6c-aaf72171eebc)
+		{
+			name: "USB_button"
+			template: @e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "USB"
+			visible: visible@e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (propref<bool>)
+			x: 350
+			y: 190
+			buttonEvent: function<bool>(38e23ae6-7942-4c3a-9406-a1a3867d810c)
+			{
+				script: "function()" \
+					"{" \
+					"	 fire ev:goto_USB();" \
+					"	false" \
+					"}"
+			}
+			touchShortReleased: touchShortReleased@e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (propref<function<bool,int,int,int,int>>)
+		}, 
+		GtfContainer_template_instance(7d065530-13ff-4052-be98-d28b1e1a78ba)
+		{
+			name: "setup"
+			template: @e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "setup"
+			visible: visible@e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (propref<bool>)
+			x: 545
+			y: 186
+			buttonEvent: function<bool>(66c9cce4-2f57-4d21-be72-41ac4640b773)
+			{
+				script: "function()" \
+					"{" \
+					"    fire ev:goto_Setup();" \
+					"	false" \
+					"}"
+			}
+			touchShortReleased: touchShortReleased@e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (propref<function<bool,int,int,int,int>>)
+		}, 
+		GtfContainer_template_instance(15d01708-971e-433e-8cf7-8193e2977a89)
+		{
+			name: "groupButton 1"
+			template: @3c864909-5e0a-48a5-9946-f0eab0b08711 (objectref<GtfContainer_template>)
+			children: children_list []
+			visible_main: visible_main@3c864909-5e0a-48a5-9946-f0eab0b08711 (propref<bool>)
+			text_Main: text_Main@3c864909-5e0a-48a5-9946-f0eab0b08711 (propref<string>)
+			buttonEventMain: buttonEventMain@3c864909-5e0a-48a5-9946-f0eab0b08711 (propref<function<bool>>)
+			buttonEventBack: buttonEventBack@3c864909-5e0a-48a5-9946-f0eab0b08711 (propref<function<bool>>)
+			text_Back: text_Back@3c864909-5e0a-48a5-9946-f0eab0b08711 (propref<string>)
+			visible_back: false
+		}]
+	name: "mediaPlayer_view"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
