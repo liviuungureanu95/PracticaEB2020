@@ -1,0 +1,437 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(47c9040d-293e-4bfd-9619-88601211023c)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(e4799b3c-2a16-4b26-aa1d-1767dce9ba0e)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(0bd86808-120b-412d-a426-24a6ab2f85c5)
+				{
+					features: feature_list [
+						ScaleMode(a6450def-c763-476c-a140-1277e56a1fe8)
+						{
+							scaleMode: 2
+						}]
+					children: children_list []
+					name: "harta icon"
+					visible: true
+					width: 103
+					height: 112
+					x: 14
+					y: 2
+					image: image_resource(2b9f6727-6c1f-4403-aadf-f2afb1cdbbf8)
+					{
+						file: "map.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(991b5adb-9fa4-4d8d-88d9-894195666133)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "n tara"
+					visible: true
+					width: 131
+					height: 58
+					x: 50
+					y: 107
+					text: "Nume țară :"
+					textColor: #191970FF
+					font: font_resource(860e4032-e68e-42b4-aac5-7a2f98c4dcaa)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(e256b153-1d17-459b-aaac-80f52545a809)
+				{
+					name: "mesaj cautatre"
+					template: @49a366a2-bf4a-4fd8-97dc-a4fc179244ef (objectref<GtfContainer_template>)
+					children: children_list []
+					width: 371
+					height: 34
+					x: 346
+					y: 429
+					text: string_scriptedValue(07634181-9e69-4ca5-91cd-0884c3ac082d)
+					{
+						triggerList: trigger_list(28d5593e-b9b6-49fe-911e-31826830161f)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(fc6d0a17-ce1d-4296-ac89-79ad67761a45)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(433f40e2-68a3-4bc9-a0cf-8067cb98f7bc)
+						{
+							script: "function()" \
+								"{" \
+								"	" \
+								"		if(dp:status_label[3] == true)" \
+								"	 	v:this.\"Afisare mesaj\" = \"Se cauta cel mai scurt traseu\"" \
+								"	" \
+								"	v:this.\"Afisare mesaj\"" \
+								"}"
+						}
+						write: function<bool,string>(fe72bef7-8606-4a65-8771-01cd3c0e2658)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					visible: true
+					fillColor: #FFFFFF00
+					"Afisare mesaj": ""
+				}, 
+				GtfLabel(62b82e72-5a84-495a-b41c-fa9a26cbb921)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "titlu app"
+					visible: true
+					width: 236
+					height: 100
+					x: 125
+					y: 7
+					text: "NAVIGATOR DE BORD"
+					textColor: #191970FF
+					font: font_resource(d5b75147-2013-46d1-97a6-0cef749b11ad)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(f4f62d58-9a5e-49b1-ae38-635a1707bfad)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "n oras"
+					visible: true
+					width: 145
+					height: 100
+					x: 49
+					y: 162
+					text: "Nume Oraș :"
+					textColor: #191970FF
+					font: font_resource(d1f5355f-f2fe-45ec-9829-1d4a601b5536)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(6906271e-e548-4129-9688-7320571700da)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "n adresa"
+					visible: true
+					width: 100
+					height: 100
+					x: 52
+					y: 246
+					text: "Adresa :"
+					textColor: #191970FF
+					font: font_resource(5ecef36b-41c6-4040-86d4-63aaa6398421)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(4c7b917f-8262-4ba8-845e-52d0f441ef61)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "n numar"
+					visible: true
+					width: 112
+					height: 100
+					x: 52
+					y: 327
+					text: "Numărul :"
+					textColor: #191970FF
+					font: font_resource(4f6b37dd-499b-4069-9460-e30fb60f5b8f)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(acb7bd6b-875a-45b9-bd37-ff12a84ff4f8)
+				{
+					name: "label tara"
+					template: @49a366a2-bf4a-4fd8-97dc-a4fc179244ef (objectref<GtfContainer_template>)
+					children: children_list []
+					width: 425
+					height: 60
+					x: 198
+					y: 106
+					text: string_scriptedValue(cccf38bd-ef5f-4217-a684-3b24eea6b41e)
+					{
+						triggerList: trigger_list(8f0e852e-2ddc-4146-b73e-17278a386264)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(4de030b7-8e53-447f-82ea-e2910951549b)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(da94bdc1-de2e-4022-b836-d6ace297009d)
+						{
+							script: "function()" \
+								"{" \
+								"	if(dp:\"1_tara\"!=\"\")" \
+								"		dp:status_label[0]=true" \
+								"	dp:\"1_tara\"" \
+								"	}"
+						}
+						write: function<bool,string>(ec34b589-d8dd-4f4f-bd12-9e551d1d34b2)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					visible: visible@49a366a2-bf4a-4fd8-97dc-a4fc179244ef (propref<bool>)
+					fillColor: fillColor@49a366a2-bf4a-4fd8-97dc-a4fc179244ef (propref<color>)
+					"y 2": 0
+					"x 2": 0
+					"width 2": 100
+					"height 2": 100
+					bifa1: bool_scriptedValue(75c7e8b3-afbf-46d3-b8d9-a7e68bfd7dd0)
+					{
+						triggerList: trigger_list(9712f4c7-0d4a-41cc-9311-ab7666e9bc1b)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(cd1a7216-c6d6-442e-b4b5-6537cf4a18bb)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<bool>(8439c81b-a51b-4583-895b-00608691ea00)
+						{
+							script: "function()" \
+								"{" \
+								"	if(dp:status_label[0]==true)" \
+								"	{" \
+								"		v:this.bifa1 = true;}" \
+								"     else" \
+								"       {v:this.bifa1 = false;}" \
+								"false" \
+								"}"
+						}
+						write: function<bool,bool>(bdb94522-2f5a-447c-b9fa-877282ca05f7)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfContainer_template_instance(f4251c41-cf72-42d0-80d5-c5edf5f4d6fd)
+				{
+					name: "label oras"
+					template: @49a366a2-bf4a-4fd8-97dc-a4fc179244ef (objectref<GtfContainer_template>)
+					children: children_list []
+					width: 425
+					height: 60
+					x: 196
+					y: 187
+					text: string_scriptedValue(b975bc20-bd15-42a6-84d6-f5fd3e4fc66c)
+					{
+						triggerList: trigger_list(059396f6-e199-4b05-90a6-e7ef4a3800d1)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(0a1f50b9-a0cb-4cc8-ad66-6cd9770f812c)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(61354d69-e3f2-4457-9939-0b1c0ca6faf8)
+						{
+							script: "function()" \
+								"{" \
+								"	if(dp:status_label[0] == true && dp:\"2_oras\"!=\"\")" \
+								"		dp:status_label[1] = true" \
+								"	else" \
+								"		dp:\"2_oras\" = \"\"" \
+								"	" \
+								"	dp:\"2_oras\"" \
+								"}"
+						}
+						write: function<bool,string>(5696990a-5293-4f57-9e71-fd1b4d8dc75c)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					visible: visible@49a366a2-bf4a-4fd8-97dc-a4fc179244ef (propref<bool>)
+					fillColor: fillColor@49a366a2-bf4a-4fd8-97dc-a4fc179244ef (propref<color>)
+				}, 
+				GtfContainer_template_instance(ddb1630b-db43-4ba0-8d0c-e13f3479ec91)
+				{
+					name: "label adresa"
+					template: @49a366a2-bf4a-4fd8-97dc-a4fc179244ef (objectref<GtfContainer_template>)
+					children: children_list []
+					width: 428
+					height: 60
+					x: 196
+					y: 272
+					text: string_scriptedValue(daddad2a-03f8-4b58-b920-037b23a5dba0)
+					{
+						triggerList: trigger_list(4f3b479b-130a-435a-b8f8-c3c39e1726ac)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(c112fa68-23e6-4c24-8a0b-8873ad5137b5)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(ea085df6-629b-43a4-a424-2cde1baa3a2f)
+						{
+							script: "function()" \
+								"{" \
+								"	if(dp:status_label[1] == true && dp:\"3_adresa\"!=\"\")" \
+								"		dp:status_label[2] = true" \
+								"	else" \
+								"		dp:\"3_adresa\" = \"\"" \
+								"	" \
+								"	dp:\"3_adresa\"" \
+								"}"
+						}
+						write: function<bool,string>(b31101a4-f154-4a10-a966-1d73d8bb9e86)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					visible: visible@49a366a2-bf4a-4fd8-97dc-a4fc179244ef (propref<bool>)
+					fillColor: fillColor@49a366a2-bf4a-4fd8-97dc-a4fc179244ef (propref<color>)
+				}, 
+				GtfContainer_template_instance(85f0679b-8191-4694-ba20-b5d9e95e4d6d)
+				{
+					name: "label numar"
+					template: @49a366a2-bf4a-4fd8-97dc-a4fc179244ef (objectref<GtfContainer_template>)
+					children: children_list []
+					width: 428
+					height: 60
+					x: 196
+					y: 355
+					text: string_scriptedValue(16b395d8-9ca7-4447-abf2-ce256818a789)
+					{
+						triggerList: trigger_list(ec30c794-4c40-425b-bad9-c692cc5917bd)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(c4736a24-1c14-4ddd-b1be-2814c566b8d9)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(3ac220b0-4051-4812-a60c-53b99e683748)
+						{
+							script: "function()" \
+								"{" \
+								"	if(dp:status_label[2] == true && dp:\"4_numar\"!=0)" \
+								"		dp:status_label[3] = true" \
+								"	else" \
+								"		dp:\"4_numar\" = 0" \
+								"	" \
+								"	f:int2string(dp:\"4_numar\")" \
+								"	" \
+								"}"
+						}
+						write: function<bool,string>(a39c0b46-d024-4402-ab6a-3ac19a63e97b)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					visible: true
+					fillColor: fillColor@49a366a2-bf4a-4fd8-97dc-a4fc179244ef (propref<color>)
+				}, 
+				GtfImage(1bb4d367-0c78-44ae-82f4-1027f477f3a5)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "bara de search"
+					visible: true
+					width: 64
+					height: 64
+					x: 716
+					y: 417
+					image: image_resource(113d230b-cebf-4992-b78b-0a81bace021a)
+					{
+						file: "search.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "background"
+			visible: true
+			width: 800
+			height: 480
+			x: 0
+			y: 0
+			fillColor: #E6E6FAFF
+		}]
+	name: "View 1"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
