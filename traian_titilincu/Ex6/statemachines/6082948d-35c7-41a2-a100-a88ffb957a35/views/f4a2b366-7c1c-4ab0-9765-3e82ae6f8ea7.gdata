@@ -1,0 +1,136 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(f4a2b366-7c1c-4ab0-9765-3e82ae6f8ea7)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(71ea0e67-124d-4ce6-8faa-9c953c0572d7)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(81c095d6-1b40-41f5-bedd-7e6481c8f61f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Loading "
+					visible: true
+					width: width@f4a2b366-7c1c-4ab0-9765-3e82ae6f8ea7 (propref<int>)
+					height: 100
+					x: 0
+					y: 162
+					text: "Initializing Navigation"
+					textColor: #FFFFFFFF
+					font: font_resource(1f94e4a4-61bd-444a-813c-860154d039f8)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfRectangle(3cb0a4e6-230d-4fd4-8eda-54ebf663ebed)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfRectangle(bf8773c3-427e-4fcd-9285-04b49cdcedaa)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfParallelAnimation(2883511b-397a-4943-835a-a0bf9f66ab23)
+								{
+									features: feature_list []
+									children: children_list [
+										GtfLinearInterpolationS32(0fc4bb8c-5537-4f40-8f0b-e6a4572a2603)
+										{
+											features: feature_list []
+											children: children_list []
+											name: "Linear interpolation curve 1"
+											enabled: true
+											delay: 0
+											duration: 3000
+											repeat: 1
+											alternating: false
+											relative: false
+											start: 0
+											end: 200
+											target: width@bf8773c3-427e-4fcd-9285-04b49cdcedaa (propref<int>)
+										}]
+									name: "Loading Animation"
+									enabled: true
+									repeat: 1
+									alternating: false
+									scale: 1F
+									onPlay: function<void,int,bool>(9699fcc3-2599-4445-b80c-5f88476b319e)
+									{
+										script: "function(v:animation_time::int, v:forward::bool)" \
+											"{" \
+											"" \
+											"}"
+									}
+									onPause: function<void,int>(f226a387-16ef-4ef2-b95d-c77f60e823e7)
+									{
+										script: "function(v:animation_time::int)" \
+											"{" \
+											"" \
+											"}"
+									}
+									onTerminate: function<void,int,int>(60ffed27-1d95-437b-b159-16b321ebe257)
+									{
+										script: "function(v:animation_time::int, v:terminate::int)" \
+											"{" \
+											"" \
+											"}"
+									}
+									start: conditional_script(ac7d6fb5-b7da-450c-85a6-9a3586db0b95)
+									{
+										triggerList: trigger_list(62bf4f93-b2d6-49d4-9bd6-6d5936f6a048)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(abcdaa5e-e726-4263-8bc7-ca6e38476ae0)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	f:animation_play(v:this)" \
+												"	false" \
+												"}"
+										}
+									}
+								}]
+							name: "Blue Bar"
+							visible: true
+							width: 0
+							height: 12
+							x: 0
+							y: 0
+							fillColor: #00CED1FF
+						}]
+					name: "White Bar"
+					visible: true
+					width: 200
+					height: 12
+					x: 301
+					y: 257
+					fillColor: #F8F8FFFF
+				}]
+			name: "BG"
+			visible: true
+			width: width@f4a2b366-7c1c-4ab0-9765-3e82ae6f8ea7 (propref<int>)
+			height: height@f4a2b366-7c1c-4ab0-9765-3e82ae6f8ea7 (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(a0cf5143-38e0-47cd-a0b9-0afa2a3369a2)
+			{
+				file: "background.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "Loading View"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

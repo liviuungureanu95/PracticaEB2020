@@ -1,0 +1,40 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(ba6a0eb8-b049-4194-8a92-d185c2b26193)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(25178d36-7873-4cd3-b78c-111e17e7ca92)
+		{
+			name: "Background 1"
+			template: @86f1b7f7-dfb8-4542-bce2-19f5181df92d (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "strada:"
+			"text 2": @e4f547d9-43b5-41be-9e8d-f7663601981d (objectref<string>)
+			visible: true
+			touchShortReleased: function<bool,int,int,int,int>(6a822d43-d8f2-4125-b716-f48dea0a64d0)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    if(dp:street != \"\") fire ev:goTo_number()" \
+					"    false" \
+					"}"
+			}
+			fillColor: fillColor@86f1b7f7-dfb8-4542-bce2-19f5181df92d (propref<color>)
+			"visible 2": true
+			"touchShortReleased 2": function<bool,int,int,int,int>(76de0b87-29c1-4a57-b339-e80ee2abe7a0)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    fire ev:goTo_city()" \
+					"    false" \
+					"}"
+			}
+		}]
+	name: "Street View"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
