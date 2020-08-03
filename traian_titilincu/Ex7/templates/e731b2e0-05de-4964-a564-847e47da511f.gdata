@@ -1,0 +1,180 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(e731b2e0-05de-4964-a564-847e47da511f)
+{
+	name: "BG Template"
+	structure: GtfContainer(3eec770c-f174-494b-832b-91fc252b42c9)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfImage(817ff7c2-2494-4d09-b473-bae029c51e64)
+			{
+				features: feature_list [
+					ScaleMode(2cb4e83d-ae6b-4eac-88f0-0b2ec40697d2)
+					{
+						scaleMode: 1
+					}]
+				children: children_list [
+					GtfRectangle(ef37b079-35b8-40ab-8d2b-de3cbf832165)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLabel(72bf3fce-50a2-4398-b048-d237653fc708)
+							{
+								features: feature_list [
+									TouchShortReleased(fc2907d4-63ed-4834-81e5-77b5cc7ead09)
+									{
+										touchShortReleased: function<bool,int,int,int,int>(c08d1ae4-7713-467f-a684-8124e87f0c22)
+										{
+											script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+												"{" \
+												"    false" \
+												"}"
+										}
+									}, 
+									StateTouched(da76ab65-8967-4fbd-9910-28dc3e681879)
+									{
+										touchable: true
+										touched: false
+										touchPolicy: 0
+										touchBehavior: 0
+									}]
+								children: children_list []
+								name: "Label 1"
+								visible: true
+								width: 309
+								height: 41
+								x: 0
+								y: 0
+								text: "Select Country"
+								textColor: #FFFFFFFF
+								font: font_resource(5dd12115-6e2e-499b-a91a-c5805c5378b5)
+								{
+									file: "PT_Sans_Narrow.ttf"
+									size: 30
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}]
+						name: "Select Country"
+						visible: true
+						width: 306
+						height: 40
+						x: 241
+						y: 92
+						fillColor: #000000FF
+					}, 
+					GtfInstantiator(02b7d40b-c149-4b33-9336-a136aad19031)
+					{
+						features: feature_list [
+							LayoutPolicyBox(6b2b5515-5d0d-473f-a877-75bf90e6151b)
+							{
+								gap: 15
+								layoutDirection: 1
+							}]
+						children: children_list [
+							GtfRectangle(38ba2dc2-894f-4d10-87c2-9b0ae0e0d663)
+							{
+								features: feature_list [
+									LineIndex(344a28aa-f969-415e-bf8a-f6490ee60715)
+									{
+										lineIndex: 0
+									}, 
+									TouchShortReleased(dde017cd-86bc-4394-9b12-3d29a6cf2dce)
+									{
+										touchShortReleased: function<bool,int,int,int,int>(4bda31a6-d349-41e1-ad4d-1907cd174aa3)
+										{
+											script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+												"{" \
+												"    dp:country_index = v:this.lineIndex" \
+												"    fire ev:goTo_city()" \
+												"    false" \
+												"}"
+										}
+									}, 
+									StateTouched(7f4f4f19-ca2d-4dca-94f7-4afbea7c7cbb)
+									{
+										touchable: true
+										touched: false
+										touchPolicy: 0
+										touchBehavior: 0
+									}]
+								children: children_list [
+									GtfLabel(feb85178-11e6-4328-a940-e3737a8e5ce9)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "Label 2"
+										visible: true
+										width: width@38ba2dc2-894f-4d10-87c2-9b0ae0e0d663 (propref<int>)
+										height: 100
+										x: 1
+										y: -32
+										text: ""
+										textColor: #000000FF
+										font: font_resource(c8cfff05-203c-44c4-88f0-69c486d1e52c)
+										{
+											file: "PT_Sans_Narrow.ttf"
+											size: 30
+										}
+										horizontalAlign: 1
+										verticalAlign: 0
+									}]
+								name: "Rectangle 1"
+								visible: true
+								width: 306
+								height: 40
+								x: -399
+								y: 243
+								fillColor: #FFFFFFFF
+								setText: conditional_script(90e62d34-280d-4bc0-bb5b-4f47cf54ce26)
+								{
+									triggerList: trigger_list(a7e72d73-31f2-4eaf-95bf-c407b5acf6db)
+									{
+										script: "v:this.lineIndex" \
+											"dp:countries_list"
+									}
+									onTrigger: function<bool,bool>(6c489d41-f6ce-4d2e-a759-6049b8bae76f)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	v:this->\"Label 2\".text = dp:countries_list[v:this.lineIndex]" \
+											"	false" \
+											"}"
+									}
+								}
+							}]
+						name: "Categories Selection"
+						visible: true
+						width: width@3eec770c-f174-494b-832b-91fc252b42c9 (propref<int>)
+						height: height@3eec770c-f174-494b-832b-91fc252b42c9 (propref<int>)
+						x: 240
+						y: 146
+						numItems: 4
+						lineMapping: intlist []
+					}]
+				name: "Background Image"
+				visible: true
+				width: 800
+				height: 480
+				x: 0
+				y: 0
+				image: image_resource(86fb879d-e795-4aee-aac5-94bd4045291a)
+				{
+					file: "background.jpg"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "BG"
+		visible: true
+		width: 434
+		height: 480
+		x: 0
+		y: 0
+	}
+	visible: visible@02b7d40b-c149-4b33-9336-a136aad19031 (propref<bool>)
+	touchShortReleased: touchShortReleased@fc2907d4-63ed-4834-81e5-77b5cc7ead09 (propref<function<bool,int,int,int,int>>)
+	text: text@72bf3fce-50a2-4398-b048-d237653fc708 (propref<string>)
+}
