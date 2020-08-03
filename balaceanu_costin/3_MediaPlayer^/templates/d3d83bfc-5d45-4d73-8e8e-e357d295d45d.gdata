@@ -1,0 +1,55 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(d3d83bfc-5d45-4d73-8e8e-e357d295d45d)
+{
+	name: "VolumeDOWN_Button"
+	structure: GtfContainer(821d7b13-8a04-459a-a513-00f2fa1a80f6)
+	{
+		features: feature_list [
+			TouchPressed(ce5fdb0a-90d1-4927-bafc-bc717c581444)
+			{
+				touchPressed: function<bool,int,int,int,int>(cff1d8db-cd1a-4c90-9d44-1bfd75949a20)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(c96e750f-90f1-498d-804a-aa863dd9a8e4)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfImage(13bd75f4-8f2f-4268-ad16-f151af7f6711)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@821d7b13-8a04-459a-a513-00f2fa1a80f6 (propref<int>)
+				height: height@821d7b13-8a04-459a-a513-00f2fa1a80f6 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(2579f0b2-a303-4fb1-aa2d-68dc77585630)
+				{
+					file: "Volume_Down.jpg"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "Container"
+		visible: true
+		width: 70
+		height: 70
+		x: 0
+		y: 0
+	}
+	x: x@821d7b13-8a04-459a-a513-00f2fa1a80f6 (propref<int>)
+	y: y@821d7b13-8a04-459a-a513-00f2fa1a80f6 (propref<int>)
+	touchPressed: touchPressed@ce5fdb0a-90d1-4927-bafc-bc717c581444 (propref<function<bool,int,int,int,int>>)
+}

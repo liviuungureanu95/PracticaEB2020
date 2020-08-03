@@ -1,0 +1,58 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(9b141708-f8f5-435f-b862-4a9414145884)
+{
+	name: "Play_Button"
+	structure: GtfContainer(d40dd25e-5797-449e-ae87-329732e7911b)
+	{
+		features: feature_list [
+			TouchPressed(045fe290-a70b-49e2-ab64-3a7664d254aa)
+			{
+				touchPressed: function<bool,int,int,int,int>(1d5b7905-fd52-4ad1-bfe5-f9cea9a23fe1)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->Background.image = dp:Pause" \
+						"	v:this dp:Pause = dp:Play" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(a78d77f2-48c6-46f7-8899-aaec48713cbb)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfImage(012c5e05-bf6b-4eb6-933b-80a71b367e73)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@d40dd25e-5797-449e-ae87-329732e7911b (propref<int>)
+				height: height@d40dd25e-5797-449e-ae87-329732e7911b (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(d5b6d980-27d0-4b32-a167-025c6613df02)
+				{
+					file: "Play.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "Container"
+		visible: true
+		width: 70
+		height: 70
+		x: 0
+		y: 0
+	}
+	x: x@d40dd25e-5797-449e-ae87-329732e7911b (propref<int>)
+	y: y@d40dd25e-5797-449e-ae87-329732e7911b (propref<int>)
+	touchPressed: touchPressed@045fe290-a70b-49e2-ab64-3a7664d254aa (propref<function<bool,int,int,int,int>>)
+	image: image@012c5e05-bf6b-4eb6-933b-80a71b367e73 (propref<image>)
+}
