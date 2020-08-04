@@ -1,0 +1,509 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(ddf00e5d-b68d-49bc-bfe7-fbbb1e1cb762)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(f61ada61-087a-49f4-bd95-7e6755da860d)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfInstantiator(e97335ff-1ec1-4c90-9780-653fc1c5c48e)
+				{
+					features: feature_list [
+						LayoutPolicyGrid(2ba64829-593e-4384-ad57-587445783658)
+						{
+							horizontalGap: 0
+							verticalGap: 3
+							numRows: 3
+							numColumns: -1
+						}]
+					children: children_list [
+						GtfRectangle(61680d3e-ced5-47fc-8e47-41df7b9f9708)
+						{
+							features: feature_list [
+								LineIndex(4cae099e-e74d-447d-b946-a8a437aef2fe)
+								{
+									lineIndex: 0
+								}, 
+								TouchShortReleased(ea955abc-dfa9-4841-b4d4-ba1e0fa58dda)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(a3973c0a-1aa0-48f8-b9d3-65b26d58d033)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	" \
+											"	if(v:this->Name.text == \"Benzina\")" \
+											"		dp:Price = 4		" \
+											"    if(v:this->Name.text == \"Diesel\")" \
+											"    	dp:Price = 6" \
+											"	if(v:this->Name.text == \"Gaz\")" \
+											"		dp:Price = 2" \
+											"false" \
+											"}"
+									}
+								}, 
+								StateTouched(485252b3-90ef-4800-8b4c-a8d4ea12f3ec)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list [
+								GtfLabel(48cf4142-7b2e-4483-917f-3b67e2697ec4)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Name"
+									visible: true
+									width: 32
+									height: 20
+									x: 0
+									y: 0
+									text: "label"
+									textColor: #FFFFFFFF
+									font: font_resource(570ad6fa-a158-4a9b-b920-63e3dba6ee08)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 10
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+								}]
+							name: "Button"
+							visible: true
+							width: 32
+							height: 20
+							x: 4
+							y: 0
+							fillColor: #FFA07AFF
+							setText: conditional_script(7616637c-1288-42c8-be64-9ad387a8b124)
+							{
+								triggerList: trigger_list(dd596adc-e072-4119-8b40-074da3b80dac)
+								{
+									script: "dp:Combustibili" \
+										"v:this.lineIndex"
+								}
+								onTrigger: function<bool,bool>(11479605-3797-408d-9219-e50926150714)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	v:this->Name.text = dp:Combustibili[v:this.lineIndex]" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "Combustibil_List"
+					visible: true
+					width: 30
+					height: 70
+					x: 4
+					y: 50
+					numItems: 3
+					lineMapping: intlist []
+				}, 
+				GtfImage(4dbd9ac2-7ea0-40d1-8dfc-cfc6760a4faa)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Icon"
+					visible: true
+					width: 30
+					height: 30
+					x: 5
+					y: 10
+					image: image_resource(f29bfc74-1523-4233-b271-342b386da761)
+					{
+						file: "Icon.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(784e7d89-4029-4f2b-b873-1ece39b7157c)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Total_Price"
+					visible: true
+					width: 40
+					height: 30
+					x: 0
+					y: 180
+					text: string_scriptedValue(9ac89354-20b6-472c-b231-1b94b107b465)
+					{
+						triggerList: trigger_list(b9fc82ed-b57e-4170-afce-b02421f12a13)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(40ee6279-acda-4ad9-a4f9-b5a13ee647c3)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(eaf2fa2b-2aaf-467a-a840-7c5cd288d3e2)
+						{
+							script: "function()" \
+								"{	" \
+								"	dp:Total_Prices = dp:Price * dp:Quantity" \
+								"	f:int2string(dp:Total_Prices) + \" lei\"	" \
+								"}"
+						}
+						write: function<bool,string>(045fb41f-2cbf-4d87-a79f-4098ce9d9cc6)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(2cf8c34b-a520-410a-9af4-a9c6dbc7cb98)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 15
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(164edb4f-841b-49e5-8dee-202f185e850c)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Quantity"
+					visible: true
+					width: 30
+					height: 30
+					x: 4
+					y: 125
+					text: string_scriptedValue(928d5c02-b548-4642-8cdc-9c31f5534551)
+					{
+						triggerList: trigger_list(36380af8-aa9a-4388-a4a2-808c3b013963)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(022d7518-ee2b-49f7-932a-ef5820e421f3)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(ab6ffc33-4473-4173-b19e-dd09000c5f85)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:int2string(dp:Quantity) + \" l\"" \
+								"}"
+						}
+						write: function<bool,string>(6a9d86d4-0182-4090-bf76-35e47c3563bd)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(9fdc8349-5f1e-4594-acda-f9101c4b33eb)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 15
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(a0b12346-fcfe-4fb2-96bc-59d59e7cda94)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Price"
+					visible: true
+					width: 40
+					height: 30
+					x: 0
+					y: 150
+					text: string_scriptedValue(fa6dca36-530e-4f03-bce3-d564f2fe899a)
+					{
+						triggerList: trigger_list(d6fd19db-1fd5-4552-bcfe-386e9ac70d87)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(50ab9b23-72a2-45ed-8291-87e5d918d61b)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(5ada82bd-8b35-4b04-984b-dd1981eb0975)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:int2string(dp:Price) + \" lei\"" \
+								"}"
+						}
+						write: function<bool,string>(6db5d545-a643-4069-a2e7-4dab658d8079)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(ebc9a80a-a1a2-4f9b-80dd-8f38f0eba7da)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 15
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfImage(6b8153c9-cfb8-4863-9eb6-3c371d36334f)
+				{
+					features: feature_list [
+						TouchShortReleased(7e987073-75e0-4e66-a474-b4a8576428d9)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(b4a3118b-95f7-475c-bfcc-bf699ec07fd7)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(dp:Quantity < 150)" \
+									"		dp:Quantity += 10" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(c2e9cdf2-2b18-49fb-9da1-f8f7a75f455a)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "Add"
+					visible: true
+					width: 30
+					height: 30
+					x: 4
+					y: 210
+					image: image_resource(30010a65-8c08-41b7-883f-7662d3f25e89)
+					{
+						file: "Plus.png"
+					}
+					sRGB: false
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfImage(8ab5c76d-60da-4366-abd8-1e650a068ef9)
+				{
+					features: feature_list [
+						TouchShortReleased(a2e4b48c-baf7-49aa-b4ef-f41499a01c61)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(9ab2b5eb-81c0-43d7-9f4e-7a312545f0c2)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(dp:Quantity > 0)" \
+									"		dp:Quantity -= 10	" \
+									"		" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(5c88ebfa-f452-4f64-8faa-b01fc75f22cf)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "Substract"
+					visible: true
+					width: 30
+					height: 30
+					x: 4
+					y: 240
+					image: image_resource(385fc290-1b8e-444e-8049-545d5d722805)
+					{
+						file: "Minus.png"
+					}
+					sRGB: false
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfRectangle(49a779e6-72c1-48be-92c4-5ea454dbd729)
+				{
+					features: feature_list [
+						TouchShortReleased(c1810c92-a55d-4370-844d-b6d6c8a78a4f)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(f1bb8ffc-e638-4e1a-875f-567b0dbcb493)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	f:animation_play(v:this->^->Percent->Counter->Count)" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(cd027e0c-438f-4dd6-b978-51de1068dedc)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(8c230a24-c030-4a24-b96f-7447a3cfc037)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Name"
+							visible: true
+							width: 32
+							height: 20
+							x: 0
+							y: 0
+							text: "Start"
+							textColor: #FFFFFFFF
+							font: font_resource(e7e8fa1d-037a-48bf-b6a5-f5db5981008d)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 10
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Start_Button"
+					visible: true
+					width: 32
+					height: 20
+					x: 4
+					y: 295
+					fillColor: #FFA07AFF
+				}, 
+				GtfLabel(67b3981c-06ca-4836-80de-8962f7143e9e)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfParallelAnimation(d593a917-fa06-4331-a30a-c12868efbdcb)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(cb78a1d7-7e8b-4876-8ed4-2b749f617941)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Count"
+									enabled: true
+									delay: 0
+									duration: 3000
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 0
+									end: 100
+									target: @6b51c594-cfa5-425d-a05a-bba50b61b4c6 (objectref<int>)
+								}]
+							name: "Counter"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(1d956217-f8f5-4010-86b8-fa1284d2bd12)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(c358c9c6-40c9-490b-a544-6849bd348379)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(2dec3802-5865-41e3-b2be-698d97d43a17)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}]
+					name: "Percent"
+					visible: true
+					width: 40
+					height: 30
+					x: 0
+					y: 265
+					text: string_scriptedValue(90e4727a-8db7-44aa-9d6b-1bf210a78a52)
+					{
+						triggerList: trigger_list(f194253b-715c-49ea-b31b-ebd0e74412f2)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(fb8bc34c-d1df-4a91-87e3-f7895f0f1947)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(512ab2de-305c-4e6a-b2a6-5fcb16f6ae5a)
+						{
+							script: "function()" \
+								"{" \
+								"	f:int2string(dp:Percent) + \"%\"	" \
+								"}"
+						}
+						write: function<bool,string>(f22ce73d-9070-434c-b834-8e0a2b1c9298)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(5e32bf99-bab5-4b80-b71d-1828bdff1ae5)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 15
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Background"
+			visible: true
+			width: width@ddf00e5d-b68d-49bc-bfe7-fbbb1e1cb762 (propref<int>)
+			height: height@ddf00e5d-b68d-49bc-bfe7-fbbb1e1cb762 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #FFE4B5FF
+		}]
+	name: "Main_View"
+	visible: true
+	width: 40
+	height: 320
+	x: 0
+	y: 0
+}
