@@ -1,0 +1,282 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(16ea0d6d-4aa8-4ec4-a02e-d5690e08a29f)
+{
+	name: "T_ChoiceMenu"
+	structure: GtfView(dcb4fabb-4b03-4405-9352-7a976dd055aa)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfImage(c99a29e0-fb9f-4260-9351-78b0bd936a4c)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@dcb4fabb-4b03-4405-9352-7a976dd055aa (propref<int>)
+				height: height@dcb4fabb-4b03-4405-9352-7a976dd055aa (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(ed7a105a-464c-4a01-baea-548b81b3b292)
+				{
+					file: "background_tema10_view.jpg"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(ebcd5829-61d2-46af-80d3-a8d549a3949b)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Title"
+				visible: true
+				width: width@dcb4fabb-4b03-4405-9352-7a976dd055aa (propref<int>)
+				height: 50
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(8c60f250-0e18-4785-bd76-6c6f751140a9)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfRectangle(8ec0b71d-ded2-45e4-ad8e-2d8feeff53a4)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "HorizontalLine"
+				visible: true
+				width: width@dcb4fabb-4b03-4405-9352-7a976dd055aa (propref<int>)
+				height: 2
+				x: 0
+				y: 50
+				fillColor: #000000FF
+			}, 
+			GtfRectangle(57609611-445c-44ba-87b5-72e713209a9c)
+			{
+				features: feature_list [
+					Border(aa29ffec-9303-41f6-a104-39099daab4a5)
+					{
+						borderThickness: 2
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list [
+					GtfLabel(931b9045-7e69-4c35-a164-8970b747335f)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "PriceLabel"
+						visible: true
+						width: width@57609611-445c-44ba-87b5-72e713209a9c (propref<int>)
+						height: height@57609611-445c-44ba-87b5-72e713209a9c (propref<int>)
+						x: 0
+						y: 0
+						text: "RON/kg"
+						textColor: #000000FF
+						font: font_resource(18ff3c8b-3690-4139-9387-c9335cd4c7a1)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "PriceBackground"
+				visible: true
+				width: 120
+				height: 50
+				x: 10
+				y: 80
+				fillColor: #FFFFFFFF
+			}, 
+			GtfRectangle(e93bf872-c908-4d07-b2d8-4c5afd2dc61b)
+			{
+				features: feature_list [
+					Border(f536089e-3508-451b-af1b-59c441f5a01c)
+					{
+						borderThickness: 2
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list [
+					GtfLabel(bf27a0a4-e21d-4878-9c97-014a98325977)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "PriceInput"
+						visible: true
+						width: width@e93bf872-c908-4d07-b2d8-4c5afd2dc61b (propref<int>)
+						height: height@e93bf872-c908-4d07-b2d8-4c5afd2dc61b (propref<int>)
+						x: 0
+						y: 0
+						text: ""
+						textColor: #000000FF
+						font: font_resource(c36e4219-d76d-4ae1-855b-24efb6f9e32e)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}]
+				name: "Price_Background"
+				visible: true
+				width: 150
+				height: height@57609611-445c-44ba-87b5-72e713209a9c (propref<int>)
+				x: 150
+				y: 80
+				fillColor: #AFEEEEFF
+			}, 
+			GtfRectangle(f54f9e05-3368-4ac5-9395-fbdf71fd45dd)
+			{
+				features: feature_list [
+					Border(d7630d44-cae8-4c16-95dd-3a5c55267966)
+					{
+						borderThickness: 2
+						borderColor: #FFFFFFFF
+						borderStyle: 0
+					}, 
+					TouchPressed(3cda800c-6e0f-49ec-8d80-67928628ad70)
+					{
+						touchPressed: function<bool,int,int,int,int>(5754348c-0b10-447b-b64a-f98fa5ed221e)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	fire ev:backTo_MainMenu()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(e6fd1ce5-5a8a-4457-9448-b8e64fdefeae)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list [
+					GtfLabel(4ae96a6f-6fae-4da1-ac92-78cb20bf7ff2)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Text"
+						visible: true
+						width: width@f54f9e05-3368-4ac5-9395-fbdf71fd45dd (propref<int>)
+						height: height@f54f9e05-3368-4ac5-9395-fbdf71fd45dd (propref<int>)
+						x: 0
+						y: 0
+						text: "BACK"
+						textColor: #FFFFFFFF
+						font: font_resource(1c3f0af4-0003-4ba6-9f45-d3d0e7ef4b65)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "BackButton"
+				visible: true
+				width: 90
+				height: 50
+				x: 310
+				y: 270
+				fillColor: #000000FF
+			}, 
+			GtfRectangle(32326843-7cf6-4fa0-8a3d-901dbef74393)
+			{
+				features: feature_list [
+					Border(68f4f687-316d-4e5f-9e4f-e17861882f40)
+					{
+						borderThickness: 2
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list [
+					GtfLabel(5e32bde9-9fac-463c-844c-e80a87c4348f)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Text"
+						visible: true
+						width: width@32326843-7cf6-4fa0-8a3d-901dbef74393 (propref<int>)
+						height: height@32326843-7cf6-4fa0-8a3d-901dbef74393 (propref<int>)
+						x: 0
+						y: 0
+						text: "Valoare Cantar (kg)"
+						textColor: #000000FF
+						font: font_resource(d8781f49-c101-4b23-a336-e611aa7b1f8a)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "Value_Background"
+				visible: true
+				width: 200
+				height: 50
+				x: 10
+				y: 150
+				fillColor: #FFFFFFFF
+			}, 
+			GtfRectangle(ec4b85d1-c3ae-44c3-be69-db652566d66d)
+			{
+				features: feature_list [
+					Border(09ecb585-054b-4920-9357-b11ee5a0a9d4)
+					{
+						borderThickness: 2
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list [
+					GtfLabel(7b9c458b-2349-4a69-ae3d-026dafa93376)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Text"
+						visible: true
+						width: width@ec4b85d1-c3ae-44c3-be69-db652566d66d (propref<int>)
+						height: height@ec4b85d1-c3ae-44c3-be69-db652566d66d (propref<int>)
+						x: 0
+						y: 0
+						text: "Pret TOTAL/RON"
+						textColor: #000000FF
+						font: font_resource(c76fef2a-a20c-414b-8871-3bce15363961)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "Total_Background"
+				visible: true
+				width: 180
+				height: 50
+				x: 10
+				y: 220
+				fillColor: #FFFFFFFF
+			}]
+		name: "Choice_View"
+		visible: true
+		width: 400
+		height: 320
+		x: 0
+		y: 0
+	}
+	text: text@ebcd5829-61d2-46af-80d3-a8d549a3949b (propref<string>)
+	textColor: textColor@ebcd5829-61d2-46af-80d3-a8d549a3949b (propref<color>)
+	font: font@ebcd5829-61d2-46af-80d3-a8d549a3949b (propref<font>)
+	"text 2": text@bf27a0a4-e21d-4878-9c97-014a98325977 (propref<string>)
+	"font 2": font@bf27a0a4-e21d-4878-9c97-014a98325977 (propref<font>)
+	horizontalAlign: horizontalAlign@bf27a0a4-e21d-4878-9c97-014a98325977 (propref<int>)
+	verticalAlign: verticalAlign@bf27a0a4-e21d-4878-9c97-014a98325977 (propref<int>)
+}
