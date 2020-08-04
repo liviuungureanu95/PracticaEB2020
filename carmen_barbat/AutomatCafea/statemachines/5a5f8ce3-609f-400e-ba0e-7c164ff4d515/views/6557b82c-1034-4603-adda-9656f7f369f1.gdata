@@ -1,0 +1,99 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(6557b82c-1034-4603-adda-9656f7f369f1)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(160bad81-2cb1-47b5-bd67-0c8a8a047702)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(7635bb96-27b3-4b18-8969-9cb259830613)
+				{
+					features: feature_list [
+						ScaleMode(3fe96723-3300-4259-9a56-839dc8be5361)
+						{
+							scaleMode: 2
+						}]
+					children: children_list []
+					name: "pop-up_Image"
+					visible: true
+					width: 237
+					height: 230
+					x: 111
+					y: 45
+					image: image_resource(3ae2c73f-5e0f-4688-9888-47db5e614fb2)
+					{
+						file: "Coffee.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(090834ca-5455-465f-8dbd-e1724dbe85ca)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label"
+					visible: true
+					width: width@160bad81-2cb1-47b5-bd67-0c8a8a047702 (propref<int>)
+					height: 77
+					x: 0
+					y: 12
+					text: "Cafeaua dumneavoastra se prepara"
+					textColor: #FFFFFFFF
+					font: font_resource(fa6e59dd-f4f7-4c32-a576-65ee64580083)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 40
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "pop-up_Background"
+			visible: true
+			width: width@6557b82c-1034-4603-adda-9656f7f369f1 (propref<int>)
+			height: height@6557b82c-1034-4603-adda-9656f7f369f1 (propref<int>)
+			x: 1
+			y: 1
+			fillColor: #90EE90FF
+		}, 
+		GtfContainer_template_instance(f3c18ab5-1314-4ee6-9da9-f9d45d845e85)
+		{
+			name: "Button_temp 1"
+			template: @afe6ca6b-03ca-4fdc-95c4-33e41c0c0032 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: width@afe6ca6b-03ca-4fdc-95c4-33e41c0c0032 (propref<int>)
+			height: height@afe6ca6b-03ca-4fdc-95c4-33e41c0c0032 (propref<int>)
+			text: "ok"
+			fillColor: #32CD32FF
+			x: 385
+			y: 229
+			"x 2": "x 2"@afe6ca6b-03ca-4fdc-95c4-33e41c0c0032 (propref<int>)
+			"y 2": "y 2"@afe6ca6b-03ca-4fdc-95c4-33e41c0c0032 (propref<int>)
+			"x 3": "x 3"@afe6ca6b-03ca-4fdc-95c4-33e41c0c0032 (propref<int>)
+			"y 3": "y 3"@afe6ca6b-03ca-4fdc-95c4-33e41c0c0032 (propref<int>)
+			buttonEvent: function<bool>(838fd497-bebe-4846-83b7-3831f2e7e530)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:dismiss_message()" \
+					"	false" \
+					"}"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(7fbad634-7231-441f-b391-2dcaa8a76975)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:dismiss_message()" \
+					"    false" \
+					"}"
+			}
+		}]
+	name: "pop-up_view"
+	visible: true
+	width: 512
+	height: 295
+	x: 146
+	y: 75
+}

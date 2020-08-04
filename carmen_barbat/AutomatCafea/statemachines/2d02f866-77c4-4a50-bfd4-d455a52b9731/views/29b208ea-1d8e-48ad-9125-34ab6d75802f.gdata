@@ -1,0 +1,337 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(29b208ea-1d8e-48ad-9125-34ab6d75802f)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(6faddc41-4f94-4c08-addf-16414572bb58)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Background"
+			visible: true
+			width: width@29b208ea-1d8e-48ad-9125-34ab6d75802f (propref<int>)
+			height: height@29b208ea-1d8e-48ad-9125-34ab6d75802f (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #D2B48CFF
+		}, 
+		GtfImage(7c9ced0a-6bbe-48a8-8daf-848cc76adc2c)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Beans_Image"
+			visible: true
+			width: width@29b208ea-1d8e-48ad-9125-34ab6d75802f (propref<int>)
+			height: height@29b208ea-1d8e-48ad-9125-34ab6d75802f (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(06937113-cccc-49f3-ab84-909642c227c6)
+			{
+				file: "beans.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(830004f1-a611-4583-b7d5-53f7d4a2f450)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Choose_Label"
+			visible: true
+			width: width@29b208ea-1d8e-48ad-9125-34ab6d75802f (propref<int>)
+			height: 100
+			x: 0
+			y: 0
+			text: "Sortimente disponibile"
+			textColor: #FFFFFFFF
+			font: font_resource(0d7f9d90-4e57-43b3-ad39-beb4ed0ae045)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(647a7084-0db0-4686-8313-4899bd1072ef)
+		{
+			name: "Up_button"
+			template: @afe6ca6b-03ca-4fdc-95c4-33e41c0c0032 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: width@afe6ca6b-03ca-4fdc-95c4-33e41c0c0032 (propref<int>)
+			height: height@afe6ca6b-03ca-4fdc-95c4-33e41c0c0032 (propref<int>)
+			text: "Up"
+			fillColor: fillColor@afe6ca6b-03ca-4fdc-95c4-33e41c0c0032 (propref<color>)
+			x: 450
+			y: 120
+			"x 2": 0
+			"y 2": "y 2"@afe6ca6b-03ca-4fdc-95c4-33e41c0c0032 (propref<int>)
+			"x 3": 0
+			"y 3": 0
+			buttonEvent: function<bool>(408f2e2f-76cd-4294-9719-47ff4120806f)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:scroll_up()" \
+					"	false" \
+					"}"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(1bfbec57-7501-459d-8d1f-f92e6bc14419)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.buttonEvent()" \
+					"	" \
+					"    false" \
+					"}"
+			}
+			"x 4": 0
+			"y 4": 0
+		}, 
+		GtfContainer_template_instance(09fd5807-fb4e-49a7-bfa3-9c8a3ca92e29)
+		{
+			name: "Down_button"
+			template: @afe6ca6b-03ca-4fdc-95c4-33e41c0c0032 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: width@afe6ca6b-03ca-4fdc-95c4-33e41c0c0032 (propref<int>)
+			height: height@afe6ca6b-03ca-4fdc-95c4-33e41c0c0032 (propref<int>)
+			text: "Down"
+			fillColor: fillColor@afe6ca6b-03ca-4fdc-95c4-33e41c0c0032 (propref<color>)
+			x: 450
+			y: 200
+			"x 2": "x 2"@afe6ca6b-03ca-4fdc-95c4-33e41c0c0032 (propref<int>)
+			"y 2": "y 2"@afe6ca6b-03ca-4fdc-95c4-33e41c0c0032 (propref<int>)
+			"x 3": "x 3"@afe6ca6b-03ca-4fdc-95c4-33e41c0c0032 (propref<int>)
+			"y 3": "y 3"@afe6ca6b-03ca-4fdc-95c4-33e41c0c0032 (propref<int>)
+			buttonEvent: function<bool>(37a6e91b-2b74-4827-b3b9-692b99c1492b)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:scroll_down()" \
+					"	false" \
+					"}"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(3b51c2be-6b6a-4bd0-835a-cdae3a74958c)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.buttonEvent()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer(73a8fcae-b5a2-4a86-a2dc-106523d63343)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfInstantiator(03f65b60-1f5e-45de-9b32-b30827f8e97b)
+				{
+					features: feature_list [
+						LayoutPolicyFlow(118e9e2e-6d73-48a5-b68f-d7fc1f65d07a)
+						{
+							horizontalGap: 0
+							verticalGap: 0
+							layoutDirection: 0
+							horizontalChildAlign: 0
+							verticalChildAlign: 0
+						}, 
+						ViewPort(c29f12bb-30fa-45b5-82cc-a0b93d15fb8f)
+						{
+							xOffset: 0
+							yOffset: 0
+						}]
+					children: children_list [
+						GtfContainer(c2c8305b-2f88-42dd-aaaf-ddd849b57977)
+						{
+							features: feature_list [
+								LineIndex(5dbe3ba2-5652-422f-90d1-5e028dd5faad)
+								{
+									lineIndex: 0
+								}]
+							children: children_list [
+								GtfRectangle(1052b6e8-57f0-4469-8903-49e4438a4978)
+								{
+									features: feature_list [
+										Border(4f85b71a-bad7-4dde-a934-9bfc641c5d1a)
+										{
+											borderThickness: 2
+											borderColor: #D2B48CFF
+											borderStyle: 0
+										}, 
+										TouchShortReleased(4dd1f3d8-5192-48a6-8002-c316b0d19d7a)
+										{
+											touchShortReleased: function<bool,int,int,int,int>(51c1f20e-a022-4b63-be20-8c0358e77e03)
+											{
+												script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+													"{" \
+													"	fire ev:display_message()" \
+													"    false" \
+													"}"
+											}
+										}, 
+										StateTouched(98eefc3a-6c43-4ab3-8f53-33e6f15f9648)
+										{
+											touchable: true
+											touched: false
+											touchPolicy: 0
+											touchBehavior: 0
+										}]
+									children: children_list []
+									name: "Button_background"
+									visible: true
+									width: width@c2c8305b-2f88-42dd-aaaf-ddd849b57977 (propref<int>)
+									height: height@c2c8305b-2f88-42dd-aaaf-ddd849b57977 (propref<int>)
+									x: 0
+									y: 0
+									fillColor: #DEB887FF
+								}, 
+								GtfLabel(0c9321d3-3de8-467a-90bd-e31e48c7cfc6)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Button_label"
+									visible: true
+									width: width@c2c8305b-2f88-42dd-aaaf-ddd849b57977 (propref<int>)
+									height: height@c2c8305b-2f88-42dd-aaaf-ddd849b57977 (propref<int>)
+									x: 0
+									y: 1
+									text: "label"
+									textColor: #FFFFFFFF
+									font: font_resource(48bbc26c-23cb-4a6f-bc79-dfd0d920464f)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 30
+									}
+									horizontalAlign: 0
+									verticalAlign: 0
+									setText: conditional_script(ac050dc8-ed67-429d-a5cb-99d050cbbb3f)
+									{
+										triggerList: trigger_list(dc02cfba-a951-4b43-ab8a-d12dbe30edda)
+										{
+											script: "v:this->^->^->^.Coffee_input" \
+												"v:this->^.lineIndex"
+										}
+										onTrigger: function<bool,bool>(ab734bff-8a9f-462e-b094-3f9c8c7d1817)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	v:this.text=v:this->^->^->^.Coffee_input[v:this->^.lineIndex]" \
+												"	false" \
+												"}"
+										}
+									}
+								}]
+							name: "List_button"
+							visible: true
+							width: width@73a8fcae-b5a2-4a86-a2dc-106523d63343 (propref<int>)
+							height: listButtonHeight@03f65b60-1f5e-45de-9b32-b30827f8e97b (propref<int>)
+							x: 0
+							y: 0
+						}]
+					name: "Coffee_button_instantiator"
+					visible: true
+					width: width@73a8fcae-b5a2-4a86-a2dc-106523d63343 (propref<int>)
+					height: height@73a8fcae-b5a2-4a86-a2dc-106523d63343 (propref<int>)
+					x: 80
+					y: 100
+					numItems: int_scriptedValue(9bcc8232-ffc8-4354-9091-0d8675da0287)
+					{
+						triggerList: trigger_list(70100b2c-1381-444a-8965-b917ee817f9c)
+						{
+							script: "v:this->^.Coffee_input"
+						}
+						onTrigger: function<bool,bool>(97537f90-4d71-44c2-b801-3bbc8a09a4b3)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	true" \
+								"}"
+						}
+						read: function<int>(7ad10830-b442-41ca-93f4-e53fdab2b2af)
+						{
+							script: "function()" \
+								"{" \
+								"	length v:this->^.Coffee_input" \
+								"	" \
+								"}"
+						}
+						write: function<bool,int>(122d85df-6cf0-4150-839d-f42617b1bbd6)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"	" \
+								"	false" \
+								"}"
+						}
+					}
+					lineMapping: intlist []
+					listButtonHeight: 50
+					moveUpDown: conditional_script(8f28ba57-7b33-4995-a424-5eb205b8bb8b)
+					{
+						triggerList: trigger_list(acdbdb30-3831-4965-b999-97ec277e1b14)
+						{
+							script: "ev:scroll_down" \
+								"ev:scroll_up" \
+								"v:this.listButtonHeight"
+						}
+						onTrigger: function<bool,bool>(b4af6cc9-a196-4757-9a7f-e4d5395c9fea)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	match_event v:event = ev:scroll_up in" \
+								"	{" \
+								"		v:this.yOffset += v:this.listButtonHeight/2" \
+								"	}" \
+								"	match_event v:event = ev:scroll_down in" \
+								"	{" \
+								"		v:this.yOffset -= v:this.listButtonHeight/2" \
+								"	}" \
+								"	" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "Coffee_scroll_list"
+			visible: true
+			width: 300
+			height: 350
+			x: 0
+			y: 0
+			Coffee_input: stringlist ["Espresso Sorbetto", "Cappuccino", "Latte Macchiato", "Caffe Latte", "Irish Coffee", "Long Black", "Flat White", "Caramel Latte", "Vanilla Latte"]
+			limitYMovement: conditional_script(e41bf248-6390-4b27-ab58-2ee28589b21c)
+			{
+				triggerList: trigger_list(90b1ee8b-7d79-44d3-9687-6f5659ee6861)
+				{
+					script: "v:this.Coffee_input" \
+						"v:this->Coffee_button_instantiator.listButtonHeight" \
+						"v:this->Coffee_button_instantiator.yOffset"
+				}
+				onTrigger: function<bool,bool>(a3bb360b-bac2-439c-89a4-43fdbaba06fa)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	let v:maximumOffset = length v:this.Coffee_input * v:this->Coffee_button_instantiator.listButtonHeight - v:this.height in" \
+						"	{" \
+						"		if(v:this->Coffee_button_instantiator.yOffset > 0)" \
+						"		{" \
+						"			v:this->Coffee_button_instantiator.yOffset = 0" \
+						"		}" \
+						"		if(v:this->Coffee_button_instantiator.yOffset < -v:maximumOffset)" \
+						"		{" \
+						"			v:this->Coffee_button_instantiator.yOffset = -v:maximumOffset" \
+						"		}" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+			}
+		}]
+	name: "Menu_View"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
