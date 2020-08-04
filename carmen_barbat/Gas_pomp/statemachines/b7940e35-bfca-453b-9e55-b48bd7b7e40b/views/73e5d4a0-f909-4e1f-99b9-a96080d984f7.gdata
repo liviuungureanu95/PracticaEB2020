@@ -1,0 +1,180 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(73e5d4a0-f909-4e1f-99b9-a96080d984f7)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(a5c2e476-9898-42bf-b839-6df7dbf6516d)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(40926b68-4043-426d-8f37-3a1e50df99f8)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 2"
+					visible: true
+					width: width@73e5d4a0-f909-4e1f-99b9-a96080d984f7 (propref<int>)
+					height: 60
+					x: 0
+					y: 0
+					text: "Alege combustibil"
+					textColor: #FFFFFFFF
+					font: font_resource(87534caa-3eb2-4236-b143-48c1e63101af)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(3d203a97-7967-44ea-b78d-50363782efc1)
+				{
+					name: "Benzina_btn"
+					template: @0e92a062-6019-4b0d-b186-b3d3049e08ab (objectref<GtfContainer_template>)
+					children: children_list []
+					text: "Benzina"
+					x: 20
+					y: 100
+					"x 2": "x 2"@0e92a062-6019-4b0d-b186-b3d3049e08ab (propref<int>)
+					"y 2": "y 2"@0e92a062-6019-4b0d-b186-b3d3049e08ab (propref<int>)
+					fillColor: fillColor@0e92a062-6019-4b0d-b186-b3d3049e08ab (propref<color>)
+					"x 3": "x 3"@0e92a062-6019-4b0d-b186-b3d3049e08ab (propref<int>)
+					"y 3": "y 3"@0e92a062-6019-4b0d-b186-b3d3049e08ab (propref<int>)
+					touchShortReleased: function<bool,int,int,int,int>(5c494e05-3b35-49d1-b64d-537e47cfcb26)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:GoToPomp()" \
+							"	dp:p=4.54" \
+							"	dp:Combustibil=\"Benzina\"" \
+							"    false" \
+							"}"
+					}
+					width: width@0e92a062-6019-4b0d-b186-b3d3049e08ab (propref<int>)
+				}, 
+				GtfContainer_template_instance(8a0a99fa-6ba9-41f3-aa77-5f2938a71634)
+				{
+					name: "Motorina_btn"
+					template: @0e92a062-6019-4b0d-b186-b3d3049e08ab (objectref<GtfContainer_template>)
+					children: children_list []
+					text: "Motorina"
+					x: 20
+					y: 160
+					"x 2": "x 2"@0e92a062-6019-4b0d-b186-b3d3049e08ab (propref<int>)
+					"y 2": "y 2"@0e92a062-6019-4b0d-b186-b3d3049e08ab (propref<int>)
+					fillColor: fillColor@0e92a062-6019-4b0d-b186-b3d3049e08ab (propref<color>)
+					"x 3": "x 3"@0e92a062-6019-4b0d-b186-b3d3049e08ab (propref<int>)
+					"y 3": "y 3"@0e92a062-6019-4b0d-b186-b3d3049e08ab (propref<int>)
+					touchShortReleased: function<bool,int,int,int,int>(ad7f1d85-34f4-452c-ba82-1d52b661024a)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:GoToPomp()" \
+							"	dp:p=4.63" \
+							"	dp:Combustibil=\"Motorina\"" \
+							"    false" \
+							"}"
+					}
+					width: width@0e92a062-6019-4b0d-b186-b3d3049e08ab (propref<int>)
+				}, 
+				GtfContainer_template_instance(6af53909-672b-4ad6-8edd-85a26b9e9b5c)
+				{
+					name: "GPL_btn"
+					template: @0e92a062-6019-4b0d-b186-b3d3049e08ab (objectref<GtfContainer_template>)
+					children: children_list []
+					text: "GPL"
+					x: 20
+					y: 220
+					"x 2": "x 2"@0e92a062-6019-4b0d-b186-b3d3049e08ab (propref<int>)
+					"y 2": "y 2"@0e92a062-6019-4b0d-b186-b3d3049e08ab (propref<int>)
+					fillColor: fillColor@0e92a062-6019-4b0d-b186-b3d3049e08ab (propref<color>)
+					"x 3": "x 3"@0e92a062-6019-4b0d-b186-b3d3049e08ab (propref<int>)
+					"y 3": "y 3"@0e92a062-6019-4b0d-b186-b3d3049e08ab (propref<int>)
+					touchShortReleased: function<bool,int,int,int,int>(0c90274f-d23f-4fa6-a8b2-dd2dbd0ca6a8)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:GoToPomp()" \
+							"	dp:p=2.51" \
+							"	dp:Combustibil=\"GPL\"" \
+							"    false" \
+							"}"
+					}
+					width: width@0e92a062-6019-4b0d-b186-b3d3049e08ab (propref<int>)
+				}, 
+				GtfLabel(b7a51ceb-4356-42cb-8e40-1fb36ad91854)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Pret_b"
+					visible: true
+					width: 100
+					height: 50
+					x: 200
+					y: 100
+					text: "4.54/L"
+					textColor: #FFFFFFFF
+					font: font_resource(94fac6d3-0204-4d5a-9ac8-bfd53aae2412)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(7eab3bd7-98c2-4852-a111-8f9666c32134)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Pret_m"
+					visible: true
+					width: 100
+					height: 50
+					x: 200
+					y: 160
+					text: "4.63/L"
+					textColor: #FFFFFFFF
+					font: font_resource(7d7169a4-db6a-46c5-852d-4d456d556baf)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(917747e9-6669-464b-8968-f59a8b959c9a)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Pret_GPL"
+					visible: true
+					width: 100
+					height: 50
+					x: 200
+					y: 220
+					text: "2.51/L"
+					textColor: #FFFFFFFF
+					font: font_resource(15278767-cb8c-4d02-9e9e-bedd1f7bd474)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "Background"
+			visible: true
+			width: width@73e5d4a0-f909-4e1f-99b9-a96080d984f7 (propref<int>)
+			height: height@73e5d4a0-f909-4e1f-99b9-a96080d984f7 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #191970FF
+		}]
+	name: "Menu_view"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}
