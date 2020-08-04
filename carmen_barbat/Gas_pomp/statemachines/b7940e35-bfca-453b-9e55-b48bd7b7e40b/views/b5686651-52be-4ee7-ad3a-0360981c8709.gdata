@@ -1,0 +1,298 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(b5686651-52be-4ee7-ad3a-0360981c8709)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(0e3b929c-f809-48a6-b647-e05f7d00ff87)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(d5c698ab-c322-464c-8050-f0b109cfe325)
+				{
+					features: feature_list [
+						ScaleMode(ad9d0b64-47c1-44ea-8a85-fb56a6e1b803)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "Pomp_Image"
+					visible: true
+					width: 165
+					height: 147
+					x: 308
+					y: 0
+					image: image_resource(f175f8fa-9887-45d2-8012-0dd4aca1737e)
+					{
+						file: "pomp.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(f2f035a5-4ddd-4aa1-998f-8c2b8a846d7a)
+				{
+					features: feature_list [
+						ScaleMode(150e1fec-2db6-4cae-9c7a-a32dd041f51b)
+						{
+							scaleMode: 1
+						}]
+					children: children_list [
+						GtfParallelAnimation(84db69ea-5dd5-4789-bce6-1b3eb05c5ec0)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(4b2b6c3c-7fff-47d3-975f-5c55d9c48102)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Move_down_drop"
+									enabled: true
+									delay: 0
+									duration: 4000
+									repeat: @9248d7e1-d9bd-4af2-bb91-ba919aedf964 (objectref<int>)
+									alternating: false
+									relative: false
+									start: 40
+									end: 300
+									target: y@f2f035a5-4ddd-4aa1-998f-8c2b8a846d7a (propref<int>)
+								}]
+							name: "Drop_Animation"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(39a865da-e14c-475d-bc63-b5264ddac582)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(32e8c770-2db5-4561-928b-4567ae883fbc)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(51698ae0-a3a0-4e16-83d7-4cde0b793391)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}]
+					name: "Drop_Image"
+					visible: true
+					width: 60
+					height: 72
+					x: 282
+					y: 40
+					image: image_resource(f042ef54-eab7-43c3-bb96-e2f2439df3fa)
+					{
+						file: "drop-diamond.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(8b92e6b0-03a4-4be3-b461-68785c90a15f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Tip_combustibil_label"
+					visible: true
+					width: 200
+					height: 50
+					x: 0
+					y: 0
+					text: @409eadc9-1c82-49a6-8a42-cb6b1a2a45e9 (objectref<string>)
+					textColor: #FFFFFFFF
+					font: font_resource(185b5446-4e87-4946-afab-2e19a73c7367)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(160376c3-3fc9-48eb-a4d3-fb35369bd536)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "PretL_label"
+					visible: true
+					width: 81
+					height: 50
+					x: 0
+					y: 101
+					text: "Pret/L"
+					textColor: #FFFFFFFF
+					font: font_resource(93e182a1-e248-46d4-86a9-1b22bf35d3ee)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(1a80cc27-d442-4926-9b36-d9283f79e86a)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "PretT_label"
+					visible: true
+					width: 105
+					height: 50
+					x: 0
+					y: 178
+					text: "Pret total "
+					textColor: #FFFFFFFF
+					font: font_resource(799624ce-5113-4490-b420-76c66dd9f9fc)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(1113716e-3754-4b04-a3df-bb7df220187d)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Pret1_Label"
+					visible: true
+					width: 133
+					height: 50
+					x: 105
+					y: 101
+					text: string_scriptedValue(715c7d7c-625d-46d1-8adb-b3d7e33071c7)
+					{
+						triggerList: trigger_list(dd288ea0-69d7-4c30-8f29-39a64ef720ec)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(7b2cc782-05c5-4670-8160-0a4a5aebaa3e)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(5755e097-ef54-493d-835c-942a511cb577)
+						{
+							script: "function()" \
+								"{" \
+								"	" \
+								"	f:float2string(dp:p)+\" lei\"" \
+								"}"
+						}
+						write: function<bool,string>(11b915fb-7c51-4c9d-bbc2-5ef8f9d410a2)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(bcd817cd-ebcd-4a53-8c5a-6ea26c277f6d)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(69ddc23e-a6dd-4d7a-aedd-e55f80ebfbff)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Pret2Label"
+					visible: true
+					width: 175
+					height: 50
+					x: 110
+					y: 178
+					text: string_scriptedValue(546c0b2d-282e-426e-b87e-9b2fd1948a30)
+					{
+						triggerList: trigger_list(1a4fadc8-ceaa-4444-b8dc-ed16bee17b2d)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(81e27a6d-8135-461e-bb9a-e896442ce50e)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(f423e8b7-5883-4f44-bae1-53637463e424)
+						{
+							script: "function()" \
+								"{" \
+								"	f:float2string(f:int2float(dp:Nr_Litri)*dp:p) + \" lei\"" \
+								"}"
+						}
+						write: function<bool,string>(5b406152-92e7-4b24-9388-48712b743260)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(c8a7b83b-51e7-46a8-a849-d34bba8b1131)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(220ee83e-4e8e-43ad-a575-4288b87580e5)
+				{
+					name: "Porneste_btn"
+					template: @0e92a062-6019-4b0d-b186-b3d3049e08ab (objectref<GtfContainer_template>)
+					children: children_list []
+					text: "Porneste pompa"
+					x: 12
+					y: 248
+					"x 2": "x 2"@0e92a062-6019-4b0d-b186-b3d3049e08ab (propref<int>)
+					"y 2": "y 2"@0e92a062-6019-4b0d-b186-b3d3049e08ab (propref<int>)
+					fillColor: fillColor@0e92a062-6019-4b0d-b186-b3d3049e08ab (propref<color>)
+					"x 3": "x 3"@0e92a062-6019-4b0d-b186-b3d3049e08ab (propref<int>)
+					"y 3": "y 3"@0e92a062-6019-4b0d-b186-b3d3049e08ab (propref<int>)
+					touchShortReleased: function<bool,int,int,int,int>(6c8229de-bd6e-4a87-9e4e-1f6a5fadcad7)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	f:animation_play(v:this->^->Drop_Image->Drop_Animation)" \
+							"	" \
+							"    false" \
+							"}"
+					}
+					width: 200
+				}]
+			name: "Background"
+			visible: true
+			width: width@b5686651-52be-4ee7-ad3a-0360981c8709 (propref<int>)
+			height: height@b5686651-52be-4ee7-ad3a-0360981c8709 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #87CEFAFF
+		}]
+	name: "Pomp_View"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}
