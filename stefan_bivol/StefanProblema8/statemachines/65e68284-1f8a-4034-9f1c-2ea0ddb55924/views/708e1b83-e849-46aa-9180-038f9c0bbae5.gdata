@@ -1,0 +1,196 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(708e1b83-e849-46aa-9180-038f9c0bbae5)
+{
+	name: "Preparation_View"
+	template: @28743ef7-65cd-4b06-a6e9-a2b181568ee7 (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(f76a8fa0-c5fc-41b2-a046-4fbdb498c8d4)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Coffe_Name"
+			visible: true
+			width: 400
+			height: 75
+			x: 25
+			y: 50
+			text: string_scriptedValue(33ca040d-cb3c-4baa-a9f8-20f561c7c196)
+			{
+				triggerList: trigger_list(2cd6c2e0-92cb-403d-9628-811f80976a7b)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(1df8c203-5a2f-43a4-aaff-181cec39b4a6)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(ab322494-0051-4715-ae76-3fa51eb3e131)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:Drink + \" in preparation...\"" \
+						"}"
+				}
+				write: function<bool,string>(ad39aa27-79ed-4f01-96ea-20c0abdbc5e4)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #FFFFFFFF
+			font: font_resource(01efa3c3-5f94-40a4-8f24-9ed660e223f2)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer(b73f3e3f-f340-44d4-b31e-53f0b554d1d0)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(3461457d-f871-4e39-a95e-51a7d5566a15)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Line_Up"
+					visible: true
+					width: width@b73f3e3f-f340-44d4-b31e-53f0b554d1d0 (propref<int>)
+					height: 3
+					x: 0
+					y: 0
+					fillColor: #FFFFFFFF
+				}, 
+				GtfRectangle(ee75bd3c-f847-4183-b589-6d275e2baf72)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Line_Down"
+					visible: true
+					width: width@b73f3e3f-f340-44d4-b31e-53f0b554d1d0 (propref<int>)
+					height: 3
+					x: 0
+					y: 48
+					fillColor: #FFFFFFFF
+				}, 
+				GtfRectangle(7961560a-c20c-434d-be65-d80d87f7fb54)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Line_Left"
+					visible: true
+					width: 3
+					height: height@b73f3e3f-f340-44d4-b31e-53f0b554d1d0 (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #FFFFFFFF
+				}, 
+				GtfRectangle(36517089-13f8-4e93-a2e0-22612d89e334)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Line_Right"
+					visible: true
+					width: 3
+					height: height@b73f3e3f-f340-44d4-b31e-53f0b554d1d0 (propref<int>)
+					x: 198
+					y: 0
+					fillColor: #FFFFFFFF
+				}, 
+				GtfRectangle(d6a4486e-bc22-48e5-969f-05c6b504a3e7)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfParallelAnimation(4a047433-6bce-4644-a22a-82f8ea058545)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(a022169d-f11c-489f-923b-d52204cbd6eb)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Load"
+									enabled: true
+									delay: 0
+									duration: 5200
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 0
+									end: 195
+									target: width@d6a4486e-bc22-48e5-969f-05c6b504a3e7 (propref<int>)
+									play: conditional_script(fc7c3a36-2175-4f3c-acfc-0a8d8f8cd712)
+									{
+										triggerList: trigger_list(763779b3-7a19-4bca-a074-fa47f40a7dda)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(8adadb28-14dd-4d94-8b82-be7542d585f3)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	f:animation_play(v:this)" \
+												"	fire_delayed 5500, ev:goToMenu()" \
+												"	false" \
+												"}"
+										}
+									}
+								}]
+							name: "Loading_Bar"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(6166d591-4ccd-4d98-8f07-f9dc6cc64c65)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(35b9d2d1-7608-443a-ba5a-a21c0986928d)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(72f75ef0-5670-43b3-9e3b-d2adc5770f31)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}]
+					name: "Loading"
+					visible: true
+					width: 0
+					height: 45
+					x: 3
+					y: 3
+					fillColor: #00FF00FF
+				}]
+			name: "Loading_Bar"
+			visible: true
+			width: 200
+			height: 50
+			x: 125
+			y: 140
+		}]
+	width: 450
+	height: 240
+	x: 185
+	y: 125
+	visible: visible@28743ef7-65cd-4b06-a6e9-a2b181568ee7 (propref<bool>)
+}
