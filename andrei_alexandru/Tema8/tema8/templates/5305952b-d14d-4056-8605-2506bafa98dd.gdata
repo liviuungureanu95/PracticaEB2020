@@ -1,0 +1,172 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(5305952b-d14d-4056-8605-2506bafa98dd)
+{
+	name: "T_PopUpView"
+	structure: GtfView(f57c1510-fa3c-4201-818a-18de96684a17)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(47a605dc-f88b-49ee-a855-9d0bbfbbff53)
+			{
+				features: feature_list [
+					TouchPressed(da37504d-5797-4ec0-b55c-a99eeaac2555)
+					{
+						touchPressed: function<bool,int,int,int,int>(f647f9cc-6359-4fde-9a91-1de448fc1c3c)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    true" \
+								"}"
+						}
+					}, 
+					StateTouched(c27f3f59-13ec-4b63-a962-f72b44131f2c)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list []
+				name: "InvisibleBackground"
+				visible: true
+				width: width@f57c1510-fa3c-4201-818a-18de96684a17 (propref<int>)
+				height: height@f57c1510-fa3c-4201-818a-18de96684a17 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+			}, 
+			GtfContainer(28a08411-4fbe-4170-a4ca-57ef86ecbce3)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfRectangle(ae2631da-749b-4f58-9e05-6753cb49fb2f)
+					{
+						features: feature_list [
+							Border(6cd0968b-d4cb-46b0-98c2-1f6b8fbee0ad)
+							{
+								borderThickness: 4
+								borderColor: #FF0000FF
+								borderStyle: 0
+							}]
+						children: children_list []
+						name: "Background"
+						visible: true
+						width: width@28a08411-4fbe-4170-a4ca-57ef86ecbce3 (propref<int>)
+						height: height@28a08411-4fbe-4170-a4ca-57ef86ecbce3 (propref<int>)
+						x: 0
+						y: 0
+						fillColor: #F0FFFFFF
+					}, 
+					GtfRectangle(deba87de-fbaa-4084-83fb-d32614a3fbc3)
+					{
+						features: feature_list [
+							Border(28214e10-f27e-4437-b8c7-a45e41c429d4)
+							{
+								borderThickness: 4
+								borderColor: #FF0000FF
+								borderStyle: 0
+							}]
+						children: children_list [
+							GtfLabel(0e478275-6e39-4d5b-afe7-b705576f7a17)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Title_Text"
+								visible: true
+								width: width@deba87de-fbaa-4084-83fb-d32614a3fbc3 (propref<int>)
+								height: height@deba87de-fbaa-4084-83fb-d32614a3fbc3 (propref<int>)
+								x: 0
+								y: 0
+								text: title@0e478275-6e39-4d5b-afe7-b705576f7a17 (propref<string>)
+								textColor: #000000FF
+								font: font_resource(1142be9f-d7de-4189-b121-4b5ec846d18c)
+								{
+									file: "PT_Sans_Narrow.ttf"
+									size: 30
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+								title: @47c3cab3-3cc8-4970-8ede-0be15cb9ea18 (objectref<string>)
+							}, 
+							GtfLabel(eff8c106-4743-4119-905f-c4dabe3e7fdd)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Description"
+								visible: true
+								width: width@deba87de-fbaa-4084-83fb-d32614a3fbc3 (propref<int>)
+								height: 50
+								x: 10
+								y: 50
+								text: Description@eff8c106-4743-4119-905f-c4dabe3e7fdd (propref<string>)
+								textColor: #000000FF
+								font: font_resource(c2f4871b-c72e-4894-889b-bb8755d5753a)
+								{
+									file: "PT_Sans_Narrow.ttf"
+									size: 30
+								}
+								horizontalAlign: 0
+								verticalAlign: 0
+								Description: @2402a17a-572a-4fdf-b94c-76e181e9d057 (objectref<string>)
+							}, 
+							GtfLabel(c913f393-a0f1-4450-bf65-5aa090f3f9e4)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Information"
+								visible: true
+								width: width@deba87de-fbaa-4084-83fb-d32614a3fbc3 (propref<int>)
+								height: 100
+								x: 10
+								y: 80
+								text: Information@c913f393-a0f1-4450-bf65-5aa090f3f9e4 (propref<string>)
+								textColor: #000000FF
+								font: font_resource(bcbe8131-48d1-4787-9f24-c12a83446cea)
+								{
+									file: "PT_Sans_Narrow.ttf"
+									size: 30
+								}
+								horizontalAlign: 0
+								verticalAlign: 0
+								Information: @2fa26177-d1e9-4cd2-8407-0f4afab968c5 (objectref<string>)
+							}]
+						name: "Title_Background"
+						visible: true
+						width: width@28a08411-4fbe-4170-a4ca-57ef86ecbce3 (propref<int>)
+						height: 50
+						x: 0
+						y: 0
+						fillColor: #3CB371FF
+					}, 
+					GtfContainer_template_instance(6e55972a-983b-479c-b2c4-c04b12517381)
+					{
+						name: "OK_Button"
+						template: @34f71a21-8029-4fe2-b992-1fe44b3eb881 (objectref<GtfContainer_template>)
+						children: children_list []
+						x: 380
+						y: 190
+						touchPressed: function<bool,int,int,int,int>(8261cbd9-9a66-4b34-8811-f6de89f83a9d)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	fire ev:closePopUp()" \
+								"    false" \
+								"}"
+						}
+					}]
+				name: "DialogBox"
+				visible: true
+				width: 500
+				height: 250
+				x: 150
+				y: 210
+			}]
+		name: "PopUp_View"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+	}
+}
