@@ -1,0 +1,321 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(54106f1c-c8af-4b5c-9fd5-189613e01861)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(3c516b42-2170-4b62-af60-72e6c3779b3d)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(52963143-1176-428e-930c-fb72d67ab964)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Titlu_label"
+					visible: true
+					width: width@54106f1c-c8af-4b5c-9fd5-189613e01861 (propref<int>)
+					height: 50
+					x: 0
+					y: 0
+					text: "Alege produsul"
+					textColor: #000000FF
+					font: font_resource(93901cbf-995f-4956-94a5-ae92bf9e3fb0)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 40
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfContainer(35b540b0-3db5-4521-aa9c-62949f5bb3d2)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfInstantiator(610ec72c-ac5c-43f3-9240-2ea3557a9665)
+						{
+							features: feature_list [
+								LayoutPolicyFlow(5eb0f2ed-4652-4a5c-8efd-92fe9d64813e)
+								{
+									horizontalGap: 0
+									verticalGap: 0
+									layoutDirection: 0
+									horizontalChildAlign: 0
+									verticalChildAlign: 0
+								}, 
+								ViewPort(f12d7de5-ffa3-41da-962a-ac2264a7f33e)
+								{
+									xOffset: 0
+									yOffset: 0
+								}]
+							children: children_list [
+								GtfContainer(2ac4e30b-906a-4984-83e1-f8d5da99bed3)
+								{
+									features: feature_list [
+										LineIndex(3f7cc09b-33c1-4311-9a2e-25f5563a039e)
+										{
+											lineIndex: 0
+										}]
+									children: children_list [
+										GtfRectangle(0452e7fc-847c-49da-852f-46a9e8f618e7)
+										{
+											features: feature_list [
+												TouchShortReleased(e70cfb68-e783-4897-9477-b748f49801d4)
+												{
+													touchShortReleased: function<bool,int,int,int,int>(1d17a6d0-e13f-4ab0-a49f-7f1c48cdaa8f)
+													{
+														script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+															"{" \
+															"	fire ev:GoToScale()" \
+															"	dp:IndexProdus=v:this->^.lineIndex" \
+															"	dp:Produs=v:this->^->^->^.product_input[v:this->^.lineIndex]" \
+															"    false" \
+															"}"
+													}
+												}, 
+												StateTouched(d712689b-07e6-4d25-a06e-127b7b012e2b)
+												{
+													touchable: true
+													touched: false
+													touchPolicy: 0
+													touchBehavior: 0
+												}, 
+												Border(21bb8614-8432-4dec-9135-d7fc55327ec5)
+												{
+													borderThickness: 2
+													borderColor: #DAA520FF
+													borderStyle: 0
+												}]
+											children: children_list []
+											name: "Background"
+											visible: true
+											width: width@2ac4e30b-906a-4984-83e1-f8d5da99bed3 (propref<int>)
+											height: height@2ac4e30b-906a-4984-83e1-f8d5da99bed3 (propref<int>)
+											x: 0
+											y: 0
+											fillColor: #FFD700FF
+										}, 
+										GtfLabel(a2aa2525-169a-41e6-893b-1ad20a2b50bb)
+										{
+											features: feature_list []
+											children: children_list []
+											name: "Text"
+											visible: true
+											width: width@2ac4e30b-906a-4984-83e1-f8d5da99bed3 (propref<int>)
+											height: height@2ac4e30b-906a-4984-83e1-f8d5da99bed3 (propref<int>)
+											x: 0
+											y: 0
+											text: "label"
+											textColor: #000000FF
+											font: font_resource(75539452-2fe8-4e69-bd61-734e02a8495d)
+											{
+												file: "PT_Sans_Narrow.ttf"
+												size: 30
+											}
+											horizontalAlign: 0
+											verticalAlign: 0
+											setText: conditional_script(fbe06988-0ed5-4384-b20f-75b54cdc1108)
+											{
+												triggerList: trigger_list(76292e29-9c9e-4218-9a13-0e09794168b1)
+												{
+													script: "v:this->^.lineIndex" \
+														"v:this->^->^->^.product_input" \
+														""
+												}
+												onTrigger: function<bool,bool>(8114fba0-6d1a-4d60-9ebd-259842b3103d)
+												{
+													script: "function(v:arg0::bool)" \
+														"{" \
+														"	v:this.text=v:this->^->^->^.product_input[v:this->^.lineIndex]" \
+														"	false" \
+														"}"
+												}
+											}
+										}]
+									name: "Lista_butoane"
+									visible: true
+									width: width@35b540b0-3db5-4521-aa9c-62949f5bb3d2 (propref<int>)
+									height: listBtnHeight@610ec72c-ac5c-43f3-9240-2ea3557a9665 (propref<int>)
+									x: 0
+									y: 0
+								}]
+							name: "Produse_Instantiator"
+							visible: true
+							width: width@35b540b0-3db5-4521-aa9c-62949f5bb3d2 (propref<int>)
+							height: height@35b540b0-3db5-4521-aa9c-62949f5bb3d2 (propref<int>)
+							x: 0
+							y: 0
+							numItems: int_scriptedValue(2ab1fb20-dc29-4845-a326-3697f53c0590)
+							{
+								triggerList: trigger_list(7d212e5b-0ffd-4bbb-bba6-dee1fac2d189)
+								{
+									script: "v:this->^.product_input"
+								}
+								onTrigger: function<bool,bool>(84e07b59-1c0d-4ab0-978a-795617fd9f07)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	true" \
+										"}"
+								}
+								read: function<int>(461a4a29-c2c9-473e-abe8-6962fc940528)
+								{
+									script: "function()" \
+										"{" \
+										"	length v:this->^.product_input" \
+										"}"
+								}
+								write: function<bool,int>(618a8bca-0e45-4c60-9de3-bdce2d3e4fa9)
+								{
+									script: "function(v:arg0::int)" \
+										"{" \
+										"	" \
+										"	false" \
+										"}"
+								}
+							}
+							lineMapping: intlist []
+							listBtnHeight: 50
+							MoveUpDown: conditional_script(5a30e22b-c91d-49ca-acab-222eb2b22b99)
+							{
+								triggerList: trigger_list(e08b723f-e707-4798-bd87-dbff5ff0288a)
+								{
+									script: "ev:scroll_up" \
+										"ev:scroll_down" \
+										"v:this.listBtnHeight"
+								}
+								onTrigger: function<bool,bool>(de684e61-997e-42b4-9bc0-925f1f33e2c8)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	match_event v:event = ev:scroll_up in" \
+										"	{" \
+										"		v:this.yOffset += v:this.listBtnHeight/2" \
+										"	}" \
+										"	match_event v:event = ev:scroll_down in" \
+										"	{" \
+										"		v:this.yOffset -= v:this.listBtnHeight/2" \
+										"	}" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "Lista_Produse"
+					visible: true
+					width: 200
+					height: 200
+					x: 40
+					y: 60
+					product_input: stringlist ["Banane", "Mere", "Pere", "Persici", "Cartofi", "Rosi", "Morcovi"]
+					LimitYMovement: conditional_script(300b2a99-d5cb-4c7e-81be-939cf397ad7a)
+					{
+						triggerList: trigger_list(aed577a0-e3b9-4abc-9670-9b1b75ffa716)
+						{
+							script: "v:this->Produse_Instantiator.listBtnHeight" \
+								"v:this.product_input" \
+								"v:this->Produse_Instantiator.yOffset"
+						}
+						onTrigger: function<bool,bool>(1dc4fb65-079a-43b4-8dc5-21086c925039)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	let v:maximumOffset = length v:this.product_input * v:this->Produse_Instantiator.listBtnHeight - v:this.height in" \
+								"	{" \
+								"		if(v:this->Produse_Instantiator.yOffset > 0)" \
+								"		{" \
+								"			v:this->Produse_Instantiator.yOffset = 0" \
+								"		}" \
+								"		if(v:this->Produse_Instantiator.yOffset < -v:maximumOffset)" \
+								"		{" \
+								"			v:this->Produse_Instantiator.yOffset = -v:maximumOffset" \
+								"		}" \
+								"	}" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfContainer_template_instance(3eb5451d-c69a-495f-a13f-9cba722564b9)
+				{
+					name: "Button_Up"
+					template: @4159587d-9430-4db3-bec7-0159ac35ae96 (objectref<GtfContainer_template>)
+					children: children_list []
+					width: width@4159587d-9430-4db3-bec7-0159ac35ae96 (propref<int>)
+					height: height@4159587d-9430-4db3-bec7-0159ac35ae96 (propref<int>)
+					x: 300
+					y: 100
+					"x 2": "x 2"@4159587d-9430-4db3-bec7-0159ac35ae96 (propref<int>)
+					"y 2": "y 2"@4159587d-9430-4db3-bec7-0159ac35ae96 (propref<int>)
+					fillColor: #FFD700FF
+					"x 3": "x 3"@4159587d-9430-4db3-bec7-0159ac35ae96 (propref<int>)
+					"y 3": "y 3"@4159587d-9430-4db3-bec7-0159ac35ae96 (propref<int>)
+					text: "Up"
+					textColor: textColor@4159587d-9430-4db3-bec7-0159ac35ae96 (propref<color>)
+					touchShortReleased: function<bool,int,int,int,int>(ab94240a-548d-4add-b369-b7e8a2beab19)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    v:this.buttonEvent()" \
+							"    false" \
+							"}"
+					}
+					buttonEvent: function<bool>(be8131ab-19db-48ce-8d3a-326a3837ce9b)
+					{
+						script: "function()" \
+							"{" \
+							"	fire ev:scroll_up()" \
+							"	false" \
+							"}"
+					}
+					lineIndex: lineIndex@4159587d-9430-4db3-bec7-0159ac35ae96 (propref<int>)
+				}, 
+				GtfContainer_template_instance(18efd966-6f7c-4654-ade3-82f942614ba3)
+				{
+					name: "Button_Down"
+					template: @4159587d-9430-4db3-bec7-0159ac35ae96 (objectref<GtfContainer_template>)
+					children: children_list []
+					width: 100
+					height: height@4159587d-9430-4db3-bec7-0159ac35ae96 (propref<int>)
+					x: 300
+					y: 170
+					"x 2": "x 2"@4159587d-9430-4db3-bec7-0159ac35ae96 (propref<int>)
+					"y 2": "y 2"@4159587d-9430-4db3-bec7-0159ac35ae96 (propref<int>)
+					fillColor: #FFD700FF
+					"x 3": "x 3"@4159587d-9430-4db3-bec7-0159ac35ae96 (propref<int>)
+					"y 3": "y 3"@4159587d-9430-4db3-bec7-0159ac35ae96 (propref<int>)
+					text: "Down"
+					textColor: textColor@4159587d-9430-4db3-bec7-0159ac35ae96 (propref<color>)
+					touchShortReleased: function<bool,int,int,int,int>(b387f877-edce-494b-bccd-31f428d60cfd)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonEvent()" \
+							"    false" \
+							"}"
+					}
+					buttonEvent: function<bool>(37e48113-d36b-44c8-abf1-4a64488032b2)
+					{
+						script: "function()" \
+							"{" \
+							"	fire ev:scroll_down()" \
+							"	false" \
+							"}"
+					}
+					lineIndex: lineIndex@4159587d-9430-4db3-bec7-0159ac35ae96 (propref<int>)
+				}]
+			name: "Background"
+			visible: true
+			width: width@54106f1c-c8af-4b5c-9fd5-189613e01861 (propref<int>)
+			height: height@54106f1c-c8af-4b5c-9fd5-189613e01861 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #7FFFD4FF
+		}]
+	name: "Product_View"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}

@@ -1,0 +1,186 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(b83031ee-6c96-4ac7-b134-ab71582f54a0)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(79b5bc18-7e35-44e3-a439-f1d3c6e8a34f)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(7ad95fa0-d808-4305-82c9-2c9ab2f66f0f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Titlu_Label"
+					visible: true
+					width: width@b83031ee-6c96-4ac7-b134-ab71582f54a0 (propref<int>)
+					height: 60
+					x: 0
+					y: 0
+					text: @2d490fee-aee4-4baf-9cc8-a0c38f362c33 (objectref<string>)
+					textColor: #808080FF
+					font: font_resource(018c84a4-0b50-4fa1-a167-0a985a36ec92)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 40
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(14320820-f38c-4e0e-a065-133e0cefc713)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Cantitate_Label"
+					visible: true
+					width: 100
+					height: 50
+					x: 50
+					y: 90
+					text: "Cantitate"
+					textColor: #808080FF
+					font: font_resource(99c40c0b-f5d0-468a-8a4a-a6061bbb3e1c)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(6234c17e-ac6d-41df-b227-6d50221f2d5e)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Pret_Label"
+					visible: true
+					width: 100
+					height: 50
+					x: 50
+					y: 165
+					text: "Pret"
+					textColor: #808080FF
+					font: font_resource(9ca44e50-daa0-4e2e-9cc4-cca7ed9df5ae)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(5f587e73-ea24-4f7c-8a82-4a7762f3dcbb)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 7"
+					visible: true
+					width: 100
+					height: 50
+					x: 220
+					y: 90
+					text: string_scriptedValue(f1714136-758d-497f-8a64-f5c202e1b28f)
+					{
+						triggerList: trigger_list(5d885ded-366f-41da-bdff-dd1d41f0a622)
+						{
+							script: "dp:KG" \
+								""
+						}
+						onTrigger: function<bool,bool>(862309ab-556b-4f30-9084-3db19ff50d37)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(a925db33-fff0-47b4-b681-823e8a0e2867)
+						{
+							script: "function()" \
+								"{" \
+								"	f:float2string(dp:KG)" \
+								"}"
+						}
+						write: function<bool,string>(9d82d44c-d3f0-4aa1-8b40-a93ba494083f)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #808080FF
+					font: font_resource(0080c1ab-96f0-4533-81e6-a90fb820d688)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(24d94125-f46f-4149-a873-e1eb49c9a5ab)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 8"
+					visible: true
+					width: 100
+					height: 50
+					x: 220
+					y: 165
+					text: string_scriptedValue(de5bdced-b5f0-4a44-80b3-102a7938d481)
+					{
+						triggerList: trigger_list(b1ba40c4-23db-4766-9164-655c02186fbc)
+						{
+							script: "dp:KG" \
+								"dp:Pret" \
+								"dp:IndexProdus"
+						}
+						onTrigger: function<bool,bool>(892e51db-9bb8-44ad-93ff-9afc202a8b3f)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(09dd4203-60ce-4075-8f4d-1cabf6cb41c8)
+						{
+							script: "function()" \
+								"{" \
+								"	f:float2string(dp:KG * dp:Pret[dp:IndexProdus])" \
+								"}"
+						}
+						write: function<bool,string>(482a6565-fe9e-402a-9d44-3487b042b729)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #808080FF
+					font: font_resource(1b35bfb1-d065-4e3f-bdd5-1791c44593b7)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "Background"
+			visible: true
+			width: width@b83031ee-6c96-4ac7-b134-ab71582f54a0 (propref<int>)
+			height: height@b83031ee-6c96-4ac7-b134-ab71582f54a0 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #AFEEEEFF
+		}]
+	name: "Scale_view"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}
