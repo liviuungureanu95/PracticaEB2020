@@ -1,0 +1,375 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(74253a61-6d1a-4b9e-8441-43e48592ea82)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(1d0d927f-3641-4512-bfc5-ad4dfde18a5f)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(7175f99a-25ec-48ab-a584-09847203fdea)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "QuantityLabel"
+					visible: true
+					width: 76
+					height: 27
+					x: 276
+					y: y@dcb5f223-3dad-45f1-ab67-3d89c07a5eca (propref<int>)
+					text: "Quantity"
+					textColor: @55e0d209-a9d0-4c19-914e-40f3d4121b71 (objectref<color>)
+					font: font_resource(f312d669-1eec-495b-81cc-d91f12ce8f48)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 25
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(dcb5f223-3dad-45f1-ab67-3d89c07a5eca)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "QuantityValueLabel"
+					visible: true
+					width: 49
+					height: 29
+					x: 401
+					y: 211
+					text: string_scriptedValue(d6b09a99-cfe6-4f10-9623-40544d44663b)
+					{
+						triggerList: trigger_list(15fc2c11-f795-4f08-b11f-88ff8995bca7)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(2db4716e-d437-47b4-9cd0-f81da40b6919)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(4bde1770-2966-45e7-a627-ea9d6b0fb8b2)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:float2string(dp:Quantity);" \
+								"}"
+						}
+						write: function<bool,string>(47ae2015-2e54-448c-a605-065c41d3f3fa)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: @55e0d209-a9d0-4c19-914e-40f3d4121b71 (objectref<color>)
+					font: font_resource(4ae1477e-f1fe-4da9-871b-3ce2922cad6d)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 26
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(e9e97515-9bcc-4fb3-90e2-9cd6cb12ea39)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "PriceLabel"
+					visible: true
+					width: 97
+					height: 24
+					x: 276
+					y: y@42a185ea-2496-4544-a7ea-f5adcca9f538 (propref<int>)
+					text: "Total price"
+					textColor: @55e0d209-a9d0-4c19-914e-40f3d4121b71 (objectref<color>)
+					font: font_resource(d5f32560-1090-4a20-9920-4c6cfe8b1b06)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 25
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(42a185ea-2496-4544-a7ea-f5adcca9f538)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "PriceValueLabel"
+					visible: true
+					width: 52
+					height: 24
+					x: 401
+					y: 256
+					text: string_scriptedValue(b87a6ef0-e81b-4307-8fec-06de8e08462a)
+					{
+						triggerList: trigger_list(b2d5b088-157b-4b52-87eb-6dacf120b763)
+						{
+							script: "dp:Quantity" \
+								"dp:PricePerKilo" \
+								""
+						}
+						onTrigger: function<bool,bool>(ea107308-1dd2-4f6b-9de8-542b064e7358)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	f:float2string(dp:Quantity * dp:PricePerKilo);" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(633298b4-4214-4525-816c-f4a3fd6e7638)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:float2string(dp:Quantity * dp:PricePerKilo);" \
+								"}"
+						}
+						write: function<bool,string>(74278518-96cc-4649-a682-36d4e4024c27)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: @55e0d209-a9d0-4c19-914e-40f3d4121b71 (objectref<color>)
+					font: font_resource(bd16997a-a013-4938-bdaa-1466e2b59560)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 26
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfContainer(9613bad7-c33b-4643-b15b-066602fc8c48)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfContainer_template_instance(6c3e109b-0849-4aa6-8513-11535e63a08e)
+						{
+							name: "BananaProduct"
+							template: @cfad57ed-1d16-477d-b089-493c446c0083 (objectref<GtfContainer_template>)
+							children: children_list []
+							product: "Banane"
+							image: image_resource(bbd5eb1a-8ad8-418b-9dbe-0e370151add1)
+							{
+								file: "banana.png"
+							}
+							x: 13
+							y: 22
+							Selected: false
+							price: "3.00"
+							textColor: textColor@cfad57ed-1d16-477d-b089-493c446c0083 (propref<color>)
+							buttonId: buttonId@cfad57ed-1d16-477d-b089-493c446c0083 (propref<int>)
+							borderThickness: 0
+							fillColor: #FA8072FF
+						}, 
+						GtfContainer_template_instance(7a951ec3-ef32-461b-ab9b-0fa49a6c2f5b)
+						{
+							name: "CapsuneProduct"
+							template: @cfad57ed-1d16-477d-b089-493c446c0083 (objectref<GtfContainer_template>)
+							children: children_list []
+							product: "Capsune"
+							image: image_resource(9dd802fd-5ff9-4113-9c33-c054313c18d9)
+							{
+								file: "capsune.png"
+							}
+							x: 134
+							y: 22
+							Selected: Selected@cfad57ed-1d16-477d-b089-493c446c0083 (propref<bool>)
+							price: "5.00"
+							textColor: textColor@cfad57ed-1d16-477d-b089-493c446c0083 (propref<color>)
+							buttonId: 1
+							fillColor: #FA8072FF
+						}, 
+						GtfContainer_template_instance(04daf88e-9da3-4023-9113-e18ea99a287f)
+						{
+							name: "PepeneProduct"
+							template: @cfad57ed-1d16-477d-b089-493c446c0083 (objectref<GtfContainer_template>)
+							children: children_list []
+							product: "Pepene"
+							image: image_resource(5fb6a721-a577-4c7f-8d73-274508b36e8d)
+							{
+								file: "pepene.png"
+							}
+							x: 253
+							y: 22
+							Selected: Selected@cfad57ed-1d16-477d-b089-493c446c0083 (propref<bool>)
+							price: "1.50"
+							textColor: textColor@cfad57ed-1d16-477d-b089-493c446c0083 (propref<color>)
+							buttonId: 2
+							fillColor: #FA8072FF
+						}, 
+						GtfContainer_template_instance(67709e2e-8af4-41c7-8144-4efba8ade550)
+						{
+							name: "TelinaProduct"
+							template: @cfad57ed-1d16-477d-b089-493c446c0083 (objectref<GtfContainer_template>)
+							children: children_list []
+							product: "Telina"
+							image: image_resource(2e4303d2-b54a-4803-a29d-ea6779a79f6a)
+							{
+								file: "telina.png"
+							}
+							x: 371
+							y: 22
+							Selected: Selected@cfad57ed-1d16-477d-b089-493c446c0083 (propref<bool>)
+							price: "0.80"
+							textColor: textColor@cfad57ed-1d16-477d-b089-493c446c0083 (propref<color>)
+							buttonId: 3
+							fillColor: #FA8072FF
+						}, 
+						GtfContainer_template_instance(9a545608-c213-426d-9eac-80510788628a)
+						{
+							name: "Product 1"
+							template: @cfad57ed-1d16-477d-b089-493c446c0083 (objectref<GtfContainer_template>)
+							children: children_list []
+							product: "Ciuperci"
+							image: image_resource(2fefbd7f-8aa3-416d-b7ba-3e7a98897e92)
+							{
+								file: "ciuperci.png"
+							}
+							x: 14
+							y: 164
+							Selected: Selected@cfad57ed-1d16-477d-b089-493c446c0083 (propref<bool>)
+							price: "4.50"
+							textColor: textColor@cfad57ed-1d16-477d-b089-493c446c0083 (propref<color>)
+							buttonId: 4
+							fillColor: #FA8072FF
+						}, 
+						GtfContainer_template_instance(9a4a1ecc-a0bb-4e6d-87c7-a59f90cda0a2)
+						{
+							name: "Product 2"
+							template: @cfad57ed-1d16-477d-b089-493c446c0083 (objectref<GtfContainer_template>)
+							children: children_list []
+							product: "Nuci"
+							image: image_resource(126c01b8-51e9-4f13-98bc-4da3e532be35)
+							{
+								file: "nuci.png"
+							}
+							x: 134
+							y: 164
+							Selected: Selected@cfad57ed-1d16-477d-b089-493c446c0083 (propref<bool>)
+							price: "10.50"
+							textColor: textColor@cfad57ed-1d16-477d-b089-493c446c0083 (propref<color>)
+							buttonId: 5
+							fillColor: #FA8072FF
+						}]
+					name: "Produse"
+					visible: true
+					width: 480
+					height: 152
+					x: 1
+					y: 0
+				}, 
+				GtfLabel(b9b4c88b-8ee7-4385-9913-64240f7d5196)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 1"
+					visible: true
+					width: 110
+					height: 39
+					x: 276
+					y: 169
+					text: "Price per kilo"
+					textColor: #FFFF00FF
+					font: font_resource(8bac11bb-4117-4c78-b7e7-43a98f7bafa9)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 25
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(43f4a09e-3948-4763-bc9f-6c49982e68bc)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 2"
+					visible: true
+					width: 51
+					height: 29
+					x: 401
+					y: 171
+					text: string_scriptedValue(18ed70a4-c498-4943-8c84-3300b0568397)
+					{
+						triggerList: trigger_list(9a2c32fa-6fbb-44fb-bd04-b44e7ac29388)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(f4c99c2a-2ba3-419b-bbcd-4af86aa1a190)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(1d413025-b626-42e9-9ad1-b845e1d26737)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:float2string(dp:PricePerKilo);" \
+								"}"
+						}
+						write: function<bool,string>(43fc91da-b117-4591-9969-a1e42704659b)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFF00FF
+					font: font_resource(52054b94-a47e-44f8-97f3-6e2ba26efc95)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 25
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "Background"
+			visible: true
+			width: width@74253a61-6d1a-4b9e-8441-43e48592ea82 (propref<int>)
+			height: height@74253a61-6d1a-4b9e-8441-43e48592ea82 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #87CEEBFF
+		}]
+	name: "MainView"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+	WhenEvent: conditional_script(176e03ed-6618-41aa-a63c-53cf7832d50e)
+	{
+		triggerList: trigger_list(e34ba2bf-ac2a-4f9d-8f5e-30401d2a4da1)
+		{
+			script: "ev:ChangeProduct"
+		}
+		onTrigger: function<bool,bool>(fb514382-cdb3-4783-bac5-491990f7c701)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	match_event v:event = ev:ChangeProduct in" \
+				"	{" \
+				"		dp:PricePerKilo = v:event.Price;" \
+				"	}" \
+				"	false" \
+				"}"
+		}
+	}
+}
