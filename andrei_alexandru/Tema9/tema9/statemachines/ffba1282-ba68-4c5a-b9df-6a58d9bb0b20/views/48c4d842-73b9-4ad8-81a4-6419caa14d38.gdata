@@ -1,0 +1,120 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(48c4d842-73b9-4ad8-81a4-6419caa14d38)
+{
+	name: "Choice_View"
+	template: @98f8278d-4d7d-4715-8df3-04a719424fff (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(5d36b9c2-e342-473e-886b-36d757efd4e4)
+		{
+			name: "Input Button"
+			template: @819e2636-fedb-4576-843a-b9f6eacef7ac (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 150
+			y: 170
+			text: string_scriptedValue(9ad66257-fd8f-4d78-a73e-ac00bcbfdd45)
+			{
+				triggerList: trigger_list(f7f27274-48aa-4226-bbbf-e65aa0e2b7f7)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(aedf7ecb-67b1-417b-8439-128219c02422)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(959e84e1-7890-41c6-a1ce-26bdef633e34)
+				{
+					script: "function()" \
+						"{" \
+						"	if(dp:L_Input!=\"\")" \
+						"	dp:Start[0] = true" \
+						"	dp:L_Input" \
+						"}"
+				}
+				write: function<bool,string>(5548d97d-bc3f-4534-8365-e97e82372eca)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: textColor@819e2636-fedb-4576-843a-b9f6eacef7ac (propref<color>)
+		}, 
+		GtfLabel(59cd46c6-80e2-406f-98d8-9adb65519bd7)
+		{
+			features: feature_list [
+				TouchPressed(a185d619-e447-4f23-8252-8f0d12e2fc95)
+				{
+					touchPressed: function<bool,int,int,int,int>(3d924852-c1f6-4569-b6fd-7e0457da4d8f)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goTo_simulation()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(c8681a28-6d90-4366-8162-eadaa7d84165)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "Input_StartButton"
+			visible: true
+			width: 380
+			height: 50
+			x: 10
+			y: 250
+			text: string_scriptedValue(1a5ba059-61b7-418e-9168-cc4b28edad63)
+			{
+				triggerList: trigger_list(365426ec-83ec-44f8-a9c8-608cc052885f)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(fb8bfba9-ca94-4a2a-a469-791611ce23d9)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(2a64f511-39d1-4789-8a67-184f58541a91)
+				{
+					script: "function()" \
+						"{" \
+						"	if(dp:Start[0] == true)" \
+						"	v:this.StartAlimentare = \"Apasati pentru a alimenta!\"" \
+						"	" \
+						"	v:this.StartAlimentare" \
+						"}"
+				}
+				write: function<bool,string>(d30cffba-068d-4603-8285-f355a42666da)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #FFFFFFFF
+			font: font_resource(27ddeacf-6b4d-466e-b232-42c45570aa99)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+			StartAlimentare: ""
+		}]
+}

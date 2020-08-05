@@ -1,0 +1,141 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(56981e05-3d22-4db2-a4a0-c6ca216125d0)
+{
+	name: "Simulation_View"
+	template: @fede87e8-e41e-4aa3-b52f-40eaab1b81e7 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(a6fe3f01-3b05-44b3-9999-b99a2c9aa44b)
+		{
+			name: "LoadingProgressBar"
+			template: @39109d3b-3581-441b-9a12-1101735cb536 (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfParallelAnimation(8d3b740d-82ca-4e7f-a181-3636693c5dc3)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationS32(d782268c-6a2f-468f-9daf-8ccc19db0716)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Linear interpolation curve"
+							enabled: true
+							delay: 0
+							duration: int_scriptedValue(84aef7d9-34ca-4dbf-b148-fe59bb37aa7f)
+							{
+								triggerList: trigger_list(fe73c051-3e36-465a-811b-6716d074f0e4)
+								{
+									script: "dp:L_Input"
+								}
+								onTrigger: function<bool,bool>(bb9ededf-05bb-42fc-9134-48771ec50428)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<int>(38286cbd-db04-47ea-9cd2-664183ca327f)
+								{
+									script: "function()" \
+										"{" \
+										"	f:string2int(dp:L_Input) * 3000" \
+										"}"
+								}
+								write: function<bool,int>(1b7891cc-d5bb-4b84-b69b-04d3e326a488)
+								{
+									script: "function(v:arg0::int)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							repeat: 1
+							alternating: false
+							relative: false
+							start: 0
+							end: 100
+							target: progress@a6fe3f01-3b05-44b3-9999-b99a2c9aa44b (propref<int>)
+						}]
+					name: "LoadingProgressAnimation"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(359b5c32-c227-44b4-bfc9-42c337af762f)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(92244c65-0425-475f-ba2b-001f93bebfa3)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(96a1de54-9ef4-47c0-a95d-3a57aa7134c5)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"	dp:L_Input = \"\"" \
+							"	fire ev:backTo_Menu()" \
+							"}"
+					}
+					startProgressAnimation: conditional_script(140c7cae-3f01-43e0-93dc-cceee310cea0)
+					{
+						triggerList: trigger_list(60aae99f-8a98-479b-ae50-cdbcc62575e4)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(2caa0945-f6a7-4498-bd7c-0d191b6bf9ef)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	f:animation_play(v:this)" \
+								"	" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			width: 300
+			height: 50
+			x: 50
+			y: 120
+			progress: progress@39109d3b-3581-441b-9a12-1101735cb536 (propref<int>)
+		}]
+	text: string_scriptedValue(e16bd65b-8f59-4bf3-a5f3-4a353e266732)
+	{
+		triggerList: trigger_list(127ed959-fc83-4993-90e6-bbc7bce7b50b)
+		{
+			script: ""
+		}
+		onTrigger: function<bool,bool>(fac548ed-f310-40e4-b2a2-0fd648cc82b1)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		read: function<string>(1ee433f5-6c61-403a-9c3e-5069ab42d7af)
+		{
+			script: "function()" \
+				"{" \
+				"	f:float2string(f:string2float(dp:L_Input)*dp:Price) + \" RON \"" \
+				"}"
+		}
+		write: function<bool,string>(ed4f3788-ca3f-4915-b4ed-0d75247753bb)
+		{
+			script: "function(v:arg0::string)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+}

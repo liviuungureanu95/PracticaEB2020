@@ -1,0 +1,188 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(77ada9e9-d97f-45ac-a189-f99c51157539)
+{
+	name: "MainMenu_View"
+	template: @4576a64f-d8e4-491a-ac66-8a4a66a2a2ac (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(37b3faa5-b084-431f-a0be-eb44b1cca586)
+		{
+			name: "BenzinaStandard"
+			template: @e589bc55-de8d-45e8-a013-26cc5c207745 (objectref<GtfContainer_template>)
+			children: children_list []
+			fillColor: #3CB371FF
+			text: "Benzina Standard"
+			textColor: textColor@e589bc55-de8d-45e8-a013-26cc5c207745 (propref<color>)
+			x: 30
+			y: 90
+			font: font_resource(71b3c6c9-e7d0-41a8-a238-cb59cc6b9317)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 23
+			}
+			touchShortReleased: function<bool,int,int,int,int>(cc69b67d-e606-4b8a-804f-ccab97e409ca)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:goTo_choice()" \
+					"	dp:Price = 4.59" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(58d9edcf-b330-4582-936a-bc5894e61feb)
+		{
+			name: "BenzinaExtra"
+			template: @e589bc55-de8d-45e8-a013-26cc5c207745 (objectref<GtfContainer_template>)
+			children: children_list []
+			fillColor: #3CB371FF
+			text: "Benzina Extra"
+			textColor: textColor@e589bc55-de8d-45e8-a013-26cc5c207745 (propref<color>)
+			x: 220
+			y: 90
+			font: font_resource(36b3e92c-41fc-4a74-a3dd-72d2d273517e)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 22
+			}
+			touchShortReleased: function<bool,int,int,int,int>(5c248585-7126-4bc3-81bc-f734b24ac4f3)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:goTo_choice()" \
+					"	dp:Price = 5.24" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(1af19108-3c7f-43a0-a8c7-53960beb167f)
+		{
+			name: "DieselStandard"
+			template: @e589bc55-de8d-45e8-a013-26cc5c207745 (objectref<GtfContainer_template>)
+			children: children_list []
+			fillColor: #000000FF
+			text: "Diesel Standard"
+			textColor: textColor@e589bc55-de8d-45e8-a013-26cc5c207745 (propref<color>)
+			x: 30
+			y: 190
+			font: font_resource(717006a7-4418-40b3-9f10-e7c4867befd2)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 22
+			}
+			touchShortReleased: function<bool,int,int,int,int>(b5e9e368-4526-4aa7-b258-021018bcbcf3)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:goTo_choice()" \
+					"	dp:Price = 4.65" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(89befbcc-1087-4078-857d-66426620f533)
+		{
+			name: "DieselExtra"
+			template: @e589bc55-de8d-45e8-a013-26cc5c207745 (objectref<GtfContainer_template>)
+			children: children_list []
+			fillColor: #000000FF
+			text: "Diesel Extra"
+			textColor: textColor@e589bc55-de8d-45e8-a013-26cc5c207745 (propref<color>)
+			x: 220
+			y: 190
+			font: font_resource(3bb53b38-3ac4-4b49-bd31-1e8f21353994)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 22
+			}
+			touchShortReleased: function<bool,int,int,int,int>(57122851-4e99-4bd8-9a3e-b7df2c85b65b)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:goTo_choice()" \
+					"	dp:Price = 5.04" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfLabel(4ae2f4da-5990-41a5-a893-c786f5ec68b9)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "BenzinaStandard_Pret"
+			visible: true
+			width: 100
+			height: 50
+			x: 55
+			y: 140
+			text: @f2267af8-d079-4f50-8c96-fdc5f928250f (objectref<string>)
+			textColor: #000000FF
+			font: font_resource(27331571-a524-4926-a30c-34f184d54119)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 22
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(b63e12a2-3914-4d87-8887-d5ae349b251b)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "BenzinaExtra_Pret"
+			visible: true
+			width: 100
+			height: 50
+			x: 245
+			y: 140
+			text: @1dc837bf-a240-4247-aedc-425538ba1e99 (objectref<string>)
+			textColor: #000000FF
+			font: font_resource(97d37877-b721-4a95-8599-68310e4c382d)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 22
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(f4bcbbce-6782-46ae-a30f-878f3f2d2321)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "MotorinaStandard_Pret"
+			visible: true
+			width: 100
+			height: 50
+			x: 55
+			y: 240
+			text: @953aeab3-0274-4813-b772-adb107acb638 (objectref<string>)
+			textColor: #000000FF
+			font: font_resource(1a1f901f-b734-4d2f-91ee-412a5354b4a4)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 22
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(82f8af99-8699-4441-af7d-2ad710c5a841)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "MotorinaExtra_Pret"
+			visible: true
+			width: 100
+			height: 50
+			x: 245
+			y: 240
+			text: @df999c7c-80d7-4741-b2a9-41e01ebe11e7 (objectref<string>)
+			textColor: #000000FF
+			font: font_resource(ef04925d-2561-4bf5-b04b-b2de90d47513)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 22
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+}
