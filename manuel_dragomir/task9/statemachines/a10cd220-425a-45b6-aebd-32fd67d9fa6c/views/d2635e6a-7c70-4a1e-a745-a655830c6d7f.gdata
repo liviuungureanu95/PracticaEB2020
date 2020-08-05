@@ -51,6 +51,7 @@ GtfView(d2635e6a-7c70-4a1e-a745-a655830c6d7f)
 						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 							"{" \
 							"	dp:ChangeFuelOn = false;" \
+							"	dp:OnceStarted = true;" \
 							"	fire ev:Start();" \
 							"    false" \
 							"}"
@@ -75,8 +76,10 @@ GtfView(d2635e6a-7c70-4a1e-a745-a655830c6d7f)
 					{
 						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 							"{" \
-							"	fire ev:Stop();" \
-							"	v:this->^->^->ResetButton.visible = true;" \
+							"	if(dp:OnceStarted == true){" \
+							"		fire ev:Stop();" \
+							"		v:this->^->^->ResetButton.visible = true;	" \
+							"	}" \
 							"    false" \
 							"}"
 					}
@@ -628,6 +631,7 @@ GtfView(d2635e6a-7c70-4a1e-a745-a655830c6d7f)
 					"	(v:this->^->QuantityImage->LitresOn);" \
 					"	v:this.visible = false;" \
 					"	dp:ChangeFuelOn = true;" \
+					"	dp:OnceStarted = false;" \
 					"    false" \
 					"}"
 			}
