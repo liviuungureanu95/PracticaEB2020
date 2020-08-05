@@ -1,0 +1,161 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(ffcb08be-b282-4b02-866a-3e020fa80f15)
+{
+	name: "Program View"
+	structure: GtfView(d60ba8ab-2f1d-4b02-ac48-499263cab0f9)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(8c260df3-f4dd-4416-8147-5f1c7ebe5fad)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLabel(226f3ea5-ef92-471f-8aac-7d38137d7d0f)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Program_Label"
+						visible: true
+						width: 800
+						height: 100
+						x: 0
+						y: 50
+						text: @96df3e3f-def0-4e3d-a805-62967b9ac406 (objectref<string>)
+						textColor: #000000FF
+						font: font_resource(0d4dcce9-fe09-4ec1-9181-c1ad2b9d32f2)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 50
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfLabel(83ee1ebd-d661-42af-8962-621142a086e1)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfParallelAnimation(3a535ea6-450f-4c3e-8ccb-d142f9a5a5d2)
+							{
+								features: feature_list []
+								children: children_list [
+									GtfLinearInterpolationS32(01b82f9c-8645-4b21-be72-c3b41ffa1b89)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "Counter"
+										enabled: true
+										delay: 0
+										duration: 7000
+										repeat: 1
+										alternating: false
+										relative: false
+										start: 7
+										end: 0
+										target: Counter@83ee1ebd-d661-42af-8962-621142a086e1 (propref<int>)
+									}]
+								name: "Timer"
+								enabled: true
+								repeat: 1
+								alternating: false
+								scale: 1F
+								onPlay: function<void,int,bool>(4a8df937-1942-4622-810e-31453b2a270b)
+								{
+									script: "function(v:animation_time::int, v:forward::bool)" \
+										"{" \
+										"" \
+										"}"
+								}
+								onPause: function<void,int>(acf8e9da-9b94-4092-86ae-f9d45972bedf)
+								{
+									script: "function(v:animation_time::int)" \
+										"{" \
+										"" \
+										"}"
+								}
+								onTerminate: function<void,int,int>(4615c4e0-db35-45ac-a09f-1f4c4ad914df)
+								{
+									script: "function(v:animation_time::int, v:terminate::int)" \
+										"{" \
+										"" \
+										"}"
+								}
+								play: conditional_script(be43a4b8-e091-4ebd-8156-7d188761799e)
+								{
+									triggerList: trigger_list(c611669d-34f9-484b-98ef-fb6422c20c22)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(1dba4851-61b8-4395-ae44-c4e1e6e91fe3)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	f:animation_play(v:this)" \
+											"	false" \
+											"}"
+									}
+								}
+							}]
+						name: "Timer_Label"
+						visible: true
+						width: 100
+						height: 100
+						x: 355
+						y: 250
+						text: string_scriptedValue(26dc0c50-564e-42b3-9148-29e86d5b6b23)
+						{
+							triggerList: trigger_list(24186a97-9860-4d38-8c15-da12ec58a5eb)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(9f03de4f-59df-463c-86fe-1f1ad6575a24)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<string>(27cd764b-e71d-41f3-b18f-20bde61a1deb)
+							{
+								script: "function()" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	f:int2string(v:this.Counter)" \
+									"}"
+							}
+							write: function<bool,string>(c57ba42b-9d03-433f-b5e1-197987ff63a0)
+							{
+								script: "function(v:arg0::string)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						textColor: #000000FF
+						font: font_resource(f3096451-a44c-407f-a76d-aa7185f653c0)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 80
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+						Counter: 0
+					}]
+				name: "Background_Image"
+				visible: true
+				width: width@d60ba8ab-2f1d-4b02-ac48-499263cab0f9 (propref<int>)
+				height: height@d60ba8ab-2f1d-4b02-ac48-499263cab0f9 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #98FB98FF
+			}]
+		name: "Program_View"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+	}
+}

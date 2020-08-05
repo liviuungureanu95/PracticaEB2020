@@ -1,0 +1,93 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(70defd21-7f64-4410-bfcd-e1a4766cd439)
+{
+	name: "Text Button"
+	structure: GtfContainer(7f48dedc-b928-465f-8705-bac4576bcc88)
+	{
+		features: feature_list [
+			TouchShortReleased(32f539c8-2a3c-489d-afac-c9edd918b919)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(768ccc67-d20e-444d-bd4e-3a277fb8fcd3)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->Backgroud_Rectangle.fillColor = v:this.Colors[1] " \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(f6cfc191-8c38-4c8b-aed0-ccfc25fc6382)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			TouchPressed(8938b41a-e243-4c59-8943-885cca8fef29)
+			{
+				touchPressed: function<bool,int,int,int,int>(e7cf8b0d-1bac-4c6c-84e1-499c859e2691)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->Backgroud_Rectangle.fillColor = v:this.Colors[0] " \
+						"    false" \
+						"}"
+				}
+			}]
+		children: children_list [
+			GtfRectangle(c33ed78f-f45a-41c0-b616-953f30533bdf)
+			{
+				features: feature_list [
+					Border(8ba594b7-4df6-42da-84d1-6dd33c259f0d)
+					{
+						borderThickness: 1
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "Backgroud_Rectangle"
+				visible: true
+				width: width@7f48dedc-b928-465f-8705-bac4576bcc88 (propref<int>)
+				height: height@7f48dedc-b928-465f-8705-bac4576bcc88 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+			}, 
+			GtfLabel(b1386c46-3756-441d-963f-2717887b6f50)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Text_Label"
+				visible: true
+				width: width@7f48dedc-b928-465f-8705-bac4576bcc88 (propref<int>)
+				height: height@7f48dedc-b928-465f-8705-bac4576bcc88 (propref<int>)
+				x: 0
+				y: 0
+				text: "textButton"
+				textColor: #000000FF
+				font: font_resource(5334ea97-f5b8-4ecc-9c0d-ba2ee800f072)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 20
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Text_Button"
+		visible: true
+		width: 85
+		height: 30
+		x: 0
+		y: 0
+		Colors: colorlist [#32CD32FF, #FFFFFF00]
+	}
+	x: x@7f48dedc-b928-465f-8705-bac4576bcc88 (propref<int>)
+	y: y@7f48dedc-b928-465f-8705-bac4576bcc88 (propref<int>)
+	touchShortReleased: touchShortReleased@32f539c8-2a3c-489d-afac-c9edd918b919 (propref<function<bool,int,int,int,int>>)
+	text: text@b1386c46-3756-441d-963f-2717887b6f50 (propref<string>)
+	Colors: Colors@7f48dedc-b928-465f-8705-bac4576bcc88 (propref<colorlist>)
+	fillColor: fillColor@c33ed78f-f45a-41c0-b616-953f30533bdf (propref<color>)
+	width: width@7f48dedc-b928-465f-8705-bac4576bcc88 (propref<int>)
+	height: height@7f48dedc-b928-465f-8705-bac4576bcc88 (propref<int>)
+}
