@@ -1,0 +1,77 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(d707697c-7fad-490e-a949-54739eb1a7d8)
+{
+	name: "Button_Temp"
+	structure: GtfContainer(83f77175-5ce6-4bd8-9baf-4fa7a9bd797c)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(17a176ba-9aa5-472c-9878-3c9ed2b9eb3b)
+			{
+				features: feature_list [
+					TouchShortReleased(3871a649-9a9f-4b84-8da5-80708d850be5)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(f49bd871-4929-431f-ba97-82209091f0a6)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	" \
+								"	fire ev:GoBack()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(42f57278-09da-46b4-b720-d3850475cd22)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list []
+				name: "Background_Button"
+				visible: true
+				width: width@83f77175-5ce6-4bd8-9baf-4fa7a9bd797c (propref<int>)
+				height: height@83f77175-5ce6-4bd8-9baf-4fa7a9bd797c (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #A9A9A9FF
+			}, 
+			GtfLabel(3b15d491-5ec0-4d16-9939-ea9857c385ce)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Text"
+				visible: true
+				width: width@83f77175-5ce6-4bd8-9baf-4fa7a9bd797c (propref<int>)
+				height: height@83f77175-5ce6-4bd8-9baf-4fa7a9bd797c (propref<int>)
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(f43844b1-fe7d-423d-9e50-9da869e7c9fa)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Button"
+		visible: true
+		width: 100
+		height: 50
+		x: 0
+		y: 0
+	}
+	x: x@83f77175-5ce6-4bd8-9baf-4fa7a9bd797c (propref<int>)
+	y: y@83f77175-5ce6-4bd8-9baf-4fa7a9bd797c (propref<int>)
+	"x 2": x@17a176ba-9aa5-472c-9878-3c9ed2b9eb3b (propref<int>)
+	"y 2": y@17a176ba-9aa5-472c-9878-3c9ed2b9eb3b (propref<int>)
+	fillColor: fillColor@17a176ba-9aa5-472c-9878-3c9ed2b9eb3b (propref<color>)
+	"x 3": x@3b15d491-5ec0-4d16-9939-ea9857c385ce (propref<int>)
+	"y 3": y@3b15d491-5ec0-4d16-9939-ea9857c385ce (propref<int>)
+	text: text@3b15d491-5ec0-4d16-9939-ea9857c385ce (propref<string>)
+	touchShortReleased: touchShortReleased@3871a649-9a9f-4b84-8da5-80708d850be5 (propref<function<bool,int,int,int,int>>)
+}

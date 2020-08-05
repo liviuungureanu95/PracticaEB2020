@@ -1,0 +1,239 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(bb8fa408-5f07-404e-bdfd-8b36e5461215)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(2ab3dfbb-88bf-48d1-bc9a-d734f3314ca0)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(9197df30-644c-4d47-8437-e9aa3853e4e0)
+				{
+					features: feature_list [
+						ScaleMode(d7c8b718-e23a-4c85-ad83-8d96cd06a6a1)
+						{
+							scaleMode: 0
+						}]
+					children: children_list []
+					name: "Background_image"
+					visible: true
+					width: width@bb8fa408-5f07-404e-bdfd-8b36e5461215 (propref<int>)
+					height: height@bb8fa408-5f07-404e-bdfd-8b36e5461215 (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(8eea4b83-6e58-4f1e-8fea-02b663df7545)
+					{
+						file: "bule.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(b72f9114-3261-4cae-8743-b035aff56c8c)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Titlu"
+					visible: true
+					width: width@bb8fa408-5f07-404e-bdfd-8b36e5461215 (propref<int>)
+					height: 100
+					x: 0
+					y: 0
+					text: "Alege programul"
+					textColor: #FFFFFFFF
+					font: font_resource(d8f76f52-3c5e-4e47-a630-02ebb225680c)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 50
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(29a9e93c-4ef2-46c6-9780-edad07524544)
+				{
+					name: "Quick_btn"
+					template: @d707697c-7fad-490e-a949-54739eb1a7d8 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 100
+					y: 190
+					"x 2": "x 2"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+					"y 2": "y 2"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+					fillColor: fillColor@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<color>)
+					"x 3": "x 3"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+					"y 3": "y 3"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+					text: "Quick"
+					touchShortReleased: function<bool,int,int,int,int>(ab501c64-0f6a-4d1a-8cc4-76ecbb920d85)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:Message=\"\"" \
+							"	fire ev:GoToQuick()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(120e457a-dde1-46d4-80e4-d67192c2e0dd)
+				{
+					name: "White_btn"
+					template: @d707697c-7fad-490e-a949-54739eb1a7d8 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 100
+					y: 260
+					"x 2": "x 2"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+					"y 2": "y 2"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+					fillColor: fillColor@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<color>)
+					"x 3": "x 3"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+					"y 3": "y 3"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+					text: "White"
+					touchShortReleased: function<bool,int,int,int,int>(613ae4c1-7586-48e1-9568-02359b08c1e3)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:Message=\"\"" \
+							"	fire ev:GoToWhite()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(23c3a158-3b39-457d-b7d6-d988d0b2c74b)
+				{
+					name: "Black_btn"
+					template: @d707697c-7fad-490e-a949-54739eb1a7d8 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 100
+					y: 330
+					"x 2": "x 2"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+					"y 2": "y 2"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+					fillColor: fillColor@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<color>)
+					"x 3": "x 3"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+					"y 3": "y 3"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+					text: "Black"
+					touchShortReleased: function<bool,int,int,int,int>(1cf10cc8-0c57-428b-87ac-960319f4a60e)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:Message=\"\"" \
+							"	fire ev:GoToBlack()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(88909d09-3549-4a60-859b-5fa8394ae4b3)
+				{
+					name: "Normal_btn"
+					template: @d707697c-7fad-490e-a949-54739eb1a7d8 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 100
+					y: 120
+					"x 2": "x 2"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+					"y 2": "y 2"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+					fillColor: fillColor@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<color>)
+					"x 3": "x 3"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+					"y 3": "y 3"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+					text: "Normal"
+					touchShortReleased: function<bool,int,int,int,int>(e651e379-9ca5-47dc-a3b7-3668a4d54d01)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:Message=\"\"" \
+							"	fire ev:GoToNormal()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfLabel(c2069983-11d4-4c3a-a9b9-b3d2ecfd731c)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 5"
+					visible: true
+					width: 145
+					height: 50
+					x: 280
+					y: 120
+					text: "120 min"
+					textColor: #FFFFFFFF
+					font: font_resource(0a1c1d08-6414-401b-8964-1e0df30ceb82)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(8650f6d5-56bb-4e2a-b66c-4199db478510)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 6"
+					visible: true
+					width: 100
+					height: 50
+					x: 280
+					y: 190
+					text: "30 min"
+					textColor: #FFFFFFFF
+					font: font_resource(734760e4-aa04-4730-aa43-9255e007454b)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(89fd567a-34b8-4d3e-9b13-ba8bf7ed1f2d)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 7"
+					visible: true
+					width: 100
+					height: 50
+					x: 280
+					y: 260
+					text: "140 min"
+					textColor: #FFFFFFFF
+					font: font_resource(079939de-5fe4-4e2f-8c82-7eeaee478c26)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(44729c34-941e-40a3-abb6-9844453c8cad)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 8"
+					visible: true
+					width: 100
+					height: 50
+					x: 280
+					y: 330
+					text: "150 min"
+					textColor: #FFFFFFFF
+					font: font_resource(0a081249-7ee3-4b22-ae16-47a45c94b6d9)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "Background"
+			visible: true
+			width: width@bb8fa408-5f07-404e-bdfd-8b36e5461215 (propref<int>)
+			height: height@bb8fa408-5f07-404e-bdfd-8b36e5461215 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #5F9EA0FF
+		}]
+	name: "Menu_View"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

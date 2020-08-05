@@ -1,0 +1,131 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(191eb0b9-f403-4a1c-933d-1ee999d2c0e5)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(42477ed6-b790-4f93-8d61-bdc998999665)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(dca7a968-d746-4e50-9ed9-4a2af212353d)
+				{
+					features: feature_list [
+						ScaleMode(ec34f4aa-82f5-4279-b586-a42fc9f7a5c9)
+						{
+							scaleMode: 2
+						}]
+					children: children_list [
+						GtfLabel(a0943c27-5a0b-4165-8d52-f4a44f4eed79)
+						{
+							features: feature_list [
+								MultiLine(caea7294-6c2f-4e87-8a5c-d712eb26d1d0)
+								{
+									lineOffset: 0
+									maxLineCount: 0
+								}]
+							children: children_list []
+							name: "Text"
+							visible: true
+							width: 512
+							height: 328
+							x: 51
+							y: 44
+							text: @24e1d1f5-6229-4ae1-8c27-b3541bab9d33 (objectref<string>)
+							textColor: #FFFFFFFF
+							font: font_resource(99b1f910-37c0-4c44-a875-ef0134efd72a)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 50
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}, 
+						GtfContainer_template_instance(6ae9d0a7-c3b5-4d35-8b72-50e2330ecb0e)
+						{
+							name: "OK_btn"
+							template: @d707697c-7fad-490e-a949-54739eb1a7d8 (objectref<GtfContainer_template>)
+							children: children_list []
+							x: 141
+							y: 380
+							"x 2": "x 2"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+							"y 2": "y 2"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+							fillColor: #4169E1FF
+							"x 3": "x 3"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+							"y 3": "y 3"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+							text: "OK"
+							touchShortReleased: function<bool,int,int,int,int>(a56473d7-033a-4f77-8957-4549ff79b329)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:Dismiss_message()" \
+									"	fire ev:GoBack()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						GtfContainer_template_instance(c324575c-6c4c-41ec-ad87-756586864dd0)
+						{
+							name: "RETRY_btn"
+							template: @d707697c-7fad-490e-a949-54739eb1a7d8 (objectref<GtfContainer_template>)
+							children: children_list []
+							x: 340
+							y: 380
+							"x 2": "x 2"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+							"y 2": "y 2"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+							fillColor: #4169E1FF
+							"x 3": "x 3"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+							"y 3": "y 3"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+							text: "Retry"
+							touchShortReleased: function<bool,int,int,int,int>(047c3622-5f07-4db5-bc1c-65467f969eba)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:Dismiss_message()" \
+									"	if(dp:Alimentare_apa==false || dp:Cuva_Inchisa==false || dp:Detergent==false)" \
+									"	{" \
+									"		fire ev:Display_message()" \
+									"		dp:Message=\"\";" \
+									"		dp:Message2=\"\";" \
+									"		if(dp:Alimentare_apa== false)" \
+									"			dp:Message= dp:Message + \"\\nEroare alimentare apa\"" \
+									"		if(dp:Cuva_Inchisa==false)" \
+									"			dp:Message=dp:Message + \"\\nEroare cuva deschisa\"" \
+									"		if(dp:Detergent==false)" \
+									"			dp:Message=dp:Message + \"\\nEroare detergent\"" \
+									"	}else" \
+									"		dp:Message2=\"Programul va incepe in 5 secunde\"" \
+									"	" \
+									"    false" \
+									"}"
+							}
+						}]
+					name: "Background_image"
+					visible: true
+					width: width@191eb0b9-f403-4a1c-933d-1ee999d2c0e5 (propref<int>)
+					height: height@191eb0b9-f403-4a1c-933d-1ee999d2c0e5 (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(97f5fec9-9cc4-476d-ab9f-27789a249d46)
+					{
+						file: "exxxx.png"
+					}
+					sRGB: false
+					horizontalAlign: 1
+					verticalAlign: 1
+				}]
+			name: "Background"
+			visible: true
+			width: width@191eb0b9-f403-4a1c-933d-1ee999d2c0e5 (propref<int>)
+			height: height@191eb0b9-f403-4a1c-933d-1ee999d2c0e5 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #9370DBFF
+		}]
+	name: "Notificare_view"
+	visible: true
+	width: 600
+	height: 460
+	x: 100
+	y: 10
+}
