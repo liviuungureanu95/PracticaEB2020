@@ -1,0 +1,96 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(ddfa3fab-bdde-4fc8-9036-22c46e353a20)
+{
+	name: "template cafea"
+	structure: GtfContainer(0be62f2d-c1ba-482d-8092-d7045f82b97d)
+	{
+		features: feature_list [
+			LayoutPolicyFlow(40df31ad-ecf1-4c27-8272-81e6b36b6c0c)
+			{
+				horizontalGap: 0
+				verticalGap: 5
+				layoutDirection: 0
+				horizontalChildAlign: 0
+				verticalChildAlign: 0
+			}, 
+			TouchShortReleased(94050fd6-2abd-4dc4-97b5-a272ff8feff8)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(18fa05ef-9732-44cc-9b46-da7fd5bf6475)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	fire ev:start_preparing()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(d9db4033-9edb-4533-9ed2-f11804c593ae)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			Coloration(715efdee-0d6d-456a-a51d-cf99da9df7bd)
+			{
+				colorationEnabled: false
+				colorationColor: #228B22FF
+			}]
+		children: children_list [
+			GtfImage(57069b08-ac9e-4625-a0c6-706f2666b2fa)
+			{
+				features: feature_list [
+					ScaleMode(ba5cc269-5fc2-417b-8be5-0707e4c28d3f)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "Image Logo"
+				visible: true
+				width: width@0be62f2d-c1ba-482d-8092-d7045f82b97d (propref<int>)
+				height: 118
+				x: 0
+				y: 0
+				image: image_resource(7257c037-d00f-4f1e-8380-607b1c549a04)
+				{
+					file: "coffee.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(ceaf2b9f-c699-455d-bc55-9162d04d77ee)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "pret"
+				visible: true
+				width: width@0be62f2d-c1ba-482d-8092-d7045f82b97d (propref<int>)
+				height: 34
+				x: 7
+				y: 127
+				text: "label"
+				textColor: #8B0000FF
+				font: font_resource(94503062-c98a-4c95-8013-96ea32cdb691)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 159
+		height: 158
+		x: 0
+		y: 0
+	}
+	image: image@57069b08-ac9e-4625-a0c6-706f2666b2fa (propref<image>)
+	text: text@ceaf2b9f-c699-455d-bc55-9162d04d77ee (propref<string>)
+	x: x@0be62f2d-c1ba-482d-8092-d7045f82b97d (propref<int>)
+	y: y@0be62f2d-c1ba-482d-8092-d7045f82b97d (propref<int>)
+	touchShortReleased: touchShortReleased@94050fd6-2abd-4dc4-97b5-a272ff8feff8 (propref<function<bool,int,int,int,int>>)
+	colorationEnabled: colorationEnabled@715efdee-0d6d-456a-a51d-cf99da9df7bd (propref<bool>)
+}
