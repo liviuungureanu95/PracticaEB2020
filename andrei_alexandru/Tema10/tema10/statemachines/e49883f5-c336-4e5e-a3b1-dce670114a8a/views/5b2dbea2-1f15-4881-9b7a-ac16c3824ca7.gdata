@@ -1,0 +1,126 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(5b2dbea2-1f15-4881-9b7a-ac16c3824ca7)
+{
+	name: "Lemon_View"
+	template: @16ea0d6d-4aa8-4ec4-a02e-d5690e08a29f (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(ffb17540-9e0f-45b6-a225-432ffc3dab46)
+		{
+			name: "T_TotalPrice"
+			template: @5c5ee70c-9030-435f-81c3-7f18846c2c25 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 210
+			y: 220
+			text: string_scriptedValue(fa31487f-b2b2-4538-a6d7-2ffa422a3eac)
+			{
+				triggerList: trigger_list(b2aadc09-0a83-41c2-91b2-ac2aefd89ff1)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(2d4e9bdc-b65f-48b7-a2f7-05f52a2589a7)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(7fd6f880-2829-4a8d-89b4-59ba7ff9852e)
+				{
+					script: "function()" \
+						"{" \
+						"	if(dp:Kg_List[0] == true)" \
+						"	v:this.result = f:int2string(f:string2int(dp:Input_Kg_lemon)*dp:\"lemon_price/kg\") " \
+						"	" \
+						"	v:this.result" \
+						"}"
+				}
+				write: function<bool,string>(8f06f79f-fc1b-45d6-85a2-368e9623a6f4)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			result: ""
+		}, 
+		GtfContainer_template_instance(c770c976-cd0f-466a-a0c0-6044abf6ee89)
+		{
+			name: "T_Input_Kg"
+			template: @9fca28b7-c927-4b86-816c-f34899c39b46 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 250
+			y: 150
+			text: string_scriptedValue(bc2dfc7a-368a-41c3-8ef5-00b91f69d8c1)
+			{
+				triggerList: trigger_list(18e273c2-6321-4ada-b9d1-6977db439e55)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(344811ea-c163-49a9-afea-261c3dc62249)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(ecbfbff6-8fcf-41ec-ae93-240324553cd9)
+				{
+					script: "function()" \
+						"{" \
+						"	if(dp:Input_Kg_lemon!=\"\")" \
+						"	dp:Kg_List[0] = true" \
+						"	dp:Input_Kg_lemon" \
+						"}"
+				}
+				write: function<bool,string>(eee99b3e-5e94-4abe-a555-ef53900f2419)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+		}]
+	text: "LAMAI"
+	textColor: textColor@16ea0d6d-4aa8-4ec4-a02e-d5690e08a29f (propref<color>)
+	font: font@16ea0d6d-4aa8-4ec4-a02e-d5690e08a29f (propref<font>)
+	"text 2": string_scriptedValue(df0617d0-770b-43b3-826b-8530af9c351c)
+	{
+		triggerList: trigger_list(f24b981f-5a7a-4ac6-a010-6823c61d1bbc)
+		{
+			script: ""
+		}
+		onTrigger: function<bool,bool>(459feac6-3186-456c-a5b3-8d43a3f46e62)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		read: function<string>(d91df563-b418-4177-bfda-6340e35f1790)
+		{
+			script: "function()" \
+				"{" \
+				"	f:int2string(dp:\"lemon_price/kg\")" \
+				"}"
+		}
+		write: function<bool,string>(d31316d9-893e-4df5-8db4-cd5eb35906fe)
+		{
+			script: "function(v:arg0::string)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	"font 2": "font 2"@16ea0d6d-4aa8-4ec4-a02e-d5690e08a29f (propref<font>)
+	horizontalAlign: 1
+	verticalAlign: verticalAlign@16ea0d6d-4aa8-4ec4-a02e-d5690e08a29f (propref<int>)
+}

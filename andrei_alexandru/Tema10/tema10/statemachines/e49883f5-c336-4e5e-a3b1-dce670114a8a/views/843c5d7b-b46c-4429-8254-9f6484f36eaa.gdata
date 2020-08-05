@@ -1,0 +1,130 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(843c5d7b-b46c-4429-8254-9f6484f36eaa)
+{
+	name: "Banana_View"
+	template: @16ea0d6d-4aa8-4ec4-a02e-d5690e08a29f (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(de624dac-12d4-4dec-8ac0-07842e65b6dc)
+		{
+			name: "T_TotalPrice"
+			template: @5c5ee70c-9030-435f-81c3-7f18846c2c25 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 210
+			y: 220
+			text: string_scriptedValue(acf4bcaf-5b2d-4b0b-b198-102e7587ba7a)
+			{
+				triggerList: trigger_list(ecede792-b2b5-4393-abdf-d8964551742b)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(9f86c27d-615c-4a42-a237-731ec09a7007)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(ccadc63d-4e71-44bf-a0f9-33ff4cc354e6)
+				{
+					script: "function()" \
+						"{" \
+						"	if(dp:Kg_List[0] == true)" \
+						"	v:this.result = f:int2string(f:string2int(dp:Input_Kg_banana)*dp:\"banana_price/kg\") " \
+						"	" \
+						"	v:this.result" \
+						"}"
+				}
+				write: function<bool,string>(7b489e05-a073-4297-81f2-75175bb2452d)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			result: ""
+		}, 
+		GtfContainer_template_instance(6e7922d4-da7a-471e-ae53-73745946e9fc)
+		{
+			name: "T_Input_Kg"
+			template: @9fca28b7-c927-4b86-816c-f34899c39b46 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 250
+			y: 150
+			text: string_scriptedValue(3f216291-6504-4709-8623-8872eeff4025)
+			{
+				triggerList: trigger_list(c2a235a4-0339-4853-a9bb-f41d5d8186b5)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(c90c9724-63dc-4c91-9667-b762733f8e0d)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(118bb6d1-c97d-49ef-9ffe-1cd112e9f07e)
+				{
+					script: "function()" \
+						"{" \
+						"	if(dp:Input_Kg_banana!=\"\")" \
+						"	dp:Kg_List[0] = true" \
+						"	dp:Input_Kg_banana" \
+						"}"
+				}
+				write: function<bool,string>(ff73682d-3a24-4238-9cb9-b0d186db8b73)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+		}]
+	text: "BANANE"
+	textColor: textColor@16ea0d6d-4aa8-4ec4-a02e-d5690e08a29f (propref<color>)
+	font: font@16ea0d6d-4aa8-4ec4-a02e-d5690e08a29f (propref<font>)
+	"text 2": string_scriptedValue(d51c3224-e33c-4182-bccf-135bfaa57ab7)
+	{
+		triggerList: trigger_list(3d90b5eb-87a5-4577-842f-8c84dfa23c9d)
+		{
+			script: ""
+		}
+		onTrigger: function<bool,bool>(44c4bcb6-f48c-4d84-86cc-1d47e56286cf)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		read: function<string>(23c2d605-7d99-4d6b-8894-24f476d77043)
+		{
+			script: "function()" \
+				"{" \
+				"	f:int2string(dp:\"banana_price/kg\")" \
+				"}"
+		}
+		write: function<bool,string>(7ab57393-8e03-417f-82df-6cc9ad71c212)
+		{
+			script: "function(v:arg0::string)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	"font 2": font_resource(effaa34a-714a-4c6e-a3bc-41bf9c421dea)
+	{
+		file: "PT_Sans_Narrow.ttf"
+		size: 30
+	}
+	horizontalAlign: 1
+	verticalAlign: 0
+}
