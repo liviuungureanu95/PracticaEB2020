@@ -74,10 +74,10 @@ GtfView(b83031ee-6c96-4ac7-b134-ab71582f54a0)
 					children: children_list []
 					name: "Label 7"
 					visible: true
-					width: 100
+					width: 151
 					height: 50
 					x: 220
-					y: 90
+					y: 91
 					text: string_scriptedValue(f1714136-758d-497f-8a64-f5c202e1b28f)
 					{
 						triggerList: trigger_list(5d885ded-366f-41da-bdff-dd1d41f0a622)
@@ -97,7 +97,7 @@ GtfView(b83031ee-6c96-4ac7-b134-ab71582f54a0)
 						{
 							script: "function()" \
 								"{" \
-								"	f:float2string(dp:KG)" \
+								"	f:float2string(dp:KG) + \" KG\"" \
 								"}"
 						}
 						write: function<bool,string>(9d82d44c-d3f0-4aa1-8b40-a93ba494083f)
@@ -124,7 +124,7 @@ GtfView(b83031ee-6c96-4ac7-b134-ab71582f54a0)
 					children: children_list []
 					name: "Label 8"
 					visible: true
-					width: 100
+					width: 139
 					height: 50
 					x: 220
 					y: 165
@@ -148,7 +148,7 @@ GtfView(b83031ee-6c96-4ac7-b134-ab71582f54a0)
 						{
 							script: "function()" \
 								"{" \
-								"	f:float2string(dp:KG * dp:Pret[dp:IndexProdus])" \
+								"	f:float2string(dp:KG * dp:Pret[dp:IndexProdus]) + \" Lei\"" \
 								"}"
 						}
 						write: function<bool,string>(482a6565-fe9e-402a-9d44-3487b042b729)
@@ -168,13 +168,41 @@ GtfView(b83031ee-6c96-4ac7-b134-ab71582f54a0)
 					}
 					horizontalAlign: 0
 					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(e777be0f-ffd2-41fb-b523-629f14b288c7)
+				{
+					name: "Button_temp 1"
+					template: @4159587d-9430-4db3-bec7-0159ac35ae96 (objectref<GtfContainer_template>)
+					children: children_list []
+					width: width@4159587d-9430-4db3-bec7-0159ac35ae96 (propref<int>)
+					height: height@4159587d-9430-4db3-bec7-0159ac35ae96 (propref<int>)
+					x: 20
+					y: 265
+					"x 2": "x 2"@4159587d-9430-4db3-bec7-0159ac35ae96 (propref<int>)
+					"y 2": "y 2"@4159587d-9430-4db3-bec7-0159ac35ae96 (propref<int>)
+					fillColor: #00FFFFFF
+					"x 3": "x 3"@4159587d-9430-4db3-bec7-0159ac35ae96 (propref<int>)
+					"y 3": "y 3"@4159587d-9430-4db3-bec7-0159ac35ae96 (propref<int>)
+					text: "Back"
+					textColor: #808080FF
+					touchShortReleased: function<bool,int,int,int,int>(180a72fb-dfe6-49f8-84ac-f0a492df9fb7)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:GoBack()" \
+							"	dp:KG=0.0" \
+							"    false" \
+							"}"
+					}
+					buttonEvent: buttonEvent@4159587d-9430-4db3-bec7-0159ac35ae96 (propref<function<bool>>)
+					lineIndex: lineIndex@4159587d-9430-4db3-bec7-0159ac35ae96 (propref<int>)
 				}]
 			name: "Background"
 			visible: true
 			width: width@b83031ee-6c96-4ac7-b134-ab71582f54a0 (propref<int>)
 			height: height@b83031ee-6c96-4ac7-b134-ab71582f54a0 (propref<int>)
 			x: 0
-			y: 0
+			y: 1
 			fillColor: #AFEEEEFF
 		}]
 	name: "Scale_view"
