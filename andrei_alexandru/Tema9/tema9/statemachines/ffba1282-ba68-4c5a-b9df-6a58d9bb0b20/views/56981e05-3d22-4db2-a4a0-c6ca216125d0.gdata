@@ -21,7 +21,36 @@ GtfView_template_instance(56981e05-3d22-4db2-a4a0-c6ca216125d0)
 							name: "Linear interpolation curve"
 							enabled: true
 							delay: 0
-							duration: 10000
+							duration: int_scriptedValue(84aef7d9-34ca-4dbf-b148-fe59bb37aa7f)
+							{
+								triggerList: trigger_list(fe73c051-3e36-465a-811b-6716d074f0e4)
+								{
+									script: "dp:L_Input"
+								}
+								onTrigger: function<bool,bool>(bb9ededf-05bb-42fc-9134-48771ec50428)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<int>(38286cbd-db04-47ea-9cd2-664183ca327f)
+								{
+									script: "function()" \
+										"{" \
+										"	f:string2int(dp:L_Input) * 3000" \
+										"}"
+								}
+								write: function<bool,int>(1b7891cc-d5bb-4b84-b69b-04d3e326a488)
+								{
+									script: "function(v:arg0::int)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
 							repeat: 1
 							alternating: false
 							relative: false
@@ -52,7 +81,8 @@ GtfView_template_instance(56981e05-3d22-4db2-a4a0-c6ca216125d0)
 					{
 						script: "function(v:animation_time::int, v:terminate::int)" \
 							"{" \
-							"" \
+							"	dp:L_Input = \"\"" \
+							"	fire ev:backTo_Menu()" \
 							"}"
 					}
 					startProgressAnimation: conditional_script(140c7cae-3f01-43e0-93dc-cceee310cea0)
@@ -66,7 +96,7 @@ GtfView_template_instance(56981e05-3d22-4db2-a4a0-c6ca216125d0)
 							script: "function(v:arg0::bool)" \
 								"{" \
 								"	f:animation_play(v:this)" \
-								"	fire_delayed 15000, ev:backTo_Menu()" \
+								"	" \
 								"	false" \
 								"}"
 						}
