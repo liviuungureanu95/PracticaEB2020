@@ -1,0 +1,194 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(ee48f174-9133-47c2-a271-7d46bbd86374)
+{
+	name: "Loading"
+	structure: GtfContainer(37abea8c-61f9-44a6-b529-a3029f37433a)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(b4c07bce-19b7-4c4a-9fc8-6ed2ec9c4b3f)
+			{
+				features: feature_list [
+					Border(aeff2d33-fdf9-4004-911a-cdc469c2cabb)
+					{
+						borderThickness: 5
+						borderColor: #FFFFFFFF
+						borderStyle: 0
+					}]
+				children: children_list [
+					GtfLabel(1df644d0-df8e-49f9-9799-bc1483ea6eee)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Loading Text"
+						visible: true
+						width: 215
+						height: 100
+						x: 50
+						y: 16
+						text: "Se prepara cafeaua"
+						textColor: #FFFFFFFF
+						font: font_resource(2917b0b8-c750-46be-9881-66cbbe76bf3c)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfRectangle(04513372-fd43-464e-8d5e-8b8fa81f4cbd)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfRectangle(7266805b-278b-4a62-9449-48d05cd65c5a)
+							{
+								features: feature_list []
+								children: children_list [
+									GtfParallelAnimation(8a4255bf-6a26-40fb-9bb8-aa64882a0b74)
+									{
+										features: feature_list []
+										children: children_list [
+											GtfLinearInterpolationS32(571b65da-75f2-4d53-a562-3cdec02f99a0)
+											{
+												features: feature_list []
+												children: children_list []
+												name: "Progress Curve"
+												enabled: true
+												delay: 0
+												duration: 5000
+												repeat: 1
+												alternating: false
+												relative: false
+												start: 0
+												end: 202
+												target: width@7266805b-278b-4a62-9449-48d05cd65c5a (propref<int>)
+											}]
+										name: "Animation 1"
+										enabled: true
+										repeat: 1
+										alternating: false
+										scale: 1F
+										onPlay: function<void,int,bool>(f1df4d7a-3f0f-439d-9b9b-0cf3a8b9c099)
+										{
+											script: "function(v:animation_time::int, v:forward::bool)" \
+												"{" \
+												"" \
+												"}"
+										}
+										onPause: function<void,int>(6129164e-6828-4fae-9bdf-abadef34fa60)
+										{
+											script: "function(v:animation_time::int)" \
+												"{" \
+												"" \
+												"}"
+										}
+										onTerminate: function<void,int,int>(9bc68f26-1262-40b8-99ea-221ecb1df780)
+										{
+											script: "function(v:animation_time::int, v:terminate::int)" \
+												"{" \
+												"	v:this->^->^->^->\"Ok Button\".visible = true" \
+												"	v:this->^->^->^->\"Loading Text\".text = \"Cafeaua este gata!\"" \
+												"}"
+										}
+									}]
+								name: "Loading Progress"
+								visible: true
+								width: 0
+								height: height@04513372-fd43-464e-8d5e-8b8fa81f4cbd (propref<int>)
+								x: 0
+								y: 0
+								fillColor: #FFFFFFFF
+							}]
+						name: "Loading Bar"
+						visible: true
+						width: 202
+						height: 12
+						x: 62
+						y: 119
+						fillColor: #8B4513FF
+					}, 
+					GtfRectangle(1a84a80e-aa80-4602-830a-0c895bc74620)
+					{
+						features: feature_list [
+							TouchShortReleased(25dd0ec2-af9d-415d-a9c0-a5f867083a88)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(e4640e07-2980-4493-872a-0bdadc66c77b)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    fire ev:closePopUp()" \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(84876154-e4c2-4a93-96b7-882d8cd7bbc8)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list [
+							GtfLabel(6e1d58d5-d309-404e-9212-52a61be39080)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Label 2"
+								visible: true
+								width: 125
+								height: 100
+								x: 8
+								y: -35
+								text: "OK"
+								textColor: #FFFFFFFF
+								font: font_resource(e291a624-fa60-41e0-8e9f-18c7be0daa27)
+								{
+									file: "PT_Sans_Narrow.ttf"
+									size: 20
+								}
+								horizontalAlign: 0
+								verticalAlign: 0
+							}]
+						name: "Ok Button"
+						visible: false
+						width: 40
+						height: 33
+						x: 221
+						y: 147
+						fillColor: #8B4513FF
+					}]
+				name: "BG"
+				visible: true
+				width: width@37abea8c-61f9-44a6-b529-a3029f37433a (propref<int>)
+				height: height@37abea8c-61f9-44a6-b529-a3029f37433a (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #CD853FFF
+			}]
+		name: "Loading Container"
+		visible: true
+		width: 300
+		height: 200
+		x: 0
+		y: 0
+		play: conditional_script(81eec1fc-59c7-43e2-8aa8-72159e3fc0a9)
+		{
+			triggerList: trigger_list(f3ddf89c-7302-4c37-be98-aab55622dcbc)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(ac57a1e1-802e-4126-91e7-64f6e9c2fe40)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	f:animation_play(v:this->BG->\"Loading Bar\"->\"Loading Progress\"->\"Animation 1\")" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+	x: x@37abea8c-61f9-44a6-b529-a3029f37433a (propref<int>)
+	y: y@37abea8c-61f9-44a6-b529-a3029f37433a (propref<int>)
+	visible: visible@37abea8c-61f9-44a6-b529-a3029f37433a (propref<bool>)
+}
