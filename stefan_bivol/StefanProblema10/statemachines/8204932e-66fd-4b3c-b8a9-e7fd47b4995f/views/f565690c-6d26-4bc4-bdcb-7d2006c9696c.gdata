@@ -1,0 +1,367 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(f565690c-6d26-4bc4-bdcb-7d2006c9696c)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(601d6a2c-2c6f-4e24-a19a-ab8fac5da5bb)
+		{
+			features: feature_list [
+				ScaleMode(304a298e-a4a8-4bde-a5ac-7fec868d6918)
+				{
+					scaleMode: 1
+				}]
+			children: children_list [
+				GtfContainer(88c9b573-029a-46df-a813-7d92b8cddc8b)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfImage(466ac61a-bc4c-4d6d-b481-c5be2e5c549a)
+						{
+							features: feature_list [
+								ScaleMode(b4bb13e7-5aad-4c38-9702-a1ba3d92d85d)
+								{
+									scaleMode: 1
+								}]
+							children: children_list []
+							name: "Shape_Black_Image"
+							visible: true
+							width: 250
+							height: 150
+							x: 0
+							y: 0
+							image: image_resource(58e6b2fe-685e-4765-8240-2947e1a5b310)
+							{
+								file: "Shape.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}, 
+						GtfImage(8e213fea-5cfa-4e4a-8e8d-008e5bdda52d)
+						{
+							features: feature_list [
+								ScaleMode(b544571d-4567-44d5-8392-60b96db7ce4b)
+								{
+									scaleMode: 1
+								}]
+							children: children_list []
+							name: "Shape_White_Image"
+							visible: true
+							width: 235
+							height: 135
+							x: 7
+							y: 7
+							image: image_resource(d790bbf1-31c1-4978-8aed-38b226914d91)
+							{
+								file: "Shape_White.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 0
+						}, 
+						GtfLabel(059d6623-5c7b-45aa-ae35-73f6159964c0)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Scale_Label"
+							visible: true
+							width: 250
+							height: 150
+							x: 0
+							y: 1
+							text: string_scriptedValue(cb8d43d8-becd-44d5-b3e5-6a0e8ea96339)
+							{
+								triggerList: trigger_list(f4b10e3b-45cb-4265-b451-d789e30d09f6)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(bc868296-ebaa-468d-b4a0-ae9d0e8d8f0c)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<string>(a3fad7a9-8cc7-4bf5-87ad-9f4d3dcdb187)
+								{
+									script: "function()" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	f:int2string(dp:Quantity) + \"g\"" \
+										"}"
+								}
+								write: function<bool,string>(7766711a-1d98-4a27-a9b8-688cdd7031d0)
+								{
+									script: "function(v:arg0::string)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							textColor: #000000FF
+							font: font_resource(79dcb04f-61b7-4edf-a247-c727601fc671)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 50
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Scale_Shape"
+					visible: true
+					width: 80
+					height: 60
+					x: 110
+					y: 50
+				}, 
+				GtfContainer(2d3a5d72-85b1-4e72-8623-914515c11219)
+				{
+					features: feature_list [
+						StateTouched(65f5617f-3d9a-4fd1-8f22-28c7dc2fa493)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfInstantiator(ef101532-0d4b-4c1f-8db6-cf77dfd31666)
+						{
+							features: feature_list [
+								LayoutPolicyFlow(ca8cb332-16d3-4779-ad20-b359a554a9f5)
+								{
+									horizontalGap: 5
+									verticalGap: 0
+									layoutDirection: 0
+									horizontalChildAlign: 0
+									verticalChildAlign: 0
+								}]
+							children: children_list [
+								GtfRectangle(1e60ae42-1230-4dc9-b5d0-bbd9315b026b)
+								{
+									features: feature_list [
+										Border(718bda1c-59ee-492d-b23b-6599681d291c)
+										{
+											borderThickness: 1
+											borderColor: #000000FF
+											borderStyle: 0
+										}, 
+										LineIndex(89154c1d-e556-42d7-b2d6-fdc25ddccdc2)
+										{
+											lineIndex: 0
+										}, 
+										TouchShortReleased(2d329c97-412d-43b4-bde7-ad26e6983369)
+										{
+											touchShortReleased: function<bool,int,int,int,int>(09790fd8-c3a6-4031-b272-385d4c17a4ab)
+											{
+												script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+													"{" \
+													"	dp:Selected_Product = v:this->Product_Label.text " \
+													"    false" \
+													"}"
+											}
+										}, 
+										StateTouched(a2a57873-6c90-4823-8846-f2f021d306fe)
+										{
+											touchable: true
+											touched: false
+											touchPolicy: 0
+											touchBehavior: 0
+										}]
+									children: children_list [
+										GtfLabel(4d3623c8-aff9-42ab-84fb-0b1ff83d151a)
+										{
+											features: feature_list []
+											children: children_list []
+											name: "Product_Label"
+											visible: true
+											width: width@2d3a5d72-85b1-4e72-8623-914515c11219 (propref<int>)
+											height: height@2d3a5d72-85b1-4e72-8623-914515c11219 (propref<int>)
+											x: 0
+											y: 0
+											text: "label"
+											textColor: #000000FF
+											font: font_resource(4f8e94b8-c8a4-49db-b3ed-b15b226ce969)
+											{
+												file: "PT_Sans_Narrow.ttf"
+												size: 18
+											}
+											horizontalAlign: 1
+											verticalAlign: 0
+										}]
+									name: "Product_Rectangle"
+									visible: true
+									width: width@2d3a5d72-85b1-4e72-8623-914515c11219 (propref<int>)
+									height: height@2d3a5d72-85b1-4e72-8623-914515c11219 (propref<int>)
+									x: 0
+									y: 0
+									fillColor: #FFFFFF00
+									setText: conditional_script(b31abe76-7e04-4f6f-b29c-c1f012e6d63d)
+									{
+										triggerList: trigger_list(74ce2ecb-b5db-48c7-a8a5-47b7d16730b4)
+										{
+											script: "dp:Product_List" \
+												"v:this.lineIndex"
+										}
+										onTrigger: function<bool,bool>(4bfa6599-f09a-4beb-8692-0a5584b8142f)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	v:this->Product_Label.text = dp:Product_List[v:this.lineIndex]" \
+												"	false" \
+												"}"
+										}
+									}
+								}]
+							name: "Product_List"
+							visible: true
+							width: 525
+							height: 25
+							x: 0
+							y: 0
+							numItems: 5
+							lineMapping: intlist []
+						}]
+					name: "Product_List"
+					visible: true
+					width: 90
+					height: 25
+					x: 5
+					y: 290
+				}, 
+				GtfLabel(c7b91ca1-570c-4596-b7b2-d0aa34f9d5a8)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Price_Label"
+					visible: true
+					width: 100
+					height: 30
+					x: 375
+					y: 240
+					text: string_scriptedValue(8dc96d40-50d4-4ac5-b85f-3f5c91dd0db4)
+					{
+						triggerList: trigger_list(b1c33484-802c-454e-94df-380e66d70159)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(2f5acd41-9199-4976-a9bb-9dbf4352aa73)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(0f5981e7-cfe1-415d-b6d1-dd709ba81bc6)
+						{
+							script: "function()" \
+								"{" \
+								"	if(dp:Selected_Product == \"Schweitzer\")" \
+								"		dp:Product_Price = dp:Product_Prices[0]" \
+								"	if(dp:Selected_Product == \"Chicken Breast\")" \
+								"		dp:Product_Price = dp:Product_Prices[1]" \
+								"	if(dp:Selected_Product == \"Goat cheese\")" \
+								"	dp:Product_Price = dp:Product_Prices[2]" \
+								"		if(dp:Selected_Product == \"Pork Chops\")" \
+								"	dp:Product_Price = dp:Product_Prices[3]" \
+								"		if(dp:Selected_Product == \"Lamb Leg\")" \
+								"	dp:Product_Price = dp:Product_Prices[4]" \
+								"	" \
+								"	f:format_float(\"%.3f\",true, dp:Product_Price) + \" lei/g\"" \
+								"" \
+								"}"
+						}
+						write: function<bool,string>(1368de5c-c239-4f8b-b57d-306bd2a55c82)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(6b61172d-7ca4-4b7a-a22f-8277dbe7fb6c)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 18
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(d8165765-b53b-4356-b1cc-5b3499a48db1)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Total_Price_Label"
+					visible: true
+					width: 150
+					height: 70
+					x: 160
+					y: 190
+					text: string_scriptedValue(bbc4d698-f030-4d3c-a9e1-6150aab65e09)
+					{
+						triggerList: trigger_list(5f18de44-ce3e-448a-98df-b88bf86c7b11)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(4593604c-c11a-45e4-861c-e339a4bb1b43)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(743d8311-d18b-422d-b46e-2df2e4566f4f)
+						{
+							script: "function()" \
+								"{" \
+								" 	dp:Final_Price = dp:Product_Price * f:int2float(dp:Quantity)" \
+								" 	f:format_float(\"%.2f\",true, dp:Final_Price) + \" lei\"" \
+								"" \
+								"}"
+						}
+						write: function<bool,string>(e3f9388a-0c04-4f91-a689-db19e3294840)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(a646c2b9-9f5b-48e0-b404-262f6b84eb68)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 33
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Background_Image"
+			visible: true
+			width: width@f565690c-6d26-4bc4-bdcb-7d2006c9696c (propref<int>)
+			height: height@f565690c-6d26-4bc4-bdcb-7d2006c9696c (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(6e455862-a92a-4763-af7a-b64c1c29c0f9)
+			{
+				file: "Background.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "Scale_View"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}
