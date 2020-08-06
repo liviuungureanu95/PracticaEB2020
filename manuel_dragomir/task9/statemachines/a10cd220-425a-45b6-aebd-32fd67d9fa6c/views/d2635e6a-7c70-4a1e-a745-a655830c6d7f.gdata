@@ -1,0 +1,646 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(d2635e6a-7c70-4a1e-a745-a655830c6d7f)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(98386899-9399-4676-8db4-86c2d82a3bd9)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfContainer_template_instance(1761f040-1f93-4bfa-b0e5-219fb996a3c7)
+				{
+					name: "ChangeFuelButton"
+					template: @de81388a-2ab9-4af7-824d-8896623fd213 (objectref<GtfContainer_template>)
+					children: children_list []
+					text: "Change Fuel"
+					height: 90
+					x: 355
+					y: 8
+					font: font_resource(818daa92-2929-4aa9-9d9e-6facc37f6b29)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 25
+					}
+					touchShortReleased: function<bool,int,int,int,int>(e6d332b9-de92-4b04-89b7-7dd9bad5d44f)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:IndexGas = (dp:IndexGas + 1) % length dp:Gas;" \
+							"    false" \
+							"}"
+					}
+					visible: @87d24d39-a066-4b4c-8d90-6c837526fbfa (objectref<bool>)
+				}, 
+				GtfContainer_template_instance(b010fdc7-1c33-46b4-9eff-887a6c9817f1)
+				{
+					name: "StartButton"
+					template: @de81388a-2ab9-4af7-824d-8896623fd213 (objectref<GtfContainer_template>)
+					children: children_list []
+					text: "Start"
+					height: 90
+					x: 356
+					y: 107
+					font: font_resource(e2b1d507-8478-4102-a82f-21e3cc4d3d5c)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 25
+					}
+					touchShortReleased: function<bool,int,int,int,int>(7cacec20-dea5-4d9c-bff3-67af654ddd1b)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:ChangeFuelOn = false;" \
+							"	dp:OnceStarted = true;" \
+							"	fire ev:Start();" \
+							"    false" \
+							"}"
+					}
+					visible: visible@de81388a-2ab9-4af7-824d-8896623fd213 (propref<bool>)
+				}, 
+				GtfContainer_template_instance(a288becc-3bd6-43b0-a929-1eb92be846ea)
+				{
+					name: "StopButton"
+					template: @de81388a-2ab9-4af7-824d-8896623fd213 (objectref<GtfContainer_template>)
+					children: children_list []
+					text: "Stop"
+					height: 90
+					x: 357
+					y: 206
+					font: font_resource(5d2cb68d-e923-4186-b6b4-a833a66a9924)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 25
+					}
+					touchShortReleased: function<bool,int,int,int,int>(669f08f7-50e4-42ca-8469-6c0cebe64952)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:OnceStarted == true){" \
+							"		fire ev:Stop();" \
+							"		v:this->^->^->ResetButton.visible = true;	" \
+							"	}" \
+							"    false" \
+							"}"
+					}
+					visible: visible@de81388a-2ab9-4af7-824d-8896623fd213 (propref<bool>)
+				}]
+			name: "Background"
+			visible: true
+			width: width@d2635e6a-7c70-4a1e-a745-a655830c6d7f (propref<int>)
+			height: height@d2635e6a-7c70-4a1e-a745-a655830c6d7f (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #000000FF
+		}, 
+		GtfImage(042e2a87-8957-4943-a97b-b814225efe05)
+		{
+			features: feature_list [
+				ScaleMode(c32a4983-6195-4517-9f25-956ee36267d9)
+				{
+					scaleMode: 2
+				}]
+			children: children_list [
+				GtfImage(bb938efe-abe4-4ed8-bb9d-d5610cd367d1)
+				{
+					features: feature_list [
+						ScaleMode(cdd61b10-fd8f-4854-9201-a33d6234383a)
+						{
+							scaleMode: 1
+						}, 
+						Rotation(a41580e7-9c82-4c6f-9277-2cd60ec1c8b4)
+						{
+							rotationEnabled: true
+							rotationAngleX: 0F
+							rotationAngleY: 0F
+							rotationAngleZ: 0F
+						}, 
+						Scaling(c6971624-933a-476a-b44d-966ee35c60b8)
+						{
+							scalingEnabled: true
+							scalingX: 100F
+							scalingY: 100F
+							scalingZ: 100F
+						}, 
+						Shearing(51dcf9f3-1b96-4bd2-aca9-d177bcd70de5)
+						{
+							shearingEnabled: true
+							shearingXbyY: 0F
+							shearingXbyZ: 0F
+							shearingYbyX: 0F
+							shearingYbyZ: 0F
+							shearingZbyX: 0F
+							shearingZbyY: 0F
+						}, 
+						Pivot(4e2cb854-d965-4cc5-8c49-594ad2043971)
+						{
+							pivotX: 40F
+							pivotY: 40F
+							pivotZ: 0F
+						}]
+					children: children_list [
+						GtfParallelAnimation(20faedfd-e04d-4ca6-b78c-52c586034326)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationFloat(83960de8-8de8-4127-ba9b-15248c5a03ab)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve 1"
+									enabled: true
+									delay: 0
+									duration: 1000
+									repeat: 0
+									alternating: false
+									relative: false
+									start: 0F
+									end: 360F
+									target: rotationAngleZ@a41580e7-9c82-4c6f-9277-2cd60ec1c8b4 (propref<float>)
+								}]
+							name: "RotatingImage"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(f2103e6a-2603-4982-b1d5-85c88c180caf)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(42853924-8965-458d-a91a-d1f01f36498e)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(957d67d3-1bb0-4d85-b70d-19df00036958)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}]
+					name: "LoadingImage"
+					visible: true
+					width: 80
+					height: 80
+					x: 86
+					y: 176
+					image: image_resource(f5a25ef9-905f-4bf3-a9bc-6f0e9d44e80a)
+					{
+						file: "loading.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+					StartRotating: conditional_script(f05c6dab-4763-4ac7-ad49-8aaccbdbc337)
+					{
+						triggerList: trigger_list(707d245e-78a0-4342-873f-bcdbb2c8f2dc)
+						{
+							script: "ev:Start"
+						}
+						onTrigger: function<bool,bool>(96e4a737-24ab-42b9-b30d-8b99866f5485)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(v:arg0 == false){" \
+								"		f:animation_play(v:this->RotatingImage);" \
+								"	}" \
+								"	false" \
+								"}"
+						}
+					}
+					StopRotating: conditional_script(578d0215-728e-4d1e-a1c8-4e84d54a8b0a)
+					{
+						triggerList: trigger_list(2199812a-32d8-4d6d-9d9d-bcadf2c12071)
+						{
+							script: "ev:Stop"
+						}
+						onTrigger: function<bool,bool>(9a5a949f-d361-4c34-8049-9a212409b58b)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(v:arg0 == false){" \
+								"		f:animation_pause(v:this->RotatingImage);" \
+								"	}" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfLabel(07ea1855-7010-4329-9189-635a4b4d7403)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "LitresLabel"
+					visible: true
+					width: 62
+					height: 30
+					x: 35
+					y: 44
+					text: "Litres"
+					textColor: @eaee1194-50f2-4413-aa9e-26c0c8358bc8 (objectref<color>)
+					font: font_resource(63536673-3844-4b2c-a838-e4ed72decebd)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 28
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(6fd96261-d678-4b11-8fed-b65ec982c00f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "PriceLabel"
+					visible: true
+					width: 54
+					height: 27
+					x: 35
+					y: 89
+					text: "Price"
+					textColor: @eaee1194-50f2-4413-aa9e-26c0c8358bc8 (objectref<color>)
+					font: font_resource(c2c69663-6423-45c6-a3b5-78b0fe911736)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 28
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(bd2e328a-77fb-4665-a94e-836e27c29fa5)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "GasNameLabel"
+					visible: true
+					width: 88
+					height: 18
+					x: 37
+					y: 14
+					text: "Gasolina"
+					textColor: #000000FF
+					font: font_resource(7ef827b2-e6dc-4b10-a010-ef1fc3a1eae4)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 20
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+					ChangeGas: conditional_script(91dfc5fb-427f-4ded-a68a-9963576dc168)
+					{
+						triggerList: trigger_list(ebb910a1-e468-425a-b773-3d5798454638)
+						{
+							script: "dp:Gas" \
+								"dp:IndexGas" \
+								""
+						}
+						onTrigger: function<bool,bool>(b6bd82a8-60fd-4268-9095-81c83a1a490a)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.text = dp:Gas[dp:IndexGas];" \
+								"	true;" \
+								"}"
+						}
+					}
+				}, 
+				GtfLabel(afa88c62-3c55-4390-bf3c-34a77df5937f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "LeiLitruLabel"
+					visible: true
+					width: 49
+					height: 18
+					x: 159
+					y: 14
+					text: "lei/litru"
+					textColor: #000000FF
+					font: font_resource(e02f445a-ea47-420b-9673-f0f4e49352ee)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 20
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(90fc1e1a-2f75-4827-8fa3-92fcd7d32bab)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "PriceValueLabel"
+					visible: true
+					width: 35
+					height: 17
+					x: 117
+					y: 15
+					text: "5"
+					textColor: #000000FF
+					font: font_resource(69b67601-9f15-4b47-938c-7399ba1883cd)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 20
+					}
+					horizontalAlign: 2
+					verticalAlign: 0
+					ChangeGas: conditional_script(52693d40-ac78-42f9-992c-e9cdcb6c65f9)
+					{
+						triggerList: trigger_list(e2aa7743-76ed-4839-9bca-9b51bca6dc2d)
+						{
+							script: "dp:IndexGas" \
+								"dp:Price" \
+								""
+						}
+						onTrigger: function<bool,bool>(b6c46cce-4a7e-408c-9edc-75d0d9f50cee)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.text = dp:Price[dp:IndexGas];" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "PumpImage"
+			visible: true
+			width: 300
+			height: 300
+			x: 9
+			y: 9
+			image: image_resource(2b889756-7010-4263-b851-4f3b8056b00e)
+			{
+				file: "gasoline.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(4ba46d59-283a-42d2-87c3-530d8f9c8146)
+		{
+			features: feature_list [
+				ScaleMode(4b306130-d074-4d14-bf24-cca468e6a3d8)
+				{
+					scaleMode: 1
+				}]
+			children: children_list [
+				GtfLabel(fe624ef9-2e23-421e-b39a-45d13a021aef)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "CurrentPriceLabel"
+					visible: true
+					width: 65
+					height: 27
+					x: 26
+					y: 12
+					text: string_scriptedValue(c6051cbc-ab24-49ab-b9f7-97d28d110586)
+					{
+						triggerList: trigger_list(2df92eee-10b7-481e-b956-70d12ae270bc)
+						{
+							script: "dp:CurrentLitres"
+						}
+						onTrigger: function<bool,bool>(479acb4f-1276-4a02-9194-93d7571f747f)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	dp:CurrentPrice = dp:CurrentLitres * f:string2float(dp:Price[dp:IndexGas]);" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(9c8f4fa8-c241-4e74-86df-f3d7c350825c)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:float2string(dp:CurrentPrice);" \
+								"}"
+						}
+						write: function<bool,string>(97bc86fc-97b6-4ab6-949d-05745943b50a)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(b1eb8b02-973e-478e-b6eb-c3ffde8bb256)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 25
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "PriceImage"
+			visible: true
+			width: width@fe5ef924-76ea-4a58-a9ca-a71e1d03aadc (propref<int>)
+			height: height@fe5ef924-76ea-4a58-a9ca-a71e1d03aadc (propref<int>)
+			x: 109
+			y: 88
+			image: image_resource(1d57306c-955f-42a2-b06a-7d4b2f6add53)
+			{
+				file: "label.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(fe5ef924-76ea-4a58-a9ca-a71e1d03aadc)
+		{
+			features: feature_list [
+				ScaleMode(5e26992a-485b-4f5b-b0ef-91e4af1c81f7)
+				{
+					scaleMode: 1
+				}]
+			children: children_list [
+				GtfLabel(8d769363-63d7-46d5-92bd-289ca4c77abd)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "CurrentQuantityLabel"
+					visible: true
+					width: 65
+					height: 27
+					x: 26
+					y: 12
+					text: string_scriptedValue(37d04298-0c66-4b70-8fc0-39d454108651)
+					{
+						triggerList: trigger_list(7db4ba42-d638-4898-8255-631f5728bd34)
+						{
+							script: "dp:CurrentLitres" \
+								""
+						}
+						onTrigger: function<bool,bool>(51f64ac8-c7c6-44e4-b1ff-81b8b1be54b3)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(4b00e2cc-4753-4b7d-8414-1dd3ce3db6fc)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:float2string(dp:CurrentLitres);" \
+								"}"
+						}
+						write: function<bool,string>(5eab67cb-ba63-4043-9f40-d30d6ccfd2c3)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(9ba2a139-19f2-4260-85bb-2b660d6ca8b6)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 25
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfParallelAnimation(5ae82edf-b32b-4bcb-85d8-cdeb9041f31b)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationFloat(eee9af51-9bcd-48cc-9eca-cf7ca47494d3)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Linear interpolation curve 2"
+							enabled: true
+							delay: 0
+							duration: 50000
+							repeat: 0
+							alternating: false
+							relative: false
+							start: 0F
+							end: 100F
+							target: @05a1fd45-a136-49ad-86d1-d87734ddc0d9 (objectref<float>)
+						}]
+					name: "LitresOn"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(4726ae43-df01-4ea1-b979-66c79d4dc079)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(6ab88870-3dee-4fea-849d-bf48607899bd)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(c3d727d3-ec11-4105-ad7a-d86d6e0249c7)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"	dp:CurrentLitres = 0.0;" \
+							"}"
+					}
+				}]
+			name: "QuantityImage"
+			visible: true
+			width: 109
+			height: 51
+			x: x@4ba46d59-283a-42d2-87c3-530d8f9c8146 (propref<int>)
+			y: 43
+			image: image_resource(c323a5d6-72b3-4c59-ac4d-9617b9e7e3c1)
+			{
+				file: "label.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+			StartCounting: conditional_script(9dc14c5e-638a-4d69-a65d-6123455bb7cf)
+			{
+				triggerList: trigger_list(3cf5510e-9fe7-4b44-8684-27fa01a6b469)
+				{
+					script: "ev:Start"
+				}
+				onTrigger: function<bool,bool>(5b849b6d-bf35-4785-99b5-6e535f8833a9)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(v:arg0 == false){" \
+						"		f:animation_play(v:this->LitresOn);" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+			}
+			StopCounting: conditional_script(01da6b22-7fa7-46af-8d2d-1bfe30fda3a6)
+			{
+				triggerList: trigger_list(626a11bc-b88b-47fc-934f-99147adb7683)
+				{
+					script: "ev:Stop"
+				}
+				onTrigger: function<bool,bool>(a9df2d89-bfa9-4e16-b58a-b7f1b44c6fac)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(v:arg0 == false){" \
+						"		f:animation_pause(v:this->LitresOn);" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfContainer_template_instance(7fe141df-b117-43a5-be12-46bc84c2959e)
+		{
+			name: "ResetButton"
+			template: @de81388a-2ab9-4af7-824d-8896623fd213 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Reset"
+			height: 40
+			x: 7
+			y: 209
+			font: font_resource(7d634232-a4ab-4227-9d8b-6777452faf9c)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 20
+			}
+			touchShortReleased: function<bool,int,int,int,int>(091639d1-14e3-4d10-8daa-cf0d551bc8ab)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	dp:CurrentLitres = 0.0;" \
+					"	dp:CurrentPrice = 0.0;" \
+					"	f:animation_cancel_reset" \
+					"	(v:this->^->PumpImage->LoadingImage->RotatingImage);" \
+					"	f:animation_cancel_reset" \
+					"	(v:this->^->QuantityImage->LitresOn);" \
+					"	v:this.visible = false;" \
+					"	dp:ChangeFuelOn = true;" \
+					"	dp:OnceStarted = false;" \
+					"    false" \
+					"}"
+			}
+			visible: false
+		}]
+	name: "MainView"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}
