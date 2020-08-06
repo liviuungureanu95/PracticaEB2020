@@ -84,7 +84,7 @@ GtfView(191eb0b9-f403-4a1c-933d-1ee999d2c0e5)
 									"	fire ev:Dismiss_message()" \
 									"	if(dp:Alimentare_apa==false || dp:Cuva_Inchisa==false || dp:Detergent==false)" \
 									"	{" \
-									"		fire ev:Display_message()" \
+									"		fire_delayed 1000, ev:Display_message()" \
 									"		dp:Message=\"\";" \
 									"		dp:Message2=\"\";" \
 									"		if(dp:Alimentare_apa== false)" \
@@ -93,8 +93,11 @@ GtfView(191eb0b9-f403-4a1c-933d-1ee999d2c0e5)
 									"			dp:Message=dp:Message + \"\\nEroare cuva deschisa\"" \
 									"		if(dp:Detergent==false)" \
 									"			dp:Message=dp:Message + \"\\nEroare detergent\"" \
-									"	}else" \
-									"		dp:Message2=\"Programul va incepe in 5 secunde\"" \
+									"	}" \
+									"	else" \
+									"		{" \
+									"			fire ev:GoToStart()" \
+									"		}" \
 									"	" \
 									"    false" \
 									"}"
