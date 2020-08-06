@@ -1,0 +1,60 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_dynamic_statemachine(5716209d-67dd-4fe0-bb0a-2ef691358b7d)
+{
+	x: 0
+	y: 0
+	width: 600
+	height: 400
+	name: "Haptic dynamic state machine 1"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions []
+	internal_transitions: haptic_internal_transitions []
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(f83b932d-9ee0-45b3-a56a-31e98d2d9ee5)
+		{
+			x: 215
+			y: 65
+			width: 100
+			height: 100
+			name: "ViewState"
+			entry_action: function<void>(2794efec-02a1-46c1-a28a-d4062863b765)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:startLoadingAnimation()" \
+					"}"
+			}
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (6d0a0eaa-89e8-4e02-8e18-182a31c531a4)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(03b92ac3-b5fb-4da8-8d6d-2db41c2438d5)
+	{
+		x: 69
+		y: 39
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(1303fd69-84b8-4685-a45b-c962be0c935c)
+		{
+			action: function<void>(none)
+			target_state: @f83b932d-9ee0-45b3-a56a-31e98d2d9ee5 (objectref<haptic_dialog_state>)
+			source_dock: 0.2684236F
+			target_dock: 0.8078704F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(none)
+}
