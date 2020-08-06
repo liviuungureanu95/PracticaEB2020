@@ -1,0 +1,129 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(b287e91e-79fb-47bc-a76b-6bb09dd6face)
+{
+	name: "T_View"
+	structure: GtfView(33371ffd-4399-40c3-bc63-3ecb77d5b81f)
+	{
+		features: feature_list [
+			StateFocused(39fd30ca-29f7-4047-b9bb-7ec1ee1ca48b)
+			{
+				focusable: 3
+				focused: false
+			}, 
+			AutoFocus(3067ea7e-769a-4d8f-b085-081e729e37dc)
+			{
+				initFocus: 0
+				focusedIndex: 0
+				focusNext: false
+				focusPrev: false
+				focusFlow: 0
+			}, 
+			KeyPressed(7222fc72-27e8-4083-8c31-f75ed95bba16)
+			{
+				keyPressed: function<bool,int>(849da9b6-e60c-4565-8f41-8ab37e99ac8e)
+				{
+					script: "function(v:keyId::int)" \
+						"{" \
+						"	f:trace_string(f:int2string(v:keyId))" \
+						"	if(v:keyId == 138) //Arrow left" \
+						"	{" \
+						"		fire ev:focus_PreviousWidget()" \
+						"	}" \
+						"	else if (v:keyId == 139) //Arrow right" \
+						"	{" \
+						"		fire ev:focus_NextWidget()" \
+						"	}" \
+						"	else if (v:keyId == 130) //Enter(return)" \
+						"	{" \
+						"		fire ev:reactOn_ReturnKey()" \
+						"	}" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StatePressed(b9f61fea-da9c-4f1e-bd8e-7cd5bcd0d42d)
+			{
+				pressed: false
+			}]
+		children: children_list [
+			GtfImage(f9fef71f-a5a8-46ad-a88a-3fa73c250605)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background_Image"
+				visible: true
+				width: width@33371ffd-4399-40c3-bc63-3ecb77d5b81f (propref<int>)
+				height: height@33371ffd-4399-40c3-bc63-3ecb77d5b81f (propref<int>)
+				x: 0
+				y: 0
+				image: @0087809e-621c-4a76-bbb6-860668a4c2ca (objectref<image>)
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(247fc5bd-ceaa-4056-b061-246753b8336b)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Title"
+				visible: true
+				width: width@3db070cc-2d37-4a19-a9c6-25e3565b844f (propref<int>)
+				height: y@3db070cc-2d37-4a19-a9c6-25e3565b844f (propref<int>)
+				x: x@3db070cc-2d37-4a19-a9c6-25e3565b844f (propref<int>)
+				y: 0
+				text: @bc85fa5b-b6a3-4452-af0f-901b4b31022d (objectref<string>)
+				textColor: @c6a991ad-f4df-482a-9404-503c1fec0acb (objectref<color>)
+				font: font_resource(231c100a-cb1e-4110-a71f-ef8d24e616a4)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 50
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}, 
+			GtfRectangle(3db070cc-2d37-4a19-a9c6-25e3565b844f)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Horizontal_Line"
+				visible: true
+				width: 760
+				height: 2
+				x: 20
+				y: 75
+				fillColor: #A9A9A9FF
+			}]
+		name: "View"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+		changeFocus: conditional_script(b89c4c39-2fcd-458c-aa17-53a17cdb5959)
+		{
+			triggerList: trigger_list(ea2bbeb1-26c1-4626-b084-d83470c03ce3)
+			{
+				script: "ev:focus_PreviousWidget" \
+					"ev:focus_NextWidget" \
+					""
+			}
+			onTrigger: function<bool,bool>(5ffaa5ec-a253-417c-beec-a2f69865fbb9)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	match_event v:event = ev:focus_PreviousWidget in" \
+					"	{" \
+					"		f:focusPrevious()" \
+					"	}" \
+					"	match_event v:event = ev:focus_NextWidget in" \
+					"	{" \
+					"		f:focusNext()" \
+					"	}" \
+					"" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+}
