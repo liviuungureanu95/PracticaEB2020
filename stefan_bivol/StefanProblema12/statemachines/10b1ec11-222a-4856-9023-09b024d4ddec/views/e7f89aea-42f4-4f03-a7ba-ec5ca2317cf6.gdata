@@ -1,0 +1,246 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(e7f89aea-42f4-4f03-a7ba-ec5ca2317cf6)
+{
+	name: "Buy_View"
+	template: @2ae1bd8e-08f7-4cbe-a2d8-271429b24bc0 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(efe11c86-0ba0-420f-848e-f981d0f6763a)
+		{
+			name: "Finish_Button"
+			template: @5fcfb726-2668-4ad9-9e93-68b395c80202 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Finish"
+			x: 300
+			y: 365
+			eventButton: function<bool>(02e9872f-904e-4193-add7-6220abec2c5f)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goToWelcome()" \
+					"	false" \
+					"}"
+			}
+			lineIndex: lineIndex@5fcfb726-2668-4ad9-9e93-68b395c80202 (propref<int>)
+		}, 
+		GtfContainer_template_instance(df3c97e5-d72a-434c-b806-9f4b43a697dc)
+		{
+			name: "Buy_Button"
+			template: @5fcfb726-2668-4ad9-9e93-68b395c80202 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Buy"
+			x: 125
+			y: 365
+			eventButton: function<bool>(ee99abe5-99fb-44bb-b32b-da2366a935bf)
+			{
+				script: "function()" \
+					"{" \
+					"	if(dp:Cash > dp:Ticket_Price)" \
+					"		dp:Cash -= dp:Ticket_Price" \
+					"	else" \
+					"		fire ev:popUpWarning()" \
+					"	false" \
+					"}"
+			}
+			lineIndex: lineIndex@5fcfb726-2668-4ad9-9e93-68b395c80202 (propref<int>)
+		}, 
+		GtfContainer(693aec9b-13dd-4616-b4ed-1b35d917c371)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfInstantiator(42704409-c1b1-4260-8ed5-0931de597c0c)
+				{
+					features: feature_list [
+						LayoutPolicyFlow(3968e26d-9910-41e9-b137-f7d5e0394092)
+						{
+							horizontalGap: 30
+							verticalGap: 0
+							layoutDirection: 0
+							horizontalChildAlign: 0
+							verticalChildAlign: 0
+						}]
+					children: children_list [
+						GtfContainer_template_instance(e775b148-406b-4abb-8de7-93db629409c2)
+						{
+							name: "Ticket_Button"
+							template: @5fcfb726-2668-4ad9-9e93-68b395c80202 (objectref<GtfContainer_template>)
+							children: children_list []
+							text: text@5fcfb726-2668-4ad9-9e93-68b395c80202 (propref<string>)
+							x: x@5fcfb726-2668-4ad9-9e93-68b395c80202 (propref<int>)
+							y: y@5fcfb726-2668-4ad9-9e93-68b395c80202 (propref<int>)
+							eventButton: function<bool>(ce07f6cb-8cc6-4a15-aca5-dc485663ffe0)
+							{
+								script: "function()" \
+									"{" \
+									"	if(v:this.text == dp:Tickets[0])" \
+									"		dp:Ticket_Price = dp:Ticket_Prices[0]" \
+									"	else if(v:this.text == dp:Tickets[1])" \
+									"		dp:Ticket_Price = dp:Ticket_Prices[1]" \
+									"	else if(v:this.text == dp:Tickets[2])" \
+									"		dp:Ticket_Price = dp:Ticket_Prices[2]" \
+									"	false" \
+									"}"
+							}
+							lineIndex: lineIndex@5fcfb726-2668-4ad9-9e93-68b395c80202 (propref<int>)
+							setText: conditional_script(456c3c5b-8d4c-4c11-beb3-6b2a55382021)
+							{
+								triggerList: trigger_list(5ad6733a-68a1-411b-968c-ca2a58a0d3f9)
+								{
+									script: "dp:Tickets" \
+										"v:this.lineIndex" \
+										""
+								}
+								onTrigger: function<bool,bool>(856c13e0-650e-48c9-a148-0d45369573ed)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	v:this.text = dp:Tickets[v:this.lineIndex]" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "List"
+					visible: true
+					width: 500
+					height: 100
+					x: 185
+					y: 100
+					numItems: int_scriptedValue(bfaf8abb-dde6-40c7-be38-a1bb73d220a4)
+					{
+						triggerList: trigger_list(7e2003c1-c901-450b-81a8-59a1c3b8573b)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(02065856-50d7-4e8b-9516-c34d8a899195)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<int>(274079b4-b9d1-4ed4-b852-b35de0bbbb7a)
+						{
+							script: "function()" \
+								"{" \
+								"	length dp:Tickets" \
+								"}"
+						}
+						write: function<bool,int>(93ae665a-a8d8-47eb-8509-b9660c8faea8)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					lineMapping: intlist []
+				}]
+			name: "Tickets_List"
+			visible: true
+			width: 100
+			height: 100
+			x: 0
+			y: 0
+		}, 
+		GtfLabel(21b55e1c-cd9a-434f-ae83-a2500cf68b61)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Amount_Label"
+			visible: true
+			width: 200
+			height: 50
+			x: 175
+			y: 200
+			text: string_scriptedValue(57291b2b-8017-4ba9-a0d2-04ca20dfa00f)
+			{
+				triggerList: trigger_list(837603d9-a774-492d-a1f9-95a2355a9031)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(49696159-e664-4369-87c7-82ccc8719881)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(a0b146ca-61e1-4a10-9201-94f5ff6b2b78)
+				{
+					script: "function()" \
+						"{" \
+						"	\"Amount: \" + f:format_float(\"%.2f\",true,dp:Cash) + \" lei\"" \
+						"}"
+				}
+				write: function<bool,string>(4a5edf48-5133-44fe-a1fc-113925f69a4d)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #000000FF
+			font: font_resource(1a4fe508-113e-47f6-b7f3-fe71df586693)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(dc414d5a-633c-4161-b1c4-44288c18ea41)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Ticket_Pirce_Label"
+			visible: true
+			width: 225
+			height: 50
+			x: 163
+			y: 275
+			text: string_scriptedValue(c14acb1f-0c78-44d3-9b60-a3b4633abcc3)
+			{
+				triggerList: trigger_list(acb5d042-378a-4474-b28b-be619bd99bfb)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(875015b2-d408-4250-a959-fa1cdd65792b)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(eca50068-0cf2-4d50-86ef-3193730b6811)
+				{
+					script: "function()" \
+						"{" \
+						"	\"Ticket Price: \" + f:format_float(\"%.2f\",true,dp:Ticket_Price) + \" lei\"" \
+						"}"
+				}
+				write: function<bool,string>(f96286c7-2313-4083-83b6-c0143940a1fa)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #000000FF
+			font: font_resource(3aa4ad81-ad96-454d-9bbc-2ae48789b1a7)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+}

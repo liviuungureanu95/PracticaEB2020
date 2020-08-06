@@ -1,0 +1,116 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(5fcfb726-2668-4ad9-9e93-68b395c80202)
+{
+	name: "Text Button"
+	structure: GtfContainer(f6045029-6922-47d4-a2ab-983d144be66d)
+	{
+		features: feature_list [
+			MoveIn(51ea9c6c-1313-46d5-9e4d-eac3141633e3)
+			{
+				moveIn: function<bool,int,int,int,int>(246be0ae-2709-4a11-ae2f-6e61941190b9)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.height += 10" \
+						"	v:this->Border_Rectangle.fillColor = v:this.moveInColor" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(858ed3e4-4ad1-490a-912b-fc9252c69dcf)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			MoveOut(f595fd31-237c-4ea8-9ec5-004b8d9e8463)
+			{
+				moveOut: function<bool,int,int,int,int>(82d3ae6c-8615-4d23-a80a-8d1ec9049885)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.height -= 10" \
+						"	v:this->Border_Rectangle.fillColor = v:this.moveOutColor" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(b95aa961-08ac-4568-bc89-4d585ebd3d82)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(72f1565c-a39d-41d8-aa25-f5cd1d98b96f)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.eventButton()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			LineIndex(6da16b7a-40a7-47a5-bef9-8217392a0a89)
+			{
+				lineIndex: 0
+			}]
+		children: children_list [
+			GtfRectangle(2479af14-a502-48f7-9381-691e0e476c15)
+			{
+				features: feature_list [
+					Border(20dcf3e1-0cdc-4da2-a0c1-0e8cfcc20bec)
+					{
+						borderThickness: 2
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list [
+					GtfLabel(04d44481-bc19-4286-81de-ee80ce3f6b83)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Name_Label"
+						visible: true
+						width: width@f6045029-6922-47d4-a2ab-983d144be66d (propref<int>)
+						height: height@f6045029-6922-47d4-a2ab-983d144be66d (propref<int>)
+						x: 0
+						y: 0
+						text: "<Button Name>"
+						textColor: #000000FF
+						font: font_resource(c8bf621f-69a8-4fdd-8cdb-57d432481d1d)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 22
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "Border_Rectangle"
+				visible: true
+				width: width@f6045029-6922-47d4-a2ab-983d144be66d (propref<int>)
+				height: height@f6045029-6922-47d4-a2ab-983d144be66d (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+			}]
+		name: "Text_Button"
+		visible: true
+		width: 125
+		height: 50
+		x: 0
+		y: 0
+		eventButton: function<bool>(67c10179-7a6c-4b06-b345-701a207da14d)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		moveInColor: #8B008BFF
+		moveOutColor: #FFFFFF00
+	}
+	text: text@04d44481-bc19-4286-81de-ee80ce3f6b83 (propref<string>)
+	x: x@f6045029-6922-47d4-a2ab-983d144be66d (propref<int>)
+	y: y@f6045029-6922-47d4-a2ab-983d144be66d (propref<int>)
+	eventButton: eventButton@f6045029-6922-47d4-a2ab-983d144be66d (propref<function<bool>>)
+	lineIndex: lineIndex@6da16b7a-40a7-47a5-bef9-8217392a0a89 (propref<int>)
+}
