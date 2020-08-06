@@ -1,0 +1,94 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(1cdac538-80cc-4ed3-b31d-f61ded4e3483)
+{
+	name: "ImageButton"
+	structure: GtfContainer(c08bf67f-3cc8-4ea6-80ad-ed79f2338b7a)
+	{
+		features: feature_list [
+			TouchPressed(e44894cd-c4fa-4251-a953-bebb9944b608)
+			{
+				touchPressed: function<bool,int,int,int,int>(affc569c-3812-42aa-b049-3a49628b681a)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.pressAction()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(f25c9040-6e39-4100-954a-8ef6b2eab7b8)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(18ca4b59-d157-4d2b-b26c-ed8eb959a4cf)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.releaseAction()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(32a69a6e-a09a-4737-a4e2-ac94aa2bdbe2)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfImage(bdc8dca0-e02f-428b-8785-8602e2a33780)
+			{
+				features: feature_list [
+					ScaleMode(92d4c517-e461-4534-ac49-8674f5340261)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "Image"
+				visible: true
+				width: width@c08bf67f-3cc8-4ea6-80ad-ed79f2338b7a (propref<int>)
+				height: height@c08bf67f-3cc8-4ea6-80ad-ed79f2338b7a (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(94f8878a-9009-4cca-a4b5-edecaf49795e)
+				{
+					file: "cappuccino_big.jpg"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "ButtonContainer"
+		visible: true
+		width: 80
+		height: 100
+		x: 0
+		y: 0
+		pressAction: function<bool>(e912fe88-fd87-492b-a2b9-01fe4f3c8e5a)
+		{
+			script: "function()" \
+				"{" \
+				"	fire ev:showPopUp()" \
+				"	dp:chosenCoffee = v:this.sortimet_" \
+				"	false" \
+				"}"
+		}
+		releaseAction: function<bool>(97560355-9bdc-4b5f-aa5c-68c44598eb5a)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		sortimet_: ""
+	}
+	image: image@bdc8dca0-e02f-428b-8785-8602e2a33780 (propref<image>)
+	x: x@c08bf67f-3cc8-4ea6-80ad-ed79f2338b7a (propref<int>)
+	y: y@c08bf67f-3cc8-4ea6-80ad-ed79f2338b7a (propref<int>)
+	sortimet_: sortimet_@c08bf67f-3cc8-4ea6-80ad-ed79f2338b7a (propref<string>)
+	width: width@c08bf67f-3cc8-4ea6-80ad-ed79f2338b7a (propref<int>)
+	height: height@c08bf67f-3cc8-4ea6-80ad-ed79f2338b7a (propref<int>)
+	visible: visible@c08bf67f-3cc8-4ea6-80ad-ed79f2338b7a (propref<bool>)
+	pressAction: pressAction@c08bf67f-3cc8-4ea6-80ad-ed79f2338b7a (propref<function<bool>>)
+}

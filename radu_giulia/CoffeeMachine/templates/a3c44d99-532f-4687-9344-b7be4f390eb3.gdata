@@ -1,0 +1,86 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfInstantiator_template(a3c44d99-532f-4687-9344-b7be4f390eb3)
+{
+	name: "LoadingBeans"
+	structure: GtfInstantiator(9b54273d-b0aa-4c58-82f1-84f5aff7b7ec)
+	{
+		features: feature_list [
+			LayoutPolicyFlow(58240e12-0932-4c48-8f0f-ad5bfd70c7c2)
+			{
+				horizontalGap: 10
+				verticalGap: 0
+				layoutDirection: 0
+				horizontalChildAlign: 0
+				verticalChildAlign: 0
+			}]
+		children: children_list [
+			GtfContainer(9cb12c29-f362-4941-81ca-d64ffaeaf33e)
+			{
+				features: feature_list [
+					LineIndex(6a456ab1-a681-4e8f-a855-b133c79162d7)
+					{
+						lineIndex: 0
+					}]
+				children: children_list [
+					GtfImage_template_instance(8558d162-339d-41e5-bcd7-87b905ee4584)
+					{
+						name: "beans"
+						template: @cd888dcb-44fd-4a42-a799-69baceeee259 (objectref<GtfImage_template>)
+						children: children_list []
+						image: image@cd888dcb-44fd-4a42-a799-69baceeee259 (propref<image>)
+						x: x@cd888dcb-44fd-4a42-a799-69baceeee259 (propref<int>)
+						y: y@cd888dcb-44fd-4a42-a799-69baceeee259 (propref<int>)
+						visible: visible@cd888dcb-44fd-4a42-a799-69baceeee259 (propref<bool>)
+					}]
+				name: "Container 1"
+				visible: true
+				width: 70
+				height: 70
+				x: 0
+				y: 0
+				setImages: conditional_script(cc430164-c734-4a30-8e13-e12964b6a7d8)
+				{
+					triggerList: trigger_list(1ac9d5ca-2973-4399-9742-6bb330a53cdc)
+					{
+						script: "v:this.lineIndex" \
+							"dp:beansLoaded" \
+							"dp:Beans"
+					}
+					onTrigger: function<bool,bool>(f52fc787-e602-42ae-9e6a-0fdf77715b63)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	v:this->beans.image = dp:Beans[v:this.lineIndex]" \
+							"	false" \
+							"}"
+					}
+				}
+			}]
+		name: "Instantiator 1"
+		visible: true
+		width: 400
+		height: 70
+		x: 0
+		y: 0
+		numItems: 1
+		lineMapping: intlist []
+		setItems: conditional_script(01229df3-b8da-47e1-8f84-e3439d2bd19f)
+		{
+			triggerList: trigger_list(2de7383c-d643-4be6-80e7-1c60a365d40c)
+			{
+				script: "dp:beansLoaded"
+			}
+			onTrigger: function<bool,bool>(ccd2a194-f9ba-4279-9cfc-456f61d0bafa)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	v:this.numItems = dp:beansLoaded" \
+					"	true" \
+					"}"
+			}
+		}
+	}
+	x: x@9b54273d-b0aa-4c58-82f1-84f5aff7b7ec (propref<int>)
+	y: y@9b54273d-b0aa-4c58-82f1-84f5aff7b7ec (propref<int>)
+}

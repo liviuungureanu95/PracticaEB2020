@@ -1,0 +1,197 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(27fe187f-2ade-4fea-bcca-21707399cec4)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(36315fe0-bb11-4c2f-957f-00bd9cd5c06c)
+		{
+			features: feature_list [
+				Border(dac18bba-fd27-4972-858a-00438ec0d4d3)
+				{
+					borderThickness: 6
+					borderColor: #FFE4C4FF
+					borderStyle: 0
+				}]
+			children: children_list [
+				GtfLabel(49a693b8-48c2-42df-8153-65a30feb2c6b)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 1"
+					visible: true
+					width: width@36315fe0-bb11-4c2f-957f-00bd9cd5c06c (propref<int>)
+					height: 49
+					x: 0
+					y: 0
+					text: "default"
+					textColor: #000000FF
+					font: font_resource(7acf65e5-0881-4efb-8b84-8851084de3bb)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfInstantiator_template_instance(6e6f2404-80d2-4145-b726-0811a21dc3f5)
+				{
+					name: "LoadingBeans"
+					template: @a3c44d99-532f-4687-9344-b7be4f390eb3 (objectref<GtfInstantiator_template>)
+					children: children_list []
+					x: 56
+					y: 105
+					playAnimation: conditional_script(b85b0863-8545-4293-b83c-5cbed2a956eb)
+					{
+						triggerList: trigger_list(3fca8ed2-ee03-4fea-8c34-cf1de6d86a38)
+						{
+							script: "ev:playBeanAnimation"
+						}
+						onTrigger: function<bool,bool>(03941312-7768-4441-bf08-2ddfd79ae53a)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	match_event v:e = ev:playBeanAnimation in" \
+								"		f:animation_play(v:this->^->Animation)" \
+								"	true" \
+								"}"
+						}
+					}
+				}, 
+				GtfParallelAnimation(bc30225e-c723-4738-936b-9270ab0ad28b)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationS32(93d1cc12-ecf3-4d30-8cb1-9eae3d48e517)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "AnimateNumberOfBeans"
+							enabled: true
+							delay: 0
+							duration: 5000
+							repeat: 1
+							alternating: false
+							relative: false
+							start: 1
+							end: 5
+							target: @10b25f44-8039-4880-8f74-96a5ea3f0114 (objectref<int>)
+						}]
+					name: "Animation"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(f6a35a4c-8209-4e02-8891-e7f376aa6cdb)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(12fdb3c1-af6c-46d9-a563-ee95e15623ad)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(c40fc906-646b-4a6d-9e6e-e9e2e8ec4c91)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"	v:this->^->BackButton.visible = true" \
+							"	v:this->^->message.visible = true" \
+							"	" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(0ea96d81-260b-456b-b209-4a1a41ca7efb)
+				{
+					name: "BackButton"
+					template: @1cdac538-80cc-4ed3-b31d-f61ded4e3483 (objectref<GtfContainer_template>)
+					children: children_list []
+					image: image_resource(bd98c74e-3729-4bbb-8c72-7421f850f20c)
+					{
+						file: "back.png"
+					}
+					x: 395
+					y: 219
+					sortimet_: sortimet_@1cdac538-80cc-4ed3-b31d-f61ded4e3483 (propref<string>)
+					width: width@1cdac538-80cc-4ed3-b31d-f61ded4e3483 (propref<int>)
+					height: 63
+					visible: false
+					pressAction: function<bool>(3a214ca5-30eb-43c0-a3b7-4b99f23d132e)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this.visible = false" \
+							"	f:popDynamicStateMachine(popup_stack:Main, sm:PopUpState)" \
+							"	" \
+							"	false" \
+							"}"
+					}
+				}, 
+				GtfLabel(33b33d94-8e42-4b00-969f-8ad3b3c7a8a0)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "message"
+					visible: false
+					width: width@36315fe0-bb11-4c2f-957f-00bd9cd5c06c (propref<int>)
+					height: 100
+					x: 0
+					y: 189
+					text: "Enjoy your coffee! :)"
+					textColor: #000000FF
+					font: font_resource(2e6a8e85-dd2b-4a63-a4a9-338dcb3b85ef)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Rectangle 1"
+			visible: true
+			width: 496
+			height: 296
+			x: 139
+			y: 101
+			fillColor: #D2B48CFF
+		}]
+	name: "View 1"
+	visible: true
+	width: 800
+	height: 480
+	x: -2
+	y: 0
+	changeLabel: conditional_script(cd66c329-7867-4335-ab8e-b91f3d5ff982)
+	{
+		triggerList: trigger_list(bf480e9f-d4b1-42d5-af31-b707fbac8b3a)
+		{
+			script: "dp:chosenCoffee"
+		}
+		onTrigger: function<bool,bool>(f0543f69-5c2b-42ad-99fb-af0061d2b1a6)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	let v:text = \" is being prepared\";" \
+				"	in{" \
+				"	if(dp:chosenCoffee == \"cappuccino\")" \
+				"		v:this->\"Rectangle 1\"->\"Label 1\".text = \"Cappucino\" + v:text" \
+				"	else" \
+				"		if(dp:chosenCoffee == \"ristretto\")" \
+				"			v:this->\"Rectangle 1\"->\"Label 1\".text = \"Ristretto\" + v:text" \
+				"		else" \
+				"			if(dp:chosenCoffee == \"caffeelatte\")" \
+				"				v:this->\"Rectangle 1\"->\"Label 1\".text = \"Caffee Latte\" + v:text" \
+				"			else" \
+				"				if(dp:chosenCoffee == \"espresso\")" \
+				"					v:this->\"Rectangle 1\"->\"Label 1\".text = \"Esppresso\" + v:text" \
+				"		}" \
+				"	false" \
+				"}"
+		}
+	}
+}
