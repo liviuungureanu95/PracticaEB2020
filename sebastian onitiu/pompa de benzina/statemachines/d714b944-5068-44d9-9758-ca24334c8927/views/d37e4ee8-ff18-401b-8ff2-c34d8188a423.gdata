@@ -1,0 +1,742 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(d37e4ee8-ff18-401b-8ff2-c34d8188a423)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(e2da4e69-457f-4874-ad4a-75a7e95e147b)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(89ceec36-ff18-4a20-aa11-29f76acc4141)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "mesaj final"
+					visible: false
+					width: 177
+					height: 30
+					x: 244
+					y: 3
+					text: "Rezervorul a fost incarcat!"
+					textColor: #FFFFFFFF
+					font: font_resource(1efba1b9-9410-4912-ac32-8060c6b8561c)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 20
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "background gri"
+			visible: true
+			width: 461
+			height: 305
+			x: 8
+			y: 6
+			fillColor: #A9A9A9FF
+		}, 
+		GtfImage(5d1eafbc-b88d-4c83-aa36-2811b55e1ca3)
+		{
+			features: feature_list [
+				ScaleMode(d0439648-0dbf-48df-8d37-082763fc4ad5)
+				{
+					scaleMode: 1
+				}]
+			children: children_list [
+				GtfRectangle(c71d1704-6be6-4b53-b835-8b7ff5c8e719)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfParallelAnimation(e5651824-3385-4293-800a-9c59753da145)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(78741c47-1520-48bd-84f9-5986761a8f78)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear"
+									enabled: true
+									delay: 0
+									duration: 5000
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 0
+									end: 15
+									target: width@c71d1704-6be6-4b53-b835-8b7ff5c8e719 (propref<int>)
+								}]
+							name: "Animation 3"
+							enabled: true
+							repeat: 1
+							alternating: true
+							scale: 1F
+							onPlay: function<void,int,bool>(8d6fde44-25cd-483f-b183-0e835f8d4919)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(dcb0db5c-2010-4a8a-8457-d039ac7d6639)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(e0cd8d5a-48ba-493f-8532-01a0974c0589)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							"Conditional script": conditional_script(986232db-8ddb-4496-8c0d-379d7b4bee47)
+							{
+								triggerList: trigger_list(304218b0-e842-4fcd-aa60-05232247e4d6)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(f4281e3c-0017-4acc-8ba7-c3abe98a67fe)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	f:animation_play(v:this->^->\"Animation 3\")" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "Rectangle 4 copy 4 copy 1"
+					visible: true
+					width: 5
+					height: 15
+					x: 356
+					y: 41
+					fillColor: #ADFF2FFF
+				}]
+			name: "Image 3"
+			visible: true
+			width: 268
+			height: 271
+			x: 217
+			y: 19
+			image: image_resource(a5ccc332-7e59-49fd-a414-17fab6c6de3b)
+			{
+				file: "pompa.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfRectangle(48244115-e5fe-410e-aec0-6c0a3e1a7456)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "backgr. consum"
+			visible: true
+			width: 122
+			height: 31
+			x: 280
+			y: 64
+			fillColor: #F8F8FFFF
+		}, 
+		GtfContainer(e173d168-81ec-4e5e-b44e-b57e8824bef6)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(861a9326-6e71-4c00-a6e9-f3ecef950607)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfParallelAnimation(cc1f6dab-6fba-4387-b205-5bc56a9ab633)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(fbd7dabe-3d2f-441e-8381-bc1b9387cd1f)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear"
+									enabled: true
+									delay: 0
+									duration: 5000
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 0
+									end: 15
+									target: width@861a9326-6e71-4c00-a6e9-f3ecef950607 (propref<int>)
+								}]
+							name: "Animation 3"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(391ab786-2829-4e57-a072-e765c99c700b)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(d1fe7db4-62c2-4928-a095-5b0a42c76bc8)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(7bf9caf6-80fb-4b8a-a8bd-0bb5c6f345c2)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}]
+					name: "Rectangle 4 copy 1"
+					visible: true
+					width: 5
+					height: 15
+					x: 301
+					y: 43
+					fillColor: #ADFF2FFF
+				}, 
+				GtfRectangle(cb2d112a-5e36-4325-863b-a11bea1ea30c)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfParallelAnimation(47820a79-70e2-41b8-9792-f2744ecd1a98)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(72d215b4-b64e-414e-b7b8-6824c39f9536)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear"
+									enabled: true
+									delay: 0
+									duration: 5000
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 0
+									end: 15
+									target: width@cb2d112a-5e36-4325-863b-a11bea1ea30c (propref<int>)
+								}]
+							name: "Animation 3"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(20e6fc35-82d4-4561-9cf5-34d3d592b93a)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(cd07218d-5d69-4332-be42-fad87eabf0ee)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(41f08e88-abfd-413e-8010-0d9a7c009112)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}]
+					name: "Rectangle 4 copy 2"
+					visible: true
+					width: 5
+					height: 15
+					x: 322
+					y: 43
+					fillColor: #ADFF2FFF
+				}, 
+				GtfRectangle(450e1412-ba6e-41bd-aefe-93d75a3c5558)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfParallelAnimation(527232f9-3a4f-4ec9-b59f-45a999b7a9f7)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(00417a69-c81c-4597-8a8f-5d5dbda357b7)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear"
+									enabled: true
+									delay: 0
+									duration: 5000
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 0
+									end: 15
+									target: width@450e1412-ba6e-41bd-aefe-93d75a3c5558 (propref<int>)
+								}]
+							name: "Animation 3"
+							enabled: true
+							repeat: 1
+							alternating: true
+							scale: 1F
+							onPlay: function<void,int,bool>(7f958f86-038e-4bc5-88f8-0f933c5a825f)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(f114368a-11c2-4e0b-8be3-4fa1611b6934)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(3c16c58f-7c59-4597-8db9-5472028cef2b)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}]
+					name: "Rectangle 4 copy 3"
+					visible: true
+					width: 5
+					height: 15
+					x: 343
+					y: 43
+					fillColor: #ADFF2FFF
+				}, 
+				GtfRectangle(31e7e1c4-2f0c-4f49-9f51-896168933ee1)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfParallelAnimation(625698b4-2231-4fd2-8f45-cb3337afddf5)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(4245e45a-01b8-4f88-a99a-71aa24212cdf)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear"
+									enabled: true
+									delay: 0
+									duration: 5000
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 0
+									end: 15
+									target: width@31e7e1c4-2f0c-4f49-9f51-896168933ee1 (propref<int>)
+								}]
+							name: "Animation 3"
+							enabled: true
+							repeat: 1
+							alternating: true
+							scale: 1F
+							onPlay: function<void,int,bool>(2454726a-39fe-4457-9e89-201eadccd752)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(99a08e32-bfd5-4087-8eed-2c399eb0ef6e)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(c9f2009d-cd4c-41db-97e6-325f04c86671)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}]
+					name: "Rectangle 4 copy 4"
+					visible: true
+					width: 5
+					height: 15
+					x: 364
+					y: 43
+					fillColor: #ADFF2FFF
+				}, 
+				GtfRectangle(7f6cf779-ef96-460a-be28-f7ca471d403f)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfParallelAnimation(59d86808-d83e-4a40-a3b9-8b10457f8960)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(57ce041e-fd03-4e18-867d-e37c747ef5ca)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear"
+									enabled: true
+									delay: 0
+									duration: 5000
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 0
+									end: 15
+									target: width@7f6cf779-ef96-460a-be28-f7ca471d403f (propref<int>)
+								}]
+							name: "Animation 3"
+							enabled: true
+							repeat: 1
+							alternating: true
+							scale: 1F
+							onPlay: function<void,int,bool>(e8b54d1d-7c79-4fdd-ad29-6d143f903192)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(cd6fbe10-a38d-4939-ae47-0d545ada6536)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(de2c2d76-8f4c-4cec-995c-2dc4368e5783)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}]
+					name: "Rectangle 4 copy 4 copy 1"
+					visible: true
+					width: 5
+					height: 15
+					x: 280
+					y: 43
+					fillColor: #ADFF2FFF
+				}, 
+				GtfRectangle(49814fce-5581-4be5-8b90-d99a4e65e2cc)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfParallelAnimation(f2ac0714-8b52-4a22-80aa-93f2192c6cea)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(b7b8738a-f8ba-456a-85fe-e8d5656181e9)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear"
+									enabled: true
+									delay: 0
+									duration: 5000
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 0
+									end: 15
+									target: width@49814fce-5581-4be5-8b90-d99a4e65e2cc (propref<int>)
+								}]
+							name: "Animation 3"
+							enabled: true
+							repeat: 1
+							alternating: true
+							scale: 1F
+							onPlay: function<void,int,bool>(49ed1cb9-7215-45ac-8d6f-dc2edf9e8a65)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(f94343a9-c1f1-4ad3-8f1e-519176dcb262)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(8ee6dce5-d313-469b-9806-8dae0f4decef)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"v:this->^->^->^->\"background gri\"->\"mesaj final\".visible = true" \
+									"}"
+							}
+						}]
+					name: "Rectangle 4 copy 4 copy 2"
+					visible: true
+					width: 5
+					height: 15
+					x: 385
+					y: 43
+					fillColor: #ADFF2FFF
+				}]
+			name: "Container cu animatii"
+			visible: false
+			width: 103
+			height: 97
+			x: 7
+			y: 1
+		}, 
+		GtfLabel(94cd9c8d-5529-42a3-a3a8-19d226fdc690)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "PRET DE PLATIT"
+			visible: false
+			width: 61
+			height: 32
+			x: 293
+			y: 103
+			text: string_scriptedValue(bb9e109a-efd4-4eca-a329-5917a02d89e9)
+			{
+				triggerList: trigger_list(0e86d899-c81d-4380-8c39-42f551a3b153)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(b78ee8e9-5499-472a-9ed2-734e1756edb9)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(d842c8f5-b807-4cfd-9591-50fa83615c1f)
+				{
+					script: "function()" \
+						"{" \
+						"	f:float2string(f:string2float(v:this->^->\"nr litrii\".text)* 4.86)" \
+						"}"
+				}
+				write: function<bool,string>(013bd0e0-e06e-4aa3-aedf-8e69dd9e2794)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #FFFFFFFF
+			font: font_resource(f6f48e83-2d6e-49f4-9306-cbfa5cb3574c)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(a9eae5aa-ed10-4f9d-8f36-1218b3a28857)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "RON"
+			visible: false
+			width: 30
+			height: 34
+			x: 361
+			y: 101
+			text: "RON"
+			textColor: #FFFFFFFF
+			font: font_resource(6177023b-7025-44d8-a4e9-d80716502553)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 20
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(22880e7c-52cd-42c7-8ad7-12b6ff008421)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "text simplu"
+			visible: true
+			width: 255
+			height: 38
+			x: 13
+			y: 43
+			text: "Selectati numarul de litrii"
+			textColor: #FFFFFFFF
+			font: font_resource(63a068a8-9cb8-4f8f-a75b-eaeed1c54633)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfImage(55b7497d-8c6a-44d4-98af-f178c358c9fa)
+		{
+			features: feature_list [
+				TouchPressed(0dd86249-459d-4c60-8e09-ff99ab2acc58)
+				{
+					touchPressed: function<bool,int,int,int,int>(4d2283c4-914b-443f-8da2-b29a79576000)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->\"nr litrii\".text = f:int2string(f:string2int(v:this->^->\"nr litrii\".text)+1)" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(ae66a351-3dd2-4d56-b541-fcc4abd25869)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "plus"
+			visible: true
+			width: 64
+			height: 64
+			x: 108
+			y: 111
+			image: image_resource(95e29048-cc89-47b7-a788-98d423ec5da3)
+			{
+				file: "plus.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(1454a494-f607-408d-95a2-9df51a34ba63)
+		{
+			features: feature_list [
+				TouchPressed(bf55916a-e4d6-4160-979c-98d7b3755756)
+				{
+					touchPressed: function<bool,int,int,int,int>(3ba9bb97-0d13-4c4d-b756-2456a0005f09)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(v:this->^->\"nr litrii\".text != \"0\")" \
+							"	v:this->^->\"nr litrii\".text = f:int2string(f:string2int(v:this->^->\"nr litrii\".text)-1)" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(aeded55c-fed4-4673-a5a2-d38c26746d1a)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "minus"
+			visible: true
+			width: 64
+			height: 64
+			x: 33
+			y: 110
+			image: image_resource(543297af-3c34-447b-9952-e60cafdfdaf1)
+			{
+				file: "minus.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(bab1d4d9-f371-4431-b222-80d1b05b625a)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "nr litrii"
+			visible: true
+			width: 69
+			height: 30
+			x: 308
+			y: 65
+			text: "0"
+			textColor: #000000FF
+			font: font_resource(fe2920d4-5a6f-41fe-858e-7bbffbdffa37)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfImage(dbfa9fcb-b653-44be-9425-a8a45a452a65)
+		{
+			features: feature_list [
+				ScaleMode(d6f9f3e0-131f-4a5d-b0ae-c77c39beebde)
+				{
+					scaleMode: 1
+				}, 
+				TouchPressed(5a585e26-cbed-4768-a59d-f6e2cfdb1b64)
+				{
+					touchPressed: function<bool,int,int,int,int>(3f7b39ba-3047-4c9b-bb02-a9064348f511)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	f:animation_play(v:this->^->\"Container cu animatii\"->\"Rectangle 4 copy 1\"->\"Animation 3\")" \
+							"    f:animation_play(v:this->^->\"Container cu animatii\"->\"Rectangle 4 copy 2\"->\"Animation 3\")" \
+							"    f:animation_play(v:this->^->\"Container cu animatii\"->\"Rectangle 4 copy 3\"->\"Animation 3\")" \
+							"    f:animation_play(v:this->^->\"Container cu animatii\"->\"Rectangle 4 copy 4\"->\"Animation 3\")" \
+							"    f:animation_play(v:this->^->\"Container cu animatii\"->\"Rectangle 4 copy 4 copy 1\"->\"Animation 3\")" \
+							"    f:animation_play(v:this->^->\"Container cu animatii\"->\"Rectangle 4 copy 4 copy 2\"->\"Animation 3\")" \
+							"    v:this->^->\"PRET DE PLATIT\".visible = true" \
+							"    v:this->^->RON.visible = true" \
+							"    v:this->^->\"Container cu animatii\".visible= true" \
+							"    fire_delayed 6500 , ev:goBack()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(e8c8506b-2a78-4822-939d-1eb24127d256)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "start"
+			visible: true
+			width: 100
+			height: 108
+			x: 53
+			y: 175
+			image: image_resource(08822e25-5a8b-4666-a4ec-034030dc137c)
+			{
+				file: "start.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "View 2"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}
