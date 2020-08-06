@@ -1,0 +1,58 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfImage_template(3a291267-c06e-4504-83f5-553f41a29e31)
+{
+	name: "ImageButton"
+	structure: GtfImage(8d7c4c03-f402-4b41-bf8b-ddb4ea9f49da)
+	{
+		features: feature_list [
+			ScaleMode(6e47f5be-76bb-43e5-81c4-c591322f497d)
+			{
+				scaleMode: 1
+			}, 
+			TouchPressed(75093d52-251e-4f8f-b625-1f3b0b3cb4a4)
+			{
+				touchPressed: function<bool,int,int,int,int>(79431004-e191-4aeb-9dcd-e69810b54e86)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.pressAction()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(3f44aab7-8ec2-42b0-acf8-a13af0584f9f)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list []
+		name: "Image 1"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		image: image_resource(1f9e3002-913c-4456-a164-e54172287d20)
+		{
+			file: "diesel.png"
+		}
+		sRGB: false
+		horizontalAlign: 0
+		verticalAlign: 1
+		pressAction: function<bool>(f1a98595-abbd-46f3-a124-4355a6e45d11)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	pressAction: pressAction@8d7c4c03-f402-4b41-bf8b-ddb4ea9f49da (propref<function<bool>>)
+	x: x@8d7c4c03-f402-4b41-bf8b-ddb4ea9f49da (propref<int>)
+	y: y@8d7c4c03-f402-4b41-bf8b-ddb4ea9f49da (propref<int>)
+	image: image@8d7c4c03-f402-4b41-bf8b-ddb4ea9f49da (propref<image>)
+}
