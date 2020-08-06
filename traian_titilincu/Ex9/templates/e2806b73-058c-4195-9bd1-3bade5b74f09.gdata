@@ -1,0 +1,426 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(e2806b73-058c-4195-9bd1-3bade5b74f09)
+{
+	name: "Fill"
+	structure: GtfContainer(706a233a-2898-46dc-a17d-eb39157b54ef)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(918a00d7-98f9-46a3-a19b-ba48a52b3800)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfContainer_template_instance(5735442e-8299-4db2-beab-447c4e1dcc15)
+					{
+						name: "Button 1"
+						template: @41ce04cd-2094-44e3-8ff5-5a3c13730ca2 (objectref<GtfContainer_template>)
+						children: children_list []
+						touchShortReleased: function<bool,int,int,int,int>(b779521f-74c0-477b-80f7-f56fdf53d78d)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	false" \
+								"}"
+						}
+						x: x@41ce04cd-2094-44e3-8ff5-5a3c13730ca2 (propref<int>)
+						y: y@41ce04cd-2094-44e3-8ff5-5a3c13730ca2 (propref<int>)
+						text: @ee41b365-a11c-47a5-b56a-00461e45c1fa (objectref<string>)
+					}, 
+					GtfLabel(fa786dc0-ea7c-46e5-bcb5-44a873632764)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Label 1"
+						visible: true
+						width: 40
+						height: 40
+						x: 0
+						y: 40
+						text: string_scriptedValue(11634b90-82e8-4cf9-b75d-1339332bfa55)
+						{
+							triggerList: trigger_list(0a0617e6-a965-4bfa-8709-de81e53bf2f6)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(8049feaf-7226-490c-8642-ca444c27fc77)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<string>(9a3e078b-cb4c-4757-8dcd-b45d13272df7)
+							{
+								script: "function()" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	f:float2string(dp:price) + \"\"" \
+									"}"
+							}
+							write: function<bool,string>(102e1e9a-6ad1-4170-a636-c0073ef2a435)
+							{
+								script: "function(v:arg0::string)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						textColor: #FFFFFFFF
+						font: font_resource(5d4455f2-3136-4d01-8ca3-e52ce5e9d0b4)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 15
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfLabel(ef4df50f-4db4-4145-97d9-ea131d3eba64)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "price"
+						visible: true
+						width: 25
+						height: 40
+						x: 0
+						y: 80
+						text: string_scriptedValue(9504978a-39d1-4f18-a637-f0a5f79c40b5)
+						{
+							triggerList: trigger_list(97012496-00f7-4975-8ca1-3bfcb0f86447)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(4d050c77-dd68-4512-a05b-06e2bafcbd43)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<string>(6f992ad4-1d6a-452d-80f4-3dfee94366a7)
+							{
+								script: "function()" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	f:float2string(dp:quantity) + \"\"" \
+									"}"
+							}
+							write: function<bool,string>(c0497e70-bb12-4871-9824-6ab5062e292f)
+							{
+								script: "function(v:arg0::string)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						textColor: #FFFFFFFF
+						font: font_resource(673af0e4-2a6f-49e5-bf8f-0963b940ba9b)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 25
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfLabel(56a7217a-1201-484c-b202-4cc915e7bb29)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "RON"
+						visible: true
+						width: 40
+						height: 40
+						x: 0
+						y: 150
+						text: "RON"
+						textColor: #FFFFFFFF
+						font: font_resource(adf217d9-b434-4415-8ee2-7269b7adebae)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 25
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfLabel(832c9632-5cca-4b87-a240-f7fbf475cf0a)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "quantity"
+						visible: true
+						width: 32
+						height: 40
+						x: 5
+						y: 120
+						text: string_scriptedValue(06ce28e5-94a0-447e-aec4-dd24faa42778)
+						{
+							triggerList: trigger_list(168e35fe-f501-4136-afc5-53b81b36df78)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(86e99166-dba3-443e-8813-f7b6261755f2)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<string>(889fa557-e8aa-46b4-8f35-25136105d731)
+							{
+								script: "function()" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	f:float2string(dp:totalPrice) + \"L\"" \
+									"}"
+							}
+							write: function<bool,string>(6c667f46-55e5-491f-89ea-533eb3ae5b9f)
+							{
+								script: "function(v:arg0::string)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						textColor: #FFFFFFFF
+						font: font_resource(9a22c173-ab63-453a-aed0-257a98f28112)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 25
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfLabel(e7eb12d4-096d-4746-99eb-ed14347c106b)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "L"
+						visible: true
+						width: 40
+						height: 40
+						x: 27
+						y: 80
+						text: "L"
+						textColor: #FFFFFFFF
+						font: font_resource(fe4e8f2b-a2a9-4733-bb9b-07dc360bf390)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 25
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}, 
+					GtfEllipse(229f4c72-b93d-4c11-9d15-bb87140ddeb8)
+					{
+						features: feature_list [
+							TouchShortReleased(776f6d02-4562-45d4-9a11-b87ab96f08ea)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(60e09027-9b20-443e-9550-946fb84b6806)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    if(v:this->\"Start/Stop\".text == \"START\")" \
+										"    {" \
+										"    	v:this.fillColor = #FF0000" \
+										"    	v:this->\"Start/Stop\".text = \"STOP\"" \
+										"    	f:animation_play(v:this->^->\"Loading Bar\"->\"Progress Bar\"->\"Animation 1\")" \
+										"    	f:animation_play(v:this->^->\"Loading Bar\"->\"Progress Bar\"->quantityAnimation)" \
+										"    }" \
+										"    else" \
+										"    {" \
+										"    	v:this.fillColor = #FFA500" \
+										"    	v:this->\"Start/Stop\".text = \"START\"" \
+										"    	f:animation_pause(v:this->^->\"Loading Bar\"->\"Progress Bar\"->\"Animation 1\")" \
+										"    	f:animation_cancel_reset(v:this->^->\"Loading Bar\"->\"Progress Bar\"->\"Animation 1\")" \
+										"    	f:animation_pause(v:this->^->\"Loading Bar\"->\"Progress Bar\"->quantityAnimation)" \
+										"    }" \
+										"    " \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(231c9be8-245d-4787-b3c5-e1f340b2a391)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list [
+							GtfLabel(39acc847-61cc-48c5-b9f5-5d4e7be70b49)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Start/Stop"
+								visible: true
+								width: 40
+								height: 40
+								x: -3
+								y: -3
+								text: "START"
+								textColor: #FFFFFFFF
+								font: font_resource(ea85c4e4-5903-4ee5-beaa-437daa295179)
+								{
+									file: "PT_Sans_Narrow.ttf"
+									size: 15
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}]
+						name: "Start/Stop"
+						visible: true
+						width: 35
+						height: 35
+						x: 2
+						y: 270
+						fillColor: #FFA500FF
+						arcWidth: 0
+						centralAngle: 360F
+						sectorRotation: 0F
+					}, 
+					GtfRectangle(b5a6c0d2-9120-42fa-afd2-7a07100a5f41)
+					{
+						features: feature_list [
+							Border(3e6b52ec-63ab-4a20-a2fe-c19f315dd58f)
+							{
+								borderThickness: 3
+								borderColor: #FFFFFFFF
+								borderStyle: 0
+							}]
+						children: children_list [
+							GtfRectangle(f26e2587-ca5e-45e9-8507-01d522f3553e)
+							{
+								features: feature_list []
+								children: children_list [
+									GtfParallelAnimation(49b3cab5-3561-48ca-ab31-e636ff0462d0)
+									{
+										features: feature_list []
+										children: children_list [
+											GtfLinearInterpolationS32(d9cda680-f440-45da-978f-68159d17e786)
+											{
+												features: feature_list []
+												children: children_list []
+												name: "progress_curve"
+												enabled: true
+												delay: 0
+												duration: 1000
+												repeat: 0
+												alternating: false
+												relative: false
+												start: 0
+												end: 70
+												target: height@f26e2587-ca5e-45e9-8507-01d522f3553e (propref<int>)
+											}]
+										name: "Animation 1"
+										enabled: true
+										repeat: 0
+										alternating: false
+										scale: 2F
+										onPlay: function<void,int,bool>(89733104-8854-4ad8-8c26-00058e8b286d)
+										{
+											script: "function(v:animation_time::int, v:forward::bool)" \
+												"{" \
+												"	dp:quantity += 0.5" \
+												"}"
+										}
+										onPause: function<void,int>(cf9b7592-4442-478f-801c-3f7c5e315168)
+										{
+											script: "function(v:animation_time::int)" \
+												"{" \
+												"" \
+												"}"
+										}
+										onTerminate: function<void,int,int>(52b4cec4-4c58-4ff4-9eb0-7ee87b67724d)
+										{
+											script: "function(v:animation_time::int, v:terminate::int)" \
+												"{" \
+												"	" \
+												"}"
+										}
+									}, 
+									GtfParallelAnimation(c839adf3-bb7c-4fad-9c7c-922c7ea43818)
+									{
+										features: feature_list []
+										children: children_list [
+											GtfLinearInterpolationFloat(0a8a687a-73a1-4292-a988-e079dc1d0455)
+											{
+												features: feature_list []
+												children: children_list []
+												name: "increase"
+												enabled: true
+												delay: 0
+												duration: 100000
+												repeat: 1
+												alternating: false
+												relative: false
+												start: 0F
+												end: 100F
+												target: quantity@f26e2587-ca5e-45e9-8507-01d522f3553e (propref<float>)
+											}]
+										name: "quantityAnimation"
+										enabled: true
+										repeat: 1
+										alternating: false
+										scale: 1F
+										onPlay: function<void,int,bool>(e752ff17-3a82-445e-92d9-6a5ac1bf45c8)
+										{
+											script: "function(v:animation_time::int, v:forward::bool)" \
+												"{" \
+												"" \
+												"}"
+										}
+										onPause: function<void,int>(4bad4c27-0d65-461b-b78e-708cbaefaa89)
+										{
+											script: "function(v:animation_time::int)" \
+												"{" \
+												"" \
+												"}"
+										}
+										onTerminate: function<void,int,int>(f71634d9-7410-4240-8368-69dac74daa78)
+										{
+											script: "function(v:animation_time::int, v:terminate::int)" \
+												"{" \
+												"" \
+												"}"
+										}
+									}]
+								name: "Progress Bar"
+								visible: true
+								width: 20
+								height: 0
+								x: 0
+								y: 0
+								fillColor: #FF0000FF
+								quantity: @c9712fbf-7d3b-401b-a357-37498a4b126c (objectref<float>)
+							}]
+						name: "Loading Bar"
+						visible: true
+						width: 20
+						height: 70
+						x: 10
+						y: 190
+						fillColor: #FFFFFFFF
+					}]
+				name: "Rectangle 1"
+				visible: true
+				width: width@706a233a-2898-46dc-a17d-eb39157b54ef (propref<int>)
+				height: height@706a233a-2898-46dc-a17d-eb39157b54ef (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #006400FF
+			}]
+		name: "Elements"
+		visible: true
+		width: 40
+		height: 320
+		x: 0
+		y: 0
+	}
+}

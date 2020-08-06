@@ -1,0 +1,86 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(41ce04cd-2094-44e3-8ff5-5a3c13730ca2)
+{
+	name: "Button"
+	structure: GtfContainer(ddf2246a-c704-4e41-ad0a-31f76826b730)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(e796bee9-84de-4071-bb37-2f4943e24188)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLabel(2c867289-2198-40b4-b6f2-467770adf3d9)
+					{
+						features: feature_list [
+							TouchShortReleased(3ed92d5f-b47f-4a29-8514-24dfc7015f6b)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(d78894a2-4005-43fc-8ca6-d5d7af8a6ea5)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    if(v:this.text == \"DIESEL\")" \
+										"    {" \
+										"    	dp:fuelText = \"DIESEL\"" \
+										"    	dp:price = 4.70" \
+										"    }" \
+										"    else if(v:this.text == \"BENZINA\")" \
+										"    {" \
+										"    	dp:fuelText = \"BENZINA\"" \
+										"    	dp:price = 4.62" \
+										"    }" \
+										"    else if(v:this.text == \"GPL\")" \
+										"    {" \
+										"    	dp:fuelText = \"GPL\"" \
+										"    	dp:price = 2.56" \
+										"    }" \
+										"    fire ev:goTo_fuel()" \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(3b46c16f-1deb-4c37-ae1f-4c93e599cc0c)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list []
+						name: "Label 2"
+						visible: true
+						width: width@e796bee9-84de-4071-bb37-2f4943e24188 (propref<int>)
+						height: height@ddf2246a-c704-4e41-ad0a-31f76826b730 (propref<int>)
+						x: 0
+						y: 0
+						text: "DIESEL"
+						textColor: #000000FF
+						font: font_resource(2200267f-7bf9-4ec2-992a-806e1e38601d)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 12
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "Rectangle 2"
+				visible: true
+				width: width@ddf2246a-c704-4e41-ad0a-31f76826b730 (propref<int>)
+				height: height@ddf2246a-c704-4e41-ad0a-31f76826b730 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFFFF
+			}]
+		name: "Button Container"
+		visible: true
+		width: 40
+		height: 40
+		x: 0
+		y: 0
+	}
+	touchShortReleased: touchShortReleased@3ed92d5f-b47f-4a29-8514-24dfc7015f6b (propref<function<bool,int,int,int,int>>)
+	x: x@ddf2246a-c704-4e41-ad0a-31f76826b730 (propref<int>)
+	y: y@ddf2246a-c704-4e41-ad0a-31f76826b730 (propref<int>)
+	text: text@2c867289-2198-40b4-b6f2-467770adf3d9 (propref<string>)
+}
