@@ -1,0 +1,131 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(6c9233ad-0b10-43c1-ac91-038110db4487)
+{
+	name: "T_SimpleButton"
+	structure: GtfContainer(11d19f08-599d-4a71-b1ac-c8e346215191)
+	{
+		features: feature_list [
+			StateFocused(5875bbdc-b841-40a4-9292-a00dc79ab006)
+			{
+				focusable: 3
+				focused: false
+			}, 
+			TouchShortReleased(00585ce2-2f70-411b-ba4a-b8287725ce90)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(eba8788b-3b69-4342-94a8-7088e122d22d)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.buttonEvent()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(b8c2f1c0-275f-4091-a953-fd1a300e34b8)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			MoveIn(c819e42e-6e96-4131-b710-86fd0ee335f7)
+			{
+				moveIn: function<bool,int,int,int,int>(4beb3f7f-03cf-4f79-b910-d4ea8bee1bc5)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	f:focusMoveTo(v:this)" \
+						"    false" \
+						"}"
+				}
+			}]
+		children: children_list [
+			GtfRectangle(6ad9a4d0-c0c1-4814-8d8f-3470d5ff4156)
+			{
+				features: feature_list [
+					Border(e80c81d4-4a3e-4513-a2ed-a3d9d932743f)
+					{
+						borderThickness: 1
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "BackGround"
+				visible: true
+				width: 100
+				height: 100
+				x: 0
+				y: 0
+				fillColor: #008000FF
+			}]
+		name: "SimpleButton"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		setBorder: conditional_script(00a33589-51d3-4972-b00f-471815f55093)
+		{
+			triggerList: trigger_list(68688305-6311-41eb-bcc5-e413e2826995)
+			{
+				script: "v:this.focused" \
+					"v:this.borderFocusedColor" \
+					"v:this.borderColor" \
+					""
+			}
+			onTrigger: function<bool,bool>(ef0cbe35-5841-469c-b387-12ec39ad8839)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	if(v:this.focused)" \
+					"	{" \
+					"		v:this->BackGround.borderColor=v:this.borderFocusedColor" \
+					"	}" \
+					"	else" \
+					"	{" \
+					"		v:this->BackGround.borderColor=v:this.borderColor" \
+					"	}" \
+					"	false" \
+					"}"
+			}
+		}
+		borderColor: #000000FF
+		borderFocusedColor: #FF0000FF
+		buttonEvent: function<bool>(7494c967-13c1-40a9-a7af-94fab28e1fc0)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		reactOnReturnKey: conditional_script(7190935f-759a-44e7-8727-09253ec163ec)
+		{
+			triggerList: trigger_list(4b89c956-9277-47f8-9815-657907a4baf6)
+			{
+				script: "v:this.focused" \
+					"ev:reactOn_ReturnKey" \
+					""
+			}
+			onTrigger: function<bool,bool>(abe7f47e-8006-4fd0-9aa7-d772b283529e)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	if(v:this.focused)" \
+					"	{" \
+					"		match_event v:event = ev:reactOn_ReturnKey in" \
+					"		{" \
+					"			v:this.buttonEvent()" \
+					"		}" \
+					"" \
+					"	}" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+	x: x@11d19f08-599d-4a71-b1ac-c8e346215191 (propref<int>)
+	y: y@11d19f08-599d-4a71-b1ac-c8e346215191 (propref<int>)
+	buttonEvent: buttonEvent@11d19f08-599d-4a71-b1ac-c8e346215191 (propref<function<bool>>)
+}
