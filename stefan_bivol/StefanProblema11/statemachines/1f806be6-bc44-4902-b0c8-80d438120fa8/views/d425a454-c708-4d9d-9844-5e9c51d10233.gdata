@@ -1,0 +1,115 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(d425a454-c708-4d9d-9844-5e9c51d10233)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(4df2c6cf-c5c7-43b9-ac8a-877d05105ab3)
+		{
+			features: feature_list [
+				Border(746ad168-6166-4213-a4c0-6bbd3491c194)
+				{
+					borderThickness: 1
+					borderColor: #32CD32FF
+					borderStyle: 0
+				}]
+			children: children_list [
+				GtfLabel(f3175e26-18c7-41f1-b5aa-040689d1e6c7)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Info_Label"
+					visible: true
+					width: 400
+					height: 30
+					x: 0
+					y: 50
+					text: "Conditiile pentru a porni"
+					textColor: #000000FF
+					font: font_resource(a14e7285-1e69-4586-a0ef-616f09247a9f)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 25
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(3e71e5bd-dca5-42cf-9c54-10638898d93b)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Info2_Label"
+					visible: true
+					width: 400
+					height: 30
+					x: 0
+					y: 75
+					text: "programul de spalare nu sunt indeplinite"
+					textColor: #000000FF
+					font: font_resource(46e120f1-1518-4d70-94c4-a090ff97c536)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 25
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfImage(4a6bfc01-4899-4e67-9e43-5697b3bf523f)
+				{
+					features: feature_list [
+						ScaleMode(097d60da-4b20-475b-8f91-cb9e77f073e7)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "Warning_Image"
+					visible: true
+					width: 70
+					height: 60
+					x: 165
+					y: 110
+					image: image_resource(bd480a8d-ba5a-4784-bc09-a8e571a0490d)
+					{
+						file: "Warning_Icon.png"
+					}
+					sRGB: false
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(0ec187ed-f538-4d8b-b631-1d7b4a72fedb)
+				{
+					name: "Ok_Button"
+					template: @70defd21-7f64-4410-bfcd-e1a4766cd439 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 160
+					y: 190
+					touchShortReleased: function<bool,int,int,int,int>(683d66b2-00a6-43e6-935d-2b8833e0a0fb)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.fillColor = v:this.Colors[1] " \
+							"	fire ev:dismissWarning()" \
+							"    false" \
+							"}"
+					}
+					text: "Ok"
+					Colors: Colors@70defd21-7f64-4410-bfcd-e1a4766cd439 (propref<colorlist>)
+					fillColor: fillColor@70defd21-7f64-4410-bfcd-e1a4766cd439 (propref<color>)
+					width: width@70defd21-7f64-4410-bfcd-e1a4766cd439 (propref<int>)
+					height: height@70defd21-7f64-4410-bfcd-e1a4766cd439 (propref<int>)
+				}]
+			name: "Background_Rectangle"
+			visible: true
+			width: 400
+			height: 240
+			x: 0
+			y: 0
+			fillColor: #98FB98FF
+		}]
+	name: "Warning_Start_Program_View"
+	visible: true
+	width: 400
+	height: 240
+	x: 200
+	y: 119
+}

@@ -1,0 +1,95 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(c5f1f2df-3a39-4c0e-ad75-8b1fb7ee11ad)
+{
+	name: "Radio Button"
+	structure: GtfContainer(f1775151-7088-4818-a45b-0e4f3cf6e226)
+	{
+		features: feature_list [
+			TouchShortReleased(a2e4d7b4-30e6-4493-8799-3827b3f3c2c9)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(e9ae5183-2d87-4cef-b0c4-466a997c9525)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	if(v:this.Pressed == true)" \
+						"		{" \
+						"			v:this.Pressed = false" \
+						"			v:this->Radio_Elipse.visible = false" \
+						"		}" \
+						"	else" \
+						"		{" \
+						"			v:this.Pressed = true" \
+						"			v:this->Radio_Elipse.visible = true" \
+						"    	}" \
+						"    " \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(32b3ee80-91a3-4199-a21c-56ed00573161)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfEllipse(29234db7-2192-41fb-bf45-85165c005189)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Border_Elipse"
+				visible: true
+				width: width@f1775151-7088-4818-a45b-0e4f3cf6e226 (propref<int>)
+				height: height@f1775151-7088-4818-a45b-0e4f3cf6e226 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #000000FF
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}, 
+			GtfEllipse(86ffbb40-bf78-4573-a9ec-b4e8694becf1)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Fundal_Elipse"
+				visible: true
+				width: 28
+				height: 28
+				x: 3
+				y: 3
+				fillColor: #FFFFFFFF
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}, 
+			GtfEllipse(e63b7c90-4507-4458-946f-9c74d2781f89)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Radio_Elipse"
+				visible: true
+				width: 25
+				height: 25
+				x: 5
+				y: 5
+				fillColor: #00FF00FF
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}]
+		name: "Radio_Button"
+		visible: true
+		width: 35
+		height: 35
+		x: 0
+		y: 0
+		Pressed: false
+	}
+	x: x@f1775151-7088-4818-a45b-0e4f3cf6e226 (propref<int>)
+	y: y@f1775151-7088-4818-a45b-0e4f3cf6e226 (propref<int>)
+	touchShortReleased: touchShortReleased@a2e4d7b4-30e6-4493-8799-3827b3f3c2c9 (propref<function<bool,int,int,int,int>>)
+	visible: visible@e63b7c90-4507-4458-946f-9c74d2781f89 (propref<bool>)
+}
