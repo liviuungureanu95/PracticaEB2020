@@ -1,0 +1,210 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(bb966bb0-b0f4-48aa-a7dd-b3025b8dfc66)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(5bec046d-d483-40b4-a4c3-65043f2425dc)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "transparent_background"
+			visible: true
+			width: width@bb966bb0-b0f4-48aa-a7dd-b3025b8dfc66 (propref<int>)
+			height: height@bb966bb0-b0f4-48aa-a7dd-b3025b8dfc66 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #FFFFFF00
+		}, 
+		GtfRectangle(a9e3358f-fc80-471f-ace2-a6b75ecc8676)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(264f2c70-235e-449f-9e97-ffd184cdcf54)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "text"
+					visible: true
+					width: width@a9e3358f-fc80-471f-ace2-a6b75ecc8676 (propref<int>)
+					height: 100
+					x: 0
+					y: 0
+					text: string_scriptedValue(5f488a12-94db-4fd8-bdf4-763fe641c625)
+					{
+						triggerList: trigger_list(eacbcbd1-7e07-4777-bb08-cafdd8fb38f6)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(6a10d9dc-69ae-4976-b1ab-3057a1f9cfb2)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(e4795bce-f8e9-4a63-86bf-29c5b8948ccb)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	dp:choice+\" in preparare\"" \
+								"}"
+						}
+						write: function<bool,string>(a5068432-8198-4a98-8f71-93486635c127)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(343bd511-1c4e-4278-a41a-6bb540db7681)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfRectangle(3340ac0a-8ab2-4abe-9233-0b7cf642f68c)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfParallelAnimation(fa2fbdab-70c3-4a73-8c68-b67ca131f98e)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(328cbe05-4a95-4d40-904e-e4bbd8801cc1)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve"
+									enabled: true
+									delay: 0
+									duration: 3000
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 0
+									end: 400
+									target: width@3340ac0a-8ab2-4abe-9233-0b7cf642f68c (propref<int>)
+								}]
+							name: "Animation"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(3f301e41-0300-4365-a3f2-7483aa4fa49b)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(593e19e5-33dd-4b55-9a79-7d3dad37a65a)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(8b8f28a9-97a3-4225-91aa-a99a6f12bade)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"	f:popDynamicStateMachine(popup_stack:\"Main state\",sm:\"pop-up dynamic state\")" \
+									"}"
+							}
+							play: conditional_script(73ef3888-f067-43a9-82ee-b309cc9c5fa4)
+							{
+								triggerList: trigger_list(ff8d8cdc-11ea-49d7-b7ec-3382dff5805d)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(9c29463e-ab2a-4240-a7cc-431a9ce111ad)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	f:animation_play(v:this)" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "loadingBar"
+					visible: true
+					width: 400
+					height: 50
+					x: 0
+					y: 110
+					fillColor: #000000FF
+				}, 
+				GtfLabel(c57ac870-f025-4ed0-9ac5-2594c749b233)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "percentage"
+					visible: true
+					width: 400
+					height: 50
+					x: 0
+					y: 110
+					text: string_scriptedValue(7853a859-ca38-4c3c-a5f8-4fe16830c7ed)
+					{
+						triggerList: trigger_list(d3c7e7b4-e442-4811-9d80-55a7b888d16f)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(d2fc3dcb-6c1b-49ba-846b-807b06a1bee1)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(ce947b8a-e03a-4af4-9260-a38e06b0b445)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:int2string(v:this->^->loadingBar.width/4)+\"%\"" \
+								"}"
+						}
+						write: function<bool,string>(3dea49de-8b17-428a-aab0-f7997c2a868a)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(45268d05-2533-4b1e-9e01-35ccbc4a9416)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "pop-up_background"
+			visible: true
+			width: 400
+			height: 200
+			x: 200
+			y: 140
+			fillColor: #8B4513FF
+		}]
+	name: "pop-upView"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
