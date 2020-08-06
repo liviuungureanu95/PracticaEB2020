@@ -51,7 +51,21 @@ haptic_statemachine(3e6412aa-5fd8-4de8-8d35-fcce500af461)
 			name: "Fuel State"
 			entry_action: function<void>(none)
 			exit_action: function<void>(none)
-			transitions: haptic_transitions []
+			transitions: haptic_transitions [
+				haptic_transition(1b554130-21b3-4b56-82c8-474b179abde1)
+				{
+					action: function<void>(none)
+					target_state: @6af699eb-c622-48f2-958b-4fc0a230cd40 (objectref<haptic_dialog_state>)
+					source_dock: 0.8273879F
+					target_dock: 0.1690999F
+					curveControlXOffset: 0
+					curveControlYOffset: 0
+					labelXOffset: 10
+					labelYOffset: -10
+					labelRotationAngle: 0
+					event: @42f2388f-80e8-46de-b802-85f925bb0c6d (objectref<event>)
+					condition: function<bool>(none)
+				}]
 			internal_transitions: haptic_internal_transitions []
 			background_color: #6C6C6CFF
 			dialog: (f79002c4-e922-4acc-9a0c-7de16c967685)
