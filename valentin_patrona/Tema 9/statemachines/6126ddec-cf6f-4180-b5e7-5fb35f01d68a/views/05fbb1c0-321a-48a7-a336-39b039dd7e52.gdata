@@ -1,0 +1,140 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(05fbb1c0-321a-48a7-a336-39b039dd7e52)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(c78af2ee-dfe9-4a5e-b693-c6cbe1b7a0da)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfContainer_template_instance(fa5b4fc5-2758-41e5-8efc-7276be39f9ed)
+				{
+					name: "Button 1"
+					template: @6a363f63-12be-413e-aef9-71cd5d80bdf6 (objectref<GtfContainer_template>)
+					children: children_list []
+					image: image_resource(0c209387-cdd2-4a68-96b4-09ffe99bd513)
+					{
+						file: "dippel-oil.png"
+					}
+					x: 69
+					y: 190
+					touchShortReleased: function<bool,int,int,int,int>(8d0e57c6-9aa8-463b-8996-a6d130077e3c)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:buffer=\"benzina\"" \
+							"	dp:bufferPret=dp:PriceList[0]" \
+							"    false" \
+							"}"
+					}
+					width: 60
+					height: 60
+				}, 
+				GtfContainer_template_instance(ab07b632-0326-40ff-bc2c-e4447afae4e7)
+				{
+					name: "Button 2"
+					template: @6a363f63-12be-413e-aef9-71cd5d80bdf6 (objectref<GtfContainer_template>)
+					children: children_list []
+					image: image_resource(9af39f4f-4491-4ce6-a4c9-ab1e69bc5f72)
+					{
+						file: "fuel.png"
+					}
+					x: 205
+					y: 190
+					touchShortReleased: function<bool,int,int,int,int>(3493de8a-a8c8-4ea2-881c-a2c33f7e3f51)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:buffer=diesel" \
+							"	dp:bufferPret=dp:PriceList[1]" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(0da0c620-569e-48f8-a5aa-cf1d6ea2aee3)
+				{
+					name: "Button 3"
+					template: @6a363f63-12be-413e-aef9-71cd5d80bdf6 (objectref<GtfContainer_template>)
+					children: children_list []
+					image: image_resource(9b2a20b2-79a0-47a1-be63-d96bf2622b10)
+					{
+						file: "gas.png"
+					}
+					x: 346
+					y: 190
+					touchShortReleased: function<bool,int,int,int,int>(0084af44-a7f3-4a5a-b5ea-972054fbceb2)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:buffer=gaz" \
+							"	dp:bufferPret=dp:PriceList[2]" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfLabel(88e9c128-f0e2-4dae-a4a7-cde667763425)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 1"
+					visible: true
+					width: width@05fbb1c0-321a-48a7-a336-39b039dd7e52 (propref<int>)
+					height: 100
+					x: 0
+					y: 0
+					text: string_scriptedValue(eda9929b-b3da-46b2-aa04-722eb82d3830)
+					{
+						triggerList: trigger_list(ad5bef8c-0c53-4dbe-ade3-b78892529040)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(5ac99ec1-6617-402c-8c38-5f6b0dda677a)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(04cf5487-f32f-444f-bd57-b9c89e2b792f)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:float2string(dp:pret)+\" <= pret \"+ dp:buffer" \
+								"}"
+						}
+						write: function<bool,string>(264f212f-4bd7-4ebb-9300-06d18ab6d8bf)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(bfb1bcb7-7905-4be6-94c1-add66d80937d)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 40
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Rectangle 1"
+			visible: true
+			width: width@05fbb1c0-321a-48a7-a336-39b039dd7e52 (propref<int>)
+			height: height@05fbb1c0-321a-48a7-a336-39b039dd7e52 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #4169E1FF
+		}]
+	name: "View 1"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}
