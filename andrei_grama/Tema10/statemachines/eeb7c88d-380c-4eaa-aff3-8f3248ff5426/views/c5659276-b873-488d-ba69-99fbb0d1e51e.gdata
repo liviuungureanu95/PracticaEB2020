@@ -1,0 +1,130 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(c5659276-b873-488d-ba69-99fbb0d1e51e)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(c2332af9-870f-4e42-a5a5-a1cda8f778db)
+		{
+			features: feature_list [
+				ScaleMode(52ee5767-745d-4767-a14e-d7ca26d0bba9)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "background"
+			visible: true
+			width: width@c5659276-b873-488d-ba69-99fbb0d1e51e (propref<int>)
+			height: height@c5659276-b873-488d-ba69-99fbb0d1e51e (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(2dc2ebd6-0b57-4175-93a6-109da047bb8b)
+			{
+				file: "valentin-salja-Z3oT1r3Pq0Y-unsplash.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(e04b765e-5279-4f9e-a92f-0ce01e70c797)
+		{
+			features: feature_list [
+				ScaleMode(0f4c70fa-e467-4c1f-91ba-094217ba0c57)
+				{
+					scaleMode: 2
+				}]
+			children: children_list []
+			name: "fruits"
+			visible: true
+			width: height@e04b765e-5279-4f9e-a92f-0ce01e70c797 (propref<int>)
+			height: height@c5659276-b873-488d-ba69-99fbb0d1e51e (propref<int>)
+			x: 80
+			y: 0
+			image: image_resource(8694ca66-80eb-4777-9a83-f9619da28e16)
+			{
+				file: "1b3cfd262a8874832bae3a1628bc7c37.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 1
+		}, 
+		GtfInstantiator(af133e51-e7fb-4c42-9e82-ea0e1e88b20c)
+		{
+			features: feature_list [
+				LayoutPolicyGrid(20d53a25-873f-4e23-8d45-c19dc21b7b61)
+				{
+					horizontalGap: 2
+					verticalGap: 2
+					numRows: 4
+					numColumns: 4
+				}]
+			children: children_list [
+				GtfRectangle(a1e9ed90-cba6-49be-912f-c875e87c2f3c)
+				{
+					features: feature_list [
+						TouchShortReleased(7f93d12e-3de2-4126-8be6-98386fe9aed7)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(a71140c9-3772-440f-9843-33b85a4526b3)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this.borderColor=color:255, 255, 255, 255" \
+									"	dp:selectedItem=v:this.lineIndex" \
+									"	fire ev:goToScale()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(b5a0f123-d21d-4cef-b9fc-7a74869a7f69)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}, 
+						Border(daad83ef-d2d1-4766-ab17-f7ac982ea3b8)
+						{
+							borderThickness: 2
+							borderColor: #FFFFFFFF
+							borderStyle: 0
+						}, 
+						TouchPressed(42046238-f9b1-4314-a769-18be5e7eaa17)
+						{
+							touchPressed: function<bool,int,int,int,int>(39284a18-2ebf-4afb-9c2f-93ee1df745f7)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this.borderColor=color:0, 0, 0, 255" \
+									"    false" \
+									"}"
+							}
+						}, 
+						LineIndex(a74734ce-ebc8-4765-9b93-9cbb7db399da)
+						{
+							lineIndex: 0
+						}]
+					children: children_list []
+					name: "button"
+					visible: true
+					width: 100
+					height: 100
+					x: 0
+					y: 0
+					fillColor: #FFFFFF00
+				}]
+			name: "fruitList"
+			visible: true
+			width: width@e04b765e-5279-4f9e-a92f-0ce01e70c797 (propref<int>)
+			height: height@e04b765e-5279-4f9e-a92f-0ce01e70c797 (propref<int>)
+			x: x@e04b765e-5279-4f9e-a92f-0ce01e70c797 (propref<int>)
+			y: y@e04b765e-5279-4f9e-a92f-0ce01e70c797 (propref<int>)
+			numItems: 16
+			lineMapping: intlist []
+		}]
+	name: "mainView"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}
