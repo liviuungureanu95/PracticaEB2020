@@ -1,0 +1,200 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(e5bced68-f74d-43cd-89fe-92499800eeca)
+{
+	name: "QuickWash_View"
+	template: @402937b4-9511-4b39-8a38-03244e8b9147 (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(c02360e5-56be-41c3-a9e4-30f49a27edba)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Text1"
+			visible: true
+			width: 800
+			height: 50
+			x: 20
+			y: 150
+			text: "Weight(kg): 4"
+			textColor: #FFFFFFFF
+			font: font_resource(4368c424-9126-4769-93fe-02af32a7d9d2)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(86e17f51-f191-4d7e-8bfb-41ecc9d64844)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Text2"
+			visible: true
+			width: 800
+			height: 50
+			x: 20
+			y: 200
+			text: "Program duration(min): 61"
+			textColor: #FFFFFFFF
+			font: font_resource(99bc91c6-1b40-4364-9fde-130b943e1cc0)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(5091a311-0567-47a5-b2cf-21d36277a90e)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Text3"
+			visible: true
+			width: 800
+			height: 50
+			x: 20
+			y: 250
+			text: "Water consumption(L): 47"
+			textColor: #FFFFFFFF
+			font: font_resource(7bccf47d-30c5-463f-a76d-940d73ee247d)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(24ff3e99-9a32-459d-a007-570924aa9236)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Text4"
+			visible: true
+			width: 310
+			height: 100
+			x: 380
+			y: 380
+			text: "Time remaining(s):"
+			textColor: #FFFF00FF
+			font: font_resource(f73018eb-36ea-4038-aaf7-b5e4b968beee)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(04ec529a-3783-46e1-92a6-94044a4ef5c8)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfParallelAnimation(e0272a57-bdc9-48d8-a9b3-632f1c884d58)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationS32(f865ed1a-528b-4041-92c6-3916900cac8d)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Linear interpolation curve 1"
+							enabled: true
+							delay: 10
+							duration: 5000
+							repeat: 1
+							alternating: false
+							relative: false
+							start: 5
+							end: 0
+							target: Counter@04ec529a-3783-46e1-92a6-94044a4ef5c8 (propref<int>)
+						}]
+					name: "ProgramTimer"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(da15daef-d5db-4759-a2e4-1108b474894b)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"	fire ev:goTo_cottons()" \
+							"}"
+					}
+					onPause: function<void,int>(d2bee9ef-fc72-4c05-96f5-bb8b0ae11199)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(5e1d3834-f9dd-4aff-a31d-c2385e4d3c21)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"	fire ev:goTo_main_menu()" \
+							"}"
+					}
+					play_timer: conditional_script(6a71edc2-74b1-4eaa-99a3-a3fd3f3d49ca)
+					{
+						triggerList: trigger_list(8bf158be-5bd2-4688-8dfe-c316ce248b05)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(d6a11075-458a-41d4-879f-9584287c075f)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	f:animation_play(v:this)" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "ProgramTimer"
+			visible: true
+			width: 100
+			height: 100
+			x: 700
+			y: 380
+			text: string_scriptedValue(1c22e2a9-f5af-4165-9e1f-3ebed5bc9619)
+			{
+				triggerList: trigger_list(3ae25354-f6be-4ccf-80e8-eb093a95e37e)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(ec26006e-dd1f-4239-9479-bea41ac09069)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(c8ae12d9-f98b-41f0-96b6-b61b4d71fd08)
+				{
+					script: "function()" \
+						"{" \
+						"	f:int2string(v:this.Counter)" \
+						"}"
+				}
+				write: function<bool,string>(afc9535a-2e6c-45a3-b4d1-c85f5ab1d0d3)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #000000FF
+			font: font_resource(4cd835d8-3561-4d21-bbd1-5d9aa3ed2895)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+			Counter: 0
+		}]
+	text: "Quick Wash Menu"
+}

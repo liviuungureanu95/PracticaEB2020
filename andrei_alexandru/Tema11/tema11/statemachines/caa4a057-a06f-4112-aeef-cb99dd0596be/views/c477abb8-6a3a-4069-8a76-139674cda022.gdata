@@ -1,0 +1,200 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(c477abb8-6a3a-4069-8a76-139674cda022)
+{
+	name: "Cottons_View"
+	template: @402937b4-9511-4b39-8a38-03244e8b9147 (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(1de4d835-50fd-4c6e-b384-1bbf681f764a)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Text1"
+			visible: true
+			width: 800
+			height: 50
+			x: 20
+			y: 150
+			text: "Weight(kg): 5"
+			textColor: #FFFFFFFF
+			font: font_resource(4a570a70-0353-421c-9b1f-8c53673f3bb0)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(392fada6-be53-4826-87f2-84aa4a1032b6)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Text2"
+			visible: true
+			width: 800
+			height: 50
+			x: 20
+			y: 200
+			text: "Program duration(min): 130 "
+			textColor: #FFFFFFFF
+			font: font_resource(7cc1ea70-e7c8-46d1-b2be-56e82f6d6e22)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(46e7932c-5cd8-4bd0-8399-f9a385936011)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Text3"
+			visible: true
+			width: 800
+			height: 50
+			x: 20
+			y: 250
+			text: "Water consumption(L): 53"
+			textColor: #FFFFFFFF
+			font: font_resource(ec613293-3275-4e97-87e4-6cd0f1b22813)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(5fd025f8-d834-4e8a-80f5-629eeda68915)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfParallelAnimation(07fbb34d-fe9c-4141-a776-e5fe03fdb2a1)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationS32(d4fe8739-c5bb-4010-b14b-b2dc117fcc9e)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Linear interpolation curve 1"
+							enabled: true
+							delay: 10
+							duration: 10000
+							repeat: 1
+							alternating: false
+							relative: false
+							start: 10
+							end: 0
+							target: Counter@5fd025f8-d834-4e8a-80f5-629eeda68915 (propref<int>)
+						}]
+					name: "ProgramTimer"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(2693752f-13cc-4c62-a37a-9b6f607a4075)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"	fire ev:goTo_cottons()" \
+							"}"
+					}
+					onPause: function<void,int>(4f1ef5c6-b5dc-476d-baf3-eb26d7ba460a)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(99c291f8-fc35-4ff2-9de2-823efed607c6)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"	fire ev:goTo_main_menu()" \
+							"}"
+					}
+					play_timer: conditional_script(b59c28cc-3af8-487f-94e1-d51357a2e919)
+					{
+						triggerList: trigger_list(c557c5ad-2737-4a9c-b93e-56b197189354)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(9a440624-fa50-485b-ba63-91f79be4ab44)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	f:animation_play(v:this)" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "ProgramTimer"
+			visible: true
+			width: 100
+			height: 100
+			x: 700
+			y: 380
+			text: string_scriptedValue(7323bcaf-ff64-47e2-9144-bd29183c79ec)
+			{
+				triggerList: trigger_list(5c511d87-b3ea-42a4-a426-1cb4a65713a4)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(374bffc3-414b-4c72-8fc8-7d381b10b9fb)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(b64e693b-8e5b-4c2b-86f2-71c10f299a71)
+				{
+					script: "function()" \
+						"{" \
+						"	f:int2string(v:this.Counter)" \
+						"}"
+				}
+				write: function<bool,string>(a0f5fbb8-0f3a-4930-a6dc-881ce42bdab4)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #000000FF
+			font: font_resource(e4fd9c0d-f582-48a6-ad61-8cb44b158a2c)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+			Counter: 0
+		}, 
+		GtfLabel(c17f5899-6b78-4dcd-9468-8024c122d431)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Text4"
+			visible: true
+			width: 310
+			height: 100
+			x: 380
+			y: 380
+			text: "Time remaining(s):"
+			textColor: #FFFF00FF
+			font: font_resource(369e7e05-949d-4098-b6f3-e68fe8062b90)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}]
+	text: "Cottons Menu"
+}
