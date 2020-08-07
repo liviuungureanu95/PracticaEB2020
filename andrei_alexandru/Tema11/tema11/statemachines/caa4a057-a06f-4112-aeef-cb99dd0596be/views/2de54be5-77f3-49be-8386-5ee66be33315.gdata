@@ -1,0 +1,129 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(2de54be5-77f3-49be-8386-5ee66be33315)
+{
+	name: "MainMenu_View"
+	template: @402937b4-9511-4b39-8a38-03244e8b9147 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(780d3d5c-f55a-404e-99a7-10e51d7fe108)
+		{
+			name: "Cottons_Button"
+			template: @d7798844-7b1e-4c2f-8064-69ad06b1f51f (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 50
+			y: 220
+			width: width@d7798844-7b1e-4c2f-8064-69ad06b1f51f (propref<int>)
+			height: height@d7798844-7b1e-4c2f-8064-69ad06b1f51f (propref<int>)
+			fillColor: fillColor@d7798844-7b1e-4c2f-8064-69ad06b1f51f (propref<color>)
+			text: "Cottons"
+			font: font_resource(07982fb0-978a-4d7f-9dd7-f38d9acb3a99)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 35
+			}
+			textColor: #000000FF
+			"text 2": "START"
+			"textColor 2": #006400FF
+			"font 2": "font 2"@d7798844-7b1e-4c2f-8064-69ad06b1f51f (propref<font>)
+			touchShortReleased: function<bool,int,int,int,int>(c78fa69d-96a5-448f-b450-f4f43011b327)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(dp:apa == false || dp:cuva_inchisa == false || dp:detergent == false)" \
+					"		{" \
+					"			fire ev:openPopUp()" \
+					"		}" \
+					"		else" \
+					"		{" \
+					"			fire ev:goTo_cottons()" \
+					"		}" \
+					"		" \
+					"    false" \
+					"}"
+			}
+			focusable: focusable@d7798844-7b1e-4c2f-8064-69ad06b1f51f (propref<int>)
+			focused: focused@d7798844-7b1e-4c2f-8064-69ad06b1f51f (propref<bool>)
+			buttonEvent: buttonEvent@d7798844-7b1e-4c2f-8064-69ad06b1f51f (propref<function<bool>>)
+		}, 
+		GtfContainer_template_instance(d911aa42-84b2-4819-95b7-d73bc28e3bac)
+		{
+			name: "Sports_Button"
+			template: @d7798844-7b1e-4c2f-8064-69ad06b1f51f (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 325
+			y: 220
+			width: width@d7798844-7b1e-4c2f-8064-69ad06b1f51f (propref<int>)
+			height: height@d7798844-7b1e-4c2f-8064-69ad06b1f51f (propref<int>)
+			fillColor: fillColor@d7798844-7b1e-4c2f-8064-69ad06b1f51f (propref<color>)
+			text: "Sports"
+			font: font_resource(fbb91665-1727-476a-b787-34ec61ca2cda)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 35
+			}
+			textColor: #000000FF
+			"text 2": "START"
+			"textColor 2": #006400FF
+			"font 2": "font 2"@d7798844-7b1e-4c2f-8064-69ad06b1f51f (propref<font>)
+			touchShortReleased: function<bool,int,int,int,int>(045bc72a-e6fd-4629-b019-986cb7ca3d9f)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(dp:apa == false || dp:cuva_inchisa == false || dp:detergent == false)" \
+					"	{" \
+					"		fire ev:openPopUp()" \
+					"	}" \
+					"	else" \
+					"	{" \
+					"		fire ev:goTo_sports()" \
+					"	}" \
+					"   " \
+					"   false" \
+					"}"
+			}
+			focusable: focusable@d7798844-7b1e-4c2f-8064-69ad06b1f51f (propref<int>)
+			focused: focused@d7798844-7b1e-4c2f-8064-69ad06b1f51f (propref<bool>)
+			buttonEvent: buttonEvent@d7798844-7b1e-4c2f-8064-69ad06b1f51f (propref<function<bool>>)
+		}, 
+		GtfContainer_template_instance(059a78e6-746e-4704-9830-0b7efca61725)
+		{
+			name: "QuickWash_Button"
+			template: @d7798844-7b1e-4c2f-8064-69ad06b1f51f (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 600
+			y: 220
+			width: width@d7798844-7b1e-4c2f-8064-69ad06b1f51f (propref<int>)
+			height: height@d7798844-7b1e-4c2f-8064-69ad06b1f51f (propref<int>)
+			fillColor: fillColor@d7798844-7b1e-4c2f-8064-69ad06b1f51f (propref<color>)
+			text: "Quick wash"
+			font: font_resource(27312c62-1ff5-47a3-8899-549f407502ca)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 35
+			}
+			textColor: #000000FF
+			"text 2": "START"
+			"textColor 2": #006400FF
+			"font 2": "font 2"@d7798844-7b1e-4c2f-8064-69ad06b1f51f (propref<font>)
+			touchShortReleased: function<bool,int,int,int,int>(2cb10a89-b014-41c0-9ece-9ba20b62e37f)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(dp:apa == false || dp:cuva_inchisa == false || dp:detergent == false)" \
+					"	{" \
+					"		fire ev:openPopUp()" \
+					"	}" \
+					"	else" \
+					"	{" \
+					"		fire ev:goTo_quickWash()" \
+					"	}" \
+					"	" \
+					"    false" \
+					"}"
+			}
+			focusable: focusable@d7798844-7b1e-4c2f-8064-69ad06b1f51f (propref<int>)
+			focused: focused@d7798844-7b1e-4c2f-8064-69ad06b1f51f (propref<bool>)
+			buttonEvent: buttonEvent@d7798844-7b1e-4c2f-8064-69ad06b1f51f (propref<function<bool>>)
+		}]
+	text: " Washing machine programs"
+}
