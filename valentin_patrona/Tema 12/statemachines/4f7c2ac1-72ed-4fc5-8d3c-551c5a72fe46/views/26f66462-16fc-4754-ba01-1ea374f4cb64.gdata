@@ -1,0 +1,379 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(26f66462-16fc-4754-ba01-1ea374f4cb64)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(572b0474-b9d4-45d4-8f77-9cf1ba36fd5f)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfContainer_template_instance(50db3719-f4f7-4dd0-a872-0d0433872809)
+				{
+					name: "Button 1"
+					template: @ced94ce9-a77a-435d-a741-32b60d64f847 (objectref<GtfContainer_template>)
+					children: children_list [
+						GtfLabel(aa03cc7d-5600-4577-b33f-7923b9bed81b)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLabel(6863fa6d-d62b-4b5d-897c-179aff485af0)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "label_pret_copil"
+									visible: true
+									width: 100
+									height: 100
+									x: 0
+									y: 50
+									text: "1 leu"
+									textColor: #FFFFFFFF
+									font: font_resource(f4aba85a-7781-447e-ac77-88b79672c222)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 30
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+								}]
+							name: "label_Copil"
+							visible: true
+							width: 117
+							height: 100
+							x: 0
+							y: 75
+							text: "Bilet Copil"
+							textColor: #FFFFFFFF
+							font: font_resource(6208d3c7-4e4d-4d22-9383-4e9cc86938b2)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 0
+							verticalAlign: 0
+						}]
+					x: 144
+					y: 200
+					touchShortReleased: function<bool,int,int,int,int>(20a898b8-a6f7-49eb-8b7e-5e89e74fe0b7)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:sold-1<0)" \
+							"	{" \
+							"		dp:Visible=true" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"		dp:sold=dp:sold-1;" \
+							"		" \
+							"	}" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(54bdcf07-0270-46e3-87e6-2fda5249aad1)
+				{
+					name: "Button 2"
+					template: @ced94ce9-a77a-435d-a741-32b60d64f847 (objectref<GtfContainer_template>)
+					children: children_list [
+						GtfLabel(8c695c0f-02c4-4654-b0c6-51201cf1d09b)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLabel(4add8e4f-b7f2-49c4-924d-45e4bee47a8d)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "label_pret_adult"
+									visible: true
+									width: 100
+									height: 100
+									x: 0
+									y: 50
+									text: "5 lei"
+									textColor: #FFFFFFFF
+									font: font_resource(5102bc3d-4b2d-469c-b17a-338bfc744def)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 30
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+								}]
+							name: "label_adult"
+							visible: true
+							width: 117
+							height: 100
+							x: 0
+							y: 75
+							text: "Bilet Adult"
+							textColor: #FFFFFFFF
+							font: font_resource(4f77c869-24dc-4fe2-9d82-214000459a1d)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 0
+							verticalAlign: 0
+						}]
+					x: 329
+					y: 200
+					touchShortReleased: function<bool,int,int,int,int>(afe2dd83-5622-4834-b15c-bffd2267dca9)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:sold-5<0)" \
+							"	{" \
+							"		dp:Visible=true" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"		dp:sold=dp:sold-5;" \
+							"		" \
+							"	}" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(b117936f-8b80-4c88-b6cc-17b7f4b64d2e)
+				{
+					name: "Button 3"
+					template: @ced94ce9-a77a-435d-a741-32b60d64f847 (objectref<GtfContainer_template>)
+					children: children_list [
+						GtfLabel(6b5fad85-d78c-429e-a7b2-b46bcd9ef3ba)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLabel(79cd6526-7b57-4c4b-89ea-687133bb4cd4)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "label_pret_pensionar"
+									visible: true
+									width: 100
+									height: 100
+									x: 20
+									y: 50
+									text: "2 lei"
+									textColor: #FFFFFFFF
+									font: font_resource(0923dfd6-6a58-4cac-a7e4-5355d61e22f6)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 30
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+								}]
+							name: "label_pensionar"
+							visible: true
+							width: 160
+							height: 100
+							x: -10
+							y: 75
+							text: "Bilet Pensionar"
+							textColor: #FFFFFFFF
+							font: font_resource(49120526-3ef9-487c-8f68-79f6663fb2d4)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 0
+							verticalAlign: 0
+						}]
+					x: 508
+					y: 200
+					touchShortReleased: function<bool,int,int,int,int>(ee95308e-9b1c-4190-98da-565f87ed0c39)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    if(dp:sold-2<0)" \
+							"	{" \
+							"		dp:Visible=true" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"		dp:sold=dp:sold-2;" \
+							"		" \
+							"	}" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfLabel(4dcd97c7-5739-4dc9-acff-38c48f106cc7)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label bani_curenti"
+					visible: true
+					width: 591
+					height: 100
+					x: 131
+					y: 53
+					text: string_scriptedValue(90dc810a-7269-4db1-91ed-25f3257ade16)
+					{
+						triggerList: trigger_list(44e6e06e-3926-4097-861f-c87697cbfc9c)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(a6386203-b3ad-4e8d-9b3f-66e7dc56b6ed)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(b9c437c5-f37a-49c5-a306-d16476c3e98c)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	\"Suma disponibila: \"+f:int2string(dp:sold)+\" lei\"" \
+								"}"
+						}
+						write: function<bool,string>(5064d3be-977d-4c1b-a85b-59f7ea0714a8)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(619bb7c0-dfd4-4fcf-99f5-9fbb216e509d)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 60
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "Rectangle 1"
+			visible: true
+			width: width@26f66462-16fc-4754-ba01-1ea374f4cb64 (propref<int>)
+			height: height@26f66462-16fc-4754-ba01-1ea374f4cb64 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #87CEEBFF
+		}, 
+		GtfRectangle(2e52cd24-1b45-4bb1-a6c2-d17c06f3d8ae)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(31db3aa5-0905-49a4-8874-526559004968)
+				{
+					features: feature_list [
+						TouchShortReleased(b335aaed-c3fd-4f24-9517-0725dd99e13a)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(f072a97b-c0aa-4ffb-86f9-e3073f1a40d9)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	dp:Visible=false" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(a6e32e72-cd43-4172-b217-6bd001e6d8bc)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(bb099237-3389-4616-8486-cbce89a1040f)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Label 4"
+							visible: true
+							width: 100
+							height: 100
+							x: -11
+							y: -15
+							text: "OK"
+							textColor: #FFFFFFFF
+							font: font_resource(6b7b6207-a53f-4a6a-8b04-70c3260aa016)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Button"
+					visible: true
+					width: 72
+					height: 66
+					x: 226
+					y: 130
+					fillColor: #A9A9A9FF
+				}, 
+				GtfLabel(05ca3a24-907b-46a1-acee-72e8f14ab925)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 5"
+					visible: true
+					width: 351
+					height: 100
+					x: 168
+					y: 2
+					text: "Not enough funds"
+					textColor: #FFFFFFFF
+					font: font_resource(1e91b66c-550c-4d44-b2ac-0c56dd7f7d4b)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "Bg_lazy_popout"
+			visible: bool_scriptedValue(c759ba13-3e37-41b1-8ab0-c354e9101ad1)
+			{
+				triggerList: trigger_list(73689c4a-a7eb-4d6d-afdf-79cc2f525c69)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(0d16aa08-cb00-49bf-a46e-fb1fd78aa183)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<bool>(5c4eb488-5b37-4c86-bbd9-7cad0024f3ba)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:Visible" \
+						"}"
+				}
+				write: function<bool,bool>(a3c4c1b3-52d5-4c54-bf53-a7f5f58d1899)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			width: 565
+			height: 250
+			x: 118
+			y: 143
+			fillColor: #FF0000FF
+		}]
+	name: "View 1"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
