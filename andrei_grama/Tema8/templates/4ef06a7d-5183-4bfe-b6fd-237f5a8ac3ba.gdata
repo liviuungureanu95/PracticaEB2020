@@ -1,0 +1,65 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfEllipse_template(4ef06a7d-5183-4bfe-b6fd-237f5a8ac3ba)
+{
+	name: "button"
+	structure: GtfEllipse(a43a62fe-d445-46d1-8ada-4b2e8fa85768)
+	{
+		features: feature_list [
+			TouchPressed(87ce9718-e6be-49a3-b9ad-0b5c118bafbd)
+			{
+				touchPressed: function<bool,int,int,int,int>(2fb5eaba-0c95-4a2c-aa38-599094ce46b5)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.fillColor=v:this.pColor" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(38a4a9c6-b36b-440e-9736-bf5e65daf4e5)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(5e1bac2f-a132-411a-9f66-d0f7f3c68190)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.fillColor=v:this.rColor" \
+						"	v:this.click()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(18ee4984-6ae8-4309-8501-744b8400245e)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list []
+		name: "Ellipse"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		fillColor: #FFA500FF
+		arcWidth: 0
+		centralAngle: 360F
+		sectorRotation: 0F
+		pColor: #FF8C00FF
+		rColor: #FFA500FF
+		click: function<bool>(473a8093-4b12-4e55-b13c-fe3a30961842)
+		{
+			script: "function()" \
+				"{" \
+				"	true" \
+				"}"
+		}
+	}
+	width: width@a43a62fe-d445-46d1-8ada-4b2e8fa85768 (propref<int>)
+	height: height@a43a62fe-d445-46d1-8ada-4b2e8fa85768 (propref<int>)
+	x: x@a43a62fe-d445-46d1-8ada-4b2e8fa85768 (propref<int>)
+	y: y@a43a62fe-d445-46d1-8ada-4b2e8fa85768 (propref<int>)
+	click: click@a43a62fe-d445-46d1-8ada-4b2e8fa85768 (propref<function<bool>>)
+}
