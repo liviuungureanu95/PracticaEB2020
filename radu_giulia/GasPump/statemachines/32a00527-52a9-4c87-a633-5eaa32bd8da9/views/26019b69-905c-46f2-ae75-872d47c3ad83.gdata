@@ -1,0 +1,127 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(26019b69-905c-46f2-ae75-872d47c3ad83)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(38ba0590-3d1d-4e76-a202-6f92823ce7d3)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(da008e34-a3d0-4b5c-99bc-e92211c9899e)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 1"
+					visible: true
+					width: width@26019b69-905c-46f2-ae75-872d47c3ad83 (propref<int>)
+					height: 100
+					x: 0
+					y: -14
+					text: "Gas Pump"
+					textColor: #000000FF
+					font: font_resource(4ee07dd2-682d-4c77-a9d2-ff382b99c31e)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 50
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(310a3855-8695-4dcd-b71d-e722c213abe3)
+				{
+					name: "TextImageButton 1"
+					template: @0974f9ab-97fc-423e-9fa0-2e318449e2b8 (objectref<GtfContainer_template>)
+					children: children_list []
+					text: "Diesel"
+					x: 6
+					y: 91
+					image: image@0974f9ab-97fc-423e-9fa0-2e318449e2b8 (propref<image>)
+					fillColor: fillColor@0974f9ab-97fc-423e-9fa0-2e318449e2b8 (propref<color>)
+					type: "Diesel"
+					visible: visible@0974f9ab-97fc-423e-9fa0-2e318449e2b8 (propref<bool>)
+					pressed: function<bool>(04e85069-55cd-4e53-8820-0f06d8865168)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this.visible=true" \
+							"	fire_delayed 1000, ev:goToType()" \
+							"	dp:chosen = v:this.type" \
+							"	dp:price = dp:pricesList[0]" \
+							"	false" \
+							"}"
+					}
+					width: 100
+				}, 
+				GtfContainer_template_instance(86cdf779-2792-4d29-895a-160ae7487d67)
+				{
+					name: "TextImageButton 2"
+					template: @0974f9ab-97fc-423e-9fa0-2e318449e2b8 (objectref<GtfContainer_template>)
+					children: children_list []
+					text: "Gasoline"
+					x: 11
+					y: 218
+					image: image_resource(9228fdef-b4bc-43ee-b121-5781f7fa6e23)
+					{
+						file: "gas-station.png"
+					}
+					fillColor: #7FFF00FF
+					type: "Gasoline"
+					visible: visible@0974f9ab-97fc-423e-9fa0-2e318449e2b8 (propref<bool>)
+					pressed: function<bool>(21fb26c9-dcd3-4745-88bb-cd5337ace041)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this.visible=true" \
+							"	fire_delayed 1000, ev:goToType()" \
+							"	dp:chosen = v:this.type" \
+							"	dp:price = dp:pricesList[1]" \
+							"	false" \
+							"}"
+					}
+					width: 100
+				}, 
+				GtfContainer_template_instance(7468a645-0f84-47e0-8210-2184e71f6e86)
+				{
+					name: "TextImageButton 3"
+					template: @0974f9ab-97fc-423e-9fa0-2e318449e2b8 (objectref<GtfContainer_template>)
+					children: children_list []
+					text: "Super Gasoline"
+					x: 9
+					y: 347
+					image: image_resource(03049b79-be85-432a-85c5-3ce0217be476)
+					{
+						file: "gas.png"
+					}
+					fillColor: #AFEEEEFF
+					type: "SuperGasoline"
+					visible: visible@0974f9ab-97fc-423e-9fa0-2e318449e2b8 (propref<bool>)
+					pressed: function<bool>(ef2447fd-9021-47e8-b017-448964c2827e)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this.visible=true" \
+							"	fire_delayed 1000, ev:goToType()" \
+							"	dp:chosen = v:this.type" \
+							"	dp:price = dp:pricesList[2]" \
+							"	" \
+							"	false" \
+							"}"
+					}
+					width: 100
+				}]
+			name: "Rectangle 1"
+			visible: true
+			width: width@26019b69-905c-46f2-ae75-872d47c3ad83 (propref<int>)
+			height: height@26019b69-905c-46f2-ae75-872d47c3ad83 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #FFFFFFFF
+		}]
+	name: "GasView"
+	visible: true
+	width: 320
+	height: 480
+	x: 0
+	y: 0
+}
