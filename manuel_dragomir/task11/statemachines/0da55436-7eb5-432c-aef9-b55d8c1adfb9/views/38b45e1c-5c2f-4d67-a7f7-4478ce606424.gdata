@@ -1,0 +1,294 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(38b45e1c-5c2f-4d67-a7f7-4478ce606424)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(6dfc859f-34cd-438c-9ff9-6c1817cdd8bf)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(18333b80-90c1-4e37-8430-52b2506760b2)
+				{
+					features: feature_list [
+						ScaleMode(e40ea780-bc6a-4917-b61e-3fc8e3b293da)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "BlackTShirt"
+					visible: true
+					width: 216
+					height: 261
+					x: 2
+					y: 99
+					image: image_resource(a0d35df0-75b5-4e2e-9c9c-4f5c5eadb26c)
+					{
+						file: "black.jpg"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(c9e02e26-c91e-4037-a551-fb7af3a0a1a5)
+				{
+					features: feature_list [
+						ScaleMode(fa38b05e-0d06-4ada-8000-ee13bb586562)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "ColorTShirt"
+					visible: true
+					width: width@18333b80-90c1-4e37-8430-52b2506760b2 (propref<int>)
+					height: height@18333b80-90c1-4e37-8430-52b2506760b2 (propref<int>)
+					x: 204
+					y: y@18333b80-90c1-4e37-8430-52b2506760b2 (propref<int>)
+					image: image_resource(3ae2c9c7-05de-4a1d-8705-51e7a5f15e96)
+					{
+						file: "color.jpg"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(7a1136dc-89f5-4505-8971-61790d49bd93)
+				{
+					features: feature_list [
+						ScaleMode(281adfa1-0a78-478e-84f5-ff1465a9f8bf)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "WhiteTShirt"
+					visible: true
+					width: width@c9e02e26-c91e-4037-a551-fb7af3a0a1a5 (propref<int>)
+					height: height@c9e02e26-c91e-4037-a551-fb7af3a0a1a5 (propref<int>)
+					x: 407
+					y: y@c9e02e26-c91e-4037-a551-fb7af3a0a1a5 (propref<int>)
+					image: image_resource(55317daa-4208-44be-9369-c66ef46222d3)
+					{
+						file: "white.jpg"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(8f8294b3-8379-456b-ab71-f5f1d6f583ae)
+				{
+					features: feature_list [
+						ScaleMode(0ba1c528-7e64-4890-8454-8d092bfee7c9)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "Wool"
+					visible: true
+					width: 176
+					height: 171
+					x: 619
+					y: 140
+					image: image_resource(acdb3e24-cd71-4f07-8088-99d15a27c534)
+					{
+						file: "wool.jpg"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfContainer(32c8d77a-8a09-4c85-85cb-9c191b4dd2e6)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfEllipse_template_instance(3ca81487-27a4-4534-82b5-9375c1c2ab2b)
+						{
+							name: "ButtonBlack"
+							template: @5e688954-e703-42d6-b340-b08a9689aa04 (objectref<GtfEllipse_template>)
+							children: children_list []
+							text: "Black"
+							x: 32
+							y: 0
+							fillColor: fillColor@5e688954-e703-42d6-b340-b08a9689aa04 (propref<color>)
+							checker: checker@5e688954-e703-42d6-b340-b08a9689aa04 (propref<function<bool>>)
+							touchShortReleased: function<bool,int,int,int,int>(ff8481f3-ed6f-4b42-95e9-c60710f5214b)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(v:this.checker()){" \
+									"		f:trace_string(f:bool2string(v:this.checker()));" \
+									"		fire ev:BlackProgramEvent()	" \
+									"	}" \
+									"    false" \
+									"}"
+							}
+							touchPressed: function<bool,int,int,int,int>(f88a5ffc-43bb-4566-b684-2fb22364901d)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"    false" \
+									"}"
+							}
+						}, 
+						GtfEllipse_template_instance(3994a294-0ed8-4e0b-a38e-a965e33e9ec9)
+						{
+							name: "ButtonColor"
+							template: @5e688954-e703-42d6-b340-b08a9689aa04 (objectref<GtfEllipse_template>)
+							children: children_list []
+							text: "Color"
+							x: 234
+							y: 0
+							fillColor: fillColor@5e688954-e703-42d6-b340-b08a9689aa04 (propref<color>)
+							checker: checker@5e688954-e703-42d6-b340-b08a9689aa04 (propref<function<bool>>)
+							touchShortReleased: function<bool,int,int,int,int>(5d166849-142f-4491-8190-eb55c9be7e55)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(v:this.checker()){" \
+									"		f:trace_string(f:bool2string(v:this.checker()));" \
+									"		fire ev:ColorProgramEvent();" \
+									"	}" \
+									"    false" \
+									"}"
+							}
+							touchPressed: function<bool,int,int,int,int>(25549d80-261d-4eb8-a488-dd128135e825)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"    false" \
+									"}"
+							}
+							checkerButton: false
+						}, 
+						GtfEllipse_template_instance(15d806be-dbf2-40b2-ba5d-e25cc0fd2fc5)
+						{
+							name: "ButtonWhite"
+							template: @5e688954-e703-42d6-b340-b08a9689aa04 (objectref<GtfEllipse_template>)
+							children: children_list []
+							text: "White"
+							x: 436
+							y: 0
+							fillColor: fillColor@5e688954-e703-42d6-b340-b08a9689aa04 (propref<color>)
+							checker: checker@5e688954-e703-42d6-b340-b08a9689aa04 (propref<function<bool>>)
+							touchShortReleased: function<bool,int,int,int,int>(ce57027b-6806-4818-be9f-2fbb783f1fd7)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(v:this.checker()){" \
+									"		f:trace_string(f:bool2string(v:this.checker()));" \
+									"		fire ev:WhiteProgramEvent();" \
+									"	}" \
+									"    false" \
+									"}"
+							}
+							touchPressed: function<bool,int,int,int,int>(d1176a7d-6bf1-4908-8ea2-d779890c50c3)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"    false" \
+									"}"
+							}
+							checkerButton: false
+						}, 
+						GtfEllipse_template_instance(eca6480c-8bb9-4efd-b30b-6a9bf8d1ddc3)
+						{
+							name: "ButtonWool"
+							template: @5e688954-e703-42d6-b340-b08a9689aa04 (objectref<GtfEllipse_template>)
+							children: children_list []
+							text: "Wool"
+							x: 621
+							y: 0
+							fillColor: fillColor@5e688954-e703-42d6-b340-b08a9689aa04 (propref<color>)
+							checker: function<bool>(a7083ca2-e246-4cd4-a4e4-90120bf2983a)
+							{
+								script: "function()" \
+									"{" \
+									"	let v:x = true in{" \
+									"		if(!dp:conditions:IsDetergent){" \
+									"			dp:conditions:ErrorList[0] = \"No detergent!\";" \
+									"			v:x = false;" \
+									"		}" \
+									"		if(!dp:conditions:IsTubeClosed){" \
+									"			dp:conditions:ErrorList[1] = \"The tube is not closed!\";" \
+									"			v:x = false;" \
+									"		}" \
+									"		if(!dp:conditions:IsWaterAvailable){" \
+									"			dp:conditions:ErrorList[2] = \"There is no water supply!\";" \
+									"			v:x = false;" \
+									"		}" \
+									"		if(v:x == false){" \
+									"			// Configure the following parameters:" \
+									"//   - popup_stack - the state with dynamic state list" \
+									"//   - sm - the dynamic state machine" \
+									"//   - priority - priority of the dynamic state machine" \
+									"			f:pushDynamicStateMachine(popup_stack:Main, sm:PopUp, 0)" \
+									"			false" \
+									"		}" \
+									"		else{" \
+									"			true" \
+									"		}" \
+									"	}" \
+									"}"
+							}
+							touchShortReleased: function<bool,int,int,int,int>(b1117ed6-b4c1-4931-a95d-408032b2a458)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(v:this.checker()){" \
+									"		f:trace_string(f:bool2string(v:this.checker()));" \
+									"		fire ev:WoolProgramEvent();" \
+									"	}" \
+									"    false" \
+									"}"
+							}
+							touchPressed: function<bool,int,int,int,int>(bb292417-e0b8-4441-8b1b-917e75e3b6e1)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:WoolProgramEvent()" \
+									"    false" \
+									"}"
+							}
+							checkerButton: false
+						}]
+					name: "Buttons"
+					visible: true
+					width: width@38b45e1c-5c2f-4d67-a7f7-4478ce606424 (propref<int>)
+					height: 100
+					x: 20
+					y: 310
+				}, 
+				GtfLabel(4abd0d39-630a-4606-aa8c-3a4475154707)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "ProgramLabel"
+					visible: true
+					width: 608
+					height: 78
+					x: 101
+					y: 21
+					text: "Choose your washing program"
+					textColor: #000000FF
+					font: font_resource(8ed31481-9c38-4fb6-92b2-477383fc672d)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 50
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Background"
+			visible: true
+			width: width@38b45e1c-5c2f-4d67-a7f7-4478ce606424 (propref<int>)
+			height: height@38b45e1c-5c2f-4d67-a7f7-4478ce606424 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: @53bd586d-eb2f-4946-bbb3-ea69614e30b9 (objectref<color>)
+		}]
+	name: "MenuView"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
