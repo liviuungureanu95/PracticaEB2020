@@ -1,0 +1,122 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfEllipse_template(5e688954-e703-42d6-b340-b08a9689aa04)
+{
+	name: "ButtonProgram"
+	structure: GtfEllipse(1f7205df-b843-4a15-8af7-848eebeb72d8)
+	{
+		features: feature_list [
+			TouchPressed(434df53d-d9d0-451e-9b15-21c4b0478319)
+			{
+				touchPressed: function<bool,int,int,int,int>(28853e48-88de-4578-aa1b-87bb5619859d)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(44d6625c-78e5-4afc-b8c8-c7e7a66e3d87)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			TouchShortReleased(368ad3c3-3487-4fe3-a9b9-fe5fc8932073)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(1339f310-abbd-411e-82bd-60fad9264bd9)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}]
+		children: children_list [
+			GtfLabel(471e23d1-9e6b-4697-8b54-c0d0cd1476a5)
+			{
+				features: feature_list [
+					MultiLine(6a5c9fa4-82aa-47c5-8378-26c3b324b6d7)
+					{
+						lineOffset: 0
+						maxLineCount: 0
+					}]
+				children: children_list []
+				name: "BlackLabel"
+				visible: true
+				width: @4fdabadd-df9e-415f-be8a-3a1b04894f57 (objectref<int>)
+				height: @69a496d9-4823-4a19-8fca-ec7e6ee21652 (objectref<int>)
+				x: 0
+				y: 0
+				text: ""
+				textColor: @7905b149-16a7-43bc-bcbe-ae614d1de939 (objectref<color>)
+				font: font_resource(49144c44-3ba0-46ca-bb7d-9842505eadb2)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "BlackButton"
+		visible: true
+		width: @4fdabadd-df9e-415f-be8a-3a1b04894f57 (objectref<int>)
+		height: @69a496d9-4823-4a19-8fca-ec7e6ee21652 (objectref<int>)
+		x: 50
+		y: 0
+		fillColor: #000000FF
+		arcWidth: 0
+		centralAngle: 360F
+		sectorRotation: 0F
+		checker: function<bool>(2033ec63-3f72-4c48-b49a-f2fbf20c09dd)
+		{
+			script: "function()" \
+				"{" \
+				"	let v:x = true in{" \
+				"		if(!dp:conditions:IsDetergent){" \
+				"			dp:conditions:ErrorList[0] = \"No detergent!\";" \
+				"			v:x = false;" \
+				"		}" \
+				"		else{" \
+				"			dp:conditions:ErrorList[0] = \"\";" \
+				"		}" \
+				"		" \
+				"		if(!dp:conditions:IsTubeClosed){" \
+				"			dp:conditions:ErrorList[1] = \"The tube is not closed!\";" \
+				"			v:x = false;" \
+				"		}" \
+				"		else{" \
+				"			dp:conditions:ErrorList[1] = \"\";" \
+				"		}" \
+				"		" \
+				"		if(!dp:conditions:IsWaterAvailable){" \
+				"			dp:conditions:ErrorList[2] = \"There is no water supply!\";" \
+				"			v:x = false;" \
+				"		}" \
+				"		else{" \
+				"			dp:conditions:ErrorList[2] = \"\";" \
+				"		}" \
+				"		" \
+				"		if(v:x == false){" \
+				"			// Configure the following parameters:" \
+				"//   - popup_stack - the state with dynamic state list" \
+				"//   - sm - the dynamic state machine" \
+				"//   - priority - priority of the dynamic state machine" \
+				"			f:pushDynamicStateMachine(popup_stack:Main, sm:PopUp, 0)" \
+				"			false" \
+				"		}" \
+				"		else{" \
+				"			true;" \
+				"		}" \
+				"	}" \
+				"}"
+		}
+	}
+	text: text@471e23d1-9e6b-4697-8b54-c0d0cd1476a5 (propref<string>)
+	x: x@1f7205df-b843-4a15-8af7-848eebeb72d8 (propref<int>)
+	y: y@1f7205df-b843-4a15-8af7-848eebeb72d8 (propref<int>)
+	fillColor: fillColor@1f7205df-b843-4a15-8af7-848eebeb72d8 (propref<color>)
+	checker: checker@1f7205df-b843-4a15-8af7-848eebeb72d8 (propref<function<bool>>)
+	touchShortReleased: touchShortReleased@368ad3c3-3487-4fe3-a9b9-fe5fc8932073 (propref<function<bool,int,int,int,int>>)
+}

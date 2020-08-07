@@ -1,0 +1,90 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(2488435c-d305-4b68-ba9f-75511a87a392)
+{
+	name: "ProgramView"
+	structure: GtfView(6dfb97a9-a92f-4b4d-b49e-5a0b4451a0fe)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(72c8a54f-c9c6-4106-b9e7-289e7c3ee355)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLabel(a6cd27a0-aaac-450d-aca8-8832f4a5f512)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "MessageLabel"
+						visible: true
+						width: 208
+						height: height@601a9886-10ce-4106-b965-9cddfc0019c0 (propref<int>)
+						x: 104
+						y: 57
+						text: "You chose"
+						textColor: #000000FF
+						font: font_resource(f33ec53e-dbb1-46e9-9a4d-16a3f9df5911)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 45
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfLabel(601a9886-10ce-4106-b965-9cddfc0019c0)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "ColorLabel"
+						visible: true
+						width: 443
+						height: 102
+						x: 323
+						y: y@a6cd27a0-aaac-450d-aca8-8832f4a5f512 (propref<int>)
+						text: "Program"
+						textColor: #000000FF
+						font: font_resource(18459d8f-2d06-48af-997d-8f195623cd79)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 80
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}, 
+					GtfEllipse_template_instance(f09d1b4b-2280-445b-bd4c-10c997911219)
+					{
+						name: "ButtonProgram 1"
+						template: @5e688954-e703-42d6-b340-b08a9689aa04 (objectref<GtfEllipse_template>)
+						children: children_list []
+						text: "Back to\\nMenu"
+						x: 626
+						y: 335
+						fillColor: fillColor@5e688954-e703-42d6-b340-b08a9689aa04 (propref<color>)
+						checker: checker@5e688954-e703-42d6-b340-b08a9689aa04 (propref<function<bool>>)
+						touchShortReleased: function<bool,int,int,int,int>(388e3679-62af-457b-b983-4b0872c97c7b)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	fire ev:GoToMenu()" \
+								"    false" \
+								"}"
+						}
+						checkerButton: false
+					}]
+				name: "Rectangle 1"
+				visible: true
+				width: 800
+				height: 480
+				x: 0
+				y: 0
+				fillColor: @53bd586d-eb2f-4946-bbb3-ea69614e30b9 (objectref<color>)
+			}]
+		name: "View 1"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+	}
+	text: text@601a9886-10ce-4106-b965-9cddfc0019c0 (propref<string>)
+}
