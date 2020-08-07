@@ -1,0 +1,66 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(aec2ebe4-9b15-4029-a46b-7d6213a8b251)
+{
+	name: "Welcome_View"
+	template: @2ae1bd8e-08f7-4cbe-a2d8-271429b24bc0 (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(cc47f6c8-7236-4ee4-91f7-5b383e064ebf)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Welcome_Label"
+			visible: true
+			width: 800
+			height: 100
+			x: 0
+			y: 75
+			text: "Welcome!"
+			textColor: #000000FF
+			font: font_resource(4dcba409-2863-4d91-923d-77914abc49c0)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(d28eda6d-299c-4385-b613-e38e6c5adfd5)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Question_Label"
+			visible: true
+			width: 490
+			height: 100
+			x: 20
+			y: 205
+			text: "Press \"begin\" to start buying a train ticket."
+			textColor: #000000FF
+			font: font_resource(c8fae9d3-0b35-400d-bbec-2d6bcd0368ef)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 35
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(83d331fe-c3a6-4620-981b-23220e0c2adf)
+		{
+			name: "Begin_Button"
+			template: @5fcfb726-2668-4ad9-9e93-68b395c80202 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Begin"
+			x: 205
+			y: 350
+			eventButton: function<bool>(7411041e-640e-4d26-96e4-fd5d3befc6b1)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goToBuy()" \
+					"	false" \
+					"}"
+			}
+			lineIndex: lineIndex@5fcfb726-2668-4ad9-9e93-68b395c80202 (propref<int>)
+		}]
+}
