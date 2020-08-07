@@ -125,7 +125,10 @@ GtfView(78e59eb3-638e-4af9-954c-950282d75e47)
 											script: "function()" \
 												"{" \
 												"	// todo: auto generated return value, please adapt" \
-												"	f:float2string(f:int2float(dp:volum)*dp:gas_price[dp:selectedGas])" \
+												"	if(dp:volum!=0)" \
+												"	f:float2string(f:int2float(dp:volum)*dp:gas_price[dp:selectedGas-1])" \
+												"	else" \
+												"	\"0\"" \
 												"}"
 										}
 										write: function<bool,string>(d108fb9b-bf5f-4a30-a96d-950f65c5f3aa)
@@ -381,12 +384,12 @@ GtfView(78e59eb3-638e-4af9-954c-950282d75e47)
 							name: "Linear interpolation curve"
 							enabled: true
 							delay: 8
-							duration: 2467
+							duration: 10000
 							repeat: 1
 							alternating: false
 							relative: false
 							start: 0
-							end: 60
+							end: 120
 							target: @3173c013-cd53-4146-91b9-ed33f9c41f95 (objectref<int>)
 						}]
 					name: "priceAnimation"
@@ -451,16 +454,10 @@ GtfView(78e59eb3-638e-4af9-954c-950282d75e47)
 									{
 										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 											"{" \
-											"	if(v:this.selected==false){" \
-											"		dp:selectedGas=v:this.lineIndex+1" \
-											"		v:this->background->selectedEllipse.fillColor=v:this.sColor" \
-											"		v:this.selected=true" \
-											"	}" \
-											"	else{" \
-											"		dp:selectedGas=0" \
-											"		v:this->background->selectedEllipse.fillColor=v:this.dColor" \
-											"		v:this.selected=false" \
-											"	}" \
+											"	v:this->^.selectedIndex=v:this.lineIndex" \
+											"	" \
+											"	dp:selectedGas=v:this.lineIndex+1" \
+											"	" \
 											"    false" \
 											"}"
 									}
@@ -471,58 +468,12 @@ GtfView(78e59eb3-638e-4af9-954c-950282d75e47)
 									touched: false
 									touchPolicy: 0
 									touchBehavior: 0
-								}, 
-								StateSelected(7a35ae29-e42c-41ee-8abe-88149f9da177)
-								{
-									selected: false
 								}]
 							children: children_list [
 								GtfRectangle(7f1e0250-81af-4cef-9879-da4bcd9b03b4)
 								{
 									features: feature_list []
-									children: children_list [
-										GtfLabel(9173879a-7cba-476d-a76c-06c99762f0ce)
-										{
-											features: feature_list [
-												Rotation(0e3d7844-6f14-43d6-ab70-c5a803499ca2)
-												{
-													rotationEnabled: true
-													rotationAngleX: 0F
-													rotationAngleY: 0F
-													rotationAngleZ: -90F
-												}]
-											children: children_list []
-											name: "names"
-											visible: true
-											width: height@7f1e0250-81af-4cef-9879-da4bcd9b03b4 (propref<int>)
-											height: width@7f1e0250-81af-4cef-9879-da4bcd9b03b4 (propref<int>)
-											x: 45
-											y: 0
-											text: "label"
-											textColor: #000000FF
-											font: font_resource(0ccbde72-71bd-4050-ab3b-021c368d1d91)
-											{
-												file: "PT_Sans_Narrow.ttf"
-												size: 25
-											}
-											horizontalAlign: 0
-											verticalAlign: 0
-										}, 
-										GtfEllipse(a15a20ad-0417-4c8b-90ee-1d78cbed5b75)
-										{
-											features: feature_list []
-											children: children_list []
-											name: "selectedEllipse"
-											visible: true
-											width: 30
-											height: 30
-											x: 8
-											y: 180
-											fillColor: #FFFFFFFF
-											arcWidth: 0
-											centralAngle: 360F
-											sectorRotation: 0F
-										}]
+									children: children_list []
 									name: "background"
 									visible: true
 									width: 45
@@ -530,6 +481,69 @@ GtfView(78e59eb3-638e-4af9-954c-950282d75e47)
 									x: 0
 									y: 0
 									fillColor: #FFFFFFFF
+								}, 
+								GtfLabel(9173879a-7cba-476d-a76c-06c99762f0ce)
+								{
+									features: feature_list [
+										Rotation(0e3d7844-6f14-43d6-ab70-c5a803499ca2)
+										{
+											rotationEnabled: true
+											rotationAngleX: 0F
+											rotationAngleY: 0F
+											rotationAngleZ: -90F
+										}]
+									children: children_list []
+									name: "names"
+									visible: true
+									width: height@7f1e0250-81af-4cef-9879-da4bcd9b03b4 (propref<int>)
+									height: width@7f1e0250-81af-4cef-9879-da4bcd9b03b4 (propref<int>)
+									x: 45
+									y: 0
+									text: "label"
+									textColor: #000000FF
+									font: font_resource(0ccbde72-71bd-4050-ab3b-021c368d1d91)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 25
+									}
+									horizontalAlign: 0
+									verticalAlign: 0
+								}, 
+								GtfEllipse(a15a20ad-0417-4c8b-90ee-1d78cbed5b75)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "selectedEllipse"
+									visible: true
+									width: 30
+									height: 30
+									x: 8
+									y: 180
+									fillColor: #FFFFFFFF
+									arcWidth: 0
+									centralAngle: 360F
+									sectorRotation: 0F
+									setSelectrion: conditional_script(aa0ceb81-2c6d-4f0a-aa45-073515c7b34d)
+									{
+										triggerList: trigger_list(4bc96a56-4413-4609-bce3-ae41bb251d76)
+										{
+											script: "v:this->^.lineIndex" \
+												"v:this->^->^.selectedIndex"
+										}
+										onTrigger: function<bool,bool>(ed4586ac-aaf3-4721-8ff8-f69ca2f97330)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	if(v:this->^.lineIndex==v:this->^->^.selectedIndex)" \
+												"	v:this.fillColor=v:this.sColor" \
+												"	else" \
+												"	v:this.fillColor=v:this.dColor" \
+												"	false" \
+												"}"
+										}
+									}
+									dColor: #FFFFFFFF
+									sColor: #1E90FFFF
 								}]
 							name: "gasType"
 							visible: true
@@ -548,13 +562,29 @@ GtfView(78e59eb3-638e-4af9-954c-950282d75e47)
 								{
 									script: "function(v:arg0::bool)" \
 										"{" \
-										"	v:this->background->names.text=dp:gas_name[v:this.lineIndex]" \
+										"	v:this->names.text=dp:gas_name[v:this.lineIndex]" \
 										"	false" \
 										"}"
 								}
 							}
-							sColor: #00FF00FF
-							dColor: #FFFFFFFF
+							click: conditional_script(5e882e7c-135b-4ae8-a785-624f86679e2d)
+							{
+								triggerList: trigger_list(2ebe3467-c0db-4574-8be5-3b08dcbbba9a)
+								{
+									script: "dp:Reset"
+								}
+								onTrigger: function<bool,bool>(efb72672-787d-405a-aae9-167ef4457575)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	if(dp:Reset==true)" \
+										"		v:this.touchable=false" \
+										"	else" \
+										"		v:this.touchable=true" \
+										"	false" \
+										"}"
+								}
+							}
 						}]
 					name: "gasList"
 					visible: true
@@ -579,20 +609,7 @@ GtfView(78e59eb3-638e-4af9-954c-950282d75e47)
 								"}"
 						}
 					}
-					color: conditional_script(b07efd05-362a-4f60-a607-5e7c4e4cfb0a)
-					{
-						triggerList: trigger_list(0a19746b-14c4-48dc-9f86-d1cd3f8c4451)
-						{
-							script: "dp:selectedGas"
-						}
-						onTrigger: function<bool,bool>(7e950d39-f60e-4f1b-8131-15e14b966d2f)
-						{
-							script: "function(v:arg0::bool)" \
-								"{" \
-								"	false" \
-								"}"
-						}
-					}
+					selectedIndex: -1
 				}, 
 				GtfContainer(707bebf0-0cbe-47dc-a4cb-7888e00abc4e)
 				{
@@ -616,6 +633,8 @@ GtfView(78e59eb3-638e-4af9-954c-950282d75e47)
 								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 									"{" \
 									"	f:animation_pause(v:this->^->^->display->priceAnimation)" \
+									"	if(dp:selectedGas!=0)" \
+									"		dp:Reset=true" \
 									"    false" \
 									"}"
 							}
@@ -651,6 +670,60 @@ GtfView(78e59eb3-638e-4af9-954c-950282d75e47)
 							verticalAlign: 1
 						}]
 					name: "pompButton"
+					visible: true
+					width: 64
+					height: 73
+					x: 0
+					y: 240
+				}, 
+				GtfContainer(19b4c60d-429b-4377-9520-62cf49e0a809)
+				{
+					features: feature_list [
+						TouchShortReleased(3b54a96a-be0d-455a-bfb9-1bf1e19fd34e)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(631ba5f1-55bf-4143-83c5-64e0d1126d9a)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	f:animation_cancel_reset(v:this->^->^->display->priceAnimation)" \
+									"	dp:selectedGas=0" \
+									"	v:this->^->gasList.selectedIndex=-1" \
+									"	dp:Reset=false" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(624fc192-f54c-49f0-a6b8-e33588002b5f)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfImage(5b3479b1-b816-4a93-a6d7-79a442c48378)
+						{
+							features: feature_list [
+								ScaleMode(ec81be23-6263-4786-9118-1ba905a8a828)
+								{
+									scaleMode: 1
+								}]
+							children: children_list []
+							name: "Image"
+							visible: true
+							width: 63
+							height: 62
+							x: 0
+							y: 0
+							image: image_resource(08e55013-24cb-44a2-9f1b-c17770002358)
+							{
+								file: "icons8-pay-64.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}]
+					name: "payButton"
 					visible: true
 					width: 64
 					height: 73
