@@ -1,0 +1,277 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(98aa9ab5-15d4-4663-a81d-860670cf6003)
+{
+	name: "Food Scaling"
+	structure: GtfContainer(b438b045-4e2c-4939-a408-822f9bf431ca)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(d16283f9-d53e-4183-9460-3a03198e11ec)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLabel(79524ac7-1414-4354-8b5d-f7589f2cb097)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "price"
+						visible: true
+						width: 199
+						height: 100
+						x: 6
+						y: 222
+						text: string_scriptedValue(c45a1210-5149-45fa-9108-0cc5a1cd756c)
+						{
+							triggerList: trigger_list(ce02e1e6-8eb8-484b-ac35-6fff141b6016)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(1b32f607-4efe-419a-a98c-9a564ac6f476)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<string>(88d33350-57b3-4c59-ac4b-238940445247)
+							{
+								script: "function()" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	f:float2string(dp:product_price) + \" RON/KG\"" \
+									"}"
+							}
+							write: function<bool,string>(47283873-e30c-42bb-bf03-8169db684aed)
+							{
+								script: "function(v:arg0::string)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						textColor: #000000FF
+						font: font_resource(c691d7df-d0ab-4e08-b26d-8ff0a5a0eb4c)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 24
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfLabel(7d9237be-62a0-442d-a5ea-b054e8e1968a)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLabel(4ee82e75-57bc-4623-8d62-9d49dba2fcf1)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "pay"
+								visible: true
+								width: 200
+								height: 75
+								x: 0
+								y: 60
+								text: string_scriptedValue(f3080015-7f5c-46b3-9bfb-47a11fb20ce1)
+								{
+									triggerList: trigger_list(5b2c221f-f644-4683-8f64-e391a057e22f)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(d7857cb2-abda-47c1-a1fb-2aab6a9c4df4)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<string>(f041338b-2442-4f55-9f52-8638262cfda1)
+									{
+										script: "function()" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	f:float2string(dp:price) + \" RON\"" \
+											"}"
+									}
+									write: function<bool,string>(5d82793c-4a07-4349-984e-6591191bb3c1)
+									{
+										script: "function(v:arg0::string)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								textColor: #000000FF
+								font: font_resource(59f98b04-e060-4aa8-8645-8cf32ed3eefd)
+								{
+									file: "PT_Sans_Narrow.ttf"
+									size: 30
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}]
+						name: "pay"
+						visible: true
+						width: 200
+						height: 75
+						x: 233
+						y: 174
+						text: "Price:"
+						textColor: #000000FF
+						font: font_resource(071e0301-0ddb-457f-9077-726b7a977ad3)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfLabel(e611e71d-8df9-4a0a-b913-1a6678b0a32d)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLabel(2f7b1fbb-455a-46a5-bba6-7ffc39f6adde)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "quantity copy 1"
+								visible: true
+								width: 200
+								height: 75
+								x: 0
+								y: 60
+								text: string_scriptedValue(324ebb60-160d-4e2e-b327-758be00c9490)
+								{
+									triggerList: trigger_list(67d123b9-dc1d-44e6-b7ec-e568e0bc1ada)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(3812d3bf-1254-4760-8faa-11f3b65be70f)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<string>(39c172ec-ec3c-4936-816b-c2669b701a8d)
+									{
+										script: "function()" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	f:float2string(dp:quantity) + \" KG\"" \
+											"}"
+									}
+									write: function<bool,string>(fa7a89a7-8fec-400f-ae61-0d444827de27)
+									{
+										script: "function(v:arg0::string)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								textColor: #000000FF
+								font: font_resource(333cc68b-fadb-4854-9dd8-e11bdb064ed1)
+								{
+									file: "PT_Sans_Narrow.ttf"
+									size: 30
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}]
+						name: "quantity"
+						visible: true
+						width: 200
+						height: 75
+						x: 238
+						y: 46
+						text: "Quantity:"
+						textColor: #000000FF
+						font: font_resource(8fdec362-7fe0-4c09-b760-d5017c880183)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfLabel(fe16a09a-c744-454b-b738-d1fbde91a928)
+					{
+						features: feature_list [
+							TouchShortReleased(5ada9e96-8803-44b5-9a9c-7f56d8a0e1ab)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(7a65eabd-45f2-4265-ba7e-26192bee4d9b)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    fire ev:goTo_home()" \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(92d2e020-b167-48f7-afcc-fe4aaf7e713c)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list []
+						name: "Label 5"
+						visible: true
+						width: 61
+						height: 53
+						x: 14
+						y: -1
+						text: "Home"
+						textColor: #000000FF
+						font: font_resource(689de7d6-33f3-4cc0-81ab-8aa12c8afbc5)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}, 
+					GtfLabel(8cbc625d-254c-44e2-9d85-7453dfc9c4fc)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Label 6"
+						visible: true
+						width: 166
+						height: 100
+						x: 31
+						y: 64
+						text: @de94ce03-5739-411b-9a0e-88433d3d3f0d (objectref<string>)
+						textColor: #000000FF
+						font: font_resource(bddea371-9fb9-42ad-8c7d-077df71cb5f9)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "Background"
+				visible: true
+				width: width@b438b045-4e2c-4939-a408-822f9bf431ca (propref<int>)
+				height: height@b438b045-4e2c-4939-a408-822f9bf431ca (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFFFF
+			}]
+		name: "Weight Container"
+		visible: true
+		width: 480
+		height: 320
+		x: 0
+		y: 0
+	}
+}

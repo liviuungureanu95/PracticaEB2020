@@ -1,0 +1,128 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(0cb102c0-0170-4e1c-9b96-745803985355)
+{
+	name: "Food"
+	structure: GtfContainer(e7492d62-e950-4704-9610-e3b8c43d20ff)
+	{
+		features: feature_list [
+			LineIndex(144db4f2-3fe3-4af6-8d71-024051ad4288)
+			{
+				lineIndex: 0
+			}]
+		children: children_list [
+			GtfImage(ac2b65c4-4508-4c90-be30-0c7d1594837a)
+			{
+				features: feature_list [
+					ScaleMode(45ded806-3818-4875-a240-7b9ebdd7778d)
+					{
+						scaleMode: 2
+					}, 
+					LineIndex(b585f8be-1b02-4142-a7f5-dc59acdbbd0a)
+					{
+						lineIndex: 0
+					}, 
+					TouchShortReleased(e5cd90e4-9a06-469b-91f4-3c5b9be97d05)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(e9d23547-a17a-482c-b267-28febc17806a)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    dp:current_product_label = v:this->^->food_name.text" \
+								"    if(dp:isFruit == true)" \
+								"    {" \
+								"    	dp:product_price = dp:fruits_prices[v:this->^.lineIndex]" \
+								"    	fire ev:goTo_scale()" \
+								"    }" \
+								"    else" \
+								"    {" \
+								"    	dp:product_price = dp:vegetables_prices[v:this->^.lineIndex]" \
+								"    	fire ev:goTo_scale()" \
+								"    }" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(a69adba7-0de4-4e86-a5f6-62d2044af7b8)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list []
+				name: "food_image"
+				visible: true
+				width: 100
+				height: 100
+				x: 0
+				y: 0
+				image: image_resource(906ed2c3-0ffb-46fc-83a1-73464882ae2d)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfLabel(ce0e0866-3e88-4187-860b-b224e1b34c20)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "food_name"
+				visible: true
+				width: width@e7492d62-e950-4704-9610-e3b8c43d20ff (propref<int>)
+				height: 57
+				x: 0
+				y: 100
+				text: "label"
+				textColor: #000000FF
+				font: font_resource(a5fe15ed-e931-4c87-85a3-09fa35a241e7)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 23
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Food Container"
+		visible: true
+		width: 100
+		height: 200
+		x: 0
+		y: 0
+		set: conditional_script(725d8eb1-f0dd-404f-9d79-5dc788c4c8a4)
+		{
+			triggerList: trigger_list(830d6c2a-865c-4cd6-afae-e1fda83b5084)
+			{
+				script: "v:this.lineIndex" \
+					"dp:fruits_images" \
+					"dp:fruits_labels" \
+					"dp:vegetables_images" \
+					"dp:vegetables_labels"
+			}
+			onTrigger: function<bool,bool>(5c29d3dc-7e12-464c-81b4-ae7c9a7b8038)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	if(dp:isFruit == true)" \
+					"	{" \
+					"		v:this->food_image.image = dp:fruits_images[v:this.lineIndex]" \
+					"		v:this->food_name.text = dp:fruits_labels[v:this.lineIndex]" \
+					"	}" \
+					"	else" \
+					"	{" \
+					"		v:this->food_image.image = dp:vegetables_images[v:this.lineIndex]" \
+					"		v:this->food_name.text = dp:vegetables_labels[v:this.lineIndex]" \
+					"	}" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+	text: text@ce0e0866-3e88-4187-860b-b224e1b34c20 (propref<string>)
+	image: image@ac2b65c4-4508-4c90-be30-0c7d1594837a (propref<image>)
+	x: x@e7492d62-e950-4704-9610-e3b8c43d20ff (propref<int>)
+	y: y@e7492d62-e950-4704-9610-e3b8c43d20ff (propref<int>)
+	textColor: textColor@ce0e0866-3e88-4187-860b-b224e1b34c20 (propref<color>)
+}

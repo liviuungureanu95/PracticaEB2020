@@ -1,0 +1,120 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(18ca0fa5-3bbd-4e46-8afc-5808bc7d919a)
+{
+	name: "Fruit Select"
+	structure: GtfContainer(55323154-6646-419b-bf11-21642bfead8a)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(d26d2e46-72b3-4d7a-997b-53738ff0ea55)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLabel(2016a6ad-6140-4a73-98ef-18b5ba2656b0)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLabel(1356351a-2c64-45e6-aa64-cb78261dc73b)
+							{
+								features: feature_list [
+									TouchShortReleased(0ebcba2a-198c-42d5-b45d-5e1060a22388)
+									{
+										touchShortReleased: function<bool,int,int,int,int>(43037b08-1aba-4b07-8773-2b651f64c225)
+										{
+											script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+												"{" \
+												"    fire ev:goTo_home()" \
+												"    false" \
+												"}"
+										}
+									}, 
+									StateTouched(89878f74-d02a-499c-8dee-bb3cd17d9285)
+									{
+										touchable: true
+										touched: false
+										touchPolicy: 0
+										touchBehavior: 0
+									}]
+								children: children_list []
+								name: "Label 1"
+								visible: true
+								width: 60
+								height: 56
+								x: 13
+								y: -18
+								text: "Back"
+								textColor: #000000FF
+								font: font_resource(7634a5d7-7c29-41b6-87b1-06c0ce3b2b36)
+								{
+									file: "PT_Sans_Narrow.ttf"
+									size: 30
+								}
+								horizontalAlign: 0
+								verticalAlign: 0
+							}]
+						name: "select_label"
+						visible: true
+						width: width@55323154-6646-419b-bf11-21642bfead8a (propref<int>)
+						height: 100
+						x: 0
+						y: 18
+						text: "Please Select Fruit"
+						textColor: #000000FF
+						font: font_resource(60c8381e-a11c-4ffe-8f7a-b41713659d01)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfInstantiator(21bed0e5-896b-4239-902b-88de18dd355a)
+					{
+						features: feature_list [
+							LayoutPolicyBox(8f74895f-a230-4983-b530-ef857527f6cc)
+							{
+								gap: 25
+								layoutDirection: 0
+							}, 
+							LineIndex(e3367dcc-fa0b-477f-ad2f-fb4b12d2fbf1)
+							{
+								lineIndex: 0
+							}]
+						children: children_list [
+							GtfContainer_template_instance(6e0f4b5f-b55d-4650-a7b0-e9a98acdca9a)
+							{
+								name: "food_image_label"
+								template: @0cb102c0-0170-4e1c-9b96-745803985355 (objectref<GtfContainer_template>)
+								children: children_list []
+								text: text@0cb102c0-0170-4e1c-9b96-745803985355 (propref<string>)
+								image: image@0cb102c0-0170-4e1c-9b96-745803985355 (propref<image>)
+								x: 0
+								y: 1
+								textColor: textColor@0cb102c0-0170-4e1c-9b96-745803985355 (propref<color>)
+							}]
+						name: "food_instantiator"
+						visible: true
+						width: 100
+						height: 100
+						x: 0
+						y: 100
+						numItems: 4
+						lineMapping: intlist []
+					}]
+				name: "background"
+				visible: true
+				width: width@55323154-6646-419b-bf11-21642bfead8a (propref<int>)
+				height: height@55323154-6646-419b-bf11-21642bfead8a (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFFFF
+			}]
+		name: "Food Select Container"
+		visible: true
+		width: 480
+		height: 320
+		x: 0
+		y: 0
+	}
+}
