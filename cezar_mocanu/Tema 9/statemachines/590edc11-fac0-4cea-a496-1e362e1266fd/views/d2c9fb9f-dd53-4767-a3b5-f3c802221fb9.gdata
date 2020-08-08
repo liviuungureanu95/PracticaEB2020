@@ -1,0 +1,231 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(d2c9fb9f-dd53-4767-a3b5-f3c802221fb9)
+{
+	name: "View 2"
+	template: @472ec2fd-032c-4fb0-bf06-97c05a44cab2 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(15b7b130-0a9e-4489-ab2d-e04002c610d7)
+		{
+			name: "FillingBar 1"
+			template: @cc4edbd8-9f43-442a-bd61-f8b524cdccee (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfLabel(045d33a8-3bf4-48f8-961a-6e48d0edcd93)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "FuelType"
+					visible: true
+					width: 100
+					height: 40
+					x: 0
+					y: 60
+					text: @3945b2d6-29f6-47b0-82cf-ccf891c73b16 (objectref<string>)
+					textColor: #FFFFFFFF
+					font: font_resource(82fd1517-28a0-4ac3-97ed-b8d42cf3a20a)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 20
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			x: 200
+			y: 200
+			width: width@cc4edbd8-9f43-442a-bd61-f8b524cdccee (propref<int>)
+			height: 100
+			animationStarted: true
+			coloration: @ff40fd34-ccf9-4918-a941-946d62ce17fe (objectref<color>)
+			loadingTime: 5
+		}, 
+		GtfContainer_template_instance(8027f703-c147-48a7-90e8-7dd18dd165f3)
+		{
+			name: "Done"
+			template: @0456fc80-1574-4624-b9bb-79fd83569ef0 (objectref<GtfContainer_template>)
+			children: children_list []
+			buttonColors: @a0ac6572-1613-46b4-92e9-a8a8389a4278 (objectref<colorlist>)
+			releaseAction: function<bool>(94d0624d-bb7f-4a22-ba2f-ac495ae2ed38)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_Done()" \
+					"	false" \
+					"}"
+			}
+			x: 420
+			y: 0
+			height: 40
+			width: 60
+			visible: visible@0456fc80-1574-4624-b9bb-79fd83569ef0 (propref<bool>)
+			text: "Done"
+		}, 
+		GtfLabel(ab38ac78-b703-41a6-89ed-86d532312221)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Liters"
+			visible: true
+			width: 250
+			height: 40
+			x: 100
+			y: 60
+			text: string_scriptedValue(0d40e0c0-883b-421f-88c7-0b48945bc017)
+			{
+				triggerList: trigger_list(3839c173-72ce-450b-baac-ba8d5a606e53)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(97be9b7d-7710-4a42-ac9e-65bb868c5c66)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(1f9077a5-a87f-49a5-af53-3ad9648d30dc)
+				{
+					script: "function()" \
+						"{" \
+						"	\"Liters: \" + f:format_float(\"%.2f\",true,dp:Liters) + \" l\"" \
+						"}"
+				}
+				write: function<bool,string>(72db8983-c1ff-4694-be0b-8fde53c7a3e3)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #FFFFFFFF
+			font: font_resource(b5b7cef3-b4e8-45db-b5b6-a9548d029f88)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(184fab93-d868-4c97-88f3-33e0ae208dc4)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Price"
+			visible: true
+			width: 250
+			height: 40
+			x: 100
+			y: 101
+			text: string_scriptedValue(a068d988-f3b9-441f-a469-8004a1b22654)
+			{
+				triggerList: trigger_list(58046bce-6ed8-4d07-a763-d8b3d4a6bc75)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(b8bc1ed7-70cf-45e2-a319-f4f333b774bf)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(831301f6-c428-4c96-95ea-f371b7dfedd9)
+				{
+					script: "function()" \
+						"{" \
+						"	\"Price: \" + f:format_float(\"%.2f\",true,dp:Liters * dp:selectedPrice) + \" Euro\"" \
+						"}"
+				}
+				write: function<bool,string>(f1625d98-9b94-4d3b-858d-40198d6eb05b)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #FFFFFFFF
+			font: font_resource(3e16cbc8-1067-42fb-a32b-8ead4c8481a5)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfParallelAnimation(35a47f65-4f71-4fe8-b81a-a90aecc0f44d)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfFastStartFloat(b81868a7-ef04-44cb-8614-44f5400d9d74)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Fast start curve 1"
+					enabled: true
+					delay: 0
+					duration: 10000
+					repeat: 1
+					alternating: false
+					relative: false
+					start: 0F
+					end: 60F
+					target: @ba3eb156-c014-4e85-9d4d-d9e43171da37 (objectref<float>)
+				}]
+			name: "FuelCharging"
+			enabled: true
+			repeat: 1
+			alternating: false
+			scale: 1F
+			onPlay: function<void,int,bool>(6f52f298-01fd-4f2b-b60b-eb094ea0345b)
+			{
+				script: "function(v:animation_time::int, v:forward::bool)" \
+					"{" \
+					"" \
+					"}"
+			}
+			onPause: function<void,int>(4fe22a15-0fbd-49b9-b82e-100f3c61c629)
+			{
+				script: "function(v:animation_time::int)" \
+					"{" \
+					"" \
+					"}"
+			}
+			onTerminate: function<void,int,int>(b986802d-dcdc-4e69-9eeb-6cb157add254)
+			{
+				script: "function(v:animation_time::int, v:terminate::int)" \
+					"{" \
+					"" \
+					"}"
+			}
+		}]
+	text: "Place the pump and start filling"
+	releaseAction: function<bool>(2e5b0f28-1416-425c-89ec-91e9a7bc5370)
+	{
+		script: "function()" \
+			"{" \
+			"	fire ev:goTo_PaymentMethod()" \
+			"	false" \
+			"}"
+	}
+	visible: visible@472ec2fd-032c-4fb0-bf06-97c05a44cab2 (propref<bool>)
+	onInit: conditional_script(5d41ec6a-9fe4-4eea-95a1-c1b55b56f2e7)
+	{
+		triggerList: trigger_list(e0375642-ca9c-494b-ae90-af02d3e1435f)
+		{
+			script: ""
+		}
+		onTrigger: function<bool,bool>(dc5acee0-42b9-4556-b3ab-5ef4748c9360)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	f:animation_play(v:this->FuelCharging)" \
+				"	false" \
+				"}"
+		}
+	}
+}

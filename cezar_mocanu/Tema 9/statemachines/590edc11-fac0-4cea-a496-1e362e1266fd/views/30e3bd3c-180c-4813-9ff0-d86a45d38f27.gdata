@@ -1,0 +1,166 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(30e3bd3c-180c-4813-9ff0-d86a45d38f27)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(27aad9f0-0128-4f06-8fe9-4fb09d61e381)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Background"
+			visible: true
+			width: 480
+			height: 320
+			x: 0
+			y: 0
+			fillColor: #2B2B2BFF
+		}, 
+		GtfLabel(f349d71c-8224-425a-8cc4-3a4647c28f1c)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Instruction"
+			visible: true
+			width: 480
+			height: 40
+			x: 0
+			y: 0
+			text: "Choose fuel type"
+			textColor: #FFFFFFFF
+			font: font_resource(8ef8dae3-57a2-48e5-8123-7fdb20873945)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer(feb6d2d7-9a84-477e-9bc5-6bf2c1e39025)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfContainer_template_instance(521c655e-3020-4a1c-857f-8e5f89626db1)
+				{
+					name: "Super"
+					template: @421dd539-c505-4d93-8d16-a19c9c90776b (objectref<GtfContainer_template>)
+					children: children_list []
+					width: width@421dd539-c505-4d93-8d16-a19c9c90776b (propref<int>)
+					height: height@feb6d2d7-9a84-477e-9bc5-6bf2c1e39025 (propref<int>)
+					x: x@421dd539-c505-4d93-8d16-a19c9c90776b (propref<int>)
+					y: y@421dd539-c505-4d93-8d16-a19c9c90776b (propref<int>)
+					text: "Super 95"
+					buttonColors: @dda09707-14e0-4267-b0f6-e4b395b97f62 (objectref<colorlist>)
+					image: image@421dd539-c505-4d93-8d16-a19c9c90776b (propref<image>)
+					premium: premium@421dd539-c505-4d93-8d16-a19c9c90776b (propref<bool>)
+					price: price@421dd539-c505-4d93-8d16-a19c9c90776b (propref<string>)
+					onReleaseAction: function<bool>(b4983331-b99f-4838-ae60-04a70c2bffa7)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:selectedFuelColor = v:this.buttonColors[1]" \
+							"	dp:selectedPrice = 1.49" \
+							"	dp:selectedFuel = \"Super 95\"" \
+							"	fire ev:goTo_PaymentMethod()" \
+							"	false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(fa831020-f76b-4252-9a83-8b5624a7fee4)
+				{
+					name: "Racer"
+					template: @421dd539-c505-4d93-8d16-a19c9c90776b (objectref<GtfContainer_template>)
+					children: children_list []
+					width: width@421dd539-c505-4d93-8d16-a19c9c90776b (propref<int>)
+					height: height@feb6d2d7-9a84-477e-9bc5-6bf2c1e39025 (propref<int>)
+					x: 240
+					y: y@421dd539-c505-4d93-8d16-a19c9c90776b (propref<int>)
+					text: "Super E10"
+					buttonColors: @bc0aa95c-9c35-40d2-9c34-12f08152da37 (objectref<colorlist>)
+					image: image_resource(edb91e7d-a632-4eb3-93a3-71ebd08016b1)
+					{
+						file: "droplet.png"
+					}
+					premium: true
+					price: "1.56"
+					onReleaseAction: function<bool>(d1fbe7c9-473a-43c2-9534-fa2f9f87243f)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:selectedFuelColor = v:this.buttonColors[1]" \
+							"	dp:selectedPrice = 1.56" \
+							"	dp:selectedFuel = \"Super E10\"" \
+							"	fire ev:goTo_PaymentMethod()" \
+							"	false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(f128ec09-47b8-42e2-b106-06ab43e47ce4)
+				{
+					name: "E10"
+					template: @421dd539-c505-4d93-8d16-a19c9c90776b (objectref<GtfContainer_template>)
+					children: children_list []
+					width: width@421dd539-c505-4d93-8d16-a19c9c90776b (propref<int>)
+					height: height@feb6d2d7-9a84-477e-9bc5-6bf2c1e39025 (propref<int>)
+					x: 120
+					y: y@421dd539-c505-4d93-8d16-a19c9c90776b (propref<int>)
+					text: "Super Racer"
+					buttonColors: @dda09707-14e0-4267-b0f6-e4b395b97f62 (objectref<colorlist>)
+					image: image@421dd539-c505-4d93-8d16-a19c9c90776b (propref<image>)
+					premium: true
+					price: "1.98"
+					onReleaseAction: function<bool>(d02cd5da-0d72-469f-ab48-6febcd86443f)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:selectedFuelColor = v:this.buttonColors[1]" \
+							"	dp:selectedPrice = 1.98" \
+							"	dp:selectedFuel = \"Super Racer\"" \
+							"	fire ev:goTo_PaymentMethod()" \
+							"	false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(38bd265b-36ba-414d-b9cf-7e36354d6b45)
+				{
+					name: "Diesel"
+					template: @421dd539-c505-4d93-8d16-a19c9c90776b (objectref<GtfContainer_template>)
+					children: children_list []
+					width: width@421dd539-c505-4d93-8d16-a19c9c90776b (propref<int>)
+					height: height@feb6d2d7-9a84-477e-9bc5-6bf2c1e39025 (propref<int>)
+					x: 360
+					y: y@421dd539-c505-4d93-8d16-a19c9c90776b (propref<int>)
+					text: "Diesel"
+					buttonColors: @d82396f8-69a1-4565-b52a-24ea2b26c9fc (objectref<colorlist>)
+					image: image_resource(09371b3e-0824-4627-b8b1-7745a1f19d0a)
+					{
+						file: "diesel.png"
+					}
+					premium: false
+					price: "1.34"
+					onReleaseAction: function<bool>(986a712c-3c83-4b90-9afd-e25ecc3be636)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:selectedFuelColor = v:this.buttonColors[1]" \
+							"	dp:selectedPrice = 1.34" \
+							"	dp:selectedFuel = \"Diesel\"" \
+							"	fire ev:goTo_PaymentMethod()" \
+							"	false" \
+							"}"
+					}
+				}]
+			name: "GasButtons"
+			visible: true
+			width: 480
+			height: 280
+			x: 0
+			y: 40
+		}]
+	name: "View 2"
+	visible: true
+	width: 482
+	height: 321
+	x: 0
+	y: 0
+}
