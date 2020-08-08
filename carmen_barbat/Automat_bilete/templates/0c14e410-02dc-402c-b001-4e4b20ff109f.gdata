@@ -1,0 +1,85 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(0c14e410-02dc-402c-b001-4e4b20ff109f)
+{
+	name: "Temp_Img_BTN"
+	structure: GtfContainer(b0f2c8b3-bf1c-48d2-a7e9-18ef789b2373)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(c33854d0-9e9b-4fae-8c90-7bbecc6d49be)
+			{
+				features: feature_list [
+					TouchShortReleased(8daa4daa-d91f-4512-92f9-24139ebc3727)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(0beb2a4c-cbe6-4e31-8ceb-f539ecadc44a)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.buttonEvent()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(41bb83f5-a064-41da-a4eb-c4bccc909bea)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@b0f2c8b3-bf1c-48d2-a7e9-18ef789b2373 (propref<int>)
+				height: height@b0f2c8b3-bf1c-48d2-a7e9-18ef789b2373 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+				buttonEvent: function<bool>(a0725941-0cee-4feb-8ab9-9b9413533d93)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}, 
+			GtfImage(37468fc1-9187-410e-8fd6-8fdfe29e14a0)
+			{
+				features: feature_list [
+					ScaleMode(d3558d2c-af64-42c6-88cd-6c22bde04516)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "Back_img"
+				visible: true
+				width: width@b0f2c8b3-bf1c-48d2-a7e9-18ef789b2373 (propref<int>)
+				height: height@b0f2c8b3-bf1c-48d2-a7e9-18ef789b2373 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(a3163663-e8a2-4bb1-9f78-a0ceff461986)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "Button"
+		visible: true
+		width: 70
+		height: 70
+		x: 0
+		y: 0
+	}
+	image: image@37468fc1-9187-410e-8fd6-8fdfe29e14a0 (propref<image>)
+	x: x@b0f2c8b3-bf1c-48d2-a7e9-18ef789b2373 (propref<int>)
+	y: y@b0f2c8b3-bf1c-48d2-a7e9-18ef789b2373 (propref<int>)
+	"x 2": x@c33854d0-9e9b-4fae-8c90-7bbecc6d49be (propref<int>)
+	"y 2": y@c33854d0-9e9b-4fae-8c90-7bbecc6d49be (propref<int>)
+	"x 3": x@37468fc1-9187-410e-8fd6-8fdfe29e14a0 (propref<int>)
+	"y 3": y@37468fc1-9187-410e-8fd6-8fdfe29e14a0 (propref<int>)
+	buttonEvent: buttonEvent@c33854d0-9e9b-4fae-8c90-7bbecc6d49be (propref<function<bool>>)
+}
