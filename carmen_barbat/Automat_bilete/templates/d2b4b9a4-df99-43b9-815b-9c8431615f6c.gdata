@@ -352,7 +352,9 @@ GtfView_template(d2b4b9a4-df99-43b9-815b-9c8431615f6c)
 								script: "function()" \
 									"{" \
 									"	dp:Price=dp:Ticket_price[dp:Index] + dp:Class_difference" \
-									"	\"Price: \" + f:float2string(dp:Price) + \" Lei\"" \
+									"	\"Price: \" + f:format_float(\"%.2f\",true,dp:Price) + \" Lei\"" \
+									"	" \
+									"	" \
 									"	" \
 									"}"
 							}
@@ -422,7 +424,8 @@ GtfView_template(d2b4b9a4-df99-43b9-815b-9c8431615f6c)
 							{
 								script: "function()" \
 									"{" \
-									"	\"Amount: \" + f:float2string(dp:Money) + \" Lei\"" \
+									"	" \
+									"	\"Amount: \" + f:format_float(\"%.2f\",true,dp:Money) + \" Lei\"" \
 									"	" \
 									"}"
 							}
