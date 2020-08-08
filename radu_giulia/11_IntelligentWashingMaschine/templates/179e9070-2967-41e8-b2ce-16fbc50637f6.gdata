@@ -1,0 +1,86 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(179e9070-2967-41e8-b2ce-16fbc50637f6)
+{
+	name: "ImageButton"
+	structure: GtfContainer(6aa06bef-3ee0-4aaf-b909-d413c70abbd9)
+	{
+		features: feature_list [
+			TouchPressed(4738eb8c-edb8-4617-9cdc-900a934841d7)
+			{
+				touchPressed: function<bool,int,int,int,int>(3556f07e-7778-423f-a83d-c13b3bc9763c)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.pressAction()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(cfa9ae36-c771-4a59-a537-b558899f5823)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			TouchShortReleased(fbd4dda7-31ad-4739-8e28-94b58dc4c8f5)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(76a0de03-8eec-4cf3-a8cc-449d37a2ebc4)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.releaseAction()" \
+						"    false" \
+						"}"
+				}
+			}]
+		children: children_list [
+			GtfImage_template_instance(7a966fa8-04e6-4e95-b417-d91c61253b0d)
+			{
+				name: "ScaledImage 1"
+				template: @8293dc8e-d93c-4011-9649-00b7fb35bddb (objectref<GtfImage_template>)
+				children: children_list []
+				scaleMode: scaleMode@8293dc8e-d93c-4011-9649-00b7fb35bddb (propref<int>)
+				image: image_resource(ab258d5e-d2c4-49c0-8453-8b21efd499f7)
+				{
+					file: "buttonOnly.png"
+				}
+				x: x@8293dc8e-d93c-4011-9649-00b7fb35bddb (propref<int>)
+				y: y@8293dc8e-d93c-4011-9649-00b7fb35bddb (propref<int>)
+				height: height@6aa06bef-3ee0-4aaf-b909-d413c70abbd9 (propref<int>)
+				width: width@6aa06bef-3ee0-4aaf-b909-d413c70abbd9 (propref<int>)
+				visible: visible@8293dc8e-d93c-4011-9649-00b7fb35bddb (propref<bool>)
+				rotationAngleZ: 0F
+			}]
+		name: "ImageButtonContainer"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		pressAction: function<bool>(0d61f1e4-8e91-424b-899c-c411421400a3)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		releaseAction: function<bool>(f341a34c-4b9a-4ad2-b4a3-94b0105fe553)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	width: width@6aa06bef-3ee0-4aaf-b909-d413c70abbd9 (propref<int>)
+	height: height@6aa06bef-3ee0-4aaf-b909-d413c70abbd9 (propref<int>)
+	x: x@6aa06bef-3ee0-4aaf-b909-d413c70abbd9 (propref<int>)
+	y: y@6aa06bef-3ee0-4aaf-b909-d413c70abbd9 (propref<int>)
+	image: image@7a966fa8-04e6-4e95-b417-d91c61253b0d (propref<image>)
+	pressAction: pressAction@6aa06bef-3ee0-4aaf-b909-d413c70abbd9 (propref<function<bool>>)
+	releaseAction: releaseAction@6aa06bef-3ee0-4aaf-b909-d413c70abbd9 (propref<function<bool>>)
+}

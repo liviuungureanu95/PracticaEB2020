@@ -1,0 +1,91 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(012f5c56-a6bc-4b72-8260-a99e80995d4d)
+{
+	name: "SimpleButton"
+	structure: GtfContainer(bc5f4da8-1c7e-4ffb-9d5a-bdd22c8cc361)
+	{
+		features: feature_list [
+			TouchPressed(f7946e2c-ee3d-4ead-88c2-7e29c64baa2e)
+			{
+				touchPressed: function<bool,int,int,int,int>(962ba7ae-1092-4e5f-b4ae-ab42578ee599)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.pressAction()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(4d3d7352-3080-48f2-abd2-74dadbd98d8d)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			TouchShortReleased(1be92d68-f292-4f38-8349-76e2ebd1877e)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(b9975181-f00d-41cc-a4ef-81176ad5079b)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}]
+		children: children_list [
+			GtfRectangle(150bfecb-ee7d-4edb-b639-3ae3a5d58938)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@bc5f4da8-1c7e-4ffb-9d5a-bdd22c8cc361 (propref<int>)
+				height: height@bc5f4da8-1c7e-4ffb-9d5a-bdd22c8cc361 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #B0C4DEFF
+				pressedColor: #A9A9A9FF
+			}, 
+			GtfLabel(fc5650bf-1369-4c26-8455-d91313d49104)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "ButtonText"
+				visible: true
+				width: width@bc5f4da8-1c7e-4ffb-9d5a-bdd22c8cc361 (propref<int>)
+				height: height@bc5f4da8-1c7e-4ffb-9d5a-bdd22c8cc361 (propref<int>)
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(bddb90e9-3468-4d62-a1ce-318ff82ca56e)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 25
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "ButtonContainer"
+		visible: true
+		width: 100
+		height: 70
+		x: 0
+		y: 0
+		pressAction: function<bool>(2669238c-9c37-41a9-a1e8-fdfeba5ced5a)
+		{
+			script: "function()" \
+				"{" \
+				"	" \
+				"	false" \
+				"}"
+		}
+	}
+	x: x@bc5f4da8-1c7e-4ffb-9d5a-bdd22c8cc361 (propref<int>)
+	y: y@bc5f4da8-1c7e-4ffb-9d5a-bdd22c8cc361 (propref<int>)
+	text: text@fc5650bf-1369-4c26-8455-d91313d49104 (propref<string>)
+	pressAction: pressAction@bc5f4da8-1c7e-4ffb-9d5a-bdd22c8cc361 (propref<function<bool>>)
+	touchShortReleased: touchShortReleased@1be92d68-f292-4f38-8349-76e2ebd1877e (propref<function<bool,int,int,int,int>>)
+}
