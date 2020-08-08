@@ -105,8 +105,10 @@ GtfView_template_instance(370b5c01-5f4f-4c28-a546-34b822d5fa92)
 				{
 					script: "function()" \
 						"{" \
-						"	" \
-						"	f:float2string(dp:currentPricesList[dp:ProductImageIndex])" \
+						"	let v:value = dp:currentPricesList[dp:ProductImageIndex] in" \
+						"	{" \
+						"		f:format_float(\"%.2f\",true,v:value)" \
+						"	}" \
 						"	" \
 						"	" \
 						"}"
@@ -177,7 +179,7 @@ GtfView_template_instance(370b5c01-5f4f-4c28-a546-34b822d5fa92)
 			visible: true
 			width: 100
 			height: 100
-			x: 364
+			x: 350
 			y: 119
 			text: string_scriptedValue(a0fda7a3-6d02-4309-bbd3-21a7be04ab2c)
 			{
@@ -197,7 +199,7 @@ GtfView_template_instance(370b5c01-5f4f-4c28-a546-34b822d5fa92)
 				{
 					script: "function()" \
 						"{" \
-						"		f:float2string(dp:quantityInput)" \
+						"		f:format_float(\"%.2f\",true,dp:quantityInput)" \
 						"" \
 						"}"
 				}
@@ -247,7 +249,7 @@ GtfView_template_instance(370b5c01-5f4f-4c28-a546-34b822d5fa92)
 			visible: true
 			width: 100
 			height: 56
-			x: 363
+			x: 350
 			y: 212
 			text: string_scriptedValue(76b669dc-78ad-471a-9650-1d79b59484ea)
 			{
@@ -267,7 +269,7 @@ GtfView_template_instance(370b5c01-5f4f-4c28-a546-34b822d5fa92)
 				{
 					script: "function()" \
 						"{" \
-						"	f:float2string(dp:quantityInput*f:string2float(v:this->^->price.text))" \
+						"	f:format_float(\"%.2f\",true,dp:quantityInput*f:string2float(v:this->^->price.text) )" \
 						"}"
 				}
 				write: function<bool,string>(0103cf00-8bde-436a-a5c3-389322bc4e53)
