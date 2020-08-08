@@ -1,0 +1,80 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_statemachine(8a49e869-64a5-46df-a62a-44f64e3be241)
+{
+	x: 0
+	y: 0
+	width: 1099
+	height: 770
+	name: "Main"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions []
+	internal_transitions: haptic_internal_transitions [
+		haptic_internal_transition(c88c2529-86e5-450f-bbc7-b04a1832573a)
+		{
+			event: @e62c3ebc-9360-4261-90a6-777a289bebc6 (objectref<event>)
+			condition: function<bool>(none)
+			action: function<void>(33d41c65-3ef0-4093-b81f-1712cd4d7a2a)
+			{
+				script: "function()" \
+					"{" \
+					"	f:popDynamicStateMachine(popup_stack:Main,sm:\"Haptic dynamic state machine 2\")" \
+					"}"
+			}
+		}, 
+		haptic_internal_transition(9c3557be-bcec-4f62-992d-e8b90e5ec8f3)
+		{
+			event: @bfda5c24-5e96-4b6d-91ca-2e71cf4de836 (objectref<event>)
+			condition: function<bool>(none)
+			action: function<void>(bbbef183-1e2f-4047-aec5-0e7ae6e859db)
+			{
+				script: "function()" \
+					"{" \
+					"	f:pushDynamicStateMachine(popup_stack:Main,sm:\"Haptic dynamic state machine 2\",0)" \
+					"}"
+			}
+		}]
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(379d1b97-ad57-404d-8a0e-37a00a298de5)
+		{
+			x: 299
+			y: 155
+			width: 100
+			height: 100
+			name: "View state 1"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (198e8d65-55cf-42cb-945f-9fbd72abe37a)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(274bb1b5-7cb7-47db-a262-09783ff6693d)
+	{
+		x: 139
+		y: 192
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(7af203fd-85a3-4e27-b75b-741610332e51)
+		{
+			action: function<void>(none)
+			target_state: @379d1b97-ad57-404d-8a0e-37a00a298de5 (objectref<haptic_dialog_state>)
+			source_dock: 0.2297062F
+			target_dock: 0.7579232F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(7fc68427-70dc-480a-adeb-85d0678baf36)
+	{
+	}
+}
