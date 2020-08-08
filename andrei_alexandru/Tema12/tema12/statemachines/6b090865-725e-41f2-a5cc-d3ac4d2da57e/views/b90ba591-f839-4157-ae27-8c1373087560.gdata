@@ -1,0 +1,299 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(b90ba591-f839-4157-ae27-8c1373087560)
+{
+	name: "MainMenu_View"
+	template: @9739a9a7-42b2-4ddc-b2fe-ed8e9ebcab64 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(89bdf775-7584-4991-8bf6-8cf549c32587)
+		{
+			name: "1stTrain_Button"
+			template: @5fdff1dc-8b93-49c8-b28f-7ccf90afd62b (objectref<GtfContainer_template>)
+			children: children_list []
+			width: 380
+			height: height@5fdff1dc-8b93-49c8-b28f-7ccf90afd62b (propref<int>)
+			x: 260
+			y: 190
+			fillColor: #87CEEBFF
+			text: "Brasov-Bucuresti Nord / IR 1936 - 11:30 AM"
+			textColor: textColor@5fdff1dc-8b93-49c8-b28f-7ccf90afd62b (propref<color>)
+			font: font_resource(ba86e375-0095-4b79-a9e6-062691d729b2)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 25
+			}
+			touchShortReleased: function<bool,int,int,int,int>(48e0fbc6-297a-4841-8dce-5d915692d74b)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(dp:sum < dp:\"1stTrain_price\")" \
+					"	{" \
+					"		fire ev:openPopUp()" \
+					"	}" \
+					"	else" \
+					"	{" \
+					"		fire ev:goTo_buyTicket()" \
+					"	}" \
+					"	" \
+					"	dp:rest = dp:sum - dp:\"1stTrain_price\"" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(8faa7bfe-9124-49dd-8d26-97b0eb9b7459)
+		{
+			name: "2ndTrain_Button"
+			template: @5fdff1dc-8b93-49c8-b28f-7ccf90afd62b (objectref<GtfContainer_template>)
+			children: children_list []
+			width: 380
+			height: height@5fdff1dc-8b93-49c8-b28f-7ccf90afd62b (propref<int>)
+			x: 260
+			y: 290
+			fillColor: #87CEEBFF
+			text: "Brasov-Constanta / IR 1746 - 4:51 PM"
+			textColor: textColor@5fdff1dc-8b93-49c8-b28f-7ccf90afd62b (propref<color>)
+			font: font_resource(baa67e08-771e-4109-9a32-f28f007f0fca)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 25
+			}
+			touchShortReleased: function<bool,int,int,int,int>(5775e69f-7973-4f66-bf90-2710573689cf)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(dp:sum < dp:\"2ndTrain_price\")" \
+					"	{" \
+					"		fire ev:openPopUp()" \
+					"	}" \
+					"	else" \
+					"	{" \
+					"		fire ev:goTo_buyTicket()" \
+					"	}" \
+					"	dp:rest = dp:sum - dp:\"2ndTrain_price\"" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(32772643-c928-44eb-8312-81f0fcc7c01c)
+		{
+			name: "3rdTrain_Button "
+			template: @5fdff1dc-8b93-49c8-b28f-7ccf90afd62b (objectref<GtfContainer_template>)
+			children: children_list []
+			width: 380
+			height: height@5fdff1dc-8b93-49c8-b28f-7ccf90afd62b (propref<int>)
+			x: 260
+			y: 390
+			fillColor: #87CEEBFF
+			text: "Brasov-Cluj-Napoca / IR 1931 - 10: 30 PM"
+			textColor: textColor@5fdff1dc-8b93-49c8-b28f-7ccf90afd62b (propref<color>)
+			font: font_resource(7c20c904-4990-42d6-802c-e718462fbc69)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 25
+			}
+			touchShortReleased: function<bool,int,int,int,int>(b3220d2d-5ad1-49fc-932c-16349920d8d3)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(dp:sum < dp:\"3rdTrain_price\")" \
+					"	{" \
+					"		fire ev:openPopUp()" \
+					"	}" \
+					"	else" \
+					"	{" \
+					"		fire ev:goTo_buyTicket()" \
+					"	}" \
+					"	dp:rest = dp:sum - dp:\"3rdTrain_price\"" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(b6b29010-d4b0-4f60-a46a-a34a684b8431)
+		{
+			name: "1stTrain_PriceButton"
+			template: @5fdff1dc-8b93-49c8-b28f-7ccf90afd62b (objectref<GtfContainer_template>)
+			children: children_list []
+			width: 120
+			height: height@5fdff1dc-8b93-49c8-b28f-7ccf90afd62b (propref<int>)
+			x: 670
+			y: 190
+			fillColor: #FFFFFFFF
+			text: string_scriptedValue(a6b351c3-3d78-4ab9-a834-9e116edb3da7)
+			{
+				triggerList: trigger_list(9feed55b-70bd-4a21-bfcd-7681288c9ddf)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(1231aabd-1c73-47e3-afd3-1926ab9bf062)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(ee0bfda6-a7e4-4498-b890-a2499e5a4288)
+				{
+					script: "function()" \
+						"{" \
+						"	f:int2string(dp:\"1stTrain_price\") + \" RON\"" \
+						"}"
+				}
+				write: function<bool,string>(2c9e3d1f-2f24-40f1-8a4e-797cfa65028f)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #000000FF
+			font: font_resource(c8f503c0-73b0-4bab-955c-8f33551dcbd2)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 25
+			}
+			touchShortReleased: touchShortReleased@5fdff1dc-8b93-49c8-b28f-7ccf90afd62b (propref<function<bool,int,int,int,int>>)
+		}, 
+		GtfContainer_template_instance(310c1ba2-ffdc-4225-a94e-cd13214b0dc6)
+		{
+			name: "2ndTrain_PriceButton"
+			template: @5fdff1dc-8b93-49c8-b28f-7ccf90afd62b (objectref<GtfContainer_template>)
+			children: children_list []
+			width: 120
+			height: height@5fdff1dc-8b93-49c8-b28f-7ccf90afd62b (propref<int>)
+			x: 670
+			y: 290
+			fillColor: #FFFFFFFF
+			text: string_scriptedValue(d7869b0c-417a-45cd-a0a5-05d09d24822e)
+			{
+				triggerList: trigger_list(02b2772e-4f00-474e-9c02-de428a6128a6)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(7189c3f1-e410-4bc9-bd7b-f448fb48103c)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(a8a9c96b-603e-4d81-9fdf-f03f8f69cbd5)
+				{
+					script: "function()" \
+						"{" \
+						"	f:int2string(dp:\"2ndTrain_price\") + \" RON\"" \
+						"}"
+				}
+				write: function<bool,string>(cf6d1b22-6c4d-4476-8742-8991ff9b54dc)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #000000FF
+			font: font_resource(2e6e3d81-ca3c-4cb9-a3d4-eae226be9bc7)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 25
+			}
+			touchShortReleased: touchShortReleased@5fdff1dc-8b93-49c8-b28f-7ccf90afd62b (propref<function<bool,int,int,int,int>>)
+		}, 
+		GtfContainer_template_instance(8a51ad2f-1de4-47cd-8802-eb21f2f47432)
+		{
+			name: "3rdTrain_PriceButton"
+			template: @5fdff1dc-8b93-49c8-b28f-7ccf90afd62b (objectref<GtfContainer_template>)
+			children: children_list []
+			width: 120
+			height: height@5fdff1dc-8b93-49c8-b28f-7ccf90afd62b (propref<int>)
+			x: 670
+			y: 390
+			fillColor: #FFFFFFFF
+			text: string_scriptedValue(5e9e9c84-d869-4c2e-a2df-fc122a33f0a8)
+			{
+				triggerList: trigger_list(8de05bbc-e2e8-4008-8260-5ee6920a75a9)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(137fd38c-f64e-4798-ae34-c4ceb1a3c720)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(2f6def71-ca2c-44f0-b8ca-ff9a96d1d76c)
+				{
+					script: "function()" \
+						"{" \
+						"	f:int2string(dp:\"3rdTrain_price\") + \" RON\"" \
+						"}"
+				}
+				write: function<bool,string>(6d793852-ec69-4b32-b9e2-c7d7c5fcd9e0)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #000000FF
+			font: font_resource(f1addb50-d73e-439d-b853-6ac290fecfc4)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 25
+			}
+			touchShortReleased: touchShortReleased@5fdff1dc-8b93-49c8-b28f-7ccf90afd62b (propref<function<bool,int,int,int,int>>)
+		}, 
+		GtfContainer_template_instance(c29b8a1b-8c24-4103-8c27-b1467449eaae)
+		{
+			name: "T_Buttons 1"
+			template: @5fdff1dc-8b93-49c8-b28f-7ccf90afd62b (objectref<GtfContainer_template>)
+			children: children_list []
+			width: width@5fdff1dc-8b93-49c8-b28f-7ccf90afd62b (propref<int>)
+			height: height@5fdff1dc-8b93-49c8-b28f-7ccf90afd62b (propref<int>)
+			x: 25
+			y: 370
+			fillColor: #F0F8FFFF
+			text: string_scriptedValue(a5ee9df8-874e-4cb7-a1bc-6f21aae57cba)
+			{
+				triggerList: trigger_list(2386b00e-8604-4986-995c-69853dbe1356)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(5d5ad626-fc40-4a43-9275-beb266455484)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(195dabd4-b949-40c7-bb4f-8c6e53cc5cb6)
+				{
+					script: "function()" \
+						"{" \
+						"	f:int2string(dp:sum) + \" RON\"" \
+						"}"
+				}
+				write: function<bool,string>(dcf888f1-9348-4c34-aff1-9a15d62b7560)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #000000FF
+			font: font@5fdff1dc-8b93-49c8-b28f-7ccf90afd62b (propref<font>)
+			touchShortReleased: touchShortReleased@5fdff1dc-8b93-49c8-b28f-7ccf90afd62b (propref<function<bool,int,int,int,int>>)
+		}]
+}

@@ -1,0 +1,203 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(21c9f56a-c505-4611-a06a-8aefc3e0fa78)
+{
+	name: "SecondMenu_View"
+	template: @d101bc53-28c7-4de6-a843-be2405ba0351 (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(f8666c11-a5dd-43cb-9593-e687be8288d9)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Title"
+			visible: true
+			width: 800
+			height: 100
+			x: 0
+			y: 0
+			text: "Printing in progess..."
+			textColor: #000000FF
+			font: font_resource(7264522d-cf53-4f9b-a51f-0bd50b83d27d)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(0c07f9a9-7a67-4bad-a886-3b93cd47398a)
+		{
+			name: "LoadingBarProgress"
+			template: @a68c49b7-4e77-4610-b900-27dcb4a9e40d (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfParallelAnimation(ba7d879d-2f87-41b0-a2da-bb68ed588ebd)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationS32(6fab202d-c78b-4663-91b6-90eb7434a900)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Linear interpolation curve"
+							enabled: true
+							delay: 0
+							duration: 5000
+							repeat: 1
+							alternating: false
+							relative: false
+							start: 0
+							end: 100
+							target: progress@0c07f9a9-7a67-4bad-a886-3b93cd47398a (propref<int>)
+						}]
+					name: "LoadingAnimationProgress"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(c32ea0ec-5407-4e4f-9829-d168a56dc501)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(7711c15c-9d63-4994-b8f9-7fcb6a9e860b)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(ac5672df-d858-42b9-b2d7-967e79250948)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"	dp:sum = 0" \
+							"	fire ev:backTo_menu()" \
+							"}"
+					}
+					startAnimation: conditional_script(d9affb2f-5d5e-43b6-ae3b-60bc07b739e7)
+					{
+						triggerList: trigger_list(94b877c3-4bd0-439f-a46d-9fb7b132d5e8)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(543c6816-9293-4cae-8ea4-f603ae934e8f)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	f:animation_play(v:this)" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			progress: progress@a68c49b7-4e77-4610-b900-27dcb4a9e40d (propref<int>)
+			y: 170
+			x: 200
+			height: 84
+			width: 390
+		}, 
+		GtfLabel(d0dbceee-c9bc-4ddd-8816-e99586a13ca4)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Text"
+			visible: true
+			width: 800
+			height: 50
+			x: 0
+			y: 320
+			text: "After printing, you will be redirected to the main menu..."
+			textColor: #000000FF
+			font: font_resource(8928cee3-c3c2-40bb-842e-29feaa146dc9)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(c7460b0d-43a0-4e23-b88f-48beec054940)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Text2"
+			visible: true
+			width: 800
+			height: 50
+			x: 0
+			y: 270
+			text: "Note!"
+			textColor: #FF0000FF
+			font: font_resource(3ff73c73-4f0e-4931-8c55-e4d73404931e)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(fa4440b2-59a2-4319-90fb-98f084a9f93e)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Rest"
+			visible: true
+			width: 350
+			height: 100
+			x: 450
+			y: 380
+			text: string_scriptedValue(ad73f304-4cf8-4931-bec7-c8d088d6db62)
+			{
+				triggerList: trigger_list(c6166b3f-8163-4b8f-9107-604b2094b8ac)
+				{
+					script: "dp:rest" \
+						""
+				}
+				onTrigger: function<bool,bool>(187a7a23-a7d4-499d-bf95-03ba7f16834e)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(94fe4095-4126-4aef-9fc5-453195289e4f)
+				{
+					script: "function()" \
+						"{" \
+						"	\"Take your change back: \" + f:int2string(dp:rest) + \" RON\"" \
+						"}"
+				}
+				write: function<bool,string>(9da68c1c-d6b8-4805-89bc-10c0ea88c3a9)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #FFFFFFFF
+			font: font_resource(dec70372-f31a-40f8-bff2-753cd7d2f95d)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfRectangle(06ff907b-ed82-4021-b7e1-63a9dc43d446)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "HorizontalLine"
+			visible: true
+			width: 400
+			height: 2
+			x: 400
+			y: 455
+			fillColor: #FF0000FF
+		}]
+}
