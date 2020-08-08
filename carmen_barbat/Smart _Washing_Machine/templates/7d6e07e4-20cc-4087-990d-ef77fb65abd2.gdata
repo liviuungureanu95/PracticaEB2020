@@ -1,0 +1,199 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(7d6e07e4-20cc-4087-990d-ef77fb65abd2)
+{
+	name: "View_Temp"
+	structure: GtfView(4f6b0d13-0a99-4fa5-aaae-0e32a142b8ac)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(0d183352-42c7-46b5-989e-2ab94d15e272)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@4f6b0d13-0a99-4fa5-aaae-0e32a142b8ac (propref<int>)
+				height: height@4f6b0d13-0a99-4fa5-aaae-0e32a142b8ac (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #ADD8E6FF
+			}, 
+			GtfImage(8bd3f4d8-bb72-4a6e-84cb-180f17f49270)
+			{
+				features: feature_list [
+					ScaleMode(300202b1-1e56-445c-a491-ad3fd4ef1da6)
+					{
+						scaleMode: 0
+					}]
+				children: children_list [
+					GtfLabel(fe2d3ebb-bdf8-4213-895b-8dfb460a6ede)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Durata_label"
+						visible: true
+						width: 370
+						height: 100
+						x: 20
+						y: 125
+						text: "Durata: 120 min"
+						textColor: #FFFFFFFF
+						font: font_resource(6eab26bc-9f20-4ead-a3b2-57922a003bf2)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}, 
+					GtfLabel(7e2e8c42-645c-445f-b217-b459ea86a6f4)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Nivel_label"
+						visible: true
+						width: 370
+						height: 100
+						x: 20
+						y: 226
+						text: "Nivel de murdarie: Mediu"
+						textColor: #FFFFFFFF
+						font: font_resource(d70c1ecb-085c-434c-a172-c625c8dbda58)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}, 
+					GtfLabel(726604dc-10e3-4e07-8e86-7d3879a3c202)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Temperatura_label"
+						visible: true
+						width: 370
+						height: 100
+						x: 20
+						y: 327
+						text: "Temperatura 60°C"
+						textColor: #FFFFFFFF
+						font: font_resource(4721aaed-6a4f-477a-9c46-50cfbe434087)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}]
+				name: "Background_Image"
+				visible: true
+				width: width@4f6b0d13-0a99-4fa5-aaae-0e32a142b8ac (propref<int>)
+				height: height@4f6b0d13-0a99-4fa5-aaae-0e32a142b8ac (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(1d4290c3-3180-4373-a427-8492d1091410)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(63542068-b25d-4b03-bb94-94e64d0dfa82)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Titlu_Label"
+				visible: true
+				width: width@4f6b0d13-0a99-4fa5-aaae-0e32a142b8ac (propref<int>)
+				height: 100
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(78a21dff-6e7b-4456-b605-c4e208bdd973)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 50
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}, 
+			GtfContainer_template_instance(449e9e0e-5d9a-421b-8b5b-c0487b602eae)
+			{
+				name: "Back_button"
+				template: @d707697c-7fad-490e-a949-54739eb1a7d8 (objectref<GtfContainer_template>)
+				children: children_list []
+				x: 670
+				y: 400
+				"x 2": "x 2"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+				"y 2": "y 2"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+				fillColor: #00BFFFFF
+				"x 3": "x 3"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+				"y 3": "y 3"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+				text: "Back"
+				touchShortReleased: function<bool,int,int,int,int>(a160f36c-d247-4a91-bf6e-4ad921b8c26c)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	" \
+						"	fire ev:GoBack()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			GtfContainer_template_instance(07485fde-3698-4765-a9d2-3cc067c2c811)
+			{
+				name: "Start_btn"
+				template: @d707697c-7fad-490e-a949-54739eb1a7d8 (objectref<GtfContainer_template>)
+				children: children_list []
+				x: 560
+				y: 400
+				"x 2": "x 2"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+				"y 2": "y 2"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+				fillColor: #00BFFFFF
+				"x 3": "x 3"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+				"y 3": "y 3"@d707697c-7fad-490e-a949-54739eb1a7d8 (propref<int>)
+				text: "Start"
+				touchShortReleased: function<bool,int,int,int,int>(dacde9e1-ab16-4b9c-8174-6041cfe715b4)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	" \
+						"	if(dp:Alimentare_apa==false || dp:Cuva_Inchisa==false || dp:Detergent==false)" \
+						"		{	fire ev:Display_message()" \
+						"			dp:Message=\"\";" \
+						"			dp:Message2=\"\";" \
+						"			if(dp:Alimentare_apa== false)" \
+						"				dp:Message= dp:Message + \"\\nEroare alimentare apa\"" \
+						"			if(dp:Cuva_Inchisa==false)" \
+						"				dp:Message=dp:Message + \"\\nEroare cuva deschisa\"" \
+						"			if(dp:Detergent==false)" \
+						"				dp:Message=dp:Message + \"\\nEroare detergent\"" \
+						"		}" \
+						"	else{" \
+						"			dp:Message2=\"Programul va incepe in 5 secunde\"" \
+						"			fire ev:GoToStart()" \
+						"		}" \
+						"	" \
+						"    false" \
+						"}"
+				}
+			}]
+		name: "View"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+	}
+	fillColor: fillColor@0d183352-42c7-46b5-989e-2ab94d15e272 (propref<color>)
+	image: image@8bd3f4d8-bb72-4a6e-84cb-180f17f49270 (propref<image>)
+	scaleMode: scaleMode@300202b1-1e56-445c-a491-ad3fd4ef1da6 (propref<int>)
+	text: text@63542068-b25d-4b03-bb94-94e64d0dfa82 (propref<string>)
+	"text 2": text@fe2d3ebb-bdf8-4213-895b-8dfb460a6ede (propref<string>)
+	"text 3": text@7e2e8c42-645c-445f-b217-b459ea86a6f4 (propref<string>)
+	"text 4": text@726604dc-10e3-4e07-8e86-7d3879a3c202 (propref<string>)
+}

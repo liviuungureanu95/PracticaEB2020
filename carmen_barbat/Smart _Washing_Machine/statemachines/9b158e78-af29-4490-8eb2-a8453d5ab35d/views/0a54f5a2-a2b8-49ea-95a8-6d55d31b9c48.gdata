@@ -1,0 +1,123 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(0a54f5a2-a2b8-49ea-95a8-6d55d31b9c48)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(a0e7d0a2-160c-435e-840d-676d94969d2d)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(be8c996e-85a1-4b5c-afb5-86661edd0ac3)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(1de007fc-9b4f-4daf-a94b-a6135363334b)
+						{
+							features: feature_list [
+								MultiLine(7c61c420-410b-4b4d-a7d0-ecadcda13647)
+								{
+									lineOffset: 0
+									maxLineCount: 0
+								}]
+							children: children_list []
+							name: "Label 1"
+							visible: true
+							width: width@0a54f5a2-a2b8-49ea-95a8-6d55d31b9c48 (propref<int>)
+							height: 300
+							x: 0
+							y: 0
+							text: string_scriptedValue(c3c042b5-61c7-4958-ba40-06302b090764)
+							{
+								triggerList: trigger_list(7f46866d-59af-4d4f-947e-12736afa788c)
+								{
+									script: "dp:Start" \
+										"dp:Message2"
+								}
+								onTrigger: function<bool,bool>(2608298a-793e-435b-98d6-d3599fc41312)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<string>(43c67012-e34c-482e-a741-868e83a081a7)
+								{
+									script: "function()" \
+										"{" \
+										"	dp:Message2=\"\"" \
+										"	if(dp:Start==1)" \
+										"	{" \
+										"		dp:Message2=\"Programul NORMAL a inceput \\n Durata 120 min\"" \
+										"		fire_delayed 12000, ev:GoBack()" \
+										"	}" \
+										"		" \
+										"	if(dp:Start==2)" \
+										"	{" \
+										"		dp:Message2=\"Programul QUICK a inceput \\n Durata 30 min\"" \
+										"		fire_delayed 3000, ev:GoBack()" \
+										"	}" \
+										"	if(dp:Start==3)" \
+										"	{" \
+										"		dp:Message2=\"Programul WHITE a inceput \\n Durata 140 min\"" \
+										"		fire_delayed 14000, ev:GoBack()" \
+										"	}" \
+										"		" \
+										"	if(dp:Start==4)" \
+										"	{" \
+										"		dp:Message2=\"Programul BLACK a inceput \\n Durata 150 min\"" \
+										"		fire_delayed 15000, ev:GoBack()" \
+										"	}" \
+										"	dp:Message2" \
+										"}"
+								}
+								write: function<bool,string>(ec3c769f-df62-48c9-98b5-ae5f2c15c4f3)
+								{
+									script: "function(v:arg0::string)" \
+										"{" \
+										"	" \
+										"		" \
+										"" \
+										"	false" \
+										"}"
+								}
+							}
+							textColor: #FFFFFFFF
+							font: font_resource(da55b17d-c2f4-4be8-9a80-a7281069c6fb)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 50
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Image 1"
+					visible: true
+					width: width@0a54f5a2-a2b8-49ea-95a8-6d55d31b9c48 (propref<int>)
+					height: height@0a54f5a2-a2b8-49ea-95a8-6d55d31b9c48 (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(ed5cf821-e3c4-4342-b714-66086eb901b6)
+					{
+						file: "bule.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Rectangle 1"
+			visible: true
+			width: width@0a54f5a2-a2b8-49ea-95a8-6d55d31b9c48 (propref<int>)
+			height: height@0a54f5a2-a2b8-49ea-95a8-6d55d31b9c48 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #87CEEBFF
+		}]
+	name: "Start_view"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
