@@ -1,0 +1,243 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(ebef417c-06ef-4fc2-bd34-e0c4070ec963)
+{
+	name: "ItemInInstantiator"
+	structure: GtfContainer(f04f6479-0b45-4772-877f-64241e03141f)
+	{
+		features: feature_list [
+			LineIndex(327774c2-bbc2-49a5-9f62-e9713258637d)
+			{
+				lineIndex: 0
+			}, 
+			MoveOut(e3f551e6-464f-462d-aced-a9734a817b13)
+			{
+				moveOut: function<bool,int,int,int,int>(2540d6a8-a0b1-4ca8-b9c3-d6f3b88be18c)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    v:this.currentBorderColor = v:this.borderColors[0]" \
+						"    true" \
+						"}"
+				}
+			}, 
+			MoveIn(2b601595-8fae-42ed-967f-7acfe3508ca5)
+			{
+				moveIn: function<bool,int,int,int,int>(aac91e5d-01dd-4bd4-96a3-b7496fa8038b)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    v:this.currentBorderColor = v:this.borderColors[1]" \
+						"    true" \
+						"}"
+				}
+			}, 
+			StateTouched(d437dc02-d1ac-4896-a20a-ac15039e65fc)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			TouchPressed(38390b6c-cf55-4465-9372-21022d9f7b08)
+			{
+				touchPressed: function<bool,int,int,int,int>(f091f4ee-81ab-422a-9db8-bd014d387af8)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	dp:chosenProduct = v:this->name.text" \
+						"	dp:ProductImageIndex = v:this.lineIndex" \
+						"	fire ev:goToProduct()" \
+						"	" \
+						"    false" \
+						"}"
+				}
+			}]
+		children: children_list [
+			GtfRectangle(bf659f77-b8f4-48ba-a44c-5925a88f91ed)
+			{
+				features: feature_list [
+					Border(59b62047-b2ba-4a33-b463-5f80af866a87)
+					{
+						borderThickness: 2
+						borderColor: currentBorderColor@f04f6479-0b45-4772-877f-64241e03141f (propref<color>)
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "Rectangle 2"
+				visible: true
+				width: width@f04f6479-0b45-4772-877f-64241e03141f (propref<int>)
+				height: height@f04f6479-0b45-4772-877f-64241e03141f (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+			}, 
+			GtfImage_template_instance(c3975ae6-68c0-4194-9dd4-e7597bc8ae74)
+			{
+				name: "ResizedImage 1"
+				template: @9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (objectref<GtfImage_template>)
+				children: children_list []
+				x: x@9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (propref<int>)
+				y: y@9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (propref<int>)
+				width: width@f04f6479-0b45-4772-877f-64241e03141f (propref<int>)
+				height: int_scriptedValue(767fd616-d187-492d-8114-5c3c221ac8d6)
+				{
+					triggerList: trigger_list(13dc75e6-2d46-4f2f-ab54-bc8d6ae1a568)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(74243ca5-8647-4bcc-bb91-3f0269125fe1)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(f3228d28-c064-4a66-a651-b39195aafdf8)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.height * 7 / 10" \
+							"}"
+					}
+					write: function<bool,int>(a065c65e-8a39-43c0-876e-1f42c34221f1)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				image: image_resource(f8c0225c-4cd1-469b-a367-3a3f39d7499f)
+				{
+					file: "cherries.png"
+				}
+				pressAction: pressAction@9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (propref<function<bool>>)
+				scaleMode: scaleMode@9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (propref<int>)
+			}, 
+			GtfLabel(8fdd7daa-4d6c-4f4c-8e55-fc2b525af1ec)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "name"
+				visible: true
+				width: width@f04f6479-0b45-4772-877f-64241e03141f (propref<int>)
+				height: int_scriptedValue(94d4bc3b-9100-4de8-a1f8-a60651839c9a)
+				{
+					triggerList: trigger_list(a07fa16e-d157-42be-aba9-c9a22b32b256)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(c80db6a7-3663-4b53-8254-54d95bba7b6d)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(e1a107d8-53c4-4764-8b71-d74e601ab816)
+					{
+						script: "function()" \
+							"{" \
+							"	 v:this->^.height * 3 / 10" \
+							"}"
+					}
+					write: function<bool,int>(5fe93863-41d2-4cdf-85d9-8ca9f6915e3c)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				x: 0
+				y: int_scriptedValue(09e9a74b-8d02-45c5-83c5-3cb51f8d815a)
+				{
+					triggerList: trigger_list(37688a69-3ab8-46f4-ad28-fcf161a6037a)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(0a2dd132-3c34-4c59-a0b3-abe1cfac9a00)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(d6426fa2-88e9-470c-99fb-ce8325c7da27)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.height * 7 / 10" \
+							"}"
+					}
+					write: function<bool,int>(2c79cdb0-bcda-4164-8296-3273189abae2)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				text: "Pinneapple"
+				textColor: #000000FF
+				font: font_resource(d77c2b35-b64d-4727-9d19-4d52ec311216)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 20
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 96
+		height: 120
+		x: 0
+		y: 0
+		setProperties: conditional_script(7217d178-0f39-44a0-a825-0433c9f769bd)
+		{
+			triggerList: trigger_list(d66bdbf1-8253-47c5-9547-03e5ae43da74)
+			{
+				script: "dp:currentStringList" \
+					"dp:currentImageList" \
+					"v:this.lineIndex"
+			}
+			onTrigger: function<bool,bool>(34c20d31-1532-4e83-9a33-21eb5757eff7)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	v:this->\"ResizedImage 1\".image = dp:currentImageList[v:this.lineIndex]" \
+					"	v:this->name.text = dp:currentStringList[v:this.lineIndex]" \
+					"	false" \
+					"}"
+			}
+		}
+		borderColors: colorlist [#6B8E23FF, #ADFF2FFF, #FFD700FF]
+		currentBorderColor: #A9A9A9FF
+		onInit: conditional_script(47e45efa-3732-45af-a26a-c4bdf15e6b79)
+		{
+			triggerList: trigger_list(54f7ce9d-ff6b-4c67-a2e5-f2ed22583b25)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(35a71510-2c96-4e81-8a5a-e38997072e37)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	v:this.currentBorderColor = v:this.borderColors[0]" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+	width: width@f04f6479-0b45-4772-877f-64241e03141f (propref<int>)
+	height: height@f04f6479-0b45-4772-877f-64241e03141f (propref<int>)
+	image: image@c3975ae6-68c0-4194-9dd4-e7597bc8ae74 (propref<image>)
+}

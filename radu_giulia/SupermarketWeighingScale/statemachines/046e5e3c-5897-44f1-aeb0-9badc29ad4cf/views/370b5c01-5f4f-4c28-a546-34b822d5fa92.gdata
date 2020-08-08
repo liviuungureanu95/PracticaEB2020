@@ -1,0 +1,328 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(370b5c01-5f4f-4c28-a546-34b822d5fa92)
+{
+	name: "ProductDetailsView"
+	template: @b167f808-0583-42a4-baa6-9dc11937b815 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer(73b85393-9cc6-49bd-a649-93684706313f)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(ae1b2e3e-8be2-40a8-993c-2a849a69db39)
+				{
+					features: feature_list [
+						Border(b2df02ce-8cc6-4243-828e-945383f3e07f)
+						{
+							borderThickness: 5
+							borderColor: #808080FF
+							borderStyle: 0
+						}]
+					children: children_list []
+					name: "Border"
+					visible: true
+					width: width@73b85393-9cc6-49bd-a649-93684706313f (propref<int>)
+					height: height@73b85393-9cc6-49bd-a649-93684706313f (propref<int>)
+					x: 37
+					y: 87
+					fillColor: #FFFFFF00
+				}, 
+				GtfImage_template_instance(540d1c8c-50d1-42b3-aca1-3a4a66fa4a81)
+				{
+					name: "ProductImage"
+					template: @9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (objectref<GtfImage_template>)
+					children: children_list []
+					x: 37
+					y: 87
+					width: width@73b85393-9cc6-49bd-a649-93684706313f (propref<int>)
+					height: height@73b85393-9cc6-49bd-a649-93684706313f (propref<int>)
+					image: image_scriptedValue(6e447238-7b6c-45a3-8fa0-b2ebfc6b6fda)
+					{
+						triggerList: trigger_list(3544504e-322a-4702-9639-b2e5433db9af)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(dc20d671-c7ec-4c73-aa97-27aa8939d37a)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<image>(9ead3021-8be6-4ac8-bfed-c918b01c06dc)
+						{
+							script: "function()" \
+								"{" \
+								"	dp:currentImageList[dp:ProductImageIndex]" \
+								"" \
+								"}"
+						}
+						write: function<bool,image>(6ce23763-a518-4efd-aef8-7ca8cdb76c45)
+						{
+							script: "function(v:arg0::image)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					pressAction: pressAction@9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (propref<function<bool>>)
+					scaleMode: scaleMode@9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (propref<int>)
+				}]
+			name: "ProductIcon"
+			visible: true
+			width: 164
+			height: 183
+			x: 0
+			y: 0
+		}, 
+		GtfLabel(39bd305a-f204-4134-b894-f7ecb96c7558)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "price"
+			visible: true
+			width: 84
+			height: 35
+			x: 350
+			y: 87
+			text: string_scriptedValue(49f7f7ba-9b90-494a-9d8f-75bd2ddb70e4)
+			{
+				triggerList: trigger_list(284f1834-484d-409a-b6e0-811467b8e3ca)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(669f38ac-495d-4a22-b7d2-21b89159c049)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(cbeba05d-4861-4ad6-a6e4-ff2312279a57)
+				{
+					script: "function()" \
+						"{" \
+						"	" \
+						"	f:float2string(dp:currentPricesList[dp:ProductImageIndex])" \
+						"	" \
+						"	" \
+						"}"
+				}
+				write: function<bool,string>(edddd1ae-b152-42d9-a344-2c8715c4ff2d)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #000000FF
+			font: font_resource(2c048ffe-067f-4bf4-9dab-0e7cf4327e3f)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(eb7ea7f4-2390-4dbb-a148-9504208439b3)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "quantityText"
+			visible: true
+			width: 100
+			height: 100
+			x: 245
+			y: 120
+			text: "Quantity:"
+			textColor: #000000FF
+			font: font_resource(d9a2caa4-8dd5-4a60-a445-82d932696eb2)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(2e44b84b-be84-4daa-991c-e63d83d3c3fd)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "pricePerPieceLabel"
+			visible: true
+			width: 87
+			height: 35
+			x: 247
+			y: 85
+			text: "Price/kg:"
+			textColor: #000000FF
+			font: font_resource(e4b5ca90-d6a8-4413-bc0f-32433a0d6d37)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(563e957c-1e72-4987-a05a-ef100f17304f)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "weight"
+			visible: true
+			width: 100
+			height: 100
+			x: 364
+			y: 119
+			text: string_scriptedValue(a0fda7a3-6d02-4309-bbd3-21a7be04ab2c)
+			{
+				triggerList: trigger_list(8e5f37a7-bfe9-4b67-bf22-2b3ba01746a6)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(d90c5390-ac5c-4f57-8a1a-283bc43959a9)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(e4802a9d-c2cb-4482-bd9d-0a8baebcfc4a)
+				{
+					script: "function()" \
+						"{" \
+						"		f:float2string(dp:quantityInput)" \
+						"" \
+						"}"
+				}
+				write: function<bool,string>(96605dbb-fe00-4155-bce4-126ec3ccaadd)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #008000FF
+			font: font_resource(eac242b0-a1ce-4c79-bf4f-29f1bf0a1d7c)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(9e2e3fa8-bed4-488e-8ec9-14366eca81c0)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "totalLabel"
+			visible: true
+			width: 100
+			height: 58
+			x: 251
+			y: 213
+			text: "Total:"
+			textColor: #000000FF
+			font: font_resource(e2f2f023-7ac6-4eea-b404-8001b018f4a5)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(c4386b91-ccd8-4957-a5f4-e5824d994ff1)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "buyPrice"
+			visible: true
+			width: 100
+			height: 56
+			x: 363
+			y: 212
+			text: string_scriptedValue(76b669dc-78ad-471a-9650-1d79b59484ea)
+			{
+				triggerList: trigger_list(ceb261f6-5832-4052-88b7-eb774c932ef5)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(a8bb7297-3d84-4179-80dd-85eaee52d46f)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(f4fe3cc5-3d01-4455-beb9-b74d7dd03ee3)
+				{
+					script: "function()" \
+						"{" \
+						"	f:float2string(dp:quantityInput*f:string2float(v:this->^->price.text))" \
+						"}"
+				}
+				write: function<bool,string>(0103cf00-8bde-436a-a5c3-389322bc4e53)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #FF0000FF
+			font: font_resource(71f21c33-ce9b-4156-8b26-2f6477a59c27)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(4beb654e-ddb5-4a44-bb8c-44d36a813bb5)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 12"
+			visible: true
+			width: 398
+			height: 52
+			x: 37
+			y: 276
+			text: "* Please simulate the quantity using the datapool variable \"quantityInput\""
+			textColor: #000000FF
+			font: font_resource(de1398bc-81d8-48ad-98cb-96064c66ec99)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 15
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfImage_template_instance(7dc43138-ca4e-42de-b9f5-49f66c0133f8)
+		{
+			name: "ResizedImage 1"
+			template: @9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (objectref<GtfImage_template>)
+			children: children_list []
+			x: 373
+			y: 0
+			width: width@9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (propref<int>)
+			height: 63
+			image: image_resource(faad966e-772f-479e-8d66-04edceb8c12d)
+			{
+				file: "kauflandLogo.png"
+			}
+			pressAction: pressAction@9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (propref<function<bool>>)
+			scaleMode: scaleMode@9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (propref<int>)
+		}]
+	text: @8a7d6fe0-4d06-4976-8d8a-4b9ecda40a16 (objectref<string>)
+}
