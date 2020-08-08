@@ -1,0 +1,84 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(5e4cb14f-1c30-46a2-8096-3e7f7ece5f79)
+{
+	name: "Temp_Button"
+	structure: GtfContainer(aa065113-9449-460a-bda5-b54ea5f3a50a)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(1b028068-adac-44aa-8110-3c18c20aeba1)
+			{
+				features: feature_list [
+					TouchShortReleased(71ad2d1f-e23c-479b-be64-a39ff8e9dd7f)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(0965949d-459b-4a16-9ad6-413347b56af4)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.buttonEvent()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(8c88ffc1-0da1-4be6-8ef2-a310a96dfe2f)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list []
+				name: "Background_btn"
+				visible: true
+				width: width@aa065113-9449-460a-bda5-b54ea5f3a50a (propref<int>)
+				height: height@aa065113-9449-460a-bda5-b54ea5f3a50a (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #40E0D0FF
+				buttonEvent: function<bool>(da23fc2f-59c8-42eb-b21f-745459672343)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}, 
+			GtfLabel(c933051c-1c30-44da-9679-9fa8d5a7536e)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Text_btn"
+				visible: true
+				width: width@aa065113-9449-460a-bda5-b54ea5f3a50a (propref<int>)
+				height: height@aa065113-9449-460a-bda5-b54ea5f3a50a (propref<int>)
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #191970FF
+				font: font_resource(e3ff8851-52c4-4eac-bd18-bc96477677cd)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Button"
+		visible: true
+		width: 200
+		height: 50
+		x: 0
+		y: 0
+	}
+	fillColor: fillColor@1b028068-adac-44aa-8110-3c18c20aeba1 (propref<color>)
+	text: text@c933051c-1c30-44da-9679-9fa8d5a7536e (propref<string>)
+	x: x@aa065113-9449-460a-bda5-b54ea5f3a50a (propref<int>)
+	y: y@aa065113-9449-460a-bda5-b54ea5f3a50a (propref<int>)
+	"x 2": x@1b028068-adac-44aa-8110-3c18c20aeba1 (propref<int>)
+	"y 2": y@1b028068-adac-44aa-8110-3c18c20aeba1 (propref<int>)
+	"x 3": x@c933051c-1c30-44da-9679-9fa8d5a7536e (propref<int>)
+	"y 3": y@c933051c-1c30-44da-9679-9fa8d5a7536e (propref<int>)
+	buttonEvent: buttonEvent@1b028068-adac-44aa-8110-3c18c20aeba1 (propref<function<bool>>)
+}

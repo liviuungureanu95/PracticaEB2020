@@ -1,0 +1,172 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(83dc3833-b42b-4f1c-bc26-2e51cc691b68)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(6fb84c03-3841-4bf5-850b-151f0b6a86c2)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(36edda19-b218-4301-baf1-dc644e5ab6d0)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Title_label"
+					visible: true
+					width: 800
+					height: 100
+					x: 0
+					y: 0
+					text: "The ticket is issued"
+					textColor: #FF4500FF
+					font: font_resource(8a258861-a774-4fae-83a6-0c53b114a598)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 50
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfImage(36ae61a1-b53c-4134-b850-be50c21b4867)
+				{
+					features: feature_list [
+						ScaleMode(af8bdf8e-4344-4376-a850-49d06fbf8ffe)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "ATM_image"
+					visible: true
+					width: 156
+					height: 347
+					x: 38
+					y: 117
+					image: image_resource(b524f79a-f07f-4836-a6f1-db033bd28cd3)
+					{
+						file: "atm.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(26c2b498-141f-4c00-a465-a57581b19fb3)
+				{
+					features: feature_list [
+						ScaleMode(36a654d2-d9dd-4dd5-9f6f-a0f3c08dcdaa)
+						{
+							scaleMode: 1
+						}]
+					children: children_list [
+						GtfParallelAnimation(d9148d95-5311-4915-923f-234c94939a37)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(2c34c5ef-0a8a-4f85-940e-a6b49fe217a4)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "MoveRight"
+									enabled: true
+									delay: 0
+									duration: 4000
+									repeat: 2
+									alternating: false
+									relative: false
+									start: 190
+									end: 630
+									target: x@26c2b498-141f-4c00-a465-a57581b19fb3 (propref<int>)
+								}]
+							name: "Ticket_animation"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(fb614823-1305-4afb-a9fc-e2ccc18227f3)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(2d46deff-4f63-4ccb-8b03-aa6ac16d4bac)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(906b9104-2249-4567-98de-ee9e6e1a0d26)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}]
+					name: "Ticket_image"
+					visible: true
+					width: 100
+					height: 100
+					x: 190
+					y: 247
+					image: image_resource(0fd31490-2d51-4089-9d80-ff931ac87cb0)
+					{
+						file: "ticket.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+					start: conditional_script(fbbd920d-9989-4cce-8c1f-14a2fed9aff0)
+					{
+						triggerList: trigger_list(23a7c43e-04c6-4647-8edb-f1367d6601ae)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(37e4395e-1c29-4ba0-a8fd-bada28a137b5)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	f:animation_play(v:this->^->Ticket_image->Ticket_animation)" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfImage(78fb4732-1201-40e2-8966-0a31e8257180)
+				{
+					features: feature_list [
+						ScaleMode(09df7832-ace1-421c-83aa-eba1f5418dfc)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "Hand_image"
+					visible: true
+					width: 173
+					height: 154
+					x: 629
+					y: 330
+					image: image_resource(01f3ff91-a4f0-412c-bd0e-0fade7eddde0)
+					{
+						file: "2hand.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Background"
+			visible: true
+			width: width@83dc3833-b42b-4f1c-bc26-2e51cc691b68 (propref<int>)
+			height: height@83dc3833-b42b-4f1c-bc26-2e51cc691b68 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #90EE90FF
+		}]
+	name: "Animation_view"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
