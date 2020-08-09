@@ -1,0 +1,80 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(9ede1ace-cb3e-4fd2-ab43-eb4d39079f71)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(f8cc4a82-5095-4f43-8dee-2c7da99523da)
+		{
+			name: "template view 1"
+			template: @38796f7d-bd5f-49c9-9f4e-bdb10ac5be6d (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfContainer_template_instance(72003d2f-fafb-4488-809d-c6b24a3cef39)
+				{
+					name: "mesaj de pornire 1"
+					template: @c42517a5-25c8-4f6c-8f1d-152d768520ef (objectref<GtfContainer_template>)
+					children: children_list []
+					visible: false
+				}]
+			text: "You selected eco_cotton program"
+			"text 2": "Temperature: 45"
+			touchPressed: function<bool,int,int,int,int>(f9dbd79d-33e5-4451-9bde-5cfbaafe705c)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(dp:\"alimentare apa\" == true && dp:\"cuva deschisa\"==true && dp:detergent==true)" \
+					"	{v:this->\"mesaj de pornire 1\".visible = true" \
+					"	fire_delayed 5000 , ev:goback()}" \
+					"	" \
+					"	else if(dp:\"alimentare apa\" != true && dp:\"cuva deschisa\"!=true && dp:detergent!=true)" \
+					"	{f:pushDynamicStateMachine(popup_stack:eco, sm:\"mesaj pop-up\" , 1)}" \
+					"	" \
+					"	else if(dp:\"alimentare apa\" != true && dp:\"cuva deschisa\"==true && dp:detergent==true)" \
+					"    {f:pushDynamicStateMachine(popup_stack:eco, sm:\"mesaj pop-up\" , 1);" \
+					"    dp:\"eroare 1\" = true;" \
+					"    }" \
+					"    " \
+					"    else if(dp:\"alimentare apa\" == true && dp:\"cuva deschisa\"!=true && dp:detergent==true)" \
+					"    {f:pushDynamicStateMachine(popup_stack:eco, sm:\"mesaj pop-up\" , 1);" \
+					"    dp:\"eroare 2\" = true;" \
+					"    }" \
+					"    " \
+					"    else if(dp:\"alimentare apa\" == true && dp:\"cuva deschisa\"==true && dp:detergent!=true)" \
+					"    {f:pushDynamicStateMachine(popup_stack:eco, sm:\"mesaj pop-up\" , 1);" \
+					"    dp:\"eroare 3\" = true;" \
+					"    }" \
+					"    " \
+					"     else if(dp:\"alimentare apa\" != true && dp:\"cuva deschisa\"!=true && dp:detergent==true)" \
+					"    {f:pushDynamicStateMachine(popup_stack:eco, sm:\"mesaj pop-up\" , 1);" \
+					"    dp:\"eroare 4\" = true;" \
+					"    }" \
+					"    " \
+					"     else if(dp:\"alimentare apa\" != true && dp:\"cuva deschisa\"==true && dp:detergent!=true)" \
+					"    {f:pushDynamicStateMachine(popup_stack:eco, sm:\"mesaj pop-up\" , 1);" \
+					"    dp:\"eroare 5\" = true;" \
+					"    }" \
+					"    " \
+					"     else if(dp:\"alimentare apa\" == true && dp:\"cuva deschisa\"!=true && dp:detergent!=true)" \
+					"    {f:pushDynamicStateMachine(popup_stack:eco, sm:\"mesaj pop-up\" , 1);" \
+					"    dp:\"eroare 6\" = true;" \
+					"    }" \
+					"    false" \
+					"}"
+			}
+			"text 3": "Duration: 45 min"
+			visible: visible@38796f7d-bd5f-49c9-9f4e-bdb10ac5be6d (propref<bool>)
+			"touchPressed 2": function<bool,int,int,int,int>(35d009ce-d1c6-416f-96af-da321caa19f5)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    false" \
+					"}"
+			}
+		}]
+	name: "View 5"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

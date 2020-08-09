@@ -1,0 +1,236 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(fef53696-dbeb-4987-8f24-6a837aecec12)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(3637c88b-0124-43f8-b0a7-c929eede6935)
+		{
+			features: feature_list [
+				ScaleMode(dfd75cd1-a5b9-4cda-8fe3-353ea416393d)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "background-ul 2"
+			visible: true
+			width: 770
+			height: 470
+			x: 1
+			y: -5
+			image: image_resource(5b46ef5b-aef2-4c31-b308-9fcff4075083)
+			{
+				file: "view_background.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+			"Conditional script 3": conditional_script(550d0d70-adc0-4a27-bf12-8ac5207f3272)
+			{
+				triggerList: trigger_list(9c3682a0-da64-45b7-a192-b68b45cd5ff2)
+				{
+					script: "dp:\"eroare 1\"" \
+						"dp:\"eroare 2\"" \
+						"dp:\"eroare 3\"" \
+						"dp:\"eroare 4\"" \
+						"dp:\"eroare 5\"" \
+						"dp:\"eroare 6\"" \
+						""
+				}
+				onTrigger: function<bool,bool>(b85fad29-36ff-48e2-bd56-d7e4ef497941)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(dp:\"eroare 1\" == true)" \
+						"	{" \
+						"		v:this->^->\"mesaj cuva\".visible = false" \
+						"		v:this->^->\"MESAJ DETERGENT\".visible = false" \
+						"	}" \
+						"	else if(dp:\"eroare 2\" == true)" \
+						"	{" \
+						"		v:this->^->\"MESAJ DETERGENT\".visible = false" \
+						"		v:this->^->\"MESAJ APA\".visible = false" \
+						"	}" \
+						"	else if(dp:\"eroare 3\" == true)" \
+						"	{" \
+						"		v:this->^->\"mesaj cuva\".visible = false" \
+						"		v:this->^->\"MESAJ APA\".visible = false" \
+						"	}" \
+						"	" \
+						"	else if(dp:\"eroare 4\" == true)" \
+						"	{" \
+						"		v:this->^->\"MESAJ DETERGENT\".visible = false" \
+						"	}" \
+						"	" \
+						"	else if(dp:\"eroare 5\" == true)" \
+						"	{" \
+						"		v:this->^->\"mesaj cuva\".visible = false" \
+						"	}" \
+						"	" \
+						"	else if(dp:\"eroare 6\" == true)" \
+						"	{" \
+						"		v:this->^->\"MESAJ APA\".visible = false" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfImage(27e7b4c5-1677-4d8c-9b45-23351e367702)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "alert"
+			visible: true
+			width: 61
+			height: 62
+			x: 366
+			y: 31
+			image: image_resource(c6032d42-670d-4e47-aaa9-0ea22156cf20)
+			{
+				file: "alert.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(d247e6ec-9fbb-4a52-a17c-e2f2c11e8f5d)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "mesaj cuva"
+			visible: true
+			width: 377
+			height: 46
+			x: 195
+			y: 110
+			text: "VERIFICATI DACA CUVA ESTE INCHISA"
+			textColor: #FFFFFFFF
+			font: font_resource(23b189dd-a8eb-4618-be7a-5aece306958a)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(9768f21a-5533-4d8c-b43f-f400a3c76d04)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "MESAJ DETERGENT"
+			visible: true
+			width: 380
+			height: 66
+			x: 197
+			y: 149
+			text: "VERIFICATI DACA EXISTA DETERGENT"
+			textColor: #FFFFFFFF
+			font: font_resource(45f6a327-75d5-4877-b65d-38de485b9681)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+			"Conditional script 3": conditional_script(65cca204-96db-4f50-ae7b-28eb0c45d121)
+			{
+				triggerList: trigger_list(02ac3e8f-f8e4-4075-80d5-a72a1e9e05b7)
+				{
+					script: "" \
+						""
+				}
+				onTrigger: function<bool,bool>(0ace4bf1-1d10-40e6-94ab-4b82a3b613e1)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfLabel(439910f3-dba1-42c3-a055-28bacc639cb9)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "MESAJ APA"
+			visible: true
+			width: 338
+			height: 60
+			x: 213
+			y: 200
+			text: "VERIFICATI ALIMENTAREA LA APA"
+			textColor: #FFFFFFFF
+			font: font_resource(6e078148-e401-4280-8b19-0fe5ed0de3c5)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfRectangle(8bc94e4b-ae03-4b3c-b58c-c23fea2412d3)
+		{
+			features: feature_list [
+				TouchPressed(7693dc6e-3d38-4efd-8f85-0508a26a48bb)
+				{
+					touchPressed: function<bool,int,int,int,int>(f7edb3b2-4467-464d-a259-a78228ee0a6d)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"fire ev:goback()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(390aaefd-7dcb-410a-96c4-38b94c3cca13)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfLabel(a1ad5614-2d21-49b7-9c0b-1705cd074092)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "mesaj start"
+					visible: true
+					width: 66
+					height: 41
+					x: 42
+					y: 6
+					text: "RETRY"
+					textColor: #FFFFFFFF
+					font: font_resource(bb91b2a5-c823-4ee2-9b78-ff2e81df3973)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "buton RETRY"
+			visible: true
+			width: 156
+			height: 58
+			x: 316
+			y: 365
+			fillColor: #00FF00FF
+		}, 
+		GtfContainer_template_instance(8f624ebd-f8d1-4618-ad23-bb206bf311af)
+		{
+			name: "mesaj de pornire"
+			template: @c42517a5-25c8-4f6c-8f1d-152d768520ef (objectref<GtfContainer_template>)
+			children: children_list []
+			visible: false
+		}]
+	name: "pop-up"
+	visible: true
+	width: 770
+	height: 464
+	x: 8
+	y: 5
+}
