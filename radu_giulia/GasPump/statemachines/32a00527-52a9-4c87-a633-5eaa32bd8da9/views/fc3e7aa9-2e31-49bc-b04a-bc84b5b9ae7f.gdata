@@ -1,0 +1,346 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(fc3e7aa9-2e31-49bc-b04a-bc84b5b9ae7f)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(01087d24-2e76-41ad-b05b-998747c01651)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(6320abe7-4286-48cc-8a17-e89e482d8f20)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 3"
+					visible: true
+					width: width@fc3e7aa9-2e31-49bc-b04a-bc84b5b9ae7f (propref<int>)
+					height: 100
+					x: 0
+					y: 0
+					text: string_scriptedValue(b952c9a7-7486-4936-8cb4-7b3a2a12a0d0)
+					{
+						triggerList: trigger_list(0a9c98f0-dcc2-408f-ab34-791f5092c83f)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(e168bd85-c2a1-4a16-b387-142c873951be)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(d5edc329-bb9c-46b6-b423-c14b37625e43)
+						{
+							script: "function()" \
+								"{" \
+								"	dp:chosen" \
+								"}"
+						}
+						write: function<bool,string>(4e6b78bc-696d-4922-8309-1b1c33a8b7c0)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(03700ea0-6fa2-4934-af9e-99c486b9d8c9)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(1666f6de-1611-4c23-b545-22abd3070b31)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 4"
+					visible: true
+					width: 126
+					height: 100
+					x: 14
+					y: 148
+					text: "Price per L:"
+					textColor: #FF0000FF
+					font: font_resource(7525c1a5-e5a1-499d-ba92-460635c20c50)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(a5fee7cb-9bfe-4f74-af9b-4adde250e826)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "price"
+					visible: true
+					width: 100
+					height: 100
+					x: 183
+					y: 146
+					text: string_scriptedValue(2d14782a-5609-4c1e-b718-6c4c52d61140)
+					{
+						triggerList: trigger_list(7795d7f6-d0d6-4f78-976a-e621422800e2)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(51b33dc1-cc7d-487d-9312-302d90c9c8d7)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(b4dc27d4-c5e8-4e3a-b659-1efca273d10a)
+						{
+							script: "function()" \
+								"{" \
+								"	f:float2string(dp:price)" \
+								"}"
+						}
+						write: function<bool,string>(8a1f7b9b-e7fa-419f-b688-8c7c56d86076)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(ffd2b99b-d0a1-4f0e-b24f-1d96f26f80e8)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfRectangle(fa6fc1cf-1e99-44f2-add8-53dbb3066601)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "bar"
+					visible: true
+					width: 267
+					height: 45
+					x: 29
+					y: 341
+					fillColor: #A9A9A9FF
+				}, 
+				GtfRectangle(c5e525b3-483f-441e-a16e-1a4c4173c20b)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfParallelAnimation(56f95c50-5359-4f5d-bc1a-c0b3e3076d13)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(2f528439-6450-4ee9-a29a-231006efe8d7)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "increaseWidth"
+									enabled: true
+									delay: 0
+									duration: 5000
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 0
+									end: 267
+									target: width@c5e525b3-483f-441e-a16e-1a4c4173c20b (propref<int>)
+								}]
+							name: "Animation 1"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(531d5322-5d67-4636-a159-d5ac8a8244be)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(4af68ff0-1c1b-49a7-ad6f-c3751581f093)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(42cc4317-4bc7-49df-af84-2e750222ccea)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"	v:this->^->^->doneLabel.visible = true" \
+									"}"
+							}
+						}]
+					name: "loadedBar"
+					visible: true
+					width: 0
+					height: 45
+					x: 29
+					y: 341
+					fillColor: #ADFF2FFF
+				}, 
+				GtfLabel(6cbb2458-a17b-4f75-90e7-9b4beea8f32d)
+				{
+					features: feature_list [
+						TouchPressed(9e3a3f9e-74d7-4358-8a2b-ddf9fe19cd6e)
+						{
+							touchPressed: function<bool,int,int,int,int>(7aff17ce-6405-4b8b-9d15-7f65a90d81f2)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:goBack()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(9f88de76-4bc6-464e-85ae-0830be9d310d)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "doneLabel"
+					visible: false
+					width: 100
+					height: 61
+					x: 110
+					y: 410
+					text: "DONE"
+					textColor: #008000FF
+					font: font_resource(964c42fb-59ea-483f-b5ac-8f69f02f7e2d)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer(126c60ff-faab-4d13-a43b-63f1c0e16f28)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Container 2"
+					visible: true
+					width: 100
+					height: 100
+					x: 0
+					y: 0
+				}, 
+				GtfLabel(3cb84578-cee7-4e8c-9584-5c0578b4bce1)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 7"
+					visible: true
+					width: 155
+					height: 62
+					x: 11
+					y: 227
+					text: "Number of L:"
+					textColor: #000000FF
+					font: font_resource(7707de77-0baf-4e20-8a3f-c599bdf65a7e)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(87c372f8-336d-4c62-bd9e-df4b867af667)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 8"
+					visible: true
+					width: 100
+					height: 69
+					x: 188
+					y: 224
+					text: string_scriptedValue(7c1dc089-c3c3-4a7c-82c9-06a404fcb230)
+					{
+						triggerList: trigger_list(f8d75e10-0b72-4c2e-b88c-082b71620a3f)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(7525aa23-f51a-4a37-bf8b-373a3daa0141)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(c867cffa-8b43-4882-abb3-e1092f323b99)
+						{
+							script: "function()" \
+								"{" \
+								"	f:int2string(dp:liters)" \
+								"}"
+						}
+						write: function<bool,string>(49187c67-cc5b-4446-aa87-88ece3d7f1c2)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(7932e9af-9748-4f02-8a47-7bb2457d1f9f)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "Rectangle 3"
+			visible: true
+			width: width@fc3e7aa9-2e31-49bc-b04a-bc84b5b9ae7f (propref<int>)
+			height: height@fc3e7aa9-2e31-49bc-b04a-bc84b5b9ae7f (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #FFFFFFFF
+		}]
+	name: "View 2"
+	visible: true
+	width: 320
+	height: 480
+	x: 0
+	y: 0
+	play: conditional_script(a5ac29c6-ab56-48b3-99f6-d5a1712ce508)
+	{
+		triggerList: trigger_list(f8f3ead9-50c4-4e42-adf4-4df8bc4fa1c6)
+		{
+			script: ""
+		}
+		onTrigger: function<bool,bool>(0b4c8264-45a0-4cfa-bf61-dd38921efddd)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	f:animation_play(v:this->\"Rectangle 3\"->loadedBar->\"Animation 1\")" \
+				"	false" \
+				"}"
+		}
+	}
+}

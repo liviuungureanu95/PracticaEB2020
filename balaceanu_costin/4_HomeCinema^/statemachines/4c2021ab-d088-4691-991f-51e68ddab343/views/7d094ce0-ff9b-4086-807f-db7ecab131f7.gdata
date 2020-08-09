@@ -1,0 +1,68 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(7d094ce0-ff9b-4086-807f-db7ecab131f7)
+{
+	name: "TurnOff"
+	template: @749a5712-2ef0-4253-aaa1-871949a645b4 (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(0d8fba25-662d-4b02-a382-3cd5d7f8c0ef)
+		{
+			features: feature_list [
+				MultiLine(63176fbd-bd6e-47f6-849c-d29f41893070)
+				{
+					lineOffset: 0
+					maxLineCount: 0
+				}]
+			children: children_list []
+			name: "Info_Txt"
+			visible: true
+			width: 275
+			height: 203
+			x: 24
+			y: 173
+			text: "Your sistem is Turning Off !! If you want to cancel press \"Back Button\". If you are sure to exic press \"TurOff Button !\""
+			textColor: #FF0000FF
+			font: font_resource(eb25e2c6-b73e-42e5-8b05-bc69cef2c76c)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(f1c6561e-daab-49fc-ba48-d1f5d4a0185e)
+		{
+			name: "Button 1"
+			template: @e68b5529-90d2-4a2e-b14e-c315fa7834b7 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 125
+			y: 390
+			Activate: Activate@e68b5529-90d2-4a2e-b14e-c315fa7834b7 (propref<bool>)
+			touchShortReleased: function<bool,int,int,int,int>(ed2bec5c-fe03-45bf-849a-6b9815de6fc0)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:GoTo_M()" \
+					"    false" \
+					"}"
+			}
+			image: image_resource(e44666db-1114-4c46-8c9c-bc21d47b848f)
+			{
+				file: "Back.png"
+			}
+		}]
+	text: "----- < [  T U R N    O F F  ] > -----"
+	Activate: false
+	image: image_resource(e10879cb-2d7d-4c76-b836-20536784540a)
+	{
+		file: "Back.png"
+	}
+	touchShortReleased: function<bool,int,int,int,int>(5b36b63d-7e22-420c-8fca-a73a6ccd6c51)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"	fire ev:GoTo_M()" \
+			"    false" \
+			"}"
+	}
+}

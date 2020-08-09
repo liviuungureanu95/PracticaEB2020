@@ -1,0 +1,124 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(39f54876-67ed-4f91-affa-a99caddbba87)
+{
+	name: "MainMenu_View"
+	template: @53ac3bed-5f76-4e35-97ac-abda296dd428 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(c39b01d1-4927-4e93-82bd-7d94ec67086e)
+		{
+			name: "Banana_Button"
+			template: @bc7875ee-6e72-4414-a8d0-4ab7436e12ff (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 0
+			y: 140
+			image: image_resource(11c7ef3a-b2a7-471d-a6a7-9737c038f7bb)
+			{
+				file: "banana.png"
+			}
+			buttonEvent: function<bool>(e510a88c-a3a2-4812-b250-7f9f34f35f6c)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_choice()" \
+					"	false" \
+					"}"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(15e34f42-55ab-47e6-a675-66e3bad59f3f)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.buttonEvent()" \
+					"	fire ev:goTo_bananaMenu()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(b1c9fc25-6cb7-4445-8615-c86e3d147b8c)
+		{
+			name: "Lemon_Button"
+			template: @bc7875ee-6e72-4414-a8d0-4ab7436e12ff (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 95
+			y: 140
+			image: image_resource(c8d4790e-03d3-4020-b7aa-5ca98657ad2a)
+			{
+				file: "lemon.png"
+			}
+			buttonEvent: function<bool>(c6ca74a7-6d09-4f75-979e-da1632fecc7e)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_choice()" \
+					"	false" \
+					"}"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(67f05dfe-6e68-4657-b15f-76c3f2693fd2)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.buttonEvent()" \
+					"	fire ev:goTo_lemonMenu()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(5e56571e-7cd9-4ad5-be91-96fb73f95e8f)
+		{
+			name: "Orange_Button"
+			template: @bc7875ee-6e72-4414-a8d0-4ab7436e12ff (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 195
+			y: 140
+			image: image_resource(bdf33a5f-a890-4997-8f44-aaf6f6eb618f)
+			{
+				file: "orange.png"
+			}
+			buttonEvent: function<bool>(3719d21f-2f1c-42d4-9bb3-48ed76506e3e)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_choice()" \
+					"	false" \
+					"}"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(b5164114-b84e-4988-8b98-8aebb68b24d0)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.buttonEvent()" \
+					"	fire ev:goTo_orangeMenu()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(8bcb9912-32df-4548-9571-5d5d152f4d9e)
+		{
+			name: "Apple_Button"
+			template: @bc7875ee-6e72-4414-a8d0-4ab7436e12ff (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 300
+			y: 140
+			image: image_resource(155644ac-77ee-46f5-8121-4b73a5c328b6)
+			{
+				file: "apple.png"
+			}
+			buttonEvent: function<bool>(885dd168-3777-43c3-aec0-8beddc79d0d6)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_choice()" \
+					"	false" \
+					"}"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(375412dc-7fd5-45c3-a5e3-111f421263e5)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.buttonEvent()" \
+					"	fire ev:goTo_appleMenu()" \
+					"    false" \
+					"}"
+			}
+		}]
+}

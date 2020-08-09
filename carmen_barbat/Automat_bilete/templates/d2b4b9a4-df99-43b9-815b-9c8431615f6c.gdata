@@ -1,0 +1,487 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(d2b4b9a4-df99-43b9-815b-9c8431615f6c)
+{
+	name: "TempView"
+	structure: GtfView(05f38c20-82b6-4412-b21a-128c5d9f1b4e)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(e1490834-0ebb-4f8e-8cb5-263f08c0acb7)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfImage(873c9981-8ed4-42a3-89ab-3156cd102fc5)
+					{
+						features: feature_list [
+							ScaleMode(9d80c768-552d-4b83-90d9-ba03729a73cc)
+							{
+								scaleMode: 2
+							}]
+						children: children_list []
+						name: "Back_image"
+						visible: true
+						width: 486
+						height: 480
+						x: 163
+						y: 0
+						image: image_resource(6b0826bd-cfb1-4c5e-a612-33e4a30941b3)
+						{
+							file: "Back.png"
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+					}, 
+					GtfContainer_template_instance(eeb22ee2-cee1-44ed-9b42-cd0542a5ecc2)
+					{
+						name: "Get_ticket_BTN"
+						template: @5e4cb14f-1c30-46a2-8096-3e7f7ece5f79 (objectref<GtfContainer_template>)
+						children: children_list []
+						fillColor: fillColor@5e4cb14f-1c30-46a2-8096-3e7f7ece5f79 (propref<color>)
+						text: "Get ticket"
+						x: 570
+						y: 400
+						"x 2": "x 2"@5e4cb14f-1c30-46a2-8096-3e7f7ece5f79 (propref<int>)
+						"y 2": "y 2"@5e4cb14f-1c30-46a2-8096-3e7f7ece5f79 (propref<int>)
+						"x 3": "x 3"@5e4cb14f-1c30-46a2-8096-3e7f7ece5f79 (propref<int>)
+						"y 3": "y 3"@5e4cb14f-1c30-46a2-8096-3e7f7ece5f79 (propref<int>)
+						buttonEvent: function<bool>(9429c113-3055-444b-bb0d-32f630a7d1c0)
+						{
+							script: "function()" \
+								"{" \
+								"	if(dp:Price > dp:Money)" \
+								"		fire ev:display_warning()" \
+								"	else" \
+								"		{" \
+								"			dp:Money -=dp:Price" \
+								"			fire ev:GoToAnimation()" \
+								"			fire_delayed 8000, ev:GoToMain()" \
+								"		}" \
+								"		" \
+								"	false" \
+								"}"
+						}
+					}, 
+					GtfContainer(6b218d0a-531c-4ce3-9289-d652cfac39d9)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfInstantiator(33db06cd-c4e2-42b4-b891-2b6b5bfff12d)
+							{
+								features: feature_list [
+									LayoutPolicyFlow(712a6c28-b018-474c-b7e5-2aed795765ce)
+									{
+										horizontalGap: 0
+										verticalGap: 0
+										layoutDirection: 0
+										horizontalChildAlign: 0
+										verticalChildAlign: 0
+									}, 
+									ViewPort(7beb561a-1ef2-4bb0-8706-42b3c13b6744)
+									{
+										xOffset: 0
+										yOffset: 0
+									}]
+								children: children_list [
+									GtfContainer(07d867da-d61c-4b08-bdda-66a1221895e5)
+									{
+										features: feature_list [
+											LineIndex(53afe94c-1c90-4238-9df4-c0cfce59714c)
+											{
+												lineIndex: 0
+											}]
+										children: children_list [
+											GtfRectangle(41b84650-9424-4e1c-9512-838b7eabfd64)
+											{
+												features: feature_list [
+													Border(ef5f4cef-1792-4de9-a329-064d0d5a07c5)
+													{
+														borderThickness: 3
+														borderColor: #98FB98FF
+														borderStyle: 0
+													}, 
+													TouchShortReleased(cea69c6a-045b-406e-879e-38ef4dae82ad)
+													{
+														touchShortReleased: function<bool,int,int,int,int>(5f8956be-92dd-4a9d-a774-4d47e15e60c2)
+														{
+															script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+																"{" \
+																"	dp:Index=v:this->^.lineIndex" \
+																"	v:this->^->^->^->^->Price_Label.visible=true" \
+																"    false" \
+																"}"
+														}
+													}, 
+													StateTouched(d8b6d846-8e8b-4f31-9fb6-9ad4c818e912)
+													{
+														touchable: true
+														touched: false
+														touchPolicy: 0
+														touchBehavior: 0
+													}]
+												children: children_list []
+												name: "Background"
+												visible: true
+												width: width@07d867da-d61c-4b08-bdda-66a1221895e5 (propref<int>)
+												height: height@07d867da-d61c-4b08-bdda-66a1221895e5 (propref<int>)
+												x: 0
+												y: 0
+												fillColor: #40E0D0FF
+											}, 
+											GtfLabel(c4316a9c-deb3-484d-ba6f-d20cf8833b8b)
+											{
+												features: feature_list []
+												children: children_list []
+												name: "Text"
+												visible: true
+												width: width@07d867da-d61c-4b08-bdda-66a1221895e5 (propref<int>)
+												height: height@07d867da-d61c-4b08-bdda-66a1221895e5 (propref<int>)
+												x: 0
+												y: 0
+												text: "label"
+												textColor: #191970FF
+												font: font_resource(1298b21c-6527-41cc-a2ce-f29ca0817279)
+												{
+													file: "PT_Sans_Narrow.ttf"
+													size: 30
+												}
+												horizontalAlign: 1
+												verticalAlign: 0
+												setText: conditional_script(c8fd353e-6100-4ada-b69e-7257dc06f374)
+												{
+													triggerList: trigger_list(9767f6c1-fb2a-447b-b7b6-d2d6a252f36c)
+													{
+														script: "v:this->^->^->^.Places_list" \
+															"v:this->^.lineIndex"
+													}
+													onTrigger: function<bool,bool>(bab8f4d6-a11f-47fd-b60b-9b27ac9c96e3)
+													{
+														script: "function(v:arg0::bool)" \
+															"{" \
+															"	v:this.text=v:this->^->^->^.Places_list[v:this->^.lineIndex]" \
+															"	false" \
+															"}"
+													}
+												}
+											}]
+										name: "list_button"
+										visible: true
+										width: width@6b218d0a-531c-4ce3-9289-d652cfac39d9 (propref<int>)
+										height: ButtonHeight@33db06cd-c4e2-42b4-b891-2b6b5bfff12d (propref<int>)
+										x: 0
+										y: 0
+									}]
+								name: "List_Instantiator"
+								visible: true
+								width: width@6b218d0a-531c-4ce3-9289-d652cfac39d9 (propref<int>)
+								height: height@6b218d0a-531c-4ce3-9289-d652cfac39d9 (propref<int>)
+								x: 0
+								y: 0
+								numItems: int_scriptedValue(c2f4626e-c186-45e9-981c-d734a2c28ccf)
+								{
+									triggerList: trigger_list(49eedaff-9ccf-46f0-a5da-d0ee89964ffb)
+									{
+										script: "v:this->^.Places_list"
+									}
+									onTrigger: function<bool,bool>(c86d6870-8f5b-4355-a2ed-9f9d9f9da8b4)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	true" \
+											"}"
+									}
+									read: function<int>(8c298bc7-97ac-4322-b5e6-04c74352ad89)
+									{
+										script: "function()" \
+											"{" \
+											"	length v:this->^.Places_list" \
+											"}"
+									}
+									write: function<bool,int>(5fea4788-2c2b-48a3-a8d0-3b37126a4cbe)
+									{
+										script: "function(v:arg0::int)" \
+											"{" \
+											"	" \
+											"	false" \
+											"}"
+									}
+								}
+								lineMapping: intlist []
+								ButtonHeight: 50
+								MoveUpDown: conditional_script(5a01a3ad-db8c-40ba-93b9-04be74380e3c)
+								{
+									triggerList: trigger_list(9174911e-bac0-4768-960e-5ded2d1d26c3)
+									{
+										script: "v:this.ButtonHeight" \
+											"ev:scroll_down" \
+											"ev:scroll_up"
+									}
+									onTrigger: function<bool,bool>(5105725d-b610-4dfd-b369-d22847c60b05)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	match_event v:event = ev:scroll_up in" \
+											"	{" \
+											"		v:this.yOffset += v:this.ButtonHeight/2" \
+											"	}" \
+											"	match_event v:event = ev:scroll_down in" \
+											"	{" \
+											"		v:this.yOffset -= v:this.ButtonHeight/2" \
+											"	}" \
+											"	" \
+											"	false" \
+											"}"
+									}
+								}
+							}]
+						name: "List_container"
+						visible: true
+						width: 350
+						height: 250
+						x: 100
+						y: 100
+						Places_list: stringlist ["Brasov", "Cluj", "Timisoara", "Sibiu", "Constanta", "Deva", "Iasi", "Bucuresti"]
+						ScrollLimit: conditional_script(c7f25362-a55b-4496-9c9c-3abc956b7cc5)
+						{
+							triggerList: trigger_list(939ae34f-1824-4186-967b-5a70db3c4a60)
+							{
+								script: "v:this->List_Instantiator.ButtonHeight" \
+									"v:this.Places_list" \
+									"v:this.height" \
+									"v:this->List_Instantiator.yOffset" \
+									""
+							}
+							onTrigger: function<bool,bool>(dd05d838-4c0b-4640-baa5-bdcab643f72a)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	let v:maximumOffset = length v:this.Places_list * v:this->List_Instantiator.ButtonHeight - v:this.height in" \
+									"	{" \
+									"		if(v:this->List_Instantiator.yOffset > 0)" \
+									"		{" \
+									"			v:this->List_Instantiator.yOffset = 0" \
+									"		}" \
+									"		if(v:this->List_Instantiator.yOffset < -v:maximumOffset)" \
+									"		{" \
+									"			v:this->List_Instantiator.yOffset = -v:maximumOffset" \
+									"		}" \
+									"	}" \
+									"	false" \
+									"}"
+							}
+						}
+					}, 
+					GtfContainer_template_instance(59c5e45f-b1ed-4e31-b573-d7f86d7d40a2)
+					{
+						name: "UP_BTN"
+						template: @0c14e410-02dc-402c-b001-4e4b20ff109f (objectref<GtfContainer_template>)
+						children: children_list []
+						image: image_resource(c563e1c3-81a5-4dea-9798-c394d961d900)
+						{
+							file: "upp.png"
+						}
+						x: 30
+						y: 101
+						"x 2": "x 2"@0c14e410-02dc-402c-b001-4e4b20ff109f (propref<int>)
+						"y 2": "y 2"@0c14e410-02dc-402c-b001-4e4b20ff109f (propref<int>)
+						"x 3": "x 3"@0c14e410-02dc-402c-b001-4e4b20ff109f (propref<int>)
+						"y 3": "y 3"@0c14e410-02dc-402c-b001-4e4b20ff109f (propref<int>)
+						buttonEvent: function<bool>(73caf33b-335d-4a4e-905a-2e88b6ed98db)
+						{
+							script: "function()" \
+								"{" \
+								"	fire ev:scroll_up()" \
+								"	false" \
+								"}"
+						}
+					}, 
+					GtfContainer_template_instance(3e416004-a159-439a-a6eb-39a626dd6963)
+					{
+						name: "DOWN_BTN"
+						template: @0c14e410-02dc-402c-b001-4e4b20ff109f (objectref<GtfContainer_template>)
+						children: children_list []
+						image: image_resource(f53940cb-8753-4838-bd1c-d23e739b1ed7)
+						{
+							file: "down.png"
+						}
+						x: 29
+						y: 281
+						"x 2": "x 2"@0c14e410-02dc-402c-b001-4e4b20ff109f (propref<int>)
+						"y 2": "y 2"@0c14e410-02dc-402c-b001-4e4b20ff109f (propref<int>)
+						"x 3": "x 3"@0c14e410-02dc-402c-b001-4e4b20ff109f (propref<int>)
+						"y 3": "y 3"@0c14e410-02dc-402c-b001-4e4b20ff109f (propref<int>)
+						buttonEvent: function<bool>(32dc2e8d-77bb-4657-a5b2-4d93a1dc8259)
+						{
+							script: "function()" \
+								"{" \
+								"	fire ev:scroll_down()" \
+								"	false" \
+								"}"
+						}
+					}, 
+					GtfLabel(e8fbdbc8-20c0-463c-a05a-c6a0924faef0)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Price_Label"
+						visible: false
+						width: 326
+						height: 152
+						x: 462
+						y: 171
+						text: string_scriptedValue(37f93718-b9f2-4901-a840-b3d1b5878149)
+						{
+							triggerList: trigger_list(65e84882-5876-4dda-bae4-573123785b40)
+							{
+								script: "dp:Ticket_price" \
+									"dp:Index" \
+									"dp:Class_difference" \
+									""
+							}
+							onTrigger: function<bool,bool>(c58b3364-b9b6-46cd-b6b2-6be8fbff7b42)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<string>(db178c80-6f94-4ae9-a0ec-9b563ceb8a7a)
+							{
+								script: "function()" \
+									"{" \
+									"	dp:Price=dp:Ticket_price[dp:Index] + dp:Class_difference" \
+									"	\"Price: \" + f:format_float(\"%.2f\",true,dp:Price) + \" Lei\"" \
+									"	" \
+									"	" \
+									"	" \
+									"}"
+							}
+							write: function<bool,string>(0ad7d9ed-87a9-4f2a-95fb-51ecfabeb87d)
+							{
+								script: "function(v:arg0::string)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						textColor: #FF4500FF
+						font: font_resource(1bca0a44-1f05-4e6b-958d-3227fb8e794c)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 40
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfLabel(e761a1a6-5284-42c2-b19b-8a483e649e64)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Title_Label"
+						visible: true
+						width: width@05f38c20-82b6-4412-b21a-128c5d9f1b4e (propref<int>)
+						height: 100
+						x: 0
+						y: 0
+						text: "Choose destination"
+						textColor: #FF4500FF
+						font: font_resource(58bec467-735c-4c42-9d17-0757542c8353)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 40
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}, 
+					GtfLabel(f310d162-5beb-4c65-8d59-102383c595b0)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Amount_label"
+						visible: true
+						width: 327
+						height: 142
+						x: 462
+						y: 48
+						text: string_scriptedValue(3f821085-fff7-420d-b921-57c34f4eba76)
+						{
+							triggerList: trigger_list(f7d3dbe7-a683-47f0-9fb2-59108287c220)
+							{
+								script: "dp:Money"
+							}
+							onTrigger: function<bool,bool>(0df7741b-c1ae-47c5-ac5e-c92e12dacdaa)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<string>(532a8628-01bb-4a15-ab08-faf56706e20f)
+							{
+								script: "function()" \
+									"{" \
+									"	" \
+									"	\"Amount: \" + f:format_float(\"%.2f\",true,dp:Money) + \" Lei\"" \
+									"	" \
+									"}"
+							}
+							write: function<bool,string>(b02af309-a016-4138-be17-b1a8910f8215)
+							{
+								script: "function(v:arg0::string)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						textColor: #FF4500FF
+						font: font_resource(adbdf7fb-d53f-4c60-a19e-1a1c34c90ade)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 40
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}, 
+					GtfContainer_template_instance(015d6435-e29e-41cf-a956-705df948feaa)
+					{
+						name: "Temp_Button 1"
+						template: @5e4cb14f-1c30-46a2-8096-3e7f7ece5f79 (objectref<GtfContainer_template>)
+						children: children_list []
+						fillColor: fillColor@5e4cb14f-1c30-46a2-8096-3e7f7ece5f79 (propref<color>)
+						text: "Back"
+						x: 0
+						y: 431
+						"x 2": "x 2"@5e4cb14f-1c30-46a2-8096-3e7f7ece5f79 (propref<int>)
+						"y 2": "y 2"@5e4cb14f-1c30-46a2-8096-3e7f7ece5f79 (propref<int>)
+						"x 3": "x 3"@5e4cb14f-1c30-46a2-8096-3e7f7ece5f79 (propref<int>)
+						"y 3": "y 3"@5e4cb14f-1c30-46a2-8096-3e7f7ece5f79 (propref<int>)
+						buttonEvent: function<bool>(60408f31-1a04-4fa2-b26c-4b2a1ba39397)
+						{
+							script: "function()" \
+								"{" \
+								"	fire ev:GoToMain()" \
+								"	false" \
+								"}"
+						}
+					}]
+				name: "Background"
+				visible: true
+				width: width@05f38c20-82b6-4412-b21a-128c5d9f1b4e (propref<int>)
+				height: height@05f38c20-82b6-4412-b21a-128c5d9f1b4e (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #90EE90FF
+			}]
+		name: "Ticket"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+	}
+}

@@ -1,0 +1,366 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(54facb4e-aea6-4060-b214-61595bcc405f)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(0739cefc-d18c-430a-83a7-a82f38270b34)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(3dfc9b4e-ea39-43cf-a00a-5f3c43173622)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(0511264e-cf29-4720-8be7-627aa75ab661)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Title_Label"
+							visible: true
+							width: 400
+							height: 100
+							x: 0
+							y: 25
+							text: "Introduceti Destinatia"
+							textColor: #000000FF
+							font: font_resource(a0016e36-3070-4b73-8a81-8c69c11c43d6)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 40
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}, 
+						GtfContainer_template_instance(a3a5ad3a-b953-4fac-8993-c7d1f766c7d9)
+						{
+							name: "Country"
+							template: @dc5efbab-d295-42df-96bf-46c4121aad93 (objectref<GtfContainer_template>)
+							children: children_list []
+							width: 200
+							height: height@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<int>)
+							x: 120
+							y: 113
+							"x 2": "x 2"@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<int>)
+							"y 2": "y 2"@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<int>)
+							fillColor: fillColor@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<color>)
+							"x 3": "x 3"@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<int>)
+							"y 3": "y 3"@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<int>)
+							text: string_scriptedValue(18d61c11-de92-4e1b-b06d-81bc0ddbbf3e)
+							{
+								triggerList: trigger_list(70c14de8-2c29-4145-b6f7-cdb1187719fc)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(8446a4d1-df44-47d0-8069-33a6b7a50340)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<string>(24106a64-1eb2-497e-90fe-c960ece5baa6)
+								{
+									script: "function()" \
+										"{" \
+										"	if(dp:Tara!=\"\")" \
+										"		dp:Ok[0]=true" \
+										"	dp:Tara" \
+										"}"
+								}
+								write: function<bool,string>(182892a3-914c-49be-a424-7c4b3de79a3a)
+								{
+									script: "function(v:arg0::string)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							textColor: textColor@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<color>)
+						}, 
+						GtfContainer_template_instance(4da5085a-7b9f-4509-aed5-94b59d90f9c1)
+						{
+							name: "City"
+							template: @dc5efbab-d295-42df-96bf-46c4121aad93 (objectref<GtfContainer_template>)
+							children: children_list []
+							width: 200
+							height: height@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<int>)
+							x: 120
+							y: 227
+							"x 2": "x 2"@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<int>)
+							"y 2": "y 2"@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<int>)
+							fillColor: fillColor@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<color>)
+							"x 3": "x 3"@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<int>)
+							"y 3": "y 3"@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<int>)
+							text: string_scriptedValue(05fbdbc3-b50f-450a-b7de-9837935bd96b)
+							{
+								triggerList: trigger_list(ca8e0906-f452-471b-8da8-a7293e7da8aa)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(8dbdc8ee-e2fa-4423-8f63-e0e62d786bd1)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<string>(6d32bc7e-fefc-460f-9b9f-21a1bac65001)
+								{
+									script: "function()" \
+										"{" \
+										"	if(dp:Ok[0] == true && dp:Oras!=\"\")" \
+										"		dp:Ok[1] = true" \
+										"	else" \
+										"		dp:Oras = \"\"" \
+										"	" \
+										"	dp:Oras" \
+										"}"
+								}
+								write: function<bool,string>(c92ac52e-5863-4be2-8209-2cfecf3e95d7)
+								{
+									script: "function(v:arg0::string)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							textColor: textColor@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<color>)
+						}, 
+						GtfContainer_template_instance(b46e3cec-ff5e-4f9a-b8d6-9fdfb97e4061)
+						{
+							name: "Street"
+							template: @dc5efbab-d295-42df-96bf-46c4121aad93 (objectref<GtfContainer_template>)
+							children: children_list []
+							width: 200
+							height: height@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<int>)
+							x: 120
+							y: 334
+							"x 2": "x 2"@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<int>)
+							"y 2": "y 2"@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<int>)
+							fillColor: fillColor@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<color>)
+							"x 3": "x 3"@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<int>)
+							"y 3": "y 3"@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<int>)
+							text: string_scriptedValue(87920259-11a3-4e07-abff-91ddb9ede46a)
+							{
+								triggerList: trigger_list(1ef65631-7f21-471c-96c8-bd1edcd316c2)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(09d8a24b-9782-4beb-9a8a-ea3560e4de2d)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<string>(b15a315d-be19-4fa8-80c4-d1c21f737cd5)
+								{
+									script: "function()" \
+										"{" \
+										"	if(dp:Ok[1] == true && dp:Strada!=\"\")" \
+										"		dp:Ok[2] = true" \
+										"	else" \
+										"		dp:Strada = \"\"" \
+										"	" \
+										"	dp:Strada" \
+										"}"
+								}
+								write: function<bool,string>(c5562ffb-b040-4fa2-aad3-58757db8f08d)
+								{
+									script: "function(v:arg0::string)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							textColor: textColor@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<color>)
+						}, 
+						GtfContainer_template_instance(f35779e5-b5f6-4cb5-8b67-037a4ec9d77c)
+						{
+							name: "Number"
+							template: @dc5efbab-d295-42df-96bf-46c4121aad93 (objectref<GtfContainer_template>)
+							children: children_list []
+							width: 200
+							height: height@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<int>)
+							x: 483
+							y: 107
+							"x 2": "x 2"@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<int>)
+							"y 2": "y 2"@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<int>)
+							fillColor: fillColor@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<color>)
+							"x 3": "x 3"@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<int>)
+							"y 3": "y 3"@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<int>)
+							text: string_scriptedValue(5e93b3db-2bcc-45e5-95ad-b44d1da3781c)
+							{
+								triggerList: trigger_list(093dcddf-f4ad-4158-b1ce-53c48e55bf67)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(76843739-4213-46ff-8ee5-78b4d65abda7)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<string>(04619fa6-41b9-4a0b-b9fe-3eccea419103)
+								{
+									script: "function()" \
+										"{" \
+										"	if(dp:Ok[2] == true && dp:Numar!=0)" \
+										"		dp:Ok[3] = true" \
+										"	else" \
+										"		dp:Numar = 0" \
+										"	" \
+										"	f:int2string(dp:Numar)" \
+										"}"
+								}
+								write: function<bool,string>(91be93ea-6fbe-4d00-b7bc-f60c1bb6df7d)
+								{
+									script: "function(v:arg0::string)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							textColor: textColor@dc5efbab-d295-42df-96bf-46c4121aad93 (propref<color>)
+						}, 
+						GtfLabel(3f0afde2-2150-427b-965a-5e79d01c1c27)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Country_Label"
+							visible: true
+							width: 100
+							height: 100
+							x: 15
+							y: 115
+							text: "Tara"
+							textColor: #000000FF
+							font: font_resource(036362fd-80a1-4b57-a9c7-143beb14e297)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}, 
+						GtfLabel(8eaa2336-5db0-47d5-aaa6-96ebfdac0c07)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "City_Label"
+							visible: true
+							width: 100
+							height: 100
+							x: 15
+							y: 228
+							text: "Oras"
+							textColor: #000000FF
+							font: font_resource(19f94dca-362f-4227-b2fb-a4066e5031e1)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}, 
+						GtfLabel(b06cdc4b-304a-428c-a4a2-f6c108115f93)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Street_Label"
+							visible: true
+							width: 100
+							height: 100
+							x: 15
+							y: 332
+							text: "Strada"
+							textColor: #000000FF
+							font: font_resource(bcaf6121-390d-4113-a632-1b5908b1bf77)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}, 
+						GtfLabel(b092ea80-cc29-4011-a9bd-b3f76ff0d729)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Number_Label"
+							visible: true
+							width: 100
+							height: 100
+							x: 375
+							y: 108
+							text: "Number"
+							textColor: #000000FF
+							font: font_resource(d9d83ad1-d308-4fd3-882d-03de6e161283)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "BackGround"
+					visible: true
+					width: width@54facb4e-aea6-4060-b214-61595bcc405f (propref<int>)
+					height: height@54facb4e-aea6-4060-b214-61595bcc405f (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(ede7ec59-fc2f-459c-a0c7-18748c0efd61)
+					{
+						file: "back.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(a6a4721a-c199-4ba5-a790-9b596e7e7424)
+				{
+					features: feature_list [
+						ScaleMode(e8652644-7f71-4525-a334-200c4652ed6d)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "Logo"
+					visible: true
+					width: 100
+					height: 100
+					x: 542
+					y: 306
+					image: image_resource(693e0e7e-e4d4-4dc4-b897-182490ca725c)
+					{
+						file: "map.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Back"
+			visible: true
+			width: width@54facb4e-aea6-4060-b214-61595bcc405f (propref<int>)
+			height: height@54facb4e-aea6-4060-b214-61595bcc405f (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #FFFAFAFF
+		}]
+	name: "View 1"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

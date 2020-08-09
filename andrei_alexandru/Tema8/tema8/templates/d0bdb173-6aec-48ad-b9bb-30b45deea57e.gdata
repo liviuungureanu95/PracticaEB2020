@@ -1,0 +1,98 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(d0bdb173-6aec-48ad-b9bb-30b45deea57e)
+{
+	name: "T_Buttons"
+	structure: GtfContainer(e387c12f-a5bc-4a5e-be13-19e4fccb78e3)
+	{
+		features: feature_list [
+			TouchPressed(851ee3e8-a721-4581-9ef4-dd1bed534540)
+			{
+				touchPressed: function<bool,int,int,int,int>(d74bb0fd-5d05-40f0-852a-7abf8f2009d0)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(27f35738-79df-480a-acee-f1aeb2538a64)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(bdc9d317-db87-40ec-94f0-489c9f012a8b)
+			{
+				features: feature_list [
+					Border(6aeba4ba-264e-4a69-83dc-8b100f4a6450)
+					{
+						borderThickness: 2
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@e387c12f-a5bc-4a5e-be13-19e4fccb78e3 (propref<int>)
+				height: height@e387c12f-a5bc-4a5e-be13-19e4fccb78e3 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFFFF
+			}, 
+			GtfLabel(c2bd6acc-7183-445d-98f2-3d459f72db09)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Text"
+				visible: true
+				width: width@e387c12f-a5bc-4a5e-be13-19e4fccb78e3 (propref<int>)
+				height: height@e387c12f-a5bc-4a5e-be13-19e4fccb78e3 (propref<int>)
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #000000FF
+				font: font_resource(5df2d972-56c9-4587-9d80-c3b4a59e521e)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}, 
+			GtfImage(7dda184f-4a0d-4229-a36a-5c9e1bc2199b)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Image"
+				visible: true
+				width: width@e387c12f-a5bc-4a5e-be13-19e4fccb78e3 (propref<int>)
+				height: height@e387c12f-a5bc-4a5e-be13-19e4fccb78e3 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(929293c7-02ea-4d2c-bac1-ce46f7bd4ff9)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 2
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 200
+		height: 70
+		x: 0
+		y: 0
+	}
+	text: text@c2bd6acc-7183-445d-98f2-3d459f72db09 (propref<string>)
+	font: font@c2bd6acc-7183-445d-98f2-3d459f72db09 (propref<font>)
+	x: x@e387c12f-a5bc-4a5e-be13-19e4fccb78e3 (propref<int>)
+	y: y@e387c12f-a5bc-4a5e-be13-19e4fccb78e3 (propref<int>)
+	image: image@7dda184f-4a0d-4229-a36a-5c9e1bc2199b (propref<image>)
+	horizontalAlign: horizontalAlign@c2bd6acc-7183-445d-98f2-3d459f72db09 (propref<int>)
+	verticalAlign: verticalAlign@c2bd6acc-7183-445d-98f2-3d459f72db09 (propref<int>)
+	touchPressed: touchPressed@851ee3e8-a721-4581-9ef4-dd1bed534540 (propref<function<bool,int,int,int,int>>)
+}

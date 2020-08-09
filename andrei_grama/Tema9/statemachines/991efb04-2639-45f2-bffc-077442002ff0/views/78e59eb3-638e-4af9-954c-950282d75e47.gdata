@@ -1,0 +1,746 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(78e59eb3-638e-4af9-954c-950282d75e47)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(8b034025-cbb9-417b-bf7a-658b5d2f6d4c)
+		{
+			features: feature_list [
+				ScaleMode(200b486d-8f10-4c8e-8e5b-24372ab49cfe)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "background"
+			visible: true
+			width: width@78e59eb3-638e-4af9-954c-950282d75e47 (propref<int>)
+			height: height@78e59eb3-638e-4af9-954c-950282d75e47 (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(b2b9e3bd-b0a8-46cb-9f53-618bd0d33b35)
+			{
+				file: "62125026.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfContainer(942c7c4a-1346-49d8-84be-8ee088913c2a)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(a035eec4-f9d5-49da-92cb-a5aea759ae82)
+				{
+					features: feature_list [
+						Border(a6b1e91a-1ac2-420e-b3f9-3b89da03528b)
+						{
+							borderThickness: 10
+							borderColor: #000000FF
+							borderStyle: 0
+						}]
+					children: children_list []
+					name: "background"
+					visible: true
+					width: width@942c7c4a-1346-49d8-84be-8ee088913c2a (propref<int>)
+					height: 260
+					x: 0
+					y: 32
+					fillColor: #C0C0C0FF
+				}, 
+				GtfRectangle(30ec5025-ef7b-4ac1-8109-d3f1369717ac)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(559cc5b5-a87a-448e-b3cc-b810f2299cf9)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "pret"
+							visible: true
+							width: 50
+							height: height@30ec5025-ef7b-4ac1-8109-d3f1369717ac (propref<int>)
+							x: 0
+							y: 0
+							text: "pret "
+							textColor: #FFFFFFFF
+							font: font_resource(e828020b-bad9-438b-8fa4-d78d77447829)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}, 
+						GtfLabel(10dd277a-cca9-4ab3-8b8f-f1a2c91e4060)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "moneda"
+							visible: true
+							width: 50
+							height: height@30ec5025-ef7b-4ac1-8109-d3f1369717ac (propref<int>)
+							x: 190
+							y: 0
+							text: "lei"
+							textColor: #FFFFFFFF
+							font: font_resource(b4d2f8d9-b8b2-42a9-b5aa-366228073951)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}, 
+						GtfRectangle(d39fefc1-704f-45cb-b406-2eb28a68e400)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLabel(849c0bfe-43b5-43db-8d7b-fe373c1324fb)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "pretText"
+									visible: true
+									width: width@d39fefc1-704f-45cb-b406-2eb28a68e400 (propref<int>)
+									height: height@d39fefc1-704f-45cb-b406-2eb28a68e400 (propref<int>)
+									x: 0
+									y: 0
+									text: string_scriptedValue(4d4d45e7-9ea4-4018-a001-4097b2aa6392)
+									{
+										triggerList: trigger_list(f5e6f74f-e6d0-4eac-8954-d7eb301b752f)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(8ccc45ca-a49e-485a-9f02-34cee5fd9b25)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+										read: function<string>(ef01e380-0d29-40e1-bb22-e339da60fc37)
+										{
+											script: "function()" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	if(dp:volum!=0)" \
+												"	f:float2string(f:int2float(dp:volum)*dp:gas_price[dp:selectedGas-1])" \
+												"	else" \
+												"	\"0\"" \
+												"}"
+										}
+										write: function<bool,string>(d108fb9b-bf5f-4a30-a96d-950f65c5f3aa)
+										{
+											script: "function(v:arg0::string)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+									}
+									textColor: #000000FF
+									font: font_resource(3c7c3eb5-3b8b-471a-83c6-05052e146c57)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 30
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+								}]
+							name: "pretTextBackground"
+							visible: true
+							width: 140
+							height: height@30ec5025-ef7b-4ac1-8109-d3f1369717ac (propref<int>)
+							x: 50
+							y: 0
+							fillColor: #FFA500FF
+						}]
+					name: "pretBackground"
+					visible: true
+					width: 240
+					height: 30
+					x: 10
+					y: 80
+					fillColor: #1E90FFFF
+				}, 
+				GtfRectangle(635f7411-9c4a-486d-ae73-176c8c9d6d3d)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(7ae59c97-edac-4ffc-85a5-0958fe003cd5)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "volum"
+							visible: true
+							width: 80
+							height: height@635f7411-9c4a-486d-ae73-176c8c9d6d3d (propref<int>)
+							x: 0
+							y: 0
+							text: "volum"
+							textColor: #FFFFFFFF
+							font: font_resource(c26bb17c-2ae3-4f01-88a1-de25cf8606c0)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}, 
+						GtfLabel(68474db2-a446-48df-8f40-a2c952e9aa9f)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "moneda"
+							visible: true
+							width: 20
+							height: height@635f7411-9c4a-486d-ae73-176c8c9d6d3d (propref<int>)
+							x: 220
+							y: 0
+							text: "L"
+							textColor: #FFFFFFFF
+							font: font_resource(cd5bf0d4-31de-4035-96a5-dee2bf9913fa)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}, 
+						GtfRectangle(14279a5d-bbbb-4b24-8449-a2ae0242bc85)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLabel(fdfb1060-078b-453d-b883-dfdbad4a07b7)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "volumText"
+									visible: true
+									width: width@14279a5d-bbbb-4b24-8449-a2ae0242bc85 (propref<int>)
+									height: height@14279a5d-bbbb-4b24-8449-a2ae0242bc85 (propref<int>)
+									x: 0
+									y: 0
+									text: string_scriptedValue(f9eb426f-a92e-47dd-93a7-dc7be018167c)
+									{
+										triggerList: trigger_list(82d872f9-085b-4456-98f5-64712ba84f59)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(3b1157a0-f65e-4eeb-812e-562f9ef37d1b)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+										read: function<string>(b5580195-fd72-47af-bade-3855dfeb1c01)
+										{
+											script: "function()" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	f:int2string(dp:volum)" \
+												"}"
+										}
+										write: function<bool,string>(b956efc7-3de4-4781-a0cf-338da1d19554)
+										{
+											script: "function(v:arg0::string)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+									}
+									textColor: #000000FF
+									font: font_resource(53835834-8372-48f2-bc24-f56cea3193d6)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 30
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+								}]
+							name: "volumTextBackground"
+							visible: true
+							width: 140
+							height: height@635f7411-9c4a-486d-ae73-176c8c9d6d3d (propref<int>)
+							x: 80
+							y: 0
+							fillColor: #FFA500FF
+						}]
+					name: "volumBackground"
+					visible: true
+					width: 240
+					height: 30
+					x: 10
+					y: 130
+					fillColor: #1E90FFFF
+				}, 
+				GtfRectangle(e078809b-d99d-4bbd-ae70-759cad6538e4)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(6da388e2-3958-49c2-98e7-fcb19972c7ce)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "gas"
+							visible: true
+							width: 100
+							height: height@e078809b-d99d-4bbd-ae70-759cad6538e4 (propref<int>)
+							x: 0
+							y: 0
+							text: "lei/L"
+							textColor: #FFFFFFFF
+							font: font_resource(89bc733d-a4c4-43b1-87f4-17d07e85a972)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}, 
+						GtfRectangle(45488ff5-acd9-4815-ab5f-ba0f3dba4796)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLabel(2d6a3424-f468-415b-83a5-acb9fa16a1a9)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "gasText"
+									visible: true
+									width: width@45488ff5-acd9-4815-ab5f-ba0f3dba4796 (propref<int>)
+									height: height@45488ff5-acd9-4815-ab5f-ba0f3dba4796 (propref<int>)
+									x: 0
+									y: 0
+									text: string_scriptedValue(d5a3ebe8-68d9-47de-9fcd-bad79f0d289a)
+									{
+										triggerList: trigger_list(b8f9991e-2146-4bf6-9852-889db6c66aa4)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(633217c8-8c19-486d-bad4-6424bd7a907c)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+										read: function<string>(c21fa33b-99fe-4458-b5f2-410d446befc4)
+										{
+											script: "function()" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	f:float2string(dp:gas_price[dp:selectedGas-1])" \
+												"}"
+										}
+										write: function<bool,string>(23e3ccdb-6260-4bb9-97a9-ee99c400855a)
+										{
+											script: "function(v:arg0::string)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+									}
+									textColor: #000000FF
+									font: font_resource(680e5e92-fa1c-4fba-90c1-7d007411b474)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 30
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+								}]
+							name: "gasTextBackground"
+							visible: true
+							width: 140
+							height: height@e078809b-d99d-4bbd-ae70-759cad6538e4 (propref<int>)
+							x: 100
+							y: 0
+							fillColor: #FFA500FF
+						}]
+					name: "gasBackground"
+					visible: true
+					width: 240
+					height: 30
+					x: 10
+					y: 180
+					fillColor: #1E90FFFF
+				}, 
+				GtfParallelAnimation(71d4dd2d-7bbe-45a3-8346-c53f4947199d)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationS32(64aa6689-20c9-4fbe-8a63-942fe6c41dce)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Linear interpolation curve"
+							enabled: true
+							delay: 8
+							duration: 10000
+							repeat: 1
+							alternating: false
+							relative: false
+							start: 0
+							end: 120
+							target: @3173c013-cd53-4146-91b9-ed33f9c41f95 (objectref<int>)
+						}]
+					name: "priceAnimation"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(babe0f1a-bbc0-4e3a-9cc7-f6b5336f2371)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(b50bc052-b25c-462b-9fbc-de9ac6de824c)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(e663d632-281a-420d-b061-cf262a07a9de)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+				}]
+			name: "display"
+			visible: true
+			width: 260
+			height: height@78e59eb3-638e-4af9-954c-950282d75e47 (propref<int>)
+			x: 0
+			y: 0
+		}, 
+		GtfContainer(d8018763-e881-4fd9-aa6c-2a4f390e43a9)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfInstantiator(11a25d7f-1d5f-4a80-be40-540e0814a736)
+				{
+					features: feature_list [
+						LayoutPolicyGrid(e73876fd-030f-495d-95fb-4737461e53c1)
+						{
+							horizontalGap: 10
+							verticalGap: 10
+							numRows: 1
+							numColumns: 4
+						}]
+					children: children_list [
+						GtfContainer(2fd25ccb-dd11-4af5-b39c-f15f4f95d3b1)
+						{
+							features: feature_list [
+								LineIndex(a46b124c-d02a-463f-b517-f2dbae507ac7)
+								{
+									lineIndex: 0
+								}, 
+								TouchShortReleased(7a822597-9f64-460c-8544-e51c2450c6db)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(41ddab44-a64e-4b6f-a180-c736dc509582)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	v:this->^.selectedIndex=v:this.lineIndex" \
+											"	" \
+											"	dp:selectedGas=v:this.lineIndex+1" \
+											"	" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(6aa6ed66-2c63-4f8a-baa7-6b7ef998658a)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list [
+								GtfRectangle(7f1e0250-81af-4cef-9879-da4bcd9b03b4)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "background"
+									visible: true
+									width: 45
+									height: 210
+									x: 0
+									y: 0
+									fillColor: #FFFFFFFF
+								}, 
+								GtfLabel(9173879a-7cba-476d-a76c-06c99762f0ce)
+								{
+									features: feature_list [
+										Rotation(0e3d7844-6f14-43d6-ab70-c5a803499ca2)
+										{
+											rotationEnabled: true
+											rotationAngleX: 0F
+											rotationAngleY: 0F
+											rotationAngleZ: -90F
+										}]
+									children: children_list []
+									name: "names"
+									visible: true
+									width: height@7f1e0250-81af-4cef-9879-da4bcd9b03b4 (propref<int>)
+									height: width@7f1e0250-81af-4cef-9879-da4bcd9b03b4 (propref<int>)
+									x: 45
+									y: 0
+									text: "label"
+									textColor: #000000FF
+									font: font_resource(0ccbde72-71bd-4050-ab3b-021c368d1d91)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 25
+									}
+									horizontalAlign: 0
+									verticalAlign: 0
+								}, 
+								GtfEllipse(a15a20ad-0417-4c8b-90ee-1d78cbed5b75)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "selectedEllipse"
+									visible: true
+									width: 30
+									height: 30
+									x: 8
+									y: 180
+									fillColor: #FFFFFFFF
+									arcWidth: 0
+									centralAngle: 360F
+									sectorRotation: 0F
+									setSelectrion: conditional_script(aa0ceb81-2c6d-4f0a-aa45-073515c7b34d)
+									{
+										triggerList: trigger_list(4bc96a56-4413-4609-bce3-ae41bb251d76)
+										{
+											script: "v:this->^.lineIndex" \
+												"v:this->^->^.selectedIndex"
+										}
+										onTrigger: function<bool,bool>(ed4586ac-aaf3-4721-8ff8-f69ca2f97330)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	if(v:this->^.lineIndex==v:this->^->^.selectedIndex)" \
+												"	v:this.fillColor=v:this.sColor" \
+												"	else" \
+												"	v:this.fillColor=v:this.dColor" \
+												"	false" \
+												"}"
+										}
+									}
+									dColor: #FFFFFFFF
+									sColor: #1E90FFFF
+								}]
+							name: "gasType"
+							visible: true
+							width: 53
+							height: 100
+							x: 0
+							y: 0
+							setText: conditional_script(f64a35f1-31b5-4a61-bc27-c0303b065e16)
+							{
+								triggerList: trigger_list(62fa02a1-440e-4e0e-8287-bad9f26d0273)
+								{
+									script: "v:this.lineIndex" \
+										"dp:gas_name"
+								}
+								onTrigger: function<bool,bool>(d03d7df5-a403-43ec-b1aa-f78e1b5ce0be)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	v:this->names.text=dp:gas_name[v:this.lineIndex]" \
+										"	false" \
+										"}"
+								}
+							}
+							click: conditional_script(5e882e7c-135b-4ae8-a785-624f86679e2d)
+							{
+								triggerList: trigger_list(2ebe3467-c0db-4574-8be5-3b08dcbbba9a)
+								{
+									script: "dp:Reset"
+								}
+								onTrigger: function<bool,bool>(efb72672-787d-405a-aae9-167ef4457575)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	if(dp:Reset==true)" \
+										"		v:this.touchable=false" \
+										"	else" \
+										"		v:this.touchable=true" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "gasList"
+					visible: true
+					width: width@d8018763-e881-4fd9-aa6c-2a4f390e43a9 (propref<int>)
+					height: 200
+					x: 10
+					y: 0
+					numItems: 0
+					lineMapping: intlist []
+					nItems: conditional_script(43b5f4cb-f06c-405e-a9ad-cd4031aa07f6)
+					{
+						triggerList: trigger_list(37301ec0-cc4e-4704-92f6-a710ea91d9c4)
+						{
+							script: "dp:gas_name"
+						}
+						onTrigger: function<bool,bool>(a343a7e6-52d6-4028-a473-951758230a98)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.numItems=length dp:gas_name " \
+								"	false" \
+								"}"
+						}
+					}
+					selectedIndex: -1
+				}, 
+				GtfContainer(707bebf0-0cbe-47dc-a4cb-7888e00abc4e)
+				{
+					features: feature_list [
+						TouchPressed(9b9ec037-34ad-4f3d-b7bc-5fd9a76728bb)
+						{
+							touchPressed: function<bool,int,int,int,int>(5384e3d9-be49-414c-8d35-ad15c70b933d)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(dp:selectedGas!=0)" \
+									"	f:animation_play(v:this->^->^->display->priceAnimation)" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(2f9502e3-b1e0-4241-804d-4a7e96cc429a)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(0fcbacd9-04ba-4100-b1fa-604b780dbd58)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	f:animation_pause(v:this->^->^->display->priceAnimation)" \
+									"	if(dp:selectedGas!=0)" \
+									"		dp:Reset=true" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(758ce4ee-879a-4d25-b926-ee5116275901)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfImage(6ea395e0-fb51-4026-b2a0-5a08348d472c)
+						{
+							features: feature_list [
+								ScaleMode(279b8109-ef60-41c1-8ecc-0065f9fe13a9)
+								{
+									scaleMode: 1
+								}]
+							children: children_list []
+							name: "Image"
+							visible: true
+							width: 63
+							height: 62
+							x: 0
+							y: 0
+							image: image_resource(21458fca-a2cc-40ae-8745-249a1f03cc90)
+							{
+								file: "icons8-gas-station-64.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}]
+					name: "pompButton"
+					visible: true
+					width: 64
+					height: 73
+					x: 0
+					y: 240
+				}, 
+				GtfContainer(19b4c60d-429b-4377-9520-62cf49e0a809)
+				{
+					features: feature_list [
+						TouchShortReleased(3b54a96a-be0d-455a-bfb9-1bf1e19fd34e)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(631ba5f1-55bf-4143-83c5-64e0d1126d9a)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	f:animation_cancel_reset(v:this->^->^->display->priceAnimation)" \
+									"	dp:selectedGas=0" \
+									"	v:this->^->gasList.selectedIndex=-1" \
+									"	dp:Reset=false" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(624fc192-f54c-49f0-a6b8-e33588002b5f)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfImage(5b3479b1-b816-4a93-a6d7-79a442c48378)
+						{
+							features: feature_list [
+								ScaleMode(ec81be23-6263-4786-9118-1ba905a8a828)
+								{
+									scaleMode: 1
+								}]
+							children: children_list []
+							name: "Image"
+							visible: true
+							width: 63
+							height: 62
+							x: 0
+							y: 0
+							image: image_resource(08e55013-24cb-44a2-9f1b-c17770002358)
+							{
+								file: "icons8-pay-64.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}]
+					name: "payButton"
+					visible: true
+					width: 64
+					height: 73
+					x: 60
+					y: 240
+				}]
+			name: "gas pump"
+			visible: true
+			width: 200
+			height: height@78e59eb3-638e-4af9-954c-950282d75e47 (propref<int>)
+			x: 260
+			y: 0
+		}]
+	name: "mainView"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}

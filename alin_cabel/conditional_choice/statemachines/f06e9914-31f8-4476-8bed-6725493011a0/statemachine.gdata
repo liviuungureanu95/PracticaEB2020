@@ -1,0 +1,75 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_statemachine(f06e9914-31f8-4476-8bed-6725493011a0)
+{
+	x: 0
+	y: 0
+	width: 803
+	height: 373
+	name: "Main"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions []
+	internal_transitions: haptic_internal_transitions []
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(95939219-9e32-445a-82ed-2d9318724b1b)
+		{
+			x: 163
+			y: 67
+			width: 100
+			height: 100
+			name: "main_state"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions [
+				haptic_transition(510bf847-49d6-4c21-8bbf-3060961803dd)
+				{
+					action: function<void>(none)
+					target_state: @3ff5be2e-7166-4ad8-a284-de4f7462b24e (objectref<haptic_compound_state>)
+					source_dock: 0.1627526F
+					target_dock: 0.7404621F
+					curveControlXOffset: 0
+					curveControlYOffset: 0
+					labelXOffset: 10
+					labelYOffset: -10
+					labelRotationAngle: 0
+					event: @c07f73b8-bdec-4d5f-adb5-90f0ec957be4 (objectref<event>)
+					condition: function<bool>(none)
+				}]
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (bb357e27-d772-4df2-919b-87bd2c46b2c4)
+			priority_stack: priority_stack(none)
+		}, 
+		(3ff5be2e-7166-4ad8-a284-de4f7462b24e)]
+	initial_state: haptic_initial_state(d0e0a65c-fc84-4687-a3fc-5e1de13335db)
+	{
+		x: 41
+		y: 42
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(2dd1a598-1dbe-446c-b77a-9b12f55b4130)
+		{
+			action: function<void>(none)
+			target_state: @95939219-9e32-445a-82ed-2d9318724b1b (objectref<haptic_dialog_state>)
+			source_dock: 0.2684236F
+			target_dock: 0.7994233F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(32db47e2-72c8-4647-8fb7-c61c0feb3cf4)
+	{
+		x: 639
+		y: 273
+		width: 100
+		height: 100
+	}
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(none)
+}

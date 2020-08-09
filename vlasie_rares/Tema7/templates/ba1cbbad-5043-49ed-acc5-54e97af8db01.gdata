@@ -1,0 +1,203 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(ba1cbbad-5043-49ed-acc5-54e97af8db01)
+{
+	name: "Selector"
+	structure: GtfContainer(85e42111-5cec-49f7-8880-2113117a825d)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(4a6abec6-15f2-40d7-acd8-a48869bfe140)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLabel(c0b52264-fa1d-45a8-9d89-24cd8c76b156)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Country_Name"
+						visible: true
+						width: 256
+						height: 28
+						x: 0
+						y: 1
+						text: @b0ba0ad6-74f3-40ee-9d04-eb1525e9b3cd (objectref<string>)
+						textColor: #808080FF
+						font: font_resource(cba974d2-2df5-4424-a443-60a47315d263)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfInstantiator(7a96b4db-2a77-4880-af86-6d5356f1bc41)
+					{
+						features: feature_list [
+							StateTouched(1f977b4e-2b2c-4db0-b017-b0cf5fbc2ca8)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}, 
+							LayoutPolicyGrid(38dd6768-b726-4568-99a8-1f41c8e1a849)
+							{
+								horizontalGap: 0
+								verticalGap: 4
+								numRows: 4
+								numColumns: -1
+							}]
+						children: children_list [
+							GtfRectangle(0ecb0654-dd3b-443b-8bc3-84c92191cc8d)
+							{
+								features: feature_list [
+									LineIndex(8cf4cca1-2411-41ae-bd39-2e057ab92edd)
+									{
+										lineIndex: 0
+									}, 
+									TouchShortReleased(2c198842-f1bd-4c53-bd84-f9a820223bdf)
+									{
+										touchShortReleased: function<bool,int,int,int,int>(b0be3315-0b4a-457e-809c-06297739f496)
+										{
+											script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+												"{" \
+												"	v:this->^.visible = false" \
+												"	dp:Select_Country = v:this->Country_Name_List.text" \
+												"    false" \
+												"}"
+										}
+									}, 
+									StateTouched(7dc5b4e5-334f-4b5c-aa7e-e0cee9f230d0)
+									{
+										touchable: true
+										touched: false
+										touchPolicy: 0
+										touchBehavior: 0
+									}]
+								children: children_list [
+									GtfLabel(1c2dc0f2-ea33-4857-99b4-d798c07cd255)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "Country_Name_List"
+										visible: true
+										width: 256
+										height: 52
+										x: 0
+										y: 0
+										text: "label"
+										textColor: #808080FF
+										font: font_resource(8e647627-7d96-416d-bb79-d074c40bd51d)
+										{
+											file: "PT_Sans_Narrow.ttf"
+											size: 30
+										}
+										horizontalAlign: 1
+										verticalAlign: 0
+									}]
+								name: "Back_List"
+								visible: true
+								width: 256
+								height: 32
+								x: 5
+								y: 0
+								fillColor: #A9A9A9FF
+								SetText: conditional_script(d3407bf7-c6eb-42c3-8fff-7f00c30a1ac3)
+								{
+									triggerList: trigger_list(2ea61868-3af7-49ff-b27f-e2012ad8cf8a)
+									{
+										script: "dp:Country_List" \
+											"v:this.lineIndex"
+									}
+									onTrigger: function<bool,bool>(396cd1f0-3b8e-4bba-a9a2-88a3b72988dd)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	v:this->Country_Name_List.text = dp:Country_List[v:this.lineIndex]" \
+											"	false" \
+											"}"
+									}
+								}
+							}]
+						name: "Country_List"
+						visible: false
+						width: 256
+						height: 220
+						x: 0
+						y: 35
+						numItems: 4
+						lineMapping: intlist []
+					}, 
+					GtfImage(91ca4fd9-400b-4725-8d15-989cc1eaecca)
+					{
+						features: feature_list [
+							ScaleMode(a27ae61f-4932-4073-92d8-f3597a7f56fe)
+							{
+								scaleMode: 1
+							}, 
+							TouchShortReleased(7fa1a23f-4219-4194-bf76-f5e5e968a2cd)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(690a5a61-73c4-4c70-9144-9977bce6dab1)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	v:this.OnFunction()" \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(f1587ea3-8353-4e92-bdb5-6432f02a8edf)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list []
+						name: "Arrow"
+						visible: true
+						width: 32
+						height: 32
+						x: 220
+						y: 0
+						image: image_resource(c12471e3-9b8b-4d88-a2c9-cdf44823ecee)
+						{
+							file: "down.png"
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+						OnFunction: function<bool>(735d5c3b-5789-4bdb-9217-f02a809d2f80)
+						{
+							script: "function()" \
+								"{" \
+								"	if(v:this->^->Country_List.visible == false)" \
+								"		v:this->^->Country_List.visible = true" \
+								"	else " \
+								"		v:this->^->Country_List.visible = false" \
+								"	false" \
+								"}"
+						}
+					}]
+				name: "BackGround"
+				visible: true
+				width: 256
+				height: 32
+				x: 0
+				y: 0
+				fillColor: #F5DEB3FF
+			}]
+		name: "Selector"
+		visible: true
+		width: 256
+		height: 256
+		x: 0
+		y: 0
+	}
+	x: x@85e42111-5cec-49f7-8880-2113117a825d (propref<int>)
+	y: y@85e42111-5cec-49f7-8880-2113117a825d (propref<int>)
+	visible: visible@7a96b4db-2a77-4880-af86-6d5356f1bc41 (propref<bool>)
+	touchShortReleased: touchShortReleased@7fa1a23f-4219-4194-bf76-f5e5e968a2cd (propref<function<bool,int,int,int,int>>)
+	OnFunction: OnFunction@91ca4fd9-400b-4725-8d15-989cc1eaecca (propref<function<bool>>)
+}

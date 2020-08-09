@@ -1,0 +1,200 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(954e1662-5cff-4af8-bcc2-92f550e7a2f3)
+{
+	name: "Sports_View"
+	template: @402937b4-9511-4b39-8a38-03244e8b9147 (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(dd5ea3b6-876d-4c9b-ad11-ba75e14df2ae)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Text1"
+			visible: true
+			width: 800
+			height: 50
+			x: 20
+			y: 150
+			text: "Weight(kg): 2.5"
+			textColor: #FFFFFFFF
+			font: font_resource(197b1614-3632-4ec6-9f01-a8f7506aa110)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(aba88d09-39c0-4d59-a316-51743b910373)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Text2"
+			visible: true
+			width: 800
+			height: 50
+			x: 20
+			y: 200
+			text: "Program duration(min): 29"
+			textColor: #FFFFFFFF
+			font: font_resource(b325545f-368c-433e-80bd-2e560f521aab)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(2bdceef5-a338-4e08-8ac0-a5e7306adc75)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Text3"
+			visible: true
+			width: 800
+			height: 50
+			x: 20
+			y: 250
+			text: "Water consumption(L): 72"
+			textColor: #FFFFFFFF
+			font: font_resource(3974ba05-6a2e-4e1a-a159-2631dc4144e4)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(cb075302-37c7-4cd9-8a71-d113d18842a7)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Text4 "
+			visible: true
+			width: 310
+			height: 100
+			x: 380
+			y: 380
+			text: "Time remaining(s):"
+			textColor: #FFFF00FF
+			font: font_resource(2e382073-8448-44c6-93db-b30c192287a1)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(dcd06b24-22cf-4327-b8b4-7536e66a9d53)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfParallelAnimation(f52cc445-0ae9-44b1-af83-ede417c64423)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationS32(06c30948-c6cd-4700-877a-c5addbf4cfc6)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Linear interpolation curve 1"
+							enabled: true
+							delay: 10
+							duration: 8000
+							repeat: 1
+							alternating: false
+							relative: false
+							start: 8
+							end: 0
+							target: Counter@dcd06b24-22cf-4327-b8b4-7536e66a9d53 (propref<int>)
+						}]
+					name: "ProgramTimer"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(3fe885b4-30eb-41a7-825b-06631551a5bf)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"	fire ev:goTo_cottons()" \
+							"}"
+					}
+					onPause: function<void,int>(d30d5a53-ec40-42e7-a2df-4da88f551f39)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(5897f181-9a30-4b7a-9d04-a6dbd985dee3)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"	fire ev:goTo_main_menu()" \
+							"}"
+					}
+					play_timer: conditional_script(e7d38e9d-e307-49ac-a60d-f3f330567db8)
+					{
+						triggerList: trigger_list(7a4037ba-867a-45d6-b5bb-e8b6537aff6b)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(16f2adba-1bcf-45d5-81d6-20ccc9b30d04)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	f:animation_play(v:this)" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "ProgramTimer"
+			visible: true
+			width: 100
+			height: 100
+			x: 700
+			y: 380
+			text: string_scriptedValue(e6a557e4-d083-4167-897d-7f934640b298)
+			{
+				triggerList: trigger_list(bbd9d40b-f7e5-4861-b9ed-6141a728e2ba)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(5568265f-6fe3-46a6-a1d8-0e69b1766fa4)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(57913dad-57b6-4099-b5ca-2776be08f0ce)
+				{
+					script: "function()" \
+						"{" \
+						"	f:int2string(v:this.Counter)" \
+						"}"
+				}
+				write: function<bool,string>(b098d960-1988-4a87-aa01-7634fb230173)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #000000FF
+			font: font_resource(3071e56a-37ee-4cf1-803a-98e4dd074c09)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+			Counter: 0
+		}]
+	text: "Sports Menu"
+}

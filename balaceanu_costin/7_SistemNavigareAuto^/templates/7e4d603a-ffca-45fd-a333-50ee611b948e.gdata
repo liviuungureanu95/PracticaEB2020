@@ -1,0 +1,53 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(7e4d603a-ffca-45fd-a333-50ee611b948e)
+{
+	name: "Back_Button"
+	structure: GtfContainer(0bb97d38-8017-4722-bea1-7762951e33cd)
+	{
+		features: feature_list [
+			TouchShortReleased(311f1a68-1ff4-466b-8e0d-81c7008beecf)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(dec61bdb-794a-4c9f-8f7f-af0bf372b09b)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	fire ev:GoTo_M()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(ee96efd9-291a-407c-b1d7-6431e09c6860)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfImage(d01139aa-e469-47fe-9635-a4c632fc17a8)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@0bb97d38-8017-4722-bea1-7762951e33cd (propref<int>)
+				height: height@0bb97d38-8017-4722-bea1-7762951e33cd (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(c2fed0f6-4e2f-4961-833d-39dc5dc7f988)
+				{
+					file: "Back_Button.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "Container"
+		visible: true
+		width: 50
+		height: 790
+		x: 425
+		y: 5
+	}
+}

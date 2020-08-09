@@ -1,0 +1,197 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(63a40e2d-7809-4cb2-a4d0-eda189054835)
+{
+	name: "Volume"
+	template: @80f4ecf5-153b-49b4-906f-539dd360f0af (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(b236ea34-f0b7-4a1b-9f0f-7ca4f1dfd3d5)
+		{
+			name: "VolumeUP_Button 1"
+			template: @1480ce95-059a-44a3-a9a8-ac2e05f0ed38 (objectref<GtfContainer_template>)
+			children: children_list []
+			touchPressed: function<bool,int,int,int,int>(244d3af2-589c-48d3-b4dc-002e15402d6f)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(dp:VolumeIndex < length dp:Volum_list -1)" \
+					"	dp:VolumeIndex = dp:VolumeIndex +1" \
+					"    false" \
+					"}"
+			}
+			x: 10
+			y: 150
+		}, 
+		GtfContainer_template_instance(8050c14c-a559-4e6c-8e8e-11a05e4fe969)
+		{
+			name: "VolumeDOWN_Button 1"
+			template: @d3d83bfc-5d45-4d73-8e8e-e357d295d45d (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 240
+			y: 150
+			touchPressed: function<bool,int,int,int,int>(7821b442-4a7a-4287-962d-5477e1877f15)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(dp:VolumeIndex > 0)" \
+					"	dp:VolumeIndex = dp:VolumeIndex -1" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(50da3e19-3ed4-4af4-ac8e-7c1d7e01e741)
+		{
+			name: "Back_Button 1"
+			template: @82e4d3ec-06eb-4f80-8a16-86b04b8cceb8 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 125
+			y: 390
+			touchPressed: function<bool,int,int,int,int>(07492859-a8be-4658-9548-a37b2f56ff12)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:GoTo_M()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer(2090ab51-e474-4e60-97b8-cc94ba1099f2)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(483a2f0d-c75b-4d9e-9765-e8b8a1dd4a14)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Volume_1"
+					visible: true
+					width: width@2090ab51-e474-4e60-97b8-cc94ba1099f2 (propref<int>)
+					height: height@2090ab51-e474-4e60-97b8-cc94ba1099f2 (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(873939a4-e6c9-4630-9bee-f6bfbed8cd2a)
+					{
+						file: "Volume_1.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Volume1UP"
+			visible: true
+			width: 140
+			height: 70
+			x: 90
+			y: 150
+		}, 
+		GtfContainer_template_instance(26de9c60-9170-4653-804b-da8d4a950acc)
+		{
+			name: "Mute_Button 1"
+			template: @a8a16ed8-5f9c-4152-90fd-5c088949dd51 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 124
+			y: 240
+			touchShortReleased: function<bool,int,int,int,int>(128331ea-70e6-4cf5-85e0-ed863f618f6e)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(v:this.mute == true)" \
+					"	{" \
+					"		v:this.mute = false;" \
+					"	}" \
+					"	else" \
+					"	{" \
+					"		v:this.mute = true;" \
+					"	}" \
+					"    false" \
+					"}"
+			}
+			image: image_scriptedValue(efb6e2f8-81f6-4aa9-9913-56ae240af731)
+			{
+				triggerList: trigger_list(8d4272ce-1bad-4b06-b822-89eaf583da6a)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(d1c830e5-d221-471b-9716-837e4f16af73)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<image>(abb33593-fe22-45d4-97a1-efec718c1f72)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	if(v:this.mute==false)" \
+						"	{dp:Mute}" \
+						"	else" \
+						"	{dp:Sound}" \
+						"" \
+						"}"
+				}
+				write: function<bool,image>(7fb55386-eeb1-40f4-95f4-34b0a68e3b46)
+				{
+					script: "function(v:arg0::image)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			mute: true
+		}, 
+		GtfLabel(1b503aea-870e-4a30-a47e-cbc76624546c)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Volume"
+			visible: true
+			width: 140
+			height: 70
+			x: 90
+			y: 150
+			text: string_scriptedValue(19fb2dd5-2692-4c71-b677-7db578bb6227)
+			{
+				triggerList: trigger_list(0fb9f9a7-4708-4a53-ba09-f3fd347d95a4)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(436dea9c-c3a5-471f-bf3b-9a9ed7bf6f31)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(8123fc64-54b1-4343-9069-f3d640d9d244)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:Volum_list[dp:VolumeIndex]" \
+						"}"
+				}
+				write: function<bool,string>(b7355a61-075b-4d16-8020-c7c25c6440c1)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #00FF97FF
+			font: font_resource(9728b868-deb7-4bcf-b07b-41a0af3deedd)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+	text: "----------< Volume >-----------"
+}

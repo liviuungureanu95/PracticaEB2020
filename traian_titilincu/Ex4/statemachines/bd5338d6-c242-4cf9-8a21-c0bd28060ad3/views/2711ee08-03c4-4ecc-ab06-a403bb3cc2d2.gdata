@@ -1,0 +1,315 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(2711ee08-03c4-4ecc-ab06-a403bb3cc2d2)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(9e5391b6-b57d-4edf-9d31-2b77e363721f)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfContainer_template_instance(68ba5b7c-f0cf-4469-b23b-9866e2907980)
+				{
+					name: "play_pause"
+					template: @290529d6-7e75-4c2c-bce4-38df2ca55efe (objectref<GtfContainer_template>)
+					children: children_list []
+					image: image_resource(97c13abe-725a-4224-96b8-7a59b87ea077)
+					{
+						file: "play.png"
+					}
+					x: 220
+					y: 268
+					touchShortReleased: function<bool,int,int,int,int>(eb210f9e-bb48-46b1-8573-555a0a031abf)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    if (v:this.stateIndex == 1) v:this.stateIndex = 0 else v:this.stateIndex = 1" \
+							"    v:this.image = v:this.button_states[v:this.stateIndex]" \
+							"    false" \
+							"}"
+					}
+					visible: true
+					width: 50
+					height: 50
+					"visible 2": true
+					button_states: imagelist [
+						image_resource(3c35263d-6f49-423c-8573-20c614364057)
+						{
+							file: "play.png"
+						}, 
+						image_resource(e6201f7a-b98a-4633-b2b9-dfdfe15c1983)
+						{
+							file: "pause.png"
+						}]
+					stateIndex: 0
+				}, 
+				GtfContainer_template_instance(99573319-f4da-44ee-a27e-df0bf9bdee5b)
+				{
+					name: "previous"
+					template: @290529d6-7e75-4c2c-bce4-38df2ca55efe (objectref<GtfContainer_template>)
+					children: children_list []
+					image: image_resource(ec7cc36c-d0f4-4e68-8f35-56bb69adb484)
+					{
+						file: "previous.png"
+					}
+					x: 174
+					y: 268
+					touchShortReleased: function<bool,int,int,int,int>(a94dc6be-7109-44d5-99a1-9f93856d3fae)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    dp:movie_index -= 1" \
+							"    if (dp:movie_index == -1) dp:movie_index = length dp:movie_list - 1" \
+							"    v:this->^->current_movie.text = dp:movie_list[dp:movie_index]" \
+							"    false" \
+							"}"
+					}
+					visible: true
+					"visible 2": true
+				}, 
+				GtfContainer_template_instance(b04d1829-65b1-4832-b65a-edafcf730158)
+				{
+					name: "next"
+					template: @290529d6-7e75-4c2c-bce4-38df2ca55efe (objectref<GtfContainer_template>)
+					children: children_list []
+					image: image_resource(0ce5ed20-7fd9-4605-8cd8-fd2af371fd86)
+					{
+						file: "next.png"
+					}
+					x: 264
+					y: 268
+					touchShortReleased: function<bool,int,int,int,int>(6100a7f4-c389-4fcb-8022-dc11c8caefce)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    dp:movie_index += 1" \
+							"    dp:movie_index = dp:movie_index % (length dp:movie_list)" \
+							"    v:this->^->current_movie.text = dp:movie_list[dp:movie_index]" \
+							"    false" \
+							"}"
+					}
+					visible: true
+					"visible 2": true
+				}, 
+				GtfLabel(46be8b8e-9d7f-400d-88d8-0f9879bd4e93)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "current_movie"
+					visible: true
+					width: width@2711ee08-03c4-4ecc-ab06-a403bb3cc2d2 (propref<int>)
+					height: 100
+					x: 0
+					y: 109
+					text: string_element_reference(e6ba2364-97d1-43fb-9148-efd448956191)
+					{
+						index: 0
+						list: @7b912fcb-10d9-4a89-90c5-6fe42595cca3 (objectref<stringlist>)
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(42ff0d0a-65a7-4219-bde6-2d15efff4eb1)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(e41b4dbe-f256-49b6-923e-0f5c65ac9665)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "volume_label"
+					visible: true
+					width: 100
+					height: 100
+					x: 16
+					y: -32
+					text: "Volume"
+					textColor: #FFFFFFFF
+					font: font_resource(184a27c8-70d2-4d5d-bc6f-d915dba7bbe7)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 15
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(68a91df3-c2b2-4448-8866-961491bc1eb5)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfContainer_template_instance(c0463ac3-0ca2-4401-8893-886858032e02)
+						{
+							name: "Button 1"
+							template: @290529d6-7e75-4c2c-bce4-38df2ca55efe (objectref<GtfContainer_template>)
+							children: children_list []
+							image: image_resource(f4494df5-3ab4-474a-81ef-4c7fc6221796)
+							{
+								file: "plus.png"
+							}
+							x: x@290529d6-7e75-4c2c-bce4-38df2ca55efe (propref<int>)
+							y: y@290529d6-7e75-4c2c-bce4-38df2ca55efe (propref<int>)
+							touchShortReleased: function<bool,int,int,int,int>(780b3069-c4bb-4343-b942-0a281e7a6049)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"    dp:volume_level += 5" \
+									"    if(dp:volume_level > 100) dp:volume_level = 100" \
+									"    false" \
+									"}"
+							}
+							visible: true
+							"visible 2": true
+						}]
+					name: "volume_level_label"
+					visible: true
+					width: 30
+					height: 100
+					x: 19
+					y: 31
+					text: string_scriptedValue(91332e0a-b83e-4fb5-8af1-7b56e0ebfd6c)
+					{
+						triggerList: trigger_list(71088693-9be5-4007-bbec-25c9d3559548)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(2dd32c9c-b0b5-49cf-aeb1-244cab0f34f5)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(78cc2bb9-2277-4fd6-a560-bf4d8e0a1692)
+						{
+							script: "function()" \
+								"{" \
+								"	f:int2string (dp:volume_level) + \"\"" \
+								"}"
+						}
+						write: function<bool,string>(86df36e8-f06d-48a9-b1b7-f46cd2a6a695)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(47dd3329-5f01-4182-8b89-f02517ca767c)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 15
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(4ac01c2e-c94c-4289-a4bb-59eacfc71392)
+				{
+					name: "volume_up_button"
+					template: @290529d6-7e75-4c2c-bce4-38df2ca55efe (objectref<GtfContainer_template>)
+					children: children_list []
+					image: image_resource(fb09453a-e5ce-4e4e-9c03-5d9c2fa759d4)
+					{
+						file: "minus.png"
+					}
+					x: 20
+					y: 95
+					touchShortReleased: function<bool,int,int,int,int>(cca8dc8c-0add-465a-9b3f-9b3399c96f83)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    dp:volume_level -= 5" \
+							"    if (dp:volume_level < 0) dp:volume_level = 0" \
+							"    false" \
+							"}"
+					}
+					visible: true
+					"visible 2": true
+				}, 
+				GtfContainer_template_instance(6d6d3d1b-38db-46a7-8464-0c95ad083361)
+				{
+					name: "turnoff_button"
+					template: @290529d6-7e75-4c2c-bce4-38df2ca55efe (objectref<GtfContainer_template>)
+					children: children_list []
+					image: image_resource(22511976-fd88-4e93-b96a-b6b54ee44b4e)
+					{
+						file: "turnoff.png"
+					}
+					x: 433
+					y: 14
+					touchShortReleased: function<bool,int,int,int,int>(ae5b7b95-3adb-4ab5-b71d-72d02ca4aba9)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    v:this->^->^->Background.visible = false" \
+							"    v:this->^->^->turn_on_label.visible = true" \
+							"    v:this->^->^->turn_on_button.visible = true" \
+							"    true" \
+							"}"
+					}
+					visible: true
+					"visible 2": true
+				}]
+			name: "Background"
+			visible: true
+			width: width@2711ee08-03c4-4ecc-ab06-a403bb3cc2d2 (propref<int>)
+			height: height@2711ee08-03c4-4ecc-ab06-a403bb3cc2d2 (propref<int>)
+			x: -1
+			y: 0
+			fillColor: #000000FF
+		}, 
+		GtfContainer_template_instance(e7e86583-04fe-42ae-b327-b337f9f143e9)
+		{
+			name: "turn_on_button"
+			template: @290529d6-7e75-4c2c-bce4-38df2ca55efe (objectref<GtfContainer_template>)
+			children: children_list []
+			image: image_resource(83132a60-8d18-4749-bdbe-f4b3d29bf420)
+			{
+				file: "turnoff.png"
+			}
+			x: 219
+			y: 210
+			touchShortReleased: function<bool,int,int,int,int>(c29418dc-4315-4f7b-9906-0ee61737e43e)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    v:this->^->Background.visible = true" \
+					"    v:this.visible = false" \
+					"    v:this->^->turn_on_label.visible = false" \
+					"    false" \
+					"}"
+			}
+			visible: false
+			"visible 2": false
+		}, 
+		GtfLabel(0b8e2458-7634-429d-94c7-084cd3acc4b8)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "turn_on_label"
+			visible: false
+			width: width@2711ee08-03c4-4ecc-ab06-a403bb3cc2d2 (propref<int>)
+			height: 100
+			x: 1
+			y: 109
+			text: "Turn on the system"
+			textColor: #FFFFFFFF
+			font: font_resource(77772119-57e4-4f16-97a1-333dac9b599d)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+	name: "Home Cinema View"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}

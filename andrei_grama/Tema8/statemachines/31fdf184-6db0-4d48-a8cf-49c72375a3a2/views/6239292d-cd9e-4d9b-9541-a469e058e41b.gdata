@@ -1,0 +1,137 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(6239292d-cd9e-4d9b-9541-a469e058e41b)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(2af978f4-1644-47a9-a2ef-5428f4aed74b)
+		{
+			features: feature_list [
+				ScaleMode(10b96781-2e67-43be-8497-7458d0fcb7c3)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "background"
+			visible: true
+			width: width@6239292d-cd9e-4d9b-9541-a469e058e41b (propref<int>)
+			height: height@6239292d-cd9e-4d9b-9541-a469e058e41b (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(eef9f4ed-9c88-4a1a-bbf4-c92da8da221c)
+			{
+				file: "mike-kenneally-TD4DBagg2wE-unsplash.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfInstantiator(a857004b-33f2-4cf5-a40f-ea3d95153aaf)
+		{
+			features: feature_list [
+				LayoutPolicyGrid(9203bb56-1dcb-4329-9a65-5ee609946230)
+				{
+					horizontalGap: 40
+					verticalGap: 40
+					numRows: 4
+					numColumns: 2
+				}]
+			children: children_list [
+				GtfContainer(161ce6fb-16d2-4533-b27c-2deb66c52e83)
+				{
+					features: feature_list [
+						LineIndex(9964487b-52bc-4344-a367-6a2125c9712e)
+						{
+							lineIndex: 0
+						}]
+					children: children_list [
+						GtfRectangle(fbe6dded-95da-40ab-8548-601af93a74ec)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLabel(bd28da43-126c-411f-80c1-fdfdb1fd4119)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "text"
+									visible: true
+									width: 154
+									height: height@fbe6dded-95da-40ab-8548-601af93a74ec (propref<int>)
+									x: 0
+									y: 0
+									text: ""
+									textColor: #FFFFFFFF
+									font: font_resource(40835e77-da45-408e-9a1d-399dfd27a0b6)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 30
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+								}, 
+								GtfEllipse_template_instance(2d5fb908-4838-4310-a368-87ae447b198b)
+								{
+									name: "button"
+									template: @4ef06a7d-5183-4bfe-b6fd-237f5a8ac3ba (objectref<GtfEllipse_template>)
+									children: children_list []
+									width: height@2d5fb908-4838-4310-a368-87ae447b198b (propref<int>)
+									height: height@fbe6dded-95da-40ab-8548-601af93a74ec (propref<int>)
+									x: 185
+									y: y@4ef06a7d-5183-4bfe-b6fd-237f5a8ac3ba (propref<int>)
+									click: function<bool>(bca55bad-86ed-4dcb-8d6b-2bdf0822fa7a)
+									{
+										script: "function()" \
+											"{" \
+											"	f:pushDynamicStateMachine(popup_stack:\"Main state\",sm:\"pop-up dynamic state\",0)" \
+											"	dp:choice=dp:\"Types of Coffee\"[v:this->^->^.lineIndex]" \
+											"	false" \
+											"}"
+									}
+								}]
+							name: "background"
+							visible: true
+							width: width@161ce6fb-16d2-4533-b27c-2deb66c52e83 (propref<int>)
+							height: height@161ce6fb-16d2-4533-b27c-2deb66c52e83 (propref<int>)
+							x: 0
+							y: 0
+							fillColor: #000000FF
+						}]
+					name: "Element"
+					visible: true
+					width: 285
+					height: 100
+					x: 0
+					y: 0
+					setText: conditional_script(e3454291-1e02-4542-933b-c8a05fd1c410)
+					{
+						triggerList: trigger_list(78088556-5c18-408d-8ec7-1cd5ecd3f135)
+						{
+							script: "dp:\"Types of Coffee\"" \
+								"v:this.lineIndex"
+						}
+						onTrigger: function<bool,bool>(67ce1646-0874-4a56-8bc7-5755d2fd0480)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this->background->text.text=dp:\"Types of Coffee\"[v:this.lineIndex]" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "coffeeList"
+			visible: true
+			width: 600
+			height: 400
+			x: 100
+			y: 40
+			numItems: 8
+			lineMapping: intlist []
+		}]
+	name: "mainView"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

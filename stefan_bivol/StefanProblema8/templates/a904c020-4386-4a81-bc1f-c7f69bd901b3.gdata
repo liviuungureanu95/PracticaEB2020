@@ -1,0 +1,175 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(a904c020-4386-4a81-bc1f-c7f69bd901b3)
+{
+	name: "Coffe List"
+	structure: GtfContainer(5cadcd9f-baaf-4441-8a65-692757b8a926)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfInstantiator(c2152c0d-9e59-4f78-9c7f-3a5915eab050)
+			{
+				features: feature_list [
+					LayoutPolicyGrid(0ed705b6-653c-45cf-a6f8-db86a2d39f71)
+					{
+						horizontalGap: 0
+						verticalGap: 4
+						numRows: 4
+						numColumns: -1
+					}]
+				children: children_list [
+					GtfLabel(dc0a4ea5-e2ff-41fa-9c40-df902d024fd9)
+					{
+						features: feature_list [
+							LineIndex(d511bf36-3e48-498c-b09f-2480c85d95b1)
+							{
+								lineIndex: 0
+							}]
+						children: children_list [
+							GtfContainer_template_instance(983a452b-0489-4f7e-8be4-98017e1b422a)
+							{
+								name: "Coffe Button"
+								template: @ec7886a8-3a5a-45c4-a8a9-167b595ef1d1 (objectref<GtfContainer_template>)
+								children: children_list []
+								x: 197
+								y: 17
+								visible: visible@ec7886a8-3a5a-45c4-a8a9-167b595ef1d1 (propref<bool>)
+								touchShortReleased: function<bool,int,int,int,int>(2f89ff85-a158-464e-92a3-b1b24c68952b)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{	" \
+										"	v:this.playAnimation()" \
+										"	dp:Drink = v:this->^.text" \
+										"	fire_delayed 1100, ev:goToThePreparation()" \
+										"	" \
+										"    false" \
+										"}"
+								}
+								playAnimation: playAnimation@ec7886a8-3a5a-45c4-a8a9-167b595ef1d1 (propref<function<bool>>)
+							}, 
+							GtfRectangle(5c1a4d71-1243-442a-9fa7-88e0383a43dc)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Line_Up"
+								visible: true
+								width: 290
+								height: 3
+								x: -10
+								y: 0
+								fillColor: #FFFFFFFF
+							}, 
+							GtfRectangle(5818596b-54c6-4278-9586-4b28d59105bf)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Line_Down"
+								visible: true
+								width: 290
+								height: 3
+								x: -10
+								y: 100
+								fillColor: #FFFFFFFF
+							}, 
+							GtfRectangle(0c276957-2695-4236-9df7-8b6691d04e2b)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Line_Left"
+								visible: true
+								width: 3
+								height: 100
+								x: -10
+								y: 0
+								fillColor: #FFFFFFFF
+							}, 
+							GtfRectangle(97ef5df7-c54b-4685-8bfd-964e38458846)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Line_Right"
+								visible: true
+								width: 3
+								height: 100
+								x: 277
+								y: 1
+								fillColor: #FFFFFFFF
+							}]
+						name: "Coffe_Name"
+						visible: true
+						width: 0
+						height: 0
+						x: 0
+						y: 0
+						text: "label"
+						textColor: #FFFFFFFF
+						font: font_resource(82c1105e-0055-44a5-a9f3-bbdc1d404751)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 25
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+						setText: conditional_script(77c7c357-8dae-43b5-a86b-e5376a5a6253)
+						{
+							triggerList: trigger_list(36641e8e-d1eb-421e-98d7-493d6f8898e7)
+							{
+								script: "dp:Coffe_Drinks" \
+									"v:this.lineIndex"
+							}
+							onTrigger: function<bool,bool>(905e9f08-73dd-4168-9a38-860d1bef0676)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	v:this.text = dp:Coffe_Drinks[v:this.lineIndex]" \
+									"	false" \
+									"}"
+							}
+						}
+					}]
+				name: "List"
+				visible: true
+				width: width@5cadcd9f-baaf-4441-8a65-692757b8a926 (propref<int>)
+				height: height@5cadcd9f-baaf-4441-8a65-692757b8a926 (propref<int>)
+				x: 20
+				y: 20
+				numItems: int_scriptedValue(14be0da0-a2fb-4a36-a6c8-a82b20fdc51d)
+				{
+					triggerList: trigger_list(c251783b-a2d8-4a50-b71b-52a55f38eb03)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(47067aaa-dfcf-40a3-86e1-6d241e020720)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(44df7a01-1f00-4422-a801-5687ddbfe768)
+					{
+						script: "function()" \
+							"{" \
+							"	length dp:Coffe_Drinks" \
+							"}"
+					}
+					write: function<bool,int>(0fa069e0-7f1d-484c-adfb-46670b6dc28d)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				lineMapping: intlist []
+			}]
+		name: "Coffe_List"
+		visible: true
+		width: 650
+		height: 440
+		x: 75
+		y: 0
+	}
+}

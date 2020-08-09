@@ -1,0 +1,81 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(d5fc8191-2a68-4ec1-86b6-20b793f0cb46)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(93a3d50b-9998-4e30-af9e-ecc9f67cffa6)
+		{
+			features: feature_list [
+				ScaleMode(c728b71a-d7bc-4d25-90bf-138638724030)
+				{
+					scaleMode: 2
+				}, 
+				TouchShortReleased(8aaaa910-4e28-4427-b9d6-bbb531361370)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(dfb34aae-748a-4e1d-af36-3717df94b2ad)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goToPlayer();" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(c1c6ecea-81b5-4459-8bfb-917a0ca401a8)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "nothing"
+			visible: true
+			width: 184
+			height: 155
+			x: 293
+			y: 132
+			image: image_resource(d2dd2007-fa76-447d-8450-2c7432fd436d)
+			{
+				file: "EB.png"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfRectangle_template_instance(6085683e-c7e6-4a9a-85ab-c35cb9255f7a)
+		{
+			name: "media_button"
+			template: @3e11272b-1326-4bb9-b521-66a3394033e3 (objectref<GtfRectangle_template>)
+			children: children_list []
+			x: 557
+			y: 154
+			touchShortReleased: function<bool,int,int,int,int>(e5c0d506-e6e3-4b21-bed6-5047f3c8ea9e)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:goToMedia()" \
+					"    false" \
+					"}"
+			}
+			text: text@3e11272b-1326-4bb9-b521-66a3394033e3 (propref<string>)
+			buttonEvent: function<bool>(74d40631-0ea4-4047-bbb4-e1abfd5eb80b)
+			{
+				script: "function()" \
+					"{" \
+					"	// todo: auto generated return value, please adapt" \
+					"	fire ev:goToMedia()" \
+					"	false" \
+					"}"
+			}
+			visible: visible@3e11272b-1326-4bb9-b521-66a3394033e3 (propref<bool>)
+			height: height@3e11272b-1326-4bb9-b521-66a3394033e3 (propref<int>)
+		}]
+	name: "main_view"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

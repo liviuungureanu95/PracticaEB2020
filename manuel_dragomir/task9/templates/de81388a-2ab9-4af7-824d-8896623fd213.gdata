@@ -1,0 +1,81 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(de81388a-2ab9-4af7-824d-8896623fd213)
+{
+	name: "Button"
+	structure: GtfContainer(cd4199fa-9809-40bb-a271-7d35758d776e)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfEllipse(263e699a-686d-4639-ae1c-da3689a303b5)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Button"
+				visible: true
+				width: width@cd4199fa-9809-40bb-a271-7d35758d776e (propref<int>)
+				height: height@cd4199fa-9809-40bb-a271-7d35758d776e (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #D32A2AFF
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}, 
+			GtfLabel(1a66691b-3d14-4e80-8ba9-862a711ca23c)
+			{
+				features: feature_list [
+					MultiLine(2faabb46-f23f-4684-ae71-1f7e035da52d)
+					{
+						lineOffset: 0
+						maxLineCount: 0
+					}, 
+					TouchShortReleased(c472884b-3c00-4152-a1f3-64f2fb8e49c5)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(b22b5c7d-edd8-4907-9d0b-4af5880fca83)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(a9da330f-0542-425a-9506-b7267949bc30)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list []
+				name: "Label"
+				visible: true
+				width: width@cd4199fa-9809-40bb-a271-7d35758d776e (propref<int>)
+				height: height@cd4199fa-9809-40bb-a271-7d35758d776e (propref<int>)
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #FFFF00FF
+				font: font_resource(78c84682-0714-4a31-aa74-e48b443ce9af)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 50
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: height@cd4199fa-9809-40bb-a271-7d35758d776e (propref<int>)
+		height: 205
+		x: 0
+		y: 0
+	}
+	text: text@1a66691b-3d14-4e80-8ba9-862a711ca23c (propref<string>)
+	height: height@cd4199fa-9809-40bb-a271-7d35758d776e (propref<int>)
+	x: x@cd4199fa-9809-40bb-a271-7d35758d776e (propref<int>)
+	y: y@cd4199fa-9809-40bb-a271-7d35758d776e (propref<int>)
+	font: font@1a66691b-3d14-4e80-8ba9-862a711ca23c (propref<font>)
+	touchShortReleased: touchShortReleased@c472884b-3c00-4152-a1f3-64f2fb8e49c5 (propref<function<bool,int,int,int,int>>)
+	visible: visible@cd4199fa-9809-40bb-a271-7d35758d776e (propref<bool>)
+}

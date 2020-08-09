@@ -1,0 +1,77 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(749a5712-2ef0-4253-aaa1-871949a645b4)
+{
+	name: "View_all"
+	structure: GtfView(340ae6c9-4988-4be5-9f7f-bd0cd5233c16)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfImage(42c93d88-7113-499d-bdbe-264fc3321294)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLabel(bc7a84dd-33ca-446a-b97e-c34e835a40f5)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Text"
+						visible: true
+						width: width@340ae6c9-4988-4be5-9f7f-bd0cd5233c16 (propref<int>)
+						height: 50
+						x: 0
+						y: 0
+						text: "---- < [ PRINCIPAL MENU ] > ----"
+						textColor: #C90000FF
+						font: font_resource(23568714-681a-402a-8111-f03955d2c465)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfContainer_template_instance(88b0afb6-4358-47ca-b3f7-02af30d2beed)
+					{
+						name: "TurnOff"
+						template: @e68b5529-90d2-4a2e-b14e-c315fa7834b7 (objectref<GtfContainer_template>)
+						children: children_list []
+						x: 25
+						y: 90
+						Activate: Activate@e68b5529-90d2-4a2e-b14e-c315fa7834b7 (propref<bool>)
+						touchShortReleased: function<bool,int,int,int,int>(806d1449-150a-4552-afc6-1bc60aafae77)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	fire ev:GoTo_TurnOff()" \
+								"    false" \
+								"}"
+						}
+						image: image_resource(5941bfb3-90d6-45d0-aa40-4aa79cc73429)
+						{
+							file: "TurnOff.png"
+						}
+					}]
+				name: "Background"
+				visible: true
+				width: width@340ae6c9-4988-4be5-9f7f-bd0cd5233c16 (propref<int>)
+				height: height@340ae6c9-4988-4be5-9f7f-bd0cd5233c16 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(21de8d45-28c2-4974-b3f4-65d47e131ac9)
+				{
+					file: "imag fundal homecinema.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "View 1"
+		visible: true
+		width: 320
+		height: 480
+		x: 0
+		y: 0
+	}
+	text: text@bc7a84dd-33ca-446a-b97e-c34e835a40f5 (propref<string>)
+}

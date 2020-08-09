@@ -1,0 +1,90 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(878606a2-3fa4-45ce-a351-f5f3349f4be5)
+{
+	name: "T_PopUp_Button"
+	structure: GtfContainer(28099fda-4603-4cad-8c8f-8407e1f81c33)
+	{
+		features: feature_list [
+			TouchPressed(2dcc85a8-4f7a-421b-8e13-a8b11b67a3e9)
+			{
+				touchPressed: function<bool,int,int,int,int>(b3912380-3b5a-4585-875e-5c81027858f1)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(9275acc1-da5f-4f5e-b17f-69ad77152ab3)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(dbaa49b4-c662-4397-b1b7-cb1a6d9ec7fa)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(1664a1ca-befc-432a-ad6e-787747f241b0)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(5831b2c7-2c4a-422d-a176-fe6191e5ddc9)
+			{
+				features: feature_list [
+					Border(e9c37beb-dddd-44e6-99ba-b3571b1173fb)
+					{
+						borderThickness: 2
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@28099fda-4603-4cad-8c8f-8407e1f81c33 (propref<int>)
+				height: height@28099fda-4603-4cad-8c8f-8407e1f81c33 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFFFF
+			}, 
+			GtfLabel(2abdf3a5-19c6-43c6-baf9-a1f16a8961bd)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Text"
+				visible: true
+				width: width@28099fda-4603-4cad-8c8f-8407e1f81c33 (propref<int>)
+				height: height@28099fda-4603-4cad-8c8f-8407e1f81c33 (propref<int>)
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #000000FF
+				font: font_resource(c7f8d3ba-5dab-4cf8-ae8c-7dd67a695ef3)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 150
+		height: 50
+		x: 0
+		y: 0
+	}
+	width: width@28099fda-4603-4cad-8c8f-8407e1f81c33 (propref<int>)
+	height: height@28099fda-4603-4cad-8c8f-8407e1f81c33 (propref<int>)
+	x: x@28099fda-4603-4cad-8c8f-8407e1f81c33 (propref<int>)
+	y: y@28099fda-4603-4cad-8c8f-8407e1f81c33 (propref<int>)
+	touchShortReleased: touchShortReleased@9275acc1-da5f-4f5e-b17f-69ad77152ab3 (propref<function<bool,int,int,int,int>>)
+	text: text@2abdf3a5-19c6-43c6-baf9-a1f16a8961bd (propref<string>)
+	textColor: textColor@2abdf3a5-19c6-43c6-baf9-a1f16a8961bd (propref<color>)
+	font: font@2abdf3a5-19c6-43c6-baf9-a1f16a8961bd (propref<font>)
+}

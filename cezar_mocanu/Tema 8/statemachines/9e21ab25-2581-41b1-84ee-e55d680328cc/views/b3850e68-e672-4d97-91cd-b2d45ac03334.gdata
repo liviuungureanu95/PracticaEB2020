@@ -1,0 +1,254 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(b3850e68-e672-4d97-91cd-b2d45ac03334)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle_template_instance(e455d25d-10f4-4dcd-bd73-aa56ba0f964c)
+		{
+			name: "Background"
+			template: @0408ec2a-5f35-4f9b-851d-6d363c83ade7 (objectref<GtfRectangle_template>)
+			children: children_list []
+		}, 
+		GtfContainer(57d94b73-801e-4daa-bf03-6293877508d2)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(2222b5bb-b8bb-48e2-a13c-02bc1dae650d)
+				{
+					features: feature_list [
+						Border(2015ce20-7871-4fdf-b5f8-be2128e5af9c)
+						{
+							borderThickness: 2
+							borderColor: #EDEDEDFF
+							borderStyle: 0
+						}]
+					children: children_list []
+					name: "Border"
+					visible: true
+					width: width@b3850e68-e672-4d97-91cd-b2d45ac03334 (propref<int>)
+					height: height@57d94b73-801e-4daa-bf03-6293877508d2 (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #FFFFFF00
+				}, 
+				GtfInstantiator(d54b1bf7-5c17-49ba-acd4-50c8aab94198)
+				{
+					features: feature_list [
+						LayoutPolicyFlow(1c402780-a199-48d1-a40f-e50c5e358007)
+						{
+							horizontalGap: 0
+							verticalGap: 0
+							layoutDirection: 0
+							horizontalChildAlign: 0
+							verticalChildAlign: 0
+						}, 
+						LineIndex(844022f5-adb0-4fc0-8aac-1557cd602a0c)
+						{
+							lineIndex: 0
+						}]
+					children: children_list [
+						GtfContainer(5a83d0df-6c25-4d97-ab79-7fb5f5ac99f0)
+						{
+							features: feature_list [
+								LineIndex(500c4ed0-74c1-4afc-b010-c54943058c63)
+								{
+									lineIndex: 0
+								}]
+							children: children_list [
+								GtfContainer_template_instance(6c5be23c-e19e-4f11-ade0-266234a0985c)
+								{
+									name: "OptionButton"
+									template: @caea8ade-6c4b-418e-bf4a-69de318338a7 (objectref<GtfContainer_template>)
+									children: children_list []
+									text: text@caea8ade-6c4b-418e-bf4a-69de318338a7 (propref<string>)
+									image: image@caea8ade-6c4b-418e-bf4a-69de318338a7 (propref<image>)
+									releaseAction: function<bool>(19ae635c-4c68-4586-82e1-fede022cddee)
+									{
+										script: "function()" \
+											"{" \
+											"	fire ev:showPopup()" \
+											"	false" \
+											"}"
+									}
+									pressAction: pressAction@caea8ade-6c4b-418e-bf4a-69de318338a7 (propref<function<bool>>)
+								}]
+							name: "OptionButtonContainer"
+							visible: true
+							width: 396
+							height: 198
+							x: 0
+							y: 0
+							setItems: conditional_script(0cdcfe9c-568e-422b-9a09-b9b6dc20b0f9)
+							{
+								triggerList: trigger_list(b0633df4-6b81-4378-82af-190026a09087)
+								{
+									script: "v:this.lineIndex" \
+										"dp:coffees"
+								}
+								onTrigger: function<bool,bool>(db7363a8-4f2c-45d1-99f0-1f61ff9ca77f)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	v:this->OptionButton.text = dp:coffees[v:this.lineIndex]" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "ButtonList"
+					visible: true
+					width: width@b3850e68-e672-4d97-91cd-b2d45ac03334 (propref<int>)
+					height: int_scriptedValue(a4157fb0-6bf0-4528-bf98-ab7da84c5178)
+					{
+						triggerList: trigger_list(39fd39ba-5db9-41aa-afde-237f84cc9b19)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(e9284a0c-1b1a-47a9-8b42-f65b7a4f0ec3)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<int>(4372be78-9aac-437e-8ef8-4ac48b061596)
+						{
+							script: "function()" \
+								"{" \
+								"	100" \
+								"	" \
+								"}"
+						}
+						write: function<bool,int>(1d8dbdc9-29ec-432f-a344-e0a1fa766a25)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					x: 2
+					y: 2
+					numItems: 4
+					lineMapping: intlist []
+				}]
+			name: "OptionsContainer"
+			visible: true
+			width: int_scriptedValue(1c587e06-cc9f-427e-a4e7-58ed59d7fcb9)
+			{
+				triggerList: trigger_list(ac09e501-5405-4e67-acf2-3506d1b48d9d)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(bb787a1b-5371-47ab-b9e7-bc57650c108e)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<int>(934fa9fc-4e10-4266-9234-6ecd94e5ee05)
+				{
+					script: "function()" \
+						"{" \
+						"	v:this->^.width - 4" \
+						"	" \
+						"	" \
+						"	" \
+						"	" \
+						"}"
+				}
+				write: function<bool,int>(5bbcf69e-93bf-47a1-a368-f24a7fbb29a4)
+				{
+					script: "function(v:arg0::int)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			height: 400
+			x: 1
+			y: 0
+		}, 
+		GtfContainer_template_instance(4e968c65-4ad0-4834-a494-db7de70d3765)
+		{
+			name: "LoadingBar 1"
+			template: @b6dfc8b2-06d9-4176-b2c6-d81f928f8b5d (objectref<GtfContainer_template>)
+			children: children_list []
+			nrOfFull: @1018021a-115d-4885-a6e8-b3424f50b144 (objectref<int>)
+			x: 195
+			y: 408
+		}, 
+		GtfContainer_template_instance(1daa4bf9-1725-40d4-b016-c5a669870377)
+		{
+			name: "Button 1"
+			template: @e91556ea-cdc7-4337-b106-bf768a618f72 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "-"
+			releaseAction: function<bool>(96bf1255-e3f5-4baf-b4a3-8bdbba44be85)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:coffeeStrength -= 1" \
+					"	if(dp:coffeeStrength < 1)" \
+					"		dp:coffeeStrength = 1" \
+					"	false" \
+					"}"
+			}
+			pressAction: pressAction@e91556ea-cdc7-4337-b106-bf768a618f72 (propref<function<bool>>)
+			x: 76
+			y: 415
+			visible: visible@e91556ea-cdc7-4337-b106-bf768a618f72 (propref<bool>)
+		}, 
+		GtfContainer_template_instance(ab5e89a6-bada-4f85-95a8-00595315a3b8)
+		{
+			name: "Button 2"
+			template: @e91556ea-cdc7-4337-b106-bf768a618f72 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "+"
+			releaseAction: function<bool>(a9f0ccbe-365c-44ba-a952-edf13518ce4b)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:coffeeStrength += 1" \
+					"	if(dp:coffeeStrength > 6)" \
+					"		dp:coffeeStrength = 6" \
+					"	false" \
+					"}"
+			}
+			pressAction: pressAction@e91556ea-cdc7-4337-b106-bf768a618f72 (propref<function<bool>>)
+			x: 625
+			y: 415
+			visible: visible@e91556ea-cdc7-4337-b106-bf768a618f72 (propref<bool>)
+		}]
+	name: "View"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+	showPopupScript: conditional_script(7f6301c1-c446-40af-90fe-57189123024e)
+	{
+		triggerList: trigger_list(04c62d9d-1394-4c64-a43f-a14486928050)
+		{
+			script: "ev:showPopup" \
+				"ev:hidePopup"
+		}
+		onTrigger: function<bool,bool>(6a62315c-d6e9-4edd-9075-86f84630308b)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	match_event v:e = ev:showPopup in " \
+				"		f:pushDynamicStateMachine(popup_stack: Main,sm: \"Haptic dynamic state machine 1\",0)" \
+				"	match_event v:e = ev:hidePopup in" \
+				"		f:popDynamicStateMachine(popup_stack: Main,sm: \"Haptic dynamic state machine 1\")	" \
+				"	true" \
+				"}"
+		}
+	}
+}

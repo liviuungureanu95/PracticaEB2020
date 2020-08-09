@@ -1,0 +1,55 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(0b549028-b115-46c2-82d4-cbee537a1d53)
+{
+	name: "Preview_Button"
+	structure: GtfContainer(e23f7c1e-a2e0-49b4-a20a-aac6c7502516)
+	{
+		features: feature_list [
+			StateTouched(a304816c-3b3c-45f8-9289-823ef3db0d9e)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			TouchShortReleased(c04b9fd4-1c55-4865-9e8c-93096fe013dc)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(683e8c43-0bb3-42b6-b2f6-bc29d8def6f4)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}]
+		children: children_list [
+			GtfImage(84fdf777-8be2-4dbb-ab74-91203273c4d1)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@e23f7c1e-a2e0-49b4-a20a-aac6c7502516 (propref<int>)
+				height: height@e23f7c1e-a2e0-49b4-a20a-aac6c7502516 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(7e231005-23f3-4a92-bba6-0868b18115e8)
+				{
+					file: "Preview.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "Container"
+		visible: true
+		width: 70
+		height: 70
+		x: 0
+		y: 0
+	}
+	x: x@e23f7c1e-a2e0-49b4-a20a-aac6c7502516 (propref<int>)
+	y: y@e23f7c1e-a2e0-49b4-a20a-aac6c7502516 (propref<int>)
+	touchShortReleased: touchShortReleased@c04b9fd4-1c55-4865-9e8c-93096fe013dc (propref<function<bool,int,int,int,int>>)
+}

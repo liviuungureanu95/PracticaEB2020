@@ -1,0 +1,220 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(8e29f6a7-608c-44d6-8240-3f2803228414)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(64097245-f8fd-4fe3-b5fd-ac01590f6d8b)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "background-pop-up"
+			visible: true
+			width: width@8e29f6a7-608c-44d6-8240-3f2803228414 (propref<int>)
+			height: height@8e29f6a7-608c-44d6-8240-3f2803228414 (propref<int>)
+			x: 1
+			y: -1
+			fillColor: #F5DA92FF
+		}, 
+		GtfLabel(f6493411-30e6-482a-947b-49b5a7e50dc1)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "message-pop-up"
+			visible: true
+			width: 111
+			height: 46
+			x: 20
+			y: 14
+			text: "Băutura"
+			textColor: #FFFFFFFF
+			font: font_resource(bbc8f340-152d-42d8-bbd6-afd04f980bca)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 38
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(83c967c3-99dd-4250-9656-8e3b892e886f)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "message-pop-up2"
+			visible: true
+			width: 322
+			height: 57
+			x: 18
+			y: 59
+			text: "se prepară in câteva momente"
+			textColor: #FFFFFFFF
+			font: font_resource(aa1a3ccb-ed85-4dd4-b9fb-21fc51ea4999)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 32
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfImage(77454053-40a7-4ab3-865b-8fca83b795af)
+		{
+			features: feature_list [
+				ScaleMode(e2450c8d-97d3-4ac4-a642-14a7d5ed085a)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "Image 9"
+			visible: true
+			width: 262
+			height: 305
+			x: 261
+			y: 99
+			image: image_resource(6f4e9a8e-73f0-4964-9ad9-17c77c5bf4f0)
+			{
+				file: "cup.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfRectangle(61652042-8f4e-472d-8322-f7feb775510e)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfParallelAnimation(6d41a9c1-f055-4ca7-8e7e-4d729fcc8fc3)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationS32(48ed287f-891a-4f99-989b-f5989cd58005)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Linear interpolation curve 6"
+							enabled: true
+							delay: 0
+							duration: 1500
+							repeat: 1
+							alternating: false
+							relative: false
+							start: 0
+							end: 163
+							target: height@61652042-8f4e-472d-8322-f7feb775510e (propref<int>)
+						}, 
+						GtfLinearInterpolationS32(1a4ea395-d2f9-49ae-8afb-9865ecf38a96)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Linear interpolation curve 7"
+							enabled: true
+							delay: 0
+							duration: 1530
+							repeat: 1
+							alternating: false
+							relative: false
+							start: 200
+							end: 185
+							target: y@61652042-8f4e-472d-8322-f7feb775510e (propref<int>)
+						}]
+					name: "Animation"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(f45252ed-75a9-4a2a-84f6-010d2b571a84)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(bed4e38f-7da1-4dad-b5a2-bbc5826f890d)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(c40635a4-f85c-48e8-95dd-ec19340c48b8)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"  fire_delayed 2000 , ev:stop_preparing();" \
+							"  v:this->^->^->\"message-pop-up2\".visible = false" \
+							"  v:this->^->^->\"message-pop-up\".visible = false" \
+							"   v:this->^->^->\"mesaj de final\".visible = true" \
+							"   v:this->^->^->\"mesaj final 2\".visible = true" \
+							"   " \
+							"}"
+					}
+				}]
+			name: "load_coffee"
+			visible: true
+			width: 115
+			height: 41
+			x: 326
+			y: 305
+			fillColor: #CD853FFF
+			"start animation": conditional_script(71cab32e-4354-4386-a397-ae15a19963d4)
+			{
+				triggerList: trigger_list(3c8b2e8f-e47b-43a7-8ed7-1b5e3d4b251c)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(1d615a20-fe08-45b3-9726-8cb7dd879515)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	f:animation_play(v:this->Animation);" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfLabel(f815ea81-0136-450f-b00e-9d92dbbf4191)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "mesaj de final"
+			visible: false
+			width: 233
+			height: 74
+			x: 324
+			y: 1
+			text: "BĂUTURA ESTE GATA!"
+			textColor: #FFFFFFFF
+			font: font_resource(a1d6bd27-a110-4b0f-ab57-946448b9480a)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(0193f0b0-3c00-4185-b30d-0b63c472d9e2)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "mesaj final 2"
+			visible: false
+			width: 291
+			height: 38
+			x: 285
+			y: 51
+			text: "Revenire la meniul principal"
+			textColor: #FFFFFFFF
+			font: font_resource(658cb855-048d-4861-9711-1e38bc2221c1)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}]
+	name: "pop-up-view"
+	visible: true
+	width: 800
+	height: 417
+	x: 0
+	y: 0
+}

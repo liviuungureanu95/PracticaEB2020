@@ -1,0 +1,366 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(9e278a6e-4279-4cc2-9444-aed6f0b4d38d)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(627f8e0d-e6bb-496c-a532-3cf63feced88)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "background"
+			visible: true
+			width: width@9e278a6e-4279-4cc2-9444-aed6f0b4d38d (propref<int>)
+			height: height@9e278a6e-4279-4cc2-9444-aed6f0b4d38d (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #F5F5F5FF
+		}, 
+		GtfContainer(eddf7e36-0999-40d2-a277-7f52b77238b1)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(25c5a166-9537-476c-99a9-cdb33f8071a6)
+				{
+					features: feature_list [
+						TouchShortReleased(a40a073c-be0f-41ba-b72c-07e62b8c1087)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(2728d2a9-8532-4fb4-9cee-7a06e5652b10)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->^->countriesList.visible=true" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(97e6edf5-bfd8-413b-b837-59d101e63491)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(28a33e61-b62d-49dc-b056-5ef6473a26d2)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "text"
+							visible: true
+							width: width@eddf7e36-0999-40d2-a277-7f52b77238b1 (propref<int>)
+							height: height@25c5a166-9537-476c-99a9-cdb33f8071a6 (propref<int>)
+							x: 0
+							y: 0
+							text: "Selecteaza tara"
+							textColor: #FFFFFFFF
+							font: font_resource(916c4bf3-44d6-4110-bd80-5510ff7692db)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "background"
+					visible: true
+					width: width@eddf7e36-0999-40d2-a277-7f52b77238b1 (propref<int>)
+					height: height@eddf7e36-0999-40d2-a277-7f52b77238b1 (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #000000FF
+				}]
+			name: "countries_textbox"
+			visible: true
+			width: 360
+			height: 40
+			x: 40
+			y: 80
+		}, 
+		GtfInstantiator(40db5082-dc1c-4cbe-846e-1180e31366a2)
+		{
+			features: feature_list [
+				LayoutPolicyBox(0d051891-feee-4d2e-b48c-08134ddfffb7)
+				{
+					gap: 5
+					layoutDirection: 1
+				}]
+			children: children_list [
+				GtfRectangle(025f82b5-9ec5-4744-8ce8-ddfd522c5d6c)
+				{
+					features: feature_list [
+						LineIndex(047f3f80-ef06-4e56-a9da-3481e9358acb)
+						{
+							lineIndex: 0
+						}, 
+						TouchShortReleased(3c525a74-0178-4075-a7d5-74e8dd3e6f4d)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(ecff8527-dc97-4ae0-a1a5-8d164cf6e76b)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->^->countries_textbox->background->text.text=dp:Countries[v:this.lineIndex]" \
+									"	v:this->^->^->countriesList.visible=false" \
+									"	if(v:this.lineIndex==0)" \
+									"	dp:Cities=dp:Romania_Cities" \
+									"	if(v:this.lineIndex==1)" \
+									"	dp:Cities=dp:Germania_Cities" \
+									"	if(v:this.lineIndex==2)" \
+									"	dp:Cities=dp:Franta_Cities" \
+									"	if(v:this.lineIndex==3)" \
+									"	dp:Cities=dp:Italia_Cities" \
+									"	v:this->^->^->cities_textbox.visible=true" \
+									"	v:this->^->^->citiesList.visible=true" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(dc4c7040-1f01-4c72-bf23-e9314b60cf52)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(0ae3d3d9-c0be-4c3d-bb00-c5a0efb991be)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "text"
+							visible: true
+							width: width@025f82b5-9ec5-4744-8ce8-ddfd522c5d6c (propref<int>)
+							height: height@025f82b5-9ec5-4744-8ce8-ddfd522c5d6c (propref<int>)
+							x: 0
+							y: 0
+							text: "label"
+							textColor: #FFFFFFFF
+							font: font_resource(d0852fd4-1f35-4a63-a7b0-83510845252e)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "background"
+					visible: true
+					width: width@40db5082-dc1c-4cbe-846e-1180e31366a2 (propref<int>)
+					height: 40
+					x: 0
+					y: 0
+					fillColor: #000000FF
+					setText: conditional_script(6eb42aa9-a24d-4822-b205-4edba6cb2e1d)
+					{
+						triggerList: trigger_list(e7c5958f-8d1f-4665-8360-1255dbedc838)
+						{
+							script: "v:this.lineIndex" \
+								"dp:Countries"
+						}
+						onTrigger: function<bool,bool>(a76afbb2-9a94-4bd3-83e5-8d05c26320a7)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this->text.text=dp:Countries[v:this.lineIndex]" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "countriesList"
+			visible: false
+			width: 360
+			height: 100
+			x: 40
+			y: 145
+			numItems: 0
+			lineMapping: intlist []
+			calculateNumItems: conditional_script(73f9df51-c98e-40a7-8b5e-477a3685b7fa)
+			{
+				triggerList: trigger_list(4a586571-3b26-43b0-9514-0f7a180f369b)
+				{
+					script: "dp:Cities"
+				}
+				onTrigger: function<bool,bool>(7652db14-7489-4be0-8f68-8a5b5b4ad06d)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	v:this.numItems=length dp:Countries" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfContainer(511ff562-121b-4680-b08a-64117c2f5d2f)
+		{
+			features: feature_list [
+				TouchShortReleased(ff6feb70-e664-4427-aa60-f23db3a312b0)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(a79aab35-46f8-4f61-ad44-c5d8fdf77a9f)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->background->^->^->citiesList.visible=true" \
+							"	" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(81d73573-828c-4d94-830f-7ca2c57db74f)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfRectangle(906770c1-d5f7-4579-b87b-692a86804736)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(61ab8bd7-f480-4154-8f06-9cbef9790a07)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "text"
+							visible: true
+							width: width@511ff562-121b-4680-b08a-64117c2f5d2f (propref<int>)
+							height: height@906770c1-d5f7-4579-b87b-692a86804736 (propref<int>)
+							x: 0
+							y: 0
+							text: "Selecteaza orasul recomandat"
+							textColor: #FFFFFFFF
+							font: font_resource(06f6663b-1feb-48eb-b5a0-c1e9f2e3313b)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "background"
+					visible: true
+					width: width@511ff562-121b-4680-b08a-64117c2f5d2f (propref<int>)
+					height: height@511ff562-121b-4680-b08a-64117c2f5d2f (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #000000FF
+				}]
+			name: "cities_textbox"
+			visible: false
+			width: 360
+			height: 40
+			x: 410
+			y: 80
+		}, 
+		GtfInstantiator(ebe43ca0-c721-4fd1-8c2a-c46614aa88f7)
+		{
+			features: feature_list [
+				LayoutPolicyBox(a31eeec3-28e6-4eca-8de6-39f979250bd2)
+				{
+					gap: 5
+					layoutDirection: 1
+				}]
+			children: children_list [
+				GtfRectangle(514a6757-d01a-4b03-b009-173cbaf547be)
+				{
+					features: feature_list [
+						LineIndex(e88d2cce-e521-4eab-bf4e-d9c6d417d4c1)
+						{
+							lineIndex: 0
+						}, 
+						TouchShortReleased(1be7d1e7-43c7-47a9-9601-3fda1a896199)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(df53435a-fa04-4aba-b2b5-b94207f93621)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->^->cities_textbox->background->text.text=dp:Cities[v:this.lineIndex]" \
+									"	v:this->^->^->citiesList.visible=false" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(b8d2c660-7a7c-4b7d-82d9-a2e210e96ac6)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(b8b5deca-8563-4f3b-b3ca-af583a07819c)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "text"
+							visible: true
+							width: width@514a6757-d01a-4b03-b009-173cbaf547be (propref<int>)
+							height: height@514a6757-d01a-4b03-b009-173cbaf547be (propref<int>)
+							x: 0
+							y: 0
+							text: "label"
+							textColor: #FFFFFFFF
+							font: font_resource(c16f7f99-8a54-45f8-a90e-b87b9ed5b99b)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "background"
+					visible: true
+					width: width@ebe43ca0-c721-4fd1-8c2a-c46614aa88f7 (propref<int>)
+					height: 40
+					x: 0
+					y: 0
+					fillColor: #000000FF
+					setText: conditional_script(948a423e-8e61-4e34-a2ba-26f2d0395529)
+					{
+						triggerList: trigger_list(9ab4fb9a-a893-466b-99ac-d28878db5d5f)
+						{
+							script: "v:this.lineIndex" \
+								"dp:Cities"
+						}
+						onTrigger: function<bool,bool>(4f843e80-3ed1-4840-a7e9-4c99cdfc91cd)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this->text.text=dp:Cities[v:this.lineIndex]" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "citiesList"
+			visible: false
+			width: 360
+			height: 100
+			x: 410
+			y: 145
+			numItems: 0
+			lineMapping: intlist []
+			calculateNumItems: conditional_script(76c7de87-799c-46e1-b493-27d57a043b24)
+			{
+				triggerList: trigger_list(b1380664-9555-42b3-94cf-50e51f65db0a)
+				{
+					script: "dp:Cities"
+				}
+				onTrigger: function<bool,bool>(432e060f-ce88-42a0-9db7-44d1c218d3b5)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	v:this.numItems=length dp:Cities" \
+						"	false" \
+						"}"
+				}
+			}
+		}]
+	name: "mainView"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

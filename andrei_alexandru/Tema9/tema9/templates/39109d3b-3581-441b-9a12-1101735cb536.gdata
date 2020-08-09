@@ -1,0 +1,137 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(39109d3b-3581-441b-9a12-1101735cb536)
+{
+	name: "T_ProgressBar"
+	structure: GtfContainer(01d93ed8-5b57-4796-bfb3-5ebe689e9eb8)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(fa7a730f-86fb-4bf7-9374-8f886f51b628)
+			{
+				features: feature_list [
+					Border(b6ee5615-1827-4d37-8785-e5c1aa808f06)
+					{
+						borderThickness: 2
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@01d93ed8-5b57-4796-bfb3-5ebe689e9eb8 (propref<int>)
+				height: height@01d93ed8-5b57-4796-bfb3-5ebe689e9eb8 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #A9A9A9FF
+			}, 
+			GtfRectangle(38edcf55-c1dd-4b03-b22a-1901a69473b7)
+			{
+				features: feature_list [
+					Border(2084884f-11bb-43c6-9014-65206b98294f)
+					{
+						borderThickness: 2
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "Progress_Rectangle"
+				visible: true
+				width: int_scriptedValue(e6c3043a-9f1d-481b-9582-6b776a0f4033)
+				{
+					triggerList: trigger_list(e970c93d-86a0-4413-90d2-093bec78c28a)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(7c945da6-cd9f-4d37-a704-5ffbcb0ee88a)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(4a995c30-576f-4173-a3b0-31d562c104cf)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.width * v:this->^.progress /100" \
+							"}"
+					}
+					write: function<bool,int>(5f24173d-ba77-4aec-86e2-acf7d4c2eb08)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				height: height@01d93ed8-5b57-4796-bfb3-5ebe689e9eb8 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #32CD32FF
+			}, 
+			GtfLabel(37a9daa1-9d85-4c3a-91b0-10ec89a6a8ca)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Text"
+				visible: true
+				width: width@01d93ed8-5b57-4796-bfb3-5ebe689e9eb8 (propref<int>)
+				height: height@01d93ed8-5b57-4796-bfb3-5ebe689e9eb8 (propref<int>)
+				x: 0
+				y: 0
+				text: string_scriptedValue(5f0a0a72-1c5d-4139-8ec9-e3959c8343ed)
+				{
+					triggerList: trigger_list(92924655-9b9b-4b7d-9810-e72aec5da828)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(75ead820-b6ab-455b-bd1d-41bdef156339)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<string>(c57071ed-5258-4d11-8192-f782d2fa06e1)
+					{
+						script: "function()" \
+							"{" \
+							"	f:int2string(v:this->^.progress) + \"%\"" \
+							"}"
+					}
+					write: function<bool,string>(a186a5ee-ca0b-4215-b7a0-f6447c52b20f)
+					{
+						script: "function(v:arg0::string)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				textColor: #FFFFFFFF
+				font: font_resource(dd8be11a-2ce8-4b44-82ed-4e637ba95172)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		progress: 0
+	}
+	width: width@01d93ed8-5b57-4796-bfb3-5ebe689e9eb8 (propref<int>)
+	height: height@01d93ed8-5b57-4796-bfb3-5ebe689e9eb8 (propref<int>)
+	x: x@01d93ed8-5b57-4796-bfb3-5ebe689e9eb8 (propref<int>)
+	y: y@01d93ed8-5b57-4796-bfb3-5ebe689e9eb8 (propref<int>)
+	progress: progress@01d93ed8-5b57-4796-bfb3-5ebe689e9eb8 (propref<int>)
+}

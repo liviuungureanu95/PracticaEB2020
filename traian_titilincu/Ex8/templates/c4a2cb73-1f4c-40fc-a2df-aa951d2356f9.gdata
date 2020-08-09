@@ -1,0 +1,166 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(c4a2cb73-1f4c-40fc-a2df-aa951d2356f9)
+{
+	name: "Espresso"
+	structure: GtfContainer(dfde756e-b971-4d20-bf6e-2f264c630374)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfImage(f3aa54ef-082e-4ba3-ac90-95f7dedff695)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLabel(f927793f-fff5-487b-b71b-228fe72205ab)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Label 4"
+						visible: true
+						width: width@dfde756e-b971-4d20-bf6e-2f264c630374 (propref<int>)
+						height: 100
+						x: 0
+						y: 20
+						text: "Espressor"
+						textColor: #FFFFFFFF
+						font: font_resource(7cb54b74-f965-4070-b7c2-5b970c111e00)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 60
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "Background"
+				visible: true
+				width: 800
+				height: 480
+				x: 0
+				y: 0
+				image: image_resource(a54b6c55-4443-4571-aef3-3e424ea6ee85)
+				{
+					file: "background.jpg"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfInstantiator(a56d93e5-f13b-4807-88c7-d6a5a745cf30)
+			{
+				features: feature_list [
+					LayoutPolicyFlow(856911a9-9c08-4611-9c8f-0b0853b5fa83)
+					{
+						horizontalGap: 40
+						verticalGap: 40
+						layoutDirection: 1
+						horizontalChildAlign: 0
+						verticalChildAlign: 0
+					}]
+				children: children_list [
+					GtfEllipse(7148e4c9-e71b-437c-a448-4a936949c067)
+					{
+						features: feature_list [
+							LineIndex(7cc30106-1235-48e6-be7a-9e8bbb24a254)
+							{
+								lineIndex: 0
+							}, 
+							TouchShortReleased(566d2eef-035f-45d9-b5b0-675d6e364f19)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(aa56770e-c1f2-4db9-b0a6-66b2a0f3b018)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    fire ev:showPopUp()" \
+										"    true" \
+										"}"
+								}
+							}, 
+							StateTouched(ee776108-6a81-4a8d-9450-e121c90216ff)
+							{
+								touchable: true
+								touched: true
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list [
+							GtfEllipse(5cfa1ea2-805f-4b45-9c64-312c4a2a16cd)
+							{
+								features: feature_list []
+								children: children_list [
+									GtfLabel(8b992a83-ec5b-42c8-97c8-e3374d37dba3)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "Label 5"
+										visible: true
+										width: 100
+										height: 100
+										x: -5
+										y: -5
+										text: "label"
+										textColor: #FFFFFFFF
+										font: font_resource(3c0e2e04-4aec-4da4-a4a0-22006545dc74)
+										{
+											file: "PT_Sans_Narrow.ttf"
+											size: 20
+										}
+										horizontalAlign: 1
+										verticalAlign: 0
+									}]
+								name: "Brown"
+								visible: true
+								width: 90
+								height: 90
+								x: 5
+								y: 5
+								fillColor: #CD853FFF
+								arcWidth: 0
+								centralAngle: 360F
+								sectorRotation: 0F
+							}]
+						name: "Stroke"
+						visible: true
+						width: 100
+						height: 100
+						x: 0
+						y: 0
+						fillColor: #FFFFFFFF
+						arcWidth: 0
+						centralAngle: 360F
+						sectorRotation: 0F
+						setText: conditional_script(64b6bbab-379b-4fc3-9686-a91b7e3c8e47)
+						{
+							triggerList: trigger_list(f72565c4-f798-4b60-87f3-f6d6500ec5c7)
+							{
+								script: "v:this.lineIndex" \
+									"dp:coffe_list"
+							}
+							onTrigger: function<bool,bool>(52d69791-591d-4811-ad5d-760ca7ee8df1)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	v:this->Brown->\"Label 5\".text = dp:coffe_list[v:this.lineIndex]" \
+									"	false" \
+									"}"
+							}
+						}
+					}]
+				name: "Button Instantiator"
+				visible: true
+				width: 100
+				height: 240
+				x: 140
+				y: 148
+				numItems: 8
+				lineMapping: intlist []
+			}]
+		name: "Button_container"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+	}
+	x: x@dfde756e-b971-4d20-bf6e-2f264c630374 (propref<int>)
+	y: y@dfde756e-b971-4d20-bf6e-2f264c630374 (propref<int>)
+}

@@ -1,0 +1,250 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(ec7886a8-3a5a-45c4-a8a9-167b595ef1d1)
+{
+	name: "Coffe Button"
+	structure: GtfContainer(d5520605-edd3-4387-b7ec-0c89e5ce0e5c)
+	{
+		features: feature_list [
+			Rotation(29e6bff5-879d-46c2-8a02-b3748a909f95)
+			{
+				rotationEnabled: true
+				rotationAngleX: 0F
+				rotationAngleY: 0F
+				rotationAngleZ: 0F
+			}, 
+			Scaling(f7326380-6c6a-4e37-ab44-271948b299cb)
+			{
+				scalingEnabled: true
+				scalingX: 100F
+				scalingY: 100F
+				scalingZ: 100F
+			}, 
+			Shearing(86e254cf-1ac7-43a6-b81f-46d64e92d793)
+			{
+				shearingEnabled: false
+				shearingXbyY: 0F
+				shearingXbyZ: 0F
+				shearingYbyX: 0F
+				shearingYbyZ: 0F
+				shearingZbyX: 0F
+				shearingZbyY: 0F
+			}, 
+			Pivot(2d7b97b3-f65a-4053-8681-94aafd4e1b6a)
+			{
+				pivotX: float_scriptedValue(3e9824b7-20c6-4417-a819-a3837f513ca9)
+				{
+					triggerList: trigger_list(919bec7c-bb3c-4020-ac8d-199ae3d9c7d9)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(15c920c7-3840-4706-bf65-46382fbef113)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<float>(b2782997-5f4d-40f7-92f7-c720a97e083a)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	35.0" \
+							"	" \
+							"}"
+					}
+					write: function<bool,float>(5040cb9b-c4de-4a99-b610-0fa290b29fc4)
+					{
+						script: "function(v:arg0::float)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				pivotY: float_scriptedValue(64c40196-7329-4fa9-9014-beb3003fc7d8)
+				{
+					triggerList: trigger_list(69801c48-68a3-4aa0-aef4-921dfb4d2d97)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(e8e96ace-ae51-450d-9e47-56359e3da169)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<float>(544fe6ca-9566-4ed7-bb87-add32e38128b)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	35.0" \
+							"}"
+					}
+					write: function<bool,float>(9aa58db3-4a82-4cde-9337-14261a9c79b6)
+					{
+						script: "function(v:arg0::float)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				pivotZ: 0F
+			}, 
+			TouchShortReleased(d3a47b94-38d5-4e0d-877e-ee290bd66595)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(90b34528-d1d8-426c-8d63-ac7752a34d25)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{	" \
+						"	v:this.playAnimation()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(69b89203-e28b-4ebd-a82d-9553360275b4)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfImage(58e07ece-0e00-470a-b7d7-1aabcf2a24e4)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Image"
+				visible: true
+				width: width@d5520605-edd3-4387-b7ec-0c89e5ce0e5c (propref<int>)
+				height: height@d5520605-edd3-4387-b7ec-0c89e5ce0e5c (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(560a8575-895f-4a10-8dd1-2514a271b1e7)
+				{
+					file: "Button.png"
+				}
+				sRGB: false
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfEllipse(ab53a749-07a7-428f-b171-908e9d316e7a)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfEllipse(56b6436b-dbd4-486b-bdaf-0474063e3a1e)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Mini_Dot"
+						visible: true
+						width: 10
+						height: 10
+						x: 2
+						y: 2
+						fillColor: #FFFFFFFF
+						arcWidth: 0
+						centralAngle: 360F
+						sectorRotation: 0F
+					}, 
+					GtfParallelAnimation(9701dade-e342-49b8-a0df-6f21fe2e73d4)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLinearInterpolationFloat(16e78cf6-2dc0-4cbd-a153-d4d04b931816)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Rotation"
+								enabled: true
+								delay: 0
+								duration: 1000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 0F
+								end: -360F
+								target: rotationAngleZ@29e6bff5-879d-46c2-8a02-b3748a909f95 (propref<float>)
+							}]
+						name: "Loading"
+						enabled: true
+						repeat: 1
+						alternating: false
+						scale: 1F
+						onPlay: function<void,int,bool>(89f1cfe4-7bf4-4dc7-b307-0bef1cd039f9)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(e4cc1d33-4e94-4163-8422-73ad1d598102)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(6cb3b606-2ab7-48f7-a25d-9f29dc1a464d)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+					}]
+				name: "Dot"
+				visible: false
+				width: 15
+				height: 15
+				x: 28
+				y: 1
+				fillColor: #2F597CFF
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}]
+		name: "Coffe_Button"
+		visible: true
+		width: 70
+		height: 70
+		x: 0
+		y: 0
+		playAnimation: function<bool>(6cdc74ff-4520-450f-8855-0be3c0991557)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this->Dot.visible = true" \
+				"	f:animation_play(v:this->Dot->Loading->Rotation)" \
+				"	fire_delayed 1100, ev:dotInvisible()" \
+				"	false" \
+				"}"
+		}
+		dotInvisible: conditional_script(b53db5c3-5b5b-46eb-9420-68684f179611)
+		{
+			triggerList: trigger_list(3fda974b-4524-441f-85da-9622dd8437f2)
+			{
+				script: "ev:dotInvisible"
+			}
+			onTrigger: function<bool,bool>(c0364398-75e4-4d6a-be62-ed782b7d0562)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	v:this->Dot.visible = false" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+	x: x@d5520605-edd3-4387-b7ec-0c89e5ce0e5c (propref<int>)
+	y: y@d5520605-edd3-4387-b7ec-0c89e5ce0e5c (propref<int>)
+	visible: visible@ab53a749-07a7-428f-b171-908e9d316e7a (propref<bool>)
+	touchShortReleased: touchShortReleased@d3a47b94-38d5-4e0d-877e-ee290bd66595 (propref<function<bool,int,int,int,int>>)
+	playAnimation: playAnimation@d5520605-edd3-4387-b7ec-0c89e5ce0e5c (propref<function<bool>>)
+}

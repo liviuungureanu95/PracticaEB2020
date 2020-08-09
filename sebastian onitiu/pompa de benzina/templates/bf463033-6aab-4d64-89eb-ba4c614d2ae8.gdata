@@ -1,0 +1,71 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(bf463033-6aab-4d64-89eb-ba4c614d2ae8)
+{
+	name: "template buton"
+	structure: GtfContainer(426c6071-6b91-4b86-a848-aa475f2d4de6)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(0b1d3628-8523-4757-a013-fa1692e78952)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "backgr."
+				visible: true
+				width: 120
+				height: 80
+				x: 0
+				y: 0
+				fillColor: #A9A9A9FF
+			}, 
+			GtfLabel(e4f27c9b-e1a0-41ef-b207-d3f2a7aff453)
+			{
+				features: feature_list [
+					TouchPressed(1010c03b-7913-45f3-8a10-1c4f9f9a6269)
+					{
+						touchPressed: function<bool,int,int,int,int>(ddd9e20f-7b14-4be9-9f14-f651ad802806)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	fire ev:goPay();" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(8311979f-d11e-45ba-a794-391396f87b55)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list []
+				name: "tip combustibil"
+				visible: true
+				width: 108
+				height: 52
+				x: 8
+				y: 12
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(57e51fde-8d8c-4515-b99d-2f7ae2b27736)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 25
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container 1"
+		visible: true
+		width: 120
+		height: 80
+		x: 0
+		y: 0
+	}
+	x: x@426c6071-6b91-4b86-a848-aa475f2d4de6 (propref<int>)
+	y: y@426c6071-6b91-4b86-a848-aa475f2d4de6 (propref<int>)
+	text: text@e4f27c9b-e1a0-41ef-b207-d3f2a7aff453 (propref<string>)
+	touchPressed: touchPressed@1010c03b-7913-45f3-8a10-1c4f9f9a6269 (propref<function<bool,int,int,int,int>>)
+}

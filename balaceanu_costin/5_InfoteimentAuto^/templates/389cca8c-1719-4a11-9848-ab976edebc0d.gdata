@@ -1,0 +1,75 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(389cca8c-1719-4a11-9848-ab976edebc0d)
+{
+	name: "Big_Button"
+	structure: GtfContainer(d7cad763-7d9a-4f6a-a27c-ef23ba782f4a)
+	{
+		features: feature_list [
+			TouchShortReleased(3d8ac873-28d4-44d4-8adb-6588ad472dc8)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(acd29c44-68af-44dd-8467-4ca1aef59424)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(94194569-174f-4f4c-a639-55201cf55330)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfImage(0f39a281-dd3e-4903-8325-de8f44555199)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@d7cad763-7d9a-4f6a-a27c-ef23ba782f4a (propref<int>)
+				height: height@d7cad763-7d9a-4f6a-a27c-ef23ba782f4a (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(0bea1b6e-6749-4a69-9cb8-cede85b05a8c)
+				{
+					file: "Help_BigButton.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(3a10c391-94a7-49fb-a9af-cc26cb32689f)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Media Player"
+				visible: true
+				width: width@d7cad763-7d9a-4f6a-a27c-ef23ba782f4a (propref<int>)
+				height: 38
+				x: 0
+				y: 160
+				text: "Media Player"
+				textColor: #00FF00FF
+				font: font_resource(6ad71336-d88e-483c-90af-043f585f9ac8)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 35
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 165
+		height: 165
+		x: 0
+		y: 0
+	}
+	image: image@0f39a281-dd3e-4903-8325-de8f44555199 (propref<image>)
+	text: text@3a10c391-94a7-49fb-a9af-cc26cb32689f (propref<string>)
+	touchShortReleased: touchShortReleased@3d8ac873-28d4-44d4-8adb-6588ad472dc8 (propref<function<bool,int,int,int,int>>)
+}

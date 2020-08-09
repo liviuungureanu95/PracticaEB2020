@@ -1,0 +1,81 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(e9aa37b1-7d3f-4580-b226-55dcb1eddcd6)
+{
+	name: "simpleButton"
+	structure: GtfContainer(9ee624e0-52e5-4f2f-8e10-ef28a143b261)
+	{
+		features: feature_list [
+			TouchShortReleased(37bf5da8-e621-4378-a5f9-9167f0d63a2d)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(dcd34ba7-0986-410e-9d4b-c61730a5a307)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.buttonEvent();" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(41407936-811c-4660-a350-df40714044b7)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(85867117-4729-448b-b99a-5087974d930d)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "background"
+				visible: visible@9ee624e0-52e5-4f2f-8e10-ef28a143b261 (propref<bool>)
+				width: width@9ee624e0-52e5-4f2f-8e10-ef28a143b261 (propref<int>)
+				height: height@9ee624e0-52e5-4f2f-8e10-ef28a143b261 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #A9A9A9FF
+			}, 
+			GtfLabel(7b0a3253-5e18-4118-a1a7-3b9aba7dc876)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "text"
+				visible: visible@9ee624e0-52e5-4f2f-8e10-ef28a143b261 (propref<bool>)
+				width: width@9ee624e0-52e5-4f2f-8e10-ef28a143b261 (propref<int>)
+				height: height@9ee624e0-52e5-4f2f-8e10-ef28a143b261 (propref<int>)
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(bb2a3bc8-113a-44c4-be38-de8ebd9ca295)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "simpleButton"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		buttonEvent: function<bool>(82c4cf1a-2401-4711-b42a-1a53c13cb2a3)
+		{
+			script: "function()" \
+				"{" \
+				"	// fire ev:event();" \
+				"	false" \
+				"}"
+		}
+	}
+	text: text@7b0a3253-5e18-4118-a1a7-3b9aba7dc876 (propref<string>)
+	visible: visible@9ee624e0-52e5-4f2f-8e10-ef28a143b261 (propref<bool>)
+	x: x@9ee624e0-52e5-4f2f-8e10-ef28a143b261 (propref<int>)
+	y: y@9ee624e0-52e5-4f2f-8e10-ef28a143b261 (propref<int>)
+	buttonEvent: buttonEvent@9ee624e0-52e5-4f2f-8e10-ef28a143b261 (propref<function<bool>>)
+	touchShortReleased: touchShortReleased@37bf5da8-e621-4378-a5f9-9167f0d63a2d (propref<function<bool,int,int,int,int>>)
+}

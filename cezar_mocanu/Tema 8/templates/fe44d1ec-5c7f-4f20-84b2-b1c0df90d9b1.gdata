@@ -1,0 +1,139 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(fe44d1ec-5c7f-4f20-84b2-b1c0df90d9b1)
+{
+	name: "CoffeeLoader"
+	structure: GtfContainer(fa7f547e-06e6-4416-b9dd-1d773c26e351)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfInstantiator(3ee47ab8-c55c-49e7-983b-904d61c6d702)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfImage(4283d463-da46-4659-a7d7-e409828b8ce8)
+					{
+						features: feature_list [
+							LineIndex(a92fff40-e14d-4e73-9974-6fdc3d22b118)
+							{
+								lineIndex: 0
+							}, 
+							ScaleMode(cbbd7aa3-e6fc-4033-ad86-4dd83eeb06f8)
+							{
+								scaleMode: 1
+							}]
+						children: children_list []
+						name: "Image"
+						visible: true
+						width: 100
+						height: 100
+						x: 0
+						y: 0
+						image: image_resource(30231381-c0d5-41dc-ac26-c0af28e86bcf)
+						{
+							file: ""
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+						setImages: conditional_script(ec4231e2-7ef9-41cf-a925-09ad07b864dc)
+						{
+							triggerList: trigger_list(73e51040-0088-42bf-a797-4cae34d2f35c)
+							{
+								script: "v:this.lineIndex" \
+									"dp:coffeeLoader"
+							}
+							onTrigger: function<bool,bool>(4cb30356-d705-490c-863a-ad09330dd4bd)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	v:this.image = dp:coffeeLoader[v:this.lineIndex]" \
+									"	false" \
+									"}"
+							}
+						}
+					}]
+				name: "Instantiator"
+				visible: true
+				width: 100
+				height: 100
+				x: 0
+				y: 0
+				numItems: loadingValue@fa7f547e-06e6-4416-b9dd-1d773c26e351 (propref<int>)
+				lineMapping: intlist []
+			}, 
+			GtfParallelAnimation(63cb038d-7fa6-4ff8-9792-eedd3360d570)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLinearInterpolationS32(df16969e-60a3-4c71-b922-74ad5ff74224)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Linear interpolation curve 1"
+						enabled: true
+						delay: 0
+						duration: 6000
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 1
+						end: 7
+						target: loadingValue@fa7f547e-06e6-4416-b9dd-1d773c26e351 (propref<int>)
+					}]
+				name: "Animation"
+				enabled: true
+				repeat: 1
+				alternating: false
+				scale: 1F
+				onPlay: function<void,int,bool>(ff155a5e-8b23-4c52-8949-7df046f2248f)
+				{
+					script: "function(v:animation_time::int, v:forward::bool)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onPause: function<void,int>(9debca5d-2e27-41c6-9461-535b4536fd93)
+				{
+					script: "function(v:animation_time::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onTerminate: function<void,int,int>(83f456e7-a8ec-4251-b460-d750fd9fafe9)
+				{
+					script: "function(v:animation_time::int, v:terminate::int)" \
+						"{" \
+						"	fire ev:finishedLoadingAnimation()" \
+						"}"
+				}
+			}]
+		name: "Container"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		loadingValue: 1
+		startAnimation: conditional_script(397f1ea9-0903-44c0-b0c7-aca6db771795)
+		{
+			triggerList: trigger_list(3fc47afd-2d97-42e7-8612-2a928db45873)
+			{
+				script: "ev:startLoadingAnimation" \
+					""
+			}
+			onTrigger: function<bool,bool>(3f59dd4c-3892-4ab6-b339-875c462ff75e)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	f:animation_play(v:this->Animation)" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+	y: y@fa7f547e-06e6-4416-b9dd-1d773c26e351 (propref<int>)
+	x: x@fa7f547e-06e6-4416-b9dd-1d773c26e351 (propref<int>)
+	width: width@fa7f547e-06e6-4416-b9dd-1d773c26e351 (propref<int>)
+	height: height@fa7f547e-06e6-4416-b9dd-1d773c26e351 (propref<int>)
+}

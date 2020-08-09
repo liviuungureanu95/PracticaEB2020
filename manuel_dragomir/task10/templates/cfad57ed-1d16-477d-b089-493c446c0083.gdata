@@ -1,0 +1,219 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(cfad57ed-1d16-477d-b089-493c446c0083)
+{
+	name: "Product"
+	structure: GtfContainer(eac96a39-e51c-450c-8669-ca9a8e11d3bf)
+	{
+		features: feature_list [
+			StateSelected(750602a3-d8fc-4cc6-914e-2a682f8dcf7c)
+			{
+				selected: true
+			}, 
+			Buttongroup(a6a8557e-f631-4dce-a8a7-ff5415cdcfb0)
+			{
+				buttonId: 0
+				buttonValue: @7ea79828-e7d4-485d-a266-0caec8b28d81 (objectref<int>)
+			}, 
+			TouchShortReleased(ea5fe7b8-f1af-4f3d-977b-214dfe9adb2e)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(74abd576-bf58-4ccf-b453-4074c38daec7)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	dp:ValueSelected = v:this.buttonId;" \
+						"	fire ev:ChangeProduct(v:this.Price);" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(c090229d-3292-40fa-b916-e13ba557215c)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(e1dae23b-a5f4-4223-b63b-d1a0d67c9cb9)
+			{
+				features: feature_list [
+					Border(f31bd9ba-e642-4330-b347-2424c1208d1d)
+					{
+						borderThickness: int_scriptedValue(077e8f06-1af9-43df-a2e5-b9ce4f7b2ea4)
+						{
+							triggerList: trigger_list(4fb6584a-f1c2-4791-a585-054831f7f98e)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(02c0a9a6-70e2-4345-956c-8e3462837a1c)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<int>(7a1d27b8-6aa2-40b0-be4e-b10826403598)
+							{
+								script: "function()" \
+									"{" \
+									"	if(v:this.IsCurrentSelected == true){" \
+									"		2" \
+									"	}" \
+									"	else{" \
+									"		0" \
+									"	}" \
+									"}"
+							}
+							write: function<bool,int>(b054682d-b3f5-4fca-8cf7-894d28bc8a46)
+							{
+								script: "function(v:arg0::int)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						borderColor: #191970FF
+						borderStyle: 0
+					}]
+				children: children_list [
+					GtfLabel(a3749218-627c-4449-8e41-e6b0687914f9)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Name"
+						visible: true
+						width: width@e1dae23b-a5f4-4223-b63b-d1a0d67c9cb9 (propref<int>)
+						height: 20
+						x: 0
+						y: 78
+						text: "<product>"
+						textColor: #191970FF
+						font: font_resource(0e4ddf18-b0c7-404c-ad30-43fbceda8896)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 20
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfImage(facef383-6e73-4dff-b767-b1465f2adb23)
+					{
+						features: feature_list [
+							ScaleMode(3c6e8c88-4079-456c-810c-d7841dbab616)
+							{
+								scaleMode: 1
+							}]
+						children: children_list []
+						name: "Image"
+						visible: true
+						width: 100
+						height: 80
+						x: 0
+						y: 0
+						image: image_resource(fc45a428-51e2-4baf-a99d-f8dcbcfa038b)
+						{
+							file: ""
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+					}, 
+					GtfLabel(2bf8933a-20d0-4be9-b5d7-52db15b9c843)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Price"
+						visible: true
+						width: width@a3749218-627c-4449-8e41-e6b0687914f9 (propref<int>)
+						height: height@a3749218-627c-4449-8e41-e6b0687914f9 (propref<int>)
+						x: 0
+						y: 100
+						text: "<price>"
+						textColor: textColor@a3749218-627c-4449-8e41-e6b0687914f9 (propref<color>)
+						font: font_resource(6d47b935-c8e1-4ab8-8fb5-aaec6761f3d1)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 16
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "Background"
+				visible: true
+				width: width@eac96a39-e51c-450c-8669-ca9a8e11d3bf (propref<int>)
+				height: height@eac96a39-e51c-450c-8669-ca9a8e11d3bf (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FA8072FF
+				IsCurrentSelected: false
+			}]
+		name: "Container"
+		visible: true
+		width: 100
+		height: 120
+		x: 0
+		y: 0
+		Selected: conditional_script(53e54634-a166-4a35-bbf4-eb62f9980afe)
+		{
+			triggerList: trigger_list(08439831-d113-49d7-b2b8-27ddd083e4ed)
+			{
+				script: "dp:ValueSelected"
+			}
+			onTrigger: function<bool,bool>(c167d939-1c91-4481-9ca5-f049fea171e7)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	if(dp:ValueSelected == v:this.buttonId){" \
+					"		v:this->Background.IsCurrentSelected = true;" \
+					"	}" \
+					"	else{" \
+					"		v:this->Background.IsCurrentSelected = false;	" \
+					"	}" \
+					"	false" \
+					"}"
+			}
+		}
+		Price: float_scriptedValue(74404829-ade3-421f-a793-97655eb03ee0)
+		{
+			triggerList: trigger_list(289b14a2-cbd9-4381-a114-7ead1749b8a9)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(d74b7466-a211-4a53-9eb7-ec6a1205ee5c)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	// todo: auto generated return value, please adapt" \
+					"	false" \
+					"}"
+			}
+			read: function<float>(cca97117-4412-4957-86ef-eba6f81fbc7e)
+			{
+				script: "function()" \
+					"{" \
+					"	// todo: auto generated return value, please adapt" \
+					"	f:string2float(v:this->Background->Price.text);" \
+					"}"
+			}
+			write: function<bool,float>(93220ec9-be1d-44c3-90be-b468b7787d89)
+			{
+				script: "function(v:arg0::float)" \
+					"{" \
+					"	// todo: auto generated return value, please adapt" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+	product: text@a3749218-627c-4449-8e41-e6b0687914f9 (propref<string>)
+	image: image@facef383-6e73-4dff-b767-b1465f2adb23 (propref<image>)
+	x: x@eac96a39-e51c-450c-8669-ca9a8e11d3bf (propref<int>)
+	y: y@eac96a39-e51c-450c-8669-ca9a8e11d3bf (propref<int>)
+	Selected: IsCurrentSelected@e1dae23b-a5f4-4223-b63b-d1a0d67c9cb9 (propref<bool>)
+	price: text@2bf8933a-20d0-4be9-b5d7-52db15b9c843 (propref<string>)
+	textColor: textColor@a3749218-627c-4449-8e41-e6b0687914f9 (propref<color>)
+	buttonId: buttonId@a6a8557e-f631-4dce-a8a7-ff5415cdcfb0 (propref<int>)
+}

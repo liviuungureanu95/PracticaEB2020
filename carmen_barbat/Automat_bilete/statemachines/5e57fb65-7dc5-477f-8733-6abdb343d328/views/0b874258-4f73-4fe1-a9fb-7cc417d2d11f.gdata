@@ -1,0 +1,89 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(0b874258-4f73-4fe1-a9fb-7cc417d2d11f)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(02ec7b9d-f300-4d0d-b92b-8f2d82a05a8e)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(8aefa7a8-7eb4-4daa-9782-7cbbae52a1b8)
+				{
+					features: feature_list [
+						ScaleMode(6b73728a-16fc-4ff1-94b6-03b5ab4c0301)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "warning_image"
+					visible: true
+					width: 180
+					height: 113
+					x: 187
+					y: 65
+					image: image_resource(e2243a96-a888-44e2-be3f-7cdf0506a808)
+					{
+						file: "warning.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(1e9275ac-a4d9-49f5-a472-f15ddac011c0)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Title"
+					visible: true
+					width: 246
+					height: 81
+					x: 181
+					y: -1
+					text: "Insufficient funds"
+					textColor: #FFFFFFFF
+					font: font_resource(06d1a3d8-54cb-4801-8976-d1c5c94ca7f5)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(f35b5b52-0f9e-4054-8f1e-cb517a7934ab)
+				{
+					name: "OK_BTN"
+					template: @5e4cb14f-1c30-46a2-8096-3e7f7ece5f79 (objectref<GtfContainer_template>)
+					children: children_list []
+					fillColor: #87CEFAFF
+					text: "OK"
+					x: 186
+					y: 239
+					"x 2": "x 2"@5e4cb14f-1c30-46a2-8096-3e7f7ece5f79 (propref<int>)
+					"y 2": "y 2"@5e4cb14f-1c30-46a2-8096-3e7f7ece5f79 (propref<int>)
+					"x 3": "x 3"@5e4cb14f-1c30-46a2-8096-3e7f7ece5f79 (propref<int>)
+					"y 3": "y 3"@5e4cb14f-1c30-46a2-8096-3e7f7ece5f79 (propref<int>)
+					buttonEvent: function<bool>(2fd4bff0-92cb-4e97-bca7-5ca4288ba6f1)
+					{
+						script: "function()" \
+							"{" \
+							"	fire ev:dismiss_message()" \
+							"	false" \
+							"}"
+					}
+				}]
+			name: "Background"
+			visible: true
+			width: width@0b874258-4f73-4fe1-a9fb-7cc417d2d11f (propref<int>)
+			height: height@0b874258-4f73-4fe1-a9fb-7cc417d2d11f (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #6495EDFF
+		}]
+	name: "warning_view"
+	visible: true
+	width: 600
+	height: 300
+	x: 100
+	y: 100
+}

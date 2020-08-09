@@ -1,0 +1,119 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(b5e161ac-435b-4a9e-9eb1-2f615c6eebfb)
+{
+	name: "MainView "
+	template: @b287e91e-79fb-47bc-a76b-6bb09dd6face (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(9b0ccc1c-b361-408a-b7f8-268f2af995d9)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "ActionLabel"
+			visible: true
+			width: 100
+			height: 100
+			x: 346
+			y: 81
+			text: "label"
+			textColor: @c6a991ad-f4df-482a-9404-503c1fec0acb (objectref<color>)
+			font: font_resource(62038d40-b585-4421-91b2-178bb6fb510e)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(ac6835a8-4fbb-4462-b562-00dc4813edf1)
+		{
+			name: "EnglishButton"
+			template: @584a5e52-e20a-4cf0-8dbb-5e2f7c4ec391 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "English"
+			y: 328
+			x: 190
+			buttonEvent: function<bool>(80f409f0-0718-46b3-a963-11dee79db3f2)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this->^->ActionLabel.text = \"English\"" \
+					"	f:setLanguage(l:Standard,true)" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(97e2612b-2271-4c2d-aae8-9be9c5585f56)
+		{
+			name: "RomanianButton"
+			template: @584a5e52-e20a-4cf0-8dbb-5e2f7c4ec391 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Romanian"
+			y: 325
+			x: 336
+			buttonEvent: function<bool>(c4750307-93f8-4a6a-818e-f902fe632d15)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this->^->ActionLabel.text = \"Romanian\"" \
+					"	f:setLanguage(l:Romanian,true)" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(5b2ecbc8-990f-44be-be46-6b427beab4a9)
+		{
+			name: "GermanButton"
+			template: @584a5e52-e20a-4cf0-8dbb-5e2f7c4ec391 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "German"
+			y: 327
+			x: 484
+			buttonEvent: function<bool>(9ccb6b9f-32c4-44cc-8378-319bb55d2c70)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this->^->ActionLabel.text = \"German\"" \
+					"	f:setLanguage(l:German,true)" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(55b16837-37ac-4165-bd20-46be4e0bfe97)
+		{
+			name: "SkinLightButton"
+			template: @584a5e52-e20a-4cf0-8dbb-5e2f7c4ec391 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Light"
+			y: 179
+			x: 256
+			buttonEvent: function<bool>(1c0358bd-c40a-499b-9583-22d3dbc5e1e8)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this->^->ActionLabel.text = \"Light\"" \
+					"	f:setSkin(s:Light,true)" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(0b9fa7fc-9e2f-4bad-9e0b-cf721bae2dfe)
+		{
+			name: "SkinDarkButton"
+			template: @584a5e52-e20a-4cf0-8dbb-5e2f7c4ec391 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Dark"
+			y: 180
+			x: 416
+			buttonEvent: function<bool>(d2350bdd-47f8-4f0b-8a2e-9f628ec38240)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this->^->ActionLabel.text = \"Dark\"" \
+					"	f:setSkin(s:Dark,true)" \
+					"	false" \
+					"}"
+			}
+		}]
+	text: "Main"
+}

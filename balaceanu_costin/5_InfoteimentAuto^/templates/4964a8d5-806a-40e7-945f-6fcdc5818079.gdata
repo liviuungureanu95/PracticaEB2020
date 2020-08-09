@@ -1,0 +1,98 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(4964a8d5-806a-40e7-945f-6fcdc5818079)
+{
+	name: "Grouo_BigButton"
+	structure: GtfContainer(6d678402-fe41-42ee-92e8-0750ab9c59cc)
+	{
+		features: feature_list [
+			LayoutPolicyFlow(401cbdfa-e61a-4f51-b4e3-bb858d2089af)
+			{
+				horizontalGap: 50
+				verticalGap: 50
+				layoutDirection: 0
+				horizontalChildAlign: 0
+				verticalChildAlign: 0
+			}]
+		children: children_list [
+			GtfContainer_template_instance(759bb351-8bb2-4324-aa65-13e8513e2cb6)
+			{
+				name: "Big_Button 1"
+				template: @389cca8c-1719-4a11-9848-ab976edebc0d (objectref<GtfContainer_template>)
+				children: children_list []
+				image: image_resource(27a5f091-a365-44a7-8c95-bee0108e5a38)
+				{
+					file: "Navigation_BigButton.jpg"
+				}
+				text: "Navigation"
+				touchShortReleased: function<bool,int,int,int,int>(3219247c-2986-4561-849a-916323d42185)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	fire ev:GoTo_Navigation()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			GtfContainer_template_instance(5d67ac5c-4cff-41f6-8e69-6eeef8cb2f36)
+			{
+				name: "Big_Button 2"
+				template: @389cca8c-1719-4a11-9848-ab976edebc0d (objectref<GtfContainer_template>)
+				children: children_list []
+				image: image_resource(7854868d-56dc-4614-9789-3abd0160f951)
+				{
+					file: "MediaPlayer_BigButton.jpeg"
+				}
+				text: text@389cca8c-1719-4a11-9848-ab976edebc0d (propref<string>)
+				touchShortReleased: function<bool,int,int,int,int>(084f8d40-f8e0-451e-aa0a-8a4df37b345f)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	fire ev:GoTo_MediaPlayer()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			GtfContainer_template_instance(b0f1649e-4c1a-49f8-892d-e8f045fed35e)
+			{
+				name: "Big_Button 3"
+				template: @389cca8c-1719-4a11-9848-ab976edebc0d (objectref<GtfContainer_template>)
+				children: children_list []
+				image: image_resource(8710f6b1-b3b4-477d-af72-d9d179e354cd)
+				{
+					file: "Radio_BigButton.png"
+				}
+				text: "Radio"
+				touchShortReleased: function<bool,int,int,int,int>(df74d563-bc6c-4b51-bfd5-c8de99e89a4e)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	fire ev:GoTo_Radio()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			GtfContainer_template_instance(7716fad5-d653-4fbe-9b54-8c47d22a50df)
+			{
+				name: "Big_Button 4"
+				template: @389cca8c-1719-4a11-9848-ab976edebc0d (objectref<GtfContainer_template>)
+				children: children_list []
+				image: image@389cca8c-1719-4a11-9848-ab976edebc0d (propref<image>)
+				text: "Help !"
+				touchShortReleased: function<bool,int,int,int,int>(092f58fa-4edb-4de0-a34e-22d5f4662ca8)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	fire ev:GoTo_Help()" \
+						"    false" \
+						"}"
+				}
+			}]
+		name: "Container"
+		visible: true
+		width: 380
+		height: 100
+		x: 50
+		y: 299
+	}
+}

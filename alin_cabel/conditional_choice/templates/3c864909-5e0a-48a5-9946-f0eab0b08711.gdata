@@ -1,0 +1,69 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(3c864909-5e0a-48a5-9946-f0eab0b08711)
+{
+	name: "groupButton"
+	structure: GtfContainer(7ee16127-7dd0-41f1-81b2-bb4e270e6a40)
+	{
+		features: feature_list [
+			LayoutPolicyFlow(772ffb3a-d33e-4087-a33a-053ed7eef3a9)
+			{
+				horizontalGap: 10
+				verticalGap: 0
+				layoutDirection: 0
+				horizontalChildAlign: 1
+				verticalChildAlign: 0
+			}]
+		children: children_list [
+			GtfContainer_template_instance(abf8d0a2-cf73-4647-b08a-eda3785798a2)
+			{
+				name: "main"
+				template: @e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (objectref<GtfContainer_template>)
+				children: children_list []
+				text: "main"
+				visible: visible@e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (propref<bool>)
+				x: x@e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (propref<int>)
+				y: y@e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (propref<int>)
+				buttonEvent: function<bool>(781b7a7e-1d38-4d30-aa3a-2b343343d60b)
+				{
+					script: "function()" \
+						"{" \
+						"	fire ev:goto_Main();" \
+						"	false" \
+						"}"
+				}
+				touchShortReleased: touchShortReleased@e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (propref<function<bool,int,int,int,int>>)
+			}, 
+			GtfContainer_template_instance(5bd28ad8-b367-40c4-b09c-c20bf10c0374)
+			{
+				name: "back"
+				template: @e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (objectref<GtfContainer_template>)
+				children: children_list []
+				text: "back"
+				visible: visible@e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (propref<bool>)
+				x: x@e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (propref<int>)
+				y: y@e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (propref<int>)
+				buttonEvent: function<bool>(5653c29f-3297-4431-8795-bbf35618de81)
+				{
+					script: "function()" \
+						"{" \
+						"    fire ev:go_Back();" \
+						"	false" \
+						"}"
+				}
+				touchShortReleased: touchShortReleased@e9aa37b1-7d3f-4580-b226-55dcb1eddcd6 (propref<function<bool,int,int,int,int>>)
+			}]
+		name: "groupButton"
+		visible: true
+		width: 300
+		height: 60
+		x: 480
+		y: 0
+	}
+	visible_main: visible@abf8d0a2-cf73-4647-b08a-eda3785798a2 (propref<bool>)
+	text_Main: text@abf8d0a2-cf73-4647-b08a-eda3785798a2 (propref<string>)
+	buttonEventMain: buttonEvent@abf8d0a2-cf73-4647-b08a-eda3785798a2 (propref<function<bool>>)
+	buttonEventBack: buttonEvent@5bd28ad8-b367-40c4-b09c-c20bf10c0374 (propref<function<bool>>)
+	text_Back: text@5bd28ad8-b367-40c4-b09c-c20bf10c0374 (propref<string>)
+	visible_back: visible@5bd28ad8-b367-40c4-b09c-c20bf10c0374 (propref<bool>)
+}
