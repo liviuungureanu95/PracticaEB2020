@@ -1,0 +1,200 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(61c8bd0e-c7b2-457b-9371-5f6224e6d0de)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(d44ddaae-0602-442f-a8db-a7aedeb5d9a6)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage_template_instance(65f016bd-c08d-4ca1-a9ba-b9f93b6aca55)
+				{
+					name: "ScaledImage 1"
+					template: @071ac8ab-db5b-4fdd-aedb-007bc9a3f0b7 (objectref<GtfImage_template>)
+					children: children_list []
+					width: width@071ac8ab-db5b-4fdd-aedb-007bc9a3f0b7 (propref<int>)
+					height: height@071ac8ab-db5b-4fdd-aedb-007bc9a3f0b7 (propref<int>)
+					image: image_resource(f4963162-9068-45b6-a64f-e781efe18800)
+					{
+						file: "Alert-Download-PNG.png"
+					}
+					scaleMode: scaleMode@071ac8ab-db5b-4fdd-aedb-007bc9a3f0b7 (propref<int>)
+					x: 45
+					y: 16
+					visible: visible@071ac8ab-db5b-4fdd-aedb-007bc9a3f0b7 (propref<bool>)
+				}, 
+				GtfLabel(edc239af-3f12-4491-bf58-f2e92d2d845d)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 12"
+					visible: true
+					width: 243
+					height: 60
+					x: 177
+					y: 34
+					text: "Insufficient funds!"
+					textColor: #FF0000FF
+					font: font_resource(2a548556-b465-4350-ba22-cdb4f74a4728)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 35
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(760680b4-8f07-4d2c-bcc8-01cd5c6eab9f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 13"
+					visible: true
+					width: 209
+					height: 49
+					x: 43
+					y: 130
+					text: string_scriptedValue(cc18425e-668f-4d9a-89e6-509266173d9d)
+					{
+						triggerList: trigger_list(ea3d88e1-dd8c-4322-aff0-22f2cb791ffd)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(86c61dc3-b4b5-4cf1-bcda-b23ed58f797b)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(0aed15a3-3635-4101-b68b-6f8abd7a66de)
+						{
+							script: "function()" \
+								"{" \
+								"	\"Total to pay: \" + f:format_float(\"%.2f\",true,(dp:totalToPay))" \
+								"	" \
+								"}"
+						}
+						write: function<bool,string>(add9a9ab-9ddd-4462-9de2-9c11f6e44d0e)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(790aaecd-2b73-4511-8079-b3791a1aaa5b)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(947ebe58-1de2-415e-86bb-1831426ffd63)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 14"
+					visible: true
+					width: 202
+					height: 51
+					x: 258
+					y: 130
+					text: string_scriptedValue(8434486c-5d58-4aa5-8e03-47800d534f88)
+					{
+						triggerList: trigger_list(1b9acc16-5e78-4056-893d-0cd8e5addb97)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(98e87800-d98a-4775-b185-8991d2a2e48b)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(ccff9f2e-f4ce-461e-8f6d-23f157d174b1)
+						{
+							script: "function()" \
+								"{" \
+								"	\"Your amount: \" + f:format_float(\"%.2f\",true,f:int2float(dp:Cash))" \
+								"}"
+						}
+						write: function<bool,string>(156e70c9-eef3-43b8-92e9-0869b851fc1b)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(5db27d2f-8ecd-48dc-9932-f3df2fcac25a)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 2
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(fa9492cb-bd4e-4775-bdcd-746a46fdc388)
+				{
+					name: "BasicButton 1"
+					template: @452e9170-13ba-4bf7-ac10-7105b5e6fabd (objectref<GtfContainer_template>)
+					children: children_list []
+					width: width@452e9170-13ba-4bf7-ac10-7105b5e6fabd (propref<int>)
+					height: 56
+					x: 204
+					y: 207
+					visible: visible@452e9170-13ba-4bf7-ac10-7105b5e6fabd (propref<bool>)
+					pressAction: function<bool>(d6984687-f516-47b1-a21d-dbed79d10447)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this.currentColor = v:this.pressedColor" \
+							"	v:this.currentTextColor = v:this.pressedTextColor" \
+							"	fire ev:closePopUp()" \
+							"	false" \
+							"}"
+					}
+					releaseAction: function<bool>(a5b3ab77-b7e2-4336-bd8a-9880eb3a9eda)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this.currentColor = v:this.releasedColor" \
+							"	v:this.currentTextColor = v:this.releasedTextColor" \
+							"	false" \
+							"}"
+					}
+					currentColor: fillColor@fa9492cb-bd4e-4775-bdcd-746a46fdc388 (propref<color>)
+					pressedColor: #E6E6FAFF
+					releasedColor: #FFFFFFFF
+					fillColor: #FFFFFFFF
+					text: "Ok"
+					textColor: #000000FF
+					pressedTextColor: #FFFFFFFF
+					releasedTextColor: releasedTextColor@452e9170-13ba-4bf7-ac10-7105b5e6fabd (propref<color>)
+					currentTextColor: textColor@fa9492cb-bd4e-4775-bdcd-746a46fdc388 (propref<color>)
+					"visible 2": "visible 2"@452e9170-13ba-4bf7-ac10-7105b5e6fabd (propref<bool>)
+				}]
+			name: "Rectangle 2"
+			visible: true
+			width: 501
+			height: 277
+			x: 156
+			y: 120
+			fillColor: #A9A9A9FF
+		}]
+	name: "PopUpView"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
