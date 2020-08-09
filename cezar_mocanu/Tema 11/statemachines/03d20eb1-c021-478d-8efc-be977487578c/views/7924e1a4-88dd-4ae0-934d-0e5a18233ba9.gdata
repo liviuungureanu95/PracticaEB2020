@@ -1,0 +1,102 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(7924e1a4-88dd-4ae0-934d-0e5a18233ba9)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(8a6be62f-0de0-4d7e-913b-06bfd661c795)
+		{
+			name: "AnimatedBackground 1"
+			template: @3439dbe8-c0b8-4d15-bc9d-edc520738e29 (objectref<GtfContainer_template>)
+			children: children_list []
+		}, 
+		GtfContainer_template_instance(7dc2f25b-527a-4425-a2ce-70e3ed2b7b4c)
+		{
+			name: "Program1"
+			template: @2e0770ee-3a36-4ac0-9e3c-957700638914 (objectref<GtfContainer_template>)
+			children: children_list []
+			releaseAction: function<bool>(6435fdaf-ae81-4317-96d9-754d94249536)
+			{
+				script: "function()" \
+					"{" \
+					"	f:pushDynamicStateMachine(popup_stack:Main,sm:ErrorPopup,0)" \
+					"	dp:chosenProgram = \"Cotton\"" \
+					"	false" \
+					"}"
+			}
+			y: 150
+			x: 150
+			height: height@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<int>)
+			width: width@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<int>)
+			text: "Cotton"
+			visible: visible@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<bool>)
+		}, 
+		GtfContainer_template_instance(d6e9ce8e-6d60-4eae-8a2b-3d9338c387dc)
+		{
+			name: "Program2"
+			template: @2e0770ee-3a36-4ac0-9e3c-957700638914 (objectref<GtfContainer_template>)
+			children: children_list []
+			releaseAction: function<bool>(0fbd2a8d-60c0-4d73-a1b8-e7ce0ebcc989)
+			{
+				script: "function()" \
+					"{" \
+					"	f:pushDynamicStateMachine(popup_stack:Main,sm:ErrorPopup,0)" \
+					"	dp:chosenProgram = \"Silk\"" \
+					"	false" \
+					"}"
+			}
+			y: 150
+			x: 350
+			height: height@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<int>)
+			width: width@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<int>)
+			text: "Silk"
+			visible: visible@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<bool>)
+		}, 
+		GtfContainer_template_instance(6478b58d-6c99-4dcd-8343-0d2632fd86da)
+		{
+			name: "Program3"
+			template: @2e0770ee-3a36-4ac0-9e3c-957700638914 (objectref<GtfContainer_template>)
+			children: children_list []
+			releaseAction: function<bool>(b6412895-a814-493e-9fda-28aad756251d)
+			{
+				script: "function()" \
+					"{" \
+					"	f:pushDynamicStateMachine(popup_stack:Main,sm:ErrorPopup,0)" \
+					"	dp:chosenProgram = \"Eco\"" \
+					"	false" \
+					"}"
+			}
+			y: 150
+			x: 550
+			height: height@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<int>)
+			width: width@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<int>)
+			text: "Eco"
+			visible: visible@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<bool>)
+		}, 
+		GtfLabel(900a6285-26e1-4cd7-8479-669bed0a7158)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Instruction"
+			visible: true
+			width: width@7924e1a4-88dd-4ae0-934d-0e5a18233ba9 (propref<int>)
+			height: 100
+			x: 0
+			y: 0
+			text: "Please choose a washing program"
+			textColor: #008080FF
+			font: font_resource(0fd99e03-a2a0-405f-8087-b98230120b6a)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+	name: "vMainMenu"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

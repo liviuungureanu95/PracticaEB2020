@@ -1,0 +1,104 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(3afbd3bd-1cbb-4222-8454-c2ce82dfcc12)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(7eee3446-5365-4042-a570-8114efe453be)
+		{
+			name: "AnimatedBackground"
+			template: @3439dbe8-c0b8-4d15-bc9d-edc520738e29 (objectref<GtfContainer_template>)
+			children: children_list []
+		}, 
+		GtfContainer_template_instance(2acbfc90-d99c-4995-a4b8-4b7581703b0d)
+		{
+			name: "Back"
+			template: @2e0770ee-3a36-4ac0-9e3c-957700638914 (objectref<GtfContainer_template>)
+			children: children_list []
+			releaseAction: function<bool>(90d03daf-cc76-4f2d-bf29-45cb4316ef23)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goToMenu()" \
+					"	false" \
+					"}"
+			}
+			y: y@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<int>)
+			x: x@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<int>)
+			height: 60
+			width: width@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<int>)
+			text: "Back"
+			visible: visible@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<bool>)
+		}, 
+		GtfLabel(fc858327-24c9-445d-9065-0848f4e9d978)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Instruction"
+			visible: true
+			width: width@3afbd3bd-1cbb-4222-8454-c2ce82dfcc12 (propref<int>)
+			height: 100
+			x: 0
+			y: 0
+			text: "Eco Program - 8 minutes"
+			textColor: #008080FF
+			font: font_resource(7f818bc7-d5ee-4760-8577-b3016ca5ed8e)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(817abde9-e6db-435e-9d14-f2e5f46f2910)
+		{
+			name: "Timmer"
+			template: @8e1f390a-6c47-4265-acfa-6a4d87315121 (objectref<GtfContainer_template>)
+			children: children_list []
+			colors: colorlist [#20B2AAFF, #48D1CCFF]
+			duration: 8
+			animationStarted: false
+			y: 200
+			x: 350
+			visible: true
+			onTerminate: function<bool>(bb95f317-c6f6-4205-aa8c-27384dc1448e)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goToMenu()" \
+					"	dp:isDetergentAdded = false" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(06e85dbc-5984-457a-bdae-f278b8afd155)
+		{
+			name: "Start"
+			template: @2e0770ee-3a36-4ac0-9e3c-957700638914 (objectref<GtfContainer_template>)
+			children: children_list []
+			releaseAction: function<bool>(d66aa103-4ec3-4322-b80b-bc7988e1b262)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this->^->Timmer.animationStarted = true" \
+					"	v:this->^->Timmer.visible = true" \
+					"	v:this.visible = false" \
+					"	v:this->^->Back.visible = false" \
+					"	v:this->^->Instruction.text = \"Please wait until the cycle is finished...\"" \
+					"	false" \
+					"}"
+			}
+			y: 200
+			x: 350
+			height: height@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<int>)
+			width: width@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<int>)
+			text: "Start"
+			visible: visible@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<bool>)
+		}]
+	name: "vEco"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

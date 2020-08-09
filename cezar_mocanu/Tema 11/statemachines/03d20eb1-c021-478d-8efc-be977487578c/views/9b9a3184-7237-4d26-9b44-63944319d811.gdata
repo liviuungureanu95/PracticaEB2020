@@ -1,0 +1,105 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(9b9a3184-7237-4d26-9b44-63944319d811)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(d886fee0-ae8a-47d2-b1ee-8896a29abeb0)
+		{
+			name: "AnimatedBackground"
+			template: @3439dbe8-c0b8-4d15-bc9d-edc520738e29 (objectref<GtfContainer_template>)
+			children: children_list []
+		}, 
+		GtfLabel(7cdd9cf9-b61b-49ea-ba9b-9272a72eab1d)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Instruction"
+			visible: true
+			width: width@9b9a3184-7237-4d26-9b44-63944319d811 (propref<int>)
+			height: 100
+			x: 0
+			y: 0
+			text: "Silk Program - 15 minutes"
+			textColor: #008080FF
+			font: font_resource(c8c6cfea-056e-4568-ab68-1319e62c78dd)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(beac2d77-5551-4361-b1f7-63b363f349c3)
+		{
+			name: "Timmer"
+			template: @8e1f390a-6c47-4265-acfa-6a4d87315121 (objectref<GtfContainer_template>)
+			children: children_list []
+			colors: colorlist [#20B2AAFF, #48D1CCFF]
+			duration: 15
+			animationStarted: false
+			y: 200
+			x: 350
+			visible: true
+			onTerminate: function<bool>(b746acbf-da3f-4bdd-a27d-d47d9aaa8aa9)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goToMenu()" \
+					"	dp:isDetergentAdded = false" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(ce6e0e28-352b-46ac-872b-f28d9b685f5e)
+		{
+			name: "Start"
+			template: @2e0770ee-3a36-4ac0-9e3c-957700638914 (objectref<GtfContainer_template>)
+			children: children_list []
+			releaseAction: function<bool>(0862f289-8a86-4378-bcd4-90ebd333b4cc)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this->^->Timmer.animationStarted = true" \
+					"	v:this->^->Timmer.visible = true" \
+					"	v:this.visible = false" \
+					"	v:this->^->Back.visible = false" \
+					"	" \
+					"	v:this->^->Instruction.text = \"Please wait until the cycle is finished...\"" \
+					"	false" \
+					"}"
+			}
+			y: 200
+			x: 350
+			height: height@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<int>)
+			width: width@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<int>)
+			text: "Start"
+			visible: visible@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<bool>)
+		}, 
+		GtfContainer_template_instance(20383902-2499-4708-974c-16d675547f8b)
+		{
+			name: "Back"
+			template: @2e0770ee-3a36-4ac0-9e3c-957700638914 (objectref<GtfContainer_template>)
+			children: children_list []
+			releaseAction: function<bool>(e783b421-4a9d-4e9f-bc06-14d914b11d28)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goToMenu()" \
+					"	false" \
+					"}"
+			}
+			y: y@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<int>)
+			x: x@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<int>)
+			height: 60
+			width: width@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<int>)
+			text: "Back"
+			visible: visible@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<bool>)
+		}]
+	name: "vSilk"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
