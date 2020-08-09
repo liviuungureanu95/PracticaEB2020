@@ -1,0 +1,185 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(a8cd2d19-6a08-4ede-9c63-3e17ab2854a5)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(e03653b9-b862-4f0e-bead-24214a75b404)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(5d89f3ab-6b2b-4e15-8c4e-4ef6f3b773a6)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 1"
+					visible: true
+					width: 209
+					height: 100
+					x: 544
+					y: 37
+					text: "Total Price:"
+					textColor: #000000FF
+					font: font_resource(2bc84ade-36f8-4b62-b154-50f23bf350cd)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 50
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(72fb512b-511d-4912-abda-45fa516884ba)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 3"
+					visible: true
+					width: 100
+					height: 100
+					x: 592
+					y: 136
+					text: string_scriptedValue(e22096df-2bb4-4661-b24d-e4e53aa404e1)
+					{
+						triggerList: trigger_list(1592bf9b-06be-4fb8-896c-e856a50513cd)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(8b50a704-a0c4-4e02-9ec6-c163c0a089f1)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(7a0b1cc6-1da1-4409-8ccc-7410ab33c642)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:int2string(dp:TotalPrice)" \
+								"}"
+						}
+						write: function<bool,string>(6822b213-89bc-443b-ac6a-48541d680757)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(7644ffcd-daa9-4cab-b4bf-64ff479ea15f)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "BG"
+			visible: true
+			width: width@a8cd2d19-6a08-4ede-9c63-3e17ab2854a5 (propref<int>)
+			height: height@a8cd2d19-6a08-4ede-9c63-3e17ab2854a5 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #FFE4B5FF
+		}, 
+		GtfInstantiator(bc0b3025-4422-4083-9a8a-5b617572e4ba)
+		{
+			features: feature_list [
+				LayoutPolicyGrid(734bd978-423f-46a0-a850-3d536573c9e3)
+				{
+					horizontalGap: 30
+					verticalGap: 30
+					numRows: 3
+					numColumns: 3
+				}]
+			children: children_list [
+				GtfRectangle(2cf90f25-56ff-41c0-aeab-020eb5141270)
+				{
+					features: feature_list [
+						LineIndex(53001d32-f978-428e-8aa5-440c1f94c5ff)
+						{
+							lineIndex: 0
+						}, 
+						TouchShortReleased(1a8efd47-d767-42e1-a5ef-41e50065a0a5)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(6262a493-d5a7-4b06-8846-14212162f57c)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	dp:Buffer= dp:PricesList[v:this.lineIndex]" \
+									"	dp:TotalPrice=dp:TotalPrice+dp:Buffer*dp:\"Quanitity\"" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(2a70261a-265e-4823-b80a-54aca5c74c9f)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(db6697ad-6486-4459-b6d4-285bd6af65c3)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "text"
+							visible: true
+							width: 100
+							height: 100
+							x: 0
+							y: 0
+							text: ""
+							textColor: #FFFFFFFF
+							font: font_resource(352802bc-7870-4d12-a623-53b3f306e06b)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Button"
+					visible: true
+					width: 264
+					height: 50
+					x: 514
+					y: 405
+					fillColor: #FA8072FF
+					"Conditional script 1": conditional_script(04d7e0c1-5ece-4bff-bbf6-f2612af4cedf)
+					{
+						triggerList: trigger_list(4bf3e49b-8c02-43b1-9060-50fdee5fe94b)
+						{
+							script: "v:this.lineIndex"
+						}
+						onTrigger: function<bool,bool>(79c907f0-42fb-49f0-8c5b-7ffcdc633ee4)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"v:this->\"text\".text=dp:Products[v:this.lineIndex];" \
+								"false" \
+								"}"
+						}
+					}
+				}]
+			name: "Instantiator 1"
+			visible: true
+			width: 401
+			height: 387
+			x: 47
+			y: 58
+			numItems: 9
+			lineMapping: intlist []
+		}]
+	name: "View 1"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
