@@ -1,0 +1,215 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(875651f8-77b9-4d8f-8c14-904666bbae6b)
+{
+	name: "Ticket"
+	structure: GtfContainer(e27d8170-e90b-4fce-8798-6f664705ce0f)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(5964ed30-7c21-415c-9e83-02451b6c7b7b)
+			{
+				features: feature_list [
+					TouchShortReleased(0e9c7893-5356-4d29-a4d8-75e8c52f9597)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(3fa29bf6-b04a-4e0e-90d1-461d08e5fdc2)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    v:this->^->confirm.visible = true" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(c133a175-6078-4eaf-a5d1-f39bcddb97da)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list [
+					GtfLabel(682fb40e-28c1-4290-9add-665cd4d78f04)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "type"
+						visible: true
+						width: 100
+						height: 60
+						x: 0
+						y: 0
+						text: "label"
+						textColor: #000000FF
+						font: font_resource(ec88a9d0-629f-4d23-abb6-bcbe16e6dee0)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 20
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "background"
+				visible: true
+				width: width@e27d8170-e90b-4fce-8798-6f664705ce0f (propref<int>)
+				height: 60
+				x: 0
+				y: 0
+				fillColor: #FFFFFFFF
+			}, 
+			GtfRectangle(8318547d-ed47-4f06-83cb-14a4b82a3e1c)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfRectangle(c1b49fa0-f42b-4fdb-8dd9-3d2f1750a778)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLabel(a0facfdd-db11-48e5-8692-987540bb0af6)
+							{
+								features: feature_list [
+									TouchShortReleased(30e66caf-7e3b-4f55-8009-eb2e2e4b38c4)
+									{
+										touchShortReleased: function<bool,int,int,int,int>(9df50c06-b93a-4c7d-8026-7308cfe0f95c)
+										{
+											script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+												"{" \
+												"    v:this->^->^.visible = false" \
+												"    false" \
+												"}"
+										}
+									}, 
+									StateTouched(c876d649-782d-4d96-9beb-e9f6d2383f20)
+									{
+										touchable: true
+										touched: false
+										touchPolicy: 0
+										touchBehavior: 0
+									}, 
+									TouchPressed(59142ddc-119b-475f-81f5-9cfc217d52b0)
+									{
+										touchPressed: function<bool,int,int,int,int>(37a9bacd-915c-4ecf-9cd0-148091c94298)
+										{
+											script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+												"{" \
+												"    " \
+												"    false" \
+												"}"
+										}
+									}]
+								children: children_list []
+								name: "confirm"
+								visible: true
+								width: 60
+								height: 39
+								x: 0
+								y: 0
+								text: "Confirm"
+								textColor: #FFFFFFFF
+								font: font_resource(cd3c851a-67c5-4141-b3d0-7a48b395e538)
+								{
+									file: "PT_Sans_Narrow.ttf"
+									size: 20
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}]
+						name: "green_rectangle"
+						visible: true
+						width: 60
+						height: 39
+						x: 2
+						y: 10
+						fillColor: #32CD32FF
+					}, 
+					GtfRectangle(2c492a95-57ed-4ea3-ae52-24fa244aa540)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLabel(bf0ed83d-3a50-42c8-8b96-fb0b58e6224d)
+							{
+								features: feature_list [
+									TouchShortReleased(62bb7068-9d22-4eba-b90a-76324987f0f3)
+									{
+										touchShortReleased: function<bool,int,int,int,int>(8487bfc5-99ef-4861-8475-6722502b9e43)
+										{
+											script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+												"{" \
+												"    v:this->^->^.visible = false" \
+												"    false" \
+												"}"
+										}
+									}, 
+									StateTouched(4d206384-91cd-46c3-b648-6b0ba0ae82e4)
+									{
+										touchable: true
+										touched: false
+										touchPolicy: 0
+										touchBehavior: 0
+									}]
+								children: children_list []
+								name: "cancel"
+								visible: true
+								width: 35
+								height: 39
+								x: 0
+								y: 0
+								text: "X"
+								textColor: #FFFFFFFF
+								font: font_resource(a868d357-2dc4-4e69-bc37-9f262010e27f)
+								{
+									file: "PT_Sans_Narrow.ttf"
+									size: 20
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}]
+						name: "red_rectangle"
+						visible: true
+						width: 30
+						height: 39
+						x: 65
+						y: 10
+						fillColor: #FF0000FF
+					}]
+				name: "confirm"
+				visible: false
+				width: width@e27d8170-e90b-4fce-8798-6f664705ce0f (propref<int>)
+				height: 60
+				x: 0
+				y: 0
+				fillColor: #DCDCDCFF
+			}, 
+			GtfLabel(df986efc-ff42-4b35-811b-dd791728b591)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "price"
+				visible: true
+				width: 100
+				height: 50
+				x: 0
+				y: 60
+				text: ""
+				textColor: #FFFFFFFF
+				font: font_resource(4ef069b0-2836-4f05-a44f-0093c6d9250f)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 20
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Ticket Container"
+		visible: true
+		width: 100
+		height: 110
+		x: 0
+		y: 0
+	}
+	x: x@e27d8170-e90b-4fce-8798-6f664705ce0f (propref<int>)
+	y: y@e27d8170-e90b-4fce-8798-6f664705ce0f (propref<int>)
+	text: text@682fb40e-28c1-4290-9add-665cd4d78f04 (propref<string>)
+	"text 2": text@df986efc-ff42-4b35-811b-dd791728b591 (propref<string>)
+	touchPressed: touchPressed@59142ddc-119b-475f-81f5-9cfc217d52b0 (propref<function<bool,int,int,int,int>>)
+}

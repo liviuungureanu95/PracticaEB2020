@@ -1,0 +1,107 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(f8048ec5-f329-45c2-b0be-336de96165ec)
+{
+	name: "Error"
+	structure: GtfContainer(ffdb7937-4344-4116-9516-98549657e65d)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(28f02dd9-6514-4d84-b8d2-19775da1f815)
+			{
+				features: feature_list [
+					Border(024b0d76-0f52-4422-8740-af5837c35453)
+					{
+						borderThickness: 5
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list [
+					GtfLabel(c3914fdd-cefe-4533-89d3-3648d76d126e)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "message"
+						visible: true
+						width: width@ffdb7937-4344-4116-9516-98549657e65d (propref<int>)
+						height: 143
+						x: 0
+						y: 0
+						text: "Not enough money!"
+						textColor: #000000FF
+						font: font_resource(6899782e-c71f-43c6-bf69-17795c03db80)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfRectangle(ed4e8172-f3eb-4d16-aa44-be84b69bc1d2)
+					{
+						features: feature_list [
+							TouchShortReleased(9588e9af-4ab0-4f98-99db-f4bcab62897b)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(2c072107-4cc1-4409-a320-d155e0a3e3ba)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    fire ev:closeError()" \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(c669913d-269e-47ef-9d3f-f087be635a39)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list [
+							GtfLabel(76a1ad5b-6aa3-4d43-8ae0-7bea1f5bf53c)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Label 7"
+								visible: true
+								width: width@ed4e8172-f3eb-4d16-aa44-be84b69bc1d2 (propref<int>)
+								height: height@ed4e8172-f3eb-4d16-aa44-be84b69bc1d2 (propref<int>)
+								x: 0
+								y: 0
+								text: "OK"
+								textColor: #FFFFFFFF
+								font: font_resource(e42bc3d1-e54f-44ab-81e9-69613cefc8ae)
+								{
+									file: "PT_Sans_Narrow.ttf"
+									size: 25
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}]
+						name: "ok_rectangle"
+						visible: true
+						width: 70
+						height: 45
+						x: 176
+						y: 131
+						fillColor: #000000FF
+					}]
+				name: "background"
+				visible: true
+				width: width@ffdb7937-4344-4116-9516-98549657e65d (propref<int>)
+				height: height@ffdb7937-4344-4116-9516-98549657e65d (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFFFF
+			}]
+		name: "Error Elements"
+		visible: true
+		width: 300
+		height: 200
+		x: 0
+		y: 0
+	}
+	x: x@ffdb7937-4344-4116-9516-98549657e65d (propref<int>)
+	y: y@ffdb7937-4344-4116-9516-98549657e65d (propref<int>)
+}
