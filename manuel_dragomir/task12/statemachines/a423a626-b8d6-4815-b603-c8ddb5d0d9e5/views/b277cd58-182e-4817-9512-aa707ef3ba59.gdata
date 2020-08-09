@@ -1,0 +1,359 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(b277cd58-182e-4817-9512-aa707ef3ba59)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(541914db-f47c-43f9-9074-ddb9b118fd25)
+		{
+			features: feature_list [
+				ScaleMode(c6690dfb-35fb-4fb4-acb1-06e6313f7d6a)
+				{
+					scaleMode: 1
+				}]
+			children: children_list [
+				GtfContainer_template_instance(c3f4ad1a-d770-4bf3-a161-2ce6f662eabd)
+				{
+					name: "RomanianButton"
+					template: @2a4201ba-38f3-47ec-bb26-81c23d21c9d5 (objectref<GtfContainer_template>)
+					children: children_list []
+					text: "RO"
+					x: 0
+					y: 0
+					image: image_resource(22058ea3-94b5-4cfb-bcc0-05ec5fe95426)
+					{
+						file: "ro_flag.png"
+					}
+					buttonId: buttonId@2a4201ba-38f3-47ec-bb26-81c23d21c9d5 (propref<int>)
+					changeLanguage: function<bool>(19e5f8c6-a7d0-44d0-aa34-4d22e479df40)
+					{
+						script: "function()" \
+							"{" \
+							"	f:setLanguage(l:Romanian, true);" \
+							"	false" \
+							"}"
+					}
+					textColor: #000000FF
+					touchShortReleased: function<bool,int,int,int,int>(c21f153b-c1e2-4060-8921-095f94882f18)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:SelectionGroupLanguage = v:this.buttonId;" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(41bfe45b-87d7-411e-9394-1fbe7ad8f4ad)
+				{
+					name: "FrenchButton"
+					template: @2a4201ba-38f3-47ec-bb26-81c23d21c9d5 (objectref<GtfContainer_template>)
+					children: children_list []
+					text: "FR"
+					x: 0
+					y: 45
+					image: image_resource(6d4d9bbb-adfd-461f-928a-749d68c7ce02)
+					{
+						file: "fr_flag.jpg"
+					}
+					buttonId: 1
+					changeLanguage: function<bool>(8ad7454d-756c-47ac-afbf-dbf43bd8b920)
+					{
+						script: "function()" \
+							"{" \
+							"	f:setLanguage(l:French, true);" \
+							"	false" \
+							"}"
+					}
+					textColor: #000000FF
+					touchShortReleased: function<bool,int,int,int,int>(08162493-f418-4f91-be96-084ea7859242)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:SelectionGroupLanguage = v:this.buttonId;" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(16b8df72-ac37-4819-a9d8-d0594b7d2c9d)
+				{
+					name: "EnglishButton"
+					template: @2a4201ba-38f3-47ec-bb26-81c23d21c9d5 (objectref<GtfContainer_template>)
+					children: children_list []
+					text: text@2a4201ba-38f3-47ec-bb26-81c23d21c9d5 (propref<string>)
+					x: 0
+					y: 89
+					image: image_resource(54740ff9-fa57-4e2a-b778-087285946286)
+					{
+						file: "en_flag.jpg"
+					}
+					buttonId: 2
+					changeLanguage: function<bool>(b34e20c4-9dfb-428c-aee9-e296d63172b9)
+					{
+						script: "function()" \
+							"{" \
+							"	f:setLanguage(l:English, true);" \
+							"	false" \
+							"}"
+					}
+					textColor: #000000FF
+					touchShortReleased: function<bool,int,int,int,int>(614ea7bc-2d46-431c-95ed-757401eb98b0)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:SelectionGroupLanguage = v:this.buttonId;" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfLabel(46df57f7-9aa0-47de-82dd-8fd3d6aff047)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "CurrentSumMessage"
+					visible: true
+					width: 386
+					height: 100
+					x: 8
+					y: 380
+					text: @0278f5aa-1ed0-44b6-9960-33b0f9858255 (objectref<string>)
+					textColor: #000000FF
+					font: font_resource(33621797-d613-4f7f-a070-43b8778350d3)
+					{
+						file: "LeagueSpartan-Bold.otf"
+						size: 50
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(5032b66c-8795-46f2-93a6-0bfca1f24dd8)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "ActualSumValue"
+					visible: true
+					width: 265
+					height: 100
+					x: 410
+					y: 373
+					text: string_scriptedValue(17dfe11e-d910-4d5d-9b17-4c21e6d54b76)
+					{
+						triggerList: trigger_list(a14f55db-8ed8-46bf-a4db-20aacfce1519)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(d04c9fde-6bd7-4ac9-833b-3ccd6d112404)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(8b69e8e0-a66f-4633-9ed3-c4c7308ab2e1)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:format_float(\"%.2f\", true, dp:Balance)" \
+								"}"
+						}
+						write: function<bool,string>(3b69dbf1-a8a1-456b-bd41-2bdf0d0564ca)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(f754831c-179f-4336-8145-a65fa20ff245)
+					{
+						file: "LeagueSpartan-Bold.otf"
+						size: 80
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(c81e8c2b-2cb0-4cf2-8672-1db0e81e39d0)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "CurrencyLabel"
+					visible: true
+					width: 54
+					height: 100
+					x: 674
+					y: 380
+					text: "$"
+					textColor: #000000FF
+					font: font_resource(e9ee09b7-abfe-4336-92b5-08cc3dfbb6aa)
+					{
+						file: "LeagueSpartan-Bold.otf"
+						size: 50
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(de4d5586-e2fb-4c5c-b3fe-8b3b3e20db5a)
+				{
+					features: feature_list [
+						MultiLine(b0a5af5f-5fa7-4bd2-a33d-61448e3788f8)
+						{
+							lineOffset: 0
+							maxLineCount: 0
+						}]
+					children: children_list []
+					name: "ChoosingMessage"
+					visible: true
+					width: 689
+					height: 135
+					x: 99
+					y: 0
+					text: @8c13e579-17df-49aa-9e66-0c5951766136 (objectref<string>)
+					textColor: #000000FF
+					font: font_resource(c4fbe680-dd4c-45bc-88ef-786f44c3f805)
+					{
+						file: "LeagueSpartan-Bold.otf"
+						size: 50
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(3df22cd9-7b94-4089-8921-37c46b6fe47f)
+				{
+					name: "FirstClassButton"
+					template: @c2c712d6-714a-4fd9-adae-258dd7cd57ee (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 27
+					y: 166
+					text: @60ee98d1-0b37-447a-ad63-f2e6113399d3 (objectref<string>)
+					Price: 10F
+					image: image_resource(ff8ccb8c-0584-4ffd-8f75-85a75adad911)
+					{
+						file: "first_class.jpg"
+					}
+					buttonId: buttonId@c2c712d6-714a-4fd9-adae-258dd7cd57ee (propref<int>)
+					whenSelected: function<bool>(77bce876-e7b9-45a3-8a00-dd06135b9465)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:SumToPay = v:this.Price;" \
+							"	false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(28735a6c-63b8-4f57-bf52-8bf1ae7fd2b1)
+				{
+					name: "SecondClassButton"
+					template: @c2c712d6-714a-4fd9-adae-258dd7cd57ee (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 254
+					y: y@3df22cd9-7b94-4089-8921-37c46b6fe47f (propref<int>)
+					text: @161244b6-7263-44e2-bdaa-09c1cbc84515 (objectref<string>)
+					Price: 8F
+					image: image_resource(00636151-95e9-4ec4-b337-d2f826a4d459)
+					{
+						file: "second_class.jpg"
+					}
+					buttonId: 1
+					whenSelected: function<bool>(07835829-b859-4cc3-9082-cf0a3145a378)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:SumToPay = v:this.Price;" \
+							"	false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(e0e536a3-dc8d-4127-8e2d-afc7eef39ea9)
+				{
+					name: "SleepingCarButton"
+					template: @c2c712d6-714a-4fd9-adae-258dd7cd57ee (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 480
+					y: y@28735a6c-63b8-4f57-bf52-8bf1ae7fd2b1 (propref<int>)
+					text: @37cb89e3-a2b7-4578-b62d-fcc7319fd60e (objectref<string>)
+					Price: 15F
+					image: image_resource(b0d63f30-1e78-43df-b6ee-bdfa56579578)
+					{
+						file: "lodge.jpg"
+					}
+					buttonId: 2
+					whenSelected: function<bool>(ecd67962-80cd-45e4-9d4e-b2a569758f13)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:SumToPay = v:this.Price;" \
+							"	false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(eed12322-c5c7-456b-ae37-eef764010c35)
+				{
+					name: "BuyButton"
+					template: @c70ffb77-b5dd-45ec-85db-bbc2818b314d (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 683
+					y: 204
+					touchShortReleased: function<bool,int,int,int,int>(8dc19935-e15f-4bb4-bd72-f6ac0f41781b)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:BuyTicketEvent(dp:SumToPay);" \
+							"    false" \
+							"}"
+					}
+					text: "BUY"
+				}]
+			name: "Background"
+			visible: true
+			width: width@b277cd58-182e-4817-9512-aa707ef3ba59 (propref<int>)
+			height: height@b277cd58-182e-4817-9512-aa707ef3ba59 (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(eb3ec9ad-481d-4109-afe5-d3f5cf779308)
+			{
+				file: "train.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "MainView"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+	whenBuy: conditional_script(e0aea110-9583-42a2-a095-c9bea30136ad)
+	{
+		triggerList: trigger_list(0090e82b-a1e8-4125-8c19-ebbe5b181dab)
+		{
+			script: "ev:BuyTicketEvent"
+		}
+		onTrigger: function<bool,bool>(6e9a70f3-1c8a-4e54-a669-3a0b1a407bf7)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	match_event v:event = ev:BuyTicketEvent in" \
+				"	{" \
+				"		if(v:event.sumToPay > dp:Balance){" \
+				"			dp:Message = dp:InsuffFunds;" \
+				"		}" \
+				"		else{" \
+				"			dp:Message = dp:PrintTicket;" \
+				"			dp:Balance -= v:event.sumToPay" \
+				"		}" \
+				"		// Configure the following parameters:" \
+				"//   - popup_stack - the state with dynamic state list" \
+				"//   - sm - the dynamic state machine" \
+				"//   - priority - priority of the dynamic state machine" \
+				"		f:pushDynamicStateMachine(popup_stack:Main, sm:PopUp, 0);" \
+				"	}" \
+				"" \
+				"	false" \
+				"}"
+		}
+	}
+}
