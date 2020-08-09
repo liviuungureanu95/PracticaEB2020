@@ -1,0 +1,192 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(53ba08ed-1c19-420a-96c3-0fa276b93436)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle_template_instance(6b0b40ac-1357-4204-8a83-ed3204086603)
+		{
+			name: "Background"
+			template: @4b7ffeca-fd68-4a0b-bcfd-4cee17af9b35 (objectref<GtfRectangle_template>)
+			children: children_list []
+		}, 
+		GtfContainer_template_instance(c1294d3f-2531-405c-ac49-b86db2325e47)
+		{
+			name: "Back"
+			template: @9aa59a14-096a-4930-b336-bb385249ab3c (objectref<GtfContainer_template>)
+			children: children_list []
+			buttonColor: colorlist [#2F4F4FFF, #3CB371FF, #00FF7FFF]
+			onReleaseAction: function<bool>(356d29ec-61e2-422b-a9f8-cfc8fa133976)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goToCategory()" \
+					"	false" \
+					"}"
+			}
+			x: x@9aa59a14-096a-4930-b336-bb385249ab3c (propref<int>)
+			y: y@9aa59a14-096a-4930-b336-bb385249ab3c (propref<int>)
+			height: height@9aa59a14-096a-4930-b336-bb385249ab3c (propref<int>)
+			width: width@9aa59a14-096a-4930-b336-bb385249ab3c (propref<int>)
+			text: "Back"
+		}, 
+		GtfContainer_template_instance(2072da8b-bd57-40fc-87d8-9e5b1eaf1a82)
+		{
+			name: "ScrollBar"
+			template: @b9941a38-6f46-448a-a23e-674882a82592 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 450
+			y: 40
+			height: 280
+			width: width@b9941a38-6f46-448a-a23e-674882a82592 (propref<int>)
+			cursorHeight: int_scriptedValue(5562377e-b7c7-4e29-a347-9cb3b30071a5)
+			{
+				triggerList: trigger_list(2d2d6fd0-fb34-4d44-9b9d-c87081650fa5)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(e93bc3f3-d1d9-4dd8-a48d-88d708ee8e73)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<int>(229ca678-50ba-4c61-8596-48a028f2e4d9)
+				{
+					script: "function()" \
+						"{" \
+						"	let v:listRows = v:this->^->ScrollList.numItems / (v:this->^->ScrollList.width / v:this->^->ScrollList.buttonWidth) +1 in" \
+						"	let v:listHeight = v:listRows * v:this->^->ScrollList.buttonHeight in" \
+						"	let v:percent  = v:this.height * 100 / v:listHeight in" \
+						"	v:this.height * v:percent / 100	" \
+						"}"
+				}
+				write: function<bool,int>(87097a1d-30e2-43cf-a7f4-4a1232778e6f)
+				{
+					script: "function(v:arg0::int)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			scrollPercent: scrollPercent@b9941a38-6f46-448a-a23e-674882a82592 (propref<int>)
+			parentY: 0
+		}, 
+		GtfContainer_template_instance(1de8fc06-9d67-468a-9e1c-8f8b48e710e5)
+		{
+			name: "ScrollList"
+			template: @19c5fc91-7992-41b9-9d06-c8e48de347e7 (objectref<GtfContainer_template>)
+			children: children_list []
+			yOffset: int_scriptedValue(a35587d5-b4e8-4849-a1a4-da0eb553578b)
+			{
+				triggerList: trigger_list(23018bc7-1e40-46d6-ae72-69e974250880)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(4db5f8ef-2e97-4f4d-933a-c4d3c2eb0850)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<int>(61a129c7-8207-4db8-b822-768eaf4f1758)
+				{
+					script: "function()" \
+						"{" \
+						"	let v:listRows = v:this.numItems / (v:this.width / v:this.buttonWidth) + 1 in" \
+						"	let v:listHeight = v:listRows * v:this.buttonHeight in" \
+						"	let v:offset = - v:listHeight * v:this->^->ScrollBar.scrollPercent / 100 in{" \
+						"		if(v:offset < -v:listHeight + v:this.height)" \
+						"			v:offset = -v:listHeight + v:this.height" \
+						"		v:offset" \
+						"	}" \
+						"		" \
+						"}"
+				}
+				write: function<bool,int>(527bea8d-7daf-4bad-be1f-f3234705e5d6)
+				{
+					script: "function(v:arg0::int)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			buttonHeight: buttonHeight@19c5fc91-7992-41b9-9d06-c8e48de347e7 (propref<int>)
+			buttonWidth: buttonWidth@19c5fc91-7992-41b9-9d06-c8e48de347e7 (propref<int>)
+			itemNames: @8538d472-4b31-421a-8829-839b2c9f064e (objectref<stringlist>)
+			itemImages: @1271085c-cdfe-4616-9e47-038682ba75da (objectref<imagelist>)
+			numItems: 5
+			y: 40
+			x: 0
+			height: height@19c5fc91-7992-41b9-9d06-c8e48de347e7 (propref<int>)
+			width: width@19c5fc91-7992-41b9-9d06-c8e48de347e7 (propref<int>)
+			setButtonAction: conditional_script(a7b61d89-2411-4c7e-a8db-8198819764c1)
+			{
+				triggerList: trigger_list(98100e64-89fb-4793-8c8f-0602af3019d9)
+				{
+					script: "ev:scrollButtonEvent"
+				}
+				onTrigger: function<bool,bool>(adf55cd6-be35-4fad-8f69-35c7f708906a)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	match_event v:e = ev:scrollButtonEvent in {" \
+						"		dp:selectedItemName = dp:selectedNames[v:e.lineIndex]" \
+						"		dp:selectedItemImage = dp:selectedImages[v:e.lineIndex]" \
+						"		dp:price = f:log10f(f:int2float(f:abs(f:rand())))" \
+						"		fire ev:goToWeight()" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfLabel(f8e57ef0-3a23-40d4-8486-e63a016aa6dc)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(d0235475-8227-44fc-adcb-2f8de8263dc0)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "BottomMargin"
+					visible: true
+					width: width@53ba08ed-1c19-420a-96c3-0fa276b93436 (propref<int>)
+					height: 2
+					x: 0
+					y: 40
+					fillColor: color_element_reference(3e817958-d748-4ee4-9bc7-f54aad8815cd)
+					{
+						index: 0
+						list: @eddfeffc-6941-4bd3-bf3d-d6af5f976944 (objectref<colorlist>)
+					}
+				}]
+			name: "Instruction"
+			visible: true
+			width: width@53ba08ed-1c19-420a-96c3-0fa276b93436 (propref<int>)
+			height: 40
+			x: 0
+			y: 0
+			text: "Scroll and select an item"
+			textColor: #2F4F4FFF
+			font: font_resource(a04a9715-dfdb-4d78-82ea-85dced0168b7)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+	name: "vList"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}
