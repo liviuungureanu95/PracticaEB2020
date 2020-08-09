@@ -1,0 +1,78 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(6afb176f-f8a6-45f2-adde-ece6c69f3e86)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle_template_instance(6a7170f9-f799-40e7-8a99-8eb38d3b8f89)
+		{
+			name: "Background"
+			template: @5deec20c-d4e2-4f3a-b6a3-de17d1f76614 (objectref<GtfRectangle_template>)
+			children: children_list []
+			fillColor: #FEFEFEFF
+		}, 
+		GtfContainer_template_instance(1ccb2277-9d6c-40f2-b958-0dbb9591021b)
+		{
+			name: "ScrollableList"
+			template: @cc139f8d-fd51-4f93-bca7-3da2a5994f94 (objectref<GtfContainer_template>)
+			children: children_list []
+			y: 40
+			x: 0
+			height: 280
+			width: 480
+			buttonHeight: 151
+			buttonWidth: 151
+			images: @490bd324-01de-446c-b455-50870b0f3c21 (objectref<imagelist>)
+			names: @605425c1-8c39-4fbc-a43b-00a56ddf6e3d (objectref<stringlist>)
+			colors: @ce38e2dc-ceca-42f1-bb14-1ef53d0c8f2b (objectref<colorlist>)
+			scrollbarColors: @51645029-7898-4e39-93b8-3b366aafbadd (objectref<colorlist>)
+			scrollbarWidth: 27
+			releaseAction: releaseAction@cc139f8d-fd51-4f93-bca7-3da2a5994f94 (propref<function<bool>>)
+			setButtonActions: conditional_script(ffc77fdf-0aa7-4620-b067-fdce52795c4e)
+			{
+				triggerList: trigger_list(c1f9daa2-f7be-4341-9507-19a6a7e6e120)
+				{
+					script: "ev:scrollButtonPressed"
+				}
+				onTrigger: function<bool,bool>(bbcfce90-16cd-45d5-8590-c627246093ea)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	match_event v:e = ev:scrollButtonPressed in {" \
+						"		dp:selectedItem = dp:selectedNames[v:e.lineIndex]" \
+						"		dp:selectedItemImage = dp:selectedImages[v:e.lineIndex]" \
+						"		dp:selectedPrice = dp:selectedPrices[v:e.lineIndex]" \
+						"		fire ev:goTo_Weight()" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfLabel(9a3d0030-188f-44cd-8def-4193ba740b27)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Title"
+			visible: true
+			width: width@6afb176f-f8a6-45f2-adde-ece6c69f3e86 (propref<int>)
+			height: 40
+			x: 0
+			y: 0
+			text: "Scroll and choose your item"
+			textColor: #2F4F4FFF
+			font: font_resource(7d03726d-be7a-4f93-999c-311c6beaf7f7)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+	name: "View 1"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}

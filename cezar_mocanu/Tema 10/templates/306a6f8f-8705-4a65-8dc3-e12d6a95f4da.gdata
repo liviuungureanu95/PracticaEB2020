@@ -1,0 +1,204 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(306a6f8f-8705-4a65-8dc3-e12d6a95f4da)
+{
+	name: "Scrollbar"
+	structure: GtfContainer(81a612c0-c8f0-4faa-9827-4ada93592a6e)
+	{
+		features: feature_list [
+			TouchMove(1711d6c6-3496-4993-895e-ede2d14b150b)
+			{
+				touchMoved: function<bool,int,int,int,int>(ee995142-7d66-46f6-b917-269247acc4c1)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    v:this->Cursor.y = v:y - v:this.yParrentOffset - v:this->Cursor.currentMouseY" \
+						"    if(v:this->Cursor.y + v:this->Cursor.height > v:this.height)" \
+						"    	v:this->Cursor.y = v:this.height - v:this->Cursor.height" \
+						"    if(v:this->Cursor.y < 0)" \
+						"    	v:this->Cursor.y = 0" \
+						"    true" \
+						"}"
+				}
+			}, 
+			StateTouched(bd54264a-bd23-477e-8dd0-20386ca0480f)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 1
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(843a0fe6-ed30-44a9-926e-5ca224e0e532)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@81a612c0-c8f0-4faa-9827-4ada93592a6e (propref<int>)
+				height: height@81a612c0-c8f0-4faa-9827-4ada93592a6e (propref<int>)
+				x: 0
+				y: 0
+				fillColor: color_element_reference(5f50107b-8784-41a5-b29d-5cd9a3370a4c)
+				{
+					index: 0
+					list: colors@81a612c0-c8f0-4faa-9827-4ada93592a6e (propref<colorlist>)
+				}
+			}, 
+			GtfRectangle(22ba1bf4-1418-4a15-b468-088731b37efa)
+			{
+				features: feature_list [
+					TouchPressed(daea9a9e-1a4a-4292-a93e-21bfb92fcd31)
+					{
+						touchPressed: function<bool,int,int,int,int>(d04c4f21-c887-4466-a1db-c49b8dda6cfe)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.currentMouseY = v:y - v:this.y" \
+								"	v:this->^.currentCursorColor = v:this->^.colors[3]" \
+								"    false" \
+								"    " \
+								"}"
+						}
+					}, 
+					StateTouched(f8e792d1-4292-4530-a01d-a2f77225b83c)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}, 
+					TouchShortReleased(7550f1d1-7afc-41b4-8e4e-83d3fa7dd6c8)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(4b850be9-b64d-4766-bf80-9f847c31744b)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this->^.currentCursorColor = v:this->^.colors[1]" \
+								"   	true" \
+								"}"
+						}
+					}, 
+					MoveOut(12424011-5e4f-4c19-ba0e-be8dc864a97e)
+					{
+						moveOut: function<bool,int,int,int,int>(4bae6e0e-70d7-40f6-8b4c-ea74e1b8f5a7)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this->^.currentCursorColor = v:this->^.colors[1]" \
+								"    true" \
+								"}"
+						}
+					}, 
+					MoveIn(e0f4dbd5-6aee-4732-8f3c-b013cf2f874b)
+					{
+						moveIn: function<bool,int,int,int,int>(eb8f51cb-8e4d-4392-8661-db27a6a28ba6)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this->^.currentCursorColor = v:this->^.colors[2]" \
+								"    false" \
+								"}"
+						}
+					}]
+				children: children_list []
+				name: "Cursor"
+				visible: true
+				width: int_scriptedValue(a4dbe749-8e75-4950-8ec4-c3b1a033d156)
+				{
+					triggerList: trigger_list(f1f9f77a-ceab-4dc8-a270-8675b822ad4f)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(f1f6217c-c7ef-44b8-95da-6a08f2243f86)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(e34bf228-a220-475d-86ca-1cc52aebfe46)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.width*6/10" \
+							"}"
+					}
+					write: function<bool,int>(3ddd46da-4d9f-4a4d-9bd6-c04f6255b1f4)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				height: 100
+				x: int_scriptedValue(9cb157f8-5e5f-4c50-b18e-00bf4db42ed9)
+				{
+					triggerList: trigger_list(40e70c15-c7e9-4824-9d93-f1e201bf55f9)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(4fba097d-1b44-43e1-b1d7-4b8c9b2abdc1)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(0c15bda9-a0fb-42bf-8c4e-95a54a61bb4c)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.width*2/10" \
+							"}"
+					}
+					write: function<bool,int>(38cd1867-ed9c-4218-b90b-fc95b8aad65d)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				y: 0
+				fillColor: currentCursorColor@81a612c0-c8f0-4faa-9827-4ada93592a6e (propref<color>)
+				currentMouseY: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 20
+		height: 320
+		x: 0
+		y: 0
+		yParrentOffset: 0
+		colors: colorlist [#A9A9A9FF, #8B4513FF, #FF0000FF, #006400FF]
+		currentCursorColor: #A9A9A9FF
+		onInit: conditional_script(d8fb7ec3-9c07-496d-8ba9-8a8869a53213)
+		{
+			triggerList: trigger_list(cb419764-892a-4aad-823a-fba5642cb418)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(a8c77779-4c0d-4203-ba52-448fec827ad9)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	v:this.currentCursorColor = v:this.colors[1]" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+	x: x@81a612c0-c8f0-4faa-9827-4ada93592a6e (propref<int>)
+	scrollCursorHeight: height@22ba1bf4-1418-4a15-b468-088731b37efa (propref<int>)
+	height: height@81a612c0-c8f0-4faa-9827-4ada93592a6e (propref<int>)
+	y: y@22ba1bf4-1418-4a15-b468-088731b37efa (propref<int>)
+	width: width@81a612c0-c8f0-4faa-9827-4ada93592a6e (propref<int>)
+	yParrentOffset: yParrentOffset@81a612c0-c8f0-4faa-9827-4ada93592a6e (propref<int>)
+	scrollbarColors: colors@81a612c0-c8f0-4faa-9827-4ada93592a6e (propref<colorlist>)
+}
