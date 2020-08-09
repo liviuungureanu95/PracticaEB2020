@@ -1,0 +1,73 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(815ad5fc-ec09-4356-be54-0dc3783dd429)
+{
+	name: "Basic_Button"
+	structure: GtfContainer(18df5efe-c745-4703-8a67-2ab46257eddc)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(e80c993f-03ad-4e0e-b126-883e9b84e166)
+			{
+				features: feature_list [
+					TouchShortReleased(e889eda6-75ae-408c-b158-54e1b772f847)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(5e4cf359-4e28-4303-8e4c-9d6b819b1a36)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(00f85235-3a29-4aa3-b93d-b07cad799a94)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list []
+				name: "Backgroung_btn"
+				visible: true
+				width: width@18df5efe-c745-4703-8a67-2ab46257eddc (propref<int>)
+				height: height@18df5efe-c745-4703-8a67-2ab46257eddc (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #A9A9A9FF
+			}, 
+			GtfLabel(b3b69da8-2a57-4b9f-afc5-62c907a85678)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Text_btn"
+				visible: true
+				width: width@18df5efe-c745-4703-8a67-2ab46257eddc (propref<int>)
+				height: height@18df5efe-c745-4703-8a67-2ab46257eddc (propref<int>)
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(ca8ee6a7-c382-4c82-9531-b680494a7e2f)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Button"
+		visible: true
+		width: 100
+		height: 50
+		x: 0
+		y: 0
+	}
+	x: x@18df5efe-c745-4703-8a67-2ab46257eddc (propref<int>)
+	y: y@18df5efe-c745-4703-8a67-2ab46257eddc (propref<int>)
+	fillColor: fillColor@e80c993f-03ad-4e0e-b126-883e9b84e166 (propref<color>)
+	touchShortReleased: touchShortReleased@e889eda6-75ae-408c-b158-54e1b772f847 (propref<function<bool,int,int,int,int>>)
+	text: text@b3b69da8-2a57-4b9f-afc5-62c907a85678 (propref<string>)
+	"x 2": x@b3b69da8-2a57-4b9f-afc5-62c907a85678 (propref<int>)
+	"y 2": y@b3b69da8-2a57-4b9f-afc5-62c907a85678 (propref<int>)
+}
