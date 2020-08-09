@@ -1,0 +1,189 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(19745cbc-b2ac-4e0a-a8cf-8bc8841e6368)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer(bb2b239b-4615-4c3a-9f5d-559f8f6a6a19)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(7ef3ff68-3623-4020-9064-e2aac23886e6)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(8c49d962-0acc-4bb6-9c84-ab35f3c6b12d)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Progress_label"
+							visible: true
+							width: 300
+							height: 100
+							x: 80
+							y: 30
+							text: "In Progress.."
+							textColor: #000000FF
+							font: font_resource(29bd7f54-b254-4f67-a6fe-9e6cb87974d9)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 40
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}, 
+						GtfContainer(3eb72e32-cebb-4322-bc59-f503c0174e24)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfRectangle(e3abf466-f2a8-4b7a-bb10-afdc16ae1117)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Line_up"
+									visible: true
+									width: width@3eb72e32-cebb-4322-bc59-f503c0174e24 (propref<int>)
+									height: 3
+									x: 0
+									y: 0
+									fillColor: #000000FF
+								}, 
+								GtfRectangle(1067fd13-333e-4700-8894-f963435998e2)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Line_down"
+									visible: true
+									width: width@3eb72e32-cebb-4322-bc59-f503c0174e24 (propref<int>)
+									height: 3
+									x: 0
+									y: 30
+									fillColor: #000000FF
+								}, 
+								GtfRectangle(ac80f8f3-64d7-4cd0-8fd2-d9a82eb1c010)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Line_left"
+									visible: true
+									width: 3
+									height: 30
+									x: 0
+									y: 0
+									fillColor: #000000FF
+								}, 
+								GtfRectangle(b173f7ed-84ba-496d-b462-77bce09e0a0b)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Line_right"
+									visible: true
+									width: 3
+									height: 33
+									x: 200
+									y: 0
+									fillColor: #000000FF
+								}, 
+								GtfRectangle(c0b53e33-5ebb-41bd-a47b-adb43bb53e07)
+								{
+									features: feature_list []
+									children: children_list [
+										GtfParallelAnimation(c4198050-b7dd-4dd7-93be-d12a8f8740d9)
+										{
+											features: feature_list []
+											children: children_list [
+												GtfLinearInterpolationS32(763a92c8-ee59-450a-8731-47316a176324)
+												{
+													features: feature_list []
+													children: children_list []
+													name: "Load"
+													enabled: true
+													delay: 0
+													duration: 5200
+													repeat: 1
+													alternating: false
+													relative: false
+													start: 0
+													end: 200
+													target: width@c0b53e33-5ebb-41bd-a47b-adb43bb53e07 (propref<int>)
+													Play: conditional_script(e529a029-0c3a-481f-81d2-0af863396706)
+													{
+														triggerList: trigger_list(5a3c3b92-d806-42be-9278-df05bf833ec1)
+														{
+															script: ""
+														}
+														onTrigger: function<bool,bool>(eeab4fc7-ca57-40c8-8cd0-7e666e4f0adf)
+														{
+															script: "function(v:arg0::bool)" \
+																"{" \
+																"	f:animation_play(v:this)" \
+																"	fire_delayed 5500, ev:goTo_menu()" \
+																"	false" \
+																"}"
+														}
+													}
+												}]
+											name: "animation"
+											enabled: true
+											repeat: 1
+											alternating: false
+											scale: 1F
+											onPlay: function<void,int,bool>(d1f33fe5-8575-4b0c-9098-777155324f30)
+											{
+												script: "function(v:animation_time::int, v:forward::bool)" \
+													"{" \
+													"" \
+													"}"
+											}
+											onPause: function<void,int>(72f39a3a-95aa-43ce-80ed-7d735df8b190)
+											{
+												script: "function(v:animation_time::int)" \
+													"{" \
+													"" \
+													"}"
+											}
+											onTerminate: function<void,int,int>(f7cd304c-c9a7-4f60-8b06-f30a8c7affed)
+											{
+												script: "function(v:animation_time::int, v:terminate::int)" \
+													"{" \
+													"" \
+													"}"
+											}
+										}]
+									name: "Loading"
+									visible: true
+									width: 0
+									height: 29
+									x: 2
+									y: 2
+									fillColor: #FF0000FF
+								}]
+							name: "Progress_bar"
+							visible: true
+							width: 200
+							height: 50
+							x: 120
+							y: 160
+						}]
+					name: "Back_popup"
+					visible: true
+					width: width@bb2b239b-4615-4c3a-9f5d-559f8f6a6a19 (propref<int>)
+					height: height@bb2b239b-4615-4c3a-9f5d-559f8f6a6a19 (propref<int>)
+					x: 0
+					y: -1
+					fillColor: #FFEBCDFF
+				}]
+			name: "Basic_popup"
+			visible: true
+			width: 450
+			height: 240
+			x: 185
+			y: 125
+		}]
+	name: "View 4"
+	visible: true
+	width: 800
+	height: 480
+	x: -81
+	y: -19
+}
