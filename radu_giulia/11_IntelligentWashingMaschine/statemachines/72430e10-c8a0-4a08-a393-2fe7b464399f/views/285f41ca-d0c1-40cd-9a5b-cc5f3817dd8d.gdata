@@ -1,0 +1,86 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(285f41ca-d0c1-40cd-9a5b-cc5f3817dd8d)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(76162baf-972f-4c41-a1f9-d2354be7a16f)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Background"
+			visible: true
+			width: 384
+			height: 239
+			x: 196
+			y: 120
+			fillColor: #FFFFFFFF
+		}, 
+		GtfRectangle(d7a6bca3-8cd3-48ca-8926-8fca2c423a90)
+		{
+			features: feature_list [
+				Border(1fd4ce5b-904e-4d95-b28a-875eec91afe0)
+				{
+					borderThickness: 4
+					borderColor: #6495EDFF
+					borderStyle: 0
+				}]
+			children: children_list []
+			name: "Border"
+			visible: true
+			width: 384
+			height: 239
+			x: 196
+			y: 120
+			fillColor: #FFFFFF00
+		}, 
+		GtfContainer_template_instance(1813750b-31f1-4030-8f25-d96c66a65ce1)
+		{
+			name: "DismissButton"
+			template: @012f5c56-a6bc-4b72-8260-a99e80995d4d (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 347
+			y: 261
+			text: "OK"
+			pressAction: function<bool>(6762a9c6-91af-4de0-b686-f6004ea21350)
+			{
+				script: "function()" \
+					"{" \
+					"	fire_delayed 100, ev:closePopUp()" \
+					"	false" \
+					"}"
+			}
+			touchShortReleased: touchShortReleased@012f5c56-a6bc-4b72-8260-a99e80995d4d (propref<function<bool,int,int,int,int>>)
+		}, 
+		GtfLabel(a1ce3ee3-3660-4b71-b33e-8463e03d0abc)
+		{
+			features: feature_list [
+				MultiLine(42f5683f-696f-44a9-bc37-426315929ac9)
+				{
+					lineOffset: 0
+					maxLineCount: 0
+				}]
+			children: children_list []
+			name: "Message"
+			visible: true
+			width: 343
+			height: 116
+			x: 220
+			y: 131
+			text: "Make sure all the requirments are checked before pressing \"Play\""
+			textColor: #FF0000FF
+			font: font_resource(9fe3991e-43f7-4a6e-b55a-2a29a2082279)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 20
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+	name: "PopUpView"
+	visible: true
+	width: 0
+	height: 0
+	x: 0
+	y: 0
+}
