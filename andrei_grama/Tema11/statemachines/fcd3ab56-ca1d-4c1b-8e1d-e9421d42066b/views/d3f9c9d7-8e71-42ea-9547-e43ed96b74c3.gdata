@@ -1,0 +1,332 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(d3f9c9d7-8e71-42ea-9547-e43ed96b74c3)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(8de55130-f2b2-40b7-abf5-6aba31584bc6)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "background"
+			visible: true
+			width: width@d3f9c9d7-8e71-42ea-9547-e43ed96b74c3 (propref<int>)
+			height: height@d3f9c9d7-8e71-42ea-9547-e43ed96b74c3 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #FFFFFFFF
+		}, 
+		GtfContainer(6557ea0f-5a7b-4ac4-aea0-aefa2b3137ed)
+		{
+			features: feature_list [
+				TouchPressed(1b49988a-6d77-4141-8460-18d783904e7f)
+				{
+					touchPressed: function<bool,int,int,int,int>(4043e1c0-8956-405d-94b1-8d2e2e6f2077)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->Ellipse.visible=true" \
+							"    false" \
+							"}"
+					}
+				}, 
+				TouchShortReleased(83c17d97-94f4-40d1-b330-2f5fe948e9d1)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(8e9253b0-66d0-48dd-bfb8-d44dbd4c5ce5)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->Ellipse.visible=false" \
+							"	if(dp:alimentare_cu_apa==false||dp:cuva_inchisa==false||dp:detergent==false)" \
+							"		f:pushDynamicStateMachine(popup_stack:\"Main state\",sm:Pop_up,0)" \
+							"	else" \
+							"		fire ev:goToPrgState()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(345f74e1-cb6b-4fc5-9a8f-0ac5be20b45a)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfEllipse(5eb8eba0-9b15-4ebc-8b4d-da55b565a406)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Ellipse"
+					visible: false
+					width: 100
+					height: 100
+					x: 0
+					y: 0
+					fillColor: #87CEFAFF
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+				}, 
+				GtfImage(3287e1da-c230-40a1-aa61-4aa9ac80044a)
+				{
+					features: feature_list [
+						ScaleMode(b1f4d825-1422-4b28-bd2d-b4ec8cf6a636)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "Image"
+					visible: true
+					width: width@6557ea0f-5a7b-4ac4-aea0-aefa2b3137ed (propref<int>)
+					height: height@6557ea0f-5a7b-4ac4-aea0-aefa2b3137ed (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(6c8423b9-5269-471c-8a93-a6bc6e6584a6)
+					{
+						file: "icons8-power-off-button-64.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "startButton"
+			visible: true
+			width: 100
+			height: width@6557ea0f-5a7b-4ac4-aea0-aefa2b3137ed (propref<int>)
+			x: 50
+			y: 180
+		}, 
+		GtfContainer(2526b501-0f46-4480-963c-aa7bf1f72c32)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfInstantiator(28bf499f-6fd1-4fbc-b744-5a74cf66981c)
+				{
+					features: feature_list [
+						LayoutPolicyGrid(e3f3c67e-8f42-44a0-9f18-598367081b6f)
+						{
+							horizontalGap: 100
+							verticalGap: 100
+							numRows: 2
+							numColumns: 2
+						}]
+					children: children_list [
+						GtfContainer(ca06a5ff-3db8-4b5c-87f4-2e8952a436e7)
+						{
+							features: feature_list [
+								LineIndex(e60fb9db-6819-42ce-ac7e-0a1c47edb492)
+								{
+									lineIndex: 0
+								}]
+							children: children_list [
+								GtfLabel(a7e6035c-a9c7-450e-96fe-fefbd4e717e6)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "text"
+									visible: true
+									width: 100
+									height: 100
+									x: 49
+									y: 36
+									text: "label"
+									textColor: #000000FF
+									font: font_resource(1ec62259-c810-4059-b7d6-a954559d6c02)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 30
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+								}, 
+								GtfImage(e012bdb0-1290-41a2-86a6-65ed1b266759)
+								{
+									features: feature_list [
+										ScaleMode(a6822552-010d-4aa2-9596-0b765e6767a7)
+										{
+											scaleMode: 0
+										}]
+									children: children_list []
+									name: "Image"
+									visible: true
+									width: 100
+									height: 100
+									x: 137
+									y: 40
+									image: image_resource(2bd7d0f9-91cd-476e-98be-24012e2fdf91)
+									{
+										file: ""
+									}
+									sRGB: false
+									horizontalAlign: 0
+									verticalAlign: 1
+								}]
+							name: "element"
+							visible: true
+							width: 338
+							height: 581
+							x: 1
+							y: 0
+							setText: conditional_script(e5cbdb7a-39e3-44a8-ba6d-3d79fa2f0359)
+							{
+								triggerList: trigger_list(61e71952-f1c1-4b89-adb8-ca65d8a24bbb)
+								{
+									script: "v:this.lineIndex" \
+										"dp:programsList"
+								}
+								onTrigger: function<bool,bool>(d3be2d75-bb81-4a5c-854a-f8ba2ec498a6)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	v:this->text.text=dp:programsList[v:this.lineIndex]" \
+										"	false" \
+										"}"
+								}
+							}
+							setImage: conditional_script(f74b33e1-d6d9-44f8-85dd-3aeeb567067e)
+							{
+								triggerList: trigger_list(12fd1378-df43-497e-965e-eda67cc53e1f)
+								{
+									script: "v:this.lineIndex" \
+										"dp:imagePrgList"
+								}
+								onTrigger: function<bool,bool>(8f336066-79b5-418f-beca-2a42a4608725)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	v:this->Image.image=dp:imagePrgList[v:this.lineIndex]" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "list"
+					visible: true
+					width: 500
+					height: height@2526b501-0f46-4480-963c-aa7bf1f72c32 (propref<int>)
+					x: 28
+					y: -1
+					numItems: int_scriptedValue(af252a79-ad88-4542-82cf-7a80aa30eeb2)
+					{
+						triggerList: trigger_list(d949a1bc-3378-48f8-a4b4-8ab9e91a72e8)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(ae0d8ea6-8db1-410e-8af8-ed58b701e371)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<int>(b4cc2954-95a3-4d59-8bd9-372af7ad3eae)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	length dp:imagePrgList" \
+								"}"
+						}
+						write: function<bool,int>(1527b131-236d-4d9b-b3f3-552259fe470e)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					lineMapping: intlist []
+				}, 
+				GtfEllipse(eaf3fc87-3403-41b9-b532-e5092d6fe413)
+				{
+					features: feature_list [
+						TouchShortReleased(949601a6-138c-4496-ab75-6dfa3e03865c)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(9b2cf4d1-9b2d-4db6-a2e8-f0b72625bc2b)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this.clicks+=1" \
+									"	" \
+									"	" \
+									"	if(v:this.clicks==1){" \
+									"		v:this->point.x=181" \
+									"		v:this->point.y=26" \
+									"		dp:selectedPrg=2" \
+									"	}" \
+									"		" \
+									"	if(v:this.clicks==2){" \
+									"		v:this->point.x=181" \
+									"		v:this->point.y=204" \
+									"		dp:selectedPrg=4" \
+									"	}" \
+									"	" \
+									"	if(v:this.clicks==3){" \
+									"		v:this->point.x=49" \
+									"		v:this->point.y=204" \
+									"		dp:selectedPrg=3" \
+									"	}" \
+									"	" \
+									"	if(v:this.clicks==4){" \
+									"		v:this->point.x=49" \
+									"		v:this->point.y=26" \
+									"		v:this.clicks=0" \
+									"		dp:selectedPrg=1" \
+									"	}" \
+									"	" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(3cf09c92-902b-4095-8187-78a671f99e68)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfEllipse(c711a18c-afa9-426d-9879-dc28de87628f)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "point"
+							visible: true
+							width: 30
+							height: width@c711a18c-afa9-426d-9879-dc28de87628f (propref<int>)
+							x: 49
+							y: 26
+							fillColor: #000000FF
+							arcWidth: 0
+							centralAngle: 360F
+							sectorRotation: 0F
+						}]
+					name: "Wheel"
+					visible: true
+					width: 260
+					height: width@eaf3fc87-3403-41b9-b532-e5092d6fe413 (propref<int>)
+					x: 175
+					y: 90
+					fillColor: #87CEFAFF
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+					clicks: 0
+				}]
+			name: "Programs"
+			visible: true
+			width: 600
+			height: height@d3f9c9d7-8e71-42ea-9547-e43ed96b74c3 (propref<int>)
+			x: 200
+			y: 0
+		}]
+	name: "mainView"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

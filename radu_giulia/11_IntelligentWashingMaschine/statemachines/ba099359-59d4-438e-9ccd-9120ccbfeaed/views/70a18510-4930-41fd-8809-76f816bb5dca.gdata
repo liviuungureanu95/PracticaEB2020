@@ -1,0 +1,551 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(70a18510-4930-41fd-8809-76f816bb5dca)
+{
+	name: "View 1"
+	template: @8a9fb157-a676-4d26-8df9-750ecaeb8399 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(5720d2ad-4521-4f33-8809-77625c21579f)
+		{
+			name: "ChooseProgramWheel"
+			template: @179e9070-2967-41e8-b2ce-16fbc50637f6 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: 248
+			height: 251
+			x: 421
+			y: 135
+			image: image_scriptedValue(c79838ee-c65a-474d-a0c7-9026fc2260de)
+			{
+				triggerList: trigger_list(393dc952-68a7-4e54-bc7d-89f2a4409f66)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(1ae7d35e-9698-482f-9b90-c62717198fe7)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<image>(8a57d0e6-a385-49f9-8a05-7b1acf3ec5ab)
+				{
+					script: "function()" \
+						"{" \
+						"	dp:ButtonPhasesImages[dp:currentImageIndex]" \
+						"" \
+						"}"
+				}
+				write: function<bool,image>(1ea3d7ce-7455-4b25-96d5-ffa751cbbc1a)
+				{
+					script: "function(v:arg0::image)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			pressAction: pressAction@179e9070-2967-41e8-b2ce-16fbc50637f6 (propref<function<bool>>)
+			releaseAction: releaseAction@179e9070-2967-41e8-b2ce-16fbc50637f6 (propref<function<bool>>)
+			touchPressed: function<bool,int,int,int,int>(77f537d2-cc16-4443-af11-43456dbc6d28)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfLabel(2198b99a-3b36-44ec-828f-0af93e1f8741)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "ActiveProgrammLabel"
+			visible: true
+			width: 162
+			height: 79
+			x: 124
+			y: 391
+			text: string_scriptedValue(b485550f-fba6-4ff0-8ac9-638964ff27db)
+			{
+				triggerList: trigger_list(dd24615c-392a-47df-94f2-f60779f37402)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(a0935334-3633-441b-9d58-d1b21648033a)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(afb4b157-887b-4aad-85e8-a9e09e4d32be)
+				{
+					script: "function()" \
+						"{" \
+						"	dp:ProgramList[dp:currentImageIndex]" \
+						"}"
+				}
+				write: function<bool,string>(52800874-74a2-4a4a-bf2f-979e5ba1b744)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #008000FF
+			font: font_resource(e9bd1061-c56f-45c6-84f8-00601baf0b0b)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(5391cd2e-2d1b-483d-b282-5439659869dd)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 3"
+			visible: true
+			width: 78
+			height: 49
+			x: 702
+			y: 416
+			text: "Next"
+			textColor: #00BFFFFF
+			font: font_resource(6c045ba9-4af2-4932-8519-ea5643bfe0f4)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(ccdf25bb-4d2b-4c79-94ce-a567ac6d2b45)
+		{
+			name: "ImageButton 2"
+			template: @179e9070-2967-41e8-b2ce-16fbc50637f6 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: width@179e9070-2967-41e8-b2ce-16fbc50637f6 (propref<int>)
+			height: height@179e9070-2967-41e8-b2ce-16fbc50637f6 (propref<int>)
+			x: 672
+			y: 325
+			image: image_resource(67decca1-cb77-4109-a004-fa414750ebf9)
+			{
+				file: "unnamed.png"
+			}
+			pressAction: function<bool>(77989ebf-c7ff-4fee-92fa-21fdba9c318c)
+			{
+				script: "function()" \
+					"{" \
+					"	if(dp:currentImageIndex < length dp:ButtonPhasesImages - 1)" \
+					"		dp:currentImageIndex+=1" \
+					"	false" \
+					"}"
+			}
+			releaseAction: releaseAction@179e9070-2967-41e8-b2ce-16fbc50637f6 (propref<function<bool>>)
+		}, 
+		GtfContainer_template_instance(057304ff-0c27-45b7-8342-5034eecf5566)
+		{
+			name: "ImageButton 3"
+			template: @179e9070-2967-41e8-b2ce-16fbc50637f6 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: 106
+			height: 104
+			x: 324
+			y: 318
+			image: image_resource(d01e4f6a-ead3-47da-bbc8-6f61c75fbaa8)
+			{
+				file: "arrowR.png"
+			}
+			pressAction: function<bool>(3a7ea3c2-bda5-458d-b748-c3870b9bf1c8)
+			{
+				script: "function()" \
+					"{" \
+					"	if(dp:currentImageIndex > 0)" \
+					"		dp:currentImageIndex-=1" \
+					"	false" \
+					"}"
+			}
+			releaseAction: function<bool>(96544b1b-56af-44b9-947d-1267200b9bc0)
+			{
+				script: "function()" \
+					"{" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(4f190fd7-621e-4318-b93d-79d61f3570e5)
+		{
+			name: "LabelAndImage 1"
+			template: @4c01c377-f0f5-4f66-ac25-ad49c237673a (objectref<GtfContainer_template>)
+			children: children_list []
+			text: string_element_reference(ee6b34b2-6f78-446f-8749-7cd88bf52e94)
+			{
+				index: 0
+				list: @17a69e53-af1c-4228-bca9-b05362cf3192 (objectref<stringlist>)
+			}
+			image: image_resource(1b5fd673-54cb-464a-b1f0-ac7b6e868d38)
+			{
+				file: "butterfly.png"
+			}
+			x: 508
+			y: 68
+			width: 202
+			height: height@4c01c377-f0f5-4f66-ac25-ad49c237673a (propref<int>)
+			rotationAngleZ: 0F
+		}, 
+		GtfContainer_template_instance(ee03e735-df2b-487d-86e6-ad87e54ef92a)
+		{
+			name: "LabelAndImage 2"
+			template: @4c01c377-f0f5-4f66-ac25-ad49c237673a (objectref<GtfContainer_template>)
+			children: children_list []
+			text: string_element_reference(5be33114-33c0-4403-8bc6-0bfbb86269f3)
+			{
+				index: 1
+				list: @17a69e53-af1c-4228-bca9-b05362cf3192 (objectref<stringlist>)
+			}
+			image: image@4c01c377-f0f5-4f66-ac25-ad49c237673a (propref<image>)
+			x: 637
+			y: 199
+			width: width@4c01c377-f0f5-4f66-ac25-ad49c237673a (propref<int>)
+			height: height@4c01c377-f0f5-4f66-ac25-ad49c237673a (propref<int>)
+			rotationAngleZ: 0F
+		}, 
+		GtfContainer_template_instance(0a833080-6e4f-4804-8977-4fa82ad71641)
+		{
+			name: "LabelAndImage 3"
+			template: @4c01c377-f0f5-4f66-ac25-ad49c237673a (objectref<GtfContainer_template>)
+			children: children_list []
+			text: string_element_reference(43d5a28e-dbae-4b03-8a90-2dedd577ef03)
+			{
+				index: 2
+				list: @17a69e53-af1c-4228-bca9-b05362cf3192 (objectref<stringlist>)
+			}
+			image: image_resource(8fbeffc3-44f8-4968-b447-c73928e3dc9c)
+			{
+				file: "wool.png"
+			}
+			x: 479
+			y: 348
+			width: 186
+			height: height@4c01c377-f0f5-4f66-ac25-ad49c237673a (propref<int>)
+			rotationAngleZ: 0F
+		}, 
+		GtfContainer_template_instance(f2ea4a1c-62a3-47ef-afa6-20626cd32dbd)
+		{
+			name: "LabelAndImage 4"
+			template: @4c01c377-f0f5-4f66-ac25-ad49c237673a (objectref<GtfContainer_template>)
+			children: children_list []
+			text: string_element_reference(f7b83696-ed9a-4a20-9382-c13ac33ac790)
+			{
+				index: 3
+				list: @17a69e53-af1c-4228-bca9-b05362cf3192 (objectref<stringlist>)
+			}
+			image: image_resource(bae96139-3650-49cd-a38b-601f7ea62e3b)
+			{
+				file: "sport.png"
+			}
+			x: 257
+			y: 203
+			width: width@4c01c377-f0f5-4f66-ac25-ad49c237673a (propref<int>)
+			height: height@4c01c377-f0f5-4f66-ac25-ad49c237673a (propref<int>)
+			rotationAngleZ: 0F
+		}, 
+		GtfLabel(025bccbd-9728-4367-afbe-7ad53e96b0ef)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Requirments"
+			visible: true
+			width: 263
+			height: 45
+			x: 9
+			y: 104
+			text: "Functioning Requirments:"
+			textColor: #000000FF
+			font: font_resource(c3346a85-97cf-440a-80e9-d00aa40c16f7)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(952c46f2-87a5-4b7a-a300-e840c34db4f2)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "DoorClosedLabel"
+			visible: true
+			width: 133
+			height: 84
+			x: 14
+			y: 247
+			text: "Door closed"
+			textColor: #000000FF
+			font: font_resource(60049071-b610-4308-9181-f6531b899bbc)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(feef080b-8f46-46e9-970f-5b6d64c85ff1)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "DetergentLabel"
+			visible: true
+			width: 118
+			height: 67
+			x: 14
+			y: 189
+			text: "Detergent"
+			textColor: #000000FF
+			font: font_resource(6c2f7d05-9944-4deb-9263-7fa07bbaff11)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(81b3a49d-0d8f-465e-af65-c561bd42048c)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "WaterLabel"
+			visible: true
+			width: 146
+			height: 63
+			x: 14
+			y: 321
+			text: "Water"
+			textColor: #000000FF
+			font: font_resource(4f96b634-a150-4b98-b433-26823b6a8d59)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfImage_template_instance(c7994a54-ebcf-436b-991f-7100294edd72)
+		{
+			name: "WaterCheck"
+			template: @8293dc8e-d93c-4011-9649-00b7fb35bddb (objectref<GtfImage_template>)
+			children: children_list []
+			scaleMode: scaleMode@8293dc8e-d93c-4011-9649-00b7fb35bddb (propref<int>)
+			image: image_resource(a2006a04-7f94-4a4f-98f2-7a336036e35c)
+			{
+				file: "check.pg.png"
+			}
+			x: 159
+			y: 316
+			height: 48
+			width: 58
+			visible: bool_scriptedValue(10305488-1345-4a84-b3be-d20a15261166)
+			{
+				triggerList: trigger_list(91eddcf1-cd98-4a6a-a0fb-f7446c16ab84)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(43d50e4f-8f96-4134-891f-e2be993bcbaa)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<bool>(2fabfe6f-9522-4d95-b51f-e62b97d44714)
+				{
+					script: "function()" \
+						"{" \
+						"	if(dp:hasWaterSupply)" \
+						"		true" \
+						"	else" \
+						"		false" \
+						"}"
+				}
+				write: function<bool,bool>(4147301c-7dda-40c7-8afe-f91cf9ea2876)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			rotationAngleZ: 0F
+		}, 
+		GtfImage_template_instance(71c083f6-4d5a-4a10-a7e8-3a37dcafa193)
+		{
+			name: "DetergentCheck"
+			template: @8293dc8e-d93c-4011-9649-00b7fb35bddb (objectref<GtfImage_template>)
+			children: children_list []
+			scaleMode: scaleMode@8293dc8e-d93c-4011-9649-00b7fb35bddb (propref<int>)
+			image: image_resource(d88decff-8514-43c7-aa7b-0c9b0f18b08f)
+			{
+				file: "check.pg.png"
+			}
+			x: 159
+			y: 187
+			height: 48
+			width: 58
+			visible: bool_scriptedValue(2e475007-4197-49ea-aee2-ad43555efe16)
+			{
+				triggerList: trigger_list(c4cf70f9-816e-4e76-9a06-b64ec65ef52e)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(13a40c90-597b-4b48-a456-a2fb1f56b28b)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<bool>(ad4e04f8-508f-49b0-81db-c8da8fdf2c5d)
+				{
+					script: "function()" \
+						"{" \
+						"	if(dp:hasDetergent)" \
+						"		true" \
+						"	else" \
+						"		false" \
+						"}"
+				}
+				write: function<bool,bool>(f2adc06e-2eeb-4590-8ea2-fdf9eb5356f3)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			rotationAngleZ: 0F
+		}, 
+		GtfImage_template_instance(cd95ef27-6526-4240-b78b-58857dbba5da)
+		{
+			name: "DoorCheck"
+			template: @8293dc8e-d93c-4011-9649-00b7fb35bddb (objectref<GtfImage_template>)
+			children: children_list []
+			scaleMode: scaleMode@8293dc8e-d93c-4011-9649-00b7fb35bddb (propref<int>)
+			image: image_resource(9f01b1c7-2fa7-43dc-9bb0-1b8a00ecac69)
+			{
+				file: "check.pg.png"
+			}
+			x: 159
+			y: 255
+			height: 48
+			width: 58
+			visible: bool_scriptedValue(4b2c772d-bfa8-4858-91cd-59eaee02aa59)
+			{
+				triggerList: trigger_list(a0e21f88-1c8f-4250-9dcb-2a9946db027d)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(a712aa66-afae-4472-b898-6f68f4d4c883)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<bool>(0cfdeaab-963a-4d8f-bce5-e71ca686ac9b)
+				{
+					script: "function()" \
+						"{" \
+						"	if(dp:hasDoorClosed)" \
+						"		true" \
+						"	else" \
+						"		false" \
+						"}"
+				}
+				write: function<bool,bool>(f960e1d8-4f56-41c8-b7a3-8362dd3b3c64)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			rotationAngleZ: 0F
+		}, 
+		GtfContainer_template_instance(398a1d21-8042-4546-9883-0e542577459a)
+		{
+			name: "PlayButton"
+			template: @179e9070-2967-41e8-b2ce-16fbc50637f6 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: 84
+			height: 83
+			x: 7
+			y: 393
+			image: image_resource(b9256bf8-7b13-4ad7-99dd-143a6fd836ee)
+			{
+				file: "play.png"
+			}
+			pressAction: function<bool>(2520ed80-71cd-4833-a2c4-adbb03eb9d27)
+			{
+				script: "function()" \
+					"{" \
+					"	if(!dp:hasDetergent || !dp:hasDoorClosed || !dp:hasWaterSupply)" \
+					"			fire ev:showPopUp()" \
+					"	else" \
+					"		if(dp:hasDetergent && dp:hasDoorClosed && dp:hasWaterSupply)" \
+					"			if(dp:ProgramList[dp:currentImageIndex]==dp:ProgramList[0])" \
+					"				fire ev:goToSynthetics()" \
+					"			else" \
+					"				if(dp:ProgramList[dp:currentImageIndex]==dp:ProgramList[1])" \
+					"					fire ev:goToCotton()" \
+					"				else" \
+					"					if(dp:ProgramList[dp:currentImageIndex]==dp:ProgramList[2])" \
+					"						fire ev:goToWool()" \
+					"					else" \
+					"						if(dp:ProgramList[dp:currentImageIndex]==dp:ProgramList[3])" \
+					"							fire ev:goToSport()" \
+					"		" \
+					"	false" \
+					"}"
+			}
+			releaseAction: function<bool>(6196d870-481c-434e-9607-ab6b79ddc887)
+			{
+				script: "function()" \
+					"{" \
+					"	" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfLabel(5eaa08d7-2aff-405e-9205-3b9b99ec08e3)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 3 copy 1"
+			visible: true
+			width: 97
+			height: 49
+			x: 342
+			y: 418
+			text: "Previous"
+			textColor: #00BFFFFF
+			font: font_resource(b73cc896-31b0-41c2-b3a8-ed530e895c37)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}]
+	text: "Welcome"
+}

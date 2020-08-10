@@ -1,0 +1,267 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(be94a5d4-563d-4d3f-8213-7ef409c247ac)
+{
+	name: "CheckoutView"
+	template: @43684120-17f8-4259-9015-7ebf9912c1c6 (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(80635498-99ab-4be2-9284-06932914086c)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 18"
+			visible: true
+			width: 754
+			height: 76
+			x: 11
+			y: 120
+			text: string_scriptedValue(4636f8c5-3090-4712-80b6-feba67a81455)
+			{
+				triggerList: trigger_list(3ed0dbdb-9ff5-4af5-b328-7c8bcb414fe9)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(ed47c93d-fc76-4b32-9498-39a54fdc6bf5)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(38d422f8-68ab-4178-8cba-7455db29e99c)
+				{
+					script: "function()" \
+						"{" \
+						"	\"Amount left: \"  + f:format_float(\"%.2f\",true,f:int2float(dp:Cash)-dp:totalToPay) + \" lei\"" \
+						"}"
+				}
+				write: function<bool,string>(22116a21-3286-4e1e-9bf1-221ef93a58d3)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #000000FF
+			font: font_resource(b5589dff-2bd6-4fec-96c9-d62bacc8ac5c)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 35
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(9a8477ae-afc6-451d-97e9-3a944e0cd14a)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 16"
+			visible: true
+			width: 735
+			height: 64
+			x: 11
+			y: 214
+			text: string_scriptedValue(2ce92aea-0421-489e-a1b5-b55861f5d57e)
+			{
+				triggerList: trigger_list(18350e1e-5b7c-40e0-af2b-b2700e01b829)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(e1b90142-4af6-42c6-97f4-b478e559888d)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(f6c91f15-2ca3-41c8-88d6-68ee6e9b648a)
+				{
+					script: "function()" \
+						"{" \
+						"	let v:message = \"You bought: \" in {" \
+						"	if(dp:BasicTicketNumber>0)" \
+						"		v:message+= f:int2string(dp:BasicTicketNumber) + \"-\" + dp:tickets[0] + \"| \"" \
+						"	if(dp:StudentTicketNumber>0)" \
+						"					v:message+= f:int2string(dp:StudentTicketNumber) + \"-\" + dp:tickets[1] + \"| \"" \
+						"	if(dp:ElderTicketNumber>0)" \
+						"					v:message+=f:int2string(dp:ElderTicketNumber) + \"-\" + dp:tickets[2]" \
+						"					" \
+						"	v:message" \
+						"	}" \
+						"}"
+				}
+				write: function<bool,string>(93820447-7319-4d78-8985-b7eeb7cc8872)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #000000FF
+			font: font_resource(b4d5ea2f-9d0f-4eba-9733-f3efe22ec31e)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 35
+			}
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(09381f8c-f4fb-4098-ad70-f7975e6f6e97)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Title"
+			visible: true
+			width: 286
+			height: 100
+			x: 240
+			y: 11
+			text: "See you soon"
+			textColor: #FFFFFFFF
+			font: font_resource(9a48b01a-2b65-4a5b-bba2-0404c5ec6f5e)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfImage_template_instance(d1f4740c-068c-4036-9dc7-1100d1efc970)
+		{
+			name: "ScaledImage 1 copy 1"
+			template: @071ac8ab-db5b-4fdd-aedb-007bc9a3f0b7 (objectref<GtfImage_template>)
+			children: children_list [
+				GtfParallelAnimation(e1dfd43e-e692-4e37-a819-5eb6329db12b)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationS32(51e93643-312f-49a8-9d21-5f42e9ec3d8b)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "MoveToRight"
+							enabled: true
+							delay: 0
+							duration: 3000
+							repeat: 1
+							alternating: false
+							relative: false
+							start: 0
+							end: 700
+							target: x@d1f4740c-068c-4036-9dc7-1100d1efc970 (propref<int>)
+						}]
+					name: "Animation 1"
+					enabled: true
+					repeat: int_scriptedValue(0895b86e-2991-4b1d-b433-09fb5aca3cae)
+					{
+						triggerList: trigger_list(79da94e8-726a-4643-8af3-44dac9088f07)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(47e23a8a-6cd6-43d8-87a1-a8309e354b7a)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<int>(a297bf1e-722f-42ab-926d-c0f0cff13e0f)
+						{
+							script: "function()" \
+								"{" \
+								"	 dp:ElderTicketNumber+dp:BasicTicketNumber+dp:StudentTicketNumber" \
+								"" \
+								"}"
+						}
+						write: function<bool,int>(c942b17c-4224-4202-b3e6-d7c104936c77)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(912df619-f8df-4757-9073-6adc7ca8a7aa)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(67e4762a-ebc4-47e9-a367-8a9b969b3250)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(55d1bce3-33e1-433a-9548-31f904e782b3)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"	v:this->^->^->\"PrintedLabel\".visible = true" \
+							"	//dp:BasicTicketNumber = 0" \
+							"	//dp:ElderTicketNumber = 0" \
+							"	//dp:StudentTicketNumber = 0" \
+							"	//dp:totalToPay = 0.0" \
+							"	fire_delayed 1000,ev:goToMain()" \
+							"}"
+					}
+				}]
+			width: 205
+			height: 136
+			image: image_resource(a1ca5a5c-bdf1-407d-8052-fe1a74333b8f)
+			{
+				file: "413-4134102_ticket-stub-ticket-vector.png"
+			}
+			scaleMode: scaleMode@071ac8ab-db5b-4fdd-aedb-007bc9a3f0b7 (propref<int>)
+			x: 0
+			y: 347
+			visible: visible@071ac8ab-db5b-4fdd-aedb-007bc9a3f0b7 (propref<bool>)
+			playAnimation: conditional_script(88e5107c-d331-48a0-9579-f2a9d46f89e6)
+			{
+				triggerList: trigger_list(c28d58fb-da62-4cf3-9739-25df9a6300ae)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(f7bfd6b6-3bb7-4885-aa79-94d3e9bed4f4)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	f:animation_play(v:this->\"Animation 1\")" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfLabel(ccdee4b0-b993-454f-b9b1-02bb417b161e)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "PrintedLabel"
+			visible: false
+			width: 603
+			height: 100
+			x: 84
+			y: 265
+			text: "All tickets were printed"
+			textColor: #0000FFFF
+			font: font_resource(6665addd-6c6d-4421-a8c8-ce863af69916)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 40
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+}

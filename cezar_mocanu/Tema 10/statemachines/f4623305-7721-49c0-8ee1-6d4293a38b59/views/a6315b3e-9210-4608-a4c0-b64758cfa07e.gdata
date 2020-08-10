@@ -1,0 +1,194 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(a6315b3e-9210-4608-a4c0-b64758cfa07e)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle_template_instance(005a3aef-5d47-43a8-bd87-211b553d3808)
+		{
+			name: "Background"
+			template: @4b7ffeca-fd68-4a0b-bcfd-4cee17af9b35 (objectref<GtfRectangle_template>)
+			children: children_list [
+				GtfContainer_template_instance(000dbca7-ba6e-488e-b8e7-ec391a53e3b5)
+				{
+					name: "ImageButton 1"
+					template: @cd8da3ad-9e5a-44f6-84b6-3cc2da3b091c (objectref<GtfContainer_template>)
+					children: children_list []
+					buttonColor: colorlist [#008000FF, #008000FF, #008000FF]
+					onReleaseAction: function<bool>(f283f125-201c-4fa8-827f-b79befff93e7)
+					{
+						script: "function()" \
+							"{" \
+							"	" \
+							"	false" \
+							"}"
+					}
+					x: 180
+					y: 60
+					height: height@cd8da3ad-9e5a-44f6-84b6-3cc2da3b091c (propref<int>)
+					width: width@cd8da3ad-9e5a-44f6-84b6-3cc2da3b091c (propref<int>)
+					text: @e2de0cef-19c4-4dd8-8cc5-becc15869488 (objectref<string>)
+					image: @5387a6f5-ab81-4f57-b2fd-eee78bcc7075 (objectref<image>)
+				}]
+		}, 
+		GtfLabel(9905dfb3-ce71-42f6-8cdf-4f7db2ae52de)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(61c5055f-080f-4be2-a44d-51c442382569)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "BottomMargin"
+					visible: true
+					width: width@a6315b3e-9210-4608-a4c0-b64758cfa07e (propref<int>)
+					height: 2
+					x: 0
+					y: 40
+					fillColor: color_element_reference(557655f2-dad6-422e-a9d2-dab8b91d9707)
+					{
+						index: 0
+						list: @eddfeffc-6941-4bd3-bf3d-d6af5f976944 (objectref<colorlist>)
+					}
+				}]
+			name: "Instruction"
+			visible: true
+			width: width@a6315b3e-9210-4608-a4c0-b64758cfa07e (propref<int>)
+			height: 40
+			x: 0
+			y: 0
+			text: "Please pick up the price tag"
+			textColor: #2F4F4FFF
+			font: font_resource(09fd4165-c0eb-4230-aa61-2b7619628d59)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(b0479541-543a-4750-8c2e-7cbb73b563f5)
+		{
+			name: "Back"
+			template: @9aa59a14-096a-4930-b336-bb385249ab3c (objectref<GtfContainer_template>)
+			children: children_list []
+			buttonColor: colorlist [#2F4F4FFF, #3CB371FF, #00FF7FFF]
+			onReleaseAction: function<bool>(43c2afd7-86fe-4813-9b5c-03b59b195e3d)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goToList()" \
+					"	false" \
+					"}"
+			}
+			x: x@9aa59a14-096a-4930-b336-bb385249ab3c (propref<int>)
+			y: y@9aa59a14-096a-4930-b336-bb385249ab3c (propref<int>)
+			height: height@9aa59a14-096a-4930-b336-bb385249ab3c (propref<int>)
+			width: width@9aa59a14-096a-4930-b336-bb385249ab3c (propref<int>)
+			text: "Back"
+		}, 
+		GtfLabel(2e151be5-1ec9-41d4-9386-c8146cdadb5c)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Weight"
+			visible: true
+			width: 160
+			height: 40
+			x: 160
+			y: 200
+			text: string_scriptedValue(a86cc9df-ec8e-4b91-8acb-26e7eab3aef8)
+			{
+				triggerList: trigger_list(fcc9d88c-f26e-41b1-8886-dad4a57a8f55)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(6fe14b28-b9cb-43f9-8de7-6efc5dd666ea)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(1af5617b-7cc4-4039-9721-2bd76e4f858e)
+				{
+					script: "function()" \
+						"{" \
+						"	f:format_float(\"%.2f\",true,dp:weight) + \" kg\"" \
+						"}"
+				}
+				write: function<bool,string>(2decdf16-83e8-4b1d-8b73-9d5107195ed2)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #2F4F4FFF
+			font: font_resource(cf903ddf-c7ce-4b91-8a92-54fc1db6314d)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 24
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(98f4f356-b747-4376-be84-6fd01b8ff487)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Price copy 1"
+			visible: true
+			width: 160
+			height: 40
+			x: 160
+			y: 240
+			text: string_scriptedValue(3dc161d4-0f8d-4b65-bd4f-db2840ee1509)
+			{
+				triggerList: trigger_list(e4b4ed3d-8518-4f56-a3a7-209fcb7276df)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(38eed76e-7a52-4f62-8686-83c3cbc259af)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(c96af741-00ac-44db-8e22-27cf07dc8cc2)
+				{
+					script: "function()" \
+						"{" \
+						"	f:format_float(\"%.2f\",true,dp:weight * dp:price) + \" euro\"" \
+						"}"
+				}
+				write: function<bool,string>(00f6eda0-8c1b-4b3e-8305-3f87bd0a5f3e)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #2F4F4FFF
+			font: font_resource(6d4835e4-d9a0-4a0e-9fa4-674333209214)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 24
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+	name: "vWeight"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}

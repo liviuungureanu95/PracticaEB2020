@@ -1,0 +1,300 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(05c6018b-d594-40dc-8a00-e183bae00bf9)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(fb03be0d-285a-4e82-8443-630fcf1568d2)
+		{
+			features: feature_list [
+				TouchPressed(26b397de-f9d4-42c2-b294-081881e67692)
+				{
+					touchPressed: function<bool,int,int,int,int>(75672613-5d0e-4ba2-930b-8d05718e28a0)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    false" \
+							"}"
+					}
+				}, 
+				TouchShortReleased(d8280cbb-ade5-4c72-a699-0a1b08483cba)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(e55a8ae9-9591-43f2-bc83-dfee63020cbd)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(63d12b45-7ab8-495d-a47d-8ffb550e7a05)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "transparentLayer"
+			visible: true
+			width: width@05c6018b-d594-40dc-8a00-e183bae00bf9 (propref<int>)
+			height: height@05c6018b-d594-40dc-8a00-e183bae00bf9 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #FFFFFF00
+		}, 
+		GtfContainer(eecf2e78-8465-46c5-85a0-7f9edc92a3ae)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(f6c905fd-922f-4edd-a3d0-7ed0215d8f83)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "background"
+					visible: true
+					width: width@eecf2e78-8465-46c5-85a0-7f9edc92a3ae (propref<int>)
+					height: height@eecf2e78-8465-46c5-85a0-7f9edc92a3ae (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #1E90FFFF
+				}, 
+				GtfLabel(de1e6dbe-7318-4e53-8c6c-498fd51ca96e)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "text"
+					visible: true
+					width: width@eecf2e78-8465-46c5-85a0-7f9edc92a3ae (propref<int>)
+					height: 40
+					x: 0
+					y: 0
+					text: "Probleme:"
+					textColor: #000000FF
+					font: font_resource(49359312-ddb6-40c1-9378-47e7156f396d)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfInstantiator(7318e858-85a8-415c-b88e-a247b8ac146c)
+				{
+					features: feature_list [
+						LayoutPolicyList(4ce72bb8-d3eb-4422-9f2c-d50041f71e88)
+						{
+							layoutDirection: 1
+							scrollOffset: 0
+							scrollOffsetRebase: false
+							firstListIndex: 0
+							scrollIndex: 0
+							scrollValue: 0
+							scrollValueMax: 0
+							scrollValueMin: 0
+							bounceValue: 0
+							bounceValueMax: 0
+							segments: 1
+							listLength: 0
+							wrapAround: false
+						}]
+					children: children_list [
+						GtfLabel(f2e3fa2f-db77-44f3-884f-7357afccb970)
+						{
+							features: feature_list [
+								LineIndex(27bb74df-b106-45d0-a840-b852e48a63ec)
+								{
+									lineIndex: 0
+								}]
+							children: children_list []
+							name: "problemText"
+							visible: true
+							width: width@eecf2e78-8465-46c5-85a0-7f9edc92a3ae (propref<int>)
+							height: 40
+							x: 0
+							y: 0
+							text: ""
+							textColor: #000000FF
+							font: font_resource(efbd6127-0cf5-483a-8bd4-279adf30136b)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+							setText: conditional_script(ce09c6f1-5058-4872-8b2d-43392aee5745)
+							{
+								triggerList: trigger_list(f9ecf38f-8cdc-4cb6-8cf9-a6760633dfc9)
+								{
+									script: "dp:alimentare_cu_apa" \
+										"dp:cuva_inchisa" \
+										"dp:detergent" \
+										""
+								}
+								onTrigger: function<bool,bool>(298494cb-50cf-46c8-94bc-f6b7f765a35d)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	v:this.text=\"\"" \
+										"	" \
+										"	if(v:this.lineIndex==0){" \
+										"		if(dp:alimentare_cu_apa==false){" \
+										"			v:this.text=\"fara apa\"" \
+										"			v:this->^.prb1=1" \
+										"		}" \
+										"		else" \
+										"		if(dp:cuva_inchisa==false){" \
+										"			v:this.text=\"cuva deschisa\"" \
+										"			v:this->^.prb1=2" \
+										"		}" \
+										"		else" \
+										"		if(dp:detergent==false){" \
+										"			v:this.text=\"fara detergent\"" \
+										"			v:this->^.prb1=3" \
+										"		}" \
+										"	}" \
+										"	" \
+										"	" \
+										"	if(v:this.lineIndex==1){" \
+										"		if(dp:alimentare_cu_apa==false&&v:this->^.prb1!=1){" \
+										"			v:this.text=\"fara apa\"" \
+										"			v:this->^.prb2=1" \
+										"		}" \
+										"		else" \
+										"		if(dp:cuva_inchisa==false&&v:this->^.prb1!=2){" \
+										"			v:this.text=\"cuva deschisa\"" \
+										"			v:this->^.prb2=2" \
+										"		}" \
+										"		else" \
+										"		if(dp:detergent==false&&v:this->^.prb1!=3){" \
+										"			v:this.text=\"fara detergent\"" \
+										"			v:this->^.prb2=3" \
+										"		}" \
+										"	}" \
+										"	" \
+										"	" \
+										"	if(v:this.lineIndex==2){" \
+										"		if(dp:alimentare_cu_apa==false&&v:this->^.prb1!=1&&v:this->^.prb2!=1){" \
+										"			v:this.text=\"fara apa\"" \
+										"			" \
+										"		}" \
+										"		else" \
+										"		if(dp:cuva_inchisa==false&&v:this->^.prb1!=2&&v:this->^.prb2!=2){" \
+										"			v:this.text=\"cuva deschisa\"" \
+										"			" \
+										"		}" \
+										"		else" \
+										"		if(dp:detergent==false&&v:this->^.prb1!=3&&v:this->^.prb2!=3){" \
+										"			v:this.text=\"fara detergent\"" \
+										"			" \
+										"		}" \
+										"	}" \
+										"false" \
+										"}"
+								}
+							}
+						}]
+					name: "problemList"
+					visible: true
+					width: width@eecf2e78-8465-46c5-85a0-7f9edc92a3ae (propref<int>)
+					height: 120
+					x: 0
+					y: 40
+					numItems: 3
+					lineMapping: intlist []
+					prb1: 0
+					prb2: 0
+				}, 
+				GtfContainer(02bc0ffb-0e37-4157-bf0f-3f1789414008)
+				{
+					features: feature_list [
+						TouchPressed(778faa69-eccb-4aa6-80d7-0665d8ab7754)
+						{
+							touchPressed: function<bool,int,int,int,int>(dde7a73e-0991-4529-be14-c7b257828b0c)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->border.borderThickness=6" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(5adac8be-fbb6-438d-bbbc-fc6920efe91a)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(cea2e7f6-a095-4bb2-a8c7-5a4f6c2bf13f)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->border.borderThickness=4" \
+									"	f:popDynamicStateMachine(popup_stack:\"Main state\",sm:Pop_up)" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(753c7f85-815e-45f6-a5b5-f78699db0cb9)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfRectangle(ae257950-af35-454f-b6d0-9d8e3931bc7b)
+						{
+							features: feature_list [
+								Border(a1cfa3aa-a2f3-44ea-a346-a9d13f8e3028)
+								{
+									borderThickness: 4
+									borderColor: #000000FF
+									borderStyle: 0
+								}]
+							children: children_list []
+							name: "border"
+							visible: true
+							width: width@02bc0ffb-0e37-4157-bf0f-3f1789414008 (propref<int>)
+							height: height@02bc0ffb-0e37-4157-bf0f-3f1789414008 (propref<int>)
+							x: 0
+							y: 0
+							fillColor: #FFFFFF00
+						}, 
+						GtfLabel(d80c1179-7903-4b94-81ca-4b5c2e2e1891)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "text"
+							visible: true
+							width: width@02bc0ffb-0e37-4157-bf0f-3f1789414008 (propref<int>)
+							height: height@02bc0ffb-0e37-4157-bf0f-3f1789414008 (propref<int>)
+							x: 0
+							y: 0
+							text: "ok"
+							textColor: #000000FF
+							font: font_resource(824a6bb7-20c9-4aa0-ae30-a859ea9557aa)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "okButton"
+					visible: true
+					width: 100
+					height: 50
+					x: 150
+					y: 180
+				}]
+			name: "pop_up"
+			visible: true
+			width: 400
+			height: 240
+			x: 200
+			y: 120
+		}]
+	name: "mainPop_upView"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

@@ -1,0 +1,105 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(19bb1b98-6d7e-40e8-aec8-b957998417c1)
+{
+	name: "View 2"
+	template: @b167f808-0583-42a4-baa6-9dc11937b815 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer(101360b1-5f6a-4371-8545-1f706dbd19b0)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfInstantiator(6098f094-39f4-476e-9125-365748f01cbc)
+				{
+					features: feature_list [
+						LayoutPolicyFlow(3b3d00e0-2f62-4f9c-b044-3869d01b68c3)
+						{
+							horizontalGap: 0
+							verticalGap: 0
+							layoutDirection: 0
+							horizontalChildAlign: 0
+							verticalChildAlign: 0
+						}]
+					children: children_list [
+						GtfContainer_template_instance(0af1f452-47ae-46df-b134-19d82a1878a9)
+						{
+							name: "ItemInInstantiator"
+							template: @ebef417c-06ef-4fc2-bd34-e0c4070ec963 (objectref<GtfContainer_template>)
+							children: children_list []
+							width: 96
+							height: 120
+							image: image@ebef417c-06ef-4fc2-bd34-e0c4070ec963 (propref<image>)
+						}]
+					name: "Items"
+					visible: true
+					width: 480
+					height: 255
+					x: 0
+					y: 0
+					numItems: 3
+					lineMapping: intlist []
+					setNumItems: conditional_script(3f50fec4-837a-4443-bd05-9931950da9c5)
+					{
+						triggerList: trigger_list(2813c5db-17fa-41c5-a16e-554a737b3f04)
+						{
+							script: "dp:currentStringList"
+						}
+						onTrigger: function<bool,bool>(cefb7c85-c2c9-414f-ae98-d938a5a03e06)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.numItems = length dp:currentStringList" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "InstantiatorContainer"
+			visible: true
+			width: 480
+			height: 240
+			x: 0
+			y: 80
+		}, 
+		GtfImage_template_instance(6c024985-d365-412c-b761-0405b03a0abc)
+		{
+			name: "ResizedImage 1"
+			template: @9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (objectref<GtfImage_template>)
+			children: children_list []
+			x: 8
+			y: 4
+			width: width@9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (propref<int>)
+			height: 64
+			image: image_resource(fde9b34a-5e18-47b4-adbe-e200ad3315a0)
+			{
+				file: "back.png"
+			}
+			pressAction: function<bool>(ee9bb117-7497-411c-8a04-4c48da558203)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goBack()" \
+					"	false" \
+					"}"
+			}
+			scaleMode: scaleMode@9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (propref<int>)
+		}, 
+		GtfImage_template_instance(033a68d4-1e58-4d73-b230-2069fc630a51)
+		{
+			name: "ResizedImage 2"
+			template: @9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (objectref<GtfImage_template>)
+			children: children_list []
+			x: 376
+			y: 0
+			width: width@9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (propref<int>)
+			height: 63
+			image: image_resource(78b97c9b-eb48-41c2-807f-23a0998b994e)
+			{
+				file: "kauflandLogo.png"
+			}
+			pressAction: pressAction@9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (propref<function<bool>>)
+			scaleMode: scaleMode@9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (propref<int>)
+		}]
+	text: @b4db6298-8cd2-43c3-9690-d4a97835bd71 (objectref<string>)
+	y: 0
+}

@@ -1,0 +1,391 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(2e0770ee-3a36-4ac0-9e3c-957700638914)
+{
+	name: "Button"
+	structure: GtfContainer(0867020d-a90e-4c18-8bc2-890d70ae9cab)
+	{
+		features: feature_list [
+			MoveOut(000a6555-b23a-43e3-9cac-0afa9c48c0d9)
+			{
+				moveOut: function<bool,int,int,int,int>(666d0eb9-3999-4826-9b4c-1cb2644dc191)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.moveOutStyle()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			MoveIn(682b3572-d59f-4d26-9761-453cfc82a45a)
+			{
+				moveIn: function<bool,int,int,int,int>(03dc3ee2-71e4-4d63-931a-5164ba623987)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.moveInStyle()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchPressed(1f097019-ed6f-46e1-9588-1ed6c8e0e2a2)
+			{
+				touchPressed: function<bool,int,int,int,int>(6276071f-d81c-41d4-a737-1c1baf08c3a0)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.pressStyle()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(d77fdc92-4d86-4b2e-bdfb-5263470f4eb7)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(e6a8fe4e-1936-476f-b0c8-7a3a436914e1)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.releaseStyle()" \
+						"	" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(cee3776e-4c1c-4813-8668-7a4c529d88f5)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			ViewPort(f52b250c-6cf5-44c9-82c8-f7717f0ea7d2)
+			{
+				xOffset: 0
+				yOffset: 0
+			}]
+		children: children_list [
+			GtfRectangle(78213ab9-0811-46c5-8fc8-bd66e60b5e2f)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Shadow"
+				visible: true
+				width: width@0867020d-a90e-4c18-8bc2-890d70ae9cab (propref<int>)
+				height: height@0867020d-a90e-4c18-8bc2-890d70ae9cab (propref<int>)
+				x: 5
+				y: 5
+				fillColor: #291D1D80
+			}, 
+			GtfRectangle(bdb144f3-06a0-4d88-9f7b-b0f8a42bf720)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@0867020d-a90e-4c18-8bc2-890d70ae9cab (propref<int>)
+				height: height@0867020d-a90e-4c18-8bc2-890d70ae9cab (propref<int>)
+				x: 0
+				y: 0
+				fillColor: currentColor@0867020d-a90e-4c18-8bc2-890d70ae9cab (propref<color>)
+			}, 
+			GtfEllipse(1ee5cb28-bfb8-4506-a567-ee7d0fec77d1)
+			{
+				features: feature_list [
+					Rotation(2d964997-28f7-45aa-940d-695998f81bd5)
+					{
+						rotationEnabled: true
+						rotationAngleX: 0F
+						rotationAngleY: 0F
+						rotationAngleZ: 0F
+					}, 
+					Scaling(474454d0-9801-4770-8cb0-8497058697b3)
+					{
+						scalingEnabled: true
+						scalingX: 0F
+						scalingY: 0F
+						scalingZ: 100F
+					}, 
+					Shearing(94609265-fc8f-4be1-966f-f9f46e89d93e)
+					{
+						shearingEnabled: true
+						shearingXbyY: 0F
+						shearingXbyZ: 0F
+						shearingYbyX: 0F
+						shearingYbyZ: 0F
+						shearingZbyX: 0F
+						shearingZbyY: 0F
+					}, 
+					Pivot(777d55b7-8508-4878-9f4b-0b458bc1f18b)
+					{
+						pivotX: float_scriptedValue(71aeb527-5e08-472a-baa3-123875ae30d9)
+						{
+							triggerList: trigger_list(0eb299ea-2308-4e5d-9b09-ec91864c9e17)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(076931c9-b575-4c68-a300-ff8fb9cefff6)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<float>(4f6a9f80-a56b-4be7-92f5-6f2e24475f99)
+							{
+								script: "function()" \
+									"{" \
+									"	f:int2float(v:this.width / 2)" \
+									"}"
+							}
+							write: function<bool,float>(b27ccb3d-efa8-4b8b-9352-44cd001fafb8)
+							{
+								script: "function(v:arg0::float)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						pivotY: float_scriptedValue(96d15c9e-1b18-41d4-8359-8609de19e7ef)
+						{
+							triggerList: trigger_list(89a7b8d5-43b8-48f5-97f2-9f31efd43875)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(fb2a430a-ab58-43dc-9132-987aa13dbe82)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<float>(2d535bc6-576f-48b6-8164-b06979844da0)
+							{
+								script: "function()" \
+									"{" \
+									"	f:int2float(v:this.height / 2)" \
+									"}"
+							}
+							write: function<bool,float>(252e7355-acf8-4697-9be1-a44cb9ee58ac)
+							{
+								script: "function(v:arg0::float)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						pivotZ: 0F
+					}]
+				children: children_list []
+				name: "Filler"
+				visible: true
+				width: 100
+				height: 100
+				x: 0
+				y: 0
+				fillColor: color_element_reference(ce43b2ee-47c5-4b2d-971e-48171fa313e9)
+				{
+					index: 3
+					list: colors@0867020d-a90e-4c18-8bc2-890d70ae9cab (propref<colorlist>)
+				}
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}, 
+			GtfLabel(8f3317c5-b10a-499c-a200-914085537c1c)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Text"
+				visible: true
+				width: width@0867020d-a90e-4c18-8bc2-890d70ae9cab (propref<int>)
+				height: height@0867020d-a90e-4c18-8bc2-890d70ae9cab (propref<int>)
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(a64f2ed0-32a8-4e57-9b9f-e6c850584155)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfParallelAnimation(bdcdfbc6-fe35-421b-a2df-349dab56bc4f)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfFastStartFloat(ba4057f6-3a5d-4451-a5e0-324f626ffa6a)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Fast start curve 1"
+						enabled: true
+						delay: 0
+						duration: 300
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 0F
+						end: 150F
+						target: scalingX@474454d0-9801-4770-8cb0-8497058697b3 (propref<float>)
+					}, 
+					GtfFastStartFloat(51baf8b6-57bf-4b5f-8354-9af0bd6ab03e)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Fast start curve 2"
+						enabled: true
+						delay: 0
+						duration: 300
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 0F
+						end: 150F
+						target: scalingY@474454d0-9801-4770-8cb0-8497058697b3 (propref<float>)
+					}]
+				name: "FillAnimation"
+				enabled: true
+				repeat: 1
+				alternating: false
+				scale: 1F
+				onPlay: function<void,int,bool>(c9b645ed-b0a2-41bc-9f83-b924f975efa1)
+				{
+					script: "function(v:animation_time::int, v:forward::bool)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onPause: function<void,int>(42c600a4-8985-45c6-81fa-41d5f399d316)
+				{
+					script: "function(v:animation_time::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onTerminate: function<void,int,int>(5f92ffd7-525f-43dd-a699-b10bea9da2db)
+				{
+					script: "function(v:animation_time::int, v:terminate::int)" \
+						"{" \
+						"	v:this->^.fillAnimationFinished = true" \
+						"}"
+				}
+			}]
+		name: "Container"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		onInit: conditional_script(0a34b7c0-3d4f-455d-a243-d80af8e7fa37)
+		{
+			triggerList: trigger_list(9bff944a-5469-4218-bcee-0cbd388301aa)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(f2756fb2-4ec8-408c-81dd-0918ddd4e470)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	v:this.currentColor = v:this.colors[0]" \
+					"	false" \
+					"}"
+			}
+		}
+		colors: colorlist [#40E0D0FF, #20B2AAFF, #48D1CCFF, #BFF0EDC8]
+		currentColor: #A9A9A9FF
+		moveInStyle: function<bool>(6da3ef83-6216-4e34-b412-a595a06fc11c)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.currentColor = v:this.colors[1]" \
+				"	false" \
+				"}"
+		}
+		moveOutStyle: function<bool>(6e171c9f-944f-4008-83ba-55f8e6a64e68)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.currentColor = v:this.colors[0]" \
+				"	false" \
+				"}"
+		}
+		pressStyle: function<bool>(e54857b1-1ae5-436b-b520-7b1f157f89ff)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.currentColor = v:this.colors[2]" \
+				"	false" \
+				"}"
+		}
+		releaseStyle: function<bool>(9f6fc73f-a13a-4300-a728-b0147540c155)
+		{
+			script: "function()" \
+				"{" \
+				"	//v:this.currentColor = v:this.colors[1]" \
+				"	v:this.fillAnimationStarted = true" \
+				"	false" \
+				"}"
+		}
+		releaseAction: function<bool>(ae8d06e2-e1a5-4b67-b006-6e8a2e9d0ab4)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		fillAnimationStarted: false
+		fillAnimationFinished: false
+		startFill: conditional_script(4c79e5fc-c49f-44ee-9f2d-55d45e13cd4e)
+		{
+			triggerList: trigger_list(8a1630a0-4b82-4750-97cb-81c916de318c)
+			{
+				script: "v:this.fillAnimationStarted"
+			}
+			onTrigger: function<bool,bool>(bd3f1dad-6095-4ac2-bcbb-84b58442224b)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	if(v:this.fillAnimationStarted)" \
+					"		f:animation_play(v:this->FillAnimation)" \
+					"	false" \
+					"}"
+			}
+		}
+		endFill: conditional_script(64068e67-be73-44fa-a083-6adb907111b6)
+		{
+			triggerList: trigger_list(7bc7c025-bc8f-4cf6-adef-2a6a778f4012)
+			{
+				script: "v:this.fillAnimationFinished"
+			}
+			onTrigger: function<bool,bool>(4bd2c826-15cc-4bbf-b51a-1f558201ca76)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	if(v:this.fillAnimationFinished){" \
+					"		v:this.fillAnimationFinished = false" \
+					"		v:this.fillAnimationStarted = false" \
+					"		v:this->Filler.scalingX = 0.0" \
+					"		v:this->Filler.scalingY = 0.0" \
+					"		v:this.releaseAction()" \
+					"	}" \
+					"		" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+	releaseAction: releaseAction@0867020d-a90e-4c18-8bc2-890d70ae9cab (propref<function<bool>>)
+	y: y@0867020d-a90e-4c18-8bc2-890d70ae9cab (propref<int>)
+	x: x@0867020d-a90e-4c18-8bc2-890d70ae9cab (propref<int>)
+	height: height@0867020d-a90e-4c18-8bc2-890d70ae9cab (propref<int>)
+	width: width@0867020d-a90e-4c18-8bc2-890d70ae9cab (propref<int>)
+	text: text@8f3317c5-b10a-499c-a200-914085537c1c (propref<string>)
+	visible: visible@0867020d-a90e-4c18-8bc2-890d70ae9cab (propref<bool>)
+}

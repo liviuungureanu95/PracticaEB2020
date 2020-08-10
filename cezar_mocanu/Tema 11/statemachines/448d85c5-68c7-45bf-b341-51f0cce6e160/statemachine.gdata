@@ -1,0 +1,71 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_dynamic_statemachine(448d85c5-68c7-45bf-b341-51f0cce6e160)
+{
+	x: 0
+	y: 0
+	width: 600
+	height: 400
+	name: "ErrorPopup"
+	entry_action: function<void>(329a2f94-9f93-4f82-bb57-e3b72b54733c)
+	{
+		script: "function()" \
+			"{" \
+			"	if(!dp:hasWaterSuply)" \
+			"		dp:errorMessage = \"Please connect the water suply\"" \
+			"	else if(!dp:isDetergentAdded)" \
+			"		dp:errorMessage = \"Please add detergent to the detergent chamber\"" \
+			"	else if(!dp:isDoorClosed)" \
+			"		dp:errorMessage = \"Please close the washing machine door\"" \
+			"	else{" \
+			"			" \
+			"		f:popDynamicStateMachine(popup_stack:Main,sm:ErrorPopup)		" \
+			"		fire ev:goToProgram()" \
+			"	}" \
+			"		" \
+			"}"
+	}
+	exit_action: function<void>(none)
+	transitions: haptic_transitions []
+	internal_transitions: haptic_internal_transitions []
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(6b107ce8-0846-4d77-bbd3-dc68e5e85a25)
+		{
+			x: 209
+			y: 94
+			width: 100
+			height: 100
+			name: "vsPopup"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (32fb7a67-09a8-4d3e-8898-2d5fbf3169e4)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(ac247cb2-c4d2-41d8-912b-abcf0537cc3b)
+	{
+		x: 68
+		y: 142
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(fc1032bf-cc28-4d0f-83d5-a45a97d1261c)
+		{
+			action: function<void>(none)
+			target_state: @6b107ce8-0846-4d77-bbd3-dc68e5e85a25 (objectref<haptic_dialog_state>)
+			source_dock: 0.2636086F
+			target_dock: 0.728996F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(none)
+}

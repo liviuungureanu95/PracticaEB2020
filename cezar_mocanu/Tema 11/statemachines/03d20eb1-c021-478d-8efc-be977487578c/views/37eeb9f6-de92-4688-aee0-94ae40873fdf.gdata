@@ -1,0 +1,104 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(37eeb9f6-de92-4688-aee0-94ae40873fdf)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(d19dfb87-125f-48b3-9848-8e051fa2a90f)
+		{
+			name: "AnimatedBackground 1"
+			template: @3439dbe8-c0b8-4d15-bc9d-edc520738e29 (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfContainer_template_instance(51a90b7a-19d5-4a18-b641-272d74c160d6)
+				{
+					name: "Timmer 1"
+					template: @8e1f390a-6c47-4265-acfa-6a4d87315121 (objectref<GtfContainer_template>)
+					children: children_list []
+					colors: colorlist [#20B2AAFF, #48D1CCFF]
+					duration: duration@8e1f390a-6c47-4265-acfa-6a4d87315121 (propref<int>)
+					animationStarted: false
+					y: 200
+					x: 350
+					visible: true
+					onTerminate: function<bool>(e5ce7446-f388-44ad-a0f8-99ea7f076a7f)
+					{
+						script: "function()" \
+							"{" \
+							"	fire ev:goToMenu()" \
+							"	dp:isDetergentAdded = false" \
+							"	false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(0c4d3113-9158-4e6b-8c9b-8bf6b999b4be)
+				{
+					name: "Button 1"
+					template: @2e0770ee-3a36-4ac0-9e3c-957700638914 (objectref<GtfContainer_template>)
+					children: children_list []
+					releaseAction: function<bool>(ccffb372-1155-42e7-a4b5-65c9e2977ed6)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^->\"Timmer 1\".animationStarted = true" \
+							"	v:this.visible = false" \
+							"	v:this->^->\"Timmer 1\".visible = true" \
+							"	v:this->^->^->Back.visible = false" \
+							"	v:this->^->^->Instruction.text = \"Please wait until the cycle is finished...\"" \
+							"	false" \
+							"}"
+					}
+					y: 200
+					x: 350
+					height: height@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<int>)
+					width: width@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<int>)
+					text: "Start"
+					visible: visible@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<bool>)
+				}]
+		}, 
+		GtfLabel(205ff1d8-0eda-4fa5-a23e-7793a0b9b318)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Instruction"
+			visible: true
+			width: width@37eeb9f6-de92-4688-aee0-94ae40873fdf (propref<int>)
+			height: 100
+			x: 0
+			y: 0
+			text: "Cotton Program - 10 minutes"
+			textColor: #008080FF
+			font: font_resource(70670395-59bc-40eb-ba3e-995847b0e335)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(1f59d3c1-9601-49df-aa9a-cd8b68ed5f37)
+		{
+			name: "Back"
+			template: @2e0770ee-3a36-4ac0-9e3c-957700638914 (objectref<GtfContainer_template>)
+			children: children_list []
+			releaseAction: function<bool>(7e5042d8-4e36-4c6c-9a98-ef8e1d23a1fa)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goToMenu()" \
+					"	false" \
+					"}"
+			}
+			y: y@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<int>)
+			x: x@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<int>)
+			height: 60
+			width: width@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<int>)
+			text: "Back"
+			visible: visible@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<bool>)
+		}]
+	name: "vCotton"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

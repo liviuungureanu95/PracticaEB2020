@@ -1,0 +1,108 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(c95e45b5-1817-4f93-b4c5-3d10d36aea36)
+{
+	name: "View 1"
+	template: @472ec2fd-032c-4fb0-bf06-97c05a44cab2 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(89cb0e93-a03c-46cd-b20e-5ba29a0d9ab8)
+		{
+			name: "RoundButton 1"
+			template: @bbe0b7a9-01e2-4eed-98cc-87a5323f7f7e (objectref<GtfContainer_template>)
+			children: children_list []
+			buttonColors: @a0ac6572-1613-46b4-92e9-a8a8389a4278 (objectref<colorlist>)
+			borderThickness: borderThickness@bbe0b7a9-01e2-4eed-98cc-87a5323f7f7e (propref<int>)
+			releaseAction: function<bool>(41ae17b3-af45-4b04-a70a-2bcc18e1472e)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_Fill()" \
+					"	false" \
+					"}"
+			}
+			x: 85
+			y: 110
+			height: height@bbe0b7a9-01e2-4eed-98cc-87a5323f7f7e (propref<int>)
+			width: width@bbe0b7a9-01e2-4eed-98cc-87a5323f7f7e (propref<int>)
+			visible: visible@bbe0b7a9-01e2-4eed-98cc-87a5323f7f7e (propref<bool>)
+			image: image_resource(8e352a45-6ab8-4e90-8b8b-3c4e0fb60add)
+			{
+				file: "cash.png"
+			}
+		}, 
+		GtfContainer_template_instance(7bb04f85-2a95-489a-9274-7dbd9b6d0336)
+		{
+			name: "RoundButton 2"
+			template: @bbe0b7a9-01e2-4eed-98cc-87a5323f7f7e (objectref<GtfContainer_template>)
+			children: children_list []
+			buttonColors: @a0ac6572-1613-46b4-92e9-a8a8389a4278 (objectref<colorlist>)
+			borderThickness: borderThickness@bbe0b7a9-01e2-4eed-98cc-87a5323f7f7e (propref<int>)
+			releaseAction: function<bool>(97444747-0fa0-4ad2-a131-e6c8b7f3768b)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_Fill()" \
+					"	false" \
+					"}"
+			}
+			x: 300
+			y: 109
+			height: height@bbe0b7a9-01e2-4eed-98cc-87a5323f7f7e (propref<int>)
+			width: width@bbe0b7a9-01e2-4eed-98cc-87a5323f7f7e (propref<int>)
+			visible: visible@bbe0b7a9-01e2-4eed-98cc-87a5323f7f7e (propref<bool>)
+			image: image_resource(886131d2-3c4e-48d9-ae3e-a7862ac92a01)
+			{
+				file: "card.png"
+			}
+		}, 
+		GtfLabel(2a4f59dc-3f39-4a89-9dff-fa60d9fc770c)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Cash"
+			visible: true
+			width: 100
+			height: 32
+			x: 85
+			y: 209
+			text: "Cash"
+			textColor: #FFFFFFFF
+			font: font_resource(0f6bfa67-377e-428d-bee7-1168f89466d9)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(a465cb4b-c961-413b-9a43-888fbc03d695)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Card"
+			visible: true
+			width: 100
+			height: 32
+			x: 300
+			y: 209
+			text: "Card"
+			textColor: #FFFFFFFF
+			font: font_resource(eea2cae7-c329-4eca-9181-ea6fdcbfac21)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+	text: "Choose a payment method"
+	releaseAction: function<bool>(65bd13b8-145d-4ec3-8f89-870ff282b68b)
+	{
+		script: "function()" \
+			"{" \
+			"	fire ev:goTo_MainMenu()" \
+			"	false" \
+			"}"
+	}
+	visible: visible@472ec2fd-032c-4fb0-bf06-97c05a44cab2 (propref<bool>)
+}

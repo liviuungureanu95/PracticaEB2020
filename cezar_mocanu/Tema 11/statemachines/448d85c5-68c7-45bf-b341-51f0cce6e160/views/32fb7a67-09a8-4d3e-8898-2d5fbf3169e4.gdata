@@ -1,0 +1,98 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(32fb7a67-09a8-4d3e-8898-2d5fbf3169e4)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(e7057025-c9a3-4a73-b54d-e9d6bc4cc2f1)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Shadow"
+			visible: true
+			width: 600
+			height: 360
+			x: 110
+			y: 70
+			fillColor: #00000080
+		}, 
+		GtfRectangle(c53edc9e-f96d-427e-939e-4c5890108208)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Background"
+			visible: true
+			width: 600
+			height: 360
+			x: 100
+			y: 60
+			fillColor: #FFFAF0FF
+		}, 
+		GtfLabel(af734ac4-d841-4568-b022-fcec22e98bbc)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Text"
+			visible: true
+			width: 600
+			height: 60
+			x: 100
+			y: 200
+			text: @a18ec033-e650-4caf-9e37-416d0a4eb961 (objectref<string>)
+			textColor: #008080FF
+			font: font_resource(77f1ee15-7469-4082-82b8-2fe99b940963)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(e40c842e-e69f-4e07-af37-d853c1f04356)
+		{
+			name: "Back"
+			template: @2e0770ee-3a36-4ac0-9e3c-957700638914 (objectref<GtfContainer_template>)
+			children: children_list []
+			releaseAction: function<bool>(76914f6e-99d6-49fa-87fa-35b9f7102bd1)
+			{
+				script: "function()" \
+					"{" \
+					"	f:popDynamicStateMachine(popup_stack:Main,sm:ErrorPopup)" \
+					"	false" \
+					"}"
+			}
+			y: 300
+			x: 200
+			height: 50
+			width: width@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<int>)
+			text: "Back"
+			visible: visible@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<bool>)
+		}, 
+		GtfContainer_template_instance(2c713b33-284e-417c-9e2a-e563d54bf508)
+		{
+			name: "TryAgain"
+			template: @2e0770ee-3a36-4ac0-9e3c-957700638914 (objectref<GtfContainer_template>)
+			children: children_list []
+			releaseAction: function<bool>(9d9bcacf-eda9-43be-8a01-1f3891104a58)
+			{
+				script: "function()" \
+					"{" \
+					"	f:popDynamicStateMachine(popup_stack:Main,sm:ErrorPopup)" \
+					"	f:pushDynamicStateMachine(popup_stack:Main,sm:ErrorPopup,0)" \
+					"	false" \
+					"}"
+			}
+			y: 300
+			x: 500
+			height: 50
+			width: width@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<int>)
+			text: "Try Again"
+			visible: visible@2e0770ee-3a36-4ac0-9e3c-957700638914 (propref<bool>)
+		}]
+	name: "vPopup"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

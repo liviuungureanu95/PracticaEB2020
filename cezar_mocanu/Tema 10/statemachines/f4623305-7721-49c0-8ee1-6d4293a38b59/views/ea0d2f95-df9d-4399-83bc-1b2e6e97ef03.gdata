@@ -1,0 +1,107 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(ea0d2f95-df9d-4399-83bc-1b2e6e97ef03)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle_template_instance(3e719c74-9463-4275-b7c1-fbfab9d4f6a2)
+		{
+			name: "Background"
+			template: @4b7ffeca-fd68-4a0b-bcfd-4cee17af9b35 (objectref<GtfRectangle_template>)
+			children: children_list []
+		}, 
+		GtfLabel(bbb397fe-b0ec-40f4-98a5-53b29ac5925d)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(adda7347-bc5a-4fcc-bae8-a9138da6d2f8)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "BottomMargin"
+					visible: true
+					width: width@ea0d2f95-df9d-4399-83bc-1b2e6e97ef03 (propref<int>)
+					height: 2
+					x: 0
+					y: 40
+					fillColor: color_element_reference(4a29394f-3b01-458f-b93d-ecf683cae46e)
+					{
+						index: 0
+						list: @eddfeffc-6941-4bd3-bf3d-d6af5f976944 (objectref<colorlist>)
+					}
+				}]
+			name: "Instruction"
+			visible: true
+			width: width@ea0d2f95-df9d-4399-83bc-1b2e6e97ef03 (propref<int>)
+			height: 40
+			x: 0
+			y: 0
+			text: "Select a category"
+			textColor: #2F4F4FFF
+			font: font_resource(a5c7ddfc-5cb4-4da8-bf66-31d022d63bf6)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(a42afd1a-6d7d-442b-b83d-cef07b35d715)
+		{
+			name: "Fruits"
+			template: @cd8da3ad-9e5a-44f6-84b6-3cc2da3b091c (objectref<GtfContainer_template>)
+			children: children_list []
+			buttonColor: buttonColor@cd8da3ad-9e5a-44f6-84b6-3cc2da3b091c (propref<colorlist>)
+			onReleaseAction: function<bool>(29e79dc1-60f0-46b5-a2f9-ac9d1ab95aff)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:selectedImages = dp:fruitsImages" \
+					"	dp:selectedNames = dp:fruitsNames" \
+					"	fire ev:goToList()	" \
+					"	false" \
+					"}"
+			}
+			x: 60
+			y: 150
+			height: height@cd8da3ad-9e5a-44f6-84b6-3cc2da3b091c (propref<int>)
+			width: width@cd8da3ad-9e5a-44f6-84b6-3cc2da3b091c (propref<int>)
+			text: "Fruits"
+			image: image_resource(c8a5bce7-485e-4058-9873-68486358db06)
+			{
+				file: "orange.png"
+			}
+		}, 
+		GtfContainer_template_instance(a2e08700-9a30-4a9a-ab1d-5514d5afb24a)
+		{
+			name: "Vegetables"
+			template: @cd8da3ad-9e5a-44f6-84b6-3cc2da3b091c (objectref<GtfContainer_template>)
+			children: children_list []
+			buttonColor: buttonColor@cd8da3ad-9e5a-44f6-84b6-3cc2da3b091c (propref<colorlist>)
+			onReleaseAction: function<bool>(61714d6b-278a-4ec4-b9d8-af197f514690)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:selectedImages = dp:vegetableImages" \
+					"	dp:selectedNames = dp:vegetableNames" \
+					"	fire ev:goToList()	" \
+					"	false" \
+					"}"
+			}
+			x: 300
+			y: 150
+			height: height@cd8da3ad-9e5a-44f6-84b6-3cc2da3b091c (propref<int>)
+			width: width@cd8da3ad-9e5a-44f6-84b6-3cc2da3b091c (propref<int>)
+			text: "Vegetables"
+			image: image_resource(d42a1f33-6c4e-4894-b641-9dd31cd8104b)
+			{
+				file: "radish.png"
+			}
+		}]
+	name: "vCategory"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}

@@ -1,0 +1,89 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(ac5f6a8d-0ac8-4e52-8360-a77c488cca25)
+{
+	name: "Choice"
+	structure: GtfContainer(a2c821f6-3ab5-4448-bf61-bca0c9a6140b)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(58d23b5e-9593-4e13-836c-f99c715dc4f6)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfContainer_template_instance(6c86427e-feb7-41c5-a7fd-1029adfe1a2c)
+					{
+						name: "Button 1"
+						template: @41ce04cd-2094-44e3-8ff5-5a3c13730ca2 (objectref<GtfContainer_template>)
+						children: children_list []
+						touchShortReleased: function<bool,int,int,int,int>(a3e9552f-cc80-41a1-bbbe-b22f7996e46a)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    dp:fuelText = \"DIESEL\"" \
+								"   	dp:price = 4.70" \
+								"   	dp:quantity = 0.0" \
+								"    fire ev:goTo_fuel()" \
+								"    false" \
+								"}"
+						}
+						x: 104
+						y: 100
+						text: text@41ce04cd-2094-44e3-8ff5-5a3c13730ca2 (propref<string>)
+					}, 
+					GtfContainer_template_instance(7bf1f804-6290-4115-a24a-7ba7be1122c0)
+					{
+						name: "Button 2"
+						template: @41ce04cd-2094-44e3-8ff5-5a3c13730ca2 (objectref<GtfContainer_template>)
+						children: children_list []
+						touchShortReleased: function<bool,int,int,int,int>(6fd028c3-d9c2-44d4-86bc-5ff8d2ae3df8)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    dp:fuelText = \"BENZINA\"" \
+								"    dp:price = 4.62" \
+								"    dp:quantity = 0.0" \
+								"    fire ev:goTo_fuel()" \
+								"    false" \
+								"}"
+						}
+						x: 199
+						y: 100
+						text: "BENZINA"
+					}, 
+					GtfContainer_template_instance(483a402b-6fd7-4769-8f7e-c1eb078fe706)
+					{
+						name: "Button 3"
+						template: @41ce04cd-2094-44e3-8ff5-5a3c13730ca2 (objectref<GtfContainer_template>)
+						children: children_list []
+						touchShortReleased: function<bool,int,int,int,int>(7a37cfd3-2f5f-45b8-8264-c992845521ae)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    dp:fuelText = \"GPL\"" \
+								"    dp:price = 2.56" \
+								"    dp:quantity = 0.0" \
+								"    fire ev:goTo_fuel()" \
+								"    false" \
+								"}"
+						}
+						x: 300
+						y: 100
+						text: "GPL"
+					}]
+				name: "BG"
+				visible: true
+				width: width@a2c821f6-3ab5-4448-bf61-bca0c9a6140b (propref<int>)
+				height: height@a2c821f6-3ab5-4448-bf61-bca0c9a6140b (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #006400FF
+			}]
+		name: "Choice Container"
+		visible: true
+		width: 480
+		height: 320
+		x: 0
+		y: 0
+	}
+}

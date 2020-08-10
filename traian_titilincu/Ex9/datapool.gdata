@@ -1,0 +1,55 @@
+EBGUIDE 6.10.0.200602120856;
+
+dp_items(6776d79c-6ea6-45fd-85fd-31ca9e5035c4)
+{
+	items: dp_item_list [
+		dp<float>(2a20e90f-207d-469e-bf6c-8082c3e97a3b)
+		{
+			value: 0F
+			name: "price"
+		}, 
+		dp<float>(46195429-0737-4a1d-9ae1-52864fa9d2f2)
+		{
+			value: float_scriptedValue(5d9c48d3-99e7-4457-9d21-717f2a3bab29)
+			{
+				triggerList: trigger_list(a888467f-34a5-4a57-8043-52aec1f823e8)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(dbcf8691-1918-476e-8687-70385aefd9b6)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<float>(99ccb1c5-7cce-4fc5-886c-f9fb23245b8b)
+				{
+					script: "function()" \
+						"{" \
+						"	dp:price * dp:quantity" \
+						"}"
+				}
+				write: function<bool,float>(c52e249d-70b2-4377-aa72-d7980651375f)
+				{
+					script: "function(v:arg0::float)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			name: "totalPrice"
+		}, 
+		dp<float>(c9712fbf-7d3b-401b-a357-37498a4b126c)
+		{
+			value: 0F
+			name: "quantity"
+		}, 
+		dp<string>(ee41b365-a11c-47a5-b56a-00461e45c1fa)
+		{
+			value: ""
+			name: "fuelText"
+		}]
+}
