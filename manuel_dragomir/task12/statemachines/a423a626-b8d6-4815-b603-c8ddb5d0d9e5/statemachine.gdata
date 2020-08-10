@@ -1,0 +1,72 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_statemachine(a423a626-b8d6-4815-b603-c8ddb5d0d9e5)
+{
+	x: 0
+	y: 0
+	width: 761
+	height: 541
+	name: "Main"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions []
+	internal_transitions: haptic_internal_transitions []
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(95ef2e4d-4db9-43c1-b8f7-d927cad2d359)
+		{
+			x: 199
+			y: 65
+			width: 100
+			height: 100
+			name: "MainState"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions [
+				haptic_internal_transition(bb12cc1f-c6a7-4709-a99c-7c8eb5eeadbe)
+				{
+					event: @48764fd8-fabf-4fc3-924e-b9db95396cca (objectref<event>)
+					condition: function<bool>(none)
+					action: function<void>(11840a5b-143f-4fac-b5f5-6a28454713a2)
+					{
+						script: "function()" \
+							"{" \
+							"// Configure the following parameters:" \
+							"//   - state - the state with dynamic state list" \
+							"//   - sm - the dynamic state machine" \
+							"f:popDynamicStateMachine(popup_stack:Main, sm:PopUp);" \
+							"" \
+							"}"
+					}
+				}]
+			background_color: #6C6C6CFF
+			dialog: (b277cd58-182e-4817-9512-aa707ef3ba59)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(1c4bbf6b-81aa-4e88-bde0-52e1cc1ffe3b)
+	{
+		x: 47
+		y: 75
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(fbf660fe-5654-4884-9690-824ea607f31f)
+		{
+			action: function<void>(none)
+			target_state: @95ef2e4d-4db9-43c1-b8f7-d927cad2d359 (objectref<haptic_dialog_state>)
+			source_dock: 0.2739324F
+			target_dock: 0.8243542F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(816e7ec9-a2aa-408d-9f2c-8b365a3b4bcb)
+	{
+	}
+}

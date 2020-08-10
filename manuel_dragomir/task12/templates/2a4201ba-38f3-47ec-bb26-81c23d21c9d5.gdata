@@ -1,0 +1,137 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(2a4201ba-38f3-47ec-bb26-81c23d21c9d5)
+{
+	name: "LanguageButton"
+	structure: GtfContainer(3d794f95-7b67-458e-aacf-2b17ebdaeafe)
+	{
+		features: feature_list [
+			StateSelected(0f560030-7aa9-478d-80a2-5111ab09512e)
+			{
+				selected: true
+			}, 
+			Buttongroup(674b5791-5963-4d91-9bb1-4465172f9dad)
+			{
+				buttonId: 0
+				buttonValue: @e13bf7a6-47c4-4384-88de-1e98dfc5d25b (objectref<int>)
+			}, 
+			TouchShortReleased(885bddcd-2c29-44a8-ac02-1fe9a4a02236)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(481857f7-aff7-497c-8066-5cc1c24bd0cd)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.changeLanguage();" \
+						"	dp:SelectionGroupLanguage = v:this.buttonId;" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(eaba5b74-0116-410c-9161-719769b94a26)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfEllipse(90a3a747-b20b-4b43-ad20-a395c2c84289)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Ellipse"
+				visible: true
+				width: 60
+				height: 40
+				x: 40
+				y: 0
+				fillColor: #808080FF
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}, 
+			GtfImage(c1aeabed-b514-4051-9786-6f3e3330a70d)
+			{
+				features: feature_list [
+					ScaleMode(410e78ee-49a1-4009-8151-332500df380c)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: 60
+				height: height@3d794f95-7b67-458e-aacf-2b17ebdaeafe (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(cad8136c-63b3-4166-b784-b7085032ec3d)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(86f40527-8f66-4e89-8559-6506335e4d56)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label"
+				visible: true
+				width: 60
+				height: height@3d794f95-7b67-458e-aacf-2b17ebdaeafe (propref<int>)
+				x: 50
+				y: 0
+				text: "EN"
+				textColor: #000000FF
+				font: font_resource(f329f830-5639-4985-af73-40f301290738)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 100
+		height: 40
+		x: 0
+		y: 0
+		onSelected: conditional_script(ca2ac388-8c3d-410b-b2f3-63f13b17b80b)
+		{
+			triggerList: trigger_list(1c16f7e9-2e55-44a0-a1d0-e8b8e99716cd)
+			{
+				script: "v:this.selected" \
+					""
+			}
+			onTrigger: function<bool,bool>(4d092ebd-303b-4459-8dc3-723167952f61)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	if(v:this.selected){" \
+					"		v:this->Ellipse.fillColor = color:0, 255, 0, 255;" \
+					"	}" \
+					"	else{" \
+					"		v:this->Ellipse.fillColor = color:128, 128, 128, 255;" \
+					"	}" \
+					"	false" \
+					"}"
+			}
+		}
+		changeLanguage: function<bool>(68399ee0-fdf5-41aa-a9b4-74fe5c0e9916)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	text: text@86f40527-8f66-4e89-8559-6506335e4d56 (propref<string>)
+	x: x@3d794f95-7b67-458e-aacf-2b17ebdaeafe (propref<int>)
+	y: y@3d794f95-7b67-458e-aacf-2b17ebdaeafe (propref<int>)
+	image: image@c1aeabed-b514-4051-9786-6f3e3330a70d (propref<image>)
+	buttonId: buttonId@674b5791-5963-4d91-9bb1-4465172f9dad (propref<int>)
+	changeLanguage: changeLanguage@3d794f95-7b67-458e-aacf-2b17ebdaeafe (propref<function<bool>>)
+}

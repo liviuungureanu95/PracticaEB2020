@@ -1,0 +1,190 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(c2c712d6-714a-4fd9-adae-258dd7cd57ee)
+{
+	name: "ChoosingButton"
+	structure: GtfContainer(745d3b60-eab5-4eb9-8763-1269a27162c0)
+	{
+		features: feature_list [
+			StateSelected(2910f8de-77b3-42a8-8f19-95cf83718e32)
+			{
+				selected: true
+			}, 
+			Buttongroup(54c986aa-3e76-41b0-a5e8-ced487ebea78)
+			{
+				buttonId: 0
+				buttonValue: @b0ea5d68-c639-4f8c-b832-3cef7e2caa9e (objectref<int>)
+			}, 
+			TouchShortReleased(adcbf036-858e-4e78-8fc1-66467b6a3517)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(4631787b-f3d1-4c62-9b99-4a3c12c97fbf)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	f:trace_string(\"CLICKED\");" \
+						"	dp:SelectionGroupTypeTicket = v:this.buttonId;" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(d4d151e9-96f7-4a6c-acb7-a5c4717c6cf8)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfImage(1bb836a9-52c2-4c9c-85a1-dfb77dcc86e5)
+			{
+				features: feature_list [
+					ScaleMode(4ed33ef6-c695-4685-b94a-d5cecfb475a5)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "Image"
+				visible: true
+				width: width@745d3b60-eab5-4eb9-8763-1269a27162c0 (propref<int>)
+				height: width@1bb836a9-52c2-4c9c-85a1-dfb77dcc86e5 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(fce1292e-7d0e-426a-a470-95f0e352892a)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfRectangle(71b3d39a-1746-4985-b22c-7aac7695fbac)
+			{
+				features: feature_list [
+					Border(7c3dd928-8702-41bf-b771-73bdc7456307)
+					{
+						borderThickness: 3
+						borderColor: #00FF00FF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "Back"
+				visible: true
+				width: 170
+				height: 170
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+			}, 
+			GtfLabel(ffd75343-4f29-4551-9894-df573063ce1b)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Price"
+				visible: true
+				width: width@745d3b60-eab5-4eb9-8763-1269a27162c0 (propref<int>)
+				height: 35
+				x: 0
+				y: -33
+				text: string_scriptedValue(6c026565-7217-4711-b91c-74d5cc1c16e4)
+				{
+					triggerList: trigger_list(821e999d-08db-42f1-baf4-7a3fee48cd4e)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(93e3beab-3d2d-4742-9e3d-db685304d7ee)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<string>(90d24bad-9a66-49b4-ab1c-df678049a955)
+					{
+						script: "function()" \
+							"{" \
+							"	f:format_float(\"%.2f\", true, v:this->^.Price)" \
+							"}"
+					}
+					write: function<bool,string>(9dd23067-315e-4def-8e3d-df866d419ac6)
+					{
+						script: "function(v:arg0::string)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				textColor: #000000FF
+				font: font_resource(4ab957c2-38e2-49da-9136-5f21f4d6449a)
+				{
+					file: "LeagueSpartan-Bold.otf"
+					size: 20
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfLabel(89a5748d-7d70-4a7b-ab55-f63849667e4d)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Name"
+				visible: true
+				width: width@745d3b60-eab5-4eb9-8763-1269a27162c0 (propref<int>)
+				height: 38
+				x: 0
+				y: 170
+				text: "label"
+				textColor: #000000FF
+				font: font_resource(e175e2b6-05a6-4108-b841-4166b37fb964)
+				{
+					file: "LeagueSpartan-Bold.otf"
+					size: 20
+				}
+				horizontalAlign: 1
+				verticalAlign: 1
+			}]
+		name: "Container"
+		visible: true
+		width: height@745d3b60-eab5-4eb9-8763-1269a27162c0 (propref<int>)
+		height: 170
+		x: 0
+		y: 31
+		Price: 2F
+		onSelectionChanged: conditional_script(0709997c-875b-4469-aa77-e33a0607a439)
+		{
+			triggerList: trigger_list(81b57654-ff49-4253-a4a9-f4578efd34c6)
+			{
+				script: "v:this.selected"
+			}
+			onTrigger: function<bool,bool>(64b15bca-af1d-4165-95cc-168b9ac3a964)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	if(v:this.selected){" \
+					"		v:this->Back.borderThickness = 3;" \
+					"		v:this.whenSelected();" \
+					"	}" \
+					"	else{" \
+					"		v:this->Back.borderThickness = 0;" \
+					"		false" \
+					"	}" \
+					"}"
+			}
+		}
+		whenSelected: function<bool>(3edf6804-19da-42f7-945b-a800364af3b9)
+		{
+			script: "function()" \
+				"{" \
+				"	dp:SumToPay = v:this.Price;" \
+				"	false" \
+				"}"
+		}
+	}
+	x: x@745d3b60-eab5-4eb9-8763-1269a27162c0 (propref<int>)
+	y: y@745d3b60-eab5-4eb9-8763-1269a27162c0 (propref<int>)
+	text: text@89a5748d-7d70-4a7b-ab55-f63849667e4d (propref<string>)
+	Price: Price@745d3b60-eab5-4eb9-8763-1269a27162c0 (propref<float>)
+	image: image@1bb836a9-52c2-4c9c-85a1-dfb77dcc86e5 (propref<image>)
+	buttonId: buttonId@54c986aa-3e76-41b0-a5e8-ced487ebea78 (propref<int>)
+}
