@@ -1,0 +1,239 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(7456278c-b5c2-42a3-a1f6-9f11a3b0dfd1)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(d84e0ba4-d9ab-4c09-881f-f0e4b7e80dff)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(728f1560-8b8a-4c5d-a26f-fc18ac71cf65)
+				{
+					features: feature_list [
+						Border(0aa43fea-aa11-43ad-a0e0-68a6f615db37)
+						{
+							borderThickness: 5
+							borderColor: #000000FF
+							borderStyle: 0
+						}]
+					children: children_list [
+						GtfParallelAnimation(173f96a1-d89c-4c30-b8b3-b56d3f326dae)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(99093e23-5f93-4a8c-9417-7e6453115774)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve 2"
+									enabled: true
+									delay: 0
+									duration: 3000
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 0
+									end: 260
+									target: height@728f1560-8b8a-4c5d-a26f-fc18ac71cf65 (propref<int>)
+								}, 
+								GtfLinearInterpolationS32(ae08b858-1f3e-4dde-881b-1563fdbb812b)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve 1"
+									enabled: true
+									delay: 0
+									duration: 3000
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 740
+									end: 475
+									target: y@728f1560-8b8a-4c5d-a26f-fc18ac71cf65 (propref<int>)
+								}]
+							name: "Animation"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(7481aaa8-be5f-42d4-a493-95472385ec92)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(875c5167-5f51-4db7-88e4-2fbc877d6bca)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(44987137-8b61-4ce5-aa95-43e9e96364af)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							Play: conditional_script(e3d0797a-c246-490c-a618-72235ba7f965)
+							{
+								triggerList: trigger_list(7e4c4ab9-7951-4b58-8c71-b01fe70f7739)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(96cd6041-cbca-45ac-88ca-5cf4f4f91a9e)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	f:animation_play(v:this)" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "Fillcoffee"
+					visible: true
+					width: 200
+					height: 260
+					x: 145
+					y: 475
+					fillColor: #5C2803FF
+				}, 
+				GtfLabel(bb77aac0-27b4-43ea-879b-07873252f4d1)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfParallelAnimation(90f9da71-d6bd-435a-85f2-7f36660cb062)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(569357de-6eaf-4761-b330-01c651ef37ac)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve 4"
+									enabled: true
+									delay: 0
+									duration: 3000
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 0
+									end: 100
+									target: Percentage@bb77aac0-27b4-43ea-879b-07873252f4d1 (propref<int>)
+								}]
+							name: "Animation 1"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(516d60df-06cc-43bd-91b9-69fde5a6be9c)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(2526afcd-c3b1-41eb-8e24-f249e38a1f73)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(cda25a29-cbb1-4c67-a06b-01d5cf728596)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							Start: conditional_script(8f2c0cbe-392d-4f88-b740-8c9e9d2f8aaa)
+							{
+								triggerList: trigger_list(007ad3e4-409b-4fe7-bffa-db94f8ab504b)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(045b72b4-ccce-410e-8660-1204dca4c9cb)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	f:animation_play(v:this)" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "Your coffe"
+					visible: true
+					width: 363
+					height: 40
+					x: 70
+					y: 740
+					text: string_scriptedValue(638be7a9-3c91-4874-8d8d-691cea9e754e)
+					{
+						triggerList: trigger_list(d50a6621-4573-4f0e-ae4c-86fae6579758)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(fc2156bb-b919-405f-83c7-4d0183d031bc)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(ab72ed57-e960-4689-9206-5fdedb1d1b4b)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	\"Your coffee is ready: \" + f:int2string(v:this.Percentage) + \"%\"" \
+								"}"
+						}
+						write: function<bool,string>(60ad1a3d-a3e7-4dea-a9a4-69890f9eeda0)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(37bdfff3-a324-4271-8694-87e8ce141816)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+					Percentage: 0
+				}]
+			name: "Background"
+			visible: true
+			width: width@7456278c-b5c2-42a3-a1f6-9f11a3b0dfd1 (propref<int>)
+			height: height@7456278c-b5c2-42a3-a1f6-9f11a3b0dfd1 (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(5c48ba69-fa8c-4099-a09d-a42c16d26188)
+			{
+				file: "Prepare_background.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "Prepare_View"
+	visible: true
+	width: 480
+	height: 800
+	x: 0
+	y: 0
+}
