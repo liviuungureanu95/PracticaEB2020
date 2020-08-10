@@ -1,0 +1,276 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(ad2f1157-e0b5-4145-8aaf-53ce6e974823)
+{
+	features: feature_list [
+		TouchShortReleased(09b46346-0792-4df4-8749-ecb84cb6966c)
+		{
+			touchShortReleased: function<bool,int,int,int,int>(d9d2c6f0-d6f4-480e-9938-799bd2e1cd36)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    false" \
+					"}"
+			}
+		}, 
+		StateTouched(eb2be0ea-9225-4642-8a9c-c25b2ddadcca)
+		{
+			touchable: true
+			touched: false
+			touchPolicy: 0
+			touchBehavior: 0
+		}]
+	children: children_list [
+		GtfRectangle(0ee0ebbd-83ec-4eba-83c5-d612af0a19ee)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfInstantiator(1c81048e-352a-43b0-bf32-60ecaa0a9e3c)
+				{
+					features: feature_list [
+						LayoutPolicyBox(64ce19bc-ca54-4c4c-a795-83839a65250d)
+						{
+							gap: 20
+							layoutDirection: 1
+						}, 
+						LayoutMargins(a48ff5ed-bfeb-40eb-a6e2-cadc9508bd24)
+						{
+							leftMargin: 0
+							topMargin: 0
+							rightMargin: 0
+							bottomMargin: 0
+						}]
+					children: children_list [
+						GtfRectangle(106643f8-eed6-43f7-aed1-671c2162044c)
+						{
+							features: feature_list [
+								LineIndex(ce16a898-2c6b-4601-a397-fc666a08cb69)
+								{
+									lineIndex: 0
+								}, 
+								TouchShortReleased(941a937c-90d7-4a67-b5db-aa2564cfb1e2)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(d1098016-3752-4244-b360-2036bf1162ef)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	if(v:this->\"LabelNume\".text==\"Romania\")" \
+											"	{" \
+											"		dp:Buffer=dp:R_city" \
+											"	}" \
+											"	if(v:this->\"LabelNume\".text==\"Germania\")" \
+											"	{" \
+											"		dp:Buffer=dp:G_city" \
+											"	}" \
+											"	if(v:this->\"LabelNume\".text==\"Italia\")" \
+											"	{" \
+											"		dp:Buffer=dp:I_city" \
+											"	}" \
+											"	if(v:this->\"LabelNume\".text==\"Franta\")" \
+											"	{" \
+											"		dp:Buffer=dp:F_city" \
+											"	}" \
+											"	dp:Changed=!dp:Changed" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(1c256188-8a9b-4376-b654-3ce7b66504ed)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list [
+								GtfLabel(946f72f4-02b9-4ca2-93a1-944a4ce5c305)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "LabelNume"
+									visible: true
+									width: width@106643f8-eed6-43f7-aed1-671c2162044c (propref<int>)
+									height: 100
+									x: 0
+									y: 0
+									text: ""
+									textColor: #FFFFFFFF
+									font: font_resource(1c704ca3-9bbd-4e2f-b576-08e286f228b9)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 30
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+								}]
+							name: "Button"
+							visible: true
+							width: 200
+							height: 100
+							x: 100
+							y: 712
+							fillColor: #CD5C5CFF
+							"Conditional script 1": conditional_script(c7629a2f-719a-4c67-82fd-d9a197909082)
+							{
+								triggerList: trigger_list(e85e0a68-9883-4eaf-a660-4626204279af)
+								{
+									script: "v:this.lineIndex"
+								}
+								onTrigger: function<bool,bool>(4cc3b00a-9155-4aee-87ff-6166c992aba0)
+								{
+									script: "function(v:arg0::bool)" \
+										"{	" \
+										"	v:this->\"LabelNume\".text=dp:Tari[v:this.lineIndex];" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "Instantiator 1"
+					visible: true
+					width: 106
+					height: 325
+					x: 50
+					y: 11
+					numItems: 4
+					lineMapping: int_scriptedListValue(af7f2efd-4eee-41fa-b5ba-98d466dd33c5)
+					{
+						triggerList: trigger_list(d4b72b44-9013-4fc7-940f-39ddee67363a)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(0eeea50f-5ba7-41d4-a1d2-dcb991d98992)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						readList: function<int,int>(108ee795-adfd-45fd-baac-7bec09749c89)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	0" \
+								"}"
+						}
+						writeList: function<bool,int,int>(4c798a7a-6634-4290-9f1a-348cbcacf25f)
+						{
+							script: "function(v:arg0::int, v:arg1::int)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						getListLength: function<int>(e639395b-e84d-4fcb-b28d-c87a0e0e38ea)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	0" \
+								"}"
+						}
+					}
+				}, 
+				GtfInstantiator(c8a988e7-268d-403e-942d-cfd515f96452)
+				{
+					features: feature_list [
+						LayoutPolicyBox(18896105-3bb2-4965-987f-2b835af89971)
+						{
+							gap: 10
+							layoutDirection: 1
+						}, 
+						LayoutMargins(cfb7ac0a-a02a-4bee-a858-0b96af9460ff)
+						{
+							leftMargin: 0
+							topMargin: 0
+							rightMargin: 0
+							bottomMargin: 0
+						}]
+					children: children_list [
+						GtfRectangle(26b8fc09-6b76-40bd-b631-2946040e0bc8)
+						{
+							features: feature_list [
+								LineIndex(ff1faaee-0c34-4a2b-b835-7bc31fea7d22)
+								{
+									lineIndex: 0
+								}, 
+								StateTouched(631de307-5ecc-402f-a13c-5a72f869258f)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list [
+								GtfLabel(eae7521e-2796-4ac5-affe-e2318eed637a)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Label 1"
+									visible: true
+									width: width@26b8fc09-6b76-40bd-b631-2946040e0bc8 (propref<int>)
+									height: height@26b8fc09-6b76-40bd-b631-2946040e0bc8 (propref<int>)
+									x: 0
+									y: 0
+									text: "label"
+									textColor: #FFFFFFFF
+									font: font_resource(44105aec-2d86-4c0c-ac2a-c5782239cab1)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 30
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+								}]
+							name: "Rectangle 1"
+							visible: true
+							width: 200
+							height: 75
+							x: 0
+							y: 0
+							fillColor: #A9A9A9FF
+							"Conditional script 2": conditional_script(32c4b8ba-6ce1-41f5-9738-6d55045cdf72)
+							{
+								triggerList: trigger_list(6d4fedda-ef44-48f3-ba75-04239e1f34a7)
+								{
+									script: "v:this.lineIndex" \
+										"dp:Changed"
+								}
+								onTrigger: function<bool,bool>(6385352d-f222-410a-b39b-7cbeeb61b750)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	" \
+										"	v:this->\"Label 1\".text=dp:Buffer[v:this.lineIndex];" \
+										"	" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "Instantiator 2"
+					visible: true
+					width: 100
+					height: 100
+					x: 400
+					y: 20
+					numItems: 5
+					lineMapping: intlist []
+				}]
+			name: "background"
+			visible: true
+			width: width@ad2f1157-e0b5-4145-8aaf-53ce6e974823 (propref<int>)
+			height: height@ad2f1157-e0b5-4145-8aaf-53ce6e974823 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #F0E68CFF
+		}]
+	name: "View 1"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
