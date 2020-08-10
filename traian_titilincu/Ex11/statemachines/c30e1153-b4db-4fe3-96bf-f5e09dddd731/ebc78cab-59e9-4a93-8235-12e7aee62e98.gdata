@@ -1,0 +1,139 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_compound_state(ebc78cab-59e9-4a93-8235-12e7aee62e98)
+{
+	x: 340
+	y: 83
+	width: 600
+	height: 400
+	name: "Cycles Compound State"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions []
+	internal_transitions: haptic_internal_transitions [
+		haptic_internal_transition(7659cd54-aa96-41bc-894a-62dcfd400dc9)
+		{
+			event: @29fcdd84-97d5-4bda-be04-5d7bdb066e2d (objectref<event>)
+			condition: function<bool>(none)
+			action: function<void>(4b3d473a-349a-45bb-9007-eb49310b5b23)
+			{
+				script: "function()" \
+					"{" \
+					"	f:popDynamicStateMachine(popup_stack:Main, sm:Error)" \
+					"}"
+			}
+		}]
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(54e81cb8-684b-4654-92fe-00be27ed6af9)
+		{
+			x: 162
+			y: 42
+			width: 100
+			height: 100
+			name: "Verify State"
+			entry_action: function<void>(fd3005a6-eaf4-49af-a036-3cbbd03f0d5a)
+			{
+				script: "function()" \
+					"{" \
+					"	fire_delayed 3000, ev:goTo_check()" \
+					"}"
+			}
+			exit_action: function<void>(none)
+			transitions: haptic_transitions [
+				haptic_transition(c00c0a6d-662f-4bc4-857a-714525d5df7d)
+				{
+					action: function<void>(472d0e38-9f6e-456b-b8d8-64dedabfcaf7)
+					{
+						script: "function()" \
+							"{" \
+							"	if(dp:isClosedDoor == false) " \
+							"	{" \
+							"		f:pushDynamicStateMachine(popup_stack:Main, sm:Error, 0)" \
+							"		dp:error_message = \"The door is not closed!\"" \
+							"	}" \
+							"	else if (dp:isDetergent == false)" \
+							"	{" \
+							"		f:pushDynamicStateMachine(popup_stack:Main, sm:Error, 0)" \
+							"		dp:error_message = \"Please insert detergent!\"" \
+							"	}" \
+							"	else if (dp:isWater == false)" \
+							"	{" \
+							"		f:pushDynamicStateMachine(popup_stack:Main, sm:Error, 0)" \
+							"		dp:error_message = \"Water not connected!\"" \
+							"	}" \
+							"}"
+					}
+					target_state: @03c3baed-920c-47ea-915b-ba6dc8bc76ac (objectref<haptic_dialog_state>)
+					source_dock: 0.2442497F
+					target_dock: 0.7614844F
+					curveControlXOffset: 0
+					curveControlYOffset: 0
+					labelXOffset: 10
+					labelYOffset: -10
+					labelRotationAngle: 0
+					event: @7b483c6e-6c33-490b-83c7-5b1ae2c793b5 (objectref<event>)
+					condition: function<bool>(none)
+				}]
+			internal_transitions: haptic_internal_transitions [
+				haptic_internal_transition(99362a07-5525-4115-a1fe-cf68c6bd8f99)
+				{
+					event: @f2ffb065-bf21-4b67-bfeb-6490d9096f04 (objectref<event>)
+					condition: function<bool>(none)
+					action: function<void>(e6f36fc5-7560-41d4-a14d-4572614299d7)
+					{
+						script: "function()" \
+							"{" \
+							"	// Configure the following parameters:" \
+							"//   - state - the state with dynamic state list" \
+							"//   - sm - the dynamic state machine" \
+							"f:popDynamicStateMachine(popup_stack:Main, sm:Error)" \
+							"" \
+							"}"
+					}
+				}]
+			background_color: #6C6C6CFF
+			dialog: (fcf4973d-befe-47c4-9383-eabb6601599c)
+			priority_stack: priority_stack(none)
+		}, 
+		haptic_dialog_state(03c3baed-920c-47ea-915b-ba6dc8bc76ac)
+		{
+			x: 385
+			y: 44
+			width: 100
+			height: 100
+			name: "View state 1"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (7f9478c3-04ce-4195-bdfa-31eb6f190a3e)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(d3f846b7-0f42-4a0f-ac59-1c92269a758e)
+	{
+		x: 53
+		y: 92
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(48ea8466-6f27-49a2-adfa-1bdc1197ef3c)
+		{
+			action: function<void>(none)
+			target_state: @54e81cb8-684b-4654-92fe-00be27ed6af9 (objectref<haptic_dialog_state>)
+			source_dock: 0.2632324F
+			target_dock: 0.7814165F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(0aefa474-d34c-4450-9995-bed5fece15dd)
+	{
+	}
+}

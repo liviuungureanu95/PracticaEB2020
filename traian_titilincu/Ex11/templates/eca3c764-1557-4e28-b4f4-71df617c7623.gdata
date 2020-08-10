@@ -1,0 +1,169 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(eca3c764-1557-4e28-b4f4-71df617c7623)
+{
+	name: "Verify"
+	structure: GtfContainer(66c0f8e2-dc74-4170-bd61-db48f0418d34)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(162b8f39-a0f3-4e05-9139-2ce98e589f3d)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfImage(62404407-894f-44d9-9cbf-e3fb89ef64cb)
+					{
+						features: feature_list [
+							ScaleMode(54d3f94e-28e6-4a73-aa3a-e57e9b1cafc7)
+							{
+								scaleMode: 2
+							}, 
+							Rotation(2219009b-4fb5-47d1-bc91-74ecf586eaa1)
+							{
+								rotationEnabled: true
+								rotationAngleX: 0F
+								rotationAngleY: 0F
+								rotationAngleZ: 0F
+							}, 
+							Scaling(d57abfc8-005f-416e-845b-a4d56345cb03)
+							{
+								scalingEnabled: true
+								scalingX: 100F
+								scalingY: 100F
+								scalingZ: 100F
+							}, 
+							Shearing(4c3b3558-0924-4bb9-8d6f-3af5981abe97)
+							{
+								shearingEnabled: true
+								shearingXbyY: 0F
+								shearingXbyZ: 0F
+								shearingYbyX: 0F
+								shearingYbyZ: 0F
+								shearingZbyX: 0F
+								shearingZbyY: 0F
+							}, 
+							Pivot(e8ee45e2-72e3-411a-b854-cac2f18cedd1)
+							{
+								pivotX: 50F
+								pivotY: 50F
+								pivotZ: 50F
+							}]
+						children: children_list [
+							GtfParallelAnimation(a39b7778-c1bb-4a8f-8455-2d39363feae7)
+							{
+								features: feature_list []
+								children: children_list [
+									GtfLinearInterpolationFloat(f9c18f9a-234d-4524-bd83-9fd02af08ad7)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "rotate"
+										enabled: true
+										delay: 0
+										duration: 1000
+										repeat: 1
+										alternating: false
+										relative: false
+										start: 0F
+										end: -360F
+										target: rotationAngleZ@2219009b-4fb5-47d1-bc91-74ecf586eaa1 (propref<float>)
+									}]
+								name: "Animation 1"
+								enabled: true
+								repeat: 10
+								alternating: false
+								scale: 1F
+								onPlay: function<void,int,bool>(650dabc6-4c52-42ff-93b4-2aaa94a7004a)
+								{
+									script: "function(v:animation_time::int, v:forward::bool)" \
+										"{" \
+										"" \
+										"}"
+								}
+								onPause: function<void,int>(906cd752-f385-4ff8-ac49-397717003eef)
+								{
+									script: "function(v:animation_time::int)" \
+										"{" \
+										"" \
+										"}"
+								}
+								onTerminate: function<void,int,int>(ae8cb1b3-da91-4f15-8fa6-c8d30f94e092)
+								{
+									script: "function(v:animation_time::int, v:terminate::int)" \
+										"{" \
+										"" \
+										"}"
+								}
+								start: conditional_script(e629c693-9d37-4a24-a54d-7dfc113273b4)
+								{
+									triggerList: trigger_list(d77c85f5-65a4-4abd-b83f-b1ff582df0a5)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(aad9c029-5838-44d3-9523-8164952361b2)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	f:animation_play(v:this)" \
+											"	false" \
+											"}"
+									}
+								}
+							}]
+						name: "loading wheel"
+						visible: true
+						width: 100
+						height: 100
+						x: 349
+						y: 148
+						image: image_resource(008e55cc-09d9-4ac1-a3fb-57d102934049)
+						{
+							file: "loading wheel.png"
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+					}, 
+					GtfLabel(b8c1f56a-f9e7-4a9b-9597-310d03a8124c)
+					{
+						features: feature_list [
+							StateTouched(8c692a80-bbc2-4d54-b389-fd910703f061)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list []
+						name: "Label 2"
+						visible: true
+						width: width@66c0f8e2-dc74-4170-bd61-db48f0418d34 (propref<int>)
+						height: 100
+						x: -2
+						y: 229
+						text: "Initializing program"
+						textColor: #FFFFFFFF
+						font: font_resource(8c03c0bd-8015-4001-9973-45da4eabf97b)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 40
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "Rectangle 2"
+				visible: true
+				width: width@66c0f8e2-dc74-4170-bd61-db48f0418d34 (propref<int>)
+				height: height@66c0f8e2-dc74-4170-bd61-db48f0418d34 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #00008BFF
+			}]
+		name: "Verify Container"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+	}
+}

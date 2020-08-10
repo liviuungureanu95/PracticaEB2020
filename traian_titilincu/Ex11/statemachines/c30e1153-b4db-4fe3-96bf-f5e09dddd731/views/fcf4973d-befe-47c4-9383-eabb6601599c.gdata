@@ -1,0 +1,42 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(fcf4973d-befe-47c4-9383-eabb6601599c)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(ba94572b-ae95-47d3-a9e0-33f6b2b93414)
+		{
+			name: "Verify 1"
+			template: @eca3c764-1557-4e28-b4f4-71df617c7623 (objectref<GtfContainer_template>)
+			children: children_list []
+		}]
+	name: "Verify View"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+	showError: conditional_script(e33b84f3-ac19-4c57-a271-0ea39ec02412)
+	{
+		triggerList: trigger_list(df13ab1d-f801-456e-a862-724e634fa1f0)
+		{
+			script: "ev:showError"
+		}
+		onTrigger: function<bool,bool>(e569fdb0-730e-4028-8006-7465ac76baac)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	match_event v:event = ev:showError in" \
+				"{// Configure the following parameters:" \
+				"//   - popup_stack - the state with dynamic state list" \
+				"//   - sm - the dynamic state machine" \
+				"//   - priority - priority of the dynamic state machine" \
+				"f:pushDynamicStateMachine(popup_stack:\"Cycles Compound State\", sm:Error, 0)" \
+				"" \
+				"}" \
+				"// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+}
