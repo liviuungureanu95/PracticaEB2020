@@ -1,0 +1,129 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(19c5fc91-7992-41b9-9d06-c8e48de347e7)
+{
+	name: "ScrollList"
+	structure: GtfContainer(254eac30-d1ff-487f-a7ef-58d482b099e4)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfInstantiator(c79f0255-c349-4c26-9830-7f395f9e3d30)
+			{
+				features: feature_list [
+					LayoutPolicyFlow(9a75cfec-5dbf-460e-b0cd-9a9a026abda9)
+					{
+						horizontalGap: 0
+						verticalGap: 0
+						layoutDirection: 0
+						horizontalChildAlign: 0
+						verticalChildAlign: 0
+					}, 
+					ViewPort(923d7d65-4196-4e3f-a474-c0eea22ef71d)
+					{
+						xOffset: 0
+						yOffset: 0
+					}]
+				children: children_list [
+					GtfContainer(305e3c68-ce0e-49cd-af73-c77472d9710a)
+					{
+						features: feature_list [
+							LineIndex(3235cc14-7566-47cb-8740-0ea28e781ad1)
+							{
+								lineIndex: 0
+							}]
+						children: children_list [
+							GtfContainer_template_instance(b18cc795-87a2-4078-8bb6-82b589a3150d)
+							{
+								name: "ImageButton"
+								template: @cd8da3ad-9e5a-44f6-84b6-3cc2da3b091c (objectref<GtfContainer_template>)
+								children: children_list []
+								buttonColor: buttonColor@cd8da3ad-9e5a-44f6-84b6-3cc2da3b091c (propref<colorlist>)
+								onReleaseAction: callButtonAction@305e3c68-ce0e-49cd-af73-c77472d9710a (propref<function<bool>>)
+								x: x@cd8da3ad-9e5a-44f6-84b6-3cc2da3b091c (propref<int>)
+								y: y@cd8da3ad-9e5a-44f6-84b6-3cc2da3b091c (propref<int>)
+								height: width@305e3c68-ce0e-49cd-af73-c77472d9710a (propref<int>)
+								width: height@305e3c68-ce0e-49cd-af73-c77472d9710a (propref<int>)
+								text: text@cd8da3ad-9e5a-44f6-84b6-3cc2da3b091c (propref<string>)
+								image: image@cd8da3ad-9e5a-44f6-84b6-3cc2da3b091c (propref<image>)
+							}]
+						name: "Container"
+						visible: true
+						width: 150
+						height: 150
+						x: 0
+						y: 0
+						callButtonAction: function<bool>(4ce1519f-2844-4140-b5b9-a4f96fa1327f)
+						{
+							script: "function()" \
+								"{" \
+								"	fire ev:scrollButtonEvent(v:this.lineIndex)" \
+								"	false" \
+								"}"
+						}
+						setItems: conditional_script(d1dd5afa-1056-42b2-85d3-a2b71b87874b)
+						{
+							triggerList: trigger_list(59d288d7-9fc4-4d1d-80a2-5423fa179748)
+							{
+								script: "v:this->^->^.itemImages" \
+									"v:this->^->^.itemNames" \
+									"v:this.lineIndex"
+							}
+							onTrigger: function<bool,bool>(33fe0490-7f81-4a1a-875b-e13f6d4efeb9)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	v:this->ImageButton.text = v:this->^->^.itemNames[v:this.lineIndex]" \
+									"	v:this->ImageButton.image = v:this->^->^.itemImages[v:this.lineIndex]" \
+									"	false" \
+									"}"
+							}
+						}
+					}]
+				name: "List"
+				visible: true
+				width: width@254eac30-d1ff-487f-a7ef-58d482b099e4 (propref<int>)
+				height: height@254eac30-d1ff-487f-a7ef-58d482b099e4 (propref<int>)
+				x: 0
+				y: 0
+				numItems: 0
+				lineMapping: intlist []
+				setNumItems: conditional_script(fa1dedf2-ba1a-4fca-9c88-49e32f88ed19)
+				{
+					triggerList: trigger_list(92aa2b76-c600-43a9-8ff6-0b2250af2285)
+					{
+						script: "v:this->^.itemNames" \
+							"v:this->^.itemImages" \
+							"v:this.numItems"
+					}
+					onTrigger: function<bool,bool>(fbfc37dd-378e-4d8e-aa29-e96fcc8e9b58)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	v:this.numItems = length v:this->^.itemNames" \
+							"	false" \
+							"}"
+					}
+				}
+			}]
+		name: "Container"
+		visible: true
+		width: 450
+		height: 320
+		x: 0
+		y: 0
+		itemImages: imagelist []
+		itemNames: stringlist ["a", "b", "c", "d", "e", "f", "g", "h", "j"]
+		buttonWidth: 150
+		buttonHeight: 150
+	}
+	yOffset: yOffset@923d7d65-4196-4e3f-a474-c0eea22ef71d (propref<int>)
+	buttonHeight: buttonHeight@254eac30-d1ff-487f-a7ef-58d482b099e4 (propref<int>)
+	buttonWidth: buttonWidth@254eac30-d1ff-487f-a7ef-58d482b099e4 (propref<int>)
+	itemNames: itemNames@254eac30-d1ff-487f-a7ef-58d482b099e4 (propref<stringlist>)
+	itemImages: itemImages@254eac30-d1ff-487f-a7ef-58d482b099e4 (propref<imagelist>)
+	numItems: numItems@c79f0255-c349-4c26-9830-7f395f9e3d30 (propref<int>)
+	y: y@254eac30-d1ff-487f-a7ef-58d482b099e4 (propref<int>)
+	x: x@254eac30-d1ff-487f-a7ef-58d482b099e4 (propref<int>)
+	height: height@254eac30-d1ff-487f-a7ef-58d482b099e4 (propref<int>)
+	width: width@254eac30-d1ff-487f-a7ef-58d482b099e4 (propref<int>)
+}

@@ -1,0 +1,171 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(9aa59a14-096a-4930-b336-bb385249ab3c)
+{
+	name: "TextButton"
+	structure: GtfContainer(cc25da7b-292a-4aa8-bbc1-08281b3ff7b3)
+	{
+		features: feature_list [
+			MoveOut(4a5b27a3-d142-4ed0-afef-ac0c7c834153)
+			{
+				moveOut: function<bool,int,int,int,int>(b1ec3ddf-1931-4566-b83b-4055d9360e06)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.onMoveOutStyle()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			MoveIn(f3b9e2e9-398f-47e8-8a34-5624090e6586)
+			{
+				moveIn: function<bool,int,int,int,int>(a5b2d5e6-7424-4848-af5f-789dfa454c97)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.onMoveInStyle()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchPressed(7f19b343-c9cf-4c13-8402-454f5c715cac)
+			{
+				touchPressed: function<bool,int,int,int,int>(e9bfcedf-8027-4080-bd93-6d999c59e168)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.onPressStyle()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(70d91330-4307-470b-bf5b-172ecf0030ca)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(954ed8e9-09bd-445e-8b75-7997b505c771)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.onReleaseStyle()" \
+						"	v:this.onReleaseAction()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(7075cad5-429e-4028-8851-770cbb65644b)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(292d9380-915e-46f1-8409-8bcf94099c33)
+			{
+				features: feature_list [
+					Border(dfd8963c-eac3-4958-acc8-1881acfd1d69)
+					{
+						borderThickness: 2
+						borderColor: currentColor@cc25da7b-292a-4aa8-bbc1-08281b3ff7b3 (propref<color>)
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "Border"
+				visible: true
+				width: width@cc25da7b-292a-4aa8-bbc1-08281b3ff7b3 (propref<int>)
+				height: height@cc25da7b-292a-4aa8-bbc1-08281b3ff7b3 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFFFF
+			}, 
+			GtfLabel(847bc463-6d50-499a-ade5-9c15fdb186e9)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Text"
+				visible: true
+				width: width@cc25da7b-292a-4aa8-bbc1-08281b3ff7b3 (propref<int>)
+				height: height@cc25da7b-292a-4aa8-bbc1-08281b3ff7b3 (propref<int>)
+				x: 0
+				y: 0
+				text: "label"
+				textColor: currentColor@cc25da7b-292a-4aa8-bbc1-08281b3ff7b3 (propref<color>)
+				font: font_resource(3e448332-8abe-4e00-b41a-9b0809861ba7)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 60
+		height: 40
+		x: 0
+		y: 0
+		currentColor: #A9A9A9FF
+		buttonColor: colorlist [#008000FF, #FFA500FF, #00BFFFFF]
+		onInit: conditional_script(dfa8ffe8-6a63-4754-87ee-1be7527c7b25)
+		{
+			triggerList: trigger_list(1f5a5ddc-741f-4115-a66b-bcd0eb6266e0)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(4173620b-645b-4920-94f5-eb08c4b4bf12)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	v:this.currentColor = v:this.buttonColor[0]" \
+					"	false" \
+					"}"
+			}
+		}
+		onMoveInStyle: function<bool>(c9bfd139-de57-4926-9dbd-208df66e609c)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.currentColor = v:this.buttonColor[1]" \
+				"	false" \
+				"}"
+		}
+		onMoveOutStyle: function<bool>(3b4add65-e4c3-4ccd-afc3-21e964a73c5f)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.currentColor = v:this.buttonColor[0]" \
+				"	false" \
+				"}"
+		}
+		onPressStyle: function<bool>(c7c50d6f-13b3-4304-b501-8eef096e5e8c)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.currentColor = v:this.buttonColor[2]" \
+				"	false" \
+				"}"
+		}
+		onReleaseStyle: function<bool>(8a7485d1-88a5-4d17-a327-28ef5223f727)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.currentColor = v:this.buttonColor[1]" \
+				"	false" \
+				"}"
+		}
+		onReleaseAction: function<bool>(aeca9b27-09f9-4170-96ee-bc529bd3e086)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.currentColor = v:this.buttonColor[1]" \
+				"	false" \
+				"}"
+		}
+	}
+	buttonColor: buttonColor@cc25da7b-292a-4aa8-bbc1-08281b3ff7b3 (propref<colorlist>)
+	onReleaseAction: onReleaseAction@cc25da7b-292a-4aa8-bbc1-08281b3ff7b3 (propref<function<bool>>)
+	x: x@cc25da7b-292a-4aa8-bbc1-08281b3ff7b3 (propref<int>)
+	y: y@cc25da7b-292a-4aa8-bbc1-08281b3ff7b3 (propref<int>)
+	height: height@cc25da7b-292a-4aa8-bbc1-08281b3ff7b3 (propref<int>)
+	width: width@cc25da7b-292a-4aa8-bbc1-08281b3ff7b3 (propref<int>)
+	text: text@847bc463-6d50-499a-ade5-9c15fdb186e9 (propref<string>)
+}
