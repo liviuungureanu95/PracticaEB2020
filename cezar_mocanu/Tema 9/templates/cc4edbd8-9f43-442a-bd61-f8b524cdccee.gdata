@@ -1,0 +1,193 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(cc4edbd8-9f43-442a-bd61-f8b524cdccee)
+{
+	name: "FillingBar"
+	structure: GtfContainer(f967d509-4fc7-4e8e-b3e0-834cb875a3b2)
+	{
+		features: feature_list [
+			ViewPort(5dd03f11-d24f-4233-96b2-8bac86cd7d1f)
+			{
+				xOffset: 0
+				yOffset: 0
+			}]
+		children: children_list [
+			GtfRectangle(d0c4d7f6-c35f-4d12-9a4e-6f0b75295979)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Bar"
+				visible: true
+				width: 100
+				height: height@f967d509-4fc7-4e8e-b3e0-834cb875a3b2 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: coloration@f967d509-4fc7-4e8e-b3e0-834cb875a3b2 (propref<color>)
+			}, 
+			GtfContainer_template_instance(d4b930fc-93ed-4a7a-b582-e4311b7ab81a)
+			{
+				name: "Wave"
+				template: @a8441eac-a2dd-4d95-8961-f119a3ef0d7e (objectref<GtfContainer_template>)
+				children: children_list []
+				x: x@a8441eac-a2dd-4d95-8961-f119a3ef0d7e (propref<int>)
+				y: int_scriptedValue(67cf0421-cfb2-42d6-b565-c802f3b79327)
+				{
+					triggerList: trigger_list(7afe2ddc-3f14-4d9b-8811-a8a7b3300d2f)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(5c2bbcf3-c994-4c7e-891d-68da8ecf715e)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(c83fa427-00b2-4537-b559-387325f9ae95)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^->Bar.y - v:this.height" \
+							"	" \
+							"}"
+					}
+					write: function<bool,int>(027e8fdc-47dc-45c7-927e-c0a922b058a2)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				height: height@a8441eac-a2dd-4d95-8961-f119a3ef0d7e (propref<int>)
+				width: width@f967d509-4fc7-4e8e-b3e0-834cb875a3b2 (propref<int>)
+				coloration: coloration@f967d509-4fc7-4e8e-b3e0-834cb875a3b2 (propref<color>)
+			}, 
+			GtfParallelAnimation(e8cb6dd1-22d9-42bf-8732-940657628ac6)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLinearInterpolationS32(ea351354-9a98-43f2-9d5b-1125a6374184)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Linear interpolation curve 2"
+						enabled: true
+						delay: 0
+						duration: int_scriptedValue(2b116fb1-8132-4c17-af92-d1263b607286)
+						{
+							triggerList: trigger_list(2d3f3b05-e5ad-41aa-b68b-3fd5b8398402)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(aa82fc58-a188-41d9-8f2c-688433b1a3e4)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<int>(a62b3d54-5f35-4b27-bf06-da42c621439f)
+							{
+								script: "function()" \
+									"{" \
+									"	v:this->^->^.loadingTime * 1000" \
+									"}"
+							}
+							write: function<bool,int>(725c0627-c907-456e-8aa5-08a2b2a5f99f)
+							{
+								script: "function(v:arg0::int)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						repeat: 1
+						alternating: false
+						relative: false
+						start: height@f967d509-4fc7-4e8e-b3e0-834cb875a3b2 (propref<int>)
+						end: height@d4b930fc-93ed-4a7a-b582-e4311b7ab81a (propref<int>)
+						target: y@d0c4d7f6-c35f-4d12-9a4e-6f0b75295979 (propref<int>)
+					}]
+				name: "Fill"
+				enabled: true
+				repeat: 0
+				alternating: false
+				scale: 1F
+				onPlay: function<void,int,bool>(af9fcebb-a369-4484-9490-23d407be3f6a)
+				{
+					script: "function(v:animation_time::int, v:forward::bool)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onPause: function<void,int>(1082846c-976a-4ce3-b811-ccafd955f7b2)
+				{
+					script: "function(v:animation_time::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onTerminate: function<void,int,int>(7212eb11-b5b9-4609-be1b-75ed19b2fac0)
+				{
+					script: "function(v:animation_time::int, v:terminate::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+			}]
+		name: "Container"
+		visible: true
+		width: 100
+		height: 300
+		x: 0
+		y: 0
+		animationStarted: false
+		changeAnimationStatus: conditional_script(ac35e03f-5635-46c2-abb5-642cdbde2e76)
+		{
+			triggerList: trigger_list(f04562c2-6119-4c3a-a4fe-c91c4a785103)
+			{
+				script: "v:this.animationStarted"
+			}
+			onTrigger: function<bool,bool>(edbe3afb-5b5f-4d86-a050-7f525aa71a2a)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	if(v:this.animationStarted)" \
+					"		f:animation_play(v:this->Fill)" \
+					"	else" \
+					"		f:animation_cancel_reset(v:this->Fill)" \
+					"	true" \
+					"}"
+			}
+		}
+		onInit: conditional_script(0e76a01a-7b8a-4b85-bccb-90b65e6455d7)
+		{
+			triggerList: trigger_list(a7643f78-23f1-4a7a-85de-357dda8dd38d)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(59f31a03-3ab4-4ba4-8853-4a80f324caf9)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	v:this->Bar.y = -v:this.height" \
+					"	false" \
+					"}"
+			}
+		}
+		coloration: #A9A9A9FF
+		loadingTime: 1
+	}
+	x: x@f967d509-4fc7-4e8e-b3e0-834cb875a3b2 (propref<int>)
+	y: y@f967d509-4fc7-4e8e-b3e0-834cb875a3b2 (propref<int>)
+	width: width@f967d509-4fc7-4e8e-b3e0-834cb875a3b2 (propref<int>)
+	height: height@f967d509-4fc7-4e8e-b3e0-834cb875a3b2 (propref<int>)
+	animationStarted: animationStarted@f967d509-4fc7-4e8e-b3e0-834cb875a3b2 (propref<bool>)
+	coloration: coloration@f967d509-4fc7-4e8e-b3e0-834cb875a3b2 (propref<color>)
+	loadingTime: loadingTime@f967d509-4fc7-4e8e-b3e0-834cb875a3b2 (propref<int>)
+}

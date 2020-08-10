@@ -1,0 +1,202 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(a8441eac-a2dd-4d95-8961-f119a3ef0d7e)
+{
+	name: "Wave"
+	structure: GtfContainer(0962f029-4178-4692-9540-dc8f3a87c4ff)
+	{
+		features: feature_list [
+			ViewPort(3eaa24b1-6fc3-4329-ba28-1eb370de5bdf)
+			{
+				xOffset: 0
+				yOffset: 0
+			}]
+		children: children_list [
+			GtfImage(5c09d5cf-b221-4727-8726-f6e7569b07c0)
+			{
+				features: feature_list [
+					ScaleMode(f4df91b9-2c19-430d-9564-331ecd66062e)
+					{
+						scaleMode: 1
+					}, 
+					Coloration(a7531291-8113-47bb-8008-d55bee8981ac)
+					{
+						colorationEnabled: true
+						colorationColor: coloration@0962f029-4178-4692-9540-dc8f3a87c4ff (propref<color>)
+					}]
+				children: children_list []
+				name: "Sprite1"
+				visible: true
+				width: width@0962f029-4178-4692-9540-dc8f3a87c4ff (propref<int>)
+				height: height@0962f029-4178-4692-9540-dc8f3a87c4ff (propref<int>)
+				x: int_scriptedValue(e1af6bb1-0d26-4711-979b-df75f84d62e3)
+				{
+					triggerList: trigger_list(bc83a67b-3e04-4b6e-adee-35f7c0a3849e)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(df93ff63-c66b-4df1-8805-10e10e42c9c8)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(ec76c59c-e7e4-4420-93d0-fd49fbb017ea)
+					{
+						script: "function()" \
+							"{" \
+							"	-v:this.width + v:this->^.animationOffsetX" \
+							"}"
+					}
+					write: function<bool,int>(3f5092e7-a696-40f2-b05a-80bf3def587a)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				y: 0
+				image: image_resource(eb3e902b-3119-4b07-9283-e3629aa1ab71)
+				{
+					file: "wave.png"
+				}
+				sRGB: false
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfImage(9e85f4da-433e-47d0-8e30-a3be737bcde0)
+			{
+				features: feature_list [
+					ScaleMode(1946e956-b02a-46af-8cd7-92b158f3a89d)
+					{
+						scaleMode: 1
+					}, 
+					Coloration(fb69629d-af94-4c9e-8a95-4f9c6d85a1c9)
+					{
+						colorationEnabled: true
+						colorationColor: coloration@0962f029-4178-4692-9540-dc8f3a87c4ff (propref<color>)
+					}]
+				children: children_list []
+				name: "Sprite2"
+				visible: true
+				width: width@0962f029-4178-4692-9540-dc8f3a87c4ff (propref<int>)
+				height: height@0962f029-4178-4692-9540-dc8f3a87c4ff (propref<int>)
+				x: int_scriptedValue(1fcc742f-a8ac-4305-993f-193d4ead6b83)
+				{
+					triggerList: trigger_list(9ee85be6-8275-471f-8b8e-2bf34801655c)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(e992da68-0bcd-4237-8cc7-f07bc90ef32b)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(5367a29c-3ce6-4ef7-9998-77015381d7b0)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.animationOffsetX" \
+							"}"
+					}
+					write: function<bool,int>(7d58b6e7-95f6-4525-9f14-e0d1e163d492)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				y: 0
+				image: image_resource(603cc256-1f6e-4823-9861-b1ac366c4314)
+				{
+					file: "wave.png"
+				}
+				sRGB: false
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfParallelAnimation(179a0849-42f8-4005-9a15-a948b1822340)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLinearInterpolationS32(9ca4ae23-0a3f-4122-983d-6870d8142870)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Flow"
+						enabled: true
+						delay: 0
+						duration: 1000
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 0
+						end: width@0962f029-4178-4692-9540-dc8f3a87c4ff (propref<int>)
+						target: animationOffsetX@0962f029-4178-4692-9540-dc8f3a87c4ff (propref<int>)
+					}]
+				name: "Flow"
+				enabled: true
+				repeat: 0
+				alternating: false
+				scale: 1F
+				onPlay: function<void,int,bool>(8d5c3745-8ce1-43de-bb58-784be181f5e2)
+				{
+					script: "function(v:animation_time::int, v:forward::bool)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onPause: function<void,int>(dff1b2ee-b195-4a74-9be1-6a9075799692)
+				{
+					script: "function(v:animation_time::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onTerminate: function<void,int,int>(4f6a1b4d-0e02-4a00-b8b5-ab3e7aa5a220)
+				{
+					script: "function(v:animation_time::int, v:terminate::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+			}]
+		name: "Container"
+		visible: true
+		width: 100
+		height: 50
+		x: 0
+		y: 0
+		animationOffsetX: 0
+		onInit: conditional_script(f6c5dd03-94e7-44a0-8a72-f0ca3314240e)
+		{
+			triggerList: trigger_list(64b2aeac-32e8-4231-a002-a62d583fbe1a)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(ab24e611-62af-40d0-8d8d-4edba2a9a1fc)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	f:animation_play(v:this->Flow)" \
+					"	false" \
+					"}"
+			}
+		}
+		coloration: #A9A9A9FF
+	}
+	x: x@0962f029-4178-4692-9540-dc8f3a87c4ff (propref<int>)
+	y: y@0962f029-4178-4692-9540-dc8f3a87c4ff (propref<int>)
+	height: height@0962f029-4178-4692-9540-dc8f3a87c4ff (propref<int>)
+	width: width@0962f029-4178-4692-9540-dc8f3a87c4ff (propref<int>)
+	coloration: coloration@0962f029-4178-4692-9540-dc8f3a87c4ff (propref<color>)
+}

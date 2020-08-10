@@ -1,0 +1,66 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(472ec2fd-032c-4fb0-bf06-97c05a44cab2)
+{
+	name: "InstructionViewState"
+	structure: GtfView(919daacd-e032-4a9b-96e6-51b5200f34d0)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(47d36a22-633b-4e98-8b0d-d7282c53e6ab)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: 480
+				height: 320
+				x: 0
+				y: 0
+				fillColor: #2B2B2BFF
+			}, 
+			GtfLabel(e98b41ce-e250-49d9-b398-47518453073b)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Instruction"
+				visible: true
+				width: 480
+				height: 40
+				x: 0
+				y: 0
+				text: "Choose a fuel type"
+				textColor: #FFFFFFFF
+				font: font_resource(7f05ec14-70ef-4d04-85f1-0971539aaa7d)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfContainer_template_instance(e412bd89-08b2-45aa-af89-9ff71d488003)
+			{
+				name: "Back"
+				template: @0456fc80-1574-4624-b9bb-79fd83569ef0 (objectref<GtfContainer_template>)
+				children: children_list []
+				buttonColors: colorlist [#1B1B1BFF, #3F3F3FFF]
+				releaseAction: releaseAction@0456fc80-1574-4624-b9bb-79fd83569ef0 (propref<function<bool>>)
+				x: x@0456fc80-1574-4624-b9bb-79fd83569ef0 (propref<int>)
+				y: y@0456fc80-1574-4624-b9bb-79fd83569ef0 (propref<int>)
+				height: 40
+				width: 60
+				visible: visible@0456fc80-1574-4624-b9bb-79fd83569ef0 (propref<bool>)
+				text: "Back"
+			}]
+		name: "View"
+		visible: true
+		width: 482
+		height: 321
+		x: 0
+		y: 0
+	}
+	text: text@e98b41ce-e250-49d9-b398-47518453073b (propref<string>)
+	releaseAction: releaseAction@e412bd89-08b2-45aa-af89-9ff71d488003 (propref<function<bool>>)
+	visible: visible@e412bd89-08b2-45aa-af89-9ff71d488003 (propref<bool>)
+}
