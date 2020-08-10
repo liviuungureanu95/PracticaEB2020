@@ -1,0 +1,61 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfImage_template(9eae5b93-8a33-4822-a03f-c9c76a9e2c0a)
+{
+	name: "ResizedImage"
+	structure: GtfImage(085c7d36-9268-4af4-bd38-e2a7c63bf9d9)
+	{
+		features: feature_list [
+			ScaleMode(b28648f3-d0dc-4a1c-9cab-56f2b5ab10b2)
+			{
+				scaleMode: 2
+			}, 
+			TouchPressed(d2ef42fe-1b85-4f19-9f14-f09f8641d832)
+			{
+				touchPressed: function<bool,int,int,int,int>(9bdf51e2-2642-4ac4-9124-83fb7c491481)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.pressAction()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(de6eddc0-e1a2-4ab0-957f-ce761ecc2371)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list []
+		name: "Image"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		image: image_resource(a1687d2e-fe63-475e-8a7d-b48bf367dd4e)
+		{
+			file: "plum.png"
+		}
+		sRGB: false
+		horizontalAlign: 1
+		verticalAlign: 0
+		pressAction: function<bool>(a2bd007b-461d-4f5a-bc73-685ef03402fd)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	x: x@085c7d36-9268-4af4-bd38-e2a7c63bf9d9 (propref<int>)
+	y: y@085c7d36-9268-4af4-bd38-e2a7c63bf9d9 (propref<int>)
+	width: width@085c7d36-9268-4af4-bd38-e2a7c63bf9d9 (propref<int>)
+	height: height@085c7d36-9268-4af4-bd38-e2a7c63bf9d9 (propref<int>)
+	image: image@085c7d36-9268-4af4-bd38-e2a7c63bf9d9 (propref<image>)
+	pressAction: pressAction@085c7d36-9268-4af4-bd38-e2a7c63bf9d9 (propref<function<bool>>)
+	scaleMode: scaleMode@b28648f3-d0dc-4a1c-9cab-56f2b5ab10b2 (propref<int>)
+}
