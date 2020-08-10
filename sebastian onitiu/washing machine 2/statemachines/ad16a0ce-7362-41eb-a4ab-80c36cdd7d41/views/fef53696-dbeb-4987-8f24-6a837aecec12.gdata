@@ -29,48 +29,14 @@ GtfView(fef53696-dbeb-4987-8f24-6a837aecec12)
 			{
 				triggerList: trigger_list(9c3682a0-da64-45b7-a192-b68b45cd5ff2)
 				{
-					script: "dp:\"eroare 1\"" \
-						"dp:\"eroare 2\"" \
-						"dp:\"eroare 3\"" \
-						"dp:\"eroare 4\"" \
-						"dp:\"eroare 5\"" \
-						"dp:\"eroare 6\"" \
+					script: "" \
 						""
 				}
 				onTrigger: function<bool,bool>(b85fad29-36ff-48e2-bd56-d7e4ef497941)
 				{
 					script: "function(v:arg0::bool)" \
 						"{" \
-						"	if(dp:\"eroare 1\" == true)" \
-						"	{" \
-						"		v:this->^->\"mesaj cuva\".visible = false" \
-						"		v:this->^->\"MESAJ DETERGENT\".visible = false" \
-						"	}" \
-						"	else if(dp:\"eroare 2\" == true)" \
-						"	{" \
-						"		v:this->^->\"MESAJ DETERGENT\".visible = false" \
-						"		v:this->^->\"MESAJ APA\".visible = false" \
-						"	}" \
-						"	else if(dp:\"eroare 3\" == true)" \
-						"	{" \
-						"		v:this->^->\"mesaj cuva\".visible = false" \
-						"		v:this->^->\"MESAJ APA\".visible = false" \
-						"	}" \
 						"	" \
-						"	else if(dp:\"eroare 4\" == true)" \
-						"	{" \
-						"		v:this->^->\"MESAJ DETERGENT\".visible = false" \
-						"	}" \
-						"	" \
-						"	else if(dp:\"eroare 5\" == true)" \
-						"	{" \
-						"		v:this->^->\"mesaj cuva\".visible = false" \
-						"	}" \
-						"	" \
-						"	else if(dp:\"eroare 6\" == true)" \
-						"	{" \
-						"		v:this->^->\"MESAJ APA\".visible = false" \
-						"	}" \
 						"	false" \
 						"}"
 				}
@@ -100,72 +66,46 @@ GtfView(fef53696-dbeb-4987-8f24-6a837aecec12)
 			children: children_list []
 			name: "mesaj cuva"
 			visible: true
-			width: 377
+			width: 608
 			height: 46
-			x: 195
-			y: 110
-			text: "VERIFICATI DACA CUVA ESTE INCHISA"
-			textColor: #FFFFFFFF
-			font: font_resource(23b189dd-a8eb-4618-be7a-5aece306958a)
+			x: 95
+			y: 106
+			text: string_scriptedValue(2400d738-3177-4416-8fce-ceb4e6a956d4)
 			{
-				file: "PT_Sans_Narrow.ttf"
-				size: 30
-			}
-			horizontalAlign: 0
-			verticalAlign: 0
-		}, 
-		GtfLabel(9768f21a-5533-4d8c-b43f-f400a3c76d04)
-		{
-			features: feature_list []
-			children: children_list []
-			name: "MESAJ DETERGENT"
-			visible: true
-			width: 380
-			height: 66
-			x: 197
-			y: 149
-			text: "VERIFICATI DACA EXISTA DETERGENT"
-			textColor: #FFFFFFFF
-			font: font_resource(45f6a327-75d5-4877-b65d-38de485b9681)
-			{
-				file: "PT_Sans_Narrow.ttf"
-				size: 30
-			}
-			horizontalAlign: 0
-			verticalAlign: 0
-			"Conditional script 3": conditional_script(65cca204-96db-4f50-ae7b-28eb0c45d121)
-			{
-				triggerList: trigger_list(02ac3e8f-f8e4-4075-80d5-a72a1e9e05b7)
+				triggerList: trigger_list(1d8d8959-443d-4487-a3c8-77103aceb21c)
 				{
-					script: "" \
-						""
+					script: ""
 				}
-				onTrigger: function<bool,bool>(0ace4bf1-1d10-40e6-94ab-4b82a3b613e1)
+				onTrigger: function<bool,bool>(7712d463-68d7-411d-a3d4-075741559813)
 				{
 					script: "function(v:arg0::bool)" \
 						"{" \
-						"	" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(16c9ae18-5d55-4094-ac0b-b25a11f23326)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:mesaj" \
+						"}"
+				}
+				write: function<bool,string>(9de456fe-df81-471a-8da4-8900977add52)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
 						"	false" \
 						"}"
 				}
 			}
-		}, 
-		GtfLabel(439910f3-dba1-42c3-a055-28bacc639cb9)
-		{
-			features: feature_list []
-			children: children_list []
-			name: "MESAJ APA"
-			visible: true
-			width: 338
-			height: 60
-			x: 213
-			y: 200
-			text: "VERIFICATI ALIMENTAREA LA APA"
 			textColor: #FFFFFFFF
-			font: font_resource(6e078148-e401-4280-8b19-0fe5ed0de3c5)
+			font: font_resource(23b189dd-a8eb-4618-be7a-5aece306958a)
 			{
 				file: "PT_Sans_Narrow.ttf"
-				size: 30
+				size: 25
 			}
 			horizontalAlign: 0
 			verticalAlign: 0
@@ -179,7 +119,7 @@ GtfView(fef53696-dbeb-4987-8f24-6a837aecec12)
 					{
 						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 							"{" \
-							"fire ev:goback()" \
+							"fire ev:\"pop-up dissappear\"()" \
 							"    false" \
 							"}"
 					}

@@ -25,38 +25,18 @@ GtfView(3c817bde-3572-4584-9c50-0301314be810)
 					"	{v:this->\"mesaj de pornire 1\".visible = true" \
 					"	fire_delayed 5000 , ev:goback()}" \
 					"	" \
-					"	else if(dp:\"alimentare apa\" != true && dp:\"cuva deschisa\"!=true && dp:detergent!=true)" \
-					"	{f:pushDynamicStateMachine(popup_stack:fast, sm:\"mesaj pop-up\" , 1)}" \
+					"	else if(dp:\"alimentare apa\" != true || dp:\"cuva deschisa\"!=true || dp:detergent!=true)" \
+					"	{fire ev:\"pop-up appear\"()" \
+					"	dp:mesaj=\"\"" \
+					"			if(dp:\"alimentare apa\"== false)" \
+					"				dp:mesaj= dp:mesaj + \"\\nEroare alimentare apa\"" \
+					"			if(dp:\"cuva deschisa\"==false)" \
+					"				dp:mesaj=dp:mesaj + \"\\nEroare cuva deschisa\"" \
+					"			if(dp:detergent==false)" \
+					"				dp:mesaj=dp:mesaj + \"\\nEroare detergent\"" \
+					"	}" \
 					"	" \
-					"	else if(dp:\"alimentare apa\" != true && dp:\"cuva deschisa\"==true && dp:detergent==true)" \
-					"    {f:pushDynamicStateMachine(popup_stack:fast, sm:\"mesaj pop-up\" , 1);" \
-					"    dp:\"eroare 1\" = true;" \
-					"    }" \
-					"    " \
-					"    else if(dp:\"alimentare apa\" == true && dp:\"cuva deschisa\"!=true && dp:detergent==true)" \
-					"    {f:pushDynamicStateMachine(popup_stack:fast, sm:\"mesaj pop-up\" , 1);" \
-					"    dp:\"eroare 2\" = true;" \
-					"    }" \
-					"    " \
-					"    else if(dp:\"alimentare apa\" == true && dp:\"cuva deschisa\"==true && dp:detergent!=true)" \
-					"    {f:pushDynamicStateMachine(popup_stack:fast, sm:\"mesaj pop-up\" , 1);" \
-					"    dp:\"eroare 3\" = true;" \
-					"    }" \
-					"    " \
-					"     else if(dp:\"alimentare apa\" != true && dp:\"cuva deschisa\"!=true && dp:detergent==true)" \
-					"    {f:pushDynamicStateMachine(popup_stack:fast, sm:\"mesaj pop-up\" , 1);" \
-					"    dp:\"eroare 4\" = true;" \
-					"    }" \
-					"    " \
-					"     else if(dp:\"alimentare apa\" != true && dp:\"cuva deschisa\"==true && dp:detergent!=true)" \
-					"    {f:pushDynamicStateMachine(popup_stack:fast, sm:\"mesaj pop-up\" , 1);" \
-					"    dp:\"eroare 5\" = true;" \
-					"    }" \
-					"    " \
-					"     else if(dp:\"alimentare apa\" == true && dp:\"cuva deschisa\"!=true && dp:detergent!=true)" \
-					"    {f:pushDynamicStateMachine(popup_stack:fast, sm:\"mesaj pop-up\" , 1);" \
-					"    dp:\"eroare 6\" = true;" \
-					"    }" \
+					"	" \
 					"    false" \
 					"}"
 			}

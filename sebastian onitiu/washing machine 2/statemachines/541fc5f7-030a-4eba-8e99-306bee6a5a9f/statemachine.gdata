@@ -40,9 +40,27 @@ haptic_statemachine(541fc5f7-030a-4eba-8e99-306bee6a5a9f)
 	internal_transitions: haptic_internal_transitions [
 		haptic_internal_transition(d45bf2c0-eb7b-4a91-979d-702c252babf8)
 		{
-			event: @00000000-0000-0000-0000-000000000000 (objectref<event>)
+			event: @dcd777ff-1043-4efe-b2d6-d4939eaa36b0 (objectref<event>)
 			condition: function<bool>(none)
-			action: function<void>(none)
+			action: function<void>(fbc04811-d740-40e2-b960-0610faa4f034)
+			{
+				script: "function()" \
+					"{" \
+					"f:pushDynamicStateMachine(popup_stack:Main , sm:\"mesaj pop-up\", 0)" \
+					"}"
+			}
+		}, 
+		haptic_internal_transition(c1e85ae5-86a4-47d9-a3e0-14793deda023)
+		{
+			event: @4b3971f6-1692-4013-8f32-c2dc1b1ad3df (objectref<event>)
+			condition: function<bool>(none)
+			action: function<void>(de0b52e0-2f58-402b-b659-fba0062aaaa1)
+			{
+				script: "function()" \
+					"{" \
+					"f:popDynamicStateMachine(popup_stack:Main, sm:\"mesaj pop-up\")" \
+					"}"
+			}
 		}]
 	background_color: #6C6C6CFF
 	states: haptic_states [
@@ -219,5 +237,7 @@ haptic_statemachine(541fc5f7-030a-4eba-8e99-306bee6a5a9f)
 	final_state: haptic_final_state(none)
 	history_state: haptic_history_state(none)
 	deep_history_state: haptic_deep_history_state(none)
-	priority_stack: priority_stack(none)
+	priority_stack: priority_stack(61a0d5c9-e0f9-4903-93e0-14170a0ef3c2)
+	{
+	}
 }
