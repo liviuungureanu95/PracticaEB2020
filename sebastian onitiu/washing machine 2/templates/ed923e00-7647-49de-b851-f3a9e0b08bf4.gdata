@@ -1,0 +1,81 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(ed923e00-7647-49de-b851-f3a9e0b08bf4)
+{
+	name: "template buton"
+	structure: GtfContainer(6dec6fb9-3975-47a0-922f-1df6e7e9d11a)
+	{
+		features: feature_list [
+			TouchPressed(81085008-48ae-4021-8d39-e483b11c4e9f)
+			{
+				touchPressed: function<bool,int,int,int,int>(61ac548d-c1b1-4ecf-b0c7-7f5aaee0e20d)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(c43965b9-1d02-4028-9207-8d52fd30c4f5)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfImage(85b2e509-ee37-48a1-8d86-4ac9d70da24d)
+			{
+				features: feature_list [
+					ScaleMode(da0d7e76-086d-4c8f-b7f5-d3409a82a50d)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "Image 8"
+				visible: true
+				width: 149
+				height: 82
+				x: 0
+				y: 0
+				image: image_resource(c6377ecf-a6d3-429e-b031-24ed6455fa8c)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(ad68648c-dcde-4df1-b7aa-71d46e5d991a)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label 2"
+				visible: true
+				width: 144
+				height: 29
+				x: 3
+				y: 79
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(a108d165-1fa2-430e-bb58-bdab4c6789b2)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}]
+		name: "buton"
+		visible: true
+		width: 150
+		height: 110
+		x: 0
+		y: 0
+	}
+	x: x@6dec6fb9-3975-47a0-922f-1df6e7e9d11a (propref<int>)
+	y: y@6dec6fb9-3975-47a0-922f-1df6e7e9d11a (propref<int>)
+	image: image@85b2e509-ee37-48a1-8d86-4ac9d70da24d (propref<image>)
+	text: text@ad68648c-dcde-4df1-b7aa-71d46e5d991a (propref<string>)
+	touchPressed: touchPressed@81085008-48ae-4021-8d39-e483b11c4e9f (propref<function<bool,int,int,int,int>>)
+}
