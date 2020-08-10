@@ -1,0 +1,291 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(3439dbe8-c0b8-4d15-bc9d-edc520738e29)
+{
+	name: "AnimatedBackground"
+	structure: GtfContainer(914a5c02-f144-49ee-a6ed-7bbf0024ba9b)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(7ec3afe4-d4ed-414f-9d65-13cd60a93e57)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: 800
+				height: 480
+				x: 0
+				y: 0
+				fillColor: #FFFFFFFF
+			}, 
+			GtfContainer(26437dab-8902-4673-b3ba-a9ea6a933b42)
+			{
+				features: feature_list [
+					ViewPort(2358e794-c6b3-4ff4-bee6-0d188efc008c)
+					{
+						xOffset: 200
+						yOffset: 0
+					}]
+				children: children_list [
+					GtfImage(de55b782-3d25-4683-b956-2c43916d9acd)
+					{
+						features: feature_list [
+							ScaleMode(2d1c1cb2-443d-4ddf-a195-27619cd554aa)
+							{
+								scaleMode: 1
+							}, 
+							Coloration(2d72e98e-ac5e-4876-a0d3-7b1d8bb77a26)
+							{
+								colorationEnabled: true
+								colorationColor: #00BFFF32
+							}]
+						children: children_list []
+						name: "First"
+						visible: true
+						width: width@914a5c02-f144-49ee-a6ed-7bbf0024ba9b (propref<int>)
+						height: 100
+						x: -800
+						y: 0
+						image: image_resource(59b28262-f6fd-4d27-8b92-95f61bcb2aa4)
+						{
+							file: "wave.png"
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+					}, 
+					GtfImage(c7dfea9b-b866-430f-93fc-9a042de50e27)
+					{
+						features: feature_list [
+							ScaleMode(14ddd95a-13c8-4199-adce-fdebf96e13f6)
+							{
+								scaleMode: 1
+							}, 
+							Coloration(5e7cd67d-85dd-46b2-86f0-29cfe08041a4)
+							{
+								colorationEnabled: true
+								colorationColor: #00BFFF32
+							}]
+						children: children_list []
+						name: "Second"
+						visible: true
+						width: width@914a5c02-f144-49ee-a6ed-7bbf0024ba9b (propref<int>)
+						height: 100
+						x: 0
+						y: 0
+						image: image_resource(9e866031-331a-4d04-9d9b-ad0a5ef22cf8)
+						{
+							file: "wave.png"
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+					}, 
+					GtfParallelAnimation(654fa887-cee0-4a91-a977-9e5488cd7537)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLinearInterpolationS32(eecf51cd-ed2f-4fd0-afbd-1e23cb575e78)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Linear interpolation curve 1"
+								enabled: true
+								delay: 0
+								duration: 5000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 0
+								end: 800
+								target: xOffset@2358e794-c6b3-4ff4-bee6-0d188efc008c (propref<int>)
+							}]
+						name: "Animation"
+						enabled: true
+						repeat: 0
+						alternating: true
+						scale: 1F
+						onPlay: function<void,int,bool>(298d1f29-c571-4263-8454-dc6ca1bda4dd)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(d42e72a6-9cf2-4d5a-b2fa-e3ef3aa20dbb)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(d1bec597-d41d-48ea-a1e7-163f028c4a48)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+					}]
+				name: "Waves2"
+				visible: true
+				width: width@914a5c02-f144-49ee-a6ed-7bbf0024ba9b (propref<int>)
+				height: 100
+				x: 0
+				y: 380
+				onInit: conditional_script(47c8acde-8240-4710-8197-ce54bd00e8a2)
+				{
+					triggerList: trigger_list(d18a88d9-374b-49e2-b055-5641e719e6c2)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(5952cf52-9be5-490d-9f15-ebaa617d9a02)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	f:animation_play(v:this->Animation)" \
+							"	false" \
+							"}"
+					}
+				}
+			}, 
+			GtfContainer(8683864c-94dd-4e95-97b7-9046893e0d10)
+			{
+				features: feature_list [
+					ViewPort(20a7a9d6-8371-489a-833c-083c31495f7d)
+					{
+						xOffset: 0
+						yOffset: 0
+					}]
+				children: children_list [
+					GtfImage(da4be583-6234-4701-8362-e902b0894f5f)
+					{
+						features: feature_list [
+							ScaleMode(8668aa5f-599a-4a8e-bf45-d66e3f309e44)
+							{
+								scaleMode: 1
+							}, 
+							Coloration(b635a5ce-c542-47b9-9edf-ccaf9fe6f497)
+							{
+								colorationEnabled: true
+								colorationColor: #AFEEEE96
+							}]
+						children: children_list []
+						name: "First"
+						visible: true
+						width: width@914a5c02-f144-49ee-a6ed-7bbf0024ba9b (propref<int>)
+						height: 100
+						x: -800
+						y: 0
+						image: image_resource(763fb340-3724-4bf6-9626-843d7c8781a6)
+						{
+							file: "wave.png"
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+					}, 
+					GtfImage(7e9d44e8-270f-4935-a5eb-16be11cd087a)
+					{
+						features: feature_list [
+							ScaleMode(3fed91d5-40e5-43bb-87e9-ec5f734e0a00)
+							{
+								scaleMode: 1
+							}, 
+							Coloration(5b5f3978-6157-44ac-8cdd-2a4aa5e1119e)
+							{
+								colorationEnabled: true
+								colorationColor: #AFEEEE96
+							}]
+						children: children_list []
+						name: "Second"
+						visible: true
+						width: width@914a5c02-f144-49ee-a6ed-7bbf0024ba9b (propref<int>)
+						height: 100
+						x: 0
+						y: 0
+						image: image_resource(30b6e67d-8928-46e8-9d04-31d2a865650a)
+						{
+							file: "wave.png"
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+					}, 
+					GtfParallelAnimation(152c28a6-9b2a-4fe1-9d3b-02296aa75956)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLinearInterpolationS32(1d781b51-e0df-4992-9cf0-f12deb3390b2)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Linear interpolation curve 1"
+								enabled: true
+								delay: 0
+								duration: 10000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 0
+								end: 800
+								target: xOffset@20a7a9d6-8371-489a-833c-083c31495f7d (propref<int>)
+							}]
+						name: "Animation"
+						enabled: true
+						repeat: 0
+						alternating: false
+						scale: 1F
+						onPlay: function<void,int,bool>(abcccd77-8630-4537-987e-4eee93a97a53)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(bdef3e05-c91a-4417-8f2e-66cec6ae0ee1)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(bfdc908c-a43a-4546-b4b1-4da9035b98c5)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+					}]
+				name: "Waves"
+				visible: true
+				width: width@914a5c02-f144-49ee-a6ed-7bbf0024ba9b (propref<int>)
+				height: 100
+				x: 0
+				y: 380
+				onInit: conditional_script(c9b85d7f-8597-4a15-a430-5c5ec7445d41)
+				{
+					triggerList: trigger_list(3eea7984-c936-4a89-a0df-bf1a9f6c5015)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(cee48c35-4ec6-4868-89b0-606a8dbe9d6a)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	f:animation_play(v:this->Animation)" \
+							"	false" \
+							"}"
+					}
+				}
+			}]
+		name: "Container"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+	}
+}
