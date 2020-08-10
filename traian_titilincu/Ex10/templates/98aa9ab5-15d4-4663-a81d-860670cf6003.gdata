@@ -40,7 +40,7 @@ GtfContainer_template(98aa9ab5-15d4-4663-a81d-860670cf6003)
 								script: "function()" \
 									"{" \
 									"	// todo: auto generated return value, please adapt" \
-									"	f:float2string(dp:product_price) + \" RON/KG\"" \
+									"	 f:format_float(\"%.2f\",true,dp:product_price) + \" RON/KG\"" \
 									"}"
 							}
 							write: function<bool,string>(47283873-e30c-42bb-bf03-8169db684aed)
@@ -94,7 +94,7 @@ GtfContainer_template(98aa9ab5-15d4-4663-a81d-860670cf6003)
 										script: "function()" \
 											"{" \
 											"	// todo: auto generated return value, please adapt" \
-											"	f:float2string(dp:price) + \" RON\"" \
+											"	 f:format_float(\"%.2f\",true,dp:price) + \" RON\"" \
 											"}"
 									}
 									write: function<bool,string>(5d82793c-4a07-4349-984e-6591191bb3c1)
@@ -163,8 +163,7 @@ GtfContainer_template(98aa9ab5-15d4-4663-a81d-860670cf6003)
 									{
 										script: "function()" \
 											"{" \
-											"	// todo: auto generated return value, please adapt" \
-											"	f:float2string(dp:quantity) + \" KG\"" \
+											"	f:format_float(\"%.2f\",true,dp:quantity) + \" KG\"" \
 											"}"
 									}
 									write: function<bool,string>(fa7a89a7-8fec-400f-ae61-0d444827de27)
