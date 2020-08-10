@@ -1,0 +1,467 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(92f27afe-f0fb-4cdd-89fb-a68adba73294)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer(b0b5a1b6-6fa0-4c00-ab8e-35c3e1dfd998)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(4b5b3719-5a0d-4527-be24-97832b5c620b)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Background"
+					visible: true
+					width: width@92f27afe-f0fb-4cdd-89fb-a68adba73294 (propref<int>)
+					height: height@92f27afe-f0fb-4cdd-89fb-a68adba73294 (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(0e93070f-4b26-48f5-a3a5-ab24b8716fc9)
+					{
+						file: "gas_STATION_bACKGROUND.jpg"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfContainer_template_instance(58426613-bfcb-4004-9365-8151f6652280)
+				{
+					name: "Motorina_button"
+					template: @345869cd-2a21-4604-a0cc-0edf132aee98 (objectref<GtfContainer_template>)
+					children: children_list []
+					text: text@345869cd-2a21-4604-a0cc-0edf132aee98 (propref<string>)
+					x: 214
+					y: 170
+					touchShortReleased: function<bool,int,int,int,int>(9c1ded3c-a485-471e-b885-7d0abbbf6699)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:Pret = f:int2float(5)" \
+							"	v:this->^->Combustibil_txt.text = \"Motorina\"" \
+							"	v:this->^->Benzina_button.visible = false" \
+							"	v:this->^->Motorina_button.visible = false" \
+							"	v:this->^->Gaz_button.visible = false" \
+							"	v:this->^->Reset.visible = true" \
+							"    false" \
+							"}"
+					}
+					visible: visible@345869cd-2a21-4604-a0cc-0edf132aee98 (propref<bool>)
+					width: width@345869cd-2a21-4604-a0cc-0edf132aee98 (propref<int>)
+					height: height@345869cd-2a21-4604-a0cc-0edf132aee98 (propref<int>)
+					textColor: textColor@345869cd-2a21-4604-a0cc-0edf132aee98 (propref<color>)
+				}, 
+				GtfContainer_template_instance(0a5644f8-1f1e-48bf-bbd4-7f2c73f83a77)
+				{
+					name: "Benzina_button"
+					template: @345869cd-2a21-4604-a0cc-0edf132aee98 (objectref<GtfContainer_template>)
+					children: children_list []
+					text: "Benzina"
+					x: 215
+					y: 245
+					touchShortReleased: function<bool,int,int,int,int>(41bbd75e-2dcb-44b9-a29b-4a9e44a6e14b)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:Pret = f:int2float(4)" \
+							"	v:this->^->Combustibil_txt.text = \"Benzina\"" \
+							"	v:this->^->Benzina_button.visible = false" \
+							"	v:this->^->Motorina_button.visible = false" \
+							"	v:this->^->Gaz_button.visible = false" \
+							"	v:this->^->Reset.visible = true" \
+							"    false" \
+							"    " \
+							"}"
+					}
+					visible: visible@345869cd-2a21-4604-a0cc-0edf132aee98 (propref<bool>)
+					width: width@345869cd-2a21-4604-a0cc-0edf132aee98 (propref<int>)
+					height: height@345869cd-2a21-4604-a0cc-0edf132aee98 (propref<int>)
+					textColor: textColor@345869cd-2a21-4604-a0cc-0edf132aee98 (propref<color>)
+				}, 
+				GtfContainer_template_instance(883eb92a-2b87-4edb-aa40-3c9d03ce7222)
+				{
+					name: "Gaz_button"
+					template: @345869cd-2a21-4604-a0cc-0edf132aee98 (objectref<GtfContainer_template>)
+					children: children_list []
+					text: "Gaz"
+					x: 215
+					y: 320
+					touchShortReleased: function<bool,int,int,int,int>(677e66ee-0393-4dfc-9e96-d703fab8778e)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:Pret = f:int2float(3)" \
+							"	v:this->^->Combustibil_txt.text = \"Gaz\"" \
+							"	v:this->^->Benzina_button.visible = false" \
+							"	v:this->^->Motorina_button.visible = false" \
+							"	v:this->^->Gaz_button.visible = false" \
+							"	v:this->^->Reset.visible = true" \
+							"    false" \
+							"}"
+					}
+					visible: visible@345869cd-2a21-4604-a0cc-0edf132aee98 (propref<bool>)
+					width: width@345869cd-2a21-4604-a0cc-0edf132aee98 (propref<int>)
+					height: height@345869cd-2a21-4604-a0cc-0edf132aee98 (propref<int>)
+					textColor: textColor@345869cd-2a21-4604-a0cc-0edf132aee98 (propref<color>)
+				}, 
+				GtfLabel(187c63d2-6885-47e0-bb93-d80c8cb0bc0c)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Combustibil_txt"
+					visible: true
+					width: 100
+					height: 20
+					x: 80
+					y: 110
+					text: "Combustibil"
+					textColor: #000000FF
+					font: font_resource(56bbd8d4-9d6e-45af-a57a-ab77cc877c6f)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 25
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(caf8c9c8-1cd9-41bd-9b29-696e11a5cd58)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Litri_txt"
+					visible: true
+					width: 42
+					height: 20
+					x: 80
+					y: 160
+					text: string_scriptedValue(1c5badb0-baf2-423f-a558-cbc8b6bfdf64)
+					{
+						triggerList: trigger_list(1811234e-4b1d-4fc7-a8d5-fe028e05c92d)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(c53c6dbb-e406-48d9-988a-51aec09c219f)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(66036776-da39-4f3a-a0e8-45bdc6e1d5fc)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	\"Litri :\"" \
+								"}"
+						}
+						write: function<bool,string>(cf02f598-c25b-4107-b2aa-939ec747525d)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(0d308786-8f4f-43a7-98af-3e0d889e160d)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 25
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(eeef5b44-e65b-4f91-86e3-9af2ee40337c)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Pret_txt"
+					visible: true
+					width: 42
+					height: 20
+					x: 80
+					y: 139
+					text: string_scriptedValue(ae3b5c21-f5d4-43b9-a457-15af40197599)
+					{
+						triggerList: trigger_list(5f5241cf-e7c5-4d33-bbbb-6df264571e90)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(56b8f1ed-39f4-4af7-89c3-1d172344c4d0)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(a22f476d-432b-444b-8d7c-3ca705faba8b)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	\"Pret :\"" \
+								"}"
+						}
+						write: function<bool,string>(28446162-132f-4c72-84f6-977266d534a0)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(3a309495-e5f0-4397-ab04-270b46c32251)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 25
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfRectangle(81068217-6b17-4644-ac71-05f8f16a8428)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "line_combustibil"
+					visible: true
+					width: 100
+					height: 5
+					x: 80
+					y: 132
+					fillColor: #000000FF
+				}, 
+				GtfLabel(33e28c7e-1fb7-4ed0-90d3-9396a0ce0324)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "NR_litri_txt"
+					visible: true
+					width: 33
+					height: 20
+					x: 135
+					y: 160
+					text: string_scriptedValue(c7cf9083-2d44-4f5b-a65b-8b19e0be4c1e)
+					{
+						triggerList: trigger_list(c23ec61d-7a1d-445c-8045-f295075b95e8)
+						{
+							script: "dp:Litri" \
+								""
+						}
+						onTrigger: function<bool,bool>(758858a4-57a1-4336-9d43-be679a7183fa)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(3576533f-5106-4f47-8c5f-83f630963330)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:float2string(dp:Litri)" \
+								"}"
+						}
+						write: function<bool,string>(78845331-0ede-4959-b18e-81747b074afe)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(df52ab42-a077-4ab3-ad36-a7caf499db17)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 20
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(9bb52323-be22-4acf-9fe7-d39c134ee7bd)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "NR_pret_txt"
+					visible: true
+					width: 31
+					height: 20
+					x: 135
+					y: 139
+					text: string_scriptedValue(b6e00530-3dae-4667-b984-ef6c97180205)
+					{
+						triggerList: trigger_list(160f8189-bc0b-4c9b-99b3-8928051b175c)
+						{
+							script: "dp:Pret" \
+								""
+						}
+						onTrigger: function<bool,bool>(8168b535-3731-4de8-bea3-0e72f0f5087f)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(25df7d86-5605-4224-8f71-9441c1eeacec)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:float2string(dp:Pret)" \
+								"}"
+						}
+						write: function<bool,string>(47958226-38b3-4589-b39d-ead07709d5ab)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(06f82c8b-93c2-406f-a6a0-a63a898ba79d)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 20
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(1b43150c-0bb1-4b94-bd19-e5173b3c8679)
+				{
+					name: "Reset"
+					template: @345869cd-2a21-4604-a0cc-0edf132aee98 (objectref<GtfContainer_template>)
+					children: children_list []
+					text: "RESET"
+					x: 233
+					y: 262
+					touchShortReleased: function<bool,int,int,int,int>(b5408b7a-0169-48de-a52b-29f7b5635819)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->Combustibil_txt.text = \"Combustibil\"" \
+							"	v:this->^->NR_litri_txt.text = f:float2string(dp:Litri)" \
+							"	v:this->^->NR_pret_txt.text = f:float2string(dp:Pret)" \
+							"	v:this->^->Reset.visible = false" \
+							"	v:this->^->Benzina_button.visible = true" \
+							"	v:this->^->Motorina_button.visible = true" \
+							"	v:this->^->Gaz_button.visible = true" \
+							"	dp:Litri = f:int2float(0)" \
+							"	dp:Pret = f:int2float(0)" \
+							"    false" \
+							"    " \
+							"}"
+					}
+					visible: false
+					width: 67
+					height: 31
+					textColor: #FF0000FF
+				}, 
+				GtfRectangle(6e3ccdaf-14e3-4baa-b9f0-069e4781dc06)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "line_litri"
+					visible: true
+					width: 100
+					height: 5
+					x: 80
+					y: 180
+					fillColor: #000000FF
+				}, 
+				GtfLabel(5d515893-fa75-421c-88e7-22a80b3e6733)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "PretCombustibil"
+					visible: true
+					width: 45
+					height: 25
+					x: 89
+					y: 185
+					text: string_scriptedValue(c4ef7d5d-15ac-4dab-8664-b1b9d765c891)
+					{
+						triggerList: trigger_list(3b49288a-0d14-4e90-9699-1aecff481cb3)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(f6b33e35-5936-41db-8738-6b166578d565)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(3a9078c5-99dc-431c-9547-4a36fd92eb3e)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:float2string(dp:PretCombustibil)" \
+								"}"
+						}
+						write: function<bool,string>(6938c8b7-0cd6-4b3b-9391-d35652d9aa87)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FF0000FF
+					font: font_resource(b90ef357-7d9b-45f2-894f-7db62ac5bb50)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(68ff4266-c4a8-4627-8fcb-63a3c15b24e0)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Lei"
+					visible: true
+					width: 31
+					height: 25
+					x: 139
+					y: 185
+					text: "LEI"
+					textColor: #FF0000FF
+					font: font_resource(15e94f69-1e52-45ca-b637-282941c3cbc2)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "Container"
+			visible: true
+			width: width@92f27afe-f0fb-4cdd-89fb-a68adba73294 (propref<int>)
+			height: height@92f27afe-f0fb-4cdd-89fb-a68adba73294 (propref<int>)
+			x: 0
+			y: 0
+		}]
+	name: "PrincipalMENU"
+	visible: true
+	width: 320
+	height: 480
+	x: 0
+	y: 0
+}
