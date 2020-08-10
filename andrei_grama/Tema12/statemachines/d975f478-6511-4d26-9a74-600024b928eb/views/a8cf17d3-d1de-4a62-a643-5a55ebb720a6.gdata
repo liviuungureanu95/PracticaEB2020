@@ -1,0 +1,154 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(a8cf17d3-d1de-4a62-a643-5a55ebb720a6)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(abab4363-7a3a-436d-b54e-a617214540ec)
+		{
+			features: feature_list [
+				StateTouched(a9729072-fb46-4ee8-88dd-06c249f738ef)
+				{
+					touchable: false
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "transparentBackground"
+			visible: true
+			width: width@a8cf17d3-d1de-4a62-a643-5a55ebb720a6 (propref<int>)
+			height: height@a8cf17d3-d1de-4a62-a643-5a55ebb720a6 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #FFFFFF00
+		}, 
+		GtfContainer(a1e069fb-f9a5-4820-96ac-464b2ec7a654)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(f9dbca6a-f427-4487-bbc6-7a3d409c573d)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "background"
+					visible: true
+					width: width@a1e069fb-f9a5-4820-96ac-464b2ec7a654 (propref<int>)
+					height: height@a1e069fb-f9a5-4820-96ac-464b2ec7a654 (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #87CEFAFF
+				}, 
+				GtfLabel(dd3e2909-299e-40e3-a95f-cc72f9ec818c)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "text"
+					visible: true
+					width: width@a1e069fb-f9a5-4820-96ac-464b2ec7a654 (propref<int>)
+					height: 50
+					x: 0
+					y: 0
+					text: "Insuficienta fonduri"
+					textColor: #000000FF
+					font: font_resource(f4dcc24b-8d8b-4d91-93c4-48729da48ee1)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 20
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer(6192af31-3657-4545-afb3-a57a5d1ffa03)
+				{
+					features: feature_list [
+						TouchPressed(fad7c414-2e62-45a4-bfce-8505245a5569)
+						{
+							touchPressed: function<bool,int,int,int,int>(e39580c7-71a0-4c55-8e00-6451c5468f51)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->Rectangle.borderThickness=6" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(038ca8b1-ad45-4f75-9a1e-ffc1be36f523)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(d5247dc8-f095-4dd2-84ee-c143cb02cb71)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->Rectangle.borderThickness=3" \
+									"	f:popDynamicStateMachine(popup_stack:\"Main state\",sm:\"Pop_up state\")" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(c2dcfc67-821f-4000-a71b-e0034e2a717a)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfRectangle(4dbe50c3-fe95-40c5-aa45-4f7c55ec2698)
+						{
+							features: feature_list [
+								Border(9434c7d5-c83f-4e5e-8e86-601c6a21b5cb)
+								{
+									borderThickness: 2
+									borderColor: #000000FF
+									borderStyle: 0
+								}]
+							children: children_list []
+							name: "Rectangle"
+							visible: true
+							width: width@6192af31-3657-4545-afb3-a57a5d1ffa03 (propref<int>)
+							height: height@6192af31-3657-4545-afb3-a57a5d1ffa03 (propref<int>)
+							x: 0
+							y: 0
+							fillColor: #FFFFFF00
+						}, 
+						GtfLabel(79f6eb48-1590-454c-90d6-586e90a9f2a1)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Label"
+							visible: true
+							width: width@6192af31-3657-4545-afb3-a57a5d1ffa03 (propref<int>)
+							height: height@6192af31-3657-4545-afb3-a57a5d1ffa03 (propref<int>)
+							x: 0
+							y: 0
+							text: "ok"
+							textColor: #000000FF
+							font: font_resource(8ade6821-b8bd-4167-9802-74deedf1ac9c)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "okButton"
+					visible: true
+					width: 60
+					height: 29
+					x: 52
+					y: 60
+				}]
+			name: "pop_up"
+			visible: true
+			width: 164
+			height: 100
+			x: 318
+			y: 150
+		}]
+	name: "pop_upView"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
