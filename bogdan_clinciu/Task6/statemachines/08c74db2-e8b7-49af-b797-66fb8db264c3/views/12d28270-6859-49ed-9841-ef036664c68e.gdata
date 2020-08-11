@@ -1,0 +1,50 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(12d28270-6859-49ed-9841-ef036664c68e)
+{
+	name: "WelcomeMenu_view"
+	template: @b0722ac3-9787-4c31-89f3-10718617ba60 (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(3bbcdb44-5038-47ec-90bb-44e250126a73)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 3"
+			visible: true
+			width: 500
+			height: 40
+			x: 75
+			y: 150
+			text: "Welcome to your Navigation Screen, I am Jarvis!"
+			textColor: #FFFFFFFF
+			font: font_resource(347393bd-a22b-4c1e-a523-9c2ad824d15a)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(383ebb7c-3480-44b9-91d9-080a4730921a)
+		{
+			name: "Text_Button 1"
+			template: @8614a3a5-3cca-4639-8293-139b044f57c6 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Select Destination"
+			width: 250
+			height: 75
+			x: 275
+			y: 270
+			ReleaseAction: function<bool>(41d95043-f874-40f7-9daf-9174706c8028)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:StartSelection()" \
+					"	false" \
+					"}"
+			}
+			visible: true
+		}]
+	text: "Navigation"
+	width: 167
+}
