@@ -1,0 +1,222 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(8333bb03-38b5-4824-a70a-203d73d5b064)
+{
+	name: "Button"
+	structure: GtfContainer(1f89dbf0-db3a-40be-a01c-27c072d43e61)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfImage(b96ac1c5-f7d3-46d7-974c-818ccf8cff2e)
+			{
+				features: feature_list [
+					ScaleMode(08b73ee4-062a-4d91-bc24-a678b052d868)
+					{
+						scaleMode: 1
+					}, 
+					Coloration(bfd47535-ae8d-4981-af7e-141f34685c90)
+					{
+						colorationEnabled: false
+						colorationColor: #FFE4C4FF
+					}, 
+					MoveOut(c050f156-b7f5-4a84-8ccc-90e80d5a6067)
+					{
+						moveOut: function<bool,int,int,int,int>(4356f76d-5610-4ac4-8484-3521c7580140)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.colorationEnabled = false;" \
+								"    false" \
+								"}"
+						}
+					}, 
+					MoveIn(d2f58967-b792-486f-a81d-a540a1d8b6ad)
+					{
+						moveIn: function<bool,int,int,int,int>(a34a1fa8-3c12-4f90-80d0-e02c735a7f75)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.colorationEnabled = true;" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(d3c5fa33-e422-4c2d-89dc-6608f2bc5b3a)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}, 
+					TouchShortReleased(5355a98a-ab93-42a0-8563-5c93ce7c8c78)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(519b5c05-4ae1-4dc8-9a91-2fb0f588743e)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.scalingX = 100.0" \
+								"	v:this.scalingY = 100.0" \
+								"	v:this.touchReleased();" \
+								"    false" \
+								"}"
+						}
+					}, 
+					TouchPressed(136e1188-8959-488e-87cb-2dd3a6cba6a7)
+					{
+						touchPressed: function<bool,int,int,int,int>(70f060ea-1dfb-4c84-b52d-4612a218384c)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.scalingX = 90.0" \
+								"	v:this.scalingY = 90.0" \
+								"    false" \
+								"}"
+						}
+					}, 
+					Rotation(45830e29-8b1e-4ed1-bca4-d5fd7ea3969d)
+					{
+						rotationEnabled: true
+						rotationAngleX: 0F
+						rotationAngleY: 0F
+						rotationAngleZ: 0F
+					}, 
+					Scaling(df9b9cad-6487-48d6-aa4a-72fa6769dd52)
+					{
+						scalingEnabled: true
+						scalingX: 100F
+						scalingY: 100F
+						scalingZ: 100F
+					}, 
+					Shearing(fe521dca-8f53-4712-8daa-eb4d5b384a82)
+					{
+						shearingEnabled: true
+						shearingXbyY: 0F
+						shearingXbyZ: 0F
+						shearingYbyX: 0F
+						shearingYbyZ: 0F
+						shearingZbyX: 0F
+						shearingZbyY: 0F
+					}, 
+					Pivot(349213af-86e0-4060-90dd-c618a783ebb1)
+					{
+						pivotX: float_scriptedValue(ff4674c6-f3a4-4d17-9d7a-68bcff0a2342)
+						{
+							triggerList: trigger_list(e48030cc-3a52-4c2d-9483-32b8f82cd8a4)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(71571ff7-6e57-45d5-abad-0545e628d1ac)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<float>(5e6baded-f1e4-4845-9c79-d3aa432fa7a5)
+							{
+								script: "function()" \
+									"{" \
+									"	f:int2float(v:this.width / 2)" \
+									"}"
+							}
+							write: function<bool,float>(fbb6a045-88c1-4155-b737-3e6926c9a40a)
+							{
+								script: "function(v:arg0::float)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						pivotY: float_scriptedValue(daad1765-0c07-495a-b9ee-71cda1e0ad81)
+						{
+							triggerList: trigger_list(bdc6a5c7-8b47-43f3-ad7b-1702dbeb6383)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(ff1577ef-d301-434f-b849-7bd83fc43179)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<float>(b59fc253-2915-40f8-988f-bb0d3c2e9c66)
+							{
+								script: "function()" \
+									"{" \
+									"	f:int2float(v:this.height / 2)" \
+									"}"
+							}
+							write: function<bool,float>(d56b2358-a326-42af-9686-30f2b4041749)
+							{
+								script: "function(v:arg0::float)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						pivotZ: 0F
+					}]
+				children: children_list []
+				name: "Image"
+				visible: true
+				width: width@1f89dbf0-db3a-40be-a01c-27c072d43e61 (propref<int>)
+				height: height@1f89dbf0-db3a-40be-a01c-27c072d43e61 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(532b7832-0f57-4ca0-bfc0-0c203e597180)
+				{
+					file: "button.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+				touchReleased: function<bool>(85d29610-fd64-4ff5-b913-fbd2fa60063e)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}, 
+			GtfLabel(c0e62a1e-e214-4f4b-b88d-e28e5ebcacb4)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label"
+				visible: true
+				width: width@1f89dbf0-db3a-40be-a01c-27c072d43e61 (propref<int>)
+				height: height@1f89dbf0-db3a-40be-a01c-27c072d43e61 (propref<int>)
+				x: 0
+				y: 0
+				text: "Play"
+				textColor: #4169E1FF
+				font: font_resource(d02160c8-d899-485d-83b6-6f408b953fd0)
+				{
+					file: "Joystick-5KjV.ttf"
+					size: 50
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Button"
+		visible: true
+		width: 174
+		height: 74
+		x: 0
+		y: 0
+	}
+	x: x@1f89dbf0-db3a-40be-a01c-27c072d43e61 (propref<int>)
+	y: y@1f89dbf0-db3a-40be-a01c-27c072d43e61 (propref<int>)
+	width: width@1f89dbf0-db3a-40be-a01c-27c072d43e61 (propref<int>)
+	height: height@1f89dbf0-db3a-40be-a01c-27c072d43e61 (propref<int>)
+	text: text@c0e62a1e-e214-4f4b-b88d-e28e5ebcacb4 (propref<string>)
+	touchReleased: touchReleased@b96ac1c5-f7d3-46d7-974c-818ccf8cff2e (propref<function<bool>>)
+	font: font@c0e62a1e-e214-4f4b-b88d-e28e5ebcacb4 (propref<font>)
+	visible: visible@1f89dbf0-db3a-40be-a01c-27c072d43e61 (propref<bool>)
+}

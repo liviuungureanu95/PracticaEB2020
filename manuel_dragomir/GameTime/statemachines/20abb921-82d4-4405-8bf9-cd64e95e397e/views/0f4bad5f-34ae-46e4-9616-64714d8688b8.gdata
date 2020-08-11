@@ -1,0 +1,151 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(0f4bad5f-34ae-46e4-9616-64714d8688b8)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(cad0bd36-468a-4d3a-9e54-d4524703546e)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(ce06c42a-ddec-4e3a-9c17-a86139c33b69)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "WhatIsThisGameLabel"
+					visible: true
+					width: 591
+					height: 68
+					x: 117
+					y: 4
+					text: "What about this game?"
+					textColor: #FFFFFFFF
+					font: font_resource(6c4ba5bc-e65f-40f9-b264-8a68675385e4)
+					{
+						file: "Helvetica-BoldOblique.ttf"
+						size: 50
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(8267ba88-86c5-4ed7-95c9-503035bd5c51)
+				{
+					name: "GiveUpButton"
+					template: @90ecc840-6650-4a09-8f49-e6749972a3c0 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 732
+					y: 413
+					hint: "Nice try. But I said use it usely !!!"
+				}, 
+				GtfLabel(a3ccc741-d65a-4efe-b23e-58a3eb257062)
+				{
+					features: feature_list [
+						MultiLine(59aad52f-e1b7-4104-aee6-b5fdb719eb7e)
+						{
+							lineOffset: 0
+							maxLineCount: 0
+						}]
+					children: children_list []
+					name: "InstructionsLabel"
+					visible: true
+					width: 737
+					height: 328
+					x: 42
+					y: 76
+					text: string_scriptedValue(898b806e-5d47-4d46-adf7-ea2de808b6cf)
+					{
+						triggerList: trigger_list(6e63b36e-8f1a-4768-abae-bfb7a9a74933)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(e3cdb347-eb09-4dce-a7fa-cf7d0244e78a)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(801dc393-ff21-4a07-8050-0c5cc3373991)
+						{
+							script: "function()" \
+								"{" \
+								"	\"This game intend to force you think outside the box and pay attention to details. \\n\\n\" +" \
+								"	\"Each level will have a short hint. You will have to use that hint to find a button that gets you to the next level.\\n\\n\" +" \
+								"	\"Sometimes you will need some extra hints. There is a give up red button in the down right corner. \\n\"" \
+								"}"
+						}
+						write: function<bool,string>(eaf14305-fdff-4a53-b286-0778d3ca2fb2)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(c2ec8649-b76e-433b-b0f5-13cdd5dbfd70)
+					{
+						file: "helvetica-rounded-bold-5871d05ead8de.otf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfContainer_template_instance(b2462911-b980-489a-817f-a4026f5aef3e)
+				{
+					name: "BackButton"
+					template: @8333bb03-38b5-4824-a70a-203d73d5b064 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 11
+					y: 416
+					width: 147
+					height: 53
+					text: "Back"
+					touchReleased: function<bool>(373c6d24-4ca9-4f3b-b7ef-9240ab88fabb)
+					{
+						script: "function()" \
+							"{" \
+							"	fire ev:GoToMenu();" \
+							"	false" \
+							"}"
+					}
+					font: font@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<font>)
+					visible: true
+				}, 
+				GtfLabel(371c6f71-f5d9-4a53-a7f6-1ef3484acfcd)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 3"
+					visible: true
+					width: 349
+					height: 66
+					x: 256
+					y: 404
+					text: "Use it wisely!"
+					textColor: #FFFFFFFF
+					font: font_resource(92cdf998-8ba5-4559-9c8c-00c8b1d5f5cd)
+					{
+						file: "helvetica-rounded-bold-5871d05ead8de.otf"
+						size: 50
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "Background"
+			visible: true
+			width: width@0f4bad5f-34ae-46e4-9616-64714d8688b8 (propref<int>)
+			height: height@0f4bad5f-34ae-46e4-9616-64714d8688b8 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #00CED1FF
+		}]
+	name: "TutorialView"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

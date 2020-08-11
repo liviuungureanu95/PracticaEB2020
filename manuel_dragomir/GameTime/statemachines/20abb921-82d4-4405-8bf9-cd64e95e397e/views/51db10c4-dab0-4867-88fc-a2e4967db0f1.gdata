@@ -1,0 +1,252 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(51db10c4-dab0-4867-88fc-a2e4967db0f1)
+{
+	name: "3_View"
+	template: @6ed0fc89-f5fa-41df-8452-71b599053367 (objectref<GtfView_template>)
+	children: children_list [
+		GtfInstantiator(f00165a4-ccf8-4efd-bd75-fcffe742b09c)
+		{
+			features: feature_list [
+				LayoutPolicyFlow(34aae354-26ca-4ee7-8f61-21a3adf29aac)
+				{
+					horizontalGap: 5
+					verticalGap: 5
+					layoutDirection: 0
+					horizontalChildAlign: 0
+					verticalChildAlign: 0
+				}]
+			children: children_list [
+				GtfRectangle(885f6dc2-6f14-46a9-8abb-7a250e2ec5ef)
+				{
+					features: feature_list [
+						LineIndex(4fdd6a48-c2fe-4232-b289-0878a2ee7a30)
+						{
+							lineIndex: 0
+						}, 
+						TouchShortReleased(11abebb4-bcb1-4cea-a527-fbb1dbf77f5b)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(c44af2e8-4441-4a96-9a40-2e66d56f3e33)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->^.Buttons[v:this.lineIndex] = 1" \
+									"	v:this.fillColor = color:0, 0, 0, 255;" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(67d1d441-49e1-4a7e-86cf-c3bb68d9d278)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfContainer_template_instance(01c049dd-92fa-4f37-884f-4dd2a005339c)
+						{
+							name: "Button"
+							template: @8333bb03-38b5-4824-a70a-203d73d5b064 (objectref<GtfContainer_template>)
+							children: children_list []
+							x: -2
+							y: 1
+							width: width@f00165a4-ccf8-4efd-bd75-fcffe742b09c (propref<int>)
+							height: 40
+							text: "Click me"
+							touchReleased: function<bool>(39ef9de5-fe18-4cab-90c2-97f5af19c6bc)
+							{
+								script: "function()" \
+									"{" \
+									"	false" \
+									"}"
+							}
+							font: font_resource(eee7db88-8109-4afd-8f63-9640ba713a99)
+							{
+								file: "Joystick-5KjV.ttf"
+								size: 25
+							}
+							visible: visible@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+						}]
+					name: "ButtonBackground"
+					visible: true
+					width: width@01c049dd-92fa-4f37-884f-4dd2a005339c (propref<int>)
+					height: height@01c049dd-92fa-4f37-884f-4dd2a005339c (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #FFFFFF00
+				}]
+			name: "Instantiator"
+			visible: true
+			width: 119
+			height: 224
+			x: 37
+			y: 130
+			numItems: 5
+			lineMapping: intlist []
+		}, 
+		GtfImage(0fe5d5bf-c24e-4f33-b10b-a555515109e1)
+		{
+			features: feature_list [
+				ScaleMode(e5642404-38e2-427b-84fc-c0e4cde9a236)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "Jeans"
+			visible: true
+			width: 163
+			height: 482
+			x: 560
+			y: 0
+			image: image_resource(6a5e500c-3ad6-4c7d-9094-ab1919ece243)
+			{
+				file: "jeans.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(8d8df07a-948a-4b6c-b15a-f8563df1f210)
+		{
+			features: feature_list [
+				MultiLine(dadce4c2-1cc0-4a2c-970e-896f1769b1c9)
+				{
+					lineOffset: 0
+					maxLineCount: 0
+				}]
+			children: children_list []
+			name: "Hint"
+			visible: true
+			width: 390
+			height: 188
+			x: 161
+			y: 144
+			text: "Click all the buttons.\\n\\n When you are done, a new one will appear"
+			textColor: #FFD700FF
+			font: @c686500e-f444-44ae-ad8a-5b5b3ef74343 (objectref<font>)
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfEllipse(f75dbb28-2616-44e2-af76-41b0f81fba94)
+		{
+			features: feature_list [
+				TouchShortReleased(3031bd06-a62d-4bf3-828e-ccf6a4c48f88)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(f73781f0-c767-4055-88f7-7afd40f1284a)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.fillColor = color: 34, 144, 158, 255" \
+							"	v:this->^.Buttons[5] = 1;" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(0632e51b-1fe9-487c-9d36-dce898f0aa59)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "ButtonButton"
+			visible: true
+			width: 10
+			height: 10
+			x: 645
+			y: 13
+			fillColor: #FFFFFF00
+			arcWidth: 0
+			centralAngle: 360F
+			sectorRotation: 0F
+		}, 
+		GtfContainer_template_instance(5b0cfe89-cca0-4e2f-a5b1-22cefa18c20b)
+		{
+			name: "NextButton"
+			template: @8333bb03-38b5-4824-a70a-203d73d5b064 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 264
+			y: 337
+			width: width@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<int>)
+			height: height@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<int>)
+			text: "Next"
+			touchReleased: function<bool>(dfeaeb0d-0e28-4e02-a513-3e918b99f2e5)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoToLevel_4()" \
+					"	false" \
+					"}"
+			}
+			font: font@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<font>)
+			visible: @d1c58995-8825-4555-9166-a655f99da9f8 (objectref<bool>)
+		}, 
+		GtfEllipse(7862ab96-927b-4b11-8188-34205a197179)
+		{
+			features: feature_list [
+				StateTouched(bf9e8a71-35f7-4930-b1b1-ac68e03531af)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}, 
+				TouchShortReleased(8c39684a-0668-47bd-8fd6-69f860ed6ab6)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(cce76a8e-8af9-4f31-bd3b-aafa8d48a9af)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^.Buttons[6] = 1;" \
+							"	v:this.visible = false" \
+							"    false" \
+							"}"
+					}
+				}]
+			children: children_list []
+			name: "HintButtonShadow"
+			visible: true
+			width: 70
+			height: 71
+			x: 730
+			y: 409
+			fillColor: #FFFFFF00
+			arcWidth: 0
+			centralAngle: 360F
+			sectorRotation: 0F
+		}]
+	hintForLevel: "Button can have another meaning..."
+	backgroundColor: #B22222FF
+	image: image@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<image>)
+	width: width@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	height: height@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	moveOver: moveOver@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<function<bool,int,int,int,int>>)
+	Buttons: intlist [0, 0, 0, 0, 0, 0, 0]
+	onAllButtonsClicked: conditional_script(d4c13654-b7ab-49c2-bfa1-c826970defd3)
+	{
+		triggerList: trigger_list(e55e0a19-e8c6-493d-9d22-9e8e314eaec4)
+		{
+			script: "v:this.Buttons"
+		}
+		onTrigger: function<bool,bool>(0381718d-39c0-475c-9c3b-b88635bb1626)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	let v:sum = 0 in{" \
+				"		let v:i = 0 in{" \
+				"			while( v:i < 7) {" \
+				"				v:sum += v:this.Buttons[v:i]" \
+				"				v:i += 1" \
+				"			}" \
+				"			if(v:sum == 7){" \
+				"				dp:DoneLevel3 = true;" \
+				"			}" \
+				"		}" \
+				"	}" \
+				"	false" \
+				"}"
+		}
+	}
+}
