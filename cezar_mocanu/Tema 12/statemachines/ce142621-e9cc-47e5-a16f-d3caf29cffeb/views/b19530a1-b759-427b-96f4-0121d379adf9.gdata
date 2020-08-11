@@ -1,0 +1,50 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(b19530a1-b759-427b-96f4-0121d379adf9)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(22cd0f34-de7f-40cd-a4af-a2ded9c65226)
+		{
+			name: "AnimatedBackground"
+			template: @13771ef0-b46e-4bd6-b213-aea7bc1e4125 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Please add money to the terminal"
+			exitScreen: exitScreen@13771ef0-b46e-4bd6-b213-aea7bc1e4125 (propref<bool>)
+			onUnloadAction: function<bool>(5df9ad8c-939c-4f4b-8b6d-8a6810a84653)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goToMainMenu()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(1f307528-0a07-49f5-8617-022c65c62a8e)
+		{
+			name: "Back"
+			template: @23da499a-28ed-4fd3-b449-6c26e7968fae (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "BACK"
+			x: 560
+			y: 350
+			height: height@23da499a-28ed-4fd3-b449-6c26e7968fae (propref<int>)
+			width: width@23da499a-28ed-4fd3-b449-6c26e7968fae (propref<int>)
+			visible: visible@23da499a-28ed-4fd3-b449-6c26e7968fae (propref<bool>)
+			onReleaseAction: function<bool>(b0e51479-a4e2-4744-9a26-a9f98f4fc1cf)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this->^->AnimatedBackground.exitScreen = true" \
+					"	" \
+					"	false" \
+					"}"
+			}
+		}]
+	name: "vCredit"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

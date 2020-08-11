@@ -1,0 +1,76 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(52d320a7-a947-4b18-8f21-a38990e3784e)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(4574d222-7415-4e73-b99e-723668c908ab)
+		{
+			name: "AnimatedBackground"
+			template: @13771ef0-b46e-4bd6-b213-aea7bc1e4125 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Add credit by selecting the first option or buy one by selectiong the second option"
+			exitScreen: exitScreen@13771ef0-b46e-4bd6-b213-aea7bc1e4125 (propref<bool>)
+			onUnloadAction: function<bool>(6bdd84cd-3710-4737-acef-63f6ee3ca598)
+			{
+				script: "function()" \
+					"{" \
+					"	if(dp:selectedOption == \"credit\")" \
+					"		fire ev:goToCredit()" \
+					"	else if(dp:selectedOption == \"ticket\")" \
+					"		fire ev:goToBuyTicket()" \
+					"	else" \
+					"		fire ev:goToMainMenu()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(11dd75f8-5090-4773-a04b-2d776b2e67be)
+		{
+			name: "AddCredit"
+			template: @23da499a-28ed-4fd3-b449-6c26e7968fae (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "ADD CREDIT"
+			x: 450
+			y: 100
+			height: height@23da499a-28ed-4fd3-b449-6c26e7968fae (propref<int>)
+			width: width@23da499a-28ed-4fd3-b449-6c26e7968fae (propref<int>)
+			visible: visible@23da499a-28ed-4fd3-b449-6c26e7968fae (propref<bool>)
+			onReleaseAction: function<bool>(2b00c4d9-8600-4e93-b7e3-d7e819af1f22)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this->^->AnimatedBackground.exitScreen = true" \
+					"	dp:selectedOption = \"credit\"" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(bae3328d-3c5f-4f3e-a60a-c76b539f8355)
+		{
+			name: "BuyTicket"
+			template: @23da499a-28ed-4fd3-b449-6c26e7968fae (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "BUY TICKET"
+			x: 660
+			y: 100
+			height: height@23da499a-28ed-4fd3-b449-6c26e7968fae (propref<int>)
+			width: width@23da499a-28ed-4fd3-b449-6c26e7968fae (propref<int>)
+			visible: visible@23da499a-28ed-4fd3-b449-6c26e7968fae (propref<bool>)
+			onReleaseAction: function<bool>(52569c17-73e6-4ce2-9385-fc234668fca4)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this->^->AnimatedBackground.exitScreen = true" \
+					"	dp:selectedOption = \"ticket\"" \
+					"	false" \
+					"}"
+			}
+		}]
+	name: "vMainMenu"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

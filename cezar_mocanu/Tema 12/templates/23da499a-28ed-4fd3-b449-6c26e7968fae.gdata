@@ -1,0 +1,370 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(23da499a-28ed-4fd3-b449-6c26e7968fae)
+{
+	name: "Button"
+	structure: GtfContainer(9dc742d6-3eee-4940-ace6-34d162b350b6)
+	{
+		features: feature_list [
+			TouchPressed(cf4f472d-8620-4cd0-8df7-96874455c8c3)
+			{
+				touchPressed: function<bool,int,int,int,int>(599461bd-7e1b-45c7-a98b-ca81c1fd1093)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.onPressStyle()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(40ffff2e-0eed-4d21-ae56-b7160840443d)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(503c4064-8216-4d79-9f13-61f4802974fc)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.onReleaseStyle()" \
+						"	v:this.onReleaseAction()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(512b16aa-6a3c-4ad8-aec9-40090f69066f)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfEllipse(1e9d9825-a83d-483a-986d-3fae194ca533)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: int_scriptedValue(b4b7bf75-4cac-4c76-abe0-9b87312d098c)
+				{
+					triggerList: trigger_list(7a7d54e2-0799-42a6-b247-624d31f4180c)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(cade332e-22a4-42ce-93d5-37cd285baa53)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(4367b438-6fe1-4fc7-ac5e-e26e58fca974)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.width * 7 / 10" \
+							"}"
+					}
+					write: function<bool,int>(655b7d82-a89e-4e0f-9c53-41ab5c01dab9)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				height: width@1e9d9825-a83d-483a-986d-3fae194ca533 (propref<int>)
+				x: int_scriptedValue(12d41eb0-a3d8-4b55-b568-3ed608ea17b0)
+				{
+					triggerList: trigger_list(4f3bbae6-7fe3-44f8-877c-740a8b086a3a)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(7a6ee1f1-7e0f-405d-bf0e-4a8b17bc5b95)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(8d7f55f6-9f3a-4d18-931f-978de19be339)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.width * 15 / 100" \
+							"}"
+					}
+					write: function<bool,int>(f4617648-8340-4700-99c5-ad58983129ac)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				y: 0
+				fillColor: color_element_reference(bee253c4-12a9-4b18-8e38-d12ffd60b88b)
+				{
+					index: 0
+					list: colors@9dc742d6-3eee-4940-ace6-34d162b350b6 (propref<colorlist>)
+				}
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}, 
+			GtfEllipse(fabf791f-f0bc-4427-84db-c8bf91f346ba)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Foreground"
+				visible: true
+				width: int_scriptedValue(1be60da4-59c5-4193-b783-f9b7bfb6ca16)
+				{
+					triggerList: trigger_list(543f6987-10a9-4ed2-b62e-d7e0c919c68d)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(5a62bfb8-590d-418d-8a22-96434e2d888c)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(b83ddafc-7578-49d9-aef1-b4cecfd06b64)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.width * 60 / 100" \
+							"}"
+					}
+					write: function<bool,int>(8a09e74d-d0cc-4340-b96f-ffa3f30d22a7)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				height: width@fabf791f-f0bc-4427-84db-c8bf91f346ba (propref<int>)
+				x: int_scriptedValue(91a7828e-d4c6-436f-a801-62318351688d)
+				{
+					triggerList: trigger_list(3ba89a2a-f933-4dc3-8b28-cb4bb7c1ea41)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(8a172d84-84dc-450f-90f2-525860c29c47)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(b8638955-2ac6-4a5f-8586-78a2d41faa1f)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.width * 20 / 100" \
+							"}"
+					}
+					write: function<bool,int>(e9160231-cac4-4e07-aad5-dcdbf8394e58)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				y: int_scriptedValue(86287403-e93b-4f9c-a619-15a9a170f374)
+				{
+					triggerList: trigger_list(b9eae017-cc97-4112-aa07-a44b5571a0e5)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(2155e975-e346-4e79-a76c-d8f6d8a2cd98)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(90db0f5e-22a4-4ae0-b751-4a9a19e6be6a)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.width * 5 / 100" \
+							"}"
+					}
+					write: function<bool,int>(5ce082bb-98f2-487d-90de-efdc933f7579)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				fillColor: currentColor@9dc742d6-3eee-4940-ace6-34d162b350b6 (propref<color>)
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}, 
+			GtfImage(19d34deb-4593-47f1-bad6-b7d5052b16d9)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Image"
+				visible: true
+				width: 100
+				height: 100
+				x: 0
+				y: 0
+				image: image_resource(b16a8cb8-38e8-40fd-8a4a-f3a41c7fc984)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(9e275281-10d1-42d5-821e-a7740bffa96e)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Text"
+				visible: true
+				width: width@9dc742d6-3eee-4940-ace6-34d162b350b6 (propref<int>)
+				height: int_scriptedValue(68901beb-8153-4688-aa0e-25bf1717a325)
+				{
+					triggerList: trigger_list(a038d791-f4e9-4bf0-afb2-7270d0d5a485)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(7c441b03-67a1-4d10-974a-b56efd3ba86a)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(b180a568-51a4-4fdf-a949-b4ed003a4dc3)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.height * 3 / 10" \
+							"}"
+					}
+					write: function<bool,int>(1c882b33-d32d-4662-93b2-c82529ddfa44)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				x: 0
+				y: int_scriptedValue(da6ad91e-8959-4744-ab51-3ac78169c71c)
+				{
+					triggerList: trigger_list(a1ccc64f-fb86-4009-b57e-2a30399fe0f8)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(2b31ef96-5bb6-40d4-8bd8-a31c29b3ef8b)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(8013034f-367a-4374-b891-945f61288819)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.height * 7 / 10" \
+							"}"
+					}
+					write: function<bool,int>(226fe7aa-8a7c-4ede-99a9-c753b983cdce)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				text: "Buy Ticket"
+				textColor: #FFFFFFFF
+				font: font_resource(754831a2-fe26-4761-ac5c-0b8b1a0ec8dc)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 22
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		colors: colorlist [#4169E1FF, #ADD8E6FF, #E0FFFFFF]
+		currentColor: #A9A9A9FF
+		onInit: conditional_script(fec508c4-7b80-4df3-a533-d0a1cbba4882)
+		{
+			triggerList: trigger_list(55e206be-f72d-4a4f-9371-07697592dfab)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(72212fc6-e1d4-4ebd-aa86-7a0a11d04cce)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	v:this.currentColor = v:this.colors[1]" \
+					"	false" \
+					"}"
+			}
+		}
+		onPressStyle: function<bool>(3dcd7167-2761-4525-81c4-6a6479275f2e)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.currentColor = v:this.colors[2]" \
+				"	false" \
+				"}"
+		}
+		onReleaseStyle: function<bool>(76c6e98a-7833-4056-82d2-390614d72a9e)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.currentColor = v:this.colors[1]" \
+				"	false" \
+				"}"
+		}
+		onReleaseAction: function<bool>(b7eb8852-7416-48df-928f-dfdd2ab91fdf)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	text: text@9e275281-10d1-42d5-821e-a7740bffa96e (propref<string>)
+	x: x@9dc742d6-3eee-4940-ace6-34d162b350b6 (propref<int>)
+	y: y@9dc742d6-3eee-4940-ace6-34d162b350b6 (propref<int>)
+	height: height@9dc742d6-3eee-4940-ace6-34d162b350b6 (propref<int>)
+	width: width@9dc742d6-3eee-4940-ace6-34d162b350b6 (propref<int>)
+	visible: visible@9dc742d6-3eee-4940-ace6-34d162b350b6 (propref<bool>)
+	onReleaseAction: onReleaseAction@9dc742d6-3eee-4940-ace6-34d162b350b6 (propref<function<bool>>)
+}
