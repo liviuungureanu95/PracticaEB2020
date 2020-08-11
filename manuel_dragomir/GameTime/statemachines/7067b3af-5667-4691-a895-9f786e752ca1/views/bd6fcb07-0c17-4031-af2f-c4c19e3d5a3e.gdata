@@ -1,0 +1,106 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(bd6fcb07-0c17-4031-af2f-c4c19e3d5a3e)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(9ddbaddb-a21b-4d85-8762-41468dceebb9)
+		{
+			features: feature_list [
+				MoveOver(d03ed841-5d7c-459b-962c-9a738f9b692c)
+				{
+					moveOver: function<bool,int,int,int,int>(887061ab-1341-4e91-a7cc-cad170376486)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    true" \
+							"}"
+					}
+				}, 
+				StateTouched(7162e222-0791-4d12-85fe-918d0a15f3c5)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfRectangle(e945eeb5-341d-4fae-9c4a-025c4f44f6b2)
+				{
+					features: feature_list [
+						Border(d31d05c7-2546-48eb-aa0a-3f7cb1af4da8)
+						{
+							borderThickness: 7
+							borderColor: #000000FF
+							borderStyle: 0
+						}]
+					children: children_list [
+						GtfContainer_template_instance(02830e6e-2f83-4ef3-9545-3254a8736266)
+						{
+							name: "Button 1"
+							template: @8333bb03-38b5-4824-a70a-203d73d5b064 (objectref<GtfContainer_template>)
+							children: children_list []
+							x: 204
+							y: 243
+							width: 82
+							height: 56
+							text: "Ok"
+							touchReleased: function<bool>(82a76953-4dcb-4149-b409-92cf9580f12c)
+							{
+								script: "function()" \
+									"{" \
+									"	f:popDynamicStateMachine(popup_stack:Main, sm:HintPopUp)" \
+									"	false" \
+									"}"
+							}
+							font: font@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<font>)
+							visible: true
+						}]
+					name: "PopUpBackground"
+					visible: true
+					width: 479
+					height: 307
+					x: 160
+					y: 79
+					fillColor: #87CEEBFF
+				}, 
+				GtfLabel(ff2ac9a2-0f0f-46d5-9e94-dd46f730159d)
+				{
+					features: feature_list [
+						MultiLine(df33cf2e-3907-468a-823c-9d4c613e3623)
+						{
+							lineOffset: 0
+							maxLineCount: 0
+						}]
+					children: children_list []
+					name: "Label"
+					visible: true
+					width: 438
+					height: 215
+					x: 182
+					y: 89
+					text: @43ad72d9-4a72-40cf-ba20-dc54eb6c0da5 (objectref<string>)
+					textColor: #FFFF00FF
+					font: font_resource(cbcacc0e-b1d2-4d5a-8bfd-2d8ff048082d)
+					{
+						file: "helvetica-rounded-bold-5871d05ead8de.otf"
+						size: 35
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Background"
+			visible: true
+			width: width@bd6fcb07-0c17-4031-af2f-c4c19e3d5a3e (propref<int>)
+			height: height@bd6fcb07-0c17-4031-af2f-c4c19e3d5a3e (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #FFFFFF00
+		}]
+	name: "View"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
