@@ -111,7 +111,7 @@ GtfView(a8cd2d19-6a08-4ede-9c63-3e17ab2854a5)
 								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 									"{" \
 									"	dp:Buffer= dp:PricesList[v:this.lineIndex]" \
-									"	dp:TotalPrice=dp:TotalPrice+dp:Buffer*dp:\"Quanitity\"" \
+									"	dp:TotalPrice=dp:TotalPrice+dp:Buffer*dp:\"KG\"" \
 									"    false" \
 									"}"
 							}
@@ -139,9 +139,29 @@ GtfView(a8cd2d19-6a08-4ede-9c63-3e17ab2854a5)
 							font: font_resource(352802bc-7870-4d12-a623-53b3f306e06b)
 							{
 								file: "PT_Sans_Narrow.ttf"
-								size: 30
+								size: 20
 							}
 							horizontalAlign: 1
+							verticalAlign: 0
+						}, 
+						GtfLabel(064160f6-8b39-4558-bff5-3ad210d98b9f)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "price"
+							visible: true
+							width: 100
+							height: 100
+							x: 30
+							y: 20
+							text: "label"
+							textColor: #FFFFFFFF
+							font: font_resource(85b355ca-89ac-40af-9cf1-87e734ab846e)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 20
+							}
+							horizontalAlign: 0
 							verticalAlign: 0
 						}]
 					name: "Button"
@@ -161,7 +181,8 @@ GtfView(a8cd2d19-6a08-4ede-9c63-3e17ab2854a5)
 						{
 							script: "function(v:arg0::bool)" \
 								"{" \
-								"v:this->\"text\".text=dp:Products[v:this.lineIndex];" \
+								"v:this->\"text\".text=dp:Products[v:this.lineIndex]" \
+								"v:this->\"price\".text=f:int2string(dp:PricesList[v:this.lineIndex])+\"$ /KG\";" \
 								"false" \
 								"}"
 						}
