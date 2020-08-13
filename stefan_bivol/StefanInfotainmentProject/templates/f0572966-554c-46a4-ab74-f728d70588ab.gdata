@@ -1,0 +1,115 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(f0572966-554c-46a4-ab74-f728d70588ab)
+{
+	name: "Image Text Button"
+	structure: GtfContainer(2047d159-cd80-4b1e-a315-add830fdce69)
+	{
+		features: feature_list [
+			MoveOut(281383e8-e591-4ec4-a1bd-db49ef50f85f)
+			{
+				moveOut: function<bool,int,int,int,int>(bd86e6c0-9a39-4d5e-91a9-a2040f72ca27)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->Background_Button.fillColor = dp:Move_Out_Color" \
+						"    false" \
+						"}"
+				}
+			}, 
+			MoveIn(8161f7f9-1892-42c5-81a6-a2f7e6044cb7)
+			{
+				moveIn: function<bool,int,int,int,int>(9b12237c-c792-4d99-ba47-01d1b93464ab)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->Background_Button.fillColor = dp:Move_In_Color" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(89a4d927-de7f-408f-8100-37be2dca7611)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			TouchShortReleased(1e294f25-3513-4625-8f83-b7d93d6edfce)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(7bca107a-2277-480f-bad5-48078bac40e4)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}]
+		children: children_list [
+			GtfRectangle(b944454c-d095-460d-b028-058f51bd05fb)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfImage(52a62ea5-d01f-4ccb-a11f-62b9d25f7f56)
+					{
+						features: feature_list [
+							ScaleMode(44fce0b0-e771-40c7-9993-83c6f4784313)
+							{
+								scaleMode: 1
+							}]
+						children: children_list []
+						name: "Image_Button"
+						visible: true
+						width: 50
+						height: 50
+						x: 22
+						y: 1
+						image: image_resource(fba3c3aa-0c26-4a80-b596-a24554ad6ead)
+						{
+							file: ""
+						}
+						sRGB: false
+						horizontalAlign: 1
+						verticalAlign: 1
+					}, 
+					GtfLabel(5a39ce86-66c2-4dfe-8a91-e78f6795a943)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Text_Button"
+						visible: true
+						width: 75
+						height: 30
+						x: 10
+						y: 45
+						text: "<Text>"
+						textColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+						font: font_resource(cc0c3239-3117-46c6-92bc-ed0c53533159)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 20
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "Background_Button"
+				visible: true
+				width: width@2047d159-cd80-4b1e-a315-add830fdce69 (propref<int>)
+				height: height@2047d159-cd80-4b1e-a315-add830fdce69 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+			}]
+		name: "Image_Text_Button"
+		visible: true
+		width: 100
+		height: 75
+		x: 0
+		y: 0
+	}
+	x: x@2047d159-cd80-4b1e-a315-add830fdce69 (propref<int>)
+	y: y@2047d159-cd80-4b1e-a315-add830fdce69 (propref<int>)
+	textButton: text@5a39ce86-66c2-4dfe-8a91-e78f6795a943 (propref<string>)
+	imageButton: image@52a62ea5-d01f-4ccb-a11f-62b9d25f7f56 (propref<image>)
+	touchShortReleased: touchShortReleased@1e294f25-3513-4625-8f83-b7d93d6edfce (propref<function<bool,int,int,int,int>>)
+}
