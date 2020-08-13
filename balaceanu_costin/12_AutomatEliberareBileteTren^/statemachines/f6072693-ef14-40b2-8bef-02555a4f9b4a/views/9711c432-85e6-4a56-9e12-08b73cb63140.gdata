@@ -1,0 +1,117 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(9711c432-85e6-4a56-9e12-08b73cb63140)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer(9c2406bf-e6f5-4b9e-9a5f-372a98032689)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(980372ab-2c44-4084-9f08-1087e35d4779)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Background"
+					visible: true
+					width: width@9711c432-85e6-4a56-9e12-08b73cb63140 (propref<int>)
+					height: height@9711c432-85e6-4a56-9e12-08b73cb63140 (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(9068b509-e50e-453e-bc4c-634303097b58)
+					{
+						file: "Train_background.jpg"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfContainer_template_instance(de3c42b4-b9a3-430e-946c-70d24fd1fc7f)
+				{
+					name: "ClassButton_Group"
+					template: @d24af9ce-ccd0-4c9a-b5f0-3a6526642654 (objectref<GtfContainer_template>)
+					children: children_list []
+					image_b1: image_resource(b4a23c03-9a09-4f43-842e-dd801d07c6f7)
+					{
+						file: "first_class_back.jpg"
+					}
+					Pressed_b1: function<bool,int,int,int,int>(5a624ea1-2dfe-4676-afe0-93809fda9a85)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->ClassButton_Group.borderColor_b1 = dp:BorderPress" \
+							"    false" \
+							"}"
+					}
+					Released_b1: function<bool,int,int,int,int>(45ea16d7-3271-4515-b051-928b51f81196)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->ClassButton_Group.borderColor_b1 = dp:BorederReleased" \
+							"	fire ev:GoTo_FirstClass()" \
+							"    false" \
+							"}"
+					}
+					image_b2: image_resource(8b633613-818b-40dc-a65c-869d5119dc59)
+					{
+						file: "second_class_back.jpg"
+					}
+					Pressed_b2: function<bool,int,int,int,int>(6c546a5b-8399-4c3a-a20c-cb45af592ac1)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->ClassButton_Group.borderColor_b2 = dp:BorderPress" \
+							"    false" \
+							"}"
+					}
+					Released_b2: function<bool,int,int,int,int>(53949848-efb2-4579-af91-a0f1dfcae592)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->ClassButton_Group.borderColor_b2 = dp:BorederReleased" \
+							"	fire ev:GoTo_SecondClass()" \
+							"    false" \
+							"}"
+					}
+					visible: true
+					borderColor_b1: borderColor_b1@d24af9ce-ccd0-4c9a-b5f0-3a6526642654 (propref<color>)
+					borderColor_b2: borderColor_b2@d24af9ce-ccd0-4c9a-b5f0-3a6526642654 (propref<color>)
+					x: 80
+					y: 305
+					textColor_b2: #000000FF
+					textColor_b1: #000000FF
+				}, 
+				GtfLabel(758f56de-37a6-407e-94eb-0c0dc3de5394)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Info_txt"
+					visible: true
+					width: width@9711c432-85e6-4a56-9e12-08b73cb63140 (propref<int>)
+					height: 100
+					x: 0
+					y: 200
+					text: "Select the CLASS you want to travel !"
+					textColor: #FFFFFFFF
+					font: font_resource(b1dc4b5a-6087-457c-84a4-da1b37c74f15)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 35
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Container"
+			visible: true
+			width: width@9711c432-85e6-4a56-9e12-08b73cb63140 (propref<int>)
+			height: height@9711c432-85e6-4a56-9e12-08b73cb63140 (propref<int>)
+			x: 0
+			y: 0
+		}]
+	name: "PrincipalMENU"
+	visible: true
+	width: 480
+	height: 800
+	x: 0
+	y: 0
+}
