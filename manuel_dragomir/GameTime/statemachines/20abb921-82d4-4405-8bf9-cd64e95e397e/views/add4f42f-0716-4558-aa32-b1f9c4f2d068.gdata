@@ -1,0 +1,258 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(add4f42f-0716-4558-aa32-b1f9c4f2d068)
+{
+	name: "9_View"
+	template: @6ed0fc89-f5fa-41df-8452-71b599053367 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(cc1d6bbc-a130-4ddc-ac28-1b7c32bc66cd)
+		{
+			name: "NextButton"
+			template: @8333bb03-38b5-4824-a70a-203d73d5b064 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 668
+			y: 207
+			width: 81
+			height: 43
+			text: ""
+			touchReleased: function<bool>(dcb64678-253b-4cdf-873b-9dd36e012015)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoToLevel_10()" \
+					"	false" \
+					"}"
+			}
+			font: font_resource(9d3247b4-d2a0-46e6-8406-452e819d6aa0)
+			{
+				file: "Joystick-5KjV.ttf"
+				size: 30
+			}
+			visible: visible@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+			touchable: false
+		}, 
+		GtfLabel(ea559b4b-975d-4ffc-924a-3f9a314e4d78)
+		{
+			features: feature_list [
+				MultiLine(acb5a972-fc67-483c-88d9-f3c6ebfd27bd)
+				{
+					lineOffset: 0
+					maxLineCount: 0
+				}]
+			children: children_list []
+			name: "Hint"
+			visible: true
+			width: 660
+			height: 71
+			x: 41
+			y: 10
+			text: "Sometimes you have to make things happen."
+			textColor: #FFFFFFFF
+			font: @c686500e-f444-44ae-ad8a-5b5b3ef74343 (objectref<font>)
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(3e351111-3b65-4961-82bd-bb90de447f37)
+		{
+			features: feature_list [
+				MultiLine(cd2b6a66-f828-4332-a369-c963568c7cb0)
+				{
+					lineOffset: 10
+					maxLineCount: 0
+				}]
+			children: children_list []
+			name: "Song"
+			visible: true
+			width: 642
+			height: 324
+			x: 75
+			y: 78
+			text: string_scriptedValue(90f69802-7b3d-46f4-96c7-1354d5ef090f)
+			{
+				triggerList: trigger_list(d9f0e0b8-ea72-4b0b-a3ab-88cf13061dab)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(05a1b6eb-f25f-4f66-8be6-d3348b76adab)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(7b64dea5-0ce6-42f5-bc88-4502081bfd28)
+				{
+					script: "function()" \
+						"{" \
+						"	\"I met this girl for the first time on Saturday night.\\n\" +" \
+						"	\"Standing in the queue at the Odeon alright\\n\" +" \
+						"	\"Oh I took her by surprise\\n\" +" \
+						"	\"When I gave her one of my lines\\n\" +" \
+						"	\"She started smiling at me real fine\\n\" +" \
+						"	\"That's when I said\\n\"" \
+						"}"
+				}
+				write: function<bool,string>(cf8ed2f3-b0b9-4f6b-897f-7dc8bd169af7)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #FFFFFFFF
+			font: font_resource(762c30a8-45db-409b-bddc-910d3c9d4531)
+			{
+				file: "Helvetica-Oblique.ttf"
+				size: 25
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(5ede117b-86a7-4f7c-9a84-6ebdd51808ef)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "AC/DC_Label"
+			visible: true
+			width: 100
+			height: 51
+			x: 584
+			y: 421
+			text: "AC/DC"
+			textColor: #FFFFFFFF
+			font: font_resource(12305c8b-1bbf-4eb1-afae-febf61d41c29)
+			{
+				file: "Helvetica-Bold.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(8f41ebcd-c774-4b7b-8221-1b50256a5129)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "FirstWords"
+			visible: true
+			width: 121
+			height: 37
+			x: 386
+			y: 390
+			text: "Can I set "
+			textColor: #FFFFFFFF
+			font: font_resource(06e865fe-f4b4-4a36-b723-7e9b94a93753)
+			{
+				file: "helvetica-light-587ebe5a59211.ttf"
+				size: 25
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(150a4b60-0b70-47e2-81eb-0f637d12a3c3)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "EndWords"
+			visible: true
+			width: 121
+			height: height@8f41ebcd-c774-4b7b-8221-1b50256a5129 (propref<int>)
+			x: 543
+			y: y@8f41ebcd-c774-4b7b-8221-1b50256a5129 (propref<int>)
+			text: "to you girl?"
+			textColor: #FFFFFFFF
+			font: font@8f41ebcd-c774-4b7b-8221-1b50256a5129 (propref<font>)
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(26b6b0b4-1dce-4c69-8b9d-79e4160b6ad1)
+		{
+			features: feature_list [
+				TouchPressed(91fc7638-8cd7-4406-931c-d7be11eb24a4)
+				{
+					touchPressed: function<bool,int,int,int,int>(f08f0a78-7429-4005-af1c-5fdb764fff82)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.touchX = v:x - v:this.x" \
+							"	v:this.touchY = v:y - v:this.y" \
+							"	v:this.touchMoved(v:touchId, v:x, v:y, v:fingerId)" \
+							"    v:this.textColor = color:0, 0, 255, 255" \
+							"    false" \
+							"}"
+					}
+				}, 
+				TouchShortReleased(42405636-ca3a-4bd9-81c5-77da36118741)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(fe38abec-0eb0-4685-b93b-f617da464e68)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	let v:nextButton = v:this->^->NextButton in{" \
+							"		if(v:x >= v:nextButton.x && v:x <= v:nextButton.x + v:nextButton.width &&" \
+							"		   v:y >= v:nextButton.y && v:y <= v:nextButton.y + v:nextButton.height){" \
+							"		   	//make the next button touchable" \
+							"		   	v:nextButton.touchable = true" \
+							"		   	" \
+							"		   	//make the label impossible to move again" \
+							"		   	v:this.touchable = false" \
+							"		   	" \
+							"		   	//middle positioning" \
+							"		  		// middle (x,y) for the next button" \
+							"		  		let v:middleX = v:nextButton.x + v:nextButton.width / 2" \
+							"		  			v:middleY = v:nextButton.y + v:nextButton.height / 2" \
+							"		  		in" \
+							"		  			{" \
+							"		  				v:this.x = v:middleX - v:this.width / 2" \
+							"		  				v:this.y = v:middleY - v:this.height / 2" \
+							"		  			}" \
+							"		   }" \
+							"	}" \
+							"	" \
+							"    false" \
+							"}"
+					}
+				}, 
+				TouchMove(d8a5e2ec-3ac0-44f4-9a7b-203e98d31dd5)
+				{
+					touchMoved: function<bool,int,int,int,int>(702d16ef-dc73-4ed3-8b10-fcbd871799a8)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    v:this.x = v:x - v:this.touchX" \
+							"    v:this.y = v:y - v:this.touchY" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(9acb39fd-7911-4d65-813c-ed5d68e03b0e)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "NextWord"
+			visible: true
+			width: 61
+			height: height@150a4b60-0b70-47e2-81eb-0f637d12a3c3 (propref<int>)
+			x: 480
+			y: 390
+			text: "next"
+			textColor: #FFFFFFFF
+			font: font@150a4b60-0b70-47e2-81eb-0f637d12a3c3 (propref<font>)
+			horizontalAlign: 1
+			verticalAlign: 0
+			touchX: 0
+			touchY: 0
+		}]
+	hintForLevel: "The 'next' word from the title of the song can be dragged. Just drop it in the right place."
+	backgroundColor: #000000FF
+	image: image@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<image>)
+	width: width@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	height: height@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	moveOver: moveOver@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<function<bool,int,int,int,int>>)
+}

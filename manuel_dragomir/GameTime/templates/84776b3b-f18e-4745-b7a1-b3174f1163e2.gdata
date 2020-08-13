@@ -1,0 +1,182 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(84776b3b-f18e-4745-b7a1-b3174f1163e2)
+{
+	name: "Digit"
+	structure: GtfContainer(7bfdc52b-a436-476c-85b6-7a4b90e03d1d)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(b2732458-80fe-4f28-afd1-ef33e8378e62)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLabel(b5038558-9f41-4089-b713-f14719c35726)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Label"
+						visible: true
+						width: width@b2732458-80fe-4f28-afd1-ef33e8378e62 (propref<int>)
+						height: 100
+						x: 0
+						y: 43
+						text: string_scriptedValue(d766cfc7-9c0f-4edc-bddb-334c48ad7377)
+						{
+							triggerList: trigger_list(a196d7f9-c69e-49bd-b305-e429e6d4f434)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(fa249e14-dc01-4190-92d9-f9b729bf1734)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<string>(e02f1cae-6a41-4c83-b6a0-2762a39ee128)
+							{
+								script: "function()" \
+									"{" \
+									"	f:int2string(v:this->^->^.digitValue)" \
+									"}"
+							}
+							write: function<bool,string>(35906280-ac86-435e-a6a9-1901585e4128)
+							{
+								script: "function(v:arg0::string)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						textColor: #2F4F4FFF
+						font: font_resource(9fb11bbe-97fb-4693-94e8-0c42276baadf)
+						{
+							file: "AreaStencil-rg4p8.otf"
+							size: 100
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "Digit"
+				visible: true
+				width: 89
+				height: height@7bfdc52b-a436-476c-85b6-7a4b90e03d1d (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #DCDCDCFF
+			}, 
+			GtfImage(2617509b-0dab-4a42-9fb5-5d9d78694d1e)
+			{
+				features: feature_list [
+					ScaleMode(4a64c8ea-415f-40a1-a860-3bd267bd5b31)
+					{
+						scaleMode: 1
+					}, 
+					TouchPressed(8cf083ec-ea65-4b55-99ca-860da9563780)
+					{
+						touchPressed: function<bool,int,int,int,int>(61f1a4ea-eca6-46dd-9826-dd70418eb412)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this->^.digitValue += 1" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(beca47b2-438d-41c3-aad4-2181aeb6546a)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list []
+				name: "DownArrow"
+				visible: true
+				width: width@7bfdc52b-a436-476c-85b6-7a4b90e03d1d (propref<int>)
+				height: 63
+				x: 1
+				y: 129
+				image: image_resource(505dde16-a78f-4b85-ae11-231433fd137f)
+				{
+					file: "down_arrow.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfImage(0dc94fac-ce6a-4cb8-95d2-5184314b324a)
+			{
+				features: feature_list [
+					ScaleMode(7a68702d-04ca-463c-ab1a-b21966a4f5e6)
+					{
+						scaleMode: 1
+					}, 
+					TouchPressed(ff369313-cacd-4a79-b206-152a6340a64d)
+					{
+						touchPressed: function<bool,int,int,int,int>(94ddd23a-c85e-45ba-abd9-a5b295f8bbf8)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this->^.digitValue -= 1" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(93728839-6edd-4ae2-92a7-010fe53fe640)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list []
+				name: "UpArrow"
+				visible: true
+				width: width@7bfdc52b-a436-476c-85b6-7a4b90e03d1d (propref<int>)
+				height: height@2617509b-0dab-4a42-9fb5-5d9d78694d1e (propref<int>)
+				x: 0
+				y: -10
+				image: image_resource(5ae8fc85-d6d2-48af-9647-60c0d4e64792)
+				{
+					file: "up_arrow.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "Container"
+		visible: true
+		width: width@b2732458-80fe-4f28-afd1-ef33e8378e62 (propref<int>)
+		height: 183
+		x: 0
+		y: 0
+		digitValue: 0
+		digitConstraints: conditional_script(bcbf6164-1b89-4e7d-948e-2132e30541eb)
+		{
+			triggerList: trigger_list(a9f04834-7695-4f31-a226-a24f32594d4b)
+			{
+				script: "v:this.digitValue"
+			}
+			onTrigger: function<bool,bool>(f205ab6b-02b8-414d-b150-51f6f445d513)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	if(v:this.digitValue < 0){" \
+					"		v:this.digitValue = 0" \
+					"	}" \
+					"	if(v:this.digitValue > 9){" \
+					"		v:this.digitValue = 9" \
+					"	}" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+	x: x@7bfdc52b-a436-476c-85b6-7a4b90e03d1d (propref<int>)
+	y: y@7bfdc52b-a436-476c-85b6-7a4b90e03d1d (propref<int>)
+	digitValue: digitValue@7bfdc52b-a436-476c-85b6-7a4b90e03d1d (propref<int>)
+}

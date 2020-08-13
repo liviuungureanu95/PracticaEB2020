@@ -1,0 +1,451 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(dfbd595c-0c9d-4b1c-a956-d7b377d12a72)
+{
+	name: "8_View"
+	template: @6ed0fc89-f5fa-41df-8452-71b599053367 (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(bef1beef-6a21-4e75-9184-718469976617)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Hint"
+			visible: true
+			width: 205
+			height: 53
+			x: 505
+			y: 16
+			text: "Hold your fire!"
+			textColor: #000000FF
+			font: @c686500e-f444-44ae-ad8a-5b5b3ef74343 (objectref<font>)
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfContainer(a1d231ca-635f-4817-a350-7b552eeefb84)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(0b7b3688-0e57-4df5-a6ac-b2ebe5453e33)
+				{
+					features: feature_list [
+						Gestures(e1232167-ce33-4f83-9424-ce943f1cae15)
+						{
+						}, 
+						GestureHold(0bc2b5ae-6bcd-45fb-80b0-2dd1e5d2796e)
+						{
+							onGestureHold: function<void,int,int>(97b2006d-23b8-44ee-8930-f77059804041)
+							{
+								script: "function(v:x::int, v:y::int)" \
+									"{" \
+									"	v:this->^->^->NextButton.visible = true" \
+									"}"
+							}
+							holdDuration: 12000
+						}, 
+						StateTouched(a540f4b7-106d-4336-adfe-665b18c95fd2)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "Layer 5"
+					visible: false
+					width: 253
+					height: 449
+					x: 51
+					y: 25
+					image: image_resource(03387ce8-8f3c-4154-8663-0b7344c12dcd)
+					{
+						file: "fire_small\\Layer 5.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+					trigger: conditional_script(277306a1-e41f-4c2c-9d22-6c9a3aa79b8d)
+					{
+						triggerList: trigger_list(c0343ccc-75d1-4c3c-a907-7d2425fcdc75)
+						{
+							script: "ev:LayersFire:TrigLayer5" \
+								""
+						}
+						onTrigger: function<bool,bool>(37818a0a-1b5b-42c8-b2a7-26f53d249819)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	match_event v:event = ev:LayersFire:TrigLayer5 in" \
+								"{" \
+								"	if(v:this->^->\"Layer 4\".visible == true){" \
+								"		v:this.visible = true" \
+								"		v:this->^->^->NextButton.visible = true	" \
+								"	}" \
+								"}" \
+								"" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfImage(db6efd6b-bbf1-4375-b95d-cfac84c9d08a)
+				{
+					features: feature_list [
+						Gestures(61369520-a106-4910-8cd1-1f2d28a79177)
+						{
+						}, 
+						GestureHold(72c35961-c54a-44a2-b42e-8cbbb328325a)
+						{
+							onGestureHold: function<void,int,int>(a08774a7-02d7-4aae-82c9-6e63deb902ae)
+							{
+								script: "function(v:x::int, v:y::int)" \
+									"{" \
+									"	v:this->^->\"Layer 5\".visible = true" \
+									"	v:this->^->\"Layer 5\".onGestureHold(v:x, v:y)" \
+									"}"
+							}
+							holdDuration: 10000
+						}, 
+						StateTouched(8a740404-1d47-4d1b-a0a4-297fc336ead2)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "Layer 4"
+					visible: false
+					width: 223
+					height: 378
+					x: 69
+					y: 75
+					image: image_resource(f6d17fab-1854-4894-b88c-8eb44854d665)
+					{
+						file: "fire_small\\Layer 4.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+					trigger: conditional_script(3985d127-b31a-4dc0-b84c-1049e6a66e73)
+					{
+						triggerList: trigger_list(062ed28c-5a81-42b3-9036-3a83413075c4)
+						{
+							script: "ev:LayersFire:TrigLayer4" \
+								""
+						}
+						onTrigger: function<bool,bool>(f0545a4c-94da-4407-ba26-219bc7ab48ed)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	match_event v:event = ev:LayersFire:TrigLayer4 in" \
+								"{" \
+								"	if(v:this->^->\"Layer 3\".visible == true){" \
+								"		v:this.visible = true" \
+								"		fire_delayed 1000, ev:LayersFire:TrigLayer5()" \
+								"	}" \
+								"}" \
+								"" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfImage(c1508513-10cd-4029-bf4c-0df6fb1227e3)
+				{
+					features: feature_list [
+						Gestures(8fe15ffe-82f4-4b72-98a0-e0aaa95c4952)
+						{
+						}, 
+						GestureHold(94608f8c-14f9-4ac3-9a04-3a644dc6dcb4)
+						{
+							onGestureHold: function<void,int,int>(8485a9ac-9e76-44b2-8a15-2d9a6ab1f98e)
+							{
+								script: "function(v:x::int, v:y::int)" \
+									"{" \
+									"	v:this->^->\"Layer 4\".visible = true" \
+									"	v:this->^->\"Layer 4\".onGestureHold(v:x, v:y)" \
+									"}"
+							}
+							holdDuration: 8000
+						}, 
+						StateTouched(fcc78c0c-1d9b-451e-a94c-c98f5e84d65f)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "Layer 3"
+					visible: false
+					width: 192
+					height: 320
+					x: 85
+					y: 114
+					image: image_resource(eb4cc100-8a94-438a-a578-0b864866362f)
+					{
+						file: "fire_small\\Layer 3.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+					trigger: conditional_script(c9f88b31-55e0-447e-bdc2-5f9ebc3e0cd1)
+					{
+						triggerList: trigger_list(4c80aa40-3ae9-498a-98df-a138716f7bc1)
+						{
+							script: "ev:LayersFire:TrigLayer3" \
+								""
+						}
+						onTrigger: function<bool,bool>(4661d257-cc91-4ae9-a1e3-e571c02d2734)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	match_event v:event = ev:LayersFire:TrigLayer3 in" \
+								"{" \
+								"	if(v:this->^->\"Layer 2\".visible == true){" \
+								"		v:this.visible = true" \
+								"		fire_delayed 1000, ev:LayersFire:TrigLayer4()" \
+								"	}" \
+								"}" \
+								"" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfImage(c5b4f699-1dd0-4d20-b391-31348300ea2f)
+				{
+					features: feature_list [
+						Gestures(09931a67-93b8-4fe6-aba5-12db3f0f8037)
+						{
+						}, 
+						GestureHold(35006252-2d71-4061-8912-d6c9e1eb1ac7)
+						{
+							onGestureHold: function<void,int,int>(93b6ee8b-4470-4fb3-90a6-ddc0b540252e)
+							{
+								script: "function(v:x::int, v:y::int)" \
+									"{" \
+									"	v:this->^->\"Layer 3\".visible = true" \
+									"	v:this->^->\"Layer 3\".onGestureHold(v:x, v:y)" \
+									"}"
+							}
+							holdDuration: 6000
+						}, 
+						StateTouched(4cf40461-4cec-44bb-8cdc-1550935f0f38)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "Layer 2"
+					visible: false
+					width: 154
+					height: 229
+					x: 104
+					y: 164
+					image: image_resource(b25c3e6e-fa27-413a-bf9b-d55d33e3e6bf)
+					{
+						file: "fire_small\\Layer 2.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+					trigger: conditional_script(15517fc4-597c-4488-bf27-ce4b228e1041)
+					{
+						triggerList: trigger_list(a907850a-c1af-4878-abb4-90f999f9f7b6)
+						{
+							script: "ev:LayersFire:TrigLayer2" \
+								""
+						}
+						onTrigger: function<bool,bool>(8b4c1de8-96f9-4167-bcce-81eead8bab6d)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	match_event v:event = ev:LayersFire:TrigLayer2 in" \
+								"{" \
+								"	if(v:this->^->\"Layer 1\".visible == true){" \
+								"		v:this.visible = true" \
+								"		fire_delayed 1000, ev:LayersFire:TrigLayer3()" \
+								"	}" \
+								"}" \
+								"" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfImage(c7f538e2-2ca8-4761-bb4c-a2b51d5e3f10)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Layer 1"
+					visible: false
+					width: 121
+					height: 170
+					x: 124
+					y: 198
+					image: image_resource(8317c293-1dd5-463e-b73a-a46e4bf9ec5c)
+					{
+						file: "fire_small\\Layer 1.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+					trigger: conditional_script(d4578d08-1e25-4f8a-bc72-cd8f3883b8d2)
+					{
+						triggerList: trigger_list(f99d78a3-2e23-47a2-822a-3b77fcd92fe3)
+						{
+							script: "ev:LayersFire:TrigLayer1"
+						}
+						onTrigger: function<bool,bool>(587ca7e1-194b-46ac-92de-e5ce428b5a80)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	match_event v:event = ev:LayersFire:TrigLayer1 in" \
+								"{" \
+								"	v:this.visible = true" \
+								"	fire_delayed 1000, ev:LayersFire:TrigLayer2()" \
+								"}" \
+								"" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfImage(887d756b-21f4-4893-9a29-3d57d36cc4fa)
+				{
+					features: feature_list [
+						Gestures(9c7a8050-c6e6-44bb-a86d-166d2d653c90)
+						{
+						}, 
+						GestureHold(399d3c14-23a5-47b0-b2af-8d5f2e7b28c8)
+						{
+							onGestureHold: function<void,int,int>(1ce6118d-8b51-4730-98e4-362738d8e8bd)
+							{
+								script: "function(v:x::int, v:y::int)" \
+									"{" \
+									"	v:this->^->\"Layer 1\".visible = true" \
+									"	fire_delayed 1000, ev:LayersFire:TrigLayer1()" \
+									"}"
+							}
+							holdDuration: 2000
+						}, 
+						StateTouched(b91bd79b-26dd-427b-8c9c-0f687efce6ae)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}, 
+						TouchShortReleased(ddebc60e-7605-495b-91a0-15369de6a801)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(9735cc89-c1e0-477e-9ea7-b68d8a9352a3)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:TouchReleased()" \
+									"    false" \
+									"}"
+							}
+						}]
+					children: children_list []
+					name: "Layer 0"
+					visible: true
+					width: 99
+					height: 113
+					x: 137
+					y: 234
+					image: image_resource(33f0091a-5550-4be5-acd3-8a64d3c2f9d0)
+					{
+						file: "fire_small\\FirstLayer.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "fire_small"
+			visible: true
+			width: 355
+			height: 500
+			x: 31
+			y: -4
+			touchReleased: conditional_script(64cd2d59-369c-485f-b631-3469835cab30)
+			{
+				triggerList: trigger_list(dbf5d81e-0a20-4beb-8620-f5c7e078bde0)
+				{
+					script: "ev:TouchReleased"
+				}
+				onTrigger: function<bool,bool>(5ca3134d-ed9f-4e6b-aaf4-c9970d5b8fd5)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	match_event v:event = ev:TouchReleased in" \
+						"{" \
+						"	v:this->\"Layer 5\".visible = false" \
+						"	v:this->\"Layer 4\".visible = false" \
+						"	v:this->\"Layer 3\".visible = false" \
+						"	v:this->\"Layer 2\".visible = false" \
+						"	v:this->\"Layer 1\".visible = false" \
+						"}" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfContainer_template_instance(4f3a77b2-0cc9-46f0-b20f-e99ee259c662)
+		{
+			name: "NextButton"
+			template: @8333bb03-38b5-4824-a70a-203d73d5b064 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 616
+			y: 426
+			width: 100
+			height: 39
+			text: "Next"
+			touchReleased: function<bool>(c37b3a44-7da0-4ef0-995b-e2b2af3a30f0)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoToLevel_9()" \
+					"	false" \
+					"}"
+			}
+			font: font_resource(d13aadd0-9c00-4cde-9971-54ca8596c87b)
+			{
+				file: "Joystick-5KjV.ttf"
+				size: 30
+			}
+			visible: false
+			touchable: touchable@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+		}, 
+		GtfImage(2e853d89-cf28-4b3b-aed2-05650b1924c7)
+		{
+			features: feature_list [
+				ScaleMode(296f6a6f-9a63-40ae-9cd4-e5876be617a8)
+				{
+					scaleMode: 2
+				}]
+			children: children_list []
+			name: "HoldFire"
+			visible: true
+			width: 373
+			height: 356
+			x: 408
+			y: 68
+			image: image_resource(a72f04fa-379b-4cbe-b389-9b0ad7ae4b8f)
+			{
+				file: "hold_fire.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	hintForLevel: hintForLevel@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<string>)
+	backgroundColor: #DF2A2FFF
+	image: image@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<image>)
+	width: width@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	height: height@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	moveOver: moveOver@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<function<bool,int,int,int,int>>)
+}
