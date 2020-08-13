@@ -2,11 +2,249 @@ EBGUIDE 6.10.0.200602120856;
 
 GtfView_template_instance(8f697858-bb65-4d69-a34e-2e33bc962567)
 {
-	name: "View 1"
+	name: "4_View"
 	template: @6ed0fc89-f5fa-41df-8452-71b599053367 (objectref<GtfView_template>)
-	children: children_list []
-	hintForLevel: hintForLevel@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<string>)
-	backgroundColor: backgroundColor@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<color>)
+	children: children_list [
+		GtfContainer(351c68df-7b5d-4d0b-bb59-5c4f06e50709)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(e3d5f428-10b1-483c-9f51-23df7a639d1b)
+				{
+					features: feature_list [
+						ScaleMode(737a5b41-785a-47fc-9b53-c4c420aede31)
+						{
+							scaleMode: 2
+						}]
+					children: children_list []
+					name: "Bread"
+					visible: true
+					width: 160
+					height: 172
+					x: 97
+					y: int_scriptedValue(b004b580-66c4-422c-835b-bc6c3f0b4ce3)
+					{
+						triggerList: trigger_list(4f55f85c-480e-490e-90e5-2655f984dfc6)
+						{
+							script: "v:this->^->ToasterButton.y" \
+								""
+						}
+						onTrigger: function<bool,bool>(06eb6bdb-ca21-4bf9-bc85-0bcdafa9963c)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<int>(25f611fd-1711-4649-8792-2c7ae6922139)
+						{
+							script: "function()" \
+								"{" \
+								"	310 - 3 * (v:this->^->ToasterButton.y - 355)" \
+								"}"
+						}
+						write: function<bool,int>(8cde29ef-9797-45da-86cf-e8aece144b60)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					image: image_resource(98c4bfae-33ba-493c-97b1-b3bc2f6f4247)
+					{
+						file: "toaster\\Bread.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(ed109f5f-cc01-4210-b42d-4f3c64973a3f)
+				{
+					features: feature_list [
+						ScaleMode(ba139558-63df-4a66-b271-2a76f9347ff4)
+						{
+							scaleMode: 2
+						}]
+					children: children_list []
+					name: "Toaster"
+					visible: true
+					width: 321
+					height: 172
+					x: 37
+					y: 309
+					image: image_resource(2ea4a710-60b4-413f-bd68-40c8e2a3b1c9)
+					{
+						file: "toaster\\Toaster.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(7562a73d-0e95-4545-b7eb-8d4bc44bc33b)
+				{
+					features: feature_list [
+						ScaleMode(fcc2b589-1f5b-4136-8029-55b5eba3631b)
+						{
+							scaleMode: 2
+						}, 
+						TouchMove(5c6260c7-8c3a-409f-a868-912eb33a94c1)
+						{
+							touchMoved: function<bool,int,int,int,int>(6353d47b-ff9f-4f3e-a140-fe5b3f56ddd1)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(v:y > 355 && v:y < 425){" \
+									"		v:this.y = v:y" \
+									"	}" \
+									"	f:trace_string(f:int2string(v:x))" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(08b25d98-ed72-479e-bc05-bd8ff19995aa)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}, 
+						Moveable(60442d27-419a-4072-9364-948c3cdebd51)
+						{
+							moveDirection: 2
+						}]
+					children: children_list []
+					name: "ToasterButton"
+					visible: true
+					width: 74
+					height: 21
+					x: 286
+					y: 355
+					image: image_resource(269a50ba-17cd-4ce2-9900-310db5ef659c)
+					{
+						file: "toaster\\ToasterButton.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+					checkYOnLimits: conditional_script(b1372745-8fee-4030-bff2-9423f572c50b)
+					{
+						triggerList: trigger_list(c695467a-f606-41ad-b456-4a8a811ce15e)
+						{
+							script: "v:this.y"
+						}
+						onTrigger: function<bool,bool>(ebf2e089-5fd7-4105-8863-790adbe34128)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(v:this.y < 355){" \
+								"		v:this.y = 355;" \
+								"	}" \
+								"	if(v:this.y > 425){" \
+								"		v:this.y = 425;" \
+								"	}" \
+								"	false" \
+								"}"
+						}
+					}
+					checkLevel: conditional_script(342de15f-b876-43c3-85f0-b09f7d89ad41)
+					{
+						triggerList: trigger_list(d102d4d4-6a83-47ab-900c-31705f77ae8c)
+						{
+							script: "v:this.y"
+						}
+						onTrigger: function<bool,bool>(824a17bb-3595-411f-bdba-c7c16ec833e3)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(v:this.y > 415){" \
+								"		v:this->^->^->NextButton.visible = true" \
+								"	}" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfLabel(ced09506-5c81-4199-8e18-326c36e9f638)
+				{
+					features: feature_list [
+						MultiLine(025a7cdb-f796-40c2-84ee-3758753017c0)
+						{
+							lineOffset: 0
+							maxLineCount: 0
+						}]
+					children: children_list []
+					name: "Hint"
+					visible: true
+					width: 362
+					height: 133
+					x: 26
+					y: 59
+					text: "A crime has happened. Find the victim and you will be rewarded."
+					textColor: #FFFFFFFF
+					font: @c686500e-f444-44ae-ad8a-5b5b3ef74343 (objectref<font>)
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfImage(2a8eae20-065e-446c-b863-07f4cadbc8a5)
+				{
+					features: feature_list [
+						ScaleMode(8cb886be-0bf3-43e1-ac48-33bf8a54bd4c)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "Character"
+					visible: true
+					width: 348
+					height: 488
+					x: 431
+					y: 1
+					image: image_resource(c79308e0-491a-4199-8f15-b35d6a058394)
+					{
+						file: "character.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "toaster"
+			visible: true
+			width: width@8f697858-bb65-4d69-a34e-2e33bc962567 (propref<int>)
+			height: height@8f697858-bb65-4d69-a34e-2e33bc962567 (propref<int>)
+			x: 0
+			y: 0
+		}, 
+		GtfContainer_template_instance(aff7e29a-c280-4d0e-a1e3-0ec3cb6e0619)
+		{
+			name: "NextButton"
+			template: @8333bb03-38b5-4824-a70a-203d73d5b064 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 437
+			y: 13
+			width: 94
+			height: 32
+			text: "Next"
+			touchReleased: function<bool>(3866386b-aa5f-4803-aa66-870314de6910)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoToLevel_5()" \
+					"	false" \
+					"}"
+			}
+			font: font_resource(5e1181f9-7506-4049-892c-ef0050454d6d)
+			{
+				file: "Joystick-5KjV.ttf"
+				size: 25
+			}
+			visible: false
+			touchable: touchable@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+		}]
+	hintForLevel: "The toaster can be used by dragging its button."
+	backgroundColor: #000000FF
 	image: image@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<image>)
 	width: width@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
 	height: height@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
