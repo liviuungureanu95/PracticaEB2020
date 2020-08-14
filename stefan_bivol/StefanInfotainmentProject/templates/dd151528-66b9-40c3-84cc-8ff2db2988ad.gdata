@@ -17,9 +17,9 @@ GtfView_template(dd151528-66b9-40c3-84cc-8ff2db2988ad)
 						children: children_list []
 						name: "Menu_Line"
 						visible: true
-						width: 700
+						width: 730
 						height: 3
-						x: 48
+						x: 32
 						y: 385
 						fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
 					}, 
@@ -101,9 +101,9 @@ GtfView_template(dd151528-66b9-40c3-84cc-8ff2db2988ad)
 								y: 0
 								fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
 							}]
-						name: "Time_Container"
+						name: "Time_Label"
 						visible: true
-						width: 100
+						width: 125
 						height: 75
 						x: 350
 						y: 395
@@ -117,7 +117,14 @@ GtfView_template(dd151528-66b9-40c3-84cc-8ff2db2988ad)
 						y: 100
 						textButton: "Home"
 						imageButton: @c2bfcd63-a30c-492e-b3b3-b8f7e2011542 (objectref<image>)
-						touchShortReleased: touchShortReleased@f0572966-554c-46a4-ab74-f728d70588ab (propref<function<bool,int,int,int,int>>)
+						touchShortReleased: function<bool,int,int,int,int>(4878a80c-269a-4cf3-84a5-368bdcbc6b16)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	fire ev:goToHome()" \
+								"    false" \
+								"}"
+						}
 					}, 
 					GtfContainer_template_instance(7bdf604c-7bd9-452a-9bf3-b9f8d43e3c16)
 					{
@@ -128,14 +135,21 @@ GtfView_template(dd151528-66b9-40c3-84cc-8ff2db2988ad)
 						y: 200
 						textButton: "Menu"
 						imageButton: @ed3fd46a-1397-4936-9297-42c3ea6d7d83 (objectref<image>)
-						touchShortReleased: touchShortReleased@f0572966-554c-46a4-ab74-f728d70588ab (propref<function<bool,int,int,int,int>>)
+						touchShortReleased: function<bool,int,int,int,int>(3e9259c0-78cd-4d73-bb2c-8f22d61a6b3d)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{	" \
+								"	fire ev:goToMenu()" \
+								"    false" \
+								"}"
+						}
 					}, 
 					GtfContainer_template_instance(cf59911d-4abd-49ef-8478-b38ac2576a27)
 					{
 						name: "Left_Seat_Button "
 						template: @f7fd713e-cdd4-49ca-a525-61a2a0801218 (objectref<GtfContainer_template>)
 						children: children_list []
-						x: 230
+						x: 205
 						y: 395
 						touchShortReleased: touchShortReleased@f7fd713e-cdd4-49ca-a525-61a2a0801218 (propref<function<bool,int,int,int,int>>)
 						imageSeat: @bd5283b1-86c3-422f-872c-9d66da9e8289 (objectref<image>)
@@ -146,11 +160,215 @@ GtfView_template(dd151528-66b9-40c3-84cc-8ff2db2988ad)
 						name: "Right_Seat_Button"
 						template: @f7fd713e-cdd4-49ca-a525-61a2a0801218 (objectref<GtfContainer_template>)
 						children: children_list []
-						x: 475
-						y: 396
+						x: 525
+						y: 395
 						touchShortReleased: touchShortReleased@f7fd713e-cdd4-49ca-a525-61a2a0801218 (propref<function<bool,int,int,int,int>>)
 						imageSeat: @d4c671da-0e41-41f0-9938-e038f88211a9 (objectref<image>)
 						ImageX: 23
+					}, 
+					GtfContainer(950c81b9-f91d-46ee-84f5-d16ae8199116)
+					{
+						features: feature_list [
+							MoveOut(6280d752-72a6-4555-9b57-1133af642a85)
+							{
+								moveOut: function<bool,int,int,int,int>(f29068b0-71f7-4337-b481-481cb1b91d8c)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	v:this->AC_Background.fillColor = dp:Colors:Move_Out_Color" \
+										"    false" \
+										"}"
+								}
+							}, 
+							MoveIn(d0aa941a-ac57-475c-a157-18d7b69598da)
+							{
+								moveIn: function<bool,int,int,int,int>(dbbd20c3-e18f-4f60-a30f-a59a106ecbdd)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	v:this->AC_Background.fillColor = dp:Colors:Move_In_Color" \
+										"    false" \
+										"}"
+								}
+							}, 
+							TouchShortReleased(05fc168f-9f2a-477c-ad0f-a398b71dc821)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(f7949ade-8a8c-4e33-bed7-844de4821a2a)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	if(v:this->AC_Background->AC_Label.text == \"Auto\")" \
+										"		v:this->AC_Background->AC_Label.text = \"Fast\"" \
+										"	else if(v:this->AC_Background->AC_Label.text == \"Fast\")" \
+										"		v:this->AC_Background->AC_Label.text = \"Soft\"" \
+										"	else if(v:this->AC_Background->AC_Label.text == \"Soft\")" \
+										"		v:this->AC_Background->AC_Label.text = \"Auto\"" \
+										"		" \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(b3664060-112d-4308-bb48-67ab640eb772)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list [
+							GtfRectangle(cc69974e-2e69-4dc6-b9e1-7416d5059149)
+							{
+								features: feature_list []
+								children: children_list [
+									GtfImage(3d7c5a4b-23b1-42ea-8af6-60bd341e963a)
+									{
+										features: feature_list [
+											ScaleMode(9590b368-d0c3-4e82-977e-d570d2603711)
+											{
+												scaleMode: 1
+											}]
+										children: children_list []
+										name: "AC_Image"
+										visible: true
+										width: 50
+										height: 50
+										x: 25
+										y: 4
+										image: @cc19c428-4882-4c94-80cf-a09db05693ef (objectref<image>)
+										sRGB: false
+										horizontalAlign: 0
+										verticalAlign: 1
+									}, 
+									GtfLabel(23fbf56e-7260-4f16-a70a-edb87e0128a0)
+									{
+										features: feature_list [
+											StateTouched(4297aa2f-0793-41ac-90b4-052d16f72bf8)
+											{
+												touchable: true
+												touched: false
+												touchPolicy: 0
+												touchBehavior: 0
+											}]
+										children: children_list []
+										name: "AC_Label"
+										visible: true
+										width: 100
+										height: 25
+										x: 0
+										y: 52
+										text: "Auto"
+										textColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+										font: font_resource(540edcf0-979d-4609-bd6a-1f2469ca27f9)
+										{
+											file: "PT_Sans_Narrow.ttf"
+											size: 23
+										}
+										horizontalAlign: 1
+										verticalAlign: 0
+									}]
+								name: "AC_Background"
+								visible: true
+								width: width@950c81b9-f91d-46ee-84f5-d16ae8199116 (propref<int>)
+								height: height@950c81b9-f91d-46ee-84f5-d16ae8199116 (propref<int>)
+								x: 0
+								y: 0
+								fillColor: #FFFFFF00
+							}]
+						name: "AC_Button"
+						visible: true
+						width: 100
+						height: 75
+						x: 650
+						y: 395
+					}, 
+					GtfContainer_template_instance(d53e9e92-b729-4224-aa1f-fe8a35395309)
+					{
+						name: "Plus_Button"
+						template: @cfc31c5e-f76d-4889-878d-a4c54e6ba2c3 (objectref<GtfContainer_template>)
+						children: children_list []
+						x: 148
+						y: 418
+						width: 35
+						height: 35
+						image: @0e416303-1afd-4812-9aae-5c7163b15e4d (objectref<image>)
+						touchShortReleased: function<bool,int,int,int,int>(ce19490b-c886-40ca-894a-acb6b115de46)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	if(dp:Variables:Temperature < 32.0)" \
+								"		dp:Variables:Temperature += 0.5" \
+								"    false" \
+								"}"
+						}
+					}, 
+					GtfContainer_template_instance(b842d28a-124b-450d-9aef-51346f5b13de)
+					{
+						name: "Minus_Button"
+						template: @cfc31c5e-f76d-4889-878d-a4c54e6ba2c3 (objectref<GtfContainer_template>)
+						children: children_list []
+						x: 40
+						y: 418
+						width: 35
+						height: 35
+						image: @027a57e6-6a00-41c4-9ff7-e81efd7c4bf0 (objectref<image>)
+						touchShortReleased: function<bool,int,int,int,int>(3ec6d7a2-2058-4699-a2fd-fe55d8fbcaf5)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	if(dp:Variables:Temperature > 17.0)" \
+								"		dp:Variables:Temperature -= 0.5" \
+								"    false" \
+								"}"
+						}
+					}, 
+					GtfLabel(78b18bc5-ac95-4e5f-b7ca-219f0fdea01a)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Temp_Label"
+						visible: true
+						width: 80
+						height: 30
+						x: 70
+						y: 420
+						text: string_scriptedValue(5a0588dc-8c4d-4715-ad36-9ab9391a5af7)
+						{
+							triggerList: trigger_list(1dd8750c-01bf-4f04-a802-75d1d0b687df)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(624ce28c-6066-4ed9-83d3-68c61ac57f5f)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<string>(d68c1e6c-0f62-4a4b-88f3-d3cadc4f12d5)
+							{
+								script: "function()" \
+									"{" \
+									"	f:format_float(\"%.1f\", true, dp:Variables:Temperature) + \"°C\"" \
+									"}"
+							}
+							write: function<bool,string>(1eda45da-45a6-4601-90dd-a1b918a787fa)
+							{
+								script: "function(v:arg0::string)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						textColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+						font: font_resource(48817e3c-0354-4ad3-b347-8d371a1a8b91)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 27
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
 					}]
 				name: "View_Background"
 				visible: true
