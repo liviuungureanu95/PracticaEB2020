@@ -37,7 +37,37 @@ GtfView_template(dd151528-66b9-40c3-84cc-8ff2db2988ad)
 								height: height@9b841706-f5be-427d-99c2-48cdb76ca40d (propref<int>)
 								x: 0
 								y: 0
-								text: ""
+								text: string_scriptedValue(8a0e9ce6-8791-466d-ac0f-ee1701742b17)
+								{
+									triggerList: trigger_list(f7751d09-ae89-4ed2-aa65-ac1a9ff477c5)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(a06b98db-be2e-4f05-96f9-9ddd6dee48cc)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<string>(aa6efc27-b996-4e43-92a8-1ab381ba241e)
+									{
+										script: "function()" \
+											"{" \
+											"	f:int2string(f:localtime_hour(f:system_time()) + 3)" \
+											"	+ \":\" + f:int2string(f:localtime_minute(f:system_time()))" \
+											"}"
+									}
+									write: function<bool,string>(b0a296aa-e8af-4bd9-a7ac-35013aa106fe)
+									{
+										script: "function(v:arg0::string)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
 								textColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
 								font: font_resource(6cb44a52-9002-4169-bd14-cfd9effb24af)
 								{
@@ -99,6 +129,28 @@ GtfView_template(dd151528-66b9-40c3-84cc-8ff2db2988ad)
 						textButton: "Menu"
 						imageButton: @ed3fd46a-1397-4936-9297-42c3ea6d7d83 (objectref<image>)
 						touchShortReleased: touchShortReleased@f0572966-554c-46a4-ab74-f728d70588ab (propref<function<bool,int,int,int,int>>)
+					}, 
+					GtfContainer_template_instance(cf59911d-4abd-49ef-8478-b38ac2576a27)
+					{
+						name: "Left_Seat_Button "
+						template: @f7fd713e-cdd4-49ca-a525-61a2a0801218 (objectref<GtfContainer_template>)
+						children: children_list []
+						x: 230
+						y: 395
+						touchShortReleased: touchShortReleased@f7fd713e-cdd4-49ca-a525-61a2a0801218 (propref<function<bool,int,int,int,int>>)
+						imageSeat: @bd5283b1-86c3-422f-872c-9d66da9e8289 (objectref<image>)
+						ImageX: 15
+					}, 
+					GtfContainer_template_instance(71e0d7bd-5000-4514-90ea-88b5f92aad23)
+					{
+						name: "Right_Seat_Button"
+						template: @f7fd713e-cdd4-49ca-a525-61a2a0801218 (objectref<GtfContainer_template>)
+						children: children_list []
+						x: 475
+						y: 396
+						touchShortReleased: touchShortReleased@f7fd713e-cdd4-49ca-a525-61a2a0801218 (propref<function<bool,int,int,int,int>>)
+						imageSeat: @d4c671da-0e41-41f0-9938-e038f88211a9 (objectref<image>)
+						ImageX: 23
 					}]
 				name: "View_Background"
 				visible: true
