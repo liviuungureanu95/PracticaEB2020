@@ -1,0 +1,69 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_statemachine(985f5459-4408-4375-a863-ba4c692b0409)
+{
+	x: 0
+	y: 0
+	width: 910
+	height: 684
+	name: "Main"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions []
+	internal_transitions: haptic_internal_transitions []
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(6aa28d28-c79c-41ff-81d7-bcd7d5a2cc31)
+		{
+			x: 88
+			y: 16
+			width: 100
+			height: 100
+			name: "Menu"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions [
+				haptic_transition(71e711e4-2950-4599-9723-dc2fd806550e)
+				{
+					action: function<void>(none)
+					target_state: @d3f09926-0c6c-4b99-a042-6693733c0a90 (objectref<haptic_compound_state>)
+					source_dock: 0.2149591F
+					target_dock: 0.7844651F
+					curveControlXOffset: 0
+					curveControlYOffset: 0
+					labelXOffset: 10
+					labelYOffset: -10
+					labelRotationAngle: 0
+					event: @00000000-0000-0000-0000-000000000000 (objectref<event>)
+					condition: function<bool>(none)
+				}]
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (b106dafd-e6f7-417d-9fd7-8448d26ec436)
+			priority_stack: priority_stack(none)
+		}, 
+		(d3f09926-0c6c-4b99-a042-6693733c0a90)]
+	initial_state: haptic_initial_state(8155e053-d77d-4884-874e-4bc902d074cd)
+	{
+		x: 24
+		y: 32
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(6d2de698-6309-4d7c-945a-1c49614a44c5)
+		{
+			action: function<void>(none)
+			target_state: @6aa28d28-c79c-41ff-81d7-bcd7d5a2cc31 (objectref<haptic_dialog_state>)
+			source_dock: 0.2323884F
+			target_dock: 0.8103165F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(none)
+}
