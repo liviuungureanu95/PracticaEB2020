@@ -1,0 +1,92 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(627f369a-2d98-4b18-ab8c-b0eb9759ede9)
+{
+	name: "Food_view"
+	template: @47101df3-2cb4-462c-8236-06e865e3862e (objectref<GtfView_template>)
+	children: children_list [
+		GtfRectangle(f5a97b06-b0b1-4279-8f72-e8a47d07ab2f)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Middle_bar"
+			visible: true
+			width: 10
+			height: 380
+			x: 395
+			y: 100
+			fillColor: #5F9EA0FF
+		}, 
+		GtfImage(0f787fdd-8d85-4374-b50b-d01b064f67e8)
+		{
+			features: feature_list [
+				ScaleMode(36de6c11-ff47-466f-a2ea-7858334f005d)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "FREE"
+			visible: true
+			width: 100
+			height: 100
+			x: 115
+			y: 0
+			image: image_resource(21481141-45e7-44a4-8740-d80b83f32931)
+			{
+				file: "no-money.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(4487f779-b221-4c6c-9ff8-13749bcf2bb1)
+		{
+			features: feature_list [
+				ScaleMode(b08c78d7-ad36-44fd-ab14-c9b593d770c1)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "PAY"
+			visible: true
+			width: 100
+			height: 100
+			x: 585
+			y: 0
+			image: image_resource(17984f1a-0a96-4475-85c2-69518cd352f7)
+			{
+				file: "premium-quality.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfContainer_template_instance(e6aecea4-b6fe-443a-bccd-c2dbe094822a)
+		{
+			name: "Back_button"
+			template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 6
+			y: 425
+			"x 2": "x 2"@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			"y 2": "y 2"@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			fillColor: #5F9EA0FF
+			"x 3": "x 3"@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			"y 3": "y 3"@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			text: "BACK"
+			buttonEvent: function<bool>(a095e9e8-a6f8-4ffc-9433-dc7e504eb3f7)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoBack()" \
+					"	false" \
+					"}"
+			}
+			width: 100
+			height: 50
+		}]
+	image: image@47101df3-2cb4-462c-8236-06e865e3862e (propref<image>)
+	text: "FOOD"
+	visible: false
+	"visible 2": "visible 2"@47101df3-2cb4-462c-8236-06e865e3862e (propref<bool>)
+}
