@@ -53,6 +53,215 @@ GtfView_template_instance(fc1ab8a8-615b-48f9-9b8c-e64926282612)
 			}
 			horizontalAlign: 0
 			verticalAlign: 0
+		}, 
+		GtfRectangle(eb601f5f-eb42-4cbe-99e6-0379a05227f4)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "HorizontalLine"
+			visible: true
+			width: 800
+			height: 1
+			x: 0
+			y: 420
+			fillColor: #000000FF
+		}, 
+		GtfInstantiator(365b41df-8465-420b-a35e-6440f1143faa)
+		{
+			features: feature_list [
+				LayoutPolicyFlow(2427609f-509f-4a32-8e00-5a0cfde3e6a2)
+				{
+					horizontalGap: 150
+					verticalGap: 40
+					layoutDirection: 0
+					horizontalChildAlign: 0
+					verticalChildAlign: 0
+				}]
+			children: children_list [
+				GtfRectangle(138d52ae-e116-427c-a06c-18fcb2d46f77)
+				{
+					features: feature_list [
+						TouchShortReleased(27a58835-592d-4b4f-a008-5ca89ab429b6)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(39d733f8-4893-4221-8f7c-37703260af2a)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this.buttonEvent()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(50d2ceea-7640-4834-b0f4-d31cb8accc75)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}, 
+						LineIndex(d36ff7d4-04b8-4bf8-a076-3ba488d6368b)
+						{
+							lineIndex: 0
+						}]
+					children: children_list [
+						GtfLabel(58667ab5-a7fa-4126-ae26-5de063fa3f2b)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text"
+							visible: true
+							width: 100
+							height: 100
+							x: 0
+							y: 30
+							text: "label"
+							textColor: #000000FF
+							font: font_resource(9a56accc-4309-4f93-9eae-a7b33a05d2e7)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 25
+							}
+							horizontalAlign: 1
+							verticalAlign: 2
+						}, 
+						GtfImage(6f5cdcb5-4f4b-470d-a737-242a6f6ad235)
+						{
+							features: feature_list [
+								ScaleMode(73cc8e6e-0985-4222-9a1d-5ec18c004e51)
+								{
+									scaleMode: 1
+								}]
+							children: children_list []
+							name: "Logo's"
+							visible: true
+							width: 100
+							height: 100
+							x: 0
+							y: 0
+							image: image_resource(cdcc3826-b812-433d-8d6f-30798efc7dba)
+							{
+								file: ""
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}]
+					name: "Background"
+					visible: true
+					width: 100
+					height: 100
+					x: 0
+					y: 0
+					fillColor: #FFFFFF00
+					buttonEvent: function<bool>(d70bd341-f880-4322-aff9-78c8167b9459)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					setText: conditional_script(7a31597f-9380-4b24-b738-eba5cbbde6ca)
+					{
+						triggerList: trigger_list(0aa9025d-b199-44aa-83ac-00d8c603a630)
+						{
+							script: "dp:RadioMenu:RadioList" \
+								"v:this.lineIndex" \
+								""
+						}
+						onTrigger: function<bool,bool>(c623fa55-6cb5-44a5-bd69-e579c95c5b6b)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this->Text.text = dp:RadioMenu:RadioList[v:this.lineIndex]" \
+								"	false " \
+								"}"
+						}
+					}
+					setLogo: conditional_script(2cae7385-8c82-4381-be58-5ab0606123ad)
+					{
+						triggerList: trigger_list(b7b184ce-27e5-4284-8b5b-0decd72b1e6f)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(b29d283c-8041-4d78-8fd8-39eaa8cd568b)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this->\"Logo's\".image = dp:RadioMenu:Radio_LogoList[v:this.lineIndex]" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "Radio_Instantiator"
+			visible: true
+			width: 600
+			height: 200
+			x: 100
+			y: 140
+			numItems: 6
+			lineMapping: intlist []
+			calculateNumItems: conditional_script(0450a4e6-823e-4d55-afd6-5686bbe7d12b)
+			{
+				triggerList: trigger_list(dec127d2-0513-4afd-9afa-df4531d4cc0d)
+				{
+					script: "dp:RadioMenu:RadioList"
+				}
+				onTrigger: function<bool,bool>(c537c4c6-1897-4228-a323-7249571b5c62)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	v:this.numItems = length dp:RadioMenu:RadioList" \
+						"	v:this.numItems = length dp:RadioMenu:Radio_LogoList" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfRectangle(fbffdc30-8349-4692-8c69-844c34a563c7)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "HorizontalLine2"
+			visible: true
+			width: 800
+			height: 1
+			x: 0
+			y: 80
+			fillColor: #FFFFFFFF
+		}, 
+		GtfRectangle(f4cd4cf5-4be1-4ee1-91be-4287b896e40c)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "HorizontalLine3"
+			visible: true
+			width: 800
+			height: 1
+			x: 0
+			y: 130
+			fillColor: #FFFFFFFF
+		}, 
+		GtfLabel(93ccf3ea-b4b7-4cd8-97c6-b403c92d4323)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Text_Current_Radio"
+			visible: true
+			width: 800
+			height: 50
+			x: 0
+			y: 80
+			text: "Current_Radio"
+			textColor: #000000FF
+			font: font_resource(7c3b49b7-c431-48bf-bebe-d2f9561d628a)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
 		}]
 	text: "Radio Menu"
 	textColor: textColor@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<color>)

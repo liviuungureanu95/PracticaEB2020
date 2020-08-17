@@ -1,0 +1,171 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(9a2e2635-9677-434a-b332-f5eb5358d538)
+{
+	name: "T_ScrollableList"
+	structure: GtfContainer(201692cb-97a1-4611-bf05-b0d2d7fc4e52)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfInstantiator(af9cd455-1110-4ccd-bbac-e09ca4093805)
+			{
+				features: feature_list [
+					LayoutPolicyFlow(903dc07e-19e9-4a9e-979c-9c999e80df95)
+					{
+						horizontalGap: 0
+						verticalGap: 0
+						layoutDirection: 0
+						horizontalChildAlign: 0
+						verticalChildAlign: 0
+					}, 
+					ViewPort(120fc080-84f4-4864-ad7e-4f217f03a374)
+					{
+						xOffset: 0
+						yOffset: 0
+					}]
+				children: children_list [
+					GtfContainer(61cf4d0e-c224-4192-b2fd-2aa977c44c29)
+					{
+						features: feature_list [
+							LineIndex(43ba7450-9e66-4dcb-b65c-2cbcf05c2df0)
+							{
+								lineIndex: 0
+							}]
+						children: children_list [
+							GtfRectangle(6dfc8da9-0021-4d84-94db-76e0b8c80caa)
+							{
+								features: feature_list [
+									Border(08a8724f-3635-49af-ba37-2f201f7066bc)
+									{
+										borderThickness: 1
+										borderColor: #FFFFFFFF
+										borderStyle: 0
+									}]
+								children: children_list []
+								name: "Button_Background"
+								visible: true
+								width: width@61cf4d0e-c224-4192-b2fd-2aa977c44c29 (propref<int>)
+								height: height@61cf4d0e-c224-4192-b2fd-2aa977c44c29 (propref<int>)
+								x: 0
+								y: 0
+								fillColor: #87CEEBFF
+							}, 
+							GtfLabel(d65f3130-f46d-4830-af8b-89afd3f24c01)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Button_Text"
+								visible: true
+								width: width@61cf4d0e-c224-4192-b2fd-2aa977c44c29 (propref<int>)
+								height: height@61cf4d0e-c224-4192-b2fd-2aa977c44c29 (propref<int>)
+								x: 0
+								y: 0
+								text: "label"
+								textColor: #000000FF
+								font: font_resource(e176d2b8-b888-44ec-a480-4e0426fb81fa)
+								{
+									file: "PT_Sans_Narrow.ttf"
+									size: 30
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+								setText: conditional_script(442765d1-d6d4-4676-b94f-b51cdc18237f)
+								{
+									triggerList: trigger_list(66c2ae5e-6ea0-4135-b713-0a266b25a71e)
+									{
+										script: "dp:PhoneMenu:ContactsList" \
+											"v:this->^.lineIndex"
+									}
+									onTrigger: function<bool,bool>(7c19239a-83c8-473d-9cb6-3f98f3920a26)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	v:this.text = dp:PhoneMenu:ContactsList[v:this->^.lineIndex]" \
+											"	false" \
+											"}"
+									}
+								}
+							}]
+						name: "Button_List"
+						visible: true
+						width: width@af9cd455-1110-4ccd-bbac-e09ca4093805 (propref<int>)
+						height: listButtonHeight@af9cd455-1110-4ccd-bbac-e09ca4093805 (propref<int>)
+						x: 0
+						y: 0
+					}]
+				name: "ScrollableList_Instantiator"
+				visible: true
+				width: width@201692cb-97a1-4611-bf05-b0d2d7fc4e52 (propref<int>)
+				height: height@201692cb-97a1-4611-bf05-b0d2d7fc4e52 (propref<int>)
+				x: 0
+				y: 0
+				numItems: 0
+				lineMapping: intlist []
+				listButtonHeight: 50
+				moveUpDown: conditional_script(ee52d829-1bcd-46c5-b72a-c73d355027d6)
+				{
+					triggerList: trigger_list(2d4e5478-69cc-4d74-aaaf-6a9886d6c957)
+					{
+						script: "ev:Phone_CompoundEvents:scroll_down_Contacts" \
+							"ev:Phone_CompoundEvents:scroll_up_Contacts" \
+							"v:this.listButtonHeight"
+					}
+					onTrigger: function<bool,bool>(1c4d616d-3cc2-49b5-9acd-e605cb099255)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	match_event v:event = ev:Phone_CompoundEvents:scroll_up_Contacts in " \
+							"	{" \
+							"		v:this.yOffset += v:this.listButtonHeight /2" \
+							"	}" \
+							"	" \
+							"	match_event v:event = ev:Phone_CompoundEvents:scroll_down_Contacts in " \
+							"	{" \
+							"		v:this.yOffset -= v:this.listButtonHeight /2" \
+							"	}" \
+							"	false" \
+							"}"
+					}
+				}
+			}]
+		name: "ScrollableList_Container"
+		visible: true
+		width: 600
+		height: 350
+		x: 70
+		y: 100
+		InputList: @d37013ab-458c-44bf-91e5-fd76bcf71e9f (objectref<stringlist>)
+		limitMovement: conditional_script(1137490e-744f-4485-9f64-4a5104912ce0)
+		{
+			triggerList: trigger_list(deeb7d89-f1c2-44cf-8f3a-c47a3c9aec5f)
+			{
+				script: "dp:PhoneMenu:ContactsList" \
+					"v:this->ScrollableList_Instantiator.listButtonHeight" \
+					"v:this->ScrollableList_Instantiator.yOffset"
+			}
+			onTrigger: function<bool,bool>(aec00060-c33b-40db-938e-57b57451633a)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	let v:maximumOffset = length dp:PhoneMenu:ContactsList * v:this->ScrollableList_Instantiator.listButtonHeight -v:this.height in" \
+					"	{" \
+					"		if(v:this->ScrollableList_Instantiator.yOffset > 0)" \
+					"		{" \
+					"			v:this->ScrollableList_Instantiator.yOffset = 0;" \
+					"		}" \
+					"		" \
+					"		if(v:this->ScrollableList_Instantiator.yOffset < -v:maximumOffset)" \
+					"		{" \
+					"			v:this->ScrollableList_Instantiator.yOffset = -v:maximumOffset" \
+					"		}" \
+					"	}" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+	InputList: InputList@201692cb-97a1-4611-bf05-b0d2d7fc4e52 (propref<stringlist>)
+	numItems: numItems@af9cd455-1110-4ccd-bbac-e09ca4093805 (propref<int>)
+	x: x@201692cb-97a1-4611-bf05-b0d2d7fc4e52 (propref<int>)
+	y: y@201692cb-97a1-4611-bf05-b0d2d7fc4e52 (propref<int>)
+}

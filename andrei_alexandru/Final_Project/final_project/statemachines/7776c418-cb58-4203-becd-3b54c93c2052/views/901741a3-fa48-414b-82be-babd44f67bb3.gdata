@@ -18,6 +18,312 @@ GtfView_template_instance(901741a3-fa48-414b-82be-babd44f67bb3)
 					"	false" \
 					"}"
 			}
+		}, 
+		GtfRectangle(9f1f0649-e8f4-4d9f-b20a-3670136285bd)
+		{
+			features: feature_list [
+				TouchShortReleased(1d0f5925-9f06-409b-a3bf-17a3ac8a1bb1)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(5427c868-c301-4f61-a918-3110b293bba9)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonEvent()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(bbbed599-2bd5-4fd2-b160-e6404e5a7184)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfLabel(2f7370a2-47f9-48bb-9e35-efb7c61bb714)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text"
+					visible: true
+					width: width@9f1f0649-e8f4-4d9f-b20a-3670136285bd (propref<int>)
+					height: height@9f1f0649-e8f4-4d9f-b20a-3670136285bd (propref<int>)
+					x: 0
+					y: 0
+					text: "UP"
+					textColor: #000000FF
+					font: font_resource(018c2552-9654-467e-afd5-c5c6e31287be)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 20
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Up_Button"
+			visible: true
+			width: 50
+			height: 50
+			x: 700
+			y: 100
+			fillColor: #FFFFFFFF
+			buttonEvent: function<bool>(c44ff3ca-0a99-4ea8-9ec6-78bd3af62249)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:Phone_CompoundEvents:scroll_up_RecentCalls()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfRectangle(d9e94502-b85a-44db-ae69-62063d73f872)
+		{
+			features: feature_list [
+				TouchShortReleased(4105a8f8-dff7-4b90-8cd9-b4765559c8d0)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(5eecfa5f-9ba9-45cc-b9eb-d4b9101cce2a)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonEvent()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(a8c9180a-1cbe-4e0f-b252-3b02e091fbf7)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfLabel(d88bc277-7e36-4604-800e-5c48375ed2cf)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text"
+					visible: true
+					width: width@d9e94502-b85a-44db-ae69-62063d73f872 (propref<int>)
+					height: height@d9e94502-b85a-44db-ae69-62063d73f872 (propref<int>)
+					x: 0
+					y: 0
+					text: "DOWN"
+					textColor: #000000FF
+					font: font_resource(4b0c5f53-c62a-43d9-a1fc-23274840d267)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 20
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Down_Button"
+			visible: true
+			width: 50
+			height: 50
+			x: 700
+			y: 400
+			fillColor: #FFFFFFFF
+			buttonEvent: function<bool>(6c2bccfc-7386-4f1d-b536-10d8073a2c73)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:Phone_CompoundEvents:scroll_down_RecentCalls()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer(c4d9e8a1-03b2-45b2-bbeb-f41234d21ede)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfInstantiator(b3aba861-5976-44d3-93e7-57862186b27b)
+				{
+					features: feature_list [
+						LayoutPolicyFlow(dae36849-7cd7-4447-aa4d-2de4a40d59b7)
+						{
+							horizontalGap: 0
+							verticalGap: 0
+							layoutDirection: 0
+							horizontalChildAlign: 0
+							verticalChildAlign: 0
+						}, 
+						ViewPort(47e1b1a1-10b1-43f4-87ee-220ded47c64b)
+						{
+							xOffset: 0
+							yOffset: 0
+						}]
+					children: children_list [
+						GtfContainer(358b630c-b1d5-49eb-be56-7beefdb449f5)
+						{
+							features: feature_list [
+								LineIndex(d702b48b-e96e-4374-9ef9-b281e503d186)
+								{
+									lineIndex: 0
+								}]
+							children: children_list [
+								GtfRectangle(dacb1986-3b9b-4e00-8ef1-dff92d231656)
+								{
+									features: feature_list [
+										Border(4ca98061-0938-436a-8737-7eb9a5ab49ab)
+										{
+											borderThickness: 1
+											borderColor: #000000FF
+											borderStyle: 0
+										}]
+									children: children_list []
+									name: "Background"
+									visible: true
+									width: width@358b630c-b1d5-49eb-be56-7beefdb449f5 (propref<int>)
+									height: height@358b630c-b1d5-49eb-be56-7beefdb449f5 (propref<int>)
+									x: 0
+									y: 0
+									fillColor: #87CEEBFF
+								}, 
+								GtfLabel(6c6b27a9-65bf-4671-8ed6-e6fd403d326d)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Text"
+									visible: true
+									width: width@358b630c-b1d5-49eb-be56-7beefdb449f5 (propref<int>)
+									height: height@358b630c-b1d5-49eb-be56-7beefdb449f5 (propref<int>)
+									x: 0
+									y: 0
+									text: "label"
+									textColor: #000000FF
+									font: font_resource(8e4bbc1c-f24e-42d5-a2ba-62169f6919b0)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 30
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+									setText: conditional_script(30fe65c5-776e-41b3-8c0d-0291035a233c)
+									{
+										triggerList: trigger_list(5ea203b5-254c-4f0e-8024-79541a3d3eb2)
+										{
+											script: "dp:PhoneMenu:Recent_CallsList" \
+												"v:this->^.lineIndex" \
+												""
+										}
+										onTrigger: function<bool,bool>(644e5cb0-8207-4d18-9baa-54d8617e90ed)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	v:this.text = dp:PhoneMenu:Recent_CallsList[v:this->^.lineIndex]" \
+												"	false" \
+												"}"
+										}
+									}
+								}]
+							name: "RecentCalls_List"
+							visible: true
+							width: width@b3aba861-5976-44d3-93e7-57862186b27b (propref<int>)
+							height: listButtonHeight@b3aba861-5976-44d3-93e7-57862186b27b (propref<int>)
+							x: 0
+							y: 0
+						}]
+					name: "RecentCalls_Instantiator"
+					visible: true
+					width: width@c4d9e8a1-03b2-45b2-bbeb-f41234d21ede (propref<int>)
+					height: height@c4d9e8a1-03b2-45b2-bbeb-f41234d21ede (propref<int>)
+					x: 0
+					y: 0
+					numItems: int_scriptedValue(472a56b4-74fb-4b5f-82a0-762290d3d571)
+					{
+						triggerList: trigger_list(21bbf190-44fd-4a74-95c7-b1d9c7a72a33)
+						{
+							script: "dp:PhoneMenu:Recent_CallsList"
+						}
+						onTrigger: function<bool,bool>(e1bbb063-bc4d-47b4-935a-1cb76e13f97d)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	true" \
+								"}"
+						}
+						read: function<int>(e07a74b2-9fb8-44b6-880e-241d910c241e)
+						{
+							script: "function()" \
+								"{" \
+								"	length dp:PhoneMenu:Recent_CallsList" \
+								"}"
+						}
+						write: function<bool,int>(9d7bcca4-93f0-4589-a05b-059d01f3f287)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					lineMapping: intlist []
+					listButtonHeight: 50
+					moveUpDown: conditional_script(d19b379c-98e6-4f22-ae2f-8c257bbdbc08)
+					{
+						triggerList: trigger_list(bf98aa46-3340-42b3-8a02-da487df6957d)
+						{
+							script: "ev:Phone_CompoundEvents:scroll_down_RecentCalls" \
+								"ev:Phone_CompoundEvents:scroll_up_RecentCalls" \
+								"v:this.listButtonHeight"
+						}
+						onTrigger: function<bool,bool>(6e5ebb72-3f12-4009-9fb9-eb593252f7a1)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	match_event v:event = ev:Phone_CompoundEvents:scroll_up_RecentCalls in" \
+								"	{" \
+								"		v:this.yOffset += v:this.listButtonHeight /2" \
+								"	}" \
+								"	" \
+								"	match_event v:event = ev:Phone_CompoundEvents:scroll_down_RecentCalls in" \
+								"	{" \
+								"		v:this.yOffset -= v:this.listButtonHeight /2" \
+								"	}" \
+								"	" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "RecentCalls_ScrollList"
+			visible: true
+			width: 600
+			height: 350
+			x: 70
+			y: 100
+			RecentCalls_List: @93675d48-9ecd-48c0-850d-2a2bf8902165 (objectref<stringlist>)
+			limitYMovement: conditional_script(5c94db9d-4899-466c-9348-e8436a227fe3)
+			{
+				triggerList: trigger_list(944861fe-e148-4f28-a3a9-1f536176e44d)
+				{
+					script: "dp:PhoneMenu:Recent_CallsList" \
+						"v:this->RecentCalls_Instantiator.listButtonHeight" \
+						"v:this->RecentCalls_Instantiator.yOffset"
+				}
+				onTrigger: function<bool,bool>(8ad6c60c-4356-4cc6-837f-2edd37f2c72d)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	let v:maximumOffset = length dp:PhoneMenu:Recent_CallsList * v:this->RecentCalls_Instantiator.listButtonHeight - v:this.height in" \
+						"	{" \
+						"		if(v:this->RecentCalls_Instantiator.yOffset >0)" \
+						"		{" \
+						"			v:this->RecentCalls_Instantiator.yOffset = 0" \
+						"		}" \
+						"		else if(v:this->RecentCalls_Instantiator.yOffset < -v:maximumOffset)" \
+						"		{" \
+						"			v:this->RecentCalls_Instantiator.yOffset = -v:maximumOffset" \
+						"		}" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+			}
 		}]
 	text: "Recent Calls - Alex's Phone"
 	textColor: textColor@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<color>)

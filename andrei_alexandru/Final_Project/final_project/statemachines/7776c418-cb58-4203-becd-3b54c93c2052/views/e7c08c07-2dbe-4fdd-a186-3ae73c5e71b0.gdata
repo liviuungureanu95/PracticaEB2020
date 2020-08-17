@@ -18,6 +18,111 @@ GtfView_template_instance(e7c08c07-2dbe-4fdd-a186-3ae73c5e71b0)
 					"	false" \
 					"}"
 			}
+		}, 
+		GtfContainer(94af7fe2-04f7-4841-9b27-59253bd02a5b)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfInstantiator(a70acd9c-bd43-4fe6-8f63-f9868dd47f97)
+				{
+					features: feature_list [
+						LayoutPolicyFlow(fda9e87f-00ad-4820-be5e-53823a08eecc)
+						{
+							horizontalGap: 0
+							verticalGap: 0
+							layoutDirection: 0
+							horizontalChildAlign: 0
+							verticalChildAlign: 0
+						}]
+					children: children_list [
+						GtfRectangle(bbbab8c2-3aaa-41fc-b66b-b7a27c8f6e21)
+						{
+							features: feature_list [
+								Border(c7eabfb9-0b0e-49bf-bc25-f52f35513c76)
+								{
+									borderThickness: 1
+									borderColor: #000000FF
+									borderStyle: 0
+								}, 
+								LineIndex(f3baf5e9-68fd-43d6-8e5c-e1e5249ab603)
+								{
+									lineIndex: 0
+								}]
+							children: children_list [
+								GtfLabel(b281122f-8eda-41bc-a481-67246b7e5344)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Text"
+									visible: true
+									width: width@bbbab8c2-3aaa-41fc-b66b-b7a27c8f6e21 (propref<int>)
+									height: 50
+									x: 0
+									y: 0
+									text: "label"
+									textColor: #000000FF
+									font: font_resource(0b2d8634-37ef-49f4-b638-4c43e66c209c)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 30
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+								}]
+							name: "Background"
+							visible: true
+							width: width@a70acd9c-bd43-4fe6-8f63-f9868dd47f97 (propref<int>)
+							height: 50
+							x: 0
+							y: 0
+							fillColor: #87CEEBFF
+							"Conditional script 5": conditional_script(7473ac4b-ebd2-457e-a1d7-424304f3e0fd)
+							{
+								triggerList: trigger_list(4af80ff2-1116-4088-9805-e52234376f76)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(a7feb98b-c2b9-4f08-8461-9e59dce068aa)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	v:this->Text.text = dp:PhoneMenu:Fav_ContactsList[v:this.lineIndex]" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "Fav_ContactsInstantiator"
+					visible: true
+					width: 600
+					height: 250
+					x: 0
+					y: 0
+					numItems: 5
+					lineMapping: intlist []
+					calculateNumItems: conditional_script(0aa7b0f4-5af6-4ab8-b42f-a0b663a3c734)
+					{
+						triggerList: trigger_list(91e62885-6ff2-4c5c-b545-11e4af96a2fc)
+						{
+							script: "dp:PhoneMenu:Fav_ContactsList" \
+								""
+						}
+						onTrigger: function<bool,bool>(c791e2de-1a93-4772-aff7-a5db0331b506)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.numItems = length dp:PhoneMenu:Fav_ContactsList" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "Fav_ContactsList"
+			visible: true
+			width: 600
+			height: 250
+			x: 100
+			y: 150
 		}]
 	text: "Favorites Contacts - Alex's Phone"
 	textColor: textColor@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<color>)

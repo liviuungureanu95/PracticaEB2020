@@ -53,6 +53,414 @@ GtfView_template_instance(10f68744-3114-4b30-ab74-d8f538b53324)
 			}
 			horizontalAlign: 0
 			verticalAlign: 0
+		}, 
+		GtfContainer(0716613a-8cdd-4fe1-aa52-87a538405ab9)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfInstantiator(8eb3d970-84f3-4093-9490-4a8751ddc21b)
+				{
+					features: feature_list [
+						ViewPort(bbceb4f9-0059-483d-a309-48a361051c06)
+						{
+							xOffset: 0
+							yOffset: 0
+						}, 
+						LayoutPolicyBox(38c96837-2193-4200-be2e-749fca5ae0db)
+						{
+							gap: 0
+							layoutDirection: 0
+						}]
+					children: children_list [
+						GtfContainer(6bf0a0fe-3edd-441c-86c3-c424998f0458)
+						{
+							features: feature_list [
+								LineIndex(c658a5ae-6fde-4b6b-80ad-33babfe26a23)
+								{
+									lineIndex: 0
+								}]
+							children: children_list [
+								GtfRectangle(71ff6456-ad6f-4a69-9a76-76622b0c22d1)
+								{
+									features: feature_list [
+										Border(45045067-4790-4940-9960-05e3bfb8fef4)
+										{
+											borderThickness: 1
+											borderColor: #000000FF
+											borderStyle: 0
+										}, 
+										TouchShortReleased(681ede19-503b-4a75-af46-8b2ed88d42e5)
+										{
+											touchShortReleased: function<bool,int,int,int,int>(33cc6147-5266-494a-8809-4a1d9df948e4)
+											{
+												script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+													"{" \
+													"	v:this.buttonEvent()" \
+													"    false" \
+													"}"
+											}
+										}, 
+										StateTouched(4d0af80c-69e9-4fb9-a7e8-678f83b63c06)
+										{
+											touchable: true
+											touched: false
+											touchPolicy: 0
+											touchBehavior: 0
+										}, 
+										LineIndex(41d537c1-aef2-4245-9422-425e412eb558)
+										{
+											lineIndex: 0
+										}]
+									children: children_list []
+									name: "Background"
+									visible: true
+									width: width@6bf0a0fe-3edd-441c-86c3-c424998f0458 (propref<int>)
+									height: listButtonWidth@8eb3d970-84f3-4093-9490-4a8751ddc21b (propref<int>)
+									x: 0
+									y: 0
+									fillColor: #FFFFFF00
+									buttonEvent: function<bool>(85534e8f-cacd-41af-81bf-51ffc0ba3078)
+									{
+										script: "function()" \
+											"{" \
+											"	if(v:this.lineIndex == 0)" \
+											"	{" \
+											"		fire ev:Apps_CompoundEvents:goTo_AndroidAuto()" \
+											"	}" \
+											"	" \
+											"	" \
+											"	if(v:this.lineIndex == 1)" \
+											"	{" \
+											"		fire ev:Apps_CompoundEvents:goTo_AppleCar()" \
+											"	}" \
+											"	false" \
+											"}"
+									}
+									setText: conditional_script(223a54a1-a36f-404a-999e-8460193b901b)
+									{
+										triggerList: trigger_list(ce425766-31da-4192-bb88-08378ee83c24)
+										{
+											script: "dp:AppsMenu:AppsList" \
+												"v:this.lineIndex" \
+												""
+										}
+										onTrigger: function<bool,bool>(69098469-db3d-4611-9b96-658eb62192a8)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	v:this->^->Text.text = dp:AppsMenu:AppsList[v:this.lineIndex]" \
+												"	false" \
+												"}"
+										}
+									}
+									setLogo: conditional_script(715d75d6-de6f-41df-8db5-0d38c227fad4)
+									{
+										triggerList: trigger_list(43afdbda-727c-426f-a4c6-0e1ef22b6bdf)
+										{
+											script: "dp:AppsMenu:Apps_LogoList" \
+												"v:this.lineIndex" \
+												""
+										}
+										onTrigger: function<bool,bool>(9f464ee1-aa52-44e6-b7b9-fa578970562a)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	v:this->^->Logo.image = dp:AppsMenu:Apps_LogoList[v:this.lineIndex]" \
+												"	false" \
+												"}"
+										}
+									}
+								}, 
+								GtfLabel(b039ef18-18f3-461e-ae1b-e7dae014097a)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Text"
+									visible: true
+									width: width@6bf0a0fe-3edd-441c-86c3-c424998f0458 (propref<int>)
+									height: listButtonWidth@8eb3d970-84f3-4093-9490-4a8751ddc21b (propref<int>)
+									x: 0
+									y: 40
+									text: "label"
+									textColor: #000000FF
+									font: font_resource(8e8dbae1-7133-4316-86e5-572749d2f9da)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 30
+									}
+									horizontalAlign: 1
+									verticalAlign: 2
+									setText: conditional_script(4dbac6d4-1625-4b69-ba57-faa9d901ab8e)
+									{
+										triggerList: trigger_list(5406c753-263c-4e63-a096-9b2fd096b0e4)
+										{
+											script: "dp:AppsMenu:AppsList" \
+												"v:this->^.lineIndex" \
+												""
+										}
+										onTrigger: function<bool,bool>(9b485f0c-96bf-46ac-85a4-892e957575e8)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	v:this.text = dp:AppsMenu:AppsList[v:this->^.lineIndex]" \
+												"	false" \
+												"}"
+										}
+									}
+								}, 
+								GtfImage(31f77b34-0f3a-4a0b-a6ba-6be5f6507f69)
+								{
+									features: feature_list [
+										ScaleMode(031903ce-8bf8-4fbb-aafa-7ce5cb50c4e8)
+										{
+											scaleMode: 1
+										}]
+									children: children_list []
+									name: "Logo"
+									visible: true
+									width: width@6bf0a0fe-3edd-441c-86c3-c424998f0458 (propref<int>)
+									height: listButtonWidth@8eb3d970-84f3-4093-9490-4a8751ddc21b (propref<int>)
+									x: 0
+									y: 0
+									image: image_resource(1ab8d61e-c153-47aa-8dac-6be954a0f47b)
+									{
+										file: ""
+									}
+									sRGB: false
+									horizontalAlign: 1
+									verticalAlign: 0
+									setLogo: conditional_script(57b1b516-f019-4517-97ce-dbb448173383)
+									{
+										triggerList: trigger_list(9f5cbdac-f85f-4520-ba2f-7b765d06a729)
+										{
+											script: "dp:AppsMenu:Apps_LogoList" \
+												"v:this->^.lineIndex" \
+												""
+										}
+										onTrigger: function<bool,bool>(8668b172-7120-410e-96bd-0d89b521cdd8)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	v:this.image = dp:AppsMenu:Apps_LogoList[v:this->^.lineIndex]" \
+												"	false" \
+												"}"
+										}
+									}
+								}]
+							name: "List_Button"
+							visible: true
+							width: width@8eb3d970-84f3-4093-9490-4a8751ddc21b (propref<int>)
+							height: listButtonWidth@8eb3d970-84f3-4093-9490-4a8751ddc21b (propref<int>)
+							x: 0
+							y: 0
+						}]
+					name: "Apps_Instantiator"
+					visible: true
+					width: width@0716613a-8cdd-4fe1-aa52-87a538405ab9 (propref<int>)
+					height: height@0716613a-8cdd-4fe1-aa52-87a538405ab9 (propref<int>)
+					x: 0
+					y: 0
+					numItems: 6
+					lineMapping: intlist []
+					listButtonWidth: 250
+					movePrevNext: conditional_script(fa58ca38-1da3-4c95-82f2-0bff0c3172f1)
+					{
+						triggerList: trigger_list(10225513-5b67-441c-857d-7394847bb847)
+						{
+							script: "ev:Apps_CompoundEvents:prev_apps" \
+								"ev:Apps_CompoundEvents:next_apps" \
+								"v:this.listButtonWidth"
+						}
+						onTrigger: function<bool,bool>(71e8b695-f866-47bd-9c07-18bd75f110ca)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	match_event v:event = ev:Apps_CompoundEvents:next_apps in" \
+								"	{" \
+								"		v:this.xOffset += v:this.listButtonWidth /1" \
+								"	}" \
+								"	" \
+								"	match_event v:event = ev:Apps_CompoundEvents:prev_apps in" \
+								"	{" \
+								"		v:this.xOffset -= v:this.listButtonWidth /1" \
+								"	}" \
+								"	" \
+								"	false" \
+								"}"
+						}
+					}
+					calculateNumItems: conditional_script(524b5999-f7a0-4292-b57e-cfed85574908)
+					{
+						triggerList: trigger_list(9a0befe5-6a9e-4b1d-a362-2ae098c022f7)
+						{
+							script: "dp:AppsMenu:AppsList"
+						}
+						onTrigger: function<bool,bool>(3c37f04c-f881-4981-b2dd-3eedc2f508e9)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.numItems = length dp:AppsMenu:AppsList" \
+								"	v:this.numItems = length dp:AppsMenu:Apps_LogoList" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "AppsList"
+			visible: true
+			width: 250
+			height: 300
+			x: 270
+			y: 140
+			AppsList: @2bc0ee31-9425-4be3-8a5d-56efd460ca7b (objectref<stringlist>)
+			LogoList: @07da4183-7e3e-40de-ad20-c303e0d2ce75 (objectref<imagelist>)
+			limitXMovement: conditional_script(02d941dd-3907-46e0-896c-4f8b606262ea)
+			{
+				triggerList: trigger_list(947aab52-2ef0-40ee-a08e-7ee7b66fb6b9)
+				{
+					script: "dp:AppsMenu:Apps_LogoList" \
+						"dp:AppsMenu:AppsList" \
+						"v:this->Apps_Instantiator.listButtonWidth" \
+						"v:this->Apps_Instantiator.xOffset" \
+						""
+				}
+				onTrigger: function<bool,bool>(16309fce-466c-49cb-859b-383b341576e3)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"let v:maximumOffset = length dp:AppsMenu:AppsList * v:this->Apps_Instantiator.listButtonWidth - v:this.width in" \
+						"{" \
+						"	if(v:this->Apps_Instantiator.xOffset > 0)" \
+						"	   {	" \
+						"	    	v:this->Apps_Instantiator.xOffset = 0" \
+						"	   }" \
+						"	   else if(v:this->Apps_Instantiator.xOffset < -v:maximumOffset)" \
+						"	   {" \
+						"	   		v:this->Apps_Instantiator.xOffset = -v:maximumOffset" \
+						"	   }" \
+						"}" \
+						"" \
+						"" \
+						"false" \
+						"}"
+				}
+			}
+		}, 
+		GtfRectangle(1727b7cc-2642-4b8a-8a75-e9d0a8168a33)
+		{
+			features: feature_list [
+				TouchShortReleased(19ec1e46-84ff-4893-8a9d-411ba3691524)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(9731c5f3-2c1d-4b1e-88db-42ced155c99d)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonEvent()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(dcf0dc30-601b-40d7-99cc-849af7699c43)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfLabel(d89dead6-33f2-4934-9a08-783b7f5d9796)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text"
+					visible: true
+					width: 150
+					height: 50
+					x: 0
+					y: 0
+					text: "NEXT"
+					textColor: #FFFFFFFF
+					font: font_resource(43e7c35b-f7d9-4aa1-9584-8c6dd4831002)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "NextButton"
+			visible: true
+			width: 150
+			height: 50
+			x: 600
+			y: 250
+			fillColor: #A9A9A9FF
+			buttonEvent: function<bool>(6ed35a3b-055e-4166-a226-278a20a98530)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:Apps_CompoundEvents:prev_apps()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfRectangle(a61143d6-6010-49b8-8fc8-f66c13a9b008)
+		{
+			features: feature_list [
+				TouchShortReleased(c5bf10e6-8f1a-4760-925c-3cf63982fe5e)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(8e274573-0e4c-4998-8b89-25c45185c2b1)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonEvent()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(fbe3b4e3-9f22-409b-a3c8-6907ee1b943e)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfLabel(16227153-0267-4eaf-83a4-bc9af92ab995)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text"
+					visible: true
+					width: 150
+					height: 50
+					x: 0
+					y: 0
+					text: "PREVIOUS"
+					textColor: #FFFFFFFF
+					font: font_resource(a8cc56fe-ab81-4450-b1e7-b31698f474c8)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "PreviousButton"
+			visible: true
+			width: 150
+			height: 50
+			x: 50
+			y: 250
+			fillColor: #A9A9A9FF
+			buttonEvent: function<bool>(1d3d5c27-10a8-416b-8ffd-036cfb51d0bc)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:Apps_CompoundEvents:next_apps()" \
+					"	false" \
+					"}"
+			}
 		}]
 	text: "Apps Menu"
 	textColor: textColor@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<color>)

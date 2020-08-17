@@ -53,6 +53,186 @@ GtfView_template_instance(48d3f4d1-3e42-4f79-afa0-c684bf19bcf4)
 			}
 			horizontalAlign: 0
 			verticalAlign: 0
+		}, 
+		GtfContainer(6eeee5df-bf62-42be-bb18-c8f0406e4e9f)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfInstantiator(13cc0899-4004-4bf7-b31c-e01766341827)
+				{
+					features: feature_list [
+						LayoutPolicyFlow(c274acf4-9d1f-4601-a919-c485ee865479)
+						{
+							horizontalGap: 60
+							verticalGap: 60
+							layoutDirection: 0
+							horizontalChildAlign: 0
+							verticalChildAlign: 0
+						}]
+					children: children_list [
+						GtfRectangle(30f8c5fe-4bb9-4491-aecb-8fcdbad937d4)
+						{
+							features: feature_list [
+								TouchShortReleased(e0f0a502-405b-47c5-a0bb-2557d7840c7b)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(3c16f8e2-c06f-4a51-9607-7dc1d6412795)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	v:this.buttonEvent()" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(c34965f5-ae79-40a1-ba3b-9b54c923f129)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}, 
+								LineIndex(ced0f33e-ab3a-4ac2-8082-0a88e8531d70)
+								{
+									lineIndex: 0
+								}, 
+								Border(e651fb0c-d8b9-495f-be89-3330fdba1006)
+								{
+									borderThickness: 1
+									borderColor: #000000FF
+									borderStyle: 0
+								}]
+							children: children_list [
+								GtfLabel(69207183-f864-4445-8680-30debbd29ae5)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Text"
+									visible: true
+									width: 100
+									height: 100
+									x: 0
+									y: 30
+									text: "label"
+									textColor: #000000FF
+									font: font_resource(cc84d952-b2e1-4262-8e39-9fe8fa73a611)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 25
+									}
+									horizontalAlign: 1
+									verticalAlign: 2
+								}, 
+								GtfImage(9a37fc68-9407-4a5b-896e-02f2945db77c)
+								{
+									features: feature_list [
+										ScaleMode(ee76d4b4-970a-43d2-b39c-b9222ae62ccd)
+										{
+											scaleMode: 1
+										}]
+									children: children_list []
+									name: "Logo's"
+									visible: true
+									width: 100
+									height: 100
+									x: 0
+									y: 0
+									image: image_resource(970e1893-ecfb-45f7-879e-35564466e52c)
+									{
+										file: ""
+									}
+									sRGB: false
+									horizontalAlign: 0
+									verticalAlign: 1
+								}]
+							name: "Background"
+							visible: true
+							width: 100
+							height: 100
+							x: 0
+							y: 0
+							fillColor: #FFFFFF00
+							buttonEvent: function<bool>(01edb4f2-7dde-4d1f-a270-cb2ca5a74706)
+							{
+								script: "function()" \
+									"{" \
+									"	if(v:this.lineIndex == 0)" \
+									"		fire ev:Media_CompoundEvents:goTo_BT()" \
+									"	if(v:this.lineIndex == 1)" \
+									"		fire ev:Media_CompoundEvents:goTo_USB()" \
+									"	if(v:this.lineIndex == 2)" \
+									"		fire ev:Media_CompoundEvents:goTo_CD()" \
+									"	if(v:this.lineIndex == 3)" \
+									"		fire ev:Media_CompoundEvents:goTo_AUX()" \
+									"	false" \
+									"}"
+							}
+							setText: conditional_script(646ab686-a085-4285-af55-658951992bd0)
+							{
+								triggerList: trigger_list(4f49b207-2656-4a37-9339-6ae8e4ad793b)
+								{
+									script: "dp:MediaMenu:MediaList" \
+										"v:this.lineIndex" \
+										""
+								}
+								onTrigger: function<bool,bool>(d860955e-5654-4ada-97ce-0f0412ac1fae)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	v:this->Text.text = dp:MediaMenu:MediaList[v:this.lineIndex]" \
+										"	false" \
+										"}"
+								}
+							}
+							setLogo: conditional_script(748c4fb9-fd38-492b-a830-f416ed98b93c)
+							{
+								triggerList: trigger_list(21de364d-a327-4481-8030-07b914505875)
+								{
+									script: "dp:MediaMenu:Media_LogoList" \
+										"v:this.lineIndex" \
+										""
+								}
+								onTrigger: function<bool,bool>(68a7c449-104c-4964-8f56-5203aaac1336)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	v:this->\"Logo's\".image = dp:MediaMenu:Media_LogoList[v:this.lineIndex]" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "MediaMenu_Instantiator"
+					visible: true
+					width: 600
+					height: 200
+					x: 110
+					y: 180
+					numItems: 4
+					lineMapping: intlist []
+					calculateNumItems: conditional_script(d47fa394-0cc9-4b92-838e-205bb7625edc)
+					{
+						triggerList: trigger_list(7e0b07da-b63e-4541-8082-f51bdf179ede)
+						{
+							script: "dp:MediaMenu:MediaList" \
+								""
+						}
+						onTrigger: function<bool,bool>(b89ceee0-2f53-4e37-894d-a2e9d2e8aab3)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.numItems = length dp:MediaMenu:MediaList" \
+								"	v:this.numItems = length dp:MediaMenu:Media_LogoList" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "Media_Menu"
+			visible: true
+			width: 100
+			height: 100
+			x: 0
+			y: 0
 		}]
 	text: "Media Menu"
 	textColor: textColor@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<color>)
