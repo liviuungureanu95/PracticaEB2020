@@ -1,0 +1,153 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(60c547d3-3bdc-429a-a9e1-550e9b630595)
+{
+	name: "View"
+	structure: GtfView(aebbc1ad-fbc0-4969-bc34-0901a19f38aa)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(af36749b-3649-4e53-8e7c-99cf2acadc07)
+			{
+				features: feature_list [
+					Border(ee3a9be1-2478-44b0-9550-74b18ae5848e)
+					{
+						borderThickness: 20
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list [
+					GtfImage(f8631715-9cb2-4f82-8476-5efe61824176)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "warning_img"
+						visible: true
+						width: 300
+						height: 222
+						x: 90
+						y: 270
+						image: image_resource(d0eb2467-eaeb-4903-8a76-2da5862eb9bf)
+						{
+							file: "Warning_img.jpg"
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+					}, 
+					GtfLabel(72cb040e-6e4d-4e62-b6b5-e398b2e741c9)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "txt"
+						visible: true
+						width: 280
+						height: 69
+						x: 100
+						y: 338
+						text: "The condition are not complete !"
+						textColor: #FF0000FF
+						font: font_resource(0a5f612a-a928-457b-8448-0cfdf9f02440)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 25
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfContainer(1d379855-6f1a-4c91-b6ba-81c0771b43c3)
+					{
+						features: feature_list [
+							TouchPressed(aa039693-e639-48ad-afa0-60d7ebeb36a4)
+							{
+								touchPressed: function<bool,int,int,int,int>(01dd1416-d356-41c0-8700-4e1e1711d915)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	v:this->background.borderColor = dp:ButtonPress_border" \
+										"    false" \
+										"}"
+								}
+							}, 
+							TouchShortReleased(58e7cf4a-ab40-4b13-a692-81f979ea9359)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(283601dc-fb5c-4f16-aeb4-9f74e4652c9a)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	v:this->^.borderColor = dp:Button_border" \
+										"	fire ev:GoTo_M()" \
+										"	f:popDynamicStateMachine(popup_stack:Main, sm:Warning_popup)" \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(ca24f7ba-e5a7-42ce-9fa9-d2f93e5607dd)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list [
+							GtfRectangle(24ef0c7c-fca5-4d84-979e-92a14af92b1f)
+							{
+								features: feature_list [
+									Border(85ccd101-f558-46ef-88b7-47fb79bbbe09)
+									{
+										borderThickness: 2
+										borderColor: #FF0000FF
+										borderStyle: 0
+									}]
+								children: children_list []
+								name: "background"
+								visible: true
+								width: width@1d379855-6f1a-4c91-b6ba-81c0771b43c3 (propref<int>)
+								height: height@1d379855-6f1a-4c91-b6ba-81c0771b43c3 (propref<int>)
+								x: 0
+								y: 0
+								fillColor: #000000FF
+							}, 
+							GtfLabel(7df9306d-9267-49cb-baff-ea24faa92a08)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "ok_txt"
+								visible: true
+								width: width@1d379855-6f1a-4c91-b6ba-81c0771b43c3 (propref<int>)
+								height: height@1d379855-6f1a-4c91-b6ba-81c0771b43c3 (propref<int>)
+								x: 0
+								y: 0
+								text: "OK"
+								textColor: #FFD600FF
+								font: font_resource(bc7e48b2-727a-4077-b7b7-8606d2fe8b5e)
+								{
+									file: "PT_Sans_Narrow.ttf"
+									size: 50
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}]
+						name: "OK_button"
+						visible: true
+						width: 100
+						height: 50
+						x: 190
+						y: 400
+					}]
+				name: "Background_Border"
+				visible: true
+				width: width@aebbc1ad-fbc0-4969-bc34-0901a19f38aa (propref<int>)
+				height: height@aebbc1ad-fbc0-4969-bc34-0901a19f38aa (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFFFF
+			}]
+		name: "View"
+		visible: true
+		width: 480
+		height: 800
+		x: 0
+		y: 0
+	}
+}
