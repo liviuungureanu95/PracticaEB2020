@@ -1,0 +1,54 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_compound_state(e6e11053-b2d9-40e4-b4fd-708039f71d8c)
+{
+	x: 44
+	y: 275
+	width: 600
+	height: 400
+	name: "TV Compound State"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions []
+	internal_transitions: haptic_internal_transitions []
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(03bb90a2-37eb-4bf7-82d3-1f4f417eb8cc)
+		{
+			x: 135
+			y: 49
+			width: 100
+			height: 100
+			name: "TV Main State"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (60165f9b-69a0-4a7b-8248-4b14acb5e3b7)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(7e00d49e-e4b9-46ef-a128-e482f10e9ed8)
+	{
+		x: 48
+		y: 58
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(b6613fe0-38c6-4ccd-80c4-e699a656afe7)
+		{
+			action: function<void>(none)
+			target_state: @03bb90a2-37eb-4bf7-82d3-1f4f417eb8cc (objectref<haptic_dialog_state>)
+			source_dock: 0.25F
+			target_dock: 0.8125098F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(none)
+}
