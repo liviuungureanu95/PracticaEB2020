@@ -39,7 +39,7 @@ GtfView(b106dafd-e6f7-417d-9fd7-8448d26ec436)
 			width: 528
 			height: 360
 			x: 21
-			y: 173
+			y: 172
 			image: image_resource(c75ebc76-edb4-44b4-ab57-169b2cf9482c)
 			{
 				file: "truck.png"
@@ -89,8 +89,8 @@ GtfView(b106dafd-e6f7-417d-9fd7-8448d26ec436)
 					visible: true
 					width: 72
 					height: 65
-					x: 26
-					y: 6
+					x: 17
+					y: 4
 					image: image_scriptedValue(1e776639-8d5b-491c-af5a-1bdd6f8ca826)
 					{
 						triggerList: trigger_list(034fc4b9-e7df-4a1d-a3ad-c5eeeb341286)
@@ -173,10 +173,17 @@ GtfView(b106dafd-e6f7-417d-9fd7-8448d26ec436)
 					}
 				}]
 			text: "Your engine's truck is off"
+			"image 2": image_resource(f475f37e-99d0-4e51-8c0e-31e681104259)
+			{
+				file: "BAR.png"
+			}
 			image: image_resource(ac764607-7006-4726-94df-00b8b2a690f5)
 			{
-				file: "truck.png"
+				file: ""
 			}
+			textColor: textColor@ae4424b5-7a37-4428-b750-c992d88a6c3e (propref<color>)
+			x: x@ae4424b5-7a37-4428-b750-c992d88a6c3e (propref<int>)
+			y: y@ae4424b5-7a37-4428-b750-c992d88a6c3e (propref<int>)
 		}, 
 		GtfImage(9dc3cff5-e425-47b2-900d-87b67542d706)
 		{
@@ -194,6 +201,7 @@ GtfView(b106dafd-e6f7-417d-9fd7-8448d26ec436)
 					{
 						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 							"{" \
+							"	fire ev:goToAir()" \
 							"    false" \
 							"}"
 					}
@@ -628,7 +636,7 @@ GtfView(b106dafd-e6f7-417d-9fd7-8448d26ec436)
 			horizontalAlign: 0
 			verticalAlign: 0
 		}]
-	name: "View 1"
+	name: "menu"
 	visible: true
 	width: 580
 	height: 780

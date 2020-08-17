@@ -29,6 +29,24 @@ GtfContainer_template(ae4424b5-7a37-4428-b750-c992d88a6c3e)
 				horizontalAlign: 0
 				verticalAlign: 1
 			}, 
+			GtfImage(4be3c57f-a6f4-4eb9-9dbf-e656c53e0a9e)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "logo_button"
+				visible: true
+				width: 188
+				height: 63
+				x: 9
+				y: 5
+				image: image_resource(99e4fac0-6d8f-4743-b104-edb3e5b6193d)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
 			GtfLabel(b1b32e7d-4abf-465d-a17b-47621dc63625)
 			{
 				features: feature_list []
@@ -37,8 +55,8 @@ GtfContainer_template(ae4424b5-7a37-4428-b750-c992d88a6c3e)
 				visible: true
 				width: 219
 				height: 54
-				x: 131
-				y: 10
+				x: 91
+				y: 12
 				text: "label"
 				textColor: #FFFFFFFF
 				font: font_resource(1bc60944-c1b5-40d2-b777-3cb7093e0189)
@@ -49,37 +67,99 @@ GtfContainer_template(ae4424b5-7a37-4428-b750-c992d88a6c3e)
 				horizontalAlign: 0
 				verticalAlign: 0
 			}, 
-			GtfImage(4bf5c75d-f1bb-4af4-b9b2-861c78d8826a)
-			{
-				features: feature_list []
-				children: children_list []
-				name: "Image 7"
-				visible: true
-				width: 64
-				height: 63
-				x: 36
-				y: 7
-				image: image_resource(339c1fea-3543-4789-8bbc-e57b2a5aa1bf)
-				{
-					file: "truck.png"
-				}
-				sRGB: false
-				horizontalAlign: 0
-				verticalAlign: 1
-			}, 
 			GtfLabel(2d4fa85d-32d8-42c0-92db-de0af6c5d3f6)
 			{
 				features: feature_list []
 				children: children_list []
-				name: "Label 3"
+				name: "hour"
 				visible: true
-				width: 100
-				height: 36
+				width: 92
+				height: 29
 				x: 439
 				y: 9
-				text: "hour"
+				text: string_scriptedValue(dd09f68c-c61e-4d40-8b85-12351a79b85c)
+				{
+					triggerList: trigger_list(d0b31896-8759-44ea-9e5d-0ce48086276a)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(f7f4cad7-8bc0-465f-b361-a6adf5a316bd)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<string>(7f9596b4-c97b-4c57-a7f0-0db8b338743a)
+					{
+						script: "function()" \
+							"{" \
+							"	" \
+							"	f:int2string(f:localtime_hour(f:system_time())) + \":\" + f:int2string(f:localtime_minute(f:system_time())) + \":\" + f:int2string(f:localtime_second(f:system_time()))" \
+							"}"
+					}
+					write: function<bool,string>(8d7f501b-afeb-4330-99cd-bfa1ee86ca67)
+					{
+						script: "function(v:arg0::string)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
 				textColor: #FFFFFFFF
 				font: font_resource(9a8e46f4-a271-47f9-a78e-661ee84c6118)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}, 
+			GtfLabel(9931deb7-2296-4bf6-95f2-b84f80092108)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "day"
+				visible: true
+				width: 110
+				height: 35
+				x: 424
+				y: 36
+				text: string_scriptedValue(2bdf7cca-d50c-408f-aada-633dcd4a65a5)
+				{
+					triggerList: trigger_list(20645c2e-8e64-4328-bd90-47f75bf99d4e)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(70451b1a-05fe-4f28-bbcd-48da17548a54)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<string>(1d75e777-c4ea-4937-9701-bb00c58509e3)
+					{
+						script: "function()" \
+							"{" \
+							"	f:int2string(f:localtime_day(f:system_time())) +" \
+							" \"-\" + f:int2string(f:localtime_month(f:system_time())) + \"-\" + f:int2string(f:localtime_year(f:system_time()))" \
+							"}"
+					}
+					write: function<bool,string>(ac3d6c44-122e-41e1-8448-8f3dcdd393da)
+					{
+						script: "function(v:arg0::string)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				textColor: #FFFFFFFF
+				font: font_resource(e57b4ba8-c27a-428b-9798-b258655140bd)
 				{
 					file: "PT_Sans_Narrow.ttf"
 					size: 30
@@ -95,5 +175,9 @@ GtfContainer_template(ae4424b5-7a37-4428-b750-c992d88a6c3e)
 		y: 0
 	}
 	text: text@b1b32e7d-4abf-465d-a17b-47621dc63625 (propref<string>)
-	image: image@4bf5c75d-f1bb-4af4-b9b2-861c78d8826a (propref<image>)
+	"image 2": image@b131baab-2daa-4d75-9585-a573484e06c6 (propref<image>)
+	image: image@4be3c57f-a6f4-4eb9-9dbf-e656c53e0a9e (propref<image>)
+	textColor: textColor@b1b32e7d-4abf-465d-a17b-47621dc63625 (propref<color>)
+	x: x@b1b32e7d-4abf-465d-a17b-47621dc63625 (propref<int>)
+	y: y@b1b32e7d-4abf-465d-a17b-47621dc63625 (propref<int>)
 }

@@ -3,11 +3,123 @@ EBGUIDE 6.10.0.200602120856;
 GtfView(165daaa8-3c55-435a-a4aa-720dbf8c6f1b)
 {
 	features: feature_list []
-	children: children_list []
-	name: "View 3"
+	children: children_list [
+		GtfContainer_template_instance(16b1448f-cc19-42df-a411-123b875a5d77)
+		{
+			name: "TEMPLATE FOR VIEW ac 1"
+			template: @dce1fc75-951c-461b-91d3-24b5a5f79e77 (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfImage(adff51b0-3bad-4972-a497-d6017c08dd7b)
+				{
+					features: feature_list [
+						ScaleMode(2192140d-df5c-4fd3-b3d7-00e74674f345)
+						{
+							scaleMode: 1
+						}, 
+						TouchPressed(12cee5f3-194e-4835-ac9e-f15b6bf62120)
+						{
+							touchPressed: function<bool,int,int,int,int>(daf11a85-ab33-4004-9f23-db6123260d25)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(v:this.start == true)" \
+									"	{" \
+									"		v:this.start == false" \
+									"	}" \
+									"	else" \
+									"	{" \
+									"		v:this.start == true" \
+									"	}" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(f21fdc6b-adf4-4626-82d5-f7e91c9a769a)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "Image 38"
+					visible: true
+					width: 136
+					height: 65
+					x: 42
+					y: 185
+					image: image_scriptedValue(f0fb6941-0e22-4ad1-be02-b4c384e7a9bb)
+					{
+						triggerList: trigger_list(80920377-a5a2-49b2-a295-762a318bc629)
+						{
+							script: "v:this.start" \
+								"dp:redoff" \
+								"dp:\"green on\"" \
+								""
+						}
+						onTrigger: function<bool,bool>(4c29210a-5b04-4d37-942d-4e55d3588ac5)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<image>(78fe95ab-e5fb-4aa4-9d67-05fec7e069e5)
+						{
+							script: "function()" \
+								"{" \
+								"	if(v:this.start == true)" \
+								"	{dp:redoff }" \
+								"	else" \
+								"	{" \
+								"		dp:\"green on\"" \
+								"	}" \
+								"" \
+								"}"
+						}
+						write: function<bool,image>(e8042138-50e7-4638-a902-3ec7d64d6b0c)
+						{
+							script: "function(v:arg0::image)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+					start: true
+				}, 
+				GtfImage(7a079167-bc3a-46bc-bb96-d3b418fad5e0)
+				{
+					features: feature_list [
+						ScaleMode(19ba502d-48b9-4f60-9c6b-d644331a90cd)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "steering wheel"
+					visible: true
+					width: 379
+					height: 374
+					x: 96
+					y: 218
+					image: image_resource(be9ee75f-e0db-4b71-ba9f-cc102addb41e)
+					{
+						file: "steering-wheel (1).png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			touchPressed: touchPressed@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<function<bool,int,int,int,int>>)
+		}]
+	name: "View steering wheel"
 	visible: true
-	width: 800
-	height: 480
+	width: 580
+	height: 780
 	x: 0
 	y: 0
 }
