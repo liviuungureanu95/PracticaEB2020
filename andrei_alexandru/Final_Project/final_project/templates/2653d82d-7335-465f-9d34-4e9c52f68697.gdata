@@ -1,0 +1,77 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(2653d82d-7335-465f-9d34-4e9c52f68697)
+{
+	name: "T_HomeButton"
+	structure: GtfContainer(ec81cb7c-e33e-4967-9604-10d735c8be1f)
+	{
+		features: feature_list [
+			TouchShortReleased(8aa89113-d5f0-4258-a21e-d3e03f373a59)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(4617d6cf-fff3-4252-9f1d-530cd472c713)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.buttonEvent()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(a2ec416d-5a93-45cc-9105-8448ad17ceec)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(36966700-c218-498a-9c49-7efdf6eef0db)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@ec81cb7c-e33e-4967-9604-10d735c8be1f (propref<int>)
+				height: height@ec81cb7c-e33e-4967-9604-10d735c8be1f (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+			}, 
+			GtfImage(b6c5513f-bceb-48d2-b806-fd8f4a8b438e)
+			{
+				features: feature_list [
+					ScaleMode(18b76482-1682-4895-918a-7c5b91a2d07a)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "Logo"
+				visible: true
+				width: width@ec81cb7c-e33e-4967-9604-10d735c8be1f (propref<int>)
+				height: height@ec81cb7c-e33e-4967-9604-10d735c8be1f (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(08118d63-6152-4a09-b96b-018740548f20)
+				{
+					file: "home_button.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "Container"
+		visible: true
+		width: 48
+		height: 48
+		x: 5
+		y: 10
+		buttonEvent: function<bool>(e785bafe-9c1f-4cd3-a6c2-2eb0021dbd48)
+		{
+			script: "function()" \
+				"{" \
+				"	fire ev:MainMenu_Events:goTo_Menu()" \
+				"	false" \
+				"}"
+		}
+	}
+}

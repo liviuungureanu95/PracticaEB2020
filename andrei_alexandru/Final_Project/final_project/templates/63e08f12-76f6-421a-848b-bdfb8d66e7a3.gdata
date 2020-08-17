@@ -1,0 +1,181 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfInstantiator_template(63e08f12-76f6-421a-848b-bdfb8d66e7a3)
+{
+	name: "T_ButtonsInstantiator"
+	structure: GtfInstantiator(fd94f908-5ecb-475c-a99b-41ab47b5579a)
+	{
+		features: feature_list [
+			LayoutPolicyFlow(50a340d1-5e9e-42fa-82d5-09a391b01afa)
+			{
+				horizontalGap: 100
+				verticalGap: 60
+				layoutDirection: 0
+				horizontalChildAlign: 0
+				verticalChildAlign: 0
+			}]
+		children: children_list [
+			GtfRectangle(7a922172-56b0-4c25-8bc7-ee90316bda10)
+			{
+				features: feature_list [
+					LineIndex(39d8272e-e2e7-480d-adee-535de8bdfbf4)
+					{
+						lineIndex: 0
+					}, 
+					TouchShortReleased(8f64401a-cd18-4566-bd79-538e3c973a8b)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(854333fc-e5bc-44a6-87c6-617e70fc0b03)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.buttonEvent()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(d780df1a-4231-44fa-b3bb-ece7b8f6b2d8)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}, 
+					Border(a9a3b2b5-4d87-4c24-a7bf-42ac7bdefd84)
+					{
+						borderThickness: 1
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list [
+					GtfLabel(b1eab4ad-16e6-4c65-871f-2b3cbdbcb192)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Text"
+						visible: true
+						width: 100
+						height: 100
+						x: 0
+						y: 65
+						text: "label"
+						textColor: #FFFFFFFF
+						font: font_resource(0bb170f6-ce2a-4924-a2e8-3e4d353522fb)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 25
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfImage(adce2c6a-8b75-4732-a9c9-0cd485513fad)
+					{
+						features: feature_list [
+							ScaleMode(315fb665-1a7a-446e-9716-f3e92927e667)
+							{
+								scaleMode: 1
+							}]
+						children: children_list []
+						name: "Logo's"
+						visible: true
+						width: 100
+						height: 100
+						x: 0
+						y: 0
+						image: image_resource(cb0fefe8-fbfe-4182-b7c8-fa98721c8e31)
+						{
+							file: ""
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+					}]
+				name: "Background"
+				visible: true
+				width: 100
+				height: 100
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+				setText: conditional_script(1ade5063-37f6-49b1-9762-a712f6a29c37)
+				{
+					triggerList: trigger_list(a1bfe0ad-efaf-4ad7-b63f-b298404a818f)
+					{
+						script: "dp:MainMenu:Name_ButtonList" \
+							"v:this.lineIndex" \
+							""
+					}
+					onTrigger: function<bool,bool>(685a63d4-7184-4975-af4b-c9d8db0c23f5)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	v:this->Text.text = dp:MainMenu:Name_ButtonList[v:this.lineIndex]" \
+							"	false" \
+							"}"
+					}
+				}
+				setLogo: conditional_script(0e6d1de3-923b-4696-accd-cb09431b06a1)
+				{
+					triggerList: trigger_list(d1f76feb-6237-45e1-af57-f8713cbccb62)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(9a393a49-dab4-4876-b597-19254baa7344)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	v:this->\"Logo's\".image = dp:MainMenu:Button_ImageList[v:this.lineIndex]" \
+							"	false" \
+							"}"
+					}
+				}
+				buttonEvent: function<bool>(8cac4ae5-16b6-4f5a-a223-5efcc2cb70d5)
+				{
+					script: "function()" \
+						"{" \
+						"	if(v:this.lineIndex == 0)" \
+						"		fire ev:MainMenu_Events:goTo_PhoneMenu()" \
+						"	if(v:this.lineIndex == 1)" \
+						"		fire ev:MainMenu_Events:goTo_MediaMenu()" \
+						"	if(v:this.lineIndex == 2)" \
+						"		fire ev:MainMenu_Events:goTo_RadioMenu()" \
+						"	if(v:this.lineIndex == 3)" \
+						"		fire ev:MainMenu_Events:goTo_NaviMenu()" \
+						"	if(v:this.lineIndex == 4)" \
+						"		fire ev:MainMenu_Events:goTo_InfoMenu()" \
+						"	if(v:this.lineIndex == 5)" \
+						"		fire ev:MainMenu_Events:goTo_TrafficMenu()" \
+						"	if(v:this.lineIndex == 6)" \
+						"		fire ev:MainMenu_Events:goTo_CarSettingsMenu()" \
+						"	if(v:this.lineIndex == 7)" \
+						"		fire ev:MainMenu_Events:goTo_AppsMenu()" \
+						"	false" \
+						"}"
+				}
+			}]
+		name: "Buttons_Instantiator"
+		visible: true
+		width: 700
+		height: 285
+		x: 50
+		y: 110
+		numItems: 7
+		lineMapping: intlist []
+		calculateNumItems: conditional_script(1fc8f581-d8ac-46bf-bb64-84f31604e347)
+		{
+			triggerList: trigger_list(e9c0ddb1-9b82-439a-90ed-9b7c2e996c75)
+			{
+				script: "dp:MainMenu:Name_ButtonList" \
+					""
+			}
+			onTrigger: function<bool,bool>(b74f4211-5f01-4630-8164-d923244b80ce)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	v:this.numItems = length dp:MainMenu:Name_ButtonList" \
+					"	v:this.numItems = length dp:MainMenu:Button_ImageList" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+}

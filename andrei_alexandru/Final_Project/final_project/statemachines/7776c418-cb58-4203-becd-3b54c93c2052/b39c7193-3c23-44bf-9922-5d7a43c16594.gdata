@@ -1,0 +1,72 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_compound_state(b39c7193-3c23-44bf-9922-5d7a43c16594)
+{
+	x: 367
+	y: 222
+	width: 600
+	height: 400
+	name: "Radio_CompoundState"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions []
+	internal_transitions: haptic_internal_transitions []
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(58cf7aa6-57c2-4214-9fd4-fda66fa4c9c3)
+		{
+			x: 200
+			y: 7
+			width: 100
+			height: 100
+			name: "RadioMenu"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (fc1ab8a8-615b-48f9-9b8c-e64926282612)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(9090c684-48ae-4877-86f7-9466d272cdb5)
+	{
+		x: 15
+		y: 32
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(d5ae7dc6-6702-427e-ba3c-c5dd2e7f1831)
+		{
+			action: function<void>(none)
+			target_state: @5076d266-da6f-4e52-9457-5e0866c142fe (objectref<haptic_deep_history_state>)
+			source_dock: 0.2622186F
+			target_dock: 0.754546F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(5076d266-da6f-4e52-9457-5e0866c142fe)
+	{
+		x: 92
+		y: 33
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(66478962-7499-42c1-8260-016b4ee05a38)
+		{
+			action: function<void>(none)
+			target_state: @58cf7aa6-57c2-4214-9fd4-fda66fa4c9c3 (objectref<haptic_dialog_state>)
+			source_dock: 0.2628763F
+			target_dock: 0.7799858F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	priority_stack: priority_stack(none)
+}

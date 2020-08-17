@@ -1,0 +1,72 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_compound_state(d4b7640a-9c51-470a-9eb2-19dd194bdd6c)
+{
+	x: 622
+	y: 315
+	width: 600
+	height: 400
+	name: "Apps_CompoundState"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions []
+	internal_transitions: haptic_internal_transitions []
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(564beab5-c939-46ae-aa71-a0ccec1488a3)
+		{
+			x: 182
+			y: 3
+			width: 100
+			height: 100
+			name: "AppsMenu"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (10f68744-3114-4b30-ab74-d8f538b53324)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(7f840728-8b32-4c12-8ead-dbb361105cf9)
+	{
+		x: 13
+		y: 24
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(b19b21a6-e3a4-490c-88f1-0dbb39db41cf)
+		{
+			action: function<void>(none)
+			target_state: @6c49515c-ab84-4c6e-b32c-686b3b34385a (objectref<haptic_deep_history_state>)
+			source_dock: 0.2782653F
+			target_dock: 0.7525432F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(6c49515c-ab84-4c6e-b32c-686b3b34385a)
+	{
+		x: 96
+		y: 27
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(e05b6083-df6d-4561-93b0-374490f6bd58)
+		{
+			action: function<void>(none)
+			target_state: @564beab5-c939-46ae-aa71-a0ccec1488a3 (objectref<haptic_dialog_state>)
+			source_dock: 0.2636086F
+			target_dock: 0.7846531F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	priority_stack: priority_stack(none)
+}

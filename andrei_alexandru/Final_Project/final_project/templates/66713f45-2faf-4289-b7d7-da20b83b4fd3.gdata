@@ -1,0 +1,78 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(66713f45-2faf-4289-b7d7-da20b83b4fd3)
+{
+	name: "T_BackButton"
+	structure: GtfContainer(f48d488f-e92d-4d84-8577-2a87264f60a9)
+	{
+		features: feature_list [
+			TouchShortReleased(55afd4f0-15f7-46d7-a1e2-621632fc786b)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(88fa4462-e751-45c6-9f5a-46d6c666ae05)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.buttonEvent()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(1891cacb-0c88-4a57-815d-f943f804a65e)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(bd2a6ea6-4d9e-498f-b182-257f8585f85d)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@f48d488f-e92d-4d84-8577-2a87264f60a9 (propref<int>)
+				height: height@f48d488f-e92d-4d84-8577-2a87264f60a9 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+			}, 
+			GtfImage(22def9ec-a646-46ac-81b7-88d5902c29a0)
+			{
+				features: feature_list [
+					ScaleMode(8029ecb9-596c-4081-b9d2-c8f5ac2f2554)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "Logo"
+				visible: true
+				width: width@f48d488f-e92d-4d84-8577-2a87264f60a9 (propref<int>)
+				height: height@f48d488f-e92d-4d84-8577-2a87264f60a9 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(9b7f3d56-f92e-46e6-b29b-74f577c1b49a)
+				{
+					file: "back_button2.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "Container"
+		visible: true
+		width: 48
+		height: 48
+		x: 745
+		y: 10
+		buttonEvent: function<bool>(ab278de9-76bf-4612-a1b8-b433496d35e4)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	buttonEvent: buttonEvent@f48d488f-e92d-4d84-8577-2a87264f60a9 (propref<function<bool>>)
+}

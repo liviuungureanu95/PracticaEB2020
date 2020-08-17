@@ -1,0 +1,230 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(a8cb2954-cfbf-40f6-8eb6-7709850038a8)
+{
+	name: "PhoneMenu_View"
+	template: @b380d1bf-d029-45e1-aa1b-a53a19df7e62 (objectref<GtfView_template>)
+	children: children_list [
+		GtfInstantiator(fb6a9828-2a36-4c55-855a-b6676e52de48)
+		{
+			features: feature_list [
+				LayoutPolicyFlow(adcf8fc8-d509-400b-89a3-8fbb6184fd08)
+				{
+					horizontalGap: 150
+					verticalGap: 0
+					layoutDirection: 0
+					horizontalChildAlign: 0
+					verticalChildAlign: 0
+				}]
+			children: children_list [
+				GtfRectangle(06bff17d-18e0-466a-82e0-65e768899fcb)
+				{
+					features: feature_list [
+						TouchShortReleased(df32cec0-d4e4-4575-be78-c66cc5e06cbf)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(f4004754-892c-44c8-a3b5-1af02d6645da)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this.buttonEvent()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(0894859d-2d7a-4fd5-8dad-53b225977645)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}, 
+						LineIndex(2370ac0e-ddfe-4c1b-a3f0-5c1d9d02e0e0)
+						{
+							lineIndex: 0
+						}, 
+						Border(d593e764-af56-4179-9716-c563c1fa85a1)
+						{
+							borderThickness: 1
+							borderColor: #000000FF
+							borderStyle: 0
+						}]
+					children: children_list [
+						GtfLabel(5cae53dc-85cd-4eea-90d8-61ac97f8d03e)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text"
+							visible: true
+							width: 100
+							height: 100
+							x: 0
+							y: 75
+							text: "label"
+							textColor: #000000FF
+							font: font_resource(391d1de7-571e-464a-b6e1-36d7870313b1)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 25
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}, 
+						GtfImage(da77cb18-8ae3-4a0d-89f5-d2a41278d62d)
+						{
+							features: feature_list [
+								ScaleMode(39d46f16-4e72-46c8-8024-78f911647bca)
+								{
+									scaleMode: 1
+								}]
+							children: children_list []
+							name: "Logo's"
+							visible: true
+							width: 100
+							height: 100
+							x: 0
+							y: 0
+							image: image_resource(94fdc778-adde-4804-a888-f42fabec020c)
+							{
+								file: ""
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}]
+					name: "Background"
+					visible: true
+					width: 100
+					height: 100
+					x: 0
+					y: 0
+					fillColor: #FFFFFF00
+					setText: conditional_script(c2102668-3b80-41cb-94d3-e930ed211861)
+					{
+						triggerList: trigger_list(75821a3f-cd61-46a5-9073-d3b797d458fa)
+						{
+							script: "dp:PhoneMenu:NameList" \
+								"v:this.lineIndex" \
+								""
+						}
+						onTrigger: function<bool,bool>(3667c30f-cdd7-4f80-ad0f-0477e1e7315f)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this->Text.text = dp:PhoneMenu:NameList[v:this.lineIndex]" \
+								"	false" \
+								"}"
+						}
+					}
+					setLogo: conditional_script(94318002-2592-4dd9-9abe-4f1836a28103)
+					{
+						triggerList: trigger_list(8077fe16-e421-4e92-a2d2-3291e3d9454b)
+						{
+							script: "dp:PhoneMenu:ImageList" \
+								"v:this.lineIndex" \
+								""
+						}
+						onTrigger: function<bool,bool>(3a5857d7-2224-4d6e-9a2a-3cf533583b25)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this->\"Logo's\".image = dp:PhoneMenu:ImageList[v:this.lineIndex]" \
+								"	false" \
+								"}"
+						}
+					}
+					buttonEvent: function<bool>(f120e795-6f36-45df-9555-ad9d5d71ed14)
+					{
+						script: "function()" \
+							"{" \
+							"	if(v:this.lineIndex == 0)" \
+							"	fire ev:Phone_CompoundEvents:goTo_RecentCalls()" \
+							"	if(v:this.lineIndex == 1)" \
+							"	fire ev:Phone_CompoundEvents:goTo_Contacts()" \
+							"	if(v:this.lineIndex == 2)" \
+							"	fire ev:Phone_CompoundEvents:goTo_Favorites()" \
+							"	" \
+							"	false" \
+							"}"
+					}
+				}]
+			name: "PhoneMenu_Instantiator"
+			visible: true
+			width: 600
+			height: 200
+			x: 100
+			y: 200
+			numItems: 2
+			lineMapping: intlist []
+			calculateNumItems: conditional_script(bac688f6-4cda-4d37-a6cd-533c009dc30f)
+			{
+				triggerList: trigger_list(71e03c08-ede3-4d63-959a-5b38a7dd984f)
+				{
+					script: "dp:PhoneMenu:NameList" \
+						"" \
+						""
+				}
+				onTrigger: function<bool,bool>(abaf8d9b-7bcc-4207-a5e9-4ce4413bd0c1)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	v:this.numItems = length dp:PhoneMenu:NameList" \
+						"	v:this.numItems = length dp:PhoneMenu:ImageList" \
+						"	false" \
+						"	" \
+						"}"
+				}
+			}
+		}, 
+		GtfLabel(70638afb-711a-48c3-a3bd-e8e92c150714)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "CurrentTime"
+			visible: true
+			width: 100
+			height: 30
+			x: 720
+			y: 20
+			text: string_scriptedValue(6e33f0c7-3bfe-4a8d-9726-091d00351fc3)
+			{
+				triggerList: trigger_list(3c3fe296-6dad-48cb-afe2-f71efe303389)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(c39a6aaf-f0ce-4e6e-8b36-91cb8a5db976)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(d3db2b98-f713-4614-bb94-185859842903)
+				{
+					script: "function()" \
+						"{" \
+						"	f:int2string(dp:StartMenu:hour + 3) + \":\" + f:int2string(dp:StartMenu:minutes)" \
+						"}"
+				}
+				write: function<bool,string>(69dd8ea5-9757-4ad6-9a26-168e21d3893c)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #FFFFFFFF
+			font: font_resource(d0956cea-f72b-487e-bf21-2028f8b3ffe0)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}]
+	text: "Alex's Phone"
+	textColor: textColor@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<color>)
+	font: font@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<font>)
+}

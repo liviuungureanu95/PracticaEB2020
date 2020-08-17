@@ -1,0 +1,267 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(3ee9ba53-7e9c-4dd4-b90e-ce0b4db36728)
+{
+	name: "T_MainMenu"
+	structure: GtfView(5791bc67-3a91-4c24-aa0b-34fbae23b98b)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfImage(9afe00b0-0966-416a-8d1b-e12254cc980b)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLabel(37bde8ff-7c4c-4680-96c0-1b7721df519c)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Label 2"
+						visible: true
+						width: 150
+						height: 50
+						x: 10
+						y: 420
+						text: string_scriptedValue(9a732ec1-8426-4a21-89db-ff2d813c24c2)
+						{
+							triggerList: trigger_list(96ea48ca-00ca-4505-a014-986bce22a300)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(9e007428-3ca2-48ce-9543-e065f40c465d)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<string>(cd4c26b8-5f14-4656-b802-b9cf00381ef1)
+							{
+								script: "function()" \
+									"{" \
+									"	f:int2string(dp:StartMenu:date) + \"/\" + f:int2string(dp:StartMenu:month) + \"/\" + f:int2string(dp:StartMenu:year)" \
+									"}"
+							}
+							write: function<bool,string>(29d5923b-5951-4e25-aa9b-fd17cfe6778a)
+							{
+								script: "function(v:arg0::string)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						textColor: #FFFFFFFF
+						font: font_resource(392d2991-e2e8-49e8-9249-16597bae6ef6)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}]
+				name: "Background"
+				visible: true
+				width: width@5791bc67-3a91-4c24-aa0b-34fbae23b98b (propref<int>)
+				height: height@5791bc67-3a91-4c24-aa0b-34fbae23b98b (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(e6c8275e-7aa1-433b-a2e0-b017e5f97556)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfContainer(c9708c25-e097-436e-9d7f-16445c63e71c)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfRectangle(cd2e23b9-cff9-4e94-9a21-f99afbf2295c)
+					{
+						features: feature_list [
+							Border(92996c27-cbc9-4c42-951e-5b1c40843b66)
+							{
+								borderThickness: 1
+								borderColor: #000000FF
+								borderStyle: 0
+							}]
+						children: children_list []
+						name: "Background"
+						visible: true
+						width: width@c9708c25-e097-436e-9d7f-16445c63e71c (propref<int>)
+						height: height@c9708c25-e097-436e-9d7f-16445c63e71c (propref<int>)
+						x: 0
+						y: 0
+						fillColor: #FFFFFFFF
+					}, 
+					GtfLabel(fc91269d-0c7a-4f22-bfeb-926d58a738ca)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Text"
+						visible: true
+						width: width@c9708c25-e097-436e-9d7f-16445c63e71c (propref<int>)
+						height: height@c9708c25-e097-436e-9d7f-16445c63e71c (propref<int>)
+						x: 0
+						y: 0
+						text: "SEARCH"
+						textColor: #000000FF
+						font: font_resource(ea174076-d797-4d0e-8feb-f44e917f08a1)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 25
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfImage(325beea8-f5ce-4b4b-9381-d1e4e205da9b)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Logo"
+						visible: true
+						width: width@c9708c25-e097-436e-9d7f-16445c63e71c (propref<int>)
+						height: height@c9708c25-e097-436e-9d7f-16445c63e71c (propref<int>)
+						x: 5
+						y: 0
+						image: image_resource(c147657b-e9fd-49e4-a7f0-ed4fd9cb2437)
+						{
+							file: "search.png"
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 0
+					}]
+				name: "SearchButton"
+				visible: true
+				width: 150
+				height: 30
+				x: 330
+				y: 10
+			}, 
+			GtfLabel(f8f508f2-8eac-42b7-85d3-2cb73d2ec2f4)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "CurrentTime"
+				visible: true
+				width: 80
+				height: 50
+				x: 720
+				y: 10
+				text: string_scriptedValue(caaeb605-671c-4029-b294-4aff3ee79a2b)
+				{
+					triggerList: trigger_list(3ee5b0b2-659d-441a-b830-87ed048f538e)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(b1d29cef-45f5-4139-9ba1-9b92425a6354)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<string>(43bc3310-0886-4c20-a923-29a2d0aac434)
+					{
+						script: "function()" \
+							"{" \
+							"	f:int2string(dp:StartMenu:hour + 3) + \":\" + f:int2string(dp:StartMenu:minutes)" \
+							"}"
+					}
+					write: function<bool,string>(49fa7c5e-f76b-479c-bfc3-82e524afb8c9)
+					{
+						script: "function(v:arg0::string)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				textColor: #FFFFFFFF
+				font: font_resource(c2a0c87e-a07d-49a8-897d-e2280fd3eba8)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}, 
+			GtfLabel(13bd1dd4-1689-4907-bf3c-d26b2a56577a)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "CurrentLocation"
+				visible: true
+				width: 100
+				height: 50
+				x: 698
+				y: 410
+				text: "Location"
+				textColor: #000000FF
+				font: font_resource(cd624a8c-fbc3-4ce6-8e8b-8b77775bfe7c)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 25
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}, 
+			GtfLabel(c62be928-24d3-4496-b718-004b2e74f42b)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "CurrentTemperature"
+				visible: true
+				width: 50
+				height: 50
+				x: 700
+				y: 435
+				text: "C"
+				textColor: #000000FF
+				font: font_resource(c537595d-d511-49d8-b81a-ebce17320edc)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 25
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}, 
+			GtfRectangle(e8541b60-a7b6-46d5-8fd0-acb235fd8c54)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "HorizontalLine"
+				visible: true
+				width: width@5791bc67-3a91-4c24-aa0b-34fbae23b98b (propref<int>)
+				height: 2
+				x: 0
+				y: 410
+				fillColor: #FAF0E6FF
+			}, 
+			GtfRectangle(5824f4ad-122e-4987-a213-81d1052ba0b5)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "HorizontalLine2"
+				visible: true
+				width: width@5791bc67-3a91-4c24-aa0b-34fbae23b98b (propref<int>)
+				height: 2
+				x: 0
+				y: 70
+				fillColor: #FAF0E6FF
+			}]
+		name: "MainMenu_View"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+	}
+	image: image@9afe00b0-0966-416a-8d1b-e12254cc980b (propref<image>)
+	text: text@c62be928-24d3-4496-b718-004b2e74f42b (propref<string>)
+	"text 2": text@13bd1dd4-1689-4907-bf3c-d26b2a56577a (propref<string>)
+}

@@ -1,0 +1,72 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_compound_state(190deae2-0097-4ac3-854d-ef8b6d39d37d)
+{
+	x: 622
+	y: 187
+	width: 600
+	height: 400
+	name: "Navigation_CompoundState"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions []
+	internal_transitions: haptic_internal_transitions []
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(5b471be7-c9c7-451e-8984-d18c1d021fe2)
+		{
+			x: 200
+			y: 12
+			width: 100
+			height: 100
+			name: "NavigationMenu"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (e4e26202-324c-482a-af42-b588183b8ffa)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(5f1a2602-c0b7-4ac7-9e9e-98f6ae86acfd)
+	{
+		x: 19
+		y: 36
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(95ddb68f-38e0-41ad-ac1f-6aa12e514720)
+		{
+			action: function<void>(none)
+			target_state: @06c829d4-6b60-4270-8c27-02c23ea00cbf (objectref<haptic_deep_history_state>)
+			source_dock: 0.25408F
+			target_dock: 0.7477954F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(06c829d4-6b60-4270-8c27-02c23ea00cbf)
+	{
+		x: 105
+		y: 37
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(be5a656a-5dc3-45a1-aa33-e2796a8e45ff)
+		{
+			action: function<void>(none)
+			target_state: @5b471be7-c9c7-451e-8984-d18c1d021fe2 (objectref<haptic_dialog_state>)
+			source_dock: 0.2363914F
+			target_dock: 0.7952213F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	priority_stack: priority_stack(none)
+}

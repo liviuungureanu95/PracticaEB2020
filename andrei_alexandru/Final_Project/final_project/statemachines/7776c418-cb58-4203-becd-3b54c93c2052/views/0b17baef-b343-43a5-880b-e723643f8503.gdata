@@ -1,0 +1,60 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(0b17baef-b343-43a5-880b-e723643f8503)
+{
+	name: "CarSettingsMenu_View"
+	template: @b380d1bf-d029-45e1-aa1b-a53a19df7e62 (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(17e0b8de-4a02-427d-8b72-8cfbb4449b67)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "CurrentTime"
+			visible: true
+			width: 100
+			height: 30
+			x: 720
+			y: 20
+			text: string_scriptedValue(a7eafea6-9ce9-4477-b196-fc1d4e99d5be)
+			{
+				triggerList: trigger_list(cc9f0afb-2d5d-409e-a709-1f1ff4a3a201)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(386e00a6-ce04-42a4-b5c8-252db5818835)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(13669b54-6443-4e1f-abcb-e675548066c8)
+				{
+					script: "function()" \
+						"{" \
+						"	f:int2string(dp:StartMenu:hour + 3) + \":\" + f:int2string(dp:StartMenu:minutes)" \
+						"}"
+				}
+				write: function<bool,string>(d738def6-5213-4501-bbd4-638dc9813fe4)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #FFFFFFFF
+			font: font_resource(cb647eeb-0623-4c68-97f8-adcd03242eb4)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}]
+	text: "Car Settings Menu"
+	textColor: textColor@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<color>)
+	font: font@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<font>)
+}
