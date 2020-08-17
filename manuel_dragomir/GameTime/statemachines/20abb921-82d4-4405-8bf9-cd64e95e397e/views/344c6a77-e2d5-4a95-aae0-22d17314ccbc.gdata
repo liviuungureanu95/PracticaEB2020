@@ -4,11 +4,419 @@ GtfView_template_instance(344c6a77-e2d5-4a95-aae0-22d17314ccbc)
 {
 	name: "10_View"
 	template: @6ed0fc89-f5fa-41df-8452-71b599053367 (objectref<GtfView_template>)
-	children: children_list []
-	hintForLevel: hintForLevel@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<string>)
-	backgroundColor: backgroundColor@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<color>)
+	children: children_list [
+		GtfSceneGraph(d5e2655d-03f0-45c7-9748-33b6f017bfc5)
+		{
+			features: feature_list [
+				Rotation(dd988a9e-167e-44cc-a290-eab26d7b0cfa)
+				{
+					rotationEnabled: true
+					rotationAngleX: 0F
+					rotationAngleY: 0F
+					rotationAngleZ: 0F
+				}, 
+				TouchMove(e6d759de-6b47-4c83-a7ad-6f674e3e97f4)
+				{
+					touchMoved: function<bool,int,int,int,int>(81ad4332-03d5-4960-a072-ebefeb6db5a2)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.rotationAngleX = -1.25 * f:int2float(v:this.startY - v:y)" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(9a14524f-6106-40d8-b948-4b9734dacc0b)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}, 
+				TouchPressed(b0eefe33-3b31-489d-be17-5d6a76bedc7d)
+				{
+					touchPressed: function<bool,int,int,int,int>(0f60ae98-2483-4c02-96ff-6deba797d7c7)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.startX = v:x" \
+							"	v:this.startY = v:y" \
+							"	v:this.touchMoved(v:touchId, v:x, v:y, v:fingerId)" \
+							"    false" \
+							"}"
+					}
+				}]
+			children: children_list [
+				GtfSceneGraphNode(f6c34c7b-4b36-478f-a5b6-a169442900b1)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfSceneGraphNode(23f43e34-a546-4902-9dff-c098198bd63d)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfSceneGraphNode(3451d1e7-f3d4-487f-b389-2a6189789bcd)
+								{
+									features: feature_list []
+									children: children_list [
+										GtfSceneGraphNode(deeee72a-5831-48fd-a57c-1e74034a9456)
+										{
+											features: feature_list []
+											children: children_list [
+												GtfMeshWidget(9896928b-be25-4e98-8732-dfdb276ea4c9)
+												{
+													features: feature_list []
+													children: children_list [
+														GtfMaterialWidget(71a1cc2e-052f-4562-93fe-fb18abd191ed)
+														{
+															features: feature_list []
+															children: children_list []
+															name: "Material_101"
+															ambient: #333333FF
+															diffuse: #000000FF
+															emissive: #000000FF
+															shininess: 0.5974287F
+															specular: #383838FF
+															opacity: 1F
+														}]
+													name: "Mesh 86"
+													visible: true
+													mesh: mesh_resource(f8390343-476f-48fd-a3ca-9ec2ccb8e98e)
+													{
+														file: "try_again_20200813_185746\\mesh_id800.ebmesh"
+													}
+													culling: 2
+												}]
+											name: "node_id76_Pivot"
+											visible: true
+											rotationX: 0F
+											rotationY: 0F
+											rotationZ: 0F
+											scalingX: 1F
+											scalingY: 1F
+											scalingZ: 1F
+											translationX: -288.9737F
+											translationY: 25F
+											translationZ: 7.5F
+										}, 
+										GtfSceneGraphNode(19730a85-9915-4df7-a851-bedbe937958e)
+										{
+											features: feature_list []
+											children: children_list [
+												GtfSceneGraphNode(0464714f-162d-4692-8206-0679bf723a33)
+												{
+													features: feature_list []
+													children: children_list [
+														GtfMeshWidget(39068bf5-b2c8-4968-bb2f-053846e5d0fe)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMaterialWidget(6a2ab671-2270-49d4-be45-efe159f83ab9)
+																{
+																	features: feature_list []
+																	children: children_list []
+																	name: "Material_103"
+																	ambient: #333333FF
+																	diffuse: #000000FF
+																	emissive: #000000FF
+																	shininess: 0.5974287F
+																	specular: #383838FF
+																	opacity: 1F
+																}]
+															name: "Mesh 88"
+															visible: true
+															mesh: mesh_resource(24492d98-2208-4d02-9047-acb3db3f20ef)
+															{
+																file: "try_again_20200813_185746\\mesh_id810.ebmesh"
+															}
+															culling: 2
+														}]
+													name: "node_id76_Pivot"
+													visible: true
+													rotationX: 0F
+													rotationY: 0F
+													rotationZ: 0F
+													scalingX: 1F
+													scalingY: 1F
+													scalingZ: 1F
+													translationX: -288.9737F
+													translationY: 8.171427F
+													translationZ: 7.5F
+												}]
+											name: "node_id76"
+											visible: true
+											rotationX: 0F
+											rotationY: 0F
+											rotationZ: 0F
+											scalingX: 1F
+											scalingY: 1F
+											scalingZ: 1F
+											translationX: 0F
+											translationY: 50F
+											translationZ: 0F
+										}]
+									name: "node_id76"
+									visible: true
+									rotationX: 90F
+									rotationY: 0F
+									rotationZ: 0F
+									scalingX: 0.001F
+									scalingY: 0.0009999999F
+									scalingZ: 0.0009999999F
+									translationX: 0.08186915F
+									translationY: -0.211F
+									translationZ: -0.135249F
+								}, 
+								GtfSceneGraphNode(3ac3f964-9a97-4a03-a31d-e69f770b1a9d)
+								{
+									features: feature_list []
+									children: children_list [
+										GtfSceneGraphNode(53ed03c0-acca-4b16-bb21-f021b79fdb2e)
+										{
+											features: feature_list []
+											children: children_list [
+												GtfMeshWidget(6448a5b2-bf82-4e60-8d72-8c0490fa1499)
+												{
+													features: feature_list []
+													children: children_list [
+														GtfMaterialWidget(4914ef35-ee57-4090-bb2c-7b2229c04070)
+														{
+															features: feature_list [
+																GtfDiffuseTextureFeature(1669f15e-9583-4fa0-a745-8fa475b017f6)
+																{
+																	diffuseTexture: image_resource(a5db285e-77eb-47ff-b079-7d5e16248666)
+																	{
+																		file: "try_again_20200813_185746\\2617.png"
+																	}
+																	diffuseTextureAddressModeU: 0
+																	diffuseTextureAddressModeV: 0
+																	diffuseFilterMode: 2
+																	diffuseSRGB: false
+																}, 
+																GtfSpecularTextureFeature(35d99d18-9fe2-402b-b8d0-718ea794a243)
+																{
+																	specularTexture: image_resource(70c68e38-3dcd-4ac5-8858-af79bbf5aa60)
+																	{
+																		file: "try_again_20200813_185746\\2621.png"
+																	}
+																	specularTextureAddressModeU: 0
+																	specularTextureAddressModeV: 0
+																	specularFilterMode: 2
+																	specularSRGB: false
+																}]
+															children: children_list []
+															name: "Material_172"
+															ambient: #333333FF
+															diffuse: #3F48CCFF
+															emissive: #000000FF
+															shininess: 0.5974287F
+															specular: #383838FF
+															opacity: 1F
+														}]
+													name: "Mesh 90"
+													visible: true
+													mesh: mesh_resource(0739fc0d-a383-439d-8153-b5aac402b289)
+													{
+														file: "try_again_20200813_185746\\mesh_id490.ebmesh"
+													}
+													culling: 2
+												}]
+											name: "root_Pivot"
+											visible: true
+											rotationX: 0F
+											rotationY: 0F
+											rotationZ: 0F
+											scalingX: 0.0009310209F
+											scalingY: 0.0006687196F
+											scalingZ: 0.0006017267F
+											translationX: 0.0150261F
+											translationY: -0.03573685F
+											translationZ: 0.1F
+										}]
+									name: "root"
+									visible: true
+									rotationX: 0F
+									rotationY: 0F
+									rotationZ: 0F
+									scalingX: 1F
+									scalingY: 1F
+									scalingZ: 1F
+									translationX: 0F
+									translationY: 0F
+									translationZ: 0F
+								}]
+							name: "root"
+							visible: true
+							rotationX: 0F
+							rotationY: 0F
+							rotationZ: 0F
+							scalingX: 200F
+							scalingY: 200F
+							scalingZ: 200F
+							translationX: 0F
+							translationY: 0F
+							translationZ: 0F
+						}, 
+						GtfSceneGraphNode(7c580d37-f32e-4af8-aa4f-d331a0fcf59e)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfPointLight(23e4a597-3db8-44ac-b13f-9c0db839e0e9)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Point light 9"
+									enabled: true
+									color: #FFFFFFFF
+									intensity: 1F
+									attenuationConstant: 1F
+									attenuationLinear: 0F
+									attenuationQuadratic: 0F
+								}]
+							name: "Scene graph node 131"
+							visible: true
+							rotationX: 0F
+							rotationY: 0F
+							rotationZ: 0F
+							scalingX: 1F
+							scalingY: 1F
+							scalingZ: 1F
+							translationX: 40F
+							translationY: 40F
+							translationZ: 50F
+						}, 
+						GtfSceneGraphNode(37065d5b-7309-4007-896c-807b66f33573)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfCameraWidget(1d7c2228-a1cf-4178-b0c6-c9c11065b125)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Camera 10"
+									enabled: true
+									nearPlane: 56F
+									farPlane: 2037F
+									fieldOfView: 50F
+									projectionType: 0
+								}]
+							name: "Scene graph node 132"
+							visible: true
+							rotationX: -90F
+							rotationY: 90F
+							rotationZ: -90F
+							scalingX: 1F
+							scalingY: 1F
+							scalingZ: 1F
+							translationX: 0F
+							translationY: 10F
+							translationZ: 200F
+						}]
+					name: "RootNode"
+					visible: true
+					rotationX: 0F
+					rotationY: 0F
+					rotationZ: 0F
+					scalingX: 1F
+					scalingY: 1F
+					scalingZ: 1F
+					translationX: 0F
+					translationY: 0F
+					translationZ: 0F
+				}]
+			name: "Scene graph 16"
+			visible: true
+			width: 701
+			height: 447
+			x: 42
+			y: 10
+			gamma: 2.2F
+			startX: 0
+			startY: 0
+		}, 
+		GtfLabel(97a7388c-c2ad-42d6-af3a-35fb63244928)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Hint"
+			visible: true
+			width: 437
+			height: 58
+			x: 31
+			y: 16
+			text: "Pyramids hide many secrets."
+			textColor: #000000FF
+			font: @c686500e-f444-44ae-ad8a-5b5b3ef74343 (objectref<font>)
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfRectangle(54ad757f-9393-4d73-baec-becd58070cf3)
+		{
+			features: feature_list [
+				TouchPressed(07babf90-960c-41fc-9668-015ba02a523f)
+				{
+					touchPressed: function<bool,int,int,int,int>(23ab657e-c304-4b7c-b70d-0ab30891e307)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(f:system_time_ms() - v:this.lastClick <= 500){" \
+							"		f:trace_string(\"DUBLU CLICK\")" \
+							"		v:this->^->NextButton.visible = true" \
+							"	}" \
+							"	v:this.lastClick = f:system_time_ms()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(a57e28c6-ed82-46b2-b9bb-9c2b7fe43410)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "Background"
+			visible: true
+			width: 77
+			height: 73
+			x: 2
+			y: 407
+			fillColor: backgroundColor@344c6a77-e2d5-4a95-aae0-22d17314ccbc (propref<color>)
+			lastClick: 0
+		}, 
+		GtfContainer_template_instance(2bca30da-8012-4962-b6bf-387774f6328a)
+		{
+			name: "NextButton"
+			template: @8333bb03-38b5-4824-a70a-203d73d5b064 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 672
+			y: 17
+			width: 105
+			height: 34
+			text: "Next"
+			touchReleased: function<bool>(0ec69465-f408-45f1-ab27-698294e9e07f)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoToLevel_11()" \
+					"	false" \
+					"}"
+			}
+			font: font_resource(2e1e3fe8-1c46-4026-a37c-418b06ec72f5)
+			{
+				file: "Joystick-5KjV.ttf"
+				size: 25
+			}
+			visible: false
+			touchable: touchable@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+		}]
+	hintForLevel: "Under the pyramid there is a massage. By the way, you can rotate the pyramid."
+	backgroundColor: #FFD700FF
 	image: image@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<image>)
 	width: width@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
 	height: height@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
 	moveOver: moveOver@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<function<bool,int,int,int,int>>)
+	xLevelContainer: xLevelContainer@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	levelNumber: 10
 }

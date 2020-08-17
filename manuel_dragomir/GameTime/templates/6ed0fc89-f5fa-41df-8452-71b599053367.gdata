@@ -49,7 +49,95 @@ GtfView_template(6ed0fc89-f5fa-41df-8452-71b599053367)
 						touchPolicy: 0
 						touchBehavior: 0
 					}]
-				children: children_list []
+				children: children_list [
+					GtfContainer(e16f0ce9-ef49-4b1f-880c-a9f21dad88d2)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfRectangle(29bfc78f-6de8-42b3-94ef-c9ec806c95e3)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Background"
+								visible: true
+								width: width@e16f0ce9-ef49-4b1f-880c-a9f21dad88d2 (propref<int>)
+								height: height@e16f0ce9-ef49-4b1f-880c-a9f21dad88d2 (propref<int>)
+								x: 0
+								y: 0
+								fillColor: #FFFFFF00
+							}, 
+							GtfLabel(6de3b59e-42fe-46c0-b3dc-ba57169b549e)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "LevelLabel"
+								visible: true
+								width: 273
+								height: height@e16f0ce9-ef49-4b1f-880c-a9f21dad88d2 (propref<int>)
+								x: 0
+								y: 0
+								text: "Level"
+								textColor: #FFFFFFFF
+								font: font_resource(c304a34d-cb39-4b0f-a415-dbf76f2f2203)
+								{
+									file: "Helvetica-Bold.ttf"
+									size: 80
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}, 
+							GtfLabel(71604c87-56ce-4716-b607-d59577bac2b8)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "NumberOfLevelLabel"
+								visible: true
+								width: 100
+								height: height@e16f0ce9-ef49-4b1f-880c-a9f21dad88d2 (propref<int>)
+								x: 253
+								y: 0
+								text: string_scriptedValue(9bfed594-b9f5-4c16-8ab3-c5386fba0e0d)
+								{
+									triggerList: trigger_list(c0315653-305e-4277-9233-252a04ea436e)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(e701d27a-dc6a-441c-8449-5906bb478b08)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<string>(c53c2082-06ef-40ce-b2ca-6b3cfa24f8f0)
+									{
+										script: "function()" \
+											"{" \
+											"	f:int2string(v:this->^->^->^.levelNumber)" \
+											"}"
+									}
+									write: function<bool,string>(8846df0a-903e-40ba-a80f-412f5a942a98)
+									{
+										script: "function(v:arg0::string)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								textColor: #FFFFFFFF
+								font: font@6de3b59e-42fe-46c0-b3dc-ba57169b549e (propref<font>)
+								horizontalAlign: 1
+								verticalAlign: 0
+							}]
+						name: "Container"
+						visible: @d6af35f5-0574-476d-bc02-69040b31f35d (objectref<bool>)
+						width: 357
+						height: 130
+						x: 213
+						y: 152
+					}]
 				name: "Background"
 				visible: true
 				width: width@40ce2856-063c-4e0a-8270-295ca52eaf05 (propref<int>)
@@ -73,6 +161,7 @@ GtfView_template(6ed0fc89-f5fa-41df-8452-71b599053367)
 		height: 480
 		x: 0
 		y: 0
+		levelNumber: 0
 	}
 	hintForLevel: hint@cf3a8da8-a93a-4367-87c7-c8d712bee3e3 (propref<string>)
 	backgroundColor: fillColor@0df65875-a51c-4e8b-ad2b-3a7860a77a3c (propref<color>)
@@ -80,4 +169,6 @@ GtfView_template(6ed0fc89-f5fa-41df-8452-71b599053367)
 	width: width@40ce2856-063c-4e0a-8270-295ca52eaf05 (propref<int>)
 	height: height@40ce2856-063c-4e0a-8270-295ca52eaf05 (propref<int>)
 	moveOver: moveOver@af82bbff-8488-4322-9bae-501e7db699f7 (propref<function<bool,int,int,int,int>>)
+	xLevelContainer: x@e16f0ce9-ef49-4b1f-880c-a9f21dad88d2 (propref<int>)
+	levelNumber: levelNumber@40ce2856-063c-4e0a-8270-295ca52eaf05 (propref<int>)
 }
