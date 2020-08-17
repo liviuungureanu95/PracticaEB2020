@@ -1,0 +1,321 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(87bbe503-db71-464e-9a3a-cdb4be66e3b8)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(f091a6c3-d7cb-43a2-adbb-75821b0b4705)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(3bffc715-a082-4914-8b6d-199740f527d6)
+				{
+					features: feature_list [
+						Rotation(ab253fc5-90b4-4246-ae48-e0c02ac708b3)
+						{
+							rotationEnabled: true
+							rotationAngleX: 0F
+							rotationAngleY: 0F
+							rotationAngleZ: 0F
+						}, 
+						Scaling(de476b3d-0209-4d76-a2a3-8665cd2d7d90)
+						{
+							scalingEnabled: true
+							scalingX: 100F
+							scalingY: 100F
+							scalingZ: 100F
+						}, 
+						Shearing(d0aee233-1088-419f-88ba-921f18584849)
+						{
+							shearingEnabled: true
+							shearingXbyY: 0F
+							shearingXbyZ: 0F
+							shearingYbyX: 0F
+							shearingYbyZ: 0F
+							shearingZbyX: 0F
+							shearingZbyY: 0F
+						}, 
+						Pivot(fd22e837-c7ff-4400-b4c8-83120aed447e)
+						{
+							pivotX: float_scriptedValue(e58e492c-53f3-4607-ba75-6801f33f88b4)
+							{
+								triggerList: trigger_list(ed11f5d8-8e1a-445b-bc97-ec2db69a71e5)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(52b65aac-c289-456e-a806-afebfaeb6139)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<float>(66a50da7-d7c8-448d-9bbb-1ae493ff033e)
+								{
+									script: "function()" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	f:int2float(v:this.width/2)" \
+										"}"
+								}
+								write: function<bool,float>(793c6ba6-5cd2-43b7-94c6-fd7211c955ea)
+								{
+									script: "function(v:arg0::float)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							pivotY: float_scriptedValue(cb9df8d4-58ee-4e90-8d3b-de874401882b)
+							{
+								triggerList: trigger_list(8261377b-b57d-4c2e-bc91-18f6433195f0)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(ed92897e-b830-4583-8be4-037d9304b532)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<float>(f25813d2-7b7c-4aff-a06e-098a53bdf1a1)
+								{
+									script: "function()" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	f:int2float(v:this.height/2)" \
+										"}"
+								}
+								write: function<bool,float>(5d501913-619b-420f-a3db-7b886e1ce9b3)
+								{
+									script: "function(v:arg0::float)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							pivotZ: 0F
+						}]
+					children: children_list [
+						GtfParallelAnimation(e45089c7-5b57-41a7-a74e-ea31601ceb2c)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationFloat(0a6474df-5c00-4699-8357-17ababfe24ff)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve 1"
+									enabled: true
+									delay: 0
+									duration: 1000
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 0F
+									end: -360F
+									target: rotationAngleZ@ab253fc5-90b4-4246-ae48-e0c02ac708b3 (propref<float>)
+								}]
+							name: "Animation 1"
+							enabled: true
+							repeat: 0
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(581503de-2a70-458c-bce2-95411a143ed2)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(f59a7114-bfbe-48f4-9844-477b6f3fdc85)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(57a130ac-d547-4385-90ba-f1ec4f67ec47)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							Start: conditional_script(4d7b48d8-c8e4-4817-b5c2-1f1ddf4df1f1)
+							{
+								triggerList: trigger_list(bbdfd0e9-8b5d-4527-a6d8-23f17112cc14)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(b5330fc0-abbf-4b1b-8965-6f6f8512ba8a)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	f:animation_play(v:this)" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "Spinning"
+					visible: true
+					width: 70
+					height: 70
+					x: 208
+					y: 504
+					image: image_resource(288e48ca-8660-4087-8eda-df694b3725be)
+					{
+						file: "SpinningWheel.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(7647c236-70bf-406e-9537-56796db8a48f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "info"
+					visible: true
+					width: 361
+					height: 100
+					x: 60
+					y: 419
+					text: "Your tiket is on the road !"
+					textColor: #00FF00FF
+					font: font_resource(e4886997-4e2c-427e-8325-4a9c205a446a)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 40
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "Background"
+			visible: true
+			width: width@87bbe503-db71-464e-9a3a-cdb4be66e3b8 (propref<int>)
+			height: height@87bbe503-db71-464e-9a3a-cdb4be66e3b8 (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(ac7809f9-3438-47b2-a92f-256197e6d384)
+			{
+				file: "Train_background.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(3eda405a-f428-48dc-a33f-063c747e7f9a)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(148a8b6c-b535-475e-bbd6-4c3fa9de02f0)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 4"
+					visible: true
+					width: 70
+					height: 100
+					x: 356
+					y: 4
+					text: string_scriptedValue(c89f0666-bf38-4452-9500-264c3ab37113)
+					{
+						triggerList: trigger_list(03a74be0-ced9-4f95-ab4c-a0ad103eb7a9)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(7c102b73-f6ad-44f2-85e8-465d370c56b7)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(07179b2a-636c-4de2-b87c-ff0ac6e547c8)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:float2string(dp:Rest)" \
+								"}"
+						}
+						write: function<bool,string>(33292a63-0e74-4d35-83eb-3b4bad32ed3f)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FF0000FF
+					font: font_resource(eeec8f0f-c663-49ef-be4d-f23046a174af)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 40
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "change"
+			visible: true
+			width: 389
+			height: 100
+			x: 11
+			y: 557
+			text: string_scriptedValue(4781bb3a-8d66-4475-9b51-dd4866d28149)
+			{
+				triggerList: trigger_list(937f17ef-5b53-4e77-b0a3-348f0e094388)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(1782a40d-129a-4164-98ad-00bd35f28144)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(f3e46042-af3e-4190-bb5f-5578be2915c2)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	\"Don't forget yout change : \"" \
+						"}"
+				}
+				write: function<bool,string>(7e51023a-ee46-49bd-b597-257306dcb6ab)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #00FF00FF
+			font: font_resource(670b0530-cd67-46a2-a7f8-f23ceca4ef7b)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 40
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}]
+	name: "BiletProcess_View"
+	visible: true
+	width: 480
+	height: 800
+	x: 0
+	y: 0
+}

@@ -1,0 +1,133 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(e50540a1-7a49-417c-bc54-de9b80c5289f)
+{
+	name: "Button"
+	structure: GtfContainer(ee588b2a-03e4-4a7a-8085-4ef255b1104d)
+	{
+		features: feature_list [
+			TouchPressed(228b9fc8-867c-443f-9dee-ae82e087e7ff)
+			{
+				touchPressed: function<bool,int,int,int,int>(f13fb359-b7c5-42b2-be5e-a42b76c4e0ef)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(e6697597-09b3-4a0c-99d9-5e0d7bd2ff2e)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(c6540bc2-ad5c-401d-b2ff-d1d73bd1e227)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(8e761ba3-117f-409a-9fb1-e296aafc9a50)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfImage(7f669ec3-2f2d-46a6-ac8e-82759cc299c4)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@ee588b2a-03e4-4a7a-8085-4ef255b1104d (propref<int>)
+				height: height@ee588b2a-03e4-4a7a-8085-4ef255b1104d (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(9ce41afe-220c-4361-ae84-1271b25846b3)
+				{
+					file: "bullet-train-agencies.jpg"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(52c04e3f-b151-43a6-924c-10e598e4d27e)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "TxtUP"
+				visible: true
+				width: width@ee588b2a-03e4-4a7a-8085-4ef255b1104d (propref<int>)
+				height: 40
+				x: 0
+				y: 0
+				text: "up"
+				textColor: #FFFFFFFF
+				font: font_resource(74665519-1efb-48e5-b4b5-90d621307cf0)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfLabel(66becc4c-f96a-4f52-b30d-83eb52912d4c)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Text"
+				visible: true
+				width: width@ee588b2a-03e4-4a7a-8085-4ef255b1104d (propref<int>)
+				height: 40
+				x: 0
+				y: 60
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(6ac8d3f4-7304-4318-9280-e0d7cffe068e)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfRectangle(36904df9-6953-494a-aef3-ad037cb87b18)
+			{
+				features: feature_list [
+					Border(35f96211-bdf1-4e8a-80ee-b109efd3539c)
+					{
+						borderThickness: 3
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "border"
+				visible: true
+				width: width@ee588b2a-03e4-4a7a-8085-4ef255b1104d (propref<int>)
+				height: height@ee588b2a-03e4-4a7a-8085-4ef255b1104d (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+			}]
+		name: "Container"
+		visible: true
+		width: 150
+		height: 100
+		x: 0
+		y: 0
+	}
+	width: width@ee588b2a-03e4-4a7a-8085-4ef255b1104d (propref<int>)
+	height: height@ee588b2a-03e4-4a7a-8085-4ef255b1104d (propref<int>)
+	x: x@ee588b2a-03e4-4a7a-8085-4ef255b1104d (propref<int>)
+	y: y@ee588b2a-03e4-4a7a-8085-4ef255b1104d (propref<int>)
+	touchPressed: touchPressed@228b9fc8-867c-443f-9dee-ae82e087e7ff (propref<function<bool,int,int,int,int>>)
+	touchShortReleased: touchShortReleased@e6697597-09b3-4a0c-99d9-5e0d7bd2ff2e (propref<function<bool,int,int,int,int>>)
+	visible: visible@ee588b2a-03e4-4a7a-8085-4ef255b1104d (propref<bool>)
+	image: image@7f669ec3-2f2d-46a6-ac8e-82759cc299c4 (propref<image>)
+	text: text@66becc4c-f96a-4f52-b30d-83eb52912d4c (propref<string>)
+	textColor: textColor@66becc4c-f96a-4f52-b30d-83eb52912d4c (propref<color>)
+	borderColor: borderColor@35f96211-bdf1-4e8a-80ee-b109efd3539c (propref<color>)
+	"text 2": text@52c04e3f-b151-43a6-924c-10e598e4d27e (propref<string>)
+	"textColor 2": textColor@52c04e3f-b151-43a6-924c-10e598e4d27e (propref<color>)
+}
