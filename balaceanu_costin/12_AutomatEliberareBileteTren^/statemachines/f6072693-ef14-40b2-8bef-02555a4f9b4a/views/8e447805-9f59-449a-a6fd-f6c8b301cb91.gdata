@@ -1,0 +1,326 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(8e447805-9f59-449a-a6fd-f6c8b301cb91)
+{
+	name: "FirstClass_View"
+	template: @85d00140-11fc-40a5-9c50-9ee384f880f0 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(499dca5c-6232-43fe-8861-79260cc0d9b6)
+		{
+			name: "PersonButton_Group"
+			template: @54a003e9-69a7-4fbd-bedb-608663235499 (objectref<GtfContainer_template>)
+			children: children_list []
+			visible: visible@54a003e9-69a7-4fbd-bedb-608663235499 (propref<bool>)
+			image_b1: image_b1@54a003e9-69a7-4fbd-bedb-608663235499 (propref<image>)
+			touchPressed_b1: function<bool,int,int,int,int>(32195f37-f98c-4eac-b49d-e021e6015615)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->PersonButton_Group.borderColor_b1 = dp:BorderPress" \
+					"    false" \
+					"}"
+			}
+			touchShortReleased_b1: function<bool,int,int,int,int>(a77852a7-8045-4c56-9b81-d17affffcf85)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->PersonButton_Group.borderColor_b1 = dp:BorederReleased" \
+					"	dp:Price = f:int2float(70)" \
+					"	if(dp:Money >= dp:Price)" \
+					"	{" \
+					"		fire ev:GoTo_Proceed()" \
+					"	}" \
+					"	if(dp:Money < dp:Price)" \
+					"	{" \
+					"		f:pushDynamicStateMachine(popup_stack:Main, sm:Warning_popup, 0)" \
+					"	}" \
+					"	" \
+					"	" \
+					"    false" \
+					"}"
+			}
+			image_b2: image_b2@54a003e9-69a7-4fbd-bedb-608663235499 (propref<image>)
+			textColor_b1: textColor_b1@54a003e9-69a7-4fbd-bedb-608663235499 (propref<color>)
+			textColor_b2: textColor_b2@54a003e9-69a7-4fbd-bedb-608663235499 (propref<color>)
+			touchPressed_b2: function<bool,int,int,int,int>(ce3fa789-1575-4ad8-b520-baa6b47fb720)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->PersonButton_Group.borderColor_b2 = dp:BorderPress" \
+					"    false" \
+					"}"
+			}
+			touchShortReleased_b2: function<bool,int,int,int,int>(3ff60a54-6089-4efa-97d9-b34379d8e96f)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->PersonButton_Group.borderColor_b2 = dp:BorederReleased" \
+					"	dp:Price = f:int2float(50)" \
+					"	if(dp:Money >= dp:Price)" \
+					"	{" \
+					"		fire ev:GoTo_Proceed()" \
+					"	}" \
+					"	if(dp:Money < dp:Price)" \
+					"	{" \
+					"		f:pushDynamicStateMachine(popup_stack:Main, sm:Warning_popup, 0)" \
+					"	}" \
+					"    false" \
+					"}"
+			}
+			image_b3: image_b3@54a003e9-69a7-4fbd-bedb-608663235499 (propref<image>)
+			touchPressed_b3: function<bool,int,int,int,int>(f0041dc1-0a12-4294-a73b-b8aac0ee1dfd)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->PersonButton_Group.borderColor_b3 = dp:BorderPress" \
+					"    false" \
+					"}"
+			}
+			touchShortReleased_b3: function<bool,int,int,int,int>(5f51b2b8-080b-4083-98f3-1d7d424da837)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->PersonButton_Group.borderColor_b3 = dp:BorederReleased" \
+					"	dp:Price = f:int2float(90)" \
+					"	if(dp:Money >= dp:Price)" \
+					"	{" \
+					"		fire ev:GoTo_Proceed()" \
+					"	}" \
+					"	if(dp:Money < dp:Price)" \
+					"	{" \
+					"		f:pushDynamicStateMachine(popup_stack:Main, sm:Warning_popup, 0)" \
+					"	}" \
+					"    false" \
+					"}"
+			}
+			textColor_b3: textColor_b3@54a003e9-69a7-4fbd-bedb-608663235499 (propref<color>)
+			textColor_b4: textColor_b4@54a003e9-69a7-4fbd-bedb-608663235499 (propref<color>)
+			touchPressed_b4: function<bool,int,int,int,int>(d17ba280-cce9-4e09-ad6f-48f46ed59f22)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->PersonButton_Group.borderColor_b4 = dp:BorderPress" \
+					"    false" \
+					"}"
+			}
+			touchShortReleased_b4: function<bool,int,int,int,int>(6a7515e3-c33d-4e4b-a877-6cb6e29c5d91)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->PersonButton_Group.borderColor_b4 = dp:BorederReleased" \
+					"	dp:Price = f:int2float(120)" \
+					"	if(dp:Money >= dp:Price)" \
+					"	{" \
+					"		fire ev:GoTo_Proceed()" \
+					"	}" \
+					"	if(dp:Money < dp:Price)" \
+					"	{" \
+					"		f:pushDynamicStateMachine(popup_stack:Main, sm:Warning_popup, 0)" \
+					"	}" \
+					"    false" \
+					"}"
+			}
+			image_b4: image_b4@54a003e9-69a7-4fbd-bedb-608663235499 (propref<image>)
+			borderColor_b1: borderColor_b1@54a003e9-69a7-4fbd-bedb-608663235499 (propref<color>)
+			borderColor_b2: borderColor_b2@54a003e9-69a7-4fbd-bedb-608663235499 (propref<color>)
+			borderColor_b3: borderColor_b3@54a003e9-69a7-4fbd-bedb-608663235499 (propref<color>)
+			borderColor_b4: borderColor_b4@54a003e9-69a7-4fbd-bedb-608663235499 (propref<color>)
+		}, 
+		GtfContainer_template_instance(6f07ff19-f686-415d-8605-af6965e56ef6)
+		{
+			name: "Back_Button"
+			template: @321eccc9-7f2f-404b-9196-aabb55533aaf (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 390
+			y: 750
+			borderColor: borderColor@321eccc9-7f2f-404b-9196-aabb55533aaf (propref<color>)
+			touchPressed: function<bool,int,int,int,int>(9ea74956-bfd7-43a3-92e3-6fafed7ac973)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->Back_Button.borderColor = dp:BorderPress" \
+					"    false" \
+					"}"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(f0abf48b-8314-4981-bc67-eddd5ebf1507)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->Back_Button.borderColor = dp:BorederReleased" \
+					"	fire ev:GoTo_M()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfLabel(736ee373-a18b-4dde-b979-cccdd7b1f286)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(0df35a17-0655-4683-af71-116c977d3107)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Euro_txt"
+					visible: true
+					width: 72
+					height: 45
+					x: 200
+					y: 0
+					text: "Euro !"
+					textColor: #FF0000FF
+					font: font_resource(ca45e3e5-4c53-4533-a150-b52309ccf59c)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "Money_txt"
+			visible: true
+			width: 100
+			height: 45
+			x: 130
+			y: 190
+			text: "MONEY : "
+			textColor: #FF0000FF
+			font: font_resource(4d2fba69-20c8-42ab-a4e3-2fb9d08d744d)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(a19207d7-e65b-420b-938b-7c81f8d1395c)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Suma"
+			visible: true
+			width: 95
+			height: 60
+			x: 228
+			y: 182
+			text: string_scriptedValue(a2d3e614-aa0c-4462-9dc7-a9dd9594eb43)
+			{
+				triggerList: trigger_list(901e9f1b-9027-4154-b2a1-95ea74ad1440)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(d794f768-795f-441a-b4c7-c4c05efdbbec)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(f9ccef61-4772-45b9-b293-bf49ccf6129b)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	f:float2string(dp:Money)" \
+						"}"
+				}
+				write: function<bool,string>(81abf4b9-0458-4382-8b57-2adb54f0705a)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #FF0000FF
+			font: font_resource(9d42c724-776a-41c5-b1bd-de05d2f68e1d)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(4a53268c-35b5-4400-9320-9fdacc39aaae)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "70 Euro_txt"
+			visible: true
+			width: 130
+			height: 60
+			x: 220
+			y: 290
+			text: "70 Euro !"
+			textColor: #FFFF00FF
+			font: font_resource(c0050336-e308-4682-b498-e5329266541c)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 40
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(9a28150b-1f75-4889-ae85-b8fe7a6b1314)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "50 Euro_txt"
+			visible: true
+			width: 130
+			height: 60
+			x: 220
+			y: 415
+			text: "50 Euro !"
+			textColor: #FFFF00FF
+			font: font_resource(ae9548bc-8c0b-45f2-bec0-14185e572f2a)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 40
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(5b7b1468-53b0-4b9a-818d-1f2b12d00beb)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "90 Euro_txt"
+			visible: true
+			width: 130
+			height: 60
+			x: 220
+			y: 545
+			text: "90 Euro !"
+			textColor: #FFFF00FF
+			font: font_resource(fa68bdb3-f88f-484d-80ce-71dc218920bb)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 40
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(dc5b1cc2-4020-4a66-b9e3-ace98510cf39)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "120 Euro_txt"
+			visible: true
+			width: 145
+			height: 60
+			x: 220
+			y: 675
+			text: "120 Euro !"
+			textColor: #FFFF00FF
+			font: font_resource(1a64b3e1-1bd3-4543-9b11-8ece36810ea0)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 40
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}]
+	text: text@85d00140-11fc-40a5-9c50-9ee384f880f0 (propref<string>)
+}
