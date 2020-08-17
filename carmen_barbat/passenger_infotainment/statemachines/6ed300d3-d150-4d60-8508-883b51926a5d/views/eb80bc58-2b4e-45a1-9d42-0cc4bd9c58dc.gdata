@@ -1,0 +1,235 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(eb80bc58-2b4e-45a1-9d42-0cc4bd9c58dc)
+{
+	name: "Settings_view"
+	template: @47101df3-2cb4-462c-8236-06e865e3862e (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(f5118165-a059-467f-8747-98dea24807cf)
+		{
+			name: "Seat_vertical_Button"
+			template: @e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: width@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			height: height@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			x: 169
+			y: 130
+			"x 2": "x 2"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			"y 2": "y 2"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			fillColor: #FFFFFF00
+			"x 3": "x 3"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			"y 3": "y 3"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			image: image_resource(56d4d68f-c8b5-4c10-aa37-9116028aa5a4)
+			{
+				file: "seat.png"
+			}
+			buttonEvent: function<bool>(12c1105a-fb9c-4843-881d-4179caff2b66)
+			{
+				script: "function()" \
+					"{" \
+					"	" \
+					"	v:this.fillColor=dp:color_on" \
+					"	v:this->^->Seat_horizontal_button.fillColor=dp:color_off" \
+					"	false" \
+					"}"
+			}
+			visible: visible@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<bool>)
+		}, 
+		GtfContainer_template_instance(83ec34d4-5b4d-46c3-923f-e10fdbaa5d4a)
+		{
+			name: "Seat_horizontal_button"
+			template: @e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: width@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			height: height@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			x: 20
+			y: 130
+			"x 2": "x 2"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			"y 2": "y 2"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			fillColor: #FFFFFF00
+			"x 3": "x 3"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			"y 3": "y 3"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			image: image_resource(4d26419e-b869-4fbb-a832-30c166a0ddb4)
+			{
+				file: "bed.png"
+			}
+			buttonEvent: function<bool>(d15838e8-27cf-4405-b60e-dce322e036d4)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this.fillColor=dp:color_on" \
+					"	v:this->^->Seat_vertical_Button.fillColor=dp:color_off" \
+					"	" \
+					"	false" \
+					"}"
+			}
+			visible: visible@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<bool>)
+		}, 
+		GtfContainer_template_instance(31b2ca95-9f15-4f8d-9a10-133c3bf14ade)
+		{
+			name: "Light_on_Button"
+			template: @e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: width@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			height: height@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			x: 486
+			y: 130
+			"x 2": "x 2"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			"y 2": "y 2"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			fillColor: #FFFFFF00
+			"x 3": "x 3"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			"y 3": "y 3"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			image: image_resource(6abeda14-870f-4685-83b5-832c5d245b13)
+			{
+				file: "idea (1).png"
+			}
+			buttonEvent: function<bool>(dc9d27b2-e4a4-4fd4-bd69-d1a917e41195)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this.fillColor=dp:color_on" \
+					"	v:this->^->Light_off_Button.fillColor=dp:color_off" \
+					"	false" \
+					"}"
+			}
+			visible: visible@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<bool>)
+		}, 
+		GtfContainer_template_instance(7afbbf00-7192-43db-84c3-56f17208fd9e)
+		{
+			name: "Light_off_Button"
+			template: @e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: width@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			height: height@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			x: 662
+			y: 130
+			"x 2": "x 2"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			"y 2": "y 2"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			fillColor: #FFFFFF00
+			"x 3": "x 3"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			"y 3": "y 3"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			image: image_resource(2ae8cfd1-b78e-4bd7-868a-b3ef75eb606e)
+			{
+				file: "idea.png"
+			}
+			buttonEvent: function<bool>(afae4a8d-ba7b-4974-ae74-6eb9334403bc)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this.fillColor=dp:color_on" \
+					"	v:this->^->Light_on_Button.fillColor=dp:color_off" \
+					"	false" \
+					"}"
+			}
+			visible: visible@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<bool>)
+		}, 
+		GtfContainer_template_instance(5a543a52-0829-4d85-b3dd-8fc9906d330c)
+		{
+			name: "Temp_plus_Button"
+			template: @e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: width@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			height: height@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			x: 550
+			y: 330
+			"x 2": "x 2"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			"y 2": "y 2"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			fillColor: #FFFFFF00
+			"x 3": "x 3"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			"y 3": "y 3"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			image: image_resource(3ce905a5-e070-4522-bdd0-54fef66e5244)
+			{
+				file: "temperature (1).png"
+			}
+			buttonEvent: function<bool>(dd685bc5-7153-46d6-8231-f3f75b4a562a)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:Temp+=0.5" \
+					"	false" \
+					"}"
+			}
+			visible: visible@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<bool>)
+		}, 
+		GtfContainer_template_instance(f54bff28-1c89-41b2-9e6d-94fcbc421998)
+		{
+			name: "Temp_minus_Button"
+			template: @e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: width@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			height: height@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			x: 190
+			y: 330
+			"x 2": "x 2"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			"y 2": "y 2"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			fillColor: #FFFFFF00
+			"x 3": "x 3"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			"y 3": "y 3"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			image: image_resource(34c56c26-4471-44a3-97d4-68dc149d51d0)
+			{
+				file: "temperature.png"
+			}
+			buttonEvent: function<bool>(8a157fb0-9d2c-4bf6-b615-134d473e373d)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:Temp-=0.5" \
+					"	false" \
+					"}"
+			}
+			visible: visible@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<bool>)
+		}, 
+		GtfLabel(ec726063-d184-44ed-84e9-765862cf9da3)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Temp_label"
+			visible: true
+			width: 100
+			height: 100
+			x: 373
+			y: 334
+			text: string_scriptedValue(60728f53-8245-4e75-8259-97db19109d03)
+			{
+				triggerList: trigger_list(5f65b8aa-31b6-4a8a-8834-5c82dd1b3759)
+				{
+					script: "dp:Temp"
+				}
+				onTrigger: function<bool,bool>(2d79f55b-50e3-4379-96df-33952a0575da)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(bd986cf4-8020-4cc6-857a-34168ee7125d)
+				{
+					script: "function()" \
+						"{" \
+						"	f:format_float(\"%.1f\",true,dp:Temp) + \" °C\"" \
+						"}"
+				}
+				write: function<bool,string>(bb476a6c-456d-484b-8921-c5b90e76d113)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #FFFFFFFF
+			font: font_resource(c7b36c61-1c86-4909-b21c-04350f71218c)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}]
+	image: image@47101df3-2cb4-462c-8236-06e865e3862e (propref<image>)
+	text: "Settings"
+	visible: visible@47101df3-2cb4-462c-8236-06e865e3862e (propref<bool>)
+	"visible 2": "visible 2"@47101df3-2cb4-462c-8236-06e865e3862e (propref<bool>)
+}

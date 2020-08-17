@@ -1,0 +1,86 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(7c4be026-1770-45f7-b13f-6d9b679aaab9)
+{
+	name: "Text_button"
+	structure: GtfContainer(8dfaf438-9b9b-469d-a04c-ba4b62b30acb)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(3f662b62-2542-4923-bdf3-67be5d7a386c)
+			{
+				features: feature_list [
+					TouchShortReleased(4e5c7d17-a7bf-4a3e-be15-71198e9e30ef)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(86d728ed-1296-40e8-b913-7b282f2e1c98)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.buttonEvent()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(6f670aea-9345-488b-bd1c-dfd8b6c84b52)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@8dfaf438-9b9b-469d-a04c-ba4b62b30acb (propref<int>)
+				height: height@8dfaf438-9b9b-469d-a04c-ba4b62b30acb (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #5F9EA0FF
+				buttonEvent: function<bool>(ed7623b4-e3dd-4278-a655-99865b80ccd7)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}, 
+			GtfLabel(ada475fc-5d7a-49ac-a79d-1fc75fa03005)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Text"
+				visible: true
+				width: width@8dfaf438-9b9b-469d-a04c-ba4b62b30acb (propref<int>)
+				height: height@8dfaf438-9b9b-469d-a04c-ba4b62b30acb (propref<int>)
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(1097f643-7f1a-40e1-a723-1cf67f3fe1b1)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Button"
+		visible: true
+		width: 200
+		height: 100
+		x: 0
+		y: 0
+	}
+	x: x@8dfaf438-9b9b-469d-a04c-ba4b62b30acb (propref<int>)
+	y: y@8dfaf438-9b9b-469d-a04c-ba4b62b30acb (propref<int>)
+	"x 2": x@3f662b62-2542-4923-bdf3-67be5d7a386c (propref<int>)
+	"y 2": y@3f662b62-2542-4923-bdf3-67be5d7a386c (propref<int>)
+	fillColor: fillColor@3f662b62-2542-4923-bdf3-67be5d7a386c (propref<color>)
+	"x 3": x@ada475fc-5d7a-49ac-a79d-1fc75fa03005 (propref<int>)
+	"y 3": y@ada475fc-5d7a-49ac-a79d-1fc75fa03005 (propref<int>)
+	text: text@ada475fc-5d7a-49ac-a79d-1fc75fa03005 (propref<string>)
+	buttonEvent: buttonEvent@3f662b62-2542-4923-bdf3-67be5d7a386c (propref<function<bool>>)
+	width: width@8dfaf438-9b9b-469d-a04c-ba4b62b30acb (propref<int>)
+	height: height@8dfaf438-9b9b-469d-a04c-ba4b62b30acb (propref<int>)
+}
