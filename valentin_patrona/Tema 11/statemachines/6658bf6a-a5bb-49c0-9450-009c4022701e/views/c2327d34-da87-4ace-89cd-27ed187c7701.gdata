@@ -1,0 +1,355 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(c2327d34-da87-4ace-89cd-27ed187c7701)
+{
+	name: "View 2"
+	template: @757736e8-ad42-4665-a524-3352ef3b4409 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(59ec87b7-3d03-4b97-b946-38263e8f430f)
+		{
+			name: "Button 1"
+			template: @18da1be8-38d1-482c-9779-7fa63345f854 (objectref<GtfContainer_template>)
+			children: children_list []
+			touchShortReleased: function<bool,int,int,int,int>(be3d2418-3a16-453a-976d-9bb857794d43)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(dp:Apa&&dp:Cuva&&dp:Detergent)" \
+					"	{" \
+					"		fire ev:GoTo1()		" \
+					"	}" \
+					"	else" \
+					"	{" \
+					"		dp:visible=true		" \
+					"	}" \
+					"    false" \
+					"}"
+			}
+			x: 140
+			y: 190
+			image: image_resource(132fb4e2-e300-45de-ae0b-d3316da061a3)
+			{
+				file: "cotton.png"
+			}
+			text: "1"
+		}, 
+		GtfContainer_template_instance(a6166e01-1bf3-4600-86e6-70506e92c29f)
+		{
+			name: "Button 2"
+			template: @18da1be8-38d1-482c-9779-7fa63345f854 (objectref<GtfContainer_template>)
+			children: children_list []
+			touchShortReleased: function<bool,int,int,int,int>(cf17311f-09df-4216-93c3-c45b8515007c)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(dp:Apa&&dp:Cuva&&dp:Detergent)" \
+					"	{" \
+					"		fire ev:GoTo2()		" \
+					"	}" \
+					"	else" \
+					"	{" \
+					"		dp:visible=true		" \
+					"	}" \
+					"    false" \
+					"}"
+			}
+			x: 338
+			y: 190
+			image: image_resource(efc6a306-7a0f-494b-ae36-a66f2be6609e)
+			{
+				file: "washing-machine.png"
+			}
+			text: "2"
+		}, 
+		GtfContainer_template_instance(22a56c61-dd59-4713-b9c0-ed3bdb7f61a5)
+		{
+			name: "Button 3"
+			template: @18da1be8-38d1-482c-9779-7fa63345f854 (objectref<GtfContainer_template>)
+			children: children_list []
+			touchShortReleased: function<bool,int,int,int,int>(fa426b7e-8f1e-4702-ad28-a89fad55a5ea)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(dp:Apa&&dp:Cuva&&dp:Detergent)" \
+					"	{" \
+					"		fire ev:GoTo3()		" \
+					"	}" \
+					"	else" \
+					"	{" \
+					"		dp:visible=true		" \
+					"	}" \
+					"    false" \
+					"}"
+			}
+			x: 530
+			y: 190
+			image: image_resource(c3fad6e3-a035-4df4-ba87-94ba82b19021)
+			{
+				file: "washing-machine (1).png"
+			}
+			text: "3"
+		}, 
+		GtfRectangle(59b29656-9721-498d-ba94-5b999a966e0e)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(06898648-5e84-40e9-878d-d9031061d934)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 2"
+					visible: true
+					width: 146
+					height: 100
+					x: 196
+					y: 99
+					text: "DETERGENT"
+					textColor: color_scriptedValue(aac3fcfc-6c8d-4861-bc77-7e3937ec686f)
+					{
+						triggerList: trigger_list(b94277cf-5c48-4631-a72e-717f5662e9c8)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(4b85a275-697d-4a4a-9077-b89b4a37d0c2)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<color>(e4491ea3-7293-48f2-90c0-ec92bd030f4b)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	if(dp:Detergent)" \
+								"	{" \
+								"		color:0,128,0,255" \
+								"	}" \
+								"	else" \
+								"	{" \
+								"		color:255,0,0,255" \
+								"	}" \
+								"}"
+						}
+						write: function<bool,color>(5b708517-fa84-4853-b798-a0633aee2ae9)
+						{
+							script: "function(v:arg0::color)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					font: font_resource(13c7e1b2-f8d4-4d9e-8788-23e2b9485c9a)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(92303a53-e6d9-44cb-bff1-cfbd612f2fba)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 3"
+					visible: true
+					width: 100
+					height: 100
+					x: 230
+					y: -9
+					text: "CUVA"
+					textColor: color_scriptedValue(7478eae2-ad7d-43e3-8b98-25dd288180a6)
+					{
+						triggerList: trigger_list(3913bd1d-bfc8-4f02-be83-272f193ddf75)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(953a1457-2e1b-4e4d-a0db-21f52855952c)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<color>(2657e72d-3065-4933-87e4-356b0a28cac2)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	if(dp:Cuva)" \
+								"	{" \
+								"		color:0,128,0,255" \
+								"	}" \
+								"	else" \
+								"	{" \
+								"		color:255,0,0,255" \
+								"	}" \
+								"}"
+						}
+						write: function<bool,color>(32416ddd-a1d9-4eb2-a7c7-2bb0704ddb82)
+						{
+							script: "function(v:arg0::color)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					font: font_resource(7368ec7d-77b8-42ea-b9ce-4a844e5d9060)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(a764720e-1a00-4d92-abbc-9748c49fff96)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 4"
+					visible: true
+					width: 226
+					height: 100
+					x: 151
+					y: 48
+					text: "ALIMENTARE LA APA"
+					textColor: color_scriptedValue(e85d19d6-6c33-4379-9fcf-aaaf882a285d)
+					{
+						triggerList: trigger_list(943cb015-6a77-4649-9925-1cfc53ee4662)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(ebedcdc6-9627-442a-96cc-643bd8cc3e93)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<color>(43c5e1ab-0745-4f42-ab23-69606aed1edc)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	if(dp:Apa)" \
+								"	{" \
+								"		color:0,128,0,255" \
+								"	}" \
+								"	else" \
+								"	{" \
+								"		color:255,0,0,255" \
+								"	}" \
+								"}"
+						}
+						write: function<bool,color>(19f1284f-2f4f-41af-8c16-7acc88cd4c04)
+						{
+							script: "function(v:arg0::color)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					font: font_resource(5186a6de-3111-40da-b349-29c57c3704b7)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfRectangle(3e10fd19-d858-4a25-9174-440ac7ec1c7e)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(9f3b43e4-2a78-4f53-b971-2369ba18e5e7)
+						{
+							features: feature_list [
+								TouchShortReleased(7c5626d4-d831-4563-b4cd-aae3fddd68dd)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(1deaa3f7-c19e-4597-96e5-4129dbc7298b)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	dp:visible=false;" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(7b761e00-5d19-4e7d-aefe-c9ea7ddc488c)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list []
+							name: "Label 5"
+							visible: true
+							width: width@3e10fd19-d858-4a25-9174-440ac7ec1c7e (propref<int>)
+							height: height@3e10fd19-d858-4a25-9174-440ac7ec1c7e (propref<int>)
+							x: 0
+							y: 0
+							text: "OK"
+							textColor: #FFFFFFFF
+							font: font_resource(b372c318-0e73-48d6-81a6-44f77c9ef613)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Rectangle 3"
+					visible: true
+					width: 64
+					height: 64
+					x: 226
+					y: 178
+					fillColor: #ADD8E6FF
+				}]
+			name: "Rectangle 2"
+			visible: bool_scriptedValue(3902d2f9-782b-4647-91a6-634b5f5f52f0)
+			{
+				triggerList: trigger_list(b35a1c3b-3b92-4903-a1a3-d7e126ded7e1)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(dcf7606c-5f21-48c5-878a-cd3d234e3aa4)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<bool>(75d5c60f-3de7-4a60-91d7-ccfe0308bdc8)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:visible" \
+						"}"
+				}
+				write: function<bool,bool>(5c3f0c3b-470f-428b-918f-4b9ef0561316)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			width: 543
+			height: 246
+			x: 135
+			y: 120
+			fillColor: #A9A9A9FF
+		}]
+}
