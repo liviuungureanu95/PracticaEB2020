@@ -54,248 +54,183 @@ GtfView_template_instance(10f68744-3114-4b30-ab74-d8f538b53324)
 			horizontalAlign: 0
 			verticalAlign: 0
 		}, 
-		GtfContainer(0716613a-8cdd-4fe1-aa52-87a538405ab9)
+		GtfContainer(52d992c1-f727-4031-a1a7-9b719d41c75c)
 		{
 			features: feature_list []
 			children: children_list [
-				GtfInstantiator(8eb3d970-84f3-4093-9490-4a8751ddc21b)
+				GtfInstantiator(acc80514-5d34-4de4-878d-11d8281f8ea0)
 				{
 					features: feature_list [
-						ViewPort(bbceb4f9-0059-483d-a309-48a361051c06)
-						{
-							xOffset: 0
-							yOffset: 0
-						}, 
-						LayoutPolicyBox(38c96837-2193-4200-be2e-749fca5ae0db)
+						LayoutPolicyBox(e6508f1d-aead-4ec3-889b-970a6a1faac9)
 						{
 							gap: 0
 							layoutDirection: 0
+						}, 
+						ViewPort(be36bb4d-dd3e-4f6e-bb48-5f757d6653cd)
+						{
+							xOffset: 0
+							yOffset: 0
 						}]
 					children: children_list [
-						GtfContainer(6bf0a0fe-3edd-441c-86c3-c424998f0458)
+						GtfRectangle(7827eb2e-fc5e-4f7a-af98-03b0c0fa7cb2)
 						{
 							features: feature_list [
-								LineIndex(c658a5ae-6fde-4b6b-80ad-33babfe26a23)
+								TouchShortReleased(df556dcd-c79a-49ce-b86b-3dd55c22223a)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(667406ea-7fdf-4958-afe4-0239058f2891)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	v:this.buttonEvent()" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(4b59cf22-b2b1-4fb6-a310-606a79748c06)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}, 
+								LineIndex(68c07d29-0677-4ada-b6bb-17615f8e4861)
 								{
 									lineIndex: 0
 								}]
 							children: children_list [
-								GtfRectangle(71ff6456-ad6f-4a69-9a76-76622b0c22d1)
-								{
-									features: feature_list [
-										Border(45045067-4790-4940-9960-05e3bfb8fef4)
-										{
-											borderThickness: 1
-											borderColor: #000000FF
-											borderStyle: 0
-										}, 
-										TouchShortReleased(681ede19-503b-4a75-af46-8b2ed88d42e5)
-										{
-											touchShortReleased: function<bool,int,int,int,int>(33cc6147-5266-494a-8809-4a1d9df948e4)
-											{
-												script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
-													"{" \
-													"	v:this.buttonEvent()" \
-													"    false" \
-													"}"
-											}
-										}, 
-										StateTouched(4d0af80c-69e9-4fb9-a7e8-678f83b63c06)
-										{
-											touchable: true
-											touched: false
-											touchPolicy: 0
-											touchBehavior: 0
-										}, 
-										LineIndex(41d537c1-aef2-4245-9422-425e412eb558)
-										{
-											lineIndex: 0
-										}]
-									children: children_list []
-									name: "Background"
-									visible: true
-									width: width@6bf0a0fe-3edd-441c-86c3-c424998f0458 (propref<int>)
-									height: listButtonWidth@8eb3d970-84f3-4093-9490-4a8751ddc21b (propref<int>)
-									x: 0
-									y: 0
-									fillColor: #FFFFFF00
-									buttonEvent: function<bool>(85534e8f-cacd-41af-81bf-51ffc0ba3078)
-									{
-										script: "function()" \
-											"{" \
-											"	if(v:this.lineIndex == 0)" \
-											"	{" \
-											"		fire ev:Apps_CompoundEvents:goTo_AndroidAuto()" \
-											"	}" \
-											"	" \
-											"	" \
-											"	if(v:this.lineIndex == 1)" \
-											"	{" \
-											"		fire ev:Apps_CompoundEvents:goTo_AppleCar()" \
-											"	}" \
-											"	false" \
-											"}"
-									}
-									setText: conditional_script(223a54a1-a36f-404a-999e-8460193b901b)
-									{
-										triggerList: trigger_list(ce425766-31da-4192-bb88-08378ee83c24)
-										{
-											script: "dp:AppsMenu:AppsList" \
-												"v:this.lineIndex" \
-												""
-										}
-										onTrigger: function<bool,bool>(69098469-db3d-4611-9b96-658eb62192a8)
-										{
-											script: "function(v:arg0::bool)" \
-												"{" \
-												"	v:this->^->Text.text = dp:AppsMenu:AppsList[v:this.lineIndex]" \
-												"	false" \
-												"}"
-										}
-									}
-									setLogo: conditional_script(715d75d6-de6f-41df-8db5-0d38c227fad4)
-									{
-										triggerList: trigger_list(43afdbda-727c-426f-a4c6-0e1ef22b6bdf)
-										{
-											script: "dp:AppsMenu:Apps_LogoList" \
-												"v:this.lineIndex" \
-												""
-										}
-										onTrigger: function<bool,bool>(9f464ee1-aa52-44e6-b7b9-fa578970562a)
-										{
-											script: "function(v:arg0::bool)" \
-												"{" \
-												"	v:this->^->Logo.image = dp:AppsMenu:Apps_LogoList[v:this.lineIndex]" \
-												"	false" \
-												"}"
-										}
-									}
-								}, 
-								GtfLabel(b039ef18-18f3-461e-ae1b-e7dae014097a)
+								GtfLabel(c68a62d1-ebda-4f38-a39b-3bd44f041e5a)
 								{
 									features: feature_list []
 									children: children_list []
 									name: "Text"
 									visible: true
-									width: width@6bf0a0fe-3edd-441c-86c3-c424998f0458 (propref<int>)
-									height: listButtonWidth@8eb3d970-84f3-4093-9490-4a8751ddc21b (propref<int>)
+									width: listButtonWidth@acc80514-5d34-4de4-878d-11d8281f8ea0 (propref<int>)
+									height: 100
 									x: 0
-									y: 40
+									y: 300
 									text: "label"
-									textColor: #000000FF
-									font: font_resource(8e8dbae1-7133-4316-86e5-572749d2f9da)
+									textColor: #FFFFFFFF
+									font: font_resource(6e1f371b-5357-44e0-ae46-363c40160241)
 									{
 										file: "PT_Sans_Narrow.ttf"
 										size: 30
 									}
 									horizontalAlign: 1
-									verticalAlign: 2
-									setText: conditional_script(4dbac6d4-1625-4b69-ba57-faa9d901ab8e)
-									{
-										triggerList: trigger_list(5406c753-263c-4e63-a096-9b2fd096b0e4)
-										{
-											script: "dp:AppsMenu:AppsList" \
-												"v:this->^.lineIndex" \
-												""
-										}
-										onTrigger: function<bool,bool>(9b485f0c-96bf-46ac-85a4-892e957575e8)
-										{
-											script: "function(v:arg0::bool)" \
-												"{" \
-												"	v:this.text = dp:AppsMenu:AppsList[v:this->^.lineIndex]" \
-												"	false" \
-												"}"
-										}
-									}
+									verticalAlign: 0
 								}, 
-								GtfImage(31f77b34-0f3a-4a0b-a6ba-6be5f6507f69)
+								GtfImage(aeb6eb7a-35df-48a1-b319-49487aa93254)
 								{
 									features: feature_list [
-										ScaleMode(031903ce-8bf8-4fbb-aafa-7ce5cb50c4e8)
+										ScaleMode(f1149e4c-c207-41d2-ad7c-282eb030eb24)
 										{
 											scaleMode: 1
 										}]
 									children: children_list []
-									name: "Logo"
+									name: "Logo's"
 									visible: true
-									width: width@6bf0a0fe-3edd-441c-86c3-c424998f0458 (propref<int>)
-									height: listButtonWidth@8eb3d970-84f3-4093-9490-4a8751ddc21b (propref<int>)
+									width: listButtonWidth@acc80514-5d34-4de4-878d-11d8281f8ea0 (propref<int>)
+									height: height@7827eb2e-fc5e-4f7a-af98-03b0c0fa7cb2 (propref<int>)
 									x: 0
 									y: 0
-									image: image_resource(1ab8d61e-c153-47aa-8dac-6be954a0f47b)
+									image: image_resource(6370e989-3d91-4dda-bba6-4f1e2efeef75)
 									{
 										file: ""
 									}
 									sRGB: false
-									horizontalAlign: 1
-									verticalAlign: 0
-									setLogo: conditional_script(57b1b516-f019-4517-97ce-dbb448173383)
-									{
-										triggerList: trigger_list(9f5cbdac-f85f-4520-ba2f-7b765d06a729)
-										{
-											script: "dp:AppsMenu:Apps_LogoList" \
-												"v:this->^.lineIndex" \
-												""
-										}
-										onTrigger: function<bool,bool>(8668b172-7120-410e-96bd-0d89b521cdd8)
-										{
-											script: "function(v:arg0::bool)" \
-												"{" \
-												"	v:this.image = dp:AppsMenu:Apps_LogoList[v:this->^.lineIndex]" \
-												"	false" \
-												"}"
-										}
-									}
+									horizontalAlign: 0
+									verticalAlign: 1
 								}]
-							name: "List_Button"
+							name: "Background"
 							visible: true
-							width: width@8eb3d970-84f3-4093-9490-4a8751ddc21b (propref<int>)
-							height: listButtonWidth@8eb3d970-84f3-4093-9490-4a8751ddc21b (propref<int>)
+							width: listButtonWidth@acc80514-5d34-4de4-878d-11d8281f8ea0 (propref<int>)
+							height: 300
 							x: 0
 							y: 0
+							fillColor: #FFFFFF00
+							buttonEvent: function<bool>(aa1946ba-1e92-4919-a20e-c92bb5361135)
+							{
+								script: "function()" \
+									"{" \
+									"	if(v:this.lineIndex == 0)" \
+									"	{" \
+									"		fire ev:Apps_CompoundEvents:goTo_AndroidAuto()" \
+									"	}" \
+									"	if(v:this.lineIndex == 1)" \
+									"	{" \
+									"		fire ev:Apps_CompoundEvents:goTo_AppleCar()" \
+									"	}" \
+									"	if(v:this.lineIndex == 2)" \
+									"	{" \
+									"		fire ev:Apps_CompoundEvents:goTo_Spotify()" \
+									"	}" \
+									"	if(v:this.lineIndex == 3)" \
+									"	{" \
+									"		fire ev:Apps_CompoundEvents:goTo_YTMusic()" \
+									"	}" \
+									"	if(v:this.lineIndex == 4)" \
+									"	{" \
+									"		fire ev:Apps_CompoundEvents:goTo_Weather()" \
+									"	}" \
+									"	if(v:this.lineIndex == 5)" \
+									"	{" \
+									"		fire ev:Apps_CompoundEvents:goTo_Browser()" \
+									"	}" \
+									"	false" \
+									"}"
+							}
+							setText: conditional_script(b9489d78-900f-4fe4-b3ba-36198426605c)
+							{
+								triggerList: trigger_list(58394302-2c95-4ea0-9471-c9f7fc38c4e6)
+								{
+									script: "dp:AppsMenu:AppsList" \
+										"v:this.lineIndex" \
+										""
+								}
+								onTrigger: function<bool,bool>(4f0c6918-329e-4b5c-81d1-6ddce4d278c3)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	v:this->Text.text = dp:AppsMenu:AppsList[v:this.lineIndex]" \
+										"	false" \
+										"}"
+								}
+							}
+							setLogo: conditional_script(6bf9ee91-ef98-4542-b67e-469bc66cff6a)
+							{
+								triggerList: trigger_list(8059f5dd-4013-47cc-9928-462d8efaa86d)
+								{
+									script: "dp:AppsMenu:Apps_LogoList" \
+										"v:this.lineIndex" \
+										""
+								}
+								onTrigger: function<bool,bool>(4cbdac0f-bd9c-4387-ad93-d05c75d45e33)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	v:this->\"Logo's\".image = dp:AppsMenu:Apps_LogoList[v:this.lineIndex]" \
+										"	false" \
+										"}"
+								}
+							}
 						}]
 					name: "Apps_Instantiator"
 					visible: true
-					width: width@0716613a-8cdd-4fe1-aa52-87a538405ab9 (propref<int>)
-					height: height@0716613a-8cdd-4fe1-aa52-87a538405ab9 (propref<int>)
+					width: width@52d992c1-f727-4031-a1a7-9b719d41c75c (propref<int>)
+					height: height@52d992c1-f727-4031-a1a7-9b719d41c75c (propref<int>)
 					x: 0
 					y: 0
 					numItems: 6
 					lineMapping: intlist []
-					listButtonWidth: 250
-					movePrevNext: conditional_script(fa58ca38-1da3-4c95-82f2-0bff0c3172f1)
+					listButtonWidth: 300
+					calculateNumItems: conditional_script(01f35560-67f7-468e-a2ee-4bc6cc9a7484)
 					{
-						triggerList: trigger_list(10225513-5b67-441c-857d-7394847bb847)
+						triggerList: trigger_list(c99c4b45-0bf7-49ef-ae85-df8cdc4885f5)
 						{
-							script: "ev:Apps_CompoundEvents:prev_apps" \
-								"ev:Apps_CompoundEvents:next_apps" \
-								"v:this.listButtonWidth"
+							script: "dp:AppsMenu:AppsList" \
+								"" \
+								""
 						}
-						onTrigger: function<bool,bool>(71e8b695-f866-47bd-9c07-18bd75f110ca)
-						{
-							script: "function(v:arg0::bool)" \
-								"{" \
-								"	match_event v:event = ev:Apps_CompoundEvents:next_apps in" \
-								"	{" \
-								"		v:this.xOffset += v:this.listButtonWidth /1" \
-								"	}" \
-								"	" \
-								"	match_event v:event = ev:Apps_CompoundEvents:prev_apps in" \
-								"	{" \
-								"		v:this.xOffset -= v:this.listButtonWidth /1" \
-								"	}" \
-								"	" \
-								"	false" \
-								"}"
-						}
-					}
-					calculateNumItems: conditional_script(524b5999-f7a0-4292-b57e-cfed85574908)
-					{
-						triggerList: trigger_list(9a0befe5-6a9e-4b1d-a362-2ae098c022f7)
-						{
-							script: "dp:AppsMenu:AppsList"
-						}
-						onTrigger: function<bool,bool>(3c37f04c-f881-4981-b2dd-3eedc2f508e9)
+						onTrigger: function<bool,bool>(48ea38e6-2832-48c7-a7fc-e1e7cff713ef)
 						{
 							script: "function(v:arg0::bool)" \
 								"{" \
@@ -305,53 +240,74 @@ GtfView_template_instance(10f68744-3114-4b30-ab74-d8f538b53324)
 								"}"
 						}
 					}
+					limitXMovement: conditional_script(0c48e8ee-80ee-4165-8b95-4a575c71eefa)
+					{
+						triggerList: trigger_list(e02c60ca-251e-4720-8536-25365ec9a0f1)
+						{
+							script: "dp:AppsMenu:AppsList" \
+								"dp:AppsMenu:Apps_LogoList" \
+								"v:this.listButtonWidth" \
+								"v:this.xOffset"
+						}
+						onTrigger: function<bool,bool>(569ef3ba-bb87-4044-b993-4ff207157f52)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	let v:maximumOffset = length dp:AppsMenu:Apps_LogoList * v:this.listButtonWidth - v:this.width in" \
+								"	{" \
+								"		if(v:this.xOffset > 0)" \
+								"		{" \
+								"			v:this.xOffset = 0" \
+								"		}" \
+								"		else if(v:this.xOffset < -v:maximumOffset)" \
+								"		{" \
+								"			v:this.xOffset = -v:maximumOffset" \
+								"		}" \
+								"	}" \
+								"	false" \
+								"}"
+						}
+					}
+					movePrevNext: conditional_script(f8fe29f6-791b-4065-bcf0-182b67494bcb)
+					{
+						triggerList: trigger_list(cf9153fd-dd4f-46d5-a6c1-3399243950c6)
+						{
+							script: "ev:Apps_CompoundEvents:next_apps" \
+								"ev:Apps_CompoundEvents:prev_apps" \
+								"v:this.listButtonWidth"
+						}
+						onTrigger: function<bool,bool>(9adfe370-d91a-4d70-b69e-7aa36e758ee3)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	match_event v:event = ev:Apps_CompoundEvents:next_apps in" \
+								"	{" \
+								"		v:this.xOffset += v:this.listButtonWidth / 1" \
+								"	}" \
+								"	" \
+								"	match_event v:event = ev:Apps_CompoundEvents:prev_apps in" \
+								"	{" \
+								"		v:this.xOffset -= v:this.listButtonWidth / 1" \
+								"	}" \
+								"	" \
+								"	false" \
+								"}"
+						}
+					}
 				}]
 			name: "AppsList"
 			visible: true
-			width: 250
+			width: 300
 			height: 300
-			x: 270
+			x: 250
 			y: 140
-			AppsList: @2bc0ee31-9425-4be3-8a5d-56efd460ca7b (objectref<stringlist>)
-			LogoList: @07da4183-7e3e-40de-ad20-c303e0d2ce75 (objectref<imagelist>)
-			limitXMovement: conditional_script(02d941dd-3907-46e0-896c-4f8b606262ea)
-			{
-				triggerList: trigger_list(947aab52-2ef0-40ee-a08e-7ee7b66fb6b9)
-				{
-					script: "dp:AppsMenu:Apps_LogoList" \
-						"dp:AppsMenu:AppsList" \
-						"v:this->Apps_Instantiator.listButtonWidth" \
-						"v:this->Apps_Instantiator.xOffset" \
-						""
-				}
-				onTrigger: function<bool,bool>(16309fce-466c-49cb-859b-383b341576e3)
-				{
-					script: "function(v:arg0::bool)" \
-						"{" \
-						"let v:maximumOffset = length dp:AppsMenu:AppsList * v:this->Apps_Instantiator.listButtonWidth - v:this.width in" \
-						"{" \
-						"	if(v:this->Apps_Instantiator.xOffset > 0)" \
-						"	   {	" \
-						"	    	v:this->Apps_Instantiator.xOffset = 0" \
-						"	   }" \
-						"	   else if(v:this->Apps_Instantiator.xOffset < -v:maximumOffset)" \
-						"	   {" \
-						"	   		v:this->Apps_Instantiator.xOffset = -v:maximumOffset" \
-						"	   }" \
-						"}" \
-						"" \
-						"" \
-						"false" \
-						"}"
-				}
-			}
 		}, 
-		GtfRectangle(1727b7cc-2642-4b8a-8a75-e9d0a8168a33)
+		GtfRectangle(baa57c97-2b14-4e3f-98b1-843795f40152)
 		{
 			features: feature_list [
-				TouchShortReleased(19ec1e46-84ff-4893-8a9d-411ba3691524)
+				TouchShortReleased(f5c12a8a-bf7b-49cc-be7a-a184d1343ca1)
 				{
-					touchShortReleased: function<bool,int,int,int,int>(9731c5f3-2c1d-4b1e-88db-42ced155c99d)
+					touchShortReleased: function<bool,int,int,int,int>(00cdfa4c-77f1-4586-ac42-beac28d3f0fe)
 					{
 						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 							"{" \
@@ -360,7 +316,7 @@ GtfView_template_instance(10f68744-3114-4b30-ab74-d8f538b53324)
 							"}"
 					}
 				}, 
-				StateTouched(dcf0dc30-601b-40d7-99cc-849af7699c43)
+				StateTouched(d1f2b83a-20ff-4731-a133-bdb710a7fbf3)
 				{
 					touchable: true
 					touched: false
@@ -368,19 +324,19 @@ GtfView_template_instance(10f68744-3114-4b30-ab74-d8f538b53324)
 					touchBehavior: 0
 				}]
 			children: children_list [
-				GtfLabel(d89dead6-33f2-4934-9a08-783b7f5d9796)
+				GtfLabel(20b8d1fe-4f71-43ff-8a67-9ebf84d7a4fd)
 				{
 					features: feature_list []
 					children: children_list []
-					name: "Text"
+					name: "Label 2"
 					visible: true
-					width: 150
-					height: 50
+					width: 100
+					height: 100
 					x: 0
 					y: 0
-					text: "NEXT"
+					text: ">"
 					textColor: #FFFFFFFF
-					font: font_resource(43e7c35b-f7d9-4aa1-9584-8c6dd4831002)
+					font: font_resource(a2225bc7-3cca-41ab-9832-b1a87c355987)
 					{
 						file: "PT_Sans_Narrow.ttf"
 						size: 30
@@ -390,12 +346,12 @@ GtfView_template_instance(10f68744-3114-4b30-ab74-d8f538b53324)
 				}]
 			name: "NextButton"
 			visible: true
-			width: 150
-			height: 50
+			width: 100
+			height: 100
 			x: 600
-			y: 250
+			y: 230
 			fillColor: #A9A9A9FF
-			buttonEvent: function<bool>(6ed35a3b-055e-4166-a226-278a20a98530)
+			buttonEvent: function<bool>(d41768c4-5c15-4547-9dd9-94c46f5704a6)
 			{
 				script: "function()" \
 					"{" \
@@ -404,12 +360,12 @@ GtfView_template_instance(10f68744-3114-4b30-ab74-d8f538b53324)
 					"}"
 			}
 		}, 
-		GtfRectangle(a61143d6-6010-49b8-8fc8-f66c13a9b008)
+		GtfRectangle(5f091472-52a8-4de7-9783-66a9a87e96f0)
 		{
 			features: feature_list [
-				TouchShortReleased(c5bf10e6-8f1a-4760-925c-3cf63982fe5e)
+				TouchShortReleased(a2927e72-6e64-4f69-83b7-1b6a2e15696c)
 				{
-					touchShortReleased: function<bool,int,int,int,int>(8e274573-0e4c-4998-8b89-25c45185c2b1)
+					touchShortReleased: function<bool,int,int,int,int>(6a201838-db0e-493d-b27b-4a1c86d221b0)
 					{
 						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 							"{" \
@@ -418,7 +374,7 @@ GtfView_template_instance(10f68744-3114-4b30-ab74-d8f538b53324)
 							"}"
 					}
 				}, 
-				StateTouched(fbe3b4e3-9f22-409b-a3c8-6907ee1b943e)
+				StateTouched(b831d5b7-2b25-490c-8352-568ddbfe4603)
 				{
 					touchable: true
 					touched: false
@@ -426,19 +382,19 @@ GtfView_template_instance(10f68744-3114-4b30-ab74-d8f538b53324)
 					touchBehavior: 0
 				}]
 			children: children_list [
-				GtfLabel(16227153-0267-4eaf-83a4-bc9af92ab995)
+				GtfLabel(6a904531-30e0-416e-9c2f-42030ccd0396)
 				{
 					features: feature_list []
 					children: children_list []
-					name: "Text"
+					name: "Label 3"
 					visible: true
-					width: 150
-					height: 50
-					x: 0
+					width: 100
+					height: 100
+					x: 1
 					y: 0
-					text: "PREVIOUS"
+					text: "<"
 					textColor: #FFFFFFFF
-					font: font_resource(a8cc56fe-ab81-4450-b1e7-b31698f474c8)
+					font: font_resource(31e4376c-6aed-4d50-a778-c8f340d7dff1)
 					{
 						file: "PT_Sans_Narrow.ttf"
 						size: 30
@@ -446,14 +402,14 @@ GtfView_template_instance(10f68744-3114-4b30-ab74-d8f538b53324)
 					horizontalAlign: 1
 					verticalAlign: 0
 				}]
-			name: "PreviousButton"
+			name: "PrevButton"
 			visible: true
-			width: 150
-			height: 50
-			x: 50
-			y: 250
+			width: 100
+			height: 100
+			x: 100
+			y: 230
 			fillColor: #A9A9A9FF
-			buttonEvent: function<bool>(1d3d5c27-10a8-416b-8ffd-036cfb51d0bc)
+			buttonEvent: function<bool>(bea71c5c-8495-41f1-9eaf-d04893f253df)
 			{
 				script: "function()" \
 					"{" \

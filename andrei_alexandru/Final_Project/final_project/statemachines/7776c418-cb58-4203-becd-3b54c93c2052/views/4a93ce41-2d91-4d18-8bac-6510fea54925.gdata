@@ -53,8 +53,159 @@ GtfView_template_instance(4a93ce41-2d91-4d18-8bac-6510fea54925)
 			}
 			horizontalAlign: 0
 			verticalAlign: 0
+		}, 
+		GtfImage(261f7be8-8f07-4ec8-a7a6-340b8d9a21b0)
+		{
+			features: feature_list [
+				ScaleMode(5a1eb120-e848-48f3-b29e-16dbdbce77a2)
+				{
+					scaleMode: 0
+				}]
+			children: children_list []
+			name: "CarImage"
+			visible: true
+			width: 600
+			height: 280
+			x: 110
+			y: 200
+			image: image_resource(5f981182-5df4-4660-8597-c1747afddd66)
+			{
+				file: "ford_mondeo_mk5.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfInstantiator(587c99db-2e96-4972-8fff-09df793e6cf6)
+		{
+			features: feature_list [
+				LayoutPolicyFlow(a95e4d84-911c-43a9-80d7-db49594b1acf)
+				{
+					horizontalGap: 10
+					verticalGap: 20
+					layoutDirection: 0
+					horizontalChildAlign: 1
+					verticalChildAlign: 0
+				}]
+			children: children_list [
+				GtfRectangle(32ae4327-c449-4f3d-8726-e7bbb0b4f475)
+				{
+					features: feature_list [
+						Border(49cf8607-2aeb-4717-abae-f238df359529)
+						{
+							borderThickness: 1
+							borderColor: #000000FF
+							borderStyle: 0
+						}, 
+						LineIndex(7ab12ef2-d188-486a-8211-0241fa2d87e0)
+						{
+							lineIndex: 0
+						}, 
+						TouchShortReleased(d0cbd1af-7a5e-4e5f-92b1-a29ff67d1ac7)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(b62b8764-40f8-4342-83bd-e5230b9fa032)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this.buttonEvent()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(143893fa-5422-4dfb-ad3b-298cf7f6d748)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(e068d941-9244-4027-a51b-7acec3c5215d)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text"
+							visible: true
+							width: width@32ae4327-c449-4f3d-8726-e7bbb0b4f475 (propref<int>)
+							height: height@32ae4327-c449-4f3d-8726-e7bbb0b4f475 (propref<int>)
+							x: 0
+							y: 0
+							text: "label"
+							textColor: #000000FF
+							font: font_resource(ec7e100f-a781-4a78-b7f8-9c01165c05a3)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Background"
+					visible: true
+					width: 180
+					height: 50
+					x: 0
+					y: 0
+					fillColor: #87CEEBFF
+					buttonEvent: function<bool>(f985b791-bd8a-4bc4-9b73-1e8854e171fa)
+					{
+						script: "function()" \
+							"{" \
+							"	if(v:this.lineIndex == 0)" \
+							"		fire ev:Info_CompoundEvents:goTo_vehicleMenu()" \
+							"	if(v:this.lineIndex == 1)" \
+							"		fire ev:Info_CompoundEvents:goTo_engineMenu()" \
+							"	if(v:this.lineIndex == 2)" \
+							"		fire ev:Info_CompoundEvents:goTo_consumptionMenu()" \
+							"	if(v:this.lineIndex == 3)" \
+							"		fire ev:Info_CompoundEvents:goTo_cameraMenu()" \
+							"	false" \
+							"}"
+					}
+					setText: conditional_script(ef4887e9-2ae4-4ca9-982d-2b91e4b57b5c)
+					{
+						triggerList: trigger_list(61253811-4a12-48f4-8ae6-bd9fc51aebfa)
+						{
+							script: "dp:InfoMenu:InfoMenu_ButtonList" \
+								"v:this.lineIndex" \
+								""
+						}
+						onTrigger: function<bool,bool>(b3f03910-0890-4549-a66a-03ed77257cee)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this->Text.text = dp:InfoMenu:InfoMenu_ButtonList[v:this.lineIndex]" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "InfoMenu_Instantiator"
+			visible: true
+			width: 800
+			height: 50
+			x: 0
+			y: 100
+			numItems: 4
+			lineMapping: intlist []
+			calculateNumItems: conditional_script(9b9b68f9-2283-4c3e-9f21-075bbeed1cfb)
+			{
+				triggerList: trigger_list(db2f3948-9084-48f2-94e1-533a7bfa42e0)
+				{
+					script: "dp:InfoMenu:InfoMenu_ButtonList" \
+						""
+				}
+				onTrigger: function<bool,bool>(0068b077-9e0e-43f3-8da6-294285c76f42)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	v:this.numItems = length dp:InfoMenu:InfoMenu_ButtonList" \
+						"	false" \
+						"}"
+				}
+			}
 		}]
-	text: "Info Menu"
+	text: "Car Info Menu"
 	textColor: textColor@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<color>)
 	font: font@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<font>)
 }

@@ -1,0 +1,43 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(a173e0ba-23b1-40f3-bc4a-051f09919527)
+{
+	name: "ConsumptionMenu_View"
+	template: @b380d1bf-d029-45e1-aa1b-a53a19df7e62 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(90f18ee5-3994-4fd6-ae7b-fb5d1518a094)
+		{
+			name: "BackButton"
+			template: @66713f45-2faf-4289-b7d7-da20b83b4fd3 (objectref<GtfContainer_template>)
+			children: children_list []
+			buttonEvent: function<bool>(38d01d58-2af3-4432-a9d1-465de589b654)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_back()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfImage(d72bca7d-a311-439a-ab7e-54fed2eeaee1)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "ImagePS"
+			visible: true
+			width: 600
+			height: 300
+			x: 100
+			y: 120
+			image: image_resource(0c33c932-1223-4235-b8a8-39c551f59e54)
+			{
+				file: "consumption2.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	text: "Consumption Menu"
+	textColor: textColor@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<color>)
+	font: font@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<font>)
+}

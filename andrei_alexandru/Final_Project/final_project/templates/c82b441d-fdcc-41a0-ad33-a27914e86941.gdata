@@ -1,0 +1,537 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(c82b441d-fdcc-41a0-ad33-a27914e86941)
+{
+	name: "T_MediaMenu"
+	structure: GtfContainer(23fd2817-9205-4900-8be3-5f46992ec63f)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(bdbc2316-6c28-4abd-a16e-7d23b1590638)
+			{
+				features: feature_list [
+					Border(6d964217-cb1d-48df-8514-ccceb7e90e47)
+					{
+						borderThickness: 5
+						borderColor: #7CFC00FF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: 200
+				height: 200
+				x: 50
+				y: 30
+				fillColor: #FFFFFF00
+			}, 
+			GtfImage(6816c4b1-7aaa-4226-9ab3-3bd7c6277e4a)
+			{
+				features: feature_list [
+					ScaleMode(b7156ab4-96b8-4dc9-82f5-e969e5dc5f61)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "Music_Logo"
+				visible: true
+				width: width@bdbc2316-6c28-4abd-a16e-7d23b1590638 (propref<int>)
+				height: height@bdbc2316-6c28-4abd-a16e-7d23b1590638 (propref<int>)
+				x: x@bdbc2316-6c28-4abd-a16e-7d23b1590638 (propref<int>)
+				y: y@bdbc2316-6c28-4abd-a16e-7d23b1590638 (propref<int>)
+				image: image_scriptedValue(728af1b8-813c-49f6-8c98-6e520de94dad)
+				{
+					triggerList: trigger_list(6b2e67fb-613c-4c80-b1d0-c99bb5b0849b)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(919f63b6-7c7a-42a8-8a72-c8ccca458bb9)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<image>(ae428e25-eaa5-4b11-b884-9d4a003c3d69)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:MediaMenu:MusicLogo_List[dp:MediaMenu:Index_Song]" \
+							"" \
+							"}"
+					}
+					write: function<bool,image>(af979a9b-630a-4535-b5a4-5aff4a9d0d05)
+					{
+						script: "function(v:arg0::image)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(31f25f4f-3505-4fe6-860d-564496758ebf)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Song_Name"
+				visible: true
+				width: 300
+				height: 50
+				x: 270
+				y: 30
+				text: string_scriptedValue(a725bd16-aced-4ee0-a0e4-40e6bbddd354)
+				{
+					triggerList: trigger_list(03fbb149-5b7f-4350-a082-767441c3edd5)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(4808f367-b3ac-4fed-b249-5d5e039fa47c)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<string>(1f69c90a-d50a-4418-9a9f-f0572e4a362a)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:MediaMenu:Music_List[dp:MediaMenu:Index_Song]" \
+							"}"
+					}
+					write: function<bool,string>(28ad0fa7-d668-4412-b675-a52c1862b038)
+					{
+						script: "function(v:arg0::string)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				textColor: #AFEEEEFF
+				font: font_resource(452ed551-4317-46aa-9cc6-881373af3075)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}, 
+			GtfLabel(4704bedb-b300-4358-8c5c-159d96325176)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Artist_Name"
+				visible: true
+				width: 300
+				height: 50
+				x: 270
+				y: 80
+				text: string_scriptedValue(6406a64f-0438-449d-be8c-a3c37571ecf6)
+				{
+					triggerList: trigger_list(978fba9f-7b00-492d-9860-7bf56ad6ac42)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(1f195b96-8c05-4d8a-abf3-38e05aaca31c)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<string>(992e0b71-5edf-43ec-8237-53f986ebc662)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:MediaMenu:Artist_List[dp:MediaMenu:Index_Song]" \
+							"}"
+					}
+					write: function<bool,string>(00b82ce4-f4c6-424e-9e3a-1f5839d5bde1)
+					{
+						script: "function(v:arg0::string)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				textColor: #E6E6FAFF
+				font: font_resource(9e2798bd-aedc-4a06-a792-9ce31348ea47)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}, 
+			GtfRectangle(9527dea8-840f-485e-86db-708ea7a7f047)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "HorizontalBar"
+				visible: true
+				width: 250
+				height: 2
+				x: 270
+				y: 80
+				fillColor: #008080FF
+			}, 
+			GtfRectangle(df35f2a8-cc1e-48dc-8994-bfd268f0f2c7)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "HorizontalBar2"
+				visible: true
+				width: 250
+				height: 2
+				x: 270
+				y: 130
+				fillColor: #008080FF
+			}, 
+			GtfRectangle(2b1304fc-eb40-4e06-b16c-a672ac9f0411)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "HorizontalBar3"
+				visible: true
+				width: 250
+				height: 2
+				x: 270
+				y: 180
+				fillColor: #008080FF
+			}, 
+			GtfRectangle(5d06ff26-d927-41bc-b017-712dcbdd0bca)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "HorizontalBar4"
+				visible: true
+				width: 500
+				height: 2
+				x: 20
+				y: 310
+				fillColor: #008080FF
+			}, 
+			GtfLabel(2a6576c1-112c-4ec7-a8d0-3fc54051e19d)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Total_Songs"
+				visible: true
+				width: 70
+				height: 50
+				x: 270
+				y: 130
+				text: string_scriptedValue(c7b6a307-afdd-43d7-b057-a7d878120646)
+				{
+					triggerList: trigger_list(3c915c99-b6a9-4a17-8c5d-7bbea0a03cd6)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(48b941db-2ad1-4c23-8d9a-e5f633aec168)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<string>(f08d2c8a-acd6-4e83-9618-2f21a335459c)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:MediaMenu:total_songs[dp:MediaMenu:Index_Song] + \"/\" + f:int2string(dp:MediaMenu:total_songs_integer)" \
+							"}"
+					}
+					write: function<bool,string>(dc44d0de-0faf-479f-93d5-d2cdb470805f)
+					{
+						script: "function(v:arg0::string)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				textColor: #2E8B57FF
+				font: font_resource(d3f7b3c7-8736-4d9c-a866-21b005aa4971)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}, 
+			GtfRectangle(b226979e-ac13-490b-994a-183c4dc69955)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "VerticalBar"
+				visible: true
+				width: 2
+				height: 30
+				x: 340
+				y: 140
+				fillColor: #008080FF
+			}, 
+			GtfContainer_template_instance(cae1f833-ebc8-4da0-8986-94d881c04744)
+			{
+				name: "PreviousButton"
+				template: @085ff6a3-6175-4e7e-8423-4cc3629e8425 (objectref<GtfContainer_template>)
+				children: children_list []
+				x: 50
+				y: 240
+				image: image_resource(4a62f67e-c3fb-4f62-b7c8-236332f9d31c)
+				{
+					file: "prev_song.png"
+				}
+				touchPressed: function<bool,int,int,int,int>(b357380d-2b6d-414c-9bd2-636870397656)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	if(dp:MediaMenu:Index_Song > 0)" \
+						"		dp:MediaMenu:Index_Song = dp:MediaMenu:Index_Song -1" \
+						"	else" \
+						"		dp:MediaMenu:Index_Song = length dp:MediaMenu:Music_List -1" \
+						"		" \
+						"	v:this->^->\"Play/Pause_Button\".image = dp:MediaMenu:pause_logo" \
+						"    " \
+						"    false" \
+						"}"
+				}
+				play: play@085ff6a3-6175-4e7e-8423-4cc3629e8425 (propref<bool>)
+			}, 
+			GtfContainer_template_instance(b50725d3-e150-497e-8cac-04d827683bbd)
+			{
+				name: "Play/Pause_Button"
+				template: @085ff6a3-6175-4e7e-8423-4cc3629e8425 (objectref<GtfContainer_template>)
+				children: children_list []
+				x: 120
+				y: 240
+				image: image_resource(183f51e6-513d-4176-a122-2b9da4b73b4d)
+				{
+					file: "pause.png"
+				}
+				touchPressed: function<bool,int,int,int,int>(e82922fb-6692-46a1-884c-b1ca5e002b96)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	if(v:this.play == false)" \
+						"	{" \
+						"		v:this.image = dp:MediaMenu:play_logo" \
+						"		v:this.play = true" \
+						"	}" \
+						"	else" \
+						"	{" \
+						"		v:this.image = dp:MediaMenu:pause_logo" \
+						"		v:this.play = false" \
+						"	}" \
+						"    false" \
+						"}"
+				}
+				play: play@085ff6a3-6175-4e7e-8423-4cc3629e8425 (propref<bool>)
+			}, 
+			GtfContainer_template_instance(c00c059e-514b-4462-80ee-0109b9c23481)
+			{
+				name: "NextButton"
+				template: @085ff6a3-6175-4e7e-8423-4cc3629e8425 (objectref<GtfContainer_template>)
+				children: children_list []
+				x: 190
+				y: 240
+				image: image_resource(a90ece2c-8618-4396-9f37-616df52b20d0)
+				{
+					file: "next_song.png"
+				}
+				touchPressed: function<bool,int,int,int,int>(e2607fda-bb07-42fd-8a98-6e0aa03bb690)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	if(dp:MediaMenu:Index_Song < length dp:MediaMenu:Music_List -1)" \
+						"		dp:MediaMenu:Index_Song = dp:MediaMenu:Index_Song +1" \
+						"	else" \
+						"		dp:MediaMenu:Index_Song = 0" \
+						"		" \
+						"	v:this->^->\"Play/Pause_Button\".image = dp:MediaMenu:pause_logo" \
+						"   " \
+						"  	false" \
+						"}"
+				}
+				play: play@085ff6a3-6175-4e7e-8423-4cc3629e8425 (propref<bool>)
+			}, 
+			GtfImage(97b43f28-2fd0-4546-a204-a402a8139e02)
+			{
+				features: feature_list [
+					ScaleMode(cf8aebee-b936-4bfa-927e-ea51bfb313bb)
+					{
+						scaleMode: 1
+					}, 
+					TouchShortReleased(7876d315-d813-4d8d-ac10-467db163ee88)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(21da0281-0be1-4dfb-820b-fb086cedcb6e)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	dp:MediaMenu:current_volume -=1" \
+								"	if(dp:MediaMenu:current_volume<0)" \
+								"		dp:MediaMenu:current_volume = 0" \
+								"   " \
+								"   false" \
+								"}"
+						}
+					}, 
+					StateTouched(8319be3b-551a-422f-9fb9-4912e9b6db19)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list []
+				name: "LowVolume"
+				visible: true
+				width: 48
+				height: 48
+				x: 25
+				y: 320
+				image: image_resource(5b478b46-6474-445b-a284-56f3abb59997)
+				{
+					file: "low_volume.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfImage(53be0443-365e-4a34-a646-7c8a1555bf13)
+			{
+				features: feature_list [
+					ScaleMode(08b96360-1bf3-41d3-9301-92177cddfc45)
+					{
+						scaleMode: 1
+					}, 
+					TouchShortReleased(306277ff-8ea7-4b8a-bb6e-3ff7cf3fd3dc)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(7ae29dd6-1602-4904-add3-18e8c7268a99)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	dp:MediaMenu:current_volume +=1" \
+								"	if(dp:MediaMenu:current_volume > dp:MediaMenu:max_volume)" \
+								"		dp:MediaMenu:current_volume = dp:MediaMenu:max_volume" \
+								"   " \
+								"   false" \
+								"}"
+						}
+					}, 
+					StateTouched(04ac0744-72bf-484a-92a2-dea18f6e909a)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list []
+				name: "HighVolume"
+				visible: true
+				width: 48
+				height: 48
+				x: 230
+				y: 320
+				image: image_resource(cb65fdc5-2d81-4bb0-b7cc-cad7f472f656)
+				{
+					file: "high_volume.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfContainer(890aebd4-774d-4481-8759-4dca80b54849)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfInstantiator(def50f6c-183b-41c2-80cb-467049777a38)
+					{
+						features: feature_list [
+							LayoutPolicyFlow(1b619a6b-c7f8-492c-bb37-ab4e9c1eb83c)
+							{
+								horizontalGap: 2
+								verticalGap: 0
+								layoutDirection: 0
+								horizontalChildAlign: 0
+								verticalChildAlign: 0
+							}]
+						children: children_list [
+							GtfRectangle(72766831-30a3-4adf-b999-ac62211358f3)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "BarBackground"
+								visible: true
+								width: int_scriptedValue(8a1783ec-4a5b-496a-92a4-2b09a1a75cf4)
+								{
+									triggerList: trigger_list(ce424d9a-2c28-4a70-9027-4124aee2f443)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(dcc26e18-cf3d-4e71-b3bd-365842e4ba8d)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<int>(0e22325a-c00e-4d3b-8441-a2cddfdda9c0)
+									{
+										script: "function()" \
+											"{" \
+											"	v:this->^->^.width / v:this->^->^.units -2	" \
+											"}"
+									}
+									write: function<bool,int>(16d15dd5-9a01-4631-bc25-caaa2089159f)
+									{
+										script: "function(v:arg0::int)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								height: height@def50f6c-183b-41c2-80cb-467049777a38 (propref<int>)
+								x: 0
+								y: 0
+								fillColor: color@890aebd4-774d-4481-8759-4dca80b54849 (propref<color>)
+							}]
+						name: "Instantiator"
+						visible: true
+						width: width@890aebd4-774d-4481-8759-4dca80b54849 (propref<int>)
+						height: height@890aebd4-774d-4481-8759-4dca80b54849 (propref<int>)
+						x: 0
+						y: 0
+						numItems: currentUnits@890aebd4-774d-4481-8759-4dca80b54849 (propref<int>)
+						lineMapping: intlist []
+					}]
+				name: "VolumeBar"
+				visible: true
+				width: 150
+				height: 30
+				x: 77
+				y: 330
+				units: @e5788391-5846-4450-bdfd-e2d67bda5057 (objectref<int>)
+				color: #FFFFFFFF
+				currentUnits: @5174911b-8d3b-4455-be62-da87a466a104 (objectref<int>)
+			}]
+		name: "Container"
+		visible: true
+		width: 600
+		height: 350
+		x: 50
+		y: 80
+	}
+}
