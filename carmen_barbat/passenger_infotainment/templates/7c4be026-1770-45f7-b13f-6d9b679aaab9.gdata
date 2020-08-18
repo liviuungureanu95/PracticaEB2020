@@ -5,7 +5,11 @@ GtfContainer_template(7c4be026-1770-45f7-b13f-6d9b679aaab9)
 	name: "Text_button"
 	structure: GtfContainer(8dfaf438-9b9b-469d-a04c-ba4b62b30acb)
 	{
-		features: feature_list []
+		features: feature_list [
+			LineIndex(301a1549-58f6-4a4d-a4a0-55cd61350557)
+			{
+				lineIndex: 0
+			}]
 		children: children_list [
 			GtfRectangle(3f662b62-2542-4923-bdf3-67be5d7a386c)
 			{
@@ -17,6 +21,7 @@ GtfContainer_template(7c4be026-1770-45f7-b13f-6d9b679aaab9)
 							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 								"{" \
 								"	v:this.buttonEvent()" \
+								"	v:this.borderThickness-=3" \
 								"    false" \
 								"}"
 						}
@@ -27,6 +32,23 @@ GtfContainer_template(7c4be026-1770-45f7-b13f-6d9b679aaab9)
 						touched: false
 						touchPolicy: 0
 						touchBehavior: 0
+					}, 
+					Border(114ff210-63c2-4ee9-9031-d17cc34c5944)
+					{
+						borderThickness: 1
+						borderColor: #20B2AAFF
+						borderStyle: 0
+					}, 
+					TouchPressed(0cc433a7-eee6-4f8b-a7d4-d37d6aaeaccc)
+					{
+						touchPressed: function<bool,int,int,int,int>(db24b22e-58b2-43e6-875e-ab8633d89d49)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.borderThickness+=3" \
+								"    false" \
+								"}"
+						}
 					}]
 				children: children_list []
 				name: "Background"
@@ -74,13 +96,11 @@ GtfContainer_template(7c4be026-1770-45f7-b13f-6d9b679aaab9)
 	}
 	x: x@8dfaf438-9b9b-469d-a04c-ba4b62b30acb (propref<int>)
 	y: y@8dfaf438-9b9b-469d-a04c-ba4b62b30acb (propref<int>)
-	"x 2": x@3f662b62-2542-4923-bdf3-67be5d7a386c (propref<int>)
-	"y 2": y@3f662b62-2542-4923-bdf3-67be5d7a386c (propref<int>)
 	fillColor: fillColor@3f662b62-2542-4923-bdf3-67be5d7a386c (propref<color>)
-	"x 3": x@ada475fc-5d7a-49ac-a79d-1fc75fa03005 (propref<int>)
-	"y 3": y@ada475fc-5d7a-49ac-a79d-1fc75fa03005 (propref<int>)
 	text: text@ada475fc-5d7a-49ac-a79d-1fc75fa03005 (propref<string>)
 	buttonEvent: buttonEvent@3f662b62-2542-4923-bdf3-67be5d7a386c (propref<function<bool>>)
 	width: width@8dfaf438-9b9b-469d-a04c-ba4b62b30acb (propref<int>)
 	height: height@8dfaf438-9b9b-469d-a04c-ba4b62b30acb (propref<int>)
+	visible: visible@8dfaf438-9b9b-469d-a04c-ba4b62b30acb (propref<bool>)
+	lineIndex: lineIndex@301a1549-58f6-4a4d-a4a0-55cd61350557 (propref<int>)
 }

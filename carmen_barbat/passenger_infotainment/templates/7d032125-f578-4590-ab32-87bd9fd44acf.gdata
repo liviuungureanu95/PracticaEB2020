@@ -1,0 +1,288 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(7d032125-f578-4590-ab32-87bd9fd44acf)
+{
+	name: "Scroll_list"
+	structure: GtfContainer(208d7da6-544b-4709-ac3a-17f5568dfaba)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(a2d2300b-e971-406d-8b54-c222e4b2350d)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@208d7da6-544b-4709-ac3a-17f5568dfaba (propref<int>)
+				height: height@208d7da6-544b-4709-ac3a-17f5568dfaba (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+			}, 
+			GtfContainer(04e1d16c-d433-4ad1-9c28-f74ba6a0426a)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfInstantiator(4e9845b4-ff08-44e8-8fc6-0f8c306f4bd1)
+					{
+						features: feature_list [
+							LayoutPolicyFlow(3cbf3f44-5cbb-46c0-b660-1249a66dec31)
+							{
+								horizontalGap: 5
+								verticalGap: 0
+								layoutDirection: 0
+								horizontalChildAlign: 0
+								verticalChildAlign: 0
+							}, 
+							ViewPort(61479eb3-fcd8-44e4-9cd8-51832c0565f2)
+							{
+								xOffset: 0
+								yOffset: 0
+							}]
+						children: children_list [
+							GtfContainer_template_instance(b5c12fa2-c342-453e-82b5-a859d8aa89b6)
+							{
+								name: "List_button"
+								template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
+								children: children_list []
+								x: x@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+								y: y@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+								fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
+								text: text@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<string>)
+								buttonEvent: function<bool>(f1d6e8b3-ac72-4eb7-be0f-9ea3b110f0d9)
+								{
+									script: "function()" \
+										"{" \
+										"	if(v:this->^->^.ListId==0)" \
+										"	{" \
+										"		dp:Food_order+=v:this.text+\"\\n\"" \
+										"	}" \
+										"	if(v:this->^->^.ListId==1)" \
+										"	{" \
+										"		dp:Food_order+=v:this.text+\"\\n\"" \
+										"		dp:Food_price+=dp:Food_price_list[v:this.lineIndex]" \
+										"	}" \
+										"	if(v:this->^->^.ListId==2)" \
+										"	{" \
+										"		dp:Drink_order+=v:this.text+\"\\n\"" \
+										"	}" \
+										"	if(v:this->^->^.ListId==3)" \
+										"	{" \
+										"		dp:Drink_order+=v:this.text+\"\\n\"" \
+										"	    dp:Drink_price+=dp:Drink_price_list[v:this.lineIndex]" \
+										"	}" \
+										"	" \
+										"	" \
+										"" \
+										"	false" \
+										"}"
+								}
+								width: 315
+								height: 50
+								visible: visible@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<bool>)
+								lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+								setText: conditional_script(ea73ce7b-9e03-4b94-833c-da74995b2f75)
+								{
+									triggerList: trigger_list(a374f1ce-1658-4286-b88e-0b6effb7bacb)
+									{
+										script: "" \
+											"v:this.lineIndex" \
+											"v:this->^->^.list_input" \
+											""
+									}
+									onTrigger: function<bool,bool>(0e2f0542-4843-42eb-a675-c6ad1e90e108)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	v:this.text=v:this->^->^.list_input[v:this.lineIndex]" \
+											"	false" \
+											"}"
+									}
+								}
+							}]
+						name: "buttonInstantiator"
+						visible: true
+						width: width@04e1d16c-d433-4ad1-9c28-f74ba6a0426a (propref<int>)
+						height: height@04e1d16c-d433-4ad1-9c28-f74ba6a0426a (propref<int>)
+						x: 0
+						y: 0
+						numItems: int_scriptedValue(f7eba61e-677e-403c-a6ca-48bd1cc0ffb4)
+						{
+							triggerList: trigger_list(85d86487-0bee-4845-a628-fac5af78d126)
+							{
+								script: "v:this->^.list_input"
+							}
+							onTrigger: function<bool,bool>(075a31e4-6d0d-4277-a592-ecf0bda6ddc8)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<int>(f07cac85-b653-412e-b6bc-437dc65ea73f)
+							{
+								script: "function()" \
+									"{" \
+									"	" \
+									"	length v:this->^.list_input" \
+									"}"
+							}
+							write: function<bool,int>(3ac08a4d-fa8f-4db0-8fd0-cbc57792a23a)
+							{
+								script: "function(v:arg0::int)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						lineMapping: intlist []
+						listButtonHeight: 50
+						MoveUpDown: conditional_script(5393bf0d-6ae7-4fb5-80d1-6186931c91ff)
+						{
+							triggerList: trigger_list(89a3445a-438d-4fdd-91ab-54a21c59473e)
+							{
+								script: "ev:scroll_down" \
+									"ev:scroll_up" \
+									"v:this.listButtonHeight"
+							}
+							onTrigger: function<bool,bool>(1636ba6c-91da-43a2-aae5-ae65491b9625)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	if(v:this.IsSelected==true)" \
+									"	{	match_event v:event = ev:scroll_up in" \
+									"		{" \
+									"			v:this.yOffset += v:this.listButtonHeight/2" \
+									"		}" \
+									"		match_event v:event = ev:scroll_down in" \
+									"		{" \
+									"			v:this.yOffset -= v:this.listButtonHeight/2" \
+									"		}" \
+									"	}" \
+									"	v:this.IsSelected=false" \
+									"	" \
+									"	false" \
+									"}"
+							}
+						}
+						IsSelected: false
+					}]
+				name: "List"
+				visible: true
+				width: 320
+				height: 260
+				x: 75
+				y: 0
+				list_input: stringlist ["Fries", "Chicken", "a", "c", "b", "d", "e", "f", "h", "i", "j"]
+				limitYMovement: conditional_script(05637788-bdd1-4265-8fcc-f2f19951139c)
+				{
+					triggerList: trigger_list(75deca6d-a8fe-4b89-bc1d-10e64c01177f)
+					{
+						script: "v:this->buttonInstantiator.listButtonHeight" \
+							"v:this.height" \
+							""
+					}
+					onTrigger: function<bool,bool>(f6266580-2237-46e3-b061-fbe45e5086ba)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	let v:maximumOffset = length v:this.list_input * v:this->buttonInstantiator.listButtonHeight - v:this.height in" \
+							"	{" \
+							"		if(v:this->buttonInstantiator.yOffset > 0)" \
+							"		{" \
+							"			v:this->buttonInstantiator.yOffset = 0" \
+							"		}" \
+							"		if(v:this->buttonInstantiator.yOffset < -v:maximumOffset)" \
+							"		{" \
+							"			v:this->buttonInstantiator.yOffset = -v:maximumOffset" \
+							"		}" \
+							"	}" \
+							"	false" \
+							"}"
+					}
+				}
+				ListId: 0
+			}, 
+			GtfContainer_template_instance(28add179-5b8a-4057-b9ad-8a4b8da07b25)
+			{
+				name: "Up_button"
+				template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
+				children: children_list []
+				x: 0
+				y: 0
+				fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
+				text: "Up"
+				buttonEvent: function<bool>(ea571ac1-36db-4890-b683-48fe3d1f7a7e)
+				{
+					script: "function()" \
+						"{" \
+						"	v:this->^->List->buttonInstantiator.IsSelected=true" \
+						"	fire ev:scroll_up()" \
+						"	" \
+						"	false" \
+						"}"
+				}
+				width: 70
+				height: 50
+				visible: visible@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<bool>)
+				lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+				"x 2": 0
+				"y 2": 0
+				"x 3": 0
+				"y 3": 0
+			}, 
+			GtfContainer_template_instance(db42890d-5035-41d0-b3c2-2d753d0898f9)
+			{
+				name: "Down_button"
+				template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
+				children: children_list []
+				x: 0
+				y: 210
+				fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
+				text: "Down"
+				buttonEvent: function<bool>(e6c5776a-19ca-4896-89c4-0cddf4670b89)
+				{
+					script: "function()" \
+						"{" \
+						"	v:this->^->List->buttonInstantiator.IsSelected=true" \
+						"	fire ev:scroll_down()" \
+						"	" \
+						"	false" \
+						"}"
+				}
+				width: 70
+				height: 50
+				visible: visible@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<bool>)
+				lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+				"x 2": 0
+				"y 2": 0
+				"x 3": 0
+				"y 3": 0
+			}]
+		name: "Scroll_list_container"
+		visible: true
+		width: 350
+		height: 260
+		x: 0
+		y: 0
+	}
+	width: width@208d7da6-544b-4709-ac3a-17f5568dfaba (propref<int>)
+	height: height@208d7da6-544b-4709-ac3a-17f5568dfaba (propref<int>)
+	x: x@208d7da6-544b-4709-ac3a-17f5568dfaba (propref<int>)
+	y: y@208d7da6-544b-4709-ac3a-17f5568dfaba (propref<int>)
+	"x 2": x@db42890d-5035-41d0-b3c2-2d753d0898f9 (propref<int>)
+	"y 2": y@db42890d-5035-41d0-b3c2-2d753d0898f9 (propref<int>)
+	"x 3": x@28add179-5b8a-4057-b9ad-8a4b8da07b25 (propref<int>)
+	"y 3": y@28add179-5b8a-4057-b9ad-8a4b8da07b25 (propref<int>)
+	"width 2": width@04e1d16c-d433-4ad1-9c28-f74ba6a0426a (propref<int>)
+	"height 2": height@04e1d16c-d433-4ad1-9c28-f74ba6a0426a (propref<int>)
+	"x 4": x@04e1d16c-d433-4ad1-9c28-f74ba6a0426a (propref<int>)
+	"y 4": y@04e1d16c-d433-4ad1-9c28-f74ba6a0426a (propref<int>)
+	list_input: list_input@04e1d16c-d433-4ad1-9c28-f74ba6a0426a (propref<stringlist>)
+	fillColor: fillColor@a2d2300b-e971-406d-8b54-c222e4b2350d (propref<color>)
+	buttonEvent: buttonEvent@28add179-5b8a-4057-b9ad-8a4b8da07b25 (propref<function<bool>>)
+	"buttonEvent 2": buttonEvent@db42890d-5035-41d0-b3c2-2d753d0898f9 (propref<function<bool>>)
+	ListId: ListId@04e1d16c-d433-4ad1-9c28-f74ba6a0426a (propref<int>)
+}

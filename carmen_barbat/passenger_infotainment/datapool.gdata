@@ -3,6 +3,21 @@ EBGUIDE 6.10.0.200602120856;
 dp_items(0ffa9091-482e-4202-a032-e1d222ae2909)
 {
 	items: dp_item_list [
+		dp<intlist>(076f4e39-b07d-401e-8156-062c820284b0)
+		{
+			value: intlist [45, 40, 50, 50, 48, 60, 60, 40, 30, 25, 55, 89, 75]
+			name: "Food_price_list"
+		}, 
+		dp<stringlist>(0a7c3e6c-6ed6-4c9b-9b5d-6492c2cce50f)
+		{
+			value: stringlist ["Coca-Cola", "Sprite", "Limonade", "Water", "Espresso", "Cappuccino", "Caffe Latte"]
+			name: "Free_drink"
+		}, 
+		dp<string>(1211d732-dd08-4371-9a76-fd3232913845)
+		{
+			value: ""
+			name: "Drink_order"
+		}, 
 		dp<string>(234d8fc2-6ab2-42fa-8ac9-fa22a0122e15)
 		{
 			value: "Bernauer Straße"
@@ -13,10 +28,36 @@ dp_items(0ffa9091-482e-4202-a032-e1d222ae2909)
 			value: 18.5F
 			name: "Temp"
 		}, 
+		dp<int>(2d382a33-9e8e-40ca-9c0a-d7a4e815f2f0)
+		{
+			value: 0
+			name: "Food_price"
+		}, 
 		dp<int>(371488fd-d7fa-4071-80a7-65e2e537a01b)
 		{
 			value: 0
 			name: "View_index"
+		}, 
+		dp<imagelist>(39d0a1d6-e4fb-4e3c-9697-fd5effebaff3)
+		{
+			value: imagelist [
+				image_resource(787061c6-7dfe-4322-b57d-dee16a07ce34)
+				{
+					file: "food.jpg"
+				}, 
+				image_resource(a5410a09-9c72-43c0-80b2-b2dbb11a54fb)
+				{
+					file: "drink.jpg"
+				}, 
+				image_resource(5592e8ac-c3e0-4096-98f3-2b4cc9477798)
+				{
+					file: ""
+				}, 
+				image_resource(2c2ca6c5-3e3a-4376-a144-f94b956453c8)
+				{
+					file: ""
+				}]
+			name: "Pop_up_image"
 		}, 
 		dp<string>(3fafb8d1-7c88-4077-a69f-b63ecfcc6048)
 		{
@@ -28,10 +69,20 @@ dp_items(0ffa9091-482e-4202-a032-e1d222ae2909)
 			value: "Airport"
 			name: "HandoverLocation"
 		}, 
+		dp<stringlist>(5526e18d-79bd-4f5e-8e41-356a7e17beec)
+		{
+			value: stringlist ["Sirloin Sandwich                  45‎€", "Classic Arabic Mezze           40‎€", "Ravioli                                  50‎€", "Dulce de Leche Cake           50‎€", "Viennese Schnitzel              48‎€", "Red Wine Braised Beef        60‎€", "Cascade Brisket Chili           60€", "Salmon Sandwich                40‎€", "Roast Beef Sandwich           30‎€", "Oreo Ice Cream                   25‎€", "Masa toro with caviar          55‎€", "Lobster Frittata                    89‎€", "Pasta salad                           75‎€"]
+			name: "Pay_food"
+		}, 
 		dp<int>(60579b62-581a-4747-addc-177c38c8016e)
 		{
 			value: 12
 			name: "Number"
+		}, 
+		dp<bool>(68a58ac3-8a15-4e73-9295-876dd4ad95bf)
+		{
+			value: false
+			name: "Food_or_drink"
 		}, 
 		dp<string>(6effc997-6c41-4ba2-a53c-5de23371ee20)
 		{
@@ -53,15 +104,70 @@ dp_items(0ffa9091-482e-4202-a032-e1d222ae2909)
 			value: "Carmen"
 			name: "Customer_name"
 		}, 
+		dp<int>(ade71259-f89a-42d9-b096-bdc35cfb60e3)
+		{
+			value: 70
+			name: "amount"
+		}, 
+		dp<string>(bb4366b0-339b-4280-a093-5b6832506482)
+		{
+			value: ""
+			name: "Food_order"
+		}, 
+		dp<string>(bdb3f3ea-eca6-4e2c-89f3-967264976162)
+		{
+			value: "09/21"
+			name: "Exp_date"
+		}, 
+		dp<int>(c888a363-9239-4819-bf1a-3b61d657dcbd)
+		{
+			value: 0
+			name: "Drink_price"
+		}, 
+		dp<stringlist>(c99300ab-eacb-46bb-af1c-95017bc816af)
+		{
+			value: stringlist ["Hong Kong-style Curry Chicken", "Strawberry Frozen Yogurt", "Turkey sandwich", "Grilled Cheese Sandwich", "Ham Sandwich", "Caesar salad", "Greek salad", "Papaya salad with chicken", "Kale salad"]
+			name: "Free_food"
+		}, 
 		dp<string>(cad0b8fa-93e4-4261-9339-5d500c39317d)
 		{
 			value: "Airport"
 			name: "TakeoverLocation"
 		}, 
+		dp<stringlist>(cf30c414-44e2-40e5-bdc7-1bbb8de657ce)
+		{
+			value: stringlist []
+			name: "String list 5"
+		}, 
+		dp<string>(dcae2339-7dbd-4cdb-89ae-c4a31569bc18)
+		{
+			value: "4929401941184731"
+			name: "Card_number"
+		}, 
+		dp<string>(e2b44654-b87f-4966-95e8-a6242b426a29)
+		{
+			value: "223"
+			name: "CVV"
+		}, 
 		dp<string>(f27f4b70-93b4-4cb7-acc7-4fb6ff41788d)
 		{
 			value: "Berlin"
 			name: "City"
+		}, 
+		dp<intlist>(f4e07a90-4506-470c-8781-b25a407b6597)
+		{
+			value: intlist [20, 20, 35, 15, 15, 20, 35]
+			name: "Drink_price_list"
+		}, 
+		dp<string>(f56540d2-0994-449d-befd-52a4cc61a9aa)
+		{
+			value: ""
+			name: "Total"
+		}, 
+		dp<stringlist>(f711c7e8-88ac-40a2-99d5-c6244d9938e5)
+		{
+			value: stringlist ["Mimosa                       20‎€", "Rum and Coke            20‎€", "Scotch and soda         35‎€", "Moscow mule             15‎€", "Gin and tonic              15‎€", "Bloody mary                20‎€", "Mojito                          35‎€"]
+			name: "Pay_drink"
 		}, 
 		dp<imagelist>(fddd05bc-fc3b-4a89-bbf5-c3a1816db90f)
 		{

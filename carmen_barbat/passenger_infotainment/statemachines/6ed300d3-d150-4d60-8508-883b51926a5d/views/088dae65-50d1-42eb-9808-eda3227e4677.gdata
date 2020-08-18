@@ -7,7 +7,7 @@ GtfView_template_instance(088dae65-50d1-42eb-9808-eda3227e4677)
 	children: children_list [
 		GtfContainer_template_instance(f6d796a1-1128-4a89-9325-af764170a05e)
 		{
-			name: "Button 1"
+			name: "Food_button"
 			template: @e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (objectref<GtfContainer_template>)
 			children: children_list []
 			width: width@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
@@ -28,6 +28,8 @@ GtfView_template_instance(088dae65-50d1-42eb-9808-eda3227e4677)
 				script: "function()" \
 					"{" \
 					"	fire ev:GoToFood()" \
+					"	dp:Food_order=\"\"" \
+					"	dp:Food_or_drink=true " \
 					"	false" \
 					"}"
 			}
@@ -35,7 +37,7 @@ GtfView_template_instance(088dae65-50d1-42eb-9808-eda3227e4677)
 		}, 
 		GtfContainer_template_instance(e889919b-3b75-447c-a262-2c299a29b36b)
 		{
-			name: "Button 2"
+			name: "Drink_button"
 			template: @e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (objectref<GtfContainer_template>)
 			children: children_list []
 			width: width@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
@@ -56,6 +58,9 @@ GtfView_template_instance(088dae65-50d1-42eb-9808-eda3227e4677)
 				script: "function()" \
 					"{" \
 					"	fire ev:GoToDrink()" \
+					"	dp:Food_or_drink=false" \
+					"	dp:Drink_order=\"\"" \
+					"	dp:Drink_price=0;" \
 					"	false" \
 					"}"
 			}
@@ -63,7 +68,7 @@ GtfView_template_instance(088dae65-50d1-42eb-9808-eda3227e4677)
 		}, 
 		GtfContainer_template_instance(834cff1d-9645-40a7-8484-fd7261942cf4)
 		{
-			name: "Button 3"
+			name: "Assistance_button"
 			template: @e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (objectref<GtfContainer_template>)
 			children: children_list []
 			width: width@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
@@ -79,7 +84,16 @@ GtfView_template_instance(088dae65-50d1-42eb-9808-eda3227e4677)
 			{
 				file: "air-hostess.png"
 			}
-			buttonEvent: buttonEvent@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<function<bool>>)
+			buttonEvent: function<bool>(12402c0d-eb7d-452a-9ae6-4ecc48f7b9bc)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:display_message()" \
+					"	fire_delayed 4000, ev:dismiss_message()" \
+					"	fire_delayed 4000, ev:GoToMenu()" \
+					"	false" \
+					"}"
+			}
 			visible: visible@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<bool>)
 		}]
 	image: image@47101df3-2cb4-462c-8236-06e865e3862e (propref<image>)
