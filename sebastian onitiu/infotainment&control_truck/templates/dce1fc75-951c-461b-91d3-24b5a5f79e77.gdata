@@ -105,7 +105,27 @@ GtfContainer_template(dce1fc75-951c-461b-91d3-24b5a5f79e77)
 							GtfLabel(dad831d1-0f19-4719-a5b9-474b7ccbcaf6)
 							{
 								features: feature_list []
-								children: children_list []
+								children: children_list [
+									GtfLabel(8930103b-7d1f-4406-94ea-fd3d5af870b7)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "Label 3 copy 1"
+										visible: true
+										width: 68
+										height: 33
+										x: 31
+										y: -11
+										text: "WARMING"
+										textColor: #FFFFFFFF
+										font: font_resource(6404cddc-06b1-434f-a146-24440c31be34)
+										{
+											file: "PT_Sans_Narrow.ttf"
+											size: 20
+										}
+										horizontalAlign: 0
+										verticalAlign: 0
+									}]
 								name: "steering wheel text copy 1"
 								visible: true
 								width: 116
@@ -223,6 +243,7 @@ GtfContainer_template(dce1fc75-951c-461b-91d3-24b5a5f79e77)
 						{
 							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 								"{" \
+								"	fire ev:goToTruckControls()" \
 								"    false" \
 								"}"
 						}
@@ -306,6 +327,7 @@ GtfContainer_template(dce1fc75-951c-461b-91d3-24b5a5f79e77)
 						{
 							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 								"{" \
+								"	fire ev:goToLights()" \
 								"    false" \
 								"}"
 						}
@@ -385,6 +407,7 @@ GtfContainer_template(dce1fc75-951c-461b-91d3-24b5a5f79e77)
 						{
 							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 								"{" \
+								"	fire ev:goToMedia()" \
 								"    false" \
 								"}"
 						}
@@ -480,13 +503,13 @@ GtfContainer_template(dce1fc75-951c-461b-91d3-24b5a5f79e77)
 				children: children_list []
 				text: "AIR CONTROL"
 				"image 2": "image 2"@ae4424b5-7a37-4428-b750-c992d88a6c3e (propref<image>)
+				textColor: #FFFFFFFF
+				x: x@ae4424b5-7a37-4428-b750-c992d88a6c3e (propref<int>)
+				y: y@ae4424b5-7a37-4428-b750-c992d88a6c3e (propref<int>)
 				image: image_resource(cd5bf484-b81a-4434-8f42-4ef12f7c4aab)
 				{
 					file: "heat air (12).png"
 				}
-				textColor: #191970FF
-				x: x@ae4424b5-7a37-4428-b750-c992d88a6c3e (propref<int>)
-				y: y@ae4424b5-7a37-4428-b750-c992d88a6c3e (propref<int>)
 			}]
 		name: "Container 2"
 		visible: true
@@ -496,4 +519,14 @@ GtfContainer_template(dce1fc75-951c-461b-91d3-24b5a5f79e77)
 		y: 0
 	}
 	touchPressed: touchPressed@e1eccdfd-abbb-415e-b235-9d4d4225ed40 (propref<function<bool,int,int,int,int>>)
+	"touchPressed 2": touchPressed@910146f5-ebf8-4a3d-88b2-4c5c6872e550 (propref<function<bool,int,int,int,int>>)
+	image: image@861db060-10cd-40c3-bf0b-65dddd30f92b (propref<image>)
+	"image 2": image@f930ee46-b5fa-460a-b468-baf93a1fc52a (propref<image>)
+	"touchPressed 3": touchPressed@436c5c48-e24c-4d6f-9d78-cc6fb3b46556 (propref<function<bool,int,int,int,int>>)
+	"image 3": image@549932ba-c1c1-49d8-a9b0-a3efb1d10c0a (propref<image>)
+	"image 4": image@a5472bfd-7581-4e1f-9689-61a9a409bf09 (propref<image>)
+	"touchPressed 4": touchPressed@6f82be48-83e7-4ae4-8e5b-e3a48b381f9b (propref<function<bool,int,int,int,int>>)
+	"image 5": image@8063351d-8980-4043-bb2e-a5958e00e9e0 (propref<image>)
+	visible: visible@a022ed5d-66e5-4687-bc39-bf12b7213473 (propref<bool>)
+	text: text@ddb4c3a4-67ce-463a-b211-d2d57d08ff7e (propref<string>)
 }

@@ -177,13 +177,13 @@ GtfView(b106dafd-e6f7-417d-9fd7-8448d26ec436)
 			{
 				file: "BAR.png"
 			}
+			textColor: textColor@ae4424b5-7a37-4428-b750-c992d88a6c3e (propref<color>)
+			x: x@ae4424b5-7a37-4428-b750-c992d88a6c3e (propref<int>)
+			y: y@ae4424b5-7a37-4428-b750-c992d88a6c3e (propref<int>)
 			image: image_resource(ac764607-7006-4726-94df-00b8b2a690f5)
 			{
 				file: ""
 			}
-			textColor: textColor@ae4424b5-7a37-4428-b750-c992d88a6c3e (propref<color>)
-			x: x@ae4424b5-7a37-4428-b750-c992d88a6c3e (propref<int>)
-			y: y@ae4424b5-7a37-4428-b750-c992d88a6c3e (propref<int>)
 		}, 
 		GtfImage(9dc3cff5-e425-47b2-900d-87b67542d706)
 		{
@@ -322,6 +322,7 @@ GtfView(b106dafd-e6f7-417d-9fd7-8448d26ec436)
 					{
 						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 							"{" \
+							"	fire ev:goToTruckControls()" \
 							"    false" \
 							"}"
 					}
@@ -350,6 +351,7 @@ GtfView(b106dafd-e6f7-417d-9fd7-8448d26ec436)
 					{
 						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 							"{" \
+							"	fire ev:goToLights()" \
 							"    false" \
 							"}"
 					}
@@ -425,6 +427,7 @@ GtfView(b106dafd-e6f7-417d-9fd7-8448d26ec436)
 					{
 						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 							"{" \
+							"	fire ev:goToMedia()" \
 							"    false" \
 							"}"
 					}
