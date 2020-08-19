@@ -1,0 +1,334 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(51b676f4-bfc3-4990-85c3-98b38a71a4a9)
+{
+	name: "14_View"
+	template: @6ed0fc89-f5fa-41df-8452-71b599053367 (objectref<GtfView_template>)
+	children: children_list [
+		GtfRectangle(2ee5b8cd-d7a5-49ce-a982-84c866d04592)
+		{
+			features: feature_list [
+				TouchShortReleased(c2fb731c-b2b1-4571-86ca-63fc1a8b270f)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(74a65f25-1c76-418b-8cdd-0ed09e69ad3b)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->Bananier.shearingXbyY = 0.0" \
+							"	v:this.starting = false" \
+							"	v:this.timeStart = 0" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(20d78b86-c355-45f7-aef0-693065d81b6e)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}, 
+				TouchMove(63fa2c7d-fffe-4d82-88ab-c68913b4994c)
+				{
+					touchMoved: function<bool,int,int,int,int>(b273fd0b-6df3-476c-81c5-91bfa32721e7)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(v:this.movable){" \
+							"		v:this.starting = true" \
+							"		v:this->^->Bananier.shearingXbyY = f:int2float(v:x - v:this.xStart)	" \
+							"		v:this.timing()" \
+							"	}" \
+							"    false" \
+							"}"
+					}
+				}, 
+				TouchPressed(1dd4cc84-d8dc-409b-b079-f4895f7ef88a)
+				{
+					touchPressed: function<bool,int,int,int,int>(dacfc0d8-c71d-4922-8804-8f163955f5a7)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.xStart = v:x" \
+							"	v:this.timeStart = f:system_time_ms()" \
+							"	v:this.touchMoved(v:touchId, v:x, v:y, v:fingerId)" \
+							"    false" \
+							"}"
+					}
+				}, 
+				MoveOut(9216a6a4-4308-4a23-886c-f62dcba9f073)
+				{
+					moveOut: function<bool,int,int,int,int>(359c9335-7cdd-420f-ab2c-dd297a941e7b)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.touchShortReleased(v:touchId, v:x, v:y, v:fingerId)" \
+							"    false" \
+							"}"
+					}
+				}]
+			children: children_list []
+			name: "Background"
+			visible: true
+			width: width@51b676f4-bfc3-4990-85c3-98b38a71a4a9 (propref<int>)
+			height: height@51b676f4-bfc3-4990-85c3-98b38a71a4a9 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #FFFFFF00
+			xStart: 0
+			movable: true
+			timeStart: 0
+			starting: false
+			timing: function<bool>(f4d11e10-6a80-4dd4-8e98-ea60276b032c)
+			{
+				script: "function()" \
+					"{" \
+					"	if(f:system_time_ms() - v:this.timeStart > 3000){" \
+					"		v:this.touchShortReleased" \
+					"		v:this.movable = false" \
+					"		fire ev:FallingBananas()" \
+					"	}" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfImage(7412ebed-061c-4a2a-8ad5-3e82852adaf9)
+		{
+			features: feature_list [
+				Rotation(6dc4992e-ac3a-4f93-9294-69d7376e109a)
+				{
+					rotationEnabled: true
+					rotationAngleX: 0F
+					rotationAngleY: 0F
+					rotationAngleZ: 0F
+				}, 
+				Scaling(eb9c18d4-f938-4415-b745-fefcb41d8262)
+				{
+					scalingEnabled: true
+					scalingX: 100F
+					scalingY: 100F
+					scalingZ: 100F
+				}, 
+				Shearing(34741da0-bf9a-4cee-9ad8-fa666a31233e)
+				{
+					shearingEnabled: true
+					shearingXbyY: 0F
+					shearingXbyZ: 0F
+					shearingYbyX: 0F
+					shearingYbyZ: 0F
+					shearingZbyX: 0F
+					shearingZbyY: 0F
+				}, 
+				Pivot(256890ae-75bc-47d6-a0de-b48dfbb5c005)
+				{
+					pivotX: 161F
+					pivotY: 458F
+					pivotZ: 0F
+				}]
+			children: children_list [
+				GtfImage(9415bfea-3197-4697-9a93-994c01ca6dcb)
+				{
+					features: feature_list [
+						ScaleMode(943f66e8-b408-40fa-8a70-31ca45316aa1)
+						{
+							scaleMode: 1
+						}]
+					children: children_list [
+						GtfParallelAnimation(7fcd1b0f-7b09-45d4-b995-b22af4e9136a)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(cc8b50f8-9a80-49f8-9289-77175f496343)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve 1"
+									enabled: true
+									delay: 0
+									duration: 1000
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 153
+									end: int_scriptedValue(f323616e-580a-4d56-86d0-fead457de079)
+									{
+										triggerList: trigger_list(b3fa1340-da3a-40ec-9dde-e6f36b2b5938)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(aceacd43-d697-4947-a222-e5e8d9e752ba)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+										read: function<int>(dfa592e6-f44b-4948-96eb-86df47ba677c)
+										{
+											script: "function()" \
+												"{" \
+												"	v:this->^->^->^->^.height - v:this->^->^.height" \
+												"}"
+										}
+										write: function<bool,int>(f664f3b5-50ee-47ab-8d43-a84da483e917)
+										{
+											script: "function(v:arg0::int)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+									}
+									target: y@9415bfea-3197-4697-9a93-994c01ca6dcb (propref<int>)
+								}]
+							name: "FallingBananas"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(943ee000-89f7-4326-a0f8-0b0512f97d7a)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(e5f5e454-9d2d-4117-9b65-63267acac36b)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(052da857-9929-4ba0-8a66-4aab2c392052)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"	v:this->^->^->^->NextButton.visible = true" \
+									"}"
+							}
+							playAnimation: conditional_script(af105ef7-5e46-41b3-b08e-0ae6db16cdb5)
+							{
+								triggerList: trigger_list(cf651c68-64dd-462e-a630-92da9c703fa4)
+								{
+									script: "ev:FallingBananas"
+								}
+								onTrigger: function<bool,bool>(a39106cc-7ada-464d-b153-63ad2033e7b8)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	match_event v:event = ev:FallingBananas in" \
+										"{" \
+										"	f:animation_play(v:this)" \
+										"}" \
+										"" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "Bananas"
+					visible: true
+					width: 98
+					height: 100
+					x: 102
+					y: 153
+					image: image_resource(a2d72483-8e69-4982-8bd5-6561f9a97198)
+					{
+						file: "bananas.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Bananier"
+			visible: true
+			width: 339
+			height: 480
+			x: 222
+			y: 0
+			image: image_resource(6ac10b51-4585-40d7-b779-d6ebcee58fd5)
+			{
+				file: "bananier_simple.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+			shearingLimits: conditional_script(a2f9c858-e4be-4131-a8d6-0e422532a97c)
+			{
+				triggerList: trigger_list(f17e1e57-c259-4dea-9a45-e19476a7d7d1)
+				{
+					script: "v:this.shearingXbyY"
+				}
+				onTrigger: function<bool,bool>(4a5a5bd3-cdb2-4eb9-b8c4-0fed93c33d40)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(v:this.shearingXbyY < -62.0){" \
+						"		v:this.shearingXbyY = -62.0" \
+						"	}" \
+						"	if(v:this.shearingXbyY > 75.0){" \
+						"		v:this.shearingXbyY = 75.0" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfLabel(790cc895-fa75-4e15-afd3-507f7610ed25)
+		{
+			features: feature_list [
+				MultiLine(487ba2d4-ae15-4282-8b9e-0da7310b7a57)
+				{
+					lineOffset: 0
+					maxLineCount: 0
+				}]
+			children: children_list []
+			name: "Hint"
+			visible: true
+			width: 275
+			height: 90
+			x: 450
+			y: 386
+			text: "Make the bananas fall."
+			textColor: #228B22FF
+			font: @c686500e-f444-44ae-ad8a-5b5b3ef74343 (objectref<font>)
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(7b7dde9e-802a-4d71-9592-c01348ab4dc2)
+		{
+			name: "NextButton"
+			template: @8333bb03-38b5-4824-a70a-203d73d5b064 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 54
+			y: 416
+			width: 96
+			height: 52
+			text: "Next"
+			touchReleased: function<bool>(f9bf1a9f-364b-45de-aead-f2450d53fd07)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoToLevel_15()" \
+					"	false" \
+					"}"
+			}
+			font: font_resource(345d138f-69c4-4c26-aea3-aae6b068b96f)
+			{
+				file: "Joystick-5KjV.ttf"
+				size: 30
+			}
+			visible: false
+			touchable: touchable@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+		}]
+	hintForLevel: "Shake the tree."
+	backgroundColor: #ADD8E6FF
+	image: image@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<image>)
+	width: width@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	height: height@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	moveOver: moveOver@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<function<bool,int,int,int,int>>)
+	xLevelContainer: xLevelContainer@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	levelNumber: levelNumber@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+}

@@ -1,0 +1,159 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(2806580f-08db-4741-be7e-34424c75cd42)
+{
+	name: "13_View"
+	template: @6ed0fc89-f5fa-41df-8452-71b599053367 (objectref<GtfView_template>)
+	children: children_list [
+		GtfRectangle_template_instance(da02916e-981a-4597-b37e-e84f6a2ff316)
+		{
+			name: "TopLeftCorner"
+			template: @dd2a934b-ef5f-4b6f-b7f7-21c73c4fc836 (objectref<GtfRectangle_template>)
+			children: children_list []
+			x: x@dd2a934b-ef5f-4b6f-b7f7-21c73c4fc836 (propref<int>)
+			y: y@dd2a934b-ef5f-4b6f-b7f7-21c73c4fc836 (propref<int>)
+			movedIn: bool_element_reference(63f33731-9491-49d5-8b7b-a46121f1ce35)
+			{
+				index: 0
+				list: @3832fa6c-ac3d-4ddf-afa2-33b5b1261e2a (objectref<boollist>)
+			}
+			squareLength: squareLength@dd2a934b-ef5f-4b6f-b7f7-21c73c4fc836 (propref<int>)
+		}, 
+		GtfRectangle_template_instance(ba55c6ba-1618-45d8-bcfa-be74f4bfd762)
+		{
+			name: "BottomLeftCorner"
+			template: @dd2a934b-ef5f-4b6f-b7f7-21c73c4fc836 (objectref<GtfRectangle_template>)
+			children: children_list []
+			x: x@dd2a934b-ef5f-4b6f-b7f7-21c73c4fc836 (propref<int>)
+			y: int_scriptedValue(269c1279-917f-42d4-8756-3fb20ed6b485)
+			{
+				triggerList: trigger_list(84e2aedd-2415-403e-9e5a-774a279185e2)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(5544ee77-8878-49bb-bd15-d31c88cbcc0a)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<int>(c3720121-e939-4408-907b-004ebf22c320)
+				{
+					script: "function()" \
+						"{" \
+						"	v:this->^.height - v:this.squareLength" \
+						"}"
+				}
+				write: function<bool,int>(c1652c01-f825-4cc9-8797-936833375542)
+				{
+					script: "function(v:arg0::int)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			movedIn: bool_element_reference(c976e5d8-2f76-4e75-be1c-e2ab3997dacb)
+			{
+				index: 1
+				list: @3832fa6c-ac3d-4ddf-afa2-33b5b1261e2a (objectref<boollist>)
+			}
+			squareLength: squareLength@dd2a934b-ef5f-4b6f-b7f7-21c73c4fc836 (propref<int>)
+		}, 
+		GtfRectangle_template_instance(e1153883-af74-4f4b-b940-12c3d0750c21)
+		{
+			name: "TopRightCorner"
+			template: @dd2a934b-ef5f-4b6f-b7f7-21c73c4fc836 (objectref<GtfRectangle_template>)
+			children: children_list []
+			x: int_scriptedValue(5ab6953a-6465-406c-bc8f-07b3afdaa493)
+			{
+				triggerList: trigger_list(5e933ff4-3fd7-414a-a010-5c4285d6dc69)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(098ce108-3e98-4020-be0f-84cbc74bb5b7)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<int>(a9b40aac-e5de-45ec-9194-00257c4b50a0)
+				{
+					script: "function()" \
+						"{" \
+						"	v:this->^.width - v:this.squareLength" \
+						"}"
+				}
+				write: function<bool,int>(3e2db822-dc9c-44ef-a96b-60468993bce5)
+				{
+					script: "function(v:arg0::int)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			y: 0
+			movedIn: bool_element_reference(1b72d9c6-b19e-466a-b95d-72f3588d2801)
+			{
+				index: 2
+				list: @3832fa6c-ac3d-4ddf-afa2-33b5b1261e2a (objectref<boollist>)
+			}
+			squareLength: squareLength@dd2a934b-ef5f-4b6f-b7f7-21c73c4fc836 (propref<int>)
+		}, 
+		GtfContainer_template_instance(9fdda8d6-931f-4132-ac38-d3938f8e7d22)
+		{
+			name: "NextButton"
+			template: @8333bb03-38b5-4824-a70a-203d73d5b064 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 307
+			y: 178
+			width: 180
+			height: 102
+			text: "Next"
+			touchReleased: function<bool>(9378ac96-3fcd-447d-b84f-e799ea4c2a8a)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoToLevel_14()" \
+					"	false" \
+					"}"
+			}
+			font: font_resource(4cc209c4-7568-47e4-8ebe-a962d14efa4b)
+			{
+				file: "Joystick-5KjV.ttf"
+				size: 60
+			}
+			visible: false
+			touchable: touchable@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+		}]
+	hintForLevel: "You got a friendly advice before... about the corners"
+	backgroundColor: #000000FF
+	image: image@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<image>)
+	width: width@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	height: height@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	moveOver: moveOver@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<function<bool,int,int,int,int>>)
+	xLevelContainer: xLevelContainer@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	levelNumber: levelNumber@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	checkAllCorners: conditional_script(a8bf61dc-8034-41b0-9c88-39de25f928a5)
+	{
+		triggerList: trigger_list(603f76a0-4434-4edf-b225-44647e3515ba)
+		{
+			script: "dp:CornersChecked"
+		}
+		onTrigger: function<bool,bool>(cf5978cb-38c2-40a0-9cb0-638b0779d92d)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	if(dp:CornersChecked[0] && dp:CornersChecked[1] && dp:CornersChecked[2]){" \
+				"		v:this->NextButton.visible = true" \
+				"	}" \
+				"	false" \
+				"}"
+		}
+	}
+}
