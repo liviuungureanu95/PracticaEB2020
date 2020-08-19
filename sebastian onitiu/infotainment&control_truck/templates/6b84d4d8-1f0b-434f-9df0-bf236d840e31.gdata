@@ -1,0 +1,184 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfImage_template(6b84d4d8-1f0b-434f-9df0-bf236d840e31)
+{
+	name: "template animation"
+	structure: GtfImage(44bac946-81b1-475b-bc91-b91e6166393a)
+	{
+		features: feature_list [
+			ScaleMode(1f797d1a-1e5f-4a84-9046-de0524717c9a)
+			{
+				scaleMode: 1
+			}, 
+			Rotation(2b32db40-a6f1-436a-bb95-3169cecc301c)
+			{
+				rotationEnabled: true
+				rotationAngleX: 0F
+				rotationAngleY: 0F
+				rotationAngleZ: 0F
+			}, 
+			Scaling(ae912f6d-566d-451d-8929-6e071a1a82c0)
+			{
+				scalingEnabled: true
+				scalingX: 100F
+				scalingY: 100F
+				scalingZ: 100F
+			}, 
+			Shearing(de31c709-c34b-4e48-9469-665f543252ce)
+			{
+				shearingEnabled: false
+				shearingXbyY: 0F
+				shearingXbyZ: 0F
+				shearingYbyX: 0F
+				shearingYbyZ: 0F
+				shearingZbyX: 0F
+				shearingZbyY: 0F
+			}, 
+			Pivot(f4c565ee-ecef-478f-ae07-2679b328dba2)
+			{
+				pivotX: float_scriptedValue(5c6317fb-c343-47bd-9ce0-d6dc30740a0b)
+				{
+					triggerList: trigger_list(5ad6a92a-37b6-403e-8228-5bb546229b53)
+					{
+						script: "v:this.width" \
+							""
+					}
+					onTrigger: function<bool,bool>(3071fe5b-4a40-4751-8f08-8285048b85a3)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	" \
+							"	false" \
+							"}"
+					}
+					read: function<float>(f48d4a7a-f54c-4b56-a0b6-ebb19ee3010a)
+					{
+						script: "function()" \
+							"{" \
+							"	f:int2float(v:this.width/2)" \
+							"}"
+					}
+					write: function<bool,float>(62c7d6d2-3e9f-4fde-9348-986e173a5884)
+					{
+						script: "function(v:arg0::float)" \
+							"{" \
+							"	" \
+							"	false" \
+							"}"
+					}
+				}
+				pivotY: float_scriptedValue(dc2d9fc6-246e-475c-a8f6-3fb88918f7ea)
+				{
+					triggerList: trigger_list(bf821daa-a017-4095-8b09-f9df1c2a12cd)
+					{
+						script: "v:this.height" \
+							""
+					}
+					onTrigger: function<bool,bool>(6aa27721-c859-4f19-8f3c-1cdc6e65829d)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	" \
+							"	false" \
+							"}"
+					}
+					read: function<float>(94d2694c-567c-4fb9-8fd0-9290c1d65873)
+					{
+						script: "function()" \
+							"{" \
+							"	f:int2float(v:this.height/2)" \
+							"}"
+					}
+					write: function<bool,float>(e9d74e1b-44f1-4426-8d0d-f2f03f3f076f)
+					{
+						script: "function(v:arg0::float)" \
+							"{" \
+							"	" \
+							"	false" \
+							"}"
+					}
+				}
+				pivotZ: 0F
+			}]
+		children: children_list [
+			GtfParallelAnimation(4a6876c6-b1a1-47f1-9de8-264958751e7a)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLinearInterpolationFloat(97ac992c-65b6-46de-a698-ac88e2d0e9bb)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Linear interpolation curve 1"
+						enabled: true
+						delay: 0
+						duration: 2000
+						repeat: 0
+						alternating: false
+						relative: false
+						start: 0F
+						end: -360F
+						target: rotationAngleZ@2b32db40-a6f1-436a-bb95-3169cecc301c (propref<float>)
+					}]
+				name: "Animation_spinning"
+				enabled: true
+				repeat: 0
+				alternating: false
+				scale: 1F
+				onPlay: function<void,int,bool>(6bf80b76-14ac-4634-9471-6e411dafcad2)
+				{
+					script: "function(v:animation_time::int, v:forward::bool)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onPause: function<void,int>(0f21ab4a-7335-4f35-95b2-2a41284110e4)
+				{
+					script: "function(v:animation_time::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onTerminate: function<void,int,int>(d975dd2b-0786-425c-b948-72225c9a4cbe)
+				{
+					script: "function(v:animation_time::int, v:terminate::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+				StartSpinning: conditional_script(9a8f15ec-3d18-4ac7-ba43-fcd08cb0d705)
+				{
+					triggerList: trigger_list(909dc78f-e20f-4196-9e0b-2547607862d6)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(1e888887-16fc-4b70-a2f1-a8c2f6b1ddd8)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"" \
+							"	f:animation_play(v:this)" \
+							"	false" \
+							"}"
+					}
+				}
+			}]
+		name: "load_circle"
+		visible: true
+		width: 54
+		height: 54
+		x: 0
+		y: 0
+		image: image_resource(52a2a995-8e99-4ce4-ad6c-39dd1fe85732)
+		{
+			file: "loading_circle.png"
+		}
+		sRGB: false
+		horizontalAlign: 0
+		verticalAlign: 1
+	}
+	x: x@44bac946-81b1-475b-bc91-b91e6166393a (propref<int>)
+	y: y@44bac946-81b1-475b-bc91-b91e6166393a (propref<int>)
+	enabled: enabled@4a6876c6-b1a1-47f1-9de8-264958751e7a (propref<bool>)
+	visible: visible@44bac946-81b1-475b-bc91-b91e6166393a (propref<bool>)
+}

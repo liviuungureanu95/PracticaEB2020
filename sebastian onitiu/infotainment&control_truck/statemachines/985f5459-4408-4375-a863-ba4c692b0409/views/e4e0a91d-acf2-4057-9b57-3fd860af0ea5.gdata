@@ -4,6 +4,28 @@ GtfView(e4e0a91d-acf2-4057-9b57-3fd860af0ea5)
 {
 	features: feature_list []
 	children: children_list [
+		GtfImage(737b46ec-7423-48fd-8812-d44410a5052f)
+		{
+			features: feature_list [
+				ScaleMode(e7f45e78-3a81-47a4-a11b-123d10df9364)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "background3"
+			visible: true
+			width: 580
+			height: 780
+			x: 0
+			y: 79
+			image: image_resource(472dcc57-b707-455e-8dc0-542dbd41ac76)
+			{
+				file: "background3.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
 		GtfContainer_template_instance(89bd24ee-7be1-435e-9256-8afb13b1efd5)
 		{
 			name: "TEMPLATE FOR VIEW ac 1"
@@ -37,6 +59,1968 @@ GtfView(e4e0a91d-acf2-4057-9b57-3fd860af0ea5)
 			{
 				file: "heat air (12).png"
 			}
+		}, 
+		GtfContainer(ff06729b-e57c-4cfb-a544-fcd091cd3c70)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfInstantiator(8b9afdc8-2248-44fe-b093-eb34e274dd2a)
+				{
+					features: feature_list [
+						LayoutPolicyFlow(0918c2d7-207f-44df-8d61-4c6f7c058938)
+						{
+							horizontalGap: 0
+							verticalGap: 10
+							layoutDirection: 0
+							horizontalChildAlign: 0
+							verticalChildAlign: 0
+						}, 
+						ViewPort(3769b81a-206b-4a69-80dd-f392624b13cb)
+						{
+							xOffset: 0
+							yOffset: 0
+						}]
+					children: children_list [
+						GtfContainer(0c1baa7d-c7e5-4ecd-9a9d-bad97b5af3bc)
+						{
+							features: feature_list [
+								LineIndex(2635e46a-a464-4ef2-9558-8b4085c6db74)
+								{
+									lineIndex: 0
+								}]
+							children: children_list [
+								GtfImage(28ed6dc6-c982-491e-8f28-28f10f9dd8d5)
+								{
+									features: feature_list [
+										ScaleMode(da97a0dd-d79d-48dd-953d-06173553d39d)
+										{
+											scaleMode: 1
+										}, 
+										TouchPressed(2e10fcc9-9591-48ea-ab6b-fe87f4164e69)
+										{
+											touchPressed: function<bool,int,int,int,int>(72ef233b-130e-411b-bcbf-d796ba6e1e3c)
+											{
+												script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+													"{" \
+													"	if(v:this->^.lineIndex ==0)" \
+													"	{v:this->^->^->^->^->ContainerTyresPressure.visible = false" \
+													"		v:this->^->^->^->^->ContainerAutopilot.visible = true" \
+													"		v:this->^->^->^->^->ContainerChair.visible = false" \
+													"	}" \
+													"	else if(v:this->^.lineIndex == 1)" \
+													"	{v:this->^->^->^->^->ContainerTyresPressure.visible = false" \
+													"		v:this->^->^->^->^->ContainerAutopilot.visible = false" \
+													"		v:this->^->^->^->^->ContainerChair.visible = true" \
+													"	}" \
+													"	if(v:this->^.lineIndex == 2)" \
+													"	{v:this->^->^->^->^->ContainerTyresPressure.visible = false" \
+													"		v:this->^->^->^->^->ContainerChair.visible = false" \
+													"		v:this->^->^->^->^->ContainerAutopilot.visible = false" \
+													"	}" \
+													"	if(v:this->^.lineIndex == 3)" \
+													"	{v:this->^->^->^->^->ContainerTyresPressure.visible = false" \
+													"		v:this->^->^->^->^->ContainerChair.visible = false" \
+													"		v:this->^->^->^->^->ContainerAutopilot.visible = false" \
+													"	}" \
+													"	if(v:this->^.lineIndex == 4)" \
+													"	{   v:this->^->^->^->^->ContainerTyresPressure.visible = true" \
+													"	    if(v:this->^->^->^->^->ContainerTyresPressure.visible == true)" \
+													"	    {" \
+													"	    " \
+													"	    	v:this->^->^->^->^->ContainerTyresPressure->\"template animation 1\".visible = true" \
+													"	    	" \
+													"	    v:this->^->^->^->^->ContainerTyresPressure->\"template animation 2\".visible = true" \
+													"	    " \
+													"	    	v:this->^->^->^->^->ContainerTyresPressure->\"template animation 3\".visible = true" \
+													"	    	" \
+													"	    v:this->^->^->^->^->ContainerTyresPressure->\"template animation 4\".visible = true" \
+													"	    }" \
+													"		v:this->^->^->^->^->ContainerChair.visible = false" \
+													"		v:this->^->^->^->^->ContainerAutopilot.visible = false" \
+													"	}" \
+													"	" \
+													"	if(v:this->^.lineIndex == 5)" \
+													"	{" \
+													"		v:this->^->^->^->^->ContainerTyresPressure.visible = false" \
+													"		v:this->^->^->^->^->ContainerChair.visible = false" \
+													"		v:this->^->^->^->^->ContainerAutopilot.visible = false" \
+													"	}" \
+													"    false" \
+													"}"
+											}
+										}, 
+										StateTouched(81741741-f5c3-4ecf-9bf3-eba627258d12)
+										{
+											touchable: true
+											touched: false
+											touchPolicy: 0
+											touchBehavior: 0
+										}]
+									children: children_list []
+									name: "Image button"
+									visible: true
+									width: width@0c1baa7d-c7e5-4ecd-9a9d-bad97b5af3bc (propref<int>)
+									height: height@0c1baa7d-c7e5-4ecd-9a9d-bad97b5af3bc (propref<int>)
+									x: -1
+									y: 37
+									image: image_resource(30bf2941-7886-43d3-86a0-9f2af48be11d)
+									{
+										file: ""
+									}
+									sRGB: false
+									horizontalAlign: 0
+									verticalAlign: 1
+									set_image_to_list: conditional_script(48dd325a-acd5-4d08-9c06-1da227420d95)
+									{
+										triggerList: trigger_list(1ccd04f0-95bb-4338-b0bb-92b4b74d16ee)
+										{
+											script: "v:this->^->^->^.input_list" \
+												"v:this->^.lineIndex"
+										}
+										onTrigger: function<bool,bool>(4787c0c8-db3f-4ac2-b34d-f3628ce37e38)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	v:this.image = v:this->^->^->^.input_list[v:this->^.lineIndex]" \
+												"	false" \
+												"}"
+										}
+									}
+								}]
+							name: "Container button"
+							visible: true
+							width: width@ff06729b-e57c-4cfb-a544-fcd091cd3c70 (propref<int>)
+							height: listButton_height@8b9afdc8-2248-44fe-b093-eb34e274dd2a (propref<int>)
+							x: -1
+							y: 13
+						}]
+					name: "Instantiator commands"
+					visible: true
+					width: width@ff06729b-e57c-4cfb-a544-fcd091cd3c70 (propref<int>)
+					height: height@ff06729b-e57c-4cfb-a544-fcd091cd3c70 (propref<int>)
+					x: 0
+					y: 0
+					numItems: int_scriptedValue(b7045e1a-361d-4a82-b694-79867e8d6e79)
+					{
+						triggerList: trigger_list(5d9082ab-c810-4608-9acb-6904e1fac384)
+						{
+							script: "v:this->^.input_list"
+						}
+						onTrigger: function<bool,bool>(f0c97205-dc75-447d-94cd-0b0af017791f)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	true" \
+								"}"
+						}
+						read: function<int>(eee03f67-e554-4055-b6f3-1e1ca8ed91d2)
+						{
+							script: "function()" \
+								"{" \
+								"" \
+								"	length v:this->^.input_list" \
+								"}"
+						}
+						write: function<bool,int>(f5640776-543b-4183-a2cf-e646682da089)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"" \
+								"	false" \
+								"}"
+						}
+					}
+					lineMapping: intlist []
+					listButton_height: 70
+					moveUpDown: conditional_script(07ac6842-f10a-446a-9c52-887cb9951211)
+					{
+						triggerList: trigger_list(2756dcaf-e01d-48a4-b107-aa6c3b77202f)
+						{
+							script: "ev:scrol_up" \
+								"ev:scroll_down" \
+								"v:this.listButton_height"
+						}
+						onTrigger: function<bool,bool>(bab8935d-089b-467a-bf9c-84d44623576d)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	match_event v:event = ev:scrol_up in" \
+								"	{" \
+								"		v:this.yOffset += v:this.listButton_height/2" \
+								"	}" \
+								"	" \
+								"	match_event v:event = ev:scroll_down in" \
+								"	{" \
+								"		v:this.yOffset -= v:this.listButton_height/2" \
+								"	}" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "Container commands"
+			visible: true
+			width: 230
+			height: 233
+			x: 5
+			y: 180
+			input_list: imagelist [
+				image_resource(9350faec-27f2-4dba-bccc-154d1d9c07de)
+				{
+					file: "autopilot.png"
+				}, 
+				image_resource(d0ddc06a-5d29-4f08-a605-38a24c7b3ce3)
+				{
+					file: "chair_control.png"
+				}, 
+				image_resource(69d81252-69b5-44ab-91a0-5c961412645c)
+				{
+					file: "bed_control.png"
+				}, 
+				image_resource(530329e1-a781-4dba-8e9d-04c88fdcf83a)
+				{
+					file: "SCHEDULE_DRIVING.png"
+				}, 
+				image_resource(ed1725d3-d131-4b7c-95b3-550313db6420)
+				{
+					file: "control_ five.png"
+				}, 
+				image_resource(95603185-7d48-4979-acc0-ad802b3b1370)
+				{
+					file: "control five.png"
+				}]
+			limitsList: conditional_script(15c43540-8f50-46b8-bba7-9be8447bc6f4)
+			{
+				triggerList: trigger_list(60d26f5f-a2a8-4c27-ae63-6f63dcffb530)
+				{
+					script: "v:this.input_list" \
+						"v:this->\"Instantiator commands\".listButton_height" \
+						"v:this->\"Instantiator commands\".yOffset"
+				}
+				onTrigger: function<bool,bool>(00aecdd5-3111-4d6d-bd5a-6af700633fdc)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	let v:maximumOffset = length v:this.input_list * v:this->\"Instantiator commands\".listButton_height * v:this->\"Instantiator commands\".yOffset in" \
+						"	{" \
+						"		if(v:this->\"Instantiator commands\".yOffset > 0)" \
+						"		{" \
+						"			v:this->\"Instantiator commands\".yOffset = 0 ;" \
+						"		}" \
+						"		" \
+						"		if(v:this->\"Instantiator commands\".yOffset < v:maximumOffset)" \
+						"		{" \
+						"			v:this->\"Instantiator commands\".yOffset = v:maximumOffset" \
+						"		}" \
+						"		" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfImage(11db1efe-98b0-4892-b7da-a4c2a49ec62b)
+		{
+			features: feature_list [
+				StateTouched(fc70d5d4-b536-485c-9977-f738cbd95106)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}, 
+				TouchShortReleased(b1158c26-b7cf-44dd-adb7-8b6810ed6d4a)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(fa6d51ff-c2f5-4cd7-9174-d4d15762372e)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonEvent();" \
+							"    false" \
+							"}"
+					}
+				}]
+			children: children_list []
+			name: "scroll-up"
+			visible: true
+			width: 50
+			height: 50
+			x: 138
+			y: 103
+			image: image_resource(098ee8ff-f210-4ae3-ab3e-b35a6756bd65)
+			{
+				file: "scroll-up.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+			buttonEvent: function<bool>(af748b0b-184c-4603-ae95-f9c1f47e371e)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:scrol_up()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfImage(27bea9bd-5444-4133-bda4-09b8dc0be781)
+		{
+			features: feature_list [
+				TouchPressed(88503013-e6eb-46e4-8ace-188cbf1d5202)
+				{
+					touchPressed: function<bool,int,int,int,int>(b469ee71-2e52-4350-a1cc-e59f1e13d797)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonEvent()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(5912415b-686e-4b0a-b486-093d67f66a3c)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "scroll-down"
+			visible: true
+			width: 50
+			height: 50
+			x: 25
+			y: 103
+			image: image_resource(430d644d-a7a0-417e-9672-05a672a7fb43)
+			{
+				file: "scroll-down.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+			buttonEvent: function<bool>(d857de63-eb4a-431f-92bb-6e593238fec3)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:scroll_down()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfRectangle(66457830-56e7-4719-9ca6-dc60df952f78)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "fine-line"
+			visible: true
+			width: 12
+			height: 346
+			x: 234
+			y: 81
+			fillColor: #B0E0E6FF
+		}, 
+		GtfContainer(1e95585f-616f-4a13-9ac4-752ef18e80a1)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(1b2a6152-7949-46be-a12c-08c1829016b2)
+				{
+					features: feature_list [
+						TouchPressed(08184c17-b608-46d8-a02d-71d7d92ba44e)
+						{
+							touchPressed: function<bool,int,int,int,int>(d9441691-f43e-4784-abb1-bc8357676154)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	f:animation_play(v:this->^->\"left seat\"->\"Animation up/down\")" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(1cd7963e-1c20-490e-8983-2ab888672fc8)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "UP"
+					visible: true
+					width: 50
+					height: 50
+					x: 5
+					y: 45
+					image: image_resource(94815e1f-367a-42c6-84cf-82eed6ebca4f)
+					{
+						file: "scroll-up.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(ab2b122c-5f6c-4a66-beeb-a500a3634013)
+				{
+					features: feature_list [
+						TouchPressed(d97eb780-ae96-4508-b229-7c5e7532f1fb)
+						{
+							touchPressed: function<bool,int,int,int,int>(cb0f66db-52f3-4605-93e6-31014cabffc4)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	f:animation_reverse(v:this->^->\"left seat\"->\"Animation up/down\")" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(517e1a5d-46cd-40aa-9c26-9718881d8a82)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "DOWN"
+					visible: true
+					width: 50
+					height: 50
+					x: 5
+					y: 97
+					image: image_resource(30c28c84-291c-42fc-b01b-f6cf9b1d6c23)
+					{
+						file: "scroll-down.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(e6f0c466-8271-4339-be27-b56abc0529bf)
+				{
+					features: feature_list [
+						ScaleMode(0aeafad1-be78-47b2-893c-3db857cfdef1)
+						{
+							scaleMode: 1
+						}]
+					children: children_list [
+						GtfParallelAnimation(28d94633-e0f2-49d9-ab88-54197c6a2865)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(02a4c1b3-7f38-4c34-b7ca-5b7c6638492f)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve 1"
+									enabled: true
+									delay: 0
+									duration: 1200
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 240
+									end: 200
+									target: y@e6f0c466-8271-4339-be27-b56abc0529bf (propref<int>)
+								}]
+							name: "Animation up/down"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(e30451f7-a2bf-495f-a180-d292080bf541)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(08726d2b-6f22-4091-a9c6-289b90328f68)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(06669327-803f-4323-bc0d-c3a79361ae78)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}, 
+						GtfParallelAnimation(b3efc1f8-88f4-4c64-a4dd-fabaad3decf4)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(044f9092-b0f3-4f8b-87af-befbd725599e)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve 2"
+									enabled: true
+									delay: 0
+									duration: 1200
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 22
+									end: -10
+									target: x@e6f0c466-8271-4339-be27-b56abc0529bf (propref<int>)
+								}]
+							name: "Animation back"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(8a6a0b27-d086-436d-a3cc-41818cd2dd65)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(25009639-b804-48f9-9103-669a5e1d0737)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(e36de172-c3de-4a46-a29a-e094e4c3a0bd)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}, 
+						GtfParallelAnimation(c272c57b-dada-4a72-a4bb-222acbec8c07)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(2b1d3d1e-025a-4a60-9c90-d20a9d50cb98)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve 3"
+									enabled: true
+									delay: 0
+									duration: 1250
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 22
+									end: 50
+									target: x@e6f0c466-8271-4339-be27-b56abc0529bf (propref<int>)
+								}]
+							name: "Animation front"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(1b37104f-44cb-456b-bfba-04859a8648d6)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(51cec844-b14e-469e-b556-5769843c044a)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(051de5ff-170c-4c77-b7dc-704f0602c5ee)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}]
+					name: "left seat"
+					visible: true
+					width: 121
+					height: 189
+					x: 22
+					y: 240
+					image: image_resource(8ddd59de-fb49-4b4b-bf2f-9ef7cdc5c0ce)
+					{
+						file: "seat driver (1) - Copie.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(f8af386b-5c9d-4091-ae4a-e425438b7e68)
+				{
+					features: feature_list [
+						ScaleMode(ba7f9d1f-0e04-49cf-80aa-3f49986c70a3)
+						{
+							scaleMode: 1
+						}, 
+						TouchPressed(b986a526-22a1-4123-a963-4a793a2b07e3)
+						{
+							touchPressed: function<bool,int,int,int,int>(21e77a5f-857c-47f3-b74d-5ffb3a99de53)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	f:animation_play(v:this->^->\"left seat\"->\"Animation front\")" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(426f12d6-75d7-4ec3-9883-51e810497c62)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "FRONT"
+					visible: true
+					width: 53
+					height: 52
+					x: 92
+					y: 91
+					image: image_resource(1843bbcb-8012-4205-bb95-2a2b2d7374bc)
+					{
+						file: "right.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(114146ba-f6a1-46ab-94b9-9c48165e2982)
+				{
+					features: feature_list [
+						ScaleMode(83df9f33-a1e2-4a96-a130-d682db6e6712)
+						{
+							scaleMode: 1
+						}, 
+						TouchPressed(8b09251b-eab7-4d2e-9b93-768209a9de38)
+						{
+							touchPressed: function<bool,int,int,int,int>(11d18b10-84ea-4703-945e-c6d3f1a8c60e)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	f:animation_play(v:this->^->\"left seat\"->\"Animation back\")" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(6a32dc2a-18d6-4eea-bf84-29b6c6195576)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "BACK"
+					visible: true
+					width: 56
+					height: 53
+					x: 68
+					y: 43
+					image: image_resource(38ddf37e-4d08-4c93-97d7-8eacfea872cf)
+					{
+						file: "left.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(9992eae2-cb5a-42da-99c5-779405177143)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 1"
+					visible: true
+					width: 57
+					height: 52
+					x: 91
+					y: 5
+					text: "BACK"
+					textColor: #000000FF
+					font: font_resource(459946cd-96ca-44bb-9e69-a44dfe74a565)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(2ac04bb7-c209-42a0-9f7b-59b6dc1f1fbe)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 2"
+					visible: true
+					width: 70
+					height: 36
+					x: 83
+					y: 142
+					text: "FRONT"
+					textColor: #000000FF
+					font: font_resource(fbc04f76-50f2-4439-9240-267de117a909)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(6a40f5d6-8cff-4ea4-b80d-129207b8601c)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 3"
+					visible: true
+					width: 33
+					height: 37
+					x: 17
+					y: 11
+					text: "UP"
+					textColor: #000000FF
+					font: font_resource(a001c1c6-c109-42cc-8888-6fd25d18e1dc)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(236d4751-5162-4e3c-8b77-06b87e5d200f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 4"
+					visible: true
+					width: 71
+					height: 41
+					x: -3
+					y: 141
+					text: "DOWN"
+					textColor: #000000FF
+					font: font_resource(1b979cb8-64b6-4a39-95fe-778e1f811480)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfImage(0f7da5f4-ce02-4834-9542-061697839a6e)
+				{
+					features: feature_list [
+						ScaleMode(6ef68ecf-d5e8-4a8d-bd19-458207ac2abb)
+						{
+							scaleMode: 1
+						}]
+					children: children_list [
+						GtfParallelAnimation(46df530a-4816-4ca3-b31d-bcd3eb0190a4)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(14ec7351-456a-4506-b23c-e2cb23b5f974)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve 1"
+									enabled: true
+									delay: 0
+									duration: 1200
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 240
+									end: 200
+									target: y@0f7da5f4-ce02-4834-9542-061697839a6e (propref<int>)
+								}]
+							name: "Animation up/down"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(ea2e8b36-7a27-40d9-8945-3be260bc6bc5)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(eba4eff1-a68b-401d-ac58-6277078b0bfa)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(eb851374-d3ea-4ac8-bbd6-17b807496c17)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}, 
+						GtfParallelAnimation(298a0ff8-19c0-49d0-aaee-5c5ceb57d5f3)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(66eabd6d-e590-45a0-8aff-7463b2baa1d0)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve 2"
+									enabled: true
+									delay: 0
+									duration: 1200
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 179
+									end: 150
+									target: x@0f7da5f4-ce02-4834-9542-061697839a6e (propref<int>)
+								}]
+							name: "Animation back"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(734a5eaf-5aae-4fe6-a99c-860cb76abcb0)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(af3b1d19-e5cd-4f68-b300-e6b1ef3a2dff)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(33d3de0f-b3eb-4715-823c-e5daf6ca3047)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}, 
+						GtfParallelAnimation(7cc34867-e7b9-4af3-8e53-8c8339e0ee29)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(04b2792c-7583-4e16-a2b1-9d8e22cc8d8e)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve 3"
+									enabled: true
+									delay: 0
+									duration: 1250
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 179
+									end: 205
+									target: x@0f7da5f4-ce02-4834-9542-061697839a6e (propref<int>)
+								}]
+							name: "Animation front"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(3ca25275-9010-4967-a179-d4ba83be3d1a)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(3f294aca-c131-4c05-8919-e20d6e00e085)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(afb85bdd-3044-4d74-9d4f-5bb80f53ebf3)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}]
+					name: "right seat"
+					visible: true
+					width: 121
+					height: 189
+					x: 179
+					y: 240
+					image: image_resource(d77b00e5-dd68-4386-b8fd-f9b10c7b23c8)
+					{
+						file: "seat driver (1) - Copie.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(9ff9fa92-cded-4b74-98d0-bbd545cf9d1a)
+				{
+					features: feature_list [
+						ScaleMode(1d7cd500-3a65-4bbb-a212-52d940693f1d)
+						{
+							scaleMode: 1
+						}, 
+						TouchPressed(857f71aa-9c39-4887-89ca-9dcacea5d329)
+						{
+							touchPressed: function<bool,int,int,int,int>(8d60c314-0bf8-4afb-9dfd-258b80b982b6)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	f:animation_play(v:this->^->\"right seat\"->\"Animation front\")" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(8999885b-73c1-4ba7-908b-47f4ccddfd3a)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "FRONT copy 1"
+					visible: true
+					width: 53
+					height: 52
+					x: 264
+					y: 95
+					image: image_resource(a8870e71-27a8-45ad-a295-0ae0b2313133)
+					{
+						file: "right.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(57f8f510-967c-48a0-b1d8-a05f19c8ac25)
+				{
+					features: feature_list [
+						ScaleMode(b378f9d4-cc34-4acd-b5f9-05df8659ae4c)
+						{
+							scaleMode: 1
+						}, 
+						TouchPressed(559005a6-a96c-4208-ae69-9f9215b5f179)
+						{
+							touchPressed: function<bool,int,int,int,int>(09f781da-68c3-4e52-96ae-78dcc646e71f)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	f:animation_play(v:this->^->\"right seat\"->\"Animation back\")" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(8e04b397-381e-4c57-8b93-cd11effddc18)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "BACK copy 1"
+					visible: true
+					width: 56
+					height: 53
+					x: 243
+					y: 44
+					image: image_resource(12576534-42cd-40de-9684-f419db9e6f60)
+					{
+						file: "left.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(349ca496-f20f-4315-8859-7eade0c407ba)
+				{
+					features: feature_list [
+						TouchPressed(849d725e-387c-4178-9c88-eec9631ccad9)
+						{
+							touchPressed: function<bool,int,int,int,int>(631a48b7-50c4-4067-a136-52ef20f4729a)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	f:animation_play(v:this->^->\"right seat\"->\"Animation up/down\")" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(31f892a9-62ff-4203-92ef-debeee9e829b)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "UP copy 1"
+					visible: true
+					width: 50
+					height: 50
+					x: 181
+					y: 44
+					image: image_resource(9275781a-74d3-424a-a445-7e001aa0f950)
+					{
+						file: "scroll-up.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(165ac010-055d-41d1-af81-c9dc803c1586)
+				{
+					features: feature_list [
+						TouchPressed(280ea6ce-3da4-4ad4-8298-d0e250c114c5)
+						{
+							touchPressed: function<bool,int,int,int,int>(cb0ae90d-6385-451f-99d0-9f7de98584a9)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	f:animation_reverse(v:this->^->\"right seat\"->\"Animation up/down\")" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(3725eea9-51e1-4b97-8b84-58a22a19c0c1)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "DOWN copy 1"
+					visible: true
+					width: 50
+					height: 50
+					x: 181
+					y: 101
+					image: image_resource(77a5c9cf-f848-43b5-a9f1-a72f7bff8ac2)
+					{
+						file: "scroll-down.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(e5620234-16cb-4569-8727-8c96fed4eb35)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 3 copy 1"
+					visible: true
+					width: 33
+					height: 37
+					x: 193
+					y: 11
+					text: "UP"
+					textColor: #000000FF
+					font: font_resource(9a80fb69-699b-4c1f-94a2-07fc380544dc)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(e891bc86-f89b-4649-ae2e-c27d19f9d6fa)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 1 copy 1"
+					visible: true
+					width: 57
+					height: 52
+					x: 265
+					y: 5
+					text: "BACK"
+					textColor: #000000FF
+					font: font_resource(6c0721d9-57ad-4f41-80cf-c5ad1b996982)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(dcf16a9a-9750-4640-9721-106b922388fb)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 2 copy 1"
+					visible: true
+					width: 70
+					height: 36
+					x: 253
+					y: 143
+					text: "FRONT"
+					textColor: #000000FF
+					font: font_resource(8b42234b-3ec9-430a-9909-b72352884ff4)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(ae35ba3c-08bd-4378-b6be-d218acb439a6)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 4 copy 1"
+					visible: true
+					width: 71
+					height: 41
+					x: 177
+					y: 141
+					text: "DOWN"
+					textColor: #000000FF
+					font: font_resource(7a65a97c-fecd-46a6-b626-2fb8056a037b)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfRectangle(4ece5225-6a6a-45b2-9c20-0c1d29dd5279)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "line-separator"
+					visible: true
+					width: 19
+					height: 165
+					x: 157
+					y: 11
+					fillColor: #A9A9A9FF
+				}]
+			name: "ContainerChair"
+			visible: false
+			width: 320
+			height: 523
+			x: 252
+			y: 85
+		}, 
+		GtfContainer(dae8f3a3-ad30-439d-87f0-74e98cad1075)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(dc129e64-523a-4b78-997a-29b16d7235b1)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "text with instruction"
+					visible: true
+					width: 286
+					height: 48
+					x: 20
+					y: 17
+					text: "Select the maximum speed for autodriving"
+					textColor: #000000FF
+					font: font_resource(32ebdd8b-ba35-4a7c-9e22-2568697113f9)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 20
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(d32b8474-a3b3-46ff-8b22-10f4ade8fdd0)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "text max-speed"
+					visible: true
+					width: 116
+					height: 65
+					x: 110
+					y: 84
+					text: "0 km/h"
+					textColor: #000000FF
+					font: font_resource(0593bd84-d286-429d-9ac8-888895e74d8f)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 35
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfImage(db9f1322-64f0-4a83-a7e5-6ce7ee9615ec)
+				{
+					features: feature_list [
+						ScaleMode(e6631403-7f64-40c3-8945-f10638751c7c)
+						{
+							scaleMode: 1
+						}, 
+						TouchPressed(2f325bcb-4aaf-4e6d-92ed-56421ac4656c)
+						{
+							touchPressed: function<bool,int,int,int,int>(3146d4db-c010-4b7e-a388-5b7da3281ba8)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(v:this->^->\"Rectangle Invisible for calculus\".width < 130 )" \
+									"  {" \
+									"  	v:this->^->\"Rectangle Invisible for calculus\".width += 5" \
+									"   v:this->^->\"text max-speed\".text = f:int2string(v:this->^->\"Rectangle Invisible for calculus\".width)	+ \" km/h\"" \
+									"dp:autodriving_speed = v:this->^->\"Rectangle Invisible for calculus\".width " \
+									" }" \
+									"  else" \
+									"  {" \
+									"  	v:this->^->\"Rectangle Invisible for calculus\".width= 130" \
+									"  	v:this->^->\"text max-speed\".text = f:int2string(130) +\" km/h\"" \
+									"  	dp:autodriving_speed= 130" \
+									"  }" \
+									"  false" \
+									"}"
+							}
+						}, 
+						StateTouched(46005dbe-da49-4adc-a043-127a109c6a34)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "increase"
+					visible: true
+					width: 62
+					height: 60
+					x: 239
+					y: 85
+					image: image_resource(d65745a2-86fd-43dd-ae1f-40385401e07e)
+					{
+						file: "plus.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(7b261cf8-6830-4f68-85c0-2a7d0eb7d0e4)
+				{
+					features: feature_list [
+						ScaleMode(401b0afe-c904-441c-b712-af38a7c23440)
+						{
+							scaleMode: 1
+						}, 
+						TouchPressed(adc3479f-6737-4b88-9162-b6fbc63323c9)
+						{
+							touchPressed: function<bool,int,int,int,int>(194a1f54-e9a4-4874-a6b1-1c58dff2bf2c)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(v:this->^->\"Rectangle Invisible for calculus\".width > 30 )" \
+									"  {" \
+									"  	v:this->^->\"Rectangle Invisible for calculus\".width -= 5" \
+									"   v:this->^->\"text max-speed\".text = f:int2string(v:this->^->\"Rectangle Invisible for calculus\".width) + \" km/h\"	" \
+									"  dp:autodriving_speed = v:this->^->\"Rectangle Invisible for calculus\".width" \
+									"  }" \
+									"  else" \
+									"  {" \
+									"  	v:this->^->\"Rectangle Invisible for calculus\".width= 30" \
+									"  	v:this->^->\"text max-speed\".text = f:int2string(0) + \" km/h\"" \
+									"  	dp:autodriving_speed  = 0" \
+									"  }" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(37e7f72b-6a72-45cd-bb95-2cbbe2b632b9)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "decrease"
+					visible: true
+					width: 62
+					height: 60
+					x: 34
+					y: 82
+					image: image_resource(ccf61aa0-a8d6-4929-b6e3-2f3d4c9ec7ba)
+					{
+						file: "minus.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfRectangle(8f30efd9-3961-4f9f-b799-c2b90d6abd37)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Rectangle Invisible for calculus"
+					visible: true
+					width: 30
+					height: 16
+					x: 30
+					y: 146
+					fillColor: #FFFFFF00
+				}, 
+				GtfLabel(9230c1f6-abf7-40aa-8fdf-a597f8411b17)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "text with instruction 2"
+					visible: true
+					width: 301
+					height: 51
+					x: 15
+					y: 190
+					text: "Select the speed when brakes activate automatically"
+					textColor: #000000FF
+					font: font_resource(38560011-85e1-4667-8768-0de1868d135e)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 18
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfImage(84ae9b3e-25a9-4a5f-ad51-05418946b3ea)
+				{
+					features: feature_list [
+						ScaleMode(ca48d0f0-896d-4fe2-8799-032f13940672)
+						{
+							scaleMode: 1
+						}, 
+						TouchPressed(32cc074c-adfc-4cbd-9d4e-ffbbba764256)
+						{
+							touchPressed: function<bool,int,int,int,int>(e804e751-a7d0-4ee5-ba28-18fba1daadfc)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(v:this->^->\"Rectangle Invisible for calculus copy 1\".width < 90 )" \
+									"  {" \
+									"  	v:this->^->\"Rectangle Invisible for calculus copy 1\".width += 5" \
+									"   v:this->^->\"text max-speed copy 1\".text = f:int2string(v:this->^->\"Rectangle Invisible for calculus copy 1\".width)	+ \" km/h\"" \
+									"" \
+									" }" \
+									"  else" \
+									"  {" \
+									"  	v:this->^->\"Rectangle Invisible for calculus copy 1\".width = 90" \
+									"  	v:this->^->\"text max-speed copy 1\".text = f:int2string(90) +\" km/h\"" \
+									"  " \
+									"  }" \
+									"  false" \
+									"}"
+							}
+						}, 
+						StateTouched(5be542da-9b36-4c09-8b3f-a776e3a9ef31)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "increase copy 1"
+					visible: true
+					width: 62
+					height: 60
+					x: 243
+					y: 243
+					image: image_resource(fd37f4e0-d4db-4307-942b-bf643d60035c)
+					{
+						file: "plus.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(1ffec5c8-d6de-447a-b728-56b75fd827ad)
+				{
+					features: feature_list [
+						ScaleMode(2bd091ec-e875-4833-aaff-e761ad82d04e)
+						{
+							scaleMode: 1
+						}, 
+						TouchPressed(4a7e0f7d-93b7-434b-9b52-d7d9d39b4731)
+						{
+							touchPressed: function<bool,int,int,int,int>(e670b36c-bcec-4c3b-9b4a-6e992aa9fe08)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(v:this->^->\"Rectangle Invisible for calculus copy 1\".width > 30 )" \
+									"  {" \
+									"  	v:this->^->\"Rectangle Invisible for calculus copy 1\".width -= 5" \
+									"   v:this->^->\"text max-speed copy 1\".text = f:int2string(v:this->^->\"Rectangle Invisible for calculus copy 1\".width)	+ \" km/h\"" \
+									"" \
+									" }" \
+									"  else" \
+									"  {" \
+									"  	v:this->^->\"Rectangle Invisible for calculus copy 1\".width = 30" \
+									"  	v:this->^->\"text max-speed copy 1\".text = f:int2string(0) +\" km/h\"" \
+									"  " \
+									"  " \
+									"  }" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(5ec14609-b79b-4021-8927-8ef2ebc94507)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "decrease copy 1"
+					visible: true
+					width: 62
+					height: 60
+					x: 39
+					y: 246
+					image: image_resource(ddd67788-9fea-44eb-95f5-9caec2d12b7e)
+					{
+						file: "minus.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(92ea6fe1-c435-4137-9013-12508ed273d6)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "text max-speed copy 1"
+					visible: true
+					width: 116
+					height: 65
+					x: 119
+					y: 244
+					text: "0 km/h"
+					textColor: #000000FF
+					font: font_resource(6ed58217-90ce-4b5f-b102-8829eae07e2d)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 35
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfRectangle(72e074aa-f09e-4879-af41-733a7a598a78)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Rectangle Invisible for calculus copy 1"
+					visible: true
+					width: 30
+					height: 16
+					x: 30
+					y: 146
+					fillColor: #FFFFFF00
+				}]
+			name: "ContainerAutopilot"
+			visible: false
+			width: 318
+			height: 565
+			x: 253
+			y: 88
+		}, 
+		GtfContainer(eb1caae3-5af3-475c-8e29-04c04feca136)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(ee73ddf8-4a1d-4e89-b22c-063c0a97b15b)
+				{
+					features: feature_list [
+						ScaleMode(024dc575-ae80-416b-930c-477eb7ce7c66)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "LF tyre"
+					visible: true
+					width: 100
+					height: 100
+					x: 22
+					y: 56
+					image: image_resource(d4d6c12c-5288-434d-b63f-11c2c6f5d407)
+					{
+						file: "tyre.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(86fa99bd-6fc8-41cf-8a47-eb7902730908)
+				{
+					features: feature_list [
+						ScaleMode(cd0e8413-f66d-47c3-80a0-06207c6e5ad0)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "LB tyre"
+					visible: true
+					width: 100
+					height: 100
+					x: 22
+					y: 297
+					image: image_resource(196f8467-f845-468a-8593-758adaf19772)
+					{
+						file: "tyre.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(565a4e49-d687-44f4-aeef-4e393e3c5260)
+				{
+					features: feature_list [
+						ScaleMode(66995204-074e-492b-935d-e34038d67c04)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "RF tyre"
+					visible: true
+					width: 101
+					height: 98
+					x: 22
+					y: 179
+					image: image_resource(693a3a04-83a4-4ec8-9874-fcee8f91abe4)
+					{
+						file: "tyre.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(d77f0a26-f19e-4fad-93d5-c09ceb4dd75b)
+				{
+					features: feature_list [
+						ScaleMode(93958f09-ac11-48f7-885e-6948797b18b1)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "RB tyre"
+					visible: true
+					width: 100
+					height: 100
+					x: 22
+					y: 420
+					image: image_resource(d1808347-b5b0-4aaa-b657-9b7fd984c81d)
+					{
+						file: "tyre.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel_template_instance(e044353d-ea98-4c21-9a48-7c1224d4872a)
+				{
+					name: "LF"
+					template: @1dde1211-fdf0-48ba-87ad-221cb764a873 (objectref<GtfLabel_template>)
+					children: children_list []
+					text: "Left Front Tyre"
+					x: 7
+					y: 15
+				}, 
+				GtfLabel_template_instance(1fdce155-50ab-46db-9470-97cc576718b5)
+				{
+					name: "RF"
+					template: @1dde1211-fdf0-48ba-87ad-221cb764a873 (objectref<GtfLabel_template>)
+					children: children_list []
+					text: "Right Front Tyre"
+					x: 6
+					y: 141
+				}, 
+				GtfLabel_template_instance(411cf00f-6788-42ca-b56b-03ed9e63573a)
+				{
+					name: "LB"
+					template: @1dde1211-fdf0-48ba-87ad-221cb764a873 (objectref<GtfLabel_template>)
+					children: children_list []
+					text: "Left Back Tyre"
+					x: 4
+					y: 263
+				}, 
+				GtfLabel_template_instance(cbf3c5f3-ee5e-4061-9c88-a643b398724f)
+				{
+					name: "RB"
+					template: @1dde1211-fdf0-48ba-87ad-221cb764a873 (objectref<GtfLabel_template>)
+					children: children_list []
+					text: "Right Back Tyre"
+					x: 3
+					y: 383
+				}, 
+				GtfImage_template_instance(099eb795-8822-45e6-ac4f-4a2f249f135a)
+				{
+					name: "template animation 1"
+					template: @6b84d4d8-1f0b-434f-9df0-bf236d840e31 (objectref<GtfImage_template>)
+					children: children_list []
+					x: 162
+					y: 16
+					enabled: true
+					visible: true
+					onTerminate: function<void,int,int>(6dd8afc7-1128-4f67-91d6-87c2cd7bbfcb)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							" v:animation_time = 2000" \
+							" v:this->^->\"button a\".visible = true" \
+							"}"
+					}
+				}, 
+				GtfImage(e8c5eb0e-e2c0-4819-8aaf-76a1d493a116)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(739b54a2-9f87-4e21-a551-022842cd063c)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "text1"
+							visible: true
+							width: 48
+							height: 37
+							x: 7
+							y: 12
+							text: string_scriptedValue(ac10132c-e0d4-4695-a7f4-b7586584ee54)
+							{
+								triggerList: trigger_list(fddf7c41-67c9-4f70-906d-bd5dd303fc9c)
+								{
+									script: "dp:\"pressure LF\"" \
+										""
+								}
+								onTrigger: function<bool,bool>(73022b8b-41e0-476f-92f4-006d07a2f4a8)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	" \
+										"	false" \
+										"}"
+								}
+								read: function<string>(323b5801-b9f7-47bb-924d-e05889d698d8)
+								{
+									script: "function()" \
+										"{" \
+										"	 f:int2string(dp:\"pressure LF\")" \
+										"}"
+								}
+								write: function<bool,string>(be384cbd-e617-4fd8-8351-145fdb25c783)
+								{
+									script: "function(v:arg0::string)" \
+										"{" \
+										"	" \
+										"	false" \
+										"}"
+								}
+							}
+							textColor: #000000FF
+							font: font_resource(99415f5e-413d-4306-a1e1-35e6e7dcb4fe)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "button a"
+					visible: true
+					width: 63
+					height: 61
+					x: 158
+					y: 14
+					image: image_resource(3735ff0a-9265-4329-b653-ce2c7f98e188)
+					{
+						file: "Fără titlu (1).png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage_template_instance(75c588ec-15f4-4a4f-925c-51c05628afad)
+				{
+					name: "template animation 2"
+					template: @6b84d4d8-1f0b-434f-9df0-bf236d840e31 (objectref<GtfImage_template>)
+					children: children_list []
+					x: 162
+					y: 137
+					enabled: true
+					visible: true
+					onTerminate: function<void,int,int>(d2ff8b00-4194-455a-b832-29decc782204)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+				}, 
+				GtfImage(5df68a26-aba6-46d8-a08d-3a075420ce85)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(ea66306b-6433-4eb4-9245-6bab69f7810e)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "text2"
+							visible: true
+							width: 48
+							height: 37
+							x: 8
+							y: 12
+							text: string_scriptedValue(5795299b-533f-492d-bf60-c4181d9e6bcd)
+							{
+								triggerList: trigger_list(c89a23af-8487-42ce-9c85-e2c7579c2544)
+								{
+									script: "dp:\"pressure RF\"" \
+										""
+								}
+								onTrigger: function<bool,bool>(1f043613-bf9d-491f-b3ec-561d8ded2683)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	" \
+										"	false" \
+										"}"
+								}
+								read: function<string>(b27d64c6-c184-4e46-90e6-1a591268d129)
+								{
+									script: "function()" \
+										"{" \
+										"	f:int2string(dp:\"pressure RF\")" \
+										"}"
+								}
+								write: function<bool,string>(0877ac5f-553e-4cdf-b4be-d2f2714a768a)
+								{
+									script: "function(v:arg0::string)" \
+										"{" \
+										"	" \
+										"	false" \
+										"}"
+								}
+							}
+							textColor: #000000FF
+							font: font_resource(0833f305-739c-4a2a-a797-50007e0aacff)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "button b"
+					visible: true
+					width: 63
+					height: 61
+					x: 161
+					y: 131
+					image: image_resource(4054d8ad-46f9-4769-acf6-05f062bd9789)
+					{
+						file: "Fără titlu (1).png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage_template_instance(d44f2fc0-a869-4d62-81fc-404f48b64d96)
+				{
+					name: "template animation 3"
+					template: @6b84d4d8-1f0b-434f-9df0-bf236d840e31 (objectref<GtfImage_template>)
+					children: children_list []
+					x: 162
+					y: 263
+					enabled: true
+					visible: true
+					onTerminate: function<void,int,int>(1df8ab25-6809-4ac5-91dc-50577c919287)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+				}, 
+				GtfImage(3de8b731-0cc4-4d5a-8d00-7fb1d4ea0e6d)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(7e6e926a-e5df-4dad-a9af-43409c21a59b)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "text3"
+							visible: true
+							width: 48
+							height: 37
+							x: 7
+							y: 11
+							text: string_scriptedValue(6ca8568c-efb6-469c-bebd-71984b46d0bf)
+							{
+								triggerList: trigger_list(bd8d9b16-b41a-4e35-b162-a65556053eff)
+								{
+									script: "dp:\"pressure LB\"" \
+										""
+								}
+								onTrigger: function<bool,bool>(bfc13af5-51ac-464e-8110-53d2c534af5e)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	" \
+										"	false" \
+										"}"
+								}
+								read: function<string>(80910330-74c4-4c99-bbe4-7b8e4c32546a)
+								{
+									script: "function()" \
+										"{" \
+										"	f:int2string(dp:\"pressure LB\")" \
+										"}"
+								}
+								write: function<bool,string>(b4eb96dc-6d7d-43d5-923c-29dab6fff391)
+								{
+									script: "function(v:arg0::string)" \
+										"{" \
+										"	" \
+										"	false" \
+										"}"
+								}
+							}
+							textColor: #000000FF
+							font: font_resource(2fdaae8a-fa3d-40cb-9478-3921fde2a5fd)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "button c"
+					visible: true
+					width: 63
+					height: 61
+					x: 158
+					y: 257
+					image: image_resource(8850c0dd-ec17-4b82-9e4c-03e40907fdc8)
+					{
+						file: "Fără titlu (1).png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage_template_instance(d7e92b33-bce8-49da-94e1-9bc27f2bf6c5)
+				{
+					name: "template animation 4"
+					template: @6b84d4d8-1f0b-434f-9df0-bf236d840e31 (objectref<GtfImage_template>)
+					children: children_list []
+					x: 162
+					y: 382
+					enabled: true
+					visible: true
+					onTerminate: function<void,int,int>(32205300-1eeb-4f24-a569-9e41bc147ebf)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+				}, 
+				GtfImage(e9f75fda-5791-4c23-847c-51f63bcb9bea)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(bdcf0a8a-cc9f-4847-80e1-cc3b150a0505)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "text4"
+							visible: true
+							width: 48
+							height: 37
+							x: 6
+							y: 12
+							text: string_scriptedValue(7dc1a207-085b-4ff7-b6ed-680f887045a6)
+							{
+								triggerList: trigger_list(f790dee7-6dfb-4e11-9111-e946b14b38eb)
+								{
+									script: "dp:\"pressure RB\"" \
+										""
+								}
+								onTrigger: function<bool,bool>(babc2f5a-37ce-4eb9-8135-9c903bbbece6)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<string>(93095f0b-b8a4-41fe-a113-845de4ae0cd5)
+								{
+									script: "function()" \
+										"{" \
+										"	f:int2string(dp:\"pressure RB\")" \
+										"}"
+								}
+								write: function<bool,string>(ebfe50cf-fd7e-429e-90be-8b51b04aeebb)
+								{
+									script: "function(v:arg0::string)" \
+										"{" \
+										"	" \
+										"	false" \
+										"}"
+								}
+							}
+							textColor: #000000FF
+							font: font_resource(64e9678f-59d6-48b8-813b-2d052c72cddb)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "button d"
+					visible: true
+					width: 63
+					height: 61
+					x: 161
+					y: 378
+					image: image_resource(e68a9b76-004d-4d1a-9dda-3be812354787)
+					{
+						file: "Fără titlu (1).png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "ContainerTyresPressure"
+			visible: false
+			width: 318
+			height: 567
+			x: 250
+			y: 86
 		}]
 	name: "View TRUCK CONTROL"
 	visible: true
