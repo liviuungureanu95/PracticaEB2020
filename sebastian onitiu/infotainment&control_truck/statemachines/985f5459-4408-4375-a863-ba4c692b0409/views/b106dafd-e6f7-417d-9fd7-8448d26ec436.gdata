@@ -1,0 +1,648 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(b106dafd-e6f7-417d-9fd7-8448d26ec436)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(4fef62c2-3fec-45b1-a1c6-12cb72efef62)
+		{
+			features: feature_list [
+				ScaleMode(29661944-ac9e-403f-a0cd-43c08562d4f1)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "background road"
+			visible: true
+			width: 580
+			height: 785
+			x: -3
+			y: -1
+			image: image_resource(6589830d-7210-4a6b-9edb-fcda7e86a2bf)
+			{
+				file: "road.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(65b52bf1-31ff-4c41-95b4-7e9d600da455)
+		{
+			features: feature_list [
+				ScaleMode(6c8cacde-1f5e-46cc-bff8-4c64c6aef4fc)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "truck"
+			visible: true
+			width: 528
+			height: 360
+			x: 21
+			y: 172
+			image: image_resource(c75ebc76-edb4-44b4-ab57-169b2cf9482c)
+			{
+				file: "truck.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfContainer_template_instance(237278fa-d496-4871-b335-011711d90eb1)
+		{
+			name: "template top bar 1"
+			template: @ae4424b5-7a37-4428-b750-c992d88a6c3e (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfImage(8fd2232e-774b-4e4b-bf7f-ddf9eaf6486e)
+				{
+					features: feature_list [
+						ScaleMode(807959c0-6f3d-412f-9916-dca4de9fcef4)
+						{
+							scaleMode: 1
+						}, 
+						TouchShortReleased(d8055784-5c82-4400-acdd-57aa9043591e)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(4dedf251-799e-4e91-b44e-044ad466822f)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(v:this.start == true){" \
+									"    	v:this.start = false;" \
+									"    	" \
+									"    }" \
+									"    else{" \
+									"    	v:this.start = true;" \
+									"    }" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(53420f3e-9855-4cf7-9f21-1f95c3dab80f)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "Image 16"
+					visible: true
+					width: 72
+					height: 65
+					x: 17
+					y: 4
+					image: image_scriptedValue(1e776639-8d5b-491c-af5a-1bdd6f8ca826)
+					{
+						triggerList: trigger_list(034fc4b9-e7df-4a1d-a3ad-c5eeeb341286)
+						{
+							script: "v:this.start" \
+								"dp:off" \
+								"dp:on" \
+								""
+						}
+						onTrigger: function<bool,bool>(f26435c2-d321-4978-95e9-7d7591de7874)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<image>(3908cad9-2c8e-463b-91f4-8db49f7725a0)
+						{
+							script: "function()" \
+								"{" \
+								"	if(v:this.start==false){" \
+								"		dp:off" \
+								"	}" \
+								"	else{" \
+								"		dp:on" \
+								"	}" \
+								"" \
+								"}"
+						}
+						write: function<bool,image>(884692cb-31ba-4f88-afb5-f85d788da58c)
+						{
+							script: "function(v:arg0::image)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+					start: true
+					"text engine on": conditional_script(37c227b0-bf01-4dad-a22f-4533d0865b59)
+					{
+						triggerList: trigger_list(281b3469-d292-440c-a2d7-a50138d7ab1e)
+						{
+							script: "v:this.start" \
+								""
+						}
+						onTrigger: function<bool,bool>(fcefdfce-f626-459e-96a2-f178dad5d02d)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(v:this.start == false)" \
+								"	{" \
+								"		 v:this->^->^->\"template top bar 1\".text = \"Your engine's truck is on\" ;" \
+								"	" \
+								"	}" \
+								"	false" \
+								"}"
+						}
+					}
+					"text engine off": conditional_script(30b47358-7d94-4029-b105-ff5d6030b48c)
+					{
+						triggerList: trigger_list(0305f17b-f76c-42aa-b55d-11a69e9793a6)
+						{
+							script: "v:this.start" \
+								""
+						}
+						onTrigger: function<bool,bool>(0662fe02-38d4-4a07-b115-97f75afbdb17)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	 if(v:this.start == true)" \
+								"	    { v:this->^->^->\"template top bar 1\".text = \"Your engine's truck is off\"; }" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			text: "Your engine's truck is off"
+			"image 2": image_resource(f475f37e-99d0-4e51-8c0e-31e681104259)
+			{
+				file: "BAR.png"
+			}
+			textColor: textColor@ae4424b5-7a37-4428-b750-c992d88a6c3e (propref<color>)
+			x: x@ae4424b5-7a37-4428-b750-c992d88a6c3e (propref<int>)
+			y: y@ae4424b5-7a37-4428-b750-c992d88a6c3e (propref<int>)
+			image: image_resource(ac764607-7006-4726-94df-00b8b2a690f5)
+			{
+				file: ""
+			}
+		}, 
+		GtfImage(9dc3cff5-e425-47b2-900d-87b67542d706)
+		{
+			features: feature_list [
+				StateTouched(f01156fc-3f53-493f-af27-607dbbda0d5f)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}, 
+				TouchPressed(9aea48d5-ecce-4dd3-9dfa-7506cb057765)
+				{
+					touchPressed: function<bool,int,int,int,int>(382a69e7-0567-4a48-929a-6aca9d711156)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goToAir()" \
+							"    false" \
+							"}"
+					}
+				}]
+			children: children_list []
+			name: "air button"
+			visible: true
+			width: 218
+			height: 60
+			x: 25
+			y: 532
+			image: image_resource(73e90962-7267-438c-80f9-206a9502c399)
+			{
+				file: "heat air (12).png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(c3b92a13-213c-4ea3-8da6-849807556a87)
+		{
+			features: feature_list [
+				TouchPressed(cf6d90db-0a17-4930-8dad-dbd4fc538d9e)
+				{
+					touchPressed: function<bool,int,int,int,int>(e9da58e9-9120-48db-9400-ccdb77cd5f18)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							" if(v:this.ON == true){" \
+							"    	v:this.ON = false;" \
+							"    	" \
+							"    }" \
+							"    else{" \
+							"    	v:this.ON = true;" \
+							"    	" \
+							"    }" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(810e8d21-4a65-4736-868e-8ce8ddf8601d)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "locking doors"
+			visible: true
+			width: 163
+			height: 100
+			x: 55
+			y: 678
+			image: image_scriptedValue(7afc094f-7426-4ea7-bace-d9a741d98064)
+			{
+				triggerList: trigger_list(ea63ea64-a621-44b4-a1ec-0a1b977efc89)
+				{
+					script: "v:this.ON" \
+						"dp:locked" \
+						"dp:unlocked" \
+						""
+				}
+				onTrigger: function<bool,bool>(09252a6c-6b79-42ce-afbc-360e6240be88)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<image>(cc831c6f-49f7-4e74-bb4e-3d075ac77f47)
+				{
+					script: "function()" \
+						"{" \
+						"	if(v:this.ON == true)" \
+						"	{" \
+						"		 dp:locked" \
+						"	}" \
+						"	else" \
+						"	{" \
+						"		 dp:unlocked" \
+						"	}" \
+						"" \
+						"}"
+				}
+				write: function<bool,image>(b13d59f2-f9c1-434d-b7df-e1f64299c453)
+				{
+					script: "function(v:arg0::image)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+			ON: true
+		}, 
+		GtfImage(0e0ebfb1-9fbb-4621-9531-20f7d0b80bec)
+		{
+			features: feature_list [
+				ScaleMode(b20a8c0f-1379-46eb-ae87-0cfc553081ae)
+				{
+					scaleMode: 1
+				}, 
+				StateTouched(1021a872-542c-42ac-8d5a-b77efa5f968b)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}, 
+				TouchPressed(40dc0071-cae1-4a62-bb03-cc623a6ed740)
+				{
+					touchPressed: function<bool,int,int,int,int>(4d87746e-b41a-4cb1-8a68-271890bcae33)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goToTruckControls()" \
+							"    false" \
+							"}"
+					}
+				}]
+			children: children_list []
+			name: "command_truck button"
+			visible: true
+			width: 229
+			height: 97
+			x: 309
+			y: 538
+			image: image_resource(a4e871ec-0945-4966-acbf-c8b398d9ccda)
+			{
+				file: "truck commands.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(84f5e987-fa48-4371-bd38-6e1adde9e8f4)
+		{
+			features: feature_list [
+				TouchPressed(2398e87a-b58d-47c6-becc-db1b10126c80)
+				{
+					touchPressed: function<bool,int,int,int,int>(a3573d16-bfbf-4732-b91e-920994c7515b)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goToLights()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(2befb5fc-0cca-40a1-8fb7-e0e801281709)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "door&lights button"
+			visible: true
+			width: 228
+			height: 56
+			x: 46
+			y: 609
+			image: image_resource(1bacd53d-71b5-426d-a7c3-039ab2cdd6b3)
+			{
+				file: "light_door (1).png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(e18f7138-c3e6-4e7d-a11d-642e61d22179)
+		{
+			features: feature_list [
+				TouchShortReleased(c52d2bcb-116b-4023-b369-4acd7e5c7643)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(2d2b82a3-ea18-4239-be44-98a899a9dab3)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(5ac185f2-0b87-4d84-8612-7f50315b0339)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "start/stop button"
+			visible: false
+			width: 63
+			height: 61
+			x: 27
+			y: 11
+			image: image_resource(e81f2ea9-c4b9-41f7-8530-9d404b7fa1ef)
+			{
+				file: "Fără titlu (1).png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(03b11564-2c0a-4297-a042-20eb4493a572)
+		{
+			features: feature_list [
+				ScaleMode(288a601a-1732-43f7-baa2-b1d90fa079fb)
+				{
+					scaleMode: 1
+				}, 
+				TouchPressed(5620d4b4-faa9-4458-a0b9-64c1f7a7d4cd)
+				{
+					touchPressed: function<bool,int,int,int,int>(34cb8583-a3e1-4844-aff2-04b3039aba33)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goToMedia()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(a8b58f40-082f-4764-9ca7-dc7f174e7bb2)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "media button"
+			visible: true
+			width: 229
+			height: 52
+			x: 331
+			y: 630
+			image: image_resource(d24c2540-3391-475f-98c0-a18c869a36bd)
+			{
+				file: "media6.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(d3a64dcc-0d41-4918-b215-b79bf022b8ae)
+		{
+			features: feature_list [
+				TouchShortReleased(576e9219-4ce9-4f49-a476-4e31de2919b0)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(002fbbca-d239-48a0-abec-3e402b89a8b7)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    if(v:this.\"brake on\" == true){" \
+							"    	v:this.\"brake on\" = false;" \
+							"    	v:this->\"text brake\".text = \"HandBrake on\"" \
+							"    	v:this.colorationColor = v:this.color" \
+							"    }" \
+							"    else{" \
+							"    	v:this.\"brake on\" = true;" \
+							"    	v:this->\"text brake\".text = \"HandBrake off\"" \
+							"    	v:this.colorationColor = v:this.\"color 2\"" \
+							"    }" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(f08b8cce-a58d-4d73-8ac4-074c3e73d709)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}, 
+				Coloration(536d4b4e-a751-4ce7-b42e-2a51be72561d)
+				{
+					colorationEnabled: true
+					colorationColor: #00FF00FF
+				}]
+			children: children_list [
+				GtfLabel(38d92325-1ce1-4611-a80e-edb2ede78e7d)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "text brake"
+					visible: true
+					width: 155
+					height: 37
+					x: 4
+					y: 49
+					text: "HandBrake Off"
+					textColor: #FFFFFFFF
+					font: font_resource(b49040e2-b115-4ad9-92ee-61360c569da0)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "handbrake"
+			visible: true
+			width: 154
+			height: 80
+			x: 368
+			y: 692
+			image: image_scriptedValue(7e4d81d9-b0c5-4a04-8826-2c519855f3f0)
+			{
+				triggerList: trigger_list(dadf2206-e8d6-489d-aac1-c9e15433a7d1)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(d82cf47e-e5e4-45fe-b5ee-06c0505e81f7)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<image>(6652449f-23f0-4491-b5ce-1f48596a7f9d)
+				{
+					script: "function()" \
+						"{" \
+						"	if(v:this.\"brake on\"==false){" \
+						"		dp:\"brake on\"" \
+						"	}" \
+						"	else{" \
+						"		dp:\"brake off\"" \
+						"	}" \
+						"" \
+						"}"
+				}
+				write: function<bool,image>(7fac1c8c-7e74-442a-9183-1f43e7c60602)
+				{
+					script: "function(v:arg0::image)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+			"brake on": true
+			color: #FF0000FF
+			"color 2": #00FF00FF
+		}, 
+		GtfLabel(18b913ab-af53-4bc5-88e0-7890f0ffd33a)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "air control"
+			visible: true
+			width: 146
+			height: 43
+			x: 87
+			y: 544
+			text: "AIR CONTROL"
+			textColor: #000000FF
+			font: font_resource(bd2606f6-a2ab-4c55-9bae-305220294a83)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(92cc7871-9891-4069-b4c0-e70e72e9b914)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "lights&doors"
+			visible: true
+			width: 169
+			height: 36
+			x: 97
+			y: 620
+			text: "LIGHTS & DOORS"
+			textColor: #000000FF
+			font: font_resource(55dad0e5-7cf1-41e8-af35-545d174cf6c5)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 28
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(deb0970f-c3e4-43ec-adfa-c4b1c6fbddc7)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "TRUCK'S COMMANDS"
+			visible: true
+			width: 172
+			height: 39
+			x: 366
+			y: 561
+			text: "TRUCK'S COMMANDS"
+			textColor: #000000FF
+			font: font_resource(61f17c12-c6c8-4ae2-9d1e-362151addefa)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 24
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(d29f5a2b-056c-47cf-bd4b-69af9ee670a0)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "MEDIA"
+			visible: true
+			width: 74
+			height: 33
+			x: 392
+			y: 644
+			text: "MEDIA"
+			textColor: #000000FF
+			font: font_resource(7381649b-045f-4a85-ae39-c2a97131d583)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}]
+	name: "menu"
+	visible: true
+	width: 580
+	height: 780
+	x: 2
+	y: 1
+}

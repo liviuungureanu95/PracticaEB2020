@@ -1,0 +1,242 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(89989a94-3ad3-464c-9d16-33eae9b4dbcb)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(a5eb6754-fdcd-42e2-8a8b-22466b25ddbd)
+		{
+			name: "TEMPLATE FOR VIEW ac 1"
+			template: @dce1fc75-951c-461b-91d3-24b5a5f79e77 (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfImage(1327edf6-e709-4f66-9134-266346ab302d)
+				{
+					features: feature_list [
+						ScaleMode(bb64ea3b-dcaf-4987-ae77-74e79adb0859)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "image chairs"
+					visible: true
+					width: 334
+					height: 299
+					x: 125
+					y: 229
+					image: image_resource(bf7753d3-2796-41cc-a89d-912efef89c8a)
+					{
+						file: "seat driver (1).png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfRectangle(9b6ac938-fe2a-4731-9d6f-2b70ec396c73)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "BorderBehindHeat"
+					visible: true
+					width: 200
+					height: 20
+					x: 186
+					y: 559
+					fillColor: #A9A9A9FF
+				}, 
+				GtfRectangle(61a97caf-6a38-4761-8d48-33b5c71a6193)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "BarcontrolHeat"
+					visible: true
+					width: 0
+					height: 20
+					x: 186
+					y: 559
+					fillColor: #00FF7FFF
+				}, 
+				GtfImage_template_instance(6e76d2c7-601b-4690-825e-a7813820a1b1)
+				{
+					name: "left plus heat"
+					template: @f1cfb5db-aa91-48d1-aac8-cc492abb5ad0 (objectref<GtfImage_template>)
+					children: children_list []
+					x: 467
+					y: 531
+					touchPressed: function<bool,int,int,int,int>(b5ea60e2-c318-4d4b-af43-63d865911224)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"" \
+							"	if(v:this->^->BarcontrolHeat.width < 200)" \
+							"	{" \
+							"		v:this->^->BarcontrolHeat.width = v:this->^->BarcontrolHeat.width + 20" \
+							"		v:this->^->\"temperature left seat\".text = \"Left seat temperature \" + f:int2string(v:this->^->BarcontrolHeat.width/8)" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"		v:this->^->BarcontrolHeat.width = 200" \
+							"	}" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfImage_template_instance(c1799279-914c-4e58-a52b-2ecd830943a9)
+				{
+					name: "left minus heat"
+					template: @d3d810ba-12d3-450c-92c3-7cfdc13fa329 (objectref<GtfImage_template>)
+					children: children_list []
+					x: 23
+					y: 532
+					touchPressed: function<bool,int,int,int,int>(289f0406-4ae4-4c03-8956-5a6a5aadca5c)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(v:this->^->BarcontrolHeat.width > 0)" \
+							"	{" \
+							"		v:this->^->BarcontrolHeat.width = v:this->^->BarcontrolHeat.width -20" \
+							"		v:this->^->\"temperature left seat\".text = \"Left seat temperature \" + f:int2string(v:this->^->BarcontrolHeat.width/8)" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"		v:this->^->BarcontrolHeat.width = 0" \
+							"	}" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfLabel(a1ad61c7-562c-4d77-a23b-be200be8ed35)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "temperature left seat"
+					visible: true
+					width: 274
+					height: 66
+					x: 152
+					y: 599
+					text: ""
+					textColor: #FFFFFFFF
+					font: font_resource(879102cc-a557-4550-98f8-795865fe4d0c)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfRectangle(fe290285-300a-416c-8db1-dd3cf9e3bf0d)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "BorderBehindHeat copy 1"
+					visible: true
+					width: 200
+					height: 20
+					x: 183
+					y: 231
+					fillColor: #A9A9A9FF
+				}, 
+				GtfRectangle(8c978f68-ff64-4d2e-8301-5661b9457a72)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "BarcontrolHeat copy 1"
+					visible: true
+					width: 0
+					height: 20
+					x: 183
+					y: 231
+					fillColor: #00FF7FFF
+				}, 
+				GtfImage_template_instance(a37352b5-8f68-47ec-9cb7-3a822b330e4a)
+				{
+					name: "right plus heat"
+					template: @f1cfb5db-aa91-48d1-aac8-cc492abb5ad0 (objectref<GtfImage_template>)
+					children: children_list []
+					x: 467
+					y: 200
+					touchPressed: function<bool,int,int,int,int>(b8f4c5a0-5689-4d59-aa59-27552f88b7bc)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"" \
+							"	if(v:this->^->BarcontrolHeat.width < 200)" \
+							"	{" \
+							"		v:this->^->\"BarcontrolHeat copy 1\".width = v:this->^->\"BarcontrolHeat copy 1\".width + 20" \
+							"		v:this->^->\"temperature right seat\".text = \"Right seat temperature \" + f:int2string(v:this->^->\"BarcontrolHeat copy 1\".width/8)" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"	v:this->^->\"BarcontrolHeat copy 1\".width = 200" \
+							"	}" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfImage_template_instance(a0298649-dfcb-401e-9251-fd3934c901c8)
+				{
+					name: "right minus heat "
+					template: @d3d810ba-12d3-450c-92c3-7cfdc13fa329 (objectref<GtfImage_template>)
+					children: children_list []
+					x: 23
+					y: 201
+					touchPressed: function<bool,int,int,int,int>(eab14c23-d429-4cc5-801a-967e46feb979)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(v:this->^->\"BarcontrolHeat copy 1\".width > 0)" \
+							"	{" \
+							"		v:this->^->\"BarcontrolHeat copy 1\".width = v:this->^->\"BarcontrolHeat copy 1\".width -20" \
+							"		v:this->^->\"temperature right seat\".text = \"Left seat temperature \" + f:int2string(v:this->^->\"BarcontrolHeat copy 1\".width/8)" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"		v:this->^->\"BarcontrolHeat copy 1\".width = 0" \
+							"	}" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfLabel(ee384434-2f4f-4cba-9979-41cd02b7a989)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "temperature right seat"
+					visible: true
+					width: 272
+					height: 38
+					x: 154
+					y: 189
+					text: "label"
+					textColor: #FFFFFFFF
+					font: font_resource(bd221e8b-1530-4eb4-a8ad-d1d7813170eb)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			touchPressed: touchPressed@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<function<bool,int,int,int,int>>)
+			"touchPressed 2": "touchPressed 2"@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<function<bool,int,int,int,int>>)
+			image: image@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<image>)
+			"image 2": "image 2"@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<image>)
+			"touchPressed 3": "touchPressed 3"@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<function<bool,int,int,int,int>>)
+			"image 3": "image 3"@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<image>)
+			"image 4": "image 4"@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<image>)
+			"touchPressed 4": "touchPressed 4"@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<function<bool,int,int,int,int>>)
+			"image 5": "image 5"@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<image>)
+			visible: visible@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<bool>)
+			text: text@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<string>)
+			"image 6": image_resource(8621cdb3-3bb1-4d67-a24e-56f1470b9a18)
+			{
+				file: "heat air (12).png"
+			}
+		}]
+	name: "View chair"
+	visible: true
+	width: 580
+	height: 780
+	x: 0
+	y: 0
+}
