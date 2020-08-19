@@ -132,8 +132,11 @@ GtfInstantiator_template(63e08f12-76f6-421a-848b-bdfb8d66e7a3)
 				{
 					script: "function()" \
 						"{" \
-						"	if(v:this.lineIndex == 0)" \
+						"	if(v:this.lineIndex == 0 && dp:PhoneMenu:phone == false)" \
+						"		fire ev:Phone_CompoundEvents:open_PhonePopUp()" \
+						"	if(v:this.lineIndex == 0 && dp:PhoneMenu:phone == true)" \
 						"		fire ev:MainMenu_Events:goTo_PhoneMenu()" \
+						"	" \
 						"	if(v:this.lineIndex == 1)" \
 						"		fire ev:MainMenu_Events:goTo_MediaMenu()" \
 						"	if(v:this.lineIndex == 2)" \

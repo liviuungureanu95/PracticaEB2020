@@ -1,0 +1,57 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(f53d4076-bda0-4f08-aef9-00c8e88a76b9)
+{
+	name: "AndroidAuto_View"
+	template: @b380d1bf-d029-45e1-aa1b-a53a19df7e62 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(58f4076b-4f52-4039-beec-a926e6c8ebb7)
+		{
+			name: "BackButton"
+			template: @66713f45-2faf-4289-b7d7-da20b83b4fd3 (objectref<GtfContainer_template>)
+			children: children_list []
+			buttonEvent: function<bool>(830cbacc-112a-48a2-abd9-da2b0205b054)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_back()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfImage_template_instance(2541588d-2b20-4236-a0ed-72747c849a6a)
+		{
+			name: "Logo"
+			template: @7fd0f026-c07c-4c25-8bb3-a0d74adb00ef (objectref<GtfImage_template>)
+			children: children_list []
+			x: 250
+			y: 100
+			image: image_resource(707a7acb-7290-46aa-b253-e5ed1255ab67)
+			{
+				file: "android_auto.png"
+			}
+		}, 
+		GtfLabel(c80fc850-c0f4-4a5d-b841-af009f6dc100)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Text"
+			visible: true
+			width: 800
+			height: 50
+			x: 0
+			y: 400
+			text: "WELCOME TO ANDROID AUTO"
+			textColor: #FFFFFFFF
+			font: font_resource(17cba754-842d-41f9-b7c0-2c594a31e191)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+	text: "Android Auto"
+	textColor: textColor@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<color>)
+	font: font@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<font>)
+}

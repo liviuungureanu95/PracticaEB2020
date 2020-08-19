@@ -21,7 +21,25 @@ GtfView_template_instance(e7c08c07-2dbe-4fdd-a186-3ae73c5e71b0)
 		}, 
 		GtfContainer(94af7fe2-04f7-4841-9b27-59253bd02a5b)
 		{
-			features: feature_list []
+			features: feature_list [
+				TouchShortReleased(9d0f0f86-84c3-4933-8850-a0fe9fec674a)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(088cae63-b86a-4596-8bdf-ae4a3f8ad0fd)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonEvent()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(aa504cc7-1277-46b7-936f-c36adebaec73)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
 			children: children_list [
 				GtfInstantiator(a70acd9c-bd43-4fe6-8f63-f9868dd47f97)
 				{
@@ -123,6 +141,14 @@ GtfView_template_instance(e7c08c07-2dbe-4fdd-a186-3ae73c5e71b0)
 			height: 250
 			x: 100
 			y: 150
+			buttonEvent: function<bool>(6fb6ff0d-9ead-4e70-baf1-cf3de34fe1dc)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:Phone_CompoundEvents:calling()" \
+					"	false" \
+					"}"
+			}
 		}]
 	text: "Favorites Contacts - Alex's Phone"
 	textColor: textColor@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<color>)

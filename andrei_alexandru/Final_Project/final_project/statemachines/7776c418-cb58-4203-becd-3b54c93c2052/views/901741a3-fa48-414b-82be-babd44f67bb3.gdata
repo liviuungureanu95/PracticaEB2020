@@ -170,6 +170,24 @@ GtfView_template_instance(901741a3-fa48-414b-82be-babd44f67bb3)
 								LineIndex(d702b48b-e96e-4374-9ef9-b281e503d186)
 								{
 									lineIndex: 0
+								}, 
+								TouchShortReleased(1a7ac44c-b4ce-4d17-ba3d-71d5a51b43c4)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(fc1f5f9d-157d-4602-9119-450be067efc9)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	v:this.buttonEvent()" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(6943e686-aa3a-45f8-8786-9020dd46fc90)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
 								}]
 							children: children_list [
 								GtfRectangle(dacb1986-3b9b-4e00-8ef1-dff92d231656)
@@ -233,6 +251,14 @@ GtfView_template_instance(901741a3-fa48-414b-82be-babd44f67bb3)
 							height: listButtonHeight@b3aba861-5976-44d3-93e7-57862186b27b (propref<int>)
 							x: 0
 							y: 0
+							buttonEvent: function<bool>(7056f83e-6640-4f61-a898-d891a1657b4e)
+							{
+								script: "function()" \
+									"{" \
+									"	fire ev:Phone_CompoundEvents:calling()" \
+									"	false" \
+									"}"
+							}
 						}]
 					name: "RecentCalls_Instantiator"
 					visible: true

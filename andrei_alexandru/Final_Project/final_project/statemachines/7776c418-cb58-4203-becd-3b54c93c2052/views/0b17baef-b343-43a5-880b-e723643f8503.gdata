@@ -53,6 +53,175 @@ GtfView_template_instance(0b17baef-b343-43a5-880b-e723643f8503)
 			}
 			horizontalAlign: 0
 			verticalAlign: 0
+		}, 
+		GtfInstantiator(f2731402-c796-41d4-83de-92687da1d63f)
+		{
+			features: feature_list [
+				LayoutPolicyFlow(85a89900-c38d-47ce-bca1-833fb4c8a2a8)
+				{
+					horizontalGap: 150
+					verticalGap: 70
+					layoutDirection: 0
+					horizontalChildAlign: 0
+					verticalChildAlign: 0
+				}]
+			children: children_list [
+				GtfRectangle(5866e487-b2d7-4b47-a395-a72a2022a484)
+				{
+					features: feature_list [
+						TouchShortReleased(4652d484-c715-4148-8db1-90b56fc616b0)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(e9a3b982-7deb-4cff-988a-429db2329c90)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this.buttonEvent()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(ca94004a-20a3-42dd-ba7c-87beccafab0c)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}, 
+						LineIndex(dd3712c2-eac8-4058-b3da-6a00a44d64e6)
+						{
+							lineIndex: 0
+						}, 
+						Border(5257911d-c1aa-4a87-be0d-38c3b18b3c3b)
+						{
+							borderThickness: 1
+							borderColor: #000000FF
+							borderStyle: 0
+						}]
+					children: children_list [
+						GtfLabel(47686d5a-4710-4eda-9a14-e66b0707636e)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text"
+							visible: true
+							width: 150
+							height: 50
+							x: -20
+							y: 100
+							text: "label"
+							textColor: #FFFFFFFF
+							font: font_resource(f7ac2827-9e72-45cb-ba97-ab99245cfe08)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 20
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}, 
+						GtfImage(b52bc1fe-8df1-4968-91a0-dd2d57c42c1b)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Logo"
+							visible: true
+							width: 100
+							height: 100
+							x: 0
+							y: 0
+							image: image_resource(c74d19d9-09a3-4730-93c5-04d56e3b150c)
+							{
+								file: ""
+							}
+							sRGB: false
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Background"
+					visible: true
+					width: 100
+					height: 100
+					x: 0
+					y: 0
+					fillColor: #FFFFFF00
+					buttonEvent: function<bool>(4a66dd1e-86f5-4f50-b2cb-59da691e1e99)
+					{
+						script: "function()" \
+							"{" \
+							"	if(v:this.lineIndex == 2)" \
+							"	fire ev:CarSettings_CompoundEvents:goTo_ChangeThemeMenu()" \
+							"	" \
+							"	if(v:this.lineIndex == 3)" \
+							"	fire ev:CarSettings_CompoundEvents:goTo_AudioSettingsMenu()	" \
+							"	" \
+							"	if(v:this.lineIndex == 4)" \
+							"	fire ev:CarSettings_CompoundEvents:goTo_LanguageMenu()	" \
+							"	" \
+							"	if(v:this.lineIndex == 5)" \
+							"	fire ev:CarSettings_CompoundEvents:goTo_AmbientLigthsMenu()	" \
+							"	" \
+							"	false" \
+							"}"
+					}
+					setText: conditional_script(179818fb-d6bb-4630-b125-59b3f02a4833)
+					{
+						triggerList: trigger_list(e464c6d9-13fc-4cca-a6ef-afd2a75481ec)
+						{
+							script: "dp:CarSettingsMenu:CarSettings_List" \
+								"v:this.lineIndex" \
+								""
+						}
+						onTrigger: function<bool,bool>(053565a4-8bd5-4bba-991d-038d35441332)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this->Text.text = dp:CarSettingsMenu:CarSettings_List[v:this.lineIndex]" \
+								"	false" \
+								"}"
+						}
+					}
+					setLogo: conditional_script(d53e503e-3228-48f2-afc8-372cf8d8e127)
+					{
+						triggerList: trigger_list(60ef783a-d9de-4594-8bfe-436a895370d3)
+						{
+							script: "dp:CarSettingsMenu:CarSettings_ImageList" \
+								"v:this.lineIndex" \
+								""
+						}
+						onTrigger: function<bool,bool>(6b92fc65-8534-4051-8aa7-16f451005697)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this->Logo.image = dp:CarSettingsMenu:CarSettings_ImageList[v:this.lineIndex]" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "CarSettings_Instantiator"
+			visible: true
+			width: 600
+			height: 300
+			x: 100
+			y: 110
+			numItems: 6
+			lineMapping: intlist []
+			calculateNumItems: conditional_script(5cd4d1d0-1e30-49fa-9428-0ccda4a47e1d)
+			{
+				triggerList: trigger_list(a1801890-4fd3-4e81-bd04-e9bc38f2e7ad)
+				{
+					script: "dp:CarSettingsMenu:CarSettings_List" \
+						""
+				}
+				onTrigger: function<bool,bool>(1ee421bb-4e63-489f-b31b-cbc9b907eec1)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	v:this.numItems = length dp:CarSettingsMenu:CarSettings_List" \
+						"	v:this.numItems = length dp:CarSettingsMenu:CarSettings_ImageList" \
+						"	false" \
+						"}"
+				}
+			}
 		}]
 	text: "Car Settings Menu"
 	textColor: textColor@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<color>)

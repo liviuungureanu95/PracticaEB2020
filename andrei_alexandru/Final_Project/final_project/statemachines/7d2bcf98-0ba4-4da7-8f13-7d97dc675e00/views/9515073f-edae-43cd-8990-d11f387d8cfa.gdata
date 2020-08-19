@@ -1,0 +1,112 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(9515073f-edae-43cd-8990-d11f387d8cfa)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(6f376237-5d93-4548-8d3c-fe18744cf457)
+		{
+			features: feature_list [
+				Border(036b503f-84d9-4190-80d0-0a4cdfdaf8e2)
+				{
+					borderThickness: 5
+					borderColor: #FF0000FF
+					borderStyle: 0
+				}]
+			children: children_list [
+				GtfLabel(5fcf0972-428a-4107-9cc3-780b81ce9c05)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text"
+					visible: true
+					width: width@6f376237-5d93-4548-8d3c-fe18744cf457 (propref<int>)
+					height: 50
+					x: 0
+					y: 120
+					text: "No USB connection found."
+					textColor: #000000FF
+					font: font_resource(42cafa82-3a6e-4892-a495-b29ad6110c98)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 25
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(392cb15a-9a48-4846-8682-f1c95660b916)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text2"
+					visible: true
+					width: width@6f376237-5d93-4548-8d3c-fe18744cf457 (propref<int>)
+					height: 50
+					x: 0
+					y: 160
+					text: "Using \"Connect\" button."
+					textColor: #3CB371FF
+					font: font_resource(c8ca8062-9fd4-4e90-b2a0-af0c991c9040)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 35
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(f99ba0f2-683f-4865-b5df-6277629d0e32)
+				{
+					name: "ConnectButton"
+					template: @60b61038-4f45-4014-b850-4e3cf3aef87b (objectref<GtfContainer_template>)
+					children: children_list []
+					touchShortReleased: function<bool,int,int,int,int>(4f6c19d5-e697-44cc-8801-db9f85570f21)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:Media_CompoundEvents:closeUSB_PopUp()" \
+							"    false" \
+							"}"
+					}
+					x: 180
+					y: 220
+					text: "CONNECT"
+					textColor: #FF0000FF
+					font: font@60b61038-4f45-4014-b850-4e3cf3aef87b (propref<font>)
+				}, 
+				GtfImage(97ae311a-e097-4ca6-a44a-17776fb04b1c)
+				{
+					features: feature_list [
+						ScaleMode(110f2b02-e380-46ad-b695-82727324d097)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "NoUSB_Logo"
+					visible: true
+					width: 52
+					height: 52
+					x: 230
+					y: 60
+					image: image_resource(21cc09de-5bb9-4424-a8fb-42a5049eebcf)
+					{
+						file: "no_usb.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Background"
+			visible: true
+			width: width@9515073f-edae-43cd-8990-d11f387d8cfa (propref<int>)
+			height: height@9515073f-edae-43cd-8990-d11f387d8cfa (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #F5F5DCFF
+		}]
+	name: "USBWarning_View"
+	visible: true
+	width: 500
+	height: 300
+	x: 150
+	y: 90
+}

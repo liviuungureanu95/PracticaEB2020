@@ -1,0 +1,112 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(8561d3f2-4059-443c-8d88-a5fd350e5ed8)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(455c3acf-b6a9-4a09-b6d1-ca46d0dfd558)
+		{
+			features: feature_list [
+				Border(8b3e75de-e757-4bb8-be87-f83f4052f799)
+				{
+					borderThickness: 5
+					borderColor: #FF0000FF
+					borderStyle: 0
+				}]
+			children: children_list [
+				GtfLabel(72fc905c-8eca-4c24-bd35-585d2a0d9374)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text"
+					visible: true
+					width: width@455c3acf-b6a9-4a09-b6d1-ca46d0dfd558 (propref<int>)
+					height: 50
+					x: 0
+					y: 120
+					text: "No AUX connection found."
+					textColor: #000000FF
+					font: font_resource(45fa9973-74d8-4908-bd8f-fc2b05e66d71)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 25
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(755d4bf6-4d27-48d1-afa8-599856d59766)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text2"
+					visible: true
+					width: width@455c3acf-b6a9-4a09-b6d1-ca46d0dfd558 (propref<int>)
+					height: 50
+					x: 0
+					y: 160
+					text: "Using \"Connect\" button."
+					textColor: #3CB371FF
+					font: font_resource(bd790578-92ed-4c20-bdd4-e98a0fed743f)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 35
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(af87c93d-c67a-4f1e-b9e0-84fc50e1e190)
+				{
+					name: "ConnectButton"
+					template: @60b61038-4f45-4014-b850-4e3cf3aef87b (objectref<GtfContainer_template>)
+					children: children_list []
+					touchShortReleased: function<bool,int,int,int,int>(137d02fc-fb52-4e3f-8ebb-e49bcfadcfae)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:Media_CompoundEvents:closeAUX_PopUp()" \
+							"    false" \
+							"}"
+					}
+					x: 180
+					y: 220
+					text: "CONNECT"
+					textColor: #FF0000FF
+					font: font@60b61038-4f45-4014-b850-4e3cf3aef87b (propref<font>)
+				}, 
+				GtfImage(ef6097f9-16ef-45d3-81d9-31141c7f6a92)
+				{
+					features: feature_list [
+						ScaleMode(4a46db30-14be-41ef-992b-143369010671)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "NoAUX_Logo"
+					visible: true
+					width: 52
+					height: 52
+					x: 230
+					y: 60
+					image: image_resource(2ba16d11-4e7b-4327-bd4f-d5f9a9cdc24e)
+					{
+						file: "no_aux.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Background"
+			visible: true
+			width: width@8561d3f2-4059-443c-8d88-a5fd350e5ed8 (propref<int>)
+			height: height@8561d3f2-4059-443c-8d88-a5fd350e5ed8 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #F5F5DCFF
+		}]
+	name: "AUXWarning_View"
+	visible: true
+	width: 500
+	height: 300
+	x: 150
+	y: 90
+}

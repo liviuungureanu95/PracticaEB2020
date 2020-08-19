@@ -155,13 +155,24 @@ GtfView_template_instance(48d3f4d1-3e42-4f79-afa0-c684bf19bcf4)
 							{
 								script: "function()" \
 									"{" \
-									"	if(v:this.lineIndex == 0)" \
+									"	if(v:this.lineIndex == 0 && dp:MediaMenu:bluetooth == false)" \
+									"		fire ev:Media_CompoundEvents:openBT_PopUp()" \
+									"	if(v:this.lineIndex == 0 && dp:MediaMenu:bluetooth == true)	" \
 									"		fire ev:Media_CompoundEvents:goTo_BT()" \
-									"	if(v:this.lineIndex == 1)" \
+									"		" \
+									"	if(v:this.lineIndex == 1 && dp:MediaMenu:usb == false)" \
+									"		fire ev:Media_CompoundEvents:openUSB_PopUp()" \
+									"	if(v:this.lineIndex == 1 && dp:MediaMenu:usb == true)	" \
 									"		fire ev:Media_CompoundEvents:goTo_USB()" \
-									"	if(v:this.lineIndex == 2)" \
+									"	" \
+									"	if(v:this.lineIndex == 2 && dp:MediaMenu:cd == false)" \
+									"		fire ev:Media_CompoundEvents:openCD_PopUp()" \
+									"	if(v:this.lineIndex == 2 && dp:MediaMenu:cd == true)	" \
 									"		fire ev:Media_CompoundEvents:goTo_CD()" \
-									"	if(v:this.lineIndex == 3)" \
+									"		" \
+									"	if(v:this.lineIndex == 3 && dp:MediaMenu:aux == false)" \
+									"		fire ev:Media_CompoundEvents:openAUX_PopUp()	" \
+									"	if(v:this.lineIndex == 3 && dp:MediaMenu:aux == true)" \
 									"		fire ev:Media_CompoundEvents:goTo_AUX()" \
 									"	false" \
 									"}"

@@ -1,0 +1,113 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(5acf50c4-4f42-4f36-93cb-08c5c88ffec6)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(f23aa3d2-8dad-465f-86dc-0de930f6daad)
+		{
+			features: feature_list [
+				Border(a0c4d607-1bac-4cd7-a9dc-d31cc5098e3c)
+				{
+					borderThickness: 5
+					borderColor: #FF0000FF
+					borderStyle: 0
+				}]
+			children: children_list [
+				GtfLabel(cafc86be-6ff2-4b27-a3a8-a3e445d5350b)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text"
+					visible: true
+					width: width@f23aa3d2-8dad-465f-86dc-0de930f6daad (propref<int>)
+					height: 50
+					x: 0
+					y: 120
+					text: "No bluetooth connection found."
+					textColor: #000000FF
+					font: font_resource(f97f1032-5cec-443a-b2f3-e10f73c9fb61)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 25
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(2aa297bd-10b3-4e6f-9866-7af859dec79c)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text2"
+					visible: true
+					width: width@f23aa3d2-8dad-465f-86dc-0de930f6daad (propref<int>)
+					height: 50
+					x: 0
+					y: 160
+					text: "Using \"Connect\" button."
+					textColor: #3CB371FF
+					font: font_resource(303e54c1-7c44-429a-a211-ec70c2a58078)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 35
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(e4e8ff0b-3918-4e6f-aca5-d2196045cebe)
+				{
+					name: "ConnectButton"
+					template: @60b61038-4f45-4014-b850-4e3cf3aef87b (objectref<GtfContainer_template>)
+					children: children_list []
+					touchShortReleased: function<bool,int,int,int,int>(fb58bbc5-5299-4489-ab69-27b4df3c525b)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	" \
+							"	fire ev:Media_CompoundEvents:closeBT_PopUp()" \
+							"    false" \
+							"}"
+					}
+					x: 180
+					y: 220
+					text: "CONNECT"
+					textColor: #FF0000FF
+					font: font@60b61038-4f45-4014-b850-4e3cf3aef87b (propref<font>)
+				}, 
+				GtfImage(ba40fec4-59b9-4400-a760-0fb0cc3032cc)
+				{
+					features: feature_list [
+						ScaleMode(36427e2d-1a9a-4c71-9307-5762e2159635)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "NoBT_Logo"
+					visible: true
+					width: 52
+					height: 52
+					x: 230
+					y: 60
+					image: image_resource(40ecae47-07a9-4c42-993c-284f93a4bcd7)
+					{
+						file: "no_bluetooth.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Background"
+			visible: true
+			width: width@5acf50c4-4f42-4f36-93cb-08c5c88ffec6 (propref<int>)
+			height: height@5acf50c4-4f42-4f36-93cb-08c5c88ffec6 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #F5F5DCFF
+		}]
+	name: "BluetoothWarning_View"
+	visible: true
+	width: 500
+	height: 300
+	x: 150
+	y: 90
+}
