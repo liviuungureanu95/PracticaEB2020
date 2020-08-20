@@ -124,10 +124,36 @@ haptic_statemachine(985f5459-4408-4375-a863-ba4c692b0409)
 			entry_action: function<void>(none)
 			exit_action: function<void>(none)
 			transitions: haptic_transitions []
-			internal_transitions: haptic_internal_transitions []
+			internal_transitions: haptic_internal_transitions [
+				haptic_internal_transition(793a5ce3-d6ce-48f5-86fa-1b90678a6649)
+				{
+					event: @16b2f242-7b62-4e82-adff-6f8e3296d1f9 (objectref<event>)
+					condition: function<bool>(none)
+					action: function<void>(3ef02908-e649-4db1-b1db-66ee5cddf0c8)
+					{
+						script: "function()" \
+							"{" \
+							"f:pushDynamicStateMachine(popup_stack:\"truck controls\" , sm:message_for_tyresPressure, 0)" \
+							"}"
+					}
+				}, 
+				haptic_internal_transition(49a223b5-0b63-4046-a3a7-3e29caa3da83)
+				{
+					event: @87ca17e2-2fbe-44ad-9461-5dcb226c7463 (objectref<event>)
+					condition: function<bool>(none)
+					action: function<void>(2f5d8f6d-b664-421b-9f0d-792f5b734ba1)
+					{
+						script: "function()" \
+							"{" \
+							"f:popDynamicStateMachine(popup_stack:\"truck controls\", sm:message_for_tyresPressure)" \
+							"}"
+					}
+				}]
 			background_color: #6C6C6CFF
 			dialog: (e4e0a91d-acf2-4057-9b57-3fd860af0ea5)
-			priority_stack: priority_stack(none)
+			priority_stack: priority_stack(e3791457-53ff-4f9a-8ec8-6a948d3fd0c7)
+			{
+			}
 		}, 
 		haptic_dialog_state(69cdc5b3-d765-4fcb-ac99-bb6af64e3e38)
 		{

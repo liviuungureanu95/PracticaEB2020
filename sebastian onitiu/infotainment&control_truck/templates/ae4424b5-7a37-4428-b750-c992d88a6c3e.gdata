@@ -76,7 +76,7 @@ GtfContainer_template(ae4424b5-7a37-4428-b750-c992d88a6c3e)
 				width: 92
 				height: 29
 				x: 439
-				y: 9
+				y: 7
 				text: string_scriptedValue(dd09f68c-c61e-4d40-8b85-12351a79b85c)
 				{
 					triggerList: trigger_list(d0b31896-8759-44ea-9e5d-0ce48086276a)
@@ -96,7 +96,7 @@ GtfContainer_template(ae4424b5-7a37-4428-b750-c992d88a6c3e)
 						script: "function()" \
 							"{" \
 							"	" \
-							"	f:int2string(f:localtime_hour(f:system_time())) + \":\" + f:int2string(f:localtime_minute(f:system_time())) + \":\" + f:int2string(f:localtime_second(f:system_time()))" \
+							"	f:format_int(\"%.2i\",f:localtime_hour(f:system_time())) + \":\" + f:format_int(\"%.2i\",f:localtime_minute(f:system_time())) + \":\" + f:format_int(\"%.2i\",f:localtime_second(f:system_time()))" \
 							"}"
 					}
 					write: function<bool,string>(8d7f501b-afeb-4330-99cd-bfa1ee86ca67)
@@ -123,10 +123,10 @@ GtfContainer_template(ae4424b5-7a37-4428-b750-c992d88a6c3e)
 				children: children_list []
 				name: "day"
 				visible: true
-				width: 110
+				width: 124
 				height: 35
 				x: 424
-				y: 36
+				y: 37
 				text: string_scriptedValue(2bdf7cca-d50c-408f-aada-633dcd4a65a5)
 				{
 					triggerList: trigger_list(20645c2e-8e64-4328-bd90-47f75bf99d4e)
@@ -145,8 +145,8 @@ GtfContainer_template(ae4424b5-7a37-4428-b750-c992d88a6c3e)
 					{
 						script: "function()" \
 							"{" \
-							"	f:int2string(f:localtime_day(f:system_time())) +" \
-							" \"-\" + f:int2string(f:localtime_month(f:system_time())) + \"-\" + f:int2string(f:localtime_year(f:system_time()))" \
+							"	f:format_int(\"%.2i\",f:localtime_day(f:system_time())) +" \
+							" \"-\" + f:format_int(\"%.2i\",f:localtime_month(f:system_time())) + \"-\" + f:int2string(f:localtime_year(f:system_time()))" \
 							"}"
 					}
 					write: function<bool,string>(ac3d6c44-122e-41e1-8448-8f3dcdd393da)

@@ -150,14 +150,16 @@ GtfImage_template(6b84d4d8-1f0b-434f-9df0-bf236d840e31)
 				{
 					triggerList: trigger_list(909dc78f-e20f-4196-9e0b-2547607862d6)
 					{
-						script: ""
+						script: "v:this.enabled" \
+							""
 					}
 					onTrigger: function<bool,bool>(1e888887-16fc-4b70-a2f1-a8c2f6b1ddd8)
 					{
 						script: "function(v:arg0::bool)" \
 							"{" \
-							"" \
-							"	f:animation_play(v:this)" \
+							"if(v:this.enabled == true)" \
+							"	{f:animation_play(v:this)" \
+							"	}" \
 							"	false" \
 							"}"
 					}

@@ -12,6 +12,14 @@ GtfContainer_template(be9dc709-5e3b-4534-889a-8cb5e7a241a6)
 				{
 					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 						"{" \
+						"	if(v:this.focused)" \
+						"	{" \
+						"		v:this->\"background air button\".borderColor = dp:color_animation2" \
+						"	}" \
+						"	else" \
+						"	{" \
+						"		v:this->\"background air button\".borderColor = dp:\"color border\"" \
+						"	}" \
 						"    false" \
 						"}"
 				}
