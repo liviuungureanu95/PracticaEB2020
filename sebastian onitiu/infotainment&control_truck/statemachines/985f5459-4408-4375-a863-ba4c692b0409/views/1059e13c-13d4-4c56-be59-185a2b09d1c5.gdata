@@ -4,11 +4,431 @@ GtfView(1059e13c-13d4-4c56-be59-185a2b09d1c5)
 {
 	features: feature_list []
 	children: children_list [
+		GtfImage(19749712-0b15-4d8d-ac3a-963e3fe4b5cd)
+		{
+			features: feature_list [
+				ScaleMode(99d92ed3-764c-4a59-96f8-61cf53073700)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "background"
+			visible: true
+			width: 583
+			height: 716
+			x: 0
+			y: 66
+			image: image_resource(0b5fa342-b43e-4667-9132-9b7727fa156d)
+			{
+				file: "background3.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
 		GtfContainer_template_instance(90aa3300-8778-4500-9a69-809df27b8b65)
 		{
 			name: "TEMPLATE FOR VIEW ac 1"
 			template: @dce1fc75-951c-461b-91d3-24b5a5f79e77 (objectref<GtfContainer_template>)
-			children: children_list []
+			children: children_list [
+				GtfImage(2b76872f-ec15-4575-aacd-7e6921caffa6)
+				{
+					features: feature_list [
+						TouchPressed(d5698d94-b078-48f0-8679-3649a5785fca)
+						{
+							touchPressed: function<bool,int,int,int,int>(5ce7c6ff-fd91-4a3c-8304-a8b642992245)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(v:this.open==true)" \
+									"	{" \
+									"		" \
+									"		v:this.open=false" \
+									"		v:this->^->^->door.visible=false" \
+									"		" \
+									"	}" \
+									"	else" \
+									"	{" \
+									"		v:this.open=true" \
+									"		v:this->^->^->door.visible=true" \
+									"	}" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(b677237d-daf4-43ad-8ba1-de2b39c53678)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "left-door-button"
+					visible: true
+					width: 100
+					height: 100
+					x: 92
+					y: 135
+					image: image_scriptedValue(f8a3da90-f4cc-4a0f-be1a-c56709852761)
+					{
+						triggerList: trigger_list(74b5576a-4860-46b0-8c61-f0e3dcd3e019)
+						{
+							script: "v:this.open" \
+								"dp:\"open-left\"" \
+								"dp:\"close-door\"" \
+								""
+						}
+						onTrigger: function<bool,bool>(910dbb0c-cb7d-45d1-b475-5bf07bcf3204)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<image>(60d9ef04-f682-444d-9cf1-78f9b30c27a4)
+						{
+							script: "function()" \
+								"{" \
+								"	if(v:this.open== true)" \
+								"	{" \
+								"		dp:\"open-left\"" \
+								"	}" \
+								"	else" \
+								"	{" \
+								"		dp:\"close-door\"" \
+								"	}" \
+								"" \
+								"}"
+						}
+						write: function<bool,image>(ab4a826a-8c20-4d4d-bc79-f709053e1e25)
+						{
+							script: "function(v:arg0::image)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+					open: @2c4f928d-704d-45b4-a717-cdc0ff22a9ff (objectref<bool>)
+				}, 
+				GtfImage(dd82691b-d97e-425c-8dcf-3ce44c507722)
+				{
+					features: feature_list [
+						TouchPressed(92bfe8e9-d9ce-4475-bd44-f624dc33c1c6)
+						{
+							touchPressed: function<bool,int,int,int,int>(4b9756ec-edb5-4bcf-b2af-1f31cd99d315)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(v:this.open==true)" \
+									"	{" \
+									"		" \
+									"		v:this.open=false" \
+									"		" \
+									"	}" \
+									"	else" \
+									"	{" \
+									"		v:this.open=true" \
+									"	}" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(51416e57-a1ea-4d5a-ae6d-bc99222319ca)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "right-door-button"
+					visible: true
+					width: 100
+					height: 100
+					x: 396
+					y: 134
+					image: image_scriptedValue(a5d3d94c-0ceb-4326-9572-f458f0b87713)
+					{
+						triggerList: trigger_list(8f334caf-5d62-4f87-b1ab-d507db490e78)
+						{
+							script: "v:this.open" \
+								"dp:\"open-right\"" \
+								"dp:\"close-door\"" \
+								""
+						}
+						onTrigger: function<bool,bool>(b90781ab-b9a5-4012-b89c-8ab7aa60f525)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<image>(3d5a4f07-bc70-4756-bed8-a1437fda1568)
+						{
+							script: "function()" \
+								"{" \
+								"	if(v:this.open== true)" \
+								"	{" \
+								"		dp:\"open-right\"" \
+								"	}" \
+								"	else" \
+								"	{" \
+								"		dp:\"close-door\"" \
+								"	}" \
+								"" \
+								"}"
+						}
+						write: function<bool,image>(a8d122c6-18a3-4f8b-b82b-5429ac07be2c)
+						{
+							script: "function(v:arg0::image)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+					open: true
+				}, 
+				GtfImage(fc4cffd2-87bb-45f0-aa17-81df00a71e1c)
+				{
+					features: feature_list [
+						ScaleMode(9e0a995e-0b7e-413b-9bc3-3c46d3879528)
+						{
+							scaleMode: 1
+						}, 
+						TouchPressed(b930bed7-4bc2-40af-b528-83e74df6b6be)
+						{
+							touchPressed: function<bool,int,int,int,int>(db5a85be-3971-41d9-8c56-cec0f7758760)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(v:this.\"light-on\"==true)" \
+									"	{" \
+									"		v:this.\"light-on\"=false" \
+									"		v:this->^->^->\"left-light\".visible=true" \
+									"		v:this->^->^->\"right-light\".visible=true" \
+									"		v:this->^->^->\"left-light\".colorationEnabled=false" \
+									"		v:this->^->^->\"right-light\".colorationEnabled=false" \
+									"	}" \
+									"	else" \
+									"	{" \
+									"		v:this.\"light-on\"=true" \
+									"		v:this->^->^->\"left-light\".visible=false" \
+									"		v:this->^->^->\"right-light\".visible=false" \
+									"	}" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(72f7ec0e-1200-4187-ad49-b8026e480f2e)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "SHORT-light-button"
+					visible: true
+					width: 100
+					height: 100
+					x: 71
+					y: 540
+					image: image_scriptedValue(5b0f8e26-1bbd-4014-9165-44bb93be520c)
+					{
+						triggerList: trigger_list(66951a78-78aa-4ca2-99f7-678dc998da2a)
+						{
+							script: "v:this.\"light-on\"" \
+								"dp:\"light-on\"" \
+								"dp:\"light-off\"" \
+								""
+						}
+						onTrigger: function<bool,bool>(c61a6482-b34a-47e5-9ebf-9bc57de6b530)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<image>(24d03319-113b-490b-b3e9-a3b20b0cb2c6)
+						{
+							script: "function()" \
+								"{" \
+								"	if(v:this.\"light-on\"==true)" \
+								"	{" \
+								"		dp:\"light-on\"" \
+								"	}" \
+								"else" \
+								"	{" \
+								"		dp:\"light-off\"" \
+								"	}" \
+								"}"
+						}
+						write: function<bool,image>(3e1263c4-6866-482e-83c7-307f55f5efa9)
+						{
+							script: "function(v:arg0::image)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+					"light-on": true
+				}, 
+				GtfImage(0a411880-3004-48f6-b963-f8945d990edf)
+				{
+					features: feature_list [
+						TouchPressed(b880d611-c0fc-4327-aa71-963365ca102c)
+						{
+							touchPressed: function<bool,int,int,int,int>(25821615-3812-46fe-a0e1-3f11fe553d8e)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(v:this.\"light-on\"==true)" \
+									"	{" \
+									"		v:this.\"light-on\"=false" \
+									"		v:this->^->^->\"left-light\".visible=true" \
+									"		v:this->^->^->\"right-light\".visible=true" \
+									"		v:this->^->^->\"left-light\".colorationEnabled=true" \
+									"		v:this->^->^->\"right-light\".colorationEnabled=true" \
+									"	}" \
+									"	else" \
+									"	{" \
+									"		v:this.\"light-on\"=true" \
+									"		v:this->^->^->\"left-light\".visible=true" \
+									"		v:this->^->^->\"right-light\".visible=true" \
+									"		v:this->^->^->\"left-light\".colorationEnabled=false" \
+									"		v:this->^->^->\"right-light\".colorationEnabled=false" \
+									"	}" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(ca739ad3-db95-4265-ae18-d75ec804d458)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}, 
+						ScaleMode(5f1f4f95-e9e3-4a12-9455-9b97d048b457)
+						{
+							scaleMode: 1
+						}, 
+						Rotation(d59044cf-86b2-41e2-a6c6-0d2c4c6d43f1)
+						{
+							rotationEnabled: true
+							rotationAngleX: 0F
+							rotationAngleY: 0F
+							rotationAngleZ: 180F
+						}]
+					children: children_list []
+					name: "FULLBEAM-light-button"
+					visible: true
+					width: 100
+					height: 100
+					x: 500
+					y: 640
+					image: image_scriptedValue(d12a5eb8-2fb0-42cd-b51b-8352b19f8bf3)
+					{
+						triggerList: trigger_list(45c55e75-1afb-4c70-8654-0be9e7d63cbe)
+						{
+							script: "v:this.\"light-on\"" \
+								"dp:\"light-on\"" \
+								"dp:\"light-off\"" \
+								""
+						}
+						onTrigger: function<bool,bool>(cf2321d1-d334-43d6-9aef-397d411b4652)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<image>(c1ecdf83-3ef5-45c9-8b27-01c19a989671)
+						{
+							script: "function()" \
+								"{" \
+								"	if(v:this.\"light-on\"==true)" \
+								"	{" \
+								"		dp:\"light-on\"" \
+								"	}" \
+								"else" \
+								"	{" \
+								"		dp:\"light-off\"" \
+								"	}" \
+								"" \
+								"}"
+						}
+						write: function<bool,image>(cf34b3af-5e57-44c3-85ec-49400683efe2)
+						{
+							script: "function(v:arg0::image)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+					"light-on": true
+				}, 
+				GtfLabel(a2ccd948-4264-432f-8342-d4e21cb7e8c6)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "text-short-light"
+					visible: true
+					width: 147
+					height: 100
+					x: 56
+					y: 482
+					text: "SHORT LIGHT"
+					textColor: #000000FF
+					font: font_resource(83491339-2cdd-4173-91cb-5111eee4fdf4)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(80f92691-019b-4602-a18a-129321881bc8)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "text-full-beam"
+					visible: true
+					width: 193
+					height: 50
+					x: 348
+					y: 505
+					text: "FULL_BEAM LIGHT"
+					textColor: #000000FF
+					font: font_resource(b4d03390-1b6c-486f-a2e7-2f6349abaad0)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
 			touchPressed: touchPressed@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<function<bool,int,int,int,int>>)
 			"touchPressed 2": "touchPressed 2"@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<function<bool,int,int,int,int>>)
 			image: image@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<image>)
@@ -33,6 +453,243 @@ GtfView(1059e13c-13d4-4c56-be59-185a2b09d1c5)
 			"image 5": "image 5"@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<image>)
 			visible: false
 			text: "LIGHTS & DOORS"
+		}, 
+		GtfSceneGraph(cf791d8f-189c-401e-89a1-26afb901e048)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfSceneGraphNode(d261f829-0b10-42b4-906c-8b29e7904179)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfSceneGraphNode(3be058ac-90df-42ee-9b99-54e02caaede1)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfSceneGraphNode(610874fc-79ab-4493-998a-b1e3575e9854)
+								{
+									features: feature_list []
+									children: children_list [
+										GtfMeshWidget(9b37aa82-b8ab-42a6-945a-8a222ad2e0fd)
+										{
+											features: feature_list []
+											children: children_list [
+												GtfMaterialWidget(54c11685-f053-46fc-b77b-81268290b107)
+												{
+													features: feature_list [
+														GtfDiffuseTextureFeature(cfcdfe84-73aa-4bfb-8eed-3e149a0bb622)
+														{
+															diffuseTexture: image_resource(1f4e0171-51c7-45a7-9115-6cd74e6cde7b)
+															{
+																file: "truck_20200821_223902\\5.png"
+															}
+															diffuseTextureAddressModeU: 0
+															diffuseTextureAddressModeV: 0
+															diffuseFilterMode: 2
+															diffuseSRGB: false
+														}, 
+														GtfSpecularTextureFeature(ce222ada-de6b-4308-ba75-d7fe6f91c263)
+														{
+															specularTexture: image_resource(37e851ff-544b-4018-aca5-cdfa10ded955)
+															{
+																file: "truck_20200821_223902\\6.png"
+															}
+															specularTextureAddressModeU: 0
+															specularTextureAddressModeV: 0
+															specularFilterMode: 2
+															specularSRGB: false
+														}]
+													children: children_list []
+													name: "Material_48"
+													ambient: #A9A9A9FF
+													diffuse: #BC8F8FFF
+													emissive: #000000FF
+													shininess: 0.55F
+													specular: #000000FF
+													opacity: 1F
+												}]
+											name: "Mesh 2"
+											visible: true
+											mesh: mesh_resource(3d596d2e-e51c-4c7d-8bd2-9c13cb3863ac)
+											{
+												file: "truck_20200821_223902\\mesh_id300.ebmesh"
+											}
+											culling: 2
+										}]
+									name: "root_Pivot"
+									visible: true
+									rotationX: 0F
+									rotationY: 45F
+									rotationZ: 0F
+									scalingX: 0.001F
+									scalingY: 0.001F
+									scalingZ: 0.001F
+									translationX: -0.05F
+									translationY: 0.041576F
+									translationZ: 0.2000107F
+								}]
+							name: "root"
+							visible: true
+							rotationX: 0F
+							rotationY: -20F
+							rotationZ: 0F
+							scalingX: 180F
+							scalingY: 180F
+							scalingZ: 180F
+							translationX: 0F
+							translationY: 0F
+							translationZ: 0F
+						}]
+					name: "RootNode"
+					visible: true
+					rotationX: 0F
+					rotationY: 0F
+					rotationZ: 0F
+					scalingX: 1F
+					scalingY: 1F
+					scalingZ: 1F
+					translationX: 1F
+					translationY: 1F
+					translationZ: 1F
+				}, 
+				GtfSceneGraphNode(a5d2b9f5-5c0d-4711-8df3-6b8ede3bc292)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfPointLight(c016dd53-d2bd-46fb-b900-1733723dd059)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Point light 1"
+							enabled: true
+							color: #87CEFAFF
+							intensity: 3F
+							attenuationConstant: 1F
+							attenuationLinear: 0F
+							attenuationQuadratic: 0F
+						}]
+					name: "Omni"
+					visible: true
+					rotationX: 0F
+					rotationY: 0F
+					rotationZ: 0F
+					scalingX: 1F
+					scalingY: 1F
+					scalingZ: 1F
+					translationX: 150F
+					translationY: 140F
+					translationZ: 120F
+				}, 
+				GtfSceneGraphNode(493a3b9e-7efe-4e3c-b065-772c49064810)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfCameraWidget(89d4ca10-4600-4b6d-be67-e0a6394ec274)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Camera 1"
+							enabled: true
+							nearPlane: 3F
+							farPlane: 3937.008F
+							fieldOfView: 27F
+							projectionType: 0
+						}]
+					name: "Camera"
+					visible: true
+					rotationX: -90F
+					rotationY: 90F
+					rotationZ: -90F
+					scalingX: 1F
+					scalingY: 1F
+					scalingZ: 1F
+					translationX: 0F
+					translationY: 0F
+					translationZ: 300F
+				}]
+			name: "Scene graph 1"
+			visible: true
+			width: 411
+			height: 379
+			x: 102
+			y: 282
+			gamma: 2.2F
+		}, 
+		GtfImage(8d6116d7-912a-4628-9dc0-421613b2bed0)
+		{
+			features: feature_list [
+				ScaleMode(1e81ceab-2499-468b-9d8f-df10db3fb56a)
+				{
+					scaleMode: 1
+				}, 
+				Coloration(61500360-1ea9-414b-962c-6f0e98697446)
+				{
+					colorationEnabled: @da0b6790-dd64-478d-bf82-aff45eaf1b60 (objectref<bool>)
+					colorationColor: #FFA500FF
+				}]
+			children: children_list []
+			name: "left-light"
+			visible: @d75ba55d-7868-4fc7-973c-5f95c6c1db7e (objectref<bool>)
+			width: 47
+			height: 23
+			x: 310
+			y: 376
+			image: image_resource(c56c52e1-d02f-4d85-a469-39fc87c49aea)
+			{
+				file: "left-light (1).png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(c9438944-bd3e-4fe2-b702-2dc323e4d19d)
+		{
+			features: feature_list [
+				ScaleMode(1c5d7ebf-ee1f-4599-8161-b4e747875c23)
+				{
+					scaleMode: 1
+				}, 
+				Coloration(e427ebe8-3e4c-44f5-bab7-48ecead56504)
+				{
+					colorationEnabled: @da0b6790-dd64-478d-bf82-aff45eaf1b60 (objectref<bool>)
+					colorationColor: #FFA500FF
+				}]
+			children: children_list []
+			name: "right-light"
+			visible: @d75ba55d-7868-4fc7-973c-5f95c6c1db7e (objectref<bool>)
+			width: 34
+			height: 33
+			x: 404
+			y: 373
+			image: image_resource(2f9373c5-33d7-4136-a0f7-7a7331d6b370)
+			{
+				file: "right-light (1).png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(7adf1bd4-63b4-4041-b74f-aff2d7e4fc81)
+		{
+			features: feature_list [
+				ScaleMode(18775965-5616-427b-a5e4-cbd0cda3666e)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "door"
+			visible: @2c4f928d-704d-45b4-a717-cdc0ff22a9ff (objectref<bool>)
+			width: 82
+			height: 87
+			x: 231
+			y: 315
+			image: image_resource(2ca4aec8-2dff-4848-9097-b22af82b18fb)
+			{
+				file: "door (1).png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
 		}]
 	name: "View LIGHTS"
 	visible: true

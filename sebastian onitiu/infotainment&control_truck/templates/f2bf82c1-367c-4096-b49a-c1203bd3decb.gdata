@@ -1,0 +1,66 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfImage_template(f2bf82c1-367c-4096-b49a-c1203bd3decb)
+{
+	name: "ok-button"
+	structure: GtfImage(006d8e9f-5962-4e9d-b745-b964aeb67ad7)
+	{
+		features: feature_list [
+			TouchPressed(28d19943-79df-4d34-a0f5-ec13780f8405)
+			{
+				touchPressed: function<bool,int,int,int,int>(8a64ebf2-3b05-4f95-8247-a1da717fed86)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(c118305b-15bd-42e9-9f62-41c9c2b6b297)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfLabel(da8c40a6-c196-4993-bb98-07f61562a504)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "text ok"
+				visible: true
+				width: width@006d8e9f-5962-4e9d-b745-b964aeb67ad7 (propref<int>)
+				height: height@006d8e9f-5962-4e9d-b745-b964aeb67ad7 (propref<int>)
+				x: 0
+				y: 0
+				text: "OK"
+				textColor: #000000FF
+				font: font_resource(fe4107ac-1c3e-4674-853f-d3b4f3ea026d)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 20
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "image-button"
+		visible: true
+		width: 64
+		height: 65
+		x: 0
+		y: 0
+		image: image_resource(1a1e938c-634f-431f-9925-b04173463333)
+		{
+			file: "Fără titlu (1).png"
+		}
+		sRGB: false
+		horizontalAlign: 0
+		verticalAlign: 1
+	}
+	touchPressed: touchPressed@28d19943-79df-4d34-a0f5-ec13780f8405 (propref<function<bool,int,int,int,int>>)
+	x: x@006d8e9f-5962-4e9d-b745-b964aeb67ad7 (propref<int>)
+	y: y@006d8e9f-5962-4e9d-b745-b964aeb67ad7 (propref<int>)
+	text: text@da8c40a6-c196-4993-bb98-07f61562a504 (propref<string>)
+	visible: visible@006d8e9f-5962-4e9d-b745-b964aeb67ad7 (propref<bool>)
+}

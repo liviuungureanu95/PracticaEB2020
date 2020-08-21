@@ -107,27 +107,34 @@ GtfView(e4e0a91d-acf2-4057-9b57-3fd860af0ea5)
 													"		v:this->^->^->^->^->ContainerAutopilot.visible = true" \
 													"		v:this->^->^->^->^->ContainerChair.visible = false" \
 													"		v:this->^->^->^->^->ContainerBED.visible =false" \
+													"		v:this->^->^->^->^->ContainerSchedule.visible = false" \
 													"	}" \
 													"	else if(v:this->^.lineIndex == 1)" \
 													"	{v:this->^->^->^->^->ContainerTyresPressure.visible = false" \
 													"		v:this->^->^->^->^->ContainerAutopilot.visible = false" \
 													"		v:this->^->^->^->^->ContainerChair.visible = true" \
 													"		v:this->^->^->^->^->ContainerBED.visible =false" \
+													"		v:this->^->^->^->^->ContainerSchedule.visible = false" \
 													"	}" \
 													"	if(v:this->^.lineIndex == 2)" \
 													"	{v:this->^->^->^->^->ContainerTyresPressure.visible = false" \
 													"		v:this->^->^->^->^->ContainerChair.visible = false" \
 													"		v:this->^->^->^->^->ContainerAutopilot.visible = false" \
 													"		v:this->^->^->^->^->ContainerBED.visible =true" \
+													"		v:this->^->^->^->^->ContainerSchedule.visible = false" \
 													"	}" \
 													"	if(v:this->^.lineIndex == 3)" \
 													"	{v:this->^->^->^->^->ContainerTyresPressure.visible = false" \
 													"		v:this->^->^->^->^->ContainerChair.visible = false" \
 													"		v:this->^->^->^->^->ContainerAutopilot.visible = false" \
 													"		v:this->^->^->^->^->ContainerBED.visible =false" \
+													"		v:this->^->^->^->^->ContainerSchedule.visible = true" \
+													"		v:this->^->^->^->^->ContainerSchedule->\"new route deliver\".visible = true" \
+													"		" \
 													"	}" \
 													"	if(v:this->^.lineIndex == 4)" \
 													"	{   v:this->^->^->^->^->ContainerTyresPressure.visible = true" \
+													"	v:this->^->^->^->^->ContainerSchedule.visible = false" \
 													"	v:this->^->^->^->^->ContainerBED.visible =false" \
 													"	    if(v:this->^->^->^->^->ContainerTyresPressure.visible == true)" \
 													"	    {" \
@@ -145,7 +152,7 @@ GtfView(e4e0a91d-acf2-4057-9b57-3fd860af0ea5)
 													"	}" \
 													"	" \
 													"	if(v:this->^.lineIndex == 5)" \
-													"	{" \
+													"	{  v:this->^->^->^->^->ContainerSchedule.visible = false" \
 													"		v:this->^->^->^->^->ContainerTyresPressure.visible = false" \
 													"		v:this->^->^->^->^->ContainerChair.visible = false" \
 													"		v:this->^->^->^->^->ContainerAutopilot.visible = false" \
@@ -168,7 +175,7 @@ GtfView(e4e0a91d-acf2-4057-9b57-3fd860af0ea5)
 									width: width@0c1baa7d-c7e5-4ecd-9a9d-bad97b5af3bc (propref<int>)
 									height: height@0c1baa7d-c7e5-4ecd-9a9d-bad97b5af3bc (propref<int>)
 									x: -2
-									y: 38
+									y: 39
 									image: image_resource(30bf2941-7886-43d3-86a0-9f2af48be11d)
 									{
 										file: ""
@@ -290,10 +297,6 @@ GtfView(e4e0a91d-acf2-4057-9b57-3fd860af0ea5)
 				image_resource(ed1725d3-d131-4b7c-95b3-550313db6420)
 				{
 					file: "control_ five.png"
-				}, 
-				image_resource(95603185-7d48-4979-acc0-ad802b3b1370)
-				{
-					file: "control five.png"
 				}]
 			limitsList: conditional_script(15c43540-8f50-46b8-bba7-9be8447bc6f4)
 			{
@@ -2367,7 +2370,7 @@ GtfView(e4e0a91d-acf2-4057-9b57-3fd860af0ea5)
 					features: feature_list []
 					children: children_list []
 					name: "new route deliver"
-					visible: true
+					visible: false
 					width: 276
 					height: 42
 					x: 8
@@ -2435,8 +2438,54 @@ GtfView(e4e0a91d-acf2-4057-9b57-3fd860af0ea5)
 									{
 										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 											"{" \
-											"	dp:StringCountry = dp:StringCountry + dp:list_letters[v:this.lineIndex]" \
-											"    v:this->^->^->country.text = dp:StringCountry" \
+											"	if(v:this->^->^->\"new route deliver\".visible == true && v:this->^->^->city.visible==false)" \
+											"	{" \
+											"		dp:StringCountry = dp:StringCountry + dp:list_letters[v:this.lineIndex]" \
+											"    v:this->^->^->field_country.text = dp:StringCountry" \
+											"    " \
+											"    " \
+											"    if(v:this.lineIndex==39 || v:this.lineIndex==40)" \
+											"    {" \
+											"    	 dp:StringCountry=dp:list_letters[v:this.lineIndex]" \
+											"    	 v:this->^->^->field_country.text = dp:list_letters[v:this.lineIndex]" \
+											"    }" \
+											"	}" \
+											"	" \
+											"	v:this->^->^->\"new route deliver\".visible == false" \
+											"	" \
+											"	" \
+											"	if(v:this->^->^->city.visible==true && v:this->^->^->\"date&address\".visible==false)" \
+											"	{" \
+											"		v:this->^->^->next1_button.visible=false" \
+											"		dp:StringCity = dp:StringCity + dp:list_letters[v:this.lineIndex]" \
+											"    v:this->^->^->field_City.text = dp:StringCity" \
+											"    " \
+											"    " \
+											"    if(v:this.lineIndex==39 || v:this.lineIndex==40)" \
+											"    {" \
+											"    	 dp:StringCity=dp:list_letters[v:this.lineIndex]" \
+											"    	 v:this->^->^->field_City.text = dp:list_letters[v:this.lineIndex]" \
+											"    }" \
+											"    v:this->^->^->next2_button.visible=true" \
+											"	}" \
+											"	" \
+											"	" \
+											"	if(v:this->^->^->\"date&address\".visible== true)" \
+											"	{" \
+											"		v:this->^->^->next2_button.visible=false" \
+											"		dp:StringAdress = dp:StringAdress + dp:list_letters[v:this.lineIndex]" \
+											"    v:this->^->^->field_Address.text = dp:StringAdress" \
+											"    " \
+											"    " \
+											"   			 if(v:this.lineIndex==39 || v:this.lineIndex==40)" \
+											"   		 {" \
+											"    		 dp:StringAdress=dp:list_letters[v:this.lineIndex]" \
+											"    		 v:this->^->^->field_Address.text = dp:list_letters[v:this.lineIndex]" \
+											"   		 }" \
+											"   		 v:this->^->^->\"ok-button 1\".visible=true" \
+											"   		 v:this->^->^->\"retry-button\".visible=true" \
+											"	}" \
+											"	" \
 											"    false" \
 											"}"
 									}
@@ -2455,7 +2504,8 @@ GtfView(e4e0a91d-acf2-4057-9b57-3fd860af0ea5)
 							height: 30
 							x: 0
 							y: 0
-							fillColor: #A9A9A9FF
+							fillColor: #FFFFFF00
+							IntegerIndex: 0
 						}]
 					name: "Instantiator_keys"
 					visible: true
@@ -2463,7 +2513,7 @@ GtfView(e4e0a91d-acf2-4057-9b57-3fd860af0ea5)
 					height: height@56f7fee7-62a3-4d5c-a6ff-830dd9a4ecb7 (propref<int>)
 					x: x@56f7fee7-62a3-4d5c-a6ff-830dd9a4ecb7 (propref<int>)
 					y: y@56f7fee7-62a3-4d5c-a6ff-830dd9a4ecb7 (propref<int>)
-					numItems: 36
+					numItems: 40
 					lineMapping: intlist []
 				}, 
 				GtfLabel(d71c7167-cdb7-414f-a967-13e911120c85)
@@ -2472,7 +2522,7 @@ GtfView(e4e0a91d-acf2-4057-9b57-3fd860af0ea5)
 					children: children_list []
 					name: "country"
 					visible: true
-					width: 51
+					width: 53
 					height: 38
 					x: 16
 					y: 66
@@ -2491,7 +2541,7 @@ GtfView(e4e0a91d-acf2-4057-9b57-3fd860af0ea5)
 					features: feature_list []
 					children: children_list []
 					name: "city"
-					visible: true
+					visible: false
 					width: 43
 					height: 54
 					x: 16
@@ -2506,37 +2556,17 @@ GtfView(e4e0a91d-acf2-4057-9b57-3fd860af0ea5)
 					horizontalAlign: 0
 					verticalAlign: 0
 				}, 
-				GtfLabel(13e6ce9b-2be4-4b3e-a867-0f4c78dc1cb3)
-				{
-					features: feature_list []
-					children: children_list []
-					name: "adress"
-					visible: true
-					width: 57
-					height: 48
-					x: 16
-					y: 181
-					text: "Date"
-					textColor: #000000FF
-					font: font_resource(0077a66a-d4de-4ef3-aaa5-da4c4321661c)
-					{
-						file: "PT_Sans_Narrow.ttf"
-						size: 20
-					}
-					horizontalAlign: 0
-					verticalAlign: 0
-				}, 
 				GtfLabel(23d00c40-3def-47b8-96a2-6db4e4d08b75)
 				{
 					features: feature_list []
 					children: children_list []
-					name: "date"
-					visible: true
-					width: 49
+					name: "date&address"
+					visible: false
+					width: 89
 					height: 41
-					x: 15
+					x: 14
 					y: 148
-					text: "Adress"
+					text: "Date&Adress"
 					textColor: #000000FF
 					font: font_resource(da5caa54-cc0d-47f8-8338-a37e9ccac69d)
 					{
@@ -2545,9 +2575,239 @@ GtfView(e4e0a91d-acf2-4057-9b57-3fd860af0ea5)
 					}
 					horizontalAlign: 0
 					verticalAlign: 0
+				}, 
+				GtfLabel(776dffcd-2cbe-48ff-8af9-c2a8f9c52f71)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "field_country"
+					visible: true
+					width: 171
+					height: 41
+					x: 75
+					y: 64
+					text: ""
+					textColor: #000000FF
+					font: font_resource(9de13a45-e772-446e-8084-5ac6c252e608)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 18
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfImage_template_instance(9af2c366-d2c7-436a-82e6-59d6da02487b)
+				{
+					name: "ok-button 1"
+					template: @f2bf82c1-367c-4096-b49a-c1203bd3decb (objectref<GtfImage_template>)
+					children: children_list []
+					touchPressed: function<bool,int,int,int,int>(ec75ca02-48e4-449d-9f81-337ba413f3c9)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{dp:\"String list Country\"[v:this.Int + 1] = dp:StringCountry" \
+							"dp:\"String list City\"[v:this.Int+1] = dp:StringCity" \
+							"dp:\"String list Address\"[v:this.Int+1] = dp:StringAdress" \
+							"	v:this.Int = v:this.Int + 1" \
+							"	" \
+							"    false" \
+							"}"
+					}
+					x: 270
+					y: 283
+					text: text@f2bf82c1-367c-4096-b49a-c1203bd3decb (propref<string>)
+					visible: false
+					Int: 0
+				}, 
+				GtfImage_template_instance(416caede-a3b6-4ab9-a243-dd2c957fdeaa)
+				{
+					name: "next1_button"
+					template: @f2bf82c1-367c-4096-b49a-c1203bd3decb (objectref<GtfImage_template>)
+					children: children_list []
+					touchPressed: function<bool,int,int,int,int>(0cc1469f-936e-4100-8cc1-6bc562efa64f)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->city.visible = true" \
+							"    false" \
+							"}"
+					}
+					x: 265
+					y: 38
+					text: "NEXT"
+					visible: true
+				}, 
+				GtfImage_template_instance(de9685f8-9927-4c06-bd1e-1fc09cb8ac4a)
+				{
+					name: "next2_button"
+					template: @f2bf82c1-367c-4096-b49a-c1203bd3decb (objectref<GtfImage_template>)
+					children: children_list []
+					touchPressed: function<bool,int,int,int,int>(94127cc2-9bee-4c0c-bff1-da032d4542ee)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->\"date&address\".visible= true" \
+							"    false" \
+							"}"
+					}
+					x: 264
+					y: 99
+					text: "NEXT"
+					visible: false
+				}, 
+				GtfLabel(e6d162af-9206-4152-8b44-364f2375a8ee)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "field_City"
+					visible: true
+					width: 177
+					height: 34
+					x: 73
+					y: 110
+					text: ""
+					textColor: #000000FF
+					font: font_resource(9add1dec-3ff1-48bb-918a-704804950dae)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 18
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(68505e7a-3994-4bec-b89e-82b4ae1f6d07)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "field_Address"
+					visible: true
+					width: 228
+					height: 40
+					x: 35
+					y: 185
+					text: ""
+					textColor: #000000FF
+					font: font_resource(49e24cf0-1890-4c24-93ce-4e563e66f536)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 18
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfImage_template_instance(e992de30-4383-44ac-9401-3ba36a45e7a1)
+				{
+					name: "retry-button"
+					template: @f2bf82c1-367c-4096-b49a-c1203bd3decb (objectref<GtfImage_template>)
+					children: children_list []
+					touchPressed: function<bool,int,int,int,int>(1f9fef18-9f75-4c2a-a4cb-e9be969086c1)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->\"new route deliver\".visible=true" \
+							"	v:this->^->city.visible=false" \
+							"v:this->^->\"date&address\".visible=false" \
+							"v:this->^->next1_button.visible=true" \
+							"" \
+							" " \
+							"	if(v:this->^->\"new route deliver\".visible == true && v:this->^->city.visible==false)" \
+							"	{ " \
+							"		dp:StringCountry = dp:StringCountry + dp:list_letters[v:this.lineIndex]" \
+							"    v:this->^->field_country.text = dp:StringCountry" \
+							"    " \
+							"    " \
+							"    if(v:this.lineIndex==39 || v:this.lineIndex==40)" \
+							"    {" \
+							"    	 dp:StringCountry=dp:list_letters[v:this.lineIndex]" \
+							"    	 v:this->^->field_country.text = dp:list_letters[v:this.lineIndex]" \
+							"    }" \
+							"	}" \
+							"	" \
+							"	v:this->^->\"new route deliver\".visible == false" \
+							"	" \
+							"	" \
+							"	if(v:this->^->city.visible==true && v:this->^->\"date&address\".visible==false)" \
+							"	{" \
+							"		v:this->^->next1_button.visible=false" \
+							"		dp:StringCity = dp:StringCity + dp:list_letters[v:this.lineIndex]" \
+							"    v:this->^->field_City.text = dp:StringCity" \
+							"    " \
+							"    " \
+							"    if(v:this.lineIndex==39 || v:this.lineIndex==40)" \
+							"    {" \
+							"    	 dp:StringCity=dp:list_letters[v:this.lineIndex]" \
+							"    	 v:this->^->field_City.text = dp:list_letters[v:this.lineIndex]" \
+							"    }" \
+							"    v:this->^->next2_button.visible=true" \
+							"	}" \
+							"	" \
+							"	" \
+							"	if(v:this->^->\"date&address\".visible== true)" \
+							"	{" \
+							"		v:this->^->next2_button.visible=false" \
+							"		dp:StringAdress = dp:StringAdress + dp:list_letters[v:this.lineIndex]" \
+							"    v:this->^->field_Address.text = dp:StringAdress" \
+							"    " \
+							"    " \
+							"   			 if(v:this.lineIndex==39 || v:this.lineIndex==40)" \
+							"   		 {" \
+							"    		 dp:StringAdress=dp:list_letters[v:this.lineIndex]" \
+							"    		 v:this->^->field_Address.text = dp:list_letters[v:this.lineIndex]" \
+							"   		 }" \
+							"   		 v:this->^->\"ok-button 1\".visible=true" \
+							"   		 v:this->^->\"retry-button\".visible=true" \
+							"	}" \
+							"	" \
+							"    false" \
+							"}"
+					}
+					x: 92
+					y: 284
+					text: "RETRY"
+					visible: false
+					lineIndex: 0
+				}, 
+				GtfLabel(bd4884b4-ba21-4c88-98e8-d773c1e4d89b)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "warning-instrution-message"
+					visible: true
+					width: 306
+					height: 31
+					x: 18
+					y: 527
+					text: "DEL will be pressed every time to clear the field"
+					textColor: #B22222FF
+					font: font_resource(ecb630fc-1b0b-4ee0-aad6-4aab134da482)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 19
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(d052b2c0-2f0f-4547-ad75-0c3bc7d91746)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "warning-instruction-message2"
+					visible: true
+					width: 276
+					height: 41
+					x: 35
+					y: 492
+					text: "!!!! AFTER PRESSING THE RETRY BUTTON !!!"
+					textColor: #B22222FF
+					font: font_resource(d521b2c0-9f0c-4151-83dd-2493fb7a3147)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 19
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
 				}]
 			name: "ContainerSchedule"
-			visible: true
+			visible: false
 			width: 334
 			height: 598
 			x: 244
