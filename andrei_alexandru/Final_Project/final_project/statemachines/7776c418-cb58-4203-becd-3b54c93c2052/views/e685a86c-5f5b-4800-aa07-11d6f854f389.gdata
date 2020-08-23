@@ -53,7 +53,8 @@ GtfView_template_instance(e685a86c-5f5b-4800-aa07-11d6f854f389)
 		{
 			script: "function()" \
 				"{" \
-				"	f:int2string(dp:StartMenu:hour + 3) + \":\" + f:int2string(dp:StartMenu:minutes)" \
+				"	f:int2string(dp:StartMenu:hour + 3) + \":\" + f:format_int(\"%.2i\", f:localtime_minute(f:system_time())) " \
+				"	+ \":\" +f:format_int(\"%.2i\", f:localtime_second(f:system_time()))  " \
 				"	" \
 				"}"
 		}

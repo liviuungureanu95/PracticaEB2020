@@ -33,7 +33,8 @@ GtfView_template_instance(0b17baef-b343-43a5-880b-e723643f8503)
 				{
 					script: "function()" \
 						"{" \
-						"	f:int2string(dp:StartMenu:hour + 3) + \":\" + f:int2string(dp:StartMenu:minutes)" \
+						"	//f:int2string(dp:StartMenu:hour + 3) + \":\" + f:int2string(dp:StartMenu:minutes)" \
+						"	f:int2string(dp:StartMenu:hour + 3) + \":\" + f:format_int(\"%.2i\", f:localtime_minute(f:system_time()))" \
 						"}"
 				}
 				write: function<bool,string>(d738def6-5213-4501-bbd4-638dc9813fe4)
@@ -45,7 +46,7 @@ GtfView_template_instance(0b17baef-b343-43a5-880b-e723643f8503)
 						"}"
 				}
 			}
-			textColor: #FFFFFFFF
+			textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 			font: font_resource(cb647eeb-0623-4c68-97f8-adcd03242eb4)
 			{
 				file: "PT_Sans_Narrow.ttf"
@@ -109,7 +110,7 @@ GtfView_template_instance(0b17baef-b343-43a5-880b-e723643f8503)
 							x: -20
 							y: 100
 							text: "label"
-							textColor: #FFFFFFFF
+							textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 							font: font_resource(f7ac2827-9e72-45cb-ba97-ab99245cfe08)
 							{
 								file: "PT_Sans_Narrow.ttf"
@@ -147,6 +148,16 @@ GtfView_template_instance(0b17baef-b343-43a5-880b-e723643f8503)
 					{
 						script: "function()" \
 							"{" \
+							"	if(v:this.lineIndex == 0)" \
+							"	{" \
+							"		f:setSkin(s:Light, true)" \
+							"	}" \
+							"	" \
+							"	if(v:this.lineIndex == 1)" \
+							"	{" \
+							"		f:setSkin(s:Dark, true)" \
+							"	}" \
+							"	" \
 							"	if(v:this.lineIndex == 2)" \
 							"	fire ev:CarSettings_CompoundEvents:goTo_ChangeThemeMenu()" \
 							"	" \
@@ -223,7 +234,9 @@ GtfView_template_instance(0b17baef-b343-43a5-880b-e723643f8503)
 				}
 			}
 		}]
-	text: "Car Settings Menu"
-	textColor: textColor@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<color>)
+	text: @96c6d719-0f35-4424-b743-c2cd55d96ad2 (objectref<string>)
+	textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 	font: font@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<font>)
+	image: @28a5929a-87d6-4473-9912-d62fd743c5c6 (objectref<image>)
+	fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 }

@@ -33,7 +33,8 @@ GtfView_template_instance(a224472f-3496-41fe-9232-38344c94d8e8)
 				{
 					script: "function()" \
 						"{" \
-						"	f:int2string(dp:StartMenu:hour + 3) + \":\" + f:int2string(dp:StartMenu:minutes)" \
+						"	//f:int2string(dp:StartMenu:hour + 3) + \":\" + f:int2string(dp:StartMenu:minutes)" \
+						"	f:int2string(dp:StartMenu:hour + 3) + \":\" + f:format_int(\"%.2i\", f:localtime_minute(f:system_time()))" \
 						"}"
 				}
 				write: function<bool,string>(92a5c74f-9716-4db2-aad5-0af1bfade017)
@@ -45,7 +46,7 @@ GtfView_template_instance(a224472f-3496-41fe-9232-38344c94d8e8)
 						"}"
 				}
 			}
-			textColor: #FFFFFFFF
+			textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 			font: font_resource(0748b2cb-fa36-4923-8cee-f70d4d575aaa)
 			{
 				file: "PT_Sans_Narrow.ttf"
@@ -53,8 +54,420 @@ GtfView_template_instance(a224472f-3496-41fe-9232-38344c94d8e8)
 			}
 			horizontalAlign: 0
 			verticalAlign: 0
+		}, 
+		GtfRectangle(96709355-48f9-48fd-9d99-6f9f24f69cb2)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "VerticalBar"
+			visible: true
+			width: 1
+			height: 410
+			x: 404
+			y: 70
+			fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+		}, 
+		GtfContainer(5e879341-f48c-43a2-ab83-83dea7df4803)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfContainer_template_instance(3cb0301b-9b33-4bc4-a536-8e7a3c05f64a)
+				{
+					name: "RestaurantsButton"
+					template: @f6c12626-eb24-4a9e-be20-384f8af93859 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: x@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					y: y@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					touchShortReleased: function<bool,int,int,int,int>(4277bb4b-fb48-4c3c-89ab-99dfe01665a1)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonValue = v:this.buttonId;" \
+							"	fire ev:Traffic_CompoundEvents:traffic_choice(v:this.text);" \
+							"    false" \
+							"}"
+					}
+					selected: false
+					buttonId: buttonId@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					buttonValue: @3c300278-4732-41b3-bc08-e4b25af3c565 (objectref<int>)
+					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					Check: selected@3cb0301b-9b33-4bc4-a536-8e7a3c05f64a (propref<bool>)
+					text: "Restaurants"
+					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					image: image_resource(73481db2-de50-4a9b-af77-e1698ed5f4b6)
+					{
+						file: "restaurants.png"
+					}
+					horizontalAlign: horizontalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					verticalAlign: verticalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+				}, 
+				GtfContainer_template_instance(79b85f72-921d-4d80-9f91-2fd776d4c189)
+				{
+					name: "TravelandTourismButton"
+					template: @f6c12626-eb24-4a9e-be20-384f8af93859 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: x@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					y: 60
+					touchShortReleased: function<bool,int,int,int,int>(5c219420-3e43-4926-b54b-10c1fb2f2919)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonValue = v:this.buttonId;" \
+							"	fire ev:Traffic_CompoundEvents:traffic_choice(v:this.text);" \
+							"    false" \
+							"}"
+					}
+					selected: false
+					buttonId: 1
+					buttonValue: @3c300278-4732-41b3-bc08-e4b25af3c565 (objectref<int>)
+					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					Check: selected@79b85f72-921d-4d80-9f91-2fd776d4c189 (propref<bool>)
+					text: "Travel and Tourism"
+					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					image: image_resource(4b6eb1cc-88ef-4db3-849c-0755b9d8e889)
+					{
+						file: "travel.png"
+					}
+					horizontalAlign: horizontalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					verticalAlign: verticalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+				}, 
+				GtfContainer_template_instance(0954d653-3be3-4ac8-84ba-6929bca3755a)
+				{
+					name: "ShoppingButton"
+					template: @f6c12626-eb24-4a9e-be20-384f8af93859 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: x@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					y: 120
+					touchShortReleased: function<bool,int,int,int,int>(6e3b04b7-676b-4e04-bb1b-89b3b4a2427f)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonValue = v:this.buttonId;" \
+							"	fire ev:Traffic_CompoundEvents:traffic_choice(v:this.text);" \
+							"    false" \
+							"}"
+					}
+					selected: false
+					buttonId: 2
+					buttonValue: @3c300278-4732-41b3-bc08-e4b25af3c565 (objectref<int>)
+					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					Check: selected@0954d653-3be3-4ac8-84ba-6929bca3755a (propref<bool>)
+					text: "Shopping"
+					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					image: image_resource(26d57381-11cc-4cbc-8a56-91ce47f56ea5)
+					{
+						file: "shopping.png"
+					}
+					horizontalAlign: horizontalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					verticalAlign: verticalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+				}, 
+				GtfContainer_template_instance(3efc0ae8-9d8b-47a4-a2d1-c713c2df2431)
+				{
+					name: "CommercialServiciesButton"
+					template: @f6c12626-eb24-4a9e-be20-384f8af93859 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: x@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					y: 180
+					touchShortReleased: function<bool,int,int,int,int>(e3b7a310-ebeb-49dc-9e2f-000987429144)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonValue = v:this.buttonId;" \
+							"	fire ev:Traffic_CompoundEvents:traffic_choice(v:this.text);" \
+							"    false" \
+							"}"
+					}
+					selected: false
+					buttonId: 3
+					buttonValue: @3c300278-4732-41b3-bc08-e4b25af3c565 (objectref<int>)
+					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					Check: selected@3efc0ae8-9d8b-47a4-a2d1-c713c2df2431 (propref<bool>)
+					text: "Commercial"
+					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					image: image_resource(c6f49044-a50b-407f-8f75-67412a50834a)
+					{
+						file: "commercial.png"
+					}
+					horizontalAlign: horizontalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					verticalAlign: verticalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+				}, 
+				GtfContainer_template_instance(384e431a-dec9-4016-990f-c53936b04677)
+				{
+					name: "FinancialServiciesButton"
+					template: @f6c12626-eb24-4a9e-be20-384f8af93859 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: x@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					y: 240
+					touchShortReleased: function<bool,int,int,int,int>(583ea66c-14fb-4b0d-be0c-5ec95ba0fb05)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonValue = v:this.buttonId;" \
+							"	fire ev:Traffic_CompoundEvents:traffic_choice(v:this.text);" \
+							"    false" \
+							"}"
+					}
+					selected: false
+					buttonId: 4
+					buttonValue: @3c300278-4732-41b3-bc08-e4b25af3c565 (objectref<int>)
+					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					Check: selected@384e431a-dec9-4016-990f-c53936b04677 (propref<bool>)
+					text: "Financial Servicies"
+					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					image: image_resource(45e7dccb-757e-4c2e-8fa0-374f91e9b657)
+					{
+						file: "financial.png"
+					}
+					horizontalAlign: horizontalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					verticalAlign: verticalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+				}, 
+				GtfContainer_template_instance(a496c165-d337-41c6-9cba-3714ba439b3f)
+				{
+					name: "HealthButton"
+					template: @f6c12626-eb24-4a9e-be20-384f8af93859 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: x@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					y: 300
+					touchShortReleased: function<bool,int,int,int,int>(671fc432-d3c3-4331-87f6-caeebea5da3e)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonValue = v:this.buttonId;" \
+							"	fire ev:Traffic_CompoundEvents:traffic_choice(v:this.text);" \
+							"    false" \
+							"}"
+					}
+					selected: false
+					buttonId: 5
+					buttonValue: @3c300278-4732-41b3-bc08-e4b25af3c565 (objectref<int>)
+					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					Check: selected@a496c165-d337-41c6-9cba-3714ba439b3f (propref<bool>)
+					text: "Health Servicies"
+					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					image: image_resource(d57fe99e-3bf1-4feb-bbc9-743f298f409a)
+					{
+						file: "health.png"
+					}
+					horizontalAlign: horizontalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					verticalAlign: verticalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+				}]
+			name: "TrafficContainter"
+			visible: true
+			width: 330
+			height: 350
+			x: 50
+			y: 100
+		}, 
+		GtfLabel(535e4cc5-1966-4794-9d43-a816bc9881ca)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "ChoiceText"
+			visible: false
+			width: 200
+			height: 30
+			x: 502
+			y: 70
+			text: ""
+			textColor: #FFFFFFFF
+			font: font_resource(d5ea8477-3b3d-47ae-a0e0-85564504d75f)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+			ChangeChoice: conditional_script(bbdc829f-41ec-4d3b-8689-56df130c8944)
+			{
+				triggerList: trigger_list(881a2ccb-0dcb-455a-8515-fb28a3f76274)
+				{
+					script: "ev:Traffic_CompoundEvents:traffic_choice"
+				}
+				onTrigger: function<bool,bool>(127b0445-ec9f-4088-afbb-671bead0e386)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	match_event v:event = ev:Traffic_CompoundEvents:traffic_choice in" \
+						"	{" \
+						"		v:this.text = v:event.choice" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfInstantiator(1a431233-c739-4bc8-bd67-2f5415ec236f)
+		{
+			features: feature_list [
+				LayoutPolicyBox(d4335b3e-bbf6-404e-895e-a515bcd1ddde)
+				{
+					gap: 2
+					layoutDirection: 1
+				}, 
+				TouchShortReleased(73ed4338-f87a-40ee-ab65-ef9e9253cd08)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(4a2ce933-185c-4ca0-9dd4-0cedd439e754)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:traffic_goTo_navi()" \
+							"		" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(8ae10f6c-cbf9-463f-9ec8-10396cb098e8)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfRectangle(d2d899f4-71b5-40f2-9957-0e93d790026c)
+				{
+					features: feature_list [
+						LineIndex(c77632ae-d9ee-46c0-9d55-039211820935)
+						{
+							lineIndex: 0
+						}, 
+						Border(bd462e3e-88c6-4956-ade0-8a018269b0bb)
+						{
+							borderThickness: 1
+							borderColor: #000000FF
+							borderStyle: 0
+						}]
+					children: children_list [
+						GtfLabel(ac89a711-d616-482e-846d-bc3b8e063110)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text"
+							visible: true
+							width: width@d2d899f4-71b5-40f2-9957-0e93d790026c (propref<int>)
+							height: height@d2d899f4-71b5-40f2-9957-0e93d790026c (propref<int>)
+							x: 0
+							y: 0
+							text: "label"
+							textColor: #000000FF
+							font: font_resource(bda71b83-58c0-49a1-8688-a663d268b45c)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+							setText: conditional_script(89a53b54-469b-44fc-b3ed-e42ae7c60e6c)
+							{
+								triggerList: trigger_list(981d3756-36a3-4ec9-b1a2-86b25dac16ba)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(4d8e8bf7-082a-4db5-975b-3ace20a70fed)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "Background"
+					visible: true
+					width: 350
+					height: 50
+					x: 0
+					y: 0
+					fillColor: #87CEEBFF
+					setText: conditional_script(2ae4c633-c8d3-4d4a-8f9e-35d069e7867f)
+					{
+						triggerList: trigger_list(19d84fe8-8ba2-4bd3-a6bf-4504aa035b67)
+						{
+							script: "v:this->^.StringList" \
+								"v:this.lineIndex" \
+								""
+						}
+						onTrigger: function<bool,bool>(15ed721c-8ae6-48c7-b2dc-c3d1cbce75d1)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this->Text.text = v:this->^.StringList[v:this.lineIndex]" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "TrafficInstantiator"
+			visible: true
+			width: 350
+			height: 350
+			x: 425
+			y: 100
+			numItems: 7
+			lineMapping: intlist []
+			changeList: conditional_script(53d1b939-87b2-43e3-b53f-b8c08fb0adf5)
+			{
+				triggerList: trigger_list(d6f6be20-b23c-4694-a42b-f04ad0339918)
+				{
+					script: "ev:Traffic_CompoundEvents:traffic_choice"
+				}
+				onTrigger: function<bool,bool>(44715970-ec03-4f4b-89fd-781e518764ac)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	match_event v:event = ev:Traffic_CompoundEvents:traffic_choice in" \
+						"	{" \
+						"		if(v:event.choice == \"Restaurants\")" \
+						"		{" \
+						"			dp:TrafficMenu:ChosenList = dp:TrafficMenu:RestaurantsList" \
+						"		}" \
+						"		else if(v:event.choice == \"Travel and Tourism\")" \
+						"		{" \
+						"			dp:TrafficMenu:ChosenList = dp:TrafficMenu:TravelList" \
+						"		}" \
+						"		else if(v:event.choice == \"Shopping\")" \
+						"		{" \
+						"			dp:TrafficMenu:ChosenList = dp:TrafficMenu:ShoppingList" \
+						"		}" \
+						"		else if(v:event.choice == \"Commercial\")" \
+						"		{" \
+						"			dp:TrafficMenu:ChosenList = dp:TrafficMenu:CommercialList" \
+						"		}" \
+						"		else if(v:event.choice == \"Financial Servicies\")" \
+						"		{" \
+						"			dp:TrafficMenu:ChosenList = dp:TrafficMenu:FinancialList" \
+						"		}" \
+						"		else if(v:event.choice == \"Health Servicies\")" \
+						"		{" \
+						"			dp:TrafficMenu:ChosenList = dp:TrafficMenu:HealthList" \
+						"		}" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+			}
+			changeNumList: conditional_script(0b6269ef-d8d2-4178-85c3-3b79e1d4a73f)
+			{
+				triggerList: trigger_list(ed1cbe87-12d1-4dfb-9a07-5a4032c5cc39)
+				{
+					script: "v:this.StringList" \
+						""
+				}
+				onTrigger: function<bool,bool>(821e28ce-1a32-45fe-9384-e7c18ad55c1a)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	v:this.numItems = length v:this.StringList" \
+						"	false" \
+						"}"
+				}
+			}
+			StringList: @c7326bb7-c4b9-46ad-b0c2-fdcc6f16d083 (objectref<stringlist>)
 		}]
-	text: "Traffic Menu"
-	textColor: textColor@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<color>)
+	text: @cfe91167-27b0-4b5f-97c6-7cc6b4c7dca5 (objectref<string>)
+	textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 	font: font@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<font>)
+	image: @28a5929a-87d6-4473-9912-d62fd743c5c6 (objectref<image>)
+	fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 }

@@ -33,7 +33,8 @@ GtfView_template_instance(10f68744-3114-4b30-ab74-d8f538b53324)
 				{
 					script: "function()" \
 						"{" \
-						"	f:int2string(dp:StartMenu:hour + 3) + \":\" + f:int2string(dp:StartMenu:minutes)" \
+						"	//f:int2string(dp:StartMenu:hour + 3) + \":\" + f:int2string(dp:StartMenu:minutes)" \
+						"	f:int2string(dp:StartMenu:hour + 3) + \":\" + f:format_int(\"%.2i\", f:localtime_minute(f:system_time()))" \
 						"}"
 				}
 				write: function<bool,string>(2d1d8b9a-4ae2-49fd-a816-6c494d513cb3)
@@ -45,7 +46,7 @@ GtfView_template_instance(10f68744-3114-4b30-ab74-d8f538b53324)
 						"}"
 				}
 			}
-			textColor: #FFFFFFFF
+			textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 			font: font_resource(4f74a5da-3dbd-4685-99dd-55e8a3f2a88c)
 			{
 				file: "PT_Sans_Narrow.ttf"
@@ -335,7 +336,7 @@ GtfView_template_instance(10f68744-3114-4b30-ab74-d8f538b53324)
 					x: 0
 					y: 0
 					text: ">"
-					textColor: #FFFFFFFF
+					textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 					font: font_resource(a2225bc7-3cca-41ab-9832-b1a87c355987)
 					{
 						file: "PT_Sans_Narrow.ttf"
@@ -393,7 +394,7 @@ GtfView_template_instance(10f68744-3114-4b30-ab74-d8f538b53324)
 					x: 1
 					y: 0
 					text: "<"
-					textColor: #FFFFFFFF
+					textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 					font: font_resource(31e4376c-6aed-4d50-a778-c8f340d7dff1)
 					{
 						file: "PT_Sans_Narrow.ttf"
@@ -418,7 +419,9 @@ GtfView_template_instance(10f68744-3114-4b30-ab74-d8f538b53324)
 					"}"
 			}
 		}]
-	text: "Apps Menu"
-	textColor: textColor@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<color>)
+	text: @ab676769-2e7d-41b1-ad5f-d8bdca150370 (objectref<string>)
+	textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 	font: font@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<font>)
+	image: @28a5929a-87d6-4473-9912-d62fd743c5c6 (objectref<image>)
+	fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 }

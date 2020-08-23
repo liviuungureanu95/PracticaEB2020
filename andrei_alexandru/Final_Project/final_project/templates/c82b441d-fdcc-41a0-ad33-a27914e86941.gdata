@@ -114,7 +114,7 @@ GtfContainer_template(c82b441d-fdcc-41a0-ad33-a27914e86941)
 							"}"
 					}
 				}
-				textColor: #AFEEEEFF
+				textColor: #3CB371FF
 				font: font_resource(452ed551-4317-46aa-9cc6-881373af3075)
 				{
 					file: "PT_Sans_Narrow.ttf"
@@ -163,7 +163,7 @@ GtfContainer_template(c82b441d-fdcc-41a0-ad33-a27914e86941)
 							"}"
 					}
 				}
-				textColor: #E6E6FAFF
+				textColor: #2F4F4FFF
 				font: font_resource(9e2798bd-aedc-4a06-a792-9ce31348ea47)
 				{
 					file: "PT_Sans_Narrow.ttf"
@@ -303,6 +303,11 @@ GtfContainer_template(c82b441d-fdcc-41a0-ad33-a27914e86941)
 						"		" \
 						"	v:this->^->\"Play/Pause_Button\".image = dp:MediaMenu:pause_logo" \
 						"    " \
+						"   if(f:animation_cancel_reset(v:this->^->Music_Progress->Music_Animation) == true)" \
+						"   {" \
+						"   	f:animation_play(v:this->^->Music_Progress->Music_Animation)" \
+						"   }" \
+						"    " \
 						"    false" \
 						"}"
 				}
@@ -333,6 +338,16 @@ GtfContainer_template(c82b441d-fdcc-41a0-ad33-a27914e86941)
 						"		v:this.image = dp:MediaMenu:pause_logo" \
 						"		v:this.play = false" \
 						"	}" \
+						"	" \
+						"	if(f:animation_pause(v:this->^->Music_Progress->Music_Animation) == true)" \
+						"	{" \
+						"		f:animation_pause(v:this->^->Music_Progress->Music_Animation)" \
+						"	}" \
+						"	else" \
+						"	{" \
+						"		f:animation_play(v:this->^->Music_Progress->Music_Animation)" \
+						"	}" \
+						"	" \
 						"    false" \
 						"}"
 				}
@@ -359,6 +374,12 @@ GtfContainer_template(c82b441d-fdcc-41a0-ad33-a27914e86941)
 						"		dp:MediaMenu:Index_Song = 0" \
 						"		" \
 						"	v:this->^->\"Play/Pause_Button\".image = dp:MediaMenu:pause_logo" \
+						"   " \
+						"   if(f:animation_cancel_reset(v:this->^->Music_Progress->Music_Animation) == true)" \
+						"   {" \
+						"   	f:animation_play(v:this->^->Music_Progress->Music_Animation)" \
+						"   }" \
+						"   " \
 						"   " \
 						"  	false" \
 						"}"
@@ -526,6 +547,85 @@ GtfContainer_template(c82b441d-fdcc-41a0-ad33-a27914e86941)
 				units: @e5788391-5846-4450-bdfd-e2d67bda5057 (objectref<int>)
 				color: #FFFFFFFF
 				currentUnits: @5174911b-8d3b-4455-be62-da87a466a104 (objectref<int>)
+			}, 
+			GtfRectangle(2cba173f-5532-4568-b5cc-11e0cc14d51e)
+			{
+				features: feature_list [
+					Border(7a6676e3-fa09-4b66-8cdd-925bee7ec0b1)
+					{
+						borderThickness: 1
+						borderColor: #3CB371FF
+						borderStyle: 0
+					}]
+				children: children_list [
+					GtfParallelAnimation(1f0348bf-1cba-42ab-865c-846ed54e0206)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLinearInterpolationS32(6437a60b-d476-4134-9670-b93f2320e7ed)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "music_progress"
+								enabled: true
+								delay: 10
+								duration: 60000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 0
+								end: 200
+								target: width@2cba173f-5532-4568-b5cc-11e0cc14d51e (propref<int>)
+							}]
+						name: "Music_Animation"
+						enabled: true
+						repeat: 1
+						alternating: false
+						scale: 1F
+						onPlay: function<void,int,bool>(6872c076-adf1-44aa-83c9-6cf1831e18b2)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(4a9ac864-f5ce-4098-ab80-a46ade134ea2)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(08d85d70-54ef-44f4-b6a6-c88b675947b3)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						startAnimation: conditional_script(c79acfe6-dab1-4e80-be37-9a472cd35de9)
+						{
+							triggerList: trigger_list(4b92f1b5-6d20-49e0-8f2c-6c83a5a6826c)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(6094dfb9-b6f0-4fbb-8f3b-7fa96997d4dd)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	f:animation_play(v:this)" \
+									"	false" \
+									"}"
+							}
+						}
+					}]
+				name: "Music_Progress"
+				visible: true
+				width: 0
+				height: 20
+				x: 280
+				y: 205
+				fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 			}]
 		name: "Container"
 		visible: true

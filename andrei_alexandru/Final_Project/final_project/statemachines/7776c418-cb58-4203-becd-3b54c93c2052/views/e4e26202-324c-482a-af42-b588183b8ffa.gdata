@@ -33,7 +33,8 @@ GtfView_template_instance(e4e26202-324c-482a-af42-b588183b8ffa)
 				{
 					script: "function()" \
 						"{" \
-						"	f:int2string(dp:StartMenu:hour + 3) + \":\" + f:int2string(dp:StartMenu:minutes)" \
+						"	//f:int2string(dp:StartMenu:hour + 3) + \":\" + f:int2string(dp:StartMenu:minutes)" \
+						"	f:int2string(dp:StartMenu:hour + 3) + \":\" + f:format_int(\"%.2i\", f:localtime_minute(f:system_time()))" \
 						"}"
 				}
 				write: function<bool,string>(330c5780-31c8-48ef-98d9-fad1e0751fc9)
@@ -45,7 +46,7 @@ GtfView_template_instance(e4e26202-324c-482a-af42-b588183b8ffa)
 						"}"
 				}
 			}
-			textColor: #FFFFFFFF
+			textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 			font: font_resource(58d3a8dc-fd13-4e87-b48a-42cd6f94940b)
 			{
 				file: "PT_Sans_Narrow.ttf"
@@ -53,8 +54,427 @@ GtfView_template_instance(e4e26202-324c-482a-af42-b588183b8ffa)
 			}
 			horizontalAlign: 0
 			verticalAlign: 0
+		}, 
+		GtfContainer(587b2eb1-9802-42bf-a4e8-0aa1e343968a)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfContainer_template_instance(52315193-f4a2-4e04-adf4-438be9a253fa)
+				{
+					name: "HomeButton"
+					template: @f6c12626-eb24-4a9e-be20-384f8af93859 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: x@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					y: y@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					touchShortReleased: function<bool,int,int,int,int>(88013ec5-1be6-4821-8633-2fb1d6a5ceaa)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonValue = v:this.buttonId;" \
+							"	fire ev:Navigation_CompoundEvents:navigation_choice(v:this.text);" \
+							"    false" \
+							"}"
+					}
+					selected: selected@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<bool>)
+					buttonId: buttonId@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					buttonValue: @5f2f0c5f-c0a1-47be-af78-56b2ee4071df (objectref<int>)
+					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					Check: selected@52315193-f4a2-4e04-adf4-438be9a253fa (propref<bool>)
+					text: "Home"
+					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					image: image_resource(6de74bac-7cdb-43b9-bebc-f1ae63811c15)
+					{
+						file: "home.png"
+					}
+					horizontalAlign: horizontalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					verticalAlign: verticalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+				}, 
+				GtfContainer_template_instance(83a8d2d7-8e03-409d-9163-5c9d604c298a)
+				{
+					name: "AddressButton"
+					template: @f6c12626-eb24-4a9e-be20-384f8af93859 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: x@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					y: 60
+					touchShortReleased: function<bool,int,int,int,int>(51f359f4-cb62-44a3-baef-204f716d6cdf)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonValue = v:this.buttonId;" \
+							"	fire ev:Navigation_CompoundEvents:navigation_choice(v:this.text);" \
+							"    false" \
+							"}"
+					}
+					selected: selected@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<bool>)
+					buttonId: 1
+					buttonValue: @5f2f0c5f-c0a1-47be-af78-56b2ee4071df (objectref<int>)
+					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					Check: selected@83a8d2d7-8e03-409d-9163-5c9d604c298a (propref<bool>)
+					text: "Address"
+					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					image: image_resource(5e20e4d7-4d76-4b71-a5cc-8c60aa1a4f28)
+					{
+						file: "address.png"
+					}
+					horizontalAlign: horizontalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					verticalAlign: verticalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+				}, 
+				GtfContainer_template_instance(bd8536f8-0a53-4b1f-ab41-722fff9f2f5d)
+				{
+					name: "EmergencyButton"
+					template: @f6c12626-eb24-4a9e-be20-384f8af93859 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: x@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					y: 120
+					touchShortReleased: function<bool,int,int,int,int>(ebe6c16c-779f-4d7a-af99-f94fea08193e)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonValue = v:this.buttonId;" \
+							"	fire ev:Navigation_CompoundEvents:navigation_choice(v:this.text);" \
+							"    false" \
+							"}"
+					}
+					selected: selected@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<bool>)
+					buttonId: 2
+					buttonValue: @5f2f0c5f-c0a1-47be-af78-56b2ee4071df (objectref<int>)
+					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					Check: selected@bd8536f8-0a53-4b1f-ab41-722fff9f2f5d (propref<bool>)
+					text: "Emergency"
+					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					image: image_resource(c2fdf12f-effe-438e-a4be-973df235528b)
+					{
+						file: "emergency.png"
+					}
+					horizontalAlign: horizontalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					verticalAlign: verticalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+				}, 
+				GtfContainer_template_instance(25fbe9a8-fa29-4c7d-acd7-026ef8584c05)
+				{
+					name: "GasStationButton"
+					template: @f6c12626-eb24-4a9e-be20-384f8af93859 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: x@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					y: 180
+					touchShortReleased: function<bool,int,int,int,int>(b629f486-bbc7-458a-8104-0cfd32d65a6e)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonValue = v:this.buttonId;" \
+							"	fire ev:Navigation_CompoundEvents:navigation_choice(v:this.text);" \
+							"    false" \
+							"}"
+					}
+					selected: selected@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<bool>)
+					buttonId: 3
+					buttonValue: @5f2f0c5f-c0a1-47be-af78-56b2ee4071df (objectref<int>)
+					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					Check: selected@25fbe9a8-fa29-4c7d-acd7-026ef8584c05 (propref<bool>)
+					text: "Gas Station"
+					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					image: image_resource(c7d1590e-d509-4fca-b5f8-de1c1f9b24ad)
+					{
+						file: "gas_station.png"
+					}
+					horizontalAlign: horizontalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					verticalAlign: verticalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+				}, 
+				GtfContainer_template_instance(f337dbd9-ec7d-4e2c-a600-c58f0bd81a82)
+				{
+					name: "MyPlacesButton"
+					template: @f6c12626-eb24-4a9e-be20-384f8af93859 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: x@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					y: 240
+					touchShortReleased: function<bool,int,int,int,int>(95c42934-66da-4c20-8a81-de129c7137f3)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonValue = v:this.buttonId;" \
+							"	fire ev:Navigation_CompoundEvents:navigation_choice(v:this.text);" \
+							"    false" \
+							"}"
+					}
+					selected: selected@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<bool>)
+					buttonId: 4
+					buttonValue: @5f2f0c5f-c0a1-47be-af78-56b2ee4071df (objectref<int>)
+					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					Check: selected@f337dbd9-ec7d-4e2c-a600-c58f0bd81a82 (propref<bool>)
+					text: "My Places"
+					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					image: image_resource(3f2b570c-28f5-4cf7-b4d9-fd95cbf74e73)
+					{
+						file: "my_places.png"
+					}
+					horizontalAlign: horizontalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					verticalAlign: verticalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+				}, 
+				GtfContainer_template_instance(5df753a0-4434-417b-83c0-ac03103d8a32)
+				{
+					name: "CountriesButton"
+					template: @f6c12626-eb24-4a9e-be20-384f8af93859 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: x@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					y: 300
+					touchShortReleased: function<bool,int,int,int,int>(8d2affb3-97ec-4490-914f-518e9f8466e7)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonValue = v:this.buttonId;" \
+							"	fire ev:Navigation_CompoundEvents:navigation_choice(v:this.text);" \
+							"    false" \
+							"}"
+					}
+					selected: false
+					buttonId: 5
+					buttonValue: @5f2f0c5f-c0a1-47be-af78-56b2ee4071df (objectref<int>)
+					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					Check: selected@5df753a0-4434-417b-83c0-ac03103d8a32 (propref<bool>)
+					text: "Countries"
+					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					image: image_resource(5aa3445c-6e0d-4c55-a405-fb62ae914848)
+					{
+						file: "countries.png"
+					}
+					horizontalAlign: horizontalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					verticalAlign: verticalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+				}]
+			name: "NavigationContainer"
+			visible: true
+			width: 330
+			height: 350
+			x: 50
+			y: 100
+		}, 
+		GtfLabel(5b9fa2cc-bdef-4f81-9e30-cb28633f9ed2)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Choice_NavText"
+			visible: false
+			width: 200
+			height: 50
+			x: 501
+			y: 16
+			text: ""
+			textColor: #FFFFFFFF
+			font: font_resource(96884062-b662-4456-85f2-4ea7d6de58e9)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+			Change_NavChoice: conditional_script(531ce645-1fc1-46f0-a8a5-dcb96f111669)
+			{
+				triggerList: trigger_list(cb096e3c-3761-4b0a-8e46-6954258e96f2)
+				{
+					script: "ev:Navigation_CompoundEvents:navigation_choice" \
+						""
+				}
+				onTrigger: function<bool,bool>(d9efa0d0-803f-4e5a-b1c5-7c8eab399587)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	match_event v:event = ev:Navigation_CompoundEvents:navigation_choice in" \
+						"	{" \
+						"		v:this.text = v:event.nav_choice" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfInstantiator(a3713834-f64a-445c-9487-a81c589ff869)
+		{
+			features: feature_list [
+				LayoutPolicyBox(d0c1f03c-dcde-4431-8db1-321683691287)
+				{
+					gap: 2
+					layoutDirection: 1
+				}, 
+				TouchPressed(d4a04dea-99ec-4e2d-b018-ffbcb838f6ee)
+				{
+					touchPressed: function<bool,int,int,int,int>(2581faf8-a003-47e5-a434-3e414c893317)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:Navigation_CompoundEvents:instantiator_nav() " \
+							"	ev:Navigation_CompoundEvents:start_searching()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(9507287e-0f08-4482-b9b0-3a1ed672bc26)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfRectangle(b51dd76d-5e7a-4c5a-990c-f861a2815b7a)
+				{
+					features: feature_list [
+						Border(75e74f4f-d6e4-4641-99fc-b12433f8cec2)
+						{
+							borderThickness: 1
+							borderColor: #87CEEBFF
+							borderStyle: 0
+						}, 
+						LineIndex(4eeae142-728c-4ef3-90aa-2f9e113cf94d)
+						{
+							lineIndex: 0
+						}]
+					children: children_list [
+						GtfLabel(6f7597d0-889f-4dfe-be02-ba7ebf41aa8b)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text"
+							visible: true
+							width: width@b51dd76d-5e7a-4c5a-990c-f861a2815b7a (propref<int>)
+							height: height@b51dd76d-5e7a-4c5a-990c-f861a2815b7a (propref<int>)
+							x: 0
+							y: 0
+							text: "label"
+							textColor: #000000FF
+							font: font_resource(f311ba82-fb85-4cc0-a0a0-1a8727fa8b81)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 25
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+							setNav_Text: conditional_script(975ed307-6218-4449-820f-20d04bda8946)
+							{
+								triggerList: trigger_list(679b916e-f252-4cea-b296-216d9b02d32f)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(51e52097-346b-4ee3-90be-fe398ad956a5)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "Background"
+					visible: true
+					width: 350
+					height: 50
+					x: 0
+					y: 0
+					fillColor: #87CEEBFF
+					setNav_Text: conditional_script(104ddc56-e922-4c7e-8230-42240e4f7253)
+					{
+						triggerList: trigger_list(7b69a835-761c-4eef-b6e0-26857da3033a)
+						{
+							script: "v:this->^.Nav_StringList" \
+								"v:this.lineIndex" \
+								""
+						}
+						onTrigger: function<bool,bool>(2a07d7c5-35a2-49f9-a6a2-132645d27250)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this->Text.text = v:this->^.Nav_StringList[v:this.lineIndex]" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "NavigationInstantiator"
+			visible: true
+			width: 350
+			height: 350
+			x: 426
+			y: 99
+			numItems: 7
+			lineMapping: intlist []
+			Nav_StringList: @ec04b01d-8e0c-498b-92e8-01727c54b441 (objectref<stringlist>)
+			ChangeNav_NumList: conditional_script(a10ebf55-9cb4-4832-b550-a1be1178e079)
+			{
+				triggerList: trigger_list(404ad113-cf5e-41fb-a1e1-839c613e4e5d)
+				{
+					script: "v:this.Nav_StringList" \
+						""
+				}
+				onTrigger: function<bool,bool>(d47e16af-c1c0-4b14-ad23-bb1b7926ebd6)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	v:this.numItems = length v:this.Nav_StringList" \
+						"	false" \
+						"}"
+				}
+			}
+			changeNavList: conditional_script(3cfc5ab0-9696-4d12-a413-781341409afe)
+			{
+				triggerList: trigger_list(dc567120-028a-41bf-a028-e259b6254cac)
+				{
+					script: "ev:Navigation_CompoundEvents:navigation_choice" \
+						""
+				}
+				onTrigger: function<bool,bool>(4429b25d-60a5-4fe0-a2c2-f514c63cecff)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	match_event v:event = ev:Navigation_CompoundEvents:navigation_choice in" \
+						"	{" \
+						"		if(v:event.nav_choice == \"Home\")" \
+						"		{" \
+						"			dp:NavigationMenu:ChosenNavigation_List = dp:NavigationMenu:HomeList" \
+						"		}" \
+						"		" \
+						"		if(v:event.nav_choice == \"Address\")" \
+						"		{" \
+						"			fire ev:Navigation_CompoundEvents:goTo_Address()" \
+						"		}" \
+						"		" \
+						"		if(v:event.nav_choice == \"Emergency\")" \
+						"		{" \
+						"			dp:NavigationMenu:ChosenNavigation_List = dp:NavigationMenu:Emergency_List" \
+						"		}" \
+						"		" \
+						"		if(v:event.nav_choice == \"Gas Station\")" \
+						"		{" \
+						"			dp:NavigationMenu:ChosenNavigation_List = dp:NavigationMenu:GasStation_List" \
+						"		}" \
+						"		" \
+						"		if(v:event.nav_choice == \"My Places\")" \
+						"		{" \
+						"			dp:NavigationMenu:ChosenNavigation_List = dp:NavigationMenu:MyPlaces_List" \
+						"		}" \
+						"		" \
+						"		if(v:event.nav_choice == \"Countries\")" \
+						"		{" \
+						"			fire ev:Navigation_CompoundEvents:goTo_Countries()" \
+						"		}" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfRectangle(b68f5329-2f27-42fb-a569-e83627732411)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "VerticalBar"
+			visible: true
+			width: 1
+			height: 410
+			x: 404
+			y: 70
+			fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 		}]
-	text: "Navigation Menu"
-	textColor: textColor@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<color>)
+	text: @dfe80a29-b3cf-4e06-9661-59375a2ecaae (objectref<string>)
+	textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 	font: font@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<font>)
+	image: @28a5929a-87d6-4473-9912-d62fd743c5c6 (objectref<image>)
+	fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 }

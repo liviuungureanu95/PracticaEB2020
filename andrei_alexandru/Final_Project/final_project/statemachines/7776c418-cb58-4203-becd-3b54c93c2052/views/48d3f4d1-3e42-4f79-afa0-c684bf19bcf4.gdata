@@ -33,7 +33,8 @@ GtfView_template_instance(48d3f4d1-3e42-4f79-afa0-c684bf19bcf4)
 				{
 					script: "function()" \
 						"{" \
-						"	f:int2string(dp:StartMenu:hour + 3) + \":\" + f:int2string(dp:StartMenu:minutes)" \
+						"	//f:int2string(dp:StartMenu:hour + 3) + \":\" + f:int2string(dp:StartMenu:minutes)" \
+						"	f:int2string(dp:StartMenu:hour + 3) + \":\" + f:format_int(\"%.2i\", f:localtime_minute(f:system_time()))" \
 						"}"
 				}
 				write: function<bool,string>(be4a89ef-3643-444a-a17a-d772ddb21b2e)
@@ -45,7 +46,7 @@ GtfView_template_instance(48d3f4d1-3e42-4f79-afa0-c684bf19bcf4)
 						"}"
 				}
 			}
-			textColor: #FFFFFFFF
+			textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 			font: font_resource(b5c81022-b15d-43a1-af3f-f92158ac7945)
 			{
 				file: "PT_Sans_Narrow.ttf"
@@ -98,7 +99,7 @@ GtfView_template_instance(48d3f4d1-3e42-4f79-afa0-c684bf19bcf4)
 								Border(e651fb0c-d8b9-495f-be89-3330fdba1006)
 								{
 									borderThickness: 1
-									borderColor: #000000FF
+									borderColor: #87CEEBFF
 									borderStyle: 0
 								}]
 							children: children_list [
@@ -113,7 +114,7 @@ GtfView_template_instance(48d3f4d1-3e42-4f79-afa0-c684bf19bcf4)
 									x: 0
 									y: 30
 									text: "label"
-									textColor: #000000FF
+									textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 									font: font_resource(cc84d952-b2e1-4262-8e39-9fe8fa73a611)
 									{
 										file: "PT_Sans_Narrow.ttf"
@@ -245,7 +246,9 @@ GtfView_template_instance(48d3f4d1-3e42-4f79-afa0-c684bf19bcf4)
 			x: 0
 			y: 0
 		}]
-	text: "Media Menu"
-	textColor: textColor@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<color>)
+	text: @556dc20e-0141-4827-8ada-8bba7915d9b9 (objectref<string>)
+	textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 	font: font@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<font>)
+	image: @28a5929a-87d6-4473-9912-d62fd743c5c6 (objectref<image>)
+	fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 }

@@ -33,7 +33,8 @@ GtfView_template_instance(fc1ab8a8-615b-48f9-9b8c-e64926282612)
 				{
 					script: "function()" \
 						"{" \
-						"	f:int2string(dp:StartMenu:hour + 3) + \":\" + f:int2string(dp:StartMenu:minutes)" \
+						"	//f:int2string(dp:StartMenu:hour + 3) + \":\" + f:int2string(dp:StartMenu:minutes)" \
+						"	f:int2string(dp:StartMenu:hour + 3) + \":\" + f:format_int(\"%.2i\", f:localtime_minute(f:system_time()))" \
 						"}"
 				}
 				write: function<bool,string>(edbdbdc4-a76e-4256-b144-3aa5e44b1d5b)
@@ -45,7 +46,7 @@ GtfView_template_instance(fc1ab8a8-615b-48f9-9b8c-e64926282612)
 						"}"
 				}
 			}
-			textColor: #FFFFFFFF
+			textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 			font: font_resource(46fac3f3-f635-457c-8af0-350bf3e897bd)
 			{
 				file: "PT_Sans_Narrow.ttf"
@@ -64,160 +65,7 @@ GtfView_template_instance(fc1ab8a8-615b-48f9-9b8c-e64926282612)
 			height: 1
 			x: 0
 			y: 420
-			fillColor: #000000FF
-		}, 
-		GtfInstantiator(365b41df-8465-420b-a35e-6440f1143faa)
-		{
-			features: feature_list [
-				LayoutPolicyFlow(2427609f-509f-4a32-8e00-5a0cfde3e6a2)
-				{
-					horizontalGap: 150
-					verticalGap: 40
-					layoutDirection: 0
-					horizontalChildAlign: 0
-					verticalChildAlign: 0
-				}]
-			children: children_list [
-				GtfRectangle(138d52ae-e116-427c-a06c-18fcb2d46f77)
-				{
-					features: feature_list [
-						TouchShortReleased(27a58835-592d-4b4f-a008-5ca89ab429b6)
-						{
-							touchShortReleased: function<bool,int,int,int,int>(39d733f8-4893-4221-8f7c-37703260af2a)
-							{
-								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
-									"{" \
-									"	v:this.buttonEvent()" \
-									"    false" \
-									"}"
-							}
-						}, 
-						StateTouched(50d2ceea-7640-4834-b0f4-d31cb8accc75)
-						{
-							touchable: true
-							touched: false
-							touchPolicy: 0
-							touchBehavior: 0
-						}, 
-						LineIndex(d36ff7d4-04b8-4bf8-a076-3ba488d6368b)
-						{
-							lineIndex: 0
-						}]
-					children: children_list [
-						GtfLabel(58667ab5-a7fa-4126-ae26-5de063fa3f2b)
-						{
-							features: feature_list []
-							children: children_list []
-							name: "Text"
-							visible: true
-							width: 100
-							height: 100
-							x: 0
-							y: 30
-							text: "label"
-							textColor: #000000FF
-							font: font_resource(9a56accc-4309-4f93-9eae-a7b33a05d2e7)
-							{
-								file: "PT_Sans_Narrow.ttf"
-								size: 25
-							}
-							horizontalAlign: 1
-							verticalAlign: 2
-						}, 
-						GtfImage(6f5cdcb5-4f4b-470d-a737-242a6f6ad235)
-						{
-							features: feature_list [
-								ScaleMode(73cc8e6e-0985-4222-9a1d-5ec18c004e51)
-								{
-									scaleMode: 1
-								}]
-							children: children_list []
-							name: "Logo's"
-							visible: true
-							width: 100
-							height: 100
-							x: 0
-							y: 0
-							image: image_resource(cdcc3826-b812-433d-8d6f-30798efc7dba)
-							{
-								file: ""
-							}
-							sRGB: false
-							horizontalAlign: 0
-							verticalAlign: 1
-						}]
-					name: "Background"
-					visible: true
-					width: 100
-					height: 100
-					x: 0
-					y: 0
-					fillColor: #FFFFFF00
-					buttonEvent: function<bool>(d70bd341-f880-4322-aff9-78c8167b9459)
-					{
-						script: "function()" \
-							"{" \
-							"	// todo: auto generated return value, please adapt" \
-							"	false" \
-							"}"
-					}
-					setText: conditional_script(7a31597f-9380-4b24-b738-eba5cbbde6ca)
-					{
-						triggerList: trigger_list(0aa9025d-b199-44aa-83ac-00d8c603a630)
-						{
-							script: "dp:RadioMenu:RadioList" \
-								"v:this.lineIndex" \
-								""
-						}
-						onTrigger: function<bool,bool>(c623fa55-6cb5-44a5-bd69-e579c95c5b6b)
-						{
-							script: "function(v:arg0::bool)" \
-								"{" \
-								"	v:this->Text.text = dp:RadioMenu:RadioList[v:this.lineIndex]" \
-								"	false " \
-								"}"
-						}
-					}
-					setLogo: conditional_script(2cae7385-8c82-4381-be58-5ab0606123ad)
-					{
-						triggerList: trigger_list(b7b184ce-27e5-4284-8b5b-0decd72b1e6f)
-						{
-							script: ""
-						}
-						onTrigger: function<bool,bool>(b29d283c-8041-4d78-8fd8-39eaa8cd568b)
-						{
-							script: "function(v:arg0::bool)" \
-								"{" \
-								"	v:this->\"Logo's\".image = dp:RadioMenu:Radio_LogoList[v:this.lineIndex]" \
-								"	false" \
-								"}"
-						}
-					}
-				}]
-			name: "Radio_Instantiator"
-			visible: true
-			width: 600
-			height: 200
-			x: 100
-			y: 140
-			numItems: 6
-			lineMapping: intlist []
-			calculateNumItems: conditional_script(0450a4e6-823e-4d55-afd6-5686bbe7d12b)
-			{
-				triggerList: trigger_list(dec127d2-0513-4afd-9afa-df4531d4cc0d)
-				{
-					script: "dp:RadioMenu:RadioList"
-				}
-				onTrigger: function<bool,bool>(c537c4c6-1897-4228-a323-7249571b5c62)
-				{
-					script: "function(v:arg0::bool)" \
-						"{" \
-						"	v:this.numItems = length dp:RadioMenu:RadioList" \
-						"	v:this.numItems = length dp:RadioMenu:Radio_LogoList" \
-						"	false" \
-						"}"
-				}
-			}
+			fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 		}, 
 		GtfRectangle(fbffdc30-8349-4692-8c69-844c34a563c7)
 		{
@@ -229,7 +77,7 @@ GtfView_template_instance(fc1ab8a8-615b-48f9-9b8c-e64926282612)
 			height: 1
 			x: 0
 			y: 80
-			fillColor: #FFFFFFFF
+			fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 		}, 
 		GtfRectangle(f4cd4cf5-4be1-4ee1-91be-4287b896e40c)
 		{
@@ -241,7 +89,7 @@ GtfView_template_instance(fc1ab8a8-615b-48f9-9b8c-e64926282612)
 			height: 1
 			x: 0
 			y: 130
-			fillColor: #FFFFFFFF
+			fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 		}, 
 		GtfLabel(93ccf3ea-b4b7-4cd8-97c6-b403c92d4323)
 		{
@@ -253,8 +101,8 @@ GtfView_template_instance(fc1ab8a8-615b-48f9-9b8c-e64926282612)
 			height: 50
 			x: 0
 			y: 80
-			text: "Current_Radio"
-			textColor: #000000FF
+			text: ""
+			textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 			font: font_resource(7c3b49b7-c431-48bf-bebe-d2f9561d628a)
 			{
 				file: "PT_Sans_Narrow.ttf"
@@ -262,8 +110,489 @@ GtfView_template_instance(fc1ab8a8-615b-48f9-9b8c-e64926282612)
 			}
 			horizontalAlign: 1
 			verticalAlign: 0
+			setText: conditional_script(09587ae1-06bc-4210-a62b-abf315ac39bd)
+			{
+				triggerList: trigger_list(2378620e-907b-44e0-977f-bd783aadcbdf)
+				{
+					script: "dp:RadioMenu:selectedRadio" \
+						""
+				}
+				onTrigger: function<bool,bool>(faac3602-a083-4cc0-bec5-2e86d98304f6)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(dp:RadioMenu:selectedRadio == 1)" \
+						"		v:this.text = \"Kiss FM\"" \
+						"	" \
+						"	if(dp:RadioMenu:selectedRadio == 2)" \
+						"		v:this.text = \"Digi FM\"" \
+						"	" \
+						"	if(dp:RadioMenu:selectedRadio == 3)" \
+						"		v:this.text = \"Radio ZU\"" \
+						"	" \
+						"	if(dp:RadioMenu:selectedRadio == 4)" \
+						"		v:this.text = \"Pro FM\"" \
+						"		" \
+						"	if(dp:RadioMenu:selectedRadio == 5)" \
+						"		v:this.text = \"Europa FM\"	" \
+						"	" \
+						"	if(dp:RadioMenu:selectedRadio == 6)" \
+						"		v:this.text = \"Virgin Radio Romania\"" \
+						"		" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfContainer(5566564a-f2d0-462d-a43b-b88d427f23db)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfInstantiator(b3eb94de-a452-4739-b4a7-32cc719c9d76)
+				{
+					features: feature_list [
+						LayoutPolicyFlow(c908f71e-d0b6-48ce-abfa-d9aefe85867a)
+						{
+							horizontalGap: 2
+							verticalGap: 0
+							layoutDirection: 0
+							horizontalChildAlign: 0
+							verticalChildAlign: 0
+						}]
+					children: children_list [
+						GtfRectangle(b6dfa974-465c-4969-84bc-0950d797d390)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "BarBackground"
+							visible: true
+							width: int_scriptedValue(3ca5f9ca-9b6f-4b03-bf26-deb938e6f575)
+							{
+								triggerList: trigger_list(92a85d66-6e68-41f0-89dd-36bab5e439aa)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(7ea8c225-3d6f-474c-841e-b450d575fdfa)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<int>(ddfbdf54-656a-4dc3-8521-b545c0eac1b7)
+								{
+									script: "function()" \
+										"{" \
+										"	v:this->^->^.width / v:this->^->^.units -2	" \
+										"}"
+								}
+								write: function<bool,int>(f921c746-d81e-438d-96ea-f75d83a57354)
+								{
+									script: "function(v:arg0::int)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							height: height@b3eb94de-a452-4739-b4a7-32cc719c9d76 (propref<int>)
+							x: 0
+							y: 0
+							fillColor: color@5566564a-f2d0-462d-a43b-b88d427f23db (propref<color>)
+						}]
+					name: "Instantiator"
+					visible: true
+					width: width@5566564a-f2d0-462d-a43b-b88d427f23db (propref<int>)
+					height: height@5566564a-f2d0-462d-a43b-b88d427f23db (propref<int>)
+					x: 0
+					y: 0
+					numItems: currentUnits@5566564a-f2d0-462d-a43b-b88d427f23db (propref<int>)
+					lineMapping: intlist []
+				}]
+			name: "VolumeBar"
+			visible: true
+			width: 150
+			height: 30
+			x: 320
+			y: 435
+			units: @e5788391-5846-4450-bdfd-e2d67bda5057 (objectref<int>)
+			color: #FFFFFFFF
+			currentUnits: @5174911b-8d3b-4455-be62-da87a466a104 (objectref<int>)
+		}, 
+		GtfImage(bed52fb7-9172-4248-acdf-7956a56b3ace)
+		{
+			features: feature_list [
+				ScaleMode(7bd7894b-bbb1-43cf-b337-54aa6d24c95c)
+				{
+					scaleMode: 1
+				}, 
+				TouchShortReleased(dfb041a1-470f-47a5-93be-3a212741c62b)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(ca1a0b42-1e47-41aa-b85e-9656492fa9d0)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:MediaMenu:current_volume -=1" \
+							"	if(dp:MediaMenu:current_volume<0)" \
+							"		dp:MediaMenu:current_volume = 0" \
+							"   " \
+							"   false" \
+							"}"
+					}
+				}, 
+				StateTouched(aa1bf7ff-fc1b-4ffa-84fa-5be0e7761e84)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "LowVolume"
+			visible: true
+			width: 48
+			height: 48
+			x: 255
+			y: 425
+			image: image_resource(7a8663f9-6096-434a-af69-b225d13aa36d)
+			{
+				file: "low_volume.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(a48303a3-6cb7-4c61-a76b-25929ee77421)
+		{
+			features: feature_list [
+				ScaleMode(bdab3f0e-6fb1-4416-98da-4fed246956ae)
+				{
+					scaleMode: 1
+				}, 
+				TouchShortReleased(08f82957-b41b-47aa-add0-31a8b1ed74fa)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(93f60e78-3644-474c-a598-490b541a0af9)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:MediaMenu:current_volume +=1" \
+							"	if(dp:MediaMenu:current_volume > dp:MediaMenu:max_volume)" \
+							"		dp:MediaMenu:current_volume = dp:MediaMenu:max_volume" \
+							"   " \
+							"   false" \
+							"}"
+					}
+				}, 
+				StateTouched(06ba1d87-a6ad-4050-9be7-62caa2a8f5fd)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "HighVolume"
+			visible: true
+			width: 48
+			height: 48
+			x: 470
+			y: 425
+			image: image_resource(0022a771-13ed-40c2-8a50-d5c141e3bc51)
+			{
+				file: "high_volume.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfContainer_template_instance(4114534a-f194-46fc-bc89-0047560f35e9)
+		{
+			name: "KissFM"
+			template: @3d83e615-7718-4830-83dc-f3bcd6d9440d (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 100
+			y: 150
+			touchShortReleased: function<bool,int,int,int,int>(ab8c4e57-8ef3-4b45-b241-12b5e754714f)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	dp:RadioMenu:selectedRadio = 1" \
+					"    false" \
+					"}"
+			}
+			image: image_resource(98aabf08-9be5-4d79-b1a1-323e4c51136c)
+			{
+				file: "kissFM.png"
+			}
+			borderThickness: borderThickness@3d83e615-7718-4830-83dc-f3bcd6d9440d (propref<int>)
+			setBorder: conditional_script(f0004e41-914c-4423-bff1-c5b55924256a)
+			{
+				triggerList: trigger_list(b3cc0dfb-ea4d-4426-a1e1-2dd4eed9b90a)
+				{
+					script: "dp:RadioMenu:selectedRadio" \
+						""
+				}
+				onTrigger: function<bool,bool>(198f7f16-9a80-4827-ae30-14ba3af96cc9)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(dp:RadioMenu:selectedRadio == 1)" \
+						"	{" \
+						"		v:this.borderThickness = 5" \
+						"	}" \
+						"	else" \
+						"	{" \
+						"		v:this.borderThickness = 0" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfContainer_template_instance(afe33e06-1ddc-4ee5-b255-a2163ca0bc4f)
+		{
+			name: "DigiFM"
+			template: @3d83e615-7718-4830-83dc-f3bcd6d9440d (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 350
+			y: 150
+			touchShortReleased: function<bool,int,int,int,int>(c9c4dab0-2e87-4586-b508-d4d79fe91da8)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	dp:RadioMenu:selectedRadio = 2" \
+					"    false" \
+					"}"
+			}
+			image: image_resource(22ae6401-a502-4d42-9177-dfd66d051b60)
+			{
+				file: "digiFM.png"
+			}
+			borderThickness: borderThickness@3d83e615-7718-4830-83dc-f3bcd6d9440d (propref<int>)
+			setBorder: conditional_script(54240e25-c88f-474b-8001-8c013fd07117)
+			{
+				triggerList: trigger_list(cc7a6f29-21d7-488e-b19f-0fd6eb85a43c)
+				{
+					script: "dp:RadioMenu:selectedRadio" \
+						""
+				}
+				onTrigger: function<bool,bool>(42cf2ba5-3304-4fbd-bd76-80fddc3859b8)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(dp:RadioMenu:selectedRadio == 2)" \
+						"		v:this.borderThickness= 5" \
+						"	else" \
+						"		v:this.borderThickness= 0" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfContainer_template_instance(495e65aa-3ed1-4dc5-8c07-7b67e27781b6)
+		{
+			name: "RadioZU"
+			template: @3d83e615-7718-4830-83dc-f3bcd6d9440d (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 600
+			y: 150
+			touchShortReleased: function<bool,int,int,int,int>(da2445a5-a987-443f-889a-1a71d16ce254)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	dp:RadioMenu:selectedRadio = 3" \
+					"    false" \
+					"}"
+			}
+			image: image_resource(7e04c387-ffdb-4a3a-8eeb-e4aaa06ec9de)
+			{
+				file: "radioZU.png"
+			}
+			borderThickness: borderThickness@3d83e615-7718-4830-83dc-f3bcd6d9440d (propref<int>)
+			setBorder: conditional_script(ba88eb02-a251-405c-b7ac-5a9175a1c0a0)
+			{
+				triggerList: trigger_list(872d338f-dcf9-4613-af05-6deec9ad559d)
+				{
+					script: "dp:RadioMenu:selectedRadio" \
+						""
+				}
+				onTrigger: function<bool,bool>(b891a4bc-85c7-4685-a544-ea386c3e09d5)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(dp:RadioMenu:selectedRadio == 3)" \
+						"		v:this.borderThickness= 5" \
+						"	else" \
+						"		v:this.borderThickness= 0" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfContainer_template_instance(bd8ae7ec-c3cc-4174-9992-5175ba98c1a8)
+		{
+			name: "ProFM"
+			template: @3d83e615-7718-4830-83dc-f3bcd6d9440d (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 100
+			y: 280
+			touchShortReleased: function<bool,int,int,int,int>(de733af9-d833-4e44-bf4c-4edf3eaf8e3a)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	dp:RadioMenu:selectedRadio = 4" \
+					"    false" \
+					"}"
+			}
+			image: image_resource(475e8f36-5e1b-4d2e-a39a-6047569c9d26)
+			{
+				file: "ProFM.png"
+			}
+			borderThickness: borderThickness@3d83e615-7718-4830-83dc-f3bcd6d9440d (propref<int>)
+			setBorder: conditional_script(02b3fe71-5a2c-4548-8138-151022463736)
+			{
+				triggerList: trigger_list(100507f4-1ebc-4d29-beb4-330d3fe2761c)
+				{
+					script: "dp:RadioMenu:selectedRadio" \
+						""
+				}
+				onTrigger: function<bool,bool>(04e5971e-8ba3-4d9d-a61c-39d38aca89cb)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(dp:RadioMenu:selectedRadio == 4)" \
+						"	{" \
+						"		v:this.borderThickness = 5" \
+						"	}" \
+						"	else" \
+						"	{" \
+						"		v:this.borderThickness = 0" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfContainer_template_instance(ab27fbd5-42e7-4c13-a3dc-1ca86a0a2af8)
+		{
+			name: "EuropaFM"
+			template: @3d83e615-7718-4830-83dc-f3bcd6d9440d (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 350
+			y: 280
+			touchShortReleased: function<bool,int,int,int,int>(032ac2b0-df91-4429-a10b-5e89bcee4ecb)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	dp:RadioMenu:selectedRadio = 5" \
+					"    false" \
+					"}"
+			}
+			image: image_resource(baca9a95-0d7c-480b-bcfb-f1aaf8a1368e)
+			{
+				file: "europaFM.png"
+			}
+			borderThickness: borderThickness@3d83e615-7718-4830-83dc-f3bcd6d9440d (propref<int>)
+			setBorder: conditional_script(1f835b39-343e-48f8-b512-2e783e488b2d)
+			{
+				triggerList: trigger_list(2accaf49-8e9e-43ac-be7d-c9ac208ee9f5)
+				{
+					script: "dp:RadioMenu:selectedRadio" \
+						""
+				}
+				onTrigger: function<bool,bool>(e8676b8c-2c99-4ebd-9e3c-d84975f1c1e5)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(dp:RadioMenu:selectedRadio == 5)" \
+						"		v:this.borderThickness= 5" \
+						"	else" \
+						"		v:this.borderThickness= 0" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfContainer_template_instance(de6adc20-f307-4f3e-b655-837701a98d0e)
+		{
+			name: "VirginRadio"
+			template: @3d83e615-7718-4830-83dc-f3bcd6d9440d (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 600
+			y: 280
+			touchShortReleased: function<bool,int,int,int,int>(3da0c092-0f45-43a5-964f-c9ea3cefebf6)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	dp:RadioMenu:selectedRadio = 6" \
+					"    false" \
+					"}"
+			}
+			image: image_resource(d05df5d8-52b2-4a56-bd47-7de849e19ffe)
+			{
+				file: "virginFM.png"
+			}
+			borderThickness: borderThickness@3d83e615-7718-4830-83dc-f3bcd6d9440d (propref<int>)
+			setBorder: conditional_script(9c1c5221-99d6-438b-bbb1-3f79b911e4bb)
+			{
+				triggerList: trigger_list(d93e8e5f-57df-4ae8-a332-4aa9fc237b2e)
+				{
+					script: "dp:RadioMenu:selectedRadio" \
+						""
+				}
+				onTrigger: function<bool,bool>(91e37aec-5281-4ad2-9992-cc929aeb138c)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(dp:RadioMenu:selectedRadio == 6)" \
+						"		v:this.borderThickness= 5" \
+						"	else" \
+						"		v:this.borderThickness= 0" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfImage(c966618e-0574-4f3b-b195-2dce6c3547cd)
+		{
+			features: feature_list [
+				TouchShortReleased(960f9ce8-fd67-46b5-9366-54fce949537b)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(2d60416e-d8e6-41c7-823f-92027c028bdf)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:Radio_CompoundEvents:goTo_radio_settings()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(9b8d725b-e2e7-412a-a663-7894727993d3)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "Image 2"
+			visible: true
+			width: 50
+			height: 50
+			x: 740
+			y: 425
+			image: image_resource(b7a4503f-f473-4ba1-af7a-00c926b0f844)
+			{
+				file: "audio_settings2.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
 		}]
 	text: "Radio Menu"
-	textColor: textColor@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<color>)
+	textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 	font: font@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<font>)
+	image: @28a5929a-87d6-4473-9912-d62fd743c5c6 (objectref<image>)
+	fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 }

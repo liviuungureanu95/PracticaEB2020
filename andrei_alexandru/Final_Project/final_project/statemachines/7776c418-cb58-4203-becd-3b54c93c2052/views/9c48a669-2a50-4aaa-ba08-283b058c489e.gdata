@@ -7,7 +7,7 @@ GtfView_template_instance(9c48a669-2a50-4aaa-ba08-283b058c489e)
 	children: children_list [
 		GtfContainer_template_instance(32edae09-ba10-40e4-b61f-447188e1968b)
 		{
-			name: "T_BackButton 1"
+			name: "BackButton"
 			template: @66713f45-2faf-4289-b7d7-da20b83b4fd3 (objectref<GtfContainer_template>)
 			children: children_list []
 			buttonEvent: function<bool>(f968e3ca-32f2-4650-bfbf-ae3d6b8739e1)
@@ -18,8 +18,240 @@ GtfView_template_instance(9c48a669-2a50-4aaa-ba08-283b058c489e)
 					"	false" \
 					"}"
 			}
+		}, 
+		GtfContainer(d451c033-d794-4bc4-8351-9568a629b41e)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfContainer_template_instance(946d669f-136f-47c5-9475-8094cb70ba11)
+				{
+					name: "BlueButton"
+					template: @f6c12626-eb24-4a9e-be20-384f8af93859 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: x@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					y: y@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					touchShortReleased: function<bool,int,int,int,int>(7919fc19-1133-4fc2-adc2-71f1b3306785)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonValue = v:this.buttonId;" \
+							"	fire ev:CarSettings_CompoundEvents:lights_choice(v:this.text);" \
+							"    false" \
+							"}"
+					}
+					selected: false
+					buttonId: buttonId@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					buttonValue: @14f8c5ec-57e5-41bd-9576-4742d1e3d400 (objectref<int>)
+					fillColor: #87CEEBFF
+					Check: selected@946d669f-136f-47c5-9475-8094cb70ba11 (propref<bool>)
+					text: "Blue Lights"
+					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					image: image_resource(f5f7eecf-8ef5-4408-b48c-44047325953a)
+					{
+						file: "blue_light.png"
+					}
+					horizontalAlign: horizontalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					verticalAlign: verticalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+				}, 
+				GtfContainer_template_instance(406b5b5d-d9af-4734-800f-8455e4aed607)
+				{
+					name: "PurpleButton"
+					template: @f6c12626-eb24-4a9e-be20-384f8af93859 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: x@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					y: 60
+					touchShortReleased: function<bool,int,int,int,int>(40de7462-162c-4212-80e3-c5f58ca1045e)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonValue = v:this.buttonId;" \
+							"	fire ev:CarSettings_CompoundEvents:lights_choice(v:this.text);" \
+							"    false" \
+							"}"
+					}
+					selected: selected@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<bool>)
+					buttonId: 1
+					buttonValue: @14f8c5ec-57e5-41bd-9576-4742d1e3d400 (objectref<int>)
+					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					Check: selected@406b5b5d-d9af-4734-800f-8455e4aed607 (propref<bool>)
+					text: "Purple Lights"
+					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					image: image_resource(688b907d-11f4-4c92-810f-920418117c24)
+					{
+						file: "purple_light.png"
+					}
+					horizontalAlign: horizontalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					verticalAlign: verticalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+				}, 
+				GtfContainer_template_instance(f164aea4-44f6-4c06-9cda-4cb8b0d98915)
+				{
+					name: "GreenButton"
+					template: @f6c12626-eb24-4a9e-be20-384f8af93859 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: x@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					y: 120
+					touchShortReleased: function<bool,int,int,int,int>(7d473a08-b4ae-4076-8d75-06c339742503)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonValue = v:this.buttonId;" \
+							"	fire ev:CarSettings_CompoundEvents:lights_choice(v:this.text);" \
+							"    false" \
+							"}"
+					}
+					selected: selected@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<bool>)
+					buttonId: 2
+					buttonValue: @14f8c5ec-57e5-41bd-9576-4742d1e3d400 (objectref<int>)
+					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					Check: selected@f164aea4-44f6-4c06-9cda-4cb8b0d98915 (propref<bool>)
+					text: "Green Lights"
+					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					image: image_resource(717b4675-5199-4881-be66-4d26497c7d1f)
+					{
+						file: "green_llight.png"
+					}
+					horizontalAlign: horizontalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					verticalAlign: verticalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+				}, 
+				GtfContainer_template_instance(799ac4cc-53e0-4736-abcd-5504799fd23d)
+				{
+					name: "LimeButton"
+					template: @f6c12626-eb24-4a9e-be20-384f8af93859 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: x@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					y: 180
+					touchShortReleased: function<bool,int,int,int,int>(116779b1-4cc6-4437-8e48-be1875772527)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonValue = v:this.buttonId;" \
+							"	fire ev:CarSettings_CompoundEvents:lights_choice(v:this.text);" \
+							"    false" \
+							"}"
+					}
+					selected: selected@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<bool>)
+					buttonId: 3
+					buttonValue: @14f8c5ec-57e5-41bd-9576-4742d1e3d400 (objectref<int>)
+					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					Check: selected@799ac4cc-53e0-4736-abcd-5504799fd23d (propref<bool>)
+					text: "Lime Lights"
+					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					image: image_resource(2877573b-672a-4d09-80ad-ca39afb820aa)
+					{
+						file: "lime_light.png"
+					}
+					horizontalAlign: horizontalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					verticalAlign: verticalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+				}, 
+				GtfContainer_template_instance(fcc206f5-b3c9-422c-bf1c-910a8282312e)
+				{
+					name: "DarkGreenButton"
+					template: @f6c12626-eb24-4a9e-be20-384f8af93859 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: x@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					y: 240
+					touchShortReleased: function<bool,int,int,int,int>(b6082970-d7e6-4ecd-8bd9-ea1b9631291d)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonValue = v:this.buttonId;" \
+							"	fire ev:CarSettings_CompoundEvents:lights_choice(v:this.text);" \
+							"    false" \
+							"}"
+					}
+					selected: selected@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<bool>)
+					buttonId: 4
+					buttonValue: @14f8c5ec-57e5-41bd-9576-4742d1e3d400 (objectref<int>)
+					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					Check: selected@fcc206f5-b3c9-422c-bf1c-910a8282312e (propref<bool>)
+					text: "Dark Green Lights"
+					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					image: image_resource(cf8a785a-0157-4606-b62c-ceb645edb7b8)
+					{
+						file: "darkgreen_light.png"
+					}
+					horizontalAlign: horizontalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					verticalAlign: verticalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+				}, 
+				GtfContainer_template_instance(8909482a-c0b5-4c81-977b-422ec15b3cb1)
+				{
+					name: "YellowButton"
+					template: @f6c12626-eb24-4a9e-be20-384f8af93859 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: x@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					y: 300
+					touchShortReleased: function<bool,int,int,int,int>(984da428-6526-4fad-a816-7fe299063df3)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonValue = v:this.buttonId;" \
+							"	fire ev:CarSettings_CompoundEvents:lights_choice(v:this.text);" \
+							"    false" \
+							"}"
+					}
+					selected: selected@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<bool>)
+					buttonId: 5
+					buttonValue: @14f8c5ec-57e5-41bd-9576-4742d1e3d400 (objectref<int>)
+					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					Check: selected@8909482a-c0b5-4c81-977b-422ec15b3cb1 (propref<bool>)
+					text: "Yellow Lights"
+					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					image: image_resource(4657e467-1837-4ef5-90ba-7aab3c2c01c1)
+					{
+						file: "yellow_light.png"
+					}
+					horizontalAlign: horizontalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					verticalAlign: verticalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+				}]
+			name: "LightsContainer"
+			visible: true
+			width: 330
+			height: 350
+			x: 230
+			y: 100
+		}, 
+		GtfLabel(a85bf42b-b26a-4173-b840-790ebc968e18)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "ChoiceText"
+			visible: false
+			width: 100
+			height: 100
+			x: 0
+			y: 0
+			text: "label"
+			textColor: #FFFFFFFF
+			font: font_resource(2af38b06-3b7b-4a4e-812d-21d310a21a21)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+			ChangeChoice: conditional_script(23b38835-7482-4800-8b1d-4cd61225a664)
+			{
+				triggerList: trigger_list(952bfa34-2c46-45b1-ae3e-45e33ace2c45)
+				{
+					script: "ev:CarSettings_CompoundEvents:lights_choice" \
+						""
+				}
+				onTrigger: function<bool,bool>(27ea842d-cfec-4484-863a-36f1a6050414)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	match_event v:event = ev:CarSettings_CompoundEvents:lights_choice in" \
+						"	{" \
+						"		v:this.text = v:event.choice" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+			}
 		}]
-	text: "Change ambient lights"
-	textColor: textColor@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<color>)
+	text: @d5baf7ca-7fe2-4d87-8dca-e1d59597c1fc (objectref<string>)
+	textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 	font: font@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<font>)
+	image: @28a5929a-87d6-4473-9912-d62fd743c5c6 (objectref<image>)
+	fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 }

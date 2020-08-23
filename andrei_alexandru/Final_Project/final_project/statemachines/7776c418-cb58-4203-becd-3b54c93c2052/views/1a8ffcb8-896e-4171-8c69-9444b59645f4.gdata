@@ -7,7 +7,7 @@ GtfView_template_instance(1a8ffcb8-896e-4171-8c69-9444b59645f4)
 	children: children_list [
 		GtfContainer_template_instance(8063fbdf-27d4-4758-ac75-a0528934f44a)
 		{
-			name: "T_BackButton 1"
+			name: "BackButton"
 			template: @66713f45-2faf-4289-b7d7-da20b83b4fd3 (objectref<GtfContainer_template>)
 			children: children_list []
 			buttonEvent: function<bool>(581cac75-6d54-4dae-a01b-918d5449abd2)
@@ -18,8 +18,179 @@ GtfView_template_instance(1a8ffcb8-896e-4171-8c69-9444b59645f4)
 					"	false" \
 					"}"
 			}
+		}, 
+		GtfInstantiator(455037b8-ca12-4b31-baed-6ea9ca0de5e0)
+		{
+			features: feature_list [
+				LayoutPolicyBox(1e49f3bf-c41c-4c72-85a8-90029963c7ad)
+				{
+					gap: 20
+					layoutDirection: 1
+				}]
+			children: children_list [
+				GtfRectangle(420829df-1ffc-4c1b-bcf1-199a6b0215a8)
+				{
+					features: feature_list [
+						Border(3015bac6-8daf-44c5-910a-1a2dd4cdc39b)
+						{
+							borderThickness: 1
+							borderColor: #000000FF
+							borderStyle: 0
+						}, 
+						LineIndex(5b75311d-29cf-4edc-b968-9de70a610cf8)
+						{
+							lineIndex: 0
+						}, 
+						TouchShortReleased(61bb03f2-e630-4366-b76d-a6de1aa057bf)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(a27abe21-c7ff-4a32-b80e-16c46dda13b5)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this.buttonEvent()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(d8c55d97-73d9-46cc-87f7-eee3ecfeb98b)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(fe0079fb-a885-4660-85ff-6c48853892df)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text"
+							visible: true
+							width: width@420829df-1ffc-4c1b-bcf1-199a6b0215a8 (propref<int>)
+							height: height@420829df-1ffc-4c1b-bcf1-199a6b0215a8 (propref<int>)
+							x: -20
+							y: 0
+							text: "label"
+							textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+							font: font_resource(789f9df9-3e5e-4ab6-af6e-50988307d83f)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 2
+							verticalAlign: 0
+						}, 
+						GtfImage(bf29ebdf-b7db-4aad-9710-a463c1c4825a)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Logo"
+							visible: true
+							width: width@420829df-1ffc-4c1b-bcf1-199a6b0215a8 (propref<int>)
+							height: height@420829df-1ffc-4c1b-bcf1-199a6b0215a8 (propref<int>)
+							x: 0
+							y: 0
+							image: image_resource(d3b6668f-6965-466b-b1da-55e37e684629)
+							{
+								file: ""
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}]
+					name: "Background"
+					visible: true
+					width: width@455037b8-ca12-4b31-baed-6ea9ca0de5e0 (propref<int>)
+					height: 50
+					x: 0
+					y: 0
+					fillColor: #FFFFFF00
+					buttonEvent: function<bool>(2db1c084-60c6-4810-b85b-04322f767d41)
+					{
+						script: "function()" \
+							"{" \
+							"	if(v:this.lineIndex == 0)" \
+							"	{" \
+							"		f:setSkin(s:Coral, true)" \
+							"	}" \
+							"	" \
+							"	if(v:this.lineIndex == 1)" \
+							"	{" \
+							"		f:setSkin(s:Red, true)" \
+							"	}" \
+							"	" \
+							"	if(v:this.lineIndex == 2)" \
+							"	{" \
+							"		f:setSkin(s:Yellow, true)" \
+							"	}" \
+							"	" \
+							"	" \
+							"	false" \
+							"}"
+					}
+					setText: conditional_script(d1b34e7b-eb93-4e3b-80d4-0a2e0b01fcb8)
+					{
+						triggerList: trigger_list(84d36c9f-9819-4089-8a18-e1ada74e1ef3)
+						{
+							script: "v:this.lineIndex" \
+								"dp:CarSettingsMenu:ThemeList" \
+								""
+						}
+						onTrigger: function<bool,bool>(107bdf36-bbc3-4d64-a394-70501f2ab5ad)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this->Text.text = dp:CarSettingsMenu:ThemeList[v:this.lineIndex]" \
+								"	false" \
+								"}"
+						}
+					}
+					setLogo: conditional_script(dc78df6e-465f-4b98-ae82-8a33087ab241)
+					{
+						triggerList: trigger_list(6e03a31a-13b8-4513-9a9b-abeccb6eab74)
+						{
+							script: "dp:CarSettingsMenu:Theme_BackgroundList" \
+								"v:this.lineIndex" \
+								""
+						}
+						onTrigger: function<bool,bool>(43b4cc81-910c-40d7-90ef-18d8d78bf541)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this->Logo.image = dp:CarSettingsMenu:Theme_BackgroundList[v:this.lineIndex]" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "Theme_Instantiator"
+			visible: true
+			width: 400
+			height: 200
+			x: 200
+			y: 150
+			numItems: 3
+			lineMapping: intlist []
+			calculateNumItems: conditional_script(25fca8e4-42f6-4cd3-a49d-28b0001aef8e)
+			{
+				triggerList: trigger_list(6c626c7f-a681-4d2b-a554-70f0da1b689d)
+				{
+					script: "dp:CarSettingsMenu:ThemeList" \
+						""
+				}
+				onTrigger: function<bool,bool>(3b44e730-2ec0-42e0-a252-3a38799b6d80)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	v:this.numItems = length dp:CarSettingsMenu:ThemeList" \
+						"	false" \
+						"}"
+				}
+			}
 		}]
-	text: "Change Theme"
-	textColor: textColor@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<color>)
+	text: @9f85f9b2-8144-4628-ae2f-c76d739fff25 (objectref<string>)
+	textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 	font: font@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<font>)
+	image: @28a5929a-87d6-4473-9912-d62fd743c5c6 (objectref<image>)
+	fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 }
