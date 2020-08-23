@@ -1,0 +1,150 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(0d232f89-0a53-422e-97e7-f4dcef8ec699)
+{
+	name: "Program_View"
+	structure: GtfView(a8003f3e-05a6-4d7f-9418-3c407e3af789)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(01bb6ee9-fe4e-4035-9a90-1d2d5d64e180)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLabel(54b57e8a-3c28-448d-b8f4-000a7f0cd8ce)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Title"
+						visible: true
+						width: 500
+						height: 100
+						x: 150
+						y: 10
+						text: "label"
+						textColor: #000000FF
+						font: font_resource(2f5e8f7f-2b8e-4c13-8e98-88dcd062ca8e)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 50
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfContainer_template_instance(1b0dfda2-7399-4564-9213-69cfaf7eb1df)
+					{
+						name: "Start"
+						template: @815ad5fc-ec09-4356-be54-0dc3783dd429 (objectref<GtfContainer_template>)
+						children: children_list []
+						x: 50
+						y: 27
+						fillColor: #00BFFFFF
+						touchShortReleased: function<bool,int,int,int,int>(d916e3a5-5123-4bdf-bd17-a7a10544d791)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	" \
+								"	if(dp:Water_Suply==false || dp:Closed==false || dp:Detergent==false)" \
+								"		{	fire ev:DisplayMsg()" \
+								"			dp:Message=\"\";" \
+								"			dp:Message2=\"\";" \
+								"			if(dp:Water_Suply== false)" \
+								"				dp:Message= dp:Message + \"\\nWater supply error\"" \
+								"			if(dp:Closed==false)" \
+								"				dp:Message=dp:Message + \"\\nWashing machine still open\"" \
+								"			if(dp:Detergent==false)" \
+								"				dp:Message=dp:Message + \"\\nNot enough detergent\"" \
+								"		}" \
+								"	else{" \
+								"			dp:Message2=\"Program will start soon\"" \
+								"			fire ev:goTo_Start()" \
+								"			fire_delayed 4000, ev:goTo_back()" \
+								"		}" \
+								"	" \
+								"    false" \
+								"}"
+						}
+						text: "Start"
+						"x 2": "x 2"@815ad5fc-ec09-4356-be54-0dc3783dd429 (propref<int>)
+						"y 2": "y 2"@815ad5fc-ec09-4356-be54-0dc3783dd429 (propref<int>)
+					}, 
+					GtfContainer_template_instance(38b9ddbd-36b8-4d96-b3e6-375fda8dd916)
+					{
+						name: "Stop"
+						template: @815ad5fc-ec09-4356-be54-0dc3783dd429 (objectref<GtfContainer_template>)
+						children: children_list []
+						x: 650
+						y: 30
+						fillColor: #00BFFFFF
+						touchShortReleased: function<bool,int,int,int,int>(0755cd7d-4c54-4060-be1a-bb4ca0e2815c)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	fire ev:goTo_back()" \
+								"    false" \
+								"}"
+						}
+						text: "Back"
+						"x 2": "x 2"@815ad5fc-ec09-4356-be54-0dc3783dd429 (propref<int>)
+						"y 2": "y 2"@815ad5fc-ec09-4356-be54-0dc3783dd429 (propref<int>)
+					}, 
+					GtfLabel(edf56b69-561e-4027-9f09-ffa1055124b5)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Time_label"
+						visible: true
+						width: 400
+						height: 100
+						x: 200
+						y: 170
+						text: "Durata: 120 de minute"
+						textColor: #000000FF
+						font: font_resource(5ecab3f6-dc07-4f66-ba97-47daa7994c4e)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 40
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfLabel(0b206cdd-d63d-4ca2-b4fa-a50c6f0c94e2)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Temp_label"
+						visible: true
+						width: 400
+						height: 100
+						x: 201
+						y: 301
+						text: "Temperatura:"
+						textColor: #000000FF
+						font: font_resource(f7ad338b-8b11-4458-a632-859efe5d607f)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 40
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "Background"
+				visible: true
+				width: width@a8003f3e-05a6-4d7f-9418-3c407e3af789 (propref<int>)
+				height: height@a8003f3e-05a6-4d7f-9418-3c407e3af789 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #BAFDD8FF
+			}]
+		name: "View 1"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+	}
+	fillColor: fillColor@01bb6ee9-fe4e-4035-9a90-1d2d5d64e180 (propref<color>)
+	text: text@54b57e8a-3c28-448d-b8f4-000a7f0cd8ce (propref<string>)
+	"text 2": text@edf56b69-561e-4027-9f09-ffa1055124b5 (propref<string>)
+	"text 3": text@0b206cdd-d63d-4ca2-b4fa-a50c6f0c94e2 (propref<string>)
+}

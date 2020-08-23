@@ -1,0 +1,271 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(d51ae951-9ac5-4967-b6b6-97d86fc62b97)
+{
+	name: "View 3"
+	template: @b3e5871b-3feb-497d-ab64-d7e4f8ce495c (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(84c68580-b8cd-41e5-8b09-b89bee6c45ff)
+		{
+			name: "BasicButton 1"
+			template: @23447c17-33c2-4923-be9d-943094e58ce8 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Buy"
+			x: 50
+			y: 90
+			Action: function<bool>(99b7e18c-61cd-4c25-b386-0e427a6fee94)
+			{
+				script: "function()" \
+					"{" \
+					"	if(dp:Cash>dp:Ticket_Price)" \
+					"		dp:Cash -= dp:Ticket_Price" \
+					"	else" \
+					"	fire ev:Warning()" \
+					"	false" \
+					"}"
+			}
+			lineIndex: lineIndex@23447c17-33c2-4923-be9d-943094e58ce8 (propref<int>)
+		}, 
+		GtfContainer_template_instance(436a32bf-f10a-46ca-ada3-0638862191ae)
+		{
+			name: "BasicButton 2"
+			template: @23447c17-33c2-4923-be9d-943094e58ce8 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Finish"
+			x: 50
+			y: 200
+			Action: function<bool>(f808e8a1-4992-46ff-beb4-13f0054ab080)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_Back()" \
+					"	false" \
+					"}"
+			}
+			lineIndex: lineIndex@23447c17-33c2-4923-be9d-943094e58ce8 (propref<int>)
+		}, 
+		GtfContainer(87ccf362-2fa9-4d7e-bba0-0fc7e7ab71ad)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfInstantiator(9dd458f1-b98f-4d4e-86c9-e408d175bdce)
+				{
+					features: feature_list [
+						LayoutPolicyFlow(966ea8b9-f94a-4cbc-a07a-88110ed13242)
+						{
+							horizontalGap: 30
+							verticalGap: 0
+							layoutDirection: 0
+							horizontalChildAlign: 0
+							verticalChildAlign: 0
+						}]
+					children: children_list [
+						GtfContainer_template_instance(c29a38b5-c6a4-401d-830c-ca09017599d5)
+						{
+							name: "BasicButton 1"
+							template: @23447c17-33c2-4923-be9d-943094e58ce8 (objectref<GtfContainer_template>)
+							children: children_list []
+							text: text@23447c17-33c2-4923-be9d-943094e58ce8 (propref<string>)
+							x: x@23447c17-33c2-4923-be9d-943094e58ce8 (propref<int>)
+							y: y@23447c17-33c2-4923-be9d-943094e58ce8 (propref<int>)
+							Action: function<bool>(6061bd60-91d4-4a38-9a97-22e720fc525f)
+							{
+								script: "function()" \
+									"{" \
+									"	if(v:this.text == dp:Ticket_Type[0])" \
+									"		dp:Ticket_Price = dp:Ticket_Prices[0]" \
+									"	else if(v:this.text == dp:Ticket_Type[1])" \
+									"		dp:Ticket_Price = dp:Ticket_Prices[1]" \
+									"	else if(v:this.text == dp:Ticket_Type[2])" \
+									"		dp:Ticket_Price = dp:Ticket_Prices[2]" \
+									"	else if(v:this.text == dp:Ticket_Type[3])" \
+									"		dp:Ticket_Price = dp:Ticket_Prices[3]" \
+									"	else if(v:this.text == dp:Ticket_Type[4])" \
+									"		dp:Ticket_Price = dp:Ticket_Prices[4]" \
+									"	else if(v:this.text == dp:Ticket_Type[5])" \
+									"		dp:Ticket_Price = dp:Ticket_Prices[5]" \
+									"	false" \
+									"}"
+							}
+							lineIndex: lineIndex@23447c17-33c2-4923-be9d-943094e58ce8 (propref<int>)
+							setText: conditional_script(78425b0e-00a2-4b4a-997a-b79854fc6b07)
+							{
+								triggerList: trigger_list(c00beeb8-c0ab-4c6d-90b6-c47e99443e01)
+								{
+									script: "dp:Ticket_Type" \
+										"v:this.lineIndex"
+								}
+								onTrigger: function<bool,bool>(b4dbbab9-0269-4365-9bab-abccde3ecee6)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	v:this.text=dp:Ticket_Type[v:this.lineIndex]" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "ButtonList"
+					visible: true
+					width: 514
+					height: 95
+					x: -58
+					y: -49
+					numItems: int_scriptedValue(ef8b3ff1-66b6-4892-a991-7367b0885a1c)
+					{
+						triggerList: trigger_list(de06eb05-f278-4773-98f8-efb71996bc3e)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(10508916-513e-4519-a51f-d71f3a63539f)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<int>(36dd10d3-a735-4a1f-92e6-9b4d585a3957)
+						{
+							script: "function()" \
+								"{" \
+								"	length dp:Ticket_Type" \
+								"}"
+						}
+						write: function<bool,int>(5b321abf-7cd2-4152-a4d0-b15266e5ddc9)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					lineMapping: intlist []
+				}]
+			name: "Button_Container"
+			visible: true
+			width: 100
+			height: 100
+			x: 256
+			y: 85
+		}, 
+		GtfLabel(3a3e937e-d484-442e-82d8-b9889eb35b0c)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Price"
+			visible: true
+			width: 214
+			height: 100
+			x: 14
+			y: 302
+			text: string_scriptedValue(2853c270-9854-436e-8a9f-84394a8142c6)
+			{
+				triggerList: trigger_list(3d8bb34e-d277-41e6-91fa-ef8c89bb1c1c)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(02751a3c-1a95-4463-89e7-d448f98d8496)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(58d4a1ba-7c7b-40e1-af06-77f5d7e2db2f)
+				{
+					script: "function()" \
+						"{" \
+						"	\"Ticket Price: \" + f:format_float(\"%.2f\",true,dp:Ticket_Price) + \" lei\"" \
+						"}"
+				}
+				write: function<bool,string>(48114cfc-5d26-4f54-88b3-662847e72a5f)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #000000FF
+			font: font_resource(8fc342b3-3f43-4e80-a14d-6f6bdbffc6d0)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(9298e0da-41fb-4f82-af57-d661bc2ae8e8)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Amount"
+			visible: true
+			width: 274
+			height: 71
+			x: 339
+			y: 314
+			text: string_scriptedValue(04a64c40-37fb-4b0a-9182-9d25257ca47e)
+			{
+				triggerList: trigger_list(b9633456-e988-482b-b040-f6e7168f9de0)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(ecc92571-f264-453e-8289-7c649a833794)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(b507ac5b-6454-43cb-b60b-6e8eedb9658f)
+				{
+					script: "function()" \
+						"{" \
+						"	\"Amount: \" + f:format_float(\"%.2f\",true,dp:Cash) + \" lei\"" \
+						"}"
+				}
+				write: function<bool,string>(2895cb25-0b3b-47aa-b955-5875feb8d96e)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #000000FF
+			font: font_resource(fcb8a5d4-807b-4732-856d-1d57ad313d6b)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(52307819-0151-4e7a-b96b-754a8afc6e2c)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 1"
+			visible: true
+			width: 495
+			height: 141
+			x: 214
+			y: 166
+			text: "Make sure you have enough funds"
+			textColor: #000000FF
+			font: font_resource(ace08f78-4333-403b-a26b-ab3aeab9f04e)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 40
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}]
+}
