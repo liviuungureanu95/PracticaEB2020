@@ -1,0 +1,114 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(93865988-5ae9-4255-993c-bb3bfde382ac)
+{
+	name: "Music_view"
+	template: @47101df3-2cb4-462c-8236-06e865e3862e (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(da845c3b-c37c-43ae-9d51-ea48633b4fc4)
+		{
+			name: "PlayMenuTemp 1"
+			template: @d23f21b6-fb1b-410f-bd3a-f6227c15a42d (objectref<GtfContainer_template>)
+			children: children_list []
+			y: 380
+			x: 100
+			buttonEvent: function<bool>(9f34aa15-bada-4a52-ba90-544f7c1d79e1)
+			{
+				script: "function()" \
+					"{" \
+					"	if(dp:index>=1)" \
+					"		dp:index-=1" \
+					"	" \
+					"	false" \
+					"}"
+			}
+			"buttonEvent 2": "buttonEvent 2"@d23f21b6-fb1b-410f-bd3a-f6227c15a42d (propref<function<bool>>)
+			"buttonEvent 3": function<bool>(2f4b21e9-f371-4bf3-8282-f48a4a7ae755)
+			{
+				script: "function()" \
+					"{" \
+					"	if(dp:index<length dp:MusicList -1)" \
+					"		dp:index+=1" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(ca813187-5c97-4095-b4f9-b45d37fe0e36)
+		{
+			name: "Back_button"
+			template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 700
+			y: 0
+			fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
+			text: "BACK"
+			buttonEvent: function<bool>(93fa1192-5c66-42fe-85e9-5d3a2758ffbe)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoBack()" \
+					"	false" \
+					"}"
+			}
+			width: 100
+			height: 50
+			visible: visible@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<bool>)
+			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+		}, 
+		GtfImage(d0ea5a52-72ea-4a33-976e-0afbd7aa9ea4)
+		{
+			features: feature_list [
+				ScaleMode(0488cd17-3cfe-4e8a-b950-2cef2041ee47)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "Image"
+			visible: true
+			width: 526
+			height: 295
+			x: 127
+			y: 78
+			image: image_resource(0635ecb1-d998-44c6-a1fd-6e47254005c3)
+			{
+				file: "music_back.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	image: image@47101df3-2cb4-462c-8236-06e865e3862e (propref<image>)
+	text: string_scriptedValue(ac1565fe-83a1-475c-96f4-72b6577e711b)
+	{
+		triggerList: trigger_list(ebb22e09-76c8-49b4-9986-5f753bef5bba)
+		{
+			script: "dp:index" \
+				"dp:MusicList"
+		}
+		onTrigger: function<bool,bool>(0abe5503-0258-4141-9652-11d48e82d9f1)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		read: function<string>(1aa23f15-6fde-43c2-8dfa-2f860a04ef41)
+		{
+			script: "function()" \
+				"{" \
+				"	dp:MusicList[dp:index]" \
+				"}"
+		}
+		write: function<bool,string>(da88145f-7007-4fd8-84ba-a78f0cff5975)
+		{
+			script: "function(v:arg0::string)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	visible: false
+	"visible 2": true
+}

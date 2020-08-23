@@ -5,56 +5,138 @@ GtfView_template_instance(52e662bc-2e1c-45df-9deb-7ed34e14d4e9)
 	name: "Movie_view"
 	template: @47101df3-2cb4-462c-8236-06e865e3862e (objectref<GtfView_template>)
 	children: children_list [
-		GtfEllipse(55bcb1b5-7902-4fa8-b50a-4e60c5e2c363)
+		GtfContainer_template_instance(1a2f5501-0997-4d6b-a5ac-077ddca614de)
 		{
-			features: feature_list []
+			name: "back_button"
+			template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
 			children: children_list []
-			name: "Ellipse 1"
-			visible: true
+			x: x@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			y: y@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
+			text: "BACK"
+			buttonEvent: function<bool>(0499964a-68e8-4e2e-bcbf-ceb6d1f43b26)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoBack()" \
+					"	false" \
+					"}"
+			}
 			width: 100
-			height: 100
-			x: 237
-			y: 298
-			fillColor: #A9A9A9FF
-			arcWidth: 0
-			centralAngle: 360F
-			sectorRotation: 0F
+			height: 50
+			visible: visible@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<bool>)
+			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
 		}, 
-		GtfEllipse(7c8eedc6-3e79-45ef-b91c-c7b6e5ea0457)
+		GtfImage(2bdcb17a-9568-4766-8b65-2f3456ea1151)
 		{
 			features: feature_list [
-				TouchShortReleased(6308d40b-4018-4107-9179-379db6d0465b)
+				ScaleMode(43e77628-6d03-4432-828b-187c4bb2e2c8)
 				{
-					touchShortReleased: function<bool,int,int,int,int>(d25fef65-dc81-47c3-8fc2-b1b6c1945048)
-					{
-						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
-							"{" \
-							"	fire ev:GoBack()" \
-							"    false" \
-							"}"
-					}
-				}, 
-				StateTouched(0c717403-3200-4591-8eee-15bed9d1703d)
-				{
-					touchable: true
-					touched: false
-					touchPolicy: 0
-					touchBehavior: 0
+					scaleMode: 1
 				}]
 			children: children_list []
-			name: "Ellipse 2"
+			name: "FilmImage"
 			visible: true
-			width: 100
-			height: 100
-			x: 96
-			y: 206
-			fillColor: #A9A9A9FF
-			arcWidth: 0
-			centralAngle: 360F
-			sectorRotation: 0F
+			width: 662
+			height: 312
+			x: 72
+			y: 76
+			image: image_scriptedValue(4b4f2ac5-2a3a-4787-a2d1-c455b1f05c92)
+			{
+				triggerList: trigger_list(275f14e7-064b-4fe8-bfca-e9dc1069cc73)
+				{
+					script: "dp:index" \
+						"dp:\"Film-List\"" \
+						""
+				}
+				onTrigger: function<bool,bool>(0f34d45f-5643-464d-a133-1e07afa34243)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<image>(45b7908a-2e35-4f62-a4ed-4b8b210bed89)
+				{
+					script: "function()" \
+						"{" \
+						"	dp:\"Film-List\"[dp:index]" \
+						"" \
+						"}"
+				}
+				write: function<bool,image>(dae28013-479e-44d7-989e-2777b7759e62)
+				{
+					script: "function(v:arg0::image)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfContainer_template_instance(41e11a7d-dd0c-498d-b95e-ac4178f7698d)
+		{
+			name: "PlayMenu"
+			template: @d23f21b6-fb1b-410f-bd3a-f6227c15a42d (objectref<GtfContainer_template>)
+			children: children_list []
+			y: 393
+			x: 101
+			buttonEvent: function<bool>(58a5c843-6cec-42f3-ae2b-6aac9177f934)
+			{
+				script: "function()" \
+					"{" \
+					"	if(dp:index>=1)" \
+					"		dp:index-=1" \
+					"	false" \
+					"}"
+			}
+			"buttonEvent 2": "buttonEvent 2"@d23f21b6-fb1b-410f-bd3a-f6227c15a42d (propref<function<bool>>)
+			"buttonEvent 3": function<bool>(3c89c368-e566-4d9a-b637-615799f24460)
+			{
+				script: "function()" \
+					"{" \
+					"	if(dp:index< length dp:Film_title-1)" \
+					"		dp:index+=1" \
+					"	false" \
+					"}"
+			}
 		}]
 	image: image@47101df3-2cb4-462c-8236-06e865e3862e (propref<image>)
-	text: text@47101df3-2cb4-462c-8236-06e865e3862e (propref<string>)
-	visible: visible@47101df3-2cb4-462c-8236-06e865e3862e (propref<bool>)
+	text: string_scriptedValue(ac7d31b4-c9cf-4c19-89c0-46b625da4efb)
+	{
+		triggerList: trigger_list(635a462f-a1a4-4413-a57b-b168b52e8769)
+		{
+			script: "dp:index" \
+				"dp:Film_title"
+		}
+		onTrigger: function<bool,bool>(d02b7194-e600-4f9d-a39f-4a5c828402b2)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		read: function<string>(18ecda38-787c-4b2e-9fc5-b3d28896af92)
+		{
+			script: "function()" \
+				"{" \
+				"	dp:Film_title[dp:index]" \
+				"}"
+		}
+		write: function<bool,string>(5f98e454-b856-4db1-8f1d-79edf0cf4dfa)
+		{
+			script: "function(v:arg0::string)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	visible: false
 	"visible 2": "visible 2"@47101df3-2cb4-462c-8236-06e865e3862e (propref<bool>)
 }
