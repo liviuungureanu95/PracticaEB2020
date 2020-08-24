@@ -26,6 +26,18 @@ GtfView(b106dafd-e6f7-417d-9fd7-8448d26ec436)
 			horizontalAlign: 0
 			verticalAlign: 1
 		}, 
+		GtfRectangle(ba924763-9e32-4153-a6ec-5e5adf777d0e)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "lights-status"
+			visible: true
+			width: 74
+			height: 128
+			x: 507
+			y: 195
+			fillColor: #FFFFFFFF
+		}, 
 		GtfImage(65b52bf1-31ff-4c41-95b4-7e9d600da455)
 		{
 			features: feature_list [
@@ -33,7 +45,51 @@ GtfView(b106dafd-e6f7-417d-9fd7-8448d26ec436)
 				{
 					scaleMode: 1
 				}]
-			children: children_list []
+			children: children_list [
+				GtfImage(9920f2dc-0c22-4e0a-910d-bd99294814eb)
+				{
+					features: feature_list [
+						ScaleMode(17ad88bf-7f89-48c0-9aaf-7365abb5c684)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "fullbeam-light"
+					visible: @da0b6790-dd64-478d-bf82-aff45eaf1b60 (objectref<bool>)
+					width: 66
+					height: 62
+					x: 487
+					y: 86
+					image: image_resource(c67faa57-5e2d-46f3-a9b6-66e7db054e39)
+					{
+						file: "full-beam-lights.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(8f7a5ab6-47ff-4061-a650-c17c0ac00173)
+				{
+					features: feature_list [
+						ScaleMode(9af3a3bf-30eb-4459-b990-047512d7e1df)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "short-light"
+					visible: @d75ba55d-7868-4fc7-973c-5f95c6c1db7e (objectref<bool>)
+					width: 65
+					height: 74
+					x: 488
+					y: 22
+					image: image_resource(7015569b-00a3-4389-bedd-c10e1cf2ff40)
+					{
+						file: "short-light.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
 			name: "truck"
 			visible: true
 			width: 528
@@ -632,6 +688,64 @@ GtfView(b106dafd-e6f7-417d-9fd7-8448d26ec436)
 			text: "MEDIA"
 			textColor: #000000FF
 			font: font_resource(7381649b-045f-4a85-ae39-c2a97131d583)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(c9e89c0e-91a0-44d6-8c26-84ba3eda2366)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "checking autodriving message"
+			visible: true
+			width: 424
+			height: 34
+			x: 116
+			y: 140
+			text: string_scriptedValue(b3ffb60e-9b42-403a-936e-5a203dadd7e8)
+			{
+				triggerList: trigger_list(71165f59-80d1-4e0d-a416-5b12afb83dbb)
+				{
+					script: "dp:autodriving_speed" \
+						""
+				}
+				onTrigger: function<bool,bool>(7fbc560c-6d47-4dc5-9416-e5585af9a8f8)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(6e6a7d21-7469-45e5-8f87-5b449e5ba3e1)
+				{
+					script: "function()" \
+						"{" \
+						"" \
+						"	if(dp:autodriving_speed == 0)" \
+						"	{" \
+						"		\" \"" \
+						"	}" \
+						"	else " \
+						"	{" \
+						"		\"!!!! AUTO-DRIVING IS ENABLED !!!!\"" \
+						"	}" \
+						"}"
+				}
+				write: function<bool,string>(8530a5ba-c326-4283-88dc-77e752494447)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #FFFFFFFF
+			font: font_resource(a7c48b49-d3b0-4027-899d-7832a421b1c3)
 			{
 				file: "PT_Sans_Narrow.ttf"
 				size: 30

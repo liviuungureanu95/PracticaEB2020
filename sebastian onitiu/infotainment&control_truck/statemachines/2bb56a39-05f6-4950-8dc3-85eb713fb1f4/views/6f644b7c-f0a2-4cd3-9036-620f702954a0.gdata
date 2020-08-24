@@ -1,0 +1,213 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(6f644b7c-f0a2-4cd3-9036-620f702954a0)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(aa7f3b80-ac95-46e7-8d3d-6bbf6504d0bb)
+		{
+			features: feature_list [
+				ScaleMode(3d592702-3675-42c5-b60c-f0905295bac0)
+				{
+					scaleMode: 1
+				}]
+			children: children_list [
+				GtfImage(bfd2bb93-5629-43bc-b718-f62cb2b103e4)
+				{
+					features: feature_list [
+						TouchPressed(a1a3f22c-c970-42a1-89cb-7834a504bf84)
+						{
+							touchPressed: function<bool,int,int,int,int>(39c055ea-7ea4-461f-b573-cf0c4f4669bb)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:\"pop-upDISABLE\"()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(019d535b-5ef9-429f-81fe-a5add4bf5f8b)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(f1adcf77-bf17-4d2b-972d-2fd75dcefa00)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "OK_TEXT"
+							visible: true
+							width: 31
+							height: 33
+							x: 15
+							y: 12
+							text: "OK"
+							textColor: #000000FF
+							font: font_resource(9a26db0c-2b1b-4761-8b31-207dd4917739)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 0
+							verticalAlign: 0
+						}]
+					name: "button_ok"
+					visible: true
+					width: 63
+					height: 61
+					x: 514
+					y: 149
+					image: image_resource(79eb8ec6-08f2-4c49-bf3d-2cbbcf3e7a05)
+					{
+						file: "Fără titlu (1).png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(91b9a815-5491-4c95-bd5e-109197b70df2)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "RESULTS/WARNING_MESSAGE"
+					visible: true
+					width: 550
+					height: 35
+					x: 252
+					y: 83
+					text: string_scriptedValue(a47938c3-a485-4900-81eb-6c6639b52822)
+					{
+						triggerList: trigger_list(1582ac89-28be-4b75-a1ac-63cd592bce99)
+						{
+							script: "dp:message_tyres_pressure" \
+								""
+						}
+						onTrigger: function<bool,bool>(b8fa2457-4464-4e56-9f9c-71bc337bff12)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(0d5f683d-8248-48dc-bf23-1bf00346e271)
+						{
+							script: "function()" \
+								"{" \
+								"	dp:message_tyres_pressure" \
+								"}"
+						}
+						write: function<bool,string>(20031f03-a4ad-431c-a4fd-a5291ee48c34)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(08137e71-4fda-4c36-ac9e-0e49104252a5)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 17
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(76445c44-47fb-4ed0-a43f-80420b1b33d5)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "messages_warning"
+					visible: true
+					width: 527
+					height: 35
+					x: 258
+					y: 120
+					text: string_scriptedValue(e8ef17e3-c6fd-4743-9fda-27c0b8933369)
+					{
+						triggerList: trigger_list(e30a9c78-0377-4718-afba-11d40baa5083)
+						{
+							script: "dp:message_tyres_2" \
+								""
+						}
+						onTrigger: function<bool,bool>(db44b935-27e2-4dad-8336-c5dc9e859865)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(b42b67e4-eb9e-4eb6-b8e0-8fb6b00bfa22)
+						{
+							script: "function()" \
+								"{" \
+								"	dp:message_tyres_2" \
+								"}"
+						}
+						write: function<bool,string>(635a0e0f-107f-425d-9128-cb9172329cbe)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(00222a4a-7498-430b-9d29-9a3b004b3521)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 18
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "warning_background"
+			visible: true
+			width: 826
+			height: 241
+			x: -250
+			y: 0
+			image: image_resource(4b7272b2-491a-4f09-b62a-c44b1e5b2107)
+			{
+				file: "control five.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(fa105483-d4f1-479e-8e1c-8d2b79dfd947)
+		{
+			features: feature_list [
+				ScaleMode(a7f3a177-c17a-4827-a5cb-3925825ceab6)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "logo_warning"
+			visible: true
+			width: 67
+			height: 68
+			x: 255
+			y: 11
+			image: image_resource(ae38b856-4ec9-4a1d-9468-c0b7abe68a8f)
+			{
+				file: "deflated_tyres.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "message_for_user"
+	visible: true
+	width: 576
+	height: 242
+	x: 0
+	y: 96
+}

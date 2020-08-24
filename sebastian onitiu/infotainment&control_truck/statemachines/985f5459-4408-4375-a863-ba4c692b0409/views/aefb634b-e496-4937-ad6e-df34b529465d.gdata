@@ -64,31 +64,6 @@ GtfView(aefb634b-e496-4937-ad6e-df34b529465d)
 							focused: focused@be9dc709-5e3b-4534-889a-8cb5e7a241a6 (propref<bool>)
 							borderColor: borderColor@be9dc709-5e3b-4534-889a-8cb5e7a241a6 (propref<color>)
 							borderThickness: borderThickness@be9dc709-5e3b-4534-889a-8cb5e7a241a6 (propref<int>)
-							"Conditional script 2": conditional_script(275d8f7a-ba25-4243-acc1-58d960b56868)
-							{
-								triggerList: trigger_list(e4e38661-2ed6-4dc3-94e4-bec1683964ad)
-								{
-									script: "v:this.focused" \
-										"dp:color_animation2" \
-										"dp:\"color border\"" \
-										""
-								}
-								onTrigger: function<bool,bool>(d8690879-bcc5-4f0d-9ad1-dd5c96d7147b)
-								{
-									script: "function(v:arg0::bool)" \
-										"{" \
-										"	if(v:this.focused)" \
-										"	{" \
-										"		v:this.borderColor = dp:color_animation2" \
-										"	}" \
-										"	else" \
-										"	{" \
-										"		v:this.borderColor = dp:\"color border\"" \
-										"	}" \
-										"	false" \
-										"}"
-								}
-							}
 						}, 
 						GtfContainer_template_instance(12eb1279-1420-4d12-9055-0f065f0c8c67)
 						{
@@ -110,23 +85,13 @@ GtfView(aefb634b-e496-4937-ad6e-df34b529465d)
 							{
 								triggerList: trigger_list(db3269cd-7417-41fd-8b0d-d68433f88ac9)
 								{
-									script: "v:this.focused" \
-										"dp:color_animation2" \
-										"dp:\"color border\"" \
-										""
+									script: ""
 								}
 								onTrigger: function<bool,bool>(7b6e3657-7ccb-439e-8494-561e2108fe62)
 								{
 									script: "function(v:arg0::bool)" \
 										"{" \
-										"	if(v:this.focused)" \
-										"	{" \
-										"		v:this.borderColor = dp:color_animation2" \
-										"	}" \
-										"	else" \
-										"	{" \
-										"		v:this.borderColor = dp:\"color border\"" \
-										"	}" \
+										"	" \
 										"	false" \
 										"}"
 								}
@@ -247,17 +212,6 @@ GtfView(aefb634b-e496-4937-ad6e-df34b529465d)
 								{
 									lineIndex: 0
 								}, 
-								TouchPressed(13370866-9443-4997-bbb9-dbb3ed12b1cd)
-								{
-									touchPressed: function<bool,int,int,int,int>(7aad8fc3-03bd-4cc6-8a91-71795c1a2985)
-									{
-										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
-											"{" \
-											"	f:focusMoveTo(v:this)" \
-											"    false" \
-											"}"
-									}
-								}, 
 								StateTouched(cca54bd5-41b3-4192-bcbb-7896b6921cb6)
 								{
 									touchable: true
@@ -278,6 +232,24 @@ GtfView(aefb634b-e496-4937-ad6e-df34b529465d)
 										{
 											colorationEnabled: true
 											colorationColor: #DCDCDCFF
+										}, 
+										TouchPressed(0a9f4373-f36c-4ede-8e7a-45ad1097b34f)
+										{
+											touchPressed: function<bool,int,int,int,int>(e63aa51c-f3dc-4ea5-a631-ae5a6f591278)
+											{
+												script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+													"{" \
+													"	f:focusMoveTo(v:this)" \
+													"    false" \
+													"}"
+											}
+										}, 
+										StateTouched(66b0ba5c-e50c-4503-b479-69d0f2bd05e9)
+										{
+											touchable: true
+											touched: false
+											touchPolicy: 0
+											touchBehavior: 0
 										}]
 									children: children_list []
 									name: "Ellipse"
