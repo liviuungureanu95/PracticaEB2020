@@ -1,0 +1,854 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(6c79a55e-384f-48a3-816e-ae66db107edf)
+{
+	name: "16_View"
+	template: @6ed0fc89-f5fa-41df-8452-71b599053367 (objectref<GtfView_template>)
+	children: children_list [
+		GtfSceneGraph(7f8650f1-56b2-4fd1-ba01-0fc3725cf94b)
+		{
+			features: feature_list [
+				TouchShortReleased(129aa23c-d756-4ea2-b251-6aed74d4e979)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(fb2f4d8a-c39f-42c3-9b80-5692a2420a73)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.colorationColor = dp:Transparent" \
+							"	v:this->^->NextButton.visible = true" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(00edf3bc-b95c-4f3c-a79b-d2d8ec028810)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}, 
+				Coloration(3df07dcd-be62-4833-a2a5-5a35cc384f24)
+				{
+					colorationEnabled: true
+					colorationColor: #FFFFFFFF
+				}]
+			children: children_list [
+				GtfSceneGraphNode(bded65f2-aeaa-4864-860a-5a26c85d11c6)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfSceneGraphNode(28b366b1-17b3-4428-8bdc-69015e35b885)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfSceneGraphNode(5747bb1e-8102-4326-8138-afe6630afee9)
+								{
+									features: feature_list []
+									children: children_list [
+										GtfMeshWidget(81e4458c-d6eb-4182-907c-256bb3fdb9b4)
+										{
+											features: feature_list []
+											children: children_list [
+												GtfMaterialWidget(c1dcdc44-2640-4ce3-b454-3851dd8aaf80)
+												{
+													features: feature_list [
+														GtfDiffuseTextureFeature(353d3c24-ed60-4e01-95ca-f338abb872a6)
+														{
+															diffuseTexture: image_resource(db8c15e5-a5da-4cfc-bd3a-79256e3beaae)
+															{
+																file: "mosquito_20200824_130605\\5.png"
+															}
+															diffuseTextureAddressModeU: 0
+															diffuseTextureAddressModeV: 0
+															diffuseFilterMode: 2
+															diffuseSRGB: false
+														}, 
+														GtfSpecularTextureFeature(c93218bc-9152-4355-8557-32cff2f31f10)
+														{
+															specularTexture: image_resource(534f5488-ae2f-4339-a174-9b4409fa6b0d)
+															{
+																file: "mosquito_20200824_130605\\6.png"
+															}
+															specularTextureAddressModeU: 0
+															specularTextureAddressModeV: 0
+															specularFilterMode: 2
+															specularSRGB: false
+														}]
+													children: children_list []
+													name: "Material_49"
+													ambient: #333333FF
+													diffuse: #FFFFFFFF
+													emissive: #000000FF
+													shininess: 2.351496F
+													specular: #FFFFFFFF
+													opacity: 1F
+												}]
+											name: "Mesh 2"
+											visible: true
+											mesh: mesh_resource(83d95826-0127-49d2-8e71-3cb11ef02d07)
+											{
+												file: "mosquito_20200824_130605\\mesh_id310.ebmesh"
+											}
+											culling: 2
+										}]
+									name: "node_id30"
+									visible: true
+									rotationX: -90.00004F
+									rotationY: 1.707546E-05F
+									rotationZ: 0F
+									scalingX: -0.6922437F
+									scalingY: -0.6922429F
+									scalingZ: -0.6922429F
+									translationX: -0.04346766F
+									translationY: -0.0006836325F
+									translationZ: 0.05683329F
+								}]
+							name: "root"
+							visible: true
+							rotationX: 0F
+							rotationY: 0F
+							rotationZ: 0F
+							scalingX: 200F
+							scalingY: 200F
+							scalingZ: 50F
+							translationX: 0F
+							translationY: 0F
+							translationZ: 0F
+						}, 
+						GtfSceneGraphNode(2ebfdd2e-6010-47bc-ae4a-69f6d7dea4c3)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfPointLight(9a956f09-d048-40d3-8115-26f58f03d113)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Point light 1"
+									enabled: true
+									color: #FFFFFFFF
+									intensity: 1F
+									attenuationConstant: 1F
+									attenuationLinear: 0F
+									attenuationQuadratic: 0F
+								}]
+							name: "Scene graph node 13"
+							visible: true
+							rotationX: 0F
+							rotationY: 0F
+							rotationZ: 0F
+							scalingX: 1F
+							scalingY: 1F
+							scalingZ: 1F
+							translationX: 40F
+							translationY: 40F
+							translationZ: 50F
+						}, 
+						GtfSceneGraphNode(cb64e7c0-821c-4028-b0b1-d86b0041a68b)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfCameraWidget(2c88dc6b-5358-448f-9bf7-bdcd84c7a7cc)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Camera 1"
+									enabled: true
+									nearPlane: 56F
+									farPlane: 2037F
+									fieldOfView: 50F
+									projectionType: 0
+								}]
+							name: "Scene graph node 14"
+							visible: true
+							rotationX: -90F
+							rotationY: 90F
+							rotationZ: -90F
+							scalingX: 1F
+							scalingY: 1F
+							scalingZ: 1F
+							translationX: 0F
+							translationY: 10F
+							translationZ: 200F
+						}]
+					name: "RootNode"
+					visible: true
+					rotationX: 0F
+					rotationY: 0F
+					rotationZ: 0F
+					scalingX: 1F
+					scalingY: 1F
+					scalingZ: 1F
+					translationX: 0F
+					translationY: 0F
+					translationZ: 0F
+				}]
+			name: "Mosquito4"
+			visible: true
+			width: 83
+			height: 105
+			x: 264
+			y: 96
+			gamma: 2.2F
+		}, 
+		GtfImage(5628ec2a-79a3-4e65-a461-d092b6882631)
+		{
+			features: feature_list [
+				ScaleMode(a8b75df2-5ff6-427c-a309-5f02708721c7)
+				{
+					scaleMode: 1
+				}, 
+				TouchPressed(9a349468-8f38-4d20-89fc-56905a130f6a)
+				{
+					touchPressed: function<bool,int,int,int,int>(c7b33b4f-8c9c-4a3b-81a4-420d90c36db4)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.startX = v:x - v:this.x" \
+							"	v:this.startY = v:y - v:this.y" \
+							"    false" \
+							"}"
+					}
+				}, 
+				TouchMove(e1a4422b-405b-4038-a92f-4f27fd55408d)
+				{
+					touchMoved: function<bool,int,int,int,int>(e38abff0-605d-4938-9679-6bd4602b864c)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.x = v:x - v:this.startX" \
+							"	v:this.y = v:y - v:this.startY" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(e16149fb-11ff-4bfb-b978-3738c4328d82)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "Windscreen"
+			visible: true
+			width: 957
+			height: 507
+			x: -90
+			y: -25
+			image: image_resource(a121322f-39b1-4954-8043-802e0c3a0b95)
+			{
+				file: "car.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+			startX: 0
+			startY: 0
+		}, 
+		GtfSceneGraph(6cb1862b-650a-4a46-91b2-1f9cc122fd79)
+		{
+			features: feature_list [
+				Coloration(15e7f65e-8c51-4368-bf8d-fb50ef42d0aa)
+				{
+					colorationEnabled: true
+					colorationColor: #000000FF
+				}, 
+				TouchShortReleased(404dd615-0d85-49e0-8df3-0ed3f55fe84e)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(15474e04-33c3-46bb-a27f-e53570d3ef74)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.colorationColor = dp:Transparent" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(26facee2-c72f-4885-8d0b-72252122aa86)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfSceneGraphNode(17bdc5ce-a7be-4c3f-b9ba-39149a2e6050)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfSceneGraphNode(00a83ce6-0754-43a9-a2e5-eaf48deefe39)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfSceneGraphNode(9b3046bd-0afa-4719-8ea6-ab8d3597f6a4)
+								{
+									features: feature_list []
+									children: children_list [
+										GtfMeshWidget(35262953-03be-4ae7-80fa-9080f5b7e2f4)
+										{
+											features: feature_list []
+											children: children_list [
+												GtfMaterialWidget(7ee823ce-42b2-4e44-a759-c50b47681805)
+												{
+													features: feature_list [
+														GtfDiffuseTextureFeature(3bc6255a-0c87-4689-8848-3e023ab1465e)
+														{
+															diffuseTexture: image_resource(ac7daa04-9fbc-438c-ad00-e095cf9710e3)
+															{
+																file: "mosquito_20200824_130605\\5.png"
+															}
+															diffuseTextureAddressModeU: 0
+															diffuseTextureAddressModeV: 0
+															diffuseFilterMode: 2
+															diffuseSRGB: false
+														}, 
+														GtfSpecularTextureFeature(e04f0155-c8f0-492f-8a07-f894a49967bd)
+														{
+															specularTexture: image_resource(ae9aeda8-6aac-4ae0-9dc6-9531b4855f8f)
+															{
+																file: "mosquito_20200824_130605\\6.png"
+															}
+															specularTextureAddressModeU: 0
+															specularTextureAddressModeV: 0
+															specularFilterMode: 2
+															specularSRGB: false
+														}]
+													children: children_list []
+													name: "Material_49"
+													ambient: #333333FF
+													diffuse: #FFFFFFFF
+													emissive: #000000FF
+													shininess: 2.351496F
+													specular: #FFFFFFFF
+													opacity: 1F
+												}]
+											name: "Mesh 2"
+											visible: true
+											mesh: mesh_resource(1a4f4910-9f6c-4d17-8487-7b167f2171ae)
+											{
+												file: "mosquito_20200824_130605\\mesh_id310.ebmesh"
+											}
+											culling: 2
+										}]
+									name: "node_id30"
+									visible: true
+									rotationX: -90.00004F
+									rotationY: 1.707546E-05F
+									rotationZ: 0F
+									scalingX: -0.6922437F
+									scalingY: -0.6922429F
+									scalingZ: -0.6922429F
+									translationX: -0.04346766F
+									translationY: -0.0006836325F
+									translationZ: 0.05683329F
+								}]
+							name: "root"
+							visible: true
+							rotationX: 0F
+							rotationY: 0F
+							rotationZ: 20F
+							scalingX: 200F
+							scalingY: 200F
+							scalingZ: 50F
+							translationX: 0F
+							translationY: 0F
+							translationZ: 0F
+						}, 
+						GtfSceneGraphNode(ac175b0a-ea0e-4611-ab4f-7a20159cccf7)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfPointLight(cea53ec3-303c-4fd3-9142-225d3a918e52)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Point light 1"
+									enabled: true
+									color: #FFFFFFFF
+									intensity: 1F
+									attenuationConstant: 1F
+									attenuationLinear: 0F
+									attenuationQuadratic: 0F
+								}]
+							name: "Scene graph node 13"
+							visible: true
+							rotationX: 0F
+							rotationY: 0F
+							rotationZ: 0F
+							scalingX: 1F
+							scalingY: 1F
+							scalingZ: 1F
+							translationX: 40F
+							translationY: 40F
+							translationZ: 50F
+						}, 
+						GtfSceneGraphNode(e0e15fef-fd3f-4750-882f-26197ef8db45)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfCameraWidget(269d35fd-c133-4a9a-bb05-af3338845a9e)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Camera 1"
+									enabled: true
+									nearPlane: 56F
+									farPlane: 2037F
+									fieldOfView: 50F
+									projectionType: 0
+								}]
+							name: "Scene graph node 14"
+							visible: true
+							rotationX: -90F
+							rotationY: 90F
+							rotationZ: -90F
+							scalingX: 1F
+							scalingY: 1F
+							scalingZ: 1F
+							translationX: 0F
+							translationY: 10F
+							translationZ: 200F
+						}]
+					name: "RootNode"
+					visible: true
+					rotationX: 0F
+					rotationY: 0F
+					rotationZ: 0F
+					scalingX: 1F
+					scalingY: 1F
+					scalingZ: 1F
+					translationX: 0F
+					translationY: 0F
+					translationZ: 0F
+				}]
+			name: "Mosquito1"
+			visible: true
+			width: 83
+			height: 105
+			x: 136
+			y: 272
+			gamma: 2.2F
+		}, 
+		GtfSceneGraph(904bc2be-a155-4fba-a590-6f9313b84439)
+		{
+			features: feature_list [
+				TouchShortReleased(9dffa778-3a58-4230-aa9b-ed727fdba60f)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(c1209c66-6dd0-404e-a82f-e06b39129ef6)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.colorationColor = dp:Transparent" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(9cfc8407-d60b-49fd-86b0-abe7a0928cdd)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}, 
+				Coloration(3450d209-9119-4f2c-b20f-eafdb791092c)
+				{
+					colorationEnabled: true
+					colorationColor: #FFFFFFFF
+				}]
+			children: children_list [
+				GtfSceneGraphNode(37fa1098-3959-4620-b06a-b363354ace5e)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfSceneGraphNode(c46c8991-b353-4ef2-be46-c4323d02e3cd)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfSceneGraphNode(846ef6ec-6ccf-492f-8ad5-f92203c4a261)
+								{
+									features: feature_list []
+									children: children_list [
+										GtfMeshWidget(c90c3a55-c828-4114-8aa1-0f69aa46ec58)
+										{
+											features: feature_list []
+											children: children_list [
+												GtfMaterialWidget(b898cfab-3e21-4824-b2db-016f7bc122d4)
+												{
+													features: feature_list [
+														GtfDiffuseTextureFeature(8a795761-ac67-4ccd-880e-d83e4980c09b)
+														{
+															diffuseTexture: image_resource(dbab42b6-dfbf-4583-8d28-2086c148e486)
+															{
+																file: "mosquito_20200824_130605\\5.png"
+															}
+															diffuseTextureAddressModeU: 0
+															diffuseTextureAddressModeV: 0
+															diffuseFilterMode: 2
+															diffuseSRGB: false
+														}, 
+														GtfSpecularTextureFeature(d3cd4f33-6611-4d70-9021-30a861cb356d)
+														{
+															specularTexture: image_resource(708d5c6f-7d44-408c-b933-aa65ec97a8ef)
+															{
+																file: "mosquito_20200824_130605\\6.png"
+															}
+															specularTextureAddressModeU: 0
+															specularTextureAddressModeV: 0
+															specularFilterMode: 2
+															specularSRGB: false
+														}]
+													children: children_list []
+													name: "Material_49"
+													ambient: #333333FF
+													diffuse: #FFFFFFFF
+													emissive: #000000FF
+													shininess: 2.351496F
+													specular: #FFFFFFFF
+													opacity: 1F
+												}]
+											name: "Mesh 2"
+											visible: true
+											mesh: mesh_resource(99b0cc01-3456-45da-b913-8d06e62ca456)
+											{
+												file: "mosquito_20200824_130605\\mesh_id310.ebmesh"
+											}
+											culling: 2
+										}]
+									name: "node_id30"
+									visible: true
+									rotationX: -90.00004F
+									rotationY: 1.707546E-05F
+									rotationZ: 0F
+									scalingX: -0.6922437F
+									scalingY: -0.6922429F
+									scalingZ: -0.6922429F
+									translationX: -0.04346766F
+									translationY: -0.0006836325F
+									translationZ: 0.05683329F
+								}]
+							name: "root"
+							visible: true
+							rotationX: 0F
+							rotationY: 0F
+							rotationZ: 50F
+							scalingX: 200F
+							scalingY: 200F
+							scalingZ: 50F
+							translationX: 0F
+							translationY: 0F
+							translationZ: 0F
+						}, 
+						GtfSceneGraphNode(515ebf65-5c24-4d04-b021-7b2f3103cd8f)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfPointLight(12579b0b-9cfe-47db-ab85-04dec1488003)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Point light 1"
+									enabled: true
+									color: #FFFFFFFF
+									intensity: 1F
+									attenuationConstant: 1F
+									attenuationLinear: 0F
+									attenuationQuadratic: 0F
+								}]
+							name: "Scene graph node 13"
+							visible: true
+							rotationX: 0F
+							rotationY: 0F
+							rotationZ: 0F
+							scalingX: 1F
+							scalingY: 1F
+							scalingZ: 1F
+							translationX: 40F
+							translationY: 40F
+							translationZ: 50F
+						}, 
+						GtfSceneGraphNode(9c53d3b5-d64e-4d47-b046-bcc2d95e91e7)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfCameraWidget(5731b2ca-77f6-4c39-9e47-d13fa266ef1b)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Camera 1"
+									enabled: true
+									nearPlane: 56F
+									farPlane: 2037F
+									fieldOfView: 50F
+									projectionType: 0
+								}]
+							name: "Scene graph node 14"
+							visible: true
+							rotationX: -90F
+							rotationY: 90F
+							rotationZ: -90F
+							scalingX: 1F
+							scalingY: 1F
+							scalingZ: 1F
+							translationX: 0F
+							translationY: 10F
+							translationZ: 200F
+						}]
+					name: "RootNode"
+					visible: true
+					rotationX: 0F
+					rotationY: 0F
+					rotationZ: 0F
+					scalingX: 1F
+					scalingY: 1F
+					scalingZ: 1F
+					translationX: 0F
+					translationY: 0F
+					translationZ: 0F
+				}]
+			name: "Mosquito2"
+			visible: true
+			width: 83
+			height: 105
+			x: 421
+			y: 116
+			gamma: 2.2F
+		}, 
+		GtfSceneGraph(eb0c2518-0b31-46ee-b891-3e05a675fbec)
+		{
+			features: feature_list [
+				Coloration(1155de11-afd5-4173-8d43-6cd0ac76ace5)
+				{
+					colorationEnabled: true
+					colorationColor: #FFFFFFFF
+				}, 
+				TouchShortReleased(713a128a-9dc4-4ef4-b880-97834549c9ab)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(a2e1c890-727d-43ad-99e4-016567575d1c)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.colorationColor = dp:Transparent" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(c83926e0-c3b7-4a1e-8a47-571915705f85)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfSceneGraphNode(97903c96-c5e8-4f3f-96e9-285663f822e5)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfSceneGraphNode(51c95c3d-7c4b-4cc4-b238-724ceb992677)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfSceneGraphNode(5f79be8a-8f1b-4ebb-94e7-19999b43ebfb)
+								{
+									features: feature_list []
+									children: children_list [
+										GtfMeshWidget(6bc65746-055f-4e39-bf98-d21b75959d5c)
+										{
+											features: feature_list []
+											children: children_list [
+												GtfMaterialWidget(a49487dd-0739-4a5e-b4c2-e09aa8b23ea3)
+												{
+													features: feature_list [
+														GtfDiffuseTextureFeature(828a65fb-6106-410b-9eae-03b25cf406d5)
+														{
+															diffuseTexture: image_resource(ccb2b4bc-4efe-4b8e-94ad-10f197251081)
+															{
+																file: "mosquito_20200824_130605\\5.png"
+															}
+															diffuseTextureAddressModeU: 0
+															diffuseTextureAddressModeV: 0
+															diffuseFilterMode: 2
+															diffuseSRGB: false
+														}, 
+														GtfSpecularTextureFeature(6e8ed34f-26c5-4714-809d-95d3591c5f98)
+														{
+															specularTexture: image_resource(84f97eb3-830f-4c99-b79e-32bc47ad5ad7)
+															{
+																file: "mosquito_20200824_130605\\6.png"
+															}
+															specularTextureAddressModeU: 0
+															specularTextureAddressModeV: 0
+															specularFilterMode: 2
+															specularSRGB: false
+														}]
+													children: children_list []
+													name: "Material_49"
+													ambient: #333333FF
+													diffuse: #FFFFFFFF
+													emissive: #000000FF
+													shininess: 2.351496F
+													specular: #FFFFFFFF
+													opacity: 1F
+												}]
+											name: "Mesh 2"
+											visible: true
+											mesh: mesh_resource(dd63618a-5287-40ba-8106-b5cd49feed99)
+											{
+												file: "mosquito_20200824_130605\\mesh_id310.ebmesh"
+											}
+											culling: 2
+										}]
+									name: "node_id30"
+									visible: true
+									rotationX: -90.00004F
+									rotationY: 1.707546E-05F
+									rotationZ: 0F
+									scalingX: -0.6922437F
+									scalingY: -0.6922429F
+									scalingZ: -0.6922429F
+									translationX: -0.04346766F
+									translationY: -0.0006836325F
+									translationZ: 0.05683329F
+								}]
+							name: "root"
+							visible: true
+							rotationX: 0F
+							rotationY: 0F
+							rotationZ: -20F
+							scalingX: 200F
+							scalingY: 200F
+							scalingZ: 50F
+							translationX: 0F
+							translationY: 0F
+							translationZ: 0F
+						}, 
+						GtfSceneGraphNode(ff2185fc-b1ae-44cd-b077-e320a543d370)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfPointLight(ca161ddc-00dc-4145-b719-438e6f43b6e2)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Point light 1"
+									enabled: true
+									color: #FFFFFFFF
+									intensity: 1F
+									attenuationConstant: 1F
+									attenuationLinear: 0F
+									attenuationQuadratic: 0F
+								}]
+							name: "Scene graph node 13"
+							visible: true
+							rotationX: 0F
+							rotationY: 0F
+							rotationZ: 0F
+							scalingX: 1F
+							scalingY: 1F
+							scalingZ: 1F
+							translationX: 40F
+							translationY: 40F
+							translationZ: 50F
+						}, 
+						GtfSceneGraphNode(9322d3b2-1c5b-48f5-8167-76d3f8d1115c)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfCameraWidget(9637e616-63c2-46ff-a2c7-84b498858be8)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Camera 1"
+									enabled: true
+									nearPlane: 56F
+									farPlane: 2037F
+									fieldOfView: 50F
+									projectionType: 0
+								}]
+							name: "Scene graph node 14"
+							visible: true
+							rotationX: -90F
+							rotationY: 90F
+							rotationZ: -90F
+							scalingX: 1F
+							scalingY: 1F
+							scalingZ: 1F
+							translationX: 0F
+							translationY: 10F
+							translationZ: 200F
+						}]
+					name: "RootNode"
+					visible: true
+					rotationX: 0F
+					rotationY: 0F
+					rotationZ: 0F
+					scalingX: 1F
+					scalingY: 1F
+					scalingZ: 1F
+					translationX: 0F
+					translationY: 0F
+					translationZ: 0F
+				}]
+			name: "Mosquito3"
+			visible: true
+			width: 83
+			height: 105
+			x: 605
+			y: 23
+			gamma: 2.2F
+		}, 
+		GtfLabel(c248775b-03ef-4f45-b75b-f004f859d5d1)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Hint"
+			visible: true
+			width: 278
+			height: 59
+			x: 123
+			y: 29
+			text: "Kill all mosquitoes!"
+			textColor: #000000FF
+			font: @c686500e-f444-44ae-ad8a-5b5b3ef74343 (objectref<font>)
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(abbd2dba-c928-44f8-9e37-ab3ab148fafe)
+		{
+			name: "NextButton"
+			template: @8333bb03-38b5-4824-a70a-203d73d5b064 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 561
+			y: 427
+			width: 114
+			height: 50
+			text: "Next"
+			touchReleased: function<bool>(e60a584a-7bdc-4428-a695-910c08911dd3)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoToFinal()" \
+					"	false" \
+					"}"
+			}
+			font: font_resource(840ea9b2-7b22-448c-b995-d78c69f3a0de)
+			{
+				file: "Joystick-5KjV.ttf"
+				size: 30
+			}
+			visible: false
+			touchable: touchable@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+		}]
+	hintForLevel: "No hint for the last level. :)"
+	backgroundColor: backgroundColor@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<color>)
+	image: image_resource(4da11beb-ea0e-4522-a7e0-3c15ef6e14c1)
+	{
+		file: "car.png"
+	}
+	width: width@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	height: height@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	moveOver: moveOver@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<function<bool,int,int,int,int>>)
+	xLevelContainer: xLevelContainer@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	levelNumber: levelNumber@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	colorationColor: colorationColor@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<color>)
+}
