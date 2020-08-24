@@ -1,0 +1,87 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(be9dc709-5e3b-4534-889a-8cb5e7a241a6)
+{
+	name: "template button air control"
+	structure: GtfContainer(8fb8892e-f1a4-4ce0-b893-5507d6cc2234)
+	{
+		features: feature_list [
+			TouchPressed(3e2b98c3-6a98-4c61-ad34-c005aadeea23)
+			{
+				touchPressed: function<bool,int,int,int,int>(beaf0750-c6cf-49be-b038-ed7769f1528b)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(c4b224fa-9d35-49d7-9de9-0744a5bd85d9)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			StateFocused(7f4b1adc-f00f-455a-9c9b-8d66953d26fe)
+			{
+				focusable: 3
+				focused: false
+			}]
+		children: children_list [
+			GtfRectangle(282066e8-b2c0-42b2-b3cf-28d4d546410c)
+			{
+				features: feature_list [
+					Border(4eb857db-3377-44e3-bcc8-585d8f58b60d)
+					{
+						borderThickness: 2
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "background air button"
+				visible: true
+				width: 60
+				height: 60
+				x: 0
+				y: -1
+				fillColor: #DCDCDCFF
+			}, 
+			GtfImage(66572981-22e9-4f65-acb3-63e633bbdbe5)
+			{
+				features: feature_list [
+					ScaleMode(38041871-e2ab-43af-9411-04faad10bc93)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "logo air"
+				visible: true
+				width: 60
+				height: 60
+				x: 0
+				y: 0
+				image: image_resource(0c1749d2-b523-4ff1-a5c4-db7437c38f85)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "Container air"
+		visible: true
+		width: 60
+		height: 60
+		x: 0
+		y: 0
+	}
+	image: image@66572981-22e9-4f65-acb3-63e633bbdbe5 (propref<image>)
+	x: x@8fb8892e-f1a4-4ce0-b893-5507d6cc2234 (propref<int>)
+	y: y@8fb8892e-f1a4-4ce0-b893-5507d6cc2234 (propref<int>)
+	touchPressed: touchPressed@3e2b98c3-6a98-4c61-ad34-c005aadeea23 (propref<function<bool,int,int,int,int>>)
+	focusable: focusable@7f4b1adc-f00f-455a-9c9b-8d66953d26fe (propref<int>)
+	focused: focused@7f4b1adc-f00f-455a-9c9b-8d66953d26fe (propref<bool>)
+	borderColor: borderColor@4eb857db-3377-44e3-bcc8-585d8f58b60d (propref<color>)
+	borderThickness: borderThickness@4eb857db-3377-44e3-bcc8-585d8f58b60d (propref<int>)
+}

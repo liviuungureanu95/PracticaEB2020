@@ -1,0 +1,53 @@
+EBGUIDE 6.10.0.200602120856;
+
+dp_items(d76884e3-1f1b-4fb1-8fc8-98c8e7e770c1)
+{
+	items: dp_item_list [
+		dp<float>(19229ea6-7dea-4837-ba08-7bb5f12f8268)
+		{
+			value: 0F
+			name: "PRETtotal"
+		}, 
+		dp<conditional_script>(6b6c1868-0718-44d1-ab07-126d8f3035e1)
+		{
+			value: conditional_script(d0392edd-5b7f-4f2e-8de6-005637c78529)
+			{
+				triggerList: trigger_list(e2c72c6f-3e70-4903-afe1-3292579f1de7)
+				{
+					script: "dp:Pret_prdus" \
+						"dp:Kg" \
+						""
+				}
+				onTrigger: function<bool,bool>(e6b3ffa1-5668-4bf3-8ca8-424da0de046c)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:PRETtotal = dp:Pret_prdus * dp:Kg" \
+						"	false" \
+						"}"
+				}
+			}
+			name: "Calcul"
+		}, 
+		dp<color>(753686ff-db24-46a8-890f-bc56dba0379e)
+		{
+			value: #FF0000FF
+			name: "textcolor"
+		}, 
+		dp<color>(7bac72c8-3f9d-4007-8ee3-a765ec1ad2c8)
+		{
+			value: #FFFFFFFF
+			name: "textColor"
+		}, 
+		dp<float>(ace6d709-f9d3-496e-9436-afa16fbcbf9b)
+		{
+			value: 0F
+			name: "Kg"
+		}, 
+		dp<float>(ddfcd449-5b82-48d5-9a30-652faef21625)
+		{
+			value: 0F
+			name: "Pret_prdus"
+		}]
+}

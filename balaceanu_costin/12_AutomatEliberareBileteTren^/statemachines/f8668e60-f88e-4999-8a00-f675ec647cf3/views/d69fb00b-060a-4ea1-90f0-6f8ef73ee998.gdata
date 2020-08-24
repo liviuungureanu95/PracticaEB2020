@@ -1,0 +1,78 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(d69fb00b-060a-4ea1-90f0-6f8ef73ee998)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(b8c4e2dd-1019-4fd7-b441-eeb0e01c33b8)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Warning_Img"
+			visible: true
+			width: width@d69fb00b-060a-4ea1-90f0-6f8ef73ee998 (propref<int>)
+			height: height@d69fb00b-060a-4ea1-90f0-6f8ef73ee998 (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(7d909b5d-739a-45bf-a623-a2da1dec8aad)
+			{
+				file: "blank-warning-sign_97458-36.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(fe34bbbd-3a7e-4a9f-9691-1a0df9b72a8b)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Txt"
+			visible: true
+			width: 302
+			height: 100
+			x: 0
+			y: 38
+			text: "You have not enaugh money !"
+			textColor: #FF0000FF
+			font: font_resource(8443a5de-58be-48c8-8b7a-3d59242855bf)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 25
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(43cf174b-03e1-40b8-b35a-a1aa212671fd)
+		{
+			name: "Back"
+			template: @321eccc9-7f2f-404b-9196-aabb55533aaf (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 110
+			y: 132
+			borderColor: borderColor@321eccc9-7f2f-404b-9196-aabb55533aaf (propref<color>)
+			touchPressed: function<bool,int,int,int,int>(a73951b3-9295-4548-acd6-54bbd7b6c05f)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.borderColor = dp:BorderPress" \
+					"    false" \
+					"}"
+			}
+			touchShortReleased: function<bool,int,int,int,int>(e53c8ca3-1933-42f2-84b9-b870c4eee990)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this.borderColor = dp:BorederReleased" \
+					"	fire ev:Dismiss_warning()" \
+					"	fire ev:GoTo_M ()" \
+					"    false" \
+					"}"
+			}
+		}]
+	name: "Warning_View"
+	visible: true
+	width: 300
+	height: 222
+	x: 90
+	y: 330
+}

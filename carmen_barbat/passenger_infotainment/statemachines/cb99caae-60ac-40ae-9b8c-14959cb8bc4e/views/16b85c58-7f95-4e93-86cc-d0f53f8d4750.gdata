@@ -1,0 +1,285 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(16b85c58-7f95-4e93-86cc-d0f53f8d4750)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(e3ebb0ce-2a5d-47c8-9db3-5bab59a7f016)
+		{
+			features: feature_list [
+				ScaleMode(8574134d-3289-4170-9d49-397cc0bfc5a4)
+				{
+					scaleMode: 1
+				}]
+			children: children_list [
+				GtfLabel(0507caec-5ab2-4285-88f7-e95ad4b71999)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Title_label"
+					visible: true
+					width: 485
+					height: 58
+					x: 0
+					y: 0
+					text: "Is this your food order?"
+					textColor: #FFFFFFFF
+					font: font_resource(d2d55010-c0e7-4663-82b9-3051904f6784)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 50
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(00fa7024-d3ba-440e-8dc9-a0e5e68535fb)
+				{
+					features: feature_list [
+						MultiLine(8512bf2f-fd30-4acd-80c0-65899aaf88a1)
+						{
+							lineOffset: 0
+							maxLineCount: 0
+						}]
+					children: children_list []
+					name: "Order_label"
+					visible: true
+					width: 431
+					height: 235
+					x: 1
+					y: 49
+					text: @bb4366b0-339b-4280-a093-5b6832506482 (objectref<string>)
+					textColor: #FFFFFFFF
+					font: font_resource(8f87d440-1d77-4ed9-8833-c171285c80a5)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(8a814d0d-efa4-44d4-aa08-a316ae49aa10)
+				{
+					name: "Yes_button"
+					template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 24
+					y: 353
+					fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
+					text: "YES"
+					buttonEvent: function<bool>(0d166649-b7e3-4840-ad69-38e4c6840497)
+					{
+						script: "function()" \
+							"{" \
+							"	if(dp:Food_price!=0)" \
+							"	{" \
+							"		v:this->^->Card_button.visible=true" \
+							"		v:this->^->Cash_button.visible=true" \
+							"		v:this->^->Total_label.visible=true" \
+							"		" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"		v:this->^->Food_label.visible=true" \
+							"		fire_delayed 4000, ev:dismiss_message()" \
+							"		dp:Food_order=\"\"" \
+							"		" \
+							"		v:this->^->Total_label.visible=false" \
+							"	}" \
+							"	" \
+							"	false" \
+							"}"
+					}
+					width: 100
+					height: 50
+					visible: visible@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<bool>)
+					lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+					"x 2": 0
+					"y 2": 0
+					"x 3": 0
+					"y 3": 0
+				}, 
+				GtfContainer_template_instance(c0ef6664-f34b-4948-b8bb-272030df7e68)
+				{
+					name: "No_button"
+					template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 146
+					y: 353
+					fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
+					text: "NO"
+					buttonEvent: function<bool>(acc398f1-12a3-4c0a-bf63-25ea495b649d)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:Food_order=\"\"" \
+							"	" \
+							"	v:this->^->Total_label.visible=false" \
+							"	fire ev:dismiss_message()" \
+							"	dp:Food_price=0" \
+							"	" \
+							"	false" \
+							"}"
+					}
+					width: 100
+					height: 50
+					visible: visible@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<bool>)
+					lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+					"x 2": 0
+					"y 2": 0
+					"x 3": 0
+					"y 3": 0
+				}, 
+				GtfContainer_template_instance(460f2e3f-8307-498d-bb83-27a0ab84ed4e)
+				{
+					name: "Cash_button"
+					template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 24
+					y: 418
+					fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
+					text: "CASH"
+					buttonEvent: function<bool>(b5abb429-5c2a-4151-9306-92290a82fe9c)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^->Food_label.visible=true" \
+							"	fire_delayed 4000, ev:dismiss_message()" \
+							"	dp:Food_order=\"\"" \
+							"	" \
+							"	v:this->^->Total_label.visible=false" \
+							"	dp:Food_price=0" \
+							"	" \
+							"	false" \
+							"}"
+					}
+					width: 100
+					height: 50
+					visible: false
+					lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+					"x 2": 0
+					"y 2": 0
+					"x 3": 0
+					"y 3": 0
+				}, 
+				GtfContainer_template_instance(d490a0e0-e065-4b93-ac45-a00b7734f53b)
+				{
+					name: "Card_button"
+					template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 146
+					y: 418
+					fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
+					text: "CARD"
+					buttonEvent: function<bool>(eef91a6e-97f5-444e-a4bd-149c12e9c251)
+					{
+						script: "function()" \
+							"{" \
+							"	fire ev:dismiss_message()" \
+							"	fire ev:GoToCard()" \
+							"	dp:Food_order=\"\"" \
+							"	" \
+							"	" \
+							"	false" \
+							"}"
+					}
+					width: 100
+					height: 50
+					visible: false
+					lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+					"x 2": 0
+					"y 2": 0
+					"x 3": 0
+					"y 3": 0
+				}, 
+				GtfLabel(3faaf7c4-a95c-4010-98fe-71d0fe00ed9e)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Food_label"
+					visible: false
+					width: 451
+					height: 100
+					x: 349
+					y: 379
+					text: "Your food is comming..."
+					textColor: #FFFFFFFF
+					font: font_resource(cf4ffa7a-4425-4898-8d7a-9d6a9ae11095)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 50
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(df6e79a1-6b5e-4801-b3fc-36195fc74094)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Total_label"
+					visible: false
+					width: 353
+					height: 100
+					x: 0
+					y: 252
+					text: string_scriptedValue(0773bb6f-8c98-4357-a2f8-8aaccae7ded3)
+					{
+						triggerList: trigger_list(b5e1da56-e6be-4de2-8649-a919b6463268)
+						{
+							script: "" \
+								"dp:Food_price" \
+								""
+						}
+						onTrigger: function<bool,bool>(0022c523-5f01-4a07-a4c7-0800807f6869)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(b3c70889-ce67-42fc-97f8-51e18924992b)
+						{
+							script: "function()" \
+								"{" \
+								"	\"Total: \"+f:int2string(dp:Food_price)+\" €\"" \
+								"}"
+						}
+						write: function<bool,string>(3ad3a066-1e98-407a-b50f-0293cb9f1af9)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(3d14f01a-7315-4186-8916-960f726541d1)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Background"
+			visible: true
+			width: width@16b85c58-7f95-4e93-86cc-d0f53f8d4750 (propref<int>)
+			height: height@16b85c58-7f95-4e93-86cc-d0f53f8d4750 (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(470f9d4c-17d3-44b1-8a2e-cc505448a85d)
+			{
+				file: "food.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "Food_orderView"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

@@ -1,0 +1,493 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(bee0fb8f-15d8-45e9-83d2-edf8b1203a6d)
+{
+	name: "Background"
+	structure: GtfContainer(7cca1861-bd44-41b8-b5bd-2bf6ab7658fe)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfImage(3cc820eb-c624-443c-b10f-603e37e195b6)
+			{
+				features: feature_list [
+					ScaleMode(01b98f3a-b9ec-47af-9736-3cea3c962487)
+					{
+						scaleMode: 2
+					}]
+				children: children_list [
+					GtfRectangle(c3bb8a96-1566-4deb-9754-41b352c88f60)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLabel(df03c8ac-3755-44a9-8a01-698a2a4d060d)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "route"
+								visible: true
+								width: width@c3bb8a96-1566-4deb-9754-41b352c88f60 (propref<int>)
+								height: 62
+								x: 1
+								y: -1
+								text: "BRASOV - BUCURESTI"
+								textColor: #FFFFFFFF
+								font: font_resource(efab5a05-4ec6-4e34-b203-42138acbb26b)
+								{
+									file: "PT_Sans_Narrow.ttf"
+									size: 30
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}, 
+							GtfRectangle(2ad4ccb1-5359-4668-9e26-d4909bdad8d7)
+							{
+								features: feature_list []
+								children: children_list [
+									GtfLabel(6ad23c3a-90ab-48a1-9887-cb4fa80fc29a)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "money"
+										visible: true
+										width: 161
+										height: height@2ad4ccb1-5359-4668-9e26-d4909bdad8d7 (propref<int>)
+										x: 15
+										y: 0
+										text: "Money inserted:"
+										textColor: #000000FF
+										font: font_resource(4079ba62-735e-43b5-ad0d-1cfb41185c0d)
+										{
+											file: "PT_Sans_Narrow.ttf"
+											size: 25
+										}
+										horizontalAlign: 0
+										verticalAlign: 0
+									}, 
+									GtfLabel(dc1cff25-f169-47e5-82f6-91cefd4c4d18)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "amount"
+										visible: true
+										width: 305
+										height: height@2ad4ccb1-5359-4668-9e26-d4909bdad8d7 (propref<int>)
+										x: 147
+										y: 0
+										text: string_scriptedValue(10b9ad9f-501a-4932-876b-23402c9d2d6e)
+										{
+											triggerList: trigger_list(1f08ab26-d75f-47f5-a64f-8361b8bc7a70)
+											{
+												script: ""
+											}
+											onTrigger: function<bool,bool>(573e0659-5a70-4426-b3f2-09ad5c14d2de)
+											{
+												script: "function(v:arg0::bool)" \
+													"{" \
+													"	// todo: auto generated return value, please adapt" \
+													"	false" \
+													"}"
+											}
+											read: function<string>(6a890d2e-f3f2-4873-915f-92d50506de1b)
+											{
+												script: "function()" \
+													"{" \
+													"	// todo: auto generated return value, please adapt" \
+													"	f:int2string(dp:money) + \" RON\"" \
+													"}"
+											}
+											write: function<bool,string>(b13a582b-4165-444d-85da-72aefc4a1861)
+											{
+												script: "function(v:arg0::string)" \
+													"{" \
+													"	// todo: auto generated return value, please adapt" \
+													"	false" \
+													"}"
+											}
+										}
+										textColor: #000000FF
+										font: font_resource(26684a63-4756-45f6-b624-91a7e2e6cd80)
+										{
+											file: "PT_Sans_Narrow.ttf"
+											size: 25
+										}
+										horizontalAlign: 0
+										verticalAlign: 0
+									}]
+								name: "money"
+								visible: true
+								width: width@c3bb8a96-1566-4deb-9754-41b352c88f60 (propref<int>)
+								height: 43
+								x: 0
+								y: 61
+								fillColor: #FFFFFFFF
+							}, 
+							GtfContainer_template_instance(cb1d99f3-be0e-4150-9472-276fc423bebc)
+							{
+								name: "Ticket 1"
+								template: @875651f8-77b9-4d8f-8c14-904666bbae6b (objectref<GtfContainer_template>)
+								children: children_list []
+								x: 20
+								y: 117
+								text: "1st Class"
+								"text 2": string_scriptedValue(4ab5cd17-17b3-4824-8cf4-199746a2ca99)
+								{
+									triggerList: trigger_list(41861ab7-fab7-4216-bd20-942352b13da6)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(cf52c61b-9c4f-48e0-bf18-db559bdd58b3)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<string>(e4a4b681-b223-4bb9-af7e-6d7c2a65173e)
+									{
+										script: "function()" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	f:int2string(dp:prices_list[0]) + \" RON\"" \
+											"}"
+									}
+									write: function<bool,string>(6aeea061-2fd8-4c2a-876b-775dcbec09a9)
+									{
+										script: "function(v:arg0::string)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								visible: visible@875651f8-77b9-4d8f-8c14-904666bbae6b (propref<bool>)
+								touchShortReleased: function<bool,int,int,int,int>(2187a802-ca69-48fa-a2df-03f304b7b74b)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    if(dp:money >= dp:prices_list[0])" \
+										"    {" \
+										"    	dp:money -= dp:prices_list[0]" \
+										"    }" \
+										"    else" \
+										"    {" \
+										"    	fire ev:showError()" \
+										"    }" \
+										"    v:this.visible = false" \
+										"    false" \
+										"}"
+								}
+								"touchShortReleased 2": function<bool,int,int,int,int>(df713413-0b75-4997-8d68-ebb6942ee613)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    dp:money -= dp:prices_list[0]" \
+										"    false" \
+										"}"
+								}
+								touchPressed: function<bool,int,int,int,int>(d6851e79-0887-40c7-a2f0-520027da8f31)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    if(dp:money > dp:prices_list[0])" \
+										"    {" \
+										"    	dp:money -= dp:prices_list[0]" \
+										"    }" \
+										"    else" \
+										"    {" \
+										"    	fire ev:showError()" \
+										"    }" \
+										"    false" \
+										"}"
+								}
+							}, 
+							GtfContainer_template_instance(3a276696-a9a8-4555-b2a8-4c81816a172e)
+							{
+								name: "Ticket 2"
+								template: @875651f8-77b9-4d8f-8c14-904666bbae6b (objectref<GtfContainer_template>)
+								children: children_list []
+								x: 127
+								y: 117
+								text: "2nd Class"
+								"text 2": string_scriptedValue(53c64e32-6ce9-4605-be80-da460a52e659)
+								{
+									triggerList: trigger_list(71978b04-a837-4fd2-a467-817c448a0050)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(5898ce2a-5d0f-4ca7-b36c-2d06415beb71)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<string>(cf3b44f2-f402-4b7c-ae41-afe754b7446e)
+									{
+										script: "function()" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	f:int2string(dp:prices_list[1]) + \" RON\"" \
+											"}"
+									}
+									write: function<bool,string>(fb9899ab-92f8-4c2f-8672-03127385c043)
+									{
+										script: "function(v:arg0::string)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								visible: visible@875651f8-77b9-4d8f-8c14-904666bbae6b (propref<bool>)
+								touchShortReleased: function<bool,int,int,int,int>(1cf21174-e51e-4b02-8167-953477a28b4a)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    if(dp:money >= dp:prices_list[1])" \
+										"    {" \
+										"    	dp:money -= dp:prices_list[1]" \
+										"    }" \
+										"    else" \
+										"    {" \
+										"    	fire ev:showError()" \
+										"    }" \
+										"    v:this.visible = false" \
+										"    false" \
+										"}"
+								}
+								"touchShortReleased 2": function<bool,int,int,int,int>(a609e269-9618-4d42-a8bd-49daf4953829)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    v:this->^->^.visible = false" \
+										"    false" \
+										"}"
+								}
+								touchPressed: function<bool,int,int,int,int>(fa6cc664-3579-43b6-9516-3bd2c04e7470)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    if(dp:money > dp:prices_list[1])" \
+										"    {" \
+										"    	dp:money -= dp:prices_list[1]" \
+										"    }" \
+										"    else" \
+										"    {" \
+										"    	fire ev:showError()" \
+										"    }" \
+										"    false" \
+										"}"
+								}
+							}, 
+							GtfContainer_template_instance(be33a02d-72b5-4543-b6c7-c43efbebd4c1)
+							{
+								name: "Ticket 3"
+								template: @875651f8-77b9-4d8f-8c14-904666bbae6b (objectref<GtfContainer_template>)
+								children: children_list []
+								x: 236
+								y: 117
+								text: "1st Class 2W"
+								"text 2": string_scriptedValue(7a8ed6b8-306c-498d-840c-22badeb27726)
+								{
+									triggerList: trigger_list(c8a114c3-a258-40a5-bcb3-a44fa5e5398b)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(012a4e2a-76d6-48d7-8669-4e9e8512ed15)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<string>(6533b6f6-7f55-4659-bd86-a86a0353d331)
+									{
+										script: "function()" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	f:int2string(dp:prices_list[2]) + \" RON\"" \
+											"}"
+									}
+									write: function<bool,string>(23e9ba84-8b53-481a-a9aa-48521362fa67)
+									{
+										script: "function(v:arg0::string)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								visible: visible@875651f8-77b9-4d8f-8c14-904666bbae6b (propref<bool>)
+								touchShortReleased: function<bool,int,int,int,int>(68e0abff-52b4-4d02-8ec7-adab3253699e)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    if(dp:money >= dp:prices_list[2])" \
+										"    {" \
+										"    	dp:money -= dp:prices_list[2]" \
+										"    }" \
+										"    else" \
+										"    {" \
+										"    	fire ev:showError()" \
+										"    }" \
+										"    v:this.visible = false" \
+										"    false" \
+										"}"
+								}
+								"touchShortReleased 2": function<bool,int,int,int,int>(0025fb69-b651-4c61-9336-69d1b4083a4d)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    v:this->^->^.visible = false" \
+										"    false" \
+										"}"
+								}
+								touchPressed: function<bool,int,int,int,int>(b477650f-bcaa-4c9a-a8b7-0cae4184c801)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    if(dp:money > dp:prices_list[2])" \
+										"    {" \
+										"    	dp:money -= dp:prices_list[2]" \
+										"    }" \
+										"    else" \
+										"    {" \
+										"    	fire ev:showError()" \
+										"    }" \
+										"    false" \
+										"}"
+								}
+							}, 
+							GtfContainer_template_instance(763bfda7-194a-4234-9f48-57914647b8b7)
+							{
+								name: "Ticket 4"
+								template: @875651f8-77b9-4d8f-8c14-904666bbae6b (objectref<GtfContainer_template>)
+								children: children_list []
+								x: 344
+								y: 117
+								text: "2nd Class 2W"
+								"text 2": string_scriptedValue(92751cd5-fc00-48ec-92fb-11a1f18735f2)
+								{
+									triggerList: trigger_list(69aa8062-fd55-42eb-b6de-c779fa327b9a)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(b23b4186-4d8f-46e9-a8a1-00d22d451695)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<string>(ae86d6ba-fdca-4b7d-8ab2-fc31997ade2f)
+									{
+										script: "function()" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	f:int2string(dp:prices_list[3]) + \" RON\"" \
+											"}"
+									}
+									write: function<bool,string>(1e005206-d34f-47f0-899f-cafea9a6209d)
+									{
+										script: "function(v:arg0::string)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								visible: visible@875651f8-77b9-4d8f-8c14-904666bbae6b (propref<bool>)
+								touchShortReleased: function<bool,int,int,int,int>(fa7411a3-f57c-4174-86c2-e15fba2d7773)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    if(dp:money >= dp:prices_list[3])" \
+										"    {" \
+										"    	dp:money -= dp:prices_list[3]" \
+										"    }" \
+										"    else" \
+										"    {" \
+										"    	fire ev:showError()" \
+										"    }" \
+										"    v:this.visible = false" \
+										"    false" \
+										"}"
+								}
+								"touchShortReleased 2": function<bool,int,int,int,int>(bb954043-74b4-4b08-9e5f-e0afe0c9d046)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    v:this->^->^.visible = false" \
+										"    false" \
+										"}"
+								}
+								touchPressed: function<bool,int,int,int,int>(50e914bb-730e-4bb7-acdb-00bae2cf9398)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    if(dp:money > dp:prices_list[3])" \
+										"    {" \
+										"    	dp:money -= dp:prices_list[3]" \
+										"    }" \
+										"    else" \
+										"    {" \
+										"    	fire ev:showError()" \
+										"    }" \
+										"    false" \
+										"}"
+								}
+							}]
+						name: "lower_rectangle"
+						visible: true
+						width: 454
+						height: 239
+						x: 163
+						y: 152
+						fillColor: #000000FF
+					}, 
+					GtfLabel(2b4694ab-8169-41a3-817b-84f4bd0db7d8)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Label 5"
+						visible: true
+						width: width@7cca1861-bd44-41b8-b5bd-2bf6ab7658fe (propref<int>)
+						height: 100
+						x: 0
+						y: 0
+						text: "BUY TICKET"
+						textColor: #FFFFFFFF
+						font: font_resource(025ff4f3-d495-4382-9d10-66cd37dd17cf)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 60
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "background"
+				visible: true
+				width: width@7cca1861-bd44-41b8-b5bd-2bf6ab7658fe (propref<int>)
+				height: height@7cca1861-bd44-41b8-b5bd-2bf6ab7658fe (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(63642f1e-26ab-43de-b12f-47c7db51a263)
+				{
+					file: "background.jpg"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "Background Container"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+	}
+}

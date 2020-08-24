@@ -1,0 +1,46 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(1882527b-231f-48a9-ba80-21054d90e33d)
+{
+	name: "View 2"
+	template: @b3e5871b-3feb-497d-ab64-d7e4f8ce495c (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(c0a58b24-b6e5-4d05-8059-07f6a0d8f93c)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 2"
+			visible: true
+			width: 600
+			height: 100
+			x: 100
+			y: 50
+			text: "Welcome! Please begin your jurney"
+			textColor: #000000FF
+			font: font_resource(9e32229b-2f69-481e-8462-9cf7322ba9d0)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(8e3f69f3-fe74-4863-b538-8a7e25f5ee61)
+		{
+			name: "BasicButton 1"
+			template: @23447c17-33c2-4923-be9d-943094e58ce8 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Begin"
+			x: 318
+			y: 186
+			Action: function<bool>(6b5092e7-14a1-49de-a439-7e9767c5d242)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_Buy()" \
+					"	false" \
+					"}"
+			}
+			lineIndex: lineIndex@23447c17-33c2-4923-be9d-943094e58ce8 (propref<int>)
+		}]
+}

@@ -1,0 +1,103 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(47101df3-2cb4-462c-8236-06e865e3862e)
+{
+	name: "View_temp"
+	structure: GtfView(9f724c7b-07de-4746-8978-025b012788b0)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(1f998cfb-b44e-4179-9701-8c221d85ea01)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "View_background"
+				visible: true
+				width: width@9f724c7b-07de-4746-8978-025b012788b0 (propref<int>)
+				height: height@9f724c7b-07de-4746-8978-025b012788b0 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #A9A9A9FF
+			}, 
+			GtfImage(7d11fbc8-063f-4b47-85fc-0a31b33348a9)
+			{
+				features: feature_list [
+					ScaleMode(75d6ccd7-5a80-4dc9-82c8-5031f18bf3de)
+					{
+						scaleMode: 1
+					}]
+				children: children_list [
+					GtfLabel(94b3da64-9773-4eae-9936-2916fdce59e4)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Title_Lavel"
+						visible: true
+						width: width@9f724c7b-07de-4746-8978-025b012788b0 (propref<int>)
+						height: 100
+						x: 0
+						y: 0
+						text: "label"
+						textColor: #FFFFFFFF
+						font: font_resource(9063e2a3-19ae-496c-afc4-0805cde79655)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 50
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfContainer_template_instance(969e2b62-e694-42e8-9201-84c6e4a026dc)
+					{
+						name: "MenuButton"
+						template: @e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (objectref<GtfContainer_template>)
+						children: children_list []
+						width: width@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+						height: height@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+						x: 700
+						y: 0
+						"x 2": "x 2"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+						"y 2": "y 2"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+						fillColor: #FFFFFF00
+						"x 3": "x 3"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+						"y 3": "y 3"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+						image: image_resource(65060ce5-adef-4cad-b7a9-38636243320f)
+						{
+							file: "menu.png"
+						}
+						buttonEvent: function<bool>(a63bbdbc-c795-4050-8dbe-751487e7a2fa)
+						{
+							script: "function()" \
+								"{" \
+								"	fire ev:GoToMenu()" \
+								"	false" \
+								"}"
+						}
+						visible: visible@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<bool>)
+					}]
+				name: "Back_image"
+				visible: true
+				width: width@9f724c7b-07de-4746-8978-025b012788b0 (propref<int>)
+				height: height@9f724c7b-07de-4746-8978-025b012788b0 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(4b82ca92-b2d7-4a19-83d5-aa271ff4ff2e)
+				{
+					file: "Back.jpg"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "View"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+	}
+	image: image@7d11fbc8-063f-4b47-85fc-0a31b33348a9 (propref<image>)
+	text: text@94b3da64-9773-4eae-9936-2916fdce59e4 (propref<string>)
+	visible: visible@969e2b62-e694-42e8-9201-84c6e4a026dc (propref<bool>)
+	"visible 2": visible@94b3da64-9773-4eae-9936-2916fdce59e4 (propref<bool>)
+}

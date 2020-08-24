@@ -1,0 +1,130 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(fe311a94-cb73-4470-8acd-c5f6c8f97e1b)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(0ad6af21-006a-47f5-ad9e-a32ba3fa513a)
+		{
+			features: feature_list [
+				ScaleMode(6a58d307-b3a1-447f-88f6-29ae7db6283d)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "background"
+			visible: true
+			width: 480
+			height: 320
+			x: 0
+			y: 0
+			image: image_resource(4c247263-72da-4293-9463-7a563f352986)
+			{
+				file: "background.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(2154b23d-bfe6-4f46-9d68-187f0c285175)
+		{
+			features: feature_list [
+				ScaleMode(2a7f8638-08f1-4fbe-9f96-a3735ff0991e)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "produse"
+			visible: true
+			width: 340
+			height: 320
+			x: 71
+			y: 0
+			image: image_resource(ec79d2c7-2b4a-4b2b-bd68-1ae28bbbe1ec)
+			{
+				file: "legume.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfInstantiator(5ab3753e-7361-4d25-89de-03c03e6dad9d)
+		{
+			features: feature_list [
+				LayoutPolicyGrid(876ef621-77fd-4a1a-b4a8-412b3f5feaae)
+				{
+					horizontalGap: 4
+					verticalGap: 12
+					numRows: 4
+					numColumns: 4
+				}]
+			children: children_list [
+				GtfRectangle(d3b8ddfa-9e05-4e70-b265-d33c74ffc30a)
+				{
+					features: feature_list [
+						Border(381261a1-5352-415c-9bca-4172e4d499cd)
+						{
+							borderThickness: 5
+							borderColor: #FFFFFF00
+							borderStyle: 0
+						}, 
+						TouchPressed(c1f02414-6a1b-4bcf-abf2-be215f64e72f)
+						{
+							touchPressed: function<bool,int,int,int,int>(b62930d4-8ab0-4376-bc8a-86e388ddef90)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this.borderColor=color:0, 0, 0, 255" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(f86e4515-e2b9-486e-992c-156c7be2e1dc)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(02d8b89c-e2ad-4e8b-809c-1b38707c0a59)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this.borderColor=color:255, 255, 255, 255" \
+									"	dp:\"selected product\"=v:this.lineIndex" \
+									"	fire ev:goPay()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(dc896372-0d88-415f-aa02-0d8c5d58323d)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}, 
+						LineIndex(ab21fcda-bc4c-4041-b7e1-b86273acd6fe)
+						{
+							lineIndex: 0
+						}]
+					children: children_list []
+					name: "butoane"
+					visible: true
+					width: 100
+					height: 100
+					x: 0
+					y: 0
+					fillColor: #FFFFFF00
+				}]
+			name: "Instantiator produse"
+			visible: true
+			width: width@2154b23d-bfe6-4f46-9d68-187f0c285175 (propref<int>)
+			height: height@2154b23d-bfe6-4f46-9d68-187f0c285175 (propref<int>)
+			x: x@2154b23d-bfe6-4f46-9d68-187f0c285175 (propref<int>)
+			y: y@2154b23d-bfe6-4f46-9d68-187f0c285175 (propref<int>)
+			numItems: 16
+			lineMapping: intlist []
+		}]
+	name: "View1"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}

@@ -1,0 +1,217 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(9d6fbfa6-3ae3-4d81-8fd3-d58fd8e8224b)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(48168d47-5e90-4be7-9bb3-cf6304d8d9a9)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(0161ee19-7e35-48fb-a97e-c8ef94d9e4b9)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Tile"
+					visible: true
+					width: 414
+					height: 150
+					x: 185
+					y: 0
+					text: "Please select the cycle"
+					textColor: #0000FFFF
+					font: font_resource(41ef96b1-bb02-4b9c-ba9f-c254dac051c8)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 50
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(1714fd2e-78f4-4336-924f-9e42315d5b26)
+				{
+					name: "Normal"
+					template: @815ad5fc-ec09-4356-be54-0dc3783dd429 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 100
+					y: 200
+					fillColor: #6495EDFF
+					touchShortReleased: function<bool,int,int,int,int>(55259678-bf30-4ac9-b7c1-fd03227a4ec9)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:Message=\"\"" \
+							"	dp:Message2=\"\"" \
+							"	dp:Start=1" \
+							"	fire ev:goTo_normal()" \
+							"    false" \
+							"}"
+					}
+					text: "Normal"
+					"x 2": "x 2"@815ad5fc-ec09-4356-be54-0dc3783dd429 (propref<int>)
+					"y 2": "y 2"@815ad5fc-ec09-4356-be54-0dc3783dd429 (propref<int>)
+				}, 
+				GtfContainer_template_instance(af2d5da6-f392-4d7c-b180-3ce5c879eef5)
+				{
+					name: "Black"
+					template: @815ad5fc-ec09-4356-be54-0dc3783dd429 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 100
+					y: 310
+					fillColor: #6495EDFF
+					touchShortReleased: function<bool,int,int,int,int>(edc5e3b3-6065-4a67-a7e3-891debdd5f04)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:Message=\"\"" \
+							"	dp:Message2=\"\"" \
+							"	dp:Start=2" \
+							"	fire ev:goTo_black()" \
+							"    false" \
+							"}"
+					}
+					text: "Black"
+					"x 2": "x 2"@815ad5fc-ec09-4356-be54-0dc3783dd429 (propref<int>)
+					"y 2": "y 2"@815ad5fc-ec09-4356-be54-0dc3783dd429 (propref<int>)
+				}, 
+				GtfContainer_template_instance(c7db6bf3-8297-42a3-85d1-e6efa1ab1d21)
+				{
+					name: "White"
+					template: @815ad5fc-ec09-4356-be54-0dc3783dd429 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 430
+					y: 310
+					fillColor: #6495EDFF
+					touchShortReleased: function<bool,int,int,int,int>(9a619757-0674-47aa-a10d-b3cc9be8f1e5)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:Message=\"\"" \
+							"	dp:Message2=\"\"" \
+							"	dp:Start=4" \
+							"	fire ev:goTo_white()" \
+							"    false" \
+							"}"
+					}
+					text: "White"
+					"x 2": "x 2"@815ad5fc-ec09-4356-be54-0dc3783dd429 (propref<int>)
+					"y 2": "y 2"@815ad5fc-ec09-4356-be54-0dc3783dd429 (propref<int>)
+				}, 
+				GtfContainer_template_instance(ccc3a1b3-0492-4587-aa56-cfd23f73d58a)
+				{
+					name: "Fast"
+					template: @815ad5fc-ec09-4356-be54-0dc3783dd429 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 430
+					y: 200
+					fillColor: #6495EDFF
+					touchShortReleased: function<bool,int,int,int,int>(61d5e453-2e5a-4666-a562-e11288464759)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:Message=\"\"" \
+							"	dp:Message2=\"\"" \
+							"	dp:Start=3" \
+							"	fire ev:goTo_quick()" \
+							"    false" \
+							"}"
+					}
+					text: "Fast"
+					"x 2": "x 2"@815ad5fc-ec09-4356-be54-0dc3783dd429 (propref<int>)
+					"y 2": "y 2"@815ad5fc-ec09-4356-be54-0dc3783dd429 (propref<int>)
+				}, 
+				GtfLabel(6128a173-fff9-407f-8ae9-d7532d2a025d)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Normal_label"
+					visible: true
+					width: 200
+					height: 100
+					x: 200
+					y: 170
+					text: "100 minutes"
+					textColor: #0000FFFF
+					font: font_resource(8d645c64-7d88-44e6-b56a-0b8537de4e3c)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(a325a7eb-4583-4451-a60f-942572451154)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Black_label"
+					visible: true
+					width: 200
+					height: 100
+					x: 200
+					y: 285
+					text: "120 minutes"
+					textColor: #0000FFFF
+					font: font_resource(e3aa1e94-6650-4c72-b973-e695efc5de76)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(670802e1-e4c1-4759-9105-2ba280e9b8e9)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Fast_label"
+					visible: true
+					width: 200
+					height: 100
+					x: 530
+					y: 170
+					text: "40 minutes"
+					textColor: #0000FFFF
+					font: font_resource(c3c19706-53f5-4bea-88fe-3ff3b1f3b616)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(d72d9f88-a792-4fcd-8097-1309adf8df7b)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 9"
+					visible: true
+					width: 200
+					height: 100
+					x: 530
+					y: 285
+					text: "120 minutes"
+					textColor: #0000FFFF
+					font: font_resource(45049f8c-d187-4976-93bd-14c7808fea2f)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "Background"
+			visible: true
+			width: width@9d6fbfa6-3ae3-4d81-8fd3-d58fd8e8224b (propref<int>)
+			height: height@9d6fbfa6-3ae3-4d81-8fd3-d58fd8e8224b (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #AFEEEEFF
+		}]
+	name: "View 2"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

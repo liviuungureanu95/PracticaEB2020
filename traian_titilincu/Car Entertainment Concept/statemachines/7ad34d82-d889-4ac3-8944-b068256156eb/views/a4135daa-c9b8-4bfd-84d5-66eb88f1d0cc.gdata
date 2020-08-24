@@ -1,0 +1,63 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(a4135daa-c9b8-4bfd-84d5-66eb88f1d0cc)
+{
+	features: feature_list [
+		TouchShortReleased(3b7e9c19-8be0-4fba-a653-402d672fe7f1)
+		{
+			touchShortReleased: function<bool,int,int,int,int>(20075c56-a966-4706-8d61-2be2bf28ba9d)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    fire ev:goTo_menu()" \
+					"    true" \
+					"}"
+			}
+		}, 
+		StateTouched(dd3724e8-0a37-4085-b418-5e42926185ea)
+		{
+			touchable: true
+			touched: false
+			touchPolicy: 0
+			touchBehavior: 0
+		}]
+	children: children_list [
+		GtfRectangle(5033d2e7-5547-4eaf-86e6-b907d322b728)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(33f9b5cb-69ca-47b4-9e48-d067413931ed)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 2"
+					visible: true
+					width: width@a4135daa-c9b8-4bfd-84d5-66eb88f1d0cc (propref<int>)
+					height: height@a4135daa-c9b8-4bfd-84d5-66eb88f1d0cc (propref<int>)
+					x: 0
+					y: 0
+					text: "Press any key to continue"
+					textColor: #000000FF
+					font: font_resource(c1ab9598-308b-4406-8761-d7b2ef72bfc7)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Rectangle 2"
+			visible: true
+			width: 1280
+			height: 720
+			x: 0
+			y: 0
+			fillColor: #FFFFFFFF
+		}]
+	name: "Idle View"
+	visible: true
+	width: 1280
+	height: 720
+	x: 0
+	y: 0
+}

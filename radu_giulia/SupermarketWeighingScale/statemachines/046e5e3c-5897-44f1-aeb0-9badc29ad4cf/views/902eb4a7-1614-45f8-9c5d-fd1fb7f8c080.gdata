@@ -1,0 +1,120 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(902eb4a7-1614-45f8-9c5d-fd1fb7f8c080)
+{
+	name: "ChooseView"
+	template: @b167f808-0583-42a4-baa6-9dc11937b815 (objectref<GtfView_template>)
+	children: children_list [
+		GtfImage_template_instance(e898b878-ba4d-4d9f-a7dd-bc22c9f8fb9d)
+		{
+			name: "VegetablesImage"
+			template: @9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (objectref<GtfImage_template>)
+			children: children_list []
+			x: 33
+			y: 125
+			width: 168
+			height: 112
+			image: image_resource(b7de3896-964a-451b-a6b0-fd8728110d37)
+			{
+				file: "vegetables.png"
+			}
+			pressAction: function<bool>(435f70fc-2d20-4a85-bd97-8d09a7012507)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:currentImageList = dp:vegetablesImages" \
+					"	dp:currentPricesList = dp:vegetablesPrices" \
+					"	dp:currentStringList = dp:vegetablesNames" \
+					"	dp:CategoryName = \"Vegetables\"" \
+					"	fire ev:goToChosen()" \
+					"	false" \
+					"}"
+			}
+			scaleMode: scaleMode@9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (propref<int>)
+		}, 
+		GtfImage_template_instance(a65d7f3a-929b-435b-9f86-ab32d74629e1)
+		{
+			name: "FruitsImage"
+			template: @9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (objectref<GtfImage_template>)
+			children: children_list []
+			x: 284
+			y: 129
+			width: 142
+			height: 103
+			image: image_resource(843db481-05f2-40d8-9f10-0c2481972453)
+			{
+				file: "fruits.png"
+			}
+			pressAction: function<bool>(5141371c-f5bb-410c-98e0-eae11c21be08)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:currentImageList = dp:fruitsImages" \
+					"	dp:currentPricesList = dp:fruitsPrices" \
+					"	dp:currentStringList = dp:fruitsNames" \
+					"	dp:CategoryName = \"Fruits\"" \
+					"	fire ev:goToChosen()" \
+					"	false" \
+					"}"
+			}
+			scaleMode: scaleMode@9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (propref<int>)
+		}, 
+		GtfLabel(922141b6-46ad-48ea-b8b2-ac58a96c4170)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "VegetablesLabel"
+			visible: true
+			width: 134
+			height: 39
+			x: 53
+			y: 234
+			text: "Vegetables"
+			textColor: #000000FF
+			font: font_resource(a7b75c48-cb73-43ee-940b-d27324020df9)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(87fab068-d06b-437f-a5ef-36ff373f03f4)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "FruitsLabel"
+			visible: true
+			width: 100
+			height: 37
+			x: 302
+			y: 238
+			text: "Fruits"
+			textColor: #000000FF
+			font: font_resource(e6da6306-8c3f-4e57-8744-8aca8c58ab2b)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfImage_template_instance(b784c96f-c057-4641-b664-7de194d69f7a)
+		{
+			name: "ResizedImage 1"
+			template: @9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (objectref<GtfImage_template>)
+			children: children_list []
+			x: 186
+			y: 63
+			width: width@9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (propref<int>)
+			height: height@9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (propref<int>)
+			image: image_resource(559a3bfb-753d-43ed-8125-533736e72b5e)
+			{
+				file: "kauflandLogo.png"
+			}
+			pressAction: pressAction@9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (propref<function<bool>>)
+			scaleMode: scaleMode@9eae5b93-8a33-4822-a03f-c9c76a9e2c0a (propref<int>)
+		}]
+	text: "Your decissions weigh more than you think"
+	y: 10
+}

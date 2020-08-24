@@ -1,0 +1,146 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(bd430c21-831d-4bbd-a1ee-e9fbed6f099b)
+{
+	name: "MainView"
+	template: @43684120-17f8-4259-9015-7ebf9912c1c6 (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(6ae867db-598b-421d-8874-3b2062152517)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Title"
+			visible: true
+			width: 800
+			height: 100
+			x: 0
+			y: 11
+			text: "CFR Calatori PRO"
+			textColor: #0000FFFF
+			font: font_resource(3da36777-aa34-434e-a141-706660f2df4a)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 60
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfImage_template_instance(4ea002df-379a-4a2b-88fd-ee760eff3863)
+		{
+			name: "ScaledImage 1"
+			template: @071ac8ab-db5b-4fdd-aedb-007bc9a3f0b7 (objectref<GtfImage_template>)
+			children: children_list [
+				GtfParallelAnimation(2135567a-1933-4d42-a82d-bba7c35c959a)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationS32(efbbf5d5-a540-41aa-989d-679bf4c21990)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "MoveToRight"
+							enabled: true
+							delay: 0
+							duration: 10000
+							repeat: 0
+							alternating: false
+							relative: false
+							start: 0
+							end: 700
+							target: x@4ea002df-379a-4a2b-88fd-ee760eff3863 (propref<int>)
+						}]
+					name: "Animation 1"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(9f8acea7-3cd1-448c-b771-17cbdadeb76b)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(fd170e89-f222-4933-9cdd-ff0c59b6dc44)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(f31e5990-631b-4643-9600-7a762c9e5e34)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+				}]
+			width: 205
+			height: 136
+			image: image_resource(cdcc48fa-82fd-4290-8602-2f567a4f0071)
+			{
+				file: "train.png"
+			}
+			scaleMode: scaleMode@071ac8ab-db5b-4fdd-aedb-007bc9a3f0b7 (propref<int>)
+			x: 0
+			y: 347
+			visible: visible@071ac8ab-db5b-4fdd-aedb-007bc9a3f0b7 (propref<bool>)
+			playAnimation: conditional_script(d84ebdf4-4304-4d89-a735-240d956f8aec)
+			{
+				triggerList: trigger_list(3de35092-ca48-4106-b643-0130f897001a)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(c700bae5-e8d7-4c97-b87b-500a07984e92)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	f:animation_play(v:this->\"Animation 1\")" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfContainer_template_instance(f23228fa-8318-46e4-bd77-cc83a4be6134)
+		{
+			name: "BasicButton 1"
+			template: @452e9170-13ba-4bf7-ac10-7105b5e6fabd (objectref<GtfContainer_template>)
+			children: children_list []
+			width: 455
+			height: 60
+			x: 184
+			y: 258
+			visible: visible@452e9170-13ba-4bf7-ac10-7105b5e6fabd (propref<bool>)
+			pressAction: function<bool>(b07e06d8-34c3-447e-9dea-4847113bc1b7)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this.fillColor = v:this.pressedColor" \
+					"	v:this.textColor = v:this.pressedTextColor" \
+					"	" \
+					"	false" \
+					"}"
+			}
+			releaseAction: function<bool>(ccc94e8f-57b9-4d71-bad6-4d7ad955c8f0)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this.currentColor = v:this.releasedColor" \
+					"	v:this.currentTextColor = v:this.releasedTextColor" \
+					"	fire_delayed 100, ev:goToTickets()" \
+					"	false" \
+					"}"
+			}
+			currentColor: fillColor@f23228fa-8318-46e4-bd77-cc83a4be6134 (propref<color>)
+			pressedColor: #E6E6FAFF
+			releasedColor: #FFFFFFFF
+			fillColor: #FFFFFFFF
+			text: "Buy tickets"
+			textColor: #000000FF
+			pressedTextColor: #FFFFFFFF
+			releasedTextColor: #000000FF
+			currentTextColor: textColor@f23228fa-8318-46e4-bd77-cc83a4be6134 (propref<color>)
+			"visible 2": "visible 2"@452e9170-13ba-4bf7-ac10-7105b5e6fabd (propref<bool>)
+		}]
+}

@@ -1,0 +1,249 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(de62d12f-5dc3-445a-9207-89369dd0b2b8)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(6cbc63a0-dbbf-477c-ac19-ccd6006a2c88)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfContainer_template_instance(4f644305-d477-48df-ab0b-d5e0f2e6087f)
+				{
+					name: "Start_Button"
+					template: @8fefa4f6-1207-44ec-bfc8-560005115d57 (objectref<GtfContainer_template>)
+					children: children_list []
+					text: text@8fefa4f6-1207-44ec-bfc8-560005115d57 (propref<string>)
+					x: 265
+					y: 155
+					ShortReleased: function<bool,int,int,int,int>(a020c3d5-8bdd-40e8-86e1-c11550dfd6e4)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->Start_Button.borderColor = dp:Button_border" \
+							"	fire ev:GoTo_Wash()" \
+							"	v:this->^->Material_Color_Button.all_buttons_visible = false" \
+							"	v:this->^->Material_Type_Button.all_buttons_visible = false" \
+							"	v:this->^->Temperature_Button.all_buttons_visible = false" \
+							"	if(dp:MaterialColor == \"color\")" \
+							"	{" \
+							"	f:pushDynamicStateMachine(popup_stack:Main, sm:Warning_popup, 0)" \
+							"	}" \
+							"	if(dp:MaterialType == \"rufe\")" \
+							"	{" \
+							"	f:pushDynamicStateMachine(popup_stack:Main, sm:Warning_popup, 0)" \
+							"	}" \
+							"	if(dp:Temperature == 0)" \
+							"	{" \
+							"	f:pushDynamicStateMachine(popup_stack:Main, sm:Warning_popup, 0)" \
+							"	}" \
+							"    false" \
+							"}"
+					}
+					borderColor: borderColor@8fefa4f6-1207-44ec-bfc8-560005115d57 (propref<color>)
+				}, 
+				GtfContainer_template_instance(8c9f0558-3b7a-4d7a-a1e5-f5f7e915be31)
+				{
+					name: "Programs_Button"
+					template: @8fefa4f6-1207-44ec-bfc8-560005115d57 (objectref<GtfContainer_template>)
+					children: children_list []
+					text: "PROGRAMS"
+					x: 80
+					y: 155
+					ShortReleased: function<bool,int,int,int,int>(805b1d39-285c-4162-945b-2070e4accdd8)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->Programs_Button.borderColor = dp:Button_border" \
+							"	v:this->^->Material_Color_Button.all_buttons_visible = true" \
+							"    false" \
+							"}"
+					}
+					borderColor: borderColor@8fefa4f6-1207-44ec-bfc8-560005115d57 (propref<color>)
+				}, 
+				GtfContainer_template_instance(26dde83f-53f5-43c8-8f8a-0a2f59f85f5b)
+				{
+					name: "Material_Color_Button"
+					template: @c40396b8-6450-45b7-9b16-821ca28b9c6f (objectref<GtfContainer_template>)
+					children: children_list []
+					image1: image_resource(27bcd4cf-fcf1-4ddb-924e-fe7ab9100565)
+					{
+						file: "Material_Color_White.jpg"
+					}
+					ShortReleased1: function<bool,int,int,int,int>(90b3fa30-1a56-4d73-9284-47521a612f2d)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:MaterialColor = White" \
+							"	v:this->^->Material_Color_Button.all_buttons_visible = false" \
+							"	v:this->^->Material_Type_Button.all_buttons_visible = true" \
+							"	v:this->^->Temperature_Button.Border_visible = false" \
+							"    false" \
+							"}"
+					}
+					text1: "White"
+					all_buttons_visible: false
+					image2: image_resource(8d63f5c7-9ef3-4cc6-82c1-1e2e3eda7fac)
+					{
+						file: "Material_Color_Colored.jpg"
+					}
+					ShortReleased2: function<bool,int,int,int,int>(b9b10b45-ea91-4408-8363-a07612838af8)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:MaterialColor = Colored" \
+							"	v:this->^->Material_Color_Button.all_buttons_visible = false" \
+							"	v:this->^->Material_Type_Button.all_buttons_visible = true" \
+							"	v:this->^->Temperature_Button.\"Border_visible 2\" = false" \
+							"    false" \
+							"}"
+					}
+					text2: "Colored"
+					image3: image_resource(cb1c460c-1070-4a58-80bd-61fa9e4382fa)
+					{
+						file: "Material_Color_Dark.jpg"
+					}
+					ShortReleased3: function<bool,int,int,int,int>(8cb0006c-a314-4e54-97ce-a0a9a37b6166)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:MaterialColor = Dark" \
+							"	v:this->^->Material_Color_Button.all_buttons_visible = false" \
+							"	v:this->^->Material_Type_Button.all_buttons_visible = true" \
+							"	v:this->^->Temperature_Button.\"Border_visible 3\" = false" \
+							"    false" \
+							"}"
+					}
+					text3: "Dark"
+					Border_visible: Border_visible@c40396b8-6450-45b7-9b16-821ca28b9c6f (propref<bool>)
+					"Border_visible 2": "Border_visible 2"@c40396b8-6450-45b7-9b16-821ca28b9c6f (propref<bool>)
+					"Border_visible 3": "Border_visible 3"@c40396b8-6450-45b7-9b16-821ca28b9c6f (propref<bool>)
+				}, 
+				GtfContainer_template_instance(a1a58f6a-0d35-4f08-9335-86b752383464)
+				{
+					name: "Material_Type_Button"
+					template: @c40396b8-6450-45b7-9b16-821ca28b9c6f (objectref<GtfContainer_template>)
+					children: children_list []
+					image1: image_resource(3a5f291e-78c4-403b-8787-059e335bf6bc)
+					{
+						file: "Material_img.jpg"
+					}
+					ShortReleased1: function<bool,int,int,int,int>(a7900830-1822-4012-8881-64816779aad7)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:MaterialType = Cotton" \
+							"	v:this->^->Material_Type_Button.all_buttons_visible = false" \
+							"	v:this->^->Temperature_Button.all_buttons_visible = true" \
+							"	v:this->^->Temperature_Button.Border_visible = false" \
+							"    false" \
+							"}"
+					}
+					text1: "Cotton"
+					all_buttons_visible: false
+					image2: image_resource(642ca1e9-7bfb-4f5f-8db4-c04d640ce652)
+					{
+						file: "Material_img.jpg"
+					}
+					ShortReleased2: function<bool,int,int,int,int>(b47a6dd2-d07a-4bc7-9232-b9eff242aad6)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:MaterialType = Shyntetics" \
+							"	v:this->^->Material_Type_Button.all_buttons_visible = false" \
+							"	v:this->^->Temperature_Button.all_buttons_visible = true" \
+							"	v:this->^->Temperature_Button.\"Border_visible 2\" = false" \
+							"    false" \
+							"}"
+					}
+					text2: "Shyntetics"
+					image3: image_resource(9c506a1f-2050-4568-97e3-938f0a245739)
+					{
+						file: "Material_img.jpg"
+					}
+					ShortReleased3: function<bool,int,int,int,int>(a1e77122-4cac-421e-bf09-022f0f5fa75b)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:MaterialType = Delicates" \
+							"	v:this->^->Material_Type_Button.all_buttons_visible = false" \
+							"	v:this->^->Temperature_Button.all_buttons_visible = true" \
+							"	v:this->^->Temperature_Button.\"Border_visible 3\" = false" \
+							"    false" \
+							"}"
+					}
+					text3: "Delicates"
+					Border_visible: Border_visible@c40396b8-6450-45b7-9b16-821ca28b9c6f (propref<bool>)
+					"Border_visible 2": "Border_visible 2"@c40396b8-6450-45b7-9b16-821ca28b9c6f (propref<bool>)
+					"Border_visible 3": "Border_visible 3"@c40396b8-6450-45b7-9b16-821ca28b9c6f (propref<bool>)
+				}, 
+				GtfContainer_template_instance(b73deb43-41da-40a3-9da8-4ee37c6eb4a5)
+				{
+					name: "Temperature_Button"
+					template: @c40396b8-6450-45b7-9b16-821ca28b9c6f (objectref<GtfContainer_template>)
+					children: children_list []
+					image1: image1@c40396b8-6450-45b7-9b16-821ca28b9c6f (propref<image>)
+					ShortReleased1: function<bool,int,int,int,int>(51973ec5-8246-41c5-ba06-1862ea30b92c)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:Temperature = 30" \
+							"	v:this->^->Temperature_Button.Border_visible = false" \
+							"    false" \
+							"}"
+					}
+					text1: ""
+					all_buttons_visible: false
+					image2: image_resource(39ba83aa-05e2-49e0-812c-dbf69f30ceb6)
+					{
+						file: "45C.jpg"
+					}
+					ShortReleased2: function<bool,int,int,int,int>(000c4f68-cd61-4e14-81e5-253154af27e5)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:Temperature = 45" \
+							"	v:this->^->Temperature_Button.\"Border_visible 2\" = false" \
+							"    false" \
+							"}"
+					}
+					text2: ""
+					image3: image_resource(7531da8e-6aab-454e-a362-2e7f288698b7)
+					{
+						file: "60C.jpg"
+					}
+					ShortReleased3: function<bool,int,int,int,int>(9f0543b2-845f-49a4-bdb7-4c88216987ad)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:Temperature = 60" \
+							"	v:this->^->Temperature_Button.\"Border_visible 3\" = false" \
+							"    false" \
+							"}"
+					}
+					text3: ""
+					Border_visible: false
+					"Border_visible 2": "Border_visible 2"@c40396b8-6450-45b7-9b16-821ca28b9c6f (propref<bool>)
+					"Border_visible 3": "Border_visible 3"@c40396b8-6450-45b7-9b16-821ca28b9c6f (propref<bool>)
+				}]
+			name: "background"
+			visible: true
+			width: width@de62d12f-5dc3-445a-9207-89369dd0b2b8 (propref<int>)
+			height: height@de62d12f-5dc3-445a-9207-89369dd0b2b8 (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(d1976056-45d7-428f-8eb5-b38dc5fef68e)
+			{
+				file: "washingmachine_background.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "PrincipalMENU"
+	visible: true
+	width: 480
+	height: 800
+	x: 0
+	y: 0
+}

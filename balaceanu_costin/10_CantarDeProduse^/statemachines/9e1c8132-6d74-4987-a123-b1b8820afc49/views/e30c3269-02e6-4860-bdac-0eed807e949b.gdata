@@ -1,0 +1,427 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(e30c3269-02e6-4860-bdac-0eed807e949b)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer(34705840-4e33-42af-a155-fd0322e2bf42)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(9daa1a7d-aa6b-40da-8c0e-39454dbf1c4d)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Background"
+					visible: true
+					width: width@34705840-4e33-42af-a155-fd0322e2bf42 (propref<int>)
+					height: height@34705840-4e33-42af-a155-fd0322e2bf42 (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(0a58a148-9f6a-4bd7-8b0a-bdfd2af8c87d)
+					{
+						file: "cantar_background.jpg"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfContainer_template_instance(e7c7b822-3217-4359-98e0-d633cdeabf15)
+				{
+					name: "pepene_button"
+					template: @88898607-1459-4eef-851e-856930af5c0a (objectref<GtfContainer_template>)
+					children: children_list []
+					image: image_resource(6bc8e14e-a304-44a6-9e6e-ceb4a12fda26)
+					{
+						file: "pepeni_background.jpg"
+					}
+					text: "PEPENE"
+					"text 2": "1 leu/kg"
+					touchShortReleased: function<bool,int,int,int,int>(cdfbd1fb-dc86-47a3-afe1-b248d212b914)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:Pret_prdus = f:int2float(1)" \
+							"    false" \
+							"}"
+					}
+					x: 5
+					y: 5
+				}, 
+				GtfContainer_template_instance(42357421-69e3-46b3-81c7-31b8baf81fff)
+				{
+					name: "piersici_button"
+					template: @88898607-1459-4eef-851e-856930af5c0a (objectref<GtfContainer_template>)
+					children: children_list []
+					image: image_resource(0270c3e6-4c72-45ef-905a-d3474845e288)
+					{
+						file: "piersici_background.jpg"
+					}
+					text: "PIERSICI"
+					"text 2": "4 lei/kg"
+					touchShortReleased: function<bool,int,int,int,int>(d278e139-8f57-416b-8c01-06e9d2e5014f)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:Pret_prdus = f:int2float(4)" \
+							"    false" \
+							"}"
+					}
+					x: 165
+					y: 5
+				}, 
+				GtfContainer_template_instance(f31fe066-372a-4cb2-8ac5-8446d58c82cb)
+				{
+					name: "cartofi_button"
+					template: @88898607-1459-4eef-851e-856930af5c0a (objectref<GtfContainer_template>)
+					children: children_list []
+					image: image_resource(285e7dbd-fedc-496b-ab05-8a6e6cf350f7)
+					{
+						file: "cartofi_background.jpg"
+					}
+					text: "CARTOFI"
+					"text 2": "5 lei/kg"
+					touchShortReleased: function<bool,int,int,int,int>(1c92c7df-b776-434c-a8ed-07ce3839f37f)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:Pret_prdus = f:int2float(5)" \
+							"    false" \
+							"}"
+					}
+					x: 5
+					y: 165
+				}, 
+				GtfContainer_template_instance(ea3995ed-15fa-4649-bec8-e35d57b6b5a6)
+				{
+					name: "rosii_button"
+					template: @88898607-1459-4eef-851e-856930af5c0a (objectref<GtfContainer_template>)
+					children: children_list []
+					image: image_resource(5b6c6ba5-2677-4649-b18e-5dd5a9235db3)
+					{
+						file: "rosii_background.jpg"
+					}
+					text: "ROSII"
+					"text 2": "3 lei/kg"
+					touchShortReleased: function<bool,int,int,int,int>(44419a33-cbf9-46ff-847b-685b3bc1a151)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:Pret_prdus = f:int2float(3)" \
+							"    false" \
+							"}"
+					}
+					x: 165
+					y: 165
+				}, 
+				GtfContainer_template_instance(3437e752-0ec3-4c9c-b460-b800b85df7bc)
+				{
+					name: "Pret_button"
+					template: @0fbf73a4-22cd-499b-b086-340fc49e2da9 (objectref<GtfContainer_template>)
+					children: children_list [
+						GtfLabel(0886cbd7-5c96-49c5-a4ed-cd42120e4491)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Label 10"
+							visible: true
+							width: width@3437e752-0ec3-4c9c-b460-b800b85df7bc (propref<int>)
+							height: 24
+							x: 0
+							y: 3
+							text: "Pret TOTAL :"
+							textColor: #FFFFFFFF
+							font: font_resource(b4e83400-5475-4f4a-8359-a420491127e5)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 25
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					x: 165
+					y: 350
+					touchShortReleased: function<bool,int,int,int,int>(f4a2791b-3b3a-4858-b0a4-f11fe0f5fe9d)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	" \
+							"	" \
+							"    false" \
+							"}"
+					}
+					width: width@0fbf73a4-22cd-499b-b086-340fc49e2da9 (propref<int>)
+					height: height@0fbf73a4-22cd-499b-b086-340fc49e2da9 (propref<int>)
+				}, 
+				GtfRectangle(4b311f37-b5b9-4d9f-94bb-1054b15c082e)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(d3043014-3a6b-4d82-add0-37c573c3a1d0)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "pret:_txt"
+							visible: true
+							width: 84
+							height: height@4b311f37-b5b9-4d9f-94bb-1054b15c082e (propref<int>)
+							x: 0
+							y: 0
+							text: "Pret produs :"
+							textColor: #FFFFFFFF
+							font: font_resource(171ac18b-3d9b-4c06-86fc-4d810b0a4224)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 20
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "PretProdus"
+					visible: true
+					width: 150
+					height: 30
+					x: 5
+					y: 350
+					fillColor: #000000FF
+				}, 
+				GtfRectangle(02368570-246b-45e9-8762-0a192c04ac8a)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLabel(c6bddf24-7e39-45e8-9c98-10e6e2655754)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "KG:_txt"
+							visible: true
+							width: 84
+							height: height@02368570-246b-45e9-8762-0a192c04ac8a (propref<int>)
+							x: 0
+							y: 0
+							text: "KG produs :"
+							textColor: #FFFFFFFF
+							font: font_resource(971efae7-820c-4018-b9fa-269f547ad59e)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 20
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "KgProdus"
+					visible: true
+					width: 150
+					height: 30
+					x: 5
+					y: 390
+					fillColor: #000000FF
+				}, 
+				GtfContainer_template_instance(07677e15-f238-423c-91fd-2bbd9fb1438e)
+				{
+					name: "reset_button 1"
+					template: @18670716-7fe2-4766-966c-99066f2fe4b5 (objectref<GtfContainer_template>)
+					children: children_list []
+					touchShortReleased: function<bool,int,int,int,int>(97027956-f359-48dd-b4ad-fdb4e4d29a81)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->\"reset_button 1\".textColor = dp:textColor" \
+							"	dp:Kg = f:int2float(0)" \
+							"	dp:Pret_prdus = f:int2float(0)" \
+							"	dp:PRETtotal = f:int2float(0)" \
+							"    false" \
+							"}"
+					}
+					x: 245
+					y: 430
+					textColor: textColor@18670716-7fe2-4766-966c-99066f2fe4b5 (propref<color>)
+					text: text@18670716-7fe2-4766-966c-99066f2fe4b5 (propref<string>)
+				}, 
+				GtfLabel(a59dbe3f-43cf-4624-bb95-da17a4502a85)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "PretProdus_txt"
+					visible: true
+					width: 35
+					height: 30
+					x: 100
+					y: 350
+					text: string_scriptedValue(c87c4543-8b54-4732-a01d-d49324e46fef)
+					{
+						triggerList: trigger_list(f5a1e06e-6c72-4a79-a5aa-aa90f038829e)
+						{
+							script: "dp:Pret_prdus" \
+								""
+						}
+						onTrigger: function<bool,bool>(31158f06-90e8-4f07-8bcb-b7e6806d506f)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(524d5e88-3798-45bb-8c70-ec3d3c23ac52)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:float2string(dp:Pret_prdus)" \
+								"}"
+						}
+						write: function<bool,string>(9a0e9ed2-766c-4143-8f8d-61907753560c)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(3e9b80ca-a095-4a46-9410-89c68d7b5310)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(ca0e9d65-cf1d-403a-86a5-2ae1917a7d45)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "KGprodus_txt"
+					visible: true
+					width: 35
+					height: 30
+					x: 100
+					y: 390
+					text: string_scriptedValue(31e92925-00a7-4aff-92cb-dd3ae6c15df0)
+					{
+						triggerList: trigger_list(e3beeab0-98e6-4ac3-a0b9-69285a2aaa09)
+						{
+							script: "dp:Kg" \
+								""
+						}
+						onTrigger: function<bool,bool>(f1e58af4-aaaf-4ce5-98d3-a19958a2e62d)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(ca51bf36-c02f-4960-bfde-dd25de5f89ef)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:float2string(dp:Kg)" \
+								"}"
+						}
+						write: function<bool,string>(7178d0ce-5ef4-45cb-880b-53494f69fe17)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(44fc054e-6e5e-412e-9d16-3b80ae1f6ca4)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(2d7bf47d-5f58-4982-90d7-5175fdd714e6)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "PRETtotal_txt"
+					visible: true
+					width: 57
+					height: 35
+					x: 184
+					y: 381
+					text: string_scriptedValue(996008e6-c1a4-4855-a279-14340a5e4aaf)
+					{
+						triggerList: trigger_list(d82f78d1-0351-4701-87aa-c7af397629e9)
+						{
+							script: "" \
+								""
+						}
+						onTrigger: function<bool,bool>(68d03327-4f0f-48a5-a45a-14bc0ec1f667)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(9ba02409-76a9-4b42-b85c-32ba52e2352f)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:float2string(dp:PRETtotal)" \
+								"}"
+						}
+						write: function<bool,string>(67041ffe-06f4-4a72-add1-ca2e49021813)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FF0000FF
+					font: font_resource(e5b615df-0da6-4e6a-b0bb-f4688edfaecd)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(215f55ec-b077-4d49-b52d-d0c3897a473f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "lei_txt"
+					visible: true
+					width: 34
+					height: 35
+					x: 252
+					y: 381
+					text: "LEI"
+					textColor: #FF0000FF
+					font: font_resource(46a017bd-07e7-4943-abe3-ed7df46445de)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "Container"
+			visible: true
+			width: width@e30c3269-02e6-4860-bdac-0eed807e949b (propref<int>)
+			height: height@e30c3269-02e6-4860-bdac-0eed807e949b (propref<int>)
+			x: 0
+			y: 0
+		}]
+	name: "PrincipalMENU"
+	visible: true
+	width: 320
+	height: 480
+	x: 0
+	y: 0
+}

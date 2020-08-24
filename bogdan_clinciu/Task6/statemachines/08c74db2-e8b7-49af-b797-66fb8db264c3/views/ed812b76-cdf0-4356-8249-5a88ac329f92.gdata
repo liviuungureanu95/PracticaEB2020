@@ -1,0 +1,136 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(ed812b76-cdf0-4356-8249-5a88ac329f92)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(c63d6cab-3c5f-41f2-99ce-a56a2ec29778)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(ae5bf036-78e1-4a65-997b-f44825a95295)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Message"
+					visible: true
+					width: 350
+					height: 100
+					x: 225
+					y: 150
+					text: "Calculating best route ..."
+					textColor: #FFFFFFFF
+					font: font_resource(1e5ab0b9-0f88-4c59-8846-16594e325f9e)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 40
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfRectangle(640e2aed-38d7-4d3e-a1ce-f2b58b054838)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfRectangle(b38daa15-4769-43f0-b355-5787f61cc667)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfParallelAnimation(81cff6da-8abd-4afe-9f8d-a60b03e5c29d)
+								{
+									features: feature_list []
+									children: children_list [
+										GtfSlowStartS32(30faade8-0de9-49d6-8659-378fa077a5ff)
+										{
+											features: feature_list []
+											children: children_list []
+											name: "LoadingAnimation"
+											enabled: true
+											delay: 0
+											duration: 10000
+											repeat: 1
+											alternating: false
+											relative: false
+											start: 0
+											end: 390
+											target: width@b38daa15-4769-43f0-b355-5787f61cc667 (propref<int>)
+											StartAnimation: conditional_script(d09bd911-9c0a-4857-a6a9-2ff9cd90287d)
+											{
+												triggerList: trigger_list(f952dc7a-5ba6-45c8-8fb9-f75581d9512f)
+												{
+													script: ""
+												}
+												onTrigger: function<bool,bool>(c3913ba6-3ce2-4335-9c66-e5948bfee8d4)
+												{
+													script: "function(v:arg0::bool)" \
+														"{" \
+														"	f:animation_play(v:this)" \
+														"	false" \
+														"}"
+												}
+											}
+										}]
+									name: "LoadingAnimation"
+									enabled: true
+									repeat: 1
+									alternating: false
+									scale: 1F
+									onPlay: function<void,int,bool>(e026f468-320d-430c-99b8-94667ca01de9)
+									{
+										script: "function(v:animation_time::int, v:forward::bool)" \
+											"{" \
+											"" \
+											"}"
+									}
+									onPause: function<void,int>(083181d0-b7cb-4e00-9bd8-42d40d48a128)
+									{
+										script: "function(v:animation_time::int)" \
+											"{" \
+											"" \
+											"}"
+									}
+									onTerminate: function<void,int,int>(9b36cd28-f5b1-4233-a5d5-dab707d379d8)
+									{
+										script: "function(v:animation_time::int, v:terminate::int)" \
+											"{" \
+											"" \
+											"}"
+									}
+								}]
+							name: "LoadingBar"
+							visible: true
+							width: 390
+							height: 30
+							x: 5
+							y: 3
+							fillColor: #ADFF2FFF
+						}]
+					name: "LoadingBG"
+					visible: true
+					width: 400
+					height: 36
+					x: 200
+					y: 285
+					fillColor: #A9A9A9FF
+				}]
+			name: "Background"
+			visible: true
+			width: width@ed812b76-cdf0-4356-8249-5a88ac329f92 (propref<int>)
+			height: height@ed812b76-cdf0-4356-8249-5a88ac329f92 (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(fd2e3798-b5d7-4847-ad72-919acecd6609)
+			{
+				file: "BackGround.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "LoadingScreen_state"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

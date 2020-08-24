@@ -1,0 +1,116 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(23447c17-33c2-4923-be9d-943094e58ce8)
+{
+	name: "BasicButton"
+	structure: GtfContainer(12ca51f8-cc35-41fd-b8d1-93f1709179e3)
+	{
+		features: feature_list [
+			MoveOut(fac97df4-9f82-43ad-8486-4be7667c32a3)
+			{
+				moveOut: function<bool,int,int,int,int>(3aefa2b2-d423-426d-84da-0ff41f187061)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.height -= 10" \
+						"	v:this->Back.fillColor = v:this.MoveOutColor" \
+						"    false" \
+						"}"
+				}
+			}, 
+			MoveIn(3dd96a7b-c6d6-453f-a18c-81d131ef387b)
+			{
+				moveIn: function<bool,int,int,int,int>(a30c62e9-4f21-412a-a60d-5dcfe6ad8816)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.height += 10" \
+						"	v:this->Back.fillColor = v:this.MoveInColor" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(b214f950-6b8d-4e98-b840-b8de7779962e)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(5ba2f471-ae72-4163-a845-d5c2af24fc59)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.Action()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(1e10fb7b-d42f-44e2-82aa-86aee18f7222)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			LineIndex(fa7c58d9-e73e-49d0-b0c5-0cc862011ff5)
+			{
+				lineIndex: 0
+			}]
+		children: children_list [
+			GtfRectangle(1bfff933-c338-4ee4-9407-87ebf7097faa)
+			{
+				features: feature_list [
+					Border(de169182-88aa-4c41-bc6b-8bc2e0013ecd)
+					{
+						borderThickness: 2
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list [
+					GtfLabel(25eaaec8-b069-4c61-93bc-39f1630a9ddf)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Label 1"
+						visible: true
+						width: width@12ca51f8-cc35-41fd-b8d1-93f1709179e3 (propref<int>)
+						height: height@12ca51f8-cc35-41fd-b8d1-93f1709179e3 (propref<int>)
+						x: 0
+						y: 0
+						text: "label"
+						textColor: #000000FF
+						font: font_resource(d5c8b518-530b-453d-aa66-1ccfaa31544c)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "Back"
+				visible: true
+				width: width@12ca51f8-cc35-41fd-b8d1-93f1709179e3 (propref<int>)
+				height: height@12ca51f8-cc35-41fd-b8d1-93f1709179e3 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+			}]
+		name: "Button"
+		visible: true
+		width: 120
+		height: 50
+		x: 0
+		y: 0
+		Action: function<bool>(bd2d47aa-625a-4963-8846-be12a5722495)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		MoveInColor: #B0E0E6FF
+		MoveOutColor: #FFFFFF00
+	}
+	text: text@25eaaec8-b069-4c61-93bc-39f1630a9ddf (propref<string>)
+	x: x@12ca51f8-cc35-41fd-b8d1-93f1709179e3 (propref<int>)
+	y: y@12ca51f8-cc35-41fd-b8d1-93f1709179e3 (propref<int>)
+	Action: Action@12ca51f8-cc35-41fd-b8d1-93f1709179e3 (propref<function<bool>>)
+	lineIndex: lineIndex@fa7c58d9-e73e-49d0-b0c5-0cc862011ff5 (propref<int>)
+}

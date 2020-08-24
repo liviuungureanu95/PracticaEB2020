@@ -1,0 +1,326 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(c9599c49-387b-42fe-b704-a626b01f4e16)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(abb7a964-de0b-4930-a303-c1de80fdc226)
+		{
+			features: feature_list [
+				ScaleMode(106b14ea-9460-48ae-9f9d-536a91760389)
+				{
+					scaleMode: 2
+				}]
+			children: children_list [
+				GtfContainer_template_instance(65444f02-ec22-4cc3-bdcc-5f1688e17ac1)
+				{
+					name: "ticket_1"
+					template: @abfc88af-9008-4c58-b5b0-9cda5e1a2a7e (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 317
+					y: 132
+					textType: "Pensionar"
+					textCost: textCost@abfc88af-9008-4c58-b5b0-9cda5e1a2a7e (propref<string>)
+					touchShortReleased: function<bool,int,int,int,int>(8c622c76-00ae-41a4-8594-5a54a3e8203f)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:selectedTicket=1" \
+							"    false" \
+							"}"
+					}
+					borderThickness: borderThickness@abfc88af-9008-4c58-b5b0-9cda5e1a2a7e (propref<int>)
+					touchable: touchable@abfc88af-9008-4c58-b5b0-9cda5e1a2a7e (propref<bool>)
+					setBorder: conditional_script(5dc6f671-973b-4783-8771-8e7da3392ae6)
+					{
+						triggerList: trigger_list(1e403423-10dc-4d6e-aef2-caad38b8a7ed)
+						{
+							script: "dp:selectedTicket"
+						}
+						onTrigger: function<bool,bool>(042575d9-69ac-45b2-95f8-76337805e040)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(dp:selectedTicket==1)" \
+								"		v:this.borderThickness=6" \
+								"	else" \
+								"		v:this.borderThickness=0" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfContainer_template_instance(937c1d4e-5519-4a40-ba44-2306c5972ee8)
+				{
+					name: "ticket_2"
+					template: @abfc88af-9008-4c58-b5b0-9cda5e1a2a7e (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 316
+					y: 187
+					textType: "Normal"
+					textCost: "18lei"
+					touchShortReleased: function<bool,int,int,int,int>(000b086c-9237-4be2-b413-855d9874c944)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:selectedTicket=2" \
+							"    false" \
+							"}"
+					}
+					borderThickness: borderThickness@abfc88af-9008-4c58-b5b0-9cda5e1a2a7e (propref<int>)
+					touchable: true
+					setBorder: conditional_script(e9a6738d-3948-4120-97d6-200d12f244c8)
+					{
+						triggerList: trigger_list(f39a8c17-8a2c-4b17-acf4-ecee8110b288)
+						{
+							script: "dp:selectedTicket"
+						}
+						onTrigger: function<bool,bool>(15ad9fbf-2776-49f1-bd2e-824280a56482)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(dp:selectedTicket==2)" \
+								"		v:this.borderThickness=6" \
+								"	else" \
+								"		v:this.borderThickness=0" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfLabel(63419d3b-6fea-4228-bc0d-7b5e6edd824c)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Balance"
+					visible: true
+					width: 183
+					height: 52
+					x: 308
+					y: 252
+					text: string_scriptedValue(f7374385-f56a-4ed3-b268-4a2684bcfd44)
+					{
+						triggerList: trigger_list(a3d70842-a01a-4668-a83c-69eb8d554b05)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(0e858fdb-e1c4-44d5-850c-0759b95517ab)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(1a791907-0709-4d53-96b2-71e84c51731b)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	\"Balance: \"+f:int2string(dp:money)+\"lei\"" \
+								"}"
+						}
+						write: function<bool,string>(126c7461-2f8f-42d3-86ce-cac7bccc4b31)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(ab58116c-3b1a-4800-acbb-bec51ff23b3c)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer(ce147cd0-fd36-4852-b2b2-4382e01051e2)
+				{
+					features: feature_list [
+						TouchShortReleased(e05d55ff-7468-4f08-8368-9f1d4d2264b3)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(a2ff53de-b552-4ba6-8af0-44e6c98b460c)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	" \
+									"	if(dp:selectedTicket!=0){" \
+									"		if(dp:money<9*dp:selectedTicket)" \
+									"			f:pushDynamicStateMachine(popup_stack:\"Main state\",sm:\"Pop_up state\",0)" \
+									"		else{" \
+									"			v:this->^->change.visible=true" \
+									"			v:this->^->ticket_1.touchable=false" \
+									"			v:this->^->ticket_2.touchable=false" \
+									"		}" \
+									"	}" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(c10d6be8-8ba1-43a7-a451-e92e4e27b66f)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfImage(5b39cdd2-206a-4fb5-93a7-051bbf1428c6)
+						{
+							features: feature_list [
+								ScaleMode(0a3f032d-0764-42e7-a90f-dbd7aa275d16)
+								{
+									scaleMode: 2
+								}]
+							children: children_list []
+							name: "Image"
+							visible: true
+							width: width@ce147cd0-fd36-4852-b2b2-4382e01051e2 (propref<int>)
+							height: height@ce147cd0-fd36-4852-b2b2-4382e01051e2 (propref<int>)
+							x: 0
+							y: 0
+							image: image_resource(52941e43-33e6-4268-a6d2-43c6fcfd926c)
+							{
+								file: "icons8-pay-64.png"
+							}
+							sRGB: false
+							horizontalAlign: 1
+							verticalAlign: 1
+						}]
+					name: "payButton"
+					visible: true
+					width: 88
+					height: 68
+					x: 268
+					y: 315
+				}, 
+				GtfContainer(02ddc353-83ea-42cf-aa4e-17818ef5a861)
+				{
+					features: feature_list [
+						StateTouched(bd51f132-306b-4d4c-9c4d-bc01a9771cc4)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}, 
+						TouchShortReleased(dde31133-0d78-41d0-89e7-c55515bdb188)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(d6aae20b-984c-479b-b3c4-f7d005f8c5bd)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	dp:money=0" \
+									"	dp:selectedTicket=0" \
+									"	v:this->^->ticket_1.touchable=true" \
+									"	v:this->^->ticket_2.touchable=true" \
+									"	v:this->^->change.visible=false" \
+									"false" \
+									"}"
+							}
+						}]
+					children: children_list [
+						GtfImage(d79f80f9-c154-4823-9d9a-9ab0531cb7eb)
+						{
+							features: feature_list [
+								ScaleMode(a73a84ae-e6fd-46f4-80d4-ae85dbad4ca8)
+								{
+									scaleMode: 2
+								}]
+							children: children_list []
+							name: "Image"
+							visible: true
+							width: width@02ddc353-83ea-42cf-aa4e-17818ef5a861 (propref<int>)
+							height: height@02ddc353-83ea-42cf-aa4e-17818ef5a861 (propref<int>)
+							x: 0
+							y: 0
+							image: image_resource(cf659643-9211-46ff-b3bc-24114c671d0e)
+							{
+								file: "icons8-reset-100.png"
+							}
+							sRGB: false
+							horizontalAlign: 1
+							verticalAlign: 1
+						}]
+					name: "resetButton"
+					visible: true
+					width: 78
+					height: 63
+					x: 448
+					y: 320
+				}, 
+				GtfLabel(7c6657df-ef6b-49ea-bbff-3c5ac3019cd9)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "change"
+					visible: false
+					width: 183
+					height: 52
+					x: 308
+					y: 396
+					text: string_scriptedValue(8727ed6b-78d8-4d48-af47-6c952b136e72)
+					{
+						triggerList: trigger_list(a871ae1f-51a4-4d03-9a35-2547b6aa1928)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(e23ef274-89f5-4163-8509-4c829e314e0c)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(3acd2dc6-3471-4cc2-8308-5c1d922f0b44)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	\"Rest: \"+f:int2string(dp:money-9*dp:selectedTicket)+\"lei\"" \
+								"}"
+						}
+						write: function<bool,string>(41c3d082-a053-4d38-82a9-f0bfa05a1b70)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(d2a6c530-9362-42b3-924c-2cf3f85f962b)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "ticket Machine"
+			visible: true
+			width: width@c9599c49-387b-42fe-b704-a626b01f4e16 (propref<int>)
+			height: height@c9599c49-387b-42fe-b704-a626b01f4e16 (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(2e213317-69d4-4dea-915c-3b35c579b20f)
+			{
+				file: "ticket-machine-512.png"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 1
+		}]
+	name: "mainView"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

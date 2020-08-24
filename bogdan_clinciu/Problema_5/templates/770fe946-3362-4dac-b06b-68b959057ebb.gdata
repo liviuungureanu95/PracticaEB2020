@@ -1,0 +1,415 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(770fe946-3362-4dac-b06b-68b959057ebb)
+{
+	name: "ViewGen"
+	structure: GtfView(9fa766bb-c3a5-4274-ae53-911495932268)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfImage(9dacbae8-d5b2-4efd-8999-93c519379ea3)
+			{
+				features: feature_list [
+					ScaleMode(b25bfafe-a761-420c-baab-f9333a84726e)
+					{
+						scaleMode: 1
+					}]
+				children: children_list [
+					GtfLabel(fd1a174e-42b0-4ae5-82eb-e73ebd5a2878)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Title"
+						visible: true
+						width: 400
+						height: 100
+						x: 200
+						y: 75
+						text: "<Title>"
+						textColor: #FFFFFFFF
+						font: font_resource(566968cf-1a2f-4117-b0be-2eccb17ad8c0)
+						{
+							file: "SpaceRangerTitle-63av.otf"
+							size: 50
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfContainer(b2118e82-81d8-4de7-a5a2-af78559db641)
+					{
+						features: feature_list [
+							TouchPressed(259b0c0a-04a4-4b70-b0f3-6bad1ae4bd21)
+							{
+								touchPressed: function<bool,int,int,int,int>(3ea50bfa-5faf-46d7-8605-df738281578b)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	v:this->Background.fillColor = v:this.ColorPressed" \
+										"    false" \
+										"}"
+								}
+							}, 
+							TouchShortReleased(d0eb83bb-4c0b-475e-a80b-8c4086564983)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(622c5e16-f4ac-41cf-be6e-567755586699)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	" \
+										"	if(dp:BFunction == 0)" \
+										"	{v:this->Background.fillColor = v:this.ColorReleased" \
+										"	f:animation_play(v:this->SelBarAnimation)" \
+										"	dp:BFunction = 1" \
+										"	}" \
+										"	else" \
+										"    {" \
+										"    v:this->Background.fillColor = v:this.ColorReleased" \
+										"	f:animation_reverse(v:this->SelBarAnimation)" \
+										"	dp:BFunction = 0" \
+										"    }	" \
+										"    " \
+										"    " \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(4e05b3d1-0080-4a0e-a5ef-eab3a561af44)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list [
+							GtfRectangle(e9932472-ad2c-4a2c-8776-80e239dc8265)
+							{
+								features: feature_list []
+								children: children_list [
+									GtfLabel(9be159eb-41ea-4dd9-803a-8c9c22a7a8e4)
+									{
+										features: feature_list [
+											Rotation(cfffed43-ff27-4f9c-87ff-39dcd363ed04)
+											{
+												rotationEnabled: true
+												rotationAngleX: 0F
+												rotationAngleY: 0F
+												rotationAngleZ: 180F
+											}, 
+											Scaling(d2c6531c-6bd1-4b2b-85a7-4113be8d4c97)
+											{
+												scalingEnabled: true
+												scalingX: 100F
+												scalingY: 100F
+												scalingZ: 100F
+											}, 
+											Shearing(4c3e05cc-b136-4883-b3ed-858b5c9e2b07)
+											{
+												shearingEnabled: true
+												shearingXbyY: 0F
+												shearingXbyZ: 0F
+												shearingYbyX: 0F
+												shearingYbyZ: 0F
+												shearingZbyX: 0F
+												shearingZbyY: 0F
+											}, 
+											Pivot(46eec0d4-69b3-4963-bf35-a631758c4b06)
+											{
+												pivotX: 12.5F
+												pivotY: 50F
+												pivotZ: 0F
+											}]
+										children: children_list []
+										name: "Symbol"
+										visible: true
+										width: width@e9932472-ad2c-4a2c-8776-80e239dc8265 (propref<int>)
+										height: 100
+										x: 0
+										y: 0
+										text: "<"
+										textColor: #FFFFFFFF
+										font: font_resource(faa9e1c2-7469-4257-953a-d15e57b5ae1d)
+										{
+											file: "SpaceRangerTitle-63av.otf"
+											size: 50
+										}
+										horizontalAlign: 1
+										verticalAlign: 0
+									}]
+								name: "Background"
+								visible: true
+								width: 25
+								height: 100
+								x: 0
+								y: 0
+								fillColor: #D2B48CFF
+							}, 
+							GtfParallelAnimation(49a56352-a174-42c9-bd93-9da816c726d1)
+							{
+								features: feature_list []
+								children: children_list [
+									GtfLinearInterpolationS32(b1576b7e-a188-4c6c-a08c-4bc0aedd6902)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "OpenButtonShow"
+										enabled: true
+										delay: 0
+										duration: 750
+										repeat: 1
+										alternating: false
+										relative: false
+										start: 770
+										end: 645
+										target: x@b2118e82-81d8-4de7-a5a2-af78559db641 (propref<int>)
+									}, 
+									GtfLinearInterpolationS32(8d6bcabc-bdb2-4ffc-92fb-e4a1c37bd516)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "TaskBarSlide"
+										enabled: true
+										delay: 0
+										duration: 750
+										repeat: 1
+										alternating: false
+										relative: false
+										start: 5
+										end: 130
+										target: width@0a763872-745a-4e16-95cd-78a09bf0892d (propref<int>)
+									}, 
+									GtfLinearInterpolationS32(46325ac7-2ca1-4097-806f-89222001f1b7)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "Button1Slide"
+										enabled: true
+										delay: 0
+										duration: 750
+										repeat: 1
+										alternating: false
+										relative: false
+										start: 800
+										end: 675
+										target: x@e3ceb3fb-4b5f-4b07-abad-4507b48b93d2 (propref<int>)
+									}, 
+									GtfLinearInterpolationS32(226bf2c3-5585-48b1-8296-d1d4e278a8d9)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "Button2Slide"
+										enabled: true
+										delay: 0
+										duration: 750
+										repeat: 1
+										alternating: false
+										relative: false
+										start: 800
+										end: 675
+										target: x@a29f18a7-1a07-4d01-97ea-e0c198f3923e (propref<int>)
+									}, 
+									GtfLinearInterpolationS32(2a3f2b43-ddc7-4d4c-b7ee-53b85bc3a5f3)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "Button3Slide"
+										enabled: true
+										delay: 0
+										duration: 750
+										repeat: 1
+										alternating: false
+										relative: false
+										start: 800
+										end: 675
+										target: x@6a13211a-e9dd-4399-a96f-e62178631de6 (propref<int>)
+									}, 
+									GtfFastStartS32(0f2986ca-874d-4f5b-b720-55f4f68f80fe)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "Fast start curve 1"
+										enabled: true
+										delay: 0
+										duration: 750
+										repeat: 1
+										alternating: false
+										relative: false
+										start: 200
+										end: 75
+										target: x@fd1a174e-42b0-4ae5-82eb-e73ebd5a2878 (propref<int>)
+									}]
+								name: "SelBarAnimation"
+								enabled: true
+								repeat: 1
+								alternating: false
+								scale: 1F
+								onPlay: function<void,int,bool>(894d2c21-bf67-45cb-833b-65bef6a0b4d1)
+								{
+									script: "function(v:animation_time::int, v:forward::bool)" \
+										"{" \
+										"" \
+										"}"
+								}
+								onPause: function<void,int>(4f346863-7dbf-42b3-a281-648ec5f28f10)
+								{
+									script: "function(v:animation_time::int)" \
+										"{" \
+										"" \
+										"}"
+								}
+								onTerminate: function<void,int,int>(6d4652c7-e88d-41e0-a567-7fa653ba3a8a)
+								{
+									script: "function(v:animation_time::int, v:terminate::int)" \
+										"{" \
+										"" \
+										"}"
+								}
+								"Conditional script 3": conditional_script(fda2fd6f-f685-4739-b5c1-833cdde2d517)
+								{
+									triggerList: trigger_list(1cad4a68-aba9-4e94-819a-693be4dbb672)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(c00d0f4e-72a1-406a-a44e-4beae1ce240b)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	" \
+											"	false" \
+											"}"
+									}
+								}
+							}]
+						name: "OptButton"
+						visible: true
+						width: width@e9932472-ad2c-4a2c-8776-80e239dc8265 (propref<int>)
+						height: height@e9932472-ad2c-4a2c-8776-80e239dc8265 (propref<int>)
+						x: 770
+						y: 190
+						ColorPressed: #FFA07AFF
+						ColorReleased: #D2B48CFF
+					}, 
+					GtfRectangle(0a763872-745a-4e16-95cd-78a09bf0892d)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "TaskBar"
+						visible: true
+						width: 5
+						height: 480
+						x: int_scriptedValue(fbd952f7-5d5c-4f47-bd58-309dd31f3aa2)
+						{
+							triggerList: trigger_list(ec4186eb-a0ae-4533-ba3c-90b73a1b5e6c)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(3dfd2509-fccf-459c-8180-95d569399fe9)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<int>(10d0dd1a-120e-40f6-a288-dc8943cf03f5)
+							{
+								script: "function()" \
+									"{" \
+									"	800 - v:this.width" \
+									"	" \
+									"}"
+							}
+							write: function<bool,int>(02ff0c1d-52b6-4936-91ca-3805825e306a)
+							{
+								script: "function(v:arg0::int)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						y: 0
+						fillColor: #DEB887FF
+					}, 
+					GtfContainer_template_instance(e3ceb3fb-4b5f-4b07-abad-4507b48b93d2)
+					{
+						name: "Button 1"
+						template: @0af07d63-a70a-4a63-96f9-af316fe7c82d (objectref<GtfContainer_template>)
+						children: children_list []
+						image: image@0af07d63-a70a-4a63-96f9-af316fe7c82d (propref<image>)
+						fillColor: #000080FF
+						height: 100
+						width: 120
+						x: 800
+						y: 45
+						touchShortReleased: touchShortReleased@0af07d63-a70a-4a63-96f9-af316fe7c82d (propref<function<bool,int,int,int,int>>)
+						ReleasedC: ReleasedC@0af07d63-a70a-4a63-96f9-af316fe7c82d (propref<color>)
+						TouchedC: TouchedC@0af07d63-a70a-4a63-96f9-af316fe7c82d (propref<color>)
+						visible: visible@0af07d63-a70a-4a63-96f9-af316fe7c82d (propref<bool>)
+					}, 
+					GtfContainer_template_instance(a29f18a7-1a07-4d01-97ea-e0c198f3923e)
+					{
+						name: "Button 2"
+						template: @0af07d63-a70a-4a63-96f9-af316fe7c82d (objectref<GtfContainer_template>)
+						children: children_list []
+						image: image@0af07d63-a70a-4a63-96f9-af316fe7c82d (propref<image>)
+						fillColor: #000080FF
+						height: height@0af07d63-a70a-4a63-96f9-af316fe7c82d (propref<int>)
+						width: 120
+						x: 800
+						y: 190
+						touchShortReleased: touchShortReleased@0af07d63-a70a-4a63-96f9-af316fe7c82d (propref<function<bool,int,int,int,int>>)
+						ReleasedC: ReleasedC@0af07d63-a70a-4a63-96f9-af316fe7c82d (propref<color>)
+						TouchedC: TouchedC@0af07d63-a70a-4a63-96f9-af316fe7c82d (propref<color>)
+						visible: visible@0af07d63-a70a-4a63-96f9-af316fe7c82d (propref<bool>)
+					}, 
+					GtfContainer_template_instance(6a13211a-e9dd-4399-a96f-e62178631de6)
+					{
+						name: "Button 3"
+						template: @0af07d63-a70a-4a63-96f9-af316fe7c82d (objectref<GtfContainer_template>)
+						children: children_list []
+						image: image@0af07d63-a70a-4a63-96f9-af316fe7c82d (propref<image>)
+						fillColor: #000080FF
+						height: height@0af07d63-a70a-4a63-96f9-af316fe7c82d (propref<int>)
+						width: 120
+						x: 800
+						y: 336
+						touchShortReleased: touchShortReleased@0af07d63-a70a-4a63-96f9-af316fe7c82d (propref<function<bool,int,int,int,int>>)
+						ReleasedC: ReleasedC@0af07d63-a70a-4a63-96f9-af316fe7c82d (propref<color>)
+						TouchedC: TouchedC@0af07d63-a70a-4a63-96f9-af316fe7c82d (propref<color>)
+						visible: visible@0af07d63-a70a-4a63-96f9-af316fe7c82d (propref<bool>)
+					}]
+				name: "Background"
+				visible: true
+				width: width@9fa766bb-c3a5-4274-ae53-911495932268 (propref<int>)
+				height: height@9fa766bb-c3a5-4274-ae53-911495932268 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(8f12cc28-1e25-4841-abec-f75fd9c5481e)
+				{
+					file: "983279.jpg"
+				}
+				sRGB: false
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "View 6"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+	}
+	text: text@fd1a174e-42b0-4ae5-82eb-e73ebd5a2878 (propref<string>)
+	image: image@e3ceb3fb-4b5f-4b07-abad-4507b48b93d2 (propref<image>)
+	touchShortReleased: touchShortReleased@e3ceb3fb-4b5f-4b07-abad-4507b48b93d2 (propref<function<bool,int,int,int,int>>)
+	"touchShortReleased 2": touchShortReleased@a29f18a7-1a07-4d01-97ea-e0c198f3923e (propref<function<bool,int,int,int,int>>)
+	"image 2": image@a29f18a7-1a07-4d01-97ea-e0c198f3923e (propref<image>)
+	"touchShortReleased 3": touchShortReleased@6a13211a-e9dd-4399-a96f-e62178631de6 (propref<function<bool,int,int,int,int>>)
+	"image 3": image@6a13211a-e9dd-4399-a96f-e62178631de6 (propref<image>)
+	TouchedC: TouchedC@e3ceb3fb-4b5f-4b07-abad-4507b48b93d2 (propref<color>)
+	ReleasedC: ReleasedC@e3ceb3fb-4b5f-4b07-abad-4507b48b93d2 (propref<color>)
+	fillColor: fillColor@e9932472-ad2c-4a2c-8776-80e239dc8265 (propref<color>)
+	"fillColor 2": fillColor@e3ceb3fb-4b5f-4b07-abad-4507b48b93d2 (propref<color>)
+	"fillColor 3": fillColor@a29f18a7-1a07-4d01-97ea-e0c198f3923e (propref<color>)
+	"fillColor 4": fillColor@6a13211a-e9dd-4399-a96f-e62178631de6 (propref<color>)
+}

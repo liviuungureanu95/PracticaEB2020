@@ -1,0 +1,82 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(18670716-7fe2-4766-966c-99066f2fe4b5)
+{
+	name: "reset_button"
+	structure: GtfContainer(47522759-fd71-4252-af6d-391398a36910)
+	{
+		features: feature_list [
+			TouchShortReleased(91cdb361-3050-43f6-9e45-f8e95eed22e5)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(e1f8131b-1b56-4833-80c3-456a5eacd000)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(f8a2f375-bf42-482b-8008-089bb48dfc99)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			TouchPressed(fc64f65c-e83d-483e-a733-d0374c3f247e)
+			{
+				touchPressed: function<bool,int,int,int,int>(05199aa7-bb48-4b37-afe1-6787cfcce917)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->txt.textColor = dp:textcolor" \
+						"    false" \
+						"}"
+				}
+			}]
+		children: children_list [
+			GtfRectangle(dca60176-0eb9-4e43-90c6-76ec1af8ce10)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Rectangle"
+				visible: true
+				width: width@47522759-fd71-4252-af6d-391398a36910 (propref<int>)
+				height: height@47522759-fd71-4252-af6d-391398a36910 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #000000FF
+			}, 
+			GtfLabel(92b19e2e-fc72-4960-9f4d-68fb84264c5b)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "txt"
+				visible: true
+				width: width@47522759-fd71-4252-af6d-391398a36910 (propref<int>)
+				height: height@47522759-fd71-4252-af6d-391398a36910 (propref<int>)
+				x: 0
+				y: 0
+				text: "RESET"
+				textColor: #FFFFFFFF
+				font: font_resource(bbb3160c-dad3-4217-998b-b57bdce912ef)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 70
+		height: 30
+		x: 0
+		y: 0
+	}
+	touchShortReleased: touchShortReleased@91cdb361-3050-43f6-9e45-f8e95eed22e5 (propref<function<bool,int,int,int,int>>)
+	x: x@47522759-fd71-4252-af6d-391398a36910 (propref<int>)
+	y: y@47522759-fd71-4252-af6d-391398a36910 (propref<int>)
+	textColor: textColor@92b19e2e-fc72-4960-9f4d-68fb84264c5b (propref<color>)
+	text: text@92b19e2e-fc72-4960-9f4d-68fb84264c5b (propref<string>)
+}

@@ -1,0 +1,135 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(5a720ee4-d304-4f92-86af-cb5939a8e182)
+{
+	name: "Background"
+	structure: GtfContainer(8932d75d-3b5d-4397-b991-49a8ca353aa1)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(ea62a2ca-9708-404e-abc1-1e75a060a0d3)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLabel(cb366730-362e-41b9-86e7-acfc80609260)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Main Menu"
+						visible: true
+						width: width@8932d75d-3b5d-4397-b991-49a8ca353aa1 (propref<int>)
+						height: 200
+						x: 0
+						y: 0
+						text: "Main Menu"
+						textColor: #000000FF
+						font: font_resource(56927bd6-79eb-45ed-a9b5-f71ac10be93d)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 100
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfContainer_template_instance(19387a7b-d2cf-455a-b55b-38751c485243)
+					{
+						name: "Radio"
+						template: @9985e05c-d1f0-4f3c-9f37-b0a2cad130cf (objectref<GtfContainer_template>)
+						children: children_list []
+						text: "Radio"
+						x: 95
+						y: 200
+						touchShortReleased: function<bool,int,int,int,int>(214d88d8-aa08-4785-b2d6-72676bf4f9eb)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    fire ev:goTo_radio()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					GtfContainer_template_instance(d75db796-1470-4f93-aea2-30624c1a32ba)
+					{
+						name: "Music"
+						template: @9985e05c-d1f0-4f3c-9f37-b0a2cad130cf (objectref<GtfContainer_template>)
+						children: children_list []
+						text: "Music"
+						x: 356
+						y: 200
+						touchShortReleased: function<bool,int,int,int,int>(a4749e56-786b-4290-92f7-be55fc5a0e60)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    fire ev:goTo_music()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					GtfContainer_template_instance(02428cff-8471-4cd6-b5f6-b34de7cf76fa)
+					{
+						name: "TV"
+						template: @9985e05c-d1f0-4f3c-9f37-b0a2cad130cf (objectref<GtfContainer_template>)
+						children: children_list []
+						text: "TV"
+						x: 614
+						y: 200
+						touchShortReleased: function<bool,int,int,int,int>(ca2fd93d-5f62-411a-9142-2809defacae6)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	fire ev:goTo_tv()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					GtfContainer_template_instance(fe3e2b10-d45d-492d-9be7-e7405d68012b)
+					{
+						name: "Videos"
+						template: @9985e05c-d1f0-4f3c-9f37-b0a2cad130cf (objectref<GtfContainer_template>)
+						children: children_list []
+						text: "Videos"
+						x: 904
+						y: 200
+						touchShortReleased: function<bool,int,int,int,int>(706bcb18-72a0-4a36-ad1c-9fe628eab162)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	fire ev:goTo_videos()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					GtfContainer_template_instance(80b044c6-0f3f-414b-b986-013883905853)
+					{
+						name: "Settings"
+						template: @9985e05c-d1f0-4f3c-9f37-b0a2cad130cf (objectref<GtfContainer_template>)
+						children: children_list []
+						text: "Settings"
+						x: 88
+						y: 442
+						touchShortReleased: function<bool,int,int,int,int>(3ccfc08a-e86c-4244-9082-a6f189042b28)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	fire ev:goTo_settings()" \
+								"    false" \
+								"}"
+						}
+					}]
+				name: "BG"
+				visible: true
+				width: width@8932d75d-3b5d-4397-b991-49a8ca353aa1 (propref<int>)
+				height: height@8932d75d-3b5d-4397-b991-49a8ca353aa1 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFFFF
+			}]
+		name: "Elements"
+		visible: true
+		width: 1280
+		height: 720
+		x: 0
+		y: 0
+	}
+	text: text@cb366730-362e-41b9-86e7-acfc80609260 (propref<string>)
+}

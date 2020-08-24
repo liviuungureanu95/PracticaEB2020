@@ -1,0 +1,107 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(96281e74-1795-44cc-bb7a-3880e965a36e)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(a20a006c-bfb9-491e-ac00-e1d8af2f3f92)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(e53761cf-3520-413b-a802-21f52f229077)
+				{
+					features: feature_list [
+						ScaleMode(a66bc0d9-bb93-459f-8e46-4e2fb653622d)
+						{
+							scaleMode: 1
+						}]
+					children: children_list [
+						GtfLabel(64422be0-5bf3-4fc3-93d3-4fffed7deb7d)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Label 1"
+							visible: true
+							width: 288
+							height: 72
+							x: 57
+							y: 160
+							text: "Warning: Insufficent Funds!"
+							textColor: #FFFFFFFF
+							font: font_resource(b6e5de4d-75b0-4a4b-ada9-9b2ff8ec3c80)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}, 
+						GtfContainer_template_instance(d55191b4-a28c-4eb2-8b67-f404f1bf2b6f)
+						{
+							name: "BasicButton 1"
+							template: @23447c17-33c2-4923-be9d-943094e58ce8 (objectref<GtfContainer_template>)
+							children: children_list []
+							text: "Ok"
+							x: x@23447c17-33c2-4923-be9d-943094e58ce8 (propref<int>)
+							y: y@23447c17-33c2-4923-be9d-943094e58ce8 (propref<int>)
+							Action: function<bool>(c6760b6a-67a4-4bd3-a57c-9efb0ade258e)
+							{
+								script: "function()" \
+									"{" \
+									"	fire ev:DismissWarning()" \
+									"	false" \
+									"}"
+							}
+							lineIndex: lineIndex@23447c17-33c2-4923-be9d-943094e58ce8 (propref<int>)
+						}]
+					name: "backgroud"
+					visible: true
+					width: width@96281e74-1795-44cc-bb7a-3880e965a36e (propref<int>)
+					height: height@96281e74-1795-44cc-bb7a-3880e965a36e (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(8951288f-e6d5-48ab-b7ad-a3a237bc9b3c)
+					{
+						file: "back.jpg"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(d9d91891-0628-4d59-8ad4-298cc2ca7b47)
+				{
+					features: feature_list [
+						ScaleMode(c2013d39-e612-49bb-8f78-5a42e677a291)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "warning"
+					visible: true
+					width: 156
+					height: 119
+					x: 111
+					y: 40
+					image: image_resource(9c95cf8a-6d84-45fe-bf53-47336abd00af)
+					{
+						file: "warning.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "back"
+			visible: true
+			width: width@96281e74-1795-44cc-bb7a-3880e965a36e (propref<int>)
+			height: height@96281e74-1795-44cc-bb7a-3880e965a36e (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #A9A9A9FF
+		}]
+	name: "View 3"
+	visible: true
+	width: 400
+	height: 240
+	x: 200
+	y: 120
+}

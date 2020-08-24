@@ -1,0 +1,127 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(297a9fba-923f-4ac0-b5f7-4e53c6b9fea9)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(ba088f22-5d9e-4c76-b957-d7869f41d96e)
+		{
+			name: "AnimatedBackground"
+			template: @13771ef0-b46e-4bd6-b213-aea7bc1e4125 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "HOUR TICKET - 1 EURO\\nDAY TICKET - 3 EURO"
+			exitScreen: exitScreen@13771ef0-b46e-4bd6-b213-aea7bc1e4125 (propref<bool>)
+			onUnloadAction: function<bool>(aa63ecf9-9ae3-4ee7-a5ea-44cb0e7887c7)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goToMainMenu()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(8999f683-da7e-4a40-a24e-c3c9fa78198b)
+		{
+			name: "Back"
+			template: @23da499a-28ed-4fd3-b449-6c26e7968fae (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "BACK"
+			x: 560
+			y: 350
+			height: height@23da499a-28ed-4fd3-b449-6c26e7968fae (propref<int>)
+			width: width@23da499a-28ed-4fd3-b449-6c26e7968fae (propref<int>)
+			visible: visible@23da499a-28ed-4fd3-b449-6c26e7968fae (propref<bool>)
+			onReleaseAction: function<bool>(76bef9c0-7cb8-46b3-a0b5-c85877d681f2)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this->^->AnimatedBackground.exitScreen = true" \
+					"	" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(adb64efa-24c4-48a0-ae35-53132da4e2f3)
+		{
+			name: "Ticket50"
+			template: @23da499a-28ed-4fd3-b449-6c26e7968fae (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "HOUR TICKET"
+			x: 450
+			y: 100
+			height: height@23da499a-28ed-4fd3-b449-6c26e7968fae (propref<int>)
+			width: width@23da499a-28ed-4fd3-b449-6c26e7968fae (propref<int>)
+			visible: visible@23da499a-28ed-4fd3-b449-6c26e7968fae (propref<bool>)
+			onReleaseAction: function<bool>(0d1099ab-e299-4b3d-8915-809376f73656)
+			{
+				script: "function()" \
+					"{" \
+					"	f:pushDynamicStateMachine(popup_stack:vsBuyTicket,sm:Popup,0)" \
+					"	if(dp:curentCredit >= 1){" \
+					"		dp:curentCredit -= 1" \
+					"		dp:message = \"Please pick up your ticket\"	" \
+					"	}" \
+					"	else{" \
+					"		dp:message = \"You don't have enough credit\"	" \
+					"	}" \
+					"	" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(9afeaf4e-be3f-4364-a81e-6338fe12a658)
+		{
+			name: "TicketDay"
+			template: @23da499a-28ed-4fd3-b449-6c26e7968fae (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "DAY TICKET"
+			x: 560
+			y: 100
+			height: height@23da499a-28ed-4fd3-b449-6c26e7968fae (propref<int>)
+			width: width@23da499a-28ed-4fd3-b449-6c26e7968fae (propref<int>)
+			visible: visible@23da499a-28ed-4fd3-b449-6c26e7968fae (propref<bool>)
+			onReleaseAction: function<bool>(d52955d9-950c-434e-ae96-9c3eacbf8a5e)
+			{
+				script: "function()" \
+					"{" \
+					"	f:pushDynamicStateMachine(popup_stack:vsBuyTicket,sm:Popup,0)" \
+					"	if(dp:curentCredit >= 3){" \
+					"		dp:curentCredit -= 3" \
+					"		dp:message = \"Please pick up your ticket\"	" \
+					"	}" \
+					"	else{" \
+					"		dp:message = \"You don't have enough credit\"	" \
+					"	}" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(8bbb0048-316a-44bf-b24e-de58ac667614)
+		{
+			name: "Change"
+			template: @23da499a-28ed-4fd3-b449-6c26e7968fae (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "GET CHANGE"
+			x: 660
+			y: 100
+			height: height@23da499a-28ed-4fd3-b449-6c26e7968fae (propref<int>)
+			width: width@23da499a-28ed-4fd3-b449-6c26e7968fae (propref<int>)
+			visible: visible@23da499a-28ed-4fd3-b449-6c26e7968fae (propref<bool>)
+			onReleaseAction: function<bool>(0004914a-514f-46ee-a2fd-dfabe0020473)
+			{
+				script: "function()" \
+					"{" \
+					"	f:pushDynamicStateMachine(popup_stack:vsBuyTicket,sm:Popup,0)" \
+					"	dp:curentCredit = 0" \
+					"	dp:message = \"Please pick up your change\"" \
+					"	false" \
+					"}"
+			}
+		}]
+	name: "vCredit"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

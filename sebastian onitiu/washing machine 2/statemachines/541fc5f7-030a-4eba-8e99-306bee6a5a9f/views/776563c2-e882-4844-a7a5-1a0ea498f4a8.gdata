@@ -1,0 +1,162 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(776563c2-e882-4844-a7a5-1a0ea498f4a8)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(7dfc9ba6-f94c-4f67-b00b-5ce0b7d209d1)
+		{
+			features: feature_list [
+				ScaleMode(08044fc1-1aef-4706-ae67-4e1d99624e19)
+				{
+					scaleMode: 1
+				}]
+			children: children_list [
+				GtfLabel(64021646-f77f-4278-ba19-0c66e3a144b6)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 3"
+					visible: true
+					width: 307
+					height: 45
+					x: 261
+					y: 32
+					text: "SELECT A WASHING PROGRAM"
+					textColor: #FFFFFFFF
+					font: font_resource(a392ffe9-842f-4a8d-8ad9-966b1a948d8f)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfImage(4acb54b0-3094-4c43-8129-7dbbed9aebc4)
+				{
+					features: feature_list [
+						ScaleMode(77c6caa0-06f5-4b19-bd9a-9f1729638d9c)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "Image 12"
+					visible: true
+					width: 257
+					height: 242
+					x: 267
+					y: 72
+					image: image_resource(a60789f2-c73c-46e3-9652-cf538b4cb3d3)
+					{
+						file: "washing_machine_PNG15617.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "backgr"
+			visible: true
+			width: 800
+			height: 480
+			x: 0
+			y: 2
+			image: image_resource(2bfa32b0-7ea1-4d33-96da-5435b4276e4b)
+			{
+				file: "view_background.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfContainer_template_instance(a78af791-4a0e-441d-8142-59525b4676e2)
+		{
+			name: "buton scurt"
+			template: @ed923e00-7647-49de-b851-f3a9e0b08bf4 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 166
+			y: 354
+			image: image_resource(3a309ff4-f07f-408b-acce-ecfac35f1970)
+			{
+				file: "a.png"
+			}
+			text: "Program scurt"
+			touchPressed: function<bool,int,int,int,int>(b6bc084d-1cae-45d1-b145-b8a4d337fa6b)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:go_scurt()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(1ea2b005-15d1-40ec-8f05-4036ef1c4d11)
+		{
+			name: "buton lung"
+			template: @ed923e00-7647-49de-b851-f3a9e0b08bf4 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 54
+			y: 163
+			image: image_resource(9305dad3-021d-4bc9-92f9-b7f7fba91df6)
+			{
+				file: "d.png"
+			}
+			text: "Program lung"
+			touchPressed: function<bool,int,int,int,int>(b57b2024-d909-455a-b449-a59361c17a13)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:go_lung()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(b61f0ba6-a626-42ae-9fe4-bd7a5fdd8a9f)
+		{
+			name: "buton bumbac"
+			template: @ed923e00-7647-49de-b851-f3a9e0b08bf4 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 614
+			y: 165
+			image: image_resource(91f7b13f-c854-4507-a591-f04906b7ca6a)
+			{
+				file: "b.png"
+			}
+			text: "Bumbac &Eco"
+			touchPressed: function<bool,int,int,int,int>(2d42bb37-0e83-4ac7-9095-36d5b3aa2867)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:go_bumbac_eco()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(4e3a3070-1169-455e-9172-aaeeb7af08f3)
+		{
+			name: "buton fast"
+			template: @ed923e00-7647-49de-b851-f3a9e0b08bf4 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 448
+			y: 354
+			image: image_resource(02c6850d-1903-4170-a35f-ac8b04f18a56)
+			{
+				file: "c.png"
+			}
+			text: "Program fast"
+			touchPressed: function<bool,int,int,int,int>(fb5111bd-aba9-415c-a1b6-07b2fc0d2388)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:go_fast()" \
+					"	" \
+					"    false" \
+					"}"
+			}
+		}]
+	name: "meniu"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
