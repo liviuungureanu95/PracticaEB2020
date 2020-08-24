@@ -1,0 +1,114 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(3f2817cb-a427-4d7a-b35e-3f3c9171b3cb)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(6f3eb38e-1103-4387-999e-c463f1c0ccdb)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(7138114b-f276-4432-add4-9bc6644f8450)
+				{
+					features: feature_list [
+						MultiLine(1b58517e-b608-488f-acdc-b7501f741c51)
+						{
+							lineOffset: 0
+							maxLineCount: 0
+						}]
+					children: children_list []
+					name: "CreditsLabel"
+					visible: true
+					width: 760
+					height: 284
+					x: 26
+					y: 14
+					text: "This game was designed in EB GUIDE Studio 6.10. The mind that thought about the levels is mine \\n - Manuel Dragomir - \\n intern at Elektrobit Brasov\\n with some tremendous help from the greatest mentors \\nAlin Cabel and Liviu Ungureanu."
+					textColor: #00FF00FF
+					font: font_resource(7ed8b3ee-c4ce-48bb-89a3-01fd3321dda9)
+					{
+						file: "helvetica-rounded-bold-5871d05ead8de.otf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(c4576c97-0423-4fa4-b407-30eed381807d)
+				{
+					name: "BackButton"
+					template: @8333bb03-38b5-4824-a70a-203d73d5b064 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 18
+					y: 409
+					width: 125
+					height: 53
+					text: "Back"
+					touchReleased: function<bool>(20e4cc3c-a901-4da7-84e6-7582e7180f18)
+					{
+						script: "function()" \
+							"{" \
+							"	fire ev:GoToMenu()" \
+							"	false" \
+							"}"
+					}
+					font: font_resource(5c627ada-6a5a-4647-a233-e344a8e01e43)
+					{
+						file: "Joystick-5KjV.ttf"
+						size: 40
+					}
+					visible: visible@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+					touchable: touchable@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+				}, 
+				GtfImage(98f682d4-5e8d-436a-a3c0-d30902a48a37)
+				{
+					features: feature_list [
+						ScaleMode(117881ee-0974-43c4-9b6f-a5304c0247b8)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "EBImage"
+					visible: true
+					width: 177
+					height: 145
+					x: 559
+					y: 306
+					image: image_resource(d658f9ac-e23e-47ea-8da9-b92f74c17c12)
+					{
+						file: "EB.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(b57188b2-95ec-44ac-8477-2bdad8506856)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "PoweredByLabel"
+					visible: true
+					width: 179
+					height: 100
+					x: 370
+					y: 329
+					text: "Powered by"
+					textColor: textColor@7138114b-f276-4432-add4-9bc6644f8450 (propref<color>)
+					font: font@7138114b-f276-4432-add4-9bc6644f8450 (propref<font>)
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "Background"
+			visible: true
+			width: width@3f2817cb-a427-4d7a-b35e-3f3c9171b3cb (propref<int>)
+			height: height@3f2817cb-a427-4d7a-b35e-3f3c9171b3cb (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #000000FF
+		}]
+	name: "Credits_View"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

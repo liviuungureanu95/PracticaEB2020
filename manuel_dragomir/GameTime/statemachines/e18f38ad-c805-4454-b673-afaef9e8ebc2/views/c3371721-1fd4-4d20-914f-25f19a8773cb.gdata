@@ -1,0 +1,325 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(c3371721-1fd4-4d20-914f-25f19a8773cb)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(422e8c9d-0048-4425-9371-29489339bcc9)
+		{
+			features: feature_list [
+				MoveOver(c9de94d3-1364-4c99-a68b-a845d8c0125b)
+				{
+					moveOver: function<bool,int,int,int,int>(658c6975-bb0d-4afc-9357-f3efa3a610a7)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    true" \
+							"}"
+					}
+				}, 
+				StateTouched(c71ca6d8-bff5-43a8-b177-73b4e12a52eb)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}, 
+				Coloration(6c1fc894-69ed-4217-8837-a02edb54462c)
+				{
+					colorationEnabled: false
+					colorationColor: #FFFFFF00
+				}, 
+				TouchShortReleased(7ffd61e8-1d6b-4bf0-87d8-afc65f56fd0d)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(c3317785-44d7-48ed-a5fe-5ec09a15b420)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:CloseOptionBarPopUp()" \
+							"    false" \
+							"}"
+					}
+				}]
+			children: children_list []
+			name: "Background"
+			visible: true
+			width: width@c3371721-1fd4-4d20-914f-25f19a8773cb (propref<int>)
+			height: height@c3371721-1fd4-4d20-914f-25f19a8773cb (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #FFFFFF00
+		}, 
+		GtfRectangle(d6b89cf3-0e2c-4512-b051-3c70441d9440)
+		{
+			features: feature_list [
+				Border(35e7c8d7-69e7-4814-b18c-6977f0000c5d)
+				{
+					borderThickness: 1
+					borderColor: @3bc980bc-d4a8-4ef0-8816-66c46cf900f6 (objectref<color>)
+					borderStyle: 0
+				}]
+			children: children_list [
+				GtfEllipse_template_instance(e4b9f060-d2e0-4f94-b553-5cca07011be4)
+				{
+					name: "MainMenuButton"
+					template: @867f48d3-ccd1-4598-af7b-8a6106541bd9 (objectref<GtfEllipse_template>)
+					children: children_list []
+					height: height@867f48d3-ccd1-4598-af7b-8a6106541bd9 (propref<int>)
+					x: 5
+					y: 11
+					touchShortReleased: function<bool,int,int,int,int>(4015202d-6d8e-4b19-819c-f574d11b8957)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:CloseOptionBarPopUp()" \
+							"	fire ev:GoToMenu()" \
+							"    false" \
+							"}"
+					}
+					text: text@867f48d3-ccd1-4598-af7b-8a6106541bd9 (propref<string>)
+					visible: visible@867f48d3-ccd1-4598-af7b-8a6106541bd9 (propref<bool>)
+				}, 
+				GtfLabel(e807f1d6-9049-424c-ad30-d26186e7b515)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "LevelLabel"
+					visible: true
+					width: width@d6b89cf3-0e2c-4512-b051-3c70441d9440 (propref<int>)
+					height: 42
+					x: 0
+					y: 94
+					text: "Level"
+					textColor: @3bc980bc-d4a8-4ef0-8816-66c46cf900f6 (objectref<color>)
+					font: font_resource(d01277ae-80f8-4285-bea9-956fe262e72f)
+					{
+						file: "helvetica-rounded-bold-5871d05ead8de.otf"
+						size: 18
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(4fe3c756-934d-436e-9c6f-7273562ef3c3)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "LevelNumber"
+					visible: true
+					width: width@e807f1d6-9049-424c-ad30-d26186e7b515 (propref<int>)
+					height: 53
+					x: 0
+					y: 126
+					text: string_scriptedValue(ec0716e5-70bf-4fb1-b588-29b4eefd1a48)
+					{
+						triggerList: trigger_list(cf029b98-374c-48ba-a5cb-3071224549ba)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(c46d47f0-deee-4924-bc13-b52981affe3d)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(01dc14f8-35e8-4efc-975f-834cf3f293eb)
+						{
+							script: "function()" \
+								"{" \
+								"	f:int2string(dp:Level)" \
+								"}"
+						}
+						write: function<bool,string>(500de133-730a-4d0f-aa6e-4ce591df3d7f)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: @3bc980bc-d4a8-4ef0-8816-66c46cf900f6 (objectref<color>)
+					font: font_resource(f012f472-2789-4b88-bacd-bf8dc7d08fd3)
+					{
+						file: "helvetica-rounded-bold-5871d05ead8de.otf"
+						size: 28
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfEllipse_template_instance(4c548ff7-543b-436c-a003-60c149e75a48)
+				{
+					name: "ExitButton"
+					template: @867f48d3-ccd1-4598-af7b-8a6106541bd9 (objectref<GtfEllipse_template>)
+					children: children_list []
+					height: height@867f48d3-ccd1-4598-af7b-8a6106541bd9 (propref<int>)
+					x: 7
+					y: 230
+					touchShortReleased: function<bool,int,int,int,int>(eaac9743-e43d-4397-be38-447ab384dbc2)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:CloseOptionBarPopUp()" \
+							"    false" \
+							"}"
+					}
+					text: "exit options"
+					visible: visible@867f48d3-ccd1-4598-af7b-8a6106541bd9 (propref<bool>)
+				}, 
+				GtfEllipse_template_instance(1e3959d3-9cff-4e7b-aa52-56de208af267)
+				{
+					name: "NightMode"
+					template: @867f48d3-ccd1-4598-af7b-8a6106541bd9 (objectref<GtfEllipse_template>)
+					children: children_list []
+					height: 40
+					x: 11
+					y: 180
+					touchShortReleased: function<bool,int,int,int,int>(7f046002-c264-4345-ab15-36bfdf4c4922)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    if(f:getSkinName(f:getSkin(true)) == \"NightMode\"){" \
+							"    	f:setSkin(s:Standard, true)" \
+							"    }" \
+							"    else{" \
+							"    	f:setSkin(s:NightMode, true)" \
+							"    }" \
+							"    false" \
+							"}"
+					}
+					text: string_scriptedValue(3c46391f-eeff-4178-a490-438141778951)
+					{
+						triggerList: trigger_list(a2b83dff-85cd-4a80-82ea-98fa932f5631)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(79850278-e84c-4de3-8888-a433fb3308fe)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(9cb71f21-95ae-4855-83cf-c558b38a0cf5)
+						{
+							script: "function()" \
+								"{" \
+								"	if(f:getSkinName(f:getSkin(true)) == \"NightMode\"){" \
+								"		\"Light Mode\"" \
+								"	}" \
+								"	else{" \
+								"		\"Night Mode\"" \
+								"	}" \
+								"}"
+						}
+						write: function<bool,string>(427aa9e5-7ad4-477b-931a-4936ad7f8715)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					visible: bool_scriptedValue(27cd6c41-8b58-456d-b5ea-1673dfdb7dd6)
+					{
+						triggerList: trigger_list(34493180-7f5d-413e-9e50-eea041161f6c)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(4a5789f7-458b-4ebb-9e84-f7bd0badd7f9)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<bool>(34b8efc1-913a-453a-bbc4-5fdbf30b43e7)
+						{
+							script: "function()" \
+								"{" \
+								"	dp:Level == 15" \
+								"}"
+						}
+						write: function<bool,bool>(268f97be-61fa-471d-ac66-b9852317ce84)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "OptionBar"
+			visible: true
+			width: 61
+			height: 294
+			x: int_scriptedValue(783edbd2-75f3-49d2-87ac-9a51d7018474)
+			{
+				triggerList: trigger_list(5c861c3c-4c51-471f-9c03-ce8b1c16239f)
+				{
+					script: "dp:OptionBar:SidebarWidth" \
+						"dp:OptionBar:SidebarX" \
+						""
+				}
+				onTrigger: function<bool,bool>(ec204b52-2271-44a7-8815-1d37bb5fb05e)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<int>(3f802e5f-ee5a-468b-8dd0-00bbedd55051)
+				{
+					script: "function()" \
+						"{" \
+						"	dp:OptionBar:SidebarWidth + dp:OptionBar:SidebarX" \
+						"}"
+				}
+				write: function<bool,int>(fe77d7b3-eca7-4386-adc5-71e5433f7881)
+				{
+					script: "function(v:arg0::int)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			y: 102
+			fillColor: #000000FF
+		}]
+	name: "OptionView"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+	closeOptionBarPopUp: conditional_script(94a0b895-beae-4928-b86a-d62c539755b7)
+	{
+		triggerList: trigger_list(2c067042-0746-4077-a2ba-949566b1ffa6)
+		{
+			script: "ev:CloseOptionBarPopUp"
+		}
+		onTrigger: function<bool,bool>(9a1d5aed-51d4-457a-bff8-03ca1b9768fd)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	match_event v:event = ev:CloseOptionBarPopUp in" \
+				"{" \
+				"	// Configure the following parameters:" \
+				"//   - state - the state with dynamic state list" \
+				"//   - sm - the dynamic state machine" \
+				"f:popDynamicStateMachine(popup_stack:Main, sm:OptionBarPopUp)" \
+				"" \
+				"}" \
+				"" \
+				"	false" \
+				"}"
+		}
+	}
+}

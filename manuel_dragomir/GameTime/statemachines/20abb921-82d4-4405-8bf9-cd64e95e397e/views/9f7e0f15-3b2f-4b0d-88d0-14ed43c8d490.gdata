@@ -172,12 +172,31 @@ GtfView(9f7e0f15-3b2f-4b0d-88d0-14ed43c8d490)
 					horizontalAlign: 0
 					verticalAlign: 1
 				}, 
+				GtfContainer_template_instance(d75d9a97-79f0-482a-84a7-78fe75a224e6)
+				{
+					name: "CreditsButton"
+					template: @8333bb03-38b5-4824-a70a-203d73d5b064 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 27
+					y: 441
+					width: 84
+					height: 28
+					text: "Credits"
+					touchReleased: touchReleased@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<function<bool>>)
+					font: font_resource(24e4d779-c4a9-4a9a-aad6-110d7f3651d8)
+					{
+						file: "Joystick-5KjV.ttf"
+						size: 20
+					}
+					visible: visible@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+					touchable: touchable@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+				}, 
 				GtfContainer_template_instance(16ee3ba4-6ea0-4f2c-a655-519987d308c3)
 				{
 					name: "PlayButton"
 					template: @8333bb03-38b5-4824-a70a-203d73d5b064 (objectref<GtfContainer_template>)
 					children: children_list []
-					x: 592
+					x: 596
 					y: y@e6e93e16-5b9b-4286-91ab-0112b49b740b (propref<int>)
 					width: width@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<int>)
 					height: height@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<int>)
@@ -199,8 +218,8 @@ GtfView(9f7e0f15-3b2f-4b0d-88d0-14ed43c8d490)
 					name: "TutorialButton"
 					template: @8333bb03-38b5-4824-a70a-203d73d5b064 (objectref<GtfContainer_template>)
 					children: children_list []
-					x: 377
-					y: 348
+					x: 376
+					y: 324
 					width: width@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<int>)
 					height: height@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<int>)
 					text: text@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<string>)
@@ -208,13 +227,57 @@ GtfView(9f7e0f15-3b2f-4b0d-88d0-14ed43c8d490)
 					{
 						script: "function()" \
 							"{" \
-							"	fire ev:StartGame();" \
+							"	dp:Level = 1" \
+							"	dp:NewGame = true" \
+							"	fire ev:PlayGame();" \
 							"	false" \
 							"}"
 					}
 					font: font@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<font>)
 					visible: true
 					touchable: touchable@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+				}, 
+				GtfContainer_template_instance(c28d2ed4-b045-438d-8e45-88f9f3f3cb60)
+				{
+					name: "ContinueButton"
+					template: @8333bb03-38b5-4824-a70a-203d73d5b064 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 377
+					y: 411
+					width: 395
+					height: 56
+					text: "Continue"
+					touchReleased: function<bool>(9c494e89-3179-40e5-be7f-347178607e52)
+					{
+						script: "function()" \
+							"{" \
+							"	fire ev:PlayGame()" \
+							"	false" \
+							"}"
+					}
+					font: font@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<font>)
+					visible: visible@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+					touchable: touchable@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+					checkVisible: conditional_script(ef3855d6-51be-40e0-a196-12af75280c8b)
+					{
+						triggerList: trigger_list(9001da58-f4c7-40fe-94a4-af546aaa1553)
+						{
+							script: "dp:Level"
+						}
+						onTrigger: function<bool,bool>(7b6ed6ef-e665-49c2-835a-dc70a606c1d1)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(dp:Level == 0){" \
+								"		v:this.visible = false" \
+								"	}" \
+								"	else{" \
+								"		v:this.visible = true" \
+								"	}" \
+								"	false" \
+								"}"
+						}
+					}
 				}]
 			name: "Background"
 			visible: true

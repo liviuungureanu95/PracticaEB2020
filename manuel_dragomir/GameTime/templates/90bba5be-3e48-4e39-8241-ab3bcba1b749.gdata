@@ -1,0 +1,62 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(90bba5be-3e48-4e39-8241-ab3bcba1b749)
+{
+	name: "LanguageSupport"
+	structure: GtfContainer(ce222624-9127-432f-ba07-d2803f7b76f1)
+	{
+		features: feature_list [
+			TouchShortReleased(8ae3c158-5d26-4430-95ea-1b9ab0bd1911)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(9d6e581f-8bc6-41db-821c-ba9ec2d1de30)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	f:setLanguage(v:this.language, true)" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(0ec8fdcb-7ba2-4781-8dc2-05c55e73a277)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfImage(7954369c-1f79-42e9-a43b-dec913e4bf4f)
+			{
+				features: feature_list [
+					ScaleMode(5024b93b-fdea-4f59-bc92-76b39482d2ab)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "Image"
+				visible: true
+				width: width@ce222624-9127-432f-ba07-d2803f7b76f1 (propref<int>)
+				height: height@ce222624-9127-432f-ba07-d2803f7b76f1 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(53106219-cbec-43ea-a62b-fa8459afcfe7)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "Container"
+		visible: true
+		width: 76
+		height: 49
+		x: 0
+		y: 0
+		language: ""
+	}
+	image: image@7954369c-1f79-42e9-a43b-dec913e4bf4f (propref<image>)
+	x: x@ce222624-9127-432f-ba07-d2803f7b76f1 (propref<int>)
+	y: y@ce222624-9127-432f-ba07-d2803f7b76f1 (propref<int>)
+	language: language@ce222624-9127-432f-ba07-d2803f7b76f1 (propref<string>)
+}

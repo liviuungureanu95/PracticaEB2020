@@ -4,13 +4,147 @@ GtfView_template_instance(bd9f4a3a-eb6a-41df-b3f8-9e9556c7ea3a)
 {
 	name: "15_View"
 	template: @6ed0fc89-f5fa-41df-8452-71b599053367 (objectref<GtfView_template>)
-	children: children_list []
-	hintForLevel: hintForLevel@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<string>)
-	backgroundColor: backgroundColor@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<color>)
-	image: image@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<image>)
-	width: width@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	children: children_list [
+		GtfImage(1d0c8cad-2a6c-4714-90b7-1661837f17a2)
+		{
+			features: feature_list [
+				ScaleMode(d31b8080-1a92-448f-aba9-0e358271fe5d)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "WindowView"
+			visible: true
+			width: width@b4f1b7c4-3743-43af-933d-694e62aa6183 (propref<int>)
+			height: height@b4f1b7c4-3743-43af-933d-694e62aa6183 (propref<int>)
+			x: x@b4f1b7c4-3743-43af-933d-694e62aa6183 (propref<int>)
+			y: y@b4f1b7c4-3743-43af-933d-694e62aa6183 (propref<int>)
+			image: @917f712d-9617-4eb6-9704-87f014ac9139 (objectref<image>)
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(b4f1b7c4-3743-43af-933d-694e62aa6183)
+		{
+			features: feature_list [
+				ScaleMode(7f6feb50-8fc2-4a3e-b392-b0a99003299b)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "Windows"
+			visible: true
+			width: 365
+			height: 182
+			x: 321
+			y: 92
+			image: image_resource(d8b3e4a1-4329-4ec0-90a2-37ff68f6c1a6)
+			{
+				file: "fenetres.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(0c155e03-e15e-4491-931e-9d634074c404)
+		{
+			features: feature_list [
+				ScaleMode(9a4c8ca1-4511-415b-b6d2-b2d698975fc4)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "ManSleeping"
+			visible: true
+			width: 699
+			height: 353
+			x: 33
+			y: 146
+			image: image_resource(9d41a85a-1082-4ace-83d4-7296b271cbaf)
+			{
+				file: "sleeping_man.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(6aa2e597-9d86-4e50-afe2-0f65cd81bacd)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Hint"
+			visible: true
+			width: 370
+			height: 60
+			x: 323
+			y: 19
+			text: "He really wants to sleep."
+			textColor: #000000FF
+			font: @c686500e-f444-44ae-ad8a-5b5b3ef74343 (objectref<font>)
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(2d45bdc3-55ca-48a7-8087-2ed858600c25)
+		{
+			name: "NextButton"
+			template: @8333bb03-38b5-4824-a70a-203d73d5b064 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 61
+			y: 16
+			width: width@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<int>)
+			height: height@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<int>)
+			text: "Next"
+			touchReleased: function<bool>(ac99a1f5-0b2e-42e5-8771-582d25990d75)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoToFinal()" \
+					"	false" \
+					"}"
+			}
+			font: font@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<font>)
+			visible: bool_scriptedValue(4175e073-30ec-4ccd-9e2c-11be03d1d853)
+			{
+				triggerList: trigger_list(ff6b324d-f294-4844-8903-54d5d7f7435c)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(c2f08917-9c2b-4780-b15d-3a0418698426)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<bool>(2ad7270d-af55-4206-839c-60b8a8b6828c)
+				{
+					script: "function()" \
+						"{" \
+						"	f:getSkinName(f:getSkin(true)) == \"NightMode\"" \
+						"}"
+				}
+				write: function<bool,bool>(706d14cf-77a3-48d9-80cb-fd9cc94c63ce)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			touchable: touchable@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+		}]
+	hintForLevel: "Check options."
+	backgroundColor: #FFFFFF00
+	image: image_resource(e108d348-d16b-4ea2-ab45-cdaadd5b5ffd)
+	{
+		file: "room_interior.png"
+	}
+	width: 800
 	height: height@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
 	moveOver: moveOver@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<function<bool,int,int,int,int>>)
 	xLevelContainer: xLevelContainer@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
-	levelNumber: levelNumber@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	levelNumber: 15
+	colorationColor: @3d74e9f3-a72f-4f1e-8e1f-067a7c36c7c0 (objectref<color>)
 }
