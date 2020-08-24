@@ -37,8 +37,17 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 			fillColor: fillColor@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<color>)
 			"x 2": "x 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			"y 2": "y 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
-			text: @dcae2339-7dbd-4cdb-89ae-c4a31569bc18 (objectref<string>)
+			text: "Click to edit"
 			visible: true
+			buttonEvent: function<bool>(5dda26e4-e314-424a-bccd-62bd1379e3a9)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this.text=\"\"" \
+					"	v:this->^->DoneCCN_button.visible=true" \
+					"	false" \
+					"}"
+			}
 		}, 
 		GtfLabel(eb0dc11a-22c1-4bc1-ae96-cd9b464e6cfc)
 		{
@@ -72,8 +81,16 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 			fillColor: fillColor@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<color>)
 			"x 2": "x 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			"y 2": "y 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
-			text: @bdb3f3ea-eca6-4e2c-89f3-967264976162 (objectref<string>)
-			visible: true
+			text: "Exp: 09/21"
+			visible: false
+			buttonEvent: function<bool>(08115bda-1ae8-4a03-95c2-1af6b8c8038e)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this.text=\"\"" \
+					"	false" \
+					"}"
+			}
 		}, 
 		GtfLabel(ecbfc211-d64d-4295-b33d-a826956cf6de)
 		{
@@ -107,8 +124,16 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 			fillColor: fillColor@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<color>)
 			"x 2": "x 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			"y 2": "y 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
-			text: @e2b44654-b87f-4966-95e8-a6242b426a29 (objectref<string>)
-			visible: true
+			text: "ex: 223"
+			visible: false
+			buttonEvent: function<bool>(ff7c2f86-f554-4df8-bcda-e019eca153a7)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this.text=\"\"	" \
+					"	false" \
+					"}"
+			}
 		}, 
 		GtfContainer_template_instance(f5216d0d-72cc-455f-80cc-78d2a04e864c)
 		{
@@ -130,6 +155,9 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 					"	v:this->^->Exp_label.visible=false" \
 					"	v:this->^->Exp_Type_in_Label.visible=false" \
 					"	v:this.visible=false" \
+					"	v:this->^->DoneCCN_button.visible=false" \
+					"	v:this->^->DoneED_button.visible=false" \
+					"	v:this->^->DoneCVV_button.visible=false" \
 					"	v:this->^->Message.visible=true" \
 					"	v:this->^->Amount_label.visible=true" \
 					"	v:this->^->Amount_Type_in_Label.visible=true" \
@@ -141,7 +169,7 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 			}
 			width: 70
 			height: 50
-			visible: true
+			visible: false
 			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
 		}, 
 		GtfLabel(7c446426-e5c8-40eb-ac6e-0b7ce8bcfee8)
@@ -233,6 +261,7 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 				}
 			}
 			visible: false
+			buttonEvent: buttonEvent@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<function<bool>>)
 		}, 
 		GtfLabel(3743b8f4-e1fd-448f-be2f-c730a7683c65)
 		{
@@ -363,9 +392,94 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 			height: height@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
 			visible: false
 			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+		}, 
+		GtfContainer_template_instance(8f243a44-e4a0-4b35-a012-f03919e43944)
+		{
+			name: "DoneCCN_button"
+			template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 538
+			y: 100
+			fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
+			text: "Done"
+			buttonEvent: function<bool>(ea4e3b01-6849-4373-bd02-51cf193c299f)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:Card_number=dp:String" \
+					"	dp:String=\"\"" \
+					"	v:this->^->\"Card_Type_in_Label\".text=dp:Card_number" \
+					"	v:this->^->\"Exp_Type_in_Label\".visible=true" \
+					"	v:this->^->DoneED_button.visible=true" \
+					"	false" \
+					"}"
+			}
+			width: 90
+			height: 50
+			visible: false
+			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+		}, 
+		GtfContainer_template_instance(f1b3ecaf-75ed-4b9a-8fdf-214903f82540)
+		{
+			name: "DoneED_button"
+			template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 539
+			y: 178
+			fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
+			text: "Done"
+			buttonEvent: function<bool>(71a4db70-de62-4bee-9dff-c7ac37414a97)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:Exp_date=dp:String" \
+					"	dp:String=\"\"" \
+					"	v:this->^->\"Card_Type_in_Label\".text=dp:Exp_date" \
+					"	v:this->^->\"CVV_Type_in_Label\".visible=true" \
+					"	v:this->^->DoneCVV_button.visible=true" \
+					"	false" \
+					"}"
+			}
+			width: 90
+			height: 50
+			visible: false
+			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+		}, 
+		GtfContainer_template_instance(2e22e791-311b-4831-a9d8-94cf3d4c5d3d)
+		{
+			name: "DoneCVV_button"
+			template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 541
+			y: 259
+			fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
+			text: "Done"
+			buttonEvent: function<bool>(1c03eaa0-13c4-4fb1-b87d-368b434ccbcc)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:CVV=dp:String" \
+					"	dp:String=\"\"" \
+					"	v:this->^->\"CVV_Type_in_Label\".text=dp:CVV" \
+					"	v:this->^->Ok_btn.visible=true" \
+					"	false" \
+					"}"
+			}
+			width: 90
+			height: 50
+			visible: false
+			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
 		}]
 	image: image@47101df3-2cb4-462c-8236-06e865e3862e (propref<image>)
 	text: "CARD INFO"
 	visible: true
 	"visible 2": true
+	"Function () : bool 1": function<bool>(385382e9-4893-407d-9d51-d5c749af8bc6)
+	{
+		script: "function()" \
+			"{" \
+			"	// todo: auto generated return value, please adapt" \
+			"	false" \
+			"}"
+	}
 }

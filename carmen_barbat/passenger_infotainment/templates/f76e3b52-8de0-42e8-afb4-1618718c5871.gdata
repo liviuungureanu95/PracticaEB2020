@@ -5,7 +5,25 @@ GtfRectangle_template(f76e3b52-8de0-42e8-afb4-1618718c5871)
 	name: "Type_in_Label_TEMP"
 	structure: GtfRectangle(9684ac17-b3e0-4d0e-99b5-e76ddd2ee8c1)
 	{
-		features: feature_list []
+		features: feature_list [
+			TouchShortReleased(00bb5e25-c21c-41f1-ae22-f0785394da60)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(31eeb954-08b8-4e98-b58a-7d8e8ec7a7aa)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.buttonEvent()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(29b3747f-cb5e-4b85-b106-dd1d99e0c296)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
 		children: children_list [
 			GtfLabel(4bc5b2bf-23be-4af4-a680-4c3c87d6d2e6)
 			{
@@ -34,6 +52,14 @@ GtfRectangle_template(f76e3b52-8de0-42e8-afb4-1618718c5871)
 		x: 0
 		y: 0
 		fillColor: #ADD8E6FF
+		buttonEvent: function<bool>(3bef3e2f-57bc-49b0-bbee-889bd69180bc)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
 	}
 	width: width@9684ac17-b3e0-4d0e-99b5-e76ddd2ee8c1 (propref<int>)
 	height: height@9684ac17-b3e0-4d0e-99b5-e76ddd2ee8c1 (propref<int>)
@@ -44,4 +70,5 @@ GtfRectangle_template(f76e3b52-8de0-42e8-afb4-1618718c5871)
 	"y 2": y@4bc5b2bf-23be-4af4-a680-4c3c87d6d2e6 (propref<int>)
 	text: text@4bc5b2bf-23be-4af4-a680-4c3c87d6d2e6 (propref<string>)
 	visible: visible@9684ac17-b3e0-4d0e-99b5-e76ddd2ee8c1 (propref<bool>)
+	buttonEvent: buttonEvent@9684ac17-b3e0-4d0e-99b5-e76ddd2ee8c1 (propref<function<bool>>)
 }

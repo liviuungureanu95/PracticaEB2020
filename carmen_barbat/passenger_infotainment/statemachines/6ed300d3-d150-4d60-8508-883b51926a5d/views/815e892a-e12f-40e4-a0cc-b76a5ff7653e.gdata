@@ -97,8 +97,16 @@ GtfView_template_instance(815e892a-e12f-40e4-a0cc-b76a5ff7653e)
 			fillColor: #ADD8E6FF
 			"x 2": "x 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			"y 2": "y 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
-			text: @abb0a824-16d9-4de4-a7c0-2c8cb34c0582 (objectref<string>)
+			text: "Click to edit"
 			visible: visible@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<bool>)
+			buttonEvent: function<bool>(75783902-f045-402b-be25-182eaebfc81f)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this.text=\"\"" \
+					"	false" \
+					"}"
+			}
 		}, 
 		GtfRectangle_template_instance(e132ad08-ad1c-4d30-aec3-fadfb9a3d395)
 		{
@@ -112,8 +120,17 @@ GtfView_template_instance(815e892a-e12f-40e4-a0cc-b76a5ff7653e)
 			fillColor: fillColor@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<color>)
 			"x 2": "x 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			"y 2": "y 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
-			text: @6effc997-6c41-4ba2-a53c-5de23371ee20 (objectref<string>)
-			visible: visible@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<bool>)
+			text: "Click to edit"
+			visible: false
+			buttonEvent: function<bool>(c43cc9dc-69e1-4600-80ab-29915ad23bb6)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this.text=\"\"" \
+					"	" \
+					"	false" \
+					"}"
+			}
 		}, 
 		GtfRectangle_template_instance(954281e5-9c17-424a-a05d-fbc9a72c54a7)
 		{
@@ -127,8 +144,16 @@ GtfView_template_instance(815e892a-e12f-40e4-a0cc-b76a5ff7653e)
 			fillColor: fillColor@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<color>)
 			"x 2": "x 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			"y 2": "y 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
-			text: @4988f622-ff86-4e64-b2b0-7d9977e53411 (objectref<string>)
-			visible: visible@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<bool>)
+			text: "Click to edit"
+			visible: false
+			buttonEvent: function<bool>(7c416cdc-8c85-4a79-a3a4-f030c4c377f8)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this.text=\"\"" \
+					"	false" \
+					"}"
+			}
 		}, 
 		GtfRectangle_template_instance(bebd9078-2489-45e8-ab36-49cffab93162)
 		{
@@ -142,27 +167,149 @@ GtfView_template_instance(815e892a-e12f-40e4-a0cc-b76a5ff7653e)
 			fillColor: fillColor@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<color>)
 			"x 2": "x 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			"y 2": "y 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
-			text: @cad0b8fa-93e4-4261-9339-5d500c39317d (objectref<string>)
-			visible: visible@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<bool>)
+			text: "Click to edit"
+			visible: false
+			buttonEvent: function<bool>(1d8d6349-52d2-4a2e-bbbd-e405c9656725)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this.text=\"\"" \
+					"	false" \
+					"}"
+			}
 		}, 
 		GtfContainer_template_instance(9ee4d1d7-500c-44ac-b748-9d2f92286758)
 		{
-			name: "Text_button 1"
+			name: "rent_button"
 			template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
 			children: children_list []
 			x: 590
-			y: 360
+			y: 401
 			fillColor: #5F9EA0FF
 			text: "RENT CAR"
-			buttonEvent: buttonEvent@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<function<bool>>)
-			width: width@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
-			height: height@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
-			visible: visible@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<bool>)
+			buttonEvent: function<bool>(75ee8075-cef6-4d56-9f37-d1560aa172a9)
+			{
+				script: "function()" \
+					"{" \
+					"	fire_delayed 4000, ev:display_message()" \
+					"	fire_delayed 8000, ev:dismiss_message()" \
+					"	fire_delayed 8060, ev:GoToMenu()" \
+					"	v:this.visible=false" \
+					"	false" \
+					"}"
+			}
+			width: 207
+			height: 59
+			visible: false
 			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
 			"x 2": 0
 			"y 2": 0
 			"x 3": 0
 			"y 3": 0
+		}, 
+		GtfContainer_template_instance(8db60b7d-9b8a-4e07-b890-ea4ef93766f1)
+		{
+			name: "DoneCN_button"
+			template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 585
+			y: 104
+			fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
+			text: "Done"
+			buttonEvent: function<bool>(a0e3035a-822d-489e-a593-533832fdb4b1)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:Customer_name=dp:String" \
+					"	dp:String=\"\"" \
+					"	v:this->^->\"Type_in_Label_TEMP 1\".text=dp:Customer_name" \
+					"	v:this->^->\"Type_in_Label_TEMP 2\".visible=true" \
+					"	v:this->^->DoneRP_button.visible=true" \
+					"	false" \
+					"}"
+			}
+			width: 90
+			height: 50
+			visible: visible@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<bool>)
+			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+		}, 
+		GtfContainer_template_instance(9ee1c1e7-5a1f-4db2-8ad5-b071b13fdb27)
+		{
+			name: "DoneRP_button"
+			template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 585
+			y: 178
+			fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
+			text: "Done"
+			buttonEvent: function<bool>(4d3efa0d-d6f9-4e72-9492-803637f44f2a)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:Rent_period=dp:String" \
+					"	dp:String=\"\"" \
+					"	v:this->^->\"Type_in_Label_TEMP 2\".text=dp:Rent_period" \
+					"	v:this->^->\"Type_in_Label_TEMP 3\".visible=true" \
+					"	v:this->^->DoneHL_button.visible=true" \
+					"	false" \
+					"}"
+			}
+			width: 90
+			height: 50
+			visible: false
+			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+		}, 
+		GtfContainer_template_instance(77bfe916-a2cf-4f26-9917-d06c8d02be44)
+		{
+			name: "DoneHL_button"
+			template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 584
+			y: 261
+			fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
+			text: "Done"
+			buttonEvent: function<bool>(e72d0f66-d495-4b3d-8645-9eab84835c09)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:HandoverLocation=dp:String" \
+					"	dp:String=\"\"" \
+					"	v:this->^->\"Type_in_Label_TEMP 3\".text=dp:HandoverLocation" \
+					"	v:this->^->\"Type_in_Label_TEMP 4\".visible=true" \
+					"	v:this->^->DoneTL_button.visible=true" \
+					"	false" \
+					"}"
+			}
+			width: 90
+			height: 50
+			visible: false
+			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+		}, 
+		GtfContainer_template_instance(2656b8ac-40fd-46e5-9287-7536f1552034)
+		{
+			name: "DoneTL_button"
+			template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 584
+			y: 330
+			fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
+			text: "Done"
+			buttonEvent: function<bool>(62ce8757-4907-4bdf-a3fc-df3b64565cdd)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:TakeoverLocation=dp:String" \
+					"	dp:String=\"\"" \
+					"	v:this->^->\"Type_in_Label_TEMP 4\".text=dp:TakeoverLocation" \
+					"	v:this->^->rent_button.visible=true" \
+					"	" \
+					"	false" \
+					"}"
+			}
+			width: 90
+			height: 50
+			visible: false
+			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
 		}]
 	image: image@47101df3-2cb4-462c-8236-06e865e3862e (propref<image>)
 	text: "Rent a car"
