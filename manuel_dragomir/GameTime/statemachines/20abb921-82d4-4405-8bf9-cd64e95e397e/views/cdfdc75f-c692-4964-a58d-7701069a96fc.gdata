@@ -1,0 +1,340 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(cdfdc75f-c692-4964-a58d-7701069a96fc)
+{
+	name: "12_View"
+	template: @6ed0fc89-f5fa-41df-8452-71b599053367 (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(bd67df79-a2de-4ae2-b402-75bc55a076f7)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Hint"
+			visible: true
+			width: 285
+			height: 42
+			x: 28
+			y: 18
+			text: "Click the odd one !"
+			textColor: #FFFFFFFF
+			font: @c686500e-f444-44ae-ad8a-5b5b3ef74343 (objectref<font>)
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfRectangle(8331ad9d-86e5-4d55-9bb6-24f74b56ec04)
+		{
+			features: feature_list [
+				TouchShortReleased(1c637214-7758-45a4-b53d-2b80b788acf7)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(9835163e-896f-4347-85ca-f26d1998bc17)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->NextButton.visible = true" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(efcba9fe-a195-4fa6-9bbb-1746931cb171)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "OddButton"
+			visible: true
+			width: 58
+			height: 34
+			x: 160
+			y: 23
+			fillColor: #FFFFFF00
+		}, 
+		GtfContainer_template_instance(4ab4093a-f495-4dbf-94b0-e32464e4c9ad)
+		{
+			name: "NextButton"
+			template: @8333bb03-38b5-4824-a70a-203d73d5b064 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 629
+			y: 229
+			width: 136
+			height: 59
+			text: "Next"
+			touchReleased: function<bool>(700127f3-5c90-487c-906a-8b67fbd42a64)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoToLevel_13()" \
+					"	false" \
+					"}"
+			}
+			font: font_resource(fc1acd09-9b84-49d0-8faa-2821f0d2992b)
+			{
+				file: "Joystick-5KjV.ttf"
+				size: 40
+			}
+			visible: false
+			touchable: touchable@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+		}, 
+		GtfContainer(b7284141-3849-4f3b-8f5a-174236c202ab)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfInstantiator(379cca67-cad6-43b7-a560-a623577dde51)
+				{
+					features: feature_list [
+						LayoutPolicyBox(60ff4f8a-f82a-45b5-b40a-d667bb77d71e)
+						{
+							gap: 6
+							layoutDirection: 1
+						}, 
+						ViewPort(b8dd4864-b13e-49ac-ace2-13ec373300f3)
+						{
+							xOffset: 0
+							yOffset: 0
+						}]
+					children: children_list [
+						GtfRectangle(3b464e5f-801b-4dd5-9fdf-56fca31db2a2)
+						{
+							features: feature_list [
+								LineIndex(6fb6f940-f445-4481-a25b-7d54d259d62e)
+								{
+									lineIndex: 0
+								}, 
+								TouchPressed(4063be6e-815a-41d6-bb75-b2a994d32b53)
+								{
+									touchPressed: function<bool,int,int,int,int>(3c315674-e6d4-4442-881a-895a72992534)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	v:this.fillColor = v:this.clickedColor" \
+											"    false" \
+											"}"
+									}
+								}, 
+								TouchShortReleased(4be7a472-ddf3-4b19-8d55-41000d419713)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(62872b69-289d-4475-b3c4-642568934dec)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	v:this.fillColor = color:255, 255, 255, 255" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(aed9af55-d020-424f-9a26-1e7389d3f815)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list [
+								GtfLabel(adfb11d2-a711-4de3-a37a-d97c692bf086)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Text"
+									visible: true
+									width: width@3b464e5f-801b-4dd5-9fdf-56fca31db2a2 (propref<int>)
+									height: 120
+									x: 0
+									y: 0
+									text: ""
+									textColor: #000000FF
+									font: font_resource(e1f5f2ff-debc-4920-823c-c3f0408b1d68)
+									{
+										file: "helvetica-light-587ebe5a59211.ttf"
+										size: 30
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+								}]
+							name: "Background"
+							visible: true
+							width: width@379cca67-cad6-43b7-a560-a623577dde51 (propref<int>)
+							height: height@adfb11d2-a711-4de3-a37a-d97c692bf086 (propref<int>)
+							x: 0
+							y: 0
+							fillColor: #FFFFFFFF
+							setText: conditional_script(64a4422b-95b8-4638-93a2-bace385e69e5)
+							{
+								triggerList: trigger_list(cdfdf0de-93bf-4690-8e83-caab5ac894b9)
+								{
+									script: "v:this.lineIndex" \
+										"dp:ListOfCountries" \
+										""
+								}
+								onTrigger: function<bool,bool>(328476a6-1da4-46c9-bfcd-02fab36e10f0)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	v:this->Text.text = dp:ListOfCountries[v:this.lineIndex];" \
+										"	false" \
+										"}"
+								}
+							}
+							clickedColor: #DCDCDCFF
+						}]
+					name: "Instantiator"
+					visible: true
+					width: width@b7284141-3849-4f3b-8f5a-174236c202ab (propref<int>)
+					height: height@b7284141-3849-4f3b-8f5a-174236c202ab (propref<int>)
+					x: 0
+					y: 0
+					numItems: int_scriptedValue(1aa1fc8a-494c-4428-87a4-1fdca1fe5b5c)
+					{
+						triggerList: trigger_list(f625777a-4f43-40c9-bc81-f5671baf7537)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(c78bb412-697f-4f6c-9336-e7afa14f718d)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<int>(fe6cc4ca-a2b9-49f0-9981-3be4d094864f)
+						{
+							script: "function()" \
+								"{" \
+								"	length dp:ListOfCountries" \
+								"}"
+						}
+						write: function<bool,int>(bfb37daf-a468-4f21-af60-1101f0d13bc9)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					lineMapping: intlist []
+					changeYOffset: conditional_script(5812bd25-7c95-4d6f-89ac-ccabbe37e1ba)
+					{
+						triggerList: trigger_list(f62ff6b4-fbdf-473c-82b6-b9e59a2dd000)
+						{
+							script: "dp:SliderValue"
+						}
+						onTrigger: function<bool,bool>(729d96a2-3f8c-4c21-aa5a-75de6af07f95)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.yOffset = - (dp:SliderValue) * 3" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "Container"
+			visible: true
+			width: 400
+			height: 377
+			x: 150
+			y: 80
+		}, 
+		GtfRectangle(f10b84ea-a586-4858-82ac-2e17c193c300)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfEllipse(65159ad2-ec71-48d0-b43e-c70f60ad823b)
+				{
+					features: feature_list [
+						TouchPressed(95f42203-d2b2-4b0b-ad4a-12d4be891656)
+						{
+							touchPressed: function<bool,int,int,int,int>(31a995a6-5a83-49e0-b31b-674bec48ef71)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this.yStart = v:y" \
+									"	v:this.yLast = v:this.y" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(58a22734-8a04-4393-a30b-46d11d4ed523)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(fb635ecb-4ea7-41cb-a0c7-405728ec85d4)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this.yLast = v:this.y" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchMove(1819eb63-01ff-441c-b044-bd115de3f380)
+						{
+							touchMoved: function<bool,int,int,int,int>(45108f2b-623b-470f-afb7-2a47a3648657)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this.y = v:this.yLast + v:y - v:this.yStart" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(fe9cf718-f642-48ce-bfb3-1da4282e01fb)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "SliderBall"
+					visible: true
+					width: height@65159ad2-ec71-48d0-b43e-c70f60ad823b (propref<int>)
+					height: 37
+					x: 2
+					y: @f82c613d-239c-4ee9-9092-eb2848dff3c8 (objectref<int>)
+					fillColor: #D3D3D3FF
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+					yStart: 0
+					yLimits: conditional_script(9b3e1b1a-7d81-48b8-bc80-0204bae9fc02)
+					{
+						triggerList: trigger_list(21e6dc84-f1d7-474e-8e49-1b5331bac021)
+						{
+							script: "v:this.y"
+						}
+						onTrigger: function<bool,bool>(6dabffe1-b84f-4060-a7a3-e40290d0d4ff)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(v:this.y < 0){" \
+								"		v:this.y = 0" \
+								"	}" \
+								"	if(v:this.y > 335){" \
+								"		v:this.y = 335" \
+								"	}" \
+								"	false" \
+								"}"
+						}
+					}
+					yLast: 0
+				}]
+			name: "Slider"
+			visible: true
+			width: 41
+			height: 374
+			x: 560
+			y: y@b7284141-3849-4f3b-8f5a-174236c202ab (propref<int>)
+			fillColor: #FFFFFFFF
+		}]
+	hintForLevel: "Click the ODD one in the sentence 'Click the odd one'. "
+	backgroundColor: #000000FF
+	image: image@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<image>)
+	width: width@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	height: height@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	moveOver: moveOver@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<function<bool,int,int,int,int>>)
+	xLevelContainer: xLevelContainer@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	levelNumber: 12
+	colorationColor: colorationColor@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<color>)
+}

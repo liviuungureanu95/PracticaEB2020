@@ -13,6 +13,11 @@ GtfView_template(6ed0fc89-f5fa-41df-8452-71b599053367)
 					ScaleMode(4769da8a-14e2-4432-a0ca-60f4b4b1bbc8)
 					{
 						scaleMode: 1
+					}, 
+					Coloration(e7122708-ee73-4568-b531-a5b3ec226ae6)
+					{
+						colorationEnabled: true
+						colorationColor: #FFFFFFFF
 					}]
 				children: children_list []
 				name: "Image"
@@ -146,6 +151,68 @@ GtfView_template(6ed0fc89-f5fa-41df-8452-71b599053367)
 				y: 0
 				fillColor: #FFFFFF00
 			}, 
+			GtfRectangle(f6fc1287-0fac-4bdc-a4f6-2ced28e0b006)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "MenuBar"
+				visible: true
+				width: @519c98c8-9c84-4ed8-8361-25ae16ecbf5e (objectref<int>)
+				height: 85
+				x: @41c55bc9-8e43-4f1e-85fb-3f7d5d0771dd (objectref<int>)
+				y: 197
+				fillColor: #A9A9A9FF
+			}, 
+			GtfRectangle(12163830-29d0-415c-8f57-8f7479e011a6)
+			{
+				features: feature_list [
+					Gestures(cb911259-64e1-4037-bb12-1aa7bc78d269)
+					{
+					}, 
+					StateTouched(e9165570-fea0-4e2e-b511-8ba2883f5c30)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}, 
+					Path(29569fbf-13d4-419f-ac17-70095af25b38)
+					{
+						onPath: function<void,int>(e33eaba7-7028-4ea5-8121-ade3a7c1cf0f)
+						{
+							script: "function(v:gestureId::int)" \
+								"{" \
+								"	if(v:gestureId == 2){" \
+								"		fire ev:OpenOptionBarPopUp()" \
+								"	}" \
+								"}"
+						}
+						onPathStart: function<void>(075ae6d4-d871-454e-b956-f56c61bd86f5)
+						{
+							script: "function()" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPathNotRecognized: function<void>(c848ac0d-9d59-42d5-ab57-23c227c8cd9a)
+						{
+							script: "function()" \
+								"{" \
+								"" \
+								"}"
+						}
+						pathMinXBox: 50
+						pathMinYBox: 50
+					}]
+				children: children_list []
+				name: "MenuBarZone"
+				visible: true
+				width: 50
+				height: 129
+				x: 0
+				y: 179
+				fillColor: #FFFFFF00
+			}, 
 			GtfContainer_template_instance(cf3a8da8-a93a-4367-87c7-c8d712bee3e3)
 			{
 				name: "GiveUpButton"
@@ -162,6 +229,47 @@ GtfView_template(6ed0fc89-f5fa-41df-8452-71b599053367)
 		x: 0
 		y: 0
 		levelNumber: 0
+		onStart: conditional_script(cffd7e0d-16ed-4de4-9659-e9e215fa12ea)
+		{
+			triggerList: trigger_list(96946dff-1c8f-4d9e-b528-5b5fdd6b75c5)
+			{
+				script: "v:this.levelNumber" \
+					""
+			}
+			onTrigger: function<bool,bool>(84d2b2d6-8415-457c-97dd-5e9f37665e28)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	dp:Level = v:this.levelNumber" \
+					"	dp:NewGame = false" \
+					"	false" \
+					"}"
+			}
+		}
+		openOptionBar: conditional_script(8e16d56c-60bf-4450-a594-0d0bff889906)
+		{
+			triggerList: trigger_list(d31e7f7c-bf5b-4560-b9e6-861d336b90d4)
+			{
+				script: "ev:OpenOptionBarPopUp"
+			}
+			onTrigger: function<bool,bool>(56fc9b3a-b18f-45b2-8b58-2b1281ce593f)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	match_event v:event = ev:OpenOptionBarPopUp in" \
+					"{" \
+					"	// Configure the following parameters:" \
+					"//   - popup_stack - the state with dynamic state list" \
+					"//   - sm - the dynamic state machine" \
+					"//   - priority - priority of the dynamic state machine" \
+					"f:pushDynamicStateMachine(popup_stack:Main, sm:OptionBarPopUp, 0)" \
+					"" \
+					"}" \
+					"" \
+					"	false" \
+					"}"
+			}
+		}
 	}
 	hintForLevel: hint@cf3a8da8-a93a-4367-87c7-c8d712bee3e3 (propref<string>)
 	backgroundColor: fillColor@0df65875-a51c-4e8b-ad2b-3a7860a77a3c (propref<color>)
@@ -171,4 +279,5 @@ GtfView_template(6ed0fc89-f5fa-41df-8452-71b599053367)
 	moveOver: moveOver@af82bbff-8488-4322-9bae-501e7db699f7 (propref<function<bool,int,int,int,int>>)
 	xLevelContainer: x@e16f0ce9-ef49-4b1f-880c-a9f21dad88d2 (propref<int>)
 	levelNumber: levelNumber@40ce2856-063c-4e0a-8270-295ca52eaf05 (propref<int>)
+	colorationColor: colorationColor@e7122708-ee73-4568-b531-a5b3ec226ae6 (propref<color>)
 }

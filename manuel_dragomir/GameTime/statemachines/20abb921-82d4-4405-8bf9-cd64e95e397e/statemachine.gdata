@@ -14,12 +14,12 @@ haptic_statemachine(20abb921-82d4-4405-8bf9-cd64e95e397e)
 		{
 			action: function<void>(none)
 			target_state: @863dbf6e-bb60-4839-9a9e-4ba455aec96c (objectref<haptic_dialog_state>)
-			source_dock: 0.9294022F
+			source_dock: 0.914506F
 			target_dock: 0.01084749F
 			curveControlXOffset: 0
 			curveControlYOffset: 0
-			labelXOffset: 10
-			labelYOffset: -10
+			labelXOffset: 39
+			labelYOffset: -5
 			labelRotationAngle: 0
 			event: @25be1f54-fc61-4ff1-87f9-2efa8278e996 (objectref<event>)
 			condition: function<bool>(none)
@@ -38,28 +38,14 @@ haptic_statemachine(20abb921-82d4-4405-8bf9-cd64e95e397e)
 			event: @79b57d60-aa26-41f6-97f5-d94d7c0e8e4f (objectref<event>)
 			condition: function<bool>(none)
 		}, 
-		haptic_transition(62a23317-f46b-42d6-9516-f5b4aa2ac00e)
-		{
-			action: function<void>(none)
-			target_state: @6e0eb714-b485-4626-917f-abb6285aef40 (objectref<haptic_compound_state>)
-			source_dock: 0.1443918F
-			target_dock: 0.2752508F
-			curveControlXOffset: 0
-			curveControlYOffset: 0
-			labelXOffset: 10
-			labelYOffset: -10
-			labelRotationAngle: 0
-			event: @3ec646bd-e2a7-4301-98ea-8f28ca74751e (objectref<event>)
-			condition: function<bool>(none)
-		}, 
 		haptic_transition(9cb8f0ee-9e1e-45a3-ae45-e274daac2781)
 		{
 			action: function<void>(none)
 			target_state: @b81faf3d-51d8-4954-a800-e50760c6536f (objectref<haptic_compound_state>)
-			source_dock: 0.2923753F
-			target_dock: 0.2278622F
-			curveControlXOffset: 0
-			curveControlYOffset: 0
+			source_dock: 0.3080494F
+			target_dock: 0.2658628F
+			curveControlXOffset: -1
+			curveControlYOffset: 1
 			labelXOffset: 10
 			labelYOffset: -10
 			labelRotationAngle: 0
@@ -71,8 +57,8 @@ haptic_statemachine(20abb921-82d4-4405-8bf9-cd64e95e397e)
 	states: haptic_states [
 		haptic_dialog_state(863dbf6e-bb60-4839-9a9e-4ba455aec96c)
 		{
-			x: 169
-			y: 58
+			x: 109
+			y: 94
 			width: 100
 			height: 100
 			name: "Menu"
@@ -93,18 +79,32 @@ haptic_statemachine(20abb921-82d4-4405-8bf9-cd64e95e397e)
 					event: @0e5104f1-e03a-4881-8b85-44e2db41077a (objectref<event>)
 					condition: function<bool>(none)
 				}, 
-				haptic_transition(e75f79df-bcef-46ee-8efb-ab908a9b8659)
+				haptic_transition(752a6940-4d84-4c10-88f4-f9d04de99d4a)
 				{
 					action: function<void>(none)
-					target_state: @b81faf3d-51d8-4954-a800-e50760c6536f (objectref<haptic_compound_state>)
-					source_dock: 0.2292307F
-					target_dock: 0.8709854F
-					curveControlXOffset: -9
-					curveControlYOffset: 5
-					labelXOffset: 10
-					labelYOffset: -10
+					target_state: @8f08f8da-39af-4071-a857-66e29007060a (objectref<haptic_choice_state>)
+					source_dock: 0.3685482F
+					target_dock: 0.875F
+					curveControlXOffset: 0
+					curveControlYOffset: 0
+					labelXOffset: 26
+					labelYOffset: -19
 					labelRotationAngle: 0
-					event: @1355d055-c25d-40c3-ac59-31fb17a62465 (objectref<event>)
+					event: @ec6fbfad-c1d3-40d5-87ef-69505dec1ced (objectref<event>)
+					condition: function<bool>(none)
+				}, 
+				haptic_transition(f7ec3856-cbe8-4718-bd9e-d2c76ec54723)
+				{
+					action: function<void>(none)
+					target_state: @5edb886a-480e-4a70-b813-820655d5298b (objectref<haptic_dialog_state>)
+					source_dock: 0.4305909F
+					target_dock: 0.9325117F
+					curveControlXOffset: 0
+					curveControlYOffset: 0
+					labelXOffset: 43
+					labelYOffset: 26
+					labelRotationAngle: 0
+					event: @7ee91fef-f846-4f92-8f7d-877155e11ebe (objectref<event>)
 					condition: function<bool>(none)
 				}]
 			internal_transitions: haptic_internal_transitions []
@@ -114,8 +114,8 @@ haptic_statemachine(20abb921-82d4-4405-8bf9-cd64e95e397e)
 		}, 
 		haptic_dialog_state(61b69183-262b-4272-b4a8-43759d695145)
 		{
-			x: 116
-			y: 333
+			x: 54
+			y: 471
 			width: 100
 			height: 100
 			name: "Tutorial"
@@ -129,19 +129,93 @@ haptic_statemachine(20abb921-82d4-4405-8bf9-cd64e95e397e)
 		}, 
 		(6e0eb714-b485-4626-917f-abb6285aef40), 
 		(773fc4cd-300f-49cb-9eba-2c26691fd236), 
-		(b81faf3d-51d8-4954-a800-e50760c6536f)]
+		(b81faf3d-51d8-4954-a800-e50760c6536f), 
+		haptic_choice_state(8f08f8da-39af-4071-a857-66e29007060a)
+		{
+			x: 344
+			y: 282
+			width: 100
+			height: 100
+			name: "LevelChoiceState"
+			choice_transitions: haptic_choice_transitions [
+				haptic_choice_transition(c1658717-28ae-4ba2-9cea-336683e7b3e5)
+				{
+					action: function<void>(none)
+					target_state: @6e0eb714-b485-4626-917f-abb6285aef40 (objectref<haptic_compound_state>)
+					source_dock: 0.0400577F
+					target_dock: 0.6978388F
+					curveControlXOffset: 0
+					curveControlYOffset: -9
+					labelXOffset: 56
+					labelYOffset: 3
+					labelRotationAngle: 0
+					condition: function<bool>(d9bd60aa-db98-4520-a799-7d8f2332ab3a)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:Level >=1 && dp:Level <= 5" \
+							"}"
+					}
+				}, 
+				haptic_choice_transition(60cb0523-2c00-48db-8a78-52eb7de0d62f)
+				{
+					action: function<void>(none)
+					target_state: @773fc4cd-300f-49cb-9eba-2c26691fd236 (objectref<haptic_compound_state>)
+					source_dock: 0.2015356F
+					target_dock: 0.7874882F
+					curveControlXOffset: -1
+					curveControlYOffset: 0
+					labelXOffset: 4
+					labelYOffset: -24
+					labelRotationAngle: 0
+					condition: function<bool>(65854310-1f2e-460e-a26a-758e9a34671a)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:Level >= 6 && dp:Level <= 10" \
+							"}"
+					}
+				}]
+			else_transition: haptic_default_transition(db896576-0441-4ea7-b959-4a1279dfb5db)
+			{
+				action: function<void>(none)
+				target_state: @b81faf3d-51d8-4954-a800-e50760c6536f (objectref<haptic_compound_state>)
+				source_dock: 0.375F
+				target_dock: 0.8534301F
+				curveControlXOffset: 0
+				curveControlYOffset: 0
+				labelXOffset: 19
+				labelYOffset: -6
+				labelRotationAngle: 0
+			}
+		}, 
+		haptic_dialog_state(5edb886a-480e-4a70-b813-820655d5298b)
+		{
+			x: 269
+			y: 470
+			width: 100
+			height: 100
+			name: "CreditsState"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (3f2817cb-a427-4d7a-b35e-3f3c9171b3cb)
+			priority_stack: priority_stack(none)
+		}]
 	initial_state: haptic_initial_state(e0881d25-2e39-4513-b63c-d5f889e2dd31)
 	{
-		x: 63
-		y: 26
+		x: 23
+		y: 64
 		width: 100
 		height: 100
 		default_transition: haptic_default_transition(59236f06-7b02-4dcb-993c-ad480803524b)
 		{
 			action: function<void>(none)
 			target_state: @863dbf6e-bb60-4839-9a9e-4ba455aec96c (objectref<haptic_dialog_state>)
-			source_dock: 0.2717091F
-			target_dock: 0.8003616F
+			source_dock: 0.3023746F
+			target_dock: 0.875F
 			curveControlXOffset: 0
 			curveControlYOffset: 0
 			labelXOffset: 10
