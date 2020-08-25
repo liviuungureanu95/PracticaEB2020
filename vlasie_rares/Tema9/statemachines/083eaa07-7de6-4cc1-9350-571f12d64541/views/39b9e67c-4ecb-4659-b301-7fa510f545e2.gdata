@@ -1,0 +1,250 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(39b9e67c-4ecb-4659-b301-7fa510f545e2)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(1af74d4d-5008-474d-a592-ecc671a21cad)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(d7035205-7493-4728-a5e6-d795e59b8821)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Type_label"
+					visible: true
+					width: 100
+					height: 100
+					x: 150
+					y: 0
+					text: string_scriptedValue(307bc64a-69ae-4586-a11f-ff5add0635ac)
+					{
+						triggerList: trigger_list(7f16423b-835f-4537-a4cd-bc07f7a7178a)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(5fd67214-0b23-4629-8f28-44dcf932d47f)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(355546e6-0fe3-4ff6-bbd2-c3a21ecbda01)
+						{
+							script: "function()" \
+								"{" \
+								"	dp:Chosen" \
+								"}"
+						}
+						write: function<bool,string>(19774798-aad0-416d-986a-ad5f210fd620)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #008000FF
+					font: font_resource(3ef325f5-2538-4eea-b575-96b78f0ef7f2)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(1452bc60-d403-40d2-be0c-af3490690211)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Price"
+					visible: true
+					width: 110
+					height: 50
+					x: 55
+					y: 120
+					text: "Price/liter:"
+					textColor: #FF0000FF
+					font: font_resource(aca535a3-5558-4f8d-9022-e4dbae893cab)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(ccbcd762-7b1f-4ed8-89cd-88b721641023)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Amount"
+					visible: true
+					width: 100
+					height: 50
+					x: 55
+					y: 170
+					text: "Amount Wanted"
+					textColor: #000000FF
+					font: font_resource(719ea61a-f234-4276-b905-79812195d16f)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(0079d005-c79d-4a6d-a3ef-a5a5bb98906c)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Price_nr"
+					visible: true
+					width: 150
+					height: 50
+					x: 220
+					y: 125
+					text: string_scriptedValue(438079ab-6ced-4f25-84cf-30262a56ce58)
+					{
+						triggerList: trigger_list(a8f9800a-cfb6-408a-9973-a9fcddf49631)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(7ac559df-63aa-46d3-bc23-45b9c95f8003)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(93e3c00c-3ca0-4e34-b8e1-d6500ec8875f)
+						{
+							script: "function()" \
+								"{" \
+								"	f:float2string(dp:Price)" \
+								"}"
+						}
+						write: function<bool,string>(decd6916-171b-4e86-9cd0-7e275e914ce7)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(84cee2b0-129e-480b-997d-c67b3abd8e37)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(63e0a123-6d76-457d-a3a8-5a1d72951d08)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Amount_nr"
+					visible: true
+					width: 100
+					height: 50
+					x: 220
+					y: 170
+					text: string_scriptedValue(1db59f82-15a7-4872-9e27-e576bc16565f)
+					{
+						triggerList: trigger_list(6e049d36-969e-4cf6-a8fb-9403d7b41c33)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(7d1d2ae4-1e1e-4228-a5a7-2a02178eab46)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(4f26bd02-2200-4b1f-bca7-b4d7683a1a5f)
+						{
+							script: "function()" \
+								"{" \
+								"	f:int2string(dp:Liters)" \
+								"}"
+						}
+						write: function<bool,string>(2082add7-389f-4a22-8f6b-e1251bd32e9e)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(8bd1a7df-1a71-4631-bfdc-24c98c22427c)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(a205f7e1-9f45-4aca-a14e-e0e21c2bdbb5)
+				{
+					features: feature_list [
+						TouchPressed(a921b23d-7d5b-43e0-a88e-6c9268326e42)
+						{
+							touchPressed: function<bool,int,int,int,int>(2e7f03a6-77d1-43c6-bd7e-85c6a5d270ec)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:GoTo_Back()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(66a0f9b0-2f8d-4398-887c-2f649a5504de)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "Done"
+					visible: true
+					width: 100
+					height: 44
+					x: 152
+					y: 274
+					text: "Done"
+					textColor: #008000FF
+					font: font_resource(6dfb81c1-891e-4f61-9d8c-ce3b77108367)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Type"
+			visible: true
+			width: 400
+			height: 320
+			x: 200
+			y: 3
+			fillColor: #FFFFFFFF
+		}]
+	name: "View 2"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

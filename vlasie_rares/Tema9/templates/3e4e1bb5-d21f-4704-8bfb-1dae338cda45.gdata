@@ -1,0 +1,98 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(3e4e1bb5-d21f-4704-8bfb-1dae338cda45)
+{
+	name: "ImageText_btn"
+	structure: GtfContainer(1b4dcea7-d70a-415d-8baf-06e4d7e4e674)
+	{
+		features: feature_list [
+			TouchPressed(697b4533-7499-4a58-9998-6fb0c041217c)
+			{
+				touchPressed: function<bool,int,int,int,int>(0f2a40bf-375c-4759-ae3b-ddcce581bd15)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.Pressed()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(25b48669-3215-44c7-b3b4-dfed73af4f19)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(cfb50944-1c63-4929-aaa0-857c12e8400e)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Back"
+				visible: false
+				width: width@1b4dcea7-d70a-415d-8baf-06e4d7e4e674 (propref<int>)
+				height: height@1b4dcea7-d70a-415d-8baf-06e4d7e4e674 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFF00FF
+			}, 
+			GtfImage_template_instance(f4654ce8-2745-40da-a6cf-cf5414a4f4de)
+			{
+				name: "BasicImg_btn 1"
+				template: @df4bda24-fcf2-4744-9c65-8387e01c631d (objectref<GtfImage_template>)
+				children: children_list []
+				x: x@df4bda24-fcf2-4744-9c65-8387e01c631d (propref<int>)
+				y: y@df4bda24-fcf2-4744-9c65-8387e01c631d (propref<int>)
+				image: image_resource(57cba80b-1937-46c3-8890-aaf9c3bed1b5)
+				{
+					file: "gpl.png"
+				}
+				touchPressed: touchPressed@df4bda24-fcf2-4744-9c65-8387e01c631d (propref<function<bool,int,int,int,int>>)
+				Action: Action@df4bda24-fcf2-4744-9c65-8387e01c631d (propref<function<bool>>)
+			}, 
+			GtfLabel(74d8bc92-3aa8-4dd3-b9d8-0a6bfd4f4c85)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label 1"
+				visible: true
+				width: width@1b4dcea7-d70a-415d-8baf-06e4d7e4e674 (propref<int>)
+				height: height@1b4dcea7-d70a-415d-8baf-06e4d7e4e674 (propref<int>)
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #000000FF
+				font: font_resource(52de86bd-72a4-4853-bdc5-c91d881d365f)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Button"
+		visible: true
+		width: 300
+		height: 50
+		x: 0
+		y: 0
+		Pressed: function<bool>(d8f8fdba-6025-41a3-9b2b-25719554f97f)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		type: ""
+	}
+	x: x@1b4dcea7-d70a-415d-8baf-06e4d7e4e674 (propref<int>)
+	y: y@1b4dcea7-d70a-415d-8baf-06e4d7e4e674 (propref<int>)
+	Pressed: Pressed@1b4dcea7-d70a-415d-8baf-06e4d7e4e674 (propref<function<bool>>)
+	type: type@1b4dcea7-d70a-415d-8baf-06e4d7e4e674 (propref<string>)
+	visible: visible@cfb50944-1c63-4929-aaa0-857c12e8400e (propref<bool>)
+	fillColor: fillColor@cfb50944-1c63-4929-aaa0-857c12e8400e (propref<color>)
+	text: text@74d8bc92-3aa8-4dd3-b9d8-0a6bfd4f4c85 (propref<string>)
+	image: image@f4654ce8-2745-40da-a6cf-cf5414a4f4de (propref<image>)
+}

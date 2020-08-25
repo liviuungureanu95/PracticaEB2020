@@ -1,0 +1,152 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(148fce1f-dab4-4b6d-a30a-985197a71d7f)
+{
+	features: feature_list [
+		Scaling(4b485d5c-e68d-4737-aad9-6a53e4f97b7c)
+		{
+			scalingEnabled: true
+			scalingX: 200F
+			scalingY: 150F
+			scalingZ: 100F
+		}]
+	children: children_list [
+		GtfRectangle(03efadbc-78e6-4f3a-b6ff-f7ee4988d250)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(061d0222-bd74-48ab-b02e-b5e161a3f382)
+				{
+					features: feature_list [
+						ScaleMode(2b4da84f-a930-49ba-938b-f2f2fad3a325)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "Logo"
+					visible: true
+					width: 100
+					height: 100
+					x: 135
+					y: 0
+					image: image_resource(3a035eee-0eda-4617-ac6f-b750721c82a4)
+					{
+						file: "pump.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfContainer_template_instance(404edbbb-72a8-40c5-9363-23c9dc7fc37f)
+				{
+					name: "Gpl_btn"
+					template: @3e4e1bb5-d21f-4704-8bfb-1dae338cda45 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 35
+					y: 100
+					Pressed: function<bool>(f8fa3663-a044-4082-b998-a594a3e3148d)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this.visible=true" \
+							"	fire_delayed 1000, ev:goToType()" \
+							"	dp:Chosen = v:this.type" \
+							"	dp:Price = dp:PriceList[0]" \
+							"	false" \
+							"}"
+					}
+					type: "Gpl"
+					visible: visible@3e4e1bb5-d21f-4704-8bfb-1dae338cda45 (propref<bool>)
+					fillColor: fillColor@3e4e1bb5-d21f-4704-8bfb-1dae338cda45 (propref<color>)
+					text: "Gpl"
+					image: image@3e4e1bb5-d21f-4704-8bfb-1dae338cda45 (propref<image>)
+				}, 
+				GtfContainer_template_instance(55c8461e-78e7-455a-b53d-5e7d64cce868)
+				{
+					name: "Motorina_btn"
+					template: @3e4e1bb5-d21f-4704-8bfb-1dae338cda45 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 35
+					y: 160
+					Pressed: function<bool>(3c51defa-27f9-4756-81be-9b61f3469b3e)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this.visible=true" \
+							"	fire_delayed 1000, ev:goToType()" \
+							"	dp:Chosen = v:this.type" \
+							"	dp:Price = dp:PriceList[1]" \
+							"	false" \
+							"}"
+					}
+					type: "Motorina"
+					visible: visible@3e4e1bb5-d21f-4704-8bfb-1dae338cda45 (propref<bool>)
+					fillColor: fillColor@3e4e1bb5-d21f-4704-8bfb-1dae338cda45 (propref<color>)
+					text: "Motorina"
+					image: image_resource(eb0897e9-5a85-493b-80d9-6ada126b0f97)
+					{
+						file: "motrina.png"
+					}
+				}, 
+				GtfContainer_template_instance(89d42e4b-1154-4401-81ea-346ce7fa1c9b)
+				{
+					name: "Benzina_btn"
+					template: @3e4e1bb5-d21f-4704-8bfb-1dae338cda45 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 36
+					y: 220
+					Pressed: function<bool>(072fdb54-cebe-4505-8d6e-cded3ee9c386)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this.visible=true" \
+							"	fire_delayed 1000, ev:goToType()" \
+							"	dp:Chosen = v:this.type" \
+							"	dp:Price = dp:PriceList[1]" \
+							"	false" \
+							"}"
+					}
+					type: type@3e4e1bb5-d21f-4704-8bfb-1dae338cda45 (propref<string>)
+					visible: visible@3e4e1bb5-d21f-4704-8bfb-1dae338cda45 (propref<bool>)
+					fillColor: fillColor@3e4e1bb5-d21f-4704-8bfb-1dae338cda45 (propref<color>)
+					text: "Benzina"
+					image: image_resource(54a55731-7ad2-4657-b98c-a2dbb0cdb858)
+					{
+						file: "benzina.png"
+					}
+				}, 
+				GtfLabel(57f33d9f-e962-4884-a744-24601cb5b9f7)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Pump_nr"
+					visible: true
+					width: 100
+					height: 100
+					x: 251
+					y: 0
+					text: "Pompa 1"
+					textColor: #000000FF
+					font: font_resource(c6ab0a6c-b46c-41d4-a437-9e94a586286e)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "Pump"
+			visible: true
+			width: width@148fce1f-dab4-4b6d-a30a-985197a71d7f (propref<int>)
+			height: height@148fce1f-dab4-4b6d-a30a-985197a71d7f (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #FAF0E6FF
+		}]
+	name: "View 1"
+	visible: true
+	width: 400
+	height: 320
+	x: 0
+	y: 0
+}
