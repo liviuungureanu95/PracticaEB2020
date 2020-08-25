@@ -1,0 +1,447 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(19e94494-1653-4600-a1b0-95d64210c4ce)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(38a45160-e31d-4a5a-b6cd-e9a259183a6a)
+		{
+			features: feature_list [
+				ScaleMode(af925343-45ba-4557-b630-1039839b3c51)
+				{
+					scaleMode: 2
+				}, 
+				TouchPressed(51aacbca-c307-4746-860f-a9e4dc5a5fb7)
+				{
+					touchPressed: function<bool,int,int,int,int>(135ab4ee-a7e4-490d-ac4d-0fb5cc379957)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(v:this.play==true)" \
+							"	{" \
+							"		v:this.play=false" \
+							"		dp:\"button-play\"=dp:pause" \
+							"	}" \
+							"	else" \
+							"" \
+							"	{" \
+							"		v:this.play=true" \
+							"		dp:\"button-play\"=dp:play" \
+							"	}" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(69dfded5-aa12-42d7-8630-cd553fae3e84)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "play-pause-button copy 1"
+			visible: true
+			width: 74
+			height: 82
+			x: 268
+			y: 606
+			image: image_scriptedValue(705ba951-9c09-4ce2-91d6-c209ec2b6619)
+			{
+				triggerList: trigger_list(af40105f-1173-4c20-8633-1ba0199ed00f)
+				{
+					script: "dp:\"button-play\"" \
+						""
+				}
+				onTrigger: function<bool,bool>(f4924546-c4df-477b-9dc6-628eb89ee793)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	" \
+						"	false" \
+						"}"
+				}
+				read: function<image>(d889bbc0-8334-4e98-ac9f-9e9db3582675)
+				{
+					script: "function()" \
+						"{" \
+						"	dp:\"button-play\"" \
+						"" \
+						"}"
+				}
+				write: function<bool,image>(fe67974e-fc13-451f-8ac6-63f50d67fe43)
+				{
+					script: "function(v:arg0::image)" \
+						"{" \
+						"	" \
+						"	false" \
+						"}"
+				}
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+			play: true
+		}, 
+		GtfImage(122ac076-b409-4777-80ec-e93f0765f8a6)
+		{
+			features: feature_list [
+				TouchPressed(730e4153-b649-4e3d-abcd-72cc3cc26082)
+				{
+					touchPressed: function<bool,int,int,int,int>(f24674d6-42ed-4203-a75f-d1f7dcb1cba3)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(bea16353-bd5f-45f1-aca0-575a570fca3b)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "next-track-button copy 1"
+			visible: true
+			width: 46
+			height: 47
+			x: 381
+			y: 641
+			image: image_resource(de839004-b850-4d98-bd91-6890e6b6e3c6)
+			{
+				file: "next.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(e4087b45-5d41-4013-ad21-9a72142785ee)
+		{
+			features: feature_list [
+				TouchPressed(5575a839-5884-44d8-a4c7-e435e29bb8dc)
+				{
+					touchPressed: function<bool,int,int,int,int>(95cedcf1-416d-46ab-bcbc-2d87e7cae30b)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(53eadc3d-f025-48c3-93c5-db27bb93ae7e)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "previous-track-button copy 1"
+			visible: true
+			width: 46
+			height: 46
+			x: 180
+			y: 640
+			image: image_resource(01888114-5535-4d98-9bd6-6a2e75f7350d)
+			{
+				file: "previous.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(d299df9b-ef6e-4a48-8083-28dee9cd2c70)
+		{
+			features: feature_list [
+				ScaleMode(e550ac3f-d9d6-4889-8781-63c440dc47c4)
+				{
+					scaleMode: 1
+				}, 
+				TouchPressed(27560f6b-d0ae-43c4-9358-6c00da3a4e23)
+				{
+					touchPressed: function<bool,int,int,int,int>(fb13930c-bfa3-4ab7-bcb0-c1473a1dbd10)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goToMedia()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(e0338914-40b0-4def-9f25-0404446bfb99)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "backToMenu button copy 1 copy 1"
+			visible: true
+			width: 63
+			height: 59
+			x: 11
+			y: 714
+			image: image_resource(b5c6775c-85a6-46b3-a117-11c0e54c534a)
+			{
+				file: "back_to_menu.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(0a96db05-e78e-4786-b8fc-16fe8dbb9ef4)
+		{
+			features: feature_list [
+				ScaleMode(6d11b55d-904d-4daf-817f-5cf768f3b47c)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "list-songs"
+			visible: true
+			width: 585
+			height: 294
+			x: 0
+			y: 0
+			image: image_resource(377d257c-e44f-4704-8f55-de3d95295d2b)
+			{
+				file: "songs.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(65601ccd-f90c-4ce1-839b-bc22c328815d)
+		{
+			features: feature_list [
+				ScaleMode(718a07d2-80ec-45d9-b8d1-2870bb82200b)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "cover-song"
+			visible: true
+			width: 204
+			height: 203
+			x: 197
+			y: 311
+			image: image_resource(f5e53865-ed5d-4d7f-9d79-71c1eac62bad)
+			{
+				file: "song1.jpeg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(2377c2a5-a1cf-41bb-8ad7-3baa0fa2e3ef)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "song/artist-name"
+			visible: true
+			width: 343
+			height: 55
+			x: 132
+			y: 534
+			text: "label"
+			textColor: #FFFFFFFF
+			font: font_resource(9d8c37df-4f84-4a13-afb3-f1af703c2210)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 25
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer(2118d77b-09e4-4442-a8f5-ba5ede1dd069)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(6db18ffb-933c-4520-9475-b8795fe64227)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "BorderBehindHeat copy 1"
+					visible: true
+					width: 200
+					height: 20
+					x: 200
+					y: 706
+					fillColor: #A9A9A9FF
+				}, 
+				GtfRectangle(5fa53af0-4884-4763-b4f8-4d6bd211027e)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "BarcontrolHeat copy 1"
+					visible: true
+					width: 0
+					height: 20
+					x: 200
+					y: 706
+					fillColor: #00FF7FFF
+				}, 
+				GtfImage_template_instance(602b0891-c5b0-471b-b4b5-f82733ba62ed)
+				{
+					name: "right plus heat"
+					template: @f1cfb5db-aa91-48d1-aac8-cc492abb5ad0 (objectref<GtfImage_template>)
+					children: children_list []
+					x: 415
+					y: 689
+					touchPressed: function<bool,int,int,int,int>(c0011627-a181-4cd6-a1fe-530323b24915)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"" \
+							"	if(v:this->^->\"BarcontrolHeat copy 1\".width < 200)" \
+							"	{" \
+							"		v:this->^->\"BarcontrolHeat copy 1\".width = v:this->^->\"BarcontrolHeat copy 1\".width + 10" \
+							"		v:this->^->\"temperature right seat\".text = \"Volume :  \" + f:int2string(v:this->^->\"BarcontrolHeat copy 1\".width/2)" \
+							"		" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"	v:this->^->\"BarcontrolHeat copy 1\".width = 200" \
+							"	}" \
+							"    false" \
+							"}"
+					}
+					width: 52
+					height: 52
+				}, 
+				GtfImage_template_instance(4c272b99-343e-43fa-92e8-0f542f35c004)
+				{
+					name: "right minus heat "
+					template: @d3d810ba-12d3-450c-92c3-7cfdc13fa329 (objectref<GtfImage_template>)
+					children: children_list []
+					x: 131
+					y: 689
+					touchPressed: function<bool,int,int,int,int>(41fe58c5-8830-41ce-b304-beb626ea9db7)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(v:this->^->\"BarcontrolHeat copy 1\".width > 0)" \
+							"	{" \
+							"		v:this->^->\"BarcontrolHeat copy 1\".width = v:this->^->\"BarcontrolHeat copy 1\".width -10" \
+							"		v:this->^->\"temperature right seat\".text = \"Volume : \" + f:int2string(v:this->^->\"BarcontrolHeat copy 1\".width/2)" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"		v:this->^->\"BarcontrolHeat copy 1\".width = 0" \
+							"	}" \
+							"    false" \
+							"}"
+					}
+					width: 52
+					height: 52
+				}, 
+				GtfLabel(21666d0b-3a7e-4150-b3e5-94deb847004f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "temperature right seat"
+					visible: true
+					width: 272
+					height: 38
+					x: 175
+					y: 734
+					text: ""
+					textColor: #FFFFFFFF
+					font: font_resource(a88296fe-ab7c-4f3c-8abd-08dd578a1a86)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Container volume"
+			visible: true
+			width: 100
+			height: 100
+			x: 0
+			y: 0
+		}, 
+		GtfInstantiator(76847848-b98c-4b28-bd11-47c890eaee74)
+		{
+			features: feature_list [
+				LayoutPolicyGrid(af28fdc2-ae73-4cba-9068-8176ef406850)
+				{
+					horizontalGap: 0
+					verticalGap: 5
+					numRows: 8
+					numColumns: 1
+				}, 
+				TouchPressed(76988f3e-fc19-449c-bdfa-58a1bcbe6e33)
+				{
+					touchPressed: function<bool,int,int,int,int>(2a3c2b50-2273-4309-b653-24044ad6f7ba)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(ba88a267-8ce2-48bb-9d75-ef1e5a80d739)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}, 
+				LineIndex(7af5542a-c87c-48d4-9b5d-70f40296b7ec)
+				{
+					lineIndex: 0
+				}]
+			children: children_list [
+				GtfRectangle(7406984a-f088-4e54-9f9c-5de456fdd34c)
+				{
+					features: feature_list [
+						StateTouched(134a1bb1-4b23-48f9-bb56-3a4d5b1ec752)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}, 
+						TouchPressed(29b2bbd6-7541-4ed9-964d-f7f9d815b20b)
+						{
+							touchPressed: function<bool,int,int,int,int>(e42366ac-29b0-4cd9-874d-6dd9bcdac6f2)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	" \
+									"    false" \
+									"}"
+							}
+						}]
+					children: children_list []
+					name: "Rectangle 3"
+					visible: true
+					width: width@76847848-b98c-4b28-bd11-47c890eaee74 (propref<int>)
+					height: 35
+					x: 0
+					y: 0
+					fillColor: #A9A9A9FF
+				}]
+			name: "InstantiatorSongsList"
+			visible: true
+			width: 551
+			height: 260
+			x: 5
+			y: 30
+			numItems: 8
+			lineMapping: intlist []
+		}]
+	name: "View songs"
+	visible: true
+	width: 580
+	height: 780
+	x: 0
+	y: 0
+}
