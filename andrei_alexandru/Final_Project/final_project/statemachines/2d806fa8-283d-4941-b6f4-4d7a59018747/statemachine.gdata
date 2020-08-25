@@ -1,0 +1,54 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_dynamic_statemachine(2d806fa8-283d-4941-b6f4-4d7a59018747)
+{
+	x: 0
+	y: 0
+	width: 600
+	height: 400
+	name: "CarBattery_PopUp"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions []
+	internal_transitions: haptic_internal_transitions []
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(b2532e32-ba11-492d-9913-4917938fc723)
+		{
+			x: 210
+			y: 17
+			width: 100
+			height: 100
+			name: "CarBattery_PopUp"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (500f1827-341d-4649-8b5e-5e0cd62ce027)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(f6a0520e-7c32-4752-95f5-68a5954797f6)
+	{
+		x: 64
+		y: 44
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(89261b9d-b8eb-4fdb-893b-b20b0d9cc8d1)
+		{
+			action: function<void>(none)
+			target_state: @b2532e32-ba11-492d-9913-4917938fc723 (objectref<haptic_dialog_state>)
+			source_dock: 0.2551323F
+			target_dock: 0.7819578F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(none)
+}

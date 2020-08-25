@@ -1,0 +1,191 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(c9755c64-157f-48ca-8648-d01580e56bab)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(40deb5dd-ab96-4cc8-ad7c-e2a9e572d053)
+		{
+			features: feature_list [
+				Border(e0da0d8f-e878-4e17-8671-79b6cc321f70)
+				{
+					borderThickness: 5
+					borderColor: #FF0000FF
+					borderStyle: 0
+				}]
+			children: children_list [
+				GtfLabel(19b595c3-6ded-470d-8c41-1c5a145009fa)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text"
+					visible: true
+					width: width@40deb5dd-ab96-4cc8-ad7c-e2a9e572d053 (propref<int>)
+					height: 50
+					x: 0
+					y: 100
+					text: "Car Starting System Problems!"
+					textColor: #000000FF
+					font: font_resource(d9ddd1a1-fc1f-4f0b-abf0-bb70009bd798)
+					{
+						file: "big_noodle_titling_oblique.ttf"
+						size: 25
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(19de02eb-9bf0-4b1f-8c88-20d9270bfad2)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text2"
+					visible: true
+					width: width@40deb5dd-ab96-4cc8-ad7c-e2a9e572d053 (propref<int>)
+					height: 50
+					x: 0
+					y: 140
+					text: "Go to nearest service!"
+					textColor: #3CB371FF
+					font: font_resource(d4365ae9-b4ba-4f5c-ad53-5b09c1392f87)
+					{
+						file: "teen it.ttf"
+						size: 35
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(698e5b18-8492-4d8e-afdf-82a2eb713020)
+				{
+					name: "OkButton"
+					template: @60b61038-4f45-4014-b850-4e3cf3aef87b (objectref<GtfContainer_template>)
+					children: children_list []
+					touchShortReleased: function<bool,int,int,int,int>(690de81a-1b0b-4717-a71a-d63345abc3c5)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:Info_CompoundEvents:close_Car_PopUp()" \
+							"    false" \
+							"}"
+					}
+					x: 180
+					y: 190
+					text: "OK"
+					textColor: #FF0000FF
+					font: font_resource(57608a24-309a-420b-9602-02544318c6bc)
+					{
+						file: "big_noodle_titling_oblique.ttf"
+						size: 30
+					}
+				}, 
+				GtfImage(a1940a6d-bf0a-4ccb-8549-ae90907113d5)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Image"
+					visible: true
+					width: 50
+					height: 50
+					x: 230
+					y: 50
+					image: image_resource(0a6c3ef1-1f23-49f1-ac6a-593950dd82d3)
+					{
+						file: "car_problems.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(f82a211b-b1a1-4f4b-b883-c5e0aeb8e10b)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfParallelAnimation(4b9f8b1b-e6a4-48eb-a077-14f0f99a0491)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(d87daf8f-cb0f-4c14-8a50-176600ceee7f)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve"
+									enabled: true
+									delay: 0
+									duration: 3000
+									repeat: 0
+									alternating: false
+									relative: false
+									start: 20
+									end: 420
+									target: x@f82a211b-b1a1-4f4b-b883-c5e0aeb8e10b (propref<int>)
+								}]
+							name: "CarAnimation"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(bef3a88a-93bd-4cb7-b18e-2714731c230c)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(dab81708-0c23-487a-9789-72735d9c1e5c)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(bd6e6fc5-e0e2-4eb9-92b2-030b3bab89a2)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							startAnimation: conditional_script(9eab7d6d-f9e8-4a85-81fe-85f678c2ddae)
+							{
+								triggerList: trigger_list(07270141-7f7e-42b2-b31b-9cb236d02433)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(c09d8728-52a9-4479-84d4-94c7f650959f)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	f:animation_play(v:this)" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "CarAnimation"
+					visible: true
+					width: 50
+					height: 50
+					x: 420
+					y: 240
+					image: image_resource(d1c1306f-fce2-4732-9e07-9b998a1b821d)
+					{
+						file: "pop_up_car.png"
+					}
+					sRGB: false
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Background"
+			visible: true
+			width: width@c9755c64-157f-48ca-8648-d01580e56bab (propref<int>)
+			height: height@c9755c64-157f-48ca-8648-d01580e56bab (propref<int>)
+			x: -1
+			y: 0
+			fillColor: #FFFFFFFF
+		}]
+	name: "CarStartingSystem_View"
+	visible: true
+	width: 500
+	height: 300
+	x: 150
+	y: 90
+}

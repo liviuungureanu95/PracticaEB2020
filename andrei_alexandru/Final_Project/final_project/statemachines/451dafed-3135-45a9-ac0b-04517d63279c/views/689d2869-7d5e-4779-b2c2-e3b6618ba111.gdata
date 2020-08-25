@@ -1,0 +1,191 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(689d2869-7d5e-4779-b2c2-e3b6618ba111)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(f4ab03ff-43b1-4128-94f8-907065908dd0)
+		{
+			features: feature_list [
+				Border(0e651ad7-9e3b-4def-8b10-c51891f0d22e)
+				{
+					borderThickness: 5
+					borderColor: #FF0000FF
+					borderStyle: 0
+				}]
+			children: children_list [
+				GtfLabel(0a05fd01-e68b-4a8f-8a72-36af3f67ab23)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text"
+					visible: true
+					width: width@f4ab03ff-43b1-4128-94f8-907065908dd0 (propref<int>)
+					height: 50
+					x: 0
+					y: 100
+					text: "Brake Pads Problems!"
+					textColor: #000000FF
+					font: font_resource(88d0ba81-7563-4ff5-a12a-3a42bd674be2)
+					{
+						file: "big_noodle_titling_oblique.ttf"
+						size: 25
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(f3dd8813-c5d0-4cea-a718-b34e473b85f1)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text2"
+					visible: true
+					width: width@f4ab03ff-43b1-4128-94f8-907065908dd0 (propref<int>)
+					height: 50
+					x: 0
+					y: 140
+					text: "Go to nearest service!"
+					textColor: #3CB371FF
+					font: font_resource(2ab708e3-89df-4347-b6c7-78988d8c2a5f)
+					{
+						file: "teen it.ttf"
+						size: 35
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(8dd603e4-4a50-4a48-83b0-bed975d264d1)
+				{
+					name: "OkButton"
+					template: @60b61038-4f45-4014-b850-4e3cf3aef87b (objectref<GtfContainer_template>)
+					children: children_list []
+					touchShortReleased: function<bool,int,int,int,int>(a3262aa5-7c01-4ef4-b2f3-07ca55e6cc04)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:Info_CompoundEvents:close_Pads_PopUp()" \
+							"    false" \
+							"}"
+					}
+					x: 180
+					y: 190
+					text: "OK"
+					textColor: #FF0000FF
+					font: font_resource(3e6948ca-945e-4f8a-9174-74320065fe66)
+					{
+						file: "big_noodle_titling_oblique.ttf"
+						size: 30
+					}
+				}, 
+				GtfImage(d1a44ecf-0ef2-4543-995b-1eae695620e8)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Image"
+					visible: true
+					width: 50
+					height: 50
+					x: 230
+					y: 50
+					image: image_resource(e2badc57-5f2a-46bc-876f-1672874a3121)
+					{
+						file: "pads.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(8e18649c-4d7e-49bb-bb7c-c611078ddd24)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfParallelAnimation(af0a30b6-b5aa-407f-9236-159de0b566af)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(8bcb3455-a8a2-42bc-a343-cc2ac95245e1)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve"
+									enabled: true
+									delay: 0
+									duration: 3000
+									repeat: 0
+									alternating: false
+									relative: false
+									start: 20
+									end: 420
+									target: x@8e18649c-4d7e-49bb-bb7c-c611078ddd24 (propref<int>)
+								}]
+							name: "CarAnimation"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(9c78941f-d30f-4263-ac71-2e25849364bc)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(1ff50cdc-c967-4f88-8355-735048865268)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(021749f2-eea1-44ec-80bc-5518dbfc2436)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							startAnimation: conditional_script(1152c6cc-03bb-4dab-bd3a-cd92b919b75a)
+							{
+								triggerList: trigger_list(afb3d25b-3978-4abe-9231-c74c7b4087b4)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(1ab2699a-3a4e-4af3-98e6-dc529682515d)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	f:animation_play(v:this)" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "CarAnimation"
+					visible: true
+					width: 50
+					height: 50
+					x: 420
+					y: 240
+					image: image_resource(adc4654a-d1cb-4261-8304-8e0115eba1ef)
+					{
+						file: "pop_up_car.png"
+					}
+					sRGB: false
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Background"
+			visible: true
+			width: width@689d2869-7d5e-4779-b2c2-e3b6618ba111 (propref<int>)
+			height: height@689d2869-7d5e-4779-b2c2-e3b6618ba111 (propref<int>)
+			x: -1
+			y: 0
+			fillColor: #FFFFFFFF
+		}]
+	name: "BrakePads_View"
+	visible: true
+	width: 500
+	height: 300
+	x: 150
+	y: 90
+}

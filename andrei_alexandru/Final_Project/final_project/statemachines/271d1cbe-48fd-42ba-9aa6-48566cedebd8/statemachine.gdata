@@ -1,0 +1,54 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_dynamic_statemachine(271d1cbe-48fd-42ba-9aa6-48566cedebd8)
+{
+	x: 0
+	y: 0
+	width: 600
+	height: 400
+	name: "CarSystem_PopUp"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions []
+	internal_transitions: haptic_internal_transitions []
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(5222ea20-1499-410f-a807-65098065e0ec)
+		{
+			x: 251
+			y: 16
+			width: 100
+			height: 100
+			name: "CarStartingSystem_Message"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (c9755c64-157f-48ca-8648-d01580e56bab)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(c8ed8680-1118-4b08-8229-1b20e99630f5)
+	{
+		x: 43
+		y: 46
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(cf9c7b4e-30b6-4ee3-8dab-ef191699c7cf)
+		{
+			action: function<void>(none)
+			target_state: @5222ea20-1499-410f-a807-65098065e0ec (objectref<haptic_dialog_state>)
+			source_dock: 0.24592F
+			target_dock: 0.7725935F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(none)
+}

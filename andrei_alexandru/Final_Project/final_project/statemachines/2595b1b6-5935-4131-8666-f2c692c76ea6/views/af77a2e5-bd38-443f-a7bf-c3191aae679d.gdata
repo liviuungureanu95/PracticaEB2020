@@ -1,0 +1,191 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(af77a2e5-bd38-443f-a7bf-c3191aae679d)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(deabf857-fa11-4ce1-9463-57c29fdc268f)
+		{
+			features: feature_list [
+				Border(d619239d-5130-4dcd-a720-5b8838e27366)
+				{
+					borderThickness: 5
+					borderColor: #FF0000FF
+					borderStyle: 0
+				}]
+			children: children_list [
+				GtfLabel(806c118a-85a1-43b9-b86b-34d78786b354)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text"
+					visible: true
+					width: width@deabf857-fa11-4ce1-9463-57c29fdc268f (propref<int>)
+					height: 50
+					x: 0
+					y: 100
+					text: "Power Steering Problems!"
+					textColor: #000000FF
+					font: font_resource(1ccdf608-dc2c-4fae-8b57-3da1b74ff775)
+					{
+						file: "big_noodle_titling_oblique.ttf"
+						size: 25
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(9daaf4cb-2d77-4b69-85f2-31e373bc7623)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text2"
+					visible: true
+					width: width@deabf857-fa11-4ce1-9463-57c29fdc268f (propref<int>)
+					height: 50
+					x: 0
+					y: 140
+					text: "Go to nearest service!"
+					textColor: #3CB371FF
+					font: font_resource(666cc688-6e8a-49c4-8d6e-64f9104090b1)
+					{
+						file: "teen it.ttf"
+						size: 35
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(6ef4828a-f2a4-41a5-8ec5-edaaaf504ec1)
+				{
+					name: "OkButton"
+					template: @60b61038-4f45-4014-b850-4e3cf3aef87b (objectref<GtfContainer_template>)
+					children: children_list []
+					touchShortReleased: function<bool,int,int,int,int>(bd2859d6-ff8f-4833-b848-4ae0e3aebfac)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:Info_CompoundEvents:close_Steering_PopUp()" \
+							"    false" \
+							"}"
+					}
+					x: 180
+					y: 190
+					text: "OK"
+					textColor: #FF0000FF
+					font: font_resource(ae5c1b46-4521-4501-a529-e07153ce9af7)
+					{
+						file: "big_noodle_titling_oblique.ttf"
+						size: 30
+					}
+				}, 
+				GtfImage(88544080-9481-4f6e-92d8-37e40f38b326)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Image"
+					visible: true
+					width: 50
+					height: 50
+					x: 230
+					y: 50
+					image: image_resource(7c702228-6187-4e7f-8481-aec7e43b28cd)
+					{
+						file: "steering.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(1d7ef5aa-16f8-424c-a7a0-af9c95e498d0)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfParallelAnimation(a0a506b5-58a2-4b11-a3f4-14d8b9b51200)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(b2d17d14-9d06-4327-9cce-06ff5bfb66b2)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve"
+									enabled: true
+									delay: 0
+									duration: 3000
+									repeat: 0
+									alternating: false
+									relative: false
+									start: 20
+									end: 420
+									target: x@1d7ef5aa-16f8-424c-a7a0-af9c95e498d0 (propref<int>)
+								}]
+							name: "CarAnimation"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(1f6c7300-0881-4eff-b1f8-72c65ab3a412)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(fcfb65c1-8f5c-4994-bfc0-306bb4aa199a)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(74a45a36-4a2c-4856-b4ec-45b9aa5e1677)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							startAnimation: conditional_script(469151f9-0e61-4870-9155-5c06a83d4c5c)
+							{
+								triggerList: trigger_list(50ff12ba-338d-43c4-a712-e7bfd760c804)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(41d400e0-8359-4f47-8c07-e3b2cba4778f)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	f:animation_play(v:this)" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "CarAnimation"
+					visible: true
+					width: 50
+					height: 50
+					x: 420
+					y: 240
+					image: image_resource(4eb7866f-eec7-4c8d-a7b3-f69801c37795)
+					{
+						file: "pop_up_car.png"
+					}
+					sRGB: false
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Background"
+			visible: true
+			width: width@af77a2e5-bd38-443f-a7bf-c3191aae679d (propref<int>)
+			height: height@af77a2e5-bd38-443f-a7bf-c3191aae679d (propref<int>)
+			x: -1
+			y: 0
+			fillColor: #FFFFFFFF
+		}]
+	name: "SteeringProblems_View"
+	visible: true
+	width: 500
+	height: 300
+	x: 150
+	y: 90
+}

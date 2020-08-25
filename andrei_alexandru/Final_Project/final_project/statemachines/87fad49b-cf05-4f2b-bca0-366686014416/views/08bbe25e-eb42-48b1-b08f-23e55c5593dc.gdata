@@ -1,0 +1,145 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(08bbe25e-eb42-48b1-b08f-23e55c5593dc)
+{
+	name: "EngineMenu_View"
+	template: @b380d1bf-d029-45e1-aa1b-a53a19df7e62 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer(29cb74b2-b988-43f9-b780-471ee0786a2f)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfContainer_template_instance(8cd769aa-7323-43e5-81f6-2d287c576577)
+				{
+					name: "Button1"
+					template: @3f7e43ab-3582-4cc1-b768-b8a89d126731 (objectref<GtfContainer_template>)
+					children: children_list []
+					text: "Power steering problems"
+					image: image_resource(497db6c1-3b37-4d1f-884e-2a7b6335af05)
+					{
+						file: "steering.png"
+					}
+					x: x@3f7e43ab-3582-4cc1-b768-b8a89d126731 (propref<int>)
+					y: y@3f7e43ab-3582-4cc1-b768-b8a89d126731 (propref<int>)
+					width: width@3f7e43ab-3582-4cc1-b768-b8a89d126731 (propref<int>)
+					height: height@3f7e43ab-3582-4cc1-b768-b8a89d126731 (propref<int>)
+					touchShortReleased: function<bool,int,int,int,int>(f42bae58-28fa-4359-9b94-667052726a22)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:InfoMenu:steering_problems == false)" \
+							"		fire ev:Info_CompoundEvents:open_Steering_PopUp()" \
+							"	" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(f586601a-2ae7-4450-b270-b9db264d29ef)
+				{
+					name: "Button2"
+					template: @3f7e43ab-3582-4cc1-b768-b8a89d126731 (objectref<GtfContainer_template>)
+					children: children_list []
+					text: "Used brake pads"
+					image: image_resource(7fbc9d5a-917b-4dfb-bdee-5fc67225c631)
+					{
+						file: "pads.png"
+					}
+					x: x@3f7e43ab-3582-4cc1-b768-b8a89d126731 (propref<int>)
+					y: 60
+					width: width@3f7e43ab-3582-4cc1-b768-b8a89d126731 (propref<int>)
+					height: height@3f7e43ab-3582-4cc1-b768-b8a89d126731 (propref<int>)
+					touchShortReleased: function<bool,int,int,int,int>(b8387ea7-709c-4f07-8f4e-c62104c606d5)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:InfoMenu:brake_pads == false)" \
+							"		fire ev:Info_CompoundEvents:open_Pads_PopUp()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(5f6f550f-9b8b-4328-9b4c-7fbe1d665053)
+				{
+					name: "Button3"
+					template: @3f7e43ab-3582-4cc1-b768-b8a89d126731 (objectref<GtfContainer_template>)
+					children: children_list []
+					text: "Car starting system problems"
+					image: image_resource(b08c9b93-8604-4901-ae72-372dbeed79b2)
+					{
+						file: "car_problems.png"
+					}
+					x: x@3f7e43ab-3582-4cc1-b768-b8a89d126731 (propref<int>)
+					y: 121
+					width: width@3f7e43ab-3582-4cc1-b768-b8a89d126731 (propref<int>)
+					height: height@3f7e43ab-3582-4cc1-b768-b8a89d126731 (propref<int>)
+					touchShortReleased: function<bool,int,int,int,int>(7a000253-24bc-40cc-958e-b43f8f54c300)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:InfoMenu:carStarting_problems == false)" \
+							"		fire ev:Info_CompoundEvents:open_Car_PopUp()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(8522df43-f1d1-4086-be39-15101da70140)
+				{
+					name: "Button4"
+					template: @3f7e43ab-3582-4cc1-b768-b8a89d126731 (objectref<GtfContainer_template>)
+					children: children_list []
+					text: "Bulb fault"
+					image: image_resource(ddb3c496-b62c-4c8f-b03b-621725a1cb1e)
+					{
+						file: "carbulb.png"
+					}
+					x: x@3f7e43ab-3582-4cc1-b768-b8a89d126731 (propref<int>)
+					y: 180
+					width: width@3f7e43ab-3582-4cc1-b768-b8a89d126731 (propref<int>)
+					height: height@3f7e43ab-3582-4cc1-b768-b8a89d126731 (propref<int>)
+					touchShortReleased: function<bool,int,int,int,int>(55631b17-ee17-4c5c-bd77-3b37bd879a08)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:InfoMenu:bulb_fault == false)" \
+							"		fire ev:Info_CompoundEvents:open_Bulb_PopUp()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(2d173f02-3676-4d1e-b0e3-f992c3690ece)
+				{
+					name: "Button5"
+					template: @3f7e43ab-3582-4cc1-b768-b8a89d126731 (objectref<GtfContainer_template>)
+					children: children_list []
+					text: "Low Battery"
+					image: image_resource(b92a4621-5083-4652-a337-0bfb777ea8b3)
+					{
+						file: "carbattery.png"
+					}
+					x: x@3f7e43ab-3582-4cc1-b768-b8a89d126731 (propref<int>)
+					y: 240
+					width: width@3f7e43ab-3582-4cc1-b768-b8a89d126731 (propref<int>)
+					height: height@3f7e43ab-3582-4cc1-b768-b8a89d126731 (propref<int>)
+					touchShortReleased: function<bool,int,int,int,int>(6ecd7adc-5f02-4f0f-84d9-8aa9ed99c4a5)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:InfoMenu:low_battery == false)" \
+							"		fire ev:Info_CompoundEvents:open_Battery_PopUp()" \
+							"    false" \
+							"}"
+					}
+				}]
+			name: "EngineButtons_Container"
+			visible: true
+			width: 300
+			height: 290
+			x: 240
+			y: 130
+		}]
+	text: "Errors Panel"
+	textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+	font: font@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<font>)
+	image: @28a5929a-87d6-4473-9912-d62fd743c5c6 (objectref<image>)
+	fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+}

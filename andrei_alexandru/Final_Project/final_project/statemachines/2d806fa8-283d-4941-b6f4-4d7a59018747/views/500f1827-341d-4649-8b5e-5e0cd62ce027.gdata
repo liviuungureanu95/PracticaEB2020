@@ -1,0 +1,191 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(500f1827-341d-4649-8b5e-5e0cd62ce027)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(8751b376-a058-414b-ab50-c3e154540990)
+		{
+			features: feature_list [
+				Border(bd737c9e-ba21-4800-ad5e-eb80a9313ade)
+				{
+					borderThickness: 5
+					borderColor: #FF0000FF
+					borderStyle: 0
+				}]
+			children: children_list [
+				GtfLabel(ceb20857-8df1-4ed5-a273-b1ed24b63a96)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text"
+					visible: true
+					width: width@8751b376-a058-414b-ab50-c3e154540990 (propref<int>)
+					height: 50
+					x: 0
+					y: 100
+					text: "Low Battery Problems!"
+					textColor: #000000FF
+					font: font_resource(a9a836a4-22de-491e-81d2-6f06ac5379c8)
+					{
+						file: "big_noodle_titling_oblique.ttf"
+						size: 25
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(9017c9ee-772d-4953-a3c2-d941ea3e13df)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text2"
+					visible: true
+					width: width@8751b376-a058-414b-ab50-c3e154540990 (propref<int>)
+					height: 50
+					x: 0
+					y: 140
+					text: "Go to nearest service!"
+					textColor: #3CB371FF
+					font: font_resource(19190189-66c7-4c76-8043-62cc20f8601f)
+					{
+						file: "teen it.ttf"
+						size: 35
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(e671f97f-177b-4fda-b11d-85cbfeadcce5)
+				{
+					name: "OkButton"
+					template: @60b61038-4f45-4014-b850-4e3cf3aef87b (objectref<GtfContainer_template>)
+					children: children_list []
+					touchShortReleased: function<bool,int,int,int,int>(975d3d33-4134-4632-b553-39cc49e4e457)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:Info_CompoundEvents:close_Battery_PopUp()" \
+							"    false" \
+							"}"
+					}
+					x: 180
+					y: 190
+					text: "OK"
+					textColor: #FF0000FF
+					font: font_resource(e88c12d9-8cea-4434-abd8-24c500ac75cf)
+					{
+						file: "big_noodle_titling_oblique.ttf"
+						size: 30
+					}
+				}, 
+				GtfImage(3a045bb5-d3b5-451f-99e7-cfaf5a521c20)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Image"
+					visible: true
+					width: 50
+					height: 50
+					x: 230
+					y: 50
+					image: image_resource(93981ba8-c553-4498-bcca-9efe4c29c5a2)
+					{
+						file: "carbulb.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(585e4064-1010-4cec-879d-134fb135bf88)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfParallelAnimation(a6310d9d-6836-4d02-bf65-560672a0e069)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(6b88ed8b-e482-4573-8612-b3deb8712570)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve"
+									enabled: true
+									delay: 0
+									duration: 3000
+									repeat: 0
+									alternating: false
+									relative: false
+									start: 20
+									end: 420
+									target: x@585e4064-1010-4cec-879d-134fb135bf88 (propref<int>)
+								}]
+							name: "CarAnimation"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(a228170e-9f35-4bf5-b3bf-c4364f0cb534)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(1ba321c1-3d65-49b5-99aa-fbc29877b4ed)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(4885b481-3ee7-4ae3-842a-1b05222390b0)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							startAnimation: conditional_script(8459f609-05e7-4f9d-b4bc-73a3a552f71d)
+							{
+								triggerList: trigger_list(a1cb44d5-4903-4783-879a-c7aad90cfd5f)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(f0f5f64f-4336-4023-9d07-6b0526eb985f)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	f:animation_play(v:this)" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "CarAnimation"
+					visible: true
+					width: 50
+					height: 50
+					x: 420
+					y: 240
+					image: image_resource(5824fa41-2638-4b86-96dd-27f0f7b9e0ae)
+					{
+						file: "pop_up_car.png"
+					}
+					sRGB: false
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Background"
+			visible: true
+			width: width@500f1827-341d-4649-8b5e-5e0cd62ce027 (propref<int>)
+			height: height@500f1827-341d-4649-8b5e-5e0cd62ce027 (propref<int>)
+			x: -1
+			y: 0
+			fillColor: #FFFFFFFF
+		}]
+	name: "CarBattery_View"
+	visible: true
+	width: 500
+	height: 300
+	x: 150
+	y: 90
+}
