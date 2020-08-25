@@ -1,0 +1,124 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(fa630556-da91-4b4e-9a95-a14542cfd9bc)
+{
+	name: "Searching_View"
+	template: @b380d1bf-d029-45e1-aa1b-a53a19df7e62 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(bca42b26-06cf-4b25-8218-228127f7c76f)
+		{
+			name: "BackButton"
+			template: @66713f45-2faf-4289-b7d7-da20b83b4fd3 (objectref<GtfContainer_template>)
+			children: children_list []
+			buttonEvent: function<bool>(26673482-8825-4a7e-b04c-334941b901a1)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_back()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfImage(6bf5a997-882d-4d5c-9cc2-bad79273d086)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Road_Image"
+			visible: true
+			width: 800
+			height: 300
+			x: 0
+			y: 105
+			image: image_resource(d9d94094-177b-4071-809a-9b6c1c360b4d)
+			{
+				file: "road_navigation.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(b9bf066c-0377-42df-af83-4c5ba8d5e635)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfParallelAnimation(d0eb54ea-05fb-4cac-8ba0-d45885718943)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationS32(8825be3e-d471-48f6-b8ca-c05907408ca5)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "CarMoving"
+							enabled: true
+							delay: 0
+							duration: 7000
+							repeat: 1
+							alternating: false
+							relative: false
+							start: 0
+							end: 800
+							target: x@b9bf066c-0377-42df-af83-4c5ba8d5e635 (propref<int>)
+						}]
+					name: "Car_Animation"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(da057e8c-facc-446d-95fc-d359e7a4383d)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(2d818c20-8a38-4265-839a-74cc1d617f20)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(274ac6ed-dd8c-4990-b40b-a9ebb668112c)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"	fire ev:Navigation_CompoundEvents:goTo_CompletedSearch()" \
+							"}"
+					}
+					startAnimation: conditional_script(a1327717-227a-473e-951a-fe464d433073)
+					{
+						triggerList: trigger_list(b20bc3e4-e439-483e-8b8b-d9b0418253e5)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(68e624f3-6635-4753-a612-efde465cc4e3)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	f:animation_play(v:this)" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "Move_Image"
+			visible: true
+			width: 100
+			height: 100
+			x: 10
+			y: 250
+			image: image_resource(5e50d38d-b066-4d7e-8bb3-937cfc062423)
+			{
+				file: "car_move.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	text: @d101088b-8bd2-4898-8b94-461f73fee925 (objectref<string>)
+	textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+	font: font@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<font>)
+	image: @28a5929a-87d6-4473-9912-d62fd743c5c6 (objectref<image>)
+	fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+}

@@ -1,0 +1,73 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(e685a86c-5f5b-4800-aa07-11d6f854f389)
+{
+	name: "StartMenu_View"
+	template: @5f22b6ee-09f8-4acf-859c-b071bddbf8fc (objectref<GtfView_template>)
+	children: children_list []
+	text: string_scriptedValue(18b218d7-9386-43f5-820c-2915978946b0)
+	{
+		triggerList: trigger_list(5ab84ad6-5375-4e7e-8de7-89330109d745)
+		{
+			script: ""
+		}
+		onTrigger: function<bool,bool>(801c3276-dad0-4190-bbf4-2ed1d8364b6f)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		read: function<string>(b4c7ea4f-c167-47c8-bd12-500701ab2671)
+		{
+			script: "function()" \
+				"{" \
+				"	f:int2string(dp:StartMenu:date) + \"/\" + f:int2string(dp:StartMenu:month + 1) + \"/\" + f:int2string(dp:StartMenu:year)" \
+				"}"
+		}
+		write: function<bool,string>(237db78a-0863-45f7-bdca-7e227f71000e)
+		{
+			script: "function(v:arg0::string)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	"text 2": string_scriptedValue(50cd8e57-2e08-4a4a-8ae0-1b4cbdcc76b6)
+	{
+		triggerList: trigger_list(35578183-e8d6-463c-936b-f3c8897d3c33)
+		{
+			script: ""
+		}
+		onTrigger: function<bool,bool>(2f41d809-a6b3-4f4f-96fd-06e41abc7a1c)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		read: function<string>(65639993-63da-454e-8a74-bd32c185b524)
+		{
+			script: "function()" \
+				"{" \
+				"	f:int2string(dp:StartMenu:hour + 3) + \":\" + f:format_int(\"%.2i\", f:localtime_minute(f:system_time())) " \
+				"	+ \":\" +f:format_int(\"%.2i\", f:localtime_second(f:system_time()))  " \
+				"	" \
+				"}"
+		}
+		write: function<bool,string>(84de47c7-118e-4655-9916-56e738e390ea)
+		{
+			script: "function(v:arg0::string)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	"text 3": "152.766"
+	"text 5": "152.766"
+	"text 4": "Current trip"
+}

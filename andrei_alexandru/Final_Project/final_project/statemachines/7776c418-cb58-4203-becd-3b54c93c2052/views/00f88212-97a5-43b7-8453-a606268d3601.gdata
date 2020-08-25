@@ -1,0 +1,229 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(00f88212-97a5-43b7-8453-a606268d3601)
+{
+	name: "MainMenu_View"
+	template: @3ee9ba53-7e9c-4dd4-b90e-ce0b4db36728 (objectref<GtfView_template>)
+	children: children_list [
+		GtfInstantiator_template_instance(72ac24da-63aa-4897-94ac-e5ade8b911f0)
+		{
+			name: "ButtonsInstantiator"
+			template: @63e08f12-76f6-421a-848b-bdfb8d66e7a3 (objectref<GtfInstantiator_template>)
+			children: children_list [
+				GtfRectangle(35f2100a-e897-4e72-9070-fa587bce7b5b)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Rectangle 3"
+					visible: true
+					width: 100
+					height: 100
+					x: 239
+					y: 317
+					fillColor: #A9A9A9FF
+				}, 
+				GtfRectangle(d308d375-22dc-424e-8cd2-d1a2017666ea)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Rectangle 4"
+					visible: true
+					width: 100
+					height: 100
+					x: 238
+					y: 152
+					fillColor: #A9A9A9FF
+				}, 
+				GtfRectangle(dcf7dc06-351b-44fc-b83a-21ff9c6a6210)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Rectangle 5"
+					visible: true
+					width: 100
+					height: 100
+					x: 166
+					y: 256
+					fillColor: #A9A9A9FF
+				}]
+		}, 
+		GtfRectangle(f2337a90-9f9f-4568-806e-6351dc38242a)
+		{
+			features: feature_list [
+				Border(91144778-91a2-436b-a7be-c54876294ff1)
+				{
+					borderThickness: 2
+					borderColor: #000000FF
+					borderStyle: 0
+				}, 
+				TouchShortReleased(be3f7f16-b18a-4916-a2a1-860402176a18)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(35e2d392-d161-4192-8a0c-2135f11e58d2)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:AcMenu_CompoundEvents:open_AC_PopUp()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(d51841fb-1b78-4c1c-9095-02f7918926bc)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfLabel(b7a13820-5147-4696-82d6-430b5fd5b309)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text"
+					visible: true
+					width: width@f2337a90-9f9f-4568-806e-6351dc38242a (propref<int>)
+					height: height@f2337a90-9f9f-4568-806e-6351dc38242a (propref<int>)
+					x: 0
+					y: 0
+					text: "AC"
+					textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+					font: font_resource(0c5783bb-4915-4041-a629-ff5aa3e690a4)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "AC_Button"
+			visible: true
+			width: 50
+			height: 50
+			x: 382
+			y: 421
+			fillColor: #E6E6FAFF
+		}, 
+		GtfContainer_template_instance(5893c848-4947-4bae-9866-ec2cae2499c9)
+		{
+			name: "T_HomeButton"
+			template: @2653d82d-7335-465f-9d34-4e9c52f68697 (objectref<GtfContainer_template>)
+			children: children_list []
+		}, 
+		GtfRectangle(7f309666-e1cb-4189-a040-6f5768672651)
+		{
+			features: feature_list [
+				TouchShortReleased(5e8738c3-2ac7-4078-913c-1ca42b104a45)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(b95c36c5-3086-49f3-8ddd-bf022edb7bfb)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	f:setSkin(s:Light, true)" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(e0081e49-9285-4fbe-9294-18e1f22ce064)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}, 
+				Border(0b8c20a9-818c-4c3d-9f13-d4f170a85b97)
+				{
+					borderThickness: 2
+					borderColor: #000000FF
+					borderStyle: 0
+				}]
+			children: children_list [
+				GtfImage(3027f5c6-079c-45e4-9bda-f0b2e915a989)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Logo"
+					visible: true
+					width: width@7f309666-e1cb-4189-a040-6f5768672651 (propref<int>)
+					height: height@7f309666-e1cb-4189-a040-6f5768672651 (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(8a4a5906-e21b-4f95-a7d5-4f80015254db)
+					{
+						file: "lightmode_menu.png"
+					}
+					sRGB: false
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "LightMode"
+			visible: true
+			width: 48
+			height: 48
+			x: 300
+			y: 10
+			fillColor: #E6E6FAFF
+		}, 
+		GtfRectangle(9717b729-fb66-4171-b195-a6f8de21aaef)
+		{
+			features: feature_list [
+				TouchShortReleased(317e4638-d740-4f86-a2cd-8bd0a24e6520)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(fe49b03f-fb83-4749-a7b0-a38885ddf9a4)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	f:setSkin(s:Dark, true)" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(ad01a005-9d3c-46a6-bf4f-6dcae5d35833)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}, 
+				Border(124922a1-b92a-4c29-8848-5f5115317118)
+				{
+					borderThickness: 2
+					borderColor: #000000FF
+					borderStyle: 0
+				}]
+			children: children_list [
+				GtfImage(200e2698-5f87-4bba-839b-52386efff7f1)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Logo"
+					visible: true
+					width: width@9717b729-fb66-4171-b195-a6f8de21aaef (propref<int>)
+					height: height@9717b729-fb66-4171-b195-a6f8de21aaef (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(7e7eca7d-9bee-4fe0-8b78-3bc6e15007ca)
+					{
+						file: "darkmode_menu.png"
+					}
+					sRGB: false
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "DarkMode"
+			visible: true
+			width: 48
+			height: 48
+			x: 420
+			y: 10
+			fillColor: #E6E6FAFF
+		}]
+	image: @28a5929a-87d6-4473-9912-d62fd743c5c6 (objectref<image>)
+	text: @5bb328f4-d568-4d5e-9701-c65422155f29 (objectref<string>)
+	"text 2": @8dc5aea5-68e1-4b48-a434-c248e7e4318d (objectref<string>)
+	textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+	"textColor 2": @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+	"textColor 3": @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+	fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+	"fillColor 2": @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+	"textColor 4": @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+}

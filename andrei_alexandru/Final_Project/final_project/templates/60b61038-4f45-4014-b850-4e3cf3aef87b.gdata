@@ -1,0 +1,88 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(60b61038-4f45-4014-b850-4e3cf3aef87b)
+{
+	name: "T_PopUP_Connect_Button"
+	structure: GtfContainer(5c2d87a7-926c-40c7-9d6e-8c6c39abad48)
+	{
+		features: feature_list [
+			TouchShortReleased(dc75e2be-c6fc-4f23-9f32-c9350109a912)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(1cae1eaf-d93d-4339-aeaa-5aa16430a546)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(3497638e-cf9d-46b1-998c-71f9f944c018)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			TouchPressed(7c7ae7e6-7eb1-4ab3-8ff8-db8341e262b1)
+			{
+				touchPressed: function<bool,int,int,int,int>(d58ec4a9-c5eb-4cc3-90bb-f211a4d441ed)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}]
+		children: children_list [
+			GtfRectangle(36916abb-f64f-413d-bad8-5f5283ad078b)
+			{
+				features: feature_list [
+					Border(7985433a-6482-4425-be20-ee6ed090a513)
+					{
+						borderThickness: 2
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@5c2d87a7-926c-40c7-9d6e-8c6c39abad48 (propref<int>)
+				height: height@5c2d87a7-926c-40c7-9d6e-8c6c39abad48 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFFFF
+			}, 
+			GtfLabel(a52933f0-2fdb-43fc-9036-76827c996d4b)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Text"
+				visible: true
+				width: width@5c2d87a7-926c-40c7-9d6e-8c6c39abad48 (propref<int>)
+				height: height@5c2d87a7-926c-40c7-9d6e-8c6c39abad48 (propref<int>)
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #000000FF
+				font: font_resource(99c88117-b0e1-4a30-9ca2-32b478ed2803)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 150
+		height: 50
+		x: 0
+		y: 0
+	}
+	touchShortReleased: touchShortReleased@dc75e2be-c6fc-4f23-9f32-c9350109a912 (propref<function<bool,int,int,int,int>>)
+	x: x@5c2d87a7-926c-40c7-9d6e-8c6c39abad48 (propref<int>)
+	y: y@5c2d87a7-926c-40c7-9d6e-8c6c39abad48 (propref<int>)
+	text: text@a52933f0-2fdb-43fc-9036-76827c996d4b (propref<string>)
+	textColor: textColor@a52933f0-2fdb-43fc-9036-76827c996d4b (propref<color>)
+	font: font@a52933f0-2fdb-43fc-9036-76827c996d4b (propref<font>)
+}

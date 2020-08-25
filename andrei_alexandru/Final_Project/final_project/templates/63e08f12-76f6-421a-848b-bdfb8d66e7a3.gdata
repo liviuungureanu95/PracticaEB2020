@@ -1,0 +1,402 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfInstantiator_template(63e08f12-76f6-421a-848b-bdfb8d66e7a3)
+{
+	name: "T_ButtonsInstantiator"
+	structure: GtfInstantiator(fd94f908-5ecb-475c-a99b-41ab47b5579a)
+	{
+		features: feature_list [
+			LayoutPolicyFlow(50a340d1-5e9e-42fa-82d5-09a391b01afa)
+			{
+				horizontalGap: 100
+				verticalGap: 60
+				layoutDirection: 0
+				horizontalChildAlign: 0
+				verticalChildAlign: 0
+			}, 
+			MoveOut(da800f8f-8841-40f5-b7f3-d6407b568c2e)
+			{
+				moveOut: function<bool,int,int,int,int>(1b3e5197-5c19-4df4-9959-e068b0339654)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			MoveIn(268929bc-86a5-4a95-a3df-a03cc32697f7)
+			{
+				moveIn: function<bool,int,int,int,int>(9204cd13-4226-4c28-aee6-fc3e227e2b3c)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(5a0e45dd-39eb-45c9-9200-86e1b8e19147)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			StateSelected(c04cc11f-c146-4166-b4d1-268b7a6b4762)
+			{
+				selected: true
+			}, 
+			Buttongroup(7af3791a-6d16-4743-82a1-9eb92cbb9236)
+			{
+				buttonId: 0
+				buttonValue: 0
+			}]
+		children: children_list [
+			GtfRectangle(7a922172-56b0-4c25-8bc7-ee90316bda10)
+			{
+				features: feature_list [
+					LineIndex(39d8272e-e2e7-480d-adee-535de8bdfbf4)
+					{
+						lineIndex: 0
+					}, 
+					TouchShortReleased(8f64401a-cd18-4566-bd79-538e3c973a8b)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(854333fc-e5bc-44a6-87c6-617e70fc0b03)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.buttonEvent()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(d780df1a-4231-44fa-b3bb-ece7b8f6b2d8)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}, 
+					Border(a9a3b2b5-4d87-4c24-a7bf-42ac7bdefd84)
+					{
+						borderThickness: 1
+						borderColor: #000000FF
+						borderStyle: 0
+					}, 
+					MoveIn(c4203cc2-d9b9-4bfe-8961-2882f947f8c2)
+					{
+						moveIn: function<bool,int,int,int,int>(848b5bd1-0188-48fc-80c6-58e668e07af4)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    false" \
+								"}"
+						}
+					}]
+				children: children_list [
+					GtfLabel(b1eab4ad-16e6-4c65-871f-2b3cbdbcb192)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Text"
+						visible: true
+						width: 100
+						height: 100
+						x: 0
+						y: 65
+						text: "label"
+						textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+						font: font_resource(0bb170f6-ce2a-4924-a2e8-3e4d353522fb)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 25
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfImage(adce2c6a-8b75-4732-a9c9-0cd485513fad)
+					{
+						features: feature_list [
+							ScaleMode(315fb665-1a7a-446e-9716-f3e92927e667)
+							{
+								scaleMode: 1
+							}, 
+							Rotation(162993a2-b952-4737-af70-de77ef26dbc4)
+							{
+								rotationEnabled: true
+								rotationAngleX: 0F
+								rotationAngleY: 0F
+								rotationAngleZ: 0F
+							}, 
+							Scaling(efe10e72-fd4e-4075-8447-fe19f770fb8a)
+							{
+								scalingEnabled: true
+								scalingX: 100F
+								scalingY: 100F
+								scalingZ: 100F
+							}, 
+							Shearing(ef13222a-78ee-48de-9dfb-598c664b669d)
+							{
+								shearingEnabled: true
+								shearingXbyY: 0F
+								shearingXbyZ: 0F
+								shearingYbyX: 0F
+								shearingYbyZ: 0F
+								shearingZbyX: 0F
+								shearingZbyY: 0F
+							}, 
+							Pivot(0c2a3160-f3c0-4f44-a03a-a47f79a0d83d)
+							{
+								pivotX: float_scriptedValue(b9158593-2bed-49c3-b155-8cb0631e8197)
+								{
+									triggerList: trigger_list(defcbb40-03ee-4611-8589-f4759e29cd37)
+									{
+										script: "v:this.width" \
+											""
+									}
+									onTrigger: function<bool,bool>(a0066199-15df-4402-9348-dd4d523d737f)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<float>(7652af89-77db-40c5-8a73-51038d5e2ef6)
+									{
+										script: "function()" \
+											"{" \
+											"	f:int2float(v:this.width/2)" \
+											"}"
+									}
+									write: function<bool,float>(8f835c39-066f-45f6-a370-234712d3ee32)
+									{
+										script: "function(v:arg0::float)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								pivotY: float_scriptedValue(ba0c8cfd-8a8b-488d-8f45-cd3882adf967)
+								{
+									triggerList: trigger_list(14dccf18-b917-4c5c-beef-2c0536e0482c)
+									{
+										script: "v:this.height" \
+											""
+									}
+									onTrigger: function<bool,bool>(e032906d-0230-4bb5-bc84-dcd96c743bad)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<float>(df8ff718-8dfc-489a-90e1-1defa2cfe923)
+									{
+										script: "function()" \
+											"{" \
+											"	f:int2float(v:this.height/2)" \
+											"}"
+									}
+									write: function<bool,float>(2569d1e4-1376-4ae8-b581-fd912e07cc23)
+									{
+										script: "function(v:arg0::float)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								pivotZ: 0F
+							}]
+						children: children_list [
+							GtfParallelAnimation(f86663fe-3c34-4543-b75d-be0807727cc6)
+							{
+								features: feature_list []
+								children: children_list [
+									GtfLinearInterpolationFloat(045ccd52-bd96-4447-9458-480b2584c938)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "Rotate_Image_anim"
+										enabled: true
+										delay: 0
+										duration: 1500
+										repeat: 1
+										alternating: false
+										relative: false
+										start: 0F
+										end: -360F
+										target: rotationAngleZ@162993a2-b952-4737-af70-de77ef26dbc4 (propref<float>)
+									}]
+								name: "RotateImage"
+								enabled: true
+								repeat: 1
+								alternating: false
+								scale: 1F
+								onPlay: function<void,int,bool>(cbf95efe-cbce-4c1f-9a25-fab4838ece49)
+								{
+									script: "function(v:animation_time::int, v:forward::bool)" \
+										"{" \
+										"" \
+										"}"
+								}
+								onPause: function<void,int>(1ecfd039-e492-4b51-a869-4ab535b4ab5e)
+								{
+									script: "function(v:animation_time::int)" \
+										"{" \
+										"" \
+										"}"
+								}
+								onTerminate: function<void,int,int>(011eddd1-a718-458c-b296-983db8d19f6a)
+								{
+									script: "function(v:animation_time::int, v:terminate::int)" \
+										"{" \
+										"" \
+										"}"
+								}
+							}]
+						name: "Logo's"
+						visible: true
+						width: 100
+						height: 100
+						x: 0
+						y: 0
+						image: image_resource(cb0fefe8-fbfe-4182-b7c8-fa98721c8e31)
+						{
+							file: ""
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+					}]
+				name: "Background"
+				visible: true
+				width: 100
+				height: 100
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+				setText: conditional_script(1ade5063-37f6-49b1-9762-a712f6a29c37)
+				{
+					triggerList: trigger_list(a1bfe0ad-efaf-4ad7-b63f-b298404a818f)
+					{
+						script: "dp:MainMenu:Name_ButtonList" \
+							"v:this.lineIndex" \
+							""
+					}
+					onTrigger: function<bool,bool>(685a63d4-7184-4975-af4b-c9d8db0c23f5)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	v:this->Text.text = dp:MainMenu:Name_ButtonList[v:this.lineIndex]" \
+							"	false" \
+							"}"
+					}
+				}
+				setLogo: conditional_script(0e6d1de3-923b-4696-accd-cb09431b06a1)
+				{
+					triggerList: trigger_list(d1f76feb-6237-45e1-af57-f8713cbccb62)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(9a393a49-dab4-4876-b597-19254baa7344)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	v:this->\"Logo's\".image = dp:MainMenu:Button_ImageList[v:this.lineIndex]" \
+							"	false" \
+							"}"
+					}
+				}
+				buttonEvent: function<bool>(8cac4ae5-16b6-4f5a-a223-5efcc2cb70d5)
+				{
+					script: "function()" \
+						"{" \
+						"	if(v:this.lineIndex == 0 && dp:PhoneMenu:phone == false)" \
+						"	{" \
+						"		f:animation_play(v:this->\"Logo's\"->RotateImage)" \
+						"		fire_delayed 1800, ev:Phone_CompoundEvents:open_PhonePopUp()" \
+						"	}" \
+						"		" \
+						"	if(v:this.lineIndex == 0 && dp:PhoneMenu:phone == true)" \
+						"	{" \
+						"		f:animation_play(v:this->\"Logo's\"->RotateImage)" \
+						"		fire_delayed 1800, ev:MainMenu_Events:goTo_PhoneMenu()" \
+						"	}" \
+						"		" \
+						"	" \
+						"	if(v:this.lineIndex == 1)" \
+						"	{" \
+						"		f:animation_play(v:this->\"Logo's\"->RotateImage)" \
+						"		fire_delayed 1800, ev:MainMenu_Events:goTo_MediaMenu()" \
+						"	}" \
+						"		" \
+						"	if(v:this.lineIndex == 2)" \
+						"	{" \
+						"		f:animation_play(v:this->\"Logo's\"->RotateImage)" \
+						"		fire_delayed 1800, ev:MainMenu_Events:goTo_RadioMenu()" \
+						"	}" \
+						"		" \
+						"	if(v:this.lineIndex == 3)" \
+						"	{" \
+						"		f:animation_play(v:this->\"Logo's\"->RotateImage)" \
+						"		fire_delayed 1800, ev:MainMenu_Events:goTo_NaviMenu()" \
+						"	}" \
+						"		" \
+						"	if(v:this.lineIndex == 4)" \
+						"	{" \
+						"		f:animation_play(v:this->\"Logo's\"->RotateImage)" \
+						"		fire_delayed 1800, ev:MainMenu_Events:goTo_InfoMenu()" \
+						"	}" \
+						"		" \
+						"	if(v:this.lineIndex == 5)" \
+						"	{" \
+						"		f:animation_play(v:this->\"Logo's\"->RotateImage)" \
+						"		fire_delayed 1800, ev:MainMenu_Events:goTo_TrafficMenu()" \
+						"	}" \
+						"		" \
+						"	if(v:this.lineIndex == 6)" \
+						"	{" \
+						"		f:animation_play(v:this->\"Logo's\"->RotateImage)" \
+						"		fire_delayed 1800, ev:MainMenu_Events:goTo_CarSettingsMenu()" \
+						"	}" \
+						"		" \
+						"	if(v:this.lineIndex == 7)" \
+						"	{" \
+						"		f:animation_play(v:this->\"Logo's\"->RotateImage)" \
+						"		fire_delayed 1800, ev:MainMenu_Events:goTo_AppsMenu()" \
+						"	}" \
+						"		" \
+						"	false" \
+						"}"
+				}
+			}]
+		name: "Buttons_Instantiator"
+		visible: true
+		width: 700
+		height: 285
+		x: 50
+		y: 110
+		numItems: 7
+		lineMapping: intlist []
+		calculateNumItems: conditional_script(1fc8f581-d8ac-46bf-bb64-84f31604e347)
+		{
+			triggerList: trigger_list(e9c0ddb1-9b82-439a-90ed-9b7c2e996c75)
+			{
+				script: "dp:MainMenu:Name_ButtonList" \
+					""
+			}
+			onTrigger: function<bool,bool>(b74f4211-5f01-4630-8164-d923244b80ce)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	v:this.numItems = length dp:MainMenu:Name_ButtonList" \
+					"	v:this.numItems = length dp:MainMenu:Button_ImageList" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+}

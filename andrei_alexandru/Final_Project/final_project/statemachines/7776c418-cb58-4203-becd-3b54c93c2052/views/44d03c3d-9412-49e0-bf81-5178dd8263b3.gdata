@@ -1,0 +1,191 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(44d03c3d-9412-49e0-bf81-5178dd8263b3)
+{
+	name: "Countries_View"
+	template: @b380d1bf-d029-45e1-aa1b-a53a19df7e62 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(892cd241-f589-4f53-83d4-0bed97885d93)
+		{
+			name: "BackButton"
+			template: @66713f45-2faf-4289-b7d7-da20b83b4fd3 (objectref<GtfContainer_template>)
+			children: children_list []
+			buttonEvent: function<bool>(2e6a3302-d995-4e19-972c-cf42d7e556ed)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_back()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfInstantiator(5c5eb790-44e1-403d-9fad-2a271a26dfcb)
+		{
+			features: feature_list [
+				LayoutPolicyBox(ee203ae9-a612-41e9-9f61-329259604673)
+				{
+					gap: 30
+					layoutDirection: 0
+				}]
+			children: children_list [
+				GtfRectangle(089d10b9-f081-4c7c-b3e5-05f1cbce0d6a)
+				{
+					features: feature_list [
+						TouchShortReleased(6d1fd137-f98b-4e3d-bdac-2e3a2cd9e477)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(763c065f-8b99-4843-9f8a-a550c20ad340)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this.buttonEvent()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(bdc9e34d-33af-4dbe-8b5f-ed2b95d5e52d)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}, 
+						Border(d4f2cbac-9161-433d-99c7-a96323f0f3d2)
+						{
+							borderThickness: 1
+							borderColor: #000000FF
+							borderStyle: 0
+						}, 
+						LineIndex(02e53a3d-687e-4307-8060-720e591f2f08)
+						{
+							lineIndex: 0
+						}]
+					children: children_list [
+						GtfLabel(177eee08-6d16-4062-97f0-f1a2f13692fe)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text"
+							visible: true
+							width: width@089d10b9-f081-4c7c-b3e5-05f1cbce0d6a (propref<int>)
+							height: height@089d10b9-f081-4c7c-b3e5-05f1cbce0d6a (propref<int>)
+							x: 0
+							y: 70
+							text: "label"
+							textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+							font: font_resource(e9c86bc1-b345-47b2-81d7-fbe2082a5910)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}, 
+						GtfImage(b2170cfa-8d5a-4bd6-83fe-fb310adab7a0)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Logo"
+							visible: true
+							width: width@089d10b9-f081-4c7c-b3e5-05f1cbce0d6a (propref<int>)
+							height: height@089d10b9-f081-4c7c-b3e5-05f1cbce0d6a (propref<int>)
+							x: 0
+							y: 0
+							image: image_resource(f845d7f2-bf74-4f93-ba41-4ab81ea3c1ce)
+							{
+								file: ""
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}]
+					name: "Background"
+					visible: true
+					width: 100
+					height: 100
+					x: 0
+					y: 0
+					fillColor: #FFFFFF00
+					buttonEvent: function<bool>(51ae3d54-7467-4624-b135-0841f457c829)
+					{
+						script: "function()" \
+							"{" \
+							"	if(v:this.lineIndex == 0)" \
+							"		fire ev:Navigation_CompoundEvents:goTo_Address()" \
+							"		" \
+							"	if(v:this.lineIndex == 1)" \
+							"		fire ev:Navigation_CompoundEvents:goTo_Address()" \
+							"		" \
+							"	if(v:this.lineIndex == 2)" \
+							"		fire ev:Navigation_CompoundEvents:goTo_Address()" \
+							"		" \
+							"	if(v:this.lineIndex == 3)" \
+							"		fire ev:Navigation_CompoundEvents:goTo_Address()" \
+							"		" \
+							"	false" \
+							"}"
+					}
+					setText: conditional_script(4a5ddca8-56f9-4fed-a3a0-cd08dbc1a663)
+					{
+						triggerList: trigger_list(834aa4f3-16f2-47a6-8ae6-e3aa6977fbff)
+						{
+							script: "dp:NavigationMenu:CountriesNames" \
+								""
+						}
+						onTrigger: function<bool,bool>(9e64aadf-c545-4b4b-876b-63a68088d8dc)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this->Text.text = dp:NavigationMenu:CountriesNames[v:this.lineIndex]" \
+								"	false" \
+								"}"
+						}
+					}
+					setLogo: conditional_script(23afea97-6897-49c7-a061-975757dfbd61)
+					{
+						triggerList: trigger_list(0ab59a4d-3495-4bd7-a3b2-4d8aa6d3a97c)
+						{
+							script: "v:this.lineIndex" \
+								""
+						}
+						onTrigger: function<bool,bool>(83f93ebf-8edc-43ff-8cca-d25d1aca10b5)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this->Logo.image = dp:NavigationMenu:Countries_ImagesList[v:this.lineIndex]" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "Countries_Instantiator"
+			visible: true
+			width: 600
+			height: 200
+			x: 100
+			y: 150
+			numItems: 5
+			lineMapping: intlist []
+			calculateNumItems: conditional_script(f4789693-60c5-4b32-8454-6d02de909749)
+			{
+				triggerList: trigger_list(729daa97-4b15-44da-b791-6fed388ced07)
+				{
+					script: "dp:NavigationMenu:CountriesNames" \
+						""
+				}
+				onTrigger: function<bool,bool>(7c0e2918-5308-4331-92d0-6e378ad5945d)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	v:this.numItems = length dp:NavigationMenu:CountriesNames" \
+						"	v:this.numItems = length dp:NavigationMenu:Countries_ImagesList" \
+						"	false" \
+						"}"
+				}
+			}
+		}]
+	text: "Countries"
+	textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+	font: font@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<font>)
+	image: @28a5929a-87d6-4473-9912-d62fd743c5c6 (objectref<image>)
+	fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+}

@@ -1,0 +1,111 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(39dbcb7b-7dc9-48fc-9ef6-e030aabaf39d)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(c0e860b2-bcac-4f7c-9bcd-b63d40dcd8df)
+		{
+			features: feature_list [
+				Border(166d3b03-ac13-4eb0-bd2e-dbf8add72eb1)
+				{
+					borderThickness: 5
+					borderColor: #FF0000FF
+					borderStyle: 0
+				}]
+			children: children_list [
+				GtfLabel(1a24e020-a874-4a15-9b66-4aa3854e0832)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text"
+					visible: true
+					width: width@c0e860b2-bcac-4f7c-9bcd-b63d40dcd8df (propref<int>)
+					height: 50
+					x: 0
+					y: 120
+					text: "No phone connection found."
+					textColor: #000000FF
+					font: font_resource(561880cb-fa21-4d60-b7e7-2d92557020cd)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 25
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(555d9e29-1a5d-4518-9319-f7c036b61f64)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text2"
+					visible: true
+					width: width@c0e860b2-bcac-4f7c-9bcd-b63d40dcd8df (propref<int>)
+					height: 50
+					x: 0
+					y: 160
+					text: "Using \"Connect\" button."
+					textColor: #3CB371FF
+					font: font_resource(d8494cf0-6eb1-4d01-ba92-cd7c31baaf2b)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 35
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(f7741547-136f-4bcd-a0d0-a204d5e33a97)
+				{
+					name: "ConnectButton"
+					template: @60b61038-4f45-4014-b850-4e3cf3aef87b (objectref<GtfContainer_template>)
+					children: children_list []
+					touchShortReleased: function<bool,int,int,int,int>(0f4ab4cb-63a5-49ac-8a22-b68843e61ba4)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	" \
+							"	fire ev:Phone_CompoundEvents:close_PhonePopUp()" \
+							"	dp:PhoneMenu:phone == true" \
+							"	" \
+							"    false" \
+							"}"
+					}
+					x: 180
+					y: 220
+					text: "CONNECT"
+					textColor: #FF0000FF
+					font: font@60b61038-4f45-4014-b850-4e3cf3aef87b (propref<font>)
+				}, 
+				GtfImage(ad6656a1-3aee-4ee1-b2f8-9d673af392ae)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "NoPhone_Logo"
+					visible: true
+					width: 52
+					height: 52
+					x: 230
+					y: 60
+					image: image_resource(b3027ec8-0ea8-4545-a681-ed60e087da29)
+					{
+						file: "no_phone.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Background"
+			visible: true
+			width: width@39dbcb7b-7dc9-48fc-9ef6-e030aabaf39d (propref<int>)
+			height: height@39dbcb7b-7dc9-48fc-9ef6-e030aabaf39d (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #F5F5DCFF
+		}]
+	name: "PhoneWarning_View"
+	visible: true
+	width: 500
+	height: 300
+	x: 150
+	y: 90
+}
