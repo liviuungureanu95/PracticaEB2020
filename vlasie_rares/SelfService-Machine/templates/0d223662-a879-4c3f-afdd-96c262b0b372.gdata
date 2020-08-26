@@ -1,0 +1,86 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(0d223662-a879-4c3f-afdd-96c262b0b372)
+{
+	name: "Image_ButtonBasic"
+	structure: GtfContainer(f9fe6c34-1405-4186-8838-ae7fbf35b6ee)
+	{
+		features: feature_list [
+			TouchPressed(be4a438b-ff2f-4ddd-8081-907b5e456f59)
+			{
+				touchPressed: function<bool,int,int,int,int>(50eff2c5-4f34-441e-ba9d-98a491198fe9)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(6968050b-d2dd-4d79-a229-5dfb44407d09)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfImage(cd465344-998e-4bb8-9236-8896ff30e7ce)
+			{
+				features: feature_list [
+					ScaleMode(6429f8dd-169a-4a69-8126-29175179e708)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "Icon"
+				visible: true
+				width: 100
+				height: 100
+				x: 0
+				y: 0
+				image: image_resource(119d3eeb-a668-4836-bac8-7aa7368b1cef)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(b4effbe7-5e96-4cca-a150-0d14cc4ee54a)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Name"
+				visible: true
+				width: 100
+				height: 40
+				x: 0
+				y: 100
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(205f0ba9-b3b0-4faf-b06d-c429c92c0ec0)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Button"
+		visible: true
+		width: 100
+		height: 140
+		x: 0
+		y: 0
+	}
+	x: x@f9fe6c34-1405-4186-8838-ae7fbf35b6ee (propref<int>)
+	y: y@f9fe6c34-1405-4186-8838-ae7fbf35b6ee (propref<int>)
+	touchPressed: touchPressed@be4a438b-ff2f-4ddd-8081-907b5e456f59 (propref<function<bool,int,int,int,int>>)
+	visible: visible@cd465344-998e-4bb8-9236-8896ff30e7ce (propref<bool>)
+	image: image@cd465344-998e-4bb8-9236-8896ff30e7ce (propref<image>)
+	scaleMode: scaleMode@6429f8dd-169a-4a69-8126-29175179e708 (propref<int>)
+	touchable: touchable@6968050b-d2dd-4d79-a229-5dfb44407d09 (propref<bool>)
+	text: text@b4effbe7-5e96-4cca-a150-0d14cc4ee54a (propref<string>)
+	textColor: textColor@b4effbe7-5e96-4cca-a150-0d14cc4ee54a (propref<color>)
+	"visible 2": visible@b4effbe7-5e96-4cca-a150-0d14cc4ee54a (propref<bool>)
+}

@@ -1,0 +1,119 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_dynamic_statemachine(f4558b33-ee89-4ab6-827a-8e4cdb8aa428)
+{
+	x: 0
+	y: 0
+	width: 800
+	height: 413
+	name: "FoodOrder"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions [
+		haptic_transition(ca3e80fc-9b02-4665-9f2b-b4aba822b0bd)
+		{
+			action: function<void>(none)
+			target_state: @03beb200-f38f-4529-b6d2-1739bc3311ef (objectref<haptic_dialog_state>)
+			source_dock: 0.5108424F
+			target_dock: 0.410595F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+			event: @64bed2de-d0e2-4398-b1fb-67007f87452f (objectref<event>)
+			condition: function<bool>(none)
+		}, 
+		haptic_transition(3552f44a-3b8d-49e5-97b4-85158a27fdee)
+		{
+			action: function<void>(none)
+			target_state: @0bca8d08-989a-4bf8-9ed5-8566a89f5db1 (objectref<haptic_dialog_state>)
+			source_dock: 0.2693552F
+			target_dock: 0.2638897F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+			event: @122184ad-049b-4ebd-9730-2adf30fd0fff (objectref<event>)
+			condition: function<bool>(none)
+		}]
+	internal_transitions: haptic_internal_transitions []
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(79293d76-0ebd-4b8a-aa2c-b05be1ab4d2e)
+		{
+			x: 229
+			y: 20
+			width: 100
+			height: 100
+			name: "Receipt"
+			entry_action: function<void>(de7d0c0a-8e51-42e3-8fb3-2b058f1872d7)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:display_msg()" \
+					"" \
+					"}"
+			}
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (37316de7-4d24-4be9-b97c-26ea5756d838)
+			priority_stack: priority_stack(none)
+		}, 
+		haptic_dialog_state(03beb200-f38f-4529-b6d2-1739bc3311ef)
+		{
+			x: 232
+			y: 197
+			width: 100
+			height: 100
+			name: "Card"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (9adc7b3e-8e49-4587-b9bc-f9813604e7b7)
+			priority_stack: priority_stack(none)
+		}, 
+		haptic_dialog_state(0bca8d08-989a-4bf8-9ed5-8566a89f5db1)
+		{
+			x: 594
+			y: 175
+			width: 100
+			height: 100
+			name: "Cash"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (4ec1ad8e-4929-455c-8713-f32b9f849abf)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(c91b2940-14d4-49e1-ad7e-b55f1f988bc3)
+	{
+		x: 26
+		y: 46
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(56ba2e77-2269-445d-971b-e6730463f5ba)
+		{
+			action: function<void>(none)
+			target_state: @79293d76-0ebd-4b8a-aa2c-b05be1ab4d2e (objectref<haptic_dialog_state>)
+			source_dock: 0.2430511F
+			target_dock: 0.7881774F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(none)
+}

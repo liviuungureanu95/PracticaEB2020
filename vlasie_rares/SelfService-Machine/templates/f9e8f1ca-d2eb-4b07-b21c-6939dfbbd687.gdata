@@ -1,0 +1,296 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(f9e8f1ca-d2eb-4b07-b21c-6939dfbbd687)
+{
+	name: "List"
+	structure: GtfContainer(75826e14-2e0e-4ffd-a334-693dbb5ee322)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(17ac665c-36c9-49c9-a3ff-2c9bcc122eed)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfContainer_template_instance(248308c6-026d-4537-b05d-5ee3d662b7f7)
+					{
+						name: "Down"
+						template: @42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (objectref<GtfContainer_template>)
+						children: children_list []
+						width: 70
+						height: 50
+						x: 0
+						y: 200
+						lineIndex: lineIndex@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<int>)
+						fillColor: fillColor@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<color>)
+						ButtonEvent: function<bool>(2b08e57d-4a08-4576-b962-7b18edc826cd)
+						{
+							script: "function()" \
+								"{" \
+								"	v:this->^->^->List->\"Instantiator \".IsSelected=true" \
+								"	fire ev:scrollDown()" \
+								"	false" \
+								"}"
+						}
+						text: "Down"
+						textColor: textColor@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<color>)
+						visible: visible@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<bool>)
+						x2: 0
+						x3: 0
+						y2: 0
+						y3: 0
+					}, 
+					GtfContainer_template_instance(0de27079-8070-4f3e-90eb-5f11689d4864)
+					{
+						name: "Up_Button"
+						template: @42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (objectref<GtfContainer_template>)
+						children: children_list []
+						width: 70
+						height: 50
+						x: x@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<int>)
+						y: y@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<int>)
+						lineIndex: lineIndex@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<int>)
+						fillColor: fillColor@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<color>)
+						ButtonEvent: function<bool>(f21328ff-61f4-4d14-9e7c-e1923d5f5da6)
+						{
+							script: "function()" \
+								"{" \
+								"	v:this->^->^->List->\"Instantiator \".IsSelected=true" \
+								"	fire ev:scrollUp()" \
+								"	false" \
+								"}"
+						}
+						text: "Up"
+						textColor: textColor@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<color>)
+						visible: visible@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<bool>)
+						x2: 0
+						x3: 0
+						y2: 0
+						y3: 0
+					}]
+				name: "Background"
+				visible: true
+				width: width@75826e14-2e0e-4ffd-a334-693dbb5ee322 (propref<int>)
+				height: height@75826e14-2e0e-4ffd-a334-693dbb5ee322 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+			}, 
+			GtfContainer(a33ffa76-ac0b-4cd4-b1cd-145d813f0cc4)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfInstantiator(85b4aa80-332b-4f23-b734-f105b80768ab)
+					{
+						features: feature_list [
+							ViewPort(56e6b2d8-c4d1-4b2c-b6b7-06e882d49b7c)
+							{
+								xOffset: 0
+								yOffset: 0
+							}, 
+							LayoutPolicyFlow(edb969e8-7d93-4ddf-8029-9035004cb01a)
+							{
+								horizontalGap: 5
+								verticalGap: 0
+								layoutDirection: 0
+								horizontalChildAlign: 0
+								verticalChildAlign: 0
+							}]
+						children: children_list [
+							GtfContainer_template_instance(f24aa8b0-bbac-4038-ad60-79e537c276d4)
+							{
+								name: "Button"
+								template: @42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (objectref<GtfContainer_template>)
+								children: children_list []
+								width: 315
+								height: 50
+								x: x@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<int>)
+								y: y@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<int>)
+								lineIndex: lineIndex@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<int>)
+								fillColor: fillColor@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<color>)
+								ButtonEvent: function<bool>(d0204888-7d45-4123-8ae9-b963220d3bc1)
+								{
+									script: "function()" \
+										"{" \
+										"	" \
+										"	if(v:this->^->^.listId==0)" \
+										"	{" \
+										"		dp:Order+=v:this.text+\"\\n\"" \
+										"		dp:Order_Price+=dp:DrinkList_Price[v:this.lineIndex]" \
+										"	}" \
+										"	if(v:this->^->^.listId==1)" \
+										"	{" \
+										"		dp:Order+=v:this.text+\"\\n\"" \
+										"		dp:Order_Price+=dp:AlcDrinkList_Price[v:this.lineIndex]" \
+										"	}" \
+										"	if(v:this->^->^.listId==2)" \
+										"	{" \
+										"		dp:Order+=v:this.text+\"\\n\"" \
+										"		dp:Order_Price+=dp:BurgerList_Price[v:this.lineIndex]" \
+										"	}" \
+										"	if(v:this->^->^.listId==3)" \
+										"	{" \
+										"		dp:Order+=v:this.text+\"\\n\"" \
+										"		dp:Order_Price+=dp:SidesList_Price[v:this.lineIndex]" \
+										"	}" \
+										"	if(v:this->^->^.listId==4)" \
+										"	{" \
+										"		dp:Order+=v:this.text+\"\\n\"" \
+										"		dp:Order_Price+=dp:OtherList_Price[v:this.lineIndex]" \
+										"	}" \
+										"	if(v:this->^->^.listId==5)" \
+										"	{" \
+										"		dp:Order+=v:this.text+\"\\n\"" \
+										"		dp:Order_Price+=dp:KidList_Price[v:this.lineIndex]" \
+										"	}" \
+										"	false" \
+										"}"
+								}
+								text: text@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<string>)
+								textColor: textColor@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<color>)
+								visible: visible@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<bool>)
+								SetText: conditional_script(7ec00427-153c-4dc5-a381-ca090dcfe15f)
+								{
+									triggerList: trigger_list(c640b724-c27b-4abb-aa74-4a0bdb69473b)
+									{
+										script: "v:this.lineIndex" \
+											"v:this->^->^.listInput"
+									}
+									onTrigger: function<bool,bool>(18bcc6d8-abd6-4661-a840-4529f5d80dbe)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	v:this.text=v:this->^->^.listInput[v:this.lineIndex]" \
+											"	false" \
+											"}"
+									}
+								}
+							}]
+						name: "Instantiator "
+						visible: true
+						width: width@a33ffa76-ac0b-4cd4-b1cd-145d813f0cc4 (propref<int>)
+						height: height@a33ffa76-ac0b-4cd4-b1cd-145d813f0cc4 (propref<int>)
+						x: 0
+						y: 0
+						numItems: int_scriptedValue(59fb7192-cd2a-444d-84d6-54dfc630f5c2)
+						{
+							triggerList: trigger_list(7b56523e-7118-49fe-999a-71ae30457649)
+							{
+								script: "v:this->^.listInput"
+							}
+							onTrigger: function<bool,bool>(560556d5-aade-4057-9f34-f1bdeda20e15)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<int>(a49359a8-7867-4546-8cf2-09d521b5ad2b)
+							{
+								script: "function()" \
+									"{" \
+									"	" \
+									"	length v:this->^.listInput" \
+									"}"
+							}
+							write: function<bool,int>(1567cc1c-46f7-4298-8b10-3c3395f1c0bc)
+							{
+								script: "function(v:arg0::int)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						lineMapping: intlist []
+						IsSelected: false
+						ListButton_height: 50
+						UpDownMovement: conditional_script(3fb72e8e-2d98-4703-a215-6b6309a273ba)
+						{
+							triggerList: trigger_list(16ed4c20-7034-42e8-85f8-be7bcd37ac88)
+							{
+								script: "ev:scrollDown" \
+									"ev:scrollUp" \
+									"v:this.ListButton_height"
+							}
+							onTrigger: function<bool,bool>(3fb3747d-e8bd-47d3-912d-dbfc61063dfa)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	if(v:this.IsSelected==true)" \
+									"	{	match_event v:event = ev:scrollUp in" \
+									"		{" \
+									"			v:this.yOffset += v:this.ListButton_height/2" \
+									"		}" \
+									"		match_event v:event = ev:scrollDown in" \
+									"		{" \
+									"			v:this.yOffset -= v:this.ListButton_height/2" \
+									"		}" \
+									"	}" \
+									"	v:this.IsSelected=false" \
+									"	" \
+									"	false" \
+									"}"
+							}
+						}
+					}]
+				name: "List"
+				visible: true
+				width: 320
+				height: 260
+				x: 75
+				y: 0
+				listInput: stringlist ["a", "b", "c", "d", "e", "f"]
+				listId: 0
+				LimitYMovement: conditional_script(d19e614b-5932-4f2f-b147-407d95fadb2e)
+				{
+					triggerList: trigger_list(fa91c73c-4cb6-4c7e-a62f-3c03f64212e9)
+					{
+						script: "v:this->\"Instantiator \".ListButton_height" \
+							"v:this.height"
+					}
+					onTrigger: function<bool,bool>(76819fc6-ea68-4e1d-9d6b-f6ba9f173455)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	let v:maximumOffset = length v:this.listInput * v:this->\"Instantiator \".ListButton_height - v:this.height in" \
+							"	{" \
+							"		if(v:this->\"Instantiator \".yOffset > 0)" \
+							"		{" \
+							"			v:this->\"Instantiator \".yOffset = 0" \
+							"		}" \
+							"		if(v:this->\"Instantiator \".yOffset < -v:maximumOffset)" \
+							"		{" \
+							"			v:this->\"Instantiator \".yOffset = -v:maximumOffset" \
+							"		}" \
+							"	}" \
+							"	false" \
+							"}"
+					}
+				}
+			}]
+		name: "ScrollList_Container"
+		visible: true
+		width: 350
+		height: 260
+		x: 0
+		y: 0
+	}
+	width: width@75826e14-2e0e-4ffd-a334-693dbb5ee322 (propref<int>)
+	height: height@75826e14-2e0e-4ffd-a334-693dbb5ee322 (propref<int>)
+	x: x@75826e14-2e0e-4ffd-a334-693dbb5ee322 (propref<int>)
+	y: y@75826e14-2e0e-4ffd-a334-693dbb5ee322 (propref<int>)
+	fillColor: fillColor@17ac665c-36c9-49c9-a3ff-2c9bcc122eed (propref<color>)
+	listInput: listInput@a33ffa76-ac0b-4cd4-b1cd-145d813f0cc4 (propref<stringlist>)
+	listId: listId@a33ffa76-ac0b-4cd4-b1cd-145d813f0cc4 (propref<int>)
+	"width 2": width@a33ffa76-ac0b-4cd4-b1cd-145d813f0cc4 (propref<int>)
+	"height 2": height@a33ffa76-ac0b-4cd4-b1cd-145d813f0cc4 (propref<int>)
+	"x 2": x@a33ffa76-ac0b-4cd4-b1cd-145d813f0cc4 (propref<int>)
+	"y 2": y@a33ffa76-ac0b-4cd4-b1cd-145d813f0cc4 (propref<int>)
+	ButtonEvent: ButtonEvent@0de27079-8070-4f3e-90eb-5f11689d4864 (propref<function<bool>>)
+	"ButtonEvent 2": ButtonEvent@248308c6-026d-4537-b05d-5ee3d662b7f7 (propref<function<bool>>)
+	"x 3": x@248308c6-026d-4537-b05d-5ee3d662b7f7 (propref<int>)
+	"y 3": y@248308c6-026d-4537-b05d-5ee3d662b7f7 (propref<int>)
+	"x 4": x@0de27079-8070-4f3e-90eb-5f11689d4864 (propref<int>)
+	"y 4": y@0de27079-8070-4f3e-90eb-5f11689d4864 (propref<int>)
+}
