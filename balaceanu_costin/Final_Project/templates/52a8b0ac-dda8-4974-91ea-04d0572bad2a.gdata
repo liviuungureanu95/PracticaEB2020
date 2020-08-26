@@ -1,0 +1,202 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfImage_template(52a8b0ac-dda8-4974-91ea-04d0572bad2a)
+{
+	name: "zzzSPINNING2"
+	structure: GtfImage(d6373b05-9e3c-4f32-ad87-2046baa3bbe8)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfImage_template_instance(01d35049-997b-47da-94a9-a2e4cfd07feb)
+			{
+				name: "zzzSPINNIMG 1"
+				template: @7dacb30a-8aae-4364-8743-0fb5e1d17c35 (objectref<GtfImage_template>)
+				children: children_list []
+				x: x@7dacb30a-8aae-4364-8743-0fb5e1d17c35 (propref<int>)
+				y: y@7dacb30a-8aae-4364-8743-0fb5e1d17c35 (propref<int>)
+				visible: visible@7dacb30a-8aae-4364-8743-0fb5e1d17c35 (propref<bool>)
+			}, 
+			GtfParallelAnimation(40e62299-508b-4b93-a9b1-043cd3d75ed2)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfSlowStartS32(64002992-907d-4cb5-8d40-4af6df185174)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Slow start curve 1"
+						enabled: true
+						delay: 8000
+						duration: 2000
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 404
+						end: 152
+						target: x@d6373b05-9e3c-4f32-ad87-2046baa3bbe8 (propref<int>)
+					}, 
+					GtfSlowStartS32(5d1c412d-2c19-43b3-a123-a13ec85fc0d2)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Slow start curve 2"
+						enabled: true
+						delay: 8000
+						duration: 2000
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 222
+						end: 348
+						target: y@d6373b05-9e3c-4f32-ad87-2046baa3bbe8 (propref<int>)
+					}, 
+					GtfFastStartS32(7830b4d1-5598-4a9f-bbac-af162c75e18e)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Fast start curve 1"
+						enabled: true
+						delay: 0
+						duration: 2000
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 404
+						end: 460
+						target: x@d6373b05-9e3c-4f32-ad87-2046baa3bbe8 (propref<int>)
+					}, 
+					GtfFastStartS32(ab9178cd-79d7-48a8-8ba1-54fc4934c0c9)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Fast start curve 2"
+						enabled: true
+						delay: 2000
+						duration: 4000
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 460
+						end: 352
+						target: x@d6373b05-9e3c-4f32-ad87-2046baa3bbe8 (propref<int>)
+					}, 
+					GtfFastStartS32(ff8f02c3-d9b7-4241-9871-e342083a6066)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Fast start curve 3"
+						enabled: true
+						delay: 6000
+						duration: 2000
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 404
+						end: 1
+						target: x@d6373b05-9e3c-4f32-ad87-2046baa3bbe8 (propref<int>)
+					}, 
+					GtfFastStartS32(34fff3da-aaec-476b-a8f5-40edab37c0eb)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Fast start curve 4"
+						enabled: true
+						delay: 0
+						duration: 2000
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 222
+						end: 273
+						target: y@d6373b05-9e3c-4f32-ad87-2046baa3bbe8 (propref<int>)
+					}, 
+					GtfFastStartS32(8fa35d95-40f3-4066-9523-d6cea6d21f71)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Fast start curve 5"
+						enabled: true
+						delay: 2000
+						duration: 4000
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 273
+						end: 161
+						target: y@d6373b05-9e3c-4f32-ad87-2046baa3bbe8 (propref<int>)
+					}, 
+					GtfFastStartS32(e350ce65-a33a-4c2a-a127-1aa468351603)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Fast start curve 6"
+						enabled: true
+						delay: 6000
+						duration: 2000
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 161
+						end: 222
+						target: y@d6373b05-9e3c-4f32-ad87-2046baa3bbe8 (propref<int>)
+					}]
+				name: "Animation 8"
+				enabled: true
+				repeat: 1
+				alternating: false
+				scale: 1F
+				onPlay: function<void,int,bool>(484eb050-e2b0-46c0-9817-f6145a87b709)
+				{
+					script: "function(v:animation_time::int, v:forward::bool)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onPause: function<void,int>(0e19af18-2ffe-4054-b6a2-7c55aaa7d7f3)
+				{
+					script: "function(v:animation_time::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onTerminate: function<void,int,int>(a1baa6ce-6ff5-407b-9c8d-1e9a166cb070)
+				{
+					script: "function(v:animation_time::int, v:terminate::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+			}]
+		name: "Image"
+		visible: true
+		width: 50
+		height: 50
+		x: 0
+		y: 0
+		image: image_resource(5087b044-81a6-4ad3-97ce-6b78bad0f5d7)
+		{
+			file: ""
+		}
+		sRGB: false
+		horizontalAlign: 0
+		verticalAlign: 1
+		animation_start: conditional_script(d2342a2b-e297-41b4-b0d4-2f7bef6c0114)
+		{
+			triggerList: trigger_list(f90f42ea-4803-4dfd-820c-ed2a27c8f7d8)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(fbe9c9f5-8545-4675-9087-258e3de042d1)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	f:animation_play(v:this->\"Animation 8\")" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+	visible: visible@d6373b05-9e3c-4f32-ad87-2046baa3bbe8 (propref<bool>)
+	x: x@d6373b05-9e3c-4f32-ad87-2046baa3bbe8 (propref<int>)
+	y: y@d6373b05-9e3c-4f32-ad87-2046baa3bbe8 (propref<int>)
+}

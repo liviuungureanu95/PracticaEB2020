@@ -1,0 +1,97 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(691de218-dfb0-425a-a4ce-f166f6ce886f)
+{
+	name: "DEL_button"
+	structure: GtfContainer(48a07f44-e516-4d7e-a105-e524e36534c2)
+	{
+		features: feature_list [
+			TouchPressed(1e5204ec-e20e-403c-aee5-ee961d2a619e)
+			{
+				touchPressed: function<bool,int,int,int,int>(f6690b74-d45a-42dc-8b84-2a2a5b94c089)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->Rectangle.borderColor = dp:BorderColor_Pressed" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(c15c1653-6843-484b-b7c2-dc6492358430)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(7610b440-8c4f-46d5-bfa6-e0ebfdc9fe96)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.\"Released_button DEL\"()" \
+						"	v:this->Rectangle.borderColor = dp:BorderColor" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(2a547730-29ac-437a-b0c4-b2e76b812e70)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(334a4c9e-7efb-4c22-98a6-f3bead03cb35)
+			{
+				features: feature_list [
+					Border(3f315e5c-de7c-4860-825b-c08dfad09b83)
+					{
+						borderThickness: 1
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "Rectangle"
+				visible: true
+				width: width@48a07f44-e516-4d7e-a105-e524e36534c2 (propref<int>)
+				height: height@48a07f44-e516-4d7e-a105-e524e36534c2 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #000000FF
+			}, 
+			GtfLabel(0f6bb0d8-cc4e-4a63-899a-c13bae2a512d)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label"
+				visible: true
+				width: width@48a07f44-e516-4d7e-a105-e524e36534c2 (propref<int>)
+				height: height@48a07f44-e516-4d7e-a105-e524e36534c2 (propref<int>)
+				x: 0
+				y: 0
+				text: "DEL"
+				textColor: #FFFFFFFF
+				font: font_resource(68a241a1-9e2d-457a-9f7c-7808536cd7d6)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 40
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 85
+		height: 40
+		x: 0
+		y: 0
+		"Released_button DEL": function<bool>(e43c95b3-90f3-4f04-a3c2-bca02d64cb4f)
+		{
+			script: "function()" \
+				"{" \
+				"	" \
+				"	false" \
+				"}"
+		}
+	}
+	"Released_button DEL": "Released_button DEL"@48a07f44-e516-4d7e-a105-e524e36534c2 (propref<function<bool>>)
+	x: x@48a07f44-e516-4d7e-a105-e524e36534c2 (propref<int>)
+	y: y@48a07f44-e516-4d7e-a105-e524e36534c2 (propref<int>)
+	height: height@48a07f44-e516-4d7e-a105-e524e36534c2 (propref<int>)
+}

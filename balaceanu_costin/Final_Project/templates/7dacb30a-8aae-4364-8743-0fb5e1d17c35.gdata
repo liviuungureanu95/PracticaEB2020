@@ -1,0 +1,182 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfImage_template(7dacb30a-8aae-4364-8743-0fb5e1d17c35)
+{
+	name: "zzzSPINNIMG"
+	structure: GtfImage(fa4907ad-7496-4d3a-b846-0e08b5f3a96e)
+	{
+		features: feature_list [
+			Rotation(c152475f-95b6-47ca-9c89-f5b05aa44e77)
+			{
+				rotationEnabled: true
+				rotationAngleX: 0F
+				rotationAngleY: 0F
+				rotationAngleZ: 0F
+			}, 
+			Scaling(29ec081d-c079-4abf-b66a-08a0e998fdf5)
+			{
+				scalingEnabled: true
+				scalingX: 100F
+				scalingY: 100F
+				scalingZ: 100F
+			}, 
+			Shearing(7bccd6e1-acb4-4a0a-abc5-0c4b24a009f4)
+			{
+				shearingEnabled: true
+				shearingXbyY: 0F
+				shearingXbyZ: 0F
+				shearingYbyX: 0F
+				shearingYbyZ: 0F
+				shearingZbyX: 0F
+				shearingZbyY: 0F
+			}, 
+			Pivot(3eeac8a7-bf9b-403b-807b-42b60d0d94cd)
+			{
+				pivotX: float_scriptedValue(d37fd252-2d80-4abd-a297-5b8a96e5a301)
+				{
+					triggerList: trigger_list(713dfaa1-a717-4aae-aa63-238177b9e2ff)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(bbf4d807-ab5f-4082-81e2-a8e11e9610f1)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<float>(0b9f824c-18c1-47d3-9898-46b482392c11)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	f:int2float(v:this.width/2)" \
+							"}"
+					}
+					write: function<bool,float>(b0ea61d3-e25d-4f4c-b23b-635759f39779)
+					{
+						script: "function(v:arg0::float)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				pivotY: float_scriptedValue(5d526e6d-e0c5-4f5e-b855-07f5577d302e)
+				{
+					triggerList: trigger_list(6bd93843-dc72-4078-bc3e-bf6e38db9ac3)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(a8f2e782-5015-4f3a-84e7-f92e2111786b)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<float>(96f96d85-fee1-4c6b-8d24-694b7b7ced14)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	f:int2float(v:this.height/2)" \
+							"}"
+					}
+					write: function<bool,float>(3d3cb448-568b-440a-812c-8eb711654573)
+					{
+						script: "function(v:arg0::float)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				pivotZ: 0F
+			}, 
+			ScaleMode(c6169f28-1644-4e4d-9d6e-88e8443f7e98)
+			{
+				scaleMode: 1
+			}]
+		children: children_list [
+			GtfParallelAnimation(ede6adca-77a8-4349-9c70-7b4821103d82)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLinearInterpolationFloat(8603fcb7-d8c2-4f0f-83da-ff1734bd18fa)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Linear interpolation curve 1"
+						enabled: true
+						delay: 0
+						duration: 200
+						repeat: 0
+						alternating: false
+						relative: false
+						start: 0F
+						end: -360F
+						target: rotationAngleZ@c152475f-95b6-47ca-9c89-f5b05aa44e77 (propref<float>)
+					}]
+				name: "Animation 2"
+				enabled: true
+				repeat: 1
+				alternating: false
+				scale: 1F
+				onPlay: function<void,int,bool>(b24d7e8d-b87a-4b9f-9726-37d14273c3ec)
+				{
+					script: "function(v:animation_time::int, v:forward::bool)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onPause: function<void,int>(fad1fb8a-4fc6-4fba-bbae-a160ff7d0356)
+				{
+					script: "function(v:animation_time::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onTerminate: function<void,int,int>(490411b5-c129-4fb0-bcc2-b4e9bd013ffd)
+				{
+					script: "function(v:animation_time::int, v:terminate::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+			}]
+		name: "Image"
+		visible: true
+		width: 50
+		height: 50
+		x: 0
+		y: 0
+		image: image_resource(02e61608-cf21-4980-9e1c-569aa929cd7d)
+		{
+			file: "VIEW2.png"
+		}
+		sRGB: false
+		horizontalAlign: 0
+		verticalAlign: 1
+		start_animation: conditional_script(ece95ce6-abbd-48f6-a642-ef9359631232)
+		{
+			triggerList: trigger_list(9b5d9f28-9580-4321-999b-c9b8686e064c)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(fbff21c8-7708-482f-b4ec-7e2e4b117d22)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	f:animation_play(v:this->\"Animation 2\")" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+	x: x@fa4907ad-7496-4d3a-b846-0e08b5f3a96e (propref<int>)
+	y: y@fa4907ad-7496-4d3a-b846-0e08b5f3a96e (propref<int>)
+	visible: visible@fa4907ad-7496-4d3a-b846-0e08b5f3a96e (propref<bool>)
+}

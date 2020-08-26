@@ -1,0 +1,60 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_compound_state(e6127676-b1e1-450a-ae42-7e53bea36ff2)
+{
+	x: 121
+	y: 525
+	width: 300
+	height: 200
+	name: "Google"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions []
+	internal_transitions: haptic_internal_transitions []
+	background_color: #000000FF
+	states: haptic_states [
+		haptic_dialog_state(74c90059-abb3-44e6-84d2-e4f7f31e3553)
+		{
+			x: 82
+			y: 13
+			width: 100
+			height: 100
+			name: "Google"
+			entry_action: function<void>(f8f63084-8539-4615-8b6c-a7d16e5d1f68)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:KEYBOARD:Google_Txt = \"\"" \
+					"}"
+			}
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (c706c2de-ea34-475d-a9d3-6fe8fc8f0057)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(71d49076-c51d-4447-ae8c-363e9346c0e4)
+	{
+		x: 17
+		y: 50
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(f8e10215-590f-4316-adfa-60abb964e57b)
+		{
+			action: function<void>(none)
+			target_state: @74c90059-abb3-44e6-84d2-e4f7f31e3553 (objectref<haptic_dialog_state>)
+			source_dock: 0.2610859F
+			target_dock: 0.7518429F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(none)
+}

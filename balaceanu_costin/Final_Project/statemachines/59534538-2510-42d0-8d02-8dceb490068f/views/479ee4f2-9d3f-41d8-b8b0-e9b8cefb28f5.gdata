@@ -1,0 +1,100 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(479ee4f2-9d3f-41d8-b8b0-e9b8cefb28f5)
+{
+	name: "INFO_car_View"
+	template: @95461b8a-82f0-421b-ba66-6095f03a1846 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(6f08ffa8-c1aa-4172-b576-d7c39d5e6489)
+		{
+			name: "SETTINGS_Button 1"
+			template: @b530f6c5-1e45-4ddc-9586-3b30cc4d5800 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 55
+			y: 135
+			image: image_resource(0e69504f-80f8-456d-a2e7-6a0ec6196831)
+			{
+				file: "TYRE_button.jpg"
+			}
+			"Button function": function<bool>(a0e206ad-ffef-4c61-ad3b-e4596e170be0)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoTo_TirePressure()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(800da1f7-72bf-4e12-88e9-2103e8f0e639)
+		{
+			name: "SETTINGS_Button 2"
+			template: @b530f6c5-1e45-4ddc-9586-3b30cc4d5800 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 420
+			y: 135
+			image: image_resource(48e2c3f2-6fcc-489f-927b-1bd195655f27)
+			{
+				file: "LIGHTS_button.jpg"
+			}
+			"Button function": function<bool>(5de59272-daa0-4cf5-9059-4f36467f6db0)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:\"GoTo_LightsON/OFF\"()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(b53037a9-3f05-445c-924b-d8144b2d8366)
+		{
+			name: "SETTINGS_Button 3"
+			template: @b530f6c5-1e45-4ddc-9586-3b30cc4d5800 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 55
+			y: 300
+			image: image_resource(3dc18cc2-196e-4e80-90a6-3eb2e2e944ae)
+			{
+				file: "OIL_button.jpg"
+			}
+			"Button function": function<bool>(2807be6a-702c-41d3-87e0-42eed70ed811)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoTo_OilLevel()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(321e8cf3-d18e-4d67-8791-8d924e623504)
+		{
+			name: "SETTINGS_Button 4"
+			template: @b530f6c5-1e45-4ddc-9586-3b30cc4d5800 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 420
+			y: 300
+			image: image_resource(057eccc7-3558-4f09-9fbc-a1b17fe0cccc)
+			{
+				file: "AC_button.jpg"
+			}
+			"Button function": function<bool>(0341a9f9-d3e3-48fc-8422-4875077f3f9f)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoTo_AC()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfRectangle_template_instance(93d2fbbc-8ca2-40ff-94c1-1aa0e16fd49f)
+		{
+			name: "TopBar 1"
+			template: @946dc760-ee83-4771-bd7f-52f3864de092 (objectref<GtfRectangle_template>)
+			children: children_list []
+			MainText: "Info Car"
+			BackButton_Background: BackButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Background: MainMenuButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Visible: MainMenuButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			BackButton_Visible: false
+			Released_BACK: Released_BACK@946dc760-ee83-4771-bd7f-52f3864de092 (propref<function<bool>>)
+		}]
+}

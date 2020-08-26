@@ -1,0 +1,485 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(24c66f9d-848b-43ef-a6bc-a16878c97837)
+{
+	name: "MAKE_Call_View"
+	template: @95461b8a-82f0-421b-ba66-6095f03a1846 (objectref<GtfView_template>)
+	children: children_list [
+		GtfRectangle_template_instance(454a3cd8-beae-485c-991e-78835e74e54f)
+		{
+			name: "TopBar 1"
+			template: @946dc760-ee83-4771-bd7f-52f3864de092 (objectref<GtfRectangle_template>)
+			children: children_list []
+			MainText: "Calling ..."
+			BackButton_Background: BackButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Background: MainMenuButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Visible: false
+			BackButton_Visible: false
+			Released_BACK: function<bool>(db9cffd0-9c32-4df6-bfcc-c7f3f6385a1a)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoTo_Phone()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfImage(bdfce059-e0aa-443b-a0bd-8264c90ba4c5)
+		{
+			features: feature_list [
+				Rotation(2ba4aec6-9cd2-4152-97c5-fd50d5634cad)
+				{
+					rotationEnabled: true
+					rotationAngleX: 0F
+					rotationAngleY: 0F
+					rotationAngleZ: 0F
+				}, 
+				Scaling(cbe9556b-bbe5-4809-90b5-83066f6aece5)
+				{
+					scalingEnabled: true
+					scalingX: 100F
+					scalingY: 100F
+					scalingZ: 100F
+				}, 
+				Shearing(e0927d33-68b9-41e7-bcfc-38a4fe1b3653)
+				{
+					shearingEnabled: true
+					shearingXbyY: 0F
+					shearingXbyZ: 0F
+					shearingYbyX: 0F
+					shearingYbyZ: 0F
+					shearingZbyX: 0F
+					shearingZbyY: 0F
+				}, 
+				Pivot(c22104db-bc40-4449-a99d-b66f42dd25ce)
+				{
+					pivotX: float_scriptedValue(c1445472-cc45-419d-96c5-221389470eea)
+					{
+						triggerList: trigger_list(e646f2be-e235-4513-ad3c-339c8376b4e6)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(0e2349b9-77d6-402a-9113-5e7fc8022caa)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<float>(bc48cd41-d259-4bca-9a74-52be4c21c112)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:int2float(v:this.width/2)" \
+								"}"
+						}
+						write: function<bool,float>(66c02122-59dd-465a-ba1a-baf3483ca356)
+						{
+							script: "function(v:arg0::float)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					pivotY: float_scriptedValue(fd325d57-d14f-4349-8366-75f6e4121209)
+					{
+						triggerList: trigger_list(3c8a7783-e0c0-4da6-a9b3-f49b606cd5a7)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(302280fc-bc78-4194-8746-fc207d409d62)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<float>(e0d58771-e0b7-43a3-8d52-f7d30275d4be)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:int2float(v:this.height/2)" \
+								"}"
+						}
+						write: function<bool,float>(c7e58967-588e-4dce-81e6-d130a79ff15e)
+						{
+							script: "function(v:arg0::float)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					pivotZ: 0F
+				}]
+			children: children_list [
+				GtfImage(9f311418-d667-4604-af88-41446c10ac84)
+				{
+					features: feature_list [
+						Rotation(b93ab6f3-3948-4215-93e7-bb762da60489)
+						{
+							rotationEnabled: true
+							rotationAngleX: 0F
+							rotationAngleY: 0F
+							rotationAngleZ: 0F
+						}, 
+						Scaling(7a912158-a578-4482-ba37-ae085e77c008)
+						{
+							scalingEnabled: true
+							scalingX: 100F
+							scalingY: 100F
+							scalingZ: 100F
+						}, 
+						Shearing(c9e0ac4c-b686-483b-9eac-2dcdd71386e5)
+						{
+							shearingEnabled: true
+							shearingXbyY: 0F
+							shearingXbyZ: 0F
+							shearingYbyX: 0F
+							shearingYbyZ: 0F
+							shearingZbyX: 0F
+							shearingZbyY: 0F
+						}, 
+						Pivot(9a581f85-14ce-4a2e-8b88-f889caeb734a)
+						{
+							pivotX: float_scriptedValue(cd3631ba-dbda-46be-be5e-6fe794124317)
+							{
+								triggerList: trigger_list(c4fea464-654f-4a62-a24d-4f50925e5c41)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(287fec6f-63b2-47b1-aa09-5c7fb1e20f42)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<float>(163f537a-62c2-4083-9c95-c6f42ddb9232)
+								{
+									script: "function()" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	f:int2float(v:this.width/2)" \
+										"}"
+								}
+								write: function<bool,float>(5f7844c6-95bc-4f80-a301-8b807d0baa49)
+								{
+									script: "function(v:arg0::float)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							pivotY: float_scriptedValue(228eede7-d7e2-4dbc-b85c-ec8d77c92b8b)
+							{
+								triggerList: trigger_list(a8c481e7-5c50-4dfd-9407-e0ec127a124f)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(31a8521b-5fb1-4413-b3e5-2b1c3fdac2fe)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<float>(8cc7a406-f7a3-4889-877e-4ec28fa49723)
+								{
+									script: "function()" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	f:int2float(v:this.height/2)" \
+										"}"
+								}
+								write: function<bool,float>(acc4b191-8997-42dc-a739-b4d0dd244a69)
+								{
+									script: "function(v:arg0::float)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							pivotZ: 0F
+						}]
+					children: children_list [
+						GtfParallelAnimation(f88b0123-b552-45f5-913a-6b17e624eda8)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(80afcf15-41b3-4601-bbe5-b3958878305b)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve 5"
+									enabled: true
+									delay: 0
+									duration: 500
+									repeat: 0
+									alternating: false
+									relative: false
+									start: 0
+									end: 152
+									target: width@9f311418-d667-4604-af88-41446c10ac84 (propref<int>)
+								}]
+							name: "call_wave"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(97586c0c-b620-44b3-8742-baca8cdc69a1)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(1ae5d8d8-a5e4-472c-96f2-f6b5dd5ea30c)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(9e5fcb18-51cb-4d50-9b93-9d9ff15de3cf)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}]
+					name: "Call_wave"
+					visible: true
+					width: 152
+					height: 211
+					x: 145
+					y: -63
+					image: image_resource(f2d518cc-bd93-4af4-a05b-a3a03b40e799)
+					{
+						file: "CALL_wave.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+					Animation_start: conditional_script(4d9f55c7-30ed-4521-950b-89ff6fc27389)
+					{
+						triggerList: trigger_list(6174b31b-d10f-422b-b77b-d883f3cc8f73)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(37215fe7-a7a4-470d-94c3-1a99edd681b1)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	f:animation_play(v:this->call_wave)" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfParallelAnimation(56405973-f242-4781-ad90-afe403fe819b)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationFloat(0f2126af-6742-4f95-90ff-d40e7972f8dd)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Linear interpolation curve 10"
+							enabled: true
+							delay: 0
+							duration: 500
+							repeat: 0
+							alternating: false
+							relative: false
+							start: 0F
+							end: -5F
+							target: rotationAngleZ@2ba4aec6-9cd2-4152-97c5-fd50d5634cad (propref<float>)
+						}]
+					name: "shaking_phone"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(de826716-2c17-427d-93e5-40294bf6d79c)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(93d468cd-63ae-4027-bb7c-69a73dd36208)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(af13cea1-2342-4d0f-b1c3-3158086df0d9)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+				}]
+			name: "Phone_img"
+			visible: true
+			width: 320
+			height: 320
+			x: 0
+			y: 162
+			image: image_resource(96c07691-8af5-46c7-a094-7b58931a0bba)
+			{
+				file: "PHONE_call_background.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+			Animation_start: conditional_script(7ace06f1-3fb1-43c8-bfa0-e5e44de72381)
+			{
+				triggerList: trigger_list(f0a482ac-eb0c-49d3-99ac-ed9932366361)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(9091e638-f33a-4ce1-a2ac-4cdf34ec50d3)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	f:animation_play(v:this->shaking_phone)" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfLabel(86c30494-84a0-4fb0-8e38-af6e685d1837)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Not_Answer"
+			visible: false
+			width: 271
+			height: 52
+			x: 404
+			y: 175
+			text: "The person is not answer !"
+			textColor: #FF0000FF
+			font: font_resource(d47c4894-7ce7-41fa-a31d-43e3a13c4fb9)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfContainer(3efa34e6-c642-4f32-9ccd-ba3e0d81441e)
+		{
+			features: feature_list [
+				TouchShortReleased(817413c0-b198-42c9-9d28-fb55cdb01a7e)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(29b220bf-aceb-46c6-9242-b8bdccd2e7c0)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:GoTo_Phone()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(c0a27ef1-6630-4e06-832f-b8fd40111876)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfImage(d6bf67d7-b42e-48ca-8d94-072946af4609)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "CLOSE"
+					visible: true
+					width: width@3efa34e6-c642-4f32-9ccd-ba3e0d81441e (propref<int>)
+					height: height@3efa34e6-c642-4f32-9ccd-ba3e0d81441e (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(e6a2c841-8571-4d2b-b3a9-f00aca7a0d2a)
+					{
+						file: "CLOSE_Call.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(ccac7bfc-be9d-4878-90d8-782c9a46a643)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "CLOSE_sign"
+					visible: false
+					width: width@3efa34e6-c642-4f32-9ccd-ba3e0d81441e (propref<int>)
+					height: height@3efa34e6-c642-4f32-9ccd-ba3e0d81441e (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(48cd538f-b39f-4425-8101-3ce5218a902c)
+					{
+						file: "CLOSE_Call_sign.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Close_Call"
+			visible: false
+			width: 100
+			height: 100
+			x: 493
+			y: 302
+		}]
+	Condition: conditional_script(3127b48c-4853-40d7-a79c-b7357ec4fd58)
+	{
+		triggerList: trigger_list(d5637181-ea7a-4083-b255-efc8762da34c)
+		{
+			script: "ev:PHONE:Phone1" \
+				"ev:PHONE:Phone2" \
+				"ev:PHONE:Phone3" \
+				"ev:PHONE:Phone4" \
+				""
+		}
+		onTrigger: function<bool,bool>(1afef083-f8b4-4bb9-af35-b56a2f92394f)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	match_event v:event = ev:PHONE:Phone1 in" \
+				"{" \
+				"	v:this->Not_Answer.visible = true" \
+				"}" \
+				"	match_event v:event = ev:PHONE:Phone2 in" \
+				"{" \
+				"	v:this->Close_Call.visible = true" \
+				"}" \
+				"	match_event v:event = ev:PHONE:Phone3 in" \
+				"{" \
+				"	v:this->Close_Call->CLOSE_sign.visible = true" \
+				"}" \
+				"	match_event v:event = ev:PHONE:Phone4 in" \
+				"{" \
+				"	fire ev:GoTo_Phone()" \
+				"}" \
+				"" \
+				"	false" \
+				"}"
+		}
+	}
+}

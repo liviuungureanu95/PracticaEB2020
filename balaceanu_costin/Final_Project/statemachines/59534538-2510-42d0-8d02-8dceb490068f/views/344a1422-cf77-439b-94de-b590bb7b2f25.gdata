@@ -1,0 +1,227 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(344a1422-cf77-439b-94de-b590bb7b2f25)
+{
+	name: "Search_View"
+	template: @95461b8a-82f0-421b-ba66-6095f03a1846 (objectref<GtfView_template>)
+	children: children_list [
+		GtfRectangle_template_instance(bc61edf8-cb3b-4af8-bc49-1068d9e93f38)
+		{
+			name: "TopBar 1"
+			template: @946dc760-ee83-4771-bd7f-52f3864de092 (objectref<GtfRectangle_template>)
+			children: children_list []
+			MainText: "Waze"
+			BackButton_Background: BackButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Background: MainMenuButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Visible: MainMenuButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			BackButton_Visible: false
+			Released_BACK: Released_BACK@946dc760-ee83-4771-bd7f-52f3864de092 (propref<function<bool>>)
+		}, 
+		GtfImage(97566a71-ca4a-46a2-b6a8-6dbfdd57e7ca)
+		{
+			features: feature_list [
+				ScaleMode(9f76b8b6-c58b-452e-93b8-576787689584)
+				{
+					scaleMode: 1
+				}]
+			children: children_list [
+				GtfContainer(6b758802-0fa4-4189-adca-d51555f87981)
+				{
+					features: feature_list [
+						TouchShortReleased(9485b458-8af9-44ad-a565-0dd3eed8efc7)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(1541e2f5-11c6-4a5b-959a-8b15425f24e0)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:GoTo_Waze()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(21cb595e-396a-4d1b-8e22-bbc98535d97e)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "back"
+					visible: true
+					width: 44
+					height: 52
+					x: 14
+					y: 22
+				}, 
+				GtfLabel(0daa4581-3b82-4fb2-972f-1a6347bc68b5)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "search"
+					visible: true
+					width: 615
+					height: 60
+					x: 91
+					y: 16
+					text: string_scriptedValue(ebb0b01e-411d-4812-a139-e6a965693f7a)
+					{
+						triggerList: trigger_list(a69140c4-07eb-4804-9660-bc2a683c24c0)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(1d3688d8-eef6-4424-afb1-da2c99b37b0b)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(d0dbfa67-47f6-41c3-af33-5fd6edfe9056)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	dp:WAZE:Search2" \
+								"}"
+						}
+						write: function<bool,string>(92b9cc38-2848-48fc-8d76-35be6caa6c3c)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(9483472e-b81d-418b-8c65-d6cce5cc8fc1)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+					inputScript: conditional_script(96c4c388-9660-4f12-84c5-017fbfb9897a)
+					{
+						triggerList: trigger_list(0da945b5-032d-4914-8cb6-fa432d07666b)
+						{
+							script: "ev:KEYBOARD:keypadPress" \
+								""
+						}
+						onTrigger: function<bool,bool>(3d40823a-b747-468f-a4d9-a56eb33ac303)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	match_event v:e = ev:KEYBOARD:keypadPress in " \
+								"		let v:val = v:e.Value in " \
+								"			if(v:val == \"space\")" \
+								"				dp:WAZE:Search2 += \" \"" \
+								"			else if(v:val == \"delete\")" \
+								"				dp:WAZE:Search2 = \"\"" \
+								"			else" \
+								"				dp:WAZE:Search2 += v:val	" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfImage(15c8df33-8cb2-4a35-85ef-86918133a118)
+				{
+					features: feature_list [
+						StateTouched(326a8e84-e895-44c5-8229-8d5aa0994f43)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "keyboard"
+					visible: true
+					width: 40
+					height: 40
+					x: 737
+					y: 26
+					image: image_resource(8f584cc3-0ee5-4321-84d5-ada7f35ff800)
+					{
+						file: "WAZE_keyboard.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfContainer(e48fbfc4-6328-4a68-aede-8dfacf48e174)
+				{
+					features: feature_list [
+						TouchShortReleased(39208262-6efb-4632-9dbb-100c4b3dde18)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(a29572be-eaf3-488e-a2d4-dfa8bd4e3085)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->KEYBOARD.visible = true" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(3701c3bb-eec9-415f-9940-9db16873c951)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "keyboard_button"
+					visible: true
+					width: 685
+					height: 41
+					x: 94
+					y: 26
+				}, 
+				GtfContainer_template_instance(6902b990-9dc4-4274-a975-caf14c62c656)
+				{
+					name: "KEYBOARD"
+					template: @710457c0-db12-4a2e-8b40-5b77a4a35792 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 92
+					y: 195
+					visible: false
+					"Released_button DEL": function<bool>(649e877d-4679-40a5-a9e3-7ccaef52306a)
+					{
+						script: "function()" \
+							"{" \
+							"	fire ev:KEYBOARD:keypadPress(\"delete\")" \
+							"	false" \
+							"}"
+					}
+					Released_Button_ENTER: function<bool>(4b2354ba-40f5-4c42-9b24-d30b79261023)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^->KEYBOARD.visible = false" \
+							"	if(dp:WAZE:Search2 !=\"\")" \
+							"	{" \
+							"		fire ev:GoTo_Route()" \
+							"	}" \
+							"	false" \
+							"}"
+					}
+				}]
+			name: "Search_menu"
+			visible: true
+			width: 800
+			height: 410
+			x: 0
+			y: 70
+			image: image_resource(d40e1540-4a23-4544-9bac-b4b080c9242b)
+			{
+				file: "WAZE_2.jpeg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+}

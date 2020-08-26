@@ -1,0 +1,121 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(009766d8-770d-44e7-8312-4d98a2b3148b)
+{
+	name: "ADD_Name_View"
+	template: @95461b8a-82f0-421b-ba66-6095f03a1846 (objectref<GtfView_template>)
+	children: children_list [
+		GtfRectangle_template_instance(e17998fb-eea4-4f9b-ab05-c98900a1359b)
+		{
+			name: "TopBar 1"
+			template: @946dc760-ee83-4771-bd7f-52f3864de092 (objectref<GtfRectangle_template>)
+			children: children_list []
+			MainText: "ADD Name"
+			BackButton_Background: BackButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Background: MainMenuButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Visible: MainMenuButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			BackButton_Visible: BackButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			Released_BACK: function<bool>(f69c9314-0f0d-4c3a-acfb-462761facc06)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoTo_Phone()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(48418090-258d-4e0b-92fb-10f77f81e388)
+		{
+			name: "KEYBOARD"
+			template: @710457c0-db12-4a2e-8b40-5b77a4a35792 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 30
+			y: 250
+			visible: false
+			"Released_button DEL": function<bool>(1d30ebf8-789a-45c6-b9d2-325e702c6b3e)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:KEYBOARD:keypadPress(\"delete\")" \
+					"	false" \
+					"}"
+			}
+			Released_Button_ENTER: function<bool>(cbff9302-ed8a-42a5-a00e-9caae0a0ab05)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this->^->KEYBOARD.visible = false" \
+					"	v:this->^->name_txt.visible = false" \
+					"	fire ev:GoTo_Phone()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfLabel(c4dc80a2-1d4c-4c4c-99b4-030acc4ad249)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "name_txt"
+			visible: true
+			width: 240
+			height: 100
+			x: 214
+			y: 142
+			text: @50538a27-0f41-479e-86d0-83a57ea31a9e (objectref<string>)
+			textColor: #FFFFFFFF
+			font: font_resource(690b38c1-6dfe-4ed4-a1c0-32d21a54abe3)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+			inputScript: conditional_script(e6108fd3-8c43-407e-991e-8d654c0effec)
+			{
+				triggerList: trigger_list(1076c271-2c1a-42af-8dc8-964926d33744)
+				{
+					script: "ev:KEYBOARD:keypadPress" \
+						""
+				}
+				onTrigger: function<bool,bool>(6f7a7c88-233c-4183-b3b1-9f9581e8a6bb)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	match_event v:e = ev:KEYBOARD:keypadPress in " \
+						"		let v:val = v:e.Value in " \
+						"			if(v:val == \"space\")" \
+						"				dp:PHONE:Name += \" \"" \
+						"			else if(v:val == \"delete\")" \
+						"				dp:PHONE:Name = \"\"" \
+						"			else" \
+						"				dp:PHONE:Name += v:val	" \
+						"" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfContainer_template_instance(94c8e583-5e21-4154-802a-a9a6f0d1826d)
+		{
+			name: "Ambient_Button 1"
+			template: @950de735-4162-40b9-ba9e-78f31c58fa76 (objectref<GtfContainer_template>)
+			children: children_list []
+			Color: #FFFFFF00
+			BorderColor: BorderColor@950de735-4162-40b9-ba9e-78f31c58fa76 (propref<color>)
+			text: "Click to add name !"
+			x: 244
+			y: 241
+			touchShortReleased: function<bool,int,int,int,int>(83d8d5db-cc8d-41c6-92d5-a1ce65faa65e)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->KEYBOARD.visible = true" \
+					"	v:this->^->\"Ambient_Button 1\".visible = false" \
+					"    false" \
+					"}"
+			}
+			width: 175
+			height: height@950de735-4162-40b9-ba9e-78f31c58fa76 (propref<int>)
+			visible: visible@950de735-4162-40b9-ba9e-78f31c58fa76 (propref<bool>)
+		}]
+}

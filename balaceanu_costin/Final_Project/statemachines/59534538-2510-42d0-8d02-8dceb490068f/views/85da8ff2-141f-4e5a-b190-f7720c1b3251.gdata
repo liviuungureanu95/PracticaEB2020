@@ -1,0 +1,380 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(85da8ff2-141f-4e5a-b190-f7720c1b3251)
+{
+	name: "Tire_Pressure"
+	template: @95461b8a-82f0-421b-ba66-6095f03a1846 (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(15c3d0bc-6e5f-47cc-864b-36d0f21a51f1)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "info_txt"
+			visible: true
+			width: 800
+			height: 33
+			x: 0
+			y: 80
+			text: "Click the weel to check the pressure !"
+			textColor: #00FF00FF
+			font: font_resource(d4b9d93e-35ce-4b52-8595-db0f6a766b0e)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(8ff49d8e-8498-47f1-a1ae-dce6dc47894e)
+		{
+			name: "WEEL_Button 1"
+			template: @afcf08ad-b7d0-4614-a3a9-99757a08af1f (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 40
+			y: 210
+			"Release button": function<bool>(462dc8f8-c1b5-4b2c-b6cc-e346c49ce974)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:WEELS:Weel1 = true" \
+					"	if(dp:WEELS:Weel1 == true)" \
+					"	{" \
+					"		fire_delayed 1800, ev:WEELS:Weel1()" \
+					"	}" \
+					"	dp:WEELS:Pressure_Tyre = \"OK\"" \
+					"	false" \
+					"}"
+			}
+			Condition: conditional_script(1cb62c2d-7fa1-4eda-90e0-46c423180cbd)
+			{
+				triggerList: trigger_list(ef4a321a-e2ae-4a51-82e8-dd113d0d7bf8)
+				{
+					script: "ev:WEELS:Weel1" \
+						""
+				}
+				onTrigger: function<bool,bool>(67202a95-e80d-4955-982e-b3ad3ba739af)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	match_event v:event = ev:WEELS:Weel1 in" \
+						"{" \
+						"	if(dp:WEELS:Weel1 == true)" \
+						"	{" \
+						"	v:this->^->ok_weel1.visible = true" \
+						"	}" \
+						"}" \
+						"" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfContainer_template_instance(c0a9837d-c729-469d-a8d6-b451d4622d1a)
+		{
+			name: "WEEL_Button 1"
+			template: @afcf08ad-b7d0-4614-a3a9-99757a08af1f (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 225
+			y: 210
+			"Release button": function<bool>(fa030672-128d-49f1-9610-bc9e0e0dfb6a)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:WEELS:Weel2 = true" \
+					"	if(dp:WEELS:Weel2 == true)" \
+					"	{" \
+					"		fire_delayed 1800, ev:WEELS:Weel2()" \
+					"	}" \
+					"	dp:WEELS:Pressure_Tyre = \"OK\"" \
+					"	false" \
+					"}"
+			}
+			Conditie: conditional_script(5409d221-6ed2-4186-989f-10d8c8e9650d)
+			{
+				triggerList: trigger_list(84ebfe60-9024-4683-a20f-48783cf59435)
+				{
+					script: "ev:WEELS:Weel2" \
+						""
+				}
+				onTrigger: function<bool,bool>(7a2fec60-2b7b-4bde-a470-3e0e41fe88d1)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	match_event v:event = ev:WEELS:Weel2 in" \
+						"{" \
+						"	if(dp:WEELS:Weel2	== true)" \
+						"	{" \
+						"	v:this->^->ok_weel2.visible = true" \
+						"	}" \
+						"}" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfContainer_template_instance(f5a6b52f-370a-45c7-90d9-9179efff8c56)
+		{
+			name: "WEEL_Button 2"
+			template: @afcf08ad-b7d0-4614-a3a9-99757a08af1f (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 415
+			y: 210
+			"Release button": function<bool>(dc4e7f87-86e3-461b-a9b7-c8e44308a9a9)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:WEELS:Weel3 = true" \
+					"	if(dp:WEELS:Weel3 == true)" \
+					"	{" \
+					"		fire_delayed 1800, ev:WEELS:Weel3()" \
+					"	}" \
+					"	dp:WEELS:Pressure_Tyre = \"OK\"" \
+					"	false" \
+					"}"
+			}
+			Conditie: conditional_script(bf946ba9-fcce-4ee5-bf33-66b7189676e2)
+			{
+				triggerList: trigger_list(6e31b746-f506-4189-a8d5-d9d9e5b3bcb0)
+				{
+					script: "ev:WEELS:Weel3" \
+						""
+				}
+				onTrigger: function<bool,bool>(6d16de24-a35b-4e33-80a1-99573270a6f5)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	match_event v:event = ev:WEELS:Weel3 in" \
+						"{" \
+						"	if(dp:WEELS:Weel3 == true)" \
+						"	{" \
+						"	v:this->^->ok_weel3.visible = true" \
+						"	}" \
+						"}" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfContainer_template_instance(b0fbbf8f-2e00-4385-affe-244c2c71e247)
+		{
+			name: "WEEL_Button 3"
+			template: @afcf08ad-b7d0-4614-a3a9-99757a08af1f (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 600
+			y: 210
+			"Release button": function<bool>(e42eaf07-6e08-4582-a572-4171df3da28e)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:WEELS:Weel4 = true" \
+					"	if(dp:WEELS:Weel4 == true)" \
+					"	{" \
+					"		fire_delayed 1800, ev:WEELS:Weel4()" \
+					"	}" \
+					"	dp:WEELS:Pressure_Tyre = \"OK\"" \
+					"	false" \
+					"}"
+			}
+			Condtidie: conditional_script(263a3276-2a94-4a5d-9b09-65fb1854ad13)
+			{
+				triggerList: trigger_list(8d92bd5e-070a-485c-85a6-f704809c09e4)
+				{
+					script: "ev:WEELS:Weel4" \
+						""
+				}
+				onTrigger: function<bool,bool>(ff930a44-43c2-4b8c-89c7-74106854587f)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	match_event v:event = ev:WEELS:Weel4 in" \
+						"{" \
+						"	if(dp:WEELS:Weel4 == true)" \
+						"	{" \
+						"	v:this->^->ok_weel4.visible = true" \
+						"	}" \
+						"}" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfLabel(d6d5ece9-28d7-48b8-ab3f-e13914a1f48f)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "weel1_txt"
+			visible: true
+			width: 165
+			height: 45
+			x: 35
+			y: 160
+			text: "Right / Front / Weel"
+			textColor: #00BFFFFF
+			font: font_resource(f5cf781b-1134-4423-8d9b-fbb6b153d4ba)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 20
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(32d8ead9-ae38-47fd-9927-1f991527b388)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "weel2_txt"
+			visible: true
+			width: 165
+			height: 45
+			x: 215
+			y: 160
+			text: "Left / Front / Weel"
+			textColor: #00BFFFFF
+			font: font_resource(b63f3241-c306-4e9b-aad0-eb33cae4d2ff)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 20
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(86c0e9f5-e08d-43c4-8fa8-5051de3fc21f)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "weel3_txt"
+			visible: true
+			width: 165
+			height: 45
+			x: 405
+			y: 160
+			text: "Right / Back / Weel"
+			textColor: #00BFFFFF
+			font: font_resource(4b02e878-a864-44a3-8778-ab433687746a)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 20
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(2366f6a9-055a-444f-b970-6731accad825)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "weel4_txt"
+			visible: true
+			width: 165
+			height: 45
+			x: 590
+			y: 160
+			text: "Left / Back / Weel"
+			textColor: #00BFFFFF
+			font: font_resource(a1c67d10-9a9d-4025-ba86-91d684215ded)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 20
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(4dbc75c7-8740-40e7-b1a8-54859559c7fc)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "ok_weel1"
+			visible: false
+			width: 85
+			height: 45
+			x: 70
+			y: 360
+			text: "OK"
+			textColor: #00FF00FF
+			font: font_resource(ab984dde-de0d-4225-92eb-415cab9a8085)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(4f902297-fdee-4daa-9337-f4c6ec2ce80a)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "ok_weel2"
+			visible: false
+			width: 85
+			height: 45
+			x: 255
+			y: 360
+			text: "OK"
+			textColor: #00FF00FF
+			font: font_resource(4ab4dccd-7f30-4d0a-9e27-c596c47c3801)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(831efec8-662f-498b-a62f-f8af92308744)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "ok_weel3"
+			visible: false
+			width: 85
+			height: 45
+			x: 445
+			y: 360
+			text: "OK"
+			textColor: #00FF00FF
+			font: font_resource(f48b6424-94dc-460e-b634-0bd5edb567d6)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(6df2ddfa-e975-46b8-97d1-b75b70b93ee9)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "ok_weel4"
+			visible: false
+			width: 85
+			height: 45
+			x: 630
+			y: 360
+			text: "OK"
+			textColor: #00FF00FF
+			font: font_resource(c7a71ac7-3969-4d8f-8761-b1e13ae1957c)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfRectangle_template_instance(78b8646b-baab-4103-a29f-5aa757000583)
+		{
+			name: "TopBar 1"
+			template: @946dc760-ee83-4771-bd7f-52f3864de092 (objectref<GtfRectangle_template>)
+			children: children_list []
+			MainText: "Tyre Pressure"
+			BackButton_Background: BackButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Background: MainMenuButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Visible: true
+			BackButton_Visible: true
+			Released_BACK: function<bool>(18abfbe8-1e12-43b1-9ef8-c1c04cb0a3e8)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoTo_InfoCar()" \
+					"	false" \
+					"}"
+			}
+		}]
+}

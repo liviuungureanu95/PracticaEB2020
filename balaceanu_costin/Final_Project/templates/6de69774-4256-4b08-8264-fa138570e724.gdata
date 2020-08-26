@@ -1,0 +1,67 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(6de69774-4256-4b08-8264-fa138570e724)
+{
+	name: "on/off_button"
+	structure: GtfContainer(b3a7e033-1e48-4597-838f-4e5fc592b494)
+	{
+		features: feature_list [
+			TouchPressed(9f789400-8d99-43b4-b812-334c3cb5b63d)
+			{
+				touchPressed: function<bool,int,int,int,int>(74d2137b-d501-4400-8848-0fb5a325f989)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(7781256f-670e-4f86-aa53-0a7ec07ba952)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(7999e6bc-06ea-4376-96c5-fe25298973ff)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(803f952a-3378-4bda-83ca-17689fe85472)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfImage(5bed4bbf-2270-4966-be26-96a0d0b36356)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Image"
+				visible: true
+				width: width@b3a7e033-1e48-4597-838f-4e5fc592b494 (propref<int>)
+				height: height@b3a7e033-1e48-4597-838f-4e5fc592b494 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(0d53c722-b4b6-40d9-83b8-5582abd714b1)
+				{
+					file: "off_button.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "Container"
+		visible: true
+		width: 30
+		height: 30
+		x: 0
+		y: 0
+	}
+	touchShortReleased: touchShortReleased@7781256f-670e-4f86-aa53-0a7ec07ba952 (propref<function<bool,int,int,int,int>>)
+	x: x@b3a7e033-1e48-4597-838f-4e5fc592b494 (propref<int>)
+	y: y@b3a7e033-1e48-4597-838f-4e5fc592b494 (propref<int>)
+	image: image@5bed4bbf-2270-4966-be26-96a0d0b36356 (propref<image>)
+	visible: visible@b3a7e033-1e48-4597-838f-4e5fc592b494 (propref<bool>)
+}

@@ -1,0 +1,215 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(f7c03d24-1267-4585-9add-cc39e29f7b05)
+{
+	name: "Passager_Airbag"
+	template: @95461b8a-82f0-421b-ba66-6095f03a1846 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer(e1d83b22-6625-4012-93ee-86b2a2c13fe4)
+		{
+			features: feature_list [
+				TouchShortReleased(86560984-de5f-4014-bcc7-1910e566897c)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(83e94e45-c2c9-4162-afde-51f6e134cf9d)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->\"AirbagON/OFF_img\".image = dp:AIRBAG:PassagerAirbag_OFF" \
+							"	dp:AIRBAG:\"PassagerAirbag_ON/OFF\" = \"OFF\"" \
+							"	v:this->^->Button_airbag_ON.visible = false" \
+							"	v:this->^->Button_airbag_OFF.visible = true" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(0a147119-224d-454e-9d28-ed3e6cf4bee3)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfImage(9c67455f-e7b7-41a6-b2ff-7d48423cc22c)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Background"
+					visible: true
+					width: width@e1d83b22-6625-4012-93ee-86b2a2c13fe4 (propref<int>)
+					height: height@e1d83b22-6625-4012-93ee-86b2a2c13fe4 (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(fa6b13a4-837b-4038-b2cd-ec1284aca210)
+					{
+						file: "ESP_ON_img.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Button_airbag_ON"
+			visible: true
+			width: 150
+			height: 61
+			x: 56
+			y: 175
+		}, 
+		GtfContainer(c039213e-dbdd-42d2-ab56-88931b4184d0)
+		{
+			features: feature_list [
+				TouchShortReleased(65f82017-dd02-4a89-b2ad-89d9149285b6)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(4d13487c-fd64-4adc-8577-8685251a171d)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->\"AirbagON/OFF_img\".image = dp:AIRBAG:PassagerAirbag_ON" \
+							"	dp:AIRBAG:\"PassagerAirbag_ON/OFF\" = \"ON\"" \
+							"	v:this->^->Button_airbag_OFF.visible = false" \
+							"	v:this->^->Button_airbag_ON.visible = true" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(113f7d61-d80e-4717-bdb4-d1a910a119c9)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfImage(8a57998f-ccfe-48c8-be05-b9f9555750ae)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Background"
+					visible: true
+					width: width@c039213e-dbdd-42d2-ab56-88931b4184d0 (propref<int>)
+					height: height@c039213e-dbdd-42d2-ab56-88931b4184d0 (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(1d85e3f9-41ad-4d3d-8108-d7e815ab2f98)
+					{
+						file: "ESP_OFF_img.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Button_airbag_OFF"
+			visible: false
+			width: 150
+			height: 61
+			x: 56
+			y: 175
+		}, 
+		GtfLabel(ffef8abf-4ce4-4921-bc1f-98ccc88910c4)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Passanger_Airbag"
+			visible: true
+			width: 342
+			height: 66
+			x: 28
+			y: 84
+			text: "Passanger airbag is :"
+			textColor: #00FF00FF
+			font: font_resource(beecc96f-2fab-4064-8b8d-66e7fcbde232)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(b71fb7fc-54ed-419c-bb97-47f5c3f24db6)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "ON/OFF"
+			visible: true
+			width: 73
+			height: 66
+			x: 370
+			y: 90
+			text: string_scriptedValue(398c2f88-bf89-4688-ae5d-87c8c4f3d0cd)
+			{
+				triggerList: trigger_list(e5ea06f7-bfa1-418d-8460-7aad0c0f3a81)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(7ce5361c-4d42-4c51-8193-f0bacd248f20)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(433d1490-0b39-4c84-aa43-fe36d7e131ca)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:AIRBAG:\"PassagerAirbag_ON/OFF\"" \
+						"}"
+				}
+				write: function<bool,string>(d1c64029-dc1f-4538-bfec-ac14d585bb2c)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #FFFFFFFF
+			font: font_resource(36eda077-7ef5-4f4e-a967-49a533ed5134)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfImage(1cfa8910-ef77-4fe7-8751-ddb7e5ace283)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "AirbagON/OFF_img"
+			visible: true
+			width: 171
+			height: 117
+			x: 495
+			y: 215
+			image: image_resource(9df62ea6-78d2-4391-be31-ae9dfe85b7e2)
+			{
+				file: "Airbag_ON.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfRectangle_template_instance(eb7d6900-1982-485e-9b38-ced8408d30fa)
+		{
+			name: "TopBar 1"
+			template: @946dc760-ee83-4771-bd7f-52f3864de092 (objectref<GtfRectangle_template>)
+			children: children_list []
+			MainText: "Airbag"
+			BackButton_Background: BackButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Background: MainMenuButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Visible: MainMenuButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			BackButton_Visible: BackButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			Released_BACK: function<bool>(079e9089-87dc-482d-ab79-530dfad9a9e9)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoTo_Settings()" \
+					"	false" \
+					"}"
+			}
+		}]
+}

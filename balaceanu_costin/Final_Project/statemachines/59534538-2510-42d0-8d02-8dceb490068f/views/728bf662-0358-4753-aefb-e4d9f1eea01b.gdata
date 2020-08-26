@@ -1,0 +1,591 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(728bf662-0358-4753-aefb-e4d9f1eea01b)
+{
+	name: "Lights_on/off"
+	template: @95461b8a-82f0-421b-ba66-6095f03a1846 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer(0a81542a-c155-489f-91dd-43b59b022a7c)
+		{
+			features: feature_list [
+				TouchShortReleased(eb9b86a5-6224-45c3-960c-e5ecd1afe218)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(70986503-5d5a-4219-8dc6-1b80d031e304)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->light1.visible = true" \
+							"	v:this->^->light2.visible = true" \
+							"	dp:Outside_Light = \"ON\"" \
+							"	v:this->^->Button_ESP_ON.visible = false" \
+							"	v:this->^->Button_ESP_OFF.visible = true" \
+							"	dp:MARTORS:LIGHT = true" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(2a8ec458-3945-4d90-adb7-514780620158)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfImage(ef34c328-8af8-4078-8e74-2aff1799378f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Background"
+					visible: true
+					width: width@0a81542a-c155-489f-91dd-43b59b022a7c (propref<int>)
+					height: height@0a81542a-c155-489f-91dd-43b59b022a7c (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(9dfff22e-db45-4af7-92f7-2965c35e07f8)
+					{
+						file: "ESP_ON_img.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Button_ESP_ON"
+			visible: true
+			width: 150
+			height: 61
+			x: 40
+			y: 100
+		}, 
+		GtfContainer(b0660fae-126e-4822-a479-719f75792be4)
+		{
+			features: feature_list [
+				TouchShortReleased(380ea9ff-9089-41bf-96b3-b0807a005493)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(277c2285-686a-4dd8-b9eb-05daffc61d00)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->light1.visible = false" \
+							"	v:this->^->light2.visible = false" \
+							"	dp:Outside_Light = \"OFF\"" \
+							"	v:this->^->Button_ESP_ON.visible = true" \
+							"	v:this->^->Button_ESP_OFF.visible = false" \
+							"	dp:MARTORS:LIGHT = false" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(1b74eb43-72af-4403-94c0-96110aea8795)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfImage(98881571-d175-41a5-89c6-28c2e77e2c36)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Background"
+					visible: true
+					width: width@b0660fae-126e-4822-a479-719f75792be4 (propref<int>)
+					height: height@b0660fae-126e-4822-a479-719f75792be4 (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(408a443d-9222-40b4-b07a-3d9cd67cd2ce)
+					{
+						file: "ESP_OFF_img.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Button_ESP_OFF"
+			visible: false
+			width: 150
+			height: 61
+			x: 40
+			y: 100
+		}, 
+		GtfContainer(567ac736-330a-4616-a2a8-27b9ecab0d3a)
+		{
+			features: feature_list [
+				TouchShortReleased(43e35102-4569-4b29-baf2-4727232a4aec)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(81e7d686-cd5a-45c8-95e2-08f8aa3ec2ba)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->light3.visible = true" \
+							"	v:this->^->light4.visible = true" \
+							"	dp:Outside_Light2 = \"ON\"" \
+							"	v:this->^->Button_ESP_ON1.visible = false" \
+							"	v:this->^->Button_ESP_OFF1.visible = true" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(ab3766fc-856c-47e0-b7eb-445766d19832)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfImage(b641ab0a-516a-4501-aee0-0686afd87c90)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Background"
+					visible: true
+					width: width@567ac736-330a-4616-a2a8-27b9ecab0d3a (propref<int>)
+					height: height@567ac736-330a-4616-a2a8-27b9ecab0d3a (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(dc7ad73c-f574-4e8c-9fa0-3c80b31f0031)
+					{
+						file: "ESP_ON_img.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Button_ESP_ON1"
+			visible: true
+			width: 150
+			height: 61
+			x: 200
+			y: 100
+		}, 
+		GtfContainer(4b68931d-433a-4fd2-8d16-dc6fc2200134)
+		{
+			features: feature_list [
+				TouchShortReleased(485d0447-aaef-424c-9c7d-54a948a5014b)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(37a7784e-8fa9-4a32-b0a0-6403c81bf502)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->light3.visible = false" \
+							"	v:this->^->light4.visible = false" \
+							"	dp:Outside_Light2 = \"OFF\"" \
+							"	v:this->^->Button_ESP_ON1.visible = true" \
+							"	v:this->^->Button_ESP_OFF1.visible = false" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(04adbf6d-62c7-47b0-8a12-f1cbbeccba9c)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfImage(5b48402c-efb4-4709-99b2-a88e3a838998)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Background"
+					visible: true
+					width: width@4b68931d-433a-4fd2-8d16-dc6fc2200134 (propref<int>)
+					height: height@4b68931d-433a-4fd2-8d16-dc6fc2200134 (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(d4f9c062-5d02-458f-a87d-9641faa4f345)
+					{
+						file: "ESP_OFF_img.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Button_ESP_OFF1"
+			visible: false
+			width: 150
+			height: 61
+			x: 200
+			y: 100
+		}, 
+		GtfContainer(4f0b9c5a-2ee1-4a1a-8453-2f98b4b0662e)
+		{
+			features: feature_list [
+				TouchShortReleased(742a1c46-7b0d-47dd-9527-4dca810ede65)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(2090a91b-d206-4b0d-8c0f-0b1c86253a24)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->light5.visible = true" \
+							"	v:this->^->light6.visible = true" \
+							"	dp:Outside_Light3 = \"ON\"" \
+							"	v:this->^->Button_ESP_ON2.visible = false" \
+							"	v:this->^->Button_ESP_OFF2.visible = true" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(42828712-cee7-4f4c-a5e8-7b017ac25d02)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfImage(e5254d4a-0b76-4a8a-b7a3-12692c110ad4)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Background"
+					visible: true
+					width: width@4f0b9c5a-2ee1-4a1a-8453-2f98b4b0662e (propref<int>)
+					height: height@4f0b9c5a-2ee1-4a1a-8453-2f98b4b0662e (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(f7955826-bd4a-4960-aff4-92cdbc253a1b)
+					{
+						file: "ESP_ON_img.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Button_ESP_ON2"
+			visible: true
+			width: 150
+			height: 61
+			x: 360
+			y: 100
+		}, 
+		GtfContainer(fb56caae-7aeb-4e47-8f8c-0401eecc2cc5)
+		{
+			features: feature_list [
+				TouchShortReleased(a24dd6ac-9f1e-4406-ade9-55c2a690512c)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(9c3ef01d-6d9c-4f5f-8fad-09ebb78502c8)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->light5.visible = false" \
+							"	v:this->^->light6.visible = false" \
+							"	dp:Outside_Light3 = \"OFF\"" \
+							"	v:this->^->Button_ESP_ON2.visible = true" \
+							"	v:this->^->Button_ESP_OFF2.visible = false" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(ed9cc434-a06e-49df-9ab3-24c113873b0c)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfImage(49413394-9421-440f-b290-2a1c4d704760)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Background"
+					visible: true
+					width: width@fb56caae-7aeb-4e47-8f8c-0401eecc2cc5 (propref<int>)
+					height: height@fb56caae-7aeb-4e47-8f8c-0401eecc2cc5 (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(e924d180-3c67-4439-8f3a-38115ddb2a8c)
+					{
+						file: "ESP_OFF_img.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Button_ESP_OFF2"
+			visible: false
+			width: 150
+			height: 61
+			x: 360
+			y: 100
+		}, 
+		GtfImage(0af080a5-033e-4314-8aad-3d44e4c1a0f6)
+		{
+			features: feature_list [
+				Scaling(7bd75a3a-dcf9-42ae-8ec9-b7a30f7edcfd)
+				{
+					scalingEnabled: true
+					scalingX: 200F
+					scalingY: 200F
+					scalingZ: 200F
+				}]
+			children: children_list []
+			name: "light5"
+			visible: false
+			width: 50
+			height: 50
+			x: 319
+			y: 356
+			image: image_resource(50ad64e6-e5da-4c96-9cfc-cb3330d2f947)
+			{
+				file: "PROJECTORS_background.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(a6a68563-fdb5-43f6-96d9-54bc272f8a60)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Image"
+			visible: true
+			width: 450
+			height: 228
+			x: 348
+			y: 243
+			image: image_resource(9bc4df8b-067e-4f5e-beb8-78baf5a6af6b)
+			{
+				file: "CAR_Light.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(5b9ae22e-ed11-40cb-804c-0d9e7cc84393)
+		{
+			features: feature_list [
+				Rotation(a546603a-f254-4166-a779-0135b4ef99e0)
+				{
+					rotationEnabled: true
+					rotationAngleX: 90F
+					rotationAngleY: 90F
+					rotationAngleZ: -80F
+				}, 
+				Scaling(04dbac95-9ffc-4d5f-9301-5b2e75f5228a)
+				{
+					scalingEnabled: true
+					scalingX: 70F
+					scalingY: 70F
+					scalingZ: 70F
+				}]
+			children: children_list []
+			name: "light1"
+			visible: false
+			width: 400
+			height: 827
+			x: 463
+			y: 188
+			image: image_resource(9fa6a2a0-cb7a-4292-a052-8fc9529f41dd)
+			{
+				file: "LIGHT_backgroun.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(5fbd0d49-2dc5-4b0f-bdb9-91973cb3d756)
+		{
+			features: feature_list [
+				Rotation(41770c9a-12b6-42b0-9b17-6c463acf696f)
+				{
+					rotationEnabled: true
+					rotationAngleX: 90F
+					rotationAngleY: 90F
+					rotationAngleZ: -80F
+				}, 
+				Scaling(d1f46a84-2844-45ce-81c0-c58e90fddc5e)
+				{
+					scalingEnabled: true
+					scalingX: 70F
+					scalingY: 70F
+					scalingZ: 70F
+				}]
+			children: children_list []
+			name: "light2"
+			visible: false
+			width: 400
+			height: 827
+			x: 631
+			y: 194
+			image: image_resource(6861b1a1-9d6f-40a6-8314-361fff89c4de)
+			{
+				file: "LIGHT_backgroun.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(ad771c96-8a19-4751-8dea-3a07e1161a22)
+		{
+			features: feature_list [
+				Rotation(28969ec2-ce9a-4e94-8cd8-0d9caf389a10)
+				{
+					rotationEnabled: true
+					rotationAngleX: 90F
+					rotationAngleY: 90F
+					rotationAngleZ: -80F
+				}, 
+				Scaling(7e07f835-d77f-43d3-99e8-a9ba82cc2b51)
+				{
+					scalingEnabled: true
+					scalingX: 40F
+					scalingY: 40F
+					scalingZ: 40F
+				}]
+			children: children_list []
+			name: "light3"
+			visible: false
+			width: 400
+			height: 827
+			x: 429
+			y: 259
+			image: image_resource(737a8beb-46e1-40f0-be77-c5268686096f)
+			{
+				file: "LIGHT_backgroun.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(e0df8a91-07f5-4e0e-ab0a-edaabf72f6fe)
+		{
+			features: feature_list [
+				Rotation(6fe8bffb-23ba-4872-9fb1-763bf3dd2759)
+				{
+					rotationEnabled: true
+					rotationAngleX: 90F
+					rotationAngleY: 90F
+					rotationAngleZ: -80F
+				}, 
+				Scaling(ba6a6c5f-76f2-489a-bcc2-0b417ba40a5e)
+				{
+					scalingEnabled: true
+					scalingX: 40F
+					scalingY: 40F
+					scalingZ: 40F
+				}]
+			children: children_list []
+			name: "light4"
+			visible: false
+			width: 400
+			height: 827
+			x: 560
+			y: 265
+			image: image_resource(8fd46313-aecb-459a-9bd9-54745dca6354)
+			{
+				file: "LIGHT_backgroun.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(740361e8-2bd9-45c9-964d-2d16db00adc5)
+		{
+			features: feature_list [
+				Scaling(4f920bef-c768-445f-bb3a-0c9799b7e91e)
+				{
+					scalingEnabled: true
+					scalingX: 200F
+					scalingY: 200F
+					scalingZ: 200F
+				}]
+			children: children_list []
+			name: "light6"
+			visible: false
+			width: 50
+			height: 50
+			x: 505
+			y: 377
+			image: image_resource(6f94abbd-f55e-40c9-b7b0-45cacf853927)
+			{
+				file: "PROJECTORS_background.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(f664d876-b202-4940-acf7-1ea0e560b47e)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "LongPHASE"
+			visible: true
+			width: 124
+			height: 56
+			x: 61
+			y: 148
+			text: "Long Beam"
+			textColor: #00FF00FF
+			font: font_resource(87443569-1f9d-497b-8c99-f07c7c1bfa0e)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(d4c6e21d-24c1-4dd1-acc6-0dab6c794c63)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "ShortPHASE"
+			visible: true
+			width: 124
+			height: 56
+			x: 216
+			y: 148
+			text: "Short Beam"
+			textColor: #00FF00FF
+			font: font_resource(8e62a0ca-f953-4776-a837-d5b634a6ea48)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(ff49b977-ac0c-48b8-9205-96f35a659081)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "PROJECTORS"
+			visible: true
+			width: 102
+			height: 54
+			x: 389
+			y: 148
+			text: "Projectors"
+			textColor: #00FF00FF
+			font: font_resource(101fde7a-adfc-4f49-ab9d-8dcd53cb2faa)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfRectangle_template_instance(92ef67be-3adf-4b8a-99f0-1754bcde1aed)
+		{
+			name: "TopBar 1"
+			template: @946dc760-ee83-4771-bd7f-52f3864de092 (objectref<GtfRectangle_template>)
+			children: children_list []
+			MainText: "Lights"
+			BackButton_Background: BackButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Background: MainMenuButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Visible: MainMenuButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			BackButton_Visible: BackButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			Released_BACK: function<bool>(fc0586d3-2ca2-4f55-a825-4856db8109e9)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoTo_InfoCar()" \
+					"	false" \
+					"}"
+			}
+		}]
+}

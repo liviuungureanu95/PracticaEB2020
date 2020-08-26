@@ -1,0 +1,68 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(85aeb067-7bc5-4064-af92-f88f668b0a47)
+{
+	name: "Youtube_button"
+	structure: GtfContainer(dd11e143-ef30-4e6e-b3a5-fce0cdaaacbd)
+	{
+		features: feature_list [
+			TouchPressed(a5c31fa9-377e-438c-b97a-6b611e9ef4f5)
+			{
+				touchPressed: function<bool,int,int,int,int>(d1aa0219-b71d-4f2b-9c3a-d580a550bee6)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->border.borderColor = dp:BorderGrey" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(7238e902-f47c-4def-bb72-1056ce4c08fc)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(dd1d6dae-52d3-41e1-acdc-3a836bef7dd8)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(a6d7a5f1-50b5-411c-9e94-32f29fd3e3f0)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(ff299ff2-024e-468d-979f-6243df7b2e41)
+			{
+				features: feature_list [
+					Border(f4ae1909-4ba7-44c3-a55c-dc51172c234f)
+					{
+						borderThickness: 2
+						borderColor: #696969FF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "border"
+				visible: true
+				width: width@dd11e143-ef30-4e6e-b3a5-fce0cdaaacbd (propref<int>)
+				height: height@dd11e143-ef30-4e6e-b3a5-fce0cdaaacbd (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+			}]
+		name: "Container"
+		visible: true
+		width: 100
+		height: 20
+		x: 0
+		y: 0
+	}
+	width: width@dd11e143-ef30-4e6e-b3a5-fce0cdaaacbd (propref<int>)
+	x: x@dd11e143-ef30-4e6e-b3a5-fce0cdaaacbd (propref<int>)
+	y: y@dd11e143-ef30-4e6e-b3a5-fce0cdaaacbd (propref<int>)
+	visible: visible@ff299ff2-024e-468d-979f-6243df7b2e41 (propref<bool>)
+	touchShortReleased: touchShortReleased@7238e902-f47c-4def-bb72-1056ce4c08fc (propref<function<bool,int,int,int,int>>)
+}

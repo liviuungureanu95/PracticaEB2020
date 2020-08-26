@@ -1,0 +1,299 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(4f229c61-7058-4959-b9da-3c5b319a55e7)
+{
+	name: "Route_View"
+	template: @95461b8a-82f0-421b-ba66-6095f03a1846 (objectref<GtfView_template>)
+	children: children_list [
+		GtfRectangle_template_instance(498e1f45-aa9b-4175-8069-d4ab9d60743a)
+		{
+			name: "TopBar 1"
+			template: @946dc760-ee83-4771-bd7f-52f3864de092 (objectref<GtfRectangle_template>)
+			children: children_list []
+			MainText: "Route"
+			BackButton_Background: BackButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Background: MainMenuButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Visible: MainMenuButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			BackButton_Visible: BackButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			Released_BACK: function<bool>(afb4952b-511e-4a68-a4ea-3bcd7855d9ef)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoTo_Waze()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfImage(889012f1-45d6-4445-92db-7a06304fba25)
+		{
+			features: feature_list [
+				ScaleMode(5882c831-2460-41b6-9afc-3a989c7b91aa)
+				{
+					scaleMode: 1
+				}]
+			children: children_list [
+				GtfLabel(aa6cba7f-ad4d-4b76-8852-50d3c0925828)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 6"
+					visible: true
+					width: 850
+					height: 70
+					x: -50
+					y: 40
+					text: string_scriptedValue(81e6cd6c-95e1-454b-8327-e55a48e7b26e)
+					{
+						triggerList: trigger_list(324791ab-c303-4055-bff0-89544d26129e)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(fd88f41f-165b-42ac-8590-477846939034)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(8d1203d4-1895-4439-b810-f3e64f7c6256)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	\"We are going at : \"+dp:WAZE:Search2" \
+								"}"
+						}
+						write: function<bool,string>(87cb6c16-4701-4b2c-b2cf-e98920d37305)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(b6da25cf-12b2-404b-80a4-d3fc593f2549)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "background"
+			visible: true
+			width: 800
+			height: 410
+			x: 0
+			y: 70
+			image: image_resource(a057a6ea-89b8-4ddb-9836-27657939282d)
+			{
+				file: "WAZE_Route.jpeg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfContainer(4012115d-c824-4614-91fc-db4e233570df)
+		{
+			features: feature_list [
+				TouchShortReleased(aa3e4a8d-3017-4909-aeb3-6677fecb558f)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(0e54f16f-2621-4ae6-9ae7-745eed2639f5)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:WAZE:GoTo_No_GPS1()" \
+							"	fire_delayed 5000, ev:WAZE:GoTo_No_GPS2()" \
+							"	f:animation_play(v:this->^->NO_GPS->\"Label 3\"->\"Animation 1\")" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(ac6ab0b5-3558-4051-95bb-d1843c58130d)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "No_gps_button"
+			visible: true
+			width: 92
+			height: 94
+			x: 701
+			y: 307
+		}, 
+		GtfContainer_template_instance(437ac776-f715-4ed6-ae12-ebbf47ea466d)
+		{
+			name: "NO_GPS"
+			template: @75bee090-7a74-46fe-98ad-450571ad33fa (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfLabel(b6aef0d0-68ab-4b06-bfb5-cb1ba299493c)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 1"
+					visible: true
+					width: 189
+					height: 100
+					x: 23
+					y: 0
+					text: "No GPS reception !"
+					textColor: #000000FF
+					font: font_resource(a45f05b3-7c25-4d45-9683-34a8860e7250)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(26e4fb61-6772-4f83-b495-cb3ad7b36d65)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 2"
+					visible: true
+					width: 189
+					height: 100
+					x: 23
+					y: 42
+					text: "Try again ..."
+					textColor: #000000FF
+					font: font_resource(9b09d262-27d8-4d5c-a3fa-f3e4b7405d3a)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(f3089580-e2e6-4f91-9013-7d466089f974)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfParallelAnimation(a1404f88-3569-4f99-8a6a-fe443b20d662)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(0a0e8433-e922-4ca4-bb2a-378d44ce2a60)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve 1"
+									enabled: true
+									delay: 10
+									duration: 5000
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 6
+									end: 1
+									target: @c4998356-479c-445c-9ed4-cb66992aef37 (objectref<int>)
+								}]
+							name: "Animation 1"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(3e0ac878-98b5-487c-96e1-a3dffd682a65)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(b6c0d18d-bc16-4a45-906d-aefe4960c731)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(11abe31b-4a7a-4993-a5f7-d4278a12eb02)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}]
+					name: "Label 3"
+					visible: true
+					width: 189
+					height: 65
+					x: 23
+					y: 101
+					text: string_scriptedValue(b256f2c5-82ce-4759-9097-1a218671dc74)
+					{
+						triggerList: trigger_list(41f65b8e-a85e-4abb-8419-262f6924d6c6)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(bd3e2ac5-5c2a-44b7-8425-35e04812e839)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(6d77632f-2885-434f-9a14-9cab60f38eef)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:int2string(dp:WAZE:Counter_Waze)" \
+								"}"
+						}
+						write: function<bool,string>(2aac3178-e1f1-48a7-b109-f9864dc275de)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FF0000FF
+					font: font_resource(5a6cc14d-4a45-4715-adf9-3561c1b97a1e)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			visible: false
+			x: 265
+			y: 194
+		}]
+	"Conditional script 5": conditional_script(6ac93f57-de02-4fb7-a76a-eb7d57365fa6)
+	{
+		triggerList: trigger_list(94d04214-3d0e-4270-b84e-023252ed37b3)
+		{
+			script: "ev:WAZE:GoTo_No_GPS1" \
+				"ev:WAZE:GoTo_No_GPS2" \
+				""
+		}
+		onTrigger: function<bool,bool>(e7a230e2-b074-4164-a28e-86c4638c9d79)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	match_event v:event = ev:WAZE:GoTo_No_GPS1 in" \
+				"{" \
+				"	v:this->NO_GPS.visible = true" \
+				"}" \
+				"	match_event v:event = ev:WAZE:GoTo_No_GPS2 in" \
+				"{" \
+				"	v:this->NO_GPS.visible = false" \
+				"}" \
+				"	false" \
+				"}"
+		}
+	}
+}

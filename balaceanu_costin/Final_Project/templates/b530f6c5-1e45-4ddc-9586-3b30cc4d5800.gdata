@@ -1,0 +1,367 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(b530f6c5-1e45-4ddc-9586-3b30cc4d5800)
+{
+	name: "SETTINGS_Button"
+	structure: GtfContainer(7ba3cdeb-ef2f-4c1b-8e6a-402c0c945e3d)
+	{
+		features: feature_list [
+			TouchPressed(f8ce9386-db62-40f9-ae94-7d30b00e2fd5)
+			{
+				touchPressed: function<bool,int,int,int,int>(8d97cd99-8820-4b91-8218-a0a9c6ea7edd)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->border.borderColor = dp:BorderColor_Pressed" \
+						"	f:animation_play(v:this->\"Animation 1\")" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(5f1e9cd4-e51a-42a7-86ca-e1a9b12fe5ee)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(310da295-88dc-4935-8da7-ef791ed2c2d0)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.\"Button function\"()" \
+						"	f:animation_play(v:this->\"Animation 2\")" \
+						"	f:animation_cancel(v:this->\"Animation 1\")" \
+						"	v:this->border.borderColor = dp:BorderColor" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(b959df0f-77fc-48f3-8adb-8a778cbec829)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			Rotation(7eb3b1d7-0c8e-41ab-903b-1243d5e1c250)
+			{
+				rotationEnabled: true
+				rotationAngleX: 0F
+				rotationAngleY: 0F
+				rotationAngleZ: 0F
+			}, 
+			Scaling(c44003da-1829-4af0-af2f-44ade14f9c80)
+			{
+				scalingEnabled: true
+				scalingX: 100F
+				scalingY: 100F
+				scalingZ: 100F
+			}, 
+			Shearing(43e2b129-d96a-41bb-9491-3e81fe1f897d)
+			{
+				shearingEnabled: true
+				shearingXbyY: 0F
+				shearingXbyZ: 0F
+				shearingYbyX: 0F
+				shearingYbyZ: 0F
+				shearingZbyX: 0F
+				shearingZbyY: 0F
+			}, 
+			Pivot(814f0e02-2df8-40d0-8bd2-3b86e6cc50f6)
+			{
+				pivotX: float_scriptedValue(56ec2bba-adb6-4fb5-b631-9d48647fac68)
+				{
+					triggerList: trigger_list(49292ef8-1f1d-46f8-974e-aeaca7263da8)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(cd333fe8-7c54-4d0d-847f-e0e120632d78)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<float>(4847e965-bdc0-4ec6-b26b-008f2ab60ff6)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	f:int2float(v:this.width/2)" \
+							"}"
+					}
+					write: function<bool,float>(da925ed3-c223-41b4-8894-de680aa31484)
+					{
+						script: "function(v:arg0::float)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				pivotY: float_scriptedValue(71303b35-4366-4a9e-b5ca-4c439cce94bc)
+				{
+					triggerList: trigger_list(06f7f2ca-2a01-4187-a485-a749a04ec553)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(84c1e82c-f51f-44e1-b8de-3f6f2e51807e)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<float>(4c8b9b0a-fc78-4c59-8538-46a7daa04cd1)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	f:int2float(v:this.height/2)" \
+							"}"
+					}
+					write: function<bool,float>(c2f02565-90cb-450e-ad3a-bb852970be2f)
+					{
+						script: "function(v:arg0::float)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				pivotZ: 0F
+			}]
+		children: children_list [
+			GtfImage(4881826a-8eee-4a85-8155-377b7db98d4e)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "background"
+				visible: true
+				width: width@7ba3cdeb-ef2f-4c1b-8e6a-402c0c945e3d (propref<int>)
+				height: height@7ba3cdeb-ef2f-4c1b-8e6a-402c0c945e3d (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(f2a9b77b-4b1f-4d84-a7c1-9624699724b8)
+				{
+					file: "AMBIENT_button.jpeg"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfRectangle(acef5670-aff7-4811-9054-eb0b3d761576)
+			{
+				features: feature_list [
+					Border(322bc7bf-1563-4d05-96f6-98e01f7e9539)
+					{
+						borderThickness: 2
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "border"
+				visible: true
+				width: width@7ba3cdeb-ef2f-4c1b-8e6a-402c0c945e3d (propref<int>)
+				height: height@7ba3cdeb-ef2f-4c1b-8e6a-402c0c945e3d (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+			}, 
+			GtfImage(4b506734-3ce6-4508-b064-9d20506e6a29)
+			{
+				features: feature_list [
+					Scaling(4dc14ca4-8324-4f62-8802-cf29de7733ac)
+					{
+						scalingEnabled: true
+						scalingX: 100F
+						scalingY: 200F
+						scalingZ: 100F
+					}]
+				children: children_list []
+				name: "Image 41"
+				visible: true
+				width: 370
+				height: 162
+				x: -15
+				y: -142
+				image: image_resource(3a740731-2013-46b0-963a-df815c1eefd0)
+				{
+					file: "line.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfImage(b0aef472-d30a-4162-afb3-b6272e649f4c)
+			{
+				features: feature_list [
+					Scaling(7aa5c2b9-0131-4855-bc66-2d8a0a0391af)
+					{
+						scalingEnabled: true
+						scalingX: 100F
+						scalingY: 200F
+						scalingZ: 100F
+					}, 
+					Rotation(782e2ebb-b5c3-4909-937c-850d39c03e54)
+					{
+						rotationEnabled: true
+						rotationAngleX: 0F
+						rotationAngleY: 0F
+						rotationAngleZ: -180F
+					}]
+				children: children_list []
+				name: "Image 41 copy 1"
+				visible: true
+				width: 370
+				height: 162
+				x: 347
+				y: 252
+				image: image_resource(ca4637bf-6719-4e23-8ae4-971cfa0c8c25)
+				{
+					file: "line.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfParallelAnimation(4dc84f27-51cc-4589-9318-dcd87774de0f)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLinearInterpolationFloat(da643a04-b866-46dd-94a2-ab97fbea9c93)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Linear interpolation curve 1"
+						enabled: true
+						delay: 0
+						duration: 10
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 110F
+						end: 90F
+						target: scalingX@c44003da-1829-4af0-af2f-44ade14f9c80 (propref<float>)
+					}, 
+					GtfLinearInterpolationFloat(1bfbc646-5451-483c-b407-8696144d7712)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Linear interpolation curve 2"
+						enabled: true
+						delay: 0
+						duration: 10
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 110F
+						end: 90F
+						target: scalingY@c44003da-1829-4af0-af2f-44ade14f9c80 (propref<float>)
+					}]
+				name: "Animation 1"
+				enabled: true
+				repeat: 1
+				alternating: false
+				scale: 1F
+				onPlay: function<void,int,bool>(348b806e-5001-4ed9-b86f-68191b8e4fd4)
+				{
+					script: "function(v:animation_time::int, v:forward::bool)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onPause: function<void,int>(b4624ade-485c-49f2-9ea9-8fc06e41059a)
+				{
+					script: "function(v:animation_time::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onTerminate: function<void,int,int>(6aad65d2-152f-4188-a3ae-a39c5fe756a6)
+				{
+					script: "function(v:animation_time::int, v:terminate::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+			}, 
+			GtfParallelAnimation(fa9100ac-2334-42f0-9a60-d0f8cc275fd5)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLinearInterpolationFloat(0804a1ce-98bd-4366-95d8-9c2f5dcba7de)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Linear interpolation curve 3"
+						enabled: true
+						delay: 0
+						duration: 10
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 90F
+						end: 110F
+						target: scalingX@c44003da-1829-4af0-af2f-44ade14f9c80 (propref<float>)
+					}, 
+					GtfLinearInterpolationFloat(203e4f5b-05b0-4f40-8afb-28a5b38c722d)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Linear interpolation curve 4"
+						enabled: true
+						delay: 0
+						duration: 10
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 90F
+						end: 110F
+						target: scalingY@c44003da-1829-4af0-af2f-44ade14f9c80 (propref<float>)
+					}]
+				name: "Animation 2"
+				enabled: true
+				repeat: 1
+				alternating: false
+				scale: 1F
+				onPlay: function<void,int,bool>(7e0a9391-f2ab-4c00-ba05-696bd2030a37)
+				{
+					script: "function(v:animation_time::int, v:forward::bool)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onPause: function<void,int>(bf1bbce4-e9a0-4a9b-abb5-fb284929a0b8)
+				{
+					script: "function(v:animation_time::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onTerminate: function<void,int,int>(ebf09636-24c8-4eec-8e12-1178d5d9f372)
+				{
+					script: "function(v:animation_time::int, v:terminate::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+			}]
+		name: "Container"
+		visible: true
+		width: 330
+		height: 110
+		x: 0
+		y: 0
+		"Button function": function<bool>(8f0d29a7-74ec-457f-9104-a41c3618d392)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	x: x@7ba3cdeb-ef2f-4c1b-8e6a-402c0c945e3d (propref<int>)
+	y: y@7ba3cdeb-ef2f-4c1b-8e6a-402c0c945e3d (propref<int>)
+	image: image@4881826a-8eee-4a85-8155-377b7db98d4e (propref<image>)
+	"Button function": "Button function"@7ba3cdeb-ef2f-4c1b-8e6a-402c0c945e3d (propref<function<bool>>)
+}

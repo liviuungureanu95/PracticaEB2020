@@ -1,0 +1,125 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(e1f953fa-1a2f-49a4-af3c-e9794438717a)
+{
+	name: "zzzzz"
+	structure: GtfContainer(be8e9231-b57d-4b55-9811-76126409b20f)
+	{
+		features: feature_list [
+			TouchPressed(1d0cde7a-0ece-40b8-826a-1c93c7f8e1b3)
+			{
+				touchPressed: function<bool,int,int,int,int>(cbe063ed-129e-4013-8ac7-73208fe47c97)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->background.fillColor = dp:BorderColor" \
+						"	v:this->background1.fillColor = dp:BorderColor" \
+						"	v:this->background2.fillColor = dp:BorderColor" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(08791fb9-1722-454a-86e1-76aefaa13dfe)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(ddf45096-9708-40ad-8d8c-a411a634c862)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.Button_function()" \
+						"	v:this->background.fillColor = dp:BorderColorTRANS" \
+						"	v:this->background1.fillColor = dp:BorderColorTRANS" \
+						"	v:this->background2.fillColor = dp:BorderColorTRANS" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(5b91f2a8-7438-432b-8b69-8510a5bf6989)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(19cdbde1-5b4c-42e6-8fd7-a877280e1355)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "background"
+				visible: true
+				width: 57
+				height: 34
+				x: 17
+				y: 9
+				fillColor: #FFFFFF00
+			}, 
+			GtfEllipse(3681e000-3e4b-4f4f-bef2-095846423ffa)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "background1"
+				visible: true
+				width: 35
+				height: 35
+				x: 0
+				y: 9
+				fillColor: #FFFFFF00
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}, 
+			GtfEllipse(83af1933-7291-4879-bdf6-280f5490b0a5)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "background2"
+				visible: true
+				width: 35
+				height: 35
+				x: 57
+				y: 9
+				fillColor: #FFFFFF00
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}, 
+			GtfLabel(50c0cf07-5801-41bf-8a8b-12376e2c0cc2)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "txt"
+				visible: true
+				width: 90
+				height: 50
+				x: 0
+				y: 0
+				text: "89.2"
+				textColor: #00BFFFFF
+				font: font_resource(720afd3d-db2b-4bd1-9076-7986e5f5368a)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 40
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 90
+		height: 50
+		x: 0
+		y: 0
+		Button_function: function<bool>(b493ad7a-b8d0-4e29-a770-3fb00e812985)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	text: text@50c0cf07-5801-41bf-8a8b-12376e2c0cc2 (propref<string>)
+	x: x@be8e9231-b57d-4b55-9811-76126409b20f (propref<int>)
+	y: y@be8e9231-b57d-4b55-9811-76126409b20f (propref<int>)
+	Button_function: Button_function@be8e9231-b57d-4b55-9811-76126409b20f (propref<function<bool>>)
+}
