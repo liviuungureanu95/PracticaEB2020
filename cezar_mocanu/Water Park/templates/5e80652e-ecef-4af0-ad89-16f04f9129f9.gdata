@@ -1,0 +1,303 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(5e80652e-ecef-4af0-ad89-16f04f9129f9)
+{
+	name: "StandardView"
+	structure: GtfView(50b80ba0-3438-4e37-a9aa-273f69d4c74d)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(14d1ba95-532d-40e7-bbca-e37cc898d9e6)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@50b80ba0-3438-4e37-a9aa-273f69d4c74d (propref<int>)
+				height: height@50b80ba0-3438-4e37-a9aa-273f69d4c74d (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFCFF
+			}, 
+			GtfContainer(3322f71e-6484-411a-a847-e9e1e68d0726)
+			{
+				features: feature_list [
+					ViewPort(a239d0f7-a71f-4c6b-ab52-7eaed74f9072)
+					{
+						xOffset: 0
+						yOffset: 0
+					}]
+				children: children_list [
+					GtfImage(0cb98fa6-93e0-4b2e-976a-9362bc21534d)
+					{
+						features: feature_list [
+							ScaleMode(d52c8465-b3db-4a61-84bf-73ae58c26a13)
+							{
+								scaleMode: 1
+							}]
+						children: children_list []
+						name: "SolidInfoBackground"
+						visible: true
+						width: 800
+						height: 60
+						x: 0
+						y: 0
+						image: image_resource(0fd02c10-cd9a-499d-af37-e6e92fa098a5)
+						{
+							file: "Bluegradient.png"
+						}
+						sRGB: false
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfImage(768ae8e5-70b3-4868-8c59-7c1f1b2d86e0)
+					{
+						features: feature_list [
+							ScaleMode(01a36ade-1c6e-4c8e-9679-87b2886e16d6)
+							{
+								scaleMode: 1
+							}]
+						children: children_list []
+						name: "SolidInfoBackground2"
+						visible: true
+						width: 800
+						height: 60
+						x: -800
+						y: 0
+						image: image_resource(68abb2dc-331c-41fd-a316-2c8b62ebbbab)
+						{
+							file: "Bluegradient.png"
+						}
+						sRGB: false
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfImage(77dc853f-87be-45e7-b72b-0ef72220546b)
+					{
+						features: feature_list [
+							ScaleMode(db97e9e3-0093-4d02-813e-7681d2a1b481)
+							{
+								scaleMode: 2
+							}]
+						children: children_list []
+						name: "InfoBackground"
+						visible: true
+						width: width@50b80ba0-3438-4e37-a9aa-273f69d4c74d (propref<int>)
+						height: 160
+						x: 0
+						y: 0
+						image: image_resource(d7386f51-4652-4071-95f8-f53bba3e7353)
+						{
+							file: "wave.png"
+						}
+						sRGB: false
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfImage(73d2cf76-034f-4398-bb76-d3822cb57050)
+					{
+						features: feature_list [
+							ScaleMode(54702b17-ff90-4293-a458-9dc7ebd2f386)
+							{
+								scaleMode: 2
+							}]
+						children: children_list []
+						name: "InfoBackground2"
+						visible: true
+						width: width@50b80ba0-3438-4e37-a9aa-273f69d4c74d (propref<int>)
+						height: height@77dc853f-87be-45e7-b72b-0ef72220546b (propref<int>)
+						x: -800
+						y: 0
+						image: image_resource(9b78c18e-3204-424d-9fd4-4e1bd21beb7d)
+						{
+							file: "wave.png"
+						}
+						sRGB: false
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfParallelAnimation(e804fc75-0a8e-48b3-8d1e-90745e2caaf8)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLinearInterpolationS32(48496735-caf5-4d6c-94dc-68787bd5f1fc)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Linear interpolation curve 1"
+								enabled: true
+								delay: 0
+								duration: 20000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 0
+								end: 800
+								target: x@77dc853f-87be-45e7-b72b-0ef72220546b (propref<int>)
+							}, 
+							GtfLinearInterpolationS32(f02b046a-e277-496c-bf0b-fa39ddceb048)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Linear interpolation curve 2"
+								enabled: true
+								delay: 0
+								duration: 20000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: -800
+								end: 0
+								target: x@73d2cf76-034f-4398-bb76-d3822cb57050 (propref<int>)
+							}, 
+							GtfLinearInterpolationS32(7d800e43-e5f4-458d-ad1c-ad727855d69c)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Linear interpolation curve 3"
+								enabled: true
+								delay: 0
+								duration: 20000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 0
+								end: 800
+								target: x@0cb98fa6-93e0-4b2e-976a-9362bc21534d (propref<int>)
+							}, 
+							GtfLinearInterpolationS32(5b253c3b-77b2-46ba-b589-0b19fb44b5cd)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Linear interpolation curve 4"
+								enabled: true
+								delay: 0
+								duration: 20000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: -800
+								end: 0
+								target: x@768ae8e5-70b3-4868-8c59-7c1f1b2d86e0 (propref<int>)
+							}]
+						name: "Flow"
+						enabled: true
+						repeat: 0
+						alternating: false
+						scale: 1F
+						onPlay: function<void,int,bool>(2f79d162-9fbe-460a-8d2e-9c360de1ff3a)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(a541a82a-fa02-4521-b175-3c68f5ed1c6e)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(db3209ad-0f80-4d07-b33a-fe6732f4b31b)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+					}]
+				name: "AnimatedBackground"
+				visible: true
+				width: 800
+				height: 135
+				x: 0
+				y: 20
+				onLoad: conditional_script(f1b808d7-3840-4769-a939-7de80eb89857)
+				{
+					triggerList: trigger_list(98746dcd-993d-4148-9ba1-50fb981a33d8)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(74db9fb0-efd2-4f19-a752-9d0a90656adb)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	f:animation_play(v:this->Flow)" \
+							"	false" \
+							"}"
+					}
+				}
+			}, 
+			GtfLabel(2cd9fa82-f9b9-44cb-ba6f-81bf5b9ac11b)
+			{
+				features: feature_list [
+					MultiLine(69996f1e-5da0-4ee4-9471-c1ed6d809cb6)
+					{
+						lineOffset: 0
+						maxLineCount: 0
+					}]
+				children: children_list []
+				name: "MainText"
+				visible: true
+				width: 390
+				height: 40
+				x: 50
+				y: 30
+				text: "Informatii Generale"
+				textColor: @fcab5033-6b39-43bd-a95b-0a58a41bdf3e (objectref<color>)
+				font: font_resource(09e9d0c9-e33a-4094-ad90-facbf600b983)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 37
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}, 
+			GtfLabel(026b2d1e-137d-42a6-9e72-01ae2e7e7c14)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "SecondaryText"
+				visible: true
+				width: 390
+				height: 40
+				x: 401
+				y: 29
+				text: "Informatii Secundare"
+				textColor: @fcab5033-6b39-43bd-a95b-0a58a41bdf3e (objectref<color>)
+				font: font_resource(a6f6bb3d-5525-4969-8dd8-768ce621726a)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 37
+				}
+				horizontalAlign: 2
+				verticalAlign: 0
+			}, 
+			GtfContainer_template_instance(c4be3eca-e98b-43ab-8229-83eaef9baae4)
+			{
+				name: "BackButton"
+				template: @14e536d3-a7a4-409b-b37a-5c10fe79bad0 (objectref<GtfContainer_template>)
+				children: children_list []
+				x: 10
+				y: 35
+				width: 30
+				height: 30
+				text: "<"
+				colors: @4ffe8e08-0d6c-4db0-8752-9db9c5b6a1b1 (objectref<colorlist>)
+				onReleaseAction: onReleaseAction@14e536d3-a7a4-409b-b37a-5c10fe79bad0 (propref<function<bool>>)
+				font: font@14e536d3-a7a4-409b-b37a-5c10fe79bad0 (propref<font>)
+				visible: visible@14e536d3-a7a4-409b-b37a-5c10fe79bad0 (propref<bool>)
+			}]
+		name: "View"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+	}
+	MainInfo: text@2cd9fa82-f9b9-44cb-ba6f-81bf5b9ac11b (propref<string>)
+	SecondaryInfo: text@026b2d1e-137d-42a6-9e72-01ae2e7e7c14 (propref<string>)
+	backButtonAction: onReleaseAction@c4be3eca-e98b-43ab-8229-83eaef9baae4 (propref<function<bool>>)
+	backButtonVisible: visible@c4be3eca-e98b-43ab-8229-83eaef9baae4 (propref<bool>)
+}

@@ -1,0 +1,306 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(53aefd19-c201-4011-b951-480be3737f43)
+{
+	name: "SlidingMenu"
+	structure: GtfContainer(4eb014e0-681c-4375-a50a-55a0ebb06326)
+	{
+		features: feature_list [
+			ViewPort(18e41f78-81b5-4ecc-bbdd-a3e21ca551dd)
+			{
+				xOffset: 0
+				yOffset: 0
+			}]
+		children: children_list [
+			GtfRectangle(9dd18aab-f786-4ffb-9e26-964d718f9df0)
+			{
+				features: feature_list [
+					TouchPressed(e905e082-802f-4e7b-a884-69a0c2b0570e)
+					{
+						touchPressed: function<bool,int,int,int,int>(227444cb-89ff-447f-beb4-eb1892c903dd)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    true" \
+								"}"
+						}
+					}, 
+					TouchShortReleased(36b1fe6c-7b16-411d-8dbb-8836918029c7)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(fd290001-d9d2-432d-b882-186ee5fa52ed)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    true" \
+								"}"
+						}
+					}, 
+					StateTouched(18d2ea18-c50a-4767-a70a-7a90bba2797c)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list []
+				name: "Mask"
+				visible: toggled@7a03b383-2e85-4e47-bd0f-4ef18b1a8265 (propref<bool>)
+				width: 800
+				height: 480
+				x: 0
+				y: 0
+				fillColor: #1B1B1B3C
+			}, 
+			GtfContainer_template_instance(7a03b383-2e85-4e47-bd0f-4ef18b1a8265)
+			{
+				name: "ToggleMenuButton"
+				template: @b99f25f3-e0e3-40f1-bd25-bf063afcee89 (objectref<GtfContainer_template>)
+				children: children_list [
+					GtfRectangle(0082aa4f-8fc7-4b90-9997-332fc580d857)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "BorderBottom"
+						visible: true
+						width: width@7a03b383-2e85-4e47-bd0f-4ef18b1a8265 (propref<int>)
+						height: 2
+						x: 0
+						y: 20
+						fillColor: #336699C8
+					}]
+				x: x@b99f25f3-e0e3-40f1-bd25-bf063afcee89 (propref<int>)
+				y: 0
+				width: width@4eb014e0-681c-4375-a50a-55a0ebb06326 (propref<int>)
+				height: 20
+				imageWidth: 4
+				imageHeight: 90
+				imageX: 48
+				imageY: 5
+				onMouseReleaseAction: function<bool>(f11b2f1a-25b7-4bd9-81e5-8ad36acc2946)
+				{
+					script: "function()" \
+						"{" \
+						"	if(!v:this->^.isOpen){" \
+						"		f:animation_play(v:this->^->OpenMenu)" \
+						"		v:this->^->ToggleMenuButton.toggled = true" \
+						"	}" \
+						"	else{" \
+						"		f:animation_play(v:this->^->CloseMenu)" \
+						"		v:this->^->ToggleMenuButton.toggled = false" \
+						"	}" \
+						"		" \
+						"" \
+						"	false" \
+						"}"
+				}
+				colors: @b022832e-bf09-4161-bc55-b4d5e1a6e564 (objectref<colorlist>)
+				toggled: toggled@b99f25f3-e0e3-40f1-bd25-bf063afcee89 (propref<bool>)
+			}, 
+			GtfContainer(63264ef8-c1df-4955-9a30-e605b0414a69)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfContainer_template_instance(00a09e05-6e0d-43d2-99f8-ef734767d34c)
+					{
+						name: "Basins"
+						template: @14e536d3-a7a4-409b-b37a-5c10fe79bad0 (objectref<GtfContainer_template>)
+						children: children_list []
+						x: x@14e536d3-a7a4-409b-b37a-5c10fe79bad0 (propref<int>)
+						y: y@14e536d3-a7a4-409b-b37a-5c10fe79bad0 (propref<int>)
+						width: 266
+						height: 80
+						text: "Basins"
+						colors: @4ffe8e08-0d6c-4db0-8752-9db9c5b6a1b1 (objectref<colorlist>)
+						onReleaseAction: function<bool>(4b16bd5f-dc57-4dc5-b5ce-d3e4b9ca3c69)
+						{
+							script: "function()" \
+								"{" \
+								"	fire ev:goTo_BasinsList()" \
+								"	false" \
+								"}"
+						}
+						font: font@14e536d3-a7a4-409b-b37a-5c10fe79bad0 (propref<font>)
+						visible: visible@14e536d3-a7a4-409b-b37a-5c10fe79bad0 (propref<bool>)
+					}, 
+					GtfContainer_template_instance(58c0c471-0ffd-47e2-a0d2-405ed84b1726)
+					{
+						name: "Complex"
+						template: @14e536d3-a7a4-409b-b37a-5c10fe79bad0 (objectref<GtfContainer_template>)
+						children: children_list []
+						x: 266
+						y: y@14e536d3-a7a4-409b-b37a-5c10fe79bad0 (propref<int>)
+						width: 266
+						height: 80
+						text: "Complex"
+						colors: @4ffe8e08-0d6c-4db0-8752-9db9c5b6a1b1 (objectref<colorlist>)
+						onReleaseAction: function<bool>(17a9cad7-5e47-4b4b-96ae-4cbb7933ba11)
+						{
+							script: "function()" \
+								"{" \
+								"	fire ev:goTo_Schema()" \
+								"	false" \
+								"}"
+						}
+						font: font@14e536d3-a7a4-409b-b37a-5c10fe79bad0 (propref<font>)
+						visible: visible@14e536d3-a7a4-409b-b37a-5c10fe79bad0 (propref<bool>)
+					}, 
+					GtfContainer_template_instance(e0ed27bf-4e7d-4b47-8446-bb5d7f1d9ea1)
+					{
+						name: "Meintenance"
+						template: @14e536d3-a7a4-409b-b37a-5c10fe79bad0 (objectref<GtfContainer_template>)
+						children: children_list []
+						x: 532
+						y: y@14e536d3-a7a4-409b-b37a-5c10fe79bad0 (propref<int>)
+						width: 267
+						height: 80
+						text: "Meintenance"
+						colors: @4ffe8e08-0d6c-4db0-8752-9db9c5b6a1b1 (objectref<colorlist>)
+						onReleaseAction: function<bool>(1399bb48-d0ba-47e2-973a-f43186ac490d)
+						{
+							script: "function()" \
+								"{" \
+								"	fire ev:goTo_Meintenance()" \
+								"	false" \
+								"}"
+						}
+						font: font@14e536d3-a7a4-409b-b37a-5c10fe79bad0 (propref<font>)
+						visible: visible@14e536d3-a7a4-409b-b37a-5c10fe79bad0 (propref<bool>)
+					}]
+				name: "Buttons"
+				visible: true
+				width: 100
+				height: 100
+				x: 0
+				y: -80
+			}, 
+			GtfParallelAnimation(57a1c06d-cedc-421a-b8eb-5388b86267b7)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfFastStartS32(5df9c91e-f2f0-4723-b13a-465aac5173ce)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Flowdown"
+						enabled: true
+						delay: 0
+						duration: 500
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 80
+						end: 0
+						target: y@7a03b383-2e85-4e47-bd0f-4ef18b1a8265 (propref<int>)
+					}, 
+					GtfFastStartS32(95b12708-04a6-4d06-8e8c-c711c419b159)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "FlowButtons"
+						enabled: true
+						delay: 0
+						duration: 500
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 0
+						end: -80
+						target: y@63264ef8-c1df-4955-9a30-e605b0414a69 (propref<int>)
+					}]
+				name: "CloseMenu"
+				enabled: true
+				repeat: 1
+				alternating: false
+				scale: 1F
+				onPlay: function<void,int,bool>(1502562e-61d0-4f8a-ac77-805814db1823)
+				{
+					script: "function(v:animation_time::int, v:forward::bool)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onPause: function<void,int>(ad4ffb33-2a6c-43e7-9dab-7f625c10a639)
+				{
+					script: "function(v:animation_time::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onTerminate: function<void,int,int>(e1f7b4d4-e2e7-4c02-9b3a-e0551f5502a3)
+				{
+					script: "function(v:animation_time::int, v:terminate::int)" \
+						"{" \
+						"	v:this->^.isOpen = false" \
+						"}"
+				}
+			}, 
+			GtfParallelAnimation(36ed7c9d-9f4f-4850-96dd-4c09794c427e)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfFastStartS32(1f5ef962-eaf6-422f-8d6b-7cc8f529d4a8)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Flowdown"
+						enabled: true
+						delay: 0
+						duration: 500
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 0
+						end: 80
+						target: y@7a03b383-2e85-4e47-bd0f-4ef18b1a8265 (propref<int>)
+					}, 
+					GtfFastStartS32(5be3a7f6-a8d8-46bb-abf4-3f0d91835ca9)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "FlowButtons"
+						enabled: true
+						delay: 0
+						duration: 500
+						repeat: 1
+						alternating: false
+						relative: false
+						start: -80
+						end: 0
+						target: y@63264ef8-c1df-4955-9a30-e605b0414a69 (propref<int>)
+					}]
+				name: "OpenMenu"
+				enabled: true
+				repeat: 1
+				alternating: false
+				scale: 1F
+				onPlay: function<void,int,bool>(39d6d43a-b12d-4aa9-be21-de7f396a1de6)
+				{
+					script: "function(v:animation_time::int, v:forward::bool)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onPause: function<void,int>(80225e3b-a612-4a08-b50f-12dae197e8ec)
+				{
+					script: "function(v:animation_time::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onTerminate: function<void,int,int>(2aa417a0-a4ee-45fc-b877-35cdbb61db0b)
+				{
+					script: "function(v:animation_time::int, v:terminate::int)" \
+						"{" \
+						"v:this->^.isOpen = true" \
+						"}"
+				}
+			}]
+		name: "Container"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+		isOpen: false
+	}
+}

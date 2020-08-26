@@ -1,0 +1,96 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(840dec3f-cbd1-47dc-8f5d-4b1ee94993c6)
+{
+	name: "PumpDial"
+	structure: GtfContainer(38d07efd-e464-4d39-a826-a4ec7c4f1f0f)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfEllipse(96ed6536-cd4d-411e-9f08-df33901d44d0)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: 100
+				height: 100
+				x: 0
+				y: 0
+				fillColor: #1B1B1BFF
+				arcWidth: 0
+				centralAngle: 180F
+				sectorRotation: 0F
+			}, 
+			GtfInstantiator(5acd5388-9d47-4909-a00a-03a60086359b)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfEllipse(486582bd-5f7a-41ce-8764-cc1b2fe76b8b)
+					{
+						features: feature_list [
+							LineIndex(6b0ce699-5236-42f7-9723-b5945070e611)
+							{
+								lineIndex: 0
+							}]
+						children: children_list []
+						name: "Ellipse"
+						visible: true
+						width: 90
+						height: 90
+						x: 5
+						y: 5
+						fillColor: #A9A9A9FF
+						arcWidth: 0
+						centralAngle: 60F
+						sectorRotation: 0F
+						setItems: conditional_script(2f0ca1c8-c9cc-4aa4-83a7-caa0383f5e11)
+						{
+							triggerList: trigger_list(23fe222c-2675-4ae4-b664-5b37bf7485a4)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(a2870740-804e-447f-9493-cd51f5ea2434)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	v:this.sectorRotation = f:int2float(v:this.lineIndex) * 60.0" \
+									"	if(v:this.lineIndex % 2 == 0)" \
+									"		v:this.fillColor = v:this->^->^.colors[0]" \
+									"	else" \
+									"		v:this.fillColor = v:this->^->^.colors[1]" \
+									"	false" \
+									"}"
+							}
+						}
+					}]
+				name: "Instantiator"
+				visible: true
+				width: 100
+				height: 100
+				x: 0
+				y: 0
+				numItems: 3
+				lineMapping: intlist []
+			}, 
+			GtfRectangle(b18043c0-11b1-4511-9725-addfd6a4090e)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Indicator"
+				visible: true
+				width: 40
+				height: 4
+				x: 5
+				y: 46
+				fillColor: #1B1B1BFF
+			}]
+		name: "Container"
+		visible: true
+		width: 100
+		height: 50
+		x: 0
+		y: 0
+		colors: colorlist [#FF4500FF, #FFFFFFFF, #FF4500FF]
+	}
+}

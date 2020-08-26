@@ -1,0 +1,204 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(af44c03e-8a87-4bdf-aced-031fc0e089ad)
+{
+	name: "SegmentedLoadingBar"
+	structure: GtfContainer(40d85d32-d1c9-48da-a649-b61705f34c5d)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfLabel(4b9fcffc-29c0-454f-ad50-c1197d81f632)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "BarName"
+				visible: true
+				width: 100
+				height: 30
+				x: 0
+				y: 0
+				text: "label"
+				textColor: @d54463d6-525e-40d2-ac5a-5fa03c727f72 (objectref<color>)
+				font: font_resource(ae9cd2f7-42b6-4b4e-aed5-12f1d9e3ccbd)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfInstantiator(77b9e8a3-ab55-4e60-a609-f62705abf575)
+			{
+				features: feature_list [
+					LayoutPolicyFlow(7406833f-45a1-4e13-9d59-e1de75bcbdc4)
+					{
+						horizontalGap: 2
+						verticalGap: 0
+						layoutDirection: 0
+						horizontalChildAlign: 0
+						verticalChildAlign: 0
+					}]
+				children: children_list [
+					GtfImage(cca0de30-c4f6-42f1-9693-175b08e7b190)
+					{
+						features: feature_list [
+							ScaleMode(8561ef20-6992-4c03-b8c7-52949c264274)
+							{
+								scaleMode: 1
+							}, 
+							Coloration(ebbf223d-8c4d-4bcd-bf5b-fc37ec1cd99d)
+							{
+								colorationEnabled: true
+								colorationColor: empty@40d85d32-d1c9-48da-a649-b61705f34c5d (propref<color>)
+							}]
+						children: children_list []
+						name: "Segment"
+						visible: true
+						width: 30
+						height: 30
+						x: 0
+						y: 0
+						image: image_resource(de828bc3-5f61-42e2-bb3c-80e3f726414e)
+						{
+							file: "roundedRectangle.png"
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+					}]
+				name: "Instantiator"
+				visible: true
+				width: 350
+				height: 30
+				x: 100
+				y: 0
+				numItems: 10
+				lineMapping: intlist []
+			}, 
+			GtfInstantiator(4174d17b-04c3-4296-8c05-8385fe081e50)
+			{
+				features: feature_list [
+					LayoutPolicyFlow(4ecd0def-4fff-49b0-a001-28453e84a2a3)
+					{
+						horizontalGap: 2
+						verticalGap: 0
+						layoutDirection: 0
+						horizontalChildAlign: 0
+						verticalChildAlign: 0
+					}]
+				children: children_list [
+					GtfImage(2f90e246-d2cf-4e51-aa72-bab97af3597d)
+					{
+						features: feature_list [
+							ScaleMode(224d91f5-fc11-4273-898c-bd1348062fa5)
+							{
+								scaleMode: 1
+							}, 
+							Coloration(b323f39f-4b76-4067-9510-09cebbaafde8)
+							{
+								colorationEnabled: true
+								colorationColor: fill@40d85d32-d1c9-48da-a649-b61705f34c5d (propref<color>)
+							}]
+						children: children_list []
+						name: "Segment"
+						visible: true
+						width: 30
+						height: 30
+						x: 0
+						y: 0
+						image: image_resource(8b4556cb-ab4b-4049-885d-55ab87deacb3)
+						{
+							file: "roundedRectangle.png"
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+					}]
+				name: "InstantiatorFilled"
+				visible: true
+				width: 350
+				height: 30
+				x: 100
+				y: 0
+				numItems: 8
+				lineMapping: intlist []
+			}, 
+			GtfParallelAnimation(ca7ab6e6-b8db-4705-9daf-168dca208a74)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfFastStartS32(08404670-8337-4872-bebe-e036257b25f2)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Fast start curve 1"
+						enabled: true
+						delay: 0
+						duration: 500
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 0
+						end: filledCount@40d85d32-d1c9-48da-a649-b61705f34c5d (propref<int>)
+						target: numItems@4174d17b-04c3-4296-8c05-8385fe081e50 (propref<int>)
+					}]
+				name: "Fill"
+				enabled: true
+				repeat: 1
+				alternating: false
+				scale: 1F
+				onPlay: function<void,int,bool>(297b3271-b71c-4cb7-9d86-9dbff706117b)
+				{
+					script: "function(v:animation_time::int, v:forward::bool)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onPause: function<void,int>(3e6a6bbc-f8bb-44ba-910c-9cc6ca84c125)
+				{
+					script: "function(v:animation_time::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onTerminate: function<void,int,int>(a5c31807-c36f-469f-acc8-71780fd4d260)
+				{
+					script: "function(v:animation_time::int, v:terminate::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+			}]
+		name: "Container"
+		visible: true
+		width: 450
+		height: 30
+		x: 0
+		y: 0
+		fill: #FFA500FF
+		empty: #1B1B1BFF
+		onInit: conditional_script(8324a972-bbd6-4db1-a4f1-8e24896a42ee)
+		{
+			triggerList: trigger_list(e069a9de-ccce-4af6-82d4-31a6613dc302)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(ae07646b-3de0-4441-91b6-296d04d22037)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	f:animation_play(v:this->Fill)" \
+					"	false" \
+					"}"
+			}
+		}
+		filledCount: 8
+		emptyCount: 10
+	}
+	text: text@4b9fcffc-29c0-454f-ad50-c1197d81f632 (propref<string>)
+	empty: empty@40d85d32-d1c9-48da-a649-b61705f34c5d (propref<color>)
+	fill: fill@40d85d32-d1c9-48da-a649-b61705f34c5d (propref<color>)
+	x: x@40d85d32-d1c9-48da-a649-b61705f34c5d (propref<int>)
+	y: y@40d85d32-d1c9-48da-a649-b61705f34c5d (propref<int>)
+	filledCount: filledCount@40d85d32-d1c9-48da-a649-b61705f34c5d (propref<int>)
+}

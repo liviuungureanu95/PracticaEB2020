@@ -1,0 +1,64 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(b96eb01d-79c5-4995-af23-9d78f937b778)
+{
+	name: "vBasins"
+	template: @5e80652e-ecef-4af0-ad89-16f04f9129f9 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(f910d2fe-6232-48f5-83c5-347eb656640c)
+		{
+			name: "Scrollbar"
+			template: @c7a7e034-9a6c-4a50-b704-53975cbdc10d (objectref<GtfContainer_template>)
+			children: children_list []
+			y: 170
+			x: 760
+			width: 30
+			height: 300
+			scrollPercent: 0
+		}, 
+		GtfContainer_template_instance(4d9d3c52-6a4b-41cd-b263-53b3d5a5ca33)
+		{
+			name: "ScrollList"
+			template: @bce370ad-df14-44a1-9a82-196c1f011880 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 0
+			y: 170
+			scrollPercent: scrollPercent@f910d2fe-6232-48f5-83c5-347eb656640c (propref<int>)
+			Labels: @551cb73c-270b-4393-9613-853c80ddc892 (objectref<stringlist>)
+			listName: "basinsList"
+			buttonWidth: buttonWidth@bce370ad-df14-44a1-9a82-196c1f011880 (propref<int>)
+			buttonHeight: buttonHeight@bce370ad-df14-44a1-9a82-196c1f011880 (propref<int>)
+			visibleIcons: boollist [true, true, true, true, true, true, true, true, true, true, true, true, true, false]
+			legendLabels: stringlist ["", "", "", "", "", "", "", "", "", "", ""]
+			legendLabelsColors: colorlist [#FF0000FF, #FF0000FF, #FF0000FF, #FF0000FF, #FF0000FF, #FF0000FF, #FF0000FF, #FF0000FF, #FF0000FF, #A9A9A9FF, #A9A9A9FF]
+			hasEffect: hasEffect@bce370ad-df14-44a1-9a82-196c1f011880 (propref<bool>)
+		}, 
+		GtfContainer_template_instance(5f8d3e2d-74e1-4c04-a29d-f7adc260212f)
+		{
+			name: "SlidingMenu"
+			template: @53aefd19-c201-4011-b951-480be3737f43 (objectref<GtfContainer_template>)
+			children: children_list []
+		}]
+	MainInfo: @93a83674-0dcc-41a4-9429-fc49d491a616 (objectref<string>)
+	SecondaryInfo: @12fd9800-d24e-42c3-8f0c-47e7677d0d58 (objectref<string>)
+	backButtonAction: backButtonAction@5e80652e-ecef-4af0-ad89-16f04f9129f9 (propref<function<bool>>)
+	backButtonVisible: false
+	listEvents: conditional_script(34603bad-6082-46e1-981d-29210f5597a9)
+	{
+		triggerList: trigger_list(396ed006-a0e8-4804-9fd8-c159d5e2823c)
+		{
+			script: "ev:listEvent_Fired"
+		}
+		onTrigger: function<bool,bool>(55284a62-e0ba-4655-8c1c-d81ed11cce67)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	match_event v:e = ev:listEvent_Fired in {" \
+				"		dp:selectedBasin = dp:Basins[v:e.lineIndex]" \
+				"		fire ev:goTo_GeneralInfo()" \
+				"	}" \
+				"	false" \
+				"}"
+		}
+	}
+}

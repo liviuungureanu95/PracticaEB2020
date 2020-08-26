@@ -1,0 +1,226 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfImage_template(f0959c09-c9f4-40e0-afc8-1fe880d28f31)
+{
+	name: "BasinButton"
+	structure: GtfImage(7b131032-a6c6-46a9-b257-989f37008308)
+	{
+		features: feature_list [
+			Coloration(e9b04e2e-da4d-475b-be45-7400872cf03c)
+			{
+				colorationEnabled: true
+				colorationColor: currentColor@7b131032-a6c6-46a9-b257-989f37008308 (propref<color>)
+			}, 
+			MoveOut(378a8596-19af-4be9-9169-a26aefe71764)
+			{
+				moveOut: function<bool,int,int,int,int>(00878783-205a-4f17-9a2f-b9a21dd932a1)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.currentColor = v:this.basinColors[0]" \
+						"    false" \
+						"}"
+				}
+			}, 
+			MoveIn(1e9c6c9d-83d8-4898-a375-bbdd166020ea)
+			{
+				moveIn: function<bool,int,int,int,int>(9d1e2675-f382-4ad4-b947-700e8264fc23)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.currentColor = v:this.basinColors[1]" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(b47072c7-3a7c-4d56-af75-3558078cb429)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 1
+			}, 
+			TouchPressed(8cb98552-2b5e-4c7d-882e-3fde3844393b)
+			{
+				touchPressed: function<bool,int,int,int,int>(769c75a2-d25a-4d9a-83cb-8a101a9f08b3)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.currentColor = v:this.basinColors[2]" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(627cfb39-a871-4da1-b6de-5e5f1e374f59)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(84fe4d03-0738-4fad-94ef-a11554248fb3)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.currentColor = v:this.basinColors[1]" \
+						"	v:this.onReleaseAction()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			ScaleMode(ded44b40-215e-4b65-a4d2-ac815c54ac5f)
+			{
+				scaleMode: 2
+			}]
+		children: children_list [
+			GtfImage(20dd91bf-98db-40f5-9732-e1573d9d5734)
+			{
+				features: feature_list [
+					Coloration(14d6c721-e2d4-4a42-8453-bf396f583295)
+					{
+						colorationEnabled: true
+						colorationColor: currentOverlay@20dd91bf-98db-40f5-9732-e1573d9d5734 (propref<color>)
+					}]
+				children: children_list []
+				name: "Overlay"
+				visible: true
+				width: width@7b131032-a6c6-46a9-b257-989f37008308 (propref<int>)
+				height: height@7b131032-a6c6-46a9-b257-989f37008308 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(ef183017-f8ee-45d3-960b-213453c0cf75)
+				{
+					file: "pump.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+				overlayColor: conditional_script(c46dced9-fa05-4262-9b3c-0945110ea724)
+				{
+					triggerList: trigger_list(bf67e6c5-d114-463d-a55f-2be7448dda31)
+					{
+						script: "v:this->^->Button.visible"
+					}
+					onTrigger: function<bool,bool>(52a619e6-1322-404b-8b09-9e8e66aa1aaf)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	if(v:this->^->Button.visible)" \
+							"		v:this.currentOverlay = v:this.opaque" \
+							"	else" \
+							"		v:this.currentOverlay = v:this.transparent" \
+							"	false" \
+							"}"
+					}
+				}
+				opaque: #FFFFFF6E
+				transparent: #FFFFFF00
+				currentOverlay: #A9A9A9FF
+			}, 
+			GtfContainer_template_instance(eaa6c066-1e14-485d-8e7e-8cbd810d2125)
+			{
+				name: "Button"
+				template: @14e536d3-a7a4-409b-b37a-5c10fe79bad0 (objectref<GtfContainer_template>)
+				children: children_list []
+				x: x@14e536d3-a7a4-409b-b37a-5c10fe79bad0 (propref<int>)
+				y: y@14e536d3-a7a4-409b-b37a-5c10fe79bad0 (propref<int>)
+				width: 50
+				height: 50
+				text: text@14e536d3-a7a4-409b-b37a-5c10fe79bad0 (propref<string>)
+				colors: colors@14e536d3-a7a4-409b-b37a-5c10fe79bad0 (propref<colorlist>)
+				onReleaseAction: function<bool>(e382aaa6-012a-4efb-b29d-331fd6022307)
+				{
+					script: "function()" \
+						"{" \
+						"	fire ev:goTo_GeneralInfo()" \
+						"	false" \
+						"}"
+				}
+				font: font@14e536d3-a7a4-409b-b37a-5c10fe79bad0 (propref<font>)
+				visible: true
+				"Color 1": color_scriptedValue(3594edf7-813c-4787-bb65-018ec6241a61)
+				{
+					triggerList: trigger_list(391fc67c-0b99-4b51-9b05-3c99e407cb5e)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(9e6296ea-aff0-452e-8a5d-e9ec16f25272)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<color>(aea40759-086a-458f-b26b-543a66db8cd5)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	color:169, 169, 169, 255" \
+							"}"
+					}
+					write: function<bool,color>(4e3edd9c-eb75-4406-a0b1-c518afa5f6f5)
+					{
+						script: "function(v:arg0::color)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+			}]
+		name: "Image"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		image: image_resource(acac7975-533e-4425-8f64-168ef2f548c8)
+		{
+			file: "down.png"
+		}
+		sRGB: false
+		horizontalAlign: 0
+		verticalAlign: 1
+		currentColor: #A9A9A9FF
+		basinColors: colorlist [#FFFFFCFF, #FFA5003C, #FFA50064]
+		onInit: conditional_script(caa685ec-f2df-456f-9a2c-0e77134fbe77)
+		{
+			triggerList: trigger_list(1a1b3d77-cd61-4e1b-bb36-932e2e50eb6a)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(af948f65-5538-401d-b751-f01e08d46921)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	v:this.colorationColor = v:this.basinColors[0]" \
+					"	false" \
+					"}"
+			}
+		}
+		onReleaseAction: function<bool>(0f9fedb0-7c26-40db-8bf2-1e428b2b94f1)
+		{
+			script: "function()" \
+				"{" \
+				"	" \
+				"	false" \
+				"}"
+		}
+	}
+	width: width@7b131032-a6c6-46a9-b257-989f37008308 (propref<int>)
+	height: height@7b131032-a6c6-46a9-b257-989f37008308 (propref<int>)
+	x: x@7b131032-a6c6-46a9-b257-989f37008308 (propref<int>)
+	y: y@7b131032-a6c6-46a9-b257-989f37008308 (propref<int>)
+	image: image@7b131032-a6c6-46a9-b257-989f37008308 (propref<image>)
+	onReleaseAction: onReleaseAction@7b131032-a6c6-46a9-b257-989f37008308 (propref<function<bool>>)
+	buttonH: height@eaa6c066-1e14-485d-8e7e-8cbd810d2125 (propref<int>)
+	buttonW: width@eaa6c066-1e14-485d-8e7e-8cbd810d2125 (propref<int>)
+	buttonY: y@eaa6c066-1e14-485d-8e7e-8cbd810d2125 (propref<int>)
+	text: text@eaa6c066-1e14-485d-8e7e-8cbd810d2125 (propref<string>)
+	buttonOnReleaseAction: onReleaseAction@eaa6c066-1e14-485d-8e7e-8cbd810d2125 (propref<function<bool>>)
+	colors: colors@eaa6c066-1e14-485d-8e7e-8cbd810d2125 (propref<colorlist>)
+	buttonX: x@eaa6c066-1e14-485d-8e7e-8cbd810d2125 (propref<int>)
+	font: font@eaa6c066-1e14-485d-8e7e-8cbd810d2125 (propref<font>)
+	touchable: touchable@b47072c7-3a7c-4d56-af75-3558078cb429 (propref<bool>)
+	buttonVisible: visible@eaa6c066-1e14-485d-8e7e-8cbd810d2125 (propref<bool>)
+	visible: visible@7b131032-a6c6-46a9-b257-989f37008308 (propref<bool>)
+	colorationEnabled: colorationEnabled@e9b04e2e-da4d-475b-be45-7400872cf03c (propref<bool>)
+	overlayImage: image@20dd91bf-98db-40f5-9732-e1573d9d5734 (propref<image>)
+}

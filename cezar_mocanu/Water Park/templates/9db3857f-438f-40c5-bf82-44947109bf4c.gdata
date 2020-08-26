@@ -1,0 +1,171 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(9db3857f-438f-40c5-bf82-44947109bf4c)
+{
+	name: "PieChart"
+	structure: GtfContainer(b0965675-46bf-403a-ab42-9dcdb1cfcdc9)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfAlphaMask(76c7aa46-d67b-47d0-8e12-50b9788a6837)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfInstantiator(ff734adc-9d33-4cde-9b1c-df0f667868fa)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfEllipse(885bb79f-4f5e-4661-bfcd-59dac9cc35bf)
+							{
+								features: feature_list [
+									LineIndex(435d22ee-7c1b-459b-ab4c-9751d767d739)
+									{
+										lineIndex: 0
+									}]
+								children: children_list [
+									GtfParallelAnimation(04d4d190-2764-48d8-9bfa-2e1cb26158e9)
+									{
+										features: feature_list []
+										children: children_list [
+											GtfFastStartColor(d8ab6f44-4afa-4b32-b216-52e318b1a4a3)
+											{
+												features: feature_list []
+												children: children_list []
+												name: "Fast start curve 1"
+												enabled: true
+												delay: 0
+												duration: 600
+												repeat: 1
+												alternating: false
+												relative: false
+												start: #FFFFFF00
+												end: targetColor@885bb79f-4f5e-4661-bfcd-59dac9cc35bf (propref<color>)
+												target: fillColor@885bb79f-4f5e-4661-bfcd-59dac9cc35bf (propref<color>)
+											}]
+										name: "FadeIn"
+										enabled: true
+										repeat: 1
+										alternating: false
+										scale: 1F
+										onPlay: function<void,int,bool>(4ddee2d7-e1a1-4469-b416-6e00e1a29910)
+										{
+											script: "function(v:animation_time::int, v:forward::bool)" \
+												"{" \
+												"" \
+												"}"
+										}
+										onPause: function<void,int>(23b9a4dd-060e-47b4-8b75-b372dd9385e9)
+										{
+											script: "function(v:animation_time::int)" \
+												"{" \
+												"" \
+												"}"
+										}
+										onTerminate: function<void,int,int>(ee912a85-f96d-48f3-b5f4-1fd285f0e736)
+										{
+											script: "function(v:animation_time::int, v:terminate::int)" \
+												"{" \
+												"" \
+												"}"
+										}
+									}]
+								name: "Ellipse"
+								visible: true
+								width: width@76c7aa46-d67b-47d0-8e12-50b9788a6837 (propref<int>)
+								height: height@76c7aa46-d67b-47d0-8e12-50b9788a6837 (propref<int>)
+								x: 0
+								y: 0
+								fillColor: #A9A9A9FF
+								arcWidth: 0
+								centralAngle: 0F
+								sectorRotation: 0F
+								setItems: conditional_script(5d11f9f4-b390-4ed4-b7b8-6dbc271d574f)
+								{
+									triggerList: trigger_list(c73ad64c-05c5-4ad8-9721-2032f546d7c8)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(f73cbbec-2cda-484c-9757-933ee2e07f8c)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	v:this.targetColor = v:this->^->^->^.Colors[v:this.lineIndex]" \
+											"	v:this.fillColor = v:this->^->^->^.Colors[v:this.lineIndex]" \
+											"	v:this.centralAngle = f:int2float(360 * v:this->^->^->^.Percents[v:this.lineIndex] / 100)" \
+											"	if(v:this.lineIndex > 0){" \
+											"		let v:angleSum = 0.0;v:i = 0 in {" \
+											"		" \
+											"			while(v:i < v:this.lineIndex){" \
+											"				v:angleSum +=  f:int2float(360 * v:this->^->^->^.Percents[v:i] / 100)" \
+											"				v:i+=1" \
+											"			}" \
+											"			v:this.sectorRotation = v:angleSum + 1.0" \
+											"				" \
+											"		}" \
+											"	}" \
+											"	else{" \
+											"		v:this.centralAngle += 2.0" \
+											"	}" \
+											"	f:animation_play(v:this->FadeIn)" \
+											"		 " \
+											"	false" \
+											"}"
+									}
+								}
+								targetColor: #A9A9A9FF
+							}]
+						name: "Instantiator"
+						visible: true
+						width: width@76c7aa46-d67b-47d0-8e12-50b9788a6837 (propref<int>)
+						height: height@76c7aa46-d67b-47d0-8e12-50b9788a6837 (propref<int>)
+						x: 0
+						y: 0
+						numItems: 0
+						lineMapping: intlist []
+						setNumberItems: conditional_script(6b46906f-07f6-4e5f-9954-b9fcc471d949)
+						{
+							triggerList: trigger_list(2dd37be5-c74f-4199-b1bd-fccb7728ffd3)
+							{
+								script: "v:this->^->^.Colors"
+							}
+							onTrigger: function<bool,bool>(32590a4a-c167-4ca0-919f-9ff53db0095e)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	v:this.numItems = length v:this->^->^.Colors" \
+									"	false" \
+									"}"
+							}
+						}
+					}]
+				name: "Mask"
+				visible: true
+				width: width@b0965675-46bf-403a-ab42-9dcdb1cfcdc9 (propref<int>)
+				height: height@b0965675-46bf-403a-ab42-9dcdb1cfcdc9 (propref<int>)
+				x: 0
+				y: 0
+				enabled: true
+				image: image_resource(8ae5ef79-f6f7-4e29-bc3e-2a35ed0c2d88)
+				{
+					file: "CircleMask.png"
+				}
+				horizontalAlign: 0
+				verticalAlign: 1
+				scaleMode: 1
+			}]
+		name: "Container"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		Percents: intlist [90, 4, 6]
+		Colors: colorlist [#1E90FFFF, #FFA500FF, #32CD32FF]
+	}
+	Colors: Colors@b0965675-46bf-403a-ab42-9dcdb1cfcdc9 (propref<colorlist>)
+	Percents: Percents@b0965675-46bf-403a-ab42-9dcdb1cfcdc9 (propref<intlist>)
+	width: width@b0965675-46bf-403a-ab42-9dcdb1cfcdc9 (propref<int>)
+	height: height@b0965675-46bf-403a-ab42-9dcdb1cfcdc9 (propref<int>)
+	x: x@b0965675-46bf-403a-ab42-9dcdb1cfcdc9 (propref<int>)
+	y: y@b0965675-46bf-403a-ab42-9dcdb1cfcdc9 (propref<int>)
+}

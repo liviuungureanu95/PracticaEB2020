@@ -1,0 +1,139 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(20a4f05f-8ff5-4c22-b8d4-d137b793cdeb)
+{
+	name: "vTemperatures"
+	template: @5e80652e-ecef-4af0-ad89-16f04f9129f9 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(b8a4a9c4-b4b8-425b-9591-4bec5b8d8902)
+		{
+			name: "TemperatureChart"
+			template: @470ef673-8939-49a3-b411-a743d36b216f (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 10
+			y: 240
+			indicatedValues: indicatedValues@470ef673-8939-49a3-b411-a743d36b216f (propref<stringlist>)
+			textColor: #FFFFFFFF
+		}, 
+		GtfLabel(117075a1-8bca-4044-aaa9-9c754f6d5b52)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "TemperatureIndicator"
+			visible: true
+			width: 400
+			height: 30
+			x: 10
+			y: 160
+			text: string_scriptedValue(cf88e2ae-0edd-4d93-b941-6c4817d77ae8)
+			{
+				triggerList: trigger_list(28c5c560-41cb-4cda-9830-302525571b55)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(fbdb41b1-468d-444e-af5a-cfa7faf98c91)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(27db5b16-f01b-4e8a-a4fc-6527674daed7)
+				{
+					script: "function()" \
+						"{" \
+						"	if(v:this->^->TemperatureChart.indicatedValues[0] == \"Empty\")" \
+						"		\"Click on the chart to see details\"" \
+						"	else" \
+						"		\"Temperature: \" + v:this->^->TemperatureChart.indicatedValues[0] + \" degrees\"" \
+						"}"
+				}
+				write: function<bool,string>(5bcee156-4e6d-4fc1-823f-8a636c2c9390)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: @d54463d6-525e-40d2-ac5a-5fa03c727f72 (objectref<color>)
+			font: font_resource(f4341025-c7b4-4272-8e8e-3bbbd138c018)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 25
+			}
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(f2e077b5-b0f2-4bf5-98e6-229373fda4af)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "TimeIndicator"
+			visible: true
+			width: 400
+			height: 30
+			x: 10
+			y: 190
+			text: string_scriptedValue(4db32ca4-9dd2-4ec5-b1f1-e516e35920fe)
+			{
+				triggerList: trigger_list(5177bf81-55cb-4952-a815-ba0aa9b2fdf4)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(70da6399-2a94-4709-b014-b4352a5e6c6f)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(f01c0243-8c88-4364-9270-cebc0f8b4dac)
+				{
+					script: "function()" \
+						"{" \
+						"	if(v:this->^->TemperatureChart.indicatedValues[1] == \"Empty\")" \
+						"		\"\"" \
+						"	else" \
+						"		\"Time: \" + v:this->^->TemperatureChart.indicatedValues[1]" \
+						"}"
+				}
+				write: function<bool,string>(6e22d1f2-02cb-474b-9762-c614a5ed4cf4)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: @d54463d6-525e-40d2-ac5a-5fa03c727f72 (objectref<color>)
+			font: font_resource(6118527e-138f-4807-a325-63f4fcc3a1cb)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 25
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(6bcd8cf3-339d-40d5-b7d5-d0990b9a4617)
+		{
+			name: "SlidingMenu"
+			template: @53aefd19-c201-4011-b951-480be3737f43 (objectref<GtfContainer_template>)
+			children: children_list []
+		}]
+	MainInfo: "Raport Temperatura Apei"
+	SecondaryInfo: @eb370099-8c0a-4970-93f2-11c83908f4a0 (objectref<string>)
+	backButtonAction: function<bool>(7b462e23-5229-4476-96c3-8005fdddd730)
+	{
+		script: "function()" \
+			"{" \
+			"	fire ev:goTo_GeneralInfo()" \
+			"	false" \
+			"}"
+	}
+	backButtonVisible: backButtonVisible@5e80652e-ecef-4af0-ad89-16f04f9129f9 (propref<bool>)
+}
