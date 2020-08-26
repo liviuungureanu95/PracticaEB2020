@@ -44,7 +44,7 @@ GtfView_template_instance(b9db78fc-a33c-483f-b129-435384dbaa8c)
 					buttonValue: @258ff0d9-0c0b-4ca7-a0cb-de2386226ecd (objectref<int>)
 					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
 					Check: selected@04d017f3-0784-4a3e-90a2-f534a14fb882 (propref<bool>)
-					text: "Trip Statistics"
+					text: @3ef57e0b-67c4-4c15-b560-787f27eccf4c (objectref<string>)
 					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
 					image: image_resource(5ecd714b-55d9-4cde-9612-67cb4dc47e7b)
 					{
@@ -74,7 +74,7 @@ GtfView_template_instance(b9db78fc-a33c-483f-b129-435384dbaa8c)
 					buttonValue: @258ff0d9-0c0b-4ca7-a0cb-de2386226ecd (objectref<int>)
 					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
 					Check: selected@be55071e-7658-41c3-88b3-7ed70dac847c (propref<bool>)
-					text: "Wheel Pressure"
+					text: @11beeb1a-4998-42c3-885f-d1729ac0bf29 (objectref<string>)
 					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
 					image: image_resource(f81e3b00-945a-46c1-875b-86515a2919e5)
 					{
@@ -104,7 +104,7 @@ GtfView_template_instance(b9db78fc-a33c-483f-b129-435384dbaa8c)
 					buttonValue: @258ff0d9-0c0b-4ca7-a0cb-de2386226ecd (objectref<int>)
 					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
 					Check: selected@e171a825-519f-4ac9-972f-05e9e666c781 (propref<bool>)
-					text: "Oil Information"
+					text: @be86ee7c-7ff5-4fdd-b1b4-50858fe34ac6 (objectref<string>)
 					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
 					image: image_resource(c0a4a81c-7b28-4e4a-ada1-6716af886764)
 					{
@@ -118,7 +118,7 @@ GtfView_template_instance(b9db78fc-a33c-483f-b129-435384dbaa8c)
 					name: "ManualButton"
 					template: @f6c12626-eb24-4a9e-be20-384f8af93859 (objectref<GtfContainer_template>)
 					children: children_list []
-					x: x@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					x: 0
 					y: 180
 					touchShortReleased: function<bool,int,int,int,int>(652beb5e-9acb-4883-8a20-e355b19418d2)
 					{
@@ -134,7 +134,7 @@ GtfView_template_instance(b9db78fc-a33c-483f-b129-435384dbaa8c)
 					buttonValue: @258ff0d9-0c0b-4ca7-a0cb-de2386226ecd (objectref<int>)
 					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
 					Check: selected@8cfb37cb-0e6a-4223-a015-b97ee99e6827 (propref<bool>)
-					text: "Owner's Manual"
+					text: @eac36bd3-bf0e-488d-9f46-34d717b495ce (objectref<string>)
 					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
 					image: image_resource(fab4eaba-8821-47ce-8436-8318cf0ed3d9)
 					{
@@ -291,22 +291,22 @@ GtfView_template_instance(b9db78fc-a33c-483f-b129-435384dbaa8c)
 						"{" \
 						"	match_event v:event = ev:Info_CompoundEvents:vehicle_choice in" \
 						"	{" \
-						"		if(v:event.choice == \"Trip Statistics\")" \
+						"		if(v:event.choice == \"Trip Statistics\" || v:event.choice == \"Informatii Calatorie\" || v:event.choice == \"Reisestatistik\")" \
 						"		{" \
 						"			dp:InfoMenu:ChosenList= dp:InfoMenu:TripList" \
 						"		}" \
 						"		" \
-						"		if(v:event.choice == \"Wheel Pressure\")" \
+						"		if(v:event.choice == \"Wheel Pressure\" || v:event.choice == \"Presiunea in roti\" || v:event.choice == \"Raddruck\")" \
 						"		{" \
 						"			dp:InfoMenu:ChosenList= dp:InfoMenu:WheelList" \
 						"		}" \
 						"		" \
-						"		if(v:event.choice == \"Oil Information\")" \
+						"		if(v:event.choice == \"Oil Information\" || v:event.choice == \"Informatii Ulei\" || v:event.choice == \"Öli Informationen\")" \
 						"		{" \
 						"			dp:InfoMenu:ChosenList= dp:InfoMenu:OilList" \
 						"		}" \
 						"		" \
-						"		if(v:event.choice == \"Owner's Manual\")" \
+						"		if(v:event.choice == \"Owner's Manual\" || v:event.choice == \"Cartea Masinii\" || v:event.choice == \"Bedienungsanleitung\")" \
 						"		{" \
 						"			dp:InfoMenu:ChosenList= dp:InfoMenu:ManualList" \
 						"		}" \
@@ -338,4 +338,8 @@ GtfView_template_instance(b9db78fc-a33c-483f-b129-435384dbaa8c)
 	font: font@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<font>)
 	image: @28a5929a-87d6-4473-9912-d62fd743c5c6 (objectref<image>)
 	fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+	x: x@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	y: y@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	height: height@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	width: width@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
 }

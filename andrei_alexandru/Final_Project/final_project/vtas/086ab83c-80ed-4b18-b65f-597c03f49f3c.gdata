@@ -1,0 +1,52 @@
+EBGUIDE 6.10.0.200602120856;
+
+entry_animation(086ab83c-80ed-4b18-b65f-597c03f49f3c)
+{
+	animation: GtfParallelAnimation(1b20a18b-b889-4a75-8a39-5e5418b080ff)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfFastStartS32(b1024125-d7c9-4af7-b382-ee672610f314)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Fast start curve Instantiator"
+				enabled: true
+				delay: 0
+				duration: 1000
+				repeat: 1
+				alternating: false
+				relative: false
+				start: -1000
+				end: 50
+				target: x@72ac24da-63aa-4897-94ac-e5ade8b911f0 (propref<int>)
+			}]
+		name: "Options Animation"
+		enabled: true
+		repeat: 1
+		alternating: false
+		scale: 1F
+		onPlay: function<void,int,bool>(14d9a023-4a02-457a-bcb3-99ee355814b8)
+		{
+			script: "function(v:animation_time::int, v:forward::bool)" \
+				"{" \
+				"" \
+				"}"
+		}
+		onPause: function<void,int>(9144ba0a-b976-4d7b-830b-046afc5f259c)
+		{
+			script: "function(v:animation_time::int)" \
+				"{" \
+				"" \
+				"}"
+		}
+		onTerminate: function<void,int,int>(265f4d20-12e6-4418-bd7e-6631b1d6e9d2)
+		{
+			script: "function(v:animation_time::int, v:terminate::int)" \
+				"{" \
+				"" \
+				"}"
+		}
+	}
+	condition: function<bool>(none)
+}

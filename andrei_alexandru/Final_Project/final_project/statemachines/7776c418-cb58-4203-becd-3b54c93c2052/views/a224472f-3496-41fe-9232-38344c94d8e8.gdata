@@ -92,7 +92,7 @@ GtfView_template_instance(a224472f-3496-41fe-9232-38344c94d8e8)
 					buttonValue: @3c300278-4732-41b3-bc08-e4b25af3c565 (objectref<int>)
 					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
 					Check: selected@3cb0301b-9b33-4bc4-a536-8e7a3c05f64a (propref<bool>)
-					text: "Restaurants"
+					text: @77ce9f5e-7a24-4b7f-9079-5f6aab688d51 (objectref<string>)
 					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
 					image: image_resource(73481db2-de50-4a9b-af77-e1698ed5f4b6)
 					{
@@ -122,7 +122,7 @@ GtfView_template_instance(a224472f-3496-41fe-9232-38344c94d8e8)
 					buttonValue: @3c300278-4732-41b3-bc08-e4b25af3c565 (objectref<int>)
 					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
 					Check: selected@79b85f72-921d-4d80-9f91-2fd776d4c189 (propref<bool>)
-					text: "Travel and Tourism"
+					text: @b70e64df-bb35-477f-9c75-162836bbffcc (objectref<string>)
 					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
 					image: image_resource(4b6eb1cc-88ef-4db3-849c-0755b9d8e889)
 					{
@@ -152,7 +152,7 @@ GtfView_template_instance(a224472f-3496-41fe-9232-38344c94d8e8)
 					buttonValue: @3c300278-4732-41b3-bc08-e4b25af3c565 (objectref<int>)
 					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
 					Check: selected@0954d653-3be3-4ac8-84ba-6929bca3755a (propref<bool>)
-					text: "Shopping"
+					text: @c87cda25-d8c0-4bf1-b92c-233a2d481e31 (objectref<string>)
 					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
 					image: image_resource(26d57381-11cc-4cbc-8a56-91ce47f56ea5)
 					{
@@ -182,7 +182,7 @@ GtfView_template_instance(a224472f-3496-41fe-9232-38344c94d8e8)
 					buttonValue: @3c300278-4732-41b3-bc08-e4b25af3c565 (objectref<int>)
 					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
 					Check: selected@3efc0ae8-9d8b-47a4-a2d1-c713c2df2431 (propref<bool>)
-					text: "Commercial"
+					text: @bc465d36-d0d4-462d-bdaa-3f55523253b0 (objectref<string>)
 					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
 					image: image_resource(c6f49044-a50b-407f-8f75-67412a50834a)
 					{
@@ -212,7 +212,7 @@ GtfView_template_instance(a224472f-3496-41fe-9232-38344c94d8e8)
 					buttonValue: @3c300278-4732-41b3-bc08-e4b25af3c565 (objectref<int>)
 					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
 					Check: selected@384e431a-dec9-4016-990f-c53936b04677 (propref<bool>)
-					text: "Financial Servicies"
+					text: @9816b690-4c32-43a8-8571-76ca486b5f97 (objectref<string>)
 					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
 					image: image_resource(45e7dccb-757e-4c2e-8fa0-374f91e9b657)
 					{
@@ -242,7 +242,7 @@ GtfView_template_instance(a224472f-3496-41fe-9232-38344c94d8e8)
 					buttonValue: @3c300278-4732-41b3-bc08-e4b25af3c565 (objectref<int>)
 					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
 					Check: selected@a496c165-d337-41c6-9cba-3714ba439b3f (propref<bool>)
-					text: "Health Servicies"
+					text: @83ed77ea-93e3-4b7b-a780-7ad545507c7e (objectref<string>)
 					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
 					image: image_resource(d57fe99e-3bf1-4feb-bbc9-743f298f409a)
 					{
@@ -418,27 +418,27 @@ GtfView_template_instance(a224472f-3496-41fe-9232-38344c94d8e8)
 						"{" \
 						"	match_event v:event = ev:Traffic_CompoundEvents:traffic_choice in" \
 						"	{" \
-						"		if(v:event.choice == \"Restaurants\")" \
+						"		if(v:event.choice == \"Restaurants\" || v:event.choice ==\"Restaurante\" || v:event.choice ==\"Das Restaurant\")" \
 						"		{" \
 						"			dp:TrafficMenu:ChosenList = dp:TrafficMenu:RestaurantsList" \
 						"		}" \
-						"		else if(v:event.choice == \"Travel and Tourism\")" \
+						"		else if(v:event.choice == \"Travel and Tourism\" || v:event.choice ==\"Calatorii si Turism\" || v:event.choice ==\"Reisen und Tourismus\")" \
 						"		{" \
 						"			dp:TrafficMenu:ChosenList = dp:TrafficMenu:TravelList" \
 						"		}" \
-						"		else if(v:event.choice == \"Shopping\")" \
+						"		else if(v:event.choice == \"Shopping\" || v:event.choice ==\"Cumparaturi\" || v:event.choice ==\"Einkaufen\")" \
 						"		{" \
 						"			dp:TrafficMenu:ChosenList = dp:TrafficMenu:ShoppingList" \
 						"		}" \
-						"		else if(v:event.choice == \"Commercial\")" \
+						"		else if(v:event.choice == \"Commercial\" || v:event.choice ==\"Centre Comerciale\" || v:event.choice ==\"Kommerziell\")" \
 						"		{" \
 						"			dp:TrafficMenu:ChosenList = dp:TrafficMenu:CommercialList" \
 						"		}" \
-						"		else if(v:event.choice == \"Financial Servicies\")" \
+						"		else if(v:event.choice == \"Financial Servicies\" || v:event.choice ==\"Servicii Financiare\" || v:event.choice ==\"Finanzdienstleistungen\")" \
 						"		{" \
 						"			dp:TrafficMenu:ChosenList = dp:TrafficMenu:FinancialList" \
 						"		}" \
-						"		else if(v:event.choice == \"Health Servicies\")" \
+						"		else if(v:event.choice == \"Health Servicies\" || v:event.choice ==\"Servicii Medicale\"|| v:event.choice ==\"Gesundheitsdienste\")" \
 						"		{" \
 						"			dp:TrafficMenu:ChosenList = dp:TrafficMenu:HealthList" \
 						"		}" \
@@ -470,4 +470,8 @@ GtfView_template_instance(a224472f-3496-41fe-9232-38344c94d8e8)
 	font: font@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<font>)
 	image: @28a5929a-87d6-4473-9912-d62fd743c5c6 (objectref<image>)
 	fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+	x: x@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	y: y@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	height: height@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	width: width@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
 }

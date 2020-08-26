@@ -1,0 +1,52 @@
+EBGUIDE 6.10.0.200602120856;
+
+entry_animation(512c7678-7197-495b-9fc4-f03c91937851)
+{
+	animation: GtfParallelAnimation(0f0bd028-0660-4f2f-b051-97e055826f02)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfFastStartS32(7d999314-13dc-4ff0-96ea-72e31748bdfc)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Fast start curve DarkMode"
+				enabled: true
+				delay: 0
+				duration: 1000
+				repeat: 1
+				alternating: false
+				relative: false
+				start: 1000
+				end: 420
+				target: x@9717b729-fb66-4171-b195-a6f8de21aaef (propref<int>)
+			}]
+		name: "DarkMode Animation"
+		enabled: true
+		repeat: 1
+		alternating: false
+		scale: 1F
+		onPlay: function<void,int,bool>(3caf3d9f-7566-4581-bb15-b3ef5f828d37)
+		{
+			script: "function(v:animation_time::int, v:forward::bool)" \
+				"{" \
+				"" \
+				"}"
+		}
+		onPause: function<void,int>(9a2953a0-1eb2-4d78-b0b2-c2fa17ca33b3)
+		{
+			script: "function(v:animation_time::int)" \
+				"{" \
+				"" \
+				"}"
+		}
+		onTerminate: function<void,int,int>(dd830eb7-bab8-47ab-9616-20199765bd92)
+		{
+			script: "function(v:animation_time::int, v:terminate::int)" \
+				"{" \
+				"" \
+				"}"
+		}
+	}
+	condition: function<bool>(none)
+}

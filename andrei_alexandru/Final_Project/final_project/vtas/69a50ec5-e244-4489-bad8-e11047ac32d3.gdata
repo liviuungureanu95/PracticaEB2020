@@ -1,0 +1,52 @@
+EBGUIDE 6.10.0.200602120856;
+
+entry_animation(69a50ec5-e244-4489-bad8-e11047ac32d3)
+{
+	animation: GtfParallelAnimation(fb3fcbef-f834-4af5-90b8-fba93c117ea6)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfFastStartS32(da2ed031-cd5f-4927-ab7c-ecc067fd0ea5)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Fast start curve LightMode"
+				enabled: true
+				delay: 0
+				duration: 1000
+				repeat: 1
+				alternating: false
+				relative: false
+				start: -1000
+				end: 300
+				target: x@7f309666-e1cb-4189-a040-6f5768672651 (propref<int>)
+			}]
+		name: "LightMode Animation"
+		enabled: true
+		repeat: 1
+		alternating: true
+		scale: 1F
+		onPlay: function<void,int,bool>(6e9caea4-fae0-4cb0-be50-b0daa32f4cf4)
+		{
+			script: "function(v:animation_time::int, v:forward::bool)" \
+				"{" \
+				"" \
+				"}"
+		}
+		onPause: function<void,int>(1c8db3c7-35e2-4516-a900-25451df5ace2)
+		{
+			script: "function(v:animation_time::int)" \
+				"{" \
+				"" \
+				"}"
+		}
+		onTerminate: function<void,int,int>(57b36f88-4dde-4270-8c60-dac4233730ce)
+		{
+			script: "function(v:animation_time::int, v:terminate::int)" \
+				"{" \
+				"" \
+				"}"
+		}
+	}
+	condition: function<bool>(none)
+}

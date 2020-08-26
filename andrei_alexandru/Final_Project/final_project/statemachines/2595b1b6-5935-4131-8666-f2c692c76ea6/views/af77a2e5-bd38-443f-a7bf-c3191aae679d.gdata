@@ -4,6 +4,35 @@ GtfView(af77a2e5-bd38-443f-a7bf-c3191aae679d)
 {
 	features: feature_list []
 	children: children_list [
+		GtfRectangle(4e07037a-58d4-4962-be7d-667cc1684bfd)
+		{
+			features: feature_list [
+				TouchPressed(d7246332-96c1-4c66-93e5-76c1c118f793)
+				{
+					touchPressed: function<bool,int,int,int,int>(5e4d5e94-1d5f-499e-94fa-66e17ac12045)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(5db6d26a-8b83-41f0-9706-a1cb7140eb97)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "InvisibleBackground"
+			visible: true
+			width: 800
+			height: 480
+			x: -150
+			y: -90
+			fillColor: #FFFFFF00
+		}, 
 		GtfRectangle(deabf857-fa11-4ce1-9463-57c29fdc268f)
 		{
 			features: feature_list [
@@ -24,7 +53,7 @@ GtfView(af77a2e5-bd38-443f-a7bf-c3191aae679d)
 					height: 50
 					x: 0
 					y: 100
-					text: "Power Steering Problems!"
+					text: @e1cab921-cab8-4994-a97d-e626e34555e9 (objectref<string>)
 					textColor: #000000FF
 					font: font_resource(1ccdf608-dc2c-4fae-8b57-3da1b74ff775)
 					{
@@ -44,7 +73,7 @@ GtfView(af77a2e5-bd38-443f-a7bf-c3191aae679d)
 					height: 50
 					x: 0
 					y: 140
-					text: "Go to nearest service!"
+					text: @ea1ef167-42b6-41ee-ba58-75ce67fd0a32 (objectref<string>)
 					textColor: #3CB371FF
 					font: font_resource(666cc688-6e8a-49c4-8d6e-64f9104090b1)
 					{
@@ -178,7 +207,7 @@ GtfView(af77a2e5-bd38-443f-a7bf-c3191aae679d)
 			visible: true
 			width: width@af77a2e5-bd38-443f-a7bf-c3191aae679d (propref<int>)
 			height: height@af77a2e5-bd38-443f-a7bf-c3191aae679d (propref<int>)
-			x: -1
+			x: 0
 			y: 0
 			fillColor: #FFFFFFFF
 		}]
