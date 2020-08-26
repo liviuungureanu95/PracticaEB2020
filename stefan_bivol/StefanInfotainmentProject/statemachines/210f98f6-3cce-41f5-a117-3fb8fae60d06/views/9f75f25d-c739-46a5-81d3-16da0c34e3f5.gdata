@@ -1,0 +1,504 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(9f75f25d-c739-46a5-81d3-16da0c34e3f5)
+{
+	name: "Sub_Sound_Volume_View"
+	template: @dd151528-66b9-40c3-84cc-8ff2db2988ad (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(1bdfe907-857e-4119-b7b0-65e973d6bd54)
+		{
+			name: "Focus_Button"
+			template: @f0572966-554c-46a4-ab74-f728d70588ab (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 662
+			y: 100
+			textButton: @ab33724f-7f18-484f-a201-58d2f208ef7d (objectref<string>)
+			imageButton: @5a1c3e6f-f786-4443-8b4d-0a86d9c4eb79 (objectref<image>)
+			touchShortReleased: function<bool,int,int,int,int>(09eee323-e298-449c-8a49-fd763c76f302)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:goToFocus()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(bd31ab27-5ee0-410c-b9f9-f7b9d562ff04)
+		{
+			name: "Volume_Button"
+			template: @f0572966-554c-46a4-ab74-f728d70588ab (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 662
+			y: 200
+			textButton: @744ee62a-f586-476b-b110-33577b011ff8 (objectref<string>)
+			imageButton: @49d72945-f1dd-4f75-b4c7-046a78ac292e (objectref<image>)
+			touchShortReleased: touchShortReleased@f0572966-554c-46a4-ab74-f728d70588ab (propref<function<bool,int,int,int,int>>)
+		}, 
+		GtfContainer(fada48a5-04d4-4ef2-9d67-6b07875ef1e4)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(e20d36a9-a514-47e2-8bec-da95d25d82d8)
+				{
+					features: feature_list [
+						Border(b7be66fd-60fe-4fb7-b929-a89c4bcb61b3)
+						{
+							borderThickness: 1
+							borderColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+							borderStyle: 0
+						}]
+					children: children_list []
+					name: "Point_Rectangle"
+					visible: true
+					width: width@fada48a5-04d4-4ef2-9d67-6b07875ef1e4 (propref<int>)
+					height: height@fada48a5-04d4-4ef2-9d67-6b07875ef1e4 (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #FFFFFFFF
+				}]
+			name: "Selected_Point"
+			visible: true
+			width: 20
+			height: 20
+			x: 390
+			y: 355
+		}, 
+		GtfContainer(f258ad20-e07c-4fc4-b17b-a707686cef27)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(6b6537cc-9881-47fc-8b92-5ffd5b49dc86)
+				{
+					features: feature_list [
+						Border(10dcd39f-63c5-4e06-9bbd-4946d459c539)
+						{
+							borderThickness: 1
+							borderColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+							borderStyle: 0
+						}]
+					children: children_list []
+					name: "Point_Rectangle"
+					visible: true
+					width: width@f258ad20-e07c-4fc4-b17b-a707686cef27 (propref<int>)
+					height: height@f258ad20-e07c-4fc4-b17b-a707686cef27 (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #00FF00FF
+				}]
+			name: "Selected_Second_Point"
+			visible: true
+			width: 20
+			height: 20
+			x: 415
+			y: 355
+		}, 
+		GtfContainer(417389ba-4747-4d5d-b373-1d256473030a)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(a1e42a15-de66-4b7a-a127-e63687b21db9)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Title_Label"
+					visible: true
+					width: width@417389ba-4747-4d5d-b373-1d256473030a (propref<int>)
+					height: height@417389ba-4747-4d5d-b373-1d256473030a (propref<int>)
+					x: 5
+					y: 0
+					text: @f328442a-13d3-4025-ba3b-1c04e1377ac9 (objectref<string>)
+					textColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+					font: font_resource(8894e526-1dfc-41da-9f58-451ef1dc6300)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfRectangle(b3fec30d-751b-412d-8410-d1c42eae0698)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Down_Line"
+					visible: true
+					width: width@417389ba-4747-4d5d-b373-1d256473030a (propref<int>)
+					height: 1
+					x: 5
+					y: 45
+					fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+				}]
+			name: "Sub_Title_Music"
+			visible: true
+			width: 500
+			height: 50
+			x: 125
+			y: 50
+		}, 
+		GtfContainer(3d1261ba-e7eb-4a30-ac64-d639f466c6ef)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(a5285d04-9414-4385-bb86-b5cf9b6dd5d4)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Title_Label"
+					visible: true
+					width: width@3d1261ba-e7eb-4a30-ac64-d639f466c6ef (propref<int>)
+					height: height@3d1261ba-e7eb-4a30-ac64-d639f466c6ef (propref<int>)
+					x: 5
+					y: 0
+					text: @72c47582-cecd-41bd-97a0-59d755bdce88 (objectref<string>)
+					textColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+					font: font_resource(b27234ad-deb5-4c3a-9909-fcb9a8f4c9fe)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfRectangle(3ad68be7-738f-425f-9925-b4a5c3534381)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Down_Line"
+					visible: true
+					width: width@3d1261ba-e7eb-4a30-ac64-d639f466c6ef (propref<int>)
+					height: 1
+					x: 5
+					y: 45
+					fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+				}]
+			name: "Sub_Title_General_Audio"
+			visible: true
+			width: 500
+			height: 50
+			x: 125
+			y: 200
+		}, 
+		GtfContainer(39f38d69-4d63-48b1-af0a-da05d2b720df)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(ad28cb68-60cb-4efa-88e3-80e332f8c9bc)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Load_Rectangle"
+					visible: true
+					width: int_scriptedValue(04f0a924-2ba0-414f-8cab-9c16bd905777)
+					{
+						triggerList: trigger_list(1577383f-c4d3-4570-9584-807ad8eff03e)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(0ceba3a8-742a-47d7-b5ab-10e57492a4dc)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<int>(da724541-d994-401c-8741-b09e0ee235f1)
+						{
+							script: "function()" \
+								"{" \
+								"	(dp:Variables:Music_Sound_Percent / 10) * 35" \
+								"" \
+								"}"
+						}
+						write: function<bool,int>(5fe66695-5d40-4cee-8660-ad8e7df94b84)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					height: height@39f38d69-4d63-48b1-af0a-da05d2b720df (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #00FF00FF
+				}, 
+				GtfRectangle(f313e86c-0cf1-46d5-a358-326140febaab)
+				{
+					features: feature_list [
+						Border(f6026d44-81a3-4abf-8246-313649d4cf9a)
+						{
+							borderThickness: 2
+							borderColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+							borderStyle: 0
+						}]
+					children: children_list []
+					name: "Bar_Rectangle"
+					visible: true
+					width: width@39f38d69-4d63-48b1-af0a-da05d2b720df (propref<int>)
+					height: height@39f38d69-4d63-48b1-af0a-da05d2b720df (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #FFFFFF00
+				}]
+			name: "Music_Sound_Bar"
+			visible: true
+			width: 350
+			height: 33
+			x: 170
+			y: 132
+		}, 
+		GtfContainer(99a7c007-9f94-407b-971a-fae62dca491c)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(8d0642b7-6092-47d8-aa17-4d6519e5b7d1)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Load_Rectangle"
+					visible: true
+					width: int_scriptedValue(2342a6f8-353a-47eb-a0d9-d5fbd165b011)
+					{
+						triggerList: trigger_list(e3582eb7-1eb7-4400-8198-20e6257206e1)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(fe8abbaf-5fb9-4756-a06d-553d7d704500)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<int>(7b8fc15a-f417-4b36-ac16-51d913c2504f)
+						{
+							script: "function()" \
+								"{" \
+								"	(dp:Variables:General_Sound_Percent / 10) * 35" \
+								"}"
+						}
+						write: function<bool,int>(4fa7c37d-fd53-4047-bcb8-16603f667be5)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					height: height@99a7c007-9f94-407b-971a-fae62dca491c (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #00FF00FF
+				}, 
+				GtfRectangle(9f850378-234c-438a-a427-2a0569f0c5de)
+				{
+					features: feature_list [
+						Border(126193cb-3ca6-4eff-af47-8de073a83f6c)
+						{
+							borderThickness: 2
+							borderColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+							borderStyle: 0
+						}]
+					children: children_list []
+					name: "Bar_Rectangle"
+					visible: true
+					width: width@99a7c007-9f94-407b-971a-fae62dca491c (propref<int>)
+					height: height@99a7c007-9f94-407b-971a-fae62dca491c (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #FFFFFF00
+				}]
+			name: "General_Sound_Bar"
+			visible: true
+			width: 350
+			height: 33
+			x: 170
+			y: 282
+		}, 
+		GtfLabel(5c1d2249-e433-41c5-b372-ac49661ec7c4)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Music_Sound_Label"
+			visible: true
+			width: 100
+			height: 30
+			x: 550
+			y: 130
+			text: string_scriptedValue(7e49291b-72c9-4b0d-9242-7504f0cf6b7d)
+			{
+				triggerList: trigger_list(a5e4c52c-1435-4303-81b7-6d0f518477f4)
+				{
+					script: "dp:Variables:Music_Sound_Percent" \
+						""
+				}
+				onTrigger: function<bool,bool>(4387b9eb-7c41-4d4a-a095-8e11f49464c0)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(7f66affa-6232-4333-83eb-e3a8ae56ea93)
+				{
+					script: "function()" \
+						"{" \
+						"	" \
+						"	f:int2string(dp:Variables:Music_Sound_Percent) +\"%\"" \
+						"}"
+				}
+				write: function<bool,string>(0ffd8d43-6b08-4340-85e4-07a5bdb03131)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+			font: font_resource(a3a29186-54ac-4cda-9f0b-750084866a01)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(4ff80cd4-e483-4d76-8eda-b6899101995d)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "General_Sound_Label"
+			visible: true
+			width: 100
+			height: 30
+			x: 550
+			y: 280
+			text: string_scriptedValue(46b37014-eed7-4759-bb78-4e764700da99)
+			{
+				triggerList: trigger_list(831ec7b7-7e21-4856-b2ec-59127471f350)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(b8d7ae36-2ad7-422c-8f66-f7ab54cbd03f)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(3910587f-1204-4f70-8eab-f949e32175d2)
+				{
+					script: "function()" \
+						"{" \
+						"	f:int2string(dp:Variables:General_Sound_Percent) + \"%\"" \
+						"}"
+				}
+				write: function<bool,string>(bc94e9f7-a2a3-4539-ab66-db59a6c6de07)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+			font: font_resource(92697c80-25df-401b-8120-a4ba1997879e)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(52a9b109-f903-458a-8727-f89faf808a93)
+		{
+			name: "Minus_Music_Button"
+			template: @cfc31c5e-f76d-4889-878d-a4c54e6ba2c3 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 130
+			y: 130
+			width: width@cfc31c5e-f76d-4889-878d-a4c54e6ba2c3 (propref<int>)
+			height: height@cfc31c5e-f76d-4889-878d-a4c54e6ba2c3 (propref<int>)
+			image: @027a57e6-6a00-41c4-9ff7-e81efd7c4bf0 (objectref<image>)
+			touchShortReleased: function<bool,int,int,int,int>(a1248890-2af1-43dc-944e-f140a9230a6f)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(dp:Variables:Music_Sound_Percent > 0)" \
+					"		dp:Variables:Music_Sound_Percent -= 10" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(18d6d196-0d23-4a56-b531-adc95c20e633)
+		{
+			name: "Minus_General_Button"
+			template: @cfc31c5e-f76d-4889-878d-a4c54e6ba2c3 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 130
+			y: 280
+			width: width@cfc31c5e-f76d-4889-878d-a4c54e6ba2c3 (propref<int>)
+			height: height@cfc31c5e-f76d-4889-878d-a4c54e6ba2c3 (propref<int>)
+			image: @027a57e6-6a00-41c4-9ff7-e81efd7c4bf0 (objectref<image>)
+			touchShortReleased: function<bool,int,int,int,int>(55663238-2cef-40fc-8b52-b608d552eed4)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(dp:Variables:General_Sound_Percent > 0)" \
+					"		dp:Variables:General_Sound_Percent -= 10" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(cec898ed-2283-4b20-a8f1-05d42ccd8ffc)
+		{
+			name: "Plus_Music_Button"
+			template: @cfc31c5e-f76d-4889-878d-a4c54e6ba2c3 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 525
+			y: 130
+			width: width@cfc31c5e-f76d-4889-878d-a4c54e6ba2c3 (propref<int>)
+			height: height@cfc31c5e-f76d-4889-878d-a4c54e6ba2c3 (propref<int>)
+			image: @0e416303-1afd-4812-9aae-5c7163b15e4d (objectref<image>)
+			touchShortReleased: function<bool,int,int,int,int>(65597309-12a3-4d39-8612-4c94dadc9605)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(dp:Variables:Music_Sound_Percent < 100)" \
+					"		dp:Variables:Music_Sound_Percent += 10" \
+					"			" \
+					"		" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(75814e9c-1371-4667-995f-4bd41e5ae8e0)
+		{
+			name: "Plus_General_Button"
+			template: @cfc31c5e-f76d-4889-878d-a4c54e6ba2c3 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 525
+			y: 280
+			width: width@cfc31c5e-f76d-4889-878d-a4c54e6ba2c3 (propref<int>)
+			height: height@cfc31c5e-f76d-4889-878d-a4c54e6ba2c3 (propref<int>)
+			image: @0e416303-1afd-4812-9aae-5c7163b15e4d (objectref<image>)
+			touchShortReleased: function<bool,int,int,int,int>(6f182875-6495-4745-b7a5-32203d9cd34e)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(dp:Variables:General_Sound_Percent < 100)" \
+					"		dp:Variables:General_Sound_Percent += 10" \
+					"    false" \
+					"}"
+			}
+		}]
+}

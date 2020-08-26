@@ -1,0 +1,152 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(e6351d64-f062-46bd-a0b0-36cd9cd6440e)
+{
+	name: "Mods Button"
+	structure: GtfContainer(0ef93d79-d933-4ab9-84dd-a7c8c5b42e46)
+	{
+		features: feature_list [
+			MoveOut(dd129ad5-ee3b-42ff-bf87-762a576ec0fd)
+			{
+				moveOut: function<bool,int,int,int,int>(7d8420e1-b350-4523-b4ea-b3d0e854f55e)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->Border_Elipse->Elipse_On.fillColor = dp:Colors:Move_Out_Color" \
+						"    false" \
+						"}"
+				}
+			}, 
+			MoveIn(7372fc70-5045-48c9-b3b6-a9681970c6d0)
+			{
+				moveIn: function<bool,int,int,int,int>(af7bc4bb-e3f3-4a3e-b324-09305853be2b)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->Border_Elipse->Elipse_On.fillColor = dp:Colors:Move_In_Color" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(2a667dd0-4097-4101-9c04-ddaeadf73457)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			TouchPressed(62e9b03e-08a0-49c0-aac2-3fbcf4a6c7bd)
+			{
+				touchPressed: function<bool,int,int,int,int>(12688333-f7c3-4caf-a3c5-d7fc32f28e1b)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	fire ev:onModePopUp()" \
+						"	dp:Variables:Mods_Background_On = true" \
+						"    false" \
+						"}"
+				}
+			}]
+		children: children_list [
+			GtfEllipse(56631561-91ab-44ff-8b8e-9ff2d7e68dc9)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfEllipse(06d64d4f-f421-48ad-b828-571872d1bfc6)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Elipse"
+						visible: true
+						width: 117
+						height: 117
+						x: 4
+						y: 4
+						fillColor: @6927c983-d312-43fc-8e7f-bde98fa1464b (objectref<color>)
+						arcWidth: 0
+						centralAngle: 360F
+						sectorRotation: 0F
+					}, 
+					GtfEllipse(1445c0c6-2ae8-4cf8-918b-377f8f620859)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Elipse_On"
+						visible: true
+						width: 117
+						height: 117
+						x: 4
+						y: 4
+						fillColor: #FFFFFF00
+						arcWidth: 0
+						centralAngle: 360F
+						sectorRotation: 0F
+					}, 
+					GtfImage(cee679a6-957f-4933-8462-dd6580775dae)
+					{
+						features: feature_list [
+							ScaleMode(34177ae9-cd29-4754-a4c2-d32643d454ad)
+							{
+								scaleMode: 1
+							}]
+						children: children_list []
+						name: "Image"
+						visible: true
+						width: 75
+						height: 75
+						x: 25
+						y: 25
+						image: image_resource(1baefaff-8c36-409d-8339-65bf8d161488)
+						{
+							file: ""
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+					}]
+				name: "Border_Elipse"
+				visible: true
+				width: width@0ef93d79-d933-4ab9-84dd-a7c8c5b42e46 (propref<int>)
+				height: 125
+				x: 0
+				y: 0
+				fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+				lightColor: #000000FF
+				elseColor: #FFFFFFFF
+			}, 
+			GtfLabel(a851ee1f-5b1b-439a-b4cf-24e42090eb54)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Button_Label"
+				visible: true
+				width: width@0ef93d79-d933-4ab9-84dd-a7c8c5b42e46 (propref<int>)
+				height: 35
+				x: 0
+				y: 120
+				text: "<Text>"
+				textColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+				font: font_resource(e79fbde2-2657-4944-b6c5-a0609b03c01b)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 25
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Mods_Button"
+		visible: true
+		width: 125
+		height: 150
+		x: 0
+		y: 0
+	}
+	image: image@cee679a6-957f-4933-8462-dd6580775dae (propref<image>)
+	text: text@a851ee1f-5b1b-439a-b4cf-24e42090eb54 (propref<string>)
+	x: x@0ef93d79-d933-4ab9-84dd-a7c8c5b42e46 (propref<int>)
+	y: y@0ef93d79-d933-4ab9-84dd-a7c8c5b42e46 (propref<int>)
+	actionButton: touchPressed@62e9b03e-08a0-49c0-aac2-3fbcf4a6c7bd (propref<function<bool,int,int,int,int>>)
+}

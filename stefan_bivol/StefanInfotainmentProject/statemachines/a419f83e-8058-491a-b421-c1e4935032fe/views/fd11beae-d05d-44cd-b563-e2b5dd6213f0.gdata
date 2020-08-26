@@ -1,0 +1,251 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(fd11beae-d05d-44cd-b563-e2b5dd6213f0)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(cea78764-241e-4b2c-b5ed-97e2acd86628)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(84fd3a7a-b8ed-409a-bfbb-b7920051b562)
+				{
+					features: feature_list [
+						Border(690e76ee-2b2a-4be1-a041-23d95d4133ea)
+						{
+							borderThickness: 2
+							borderColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+							borderStyle: 0
+						}]
+					children: children_list []
+					name: "Border"
+					visible: true
+					width: width@cea78764-241e-4b2c-b5ed-97e2acd86628 (propref<int>)
+					height: height@cea78764-241e-4b2c-b5ed-97e2acd86628 (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #FFFFFF00
+				}, 
+				GtfLabel(752ee196-9318-4b4e-80ba-2f6997d08d01)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Eco_Label"
+					visible: true
+					width: width@cea78764-241e-4b2c-b5ed-97e2acd86628 (propref<int>)
+					height: 100
+					x: 0
+					y: 5
+					text: @b258bc85-a630-4134-9f99-1991f2c8bfb0 (objectref<string>)
+					textColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+					font: font_resource(c825182a-7270-4c0b-858d-cceb3e4054fd)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer(602fb688-e1ff-4d8c-b2ac-7e067fa1fb94)
+				{
+					features: feature_list [
+						MoveOut(a7c78e3a-f77a-45bc-a8ea-2bd763ff0d70)
+						{
+							moveOut: function<bool,int,int,int,int>(00769050-1542-46aa-be06-64825d1047b8)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->Border_Button.fillColor = dp:Colors:Move_Out_Color" \
+									"    false" \
+									"}"
+							}
+						}, 
+						MoveIn(4162c47c-8d57-423f-8d14-02a4c85b8a2a)
+						{
+							moveIn: function<bool,int,int,int,int>(47fdf86f-5170-4ff0-abd4-1688a716d28e)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->Border_Button.fillColor = dp:Colors:Move_In_Color" \
+									"    false" \
+									"}"
+							}
+						}, 
+						TouchShortReleased(9ab7eb9c-9bd5-4158-97a0-56e74b2a699f)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(e60c61f8-b087-417f-b977-dc8527b4ea24)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:offModePopUp()" \
+									"	dp:Variables:Mods_Background_On = false" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(c4443961-19f9-4cdd-8d9d-921b74c7dc4b)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfRectangle(b80ea00d-5ae7-4f66-b1a4-17b0898c48ce)
+						{
+							features: feature_list [
+								Border(78e42252-8be9-4b79-8658-759a96ff43ac)
+								{
+									borderThickness: 2
+									borderColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+									borderStyle: 0
+								}]
+							children: children_list [
+								GtfLabel(21ade5c2-2669-43a4-b8d3-45163b2645fc)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Ok_Label"
+									visible: true
+									width: width@602fb688-e1ff-4d8c-b2ac-7e067fa1fb94 (propref<int>)
+									height: height@602fb688-e1ff-4d8c-b2ac-7e067fa1fb94 (propref<int>)
+									x: 0
+									y: 0
+									text: "Ok"
+									textColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+									font: font_resource(88c743af-c7c1-40a2-9401-9db260c9fae1)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 30
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+								}]
+							name: "Border_Button"
+							visible: true
+							width: width@602fb688-e1ff-4d8c-b2ac-7e067fa1fb94 (propref<int>)
+							height: height@602fb688-e1ff-4d8c-b2ac-7e067fa1fb94 (propref<int>)
+							x: 0
+							y: 0
+							fillColor: #FFFFFF00
+						}]
+					name: "Ok_Button"
+					visible: true
+					width: 100
+					height: 40
+					x: 203
+					y: 225
+				}, 
+				GtfLabel(bc3a0825-9921-47e5-ac19-afce98fc1ed3)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "S_Label"
+					visible: true
+					width: width@cea78764-241e-4b2c-b5ed-97e2acd86628 (propref<int>)
+					height: 30
+					x: 0
+					y: 100
+					text: string_scriptedValue(3c0f5851-077e-42ee-a061-1de086b30d91)
+					{
+						triggerList: trigger_list(28164583-d555-4ad6-b33f-a699608d9eb4)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(1842e362-27dd-49ef-a578-beb420f4f7fc)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(7d5b5ddb-7465-44ef-a3d5-34ed8d3a37f9)
+						{
+							script: "function()" \
+								"{" \
+								"	dp:Language:Suspension_Text + \": \" + \"Auto\"" \
+								"}"
+						}
+						write: function<bool,string>(4c1b2945-57fe-463f-b777-fe9695adc49d)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+					font: font_resource(dc44fbab-00c1-4452-b96f-e63b40e8629d)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(e058880f-fd7e-43ee-861b-dddcbfac1264)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "RPM_Label"
+					visible: true
+					width: width@cea78764-241e-4b2c-b5ed-97e2acd86628 (propref<int>)
+					height: 30
+					x: 0
+					y: 130
+					text: string_scriptedValue(789bc61d-8e49-4f35-853e-0b973fad2b05)
+					{
+						triggerList: trigger_list(7c1d7066-484e-4bf5-9e8b-436df60a3433)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(1eba0cce-c452-41af-94ad-5b3003320353)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(883eb0cf-b593-4fef-a16d-ab0d7c0ee01f)
+						{
+							script: "function()" \
+								"{" \
+								"	\"RPM\" + \": \" + dp:Language:RPM_Low_Text" \
+								"}"
+						}
+						write: function<bool,string>(cd13a777-4cf1-45e6-9eda-cdd885c4d5dd)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+					font: font_resource(04e99ea4-8e4c-4c04-8b50-54215cc7cdba)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Background"
+			visible: true
+			width: 500
+			height: 300
+			x: 150
+			y: 75
+			fillColor: @6927c983-d312-43fc-8e7f-bde98fa1464b (objectref<color>)
+		}]
+	name: "Pop_Up_Mode_View"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

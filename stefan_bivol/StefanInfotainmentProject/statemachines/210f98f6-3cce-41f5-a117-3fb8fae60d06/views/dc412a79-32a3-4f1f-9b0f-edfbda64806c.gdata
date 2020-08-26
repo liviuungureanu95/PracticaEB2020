@@ -1,0 +1,313 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(dc412a79-32a3-4f1f-9b0f-edfbda64806c)
+{
+	name: "Favourite_View"
+	template: @e0d94433-fcfc-49d3-ab30-42b9a67dd306 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer(91681621-c2ee-4043-ad6d-0a603490b9fb)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(dca53921-fe54-4110-8e7a-79b97bf0f3b0)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Title_Label"
+					visible: true
+					width: width@91681621-c2ee-4043-ad6d-0a603490b9fb (propref<int>)
+					height: height@91681621-c2ee-4043-ad6d-0a603490b9fb (propref<int>)
+					x: 5
+					y: 0
+					text: "Radio"
+					textColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+					font: font_resource(efffea96-acbe-4976-9a70-7fa62904a090)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfRectangle(b9b5d8c3-0af4-424b-89c8-a409d80f888a)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Down_Line"
+					visible: true
+					width: width@91681621-c2ee-4043-ad6d-0a603490b9fb (propref<int>)
+					height: 1
+					x: 5
+					y: 45
+					fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+				}]
+			name: "Favorite_Radio"
+			visible: true
+			width: 260
+			height: 50
+			x: 125
+			y: 50
+		}, 
+		GtfContainer(0f76e898-a681-41ef-8ae7-d149a0b7d738)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(359c10cf-0ba2-4912-9272-c42091fe0b13)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Title_Label"
+					visible: true
+					width: width@0f76e898-a681-41ef-8ae7-d149a0b7d738 (propref<int>)
+					height: height@0f76e898-a681-41ef-8ae7-d149a0b7d738 (propref<int>)
+					x: 5
+					y: 0
+					text: "Media"
+					textColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+					font: font_resource(a19e9ede-70b0-4a01-8c88-e7d093a8518e)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfRectangle(d4d0a221-95b2-4999-a28e-d7635a1ea0c6)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Down_Line"
+					visible: true
+					width: width@0f76e898-a681-41ef-8ae7-d149a0b7d738 (propref<int>)
+					height: 1
+					x: 5
+					y: 45
+					fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+				}]
+			name: "Favorite_Media"
+			visible: true
+			width: 275
+			height: 50
+			x: 450
+			y: 50
+		}, 
+		GtfContainer(fa59c2bf-b5fc-4673-94c0-8322d578ca8f)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfInstantiator(e3ed2423-f2b9-490e-9ac1-64ecd2c32f26)
+				{
+					features: feature_list [
+						LayoutPolicyFlow(2b3450d3-d8be-40a2-af70-02444bc07152)
+						{
+							horizontalGap: 3
+							verticalGap: 0
+							layoutDirection: 0
+							horizontalChildAlign: 0
+							verticalChildAlign: 0
+						}]
+					children: children_list [
+						GtfLabel(84a24795-d092-4dcd-8612-877f59732248)
+						{
+							features: feature_list [
+								LineIndex(afeb19c8-9c57-490f-974c-86ae73f72af7)
+								{
+									lineIndex: 0
+								}, 
+								TouchShortReleased(2e825d4c-9b9b-4d55-80a7-4cc95ebfa07d)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(595196b8-ab9e-42d6-981f-f4051cf9c109)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	if(v:this.text != \"-\")" \
+											"		{" \
+											"			fire ev:playRadioMedia()" \
+											"			dp:Variables:Current_Radio_Media_Song = v:this.text" \
+											"			dp:Variables:Radio_Media_Choice = \"Favourite\"" \
+											"		}" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(38517b29-08f0-4a64-a493-a68f8dfcc1ca)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list []
+							name: "Radio_Label"
+							visible: true
+							width: 220
+							height: 50
+							x: 10
+							y: 0
+							text: string_scriptedValue(591fee5d-6642-418e-ab7e-f5bb1f22ca2e)
+							{
+								triggerList: trigger_list(c618a2ea-7b03-4183-8b6f-647001cfbce8)
+								{
+									script: "v:this.lineIndex" \
+										""
+								}
+								onTrigger: function<bool,bool>(05d086ef-56ca-4e86-9bf3-45932f05c66e)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<string>(16e5b916-288a-4012-89fc-a52483e75b57)
+								{
+									script: "function()" \
+										"{" \
+										"	dp:Variables:Favorite_Radio_List[v:this.lineIndex]" \
+										"}"
+								}
+								write: function<bool,string>(680eb06b-4601-4ddf-9a05-f2a9883ca37e)
+								{
+									script: "function(v:arg0::string)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							textColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+							font: font_resource(9483723e-9eab-4943-a2f3-1cbf3dcf1100)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 23
+							}
+							horizontalAlign: 0
+							verticalAlign: 0
+						}]
+					name: "Radio_Instantiator"
+					visible: true
+					width: 0
+					height: 50
+					x: 0
+					y: 0
+					numItems: 3
+					lineMapping: intlist []
+				}]
+			name: "Radio_List"
+			visible: true
+			width: 400
+			height: 50
+			x: 127
+			y: 110
+		}, 
+		GtfContainer(1090c2c3-3391-403f-97fd-e18e61f62073)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfInstantiator(07f6ce78-e298-400d-9469-a38d6d24140a)
+				{
+					features: feature_list [
+						LayoutPolicyFlow(c2758e00-f155-49e3-aa5b-6c1f9b32935d)
+						{
+							horizontalGap: 3
+							verticalGap: 0
+							layoutDirection: 0
+							horizontalChildAlign: 0
+							verticalChildAlign: 0
+						}]
+					children: children_list [
+						GtfLabel(5156c5c3-6d5b-4b74-b386-f5938122d972)
+						{
+							features: feature_list [
+								LineIndex(3f2db6fe-d0cc-4bf3-b1b3-693b2552a911)
+								{
+									lineIndex: 0
+								}, 
+								TouchShortReleased(d71930cd-fd07-4972-9033-738debab65af)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(aa2f8f58-815c-4b11-99bc-28898693a407)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	if(v:this.text != \"-\")" \
+											"		{" \
+											"			fire ev:playRadioMedia()" \
+											"			dp:Variables:Current_Radio_Media_Song = v:this.text" \
+											"			dp:Variables:Radio_Media_Choice = \"Favourite\"" \
+											"    	}" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(0d0a023b-cbce-4a97-af6f-de4fc6880b26)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list []
+							name: "Media_Label"
+							visible: true
+							width: 335
+							height: 50
+							x: 10
+							y: 0
+							text: string_scriptedValue(6284ae69-88c3-43c2-8825-5417b5367d3f)
+							{
+								triggerList: trigger_list(8ecd7eba-1fd8-4999-a7f7-d4c25d1afee6)
+								{
+									script: "v:this.lineIndex" \
+										""
+								}
+								onTrigger: function<bool,bool>(bc42e268-6dd5-4439-bfcd-6a071dae620f)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<string>(7d0a1091-7bce-432c-90c2-24fc13de3536)
+								{
+									script: "function()" \
+										"{" \
+										"	dp:Variables:Favorite_Media_List[v:this.lineIndex]" \
+										"}"
+								}
+								write: function<bool,string>(7cb17691-6d86-4eae-af0f-b7dc1ebbf3f6)
+								{
+									script: "function(v:arg0::string)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							textColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+							font: font_resource(2ade5327-50dd-4dd3-a609-ba696586f2ff)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 23
+							}
+							horizontalAlign: 0
+							verticalAlign: 0
+						}]
+					name: "Media_Instantiator"
+					visible: true
+					width: 0
+					height: 50
+					x: 0
+					y: 0
+					numItems: 3
+					lineMapping: intlist []
+				}]
+			name: "Media_List"
+			visible: true
+			width: 400
+			height: 50
+			x: 452
+			y: 110
+		}]
+	textTitleView: @5fb37974-95fb-41c5-83ad-07d72da9e2d7 (objectref<string>)
+}

@@ -1,0 +1,184 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(f7fd713e-cdd4-49ca-a525-61a2a0801218)
+{
+	name: "Seat Button"
+	structure: GtfContainer(c8478c84-f3bb-45b1-a7c2-23399e0dba60)
+	{
+		features: feature_list [
+			MoveOut(8ee94528-46a4-4fa9-8cac-31a207fa330e)
+			{
+				moveOut: function<bool,int,int,int,int>(dc68b407-5df6-40a6-9546-0c2d30bc6010)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->Background_Button.fillColor = dp:Colors:Move_Out_Color" \
+						"    false" \
+						"}"
+				}
+			}, 
+			MoveIn(c5c4132a-eafc-441b-8aed-bad13a0be50a)
+			{
+				moveIn: function<bool,int,int,int,int>(3faf794d-652b-4a33-844d-4a811f80941c)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->Background_Button.fillColor = dp:Colors:Move_In_Color" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(08d4b416-eef4-443b-a8b6-722d6f4749b8)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(c2fc5a52-0f0f-429b-9be0-3ab4e3ebd50f)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.stageAction()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(bf43f933-c139-4acd-ad91-6902b7f66dc4)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(9c0285d3-d027-4d36-88d2-9ac78aceaf6c)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfImage(005a4661-d93e-4728-9a05-ef1b9f88aca3)
+					{
+						features: feature_list [
+							ScaleMode(f7760615-8778-42cb-81da-be5135b88d32)
+							{
+								scaleMode: 1
+							}]
+						children: children_list []
+						name: "Button_Image"
+						visible: true
+						width: 60
+						height: 50
+						x: 15
+						y: 5
+						image: image_resource(a40c2083-6c84-416e-bdb5-19dec3ecf73a)
+						{
+							file: ""
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+					}, 
+					GtfRectangle(b77b9f2a-7f5c-4757-961a-b15ce49243a8)
+					{
+						features: feature_list [
+							Border(81fd5fd9-ae83-4c04-8e1a-b3ba3a09df77)
+							{
+								borderThickness: 1
+								borderColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+								borderStyle: 0
+							}]
+						children: children_list []
+						name: "Button_First_Stage"
+						visible: true
+						width: 20
+						height: 5
+						x: 3
+						y: 65
+						fillColor: #FFFAFAFF
+					}, 
+					GtfRectangle(1a2936fe-0de6-4a0c-8db8-4f90d858d224)
+					{
+						features: feature_list [
+							Border(7cc6bb1d-d221-4efc-97bd-cdfe99dce452)
+							{
+								borderThickness: 1
+								borderColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+								borderStyle: 0
+							}]
+						children: children_list []
+						name: "Button_Second_Stage"
+						visible: true
+						width: 20
+						height: 5
+						x: 27
+						y: 65
+						fillColor: #FFFAFAFF
+					}, 
+					GtfRectangle(1ac953b8-dfc5-4a4d-a23d-53eec50dd7f6)
+					{
+						features: feature_list [
+							Border(8a5acb88-6396-408b-8f14-9aa1d42e3344)
+							{
+								borderThickness: 1
+								borderColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+								borderStyle: 0
+							}]
+						children: children_list []
+						name: "Button_Third_Stage"
+						visible: true
+						width: 20
+						height: 5
+						x: 52
+						y: 65
+						fillColor: #FFFAFAFF
+					}, 
+					GtfRectangle(73e10a75-58e1-4d4d-bec1-300360c6cd50)
+					{
+						features: feature_list [
+							Border(9942fa91-10e2-41e4-bfb8-1bf88fd77a8a)
+							{
+								borderThickness: 1
+								borderColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+								borderStyle: 0
+							}]
+						children: children_list []
+						name: "Button_Fourth_Stage"
+						visible: true
+						width: 20
+						height: 5
+						x: 77
+						y: 65
+						fillColor: #FFFAFAFF
+					}]
+				name: "Background_Button"
+				visible: true
+				width: width@c8478c84-f3bb-45b1-a7c2-23399e0dba60 (propref<int>)
+				height: height@c8478c84-f3bb-45b1-a7c2-23399e0dba60 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+			}]
+		name: "Seat_Button"
+		visible: true
+		width: 100
+		height: 75
+		x: 0
+		y: 0
+		stage: 0
+		stageColorOn: #00FF00FF
+		stageAction: function<bool>(97fec0c7-5fe0-4b00-9c6d-3c2a247cd01c)
+		{
+			script: "function()" \
+				"{		" \
+				"	false" \
+				"}"
+		}
+		stageColorOff: #FFFAFAFF
+	}
+	x: x@c8478c84-f3bb-45b1-a7c2-23399e0dba60 (propref<int>)
+	y: y@c8478c84-f3bb-45b1-a7c2-23399e0dba60 (propref<int>)
+	imageSeat: image@005a4661-d93e-4728-9a05-ef1b9f88aca3 (propref<image>)
+	ImageX: x@005a4661-d93e-4728-9a05-ef1b9f88aca3 (propref<int>)
+	stageAction: stageAction@c8478c84-f3bb-45b1-a7c2-23399e0dba60 (propref<function<bool>>)
+	stage1Color: fillColor@b77b9f2a-7f5c-4757-961a-b15ce49243a8 (propref<color>)
+	stage2Color: fillColor@1a2936fe-0de6-4a0c-8db8-4f90d858d224 (propref<color>)
+	stage3Color: fillColor@1ac953b8-dfc5-4a4d-a23d-53eec50dd7f6 (propref<color>)
+	stage4Color: fillColor@73e10a75-58e1-4d4d-bec1-300360c6cd50 (propref<color>)
+	stageColorOff: stageColorOff@c8478c84-f3bb-45b1-a7c2-23399e0dba60 (propref<color>)
+	stageColorOn: stageColorOn@c8478c84-f3bb-45b1-a7c2-23399e0dba60 (propref<color>)
+}
