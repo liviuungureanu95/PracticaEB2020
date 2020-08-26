@@ -93,10 +93,60 @@ haptic_statemachine(985f5459-4408-4375-a863-ba4c692b0409)
 			entry_action: function<void>(none)
 			exit_action: function<void>(none)
 			transitions: haptic_transitions []
-			internal_transitions: haptic_internal_transitions []
+			internal_transitions: haptic_internal_transitions [
+				haptic_internal_transition(737e1823-1493-4a95-ba8f-02104dff58d7)
+				{
+					event: @cfeb2754-6e74-49b9-8159-086f8aa337f8 (objectref<event>)
+					condition: function<bool>(none)
+					action: function<void>(4dfaaaed-e63e-4d48-aaa5-d40625ef8742)
+					{
+						script: "function()" \
+							"{" \
+							"  f:pushDynamicStateMachine(popup_stack:Menu , sm:\"message-for-rekaxing-time\" , 0)" \
+							"}"
+					}
+				}, 
+				haptic_internal_transition(41409156-f66e-44f0-ad24-1f021d5c891b)
+				{
+					event: @1698ebef-37d5-40c3-92a5-45b770f66d13 (objectref<event>)
+					condition: function<bool>(none)
+					action: function<void>(12df5186-94fb-47e8-881f-144ad922a62a)
+					{
+						script: "function()" \
+							"{" \
+							"   f:popDynamicStateMachine(popup_stack:Menu , sm:\"message-for-rekaxing-time\")" \
+							"}"
+					}
+				}, 
+				haptic_internal_transition(7e4e2e42-00fb-419d-8f40-6de9ed52cbcd)
+				{
+					event: @327108d9-11e6-47a0-a657-68c2ee14572f (objectref<event>)
+					condition: function<bool>(none)
+					action: function<void>(4f678a9b-1293-467c-88b6-8439a3f3f4f3)
+					{
+						script: "function()" \
+							"{" \
+							" f:pushDynamicStateMachine(popup_stack:Menu , sm:\"message-for-relax-2\" , 0)" \
+							"}"
+					}
+				}, 
+				haptic_internal_transition(b9de19e2-5e23-42a0-83d4-9f3a2e0bb1c8)
+				{
+					event: @47670ccb-63fc-4ff5-ada4-b151aaaa604b (objectref<event>)
+					condition: function<bool>(none)
+					action: function<void>(418667e8-2c1b-44c3-82d9-13e29cd451e7)
+					{
+						script: "function()" \
+							"{" \
+							"f:popDynamicStateMachine(popup_stack:Menu , sm:\"message-for-relax-2\")" \
+							"}"
+					}
+				}]
 			background_color: #6C6C6CFF
 			dialog: (b106dafd-e6f7-417d-9fd7-8448d26ec436)
-			priority_stack: priority_stack(none)
+			priority_stack: priority_stack(50cb54d7-fc00-48d8-9775-210530ea89f0)
+			{
+			}
 		}, 
 		(c3aec5c1-9131-4a8f-9708-b842bd58d22b), 
 		haptic_dialog_state(5f62a947-167e-4894-a06f-0363921b5bde)

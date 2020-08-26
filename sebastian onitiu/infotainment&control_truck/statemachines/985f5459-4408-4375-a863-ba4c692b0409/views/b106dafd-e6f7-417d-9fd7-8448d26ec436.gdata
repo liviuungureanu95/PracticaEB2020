@@ -122,8 +122,15 @@ GtfView(b106dafd-e6f7-417d-9fd7-8448d26ec436)
 							{
 								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 									"{" \
-									"	if(v:this.start == true){" \
+									"	if(v:this.start == true)" \
+									"	{" \
 									"    	v:this.start = false;" \
+									"    	if(dp:\"hour-finish-pause\"-f:localtime_hour(f:system_time()) == 0  && dp:\"minute-finish-pause\"-f:localtime_minute(f:system_time()) == 0)" \
+									"    	{fire ev:\"popup-Pause-Enable\"()}" \
+									"    	else" \
+									"    	{" \
+									"    		fire ev:popUP_ENABLE2()" \
+									"    	}" \
 									"    	" \
 									"    }" \
 									"    else{" \
@@ -286,13 +293,16 @@ GtfView(b106dafd-e6f7-417d-9fd7-8448d26ec436)
 					{
 						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 							"{" \
-							" if(v:this.ON == true){" \
-							"    	v:this.ON = false;" \
+							" if(dp:\"doors-locked\" == true){" \
+							"    	" \
+							"    	dp:\"doors-locked\" = false" \
+							"    	v:this.image = dp:unlocked" \
 							"    	" \
 							"    }" \
 							"    else{" \
-							"    	v:this.ON = true;" \
+							"    	dp:\"doors-locked\" =true" \
 							"    	" \
+							"    	v:this.image = dp:locked" \
 							"    }" \
 							"    false" \
 							"}"
@@ -316,9 +326,9 @@ GtfView(b106dafd-e6f7-417d-9fd7-8448d26ec436)
 			{
 				triggerList: trigger_list(ea63ea64-a621-44b4-a1ec-0a1b977efc89)
 				{
-					script: "v:this.ON" \
-						"dp:locked" \
+					script: "dp:locked" \
 						"dp:unlocked" \
+						"dp:\"doors-locked\"" \
 						""
 				}
 				onTrigger: function<bool,bool>(09252a6c-6b79-42ce-afbc-360e6240be88)
@@ -333,7 +343,7 @@ GtfView(b106dafd-e6f7-417d-9fd7-8448d26ec436)
 				{
 					script: "function()" \
 						"{" \
-						"	if(v:this.ON == true)" \
+						"	if(dp:\"doors-locked\" == true)" \
 						"	{" \
 						"		 dp:locked" \
 						"	}" \
@@ -519,15 +529,18 @@ GtfView(b106dafd-e6f7-417d-9fd7-8448d26ec436)
 					{
 						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 							"{" \
-							"    if(v:this.\"brake on\" == true){" \
-							"    	v:this.\"brake on\" = false;" \
-							"    	v:this->\"text brake\".text = \"HandBrake on\"" \
-							"    	v:this.colorationColor = v:this.color" \
+							"    if(dp:\"break-activatio-deactivation\" == true)" \
+							"    " \
+							"   {" \
+							"    	dp:\"break-activatio-deactivation\" = false" \
+							"    	" \
+							"    " \
 							"    }" \
-							"    else{" \
-							"    	v:this.\"brake on\" = true;" \
-							"    	v:this->\"text brake\".text = \"HandBrake off\"" \
-							"    	v:this.colorationColor = v:this.\"color 2\"" \
+							"    else" \
+							"    {" \
+							"    	dp:\"break-activatio-deactivation\" = true" \
+							"    	" \
+							"    	" \
 							"    }" \
 							"    false" \
 							"}"
@@ -543,7 +556,7 @@ GtfView(b106dafd-e6f7-417d-9fd7-8448d26ec436)
 				Coloration(536d4b4e-a751-4ce7-b42e-2a51be72561d)
 				{
 					colorationEnabled: true
-					colorationColor: #00FF00FF
+					colorationColor: #7FFF00FF
 				}]
 			children: children_list [
 				GtfLabel(38d92325-1ce1-4611-a80e-edb2ede78e7d)
@@ -556,7 +569,43 @@ GtfView(b106dafd-e6f7-417d-9fd7-8448d26ec436)
 					height: 37
 					x: 4
 					y: 49
-					text: "HandBrake Off"
+					text: string_scriptedValue(fbfa4ba3-c0ac-4092-8d9c-ede81c8a416c)
+					{
+						triggerList: trigger_list(70b0092e-dfa4-4662-897c-31ec660403c3)
+						{
+							script: "dp:\"break-activatio-deactivation\"" \
+								""
+						}
+						onTrigger: function<bool,bool>(8e6b964f-1774-43ce-8f35-ef0bf5e186e7)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(5d70a750-297f-428f-a711-9899febd9720)
+						{
+							script: "function()" \
+								"{  if(dp:\"break-activatio-deactivation\"== false)" \
+								"{" \
+								"	\"Brake off\"" \
+								"}" \
+								"else" \
+								"{" \
+								"	\"Brake on\"" \
+								"}" \
+								"}"
+						}
+						write: function<bool,string>(869f0acd-d009-49c6-80ed-3454f565d4da)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	" \
+								"	false" \
+								"}"
+						}
+					}
 					textColor: #FFFFFFFF
 					font: font_resource(b49040e2-b115-4ad9-92ee-61360c569da0)
 					{
@@ -571,12 +620,15 @@ GtfView(b106dafd-e6f7-417d-9fd7-8448d26ec436)
 			width: 154
 			height: 80
 			x: 368
-			y: 692
+			y: 691
 			image: image_scriptedValue(7e4d81d9-b0c5-4a04-8826-2c519855f3f0)
 			{
 				triggerList: trigger_list(dadf2206-e8d6-489d-aac1-c9e15433a7d1)
 				{
-					script: ""
+					script: "dp:\"break-activatio-deactivation\"" \
+						"dp:\"brake on\"" \
+						"dp:\"brake off\"" \
+						""
 				}
 				onTrigger: function<bool,bool>(d82cf47e-e5e4-45fe-b5ee-06c0505e81f7)
 				{
@@ -590,7 +642,7 @@ GtfView(b106dafd-e6f7-417d-9fd7-8448d26ec436)
 				{
 					script: "function()" \
 						"{" \
-						"	if(v:this.\"brake on\"==false){" \
+						"	if(dp:\"break-activatio-deactivation\"==false){" \
 						"		dp:\"brake on\"" \
 						"	}" \
 						"	else{" \
@@ -612,8 +664,6 @@ GtfView(b106dafd-e6f7-417d-9fd7-8448d26ec436)
 			horizontalAlign: 0
 			verticalAlign: 1
 			"brake on": true
-			color: #FF0000FF
-			"color 2": #00FF00FF
 		}, 
 		GtfLabel(18b913ab-af53-4bc5-88e0-7890f0ffd33a)
 		{

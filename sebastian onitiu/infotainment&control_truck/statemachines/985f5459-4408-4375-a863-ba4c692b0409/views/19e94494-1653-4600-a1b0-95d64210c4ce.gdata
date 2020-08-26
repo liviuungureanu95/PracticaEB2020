@@ -83,6 +83,109 @@ GtfView(19e94494-1653-4600-a1b0-95d64210c4ce)
 			verticalAlign: 1
 			play: true
 		}, 
+		GtfInstantiator(76847848-b98c-4b28-bd11-47c890eaee74)
+		{
+			features: feature_list [
+				LayoutPolicyGrid(af28fdc2-ae73-4cba-9068-8176ef406850)
+				{
+					horizontalGap: 0
+					verticalGap: 5
+					numRows: 8
+					numColumns: 1
+				}, 
+				TouchPressed(76988f3e-fc19-449c-bdfa-58a1bcbe6e33)
+				{
+					touchPressed: function<bool,int,int,int,int>(2a3c2b50-2273-4309-b653-24044ad6f7ba)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(ba88a267-8ce2-48bb-9d75-ef1e5a80d739)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfRectangle(7406984a-f088-4e54-9f9c-5de456fdd34c)
+				{
+					features: feature_list [
+						StateTouched(134a1bb1-4b23-48f9-bb56-3a4d5b1ec752)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}, 
+						TouchPressed(29b2bbd6-7541-4ed9-964d-f7f9d815b20b)
+						{
+							touchPressed: function<bool,int,int,int,int>(e42366ac-29b0-4cd9-874d-6dd9bcdac6f2)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->^->\"cover-song\".image = dp:MusicCovers[v:this.lineIndex]" \
+									"	v:this->^->^->\"song/artist-name\".text = dp:\"Music-Playlist\"[v:this.lineIndex]" \
+									"	dp:\"button-play\"=dp:pause" \
+									"    false" \
+									"}"
+							}
+						}, 
+						LineIndex(9fe2411c-1c84-4870-bfbb-c845368f5325)
+						{
+							lineIndex: 0
+						}]
+					children: children_list []
+					name: "Rectangle 3"
+					visible: true
+					width: width@76847848-b98c-4b28-bd11-47c890eaee74 (propref<int>)
+					height: 35
+					x: 0
+					y: 0
+					fillColor: #FFFFFF00
+				}]
+			name: "InstantiatorSongsList"
+			visible: true
+			width: 564
+			height: 260
+			x: 5
+			y: 30
+			numItems: int_scriptedValue(6fcbd2d8-115c-4d8c-8581-d9ad4110f4ef)
+			{
+				triggerList: trigger_list(39faffb2-8f0d-4a98-8902-24a019cdbd91)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(d5e280cd-f297-459d-93cc-20f5af03ade4)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	" \
+						"	false" \
+						"}"
+				}
+				read: function<int>(5c94951b-2664-429f-8c44-f69db5cdd5c9)
+				{
+					script: "function()" \
+						"{" \
+						"	length dp:MusicCovers" \
+						"}"
+				}
+				write: function<bool,int>(f949c55a-c02f-459b-8dc8-adc351b09353)
+				{
+					script: "function(v:arg0::int)" \
+						"{" \
+						"	" \
+						"	false" \
+						"}"
+				}
+			}
+			lineMapping: intlist []
+		}, 
 		GtfImage(122ac076-b409-4777-80ec-e93f0765f8a6)
 		{
 			features: feature_list [
@@ -91,7 +194,19 @@ GtfView(19e94494-1653-4600-a1b0-95d64210c4ce)
 					touchPressed: function<bool,int,int,int,int>(f24674d6-42ed-4203-a75f-d1f7dcb1cba3)
 					{
 						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
-							"{" \
+							"{   " \
+							"	if(dp:INDEX >=-1 && dp:INDEX <=7) " \
+							"	{" \
+							"	dp:INDEX += 1" \
+							"	" \
+							"	}" \
+							"	" \
+							"	v:this->^->\"cover-song\".image = dp:MusicCovers[dp:INDEX]" \
+							"	v:this->^->\"song/artist-name\".text = dp:\"Music-Playlist\"[dp:INDEX]" \
+							"	dp:\"button-play\"=dp:pause" \
+							"	" \
+							"	" \
+							"	" \
 							"    false" \
 							"}"
 					}
@@ -108,8 +223,8 @@ GtfView(19e94494-1653-4600-a1b0-95d64210c4ce)
 			visible: true
 			width: 46
 			height: 47
-			x: 381
-			y: 641
+			x: 380
+			y: 644
 			image: image_resource(de839004-b850-4d98-bd91-6890e6b6e3c6)
 			{
 				file: "next.png"
@@ -127,6 +242,16 @@ GtfView(19e94494-1653-4600-a1b0-95d64210c4ce)
 					{
 						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 							"{" \
+							"	if(dp:INDEX >=-1 && dp:INDEX <=7) " \
+							"	{" \
+							"	dp:INDEX -= 1" \
+							"	" \
+							"	}" \
+							"	" \
+							"	" \
+							"	v:this->^->\"cover-song\".image = dp:MusicCovers[dp:INDEX]" \
+							"	v:this->^->\"song/artist-name\".text = dp:\"Music-Playlist\"[dp:INDEX]" \
+							"	dp:\"button-play\"=dp:pause" \
 							"    false" \
 							"}"
 					}
@@ -143,7 +268,7 @@ GtfView(19e94494-1653-4600-a1b0-95d64210c4ce)
 			visible: true
 			width: 46
 			height: 46
-			x: 180
+			x: 179
 			y: 640
 			image: image_resource(01888114-5535-4d98-9bd6-6a2e75f7350d)
 			{
@@ -205,8 +330,8 @@ GtfView(19e94494-1653-4600-a1b0-95d64210c4ce)
 			visible: true
 			width: 585
 			height: 294
-			x: 0
-			y: 0
+			x: 1
+			y: 1
 			image: image_resource(377d257c-e44f-4704-8f55-de3d95295d2b)
 			{
 				file: "songs.png"
@@ -227,11 +352,11 @@ GtfView(19e94494-1653-4600-a1b0-95d64210c4ce)
 			visible: true
 			width: 204
 			height: 203
-			x: 197
-			y: 311
+			x: 195
+			y: 314
 			image: image_resource(f5e53865-ed5d-4d7f-9d79-71c1eac62bad)
 			{
-				file: "song1.jpeg"
+				file: ""
 			}
 			sRGB: false
 			horizontalAlign: 0
@@ -247,7 +372,7 @@ GtfView(19e94494-1653-4600-a1b0-95d64210c4ce)
 			height: 55
 			x: 132
 			y: 534
-			text: "label"
+			text: ""
 			textColor: #FFFFFFFF
 			font: font_resource(9d8c37df-4f84-4a13-afb3-f1af703c2210)
 			{
@@ -279,7 +404,7 @@ GtfView(19e94494-1653-4600-a1b0-95d64210c4ce)
 					children: children_list []
 					name: "BarcontrolHeat copy 1"
 					visible: true
-					width: 0
+					width: @5ab437c8-95a9-4fae-abb4-b0a724557029 (objectref<int>)
 					height: 20
 					x: 200
 					y: 706
@@ -299,13 +424,13 @@ GtfView(19e94494-1653-4600-a1b0-95d64210c4ce)
 							"" \
 							"	if(v:this->^->\"BarcontrolHeat copy 1\".width < 200)" \
 							"	{" \
-							"		v:this->^->\"BarcontrolHeat copy 1\".width = v:this->^->\"BarcontrolHeat copy 1\".width + 10" \
-							"		v:this->^->\"temperature right seat\".text = \"Volume :  \" + f:int2string(v:this->^->\"BarcontrolHeat copy 1\".width/2)" \
+							"		dp:\"Retainer volume-up/down\" = dp:\"Retainer volume-up/down\" + 10" \
+							"		dp:\"Retainer-volume-text\" = \"Volume :  \" + f:int2string(dp:\"Retainer volume-up/down\"/2)" \
 							"		" \
 							"	}" \
 							"	else" \
 							"	{" \
-							"	v:this->^->\"BarcontrolHeat copy 1\".width = 200" \
+							"	dp:\"Retainer volume-up/down\" = 200" \
 							"	}" \
 							"    false" \
 							"}"
@@ -324,14 +449,16 @@ GtfView(19e94494-1653-4600-a1b0-95d64210c4ce)
 					{
 						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 							"{" \
+							"	" \
 							"	if(v:this->^->\"BarcontrolHeat copy 1\".width > 0)" \
 							"	{" \
-							"		v:this->^->\"BarcontrolHeat copy 1\".width = v:this->^->\"BarcontrolHeat copy 1\".width -10" \
-							"		v:this->^->\"temperature right seat\".text = \"Volume : \" + f:int2string(v:this->^->\"BarcontrolHeat copy 1\".width/2)" \
+							"		dp:\"Retainer volume-up/down\" = dp:\"Retainer volume-up/down\" - 10" \
+							"		dp:\"Retainer-volume-text\" = \"Volume :  \" + f:int2string(dp:\"Retainer volume-up/down\"/2)" \
+							"		" \
 							"	}" \
 							"	else" \
 							"	{" \
-							"		v:this->^->\"BarcontrolHeat copy 1\".width = 0" \
+							"	dp:\"Retainer volume-up/down\" = 0" \
 							"	}" \
 							"    false" \
 							"}"
@@ -349,7 +476,7 @@ GtfView(19e94494-1653-4600-a1b0-95d64210c4ce)
 					height: 38
 					x: 175
 					y: 734
-					text: ""
+					text: @8793708a-ad7b-4a91-b48d-27f8df14cb02 (objectref<string>)
 					textColor: #FFFFFFFF
 					font: font_resource(a88296fe-ab7c-4f3c-8abd-08dd578a1a86)
 					{
@@ -365,78 +492,6 @@ GtfView(19e94494-1653-4600-a1b0-95d64210c4ce)
 			height: 100
 			x: 0
 			y: 0
-		}, 
-		GtfInstantiator(76847848-b98c-4b28-bd11-47c890eaee74)
-		{
-			features: feature_list [
-				LayoutPolicyGrid(af28fdc2-ae73-4cba-9068-8176ef406850)
-				{
-					horizontalGap: 0
-					verticalGap: 5
-					numRows: 8
-					numColumns: 1
-				}, 
-				TouchPressed(76988f3e-fc19-449c-bdfa-58a1bcbe6e33)
-				{
-					touchPressed: function<bool,int,int,int,int>(2a3c2b50-2273-4309-b653-24044ad6f7ba)
-					{
-						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
-							"{" \
-							"	" \
-							"    false" \
-							"}"
-					}
-				}, 
-				StateTouched(ba88a267-8ce2-48bb-9d75-ef1e5a80d739)
-				{
-					touchable: true
-					touched: false
-					touchPolicy: 0
-					touchBehavior: 0
-				}, 
-				LineIndex(7af5542a-c87c-48d4-9b5d-70f40296b7ec)
-				{
-					lineIndex: 0
-				}]
-			children: children_list [
-				GtfRectangle(7406984a-f088-4e54-9f9c-5de456fdd34c)
-				{
-					features: feature_list [
-						StateTouched(134a1bb1-4b23-48f9-bb56-3a4d5b1ec752)
-						{
-							touchable: true
-							touched: false
-							touchPolicy: 0
-							touchBehavior: 0
-						}, 
-						TouchPressed(29b2bbd6-7541-4ed9-964d-f7f9d815b20b)
-						{
-							touchPressed: function<bool,int,int,int,int>(e42366ac-29b0-4cd9-874d-6dd9bcdac6f2)
-							{
-								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
-									"{" \
-									"	" \
-									"    false" \
-									"}"
-							}
-						}]
-					children: children_list []
-					name: "Rectangle 3"
-					visible: true
-					width: width@76847848-b98c-4b28-bd11-47c890eaee74 (propref<int>)
-					height: 35
-					x: 0
-					y: 0
-					fillColor: #A9A9A9FF
-				}]
-			name: "InstantiatorSongsList"
-			visible: true
-			width: 551
-			height: 260
-			x: 5
-			y: 30
-			numItems: 8
-			lineMapping: intlist []
 		}]
 	name: "View songs"
 	visible: true
