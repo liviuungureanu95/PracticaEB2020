@@ -1,0 +1,515 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(7749764f-5300-4a7f-b53f-95513aecf96a)
+{
+	name: "Phone_View"
+	template: @95461b8a-82f0-421b-ba66-6095f03a1846 (objectref<GtfView_template>)
+	children: children_list [
+		GtfRectangle(ba11853f-5422-4a61-9112-2557e23fb8a1)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "1)|"
+			visible: true
+			width: 1
+			height: 70
+			x: 20
+			y: 90
+			fillColor: #A9A9A9FF
+		}, 
+		GtfRectangle(e5755016-5e59-41ac-80cb-966b504e0f54)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "2)| "
+			visible: true
+			width: 1
+			height: 70
+			x: 290
+			y: 90
+			fillColor: #A9A9A9FF
+		}, 
+		GtfRectangle(301d93fc-7a69-4463-ac88-530488163457)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "3)|"
+			visible: true
+			width: 1
+			height: 70
+			x: 470
+			y: 90
+			fillColor: #A9A9A9FF
+		}, 
+		GtfRectangle(3d18ab1b-6ff0-4f58-a154-98d64d5510d0)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "4)|"
+			visible: true
+			width: 1
+			height: 70
+			x: 570
+			y: 90
+			fillColor: #A9A9A9FF
+		}, 
+		GtfRectangle(0c6f0cda-ca78-48df-9b52-d197f2e62a3a)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "5)|"
+			visible: true
+			width: 1
+			height: 70
+			x: 700
+			y: 90
+			fillColor: #A9A9A9FF
+		}, 
+		GtfContainer_template_instance(da2ed50f-ff8e-4d21-ad73-b30f5dd569be)
+		{
+			name: "add_name"
+			template: @042f0a2d-7040-4896-8667-d3c0697eeb96 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: 240
+			x: 35
+			y: 90
+			text: string_scriptedValue(3680f8ca-1ee0-4b78-b757-fbf9eb9d2bda)
+			{
+				triggerList: trigger_list(a0ced09c-c2ff-4bc5-b9de-ff58c75fb2dd)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(519c052e-2a8a-46b7-a01b-59c34ebbd277)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(af87056a-3464-4983-80a8-58ff007882a4)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:PHONE:Name" \
+						"}"
+				}
+				write: function<bool,string>(efe7e3a6-80fc-4f46-81d1-c6c65a73ef6e)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			borderColor: borderColor@042f0a2d-7040-4896-8667-d3c0697eeb96 (propref<color>)
+			touchShortReleased: function<bool,int,int,int,int>(54eac8d0-fe45-43a5-b1d4-a59d4495b6c6)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    fire ev:GoTo_ADD_Name()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(f699534c-7e82-4a0c-b0bd-5b59ede909fd)
+		{
+			name: "add_number"
+			template: @042f0a2d-7040-4896-8667-d3c0697eeb96 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: 150
+			x: 305
+			y: 90
+			text: string_scriptedValue(b279cfd6-8bc8-42ee-8333-117ab397f581)
+			{
+				triggerList: trigger_list(590706e1-0935-4d7d-82a0-3f6f40b2529e)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(0ad9ab57-dbf4-425d-903e-d0be131bcbef)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(346f2bf7-4c99-4432-aca1-f5592fe2570f)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:PHONE:Number" \
+						"}"
+				}
+				write: function<bool,string>(077c5bb9-7b2b-4ce6-a621-6e8cd88a0dd7)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			borderColor: borderColor@042f0a2d-7040-4896-8667-d3c0697eeb96 (propref<color>)
+			touchShortReleased: function<bool,int,int,int,int>(d8ae2a8d-d8ce-46c6-8dad-99b2c3e054bd)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:GoTo_ADD_Number()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfImage(2c69ed05-61ee-411f-ab94-b4511a148d10)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "add_avatar"
+			visible: true
+			width: 70
+			height: 70
+			x: 485
+			y: 90
+			image: image_scriptedValue(4a6852dc-7549-4380-97ae-3a6f6b920251)
+			{
+				triggerList: trigger_list(52b99117-b016-4b09-8e28-6114e6eac75c)
+				{
+					script: "dp:PHONE:Avatar" \
+						""
+				}
+				onTrigger: function<bool,bool>(7c533a61-7ce7-4c52-91ae-b0a8ca42ef26)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<image>(b178f2cd-5d14-494d-bed7-14e42c647769)
+				{
+					script: "function()" \
+						"{" \
+						"	dp:PHONE:Avatar" \
+						"" \
+						"}"
+				}
+				write: function<bool,image>(fa937807-34a5-48aa-98ee-f1ed739805b4)
+				{
+					script: "function(v:arg0::image)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfContainer(bf7d6a61-ce3c-4e2c-ab6c-55f7bfb4e4ec)
+		{
+			features: feature_list [
+				TouchShortReleased(222c9603-2a4d-4593-a889-9575a4368377)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(442cdda6-59b6-482c-b760-2713104e0d9c)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:GoTo_ADD_Avatar()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(325ec16b-b6ff-4340-9403-44f8c7878fa4)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "goto_avatar_button"
+			visible: true
+			width: 70
+			height: 70
+			x: 485
+			y: 90
+		}, 
+		GtfContainer_template_instance(230ba5d6-018a-4131-a209-cc2b25c78e70)
+		{
+			name: "add_kinship"
+			template: @042f0a2d-7040-4896-8667-d3c0697eeb96 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: width@042f0a2d-7040-4896-8667-d3c0697eeb96 (propref<int>)
+			x: 585
+			y: 89
+			text: string_scriptedValue(471fc5ea-9d7d-4947-87e3-a711d0c4859c)
+			{
+				triggerList: trigger_list(341d071f-e8f5-4091-8836-d46e947a1a69)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(7c574613-5e32-4756-bbab-03bb75be7222)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(e989c950-45f0-4a94-a85d-79bd5c0a563a)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:PHONE:Kinship" \
+						"}"
+				}
+				write: function<bool,string>(d7dec3a7-c487-44a3-950c-8b855aa6c8f7)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			borderColor: borderColor@042f0a2d-7040-4896-8667-d3c0697eeb96 (propref<color>)
+			touchShortReleased: function<bool,int,int,int,int>(1d2a5597-82cf-43a0-856d-5a31e6147ef1)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:GoTo_ADD_Kinship()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer(c5fa323b-9874-4f28-9cd0-9d1cebff7870)
+		{
+			features: feature_list [
+				TouchShortReleased(b5c1391e-033f-4c4f-9a70-53803420f400)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(b7bb3a7a-a43f-4056-833a-31e684f3ee3d)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(v:this->^->add_name.text !=\"\")" \
+							"	{" \
+							"		if(v:this->^->add_number.text !=\"\")" \
+							"	{" \
+							"		if(v:this->^->add_kinship.text !=\"\")" \
+							"	{" \
+							"		fire ev:GoTo_Call()" \
+							"	}" \
+							"	}" \
+							"	}" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(36f41103-42f9-47ce-9547-3c1d7b148785)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfImage(fec39ba2-9955-4fb3-8511-18ecae6c5b9d)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "background"
+					visible: true
+					width: width@c5fa323b-9874-4f28-9cd0-9d1cebff7870 (propref<int>)
+					height: height@c5fa323b-9874-4f28-9cd0-9d1cebff7870 (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(6215bdef-75fa-4e54-9671-cda085b631b2)
+					{
+						file: "Call.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "goto_call"
+			visible: true
+			width: 70
+			height: 70
+			x: 715
+			y: 90
+		}, 
+		GtfRectangle_template_instance(db19a355-b3b9-44d3-86ba-9404e978ef73)
+		{
+			name: "TopBar 1"
+			template: @946dc760-ee83-4771-bd7f-52f3864de092 (objectref<GtfRectangle_template>)
+			children: children_list []
+			MainText: "Phone"
+			BackButton_Background: BackButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Background: MainMenuButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Visible: MainMenuButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			BackButton_Visible: false
+			Released_BACK: Released_BACK@946dc760-ee83-4771-bd7f-52f3864de092 (propref<function<bool>>)
+		}, 
+		GtfLabel(62b37075-3384-4d34-acb2-4495fad36894)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "name_add_info"
+			visible: true
+			width: 240
+			height: 40
+			x: 35
+			y: 160
+			text: "Add a name !"
+			textColor: #FFFFFFFF
+			font: font_resource(f38a7d08-0224-4fb6-8e0c-3dc315f8f86c)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 20
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(4dcdf8c0-a079-44ac-b0c0-b233ebac1c72)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "number_add_info"
+			visible: true
+			width: 150
+			height: 40
+			x: 305
+			y: 160
+			text: "Add a number !"
+			textColor: #FFFFFFFF
+			font: font_resource(074bb5c1-00d2-4318-9161-7f4a295dffc8)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 20
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(011bc751-4986-4d81-b66b-1c4b09250430)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "avatar_add_info"
+			visible: true
+			width: 80
+			height: 40
+			x: 481
+			y: 160
+			text: "Add avatar !"
+			textColor: #FFFFFFFF
+			font: font_resource(81587904-597c-4922-8e38-401ab3bdbbb4)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 20
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(2c9caf22-e322-4ced-9959-8af1a1bb060e)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "kinship_add_info"
+			visible: true
+			width: 100
+			height: 40
+			x: 585
+			y: 160
+			text: "Add a kinship !"
+			textColor: #FFFFFFFF
+			font: font_resource(a1134d46-9f58-4ad0-9aea-591b49392259)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 20
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer(c6bd6474-52db-4553-bb9b-114b2c5ed8db)
+		{
+			features: feature_list [
+				TouchPressed(c0ccd4d5-4b97-4b4c-ab43-30257309c236)
+				{
+					touchPressed: function<bool,int,int,int,int>(fbcab766-7f5a-4cc3-9d21-7098fa66846c)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->border.fillColor = dp:BorderColor_Pressed" \
+							"    false" \
+							"}"
+					}
+				}, 
+				TouchShortReleased(5d08f082-2e4d-48d0-b4df-616eee43e619)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(232b1151-2d62-405e-93bc-2da406fcc1d8)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->border.fillColor = dp:BorderColor" \
+							"	dp:PHONE:Name = \"\"" \
+							"	dp:PHONE:Number = \"\"" \
+							"	dp:PHONE:Avatar = dp:PHONE:\"33\"" \
+							"	dp:PHONE:Kinship = \"\"" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(3f83564e-1c4d-4d6e-ba05-23b017601504)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfEllipse(edace9c4-e77b-4566-ad40-3348f11b433a)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "border"
+					visible: true
+					width: 108
+					height: 108
+					x: -4
+					y: -4
+					fillColor: #000000FF
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+				}, 
+				GtfImage(c4cb65ec-afdc-457a-8b55-c53aa9dfaf5e)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "background"
+					visible: true
+					width: width@c6bd6474-52db-4553-bb9b-114b2c5ed8db (propref<int>)
+					height: height@c6bd6474-52db-4553-bb9b-114b2c5ed8db (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(6514b9df-8d64-4acf-94c8-ed2dcba503a7)
+					{
+						file: "RESET_button.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Reset_Button"
+			visible: true
+			width: 100
+			height: 100
+			x: 350
+			y: 300
+		}]
+}

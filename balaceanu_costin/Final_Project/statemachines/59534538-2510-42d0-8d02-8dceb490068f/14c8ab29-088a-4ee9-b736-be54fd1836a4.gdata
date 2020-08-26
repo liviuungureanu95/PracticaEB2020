@@ -1,0 +1,60 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_compound_state(14c8ab29-088a-4ee9-b736-be54fd1836a4)
+{
+	x: 122
+	y: 407
+	width: 300
+	height: 200
+	name: "Spotify"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions []
+	internal_transitions: haptic_internal_transitions []
+	background_color: #000000FF
+	states: haptic_states [
+		haptic_dialog_state(a17bfeef-eec4-4484-b806-d37589304dd3)
+		{
+			x: 69
+			y: 13
+			width: 100
+			height: 100
+			name: "Spotify"
+			entry_action: function<void>(54d6b95c-3eba-4cd2-890d-932f1aed8e99)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:KEYBOARD:Spotify_Txt = \"\"" \
+					"}"
+			}
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (80313767-f0cb-47b8-998c-32b09d3d5404)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(971222d9-b214-4703-8b7c-99fc2b1f6fd8)
+	{
+		x: 15
+		y: 39
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(22036459-cc50-4bf3-9a83-7b9269c47064)
+		{
+			action: function<void>(none)
+			target_state: @a17bfeef-eec4-4484-b806-d37589304dd3 (objectref<haptic_dialog_state>)
+			source_dock: 0.2461189F
+			target_dock: 0.7877088F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(none)
+}

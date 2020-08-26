@@ -1,0 +1,744 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfRectangle_template(946dc760-ee83-4771-bd7f-52f3864de092)
+{
+	name: "TopBar"
+	structure: GtfRectangle(a213d825-6d41-4eeb-8a50-0b5505264983)
+	{
+		features: feature_list [
+			Border(cd8f77de-ad02-40f8-a937-121a3e929428)
+			{
+				borderThickness: 1
+				borderColor: #000000FF
+				borderStyle: 0
+			}]
+		children: children_list [
+			GtfImage(7b3f2401-9c20-4420-8eac-f5147abbddd1)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@a213d825-6d41-4eeb-8a50-0b5505264983 (propref<int>)
+				height: height@a213d825-6d41-4eeb-8a50-0b5505264983 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(a916a78e-192a-41b2-9d58-f42f2e87bcec)
+				{
+					file: "TopBar_Background.jpg"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(d585db6f-7f91-409f-aafe-4797260a4dc2)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Menu_txt"
+				visible: true
+				width: 190
+				height: height@a213d825-6d41-4eeb-8a50-0b5505264983 (propref<int>)
+				x: 10
+				y: 0
+				text: "Main Menu"
+				textColor: #FFFFFFFF
+				font: font_resource(2b75ccbe-3f3c-4c69-903b-1ab3aa007125)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 40
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}, 
+			GtfContainer(de9b091c-26ee-4fcf-805b-2dd5f31a6445)
+			{
+				features: feature_list [
+					TouchShortReleased(2b5732a3-f382-43f2-964e-41e5ecf8a547)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(beec0805-1140-40d1-bace-c9f768025c0a)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	fire ev:GoTo_Clock()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(78faf79a-4e2f-4a8c-873e-fec299638924)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list [
+					GtfImage(22ac3746-b524-485b-9dbe-6a7fb2fc6882)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Background"
+						visible: true
+						width: width@de9b091c-26ee-4fcf-805b-2dd5f31a6445 (propref<int>)
+						height: height@de9b091c-26ee-4fcf-805b-2dd5f31a6445 (propref<int>)
+						x: 0
+						y: 0
+						image: image_resource(ff28abf4-24c4-47f5-9eb9-57cd2cc16271)
+						{
+							file: "clock2.png"
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+					}]
+				name: "Clock_Button"
+				visible: true
+				width: 35
+				height: 40
+				x: 645
+				y: 15
+			}, 
+			GtfContainer(04eb467b-7e9c-4049-9a4d-8d3f04f2a69e)
+			{
+				features: feature_list [
+					TouchShortReleased(b4a27aac-e4ef-4e77-8678-233c1590c3a4)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(8f2cf5ff-2a1a-4840-af4e-e0686c20f11f)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	fire ev:GoTo_Temperature()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(9e1cd967-d279-413b-be51-681ff6924c82)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list [
+					GtfImage(39c28f00-963a-4a5a-b150-2edf79a7798f)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Background"
+						visible: true
+						width: width@04eb467b-7e9c-4049-9a4d-8d3f04f2a69e (propref<int>)
+						height: height@04eb467b-7e9c-4049-9a4d-8d3f04f2a69e (propref<int>)
+						x: 0
+						y: 3
+						image: @1855416d-bbb3-417e-aafd-7c4c4380ff99 (objectref<image>)
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+						Condition: conditional_script(5200c005-d674-460d-ab3a-37d2627fa266)
+						{
+							triggerList: trigger_list(342a6d2f-71ff-4359-aa46-1785fff17720)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(59f1e2f8-47ea-4911-839d-100145396b91)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	//if(v:this->)" \
+									"	//{" \
+									"	//	dp:TOPBAR:IMG_Temperature = dp:TOPBAR:MOON_img" \
+									"	//}" \
+									"	false" \
+									"}"
+							}
+						}
+					}]
+				name: "Temperature_Button"
+				visible: true
+				width: 50
+				height: 50
+				x: 465
+				y: 8
+			}, 
+			GtfContainer(3719cba6-d117-408a-91b9-4cfaeadfe04f)
+			{
+				features: feature_list [
+					TouchPressed(bec4dfa4-b63c-4888-9bf6-4a3603ad9e61)
+					{
+						touchPressed: function<bool,int,int,int,int>(79d99d86-1021-44c6-b003-9d34b347ef61)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this->border.visible = true" \
+								"    false" \
+								"}"
+						}
+					}, 
+					TouchShortReleased(be8142be-7ca3-452d-91c4-f19d0c3b7a45)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(8ed5914d-2fb2-4c79-bff7-c0fb35fae456)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.Released_BACK()" \
+								"	v:this->border.visible = false" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(b0d0f91b-e5b7-4bd9-b8c3-9ed6bc7503dd)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list [
+					GtfImage(29be75bc-c7fb-419c-a72d-da1315e5d5ca)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Background"
+						visible: true
+						width: width@3719cba6-d117-408a-91b9-4cfaeadfe04f (propref<int>)
+						height: height@3719cba6-d117-408a-91b9-4cfaeadfe04f (propref<int>)
+						x: 0
+						y: 0
+						image: image_resource(6881a229-9c44-41cc-b478-76fec22f164e)
+						{
+							file: "BACK_Button_Background.png"
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+					}, 
+					GtfRectangle(45e59028-550f-4773-be1c-18ae59de64bb)
+					{
+						features: feature_list [
+							Border(117e4774-db9d-4de6-8ed1-5ccd08b82277)
+							{
+								borderThickness: 1
+								borderColor: #00FF00FF
+								borderStyle: 0
+							}]
+						children: children_list []
+						name: "border"
+						visible: false
+						width: width@3719cba6-d117-408a-91b9-4cfaeadfe04f (propref<int>)
+						height: height@3719cba6-d117-408a-91b9-4cfaeadfe04f (propref<int>)
+						x: 0
+						y: 0
+						fillColor: #FFFFFF00
+					}]
+				name: "BackButton"
+				visible: true
+				width: 55
+				height: 55
+				x: 270
+				y: 7
+				Released_BACK: function<bool>(ef8c2ce6-7158-43ec-8c2f-4bbfcfa2b14b)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}, 
+			GtfContainer(43bdf846-7cfc-4ae5-b739-af0cdab3b85d)
+			{
+				features: feature_list [
+					TouchPressed(78e8c648-301f-4250-b5f6-d49a5ad7a348)
+					{
+						touchPressed: function<bool,int,int,int,int>(3c9516ba-f45f-4d10-89c8-fc047d34f1d3)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this->border.visible = true" \
+								"    false" \
+								"}"
+						}
+					}, 
+					TouchShortReleased(9ad37a2e-d070-4955-9711-0724ff869b68)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(5d229295-02f4-4103-bb49-041edfd989fa)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this->border.visible = false" \
+								"	fire ev:GoTo_Menu()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(65ff5156-5b95-4d65-94a5-a213c1f30a40)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list [
+					GtfImage(49721dbf-2943-48d8-8bd2-e59a9f865cd7)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Background"
+						visible: true
+						width: width@43bdf846-7cfc-4ae5-b739-af0cdab3b85d (propref<int>)
+						height: height@43bdf846-7cfc-4ae5-b739-af0cdab3b85d (propref<int>)
+						x: 0
+						y: 0
+						image: image_resource(75a0c938-6adf-47f9-a7d1-30fd4b7bbf45)
+						{
+							file: "HOME_Button_Background.png"
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+					}, 
+					GtfRectangle(d6e4381b-7bc8-4a72-8eb3-bbfe045088b7)
+					{
+						features: feature_list [
+							Border(8840a8e7-ab82-466e-a10a-16785bfe934a)
+							{
+								borderThickness: 1
+								borderColor: #00FF00FF
+								borderStyle: 0
+							}]
+						children: children_list []
+						name: "border"
+						visible: false
+						width: width@43bdf846-7cfc-4ae5-b739-af0cdab3b85d (propref<int>)
+						height: height@43bdf846-7cfc-4ae5-b739-af0cdab3b85d (propref<int>)
+						x: 0
+						y: 0
+						fillColor: #FFFFFF00
+					}]
+				name: "MainMenuButton"
+				visible: true
+				width: 57
+				height: 61
+				x: 200
+				y: 4
+			}, 
+			GtfLabel(79942ffc-70d2-45e7-ab3e-7d9312214de6)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Temperature_Txt"
+				visible: true
+				width: 105
+				height: 70
+				x: 515
+				y: 0
+				text: string_scriptedValue(30e97583-9dd7-4deb-915c-66af320d90be)
+				{
+					triggerList: trigger_list(b40eb6fa-4e00-4912-b0a9-884508760803)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(6a857a3c-81ad-4066-a5f7-98aadac231be)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<string>(a9302a60-0432-40c5-836f-2ad96af24475)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	f:int2string(dp:TOPBAR:Temperature_Nr) + \"°C\"" \
+							"}"
+					}
+					write: function<bool,string>(e55ddcac-37b5-4608-a29a-c7c4d48067c4)
+					{
+						script: "function(v:arg0::string)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				textColor: #FFFFFFFF
+				font: font_resource(ac6f5b6c-b1f1-45b7-a66e-c733e2b1f8cc)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 50
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfLabel(22f4116e-ab0a-4b76-a329-665943e03607)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Clock_Txt"
+				visible: true
+				width: 99
+				height: 32
+				x: 690
+				y: 4
+				text: string_scriptedValue(c8e473e8-bcf8-4e0c-8617-d7e4ac0c7889)
+				{
+					triggerList: trigger_list(531a3f30-8b0a-457c-bdb5-50699ee2ed18)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(5bf2f940-ea8c-43c4-bd64-4c758016bb36)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<string>(ba079394-9240-4772-9f36-78c4ef62aec1)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	f:format_int(\"%.2i\",f:localtime_hour(f:system_time())+3) + \" : \" + f:format_int(\"%.2i\",f:localtime_minute(f:system_time()))" \
+							"	" \
+							"}"
+					}
+					write: function<bool,string>(a0de0658-2d27-4721-894f-b11643bf4363)
+					{
+						script: "function(v:arg0::string)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				textColor: #FF6347FF
+				font: font_resource(08314ab2-1626-44aa-ab1a-844964047a78)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 35
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfLabel(7b966c74-17e0-4530-9377-640263fb008d)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "date_Txt"
+				visible: true
+				width: 99
+				height: 32
+				x: 692
+				y: 35
+				text: string_scriptedValue(6850b94f-3d0a-400a-a762-936f44b5f208)
+				{
+					triggerList: trigger_list(80b7ee0c-61c4-4836-8897-22c0ef3c86b7)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(a9e22d4d-e5e6-4ec6-a3c2-44598f77dde5)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<string>(c37b54bf-1897-49a0-a96b-430f248f67fb)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	" \
+							"	f:format_int(\"%.2i\",f:localtime_day(f:system_time())) + \"-\" + f:format_int(\"%.2i\",f:localtime_month(f:system_time())) + \"-\" + f:int2string(f:localtime_year(f:system_time()))" \
+							"}"
+					}
+					write: function<bool,string>(13c3e33a-2847-4b56-8ffe-0cbfc8611d14)
+					{
+						script: "function(v:arg0::string)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				textColor: #00BFFFFF
+				font: font_resource(9809ce21-773e-41ea-ab87-6a7e598c94a1)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 20
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfImage(428191b1-103e-43c9-93fd-87135c6f89ee)
+			{
+				features: feature_list [
+					Scaling(a8ab1ac9-88d7-4713-8153-cea166e3e9b4)
+					{
+						scalingEnabled: true
+						scalingX: 150F
+						scalingY: 150F
+						scalingZ: 100F
+					}]
+				children: children_list []
+				name: "martor_esp"
+				visible: true
+				width: 19
+				height: 30
+				x: 383
+				y: 30
+				image: image_resource(715652d6-2ca4-4540-88c1-e19cf80b53c6)
+				{
+					file: "martos_esp.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+				Condition: conditional_script(9b008865-55aa-4be2-8217-fdfe18355b11)
+				{
+					triggerList: trigger_list(8d92224e-c67a-4a0f-80ec-bf89063bb174)
+					{
+						script: "dp:MARTORS:ESP" \
+							""
+					}
+					onTrigger: function<bool,bool>(6c066af2-6266-4604-9e97-6e46f6c6403c)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	if(dp:MARTORS:ESP == true)" \
+							"	{" \
+							"		v:this->^->martor_esp.visible = true" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"		v:this->^->martor_esp.visible = false" \
+							"	}" \
+							"	false" \
+							"}"
+					}
+				}
+			}, 
+			GtfImage(fdbf5079-ef5a-473d-8c4a-bc797e0fec12)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "martor_light"
+				visible: true
+				width: 40
+				height: 40
+				x: 335
+				y: -2
+				image: image_resource(c180b1ec-0d15-4eb9-81ea-4f8e3371ea31)
+				{
+					file: "martor_light.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+				conditie: conditional_script(39faba58-4734-4bca-a8c6-ca6c6584ce58)
+				{
+					triggerList: trigger_list(0f488b26-bd76-41e9-8ffc-7b4cefa27d0f)
+					{
+						script: "dp:MARTORS:LIGHT" \
+							""
+					}
+					onTrigger: function<bool,bool>(bf53f8d4-1e6e-44ee-90b4-6de23f650476)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	if(dp:MARTORS:LIGHT == true)" \
+							"	{" \
+							"		v:this->^->martor_light.visible = true" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"		v:this->^->martor_light.visible = false" \
+							"	}" \
+							"	false" \
+							"}"
+					}
+				}
+			}, 
+			GtfImage(3d084cf7-430d-45a4-b5e2-d8cddf178557)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "martor_handbrake"
+				visible: true
+				width: 40
+				height: 40
+				x: 380
+				y: 0
+				image: image_resource(ede9a1e9-798e-43a8-bf27-9aad86fe3bff)
+				{
+					file: "martor_bracking.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+				conditie: conditional_script(7ff3cc72-7ae7-4fe1-b527-ceba951928da)
+				{
+					triggerList: trigger_list(cd7b6bc2-375f-4e8d-a29c-ea1d5e889f91)
+					{
+						script: "dp:MARTORS:HAND_BRAKE" \
+							""
+					}
+					onTrigger: function<bool,bool>(c5e8cba0-18cb-470d-b1be-9bec6519eec1)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	if(dp:MARTORS:HAND_BRAKE == true)" \
+							"	{" \
+							"		v:this->^->martor_handbrake.visible = true" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"		v:this->^->martor_handbrake.visible = false" \
+							"	}" \
+							"	false" \
+							"}"
+					}
+				}
+			}, 
+			GtfImage(48c6d3e1-2f30-4f33-a8cf-1c2b36047b68)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "martor_motor"
+				visible: true
+				width: 40
+				height: 32
+				x: 337
+				y: 35
+				image: image_resource(f724ee7d-e060-4ecc-a223-c86852ad972b)
+				{
+					file: "martor_motor.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+				conditie: conditional_script(075652fa-2858-46dd-a13b-57f9d966578c)
+				{
+					triggerList: trigger_list(2d2d7e9a-f461-4905-868d-64ccf3971d3b)
+					{
+						script: "dp:MARTORS:MOTOR" \
+							""
+					}
+					onTrigger: function<bool,bool>(feee5cf9-26e3-4041-9afd-f06366b75a56)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	if(dp:MARTORS:MOTOR == true)" \
+							"	{" \
+							"		v:this->^->martor_motor.visible = true" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"		v:this->^->martor_motor.visible = false" \
+							"	}" \
+							"	false" \
+							"}"
+					}
+				}
+			}, 
+			GtfImage(1f88ee0a-d688-4289-aa7a-a65f7176a8fb)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "martor_oil"
+				visible: true
+				width: 40
+				height: 32
+				x: 420
+				y: 1
+				image: image_resource(06546211-fd80-467c-b5c9-9cc53593b4af)
+				{
+					file: "martor_oil.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+				conditie: conditional_script(9d4243b2-5af8-4f59-9cf9-25258cbaff58)
+				{
+					triggerList: trigger_list(04a69b59-67a2-4d4c-8a4c-110d5b245d5d)
+					{
+						script: "dp:MARTORS:OIL" \
+							""
+					}
+					onTrigger: function<bool,bool>(c63baf50-4991-4e51-9f72-e9df10967495)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	if(dp:MARTORS:OIL == true)" \
+							"	{" \
+							"		v:this->^->martor_oil.visible = true" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"		v:this->^->martor_oil.visible = false" \
+							"	}" \
+							"	false" \
+							"}"
+					}
+				}
+			}, 
+			GtfImage(cbf269e5-22a5-4b99-8352-115561f929b4)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "martor_stropgel"
+				visible: true
+				width: 40
+				height: 40
+				x: 419
+				y: 27
+				image: image_resource(7871db44-5e07-4388-a86b-a9025becad30)
+				{
+					file: "martor_parbriz.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+				conditie: conditional_script(55a72f52-b290-4c9a-a075-ec1faec2d5db)
+				{
+					triggerList: trigger_list(dd3072e8-56c9-4872-9d2a-2fdc05102c2c)
+					{
+						script: "dp:MARTORS:STROPGEL" \
+							""
+					}
+					onTrigger: function<bool,bool>(898b2f77-7a38-42d6-97db-95965f969f0a)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	if(dp:MARTORS:STROPGEL == true)" \
+							"	{" \
+							"		v:this->^->martor_stropgel.visible = true" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"		v:this->^->martor_stropgel.visible = false" \
+							"	}" \
+							"	false" \
+							"}"
+					}
+				}
+			}]
+		name: "Border"
+		visible: true
+		width: 800
+		height: 70
+		x: 0
+		y: 0
+		fillColor: #A9A9A9FF
+	}
+	MainText: text@d585db6f-7f91-409f-aafe-4797260a4dc2 (propref<string>)
+	BackButton_Background: image@29be75bc-c7fb-419c-a72d-da1315e5d5ca (propref<image>)
+	MainMenuButton_Background: image@49721dbf-2943-48d8-8bd2-e59a9f865cd7 (propref<image>)
+	MainMenuButton_Visible: visible@43bdf846-7cfc-4ae5-b739-af0cdab3b85d (propref<bool>)
+	BackButton_Visible: visible@3719cba6-d117-408a-91b9-4cfaeadfe04f (propref<bool>)
+	Released_BACK: Released_BACK@3719cba6-d117-408a-91b9-4cfaeadfe04f (propref<function<bool>>)
+}

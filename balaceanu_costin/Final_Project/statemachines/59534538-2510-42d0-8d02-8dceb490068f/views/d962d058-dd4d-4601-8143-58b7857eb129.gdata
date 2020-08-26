@@ -1,0 +1,136 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(d962d058-dd4d-4601-8143-58b7857eb129)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer(d2864f9a-8df4-4bed-a0aa-de4314029142)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(f1fd17fe-a5dd-44c9-a528-1d15f051df9f)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfRectangle_template_instance(d9f95d9d-3f07-4ccd-9b95-d5b0874e4f08)
+						{
+							name: "TopBar 1"
+							template: @946dc760-ee83-4771-bd7f-52f3864de092 (objectref<GtfRectangle_template>)
+							children: children_list []
+							MainText: MainText@946dc760-ee83-4771-bd7f-52f3864de092 (propref<string>)
+							BackButton_Background: BackButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+							MainMenuButton_Background: MainMenuButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+							MainMenuButton_Visible: false
+							BackButton_Visible: false
+							Released_BACK: function<bool>(20b22249-a90a-46e6-b349-d74b425bdc4f)
+							{
+								script: "function()" \
+									"{" \
+									"	fire ev:GoTo_Language()" \
+									"	false" \
+									"}"
+							}
+						}, 
+						GtfContainer(380c6aee-503c-46aa-810d-ef4ca66e8e92)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfContainer_template_instance(76825f5a-92db-446e-ae2a-0b75e26e6e27)
+								{
+									name: "APPS_list"
+									template: @34c9f590-8c85-4c52-a751-9571373b2210 (objectref<GtfContainer_template>)
+									children: children_list []
+									visible: true
+									x: 0
+									y: 0
+									xOffset: -800
+								}]
+							name: "SCROLL"
+							visible: true
+							width: 800
+							height: 200
+							x: 0
+							y: 190
+						}, 
+						GtfContainer_template_instance(2332dc8f-b3b0-4c5c-9151-a873d78c6a0c)
+						{
+							name: "Previews"
+							template: @4b0b1c99-dce5-4072-93fa-44341b639e9a (objectref<GtfContainer_template>)
+							children: children_list []
+							x: -18
+							y: 237
+							Button_Function: function<bool>(94787e12-48fa-4072-af6a-3253ca62f8ed)
+							{
+								script: "function()" \
+									"{" \
+									"	if(v:this->^->SCROLL->APPS_list.xOffset == 0)" \
+									"	{" \
+									"	" \
+									"	}" \
+									"	else" \
+									"	{" \
+									"		v:this->^->SCROLL->APPS_list.xOffset += 100" \
+									"	}" \
+									"	false" \
+									"}"
+							}
+							image: image_resource(a63d7afc-2fb9-4f93-ab62-06851a98df0b)
+							{
+								file: "11111.png"
+							}
+						}, 
+						GtfContainer_template_instance(cb1df62a-2c26-430c-923f-f158a58c72d7)
+						{
+							name: "Next"
+							template: @4b0b1c99-dce5-4072-93fa-44341b639e9a (objectref<GtfContainer_template>)
+							children: children_list []
+							x: 715
+							y: 237
+							Button_Function: function<bool>(aa359fb5-dd31-4ce1-860c-45c2afcd06f7)
+							{
+								script: "function()" \
+									"{" \
+									"	if(v:this->^->SCROLL->APPS_list.xOffset == -1700)" \
+									"	{" \
+									"	" \
+									"	}" \
+									"	else" \
+									"	{" \
+									"		v:this->^->SCROLL->APPS_list.xOffset -= 100" \
+									"	}" \
+									"	false" \
+									"}"
+							}
+							image: image_resource(05d4b4ef-2375-47c6-be2f-8ca7f006182c)
+							{
+								file: "1111.png"
+							}
+						}]
+					name: "Background"
+					visible: true
+					width: width@d2864f9a-8df4-4bed-a0aa-de4314029142 (propref<int>)
+					height: height@d2864f9a-8df4-4bed-a0aa-de4314029142 (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(fbb0750e-ef3b-4e59-baae-4fa2cf4a984a)
+					{
+						file: "MAINview_Background.jpg"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Container"
+			visible: true
+			width: width@d962d058-dd4d-4601-8143-58b7857eb129 (propref<int>)
+			height: height@d962d058-dd4d-4601-8143-58b7857eb129 (propref<int>)
+			x: 0
+			y: 0
+		}]
+	name: "PrincipalMenu_View"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

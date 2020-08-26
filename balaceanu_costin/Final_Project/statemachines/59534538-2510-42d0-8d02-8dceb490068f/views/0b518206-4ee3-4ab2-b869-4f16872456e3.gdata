@@ -1,0 +1,143 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(0b518206-4ee3-4ab2-b869-4f16872456e3)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(e3a70876-73f1-4782-baa7-e093354f470e)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle_template_instance(1686a403-0215-44b1-ba5d-5d56ae7575d3)
+				{
+					name: "TopBar"
+					template: @946dc760-ee83-4771-bd7f-52f3864de092 (objectref<GtfRectangle_template>)
+					children: children_list []
+					MainText: "Clock"
+					BackButton_Background: BackButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+					MainMenuButton_Background: MainMenuButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+					MainMenuButton_Visible: true
+					BackButton_Visible: false
+					Released_BACK: Released_BACK@946dc760-ee83-4771-bd7f-52f3864de092 (propref<function<bool>>)
+				}, 
+				GtfLabel(e83a606d-9536-48f0-9b5e-e7925252c50e)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Time"
+					visible: true
+					width: 422
+					height: 134
+					x: 49
+					y: 106
+					text: string_scriptedValue(2f521bcc-7f04-4e10-ae17-fed4fb3d5ed0)
+					{
+						triggerList: trigger_list(e8a560cf-aaf0-4f33-b83a-25ab915ba146)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(b7835f7d-bac5-4070-91fa-a51475c705ab)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(312dc2c5-974f-4582-8c3c-cdded2e9de44)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:format_int(\"%.2i\",f:localtime_hour(f:system_time())+3) + \" : \" + f:format_int(\"%.2i\",f:localtime_minute(f:system_time()))+ \" : \" + f:format_int(\"%.2i\",f:localtime_second(f:system_time()))" \
+								"}"
+						}
+						write: function<bool,string>(cd68ef2e-690d-409b-bd8a-3379199ccf71)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FF6347FF
+					font: font_resource(84e47ee1-e104-4fd3-8848-7a7504b027fd)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 100
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(da8f4362-5809-4051-a19d-5d32499600a0)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Year"
+					visible: true
+					width: 241
+					height: 109
+					x: 491
+					y: 137
+					text: string_scriptedValue(7c9741e2-c531-4099-9615-64975126c44d)
+					{
+						triggerList: trigger_list(c4bf0bb8-1e19-4997-b693-00bda0daef20)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(634ba67e-7150-4e1b-b808-41a64653a4ed)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(1d152392-9a62-4ecd-a869-4e938b04892f)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:format_int(\"%.2i\",f:localtime_day(f:system_time())) + \"-\" + f:format_int(\"%.2i\",f:localtime_month(f:system_time())) + \"-\" + f:int2string(f:localtime_year(f:system_time()))" \
+								"}"
+						}
+						write: function<bool,string>(35e97e2a-dc65-48b7-b2bf-c0b5fa0678a3)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #1E90FFFF
+					font: font_resource(e0ced0a2-f640-4599-bbf9-d25820efd48a)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 50
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Background"
+			visible: true
+			width: width@0b518206-4ee3-4ab2-b869-4f16872456e3 (propref<int>)
+			height: height@0b518206-4ee3-4ab2-b869-4f16872456e3 (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(394b5049-74a8-4051-8931-a556d218ac02)
+			{
+				file: "View_Background.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "Clock_View"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

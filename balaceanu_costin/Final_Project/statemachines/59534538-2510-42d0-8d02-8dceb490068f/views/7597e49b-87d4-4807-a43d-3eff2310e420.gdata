@@ -1,0 +1,1060 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(7597e49b-87d4-4807-a43d-3eff2310e420)
+{
+	name: "Settings_View"
+	template: @95461b8a-82f0-421b-ba66-6095f03a1846 (objectref<GtfView_template>)
+	children: children_list [
+		GtfRectangle_template_instance(62ccec1f-6b7f-429f-91b5-0e8c1d0c0c53)
+		{
+			name: "TopBar 1"
+			template: @946dc760-ee83-4771-bd7f-52f3864de092 (objectref<GtfRectangle_template>)
+			children: children_list []
+			MainText: "Setting MP"
+			BackButton_Background: BackButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Background: MainMenuButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Visible: MainMenuButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			BackButton_Visible: BackButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			Released_BACK: function<bool>(e986513d-d3e1-433a-9c1f-438acbf7deb7)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoTo_MediaPlayer()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer(192f4061-0c8b-41e0-8cd9-50053f9de0f1)
+		{
+			features: feature_list [
+				TouchPressed(d31955a3-5067-4dfb-9b76-e248828838d7)
+				{
+					touchPressed: function<bool,int,int,int,int>(6235e98d-dbe4-49d0-ae93-3654c508c32d)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->border.fillColor = dp:BorderColor_Pressed" \
+							"    false" \
+							"}"
+					}
+				}, 
+				TouchShortReleased(7562d15f-266d-4f6d-9a40-e519b3433ce5)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(0e15e579-7dff-4667-a997-b0ca4c2eeefa)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->border.fillColor = dp:BorderColor_Pressed" \
+							"	v:this->^->EQALIZER->border.fillColor = dp:BorderColor" \
+							"	v:this->^->SIDES->border1.fillColor = dp:BorderColor" \
+							"	v:this->^->SIDES->border2.fillColor = dp:BorderColor" \
+							"	v:this->^->SIDES->border3.fillColor = dp:BorderColor" \
+							"	v:this->^->bass_txt.visible = true" \
+							"	v:this->^->sides_txt.visible = false" \
+							"	v:this->^->equalizer_txt.visible = false" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(10dee32d-36ca-4b45-a13d-774ed645ac54)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfEllipse(7dc2cfed-16d2-4ea6-8337-238e8dc9d842)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "border"
+					visible: true
+					width: 108
+					height: 108
+					x: -4
+					y: -4
+					fillColor: #000000FF
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+				}, 
+				GtfImage(4ea87d96-d08d-4ca8-88b3-e21a6f2da74d)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "BASS"
+					visible: true
+					width: width@192f4061-0c8b-41e0-8cd9-50053f9de0f1 (propref<int>)
+					height: height@192f4061-0c8b-41e0-8cd9-50053f9de0f1 (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(cc3d5aeb-99ba-4ea7-8295-e69b90c07dee)
+					{
+						file: "MP_BASS.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "BASS"
+			visible: true
+			width: 100
+			height: 100
+			x: 70
+			y: 80
+		}, 
+		GtfLabel(f6434432-fca1-47f8-9ae0-8213c7b928d9)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "bass"
+			visible: true
+			width: 100
+			height: 51
+			x: 68
+			y: 170
+			text: "BASS"
+			textColor: #00BFFFFF
+			font: font_resource(b741e57b-d5c6-4d0d-b68a-a1383b22b0ff)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 25
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer(b8c235bc-c216-447e-a730-acec22dcb8a6)
+		{
+			features: feature_list [
+				TouchPressed(e66bcdb6-3731-41a2-8591-6cdebd5012c0)
+				{
+					touchPressed: function<bool,int,int,int,int>(c2df2aa5-e990-44d3-b993-3a6ae59b3028)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->border1.fillColor = dp:BorderColor" \
+							"	v:this->border2.fillColor = dp:BorderColor" \
+							"	v:this->border3.fillColor = dp:BorderColor" \
+							"    false" \
+							"}"
+					}
+				}, 
+				TouchShortReleased(a8eec3df-86ae-40a0-ac12-8619063efbf5)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(346f0f06-f11c-4738-a965-c4cdfd0611e1)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->border1.fillColor = dp:BorderColor_Pressed" \
+							"	v:this->border2.fillColor = dp:BorderColor_Pressed" \
+							"	v:this->border3.fillColor = dp:BorderColor_Pressed" \
+							"	v:this->^->EQALIZER->border.fillColor = dp:BorderColor" \
+							"	v:this->^->BASS->border.fillColor = dp:BorderColor" \
+							"	v:this->^->bass_txt.visible = false" \
+							"	v:this->^->sides_txt.visible = true" \
+							"	v:this->^->equalizer_txt.visible = false" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(da1d1dc0-fcb5-455a-b1d3-a3873da9b58f)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfEllipse(77aafe00-d58c-4bca-9f13-eca1a75a639c)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "border1"
+					visible: true
+					width: 78
+					height: 78
+					x: 40
+					y: 12
+					fillColor: #000000FF
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+				}, 
+				GtfEllipse(4640a324-93ea-4fe9-ad4c-64968663729a)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "border2"
+					visible: true
+					width: 64
+					height: 64
+					x: -2
+					y: 23
+					fillColor: #000000FF
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+				}, 
+				GtfEllipse(36a6bf41-4e6c-4ebc-9195-83b82d940e55)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "border3"
+					visible: true
+					width: 64
+					height: 64
+					x: 95
+					y: 23
+					fillColor: #000000FF
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+				}, 
+				GtfImage(aaf35cd1-e3a5-4605-b91f-2c6520720437)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "SIDES"
+					visible: true
+					width: width@b8c235bc-c216-447e-a730-acec22dcb8a6 (propref<int>)
+					height: height@b8c235bc-c216-447e-a730-acec22dcb8a6 (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(06973cda-45eb-426e-8a1e-30a0fd15e90e)
+					{
+						file: "MP_SIDE.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "SIDES"
+			visible: true
+			width: 158
+			height: 100
+			x: 40
+			y: 205
+		}, 
+		GtfLabel(281afba4-7e91-4764-924f-d761d4eca811)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "sides"
+			visible: true
+			width: 100
+			height: 51
+			x: 68
+			y: 280
+			text: "SIDES"
+			textColor: #00BFFFFF
+			font: font_resource(ac032a67-395a-4a3d-8df6-894397e5f97e)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 25
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer(2b201c49-a2b9-42ea-b75a-4f46394da8ea)
+		{
+			features: feature_list [
+				TouchPressed(39ce9a04-b82c-4650-bfb0-c1757e8038e6)
+				{
+					touchPressed: function<bool,int,int,int,int>(237c8857-97b1-40ea-967d-ca9b27894ea2)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->border.fillColor = dp:BorderColor" \
+							"    false" \
+							"}"
+					}
+				}, 
+				TouchShortReleased(7235556c-79a2-4a50-8c09-47c369e1ed62)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(c5867765-89df-42e5-8fb7-1b3a0cd81ac8)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->border.fillColor = dp:BorderColor_Pressed" \
+							"	v:this->^->BASS->border.fillColor = dp:BorderColor" \
+							"	v:this->^->SIDES->border1.fillColor = dp:BorderColor" \
+							"	v:this->^->SIDES->border2.fillColor = dp:BorderColor" \
+							"	v:this->^->SIDES->border3.fillColor = dp:BorderColor" \
+							"	v:this->^->bass_txt.visible = false" \
+							"	v:this->^->sides_txt.visible = false" \
+							"	v:this->^->equalizer_txt.visible = true" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(631eeee2-ad59-4a6b-adee-0c363d4d5ab7)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfEllipse(62c230a5-4c37-4d8f-92a0-fc3caf58b391)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "border"
+					visible: true
+					width: 103
+					height: 102
+					x: -2
+					y: 0
+					fillColor: #000000FF
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+				}, 
+				GtfImage(ca1012f2-07b8-47a1-a881-2584ff6f38e9)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "EQUALIZER"
+					visible: true
+					width: width@2b201c49-a2b9-42ea-b75a-4f46394da8ea (propref<int>)
+					height: height@2b201c49-a2b9-42ea-b75a-4f46394da8ea (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(2a4212fe-710d-41ee-ac77-9dd07926c4d8)
+					{
+						file: "MP_EQUALIZER.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "EQALIZER"
+			visible: true
+			width: 100
+			height: 100
+			x: 70
+			y: 330
+		}, 
+		GtfLabel(0147f027-43c7-4341-b00b-5ae884995870)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "equalizer"
+			visible: true
+			width: 100
+			height: 51
+			x: 68
+			y: 418
+			text: "EQUALIZER"
+			textColor: #00BFFFFF
+			font: font_resource(4338d84b-ea80-456d-9937-e424a1e866ce)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 25
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer(e6ff3285-3072-4a65-be1f-f7accf8357c9)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(c6f0f2a9-7b66-4554-9ed0-9853e88acc2f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Bass_txt"
+					visible: true
+					width: 100
+					height: 100
+					x: 50
+					y: 0
+					text: string_scriptedValue(87c8dfd6-ce1b-4935-a16f-a3f1735a5042)
+					{
+						triggerList: trigger_list(bdf27a83-c804-479f-9191-b92ec49144b7)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(45508b9e-642b-4809-8069-61fbb94c1a44)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(46bc8e0c-07ed-4c14-9429-b6185f343b18)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	dp:MEDIA_PLAYER:BASS_volume[dp:MEDIA_PLAYER:BASS_index]" \
+								"}"
+						}
+						write: function<bool,string>(587bcd7a-b081-411e-8953-7804900f8ad1)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FF0000FF
+					font: font_resource(2e4dedc4-6fca-4efe-bb10-4c24e3bbe721)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 50
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfImage(8656ef00-efb6-4620-80cc-ddec8fc8173a)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "PLUSarrow"
+					visible: true
+					width: 50
+					height: 50
+					x: 143
+					y: 28
+					image: image_resource(85d25c72-9f40-4539-b255-71d7fe52e1e6)
+					{
+						file: "MP_ARROW.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(2459aba1-baea-40d2-9a16-d2bfd52554ba)
+				{
+					features: feature_list [
+						Rotation(9a6b3204-f3c0-488c-a710-cdf1cf7ef141)
+						{
+							rotationEnabled: true
+							rotationAngleX: 0F
+							rotationAngleY: 0F
+							rotationAngleZ: -180F
+						}]
+					children: children_list []
+					name: "MINUSarrow"
+					visible: true
+					width: 50
+					height: 50
+					x: 55
+					y: 76
+					image: image_resource(b7714f04-ce18-46d1-bdc3-6536b5a9f39f)
+					{
+						file: "MP_ARROW.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfContainer(e503d9bd-cb2d-4203-ab11-4e1f76cba996)
+				{
+					features: feature_list [
+						TouchShortReleased(3acd316e-a561-47f3-b605-62abcf854296)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(fd01eccb-f5ff-4921-8ddc-efd59b5aa0d7)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(dp:MEDIA_PLAYER:BASS_index < length dp:MEDIA_PLAYER:BASS_volume -1)" \
+									"	dp:MEDIA_PLAYER:BASS_index = dp:MEDIA_PLAYER:BASS_index +1" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(7a4c5f50-fafd-4c3b-8119-57eb5310c77d)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "plusbutton"
+					visible: true
+					width: 42
+					height: 40
+					x: 145
+					y: 32
+				}, 
+				GtfContainer(fded39b6-e429-4c92-b580-dc2639d2d9e5)
+				{
+					features: feature_list [
+						TouchShortReleased(a8eb76f8-85e9-4ab4-9491-97921e5c0d2e)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(1469b6e2-71b7-4c62-95be-7de7a1b0f846)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(dp:MEDIA_PLAYER:BASS_index >0)" \
+									"	dp:MEDIA_PLAYER:BASS_index = dp:MEDIA_PLAYER:BASS_index -1" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(ec4c6c53-2c43-4fc4-922b-92769dc5a25b)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "minusbutton"
+					visible: true
+					width: 42
+					height: 40
+					x: 11
+					y: 32
+				}]
+			name: "bass_txt"
+			visible: false
+			width: 195
+			height: 100
+			x: 427
+			y: 204
+		}, 
+		GtfContainer(70735e4a-7848-498b-9a39-ee89ab18b80f)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(fa1ca77b-cf68-4c28-80f8-e56652f4e8e6)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "LEFT"
+					visible: true
+					width: 58
+					height: 50
+					x: 20
+					y: 60
+					text: "LEFT"
+					textColor: #00BFFFFF
+					font: font_resource(0f8b6c0e-c18c-4a2d-aa4a-cfa3452421ed)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(32c7c5a0-6004-4583-94ea-bda0e9226df4)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "RIGHT"
+					visible: true
+					width: 73
+					height: 50
+					x: 212
+					y: 60
+					text: "RIGHT"
+					textColor: #00BFFFFF
+					font: font_resource(383b0e92-166f-4ad2-932a-140f75901372)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfImage(a780b935-01d4-48b9-964c-a0c42eedfd94)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "equal"
+					visible: true
+					width: 50
+					height: 50
+					x: 122
+					y: 77
+					image: image_resource(094694e1-faf7-449b-b111-bd1ea7fa4bc7)
+					{
+						file: "MP_EQUAL.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfContainer(9a05367b-be4d-464e-a13c-14f09aa154ba)
+				{
+					features: feature_list [
+						TouchShortReleased(3dfc23cb-c02c-4b2b-83a5-e3487ecf0839)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(f17202e1-b863-4a56-bd39-50154a9a484a)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->Arrow1.visible = true" \
+									"	v:this->^->Arrow2.visible = false" \
+									"	v:this->^->Arrow3.visible = false" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(2fb592b0-197d-44d5-9152-a108599bdcb1)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "equal_press"
+					visible: true
+					width: 37
+					height: 36
+					x: 129
+					y: 85
+				}, 
+				GtfImage(bf59a98d-bb72-4fe7-969a-bdf52a607552)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "boxa1"
+					visible: true
+					width: 100
+					height: 70
+					x: 0
+					y: 0
+					image: image_resource(6ede0a20-69a7-4e59-acea-cec33d563d98)
+					{
+						file: "MP_BOXA1.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfContainer(05ee6797-442a-4967-8431-57e7583859d1)
+				{
+					features: feature_list [
+						TouchShortReleased(eb6d7459-0514-4e9f-b26c-4ef416979f3d)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(971d12ac-ca02-4ba7-8d4d-463de06d12f7)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->Arrow3.visible = true" \
+									"	v:this->^->Arrow2.visible = false" \
+									"	v:this->^->Arrow1.visible = false" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(95eaeaac-1867-4da9-8d3b-c5e84debda94)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "boxa1_press"
+					visible: true
+					width: 64
+					height: 67
+					x: 17
+					y: 0
+				}, 
+				GtfImage(c2474d34-1daf-4b4e-938f-524aebfb81e8)
+				{
+					features: feature_list [
+						Rotation(420fb284-6fca-4de5-ab4c-2190dc8abc7b)
+						{
+							rotationEnabled: true
+							rotationAngleX: 0F
+							rotationAngleY: 0F
+							rotationAngleZ: 0F
+						}]
+					children: children_list []
+					name: "boxa2"
+					visible: true
+					width: 100
+					height: 70
+					x: 195
+					y: 0
+					image: image_resource(b6f12d2f-49b2-4095-a370-a0cc95c6bff6)
+					{
+						file: "MP_BOXA2.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfContainer(e32ac2d7-c37e-4271-b99b-bb1c2efd93f0)
+				{
+					features: feature_list [
+						TouchShortReleased(0532a928-da6f-423c-8a62-2f2f32674b8b)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(ccae6347-010f-4804-a45a-35e610e0c6fe)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->Arrow2.visible = true" \
+									"	v:this->^->Arrow3.visible = false" \
+									"	v:this->^->Arrow1.visible = false" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(23eb4e8c-775c-4643-a8ce-52aa7f670bee)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "boxa2_press"
+					visible: true
+					width: 64
+					height: 67
+					x: 214
+					y: 0
+				}, 
+				GtfImage(6b2c036b-77f6-4fa7-949d-4b9d8416cf6d)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Arrow1"
+					visible: true
+					width: 50
+					height: 74
+					x: 120
+					y: 0
+					image: image_resource(44c53b18-ec31-4c91-b9cf-fcbaa7bdb761)
+					{
+						file: "MP_ARROW_SIDES.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(4bef161c-0afd-471b-bed8-4190a95df540)
+				{
+					features: feature_list [
+						Rotation(cff17560-5aed-4021-8253-ba6bde823c42)
+						{
+							rotationEnabled: true
+							rotationAngleX: 0F
+							rotationAngleY: 0F
+							rotationAngleZ: -60F
+						}]
+					children: children_list []
+					name: "Arrow2"
+					visible: false
+					width: 50
+					height: 74
+					x: 190
+					y: 6
+					image: image_resource(f82bda1a-9305-4376-b7d8-a27091cac693)
+					{
+						file: "MP_ARROW_SIDES.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(a7c0add1-1f73-4437-afe9-78fb6b5fd513)
+				{
+					features: feature_list [
+						Rotation(569691ef-a3b1-4834-ac03-8a89e7d05c99)
+						{
+							rotationEnabled: true
+							rotationAngleX: 0F
+							rotationAngleY: 0F
+							rotationAngleZ: 60F
+						}]
+					children: children_list []
+					name: "Arrow3"
+					visible: false
+					width: 50
+					height: 74
+					x: 75
+					y: 49
+					image: image_resource(a7f0b6d4-aa1b-4c9f-b5f5-b6279ceb3b23)
+					{
+						file: "MP_ARROW_SIDES.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "sides_txt"
+			visible: false
+			width: 293
+			height: 120
+			x: 379
+			y: 213
+		}, 
+		GtfContainer(c682fb29-079a-48a5-ba4d-4ab86bacdfad)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(37e18894-1e77-4e70-a7f2-2f6503d2f453)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "+15"
+					visible: true
+					width: 82
+					height: 100
+					x: 0
+					y: 0
+					text: "+ 15 Db"
+					textColor: #FF0000FF
+					font: font_resource(68b4e6d4-9e39-4d28-bdf0-ce81adee2979)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer(79cf3397-dc2b-4dd1-84ae-f48c0e750260)
+				{
+					features: feature_list [
+						TouchShortReleased(537ae756-db5a-49a0-9e7c-d7cbd89cf3d8)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(ec4f850c-56af-4348-85fd-b1eb2727828f)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->\"+15_arrow\".visible = true" \
+									"	v:this->^->\"+0_arrow\".visible = false" \
+									"	v:this->^->\"-15_arrow\".visible = false" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(78332e43-471e-4b81-9c3c-ae4510f341b8)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "+15_button"
+					visible: true
+					width: 86
+					height: 45
+					x: 0
+					y: 28
+				}, 
+				GtfLabel(48a1be8b-e72c-4388-8a5b-ddc09ebb3fec)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "0"
+					visible: true
+					width: 82
+					height: 100
+					x: 0
+					y: 82
+					text: "0 Db"
+					textColor: #00BFFFFF
+					font: font_resource(0ef15332-84bf-41fa-9c94-7471b50759b3)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer(f0a2337c-dc4a-4c5c-ba1f-2ff2a34c7ba3)
+				{
+					features: feature_list [
+						TouchShortReleased(948ca154-e36f-4f36-a91c-13817b92afaa)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(3ea40e69-5c2f-447e-8a3e-5cddd5933600)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->\"+15_arrow\".visible = false" \
+									"	v:this->^->\"+0_arrow\".visible = true" \
+									"	v:this->^->\"-15_arrow\".visible = false" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(fef259cd-7b17-4ddd-bfb6-7d668b62a9ec)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "0_button"
+					visible: true
+					width: 86
+					height: 45
+					x: 0
+					y: 109
+				}, 
+				GtfLabel(654e1052-21f1-4aea-aff6-74aea32af79f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "-15"
+					visible: true
+					width: 82
+					height: 100
+					x: 0
+					y: 170
+					text: "- 15 Db"
+					textColor: #FF0000FF
+					font: font_resource(e6b8cba6-e6f2-42eb-8875-687790afc006)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer(ace1bce9-9da9-420a-b30c-eb1568ebd108)
+				{
+					features: feature_list [
+						TouchShortReleased(603c3600-542b-451a-a7a6-c6a407cec980)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(a6591b9e-029a-4b8b-94a8-5492a9e59136)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->\"+15_arrow\".visible = false" \
+									"	v:this->^->\"+0_arrow\".visible = false" \
+									"	v:this->^->\"-15_arrow\".visible = true" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(22d2324a-f2b0-4e06-a5e4-d83f40a854aa)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "-15_button"
+					visible: true
+					width: 86
+					height: 45
+					x: 0
+					y: 198
+				}, 
+				GtfImage(1ee44fbb-54a1-4c4e-8612-c3db17f5d18c)
+				{
+					features: feature_list [
+						Rotation(57384194-9c5d-4783-a1c4-bbf352f551c6)
+						{
+							rotationEnabled: true
+							rotationAngleX: 0F
+							rotationAngleY: 0F
+							rotationAngleZ: -90F
+						}]
+					children: children_list []
+					name: "bar"
+					visible: true
+					width: 250
+					height: 137
+					x: 214
+					y: 9
+					image: image_resource(839458c1-8c80-41ab-ab64-393535748aee)
+					{
+						file: "MP_EQUALIZERBAR.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(d65dcc5b-4992-4c78-bfa0-4e349cf23b95)
+				{
+					features: feature_list [
+						Rotation(436b1958-43d6-41b8-a0ed-f89c202a5da5)
+						{
+							rotationEnabled: true
+							rotationAngleX: 0F
+							rotationAngleY: 0F
+							rotationAngleZ: 90F
+						}]
+					children: children_list []
+					name: "+15_arrow"
+					visible: false
+					width: 50
+					height: 74
+					x: 102
+					y: 78
+					image: image_resource(f05c67b8-5bcc-4455-8b39-74ade02416fe)
+					{
+						file: "MP_ARROW_SIDES.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(7b4d3f46-0676-4551-a535-7a1f04ba9689)
+				{
+					features: feature_list [
+						Rotation(dce1ad3c-e66e-456a-a392-9b005f67e429)
+						{
+							rotationEnabled: true
+							rotationAngleX: 0F
+							rotationAngleY: 0F
+							rotationAngleZ: 90F
+						}]
+					children: children_list []
+					name: "+0_arrow"
+					visible: true
+					width: 50
+					height: 74
+					x: 102
+					y: 156
+					image: image_resource(727b6a42-521e-4ecf-8d7d-86e19f968474)
+					{
+						file: "MP_ARROW_SIDES.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(d5582125-097c-4f7f-88e8-e84d25069762)
+				{
+					features: feature_list [
+						Rotation(d8c1f58f-0ac6-4ea4-b79d-fc9e30ce40d0)
+						{
+							rotationEnabled: true
+							rotationAngleX: 0F
+							rotationAngleY: 0F
+							rotationAngleZ: 90F
+						}]
+					children: children_list []
+					name: "-15_arrow"
+					visible: false
+					width: 50
+					height: 74
+					x: 102
+					y: 246
+					image: image_resource(4b283335-2acc-4f86-81ba-26cd519d8b3f)
+					{
+						file: "MP_ARROW_SIDES.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "equalizer_txt"
+			visible: false
+			width: 187
+			height: 270
+			x: 427
+			y: 122
+		}]
+}

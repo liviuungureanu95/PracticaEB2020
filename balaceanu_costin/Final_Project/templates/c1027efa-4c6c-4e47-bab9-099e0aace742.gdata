@@ -1,0 +1,187 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfImage_template(c1027efa-4c6c-4e47-bab9-099e0aace742)
+{
+	name: "zzzIMG2"
+	structure: GtfImage(501263c2-7cb4-4cf0-868e-ea1af9984c19)
+	{
+		features: feature_list [
+			Rotation(31b3142d-a5b3-4751-bcf4-51264e14361d)
+			{
+				rotationEnabled: true
+				rotationAngleX: 0F
+				rotationAngleY: 0F
+				rotationAngleZ: 0F
+			}, 
+			Scaling(28843e84-d58d-47b8-b879-4b254e3d60c1)
+			{
+				scalingEnabled: true
+				scalingX: 100F
+				scalingY: 100F
+				scalingZ: 100F
+			}, 
+			Shearing(24874c05-bf41-457b-93b8-325490c3a69a)
+			{
+				shearingEnabled: true
+				shearingXbyY: 0F
+				shearingXbyZ: 0F
+				shearingYbyX: 0F
+				shearingYbyZ: 0F
+				shearingZbyX: 0F
+				shearingZbyY: 0F
+			}, 
+			Pivot(fdb3d9fe-60df-4532-9cd0-8de76e1393a5)
+			{
+				pivotX: float_scriptedValue(ac7046c6-ce40-4408-9b26-de6fd23d0414)
+				{
+					triggerList: trigger_list(fb01621b-ed9a-49f0-b8c9-9265d5256212)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(440f1f46-c192-4f41-893e-f06a9d888959)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<float>(0dfb9d29-42c1-4e6c-bd08-9ee85484fcc3)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	f:int2float(v:this.width/2)" \
+							"}"
+					}
+					write: function<bool,float>(0413601d-d1b6-4953-8437-55c3142af9f3)
+					{
+						script: "function(v:arg0::float)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				pivotY: float_scriptedValue(7e6411db-a0eb-4ed9-85e9-4d23327fb061)
+				{
+					triggerList: trigger_list(b64716af-e3ce-47a3-a785-a10ea7325441)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(2844e957-424f-4d6a-b99b-8fcf9c32e59f)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<float>(b57a6796-3d7e-4c8a-a27a-d0f7717d4f32)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	f:int2float(v:this.height/2)" \
+							"}"
+					}
+					write: function<bool,float>(6b103b8c-59dc-4f72-a0a3-7024f66c12c2)
+					{
+						script: "function(v:arg0::float)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				pivotZ: 0F
+			}]
+		children: children_list [
+			GtfImage_template_instance(b3a0772f-8f0e-4c12-b33b-c43617a50e49)
+			{
+				name: "zzzSPINNIMG 1"
+				template: @7dacb30a-8aae-4364-8743-0fb5e1d17c35 (objectref<GtfImage_template>)
+				children: children_list []
+				x: 100
+				y: 206
+				visible: visible@7dacb30a-8aae-4364-8743-0fb5e1d17c35 (propref<bool>)
+			}, 
+			GtfParallelAnimation(d2032d9b-92d9-4d81-9366-79161f9f78b9)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLinearInterpolationFloat(6d2a5f37-26b8-4b0b-84dc-ddb9cc3d92ba)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Linear interpolation curve 3"
+						enabled: true
+						delay: 0
+						duration: 1000
+						repeat: 0
+						alternating: false
+						relative: false
+						start: 0F
+						end: -360F
+						target: rotationAngleZ@31b3142d-a5b3-4751-bcf4-51264e14361d (propref<float>)
+					}]
+				name: "Animation 4"
+				enabled: true
+				repeat: 1
+				alternating: false
+				scale: 1F
+				onPlay: function<void,int,bool>(88b859aa-167b-4b93-96e9-f4dfdf1d51fb)
+				{
+					script: "function(v:animation_time::int, v:forward::bool)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onPause: function<void,int>(01a38dca-de49-4448-a3da-38dee87ee80f)
+				{
+					script: "function(v:animation_time::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onTerminate: function<void,int,int>(deafceaa-96d7-4791-abbd-cfae3993d211)
+				{
+					script: "function(v:animation_time::int, v:terminate::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+			}]
+		name: "Image 7"
+		visible: true
+		width: 250
+		height: 250
+		x: 0
+		y: 0
+		image: image_resource(304128ee-d779-49ea-bb08-8796f3f173b5)
+		{
+			file: ""
+		}
+		sRGB: false
+		horizontalAlign: 0
+		verticalAlign: 1
+		animation_start: conditional_script(ef992586-2bf7-4f92-aa27-5ca657e86626)
+		{
+			triggerList: trigger_list(37bf27c5-2f84-4c26-b35b-809f3ec9ad74)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(6a9f627d-b2a9-43ba-ae26-1cae3ca5e443)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	f:animation_play(v:this->\"Animation 4\")" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+	x: x@501263c2-7cb4-4cf0-868e-ea1af9984c19 (propref<int>)
+	y: y@501263c2-7cb4-4cf0-868e-ea1af9984c19 (propref<int>)
+	visible: visible@501263c2-7cb4-4cf0-868e-ea1af9984c19 (propref<bool>)
+}

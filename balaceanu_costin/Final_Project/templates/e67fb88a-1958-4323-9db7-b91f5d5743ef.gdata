@@ -1,0 +1,97 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(e67fb88a-1958-4323-9db7-b91f5d5743ef)
+{
+	name: "ENTER_button"
+	structure: GtfContainer(78553c17-e120-497d-be5b-4103a8f7c0ce)
+	{
+		features: feature_list [
+			TouchPressed(18cecb0f-bc71-46be-9b6e-5762fe0bc171)
+			{
+				touchPressed: function<bool,int,int,int,int>(e5f6544a-8409-4d0c-9681-4930d1fadbf9)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->Rectangle.borderColor = dp:BorderColor_Pressed" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(0f6a7367-a71e-4caa-b8a4-a41557920856)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(6bc8c0e3-97e3-4399-a135-d33677481e46)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.Released_Button_ENTER()" \
+						"	v:this->Rectangle.borderColor = dp:BorderColor" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(8dcae7b6-dfdd-4981-b03b-45b5438e0835)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(c23a2580-9bea-4745-a807-3f304c2b30bf)
+			{
+				features: feature_list [
+					Border(f15bd5d4-9a8b-4d36-843f-ea981f88fb4b)
+					{
+						borderThickness: 1
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "Rectangle"
+				visible: true
+				width: width@78553c17-e120-497d-be5b-4103a8f7c0ce (propref<int>)
+				height: height@78553c17-e120-497d-be5b-4103a8f7c0ce (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #000000FF
+			}, 
+			GtfLabel(8258eca9-21dd-4513-b76d-fd78ed455d47)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label"
+				visible: true
+				width: width@78553c17-e120-497d-be5b-4103a8f7c0ce (propref<int>)
+				height: height@78553c17-e120-497d-be5b-4103a8f7c0ce (propref<int>)
+				x: 0
+				y: 0
+				text: "ENTER"
+				textColor: #FFFFFFFF
+				font: font_resource(109e9a57-3fe5-444e-9213-ec67841989eb)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 35
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 85
+		height: 40
+		x: 0
+		y: 0
+		Released_Button_ENTER: function<bool>(c12eac4c-fdb4-4c98-bf5e-5345781777a8)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	Released_Button_ENTER: Released_Button_ENTER@78553c17-e120-497d-be5b-4103a8f7c0ce (propref<function<bool>>)
+	x: x@78553c17-e120-497d-be5b-4103a8f7c0ce (propref<int>)
+	y: y@78553c17-e120-497d-be5b-4103a8f7c0ce (propref<int>)
+	height: height@78553c17-e120-497d-be5b-4103a8f7c0ce (propref<int>)
+}

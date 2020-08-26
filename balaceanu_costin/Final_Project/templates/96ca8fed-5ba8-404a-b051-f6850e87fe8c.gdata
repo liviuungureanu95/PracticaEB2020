@@ -1,0 +1,90 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(96ca8fed-5ba8-404a-b051-f6850e87fe8c)
+{
+	name: "Hotspot_Button"
+	structure: GtfContainer(6d6f9525-7f7e-4ae7-99a2-113588d9c879)
+	{
+		features: feature_list [
+			TouchShortReleased(8546f288-a953-4160-aef2-f04385c095d8)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(d40b526e-b032-4344-a1c2-827782d42bb6)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(b9460888-0872-492f-b426-f71a086789f5)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			TouchPressed(4db83277-686c-4c00-913a-79eb32733078)
+			{
+				touchPressed: function<bool,int,int,int,int>(c3c2fc63-60b5-4ae4-9c43-85b4aaeb839c)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->background.borderColor = dp:BorderColor" \
+						"    false" \
+						"}"
+				}
+			}]
+		children: children_list [
+			GtfRectangle(cf9113ca-8830-48b8-9d33-82e88cf6c9d5)
+			{
+				features: feature_list [
+					Border(0d67d93e-9dc0-4c82-bcfc-81318f271930)
+					{
+						borderThickness: 2
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "background"
+				visible: true
+				width: width@6d6f9525-7f7e-4ae7-99a2-113588d9c879 (propref<int>)
+				height: height@6d6f9525-7f7e-4ae7-99a2-113588d9c879 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+			}, 
+			GtfLabel(82097451-ba95-4818-8f16-69be58a31cd2)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "txt"
+				visible: true
+				width: width@6d6f9525-7f7e-4ae7-99a2-113588d9c879 (propref<int>)
+				height: height@6d6f9525-7f7e-4ae7-99a2-113588d9c879 (propref<int>)
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(883b2bb1-cdd6-4841-a038-764b8f1e4b06)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 300
+		height: 50
+		x: 0
+		y: 0
+	}
+	text: text@82097451-ba95-4818-8f16-69be58a31cd2 (propref<string>)
+	x: x@6d6f9525-7f7e-4ae7-99a2-113588d9c879 (propref<int>)
+	y: y@6d6f9525-7f7e-4ae7-99a2-113588d9c879 (propref<int>)
+	borderColor: borderColor@0d67d93e-9dc0-4c82-bcfc-81318f271930 (propref<color>)
+	touchShortReleased: touchShortReleased@8546f288-a953-4160-aef2-f04385c095d8 (propref<function<bool,int,int,int,int>>)
+	touchPressed: touchPressed@4db83277-686c-4c00-913a-79eb32733078 (propref<function<bool,int,int,int,int>>)
+	visible: visible@6d6f9525-7f7e-4ae7-99a2-113588d9c879 (propref<bool>)
+}

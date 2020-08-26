@@ -1,0 +1,135 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(c706c2de-ea34-475d-a9d3-6fe8fc8f0057)
+{
+	name: "Google_View"
+	template: @95461b8a-82f0-421b-ba66-6095f03a1846 (objectref<GtfView_template>)
+	children: children_list [
+		GtfImage(5d82ee75-c493-4291-ae71-8cf86e0570a8)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(21b0ad72-99b6-43a4-a474-49338317bd93)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "add_txt"
+					visible: true
+					width: 297
+					height: 31
+					x: 235
+					y: 145
+					text: @2fafd416-f7bf-488b-b9fe-735f7c7172f5 (objectref<string>)
+					textColor: #000000FF
+					font: font_resource(6b7135b3-cc8e-42fa-8f35-0d0913fa0660)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 25
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+					inputScript: conditional_script(b84ce9c9-daff-4032-9922-05d8154ee5be)
+					{
+						triggerList: trigger_list(a2624faf-dbb7-46c9-b47b-d59a1f3f5381)
+						{
+							script: "ev:KEYBOARD:keypadPress" \
+								""
+						}
+						onTrigger: function<bool,bool>(57886920-ae60-4a13-96ca-80e6b51fec41)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	match_event v:e = ev:KEYBOARD:keypadPress in " \
+								"		let v:val = v:e.Value in " \
+								"			if(v:val == \"space\")" \
+								"				dp:KEYBOARD:Google_Txt += \" \"" \
+								"			else if(v:val == \"delete\")" \
+								"				dp:KEYBOARD:Google_Txt = \"\"" \
+								"			else" \
+								"				dp:KEYBOARD:Google_Txt += v:val	" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfContainer_template_instance(9b631f64-b429-4c4c-bf4d-3491e411b238)
+				{
+					name: "KEYBOARD 1"
+					template: @710457c0-db12-4a2e-8b40-5b77a4a35792 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 94
+					y: 192
+					visible: false
+					"Released_button DEL": function<bool>(c8a4a32a-fe15-47bb-baf5-bf8c715c1c90)
+					{
+						script: "function()" \
+							"{" \
+							"	fire ev:KEYBOARD:keypadPress(\"delete\")" \
+							"	false" \
+							"}"
+					}
+					Released_Button_ENTER: function<bool>(cec00ebb-f5f5-4991-99a5-76cad199e578)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^->\"KEYBOARD 1\".visible = false" \
+							"	false" \
+							"}"
+					}
+				}, 
+				GtfContainer(beeb7eb5-ce7d-47d9-be62-7e9988502785)
+				{
+					features: feature_list [
+						TouchShortReleased(04e05ebf-8562-485a-a5b8-692aeb580c7b)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(7670ef24-125c-47e5-8e5e-091a29ad759a)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->\"KEYBOARD 1\".visible = true" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(ca914d68-3242-468e-81f7-d53ed8060361)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "keyboard"
+					visible: true
+					width: 26
+					height: 18
+					x: 532
+					y: 153
+				}]
+			name: "background"
+			visible: true
+			width: 800
+			height: 410
+			x: 0
+			y: 70
+			image: image_resource(30c44a66-d5e1-437f-8cd4-620e5d461ad2)
+			{
+				file: "GOOGLE_background.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfRectangle_template_instance(b2f0b14c-65f0-4bb3-b99e-908fafcaa796)
+		{
+			name: "TopBar 1"
+			template: @946dc760-ee83-4771-bd7f-52f3864de092 (objectref<GtfRectangle_template>)
+			children: children_list []
+			MainText: "Google"
+			BackButton_Background: BackButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Background: MainMenuButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Visible: MainMenuButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			BackButton_Visible: false
+			Released_BACK: Released_BACK@946dc760-ee83-4771-bd7f-52f3864de092 (propref<function<bool>>)
+		}]
+}

@@ -1,0 +1,193 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_compound_state(28c29c8b-6bdc-4c40-a5d0-4830c92cf4fc)
+{
+	x: 325
+	y: 889
+	width: 633
+	height: 464
+	name: "InfoCar"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions [
+		haptic_transition(92a3df1c-9632-47ea-8046-d4ec895edbf0)
+		{
+			action: function<void>(none)
+			target_state: @309262a0-093c-4a03-92a4-3f6d1ebe2b04 (objectref<haptic_dialog_state>)
+			source_dock: 0.1514782F
+			target_dock: 0.2401534F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 1
+			labelYOffset: -17
+			labelRotationAngle: 0
+			event: @2d877645-492c-4eb1-b19c-6200585379f7 (objectref<event>)
+			condition: function<bool>(none)
+		}, 
+		haptic_transition(f86fda8a-b62e-40ae-99e3-05b587b70e39)
+		{
+			action: function<void>(none)
+			target_state: @b35d9eac-5319-46a8-969d-1b5a41bd1d00 (objectref<haptic_dialog_state>)
+			source_dock: 0.7458475F
+			target_dock: 0.7483122F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 2
+			labelYOffset: -18
+			labelRotationAngle: 0
+			event: @326a257b-bb08-42df-baeb-fdec5b3db0ab (objectref<event>)
+			condition: function<bool>(none)
+		}, 
+		haptic_transition(1bf19373-599f-42aa-a260-7a5e9a050cfd)
+		{
+			action: function<void>(none)
+			target_state: @a89e9594-16d9-4d28-97bf-37a2ac194d80 (objectref<haptic_dialog_state>)
+			source_dock: 0.6594556F
+			target_dock: 0.7400157F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 3
+			labelYOffset: -14
+			labelRotationAngle: 0
+			event: @57529755-7896-4eb2-9260-b9fbf6dc54eb (objectref<event>)
+			condition: function<bool>(none)
+		}, 
+		haptic_transition(72d52745-28bd-4d7f-8327-40a88d72f5e1)
+		{
+			action: function<void>(none)
+			target_state: @e9c70532-df76-4d2d-9df4-af08cfe76519 (objectref<haptic_dialog_state>)
+			source_dock: 0.3392701F
+			target_dock: 0.2623336F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: -1
+			labelYOffset: -15
+			labelRotationAngle: 0
+			event: @76b45347-b947-494f-b932-e1c6ba5666c3 (objectref<event>)
+			condition: function<bool>(none)
+		}, 
+		haptic_transition(60b9d64d-488b-4811-a5ae-7150d74e7055)
+		{
+			action: function<void>(none)
+			target_state: @2c9f961b-e972-47dc-a0df-5120dc0c9aca (objectref<haptic_dialog_state>)
+			source_dock: 0.2493147F
+			target_dock: 0.2398513F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 7
+			labelYOffset: -17
+			labelRotationAngle: 0
+			event: @213b1024-b594-4cb4-a11e-5c0f1900efd3 (objectref<event>)
+			condition: function<bool>(none)
+		}]
+	internal_transitions: haptic_internal_transitions []
+	background_color: #000000FF
+	states: haptic_states [
+		haptic_dialog_state(309262a0-093c-4a03-92a4-3f6d1ebe2b04)
+		{
+			x: 218
+			y: 14
+			width: 100
+			height: 100
+			name: "INFO_car"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (479ee4f2-9d3f-41d8-b8b0-e9b8cefb28f5)
+			priority_stack: priority_stack(none)
+		}, 
+		haptic_dialog_state(b35d9eac-5319-46a8-969d-1b5a41bd1d00)
+		{
+			x: 131
+			y: 181
+			width: 100
+			height: 100
+			name: "TIRE_PRESSURE"
+			entry_action: function<void>(5200ea0b-1a8f-4a4f-b13c-e38fbfc8be65)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:WEELS:Weel1()" \
+					"	fire ev:WEELS:Weel2()" \
+					"	fire ev:WEELS:Weel3()" \
+					"	fire ev:WEELS:Weel4()" \
+					"}"
+			}
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (85da8ff2-141f-4e5a-b190-f7720c1b3251)
+			priority_stack: priority_stack(none)
+		}, 
+		haptic_dialog_state(2c9f961b-e972-47dc-a0df-5120dc0c9aca)
+		{
+			x: 322
+			y: 181
+			width: 100
+			height: 100
+			name: "LIGHTS_ON/OFF"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (728bf662-0358-4753-aefb-e4d9f1eea01b)
+			priority_stack: priority_stack(none)
+		}, 
+		haptic_dialog_state(a89e9594-16d9-4d28-97bf-37a2ac194d80)
+		{
+			x: 131
+			y: 322
+			width: 100
+			height: 100
+			name: "OIL_LEVEL"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (475e04a1-5c42-4be1-85b4-1bfe0b2ab7c8)
+			priority_stack: priority_stack(none)
+		}, 
+		haptic_dialog_state(e9c70532-df76-4d2d-9df4-af08cfe76519)
+		{
+			x: 322
+			y: 321
+			width: 100
+			height: 100
+			name: "AC"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (d18aead1-e198-4687-91f4-9753de15591c)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(fc1ae1e9-1f74-4fca-8568-1b478aa79553)
+	{
+		x: 96
+		y: 47
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(7d64286d-8fe2-4a26-a6d5-042bac275169)
+		{
+			action: function<void>(none)
+			target_state: @309262a0-093c-4a03-92a4-3f6d1ebe2b04 (objectref<haptic_dialog_state>)
+			source_dock: 0.2531203F
+			target_dock: 0.7635977F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(none)
+}

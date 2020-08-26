@@ -1,0 +1,109 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(3dec476b-ecd7-42d9-8eab-62f7eb2acd70)
+{
+	name: "LanguageButton"
+	structure: GtfContainer(c8ddee9a-7418-435e-bb4a-13db6b11ec77)
+	{
+		features: feature_list [
+			TouchPressed(e71bd4c3-4aeb-4c8e-9862-720e30388b6b)
+			{
+				touchPressed: function<bool,int,int,int,int>(a75ba163-6fb4-4e79-821b-f57707603361)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->Border.borderColor = dp:BorderColor_Pressed" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(d3398b43-51d3-48ab-a7ae-00898f4d5298)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(2eae56f4-6fd2-43c4-9a69-49148aabc875)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->Border.borderColor = dp:BorderColor" \
+						"	fire ev:GoTo_Menu()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(3ad2aaac-bd70-48a1-bddf-2e096a9c56f4)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfImage(8d72372d-91f6-4551-a98c-4d344f841bc6)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "background"
+				visible: true
+				width: width@c8ddee9a-7418-435e-bb4a-13db6b11ec77 (propref<int>)
+				height: height@c8ddee9a-7418-435e-bb4a-13db6b11ec77 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(562531db-ecf1-4d09-bf4d-a4f1db826049)
+				{
+					file: "MAINview_Background.jpg"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfRectangle(2703527b-a05c-4fb2-aaf4-c60bc0668cac)
+			{
+				features: feature_list [
+					Border(486c4479-e348-4d17-84c2-a921e627169a)
+					{
+						borderThickness: 5
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "Border"
+				visible: true
+				width: width@c8ddee9a-7418-435e-bb4a-13db6b11ec77 (propref<int>)
+				height: height@c8ddee9a-7418-435e-bb4a-13db6b11ec77 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+			}, 
+			GtfLabel(4af6f848-338e-433b-9521-540b502e27d3)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Text"
+				visible: true
+				width: width@c8ddee9a-7418-435e-bb4a-13db6b11ec77 (propref<int>)
+				height: 55
+				x: 0
+				y: 70
+				text: "Romanian"
+				textColor: #00FF00FF
+				font: font_resource(2d94fb2d-eaa8-4fc4-b9ea-8958bdf5d3e3)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 50
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 250
+		height: 125
+		x: 0
+		y: 0
+	}
+	x: x@c8ddee9a-7418-435e-bb4a-13db6b11ec77 (propref<int>)
+	y: y@c8ddee9a-7418-435e-bb4a-13db6b11ec77 (propref<int>)
+	Background_Image: image@8d72372d-91f6-4551-a98c-4d344f841bc6 (propref<image>)
+	BorderColor: borderColor@486c4479-e348-4d17-84c2-a921e627169a (propref<color>)
+	Released: touchShortReleased@d3398b43-51d3-48ab-a7ae-00898f4d5298 (propref<function<bool,int,int,int,int>>)
+	text: text@4af6f848-338e-433b-9521-540b502e27d3 (propref<string>)
+}
