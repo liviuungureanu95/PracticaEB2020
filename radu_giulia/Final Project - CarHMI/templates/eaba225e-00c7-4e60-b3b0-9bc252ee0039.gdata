@@ -1,0 +1,167 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(eaba225e-00c7-4e60-b3b0-9bc252ee0039)
+{
+	name: "ScrollableList"
+	structure: GtfContainer(7958befb-8257-422a-af13-f8711e39f6d6)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfInstantiator(4c8661b1-514b-46fc-bb80-f9c51d617de3)
+			{
+				features: feature_list [
+					LayoutPolicyFlow(64ad91ce-a488-4d76-aef2-0dac66f137e1)
+					{
+						horizontalGap: 10
+						verticalGap: 20
+						layoutDirection: 0
+						horizontalChildAlign: 0
+						verticalChildAlign: 1
+					}, 
+					ViewPort(aac6ca5c-692b-421a-a5f5-21684d123382)
+					{
+						xOffset: 0
+						yOffset: 0
+					}]
+				children: children_list [
+					GtfContainer_template_instance(e1bc4380-c2e0-4d10-a488-ddafdd402198)
+					{
+						name: "ScrollListButton"
+						template: @7333191c-1efc-47f7-9c7b-a35f85a543b7 (objectref<GtfContainer_template>)
+						children: children_list []
+						pressedAction: function<bool>(822df627-7432-4ea9-a3ff-77e80bae869b)
+						{
+							script: "function()" \
+								"{" \
+								"	v:this.currentColor=v:this.pressedColor" \
+								"	v:this.currentTextColor = v:this.pressedTextColor" \
+								"	dp:\"musicPlaying \"=true" \
+								"	fire ev:stationPressed(v:this.text)" \
+								"	fire ev:showCallPopUp()" \
+								"	fire_delayed 3000,ev:closeCallPopUp()" \
+								"	dp:calledContact=v:this.text" \
+								"	dp:isCalling=true" \
+								"	false" \
+								"}"
+						}
+						releasedAction: function<bool>(458733bb-aa38-4645-9f4e-2ba1c2fca326)
+						{
+							script: "function()" \
+								"{" \
+								"	v:this.currentColor=v:this.releasedColor" \
+								"	v:this.currentTextColor=v:this.releasedTextColor" \
+								"	false" \
+								"}"
+						}
+						x: x@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<int>)
+						y: y@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<int>)
+						width: width@7958befb-8257-422a-af13-f8711e39f6d6 (propref<int>)
+						currentColor: #000000FF
+						pressedColor: #FFA500FF
+						releasedColor: #000000FF
+						borderThickness: 2
+						borderColor: #FFA500FF
+						text: text@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<string>)
+						height: ButtonHeight@4c8661b1-514b-46fc-bb80-f9c51d617de3 (propref<int>)
+						lineIndex: lineIndex@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<int>)
+						pressedTextColor: #000000FF
+						releasedTextColor: #FFFFFFFF
+						currentTextColor: currentTextColor@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<color>)
+						touchPressed: touchPressed@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<function<bool,int,int,int,int>>)
+						setButtonText: conditional_script(b4625063-0938-421c-9616-7ffe52129ca8)
+						{
+							triggerList: trigger_list(f8900d2e-7198-46e0-9184-6bf7ad494134)
+							{
+								script: "v:this->^->^.StationsList" \
+									"v:this.lineIndex"
+							}
+							onTrigger: function<bool,bool>(1e8ac26a-dbda-474e-a963-86301e1e2a2f)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	v:this.text=v:this->^->^.StationsList[v:this.lineIndex]" \
+									"	false" \
+									"}"
+							}
+						}
+						textColor: #FFA500FF
+					}]
+				name: "Instantiator"
+				visible: true
+				width: width@7958befb-8257-422a-af13-f8711e39f6d6 (propref<int>)
+				height: height@7958befb-8257-422a-af13-f8711e39f6d6 (propref<int>)
+				x: 0
+				y: 0
+				numItems: 0
+				lineMapping: intlist []
+				ButtonHeight: 40
+				slide: conditional_script(2e17952e-b5ac-4626-a9aa-47af2a8e143f)
+				{
+					triggerList: trigger_list(f037c777-5898-46f8-b3f3-d0c3a4cb06b8)
+					{
+						script: "ev:scrollDown" \
+							"ev:scrollUp" \
+							"v:this.ButtonHeight"
+					}
+					onTrigger: function<bool,bool>(1d39969b-849f-4f91-9b47-3f32ab6bd361)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	match_event v:event = ev:scrollUp in" \
+							"	{" \
+							"		v:this.yOffset += v:this.ButtonHeight/2" \
+							"	}" \
+							"	match_event v:event = ev:scrollDown in" \
+							"	{" \
+							"		v:this.yOffset -= v:this.ButtonHeight/2" \
+							"	}" \
+							"	" \
+							"	false" \
+							"}"
+					}
+				}
+			}]
+		name: "ListContainer"
+		visible: true
+		width: 317
+		height: 340
+		x: 0
+		y: 0
+		StationsList: stringlist ["Europa FM", "Magic FM", "Virgin Radio", "Radio ZU", "Kiss FM", "Radio BV", "City FM", "Romania FM", "Pro FM", "Rock FM", "Radio Guerilla", "Cultural FM"]
+		LimitScroll: conditional_script(e2418ae9-4eb6-4eda-9b8b-fe8f35d841b7)
+		{
+			triggerList: trigger_list(5f985464-e9f9-4b10-a306-045c68fc21a7)
+			{
+				script: "v:this->Instantiator.ButtonHeight" \
+					"v:this.StationsList" \
+					"v:this.height" \
+					"v:this->Instantiator.yOffset"
+			}
+			onTrigger: function<bool,bool>(2aa4e8f3-89a7-42f3-a3ed-923d55cc1dd0)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	let v:maxOffset = length v:this.StationsList * v:this->Instantiator.ButtonHeight + (length v:this.StationsList * v:this->Instantiator.verticalGap)- v:this.height in" \
+					"	{" \
+					"		if(v:this->Instantiator.yOffset > 0)" \
+					"		{" \
+					"			v:this->Instantiator.yOffset = 0" \
+					"		}" \
+					"		if(v:this->Instantiator.yOffset < -v:maxOffset)" \
+					"		{" \
+					"			v:this->Instantiator.yOffset = -v:maxOffset" \
+					"		}" \
+					"	}" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+	x: x@7958befb-8257-422a-af13-f8711e39f6d6 (propref<int>)
+	y: y@7958befb-8257-422a-af13-f8711e39f6d6 (propref<int>)
+	StationsList: StationsList@7958befb-8257-422a-af13-f8711e39f6d6 (propref<stringlist>)
+	numItems: numItems@4c8661b1-514b-46fc-bb80-f9c51d617de3 (propref<int>)
+	width: width@7958befb-8257-422a-af13-f8711e39f6d6 (propref<int>)
+	height: height@7958befb-8257-422a-af13-f8711e39f6d6 (propref<int>)
+	visible: visible@7958befb-8257-422a-af13-f8711e39f6d6 (propref<bool>)
+}

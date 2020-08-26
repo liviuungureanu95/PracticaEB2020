@@ -1,0 +1,124 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(56f7f44a-6d47-4f30-80c8-584291cbcf5f)
+{
+	name: "StraightKeyboardLetterButton"
+	structure: GtfContainer(cfceb165-adc0-44f2-bcc0-9a6351dbc63c)
+	{
+		features: feature_list [
+			TouchPressed(c42fd726-ea00-4e5a-8126-5f088763179c)
+			{
+				touchPressed: function<bool,int,int,int,int>(5e582d41-ba7f-4fcc-bb62-20c288cc39bc)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.pressAction()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(848b521c-64ab-4517-bc58-539f70ac5524)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			LineIndex(079da513-24f6-4b7f-b483-21146c15786a)
+			{
+				lineIndex: 0
+			}]
+		children: children_list [
+			GtfImage(53b73dda-2613-48f4-8544-20dfe6bdc3f8)
+			{
+				features: feature_list [
+					ScaleMode(5f5e1ab7-642d-4ced-9951-63755590c03e)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "Image"
+				visible: true
+				width: width@cfceb165-adc0-44f2-bcc0-9a6351dbc63c (propref<int>)
+				height: height@cfceb165-adc0-44f2-bcc0-9a6351dbc63c (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(ca56743b-9e16-4829-8c3d-ee3b8c16e6dd)
+				{
+					file: "releasedLetter.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+				replaceImage: image_resource(678ef415-126f-4851-909c-cb750444cf7d)
+				{
+					file: "pressedLetter.png"
+				}
+			}, 
+			GtfLabel(f3aa8ffd-b710-45d8-843b-aa536502cb80)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "ButtonText"
+				visible: true
+				width: width@cfceb165-adc0-44f2-bcc0-9a6351dbc63c (propref<int>)
+				height: height@cfceb165-adc0-44f2-bcc0-9a6351dbc63c (propref<int>)
+				x: 0
+				y: 0
+				text: "A"
+				textColor: #000000FF
+				font: font_resource(e7c10614-85c8-4ebc-a75e-dd4bf1904f00)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfRectangle(e1477120-9b5b-47bb-b54a-1d903819a898)
+			{
+				features: feature_list [
+					Border(64403743-de0b-4fd2-8736-83fd03b4e61b)
+					{
+						borderThickness: 2
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "Border"
+				visible: true
+				width: width@cfceb165-adc0-44f2-bcc0-9a6351dbc63c (propref<int>)
+				height: height@cfceb165-adc0-44f2-bcc0-9a6351dbc63c (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+			}]
+		name: "ButtonContainer"
+		visible: true
+		width: 30
+		height: 30
+		x: 0
+		y: 0
+		pressedImage: image_resource(c495c97d-c21f-44b5-b64a-85a26fc1fb3a)
+		{
+			file: "pressedLetter.png"
+		}
+		pressAction: function<bool>(67d52874-a17f-4fc6-bc24-a85a36525733)
+		{
+			script: "function()" \
+				"{" \
+				"	//v:this->Image.image=v:this->Image.replaceImage" \
+				"	//v:this->Border.borderColor=#000000" \
+				"	v:this.currentBorderColor = v:this.selectedButtonBorder" \
+				"	false" \
+				"}"
+		}
+		selectedButtonBorder: #FFFFFFFF
+		currentBorderColor: #000000FF
+	}
+	pressAction: pressAction@cfceb165-adc0-44f2-bcc0-9a6351dbc63c (propref<function<bool>>)
+	text: text@f3aa8ffd-b710-45d8-843b-aa536502cb80 (propref<string>)
+	lineIndex: lineIndex@079da513-24f6-4b7f-b483-21146c15786a (propref<int>)
+	x: x@cfceb165-adc0-44f2-bcc0-9a6351dbc63c (propref<int>)
+	y: y@cfceb165-adc0-44f2-bcc0-9a6351dbc63c (propref<int>)
+}

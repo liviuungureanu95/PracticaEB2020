@@ -1,0 +1,344 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(7158ff79-abe5-43dc-8c81-c661ed264a1c)
+{
+	name: "SettingsView"
+	template: @e194e414-71c1-406e-a41c-22a1af233577 (objectref<GtfView_template>)
+	children: children_list [
+		GtfImage_template_instance(bc6396af-14ed-4ac0-b954-32870c984307)
+		{
+			name: "BackButton"
+			template: @783dbbc3-0048-41b2-8249-a5078951fba2 (objectref<GtfImage_template>)
+			children: children_list []
+			x: 30
+			y: 16
+			image: image_resource(70730397-e415-4a8a-80ae-db5612e3fc20)
+			{
+				file: "back.png"
+			}
+			rotationAngleZ: rotationAngleZ@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<float>)
+			touchPressed: function<bool,int,int,int,int>(771a874c-ef0c-477c-8dda-1a683bc2440a)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:GoBack()" \
+					"    false" \
+					"}"
+			}
+			width: 56
+			height: 55
+			visible: visible@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+			touchable: touchable@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+			touched: touched@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+		}, 
+		GtfContainer_template_instance(4422f195-ef69-4535-8d5a-532565bc71a4)
+		{
+			name: "ListMenu"
+			template: @c5910f03-c0ff-4a78-b0d2-367765444908 (objectref<GtfContainer_template>)
+			children: children_list []
+			InputList: @44688131-3c89-4731-a684-cfaa171406a7 (objectref<stringlist>)
+			x: 45
+			y: 171
+			width: width@c5910f03-c0ff-4a78-b0d2-367765444908 (propref<int>)
+			height: height@c5910f03-c0ff-4a78-b0d2-367765444908 (propref<int>)
+			visible: visible@c5910f03-c0ff-4a78-b0d2-367765444908 (propref<bool>)
+			touchPressed: function<bool,int,int,int,int>(7c5010c0-6974-4379-bee8-e8ddeaba8778)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer(5e7e73c5-d230-4371-95b5-fbc2f4668083)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(cf253ca9-ab53-4039-ada6-68be3d2c20ff)
+				{
+					features: feature_list [
+						Rotation(0fb0f9dd-bd6e-4fbd-8919-4f83721a7fde)
+						{
+							rotationEnabled: true
+							rotationAngleX: 0F
+							rotationAngleY: 0F
+							rotationAngleZ: 0F
+						}, 
+						Scaling(9013a11a-0d5a-463e-a4c3-6726b0ba1f1c)
+						{
+							scalingEnabled: true
+							scalingX: 100F
+							scalingY: 100F
+							scalingZ: 100F
+						}, 
+						Shearing(668c578b-f550-4508-8a8d-178eb95b9ca4)
+						{
+							shearingEnabled: true
+							shearingXbyY: 0F
+							shearingXbyZ: 0F
+							shearingYbyX: 0F
+							shearingYbyZ: 0F
+							shearingZbyX: 0F
+							shearingZbyY: 0F
+						}, 
+						Pivot(f4d5fea1-2226-4642-ad49-0c2e9668d0f3)
+						{
+							pivotX: float_scriptedValue(24b00c10-a73c-4990-814f-82b825fd1aff)
+							{
+								triggerList: trigger_list(5b10fde0-8f8a-4e17-86c0-974c08512af2)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(6c0efc72-4c51-4993-9ba3-c40f6ed4c813)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<float>(ec553684-ad1f-4cc7-b6b3-12b24679b6b5)
+								{
+									script: "function()" \
+										"{" \
+										"	f:int2float(v:this.width)" \
+										"}"
+								}
+								write: function<bool,float>(7e34b648-c6f4-4152-9ff9-4a66aedaa04d)
+								{
+									script: "function(v:arg0::float)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							pivotY: float_scriptedValue(b323048e-0b27-4894-b366-5e19802865db)
+							{
+								triggerList: trigger_list(ad97b254-de0c-46ef-b690-9155bedbcb08)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(47d92969-415a-4bd0-b24a-891ae88b3f6e)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<float>(da7a48f2-b23b-45d2-9f70-fa225161b1be)
+								{
+									script: "function()" \
+										"{" \
+										"	f:int2float(v:this.height / 2)" \
+										"}"
+								}
+								write: function<bool,float>(93859c2c-ce2c-4242-8859-f358a45969a1)
+								{
+									script: "function(v:arg0::float)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							pivotZ: 0F
+						}]
+					children: children_list []
+					name: "Indicator"
+					visible: true
+					width: 94
+					height: 5
+					x: 39
+					y: 45
+					fillColor: #FFA500FF
+				}, 
+				GtfEllipse(7edfc9ec-ef3d-4a73-9eac-fb5f2db26db5)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Selector"
+					visible: true
+					width: 30
+					height: 30
+					x: 17
+					y: 34
+					fillColor: #FFA500FF
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+				}]
+			name: "IndicatorContainer"
+			visible: false
+			width: 100
+			height: 100
+			x: 312
+			y: 142
+		}, 
+		GtfContainer_template_instance(b77432ba-ad09-49c1-91d6-cd07b474284c)
+		{
+			name: "LanguagesSideMenu"
+			template: @c5910f03-c0ff-4a78-b0d2-367765444908 (objectref<GtfContainer_template>)
+			children: children_list []
+			InputList: @9c516e22-4dc8-4a9c-a424-d274d3431716 (objectref<stringlist>)
+			x: 445
+			y: 170
+			width: 180
+			height: height@c5910f03-c0ff-4a78-b0d2-367765444908 (propref<int>)
+			visible: false
+			touchPressed: function<bool,int,int,int,int>(275c02cf-be46-4ebc-ba0d-981d75678fd8)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(488db964-e1cb-4d42-8195-579cc40d95c4)
+		{
+			name: "ThemeSideMenu"
+			template: @c5910f03-c0ff-4a78-b0d2-367765444908 (objectref<GtfContainer_template>)
+			children: children_list []
+			InputList: @ff2169f1-8b0d-4072-86c7-c6f6aacdcffd (objectref<stringlist>)
+			x: 445
+			y: 224
+			width: width@c5910f03-c0ff-4a78-b0d2-367765444908 (propref<int>)
+			height: height@c5910f03-c0ff-4a78-b0d2-367765444908 (propref<int>)
+			visible: false
+		}, 
+		GtfContainer_template_instance(99c5d8ec-ac33-4dd6-afa8-f55ee4fb896a)
+		{
+			name: "BluetoothSideMenu"
+			template: @c5910f03-c0ff-4a78-b0d2-367765444908 (objectref<GtfContainer_template>)
+			children: children_list []
+			InputList: @b1730e87-0ab7-4305-9a19-00758ba39167 (objectref<stringlist>)
+			x: 445
+			y: 277
+			width: width@c5910f03-c0ff-4a78-b0d2-367765444908 (propref<int>)
+			height: height@c5910f03-c0ff-4a78-b0d2-367765444908 (propref<int>)
+			visible: false
+		}]
+	text: string_element_reference(e33effbe-0093-487d-9ef4-34a26517b7f3)
+	{
+		index: 5
+		list: @1dc3d3cb-4b0b-48af-84ad-ea2469add107 (objectref<stringlist>)
+	}
+	x: 682
+	y: 0
+	listenToMenuEvent: conditional_script(0a9bde98-4147-445f-b819-18f8f9b4c715)
+	{
+		triggerList: trigger_list(18935a7f-ecbf-4c16-b682-e5cd4e4bfd70)
+		{
+			script: "ev:settingButtonPressed"
+		}
+		onTrigger: function<bool,bool>(d912846e-b1d1-43a3-94a4-836d6de522c7)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	match_event v:e = ev:settingButtonPressed in {" \
+				"		v:this->IndicatorContainer.x = (v:this->ListMenu.width)" \
+				"		if(v:e.Option == \"Languages\" || v:e.Option == \"Sprachen\"){" \
+				"			v:this->ThemeSideMenu.visible=false" \
+				"			v:this->LanguagesSideMenu.visible=true" \
+				"			v:this->IndicatorContainer.visible=true" \
+				"			v:this->BluetoothSideMenu.visible =false" \
+				"			v:this->IndicatorContainer.y = (v:this->ListMenu.y -20 - 10)" \
+				"			" \
+				"		}" \
+				"		else" \
+				"			if(v:e.Option == \"Theme\" || v:e.Option == \"Thema\"){" \
+				"			v:this->LanguagesSideMenu.visible=false" \
+				"			v:this->IndicatorContainer.visible=true" \
+				"			v:this->ThemeSideMenu.visible=true" \
+				"			v:this->BluetoothSideMenu.visible =false" \
+				"			v:this->IndicatorContainer.y = (v:this->ListMenu.y +40 - 20)" \
+				"			}" \
+				"		else" \
+				"			if(v:e.Option == \"Bluetooth\"){" \
+				"				v:this->LanguagesSideMenu.visible=false" \
+				"				v:this->ThemeSideMenu.visible=false" \
+				"				v:this->IndicatorContainer.visible=true" \
+				"				v:this->BluetoothSideMenu.visible =true" \
+				"				v:this->IndicatorContainer.y = (v:this->ListMenu.y +80 -10)" \
+				"			}" \
+				"		" \
+				"		" \
+				"	}" \
+				"	false" \
+				"}"
+		}
+	}
+	listenToLanguagePressed: conditional_script(5b9adaf4-cc83-4888-a27c-5d0105fe9b0a)
+	{
+		triggerList: trigger_list(ae712cef-04a6-4c7f-bad8-413072b1848a)
+		{
+			script: "ev:LanguagePressed"
+		}
+		onTrigger: function<bool,bool>(df25b6c7-0b2e-41d9-8a40-9b80090a6eec)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	match_event v:e = ev:LanguagePressed in {" \
+				"		if(v:e.language == \"English\" || v:e.language == \"Englisch\"){" \
+				"			f:setLanguage(l:Standard,true)" \
+				"			dp:languageSelected=\"English\"" \
+				"			" \
+				"		}" \
+				"		else" \
+				"			if(v:e.language == \"German\" || v:e.language == \"Deutsch\"){" \
+				"				f:setLanguage(l:German,true)" \
+				"				dp:languageSelected=\"German\"" \
+				"			}" \
+				"	}" \
+				"	false" \
+				"}"
+		}
+	}
+	listenToThemePressed: conditional_script(f4c6fcad-895b-4377-b40e-3bc629ce840b)
+	{
+		triggerList: trigger_list(13c99ff4-2b1e-4e97-bfda-dab989abf485)
+		{
+			script: "ev:themePressed"
+		}
+		onTrigger: function<bool,bool>(5093b32c-add5-46a7-a98f-13c5da50cd9d)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	match_event v:e = ev:themePressed in{" \
+				"		if(v:e.theme==\"Light\" || v:e.theme==\"Hell\")" \
+				"		{" \
+				"			f:setSkin(s:Light,true)" \
+				"		}" \
+				"		else" \
+				"			if(v:e.theme==\"Dark\" || v:e.theme==\"Dunkel\")" \
+				"			{" \
+				"				f:setSkin(s:Dark,true)" \
+				"			}" \
+				"	}" \
+				"	false" \
+				"}"
+		}
+	}
+	listenToBluetoothPressed: conditional_script(27566bb7-cd9a-4e93-a08e-f6b698c930c2)
+	{
+		triggerList: trigger_list(e7391a71-2104-4e28-a7c9-76a76e2f1e9f)
+		{
+			script: "ev:BluetoothPressed"
+		}
+		onTrigger: function<bool,bool>(dd8e3578-f880-42af-97a9-23797301298e)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	match_event v:e = ev:BluetoothPressed in {" \
+				"		if(v:e.value == \"Paired devices\" || v:e.value == \"Verbundene Geräte\"){" \
+				"			fire ev:goToBluetooth()" \
+				"			" \
+				"		}" \
+				"	}" \
+				"	false" \
+				"}"
+		}
+	}
+}
