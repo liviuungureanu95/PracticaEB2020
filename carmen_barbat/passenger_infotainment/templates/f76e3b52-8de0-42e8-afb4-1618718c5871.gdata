@@ -11,8 +11,10 @@ GtfRectangle_template(f76e3b52-8de0-42e8-afb4-1618718c5871)
 				touchShortReleased: function<bool,int,int,int,int>(31eeb954-08b8-4e98-b58a-7d8e8ec7a7aa)
 				{
 					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
-						"{" \
+						"{	" \
 						"	v:this.buttonEvent()" \
+						"	f:focusMoveTo(v:this)" \
+						"	f:trace_string(\"touchShortReleased\")" \
 						"    false" \
 						"}"
 				}
@@ -23,6 +25,11 @@ GtfRectangle_template(f76e3b52-8de0-42e8-afb4-1618718c5871)
 				touched: false
 				touchPolicy: 0
 				touchBehavior: 0
+			}, 
+			StateFocused(48b03c70-349b-4ce8-9c82-1f3ae6af11fd)
+			{
+				focusable: 3
+				focused: false
 			}]
 		children: children_list [
 			GtfLabel(4bc5b2bf-23be-4af4-a680-4c3c87d6d2e6)
@@ -40,7 +47,7 @@ GtfRectangle_template(f76e3b52-8de0-42e8-afb4-1618718c5871)
 				font: font_resource(d5f9d66b-9ef9-471f-b50c-f372bf2a1445)
 				{
 					file: "PT_Sans_Narrow.ttf"
-					size: 30
+					size: 35
 				}
 				horizontalAlign: 1
 				verticalAlign: 0
@@ -56,9 +63,36 @@ GtfRectangle_template(f76e3b52-8de0-42e8-afb4-1618718c5871)
 		{
 			script: "function()" \
 				"{" \
-				"	// todo: auto generated return value, please adapt" \
 				"	false" \
 				"}"
+		}
+		ColorUnfocused: #ADD8E6FF
+		ColorFocused: #4682B4FF
+		reactOnFocus: conditional_script(300e82c8-d9ac-4c92-8b84-bf69da064c18)
+		{
+			triggerList: trigger_list(5ee484ff-2f1b-40f5-88c5-a86680737630)
+			{
+				script: "v:this.focused" \
+					"v:this.ColorFocused" \
+					"v:this.ColorUnfocused" \
+					""
+			}
+			onTrigger: function<bool,bool>(ccc50d50-7c2e-4e5f-9f09-d9933697306c)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	f:trace_string(\"React on focus change\")" \
+					"	if(v:this.focused)" \
+					"	{" \
+					"		v:this.fillColor =v:this.ColorFocused" \
+					"	}" \
+					"	else" \
+					"	{" \
+					"		v:this.fillColor=v:this.ColorUnfocused" \
+					"	}" \
+					"	false" \
+					"}"
+			}
 		}
 	}
 	width: width@9684ac17-b3e0-4d0e-99b5-e76ddd2ee8c1 (propref<int>)
@@ -71,4 +105,5 @@ GtfRectangle_template(f76e3b52-8de0-42e8-afb4-1618718c5871)
 	text: text@4bc5b2bf-23be-4af4-a680-4c3c87d6d2e6 (propref<string>)
 	visible: visible@9684ac17-b3e0-4d0e-99b5-e76ddd2ee8c1 (propref<bool>)
 	buttonEvent: buttonEvent@9684ac17-b3e0-4d0e-99b5-e76ddd2ee8c1 (propref<function<bool>>)
+	focused: focused@48b03c70-349b-4ce8-9c82-1f3ae6af11fd (propref<bool>)
 }

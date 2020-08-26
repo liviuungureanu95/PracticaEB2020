@@ -14,7 +14,7 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 			width: 205
 			height: 70
 			x: 10
-			y: 90
+			y: 100
 			text: "Credit Card Number:"
 			textColor: #FFFFFFFF
 			font: font_resource(3cebf500-5506-4b35-b86e-d40baf129ca3)
@@ -33,7 +33,7 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 			width: width@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			height: height@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			x: 230
-			y: 90
+			y: 100
 			fillColor: fillColor@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<color>)
 			"x 2": "x 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			"y 2": "y 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
@@ -44,9 +44,36 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 				script: "function()" \
 					"{" \
 					"	v:this.text=\"\"" \
-					"	v:this->^->DoneCCN_button.visible=true" \
 					"	false" \
 					"}"
+			}
+			focused: false
+			focusable: 3
+			touched: false
+			PutInLabel: conditional_script(ff24b8eb-677d-4431-96f9-462c27469302)
+			{
+				triggerList: trigger_list(cdcb6dd6-78ba-4592-9259-5b2d3f375acb)
+				{
+					script: "v:this.focused" \
+						"dp:String" \
+						""
+				}
+				onTrigger: function<bool,bool>(38ac2793-e16a-4566-9586-58c24d20dbc2)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(v:this.focused)" \
+						"	{" \
+						"		dp:Card_number=dp:String" \
+						"		if(dp:Card_number!=\"\")" \
+						"		{" \
+						"			v:this.text=dp:Card_number" \
+						"			v:this->^->DoneCCN_button.visible=true" \
+						"		}" \
+						"	}		" \
+						"	false" \
+						"}"
+				}
 			}
 		}, 
 		GtfLabel(eb0dc11a-22c1-4bc1-ae96-cd9b464e6cfc)
@@ -58,7 +85,7 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 			width: 205
 			height: 70
 			x: 10
-			y: 170
+			y: 180
 			text: "Expiration date"
 			textColor: #FFFFFFFF
 			font: font_resource(1f12bf86-4fca-4fcb-8bc2-26174a038a53)
@@ -77,7 +104,7 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 			width: width@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			height: height@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			x: 230
-			y: 170
+			y: 180
 			fillColor: fillColor@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<color>)
 			"x 2": "x 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			"y 2": "y 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
@@ -91,6 +118,35 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 					"	false" \
 					"}"
 			}
+			focused: false
+			focusable: 3
+			touched: false
+			PutInLabel: conditional_script(ed9a4db2-11ab-436a-a46d-b3dcdb32f1bf)
+			{
+				triggerList: trigger_list(848028e7-5e08-43aa-8ee9-8eaa761fe9b0)
+				{
+					script: "v:this.focused" \
+						"dp:String" \
+						""
+				}
+				onTrigger: function<bool,bool>(19164b09-b343-4aaa-ae13-03b1875772fd)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(v:this.focused)" \
+						"	{" \
+						"		dp:Exp_date=dp:String" \
+						"		if(dp:Exp_date!=\"\")" \
+						"		{" \
+						"			v:this.text=dp:Exp_date" \
+						"			v:this->^->DoneED_button.visible=true" \
+						"		}" \
+						"	}		" \
+						"	" \
+						"	false" \
+						"}"
+				}
+			}
 		}, 
 		GtfLabel(ecbfc211-d64d-4295-b33d-a826956cf6de)
 		{
@@ -101,7 +157,7 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 			width: 205
 			height: 70
 			x: 10
-			y: 250
+			y: 260
 			text: "CVV"
 			textColor: #FFFFFFFF
 			font: font_resource(51656784-32e1-49a2-ba2f-d60bb7bf763c)
@@ -120,7 +176,7 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 			width: width@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			height: height@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			x: 230
-			y: 250
+			y: 260
 			fillColor: fillColor@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<color>)
 			"x 2": "x 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			"y 2": "y 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
@@ -133,6 +189,37 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 					"	v:this.text=\"\"	" \
 					"	false" \
 					"}"
+			}
+			focused: false
+			focusable: 3
+			touched: false
+			PutInLabel: conditional_script(d08d7c6b-4994-4113-aa1a-2d5a788a28c0)
+			{
+				triggerList: trigger_list(1c05a34c-9a28-4826-a8ff-f7d003a86e4c)
+				{
+					script: "v:this.focused" \
+						"dp:String" \
+						""
+				}
+				onTrigger: function<bool,bool>(48a23663-7e8e-447b-8977-b721ec862395)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(v:this.focused)" \
+						"	{" \
+						"		dp:CVV=dp:String" \
+						"		if(dp:CVV!=\"\")" \
+						"		{" \
+						"			v:this.text=dp:CVV" \
+						"			v:this->^->DoneCVV_button.visible=true" \
+						"		}" \
+						"	}		" \
+						"	" \
+						"	false" \
+						"	" \
+						"	" \
+						"}"
+				}
 			}
 		}, 
 		GtfContainer_template_instance(f5216d0d-72cc-455f-80cc-78d2a04e864c)
@@ -171,6 +258,7 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 			height: 50
 			visible: false
 			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			borderColor: borderColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
 		}, 
 		GtfLabel(7c446426-e5c8-40eb-ac6e-0b7ce8bcfee8)
 		{
@@ -188,7 +276,7 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 			x: 0
 			y: 128
 			text: "The card information has been verified and approved"
-			textColor: #FFFFFFFF
+			textColor: #7B68EEFF
 			font: font_resource(38776800-b656-4a2e-a1a5-9e49bfee2db3)
 			{
 				file: "PT_Sans_Narrow.ttf"
@@ -212,7 +300,7 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 			font: font_resource(b21fe785-4615-40bb-90fd-9ab49b7c771b)
 			{
 				file: "PT_Sans_Narrow.ttf"
-				size: 30
+				size: 35
 			}
 			horizontalAlign: 0
 			verticalAlign: 0
@@ -262,6 +350,9 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 			}
 			visible: false
 			buttonEvent: buttonEvent@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<function<bool>>)
+			focused: false
+			focusable: 3
+			touched: false
 		}, 
 		GtfLabel(3743b8f4-e1fd-448f-be2f-c730a7683c65)
 		{
@@ -318,7 +409,7 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 			font: font_resource(9d5a09fc-6859-4730-9105-5cf6d0aa0906)
 			{
 				file: "PT_Sans_Narrow.ttf"
-				size: 30
+				size: 35
 			}
 			horizontalAlign: 0
 			verticalAlign: 0
@@ -358,6 +449,7 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 					"			dp:Food_price=0" \
 					"			fire_delayed 4000, ev:GoToFood()" \
 					"			v:this->^->Total_label.visible=false" \
+					"			v:this.visible=false" \
 					"		}" \
 					"		" \
 					"	}" \
@@ -382,6 +474,7 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 					"			dp:Drink_price=0" \
 					"			fire_delayed 4000, ev:GoToDrink()" \
 					"			v:this->^->Total_label.visible=false" \
+					"			v:this.visible=false" \
 					"		}" \
 					"	}" \
 					"	" \
@@ -392,6 +485,7 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 			height: height@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
 			visible: false
 			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			borderColor: borderColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
 		}, 
 		GtfContainer_template_instance(8f243a44-e4a0-4b35-a012-f03919e43944)
 		{
@@ -411,6 +505,7 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 					"	v:this->^->\"Card_Type_in_Label\".text=dp:Card_number" \
 					"	v:this->^->\"Exp_Type_in_Label\".visible=true" \
 					"	v:this->^->DoneED_button.visible=true" \
+					"	f:focusNext()" \
 					"	false" \
 					"}"
 			}
@@ -418,6 +513,7 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 			height: 50
 			visible: false
 			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			borderColor: borderColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
 		}, 
 		GtfContainer_template_instance(f1b3ecaf-75ed-4b9a-8fdf-214903f82540)
 		{
@@ -437,6 +533,7 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 					"	v:this->^->\"Card_Type_in_Label\".text=dp:Exp_date" \
 					"	v:this->^->\"CVV_Type_in_Label\".visible=true" \
 					"	v:this->^->DoneCVV_button.visible=true" \
+					"	f:focusNext()" \
 					"	false" \
 					"}"
 			}
@@ -444,6 +541,7 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 			height: 50
 			visible: false
 			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			borderColor: borderColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
 		}, 
 		GtfContainer_template_instance(2e22e791-311b-4831-a9d8-94cf3d4c5d3d)
 		{
@@ -462,6 +560,7 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 					"	dp:String=\"\"" \
 					"	v:this->^->\"CVV_Type_in_Label\".text=dp:CVV" \
 					"	v:this->^->Ok_btn.visible=true" \
+					"	v:this->^->CVV_Type_in_Label.focused=false" \
 					"	false" \
 					"}"
 			}
@@ -469,17 +568,19 @@ GtfView_template_instance(a717ec04-9b0d-48ac-ba92-7daa27e8bbe4)
 			height: 50
 			visible: false
 			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			borderColor: borderColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
 		}]
 	image: image@47101df3-2cb4-462c-8236-06e865e3862e (propref<image>)
 	text: "CARD INFO"
 	visible: true
 	"visible 2": true
-	"Function () : bool 1": function<bool>(385382e9-4893-407d-9d51-d5c749af8bc6)
-	{
-		script: "function()" \
-			"{" \
-			"	// todo: auto generated return value, please adapt" \
-			"	false" \
-			"}"
-	}
+	"visible 3": "visible 3"@47101df3-2cb4-462c-8236-06e865e3862e (propref<bool>)
+	fillColor: fillColor@47101df3-2cb4-462c-8236-06e865e3862e (propref<color>)
+	textColor: textColor@47101df3-2cb4-462c-8236-06e865e3862e (propref<color>)
+	initFocus: 0
+	focusedIndex: 0
+	focusNext: false
+	focusPrev: false
+	focusFlow: 1
+	focused: false
 }

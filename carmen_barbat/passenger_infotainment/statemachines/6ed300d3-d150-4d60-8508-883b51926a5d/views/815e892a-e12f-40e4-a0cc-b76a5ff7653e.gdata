@@ -16,11 +16,11 @@ GtfView_template_instance(815e892a-e12f-40e4-a0cc-b76a5ff7653e)
 			x: 0
 			y: 100
 			text: "Customer name"
-			textColor: #FFFFFFFF
+			textColor: #696969FF
 			font: font_resource(83608572-366b-4ba8-a229-f7f24f0751f7)
 			{
 				file: "PT_Sans_Narrow.ttf"
-				size: 30
+				size: 35
 			}
 			horizontalAlign: 1
 			verticalAlign: 0
@@ -36,11 +36,11 @@ GtfView_template_instance(815e892a-e12f-40e4-a0cc-b76a5ff7653e)
 			x: 0
 			y: 175
 			text: "Rent period"
-			textColor: #FFFFFFFF
+			textColor: #696969FF
 			font: font_resource(32653da7-be15-424b-9329-7f8952373da8)
 			{
 				file: "PT_Sans_Narrow.ttf"
-				size: 30
+				size: 35
 			}
 			horizontalAlign: 1
 			verticalAlign: 0
@@ -56,11 +56,11 @@ GtfView_template_instance(815e892a-e12f-40e4-a0cc-b76a5ff7653e)
 			x: 0
 			y: 250
 			text: "Handover location"
-			textColor: #FFFFFFFF
+			textColor: #696969FF
 			font: font_resource(7aae3ae3-d357-4011-96ab-e8fe879ccb9a)
 			{
 				file: "PT_Sans_Narrow.ttf"
-				size: 30
+				size: 35
 			}
 			horizontalAlign: 1
 			verticalAlign: 0
@@ -76,11 +76,11 @@ GtfView_template_instance(815e892a-e12f-40e4-a0cc-b76a5ff7653e)
 			x: 0
 			y: 325
 			text: "Takeover location"
-			textColor: #FFFFFFFF
+			textColor: #696969FF
 			font: font_resource(e5c8a4f9-e9ab-4f2f-ba5a-8bb2dfcbb49c)
 			{
 				file: "PT_Sans_Narrow.ttf"
-				size: 30
+				size: 35
 			}
 			horizontalAlign: 1
 			verticalAlign: 0
@@ -103,9 +103,40 @@ GtfView_template_instance(815e892a-e12f-40e4-a0cc-b76a5ff7653e)
 			{
 				script: "function()" \
 					"{" \
-					"	v:this.text=\"\"" \
+					"	v:this.text =\"\"" \
+					"	" \
 					"	false" \
 					"}"
+			}
+			focused: focused@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<bool>)
+			PutInLabel: conditional_script(25e715d5-4162-40ef-83da-ae471319b65b)
+			{
+				triggerList: trigger_list(59912022-e832-4710-89bb-87a34595a379)
+				{
+					script: "dp:Customer_name" \
+						"dp:String" \
+						"v:this.focused" \
+						""
+				}
+				onTrigger: function<bool,bool>(e4c06d03-fedd-413c-9ffa-080a41c8b424)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(v:this.focused)" \
+						"	{" \
+						"		dp:Customer_name=dp:String" \
+						"		if(dp:Customer_name!=\"\")" \
+						"		{" \
+						"			v:this.text=dp:Customer_name" \
+						"			v:this->^->DoneCN_button.visible=true" \
+						"		}" \
+						"	}		" \
+						"	false	" \
+						"	" \
+						"	" \
+						"	" \
+						"}"
+				}
 			}
 		}, 
 		GtfRectangle_template_instance(e132ad08-ad1c-4d30-aec3-fadfb9a3d395)
@@ -126,10 +157,36 @@ GtfView_template_instance(815e892a-e12f-40e4-a0cc-b76a5ff7653e)
 			{
 				script: "function()" \
 					"{" \
-					"	v:this.text=\"\"" \
+					"	v:this.text =\"\"" \
 					"	" \
 					"	false" \
 					"}"
+			}
+			focused: focused@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<bool>)
+			PutInLabel: conditional_script(9b659d07-ba85-41a6-90f0-50475ecb20f8)
+			{
+				triggerList: trigger_list(486fe3bd-2677-42f0-935e-4476135b4df0)
+				{
+					script: "dp:String" \
+						"v:this.focused" \
+						""
+				}
+				onTrigger: function<bool,bool>(bd044d00-2db9-487e-a6e4-443fdc065a6a)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(v:this.focused)" \
+						"	{" \
+						"		dp:Rent_period=dp:String" \
+						"		if(dp:Rent_period!=\"\")" \
+						"		{" \
+						"			v:this.text=dp:Rent_period" \
+						"			v:this->^->DoneRP_button.visible=true" \
+						"		}" \
+						"	}	" \
+						"	false" \
+						"}"
+				}
 			}
 		}, 
 		GtfRectangle_template_instance(954281e5-9c17-424a-a05d-fbc9a72c54a7)
@@ -150,9 +207,37 @@ GtfView_template_instance(815e892a-e12f-40e4-a0cc-b76a5ff7653e)
 			{
 				script: "function()" \
 					"{" \
-					"	v:this.text=\"\"" \
+					"	v:this.text =\"\"" \
+					"	" \
 					"	false" \
 					"}"
+			}
+			focused: focused@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<bool>)
+			PutInLabel: conditional_script(b0e1afd1-bfac-4a80-9245-481c020da7eb)
+			{
+				triggerList: trigger_list(201f3a3b-457b-4b46-96f4-3f27f75f0fb5)
+				{
+					script: "dp:String" \
+						"" \
+						""
+				}
+				onTrigger: function<bool,bool>(a3c97f91-3600-4e44-a88a-4a272c075472)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(v:this.focused)" \
+						"	{" \
+						"		dp:HandoverLocation=dp:String" \
+						"		if(dp:HandoverLocation!=\"\")" \
+						"		{" \
+						"			v:this.text=dp:HandoverLocation" \
+						"			v:this->^->DoneHL_button.visible=true" \
+						"		}" \
+						"			" \
+						"	}" \
+						"	false" \
+						"}"
+				}
 			}
 		}, 
 		GtfRectangle_template_instance(bebd9078-2489-45e8-ab36-49cffab93162)
@@ -177,6 +262,32 @@ GtfView_template_instance(815e892a-e12f-40e4-a0cc-b76a5ff7653e)
 					"	false" \
 					"}"
 			}
+			focused: focused@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<bool>)
+			PutInLabel: conditional_script(2ca9f8c3-de90-4243-a6ad-65a092fe81a9)
+			{
+				triggerList: trigger_list(ba60d1d5-4d6f-44ae-893b-da9e8030d165)
+				{
+					script: "dp:String" \
+						"v:this.focused" \
+						""
+				}
+				onTrigger: function<bool,bool>(ded70ccb-28c1-45ef-ab67-63607caa9371)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(v:this.focused)" \
+						"	{" \
+						"		dp:TakeoverLocation=dp:String" \
+						"		if(dp:TakeoverLocation!=\"\")" \
+						"		{" \
+						"			v:this.text=dp:TakeoverLocation" \
+						"			v:this->^->DoneTL_button.visible=true" \
+						"		}" \
+						"	}		" \
+						"	false" \
+						"}"
+				}
+			}
 		}, 
 		GtfContainer_template_instance(9ee4d1d7-500c-44ac-b748-9d2f92286758)
 		{
@@ -185,7 +296,7 @@ GtfView_template_instance(815e892a-e12f-40e4-a0cc-b76a5ff7653e)
 			children: children_list []
 			x: 590
 			y: 401
-			fillColor: #5F9EA0FF
+			fillColor: #ADD8E6FF
 			text: "RENT CAR"
 			buttonEvent: function<bool>(75ee8075-cef6-4d56-9f37-d1560aa172a9)
 			{
@@ -202,6 +313,7 @@ GtfView_template_instance(815e892a-e12f-40e4-a0cc-b76a5ff7653e)
 			height: 59
 			visible: false
 			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			borderColor: #7FFFD4FF
 			"x 2": 0
 			"y 2": 0
 			"x 3": 0
@@ -214,7 +326,7 @@ GtfView_template_instance(815e892a-e12f-40e4-a0cc-b76a5ff7653e)
 			children: children_list []
 			x: 585
 			y: 104
-			fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
+			fillColor: #B0E0E6FF
 			text: "Done"
 			buttonEvent: function<bool>(a0e3035a-822d-489e-a593-533832fdb4b1)
 			{
@@ -224,14 +336,16 @@ GtfView_template_instance(815e892a-e12f-40e4-a0cc-b76a5ff7653e)
 					"	dp:String=\"\"" \
 					"	v:this->^->\"Type_in_Label_TEMP 1\".text=dp:Customer_name" \
 					"	v:this->^->\"Type_in_Label_TEMP 2\".visible=true" \
-					"	v:this->^->DoneRP_button.visible=true" \
+					"	//v:this->^->DoneRP_button.visible=true" \
+					"	f:focusNext()" \
 					"	false" \
 					"}"
 			}
 			width: 90
 			height: 50
-			visible: visible@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<bool>)
+			visible: false
 			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			borderColor: #7FFFD4FF
 		}, 
 		GtfContainer_template_instance(9ee1c1e7-5a1f-4db2-8ad5-b071b13fdb27)
 		{
@@ -240,7 +354,7 @@ GtfView_template_instance(815e892a-e12f-40e4-a0cc-b76a5ff7653e)
 			children: children_list []
 			x: 585
 			y: 178
-			fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
+			fillColor: #B0E0E6FF
 			text: "Done"
 			buttonEvent: function<bool>(4d3efa0d-d6f9-4e72-9492-803637f44f2a)
 			{
@@ -250,7 +364,8 @@ GtfView_template_instance(815e892a-e12f-40e4-a0cc-b76a5ff7653e)
 					"	dp:String=\"\"" \
 					"	v:this->^->\"Type_in_Label_TEMP 2\".text=dp:Rent_period" \
 					"	v:this->^->\"Type_in_Label_TEMP 3\".visible=true" \
-					"	v:this->^->DoneHL_button.visible=true" \
+					"	//v:this->^->DoneHL_button.visible=true" \
+					"	f:focusNext()" \
 					"	false" \
 					"}"
 			}
@@ -258,15 +373,16 @@ GtfView_template_instance(815e892a-e12f-40e4-a0cc-b76a5ff7653e)
 			height: 50
 			visible: false
 			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			borderColor: #7FFFD4FF
 		}, 
 		GtfContainer_template_instance(77bfe916-a2cf-4f26-9917-d06c8d02be44)
 		{
 			name: "DoneHL_button"
 			template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
 			children: children_list []
-			x: 584
+			x: 585
 			y: 261
-			fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
+			fillColor: #B0E0E6FF
 			text: "Done"
 			buttonEvent: function<bool>(e72d0f66-d495-4b3d-8645-9eab84835c09)
 			{
@@ -276,7 +392,8 @@ GtfView_template_instance(815e892a-e12f-40e4-a0cc-b76a5ff7653e)
 					"	dp:String=\"\"" \
 					"	v:this->^->\"Type_in_Label_TEMP 3\".text=dp:HandoverLocation" \
 					"	v:this->^->\"Type_in_Label_TEMP 4\".visible=true" \
-					"	v:this->^->DoneTL_button.visible=true" \
+					"	//v:this->^->DoneTL_button.visible=true" \
+					"	f:focusNext()" \
 					"	false" \
 					"}"
 			}
@@ -284,15 +401,16 @@ GtfView_template_instance(815e892a-e12f-40e4-a0cc-b76a5ff7653e)
 			height: 50
 			visible: false
 			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			borderColor: #7FFFD4FF
 		}, 
 		GtfContainer_template_instance(2656b8ac-40fd-46e5-9287-7536f1552034)
 		{
 			name: "DoneTL_button"
 			template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
 			children: children_list []
-			x: 584
+			x: 585
 			y: 330
-			fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
+			fillColor: #B0E0E6FF
 			text: "Done"
 			buttonEvent: function<bool>(62ce8757-4907-4bdf-a3fc-df3b64565cdd)
 			{
@@ -302,7 +420,7 @@ GtfView_template_instance(815e892a-e12f-40e4-a0cc-b76a5ff7653e)
 					"	dp:String=\"\"" \
 					"	v:this->^->\"Type_in_Label_TEMP 4\".text=dp:TakeoverLocation" \
 					"	v:this->^->rent_button.visible=true" \
-					"	" \
+					"	v:this->^->\"Type_in_Label_TEMP 4\".focused=false" \
 					"	false" \
 					"}"
 			}
@@ -310,9 +428,13 @@ GtfView_template_instance(815e892a-e12f-40e4-a0cc-b76a5ff7653e)
 			height: 50
 			visible: false
 			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			borderColor: #7FFFD4FF
 		}]
 	image: image@47101df3-2cb4-462c-8236-06e865e3862e (propref<image>)
 	text: "Rent a car"
-	visible: visible@47101df3-2cb4-462c-8236-06e865e3862e (propref<bool>)
-	"visible 2": "visible 2"@47101df3-2cb4-462c-8236-06e865e3862e (propref<bool>)
+	visible: true
+	"visible 2": true
+	"visible 3": true
+	fillColor: fillColor@47101df3-2cb4-462c-8236-06e865e3862e (propref<color>)
+	textColor: #696969FF
 }

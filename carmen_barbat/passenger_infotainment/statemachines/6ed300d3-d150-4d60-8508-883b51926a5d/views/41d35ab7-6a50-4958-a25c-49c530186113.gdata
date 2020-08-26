@@ -14,13 +14,13 @@ GtfView_template_instance(41d35ab7-6a50-4958-a25c-49c530186113)
 			width: 100
 			height: 70
 			x: 20
-			y: 80
+			y: 90
 			text: "City"
-			textColor: #FFFFFFFF
+			textColor: #DCDCDCFF
 			font: font_resource(15051976-4988-4faf-a828-5e0f61f39412)
 			{
 				file: "PT_Sans_Narrow.ttf"
-				size: 30
+				size: 35
 			}
 			horizontalAlign: 1
 			verticalAlign: 0
@@ -34,13 +34,13 @@ GtfView_template_instance(41d35ab7-6a50-4958-a25c-49c530186113)
 			width: 100
 			height: 70
 			x: 20
-			y: 155
+			y: 165
 			text: "Street"
-			textColor: #FFFFFFFF
+			textColor: #DCDCDCFF
 			font: font_resource(15d2d0b6-2cf4-40ec-bebe-d37bd1c6fd0c)
 			{
 				file: "PT_Sans_Narrow.ttf"
-				size: 30
+				size: 35
 			}
 			horizontalAlign: 1
 			verticalAlign: 0
@@ -54,13 +54,13 @@ GtfView_template_instance(41d35ab7-6a50-4958-a25c-49c530186113)
 			width: 100
 			height: 70
 			x: 20
-			y: 230
+			y: 240
 			text: "Number"
-			textColor: #FFFFFFFF
+			textColor: #DCDCDCFF
 			font: font_resource(e6188c95-7bc5-47fd-991f-fda35db1dd66)
 			{
 				file: "PT_Sans_Narrow.ttf"
-				size: 30
+				size: 35
 			}
 			horizontalAlign: 1
 			verticalAlign: 0
@@ -74,13 +74,13 @@ GtfView_template_instance(41d35ab7-6a50-4958-a25c-49c530186113)
 			width: 100
 			height: 70
 			x: 20
-			y: 305
+			y: 315
 			text: "Time"
-			textColor: #FFFFFFFF
+			textColor: #DCDCDCFF
 			font: font_resource(fec72da6-647e-4df2-98fc-1dcdf977604c)
 			{
 				file: "PT_Sans_Narrow.ttf"
-				size: 30
+				size: 35
 			}
 			horizontalAlign: 1
 			verticalAlign: 0
@@ -92,7 +92,7 @@ GtfView_template_instance(41d35ab7-6a50-4958-a25c-49c530186113)
 			children: children_list []
 			x: 544
 			y: 421
-			fillColor: #5F9EA0FF
+			fillColor: #B0E0E6FF
 			text: "Reserve taxi"
 			buttonEvent: function<bool>(f2914344-e9a7-47b8-a1f2-90ea4e2f0a15)
 			{
@@ -111,6 +111,7 @@ GtfView_template_instance(41d35ab7-6a50-4958-a25c-49c530186113)
 			height: 49
 			visible: false
 			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			borderColor: borderColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
 			"x 2": 0
 			"y 2": 0
 			"x 3": 0
@@ -124,7 +125,7 @@ GtfView_template_instance(41d35ab7-6a50-4958-a25c-49c530186113)
 			width: width@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			height: height@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			x: 140
-			y: 80
+			y: 95
 			fillColor: fillColor@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<color>)
 			"x 2": "x 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			"y 2": "y 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
@@ -134,11 +135,38 @@ GtfView_template_instance(41d35ab7-6a50-4958-a25c-49c530186113)
 			{
 				script: "function()" \
 					"{" \
-					"	v:this.text=\"\"" \
-					"	v:this->^->DoneC_button.visible=true" \
 					"	" \
+					"	v:this.text =\"\"" \
 					"	false" \
 					"}"
+			}
+			focused: false
+			focusable: 3
+			touched: false
+			PutInLabel: conditional_script(3764e2cb-cd29-42e6-b930-e544d73b8182)
+			{
+				triggerList: trigger_list(838741d3-2262-4bec-aac4-176f7f9fbba4)
+				{
+					script: "v:this.focused" \
+						"dp:String" \
+						"dp:City"
+				}
+				onTrigger: function<bool,bool>(90f3e551-3071-4810-87e1-52cfe376e9c0)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(v:this.focused)" \
+						"	{" \
+						"		dp:City=dp:String" \
+						"		if(dp:City!=\"\")" \
+						"		{" \
+						"			v:this.text=dp:City" \
+						"			v:this->^->DoneC_button.visible=true" \
+						"		}" \
+						"	}		" \
+						"	false" \
+						"}"
+				}
 			}
 		}, 
 		GtfRectangle_template_instance(39858596-3971-4c50-9819-6a257cbc3c9f)
@@ -149,7 +177,7 @@ GtfView_template_instance(41d35ab7-6a50-4958-a25c-49c530186113)
 			width: width@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			height: height@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			x: 140
-			y: 155
+			y: 170
 			fillColor: fillColor@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<color>)
 			"x 2": "x 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			"y 2": "y 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
@@ -159,9 +187,37 @@ GtfView_template_instance(41d35ab7-6a50-4958-a25c-49c530186113)
 			{
 				script: "function()" \
 					"{" \
-					"	v:this.text=\"\"" \
+					"	v:this.text =\"\"" \
 					"	false" \
 					"}"
+			}
+			focused: false
+			focusable: 3
+			touched: false
+			PutInLabel: conditional_script(8f60a2fe-ae18-4542-bf49-a70d9b36ec7c)
+			{
+				triggerList: trigger_list(134df282-e9b9-4eff-a33e-738c98b5b294)
+				{
+					script: "v:this.focused" \
+						"dp:String" \
+						""
+				}
+				onTrigger: function<bool,bool>(07142362-169a-4b22-b0e1-a0aab19b6106)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(v:this.focused)" \
+						"	{" \
+						"		dp:Street=dp:String" \
+						"		if(dp:Street!=\"\")" \
+						"		{" \
+						"			v:this.text=dp:Street" \
+						"			v:this->^->DoneS_button.visible=true" \
+						"		}" \
+						"	}	" \
+						"	false" \
+						"}"
+				}
 			}
 		}, 
 		GtfRectangle_template_instance(f9eb7d4d-78ae-4fbe-90d8-93d7e5bed42f)
@@ -172,7 +228,7 @@ GtfView_template_instance(41d35ab7-6a50-4958-a25c-49c530186113)
 			width: width@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			height: height@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			x: 140
-			y: 230
+			y: 245
 			fillColor: fillColor@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<color>)
 			"x 2": "x 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			"y 2": "y 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
@@ -182,9 +238,39 @@ GtfView_template_instance(41d35ab7-6a50-4958-a25c-49c530186113)
 			{
 				script: "function()" \
 					"{" \
-					"	v:this.text=\"\"" \
+					"	v:this.text =\"\"" \
 					"	false" \
 					"}"
+			}
+			focused: false
+			focusable: 3
+			touched: false
+			PutInLabel: conditional_script(0747b97c-e5fb-4b91-aac8-fe6056dcc5cb)
+			{
+				triggerList: trigger_list(5cbce7e2-b87b-4e8c-b85c-0dd2a8276db6)
+				{
+					script: "v:this.focused" \
+						"dp:String" \
+						""
+				}
+				onTrigger: function<bool,bool>(42225109-e59b-4108-8649-ee0839585160)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	" \
+						"	if(v:this.focused)" \
+						"	{" \
+						"		dp:Number= dp:String" \
+						"		if(dp:Number!= \"\")" \
+						"		{" \
+						"			v:this.text = dp:Number" \
+						"			v:this->^->DoneN_button.visible=true" \
+						"		}" \
+						"	}" \
+						"	" \
+						"	false" \
+						"}"
+				}
 			}
 		}, 
 		GtfRectangle_template_instance(b2b6a534-0daa-4a30-a504-4d008ed37ede)
@@ -195,7 +281,7 @@ GtfView_template_instance(41d35ab7-6a50-4958-a25c-49c530186113)
 			width: width@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			height: height@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			x: 140
-			y: 305
+			y: 320
 			fillColor: fillColor@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<color>)
 			"x 2": "x 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
 			"y 2": "y 2"@f76e3b52-8de0-42e8-afb4-1618718c5871 (propref<int>)
@@ -205,9 +291,40 @@ GtfView_template_instance(41d35ab7-6a50-4958-a25c-49c530186113)
 			{
 				script: "function()" \
 					"{" \
-					"	v:this.text=\"\"" \
+					"	v:this.text =\"\"" \
+					"	false	" \
+					"	" \
 					"	false" \
 					"}"
+			}
+			focused: false
+			focusable: 3
+			touched: false
+			PutInLabel: conditional_script(2f0f439d-c9c8-48f7-8b08-2ec779852df7)
+			{
+				triggerList: trigger_list(596bb0c6-61b8-417e-a890-d52a33fae8b9)
+				{
+					script: "v:this.focused" \
+						"dp:String" \
+						""
+				}
+				onTrigger: function<bool,bool>(5d72539a-b519-4b78-a316-d9b0fba5b231)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(v:this.focused)" \
+						"	{" \
+						"		dp:Time=dp:String" \
+						"		if(dp:Time!=\"\")" \
+						"		{" \
+						"			v:this.text=dp:Time" \
+						"			v:this->^->DoneT_button.visible=true" \
+						"		}" \
+						"	}		" \
+						"	false" \
+						"	" \
+						"}"
+				}
 			}
 		}, 
 		GtfContainer_template_instance(1d988e48-9fc0-44b8-8096-cf17d19aa6c2)
@@ -216,7 +333,7 @@ GtfView_template_instance(41d35ab7-6a50-4958-a25c-49c530186113)
 			template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
 			children: children_list []
 			x: 455
-			y: 90
+			y: 100
 			fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
 			text: "Done"
 			buttonEvent: function<bool>(fb3ec628-b89e-418c-acb5-147b7e88fa87)
@@ -228,6 +345,7 @@ GtfView_template_instance(41d35ab7-6a50-4958-a25c-49c530186113)
 					"	v:this->^->\"Type_in_Label_TEMP 1\".text=dp:City" \
 					"	v:this->^->\"Type_in_Label_TEMP 2\".visible=true" \
 					"	v:this->^->DoneS_button.visible=true" \
+					"	f:focusNext()" \
 					"	false" \
 					"}"
 			}
@@ -235,6 +353,7 @@ GtfView_template_instance(41d35ab7-6a50-4958-a25c-49c530186113)
 			height: 50
 			visible: false
 			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			borderColor: borderColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
 		}, 
 		GtfContainer_template_instance(1279edc4-bb5c-4b73-9614-6a85323f151d)
 		{
@@ -242,7 +361,7 @@ GtfView_template_instance(41d35ab7-6a50-4958-a25c-49c530186113)
 			template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
 			children: children_list []
 			x: 455
-			y: 170
+			y: 180
 			fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
 			text: "Done"
 			buttonEvent: function<bool>(a060e0eb-a435-4bfa-aa25-32c19067643c)
@@ -254,6 +373,7 @@ GtfView_template_instance(41d35ab7-6a50-4958-a25c-49c530186113)
 					"	v:this->^->\"Type_in_Label_TEMP 2\".text=dp:Street" \
 					"	v:this->^->\"Type_in_Label_TEMP 3\".visible=true" \
 					"	v:this->^->DoneN_button.visible=true" \
+					"	f:focusNext()" \
 					"	false" \
 					"}"
 			}
@@ -261,6 +381,7 @@ GtfView_template_instance(41d35ab7-6a50-4958-a25c-49c530186113)
 			height: 50
 			visible: false
 			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			borderColor: borderColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
 		}, 
 		GtfContainer_template_instance(9ca01adc-1a94-4b5b-aa37-9628e667edd4)
 		{
@@ -268,18 +389,19 @@ GtfView_template_instance(41d35ab7-6a50-4958-a25c-49c530186113)
 			template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
 			children: children_list []
 			x: 455
-			y: 243
+			y: 255
 			fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
 			text: "Done"
 			buttonEvent: function<bool>(ff5c34e1-6565-4374-95aa-adde1fed1476)
 			{
 				script: "function()" \
 					"{" \
-					"	dp:Number=f:string2int(dp:String)" \
+					"	dp:Number=dp:String" \
 					"	dp:String=\"\"" \
-					"	v:this->^->\"Type_in_Label_TEMP 3\".text=f:int2string(dp:Number)" \
+					"	v:this->^->\"Type_in_Label_TEMP 3\".text=dp:Number" \
 					"	v:this->^->\"Type_in_Label_TEMP 4\".visible=true" \
 					"	v:this->^->DoneT_button.visible=true" \
+					"	f:focusNext()" \
 					"	false" \
 					"}"
 			}
@@ -287,6 +409,7 @@ GtfView_template_instance(41d35ab7-6a50-4958-a25c-49c530186113)
 			height: 50
 			visible: false
 			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			borderColor: borderColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
 		}, 
 		GtfContainer_template_instance(c9ce583f-516d-44d4-aaab-7ee2c686c55d)
 		{
@@ -294,7 +417,7 @@ GtfView_template_instance(41d35ab7-6a50-4958-a25c-49c530186113)
 			template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
 			children: children_list []
 			x: 455
-			y: 312
+			y: 330
 			fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
 			text: "Done"
 			buttonEvent: function<bool>(8a1ce013-6744-4d54-995f-410215a8a9c9)
@@ -305,6 +428,7 @@ GtfView_template_instance(41d35ab7-6a50-4958-a25c-49c530186113)
 					"	dp:String=\"\"" \
 					"	v:this->^->\"Type_in_Label_TEMP 4\".text=dp:Time" \
 					"	v:this->^->Reserv_button.visible=true" \
+					"	v:this->^->\"Type_in_Label_TEMP 4\".focused=false" \
 					"	false" \
 					"}"
 			}
@@ -312,17 +436,19 @@ GtfView_template_instance(41d35ab7-6a50-4958-a25c-49c530186113)
 			height: 50
 			visible: false
 			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			borderColor: borderColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
 		}]
 	image: image@47101df3-2cb4-462c-8236-06e865e3862e (propref<image>)
 	text: "Taxi"
 	visible: visible@47101df3-2cb4-462c-8236-06e865e3862e (propref<bool>)
 	"visible 2": "visible 2"@47101df3-2cb4-462c-8236-06e865e3862e (propref<bool>)
-	"Function () : bool 1": function<bool>(fa401862-9ecf-425a-aebe-3073a30913fc)
-	{
-		script: "function()" \
-			"{" \
-			"	// todo: auto generated return value, please adapt" \
-			"	false" \
-			"}"
-	}
+	"visible 3": "visible 3"@47101df3-2cb4-462c-8236-06e865e3862e (propref<bool>)
+	fillColor: fillColor@47101df3-2cb4-462c-8236-06e865e3862e (propref<color>)
+	textColor: textColor@47101df3-2cb4-462c-8236-06e865e3862e (propref<color>)
+	initFocus: 0
+	focusedIndex: 0
+	focusNext: false
+	focusPrev: false
+	focusFlow: 1
+	focused: false
 }
