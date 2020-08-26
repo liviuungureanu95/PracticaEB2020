@@ -2,7 +2,7 @@ EBGUIDE 6.10.0.200602120856;
 
 GtfContainer_template(25a974a8-a71f-4d8f-bad2-86b065f546c6)
 {
-	name: "Info"
+	name: "Radio Template"
 	structure: GtfContainer(a075dc3b-25c2-4f47-8476-4b12fa42fab4)
 	{
 		features: feature_list []
@@ -10,67 +10,555 @@ GtfContainer_template(25a974a8-a71f-4d8f-bad2-86b065f546c6)
 			GtfRectangle(5801b5ea-543f-46ad-ac95-00d40407b2de)
 			{
 				features: feature_list []
-				children: children_list [
-					GtfLabel(804b8644-5000-404e-8ded-e1b1b4508426)
-					{
-						features: feature_list []
-						children: children_list [
-							GtfEllipse(688035a1-6d55-46a8-8fb7-fbdf1f579334)
-							{
-								features: feature_list [
-									TouchShortReleased(0f3a87fe-a363-429e-bf79-ca4a10d3e179)
-									{
-										touchShortReleased: function<bool,int,int,int,int>(d34b4533-45ac-4272-a561-0725ed5c4b50)
-										{
-											script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
-												"{" \
-												"    fire ev:goTo_menu()" \
-												"    false" \
-												"}"
-										}
-									}, 
-									StateTouched(0e0013f4-f318-4da9-b1ca-d6446b699e16)
-									{
-										touchable: true
-										touched: false
-										touchPolicy: 0
-										touchBehavior: 0
-									}]
-								children: children_list []
-								name: "Ellipse 4"
-								visible: true
-								width: 50
-								height: 50
-								x: 614
-								y: 638
-								fillColor: #000000FF
-								arcWidth: 0
-								centralAngle: 360F
-								sectorRotation: 0F
-							}]
-						name: "Label 5"
-						visible: true
-						width: width@5801b5ea-543f-46ad-ac95-00d40407b2de (propref<int>)
-						height: height@5801b5ea-543f-46ad-ac95-00d40407b2de (propref<int>)
-						x: 0
-						y: 0
-						text: "label"
-						textColor: #000000FF
-						font: font_resource(c3183d7f-03a8-49fa-99d8-644a4312b732)
-						{
-							file: "PT_Sans_Narrow.ttf"
-							size: 100
-						}
-						horizontalAlign: 1
-						verticalAlign: 0
-					}]
-				name: "Rectangle 3"
+				children: children_list []
+				name: "background"
 				visible: true
 				width: width@a075dc3b-25c2-4f47-8476-4b12fa42fab4 (propref<int>)
 				height: height@a075dc3b-25c2-4f47-8476-4b12fa42fab4 (propref<int>)
 				x: 0
 				y: 0
-				fillColor: #FFFFFFFF
+				fillColor: @af66ba07-d9db-41c1-a543-11b5323fa844 (objectref<color>)
+			}, 
+			GtfContainer_template_instance(31f4cc19-7761-41b2-986d-9d5959abf8bf)
+			{
+				name: "home_button"
+				template: @37538332-8afd-45a9-bc6f-34198f6c046d (objectref<GtfContainer_template>)
+				children: children_list []
+				y: 650
+				visible: visible@37538332-8afd-45a9-bc6f-34198f6c046d (propref<bool>)
+			}, 
+			GtfAlphaMask(a3560d7c-d3aa-4f38-8965-9818211eaa8a)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfRectangle(ecdefc23-48d7-43e5-a7ae-dbe0f6b5fdcf)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "menu_rectangle"
+						visible: true
+						width: 1280
+						height: 720
+						x: 43
+						y: 37
+						fillColor: #333333FF
+					}, 
+					GtfInstantiator(6c2bd8a9-3a17-4fb5-9312-786e940e5710)
+					{
+						features: feature_list [
+							LayoutPolicyBox(42174a40-e751-465f-8bb4-4dcd44bc98bf)
+							{
+								gap: 0
+								layoutDirection: 1
+							}]
+						children: children_list [
+							GtfRectangle(4e3e83a8-33a9-47af-8cc5-c71879520bd7)
+							{
+								features: feature_list [
+									LineIndex(80c8d65f-15b8-4233-8fe5-fc45fb7ab9a2)
+									{
+										lineIndex: 0
+									}]
+								children: children_list [
+									GtfLabel(dc4848cb-f942-42eb-9f1d-0c150a2ce4da)
+									{
+										features: feature_list [
+											TouchShortReleased(3ab86545-9cea-461a-b914-3ed7270873fe)
+											{
+												touchShortReleased: function<bool,int,int,int,int>(e28bfffb-42c7-49b1-a585-bd041fb629ef)
+												{
+													script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+														"{" \
+														"    dp:Radio:radio_freq = dp:Radio:radio_stations_list[v:this->^.lineIndex]" \
+														"    false" \
+														"}"
+												}
+											}, 
+											StateTouched(dff00f52-77ed-4ea9-ac7e-b5483b56eda8)
+											{
+												touchable: true
+												touched: false
+												touchPolicy: 0
+												touchBehavior: 0
+											}]
+										children: children_list []
+										name: "radio_station"
+										visible: true
+										width: 389
+										height: 60
+										x: 19
+										y: 0
+										text: ""
+										textColor: #FFFFFFFF
+										font: font_resource(96d73bbc-45b6-4078-a174-ce6e173b2412)
+										{
+											file: "Fonts\\HelveticaNowDisplay-Regular.otf"
+											size: 30
+										}
+										horizontalAlign: 0
+										verticalAlign: 0
+									}]
+								name: "background"
+								visible: true
+								width: 391
+								height: 60
+								x: 0
+								y: 0
+								fillColor: #FFFFFF00
+								setText: conditional_script(f5f755a4-a1c1-4e17-9309-4862b2e2e6d8)
+								{
+									triggerList: trigger_list(3ae9feed-5cbb-43e2-b9fa-6da920dab7fd)
+									{
+										script: "v:this.lineIndex" \
+											"dp:Radio:radio_stations"
+									}
+									onTrigger: function<bool,bool>(d276472b-d5f6-4826-b7fd-ba01d20ed5ce)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	v:this->radio_station.text = dp:Radio:radio_stations[v:this.lineIndex]" \
+											"	false" \
+											"}"
+									}
+								}
+							}]
+						name: "function_list"
+						visible: true
+						width: 400
+						height: 443
+						x: 727
+						y: 176
+						numItems: 5
+						lineMapping: intlist []
+					}, 
+					GtfLabel(8e338338-0280-4bad-968c-813cc70ecc2c)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "freq"
+						visible: true
+						width: 312
+						height: 217
+						x: 189
+						y: 187
+						text: string_scriptedValue(53cfdfcd-cfef-46a5-9df0-6d7ef805cb02)
+						{
+							triggerList: trigger_list(f005d547-4aa9-4876-b102-fc61db721810)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(be6b2d3f-941a-4224-bf30-0195d41c9181)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<string>(db69081c-6726-4b06-aca7-78032d3500b5)
+							{
+								script: "function()" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	f:format_float(\"%.1f\", true, dp:Radio:radio_freq) + \"\"" \
+									"}"
+							}
+							write: function<bool,string>(5099d1dc-e76a-4cd1-9754-f07145814767)
+							{
+								script: "function(v:arg0::string)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						textColor: #FFFFFFFF
+						font: font_resource(3db04469-6a93-4896-853c-af21545f693f)
+						{
+							file: "Fonts\\HelveticaNowDisplay-Black.otf"
+							size: 100
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfImage(a33632b6-81a3-43b5-870d-52bf122ee630)
+					{
+						features: feature_list [
+							ScaleMode(1f0db4c6-cb71-4d14-b1d0-21944337499c)
+							{
+								scaleMode: 2
+							}, 
+							TouchShortReleased(1980b72a-6ee6-4e0f-940d-a04ccf5581bc)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(4b90be43-82cc-4e17-b4c8-5f91c1176790)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    if(dp:Radio:radio_freq <= 87.6)" \
+										"    	dp:Radio:radio_freq = 108.0" \
+										"    else" \
+										"	    dp:Radio:radio_freq -= 0.1" \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(0d34375f-25e8-4c1f-916d-0e105302089d)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list []
+						name: "left_arrow"
+						visible: true
+						width: 40
+						height: 40
+						x: 160
+						y: 275
+						image: image_resource(f6ee5d1a-565c-40d9-853b-2d0e93384411)
+						{
+							file: "Icons\\radio\\left arrow.png"
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 0
+					}, 
+					GtfImage(332d16e5-89fc-49c5-9124-6679f47085ad)
+					{
+						features: feature_list [
+							ScaleMode(d32bb124-5569-440e-849a-5d8d7db7fd05)
+							{
+								scaleMode: 2
+							}, 
+							TouchShortReleased(dd4b4f83-25d0-499b-9ffe-a24d4b41b02f)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(85785ac5-b3c3-4fbf-85fc-925b4b96d038)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    if(dp:Radio:radio_freq >= 107.9)" \
+										"    	dp:Radio:radio_freq = 87.5" \
+										"    else" \
+										"	    dp:Radio:radio_freq += 0.1" \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(98865845-acaf-479f-ba61-818ad5429abb)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list []
+						name: "right_arrow"
+						visible: true
+						width: 40
+						height: 40
+						x: 490
+						y: 275
+						image: image_resource(a2a6f582-ea75-41b9-b883-52f6b78f1bae)
+						{
+							file: "Icons\\radio\\right arrow.png"
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 0
+					}, 
+					GtfLabel(cbabf602-85a1-4a6d-9c48-3603051eb253)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "mid_freq"
+						visible: true
+						width: 74
+						height: 67
+						x: 320
+						y: 480
+						text: "97.5"
+						textColor: #FFFFFFFF
+						font: font_resource(7c42d4fb-46e3-4674-afee-125775992d23)
+						{
+							file: "Fonts\\HelveticaNowDisplay-ExtraBold.otf"
+							size: 20
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}, 
+					GtfLabel(1a09a138-ce98-4657-a5a5-f6e59d525f20)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "highest_freq"
+						visible: true
+						width: 74
+						height: 67
+						x: 490
+						y: 480
+						text: "108.0"
+						textColor: #FFFFFFFF
+						font: font_resource(a5452cc9-a7cd-4008-ac46-3c8209b297e1)
+						{
+							file: "Fonts\\HelveticaNowDisplay-ExtraBold.otf"
+							size: 20
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}, 
+					GtfLabel(bfe4bf1f-c28f-42e7-9a41-93b7bd53c3c0)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "lowest_freq"
+						visible: true
+						width: 74
+						height: 67
+						x: 155
+						y: 480
+						text: "87.5"
+						textColor: #FFFFFFFF
+						font: font_resource(ede509b8-2374-49bd-a285-9183e9ca5440)
+						{
+							file: "Fonts\\HelveticaNowDisplay-ExtraBold.otf"
+							size: 20
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}, 
+					GtfAlphaMask(a2b2a8d0-17f6-4756-9774-2cab8757ec30)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfContainer_template_instance(708c5a31-c6ff-43aa-a404-97acf3ab3fb9)
+							{
+								name: "volume_bar"
+								template: @380f76a9-8656-46e2-b4d1-d77e6b1d4a14 (objectref<GtfContainer_template>)
+								children: children_list []
+								x: 615
+								y: 78
+							}]
+						name: "volume_mask"
+						visible: true
+						width: 1280
+						height: 720
+						x: 0
+						y: 0
+						enabled: true
+						image: image_resource(1ff69a20-aa3e-4222-b3e1-dad967c5e9ce)
+						{
+							file: "Graphic Elements\\Alpha Masks\\volume bar mask.jpg"
+						}
+						horizontalAlign: 0
+						verticalAlign: 1
+						scaleMode: 0
+					}, 
+					GtfImage(5b184269-bed3-4723-9401-07471ffe7e1a)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfRectangle(3aa4dff6-f4db-4ea9-a250-74be6a8d3825)
+							{
+								features: feature_list [
+									StateTouched(aad2dc6a-8d08-4789-8c36-7c122d0a1e32)
+									{
+										touchable: true
+										touched: false
+										touchPolicy: 1
+										touchBehavior: 1
+									}]
+								children: children_list []
+								name: "freq_chosen_line"
+								visible: true
+								width: 7
+								height: 61
+								x: int_scriptedValue(a57e3125-732b-4a7b-9173-6859abc42c66)
+								{
+									triggerList: trigger_list(0dc97f6b-dc68-44df-8459-f61c84362b16)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(5d1d7d40-0016-4e01-9a64-07d68009472a)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<int>(cf045d72-c51a-4e7d-9897-d9be3fa5eb26)
+									{
+										script: "function()" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	f:floor(40.0 + v:this.ratio * 17.0)" \
+											"}"
+									}
+									write: function<bool,int>(58e1d77c-a5bb-463d-a180-1a8c84aaffba)
+									{
+										script: "function(v:arg0::int)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								y: -1
+								fillColor: @f490717d-9d6d-48ab-8a26-8a47b0dbc54d (objectref<color>)
+								ratio: float_scriptedValue(4f49e8b5-d7e6-47d0-a274-2c640a346edc)
+								{
+									triggerList: trigger_list(0c60220f-ce85-49db-aa8e-159c168d0e56)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(3f3f358e-59bb-420d-87cb-8e91cf83c351)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<float>(a5b419a8-96f9-4c19-9f48-293df9d62882)
+									{
+										script: "function()" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	dp:Radio:radio_freq - 87.50" \
+											"}"
+									}
+									write: function<bool,float>(77872d02-3e9f-44a4-b5a1-9ec11b6e713c)
+									{
+										script: "function(v:arg0::float)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+							}]
+						name: "freq_lines"
+						visible: true
+						width: 437
+						height: 66
+						x: 129
+						y: 430
+						image: image_resource(e18648b7-b41c-48d8-966c-d08654e8e87f)
+						{
+							file: "Icons\\radio\\freq_line.png"
+						}
+						sRGB: false
+						horizontalAlign: 1
+						verticalAlign: 1
+					}]
+				name: "menu_mask"
+				visible: true
+				width: 1280
+				height: 720
+				x: 0
+				y: 0
+				enabled: true
+				image: image_resource(e099c4c4-ae76-4a2d-bea7-325c3930c588)
+				{
+					file: "Graphic Elements\\menu mask.jpg"
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+				scaleMode: 2
+			}, 
+			GtfAlphaMask(344684d1-1e3f-4ee8-9702-7b3f2743d7c6)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfRectangle(b6b56f5b-fd58-4fec-86a8-d02068246f3a)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLabel(0fd6b51b-2959-459b-bcf2-fe9e64c4f0fd)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "list_label"
+								visible: true
+								width: 374
+								height: 76
+								x: 745
+								y: 101
+								text: "Stations"
+								textColor: #FFFFFFFF
+								font: font_resource(dd746746-36e4-4cfc-9eeb-9ea02e0b1ff4)
+								{
+									file: "Fonts\\HelveticaNowDisplay-Bold.otf"
+									size: 30
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}, 
+							GtfLabel(31975428-6415-4299-8e9a-e9dc0b5a9524)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "function_label"
+								visible: true
+								width: 374
+								height: 76
+								x: 154
+								y: 101
+								text: "FM-Radio"
+								textColor: #FFFFFFFF
+								font: font_resource(cdf9e879-ae98-44c1-802b-251382963cd2)
+								{
+									file: "Fonts\\HelveticaNowDisplay-Bold.otf"
+									size: 30
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}, 
+							GtfImage(aead843c-8aaa-478e-a0ea-1d192114cf94)
+							{
+								features: feature_list [
+									ScaleMode(183ed3dd-a86c-46da-8691-0ac42b49acf8)
+									{
+										scaleMode: 2
+									}]
+								children: children_list []
+								name: "volume_icon"
+								visible: true
+								width: 51
+								height: 44
+								x: 616
+								y: 122
+								image: image_resource(9e1a504a-c4d0-4402-81c7-199c3de01554)
+								{
+									file: "Icons\\volume.png"
+								}
+								sRGB: false
+								horizontalAlign: 1
+								verticalAlign: 0
+							}]
+						name: "menu_title_bg"
+						visible: true
+						width: 1280
+						height: 720
+						x: 2
+						y: 1
+						fillColor: @f490717d-9d6d-48ab-8a26-8a47b0dbc54d (objectref<color>)
+					}]
+				name: "menu_titles_mask"
+				visible: true
+				width: 1280
+				height: 720
+				x: 0
+				y: 0
+				enabled: true
+				image: image_resource(8dad6b64-eb25-44b2-b966-796ae167c190)
+				{
+					file: "Graphic Elements\\menu title mask.jpg"
+				}
+				horizontalAlign: 0
+				verticalAlign: 1
+				scaleMode: 0
 			}]
 		name: "Elements"
 		visible: true
@@ -79,5 +567,6 @@ GtfContainer_template(25a974a8-a71f-4d8f-bad2-86b065f546c6)
 		x: 0
 		y: 0
 	}
-	text: text@804b8644-5000-404e-8ded-e1b1b4508426 (propref<string>)
+	text: text@31975428-6415-4299-8e9a-e9dc0b5a9524 (propref<string>)
+	"text 2": text@0fd6b51b-2959-459b-bcf2-fe9e64c4f0fd (propref<string>)
 }

@@ -1,0 +1,98 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(380f76a9-8656-46e2-b4d1-d77e6b1d4a14)
+{
+	name: "Volume Bar"
+	structure: GtfContainer(fde784cd-fe18-4590-84c1-56e0b69076ae)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(4f934db5-cc0e-4297-9aab-3a0ca15c81b8)
+			{
+				features: feature_list [
+					TouchPressed(9036c27a-f8e8-4c9b-b72d-e48cbdefa826)
+					{
+						touchPressed: function<bool,int,int,int,int>(35450e9b-d85b-4a6c-8e9d-3c0bb7a4a139)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	dp:Music:volume_y = v:y - 100" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(131a7370-b986-4db5-908b-ed10e6227248)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list []
+				name: "blank_line"
+				visible: true
+				width: 6
+				height: 400
+				x: 22
+				y: 100
+				fillColor: @af66ba07-d9db-41c1-a543-11b5323fa844 (objectref<color>)
+			}, 
+			GtfEllipse(352957b3-07b5-4e4d-b8a8-c1daba0d1762)
+			{
+				features: feature_list [
+					TouchMove(3affa9ec-89a8-4d11-879b-4283e6d949cf)
+					{
+						touchMoved: function<bool,int,int,int,int>(5d338803-5522-42c9-a101-53329d14918d)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.y = v:y - 100" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(fdce9f4d-f4ce-415b-bac5-b76540b661c7)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 1
+						touchBehavior: 1
+					}, 
+					Moveable(e717a6b8-1353-4962-8009-3c0bdd913ef0)
+					{
+						moveDirection: 1
+					}]
+				children: children_list [
+					GtfRectangle(2305cdf6-8c38-4906-91b8-7a0568f18446)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "volume level"
+						visible: true
+						width: 6
+						height: 720
+						x: 12
+						y: 0
+						fillColor: @f490717d-9d6d-48ab-8a26-8a47b0dbc54d (objectref<color>)
+					}]
+				name: "volume_circle"
+				visible: true
+				width: 30
+				height: 30
+				x: 10
+				y: @3ab94536-85d6-42db-a01d-9ae9b787f6ad (objectref<int>)
+				fillColor: @f490717d-9d6d-48ab-8a26-8a47b0dbc54d (objectref<color>)
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}]
+		name: "Elements"
+		visible: true
+		width: 50
+		height: 720
+		x: 0
+		y: 0
+	}
+	x: x@fde784cd-fe18-4590-84c1-56e0b69076ae (propref<int>)
+	y: y@fde784cd-fe18-4590-84c1-56e0b69076ae (propref<int>)
+}

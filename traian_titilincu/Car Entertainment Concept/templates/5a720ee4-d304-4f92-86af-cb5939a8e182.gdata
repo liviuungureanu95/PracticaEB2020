@@ -2,12 +2,30 @@ EBGUIDE 6.10.0.200602120856;
 
 GtfContainer_template(5a720ee4-d304-4f92-86af-cb5939a8e182)
 {
-	name: "Background"
+	name: "Main Menu"
 	structure: GtfContainer(8932d75d-3b5d-4397-b991-49a8ca353aa1)
 	{
 		features: feature_list []
 		children: children_list [
-			GtfRectangle(ea62a2ca-9708-404e-abc1-1e75a060a0d3)
+			GtfContainer_template_instance(d0d633cc-410e-4ab3-b17d-e8dbed438b2b)
+			{
+				name: "background_animation"
+				template: @0db2a9bf-6e50-420f-88a3-e0a90f5bcb26 (objectref<GtfContainer_template>)
+				children: children_list []
+			}, 
+			GtfRectangle(fb60e4da-2895-435a-beb4-ab3908f8aa8f)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Rectangle 2"
+				visible: false
+				width: 1280
+				height: 720
+				x: 0
+				y: 0
+				fillColor: @af66ba07-d9db-41c1-a543-11b5323fa844 (objectref<color>)
+			}, 
+			GtfContainer(243e59bf-086e-46ba-ac36-2e8ca72c5374)
 			{
 				features: feature_list []
 				children: children_list [
@@ -18,15 +36,15 @@ GtfContainer_template(5a720ee4-d304-4f92-86af-cb5939a8e182)
 						name: "Main Menu"
 						visible: true
 						width: width@8932d75d-3b5d-4397-b991-49a8ca353aa1 (propref<int>)
-						height: 200
+						height: 164
 						x: 0
 						y: 0
 						text: "Main Menu"
-						textColor: #000000FF
+						textColor: #FFFFFFFF
 						font: font_resource(56927bd6-79eb-45ed-a9b5-f71ac10be93d)
 						{
-							file: "PT_Sans_Narrow.ttf"
-							size: 100
+							file: "Fonts\\HelveticaNowDisplay-ExtraBold.otf"
+							size: 50
 						}
 						horizontalAlign: 1
 						verticalAlign: 0
@@ -36,9 +54,13 @@ GtfContainer_template(5a720ee4-d304-4f92-86af-cb5939a8e182)
 						name: "Radio"
 						template: @9985e05c-d1f0-4f3c-9f37-b0a2cad130cf (objectref<GtfContainer_template>)
 						children: children_list []
-						text: "Radio"
 						x: 95
-						y: 200
+						y: 180
+						text: "Radio"
+						image: image_resource(beb41993-2591-414f-a80b-719595f43a62)
+						{
+							file: "Icons\\radio.png"
+						}
 						touchShortReleased: function<bool,int,int,int,int>(214d88d8-aa08-4785-b2d6-72676bf4f9eb)
 						{
 							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
@@ -53,9 +75,13 @@ GtfContainer_template(5a720ee4-d304-4f92-86af-cb5939a8e182)
 						name: "Music"
 						template: @9985e05c-d1f0-4f3c-9f37-b0a2cad130cf (objectref<GtfContainer_template>)
 						children: children_list []
-						text: "Music"
 						x: 356
-						y: 200
+						y: 180
+						text: "Music"
+						image: image_resource(e64cc463-5fd4-49f4-b12e-488910639efc)
+						{
+							file: "Icons\\music.png"
+						}
 						touchShortReleased: function<bool,int,int,int,int>(a4749e56-786b-4290-92f7-be55fc5a0e60)
 						{
 							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
@@ -70,9 +96,10 @@ GtfContainer_template(5a720ee4-d304-4f92-86af-cb5939a8e182)
 						name: "TV"
 						template: @9985e05c-d1f0-4f3c-9f37-b0a2cad130cf (objectref<GtfContainer_template>)
 						children: children_list []
-						text: "TV"
 						x: 614
-						y: 200
+						y: 180
+						text: "TV"
+						image: image@9985e05c-d1f0-4f3c-9f37-b0a2cad130cf (propref<image>)
 						touchShortReleased: function<bool,int,int,int,int>(ca2fd93d-5f62-411a-9142-2809defacae6)
 						{
 							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
@@ -87,9 +114,13 @@ GtfContainer_template(5a720ee4-d304-4f92-86af-cb5939a8e182)
 						name: "Videos"
 						template: @9985e05c-d1f0-4f3c-9f37-b0a2cad130cf (objectref<GtfContainer_template>)
 						children: children_list []
-						text: "Videos"
 						x: 904
-						y: 200
+						y: 180
+						text: "Videos"
+						image: image_resource(f2808e78-daa9-48da-9615-93fe3ea1f7e6)
+						{
+							file: "Icons\\videos.png"
+						}
 						touchShortReleased: function<bool,int,int,int,int>(706bcb18-72a0-4a36-ad1c-9fe628eab162)
 						{
 							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
@@ -104,9 +135,13 @@ GtfContainer_template(5a720ee4-d304-4f92-86af-cb5939a8e182)
 						name: "Settings"
 						template: @9985e05c-d1f0-4f3c-9f37-b0a2cad130cf (objectref<GtfContainer_template>)
 						children: children_list []
-						text: "Settings"
 						x: 88
 						y: 442
+						text: "Settings"
+						image: image_resource(15d4ced0-aa87-4aed-b1be-c79d20792a1d)
+						{
+							file: "Icons\\settings.png"
+						}
 						touchShortReleased: function<bool,int,int,int,int>(3ccfc08a-e86c-4244-9082-a6f189042b28)
 						{
 							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
@@ -115,14 +150,32 @@ GtfContainer_template(5a720ee4-d304-4f92-86af-cb5939a8e182)
 								"    false" \
 								"}"
 						}
+					}, 
+					GtfAlphaMask(b94045c1-4423-431c-b828-95bbe19a38de)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Icons Alpha Mask"
+						visible: true
+						width: 1280
+						height: 720
+						x: 0
+						y: 1
+						enabled: true
+						image: image_resource(ba02752a-af62-48b7-847c-eefd5eb3e723)
+						{
+							file: "Icons\\radio.png"
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+						scaleMode: 2
 					}]
-				name: "BG"
+				name: "menu_container"
 				visible: true
-				width: width@8932d75d-3b5d-4397-b991-49a8ca353aa1 (propref<int>)
-				height: height@8932d75d-3b5d-4397-b991-49a8ca353aa1 (propref<int>)
+				width: 100
+				height: 100
 				x: 0
 				y: 0
-				fillColor: #FFFFFFFF
 			}]
 		name: "Elements"
 		visible: true

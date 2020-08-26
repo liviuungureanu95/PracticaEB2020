@@ -1,0 +1,172 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(0db2a9bf-6e50-420f-88a3-e0a90f5bcb26)
+{
+	name: "Background Animation"
+	structure: GtfContainer(69e19f1b-cab7-4e1d-80f1-1df0d5ddcc48)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfImage(208a18f8-9d7f-4458-8a43-33608a81156d)
+			{
+				features: feature_list [
+					Coloration(9715bd41-1f2b-44b0-93b5-2bc676fc3007)
+					{
+						colorationEnabled: true
+						colorationColor: @f490717d-9d6d-48ab-8a26-8a47b0dbc54d (objectref<color>)
+					}]
+				children: children_list []
+				name: "background_image"
+				visible: true
+				width: 1280
+				height: 720
+				x: 0
+				y: 0
+				image: image_scriptedValue(fe357f26-0ae8-48e8-a8b1-843648389898)
+				{
+					triggerList: trigger_list(def01f55-0322-4094-826a-15867c0b5fa4)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(016a4f27-855f-46c0-9b46-493e1a741bfb)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<image>(1167e23f-2833-483c-af33-9df070a47a76)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	dp:Animations:background_animation[v:this->^.animationIndex]" \
+							"}"
+					}
+					write: function<bool,image>(07d7da72-1519-403c-8460-deadaa1e5da3)
+					{
+						script: "function(v:arg0::image)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfParallelAnimation(56cef46b-2d66-4b56-92c3-e69412451fc3)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLinearInterpolationS32(37d0774a-ec30-4e97-99b7-24ba759e3dfc)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "index_change"
+						enabled: true
+						delay: 0
+						duration: 1000
+						repeat: 0
+						alternating: false
+						relative: false
+						start: 0
+						end: 17
+						target: animationIndex@69e19f1b-cab7-4e1d-80f1-1df0d5ddcc48 (propref<int>)
+					}, 
+					GtfLinearInterpolationS32(307f718a-98ce-4fae-aef6-ca76e279ebc4)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "index_change_2"
+						enabled: true
+						delay: 2000
+						duration: 1000
+						repeat: 0
+						alternating: false
+						relative: false
+						start: 17
+						end: 0
+						target: animationIndex@69e19f1b-cab7-4e1d-80f1-1df0d5ddcc48 (propref<int>)
+					}, 
+					GtfConstCurveS32(01165770-bcd1-4fc1-8894-03920db46920)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "constant_index"
+						enabled: true
+						delay: 1000
+						duration: 1000
+						repeat: 1
+						alternating: false
+						relative: false
+						value: 17
+						target: animationIndex@69e19f1b-cab7-4e1d-80f1-1df0d5ddcc48 (propref<int>)
+					}, 
+					GtfConstCurveS32(eb7aedfe-85f9-481f-a1e7-316abfdbce0c)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "constant_index copy 1"
+						enabled: true
+						delay: 3000
+						duration: 1000
+						repeat: 1
+						alternating: false
+						relative: false
+						value: 0
+						target: animationIndex@69e19f1b-cab7-4e1d-80f1-1df0d5ddcc48 (propref<int>)
+					}]
+				name: "background_animation"
+				enabled: true
+				repeat: 0
+				alternating: false
+				scale: 1F
+				onPlay: function<void,int,bool>(e6548fe4-8148-4b95-83f3-dedbdf2fb103)
+				{
+					script: "function(v:animation_time::int, v:forward::bool)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onPause: function<void,int>(c4080a1f-184e-471c-96c6-45cd7d855504)
+				{
+					script: "function(v:animation_time::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onTerminate: function<void,int,int>(ee45724a-9006-4c47-9236-7af7efca498b)
+				{
+					script: "function(v:animation_time::int, v:terminate::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+				animation_start: conditional_script(1dc4145c-a271-4d6e-8f3d-627673040ebc)
+				{
+					triggerList: trigger_list(635b94d0-b975-45c4-a213-e4ff2abe36f4)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(bb9dcdd7-7fa6-408f-8e91-9c2a7585e051)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	f:animation_play(v:this)" \
+							"	false" \
+							"}"
+					}
+				}
+			}]
+		name: "background_animation_container"
+		visible: true
+		width: 1280
+		height: 729
+		x: 0
+		y: 0
+		animationIndex: 0
+	}
+}

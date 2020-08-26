@@ -4,12 +4,158 @@ GtfView(60165f9b-69a0-4a7b-8248-4b14acb5e3b7)
 {
 	features: feature_list []
 	children: children_list [
-		GtfContainer_template_instance(93e2fae2-2e09-464f-bda5-d745346326c3)
+		GtfContainer_template_instance(49ac9fff-62d8-4cab-b9b9-37d7dc3a1eeb)
 		{
-			name: "Info 1"
-			template: @25a974a8-a71f-4d8f-bad2-86b065f546c6 (objectref<GtfContainer_template>)
+			name: "TV"
+			template: @a5cbedac-b6f8-4379-aa07-603d5e637695 (objectref<GtfContainer_template>)
 			children: children_list []
-			text: "TV"
+			text: string_scriptedValue(fcb31569-176d-45c2-a87c-e429fd0ac424)
+			{
+				triggerList: trigger_list(2be335a3-2b16-444b-8b4c-cd5bc402bc0d)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(b70b81dc-5bca-401c-805d-acf0b05c027b)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(8eae1226-49a3-4060-9d95-66cbc088d266)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:TV:tv_channels[dp:TV:tv_channel_index] + \"\"" \
+						"}"
+				}
+				write: function<bool,string>(cb8683d8-3be1-4e24-a586-a4a680a9fc68)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			image: image_scriptedValue(053731a3-6635-4828-a32f-423597653452)
+			{
+				triggerList: trigger_list(490464c1-3d8b-4657-86a0-30c21c2a070d)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(945cbb6e-4208-4284-945d-077199833fdc)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<image>(f419fe57-8b48-4414-9d03-2bf36601f148)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:TV:tv_images[dp:TV:tv_channel_index]" \
+						"}"
+				}
+				write: function<bool,image>(a055caa7-1763-4401-9dfc-e4bd7762730c)
+				{
+					script: "function(v:arg0::image)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			touchShortReleased: function<bool,int,int,int,int>(05d33aa1-b254-4e10-929d-54472d149479)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if (dp:TV:tv_channel_index == length dp:TV:tv_channels - 1)" \
+					"    {" \
+					"    	dp:TV:tv_channel_index = 0" \
+					"    }" \
+					"    else" \
+					"    {" \
+					"    	dp:TV:tv_channel_index += 1" \
+					"    }" \
+					"    dp:TV:tv_isPlay = true" \
+					"    false" \
+					"}"
+			}
+			"touchShortReleased 2": function<bool,int,int,int,int>(9a68507a-4b7d-474a-8bdd-10b362d640a7)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    if(dp:TV:tv_isPlay == true)" \
+					"    {" \
+					"    	dp:TV:tv_isPlay = false" \
+					"    }" \
+					"    else" \
+					"    {" \
+					"    	dp:TV:tv_isPlay = true" \
+					"    }" \
+					"    false" \
+					"}"
+			}
+			"touchShortReleased 3": function<bool,int,int,int,int>(dd231180-8f7a-4525-a93d-7b54d83c0120)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if (dp:TV:tv_channel_index == length dp:TV:tv_channels - 1)" \
+					"    {" \
+					"    	dp:TV:tv_channel_index = 0" \
+					"    }" \
+					"    else" \
+					"    {" \
+					"    	dp:TV:tv_channel_index += 1" \
+					"    }" \
+					"    dp:TV:tv_isPlay = true" \
+					"    false" \
+					"}"
+			}
+			"image 2": image_scriptedValue(a41dc613-fc1f-4717-b238-00f504f5b6a5)
+			{
+				triggerList: trigger_list(7cfb00aa-3cc7-4cf0-ba08-c8a01038f8e5)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(86c97ab1-be6e-4435-934f-373a0686d610)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<image>(937367a3-0752-46c9-8ab6-0f868b79f0b1)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	if(dp:TV:tv_isPlay == true)" \
+						"	{" \
+						"		dp:\"Graphic Elements\":play_states[0]" \
+						"	}" \
+						"	else" \
+						"	{" \
+						"		dp:\"Graphic Elements\":play_states[1]" \
+						"	}" \
+						"}"
+				}
+				write: function<bool,image>(24b945b4-866c-425a-a6aa-d2e5be54f6cd)
+				{
+					script: "function(v:arg0::image)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
 		}]
 	name: "TV View"
 	visible: true

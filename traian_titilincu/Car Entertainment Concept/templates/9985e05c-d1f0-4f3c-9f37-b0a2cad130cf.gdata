@@ -7,12 +7,16 @@ GtfContainer_template(9985e05c-d1f0-4f3c-9f37-b0a2cad130cf)
 	{
 		features: feature_list []
 		children: children_list [
-			GtfEllipse(eb669815-dec7-4f1f-8bbc-f957551832e4)
+			GtfImage(c84873ed-8b02-42f2-a542-9cff552912cc)
 			{
 				features: feature_list [
-					TouchShortReleased(8bcea226-8b57-4671-aac1-157dec594778)
+					ScaleMode(b6fcccd0-588e-43ef-94f6-8db41622a26e)
 					{
-						touchShortReleased: function<bool,int,int,int,int>(b1a0fb16-e676-4c6a-8f17-22644efe83f1)
+						scaleMode: 2
+					}, 
+					TouchShortReleased(efa71d38-cbdc-4b91-b428-9bd81cdc7bdd)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(b06a25a9-c4ff-4476-864f-52b5d58d9bce)
 						{
 							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 								"{" \
@@ -20,44 +24,47 @@ GtfContainer_template(9985e05c-d1f0-4f3c-9f37-b0a2cad130cf)
 								"}"
 						}
 					}, 
-					StateTouched(b614c090-5ac6-4376-8fe6-fca8774c60f0)
+					StateTouched(05707627-a1e9-44c0-87c6-56f0b884b7f1)
 					{
 						touchable: true
 						touched: false
 						touchPolicy: 0
 						touchBehavior: 0
 					}]
-				children: children_list [
-					GtfLabel(6b71b57f-4991-4647-805b-01b83cc5e3b9)
-					{
-						features: feature_list []
-						children: children_list []
-						name: "Label 4"
-						visible: true
-						width: width@eb669815-dec7-4f1f-8bbc-f957551832e4 (propref<int>)
-						height: height@eb669815-dec7-4f1f-8bbc-f957551832e4 (propref<int>)
-						x: 0
-						y: 0
-						text: "label"
-						textColor: #FFFFFFFF
-						font: font_resource(271f6bf4-1c1d-4175-89a2-3e23d5aecf65)
-						{
-							file: "PT_Sans_Narrow.ttf"
-							size: 40
-						}
-						horizontalAlign: 1
-						verticalAlign: 0
-					}]
-				name: "Ellipse 3"
+				children: children_list []
+				name: "Icon"
 				visible: true
-				width: width@c5353205-1bd3-4a10-927a-53c02f1e257a (propref<int>)
-				height: height@c5353205-1bd3-4a10-927a-53c02f1e257a (propref<int>)
-				x: 0
+				width: 150
+				height: 150
+				x: 25
 				y: 0
-				fillColor: #000000FF
-				arcWidth: 0
-				centralAngle: 360F
-				sectorRotation: 0F
+				image: image_resource(2891cc80-3261-4d93-b6eb-dd4629fa8e7c)
+				{
+					file: "Icons\\tv.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(40a3d483-02e8-4139-80cd-5e5902fb4a8f)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "button_label"
+				visible: true
+				width: 200
+				height: 50
+				x: 0
+				y: 150
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(45be00b5-6148-4501-9b4d-babc6aab4fc3)
+				{
+					file: "Fonts\\HelveticaNowDisplay-ExtraBold.otf"
+					size: 20
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
 			}]
 		name: "Elements"
 		visible: true
@@ -66,8 +73,9 @@ GtfContainer_template(9985e05c-d1f0-4f3c-9f37-b0a2cad130cf)
 		x: 0
 		y: 0
 	}
-	text: text@6b71b57f-4991-4647-805b-01b83cc5e3b9 (propref<string>)
 	x: x@c5353205-1bd3-4a10-927a-53c02f1e257a (propref<int>)
 	y: y@c5353205-1bd3-4a10-927a-53c02f1e257a (propref<int>)
-	touchShortReleased: touchShortReleased@8bcea226-8b57-4671-aac1-157dec594778 (propref<function<bool,int,int,int,int>>)
+	text: text@40a3d483-02e8-4139-80cd-5e5902fb4a8f (propref<string>)
+	image: image@c84873ed-8b02-42f2-a542-9cff552912cc (propref<image>)
+	touchShortReleased: touchShortReleased@efa71d38-cbdc-4b91-b428-9bd81cdc7bdd (propref<function<bool,int,int,int,int>>)
 }

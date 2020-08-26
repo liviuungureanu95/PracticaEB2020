@@ -1,0 +1,505 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(a5cbedac-b6f8-4379-aa07-603d5e637695)
+{
+	name: "Video Template"
+	structure: GtfContainer(bf380e22-c439-42c1-8a1d-13196f1b2fa1)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(b231585d-dcf9-4084-9ee9-56ba1012a1fd)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "background"
+				visible: true
+				width: width@bf380e22-c439-42c1-8a1d-13196f1b2fa1 (propref<int>)
+				height: height@bf380e22-c439-42c1-8a1d-13196f1b2fa1 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: @af66ba07-d9db-41c1-a543-11b5323fa844 (objectref<color>)
+			}, 
+			GtfAlphaMask(0145f3e1-f0f4-4980-9eec-ff1a392e8a42)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfRectangle(52dc1f81-3849-488d-9271-54541825abc7)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfImage(b902f98c-b61a-412d-93c6-ff1b8516e3aa)
+							{
+								features: feature_list [
+									ScaleMode(05886edb-af0e-47c1-8638-8a51df497417)
+									{
+										scaleMode: 2
+									}, 
+									StateTouched(d519a6fa-5b12-4bbe-8f15-b5f987dc157b)
+									{
+										touchable: true
+										touched: false
+										touchPolicy: 0
+										touchBehavior: 0
+									}, 
+									MoveOver(231a3b69-71cf-4bd2-9924-9f867d3b3a32)
+									{
+										moveOver: function<bool,int,int,int,int>(359bc93d-70db-41d3-ab95-9618921c52cf)
+										{
+											script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+												"{" \
+												"    if(dp:\"Graphic Elements\":isFullscreen == true)" \
+												"    {" \
+												"    	f:animation_play(v:this->^->^->^->buttons_mask->go_up)" \
+												"    }" \
+												"    false" \
+												"}"
+										}
+									}]
+								children: children_list []
+								name: "content"
+								visible: true
+								width: 935
+								height: 522
+								x: 178
+								y: 100
+								image: image_resource(c701933e-3117-48ff-a95b-dd6d10af467a)
+								{
+									file: ""
+								}
+								sRGB: false
+								horizontalAlign: 1
+								verticalAlign: 0
+							}]
+						name: "menu_rectangle"
+						visible: true
+						width: 1280
+						height: 720
+						x: 0
+						y: 0
+						fillColor: #333333FF
+					}]
+				name: "menu_mask"
+				visible: true
+				width: 1280
+				height: 720
+				x: 0
+				y: 0
+				enabled: true
+				image: image_resource(ac8c3381-8c9c-4fae-8dbf-13a0b573f6c2)
+				{
+					file: "Graphic Elements\\menu mask 2.jpg"
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+				scaleMode: 2
+			}, 
+			GtfAlphaMask(16cb39f5-33fd-4fd0-a140-9b3a2ddc7b53)
+			{
+				features: feature_list [
+					TouchShortReleased(b3566788-2f75-4806-8571-5050720d888b)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(12384a7f-b8a7-4cdd-93cf-933b4359f4de)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    if(dp:\"Graphic Elements\":isFullscreen == true)" \
+								"    {" \
+								"    	f:animation_pause(v:this->go_up)" \
+								"    }" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(2aa1ff2e-0058-481a-b9c4-b33a0a77c01e)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list [
+					GtfRectangle(a95b3fbc-f906-46a3-8bb2-b27f43dfd0e8)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfImage(d5323d31-340e-4b7b-b2e2-334e63a71d58)
+							{
+								features: feature_list [
+									ScaleMode(889a4421-1232-4805-a5b1-2f484d582a98)
+									{
+										scaleMode: 2
+									}, 
+									TouchShortReleased(f64eee50-3e9e-463a-85c7-2e69ee782a91)
+									{
+										touchShortReleased: function<bool,int,int,int,int>(5fecef70-a46c-4f37-b703-9a506ba4edf4)
+										{
+											script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+												"{" \
+												"    false" \
+												"}"
+										}
+									}, 
+									StateTouched(ec0d06b8-470a-49c1-bb54-a66bf1351470)
+									{
+										touchable: true
+										touched: false
+										touchPolicy: 0
+										touchBehavior: 0
+									}]
+								children: children_list []
+								name: "play_pause"
+								visible: true
+								width: 50
+								height: 50
+								x: 610
+								y: 530
+								image: image_resource(26b3ff07-c2a6-454f-ad16-0c90958b6853)
+								{
+									file: "Graphic Elements\\Buttons\\play.png"
+								}
+								sRGB: false
+								horizontalAlign: 1
+								verticalAlign: 0
+							}, 
+							GtfImage(d522c06b-bb2f-449d-8af8-7ccf87cc5f29)
+							{
+								features: feature_list [
+									ScaleMode(d8c3fb7b-d8b9-4b99-8383-daeadbbe68b7)
+									{
+										scaleMode: 2
+									}, 
+									TouchShortReleased(cbfe5dbf-1f90-454c-9c77-1ab9a4ac7b18)
+									{
+										touchShortReleased: function<bool,int,int,int,int>(4dd4dc03-2809-46ae-9778-a738a6c87b77)
+										{
+											script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+												"{" \
+												"    false" \
+												"}"
+										}
+									}, 
+									StateTouched(236f6ee6-7ffc-4f64-9cda-643ca04fe257)
+									{
+										touchable: true
+										touched: false
+										touchPolicy: 0
+										touchBehavior: 0
+									}]
+								children: children_list []
+								name: "previous"
+								visible: true
+								width: 50
+								height: 50
+								x: 550
+								y: 530
+								image: image_resource(ca4f7c01-4408-43e6-bc85-3981894f9bca)
+								{
+									file: "Graphic Elements\\Buttons\\previous.png"
+								}
+								sRGB: false
+								horizontalAlign: 1
+								verticalAlign: 0
+							}, 
+							GtfImage(4c8ef64f-57bf-4e25-9ff9-e5f2ddd8b592)
+							{
+								features: feature_list [
+									ScaleMode(74717b9a-87b9-41ad-8b40-f38f22cd03ef)
+									{
+										scaleMode: 2
+									}, 
+									TouchShortReleased(0ecf51be-2bb8-45d2-b88f-02fa03e37a83)
+									{
+										touchShortReleased: function<bool,int,int,int,int>(8d44195e-c11f-40fc-b6ee-62e7a3079d90)
+										{
+											script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+												"{" \
+												"    false" \
+												"}"
+										}
+									}, 
+									StateTouched(94d472df-0fad-4323-938b-0637f1e335c1)
+									{
+										touchable: true
+										touched: false
+										touchPolicy: 0
+										touchBehavior: 0
+									}]
+								children: children_list []
+								name: "next"
+								visible: true
+								width: 50
+								height: 50
+								x: 669
+								y: 530
+								image: image_resource(22bcb68c-cc49-4944-83c1-2f63a6466474)
+								{
+									file: "Graphic Elements\\Buttons\\next.png"
+								}
+								sRGB: false
+								horizontalAlign: 1
+								verticalAlign: 0
+							}, 
+							GtfLabel(cf5710c3-eb0e-4c2b-b9e9-b58290ff8030)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "title_label"
+								visible: true
+								width: 279
+								height: 46
+								x: 498
+								y: 485
+								text: "label"
+								textColor: #FFFFFFFF
+								font: font_resource(2b00bb34-43d7-46fd-880c-ae1bba5c9e5b)
+								{
+									file: "Fonts\\HelveticaNowDisplay-ExtraBold.otf"
+									size: 25
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}]
+						name: "background"
+						visible: true
+						width: 1280
+						height: 720
+						x: 0
+						y: 0
+						fillColor: @f490717d-9d6d-48ab-8a26-8a47b0dbc54d (objectref<color>)
+					}, 
+					GtfImage(cf9f5dcc-4416-49b3-989c-3df2772b4f11)
+					{
+						features: feature_list [
+							ScaleMode(5c0b7a6d-4a15-45bc-a106-e78c7a4fc761)
+							{
+								scaleMode: 2
+							}, 
+							TouchShortReleased(b64d418c-aed1-4ee6-8e94-97a7f92ae3ba)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(ae6fe1d5-e178-4943-84c6-b063b19ad999)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    if(dp:\"Graphic Elements\":isFullscreen == false)" \
+										"    {" \
+										"    	v:this->^->^->menu_mask.image = dp:\"Graphic Elements\":full_screen" \
+										"  	 	v:this->^->^->menu_mask->menu_rectangle->content.x = 0" \
+										"  	    v:this->^->^->menu_mask->menu_rectangle->content.y = 0" \
+										"  	    v:this->^->^->menu_mask->menu_rectangle->content.height = 720" \
+										"  		v:this->^->^->menu_mask->menu_rectangle->content.width = 1280" \
+										"  		v:this->^->^->home_button.visible = false" \
+										"    	f:animation_play(v:this->^->go_down)" \
+										"    	dp:\"Graphic Elements\":isFullscreen = true" \
+										"    	" \
+										"    }" \
+										"    else" \
+										"    {" \
+										"    	f:animation_cancel(v:this->^->go_up)" \
+										"    	v:this->^->^->menu_mask.image = dp:\"Graphic Elements\":small_screen" \
+										"  	 	v:this->^->^->menu_mask->menu_rectangle->content.x = 178" \
+										"  	    v:this->^->^->menu_mask->menu_rectangle->content.y = 100" \
+										"  	    v:this->^->^->menu_mask->menu_rectangle->content.height = 522" \
+										"  		v:this->^->^->menu_mask->menu_rectangle->content.width = 935" \
+										"    	dp:\"Graphic Elements\":isFullscreen = false" \
+										"    	v:this->^->^->home_button.visible = true" \
+										"    }" \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(09ee3603-f882-4d82-8e50-f300ff5c5164)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list []
+						name: "full_screen_icon"
+						visible: true
+						width: 30
+						height: 30
+						x: 733
+						y: 540
+						image: image_scriptedValue(40ef1608-bd3a-4af0-97b7-28b07bb0ebcf)
+						{
+							triggerList: trigger_list(d26c65df-e8e4-4ba3-a161-e1490df98184)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(709754d5-82ef-401c-bd20-fa3512cd3373)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<image>(bd343271-e0cb-4bda-910d-2fd96ff644d6)
+							{
+								script: "function()" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	if(dp:\"Graphic Elements\":isFullscreen == false)" \
+									"		dp:\"Graphic Elements\":maximize_minimize[0]" \
+									"	else" \
+									"		dp:\"Graphic Elements\":maximize_minimize[1]" \
+									"}"
+							}
+							write: function<bool,image>(2f804ebf-01b9-4760-8bcc-7fa8231e95db)
+							{
+								script: "function(v:arg0::image)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						sRGB: false
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfParallelAnimation(35165888-8ac7-403f-9970-242a68e88c05)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfFastStartS32(7cb6f622-3539-4a07-89d9-20b18f84bc2c)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "go_down"
+								enabled: true
+								delay: 0
+								duration: 1000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 0
+								end: 250
+								target: y@16cb39f5-33fd-4fd0-a140-9b3a2ddc7b53 (propref<int>)
+							}]
+						name: "go_down"
+						enabled: true
+						repeat: 1
+						alternating: false
+						scale: 1F
+						onPlay: function<void,int,bool>(1250f0ab-16ba-4bff-92f3-06e9fede8a47)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(c4965231-0e6d-4887-be0f-31d4606098a2)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(e37cca18-d6f7-4e27-b626-8c9ea747d3eb)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+					}, 
+					GtfParallelAnimation(36f32c70-e5c2-4823-a529-e2b179bfd9c6)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfFastStartS32(ab87d95c-ee52-4698-ba49-52e7e371f998)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "go_up"
+								enabled: true
+								delay: 0
+								duration: 1000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 250
+								end: 0
+								target: y@16cb39f5-33fd-4fd0-a140-9b3a2ddc7b53 (propref<int>)
+							}, 
+							GtfFastStartS32(66ecae94-e204-4b08-919e-c3b0aeff5262)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "go_up copy 1"
+								enabled: true
+								delay: 3000
+								duration: 1000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 0
+								end: 250
+								target: y@16cb39f5-33fd-4fd0-a140-9b3a2ddc7b53 (propref<int>)
+							}]
+						name: "go_up"
+						enabled: true
+						repeat: 1
+						alternating: false
+						scale: 1F
+						onPlay: function<void,int,bool>(83b662db-411e-4652-93cc-4d3372a0412f)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(d5306c1a-746b-4ec7-9e7d-b5ac8f292c6e)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(20ae223b-96ea-403f-b11e-8d7f47e6c3dc)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+					}]
+				name: "buttons_mask"
+				visible: true
+				width: 1280
+				height: 720
+				x: 0
+				y: 0
+				enabled: true
+				image: image_resource(254f6a2d-4c49-442b-a3e1-528b03246e86)
+				{
+					file: "Graphic Elements\\lower buttons mask.jpg"
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+				scaleMode: 0
+			}, 
+			GtfContainer_template_instance(1bba488d-b7a0-44fd-a1fa-3e38cdbf351d)
+			{
+				name: "home_button"
+				template: @37538332-8afd-45a9-bc6f-34198f6c046d (objectref<GtfContainer_template>)
+				children: children_list []
+				y: 650
+				visible: visible@37538332-8afd-45a9-bc6f-34198f6c046d (propref<bool>)
+			}]
+		name: "Elements"
+		visible: true
+		width: 1280
+		height: 720
+		x: 0
+		y: 0
+	}
+	text: text@cf5710c3-eb0e-4c2b-b9e9-b58290ff8030 (propref<string>)
+	image: image@b902f98c-b61a-412d-93c6-ff1b8516e3aa (propref<image>)
+	touchShortReleased: touchShortReleased@cbfe5dbf-1f90-454c-9c77-1ab9a4ac7b18 (propref<function<bool,int,int,int,int>>)
+	"touchShortReleased 2": touchShortReleased@f64eee50-3e9e-463a-85c7-2e69ee782a91 (propref<function<bool,int,int,int,int>>)
+	"touchShortReleased 3": touchShortReleased@0ecf51be-2bb8-45d2-b88f-02fa03e37a83 (propref<function<bool,int,int,int,int>>)
+	"image 2": image@d5323d31-340e-4b7b-b2e2-334e63a71d58 (propref<image>)
+}
