@@ -1,0 +1,71 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(3d8b2a56-e6db-4491-999e-67be2e62da91)
+{
+	name: "TopBar"
+	structure: GtfContainer(bf54efeb-c501-4b56-a3d7-f5b38c677b9c)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(5bff3e4e-ad85-49d3-b423-452535d07acc)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLabel(9c1a3931-ddf8-489b-9c3c-12162ca84ca4)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Label 3"
+						visible: true
+						width: width@5bff3e4e-ad85-49d3-b423-452535d07acc (propref<int>)
+						height: height@5bff3e4e-ad85-49d3-b423-452535d07acc (propref<int>)
+						x: 0
+						y: 0
+						text: "123"
+						textColor: #FFFFFFFF
+						font: font_resource(9148386f-f1a9-42c1-85ba-4a98024aef5d)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "Rectangle 1"
+				visible: true
+				width: 1280
+				height: 32
+				x: 0
+				y: 0
+				fillColor: #A9A9A9FF
+			}]
+		name: "Container 3"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		RefreshTime: conditional_script(301feb32-4d79-4521-b215-2590c6d04d43)
+		{
+			triggerList: trigger_list(6cb8c745-a7bc-48ac-9024-7e9ba39dfd5e)
+			{
+				script: "dp:RefreshClock"
+			}
+			onTrigger: function<bool,bool>(b4100259-694b-48dc-94c1-d16701d5c9dd)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	v:this->\"Rectangle 1\"->\"Label 3\".text=(f:format_int(\"%.2i\",f:localtime_hour(f:system_time()))" \
+					"	+\":\"+" \
+					"	f:format_int(\"%.2i\",f:localtime_minute(f:system_time()))" \
+					"	+\":\"+" \
+					"	f:format_int(\"%.2i\",f:localtime_second(f:system_time())))" \
+					"	dp:RefreshClock=!dp:RefreshClock" \
+					"	" \
+					"	" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+}

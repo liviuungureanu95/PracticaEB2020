@@ -1,0 +1,1918 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(08a1bcfe-3f85-4f32-b17c-7c5d0eb0ac9f)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(eb7dd037-407b-418b-b302-e3dbad271f73)
+		{
+			name: "View_BG 1"
+			template: @6b61b73f-f21a-4a1b-ba8e-7deca7fb390f (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfImage(250dcb56-a794-420c-9008-2f2437bd1eef)
+				{
+					features: feature_list [
+						ScaleMode(ec294bfb-6c4b-45b6-a75b-2b625c3baa44)
+						{
+							scaleMode: 2
+						}]
+					children: children_list [
+						GtfImage(e4f8727f-9a04-4b71-8d67-c692e8a364cf)
+						{
+							features: feature_list [
+								ScaleMode(dc07e2a6-f478-4a08-a30a-21228186895f)
+								{
+									scaleMode: 1
+								}, 
+								TouchShortReleased(a6ad3895-e3bc-459a-baef-5fe0140a3b27)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(f71c4227-a72c-4d3e-b4d8-1e596ccd8353)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	dp:Lock=!dp:Lock" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(9f783631-2a9c-4422-bf71-f2473170abb9)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list []
+							name: "Image 1"
+							visible: true
+							width: 106
+							height: 99
+							x: 960
+							y: 110
+							image: image_scriptedValue(6730d5e9-f64a-4e42-9569-0a1c3f83ea28)
+							{
+								triggerList: trigger_list(fd554d80-581a-4eea-9665-eeb17980e1a0)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(eb4505af-a208-42d9-861c-29b99c6eb4cd)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<image>(65bdbafc-26f0-4b0b-852d-8ad80befe74d)
+								{
+									script: "function()" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	if(dp:Lock)" \
+										"	{dp:\"IMG_Lock/Unlock\"[0]}" \
+										"	else" \
+										"	{dp:\"IMG_Lock/Unlock\"[1]}" \
+										"" \
+										"}"
+								}
+								write: function<bool,image>(9d990e16-d37b-4b86-92d1-ffdfc297d8e8)
+								{
+									script: "function(v:arg0::image)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}]
+					name: "ImageHouseModel"
+					visible: true
+					width: 1342
+					height: 800
+					x: -43
+					y: 265
+					image: image_resource(c8458df6-51d6-4324-aa1c-8ef03045f822)
+					{
+						file: "housePNG.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfRectangle(ba9a3567-03c7-4143-bddc-610c7c9f175f)
+				{
+					features: feature_list [
+						StateTouched(98c5e7db-3bb9-4bf1-8554-b80360839a10)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfContainer(b977db05-52a4-4fce-a753-1e81811038e1)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfRectangle(685f5542-8f24-4c2a-8dab-c995fa7ff978)
+								{
+									features: feature_list [
+										TouchShortReleased(462822a1-471f-4553-8f3b-94a16cfb1807)
+										{
+											touchShortReleased: function<bool,int,int,int,int>(a55f4aec-4b18-49c9-8851-ca24eec932db)
+											{
+												script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+													"{" \
+													"	dp:thermalViewRoomValues[0]+=dp:BufferTemp" \
+													"    false" \
+													"}"
+											}
+										}, 
+										StateTouched(77bd895e-e157-45fe-b809-e760f821f5f1)
+										{
+											touchable: true
+											touched: false
+											touchPolicy: 0
+											touchBehavior: 0
+										}]
+									children: children_list [
+										GtfLabel(da3493ab-82df-47b6-9f92-7861f4dc08fb)
+										{
+											features: feature_list [
+												TouchShortReleased(e412c612-246f-4f00-a343-0f121b3b639e)
+												{
+													touchShortReleased: function<bool,int,int,int,int>(61b7fdc3-eb7c-4b53-8212-b43aa7773539)
+													{
+														script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+															"{" \
+															"	dp:thermalViewRoomValues[0]+=dp:BufferTemp" \
+															"    false" \
+															"}"
+													}
+												}, 
+												StateTouched(6e170c9d-e8ef-4d66-8cc5-b8fad72f50c2)
+												{
+													touchable: true
+													touched: false
+													touchPolicy: 0
+													touchBehavior: 0
+												}]
+											children: children_list []
+											name: "Label 1"
+											visible: true
+											width: 59
+											height: 100
+											x: 145
+											y: 33
+											text: string_scriptedValue(eb91167b-4c43-4579-a9d4-91bbd93e944f)
+											{
+												triggerList: trigger_list(8bd3202e-5ee3-4ffb-8d68-25f53fcd5bfe)
+												{
+													script: ""
+												}
+												onTrigger: function<bool,bool>(b70631d9-412d-4cbd-bc1f-a779d6662590)
+												{
+													script: "function(v:arg0::bool)" \
+														"{" \
+														"	// todo: auto generated return value, please adapt" \
+														"	false" \
+														"}"
+												}
+												read: function<string>(50a5c4eb-22c2-4851-93a6-45985ae8ba16)
+												{
+													script: "function()" \
+														"{" \
+														"	// todo: auto generated return value, please adapt" \
+														"	f:float2string(dp:thermalViewRoomValues[0])" \
+														"}"
+												}
+												write: function<bool,string>(3c3a0452-5e39-4097-bb56-63740f4905f3)
+												{
+													script: "function(v:arg0::string)" \
+														"{" \
+														"	// todo: auto generated return value, please adapt" \
+														"	false" \
+														"}"
+												}
+											}
+											textColor: #FFFFFFFF
+											font: font_resource(22f36550-5a80-4fc7-91e7-d74c3e90912f)
+											{
+												file: "PT_Sans_Narrow.ttf"
+												size: 30
+											}
+											horizontalAlign: 0
+											verticalAlign: 0
+										}]
+									name: "TempRoom1"
+									visible: bool_scriptedValue(da965077-a925-46cc-9b85-67fe2837e3f2)
+									{
+										triggerList: trigger_list(1f724783-bf5e-4cdc-9d1d-c9c5d3f6ca57)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(857a8819-4c89-454e-a78d-5f48d8eb3dd5)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+										read: function<bool>(464823cd-f390-494f-a3c8-5916aebb3dc8)
+										{
+											script: "function()" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	dp:thermalView" \
+												"}"
+										}
+										write: function<bool,bool>(b1ddff96-facb-4885-b7d6-1fc658183d6e)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+									}
+									width: 366
+									height: 164
+									x: -96
+									y: 478
+									fillColor: color_scriptedValue(77e9b084-17a6-493f-8261-48a8ccf6b4c9)
+									{
+										triggerList: trigger_list(919ce3b2-07e5-4871-b77c-4297c80bd844)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(96fa6ca0-9653-42e4-a846-f014c0a69944)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+										read: function<color>(ebf44001-4208-4435-9c01-d52c667e6225)
+										{
+											script: "function()" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	if(dp:thermalViewRoomValues[0]<-10.00)" \
+												"	{dp:ColorsTemperature[0]}" \
+												"	else if((dp:thermalViewRoomValues[0]>-10.00)&&(dp:thermalViewRoomValues[0]<17.00))" \
+												"	{dp:ColorsTemperature[1]}" \
+												"	else if((dp:thermalViewRoomValues[0]>17.00)&&(dp:thermalViewRoomValues[0]<21.00))" \
+												"	{dp:ColorsTemperature[2]}" \
+												"	else if((dp:thermalViewRoomValues[0]>21.00)&&(dp:thermalViewRoomValues[0]<28.00))" \
+												"	{dp:ColorsTemperature[3]}" \
+												"	else" \
+												"	{dp:ColorsTemperature[4]}" \
+												"}"
+										}
+										write: function<bool,color>(fdb846fd-6d49-4a3f-8815-88cb979f4235)
+										{
+											script: "function(v:arg0::color)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+									}
+								}, 
+								GtfRectangle(ab89c77b-ecbb-4304-b46f-d587331cb9fe)
+								{
+									features: feature_list []
+									children: children_list [
+										GtfLabel(47bbc0df-8066-4971-a28c-7c8573621064)
+										{
+											features: feature_list [
+												TouchShortReleased(4c098b73-9e87-4ccc-adf5-42f27520e5bd)
+												{
+													touchShortReleased: function<bool,int,int,int,int>(cd620e50-0d58-407c-a6d3-6d307300181c)
+													{
+														script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+															"{" \
+															"	dp:thermalViewRoomValues[1]+=dp:BufferTemp" \
+															"    false" \
+															"}"
+													}
+												}, 
+												StateTouched(80445529-110e-4da8-8b70-9d2cdd296410)
+												{
+													touchable: true
+													touched: false
+													touchPolicy: 0
+													touchBehavior: 0
+												}]
+											children: children_list []
+											name: "Label 2"
+											visible: true
+											width: 61
+											height: 100
+											x: 130
+											y: 43
+											text: string_scriptedValue(e0554728-298c-47cf-8fdf-096c8b3fa899)
+											{
+												triggerList: trigger_list(ff38ae93-63f4-468d-9fed-6eb80dfcf582)
+												{
+													script: ""
+												}
+												onTrigger: function<bool,bool>(e8d7d5d1-1abd-4282-b7ee-fd7bf297417e)
+												{
+													script: "function(v:arg0::bool)" \
+														"{" \
+														"	// todo: auto generated return value, please adapt" \
+														"	false" \
+														"}"
+												}
+												read: function<string>(2a1565c6-1c2f-4bce-ba32-a5b14c7e26d4)
+												{
+													script: "function()" \
+														"{" \
+														"	// todo: auto generated return value, please adapt" \
+														"	f:float2string(dp:thermalViewRoomValues[1])" \
+														"}"
+												}
+												write: function<bool,string>(e13a17fc-2e71-4e31-a6a6-1ec0e5a62ae4)
+												{
+													script: "function(v:arg0::string)" \
+														"{" \
+														"	// todo: auto generated return value, please adapt" \
+														"	false" \
+														"}"
+												}
+											}
+											textColor: #FFFFFFFF
+											font: font_resource(b3fb2a9f-2c16-4118-86eb-faf8cb4b27ff)
+											{
+												file: "PT_Sans_Narrow.ttf"
+												size: 30
+											}
+											horizontalAlign: 0
+											verticalAlign: 0
+										}]
+									name: "TempRoom2"
+									visible: bool_scriptedValue(962c87bf-125d-4c51-8565-806ee58e6a4f)
+									{
+										triggerList: trigger_list(fc1998ac-baf1-4be6-b2b4-d5bfc21ef712)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(7b53c807-0160-487f-8a46-f34dd03d1029)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+										read: function<bool>(4594b905-c804-4586-bfe1-4ea1d129b1bd)
+										{
+											script: "function()" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	dp:thermalView" \
+												"}"
+										}
+										write: function<bool,bool>(c296851c-80ea-40c1-8ff4-33bf3f4da73b)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+									}
+									width: 338
+									height: 195
+									x: 133
+									y: 256
+									fillColor: color_scriptedValue(8c7c9ba1-7226-4915-b2b6-8b2437c76891)
+									{
+										triggerList: trigger_list(64e21872-d6ec-4c27-829f-cdd78dc5e235)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(690a635b-3d5e-4875-9b2e-6759ab3133c9)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+										read: function<color>(8102ee7e-47d0-40aa-aca9-95df27b57223)
+										{
+											script: "function()" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	if(dp:thermalViewRoomValues[1]<-10.00)" \
+												"	{dp:ColorsTemperature[0]}" \
+												"	else if((dp:thermalViewRoomValues[1]>-10.00)&&(dp:thermalViewRoomValues[1]<17.00))" \
+												"	{dp:ColorsTemperature[1]}" \
+												"	else if((dp:thermalViewRoomValues[1]>17.00)&&(dp:thermalViewRoomValues[1]<21.00))" \
+												"	{dp:ColorsTemperature[2]}" \
+												"	else if((dp:thermalViewRoomValues[1]>21.00)&&(dp:thermalViewRoomValues[1]<28.00))" \
+												"	{dp:ColorsTemperature[3]}" \
+												"	else" \
+												"	{dp:ColorsTemperature[4]}" \
+												"}"
+										}
+										write: function<bool,color>(982c66e0-cfe8-498a-aabb-c05a1ea294f8)
+										{
+											script: "function(v:arg0::color)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+									}
+								}, 
+								GtfRectangle(11a2ccaf-a222-4b45-90da-f4c05a949686)
+								{
+									features: feature_list [
+										TouchShortReleased(01606186-72f1-48c1-8c75-e02853b427b3)
+										{
+											touchShortReleased: function<bool,int,int,int,int>(6ea92f8a-11ef-4861-8399-c9f0dd05eaaf)
+											{
+												script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+													"{" \
+													"	dp:thermalViewRoomValues[2]+=dp:BufferTemp" \
+													"    false" \
+													"}"
+											}
+										}, 
+										StateTouched(264abc8a-2adb-4085-8b14-c0e803a79f09)
+										{
+											touchable: true
+											touched: false
+											touchPolicy: 0
+											touchBehavior: 0
+										}]
+									children: children_list [
+										GtfRectangle(d42318d7-3cae-43aa-8d15-8f1289bb0f86)
+										{
+											features: feature_list [
+												TouchShortReleased(66399bea-9def-405d-ae38-5b4184d9af0d)
+												{
+													touchShortReleased: function<bool,int,int,int,int>(75c21259-370d-4790-8e20-5d702089a63a)
+													{
+														script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+															"{" \
+															"	dp:thermalViewRoomValues[2]+=dp:BufferTemp" \
+															"    false" \
+															"}"
+													}
+												}, 
+												StateTouched(c7d96146-ae3c-4dff-8eea-6ca7f2321ab7)
+												{
+													touchable: true
+													touched: false
+													touchPolicy: 0
+													touchBehavior: 0
+												}]
+											children: children_list []
+											name: "TempRoom4C"
+											visible: true
+											width: 186
+											height: 27
+											x: 362
+											y: -27
+											fillColor: fillColor@11a2ccaf-a222-4b45-90da-f4c05a949686 (propref<color>)
+										}, 
+										GtfRectangle(ac7808f2-44d3-4cdf-a6a6-8b7584ccc885)
+										{
+											features: feature_list [
+												TouchShortReleased(ab39a6d3-58a0-49f1-ad4d-b33060bc0e76)
+												{
+													touchShortReleased: function<bool,int,int,int,int>(98b3c800-b95b-48b2-8f71-31e645a01203)
+													{
+														script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+															"{" \
+															"	dp:thermalViewRoomValues[2]+=dp:BufferTemp" \
+															"    false" \
+															"}"
+													}
+												}, 
+												StateTouched(7303f6b0-e611-4b8e-9ff1-db42add7528a)
+												{
+													touchable: true
+													touched: false
+													touchPolicy: 0
+													touchBehavior: 0
+												}]
+											children: children_list []
+											name: "TempRoom4b"
+											visible: true
+											width: 328
+											height: 196
+											x: 194
+											y: -223
+											fillColor: fillColor@11a2ccaf-a222-4b45-90da-f4c05a949686 (propref<color>)
+										}, 
+										GtfLabel(16146dc0-5d90-4263-86d9-5d2bd70400c5)
+										{
+											features: feature_list []
+											children: children_list []
+											name: "Label 6"
+											visible: true
+											width: 66
+											height: 100
+											x: 392
+											y: -62
+											text: string_scriptedValue(2a61e8a6-6b22-4233-ab03-2e77b0b492af)
+											{
+												triggerList: trigger_list(f26a0f2c-baf7-40d1-a9e0-cd12273baa65)
+												{
+													script: ""
+												}
+												onTrigger: function<bool,bool>(2ce0bd96-9d74-4987-a4fb-d0d044dd3816)
+												{
+													script: "function(v:arg0::bool)" \
+														"{" \
+														"	// todo: auto generated return value, please adapt" \
+														"	false" \
+														"}"
+												}
+												read: function<string>(6045dd65-4c98-42cf-9670-9f04365ceb43)
+												{
+													script: "function()" \
+														"{" \
+														"	// todo: auto generated return value, please adapt" \
+														"	f:float2string(dp:thermalViewRoomValues[2])" \
+														"}"
+												}
+												write: function<bool,string>(f6741b8d-d720-4510-9e3e-a039602201b0)
+												{
+													script: "function(v:arg0::string)" \
+														"{" \
+														"	// todo: auto generated return value, please adapt" \
+														"	false" \
+														"}"
+												}
+											}
+											textColor: #FFFFFFFF
+											font: font_resource(2ff3541c-e8f4-4c70-8c74-b6ae7ca34ed6)
+											{
+												file: "PT_Sans_Narrow.ttf"
+												size: 30
+											}
+											horizontalAlign: 0
+											verticalAlign: 0
+										}]
+									name: "TempRoom4"
+									visible: bool_scriptedValue(1b2494df-087c-40da-a73e-5bf446520f76)
+									{
+										triggerList: trigger_list(be26d0f1-a139-441f-8214-609baeb7d7a0)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(f184aefd-1af7-4e6f-a5c6-7215986b0e79)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+										read: function<bool>(66f486d3-a7b8-41e9-885d-5cc276e3bee3)
+										{
+											script: "function()" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	dp:thermalView" \
+												"}"
+										}
+										write: function<bool,bool>(d365190e-5a14-44ee-a879-b4cffeaed9ed)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+									}
+									width: 576
+									height: 161
+									x: 295
+									y: 479
+									fillColor: color_scriptedValue(c85f0c6e-5028-4205-a85d-7f015cfebb8d)
+									{
+										triggerList: trigger_list(549dea47-d6d0-49fa-ba77-aa4a3f2b16ee)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(78238efc-8cb1-447d-bf9f-945bb31006f8)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+										read: function<color>(64522830-5f22-435a-acfd-faf25ada55f3)
+										{
+											script: "function()" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	if(dp:thermalViewRoomValues[2]<-10.00)" \
+												"	{dp:ColorsTemperature[0]}" \
+												"	else if((dp:thermalViewRoomValues[2]>-10.00)&&(dp:thermalViewRoomValues[2]<17.00))" \
+												"	{dp:ColorsTemperature[1]}" \
+												"	else if((dp:thermalViewRoomValues[2]>17.00)&&(dp:thermalViewRoomValues[2]<21.00))" \
+												"	{dp:ColorsTemperature[2]}" \
+												"	else if((dp:thermalViewRoomValues[2]>21.00)&&(dp:thermalViewRoomValues[2]<28.00))" \
+												"	{dp:ColorsTemperature[3]}" \
+												"	else" \
+												"	{dp:ColorsTemperature[4]}" \
+												"}"
+										}
+										write: function<bool,color>(120977d6-fd6d-4468-a2fd-ac32dde8ee9a)
+										{
+											script: "function(v:arg0::color)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+									}
+								}, 
+								GtfRectangle(5577597f-0e91-4334-9b18-c4ff6f238a3e)
+								{
+									features: feature_list [
+										TouchShortReleased(76408254-c550-447c-b527-972b0cb8ed61)
+										{
+											touchShortReleased: function<bool,int,int,int,int>(e7821bc1-a7b2-4535-be4a-e7421f47672b)
+											{
+												script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+													"{" \
+													"	dp:thermalViewRoomValues[3]+=dp:BufferTemp" \
+													"    false" \
+													"}"
+											}
+										}, 
+										StateTouched(22f915d3-6947-4145-883e-d01b6c56558b)
+										{
+											touchable: true
+											touched: false
+											touchPolicy: 0
+											touchBehavior: 0
+										}]
+									children: children_list [
+										GtfLabel(89203a4c-048b-4ea1-9967-8055159af7f4)
+										{
+											features: feature_list []
+											children: children_list []
+											name: "Label 3"
+											visible: true
+											width: 56
+											height: 100
+											x: 83
+											y: 24
+											text: string_scriptedValue(d3f7adf1-67c8-42a3-a934-647f8c0768d3)
+											{
+												triggerList: trigger_list(4a057e0b-56e5-4011-b924-77134edd589b)
+												{
+													script: ""
+												}
+												onTrigger: function<bool,bool>(62c8071e-7f6f-4f03-8838-c7e3f2abe4e0)
+												{
+													script: "function(v:arg0::bool)" \
+														"{" \
+														"	// todo: auto generated return value, please adapt" \
+														"	false" \
+														"}"
+												}
+												read: function<string>(5133388c-d459-4d75-b74c-5b1953da7b74)
+												{
+													script: "function()" \
+														"{" \
+														"	// todo: auto generated return value, please adapt" \
+														"	f:float2string(dp:thermalViewRoomValues[3])" \
+														"}"
+												}
+												write: function<bool,string>(f715b3de-cdf4-4647-8080-73d796dbfc1e)
+												{
+													script: "function(v:arg0::string)" \
+														"{" \
+														"	// todo: auto generated return value, please adapt" \
+														"	false" \
+														"}"
+												}
+											}
+											textColor: #FFFFFFFF
+											font: font_resource(0b545a15-8517-451b-9385-a15f036692cf)
+											{
+												file: "PT_Sans_Narrow.ttf"
+												size: 30
+											}
+											horizontalAlign: 0
+											verticalAlign: 0
+										}]
+									name: "TempRoom3"
+									visible: bool_scriptedValue(43004e45-ae43-4215-8e8a-aad7d62b3287)
+									{
+										triggerList: trigger_list(3a235a26-41aa-4ae0-9801-2929f1bc99be)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(c8a1b417-ac23-446a-a01c-1ec888b95c44)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+										read: function<bool>(34fd4c1b-1964-480d-b0ca-4015806eae6d)
+										{
+											script: "function()" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	dp:thermalView" \
+												"}"
+										}
+										write: function<bool,bool>(5882e5a2-2e2d-42a4-9751-80ade7e8cd1d)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+									}
+									width: 212
+									height: 162
+									x: 892
+									y: 479
+									fillColor: color_scriptedValue(b6b64c6f-8d0e-41fc-9274-ae0e2ca48fb3)
+									{
+										triggerList: trigger_list(bc83b977-ef67-4b8f-a2c2-9dda618bc716)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(00a0a6f9-b881-470c-9ec9-e58adca54739)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+										read: function<color>(7fd37f49-8d95-44f4-a542-8f5e5cf9d03f)
+										{
+											script: "function()" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	if(dp:thermalViewRoomValues[3]<=-10.00)" \
+												"	{dp:ColorsTemperature[0]}" \
+												"	else if((dp:thermalViewRoomValues[3]>-10.00)&&(dp:thermalViewRoomValues[3]<=17.00))" \
+												"	{dp:ColorsTemperature[1]}" \
+												"	else if((dp:thermalViewRoomValues[3]>17.00)&&(dp:thermalViewRoomValues[3]<=21.00))" \
+												"	{dp:ColorsTemperature[2]}" \
+												"	else if((dp:thermalViewRoomValues[3]>21.00)&&(dp:thermalViewRoomValues[3]<=28.00))" \
+												"	{dp:ColorsTemperature[3]}" \
+												"	else" \
+												"	{dp:ColorsTemperature[4]}" \
+												"}"
+										}
+										write: function<bool,color>(daa19331-928b-47d4-9001-7edafc688e46)
+										{
+											script: "function(v:arg0::color)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+									}
+								}]
+							name: "Container 1"
+							visible: true
+							width: 100
+							height: 100
+							x: 0
+							y: 0
+						}, 
+						GtfContainer(b6db546b-9b3b-4abb-8f1c-43b6a3b87c8b)
+						{
+							features: feature_list [
+								TouchShortReleased(2b682cb2-5a48-4881-88cd-63196312b1d9)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(8d334d19-4883-4e20-a3f7-5cb0bea33335)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	dp:BufferTemp=-2.5" \
+											"	v:this->^->\"Container 4\"->\"Rectangle 7\".visible=true" \
+											"	v:this->^->\"Container 5\"->\"Rectangle 7 copy 1\".visible=false" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(18bbc576-abb6-47e7-8335-41f2eca14a5a)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list [
+								GtfRectangle(4677a7e3-9d9f-4ab1-a272-1f42071aa8be)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Rectangle 7"
+									visible: false
+									width: 100
+									height: 100
+									x: 560
+									y: 90
+									fillColor: #FFFACDFF
+								}, 
+								GtfImage(3b2709a8-554b-4530-a543-a68a662e3da8)
+								{
+									features: feature_list [
+										ScaleMode(806932de-61c8-4d2d-bf36-36e8bd5840ee)
+										{
+											scaleMode: 1
+										}, 
+										StateTouched(3083c136-d352-4abf-9f06-77bb70eb9f1b)
+										{
+											touchable: true
+											touched: false
+											touchPolicy: 0
+											touchBehavior: 0
+										}]
+									children: children_list []
+									name: "Image 2"
+									visible: true
+									width: 105
+									height: 105
+									x: 557
+									y: 88
+									image: image_resource(343b0da0-399f-4336-96c3-9488accbdeb4)
+									{
+										file: "Artboard_4-512.png"
+									}
+									sRGB: false
+									horizontalAlign: 0
+									verticalAlign: 1
+								}]
+							name: "Container 4"
+							visible: @a7262044-7e52-47c6-ba43-ed0af4fbdcdc (objectref<bool>)
+							width: 100
+							height: 100
+							x: 0
+							y: 0
+						}, 
+						GtfContainer(66bd742e-da9b-4d9b-89d9-feddeed79a05)
+						{
+							features: feature_list [
+								TouchShortReleased(5d125932-c08a-4b1c-ae01-c01eb89e96a1)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(bce1abf1-eaef-46ca-92a7-641ad63ef85e)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	dp:BufferTemp=2.5" \
+											"	v:this->^->\"Container 4\"->\"Rectangle 7\".visible=false" \
+											"	v:this->^->\"Container 5\"->\"Rectangle 7 copy 1\".visible=true" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(a1fc08bb-53ec-458d-b052-0d5f3cc68b96)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list [
+								GtfRectangle(73fd14a2-3cb0-4d70-8615-06949c6b6496)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Rectangle 7 copy 1"
+									visible: false
+									width: 105
+									height: 105
+									x: 735
+									y: 90
+									fillColor: #FFFACDFF
+								}, 
+								GtfImage(8430fe2f-7082-4db1-b754-0bc0a7f312dd)
+								{
+									features: feature_list [
+										ScaleMode(bff6f912-35fb-491b-8ee9-0821bb8052d9)
+										{
+											scaleMode: 2
+										}, 
+										StateTouched(9fa549e6-b3e9-4c90-8495-668cb75c9f94)
+										{
+											touchable: true
+											touched: false
+											touchPolicy: 0
+											touchBehavior: 0
+										}]
+									children: children_list []
+									name: "Image 3"
+									visible: true
+									width: 100
+									height: 100
+									x: 738
+									y: 90
+									image: image_resource(a3460847-d249-4369-b6de-57581f7f97b5)
+									{
+										file: "fire.png"
+									}
+									sRGB: false
+									horizontalAlign: 0
+									verticalAlign: 1
+								}]
+							name: "Container 5"
+							visible: @a7262044-7e52-47c6-ba43-ed0af4fbdcdc (objectref<bool>)
+							width: 100
+							height: 100
+							x: 0
+							y: 0
+						}, 
+						GtfContainer_template_instance(a942f950-cccf-493a-ad61-ff4e56cf948f)
+						{
+							name: "SwitchButton 1"
+							template: @8da9a615-211f-4c29-8286-3367dde39f69 (objectref<GtfContainer_template>)
+							children: children_list []
+							touchShortReleased: function<bool,int,int,int,int>(6b97a8ac-d0d8-483d-b392-202b2c3142cc)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(dp:quickButtonThermal)" \
+									"	{" \
+									"		dp:SwitchButtonsOutsett[0]=135;" \
+									"		v:this.visible=true" \
+									"		v:this.\"visible 2\"=true" \
+									"		dp:quickButtonThermal=false" \
+									"		dp:thermalView=false" \
+									"		" \
+									"	}" \
+									"	else" \
+									"	{" \
+									"		dp:SwitchButtonsOutsett[0]=0;" \
+									"		v:this.visible=false" \
+									"		v:this.\"visible 2\"=false" \
+									"		dp:quickButtonThermal=true" \
+									"		dp:thermalView=true" \
+									"	}" \
+									"	if(dp:thermalView)" \
+									"	{" \
+									"		dp:thermalView=false;" \
+									"	}" \
+									"	else" \
+									"	{" \
+									"	dp:thermalView=true;" \
+									"	}" \
+									"    false" \
+									"}"
+							}
+							fillColor: fillColor@8da9a615-211f-4c29-8286-3367dde39f69 (propref<color>)
+							"fillColor 2": "fillColor 2"@8da9a615-211f-4c29-8286-3367dde39f69 (propref<color>)
+							x: -67
+							y: -45
+							"x 2": int_scriptedValue(5797a160-cb61-4021-9c29-c802faafc212)
+							{
+								triggerList: trigger_list(f715d3f2-24fd-4396-9071-52c03bcdb81b)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(39691047-d4cc-4406-9a78-db66f67a884c)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<int>(f7f745c4-a9fd-48fe-8f27-921d6222fc67)
+								{
+									script: "function()" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	15+dp:SwitchButtonsOutsett[0]" \
+										"}"
+								}
+								write: function<bool,int>(343ed9b3-8007-4044-b47a-e5ff2d07e0b5)
+								{
+									script: "function(v:arg0::int)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							"y 2": "y 2"@8da9a615-211f-4c29-8286-3367dde39f69 (propref<int>)
+							visible: bool_element_reference(aa95cceb-5390-45ab-a9f3-5b8f7183f013)
+							{
+								index: 0
+								list: @029d8620-8f51-4de1-b810-6d28c758aae1 (objectref<boollist>)
+							}
+							"visible 2": true
+						}, 
+						GtfLabel(436eb4b6-0157-4024-95f4-711f61bf4796)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "ThermalViewLabel"
+							visible: true
+							width: 239
+							height: 100
+							x: 136
+							y: -45
+							text: string_element_reference(cf90ccec-060e-4ae5-8137-a006ee6a0fbd)
+							{
+								index: 0
+								list: @7dfccc1f-4ac6-442d-b1a8-603f6f20b853 (objectref<stringlist>)
+							}
+							textColor: #000000FF
+							font: font_resource(f404f352-da2f-4b34-9b94-0059d38a316a)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 45
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "ThermalViewButton"
+					visible: true
+					width: 0
+					height: 0
+					x: 136
+					y: 69
+					fillColor: #A9A9A9FF
+				}, 
+				GtfContainer(74704917-315c-4b01-a032-60c32b3b1050)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfContainer_template_instance(ee5e73d9-c67e-480f-b327-e91715754c4b)
+						{
+							name: "SwitchButton 1"
+							template: @8da9a615-211f-4c29-8286-3367dde39f69 (objectref<GtfContainer_template>)
+							children: children_list []
+							touchShortReleased: function<bool,int,int,int,int>(37ca91b7-e1b4-4acf-ac8a-d1b65927eba7)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(dp:quickButtonLight)" \
+									"	{" \
+									"		dp:SwitchButtonsOutsett[1]=135;" \
+									"		v:this.visible=true" \
+									"		v:this.\"visible 2\"=true" \
+									"		dp:quickButtonLight=false" \
+									"		dp:lightView=!dp:lightView" \
+									"		" \
+									"	}" \
+									"	else" \
+									"	{" \
+									"		dp:SwitchButtonsOutsett[1]=0;" \
+									"		v:this.visible=false" \
+									"		v:this.\"visible 2\"=false" \
+									"		dp:quickButtonLight=true" \
+									"		dp:lightView=!dp:lightView" \
+									"	}" \
+									"    false" \
+									"}"
+							}
+							fillColor: color_element_reference(7c48fb6d-c10d-48b1-877d-cd33877595a3)
+							{
+								index: 1
+								list: @e39361c9-d812-453c-ba88-63e4a2b60af8 (objectref<colorlist>)
+							}
+							"fillColor 2": color_element_reference(52fe4512-bd17-4dad-8a69-af85c94301a9)
+							{
+								index: 0
+								list: @e39361c9-d812-453c-ba88-63e4a2b60af8 (objectref<colorlist>)
+							}
+							x: 74
+							y: -7
+							"x 2": int_scriptedValue(01e18b2d-d01e-448d-8ba4-902f9998d375)
+							{
+								triggerList: trigger_list(e8ebd9eb-14cb-4382-875c-3876577c9454)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(d37fb37d-dc94-497e-b059-9a2d7feab542)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<int>(c95dfa39-1e74-4722-bb7e-3c4ddbe5d400)
+								{
+									script: "function()" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	15+dp:SwitchButtonsOutsett[1]" \
+										"}"
+								}
+								write: function<bool,int>(dbdfb96c-6cc4-4324-a0ed-01c33b77a9d9)
+								{
+									script: "function(v:arg0::int)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							"y 2": "y 2"@8da9a615-211f-4c29-8286-3367dde39f69 (propref<int>)
+							visible: bool_element_reference(64b9917a-81c9-433c-bb50-8d6bce90b705)
+							{
+								index: 1
+								list: @029d8620-8f51-4de1-b810-6d28c758aae1 (objectref<boollist>)
+							}
+							"visible 2": false
+						}, 
+						GtfLabel(c614b77e-8e78-4f02-aa68-0371f4320b6f)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "ThermalViewLabel copy 1"
+							visible: true
+							width: 239
+							height: 100
+							x: 255
+							y: -8
+							text: string_element_reference(e20310a9-6850-4013-8797-98bc67fb57ee)
+							{
+								index: 1
+								list: @7dfccc1f-4ac6-442d-b1a8-603f6f20b853 (objectref<stringlist>)
+							}
+							textColor: #000000FF
+							font: font_resource(37f32c86-3350-4031-a858-61c2c2bccd1a)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 45
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}, 
+						GtfContainer(e0a777b4-0490-4e88-8741-d8fb76788caa)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfEllipse(a166f13c-7a47-4049-b1f7-678766de92e1)
+								{
+									features: feature_list [
+										TouchShortReleased(1c8342da-c39d-4cc0-a64e-46ef6843c9e2)
+										{
+											touchShortReleased: function<bool,int,int,int,int>(bfcc95a3-23ff-4d1d-830f-26046d5cf6f0)
+											{
+												script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+													"{" \
+													"	if(dp:LightBubs[4])" \
+													"	{v:this.fillColor=dp:LightViewCollors[1]" \
+													"	dp:LightBubs[4]=false}" \
+													"	else" \
+													"	{v:this.fillColor=dp:BackInBlack" \
+													"	dp:LightBubs[4]=true}" \
+													"    false" \
+													"}"
+											}
+										}, 
+										StateTouched(d2c1648b-c3c1-4d37-a9e2-cfaf1db355dc)
+										{
+											touchable: true
+											touched: false
+											touchPolicy: 0
+											touchBehavior: 0
+										}]
+									children: children_list []
+									name: "Ellipse 2"
+									visible: true
+									width: 38
+									height: 38
+									x: 267
+									y: 459
+									fillColor: #000000FF
+									arcWidth: 0
+									centralAngle: 360F
+									sectorRotation: 0F
+								}, 
+								GtfEllipse(6daa6105-630b-481f-b941-7cc5eb947d33)
+								{
+									features: feature_list [
+										TouchShortReleased(f5f05864-8bfc-4574-8fa2-2c19ad029b3c)
+										{
+											touchShortReleased: function<bool,int,int,int,int>(f815c951-fd4f-4b31-972c-192a6640e49b)
+											{
+												script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+													"{if(dp:LightBubs[6])" \
+													"	if(dp:LightBubs[4])" \
+													"	{v:this.fillColor=dp:LightViewCollors[1]" \
+													"	dp:LightBubs[4]=false}" \
+													"	else" \
+													"	{v:this.fillColor=dp:BackInBlack" \
+													"	dp:LightBubs[4]=true}" \
+													"    false" \
+													"}"
+											}
+										}, 
+										StateTouched(c0f24e75-26b6-4b22-b765-8ba927056d79)
+										{
+											touchable: true
+											touched: false
+											touchPolicy: 0
+											touchBehavior: 0
+										}]
+									children: children_list []
+									name: "Ellipse 3"
+									visible: true
+									width: 39
+									height: 35
+									x: 1099
+									y: 476
+									fillColor: #000000FF
+									arcWidth: 0
+									centralAngle: 360F
+									sectorRotation: 0F
+								}, 
+								GtfRectangle(f8a8ec10-75e2-4874-9587-441c92a91228)
+								{
+									features: feature_list [
+										TouchShortReleased(f052c7a0-0f18-4e41-812d-8b77c342705b)
+										{
+											touchShortReleased: function<bool,int,int,int,int>(8dfb3581-c83b-4581-84da-b21a2bd6dcd2)
+											{
+												script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+													"{" \
+													"	if(dp:LightBubs[4])" \
+													"	{v:this.fillColor=dp:LightViewCollors[1]" \
+													"	dp:LightBubs[4]=false}" \
+													"	else" \
+													"	{v:this.fillColor=dp:BackInBlack" \
+													"	dp:LightBubs[4]=true}" \
+													"    false" \
+													"}"
+											}
+										}, 
+										StateTouched(667a4cca-3116-47f9-99c1-4f8bc5573e4f)
+										{
+											touchable: true
+											touched: false
+											touchPolicy: 0
+											touchBehavior: 0
+										}]
+									children: children_list []
+									name: "Rectangle 2"
+									visible: true
+									width: 48
+									height: 63
+									x: 450
+									y: 483
+									fillColor: #000000FF
+								}, 
+								GtfImage(5ee7ad7e-8987-4476-b135-253ced28fcae)
+								{
+									features: feature_list [
+										ScaleMode(14b43077-0c01-42bb-98f1-12dd6056e5df)
+										{
+											scaleMode: 2
+										}, 
+										TouchShortReleased(c11b36f4-daf3-4ded-a0ee-ec49f4ead655)
+										{
+											touchShortReleased: function<bool,int,int,int,int>(fc9952b3-4c60-4f51-a64a-02e17afb018e)
+											{
+												script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+													"{" \
+													"	dp:LightBubs[1]=!dp:LightBubs[1]" \
+													"    false" \
+													"}"
+											}
+										}, 
+										StateTouched(f817af7c-2c0d-4bde-aed6-5d020ecab294)
+										{
+											touchable: true
+											touched: false
+											touchPolicy: 0
+											touchBehavior: 0
+										}]
+									children: children_list []
+									name: "Image 5"
+									visible: true
+									width: 70
+									height: 70
+									x: 411
+									y: 235
+									image: image_scriptedValue(97d097bc-adbd-40f7-bb56-1fc1e750ca9a)
+									{
+										triggerList: trigger_list(2d5b8170-eff3-4799-aff4-d0a13590c9e9)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(faef786e-59c1-42e4-8b3d-1390222ba8d3)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+										read: function<image>(3417fcce-ab05-49cb-a06b-2d43bb89affc)
+										{
+											script: "function()" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	if(dp:LightBubs[1])" \
+												"	{dp:\"Light ON/OFF\"[1]}" \
+												"	else" \
+												"	{dp:\"Light ON/OFF\"[0]}" \
+												"" \
+												"}"
+										}
+										write: function<bool,image>(981cea0f-dc60-4138-a79f-de5d9be08853)
+										{
+											script: "function(v:arg0::image)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+									}
+									sRGB: false
+									horizontalAlign: 0
+									verticalAlign: 1
+								}, 
+								GtfImage(2291f97c-db5e-42f8-8008-65a18037040f)
+								{
+									features: feature_list [
+										ScaleMode(47fa8704-d64d-4046-90f8-86ab34eec5b6)
+										{
+											scaleMode: 2
+										}, 
+										TouchShortReleased(9365af00-7534-4f5b-8ae8-6566d5215254)
+										{
+											touchShortReleased: function<bool,int,int,int,int>(2f5ca894-ceab-470d-9dbd-4e3e6a80c29e)
+											{
+												script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+													"{" \
+													"	dp:LightBubs[2]=!dp:LightBubs[2]" \
+													"    false" \
+													"}"
+											}
+										}, 
+										StateTouched(271d3552-7616-4a9f-b36a-ed11e45ff0f9)
+										{
+											touchable: true
+											touched: false
+											touchPolicy: 0
+											touchBehavior: 0
+										}]
+									children: children_list []
+									name: "Image 5 copy 1"
+									visible: true
+									width: 70
+									height: 70
+									x: 781
+									y: 232
+									image: image_scriptedValue(20537b64-1431-42f6-9048-cede84f858ef)
+									{
+										triggerList: trigger_list(ab149467-f0ae-4b1a-94a0-b9bcb944384b)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(3c76e721-6ba1-4f95-9e9d-a227950c2762)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+										read: function<image>(180369e5-f8fe-43a2-b05a-73112a5a5862)
+										{
+											script: "function()" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	if(dp:LightBubs[2])" \
+												"	{dp:\"Light ON/OFF\"[1]}" \
+												"	else" \
+												"	{dp:\"Light ON/OFF\"[0]}" \
+												"" \
+												"}"
+										}
+										write: function<bool,image>(f957260e-5b09-4727-bcc7-1fe30c38717d)
+										{
+											script: "function(v:arg0::image)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+									}
+									sRGB: false
+									horizontalAlign: 0
+									verticalAlign: 1
+								}, 
+								GtfImage(e9a7c891-d8cb-48b3-b666-f86f40db409b)
+								{
+									features: feature_list [
+										ScaleMode(93c1d9b7-83a3-4792-824d-7cc22483f5a6)
+										{
+											scaleMode: 2
+										}, 
+										TouchShortReleased(661bba21-ba3b-42d5-bb66-f229c1c3a503)
+										{
+											touchShortReleased: function<bool,int,int,int,int>(5bd82cb1-89ad-4315-a333-2b317e0aa2a0)
+											{
+												script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+													"{" \
+													"	dp:LightBubs[0]=!dp:LightBubs[0]" \
+													"    false" \
+													"}"
+											}
+										}, 
+										StateTouched(b12cd715-b022-40b4-830a-c293e90b5725)
+										{
+											touchable: true
+											touched: false
+											touchPolicy: 0
+											touchBehavior: 0
+										}]
+									children: children_list []
+									name: "Image 5 copy 1"
+									visible: true
+									width: 70
+									height: 70
+									x: 193
+									y: 232
+									image: image_scriptedValue(099da90f-875a-4176-8ffb-64e952b3583f)
+									{
+										triggerList: trigger_list(9f20c3bd-f40c-4c76-9750-2f3a09601c3f)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(f384cced-8ab9-4d85-9a96-08b27e625815)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+										read: function<image>(8997b20e-55dd-4d89-8ec4-b70b8742de7a)
+										{
+											script: "function()" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	if(dp:LightBubs[0])" \
+												"	{dp:\"Light ON/OFF\"[1]}" \
+												"	else" \
+												"	{dp:\"Light ON/OFF\"[0]}" \
+												"" \
+												"}"
+										}
+										write: function<bool,image>(e983f7a4-352e-4c19-8b9a-782e93306973)
+										{
+											script: "function(v:arg0::image)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+									}
+									sRGB: false
+									horizontalAlign: 0
+									verticalAlign: 1
+								}, 
+								GtfImage(a9657947-46dd-428a-80f8-7720dfb9a2e0)
+								{
+									features: feature_list [
+										ScaleMode(66ed525b-4ce4-417f-a16f-93021e2e16bf)
+										{
+											scaleMode: 2
+										}, 
+										TouchShortReleased(e3a006c5-3490-4fb3-84e2-d0b21674da33)
+										{
+											touchShortReleased: function<bool,int,int,int,int>(f22e6b02-2a82-44ad-aa9f-c096e9b3e63c)
+											{
+												script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+													"{" \
+													"	dp:LightBubs[3]=!dp:LightBubs[3]" \
+													"    false" \
+													"}"
+											}
+										}, 
+										StateTouched(64537c23-08bc-4937-a7aa-0c9a8123f8f4)
+										{
+											touchable: true
+											touched: false
+											touchPolicy: 0
+											touchBehavior: 0
+										}]
+									children: children_list []
+									name: "Image 5 copy 1"
+									visible: true
+									width: 70
+									height: 70
+									x: 1016
+									y: 227
+									image: image_scriptedValue(132fafb7-f7f5-4bdd-bb9e-e0a6708f5d60)
+									{
+										triggerList: trigger_list(7dfc04d4-bb20-4b56-9ecb-d15640b6d26e)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(e1fd0c8c-4951-4633-9ebb-a3cc80c37f68)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+										read: function<image>(5f1d0d58-b273-4c96-8ce8-7fee7f713cd2)
+										{
+											script: "function()" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	if(dp:LightBubs[3])" \
+												"	{dp:\"Light ON/OFF\"[1]}" \
+												"	else" \
+												"	{dp:\"Light ON/OFF\"[0]}" \
+												"" \
+												"}"
+										}
+										write: function<bool,image>(ec983ee2-b660-4c09-bbc0-dcbec9181d7f)
+										{
+											script: "function(v:arg0::image)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+									}
+									sRGB: false
+									horizontalAlign: 0
+									verticalAlign: 1
+								}]
+							name: "Lightbubs"
+							visible: @fa19c3c1-465f-43c5-abbf-e25222d51865 (objectref<bool>)
+							width: 100
+							height: 100
+							x: 0
+							y: 0
+						}]
+					name: "LightViewButton"
+					visible: true
+					width: 523
+					height: 100
+					x: 0
+					y: 108
+				}, 
+				GtfContainer(7a6edd05-f8ff-4cf6-b7a3-e0031fc86678)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfContainer_template_instance(2f2652cf-fe68-4cd6-9247-21b4d9f52428)
+						{
+							name: "SwitchButton 1"
+							template: @8da9a615-211f-4c29-8286-3367dde39f69 (objectref<GtfContainer_template>)
+							children: children_list []
+							touchShortReleased: function<bool,int,int,int,int>(669b2a25-8bd6-4df7-990b-48ce82931e12)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(dp:quickButtonGadgets)" \
+									"	{" \
+									"		dp:SwitchButtonsOutsett[2]=135;" \
+									"		" \
+									"		v:this.visible=true" \
+									"		v:this.\"visible 2\"=true" \
+									"		dp:quickButtonGadgets=false" \
+									"		dp:gadgetView=!dp:gadgetView" \
+									"		" \
+									"	}" \
+									"	else" \
+									"	{" \
+									"		dp:SwitchButtonsOutsett[2]=0;" \
+									"		" \
+									"		v:this.visible=false" \
+									"		v:this.\"visible 2\"=false" \
+									"		dp:quickButtonGadgets=true" \
+									"		dp:gadgetView=!dp:gadgetView" \
+									"	}" \
+									"    false" \
+									"}"
+							}
+							fillColor: color_element_reference(36beb97c-a128-46b5-87bf-525c6da93c39)
+							{
+								index: 1
+								list: @7387c7ec-803d-4d99-ae9c-95f34b1f681f (objectref<colorlist>)
+							}
+							"fillColor 2": color_element_reference(97dfabf3-3072-4422-b177-b124a8713d0e)
+							{
+								index: 0
+								list: @7387c7ec-803d-4d99-ae9c-95f34b1f681f (objectref<colorlist>)
+							}
+							x: 75
+							y: 171
+							"x 2": int_scriptedValue(bccca3b8-a8df-4311-b5c4-f6c3c53bfcd1)
+							{
+								triggerList: trigger_list(23d5f3a9-03de-4e3b-acf3-87154df9cbf2)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(4753aba3-24f1-4cc1-a831-44ccd59cd8b2)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<int>(e77e6845-bc35-4fad-9c26-7ed56c21cfc8)
+								{
+									script: "function()" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	15+dp:SwitchButtonsOutsett[2]" \
+										"}"
+								}
+								write: function<bool,int>(5fbbf954-48e6-4eec-a4e4-6d429e7bd5c8)
+								{
+									script: "function(v:arg0::int)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							"y 2": "y 2"@8da9a615-211f-4c29-8286-3367dde39f69 (propref<int>)
+							visible: bool_element_reference(96355908-e46f-423b-a74f-63fcb0fee699)
+							{
+								index: 2
+								list: @029d8620-8f51-4de1-b810-6d28c758aae1 (objectref<boollist>)
+							}
+							"visible 2": "visible 2"@8da9a615-211f-4c29-8286-3367dde39f69 (propref<bool>)
+						}, 
+						GtfLabel(a4dbd4ff-cf24-478e-ba50-41de0faa9c30)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Show Gadgets"
+							visible: true
+							width: 239
+							height: 100
+							x: 284
+							y: 174
+							text: string_element_reference(d9e3f48c-16c4-405b-b92f-fe9c2a62018a)
+							{
+								index: 2
+								list: @7dfccc1f-4ac6-442d-b1a8-603f6f20b853 (objectref<stringlist>)
+							}
+							textColor: #000000FF
+							font: font_resource(847256c1-45cd-4e1c-8e68-cc7024fef67b)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 45
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}, 
+						GtfContainer(c2bb3628-35d4-42fb-a09d-d02d668fd452)
+						{
+							features: feature_list [
+								TouchShortReleased(4754713c-0ac8-4555-87dc-a6265d0927c9)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(a70fc7c6-c864-474a-92c3-f8349981814a)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	v:this->^->\"Show Gadgets\"->^->\"SwitchButton 1\".\"x 2\"+=-135" \
+											"	v:this->^->\"Show Gadgets\"->^->\"SwitchButton 1\".\"visible 2\"=false" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(2bad529f-683d-498c-a864-19dd64e7369f)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list [
+								GtfImage(f1024296-c95c-4e2f-a35a-bc81065c2b65)
+								{
+									features: feature_list [
+										ScaleMode(f654515b-1ebf-43e5-a73e-856016eeb442)
+										{
+											scaleMode: 1
+										}, 
+										TouchShortReleased(7e643870-acd3-43e1-8a9b-30568972b629)
+										{
+											touchShortReleased: function<bool,int,int,int,int>(8fcadb8a-ca69-4b97-b4c0-563eb852a8cb)
+											{
+												script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+													"{" \
+													"	fire ev:goToWashingMachine()" \
+													"    false" \
+													"}"
+											}
+										}, 
+										StateTouched(578ffa09-582d-4cf8-b51f-4e287ed8af07)
+										{
+											touchable: true
+											touched: false
+											touchPolicy: 0
+											touchBehavior: 0
+										}]
+									children: children_list []
+									name: "Washing Machine"
+									visible: true
+									width: 100
+									height: 100
+									x: 915
+									y: 614
+									image: image_resource(3d10d849-9da2-4e72-b24a-5a98c96f53f2)
+									{
+										file: "2cd43b_9e6d9cd6431346a4afdfcc097417df67_mv2_d_1500_1500_s_2.png"
+									}
+									sRGB: false
+									horizontalAlign: 0
+									verticalAlign: 1
+								}, 
+								GtfImage(3fa3d276-5dff-4609-af4d-217593c654a8)
+								{
+									features: feature_list [
+										ScaleMode(70944ecf-2435-4de1-a781-0564d0b72be3)
+										{
+											scaleMode: 2
+										}, 
+										TouchShortReleased(ff0b9bc9-c542-41ae-b67a-16d778891d95)
+										{
+											touchShortReleased: function<bool,int,int,int,int>(b97564dd-8127-446d-8292-1ffd24e4bbd3)
+											{
+												script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+													"{" \
+													"	fire ev:goToTV()" \
+													"    false" \
+													"}"
+											}
+										}, 
+										StateTouched(a09ab595-0ab7-41b1-bb9c-3ab3ccb855bf)
+										{
+											touchable: true
+											touched: false
+											touchPolicy: 0
+											touchBehavior: 0
+										}]
+									children: children_list []
+									name: "TV"
+									visible: true
+									width: 190
+									height: 182
+									x: 512
+									y: 515
+									image: image_resource(b4d5be52-cbb0-449e-b8f3-9e2cb02e4c78)
+									{
+										file: "PinClipart.com_clip-art-smart_2341936.png"
+									}
+									sRGB: false
+									horizontalAlign: 0
+									verticalAlign: 1
+								}]
+							name: "Gadgets"
+							visible: bool_scriptedValue(f3a64b1d-50f6-4630-9e07-dedbaf7cbe70)
+							{
+								triggerList: trigger_list(a6d9d013-9387-479f-a9f7-75fbcbe4d052)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(daffebf8-00ef-4feb-a621-6e31cd45eb33)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<bool>(c5d01e68-1db8-476f-8f3f-94b8bc4aa52c)
+								{
+									script: "function()" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	dp:gadgetView" \
+										"}"
+								}
+								write: function<bool,bool>(1e7826b8-26d3-4c22-9dc2-c3b648ff7f48)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							width: 100
+							height: 100
+							x: 0
+							y: 0
+						}]
+					name: "GadgetViewButton"
+					visible: true
+					width: 502
+					height: 100
+					x: 0
+					y: 0
+				}, 
+				GtfContainer_template_instance(b8494125-8362-4b77-9730-0e1e4a80826d)
+				{
+					name: "TopBar 1"
+					template: @3d8b2a56-e6db-4491-999e-67be2e62da91 (objectref<GtfContainer_template>)
+					children: children_list []
+				}, 
+				GtfRectangle(2a3bb476-b185-4851-9051-25e1077d987a)
+				{
+					features: feature_list [
+						TouchShortReleased(a472bfae-5db1-4bf6-a66d-8dfe5a327d44)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(2c914cf8-9d2b-497d-8470-6a1961edaf41)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:goToFirstTimeSettings()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(e1d0634f-25bc-47af-8c8f-aa6ff28a3a8b)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfImage(2b2df1dc-c546-464a-86a0-7c1d1eb75802)
+						{
+							features: feature_list [
+								ScaleMode(73a0a98a-c3bc-4562-931b-d53c34ffe4fc)
+								{
+									scaleMode: 1
+								}, 
+								TouchShortReleased(25833743-8886-4100-8d00-f90e569a89c5)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(1a397f24-4b0c-4491-b3ab-fe60c24c8b9c)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	fire ev:goToFirstTimeSettings()" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(82a81771-cc92-4c0b-97c3-0ab90c973292)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list []
+							name: "Image 1"
+							visible: true
+							width: width@2a3bb476-b185-4851-9051-25e1077d987a (propref<int>)
+							height: height@2a3bb476-b185-4851-9051-25e1077d987a (propref<int>)
+							x: 0
+							y: 0
+							image: image_resource(9dbd646f-1e4d-47a3-aeae-9e6ce749ba43)
+							{
+								file: "setting2.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}]
+					name: "Rectangle 5"
+					visible: true
+					width: 64
+					height: 66
+					x: 1194
+					y: 46
+					fillColor: #D3D3D3FF
+				}]
+		}]
+	name: "View 2"
+	visible: true
+	width: 1280
+	height: 720
+	x: 0
+	y: 0
+}

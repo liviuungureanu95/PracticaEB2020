@@ -1,0 +1,328 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(e8206f3d-013b-4b21-bb3a-4a3b1edbcefd)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(efac8732-22b7-4822-b8e4-356f9e03ae1d)
+		{
+			name: "View_BG 1"
+			template: @6b61b73f-f21a-4a1b-ba8e-7deca7fb390f (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfContainer_template_instance(2172c00f-3674-4a66-a41b-290de6b3830d)
+				{
+					name: "TopBar 1"
+					template: @3d8b2a56-e6db-4491-999e-67be2e62da91 (objectref<GtfContainer_template>)
+					children: children_list []
+				}, 
+				GtfImage(c47a944b-1eab-4888-8352-0fdb0c631911)
+				{
+					features: feature_list [
+						ScaleMode(22cb2603-3f73-4e4b-87be-9561952bbe02)
+						{
+							scaleMode: 1
+						}]
+					children: children_list [
+						GtfImage(96d0f2a9-2ff6-477b-ac4d-23937123c9d2)
+						{
+							features: feature_list [
+								ScaleMode(d842b5f7-20dd-4fdb-9565-23dc313e0527)
+								{
+									scaleMode: 1
+								}, 
+								TouchShortReleased(75291932-986a-4709-8757-e653c7b6e3ce)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(ea82e9db-380c-4643-ba32-a6cc285ac109)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	if(dp:TV_ON==false)" \
+											"	{" \
+											"		dp:TV_ON=true" \
+											"		v:this->^.image=dp:BufferTV" \
+											"		dp:firsttimeTV=true" \
+											"	}" \
+											"	else" \
+											"	{" \
+											"		dp:TV_ON=false" \
+											"		v:this->^.image=dp:TV_IMAGES[0]" \
+											"	}" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(607f4cf8-ed5a-47b0-8375-2795535c73d9)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list []
+							name: "ON/OFF"
+							visible: true
+							width: 100
+							height: 100
+							x: 1120
+							y: 59
+							image: image_resource(b53be289-f1be-40c6-be57-701212e87287)
+							{
+								file: "turn-off.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}, 
+						GtfImage(7011c174-889c-47f8-a7a6-1daa07c28a39)
+						{
+							features: feature_list [
+								ScaleMode(e5d0fa4d-1a4b-4d15-b167-d314f223c086)
+								{
+									scaleMode: 1
+								}, 
+								TouchShortReleased(4cb16698-bcfb-426d-ac92-5ed5bea6cd47)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(e016ddcf-fff8-4659-af0e-62b0fcbef4b9)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	if(dp:TV_ON)" \
+											"	{" \
+											"		" \
+											"		v:this->^.image=dp:TV_IMAGES[1]" \
+											"		dp:BufferTV=dp:TV_IMAGES[1]" \
+											"	}" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(17676bef-98b6-4868-9a37-dbe1d15877c2)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list []
+							name: "Netflix"
+							visible: true
+							width: 100
+							height: 100
+							x: 59
+							y: 550
+							image: image_resource(c49fb91b-6cda-4f3d-b49e-5b7e8a509f65)
+							{
+								file: "netflix.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}, 
+						GtfImage(c9547241-ca2b-4406-ae11-eca28bb8b4df)
+						{
+							features: feature_list [
+								ScaleMode(dac4cdd3-1593-4943-b986-23171007c9fc)
+								{
+									scaleMode: 1
+								}, 
+								TouchShortReleased(5add4ed1-d0af-4aff-adce-771580a95a93)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(7da0f852-8aca-4d04-8980-4a53eedf3125)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	if(dp:TV_ON)" \
+											"	{" \
+											"		" \
+											"		v:this->^.image=dp:TV_IMAGES[2]" \
+											"		dp:BufferTV=dp:TV_IMAGES[2]" \
+											"	}" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(498d5bff-e4b8-49c7-9b0c-f4b799627d22)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list []
+							name: "HBO"
+							visible: true
+							width: 100
+							height: 100
+							x: 189
+							y: 550
+							image: image_resource(515f8645-2219-42c0-bc26-f355f854b7ad)
+							{
+								file: "hbo.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}, 
+						GtfImage(f1f73315-c658-485c-a948-2743deed5195)
+						{
+							features: feature_list [
+								ScaleMode(aa18e5b0-d653-4ae4-8ada-ea8dd2f10e78)
+								{
+									scaleMode: 1
+								}, 
+								TouchShortReleased(733cc1ed-e9be-4629-9d3f-00bbf89eb2be)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(b634b9cb-8ba3-4e20-a216-214969eb2638)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	if(dp:TV_ON)" \
+											"	{" \
+											"		" \
+											"		v:this->^.image=dp:TV_IMAGES[3]" \
+											"		dp:BufferTV=dp:TV_IMAGES[3]" \
+											"	}" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(bbcc65c1-5e4e-4f26-a175-8464c0842328)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list []
+							name: "DisneyPlus"
+							visible: true
+							width: 100
+							height: 100
+							x: 312
+							y: 550
+							image: image_resource(adf7f9a8-8746-4615-a773-fd88a93e8818)
+							{
+								file: "unnamed.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}, 
+						GtfImage(05f8b59c-3863-4763-9e6f-cc0c3c427ce9)
+						{
+							features: feature_list [
+								ScaleMode(fbb3e146-da76-4228-82c4-720966b822fe)
+								{
+									scaleMode: 1
+								}, 
+								TouchShortReleased(e0990754-60c4-446e-9156-1dbc6f2381e9)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(16d1d937-a811-47fd-b961-daa5f58144c8)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	if(dp:TV_ON)" \
+											"	{" \
+											"		" \
+											"		v:this->^.image=dp:TV_IMAGES[4]" \
+											"		dp:BufferTV=dp:TV_IMAGES[4]" \
+											"	}" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(dfc1b757-630f-4c55-b297-dbd513229dba)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list []
+							name: "Hulu"
+							visible: true
+							width: 100
+							height: 100
+							x: 436
+							y: 550
+							image: image_resource(5dfde96b-07bc-4416-b9fc-feed2b35cd7e)
+							{
+								file: "Hulu.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}]
+					name: "Screen"
+					visible: true
+					width: 1047
+					height: 513
+					x: 25
+					y: 54
+					image: image_scriptedValue(34fc3914-80d2-442a-96a9-235feb5602c3)
+					{
+						triggerList: trigger_list(91a2a85d-3d06-4e97-8458-2ffce7dcabe0)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(e1ae2503-483b-48a3-aa16-b63bffff8b63)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<image>(fa619042-4893-4f33-9846-d2b20f72df5e)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	if(dp:firsttimeTV==false)" \
+								"	{" \
+								"		dp:TVBlackscreen" \
+								"	}" \
+								"	else" \
+								"	{" \
+								"		dp:BufferTV" \
+								"	}" \
+								"" \
+								"}"
+						}
+						write: function<bool,image>(d1aee3cc-a786-4f81-8332-00b1bfb2821d)
+						{
+							script: "function(v:arg0::image)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfContainer_template_instance(dc8dcb32-0f53-47df-aaf5-56f41c341ba4)
+				{
+					name: "GoBackButton 1"
+					template: @2f9b95c5-8f97-4bc8-80fb-3e3d5d18d064 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 1110
+					y: 620
+					touchShortReleased: function<bool,int,int,int,int>(fffbd733-0dd6-4e22-86af-fbbe4dcf70f8)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goToMenu()" \
+							"    false" \
+							"}"
+					}
+				}]
+		}]
+	name: "SmartTVView"
+	visible: true
+	width: 1280
+	height: 720
+	x: 0
+	y: 0
+}
