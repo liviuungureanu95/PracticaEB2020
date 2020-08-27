@@ -1,0 +1,165 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(02f766ad-1847-4550-99f7-a50116e6db22)
+{
+	name: "buttons"
+	structure: GtfContainer(a06f580b-49bd-45ab-b8c8-afee5cdfe6e9)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(ff1da566-7395-49a7-8d80-8cf3f3a1e3ff)
+			{
+				features: feature_list [
+					TouchPressed(a93f78f7-60f5-4838-b128-5cfcfa4b7a74)
+					{
+						touchPressed: function<bool,int,int,int,int>(233b9e81-d3df-43a8-b8a4-6090e1370d29)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.fillColor=color:0, 0, 0, 255" \
+								"	v:this->\"Label+\".textColor=color:255, 255, 255, 255" \
+								"	v:this.\"buttonPressed+\"()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(6e661c1b-f88b-4a95-b7a9-d59a80382aca)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}, 
+					TouchShortReleased(0ca32db7-d1aa-4400-9225-df716855b51a)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(62a9faca-f320-4e3d-953a-d927225a8468)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.fillColor=color:255, 255, 255, 255" \
+								"	v:this->\"Label+\".textColor=color:0, 0, 0, 255" \
+								"    false" \
+								"}"
+						}
+					}]
+				children: children_list [
+					GtfLabel(f70f36c2-342f-4e71-9d7c-9055038b3dd5)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Label+"
+						visible: true
+						width: width@ff1da566-7395-49a7-8d80-8cf3f3a1e3ff (propref<int>)
+						height: height@ff1da566-7395-49a7-8d80-8cf3f3a1e3ff (propref<int>)
+						x: 0
+						y: 0
+						text: "+"
+						textColor: #000000FF
+						font: font_resource(d3d85ebd-75c2-4f34-a846-b03a30926113)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 50
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "button+"
+				visible: true
+				width: height@a06f580b-49bd-45ab-b8c8-afee5cdfe6e9 (propref<int>)
+				height: width@ff1da566-7395-49a7-8d80-8cf3f3a1e3ff (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFFFF
+				"buttonPressed+": function<bool>(52222d25-71b9-4474-9ac6-4795966bb2a7)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}, 
+			GtfRectangle(057c6e33-6602-4355-8027-b6a7b64822a8)
+			{
+				features: feature_list [
+					TouchPressed(64d92d32-c986-47dc-bf7b-b3c1af938cdb)
+					{
+						touchPressed: function<bool,int,int,int,int>(e21ddbd1-438e-44cd-8329-7c9503d817da)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.fillColor=color:0, 0, 0, 255" \
+								"	v:this->\"Label-\".textColor=color:255, 255, 255, 255" \
+								"	v:this.\"buttonPressed-\"()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(1b646763-52fb-4cb3-a15b-9fb5bdf0824a)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}, 
+					TouchShortReleased(6935408d-7fe0-40d4-8545-bd14ef62df50)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(f8f17209-8657-43f5-8831-9542f554deeb)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"		v:this.fillColor=color:255, 255, 255, 255" \
+								"	v:this->\"Label-\".textColor=color:0, 0, 0, 255" \
+								"    false" \
+								"}"
+						}
+					}]
+				children: children_list [
+					GtfLabel(54e3af82-8f76-4968-a96d-5997d2d756a6)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Label-"
+						visible: true
+						width: width@057c6e33-6602-4355-8027-b6a7b64822a8 (propref<int>)
+						height: height@057c6e33-6602-4355-8027-b6a7b64822a8 (propref<int>)
+						x: 0
+						y: 0
+						text: "-"
+						textColor: #000000FF
+						font: font_resource(cc814ca0-1c39-47b5-a9b9-cb7ec0874fd2)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 60
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "button-"
+				visible: true
+				width: height@a06f580b-49bd-45ab-b8c8-afee5cdfe6e9 (propref<int>)
+				height: width@057c6e33-6602-4355-8027-b6a7b64822a8 (propref<int>)
+				x: 60
+				y: 0
+				fillColor: #FFFFFFFF
+				"buttonPressed-": function<bool>(6c8ac87d-a31c-4b32-8ee1-b2f314871562)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}]
+		name: "Container"
+		visible: true
+		width: 110
+		height: 50
+		x: 0
+		y: 0
+	}
+	x: x@a06f580b-49bd-45ab-b8c8-afee5cdfe6e9 (propref<int>)
+	y: y@a06f580b-49bd-45ab-b8c8-afee5cdfe6e9 (propref<int>)
+	"buttonPressed+": "buttonPressed+"@ff1da566-7395-49a7-8d80-8cf3f3a1e3ff (propref<function<bool>>)
+	"buttonPressed-": "buttonPressed-"@057c6e33-6602-4355-8027-b6a7b64822a8 (propref<function<bool>>)
+}

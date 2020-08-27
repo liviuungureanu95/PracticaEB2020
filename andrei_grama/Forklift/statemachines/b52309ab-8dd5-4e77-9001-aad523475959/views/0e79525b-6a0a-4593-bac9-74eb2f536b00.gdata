@@ -1,0 +1,1291 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(0e79525b-6a0a-4593-bac9-74eb2f536b00)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(2690d04a-b709-4632-a227-e61f2080d9ff)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "background"
+			visible: true
+			width: width@0e79525b-6a0a-4593-bac9-74eb2f536b00 (propref<int>)
+			height: height@0e79525b-6a0a-4593-bac9-74eb2f536b00 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #696969FF
+		}, 
+		GtfContainer(4fd852b8-9326-4b4c-9836-f79f28b4ce69)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(1777a43a-b38b-44f6-96f4-ccf4f959e5e1)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfParallelAnimation(18693fd8-4400-40cf-a1c8-2a21d03064d2)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(174e872f-3fdc-4a20-9dee-cbf82a980688)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve"
+									enabled: true
+									delay: 0
+									duration: 5000
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 0
+									end: 100
+									target: x@1777a43a-b38b-44f6-96f4-ccf4f959e5e1 (propref<int>)
+								}]
+							name: "wallAnimation"
+							enabled: true
+							repeat: 100
+							alternating: true
+							scale: 1F
+							onPlay: function<void,int,bool>(236c019f-2a0f-47f8-b7bb-41e7e0065e7e)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"	v:this->^.visible=true" \
+									"}"
+							}
+							onPause: function<void,int>(d4ab4f06-1390-47e3-b0b5-b3fcefbac771)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(6816ca4a-c4db-4c4f-9c86-ee0f7a71dd7a)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"	v:this->^.visible=false" \
+									"}"
+							}
+							play: conditional_script(1a2338b0-a34c-4a30-902e-a071d41fae5c)
+							{
+								triggerList: trigger_list(3d2f8459-058c-4536-9070-ee7f0fe1f04b)
+								{
+									script: "dp:reverse"
+								}
+								onTrigger: function<bool,bool>(f9a91c02-2242-4ab8-9437-eb8f876e3abe)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	if(dp:reverse==true)" \
+										"	f:animation_play(v:this)" \
+										"	else" \
+										"	f:animation_cancel(v:this)" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "wall"
+					visible: false
+					width: 20
+					height: 150
+					x: 0
+					y: 265
+					fillColor: #FFFF00FF
+					long: #FFFF00FF
+					mid: #FFA500FF
+					short: #FF0000FF
+					setColor: conditional_script(f4d42f4e-e089-4dd1-8774-8c45da4ee9d7)
+					{
+						triggerList: trigger_list(4a4e98a1-5427-419c-b269-257c5589240c)
+						{
+							script: "v:this.x"
+						}
+						onTrigger: function<bool,bool>(b6d27726-43bf-4b24-9630-55ad1a3cf046)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(v:this.x>=0&&v:this.x<=20)" \
+								"	v:this.fillColor=v:this.long" \
+								"	else" \
+								"	if(v:this.x>=20&&v:this.x<=60)" \
+								"	v:this.fillColor=v:this.mid" \
+								"	else" \
+								"	if(v:this.x>=60&&v:this.x<=100)" \
+								"	v:this.fillColor=v:this.short" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfImage(71365a49-cedb-4cab-9359-0402ff1211ee)
+				{
+					features: feature_list [
+						ScaleMode(80a1a39b-878d-455e-8f0f-b9f986ddc4df)
+						{
+							scaleMode: 2
+						}]
+					children: children_list []
+					name: "forklift"
+					visible: true
+					width: 451
+					height: 438
+					x: 121
+					y: 0
+					image: image_resource(56fdcf2d-44f1-4b9c-999b-065aaf29f88b)
+					{
+						file: "lift_animation\\forklift-lift-truck-warehouse-512 (3).png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(cec19769-ab47-4ce4-adf3-2eccac2c9f21)
+				{
+					features: feature_list [
+						ScaleMode(2662d739-c185-4537-bb0e-b34dd3d196ea)
+						{
+							scaleMode: 2
+						}]
+					children: children_list []
+					name: "cargo"
+					visible: true
+					width: 164
+					height: 438
+					x: 399
+					y: int_scriptedValue(bf9576bb-27e4-4fef-9271-2a6ff069f024)
+					{
+						triggerList: trigger_list(7e59d620-417b-4ba1-bb06-453d952c6670)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(e8e61975-1ea2-4a0f-9095-44e8eb75060a)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<int>(32169cd2-b400-457b-9598-7eefdf7cb617)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	31-v:this->^->forkHeight.forkheight*31" \
+								"}"
+						}
+						write: function<bool,int>(9b870c9d-3a4a-4123-bb8b-75cf81539c25)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					image: image_resource(a2e674f4-c3f6-4f0e-8255-e9a1e5412c53)
+					{
+						file: "lift_animation\\forklift-lift-truck-warehouse-512 (2).png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(9a26b84c-91d7-4b4b-ba42-fea7b966564b)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfParallelAnimation(bc58fb5a-fa3f-4275-a737-a93382add3c0)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(58a797e0-86f9-484c-9d95-08f55b40a256)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve"
+									enabled: true
+									delay: 0
+									duration: int_scriptedValue(bcbeb07b-82ba-4e67-92bd-db830c9f9b2f)
+									{
+										triggerList: trigger_list(1869d5b8-df21-4747-a4f8-9ff7b480758c)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(772f25d7-8d14-4e09-a15d-586192c2c571)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+										read: function<int>(be7b14be-5ba5-47f0-8b17-d52f2784bc57)
+										{
+											script: "function()" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	f:abs(v:this->^->^.startForkHeight-dp:forkHeight)*400" \
+												"}"
+										}
+										write: function<bool,int>(1057fe29-e9df-43cf-81b3-29ba8823d8f4)
+										{
+											script: "function(v:arg0::int)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+									}
+									repeat: 1
+									alternating: false
+									relative: false
+									start: startForkHeight@9a26b84c-91d7-4b4b-ba42-fea7b966564b (propref<int>)
+									end: int_scriptedValue(e1968298-7f06-44dc-96f4-d5007378834c)
+									{
+										triggerList: trigger_list(3d310ade-2efe-4b02-b409-450179e2afa8)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(9061d3da-ad01-451d-a5b5-51fa18efde85)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+										read: function<int>(2252ee3f-8afb-491c-99c2-d3eac28a7c47)
+										{
+											script: "function()" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	dp:forkHeight" \
+												"}"
+										}
+										write: function<bool,int>(2ed50aa8-b122-4b27-807a-5a7dcfca2e77)
+										{
+											script: "function(v:arg0::int)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+									}
+									target: forkheight@9a26b84c-91d7-4b4b-ba42-fea7b966564b (propref<int>)
+								}]
+							name: "forkAnimation"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(8114e48c-a436-4307-b44b-a642c534e91e)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(61080868-2df9-4d07-8810-fe05212309a7)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(5a7ef689-44cb-4e9b-810b-a84a9f7f194d)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"	v:this->^.startForkHeight=v:this->^.forkheight" \
+									"}"
+							}
+							play: conditional_script(aef055b0-415a-4aad-b425-f9ac1ba7040c)
+							{
+								triggerList: trigger_list(b4605a0c-43d4-4318-bf3d-23c4c945b523)
+								{
+									script: "dp:forkHeight"
+								}
+								onTrigger: function<bool,bool>(2aaa133d-fec3-441c-bc04-f08ed93944b2)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	f:animation_play(v:this)" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "forkHeight"
+					visible: true
+					width: 70
+					height: 70
+					x: 444
+					y: int_scriptedValue(a2f57133-d606-4c37-b14d-a3ce0a4f1b57)
+					{
+						triggerList: trigger_list(78297f32-d425-4544-83d2-957e525d010a)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(b0086dd1-be21-4a85-8eed-fafb32405acb)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<int>(831cd1ac-0b24-40a7-92fc-11a21a804e74)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	v:this->^->cargo.y-31+304" \
+								"}"
+						}
+						write: function<bool,int>(0c6675c9-ca7a-4472-b678-9ae9a7e58286)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					text: string_scriptedValue(fb479e7b-7f39-459c-91b3-d85e4ae4184d)
+					{
+						triggerList: trigger_list(240f2c92-d2cf-42bb-90eb-cff7cf2e3047)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(97ec0195-5113-4289-ac53-73afe3c8d57d)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(3bad6de6-5031-4dc1-ba8e-1081e322c4ef)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:int2string(v:this.forkheight)+\"m\"" \
+								"}"
+						}
+						write: function<bool,string>(6524aef9-f041-4106-9f94-089d5a84f6dd)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(9a5989e2-2961-485d-a35d-53230a54b195)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 50
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+					forkheight: 0
+					startForkHeight: 0
+				}, 
+				GtfLabel(5bc760c6-bce7-4079-9dc5-96cbf71f234c)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfParallelAnimation(5bb0ba39-9654-4a85-8121-e5657bf49275)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(3a39959d-41cf-4618-8fd3-f4bbf49d8120)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve"
+									enabled: true
+									delay: 0
+									duration: int_scriptedValue(f3edb565-93aa-466a-9da5-751447105773)
+									{
+										triggerList: trigger_list(df3ddac0-f2ea-49d5-869b-d4822fc2626c)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(b3a6afeb-f1fd-4836-bfae-1329f8f4557f)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+										read: function<int>(ed1a2854-1d5f-43c3-bcf7-d36e20c4d7d5)
+										{
+											script: "function()" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	f:abs(v:this->^->^.startDegree-dp:forkAngle)*200" \
+												"}"
+										}
+										write: function<bool,int>(a9623ac9-76e8-43be-b38d-990bddb834be)
+										{
+											script: "function(v:arg0::int)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+									}
+									repeat: 1
+									alternating: false
+									relative: false
+									start: startDegree@5bc760c6-bce7-4079-9dc5-96cbf71f234c (propref<int>)
+									end: int_scriptedValue(50f67d6f-c1c7-4f25-a3aa-9610efc56058)
+									{
+										triggerList: trigger_list(812c0c27-d753-49b9-90a7-a59966c1c0b8)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(7124778b-d8d1-451b-ae0e-345d3112207a)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+										read: function<int>(9bc70f98-587e-4b94-a004-8cef0682a86f)
+										{
+											script: "function()" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	dp:forkAngle" \
+												"}"
+										}
+										write: function<bool,int>(a27af8e1-83e8-43e8-b130-da2da6f9c07e)
+										{
+											script: "function(v:arg0::int)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+									}
+									target: degree@5bc760c6-bce7-4079-9dc5-96cbf71f234c (propref<int>)
+								}]
+							name: "railsAnimation"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(de200ddd-dcce-4497-b4bf-76d692622fd0)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(82dec01a-48d1-4b38-9b53-f8a4ac5b7bad)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(d0c70ad0-fcc6-43fd-afb9-6d8bfb0dbbe1)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"	v:this->^.startDegree=v:this->^.degree" \
+									"}"
+							}
+							play: conditional_script(a41edf89-8a36-4269-97bf-0f493474ab71)
+							{
+								triggerList: trigger_list(bef3aa35-39f0-45ad-be32-d37462968f2b)
+								{
+									script: "dp:forkAngle"
+								}
+								onTrigger: function<bool,bool>(3487b841-a269-4626-b0d9-5a654a4908a2)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	f:animation_play(v:this)" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "railsAngle"
+					visible: true
+					width: 70
+					height: 70
+					x: 293
+					y: 37
+					text: string_scriptedValue(7ee55b28-3234-46af-aab9-1127757159f7)
+					{
+						triggerList: trigger_list(86c84cd7-8f24-4621-9450-8587834b7a56)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(c624cb20-ecd8-48b0-82ba-72570e00dab9)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(ba088e47-8ecd-4b6b-87ed-2fe255ae01e7)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:int2string(v:this.degree)+\"°\"" \
+								"}"
+						}
+						write: function<bool,string>(a2fb2c8c-3888-4909-a488-638701c6a918)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(aa7f9037-26d3-4bd3-9af3-071a6a51e158)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 50
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+					degree: 0
+					startDegree: 0
+				}, 
+				GtfLabel(f4a3cf83-5161-4e43-915f-2eb21450b377)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfParallelAnimation(0612d5df-5941-4037-b5e5-51587fc35623)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(234abd67-eb90-4ac2-b94b-edc31944a855)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve"
+									enabled: true
+									delay: 0
+									duration: 6000
+									repeat: 1
+									alternating: false
+									relative: false
+									start: -30
+									end: 30
+									target: degree@f4a3cf83-5161-4e43-915f-2eb21450b377 (propref<int>)
+								}]
+							name: "wheelAnimation"
+							enabled: true
+							repeat: 100
+							alternating: true
+							scale: 1F
+							onPlay: function<void,int,bool>(8a72d2f7-48af-4ad4-b709-db4a502a5236)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(1b779f6a-e160-4273-9fb4-d084cfc4a188)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(b0ae16ee-a798-46eb-a7d0-1e978a528749)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							play: conditional_script(883c9b61-f324-4027-9616-4517a75e027d)
+							{
+								triggerList: trigger_list(ec42a5a5-6f31-493c-9cbe-314ade1c390b)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(6f12abb3-b846-467b-a7b3-b3da3b13fb37)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	f:animation_play(v:this)" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "wheelAngle"
+					visible: true
+					width: 70
+					height: 70
+					x: 149
+					y: 285
+					text: string_scriptedValue(aa1f9a10-0899-45f2-9611-4134b0e72c7b)
+					{
+						triggerList: trigger_list(98a652fc-137d-458c-9db0-ad867fa79f16)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(051c27aa-15ce-41ee-aa88-802bb53f2380)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(5a62f68c-5a63-4da6-8eaf-5f4406cb0de6)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:int2string(v:this.degree)+\"°\"" \
+								"}"
+						}
+						write: function<bool,string>(13ad9a98-1a05-40c9-ba32-1ce51bf26075)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(a0cbe4a1-9bcc-4513-bcf7-af4e2e5e07cb)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 50
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+					degree: 0
+				}]
+			name: "forklift"
+			visible: true
+			width: 570
+			height: 430
+			x: 230
+			y: 50
+		}, 
+		GtfContainer(756fcbf4-ec9a-4b97-8006-8864acefb212)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(9d7000e9-b895-462b-b8e0-c8e3ea49ccfb)
+				{
+					features: feature_list [
+						ScaleMode(d60f5191-29b2-4fca-b3c6-38a46c68966b)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "parkingBrake"
+					visible: true
+					width: 100
+					height: 100
+					x: 0
+					y: 88
+					image: image_resource(65257479-0ef9-494d-915e-3aefc9289bfd)
+					{
+						file: "warning lights\\parkingBrake.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+					setVisible: conditional_script(c59d7931-8d0f-45ca-b70d-1df718ad7a46)
+					{
+						triggerList: trigger_list(24051599-0bad-450f-81a1-61e55fcdbbe0)
+						{
+							script: "dp:\"parking brake\""
+						}
+						onTrigger: function<bool,bool>(e30ae351-b9a1-4886-999e-773957abd978)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.visible=dp:\"parking brake\"" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfImage(184c02ef-62d4-47d0-b10e-1543a9d5ae94)
+				{
+					features: feature_list [
+						ScaleMode(3d85410f-dcc1-4cf2-a700-20faa52b619f)
+						{
+							scaleMode: 2
+						}]
+					children: children_list [
+						GtfParallelAnimation(42546c3f-1f3c-4e8b-a713-aaf245ab88dc)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfScriptCurveBool(2e3a191d-2064-4291-b311-55755d897cb6)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Script curve"
+									enabled: true
+									delay: 300
+									duration: 1000
+									repeat: 1
+									alternating: false
+									relative: false
+									curve: function<bool,int,int>(14e3cda7-640d-4935-a72e-b4c67f25a916)
+									{
+										script: "function(v:diff::int, v:t_anim::int)" \
+											"{" \
+											"	if((v:t_anim / 1000) % 2 != 0 )" \
+											"    {" \
+											"    	true" \
+											"    }" \
+											"    else" \
+											"    {" \
+											"    	false" \
+											"    }" \
+											"}"
+									}
+									target: visible@184c02ef-62d4-47d0-b10e-1543a9d5ae94 (propref<bool>)
+								}]
+							name: "seatAnimation"
+							enabled: true
+							repeat: 1000
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(612cd882-9790-4c7c-b277-c5a4dd65158c)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(5a307fe6-7066-4d24-b100-d854fc78e6ce)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(4458a8aa-776b-4499-b4ec-d021f51dc8e0)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"	v:this->^.visible=false" \
+									"}"
+							}
+							play: conditional_script(9b254233-dd3b-4aff-8f43-d2dd7f75f2f0)
+							{
+								triggerList: trigger_list(fb838d7d-79c5-4209-b7c3-1f1913f22286)
+								{
+									script: "dp:emptySeat"
+								}
+								onTrigger: function<bool,bool>(9edd09f1-7051-4ebd-b544-984bcc464fc6)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	if(dp:emptySeat==true)" \
+										"	f:animation_play(v:this)" \
+										"	else" \
+										"	f:animation_cancel(v:this)" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "seat"
+					visible: true
+					width: 100
+					height: 100
+					x: 130
+					y: 88
+					image: image_resource(0112dc96-ed6e-4f33-9bad-4975929bb19a)
+					{
+						file: "warning lights\\Seat.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(35b6904f-6d48-4178-a784-03c1dccb62c5)
+				{
+					features: feature_list [
+						ScaleMode(65f42443-6b68-4530-9a8e-473e0804636e)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "engineFailure"
+					visible: true
+					width: 100
+					height: 100
+					x: 0
+					y: 0
+					image: image_resource(4d7a06df-99de-4b60-b919-a04a1b561f49)
+					{
+						file: "warning lights\\engineFailure.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+					setVisible: conditional_script(4ee1c78c-895c-4034-b1cb-b955023d5109)
+					{
+						triggerList: trigger_list(3620110b-3d4d-4f7b-89a6-4a41d406f8b5)
+						{
+							script: "dp:\"engine failure\""
+						}
+						onTrigger: function<bool,bool>(655bf692-0ec0-44ca-aeb9-f423eb29d21e)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.visible=dp:\"engine failure\"" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfImage(528f04db-9342-47c0-a471-3c3379683dfa)
+				{
+					features: feature_list [
+						ScaleMode(f35b8b68-fed4-49b3-906b-87c0dfa97cd9)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "batteryProblem"
+					visible: true
+					width: 100
+					height: 100
+					x: 130
+					y: 0
+					image: image_resource(2df19767-5a69-4313-bdbc-c12fbca8c586)
+					{
+						file: "warning lights\\batteryProblem.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+					setVisible: conditional_script(4aa006e8-cca5-4213-b904-e18b0b22c856)
+					{
+						triggerList: trigger_list(2a820116-4053-4d9a-a359-f35fd122813d)
+						{
+							script: "dp:\"battery roblem\""
+						}
+						onTrigger: function<bool,bool>(7a46e72d-6f44-4cc7-9159-d2e33974ef76)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.visible=dp:\"battery roblem\"" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfRectangle(aa89d0dd-479d-4857-b71d-a650a03e3b8b)
+				{
+					features: feature_list [
+						Border(cbdf6115-80d4-4eea-a5e0-788e6fc7917f)
+						{
+							borderThickness: 5
+							borderColor: #FFFFFFFF
+							borderStyle: 0
+						}]
+					children: children_list [
+						GtfRectangle(6fa696d6-18a5-4428-a3b7-9984f4a2556d)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "fill"
+							visible: true
+							width: 110
+							height: 170
+							x: 5
+							y: int_scriptedValue(6b6929c7-20e6-455f-8e3b-2fcaabdd4f38)
+							{
+								triggerList: trigger_list(46d43259-88a6-44cf-91b0-63376a25d628)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(ac53da2f-2f16-43ea-a3e1-ec21b95df9eb)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<int>(c3440553-c97a-4e09-bafb-a7ae80ae8b4b)
+								{
+									script: "function()" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	170-v:this.height+5" \
+										"}"
+								}
+								write: function<bool,int>(b11e0e9b-a376-46f9-bd8d-aaa7a6f0d9af)
+								{
+									script: "function(v:arg0::int)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							fillColor: #FFFFFFFF
+						}, 
+						GtfRectangle(eaa59184-ef3a-456d-b16d-be8af8d7837f)
+						{
+							features: feature_list [
+								Border(16327944-6a87-4f9c-afae-49e66824b06e)
+								{
+									borderThickness: 5
+									borderColor: #FFFFFFFF
+									borderStyle: 0
+								}]
+							children: children_list []
+							name: "+"
+							visible: true
+							width: 30
+							height: 30
+							x: 10
+							y: -25
+							fillColor: #696969FF
+						}, 
+						GtfRectangle(8b84d303-bb64-4140-9c31-ff6af041e1e3)
+						{
+							features: feature_list [
+								Border(890fbec4-e7d9-4445-8c12-c2551579a919)
+								{
+									borderThickness: 5
+									borderColor: #FFFFFFFF
+									borderStyle: 0
+								}]
+							children: children_list []
+							name: "-"
+							visible: true
+							width: 30
+							height: 30
+							x: 80
+							y: -25
+							fillColor: #696969FF
+						}, 
+						GtfParallelAnimation(8ffa965d-3bf0-4c43-96bd-7cb7b90ab5d6)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(78d9959f-266c-436a-91b0-cc594c46ae5b)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve"
+									enabled: true
+									delay: 0
+									duration: 4000
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 0
+									end: 170
+									target: height@6fa696d6-18a5-4428-a3b7-9984f4a2556d (propref<int>)
+								}]
+							name: "bateryAnimation"
+							enabled: true
+							repeat: 100
+							alternating: true
+							scale: 1F
+							onPlay: function<void,int,bool>(c821cfe4-6958-4f20-8749-82798ced2fed)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(f2a2dc90-4a77-4ff4-8d92-9ec4895d3cc3)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(d6b614ec-b3d4-4c15-afbd-7d4351a542a8)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							play: conditional_script(c8b6f3ef-833f-424f-87a4-b52c09db5432)
+							{
+								triggerList: trigger_list(97f04564-fb55-4693-a56c-538e35f16ac3)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(49c4ca58-d517-4454-bc14-df9f36eea7f4)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	f:animation_play(v:this)" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "batery"
+					visible: true
+					width: 120
+					height: 180
+					x: 55
+					y: 230
+					fillColor: #FFFFFF00
+				}]
+			name: "infoPanel"
+			visible: true
+			width: 230
+			height: 430
+			x: 0
+			y: 50
+		}, 
+		GtfContainer(4808b54a-d091-455f-9722-c0694c5bbbc7)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(c4098a95-fd2f-485e-9431-a308d006a6c8)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "background"
+					visible: true
+					width: width@4808b54a-d091-455f-9722-c0694c5bbbc7 (propref<int>)
+					height: height@4808b54a-d091-455f-9722-c0694c5bbbc7 (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #F5F5F5FF
+				}, 
+				GtfLabel(93318386-b3e2-4f2c-b96d-c8b78b161b82)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "time"
+					visible: true
+					width: 200
+					height: height@4808b54a-d091-455f-9722-c0694c5bbbc7 (propref<int>)
+					x: 300
+					y: 0
+					text: string_scriptedValue(913c6998-f71b-4847-8967-ffbe33c8a4c0)
+					{
+						triggerList: trigger_list(31652992-3bf8-4c94-98b7-2187b9ec3ae5)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(b7724a51-2aba-44cf-9efe-312d0756c1ae)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(05340eb0-4931-411c-987d-b595524f8b0d)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	" \
+								"	f:int2string(f:localtime_day(f:system_time()))+\".\"+" \
+								"	f:int2string(f:localtime_month(f:system_time())+1)+\".\"+" \
+								"	f:int2string(f:localtime_year(f:system_time()))+\" \"+" \
+								"	" \
+								"	f:int2string(f:localtime_hour(f:system_time())+3)+\":\"+" \
+								"	f:int2string(f:localtime_minute(f:system_time()))" \
+								"}"
+						}
+						write: function<bool,string>(a3666708-9ef6-43a7-b1d7-e506d852b4c4)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(cd828888-7a02-43c7-a531-ed1f7e336e8a)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(8be2acf5-2ff8-4d7f-a1be-7c52b54368c9)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "infoWeight"
+					visible: true
+					width: 140
+					height: 50
+					x: 0
+					y: 0
+					text: "1000Kg"
+					textColor: #000000FF
+					font: font_resource(3a6cbfa1-72b2-4e3d-b824-466d8cd98b47)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(2405e615-11c0-4418-ab85-b8d5017ce22e)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfParallelAnimation(3eee630e-8d16-4451-ad86-69d96e8b47d7)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(8ab8427a-8937-4912-9d04-e34a8251c9b3)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve"
+									enabled: true
+									delay: 0
+									duration: 1000000
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 0
+									end: 1000
+									target: hours@2405e615-11c0-4418-ab85-b8d5017ce22e (propref<int>)
+								}]
+							name: "hoursAnimation"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(a16e4382-0d49-4a66-be50-0439bc2a6838)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(6172488a-65e2-4341-a311-e058e8af7c40)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(1d9849df-6d24-4fb7-879d-ad11aacaccb2)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							play: conditional_script(d6770f15-f868-42a8-af49-ca9fe27fa9b1)
+							{
+								triggerList: trigger_list(f52f995c-7329-4bdb-980b-ec52b7f95b88)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(af787c5d-e52a-431b-9179-821bda6106a9)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	f:animation_play(v:this)" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "usedHours"
+					visible: true
+					width: 140
+					height: 50
+					x: 660
+					y: 0
+					text: string_scriptedValue(80e61962-f874-4d50-8437-2f05e24d0e10)
+					{
+						triggerList: trigger_list(83599405-462c-4806-8d84-953c1de295e9)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(4bd6675e-5b18-418e-8285-f854424a6da9)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(2dbbc91c-d260-48a6-8e5c-c70fe9a22a4b)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:int2string(v:this.hours)+\"h\"" \
+								"}"
+						}
+						write: function<bool,string>(59e7a8b2-caf5-4e0a-835d-54693b3661e6)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(d40ac8b6-7932-4080-a995-f930f4441ffd)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+					hours: 0
+				}]
+			name: "topBar"
+			visible: true
+			width: width@0e79525b-6a0a-4593-bac9-74eb2f536b00 (propref<int>)
+			height: 50
+			x: 0
+			y: 0
+		}]
+	name: "mainView"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}
