@@ -1,0 +1,118 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(baec24da-5825-4011-873a-6cf70181bac7)
+{
+	name: "Button_Text"
+	structure: GtfContainer(e09fbed6-c7af-45ee-9c59-955a50eccdd1)
+	{
+		features: feature_list [
+			TouchPressed(458f461f-638c-4802-8bde-d3a2c40309aa)
+			{
+				touchPressed: function<bool,int,int,int,int>(dfde290c-bf3d-4550-9a23-99b9194904b1)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.OnPress()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(514abc3b-da92-42f6-bebb-c61ec692c2f0)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(60e6784f-3aac-4a03-9ddb-2cef6b658c63)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.OnRelease()" \
+						"	v:this.OnReleaseAction()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(f6e77301-0805-4caa-b332-5b30669644e8)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(e9e525e7-8e15-42fa-b1c0-5ec616346ec6)
+			{
+				features: feature_list [
+					Border(26ecb274-c951-4424-a81e-a6df0e4a8408)
+					{
+						borderThickness: 2
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list [
+					GtfLabel(6680321d-1cd1-4969-a990-4dcc80189d33)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Label 4"
+						visible: true
+						width: width@e09fbed6-c7af-45ee-9c59-955a50eccdd1 (propref<int>)
+						height: height@e09fbed6-c7af-45ee-9c59-955a50eccdd1 (propref<int>)
+						x: 0
+						y: 0
+						text: "label"
+						textColor: #FFFFFFFF
+						font: font_resource(17ae7649-2958-4886-ab9c-44cdcedec607)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "Rectangle 13"
+				visible: true
+				width: width@e09fbed6-c7af-45ee-9c59-955a50eccdd1 (propref<int>)
+				height: height@e09fbed6-c7af-45ee-9c59-955a50eccdd1 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: CurrentColor@e09fbed6-c7af-45ee-9c59-955a50eccdd1 (propref<color>)
+			}]
+		name: "Container 2"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		Colors: colorlist [#BC8F8FFF, #A9A9A9FF]
+		CurrentColor: #A9A9A9FF
+		OnPress: function<bool>(449ef88d-4618-4b2e-ba8f-0ea387b1ff7d)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.CurrentColor = v:this.Colors[0]" \
+				"	false" \
+				"}"
+		}
+		OnRelease: function<bool>(13219688-fbbb-436d-a0ac-60f1ff606470)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.CurrentColor = v:this.Colors[1]" \
+				"	false" \
+				"}"
+		}
+		OnReleaseAction: function<bool>(c98175ca-35ff-4976-8270-4cc4ac723cc4)
+		{
+			script: "function()" \
+				"{" \
+				"    fire ev:GoTo_MainMenu()" \
+				"	false" \
+				"}"
+		}
+	}
+	width: width@e09fbed6-c7af-45ee-9c59-955a50eccdd1 (propref<int>)
+	height: height@e09fbed6-c7af-45ee-9c59-955a50eccdd1 (propref<int>)
+	x: x@e09fbed6-c7af-45ee-9c59-955a50eccdd1 (propref<int>)
+	y: y@e09fbed6-c7af-45ee-9c59-955a50eccdd1 (propref<int>)
+	OnReleaseAction: OnReleaseAction@e09fbed6-c7af-45ee-9c59-955a50eccdd1 (propref<function<bool>>)
+	Colors: Colors@e09fbed6-c7af-45ee-9c59-955a50eccdd1 (propref<colorlist>)
+	text: text@6680321d-1cd1-4969-a990-4dcc80189d33 (propref<string>)
+}

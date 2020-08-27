@@ -1,0 +1,54 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_dynamic_statemachine(f185a933-13e3-4933-86e1-a3574b1c16de)
+{
+	x: 0
+	y: 0
+	width: 600
+	height: 400
+	name: "FrontDoorActivity_Pop_up"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions []
+	internal_transitions: haptic_internal_transitions []
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(4dd3489f-3df7-427d-9bac-aaab11f8a86b)
+		{
+			x: 268
+			y: 129
+			width: 100
+			height: 100
+			name: "FronDoorNotify_State"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (2bb3ba20-41ee-4c8a-b04c-60b55a105f77)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(6b6d7e32-93c8-43e9-8969-4fa04045e214)
+	{
+		x: 95
+		y: 168
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(2d45d716-4951-4613-9dab-58ab696565d1)
+		{
+			action: function<void>(none)
+			target_state: @4dd3489f-3df7-427d-9bac-aaab11f8a86b (objectref<haptic_dialog_state>)
+			source_dock: 0.25408F
+			target_dock: 0.7429624F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(none)
+}

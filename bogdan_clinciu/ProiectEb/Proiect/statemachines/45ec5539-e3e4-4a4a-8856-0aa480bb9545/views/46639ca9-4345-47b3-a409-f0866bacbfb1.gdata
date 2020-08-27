@@ -1,0 +1,211 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(46639ca9-4345-47b3-a409-f0866bacbfb1)
+{
+	name: "MainMenu_View"
+	template: @3387c792-13b3-4788-98dd-d89ffa92573b (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(fcb92f34-2438-4137-9518-c122ffd8290b)
+		{
+			name: "Button_Utilities"
+			template: @dabdb878-1d07-457a-a436-0e66cd2b8905 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: 160
+			height: 100
+			x: 160
+			y: 100
+			CurrentColor: CurrentColor@dabdb878-1d07-457a-a436-0e66cd2b8905 (propref<color>)
+			OnReleaseAction: function<bool>(03c112b5-b6d7-4727-a63d-6914738572aa)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoTo_FunctionalAct()" \
+					"	false" \
+					"}"
+			}
+			image: image_resource(76b76c17-7af9-4219-94bf-d616c3de979e)
+			{
+				file: "utility.png"
+			}
+			ColorReleased: @21a62d28-93f6-4811-9bb5-542b0867f4b5 (objectref<color>)
+			ColorPressed: @1e972d14-400b-4b80-8625-1a630cf8d43f (objectref<color>)
+		}, 
+		GtfContainer_template_instance(f2143475-9c92-4835-9f40-7b63b75acf2c)
+		{
+			name: "Button_Info"
+			template: @dabdb878-1d07-457a-a436-0e66cd2b8905 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: 160
+			height: height@dabdb878-1d07-457a-a436-0e66cd2b8905 (propref<int>)
+			x: 160
+			y: 275
+			CurrentColor: CurrentColor@dabdb878-1d07-457a-a436-0e66cd2b8905 (propref<color>)
+			OnReleaseAction: function<bool>(525ce2e7-6f76-4369-9cda-9dd44e069561)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoTo_Info()" \
+					"	false" \
+					"}"
+			}
+			image: image_resource(2d64e0ca-9c25-4212-addc-adf050163e92)
+			{
+				file: "info.png"
+			}
+			ColorReleased: ColorReleased@dabdb878-1d07-457a-a436-0e66cd2b8905 (propref<color>)
+			ColorPressed: ColorPressed@dabdb878-1d07-457a-a436-0e66cd2b8905 (propref<color>)
+		}, 
+		GtfContainer_template_instance(240295d5-312f-4084-9cdf-605d5c493fea)
+		{
+			name: "Button_Settings"
+			template: @dabdb878-1d07-457a-a436-0e66cd2b8905 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: 160
+			height: height@dabdb878-1d07-457a-a436-0e66cd2b8905 (propref<int>)
+			x: 480
+			y: 275
+			CurrentColor: CurrentColor@dabdb878-1d07-457a-a436-0e66cd2b8905 (propref<color>)
+			OnReleaseAction: function<bool>(9a9102aa-aa72-4838-a9f1-a392d0a157ce)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoTo_Settings()" \
+					"	false" \
+					"}"
+			}
+			image: image_resource(164f52cc-a996-4ac2-b378-828aafc95242)
+			{
+				file: "settings (1).png"
+			}
+			ColorReleased: ColorReleased@dabdb878-1d07-457a-a436-0e66cd2b8905 (propref<color>)
+			ColorPressed: ColorPressed@dabdb878-1d07-457a-a436-0e66cd2b8905 (propref<color>)
+		}, 
+		GtfLabel(670c13b2-834d-4ef3-8bee-070887c4a314)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label_Utilities"
+			visible: true
+			width: 160
+			height: 33
+			x: 160
+			y: 205
+			text: @c021070f-2585-4b83-a0a3-f38e7b724da6 (objectref<string>)
+			textColor: #000000FF
+			font: font_resource(f92c8774-3d7e-4fd5-9ef9-15ca381fb600)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 2
+		}, 
+		GtfLabel(d153a726-410d-4ae6-a82e-fa27d59d3a8d)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label_Info"
+			visible: true
+			width: 160
+			height: 33
+			x: 160
+			y: 385
+			text: @e8f6e99f-3acd-439a-9c9c-253cded8babf (objectref<string>)
+			textColor: #000000FF
+			font: font_resource(97df50e8-b981-4159-b69a-1c3a6d256eb8)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 2
+		}, 
+		GtfLabel(da8b86b7-991f-450d-b73a-10f831489880)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label_Settings"
+			visible: true
+			width: 160
+			height: 33
+			x: 480
+			y: 385
+			text: @12db8cc9-2015-4986-9e77-0d26a63f9b07 (objectref<string>)
+			textColor: #000000FF
+			font: font_resource(af8874bf-987e-453c-a185-542ab3d3c88d)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 2
+		}, 
+		GtfImage(a2047bad-d93d-45b6-b2f0-2499bc372363)
+		{
+			features: feature_list [
+				ScaleMode(576a15c0-932d-4977-b5f6-969adf0fdbf9)
+				{
+					scaleMode: 2
+				}]
+			children: children_list []
+			name: "Image 12"
+			visible: true
+			width: 73
+			height: 91
+			x: 701
+			y: 110
+			image: image_resource(206d80da-5c90-411c-8499-3d0a9ea521e5)
+			{
+				file: "assistant.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(c457b963-db58-4e94-ba78-58eadcfbd98e)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 10"
+			visible: true
+			width: 244
+			height: 100
+			x: 442
+			y: 99
+			text: @0558473a-a2ea-4f92-9042-59c52508a736 (objectref<string>)
+			textColor: #FFFFFFFF
+			font: font_resource(e175d8c6-a451-4053-9d50-63c6716201ff)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(b3f0fcb6-1a18-4a03-9d27-358af115f470)
+		{
+			name: "Infotainmentbar"
+			template: @b0c5ec62-2752-46c7-8be7-a5df42ec50a7 (objectref<GtfContainer_template>)
+			children: children_list []
+			image: image_resource(6259246e-976c-4f4c-99bc-edeff65f1bf7)
+			{
+				file: "arrows.png"
+			}
+		}]
+	"Conditional script 1": conditional_script(cb2f8a40-e072-407c-a365-dd672803223f)
+	{
+		triggerList: trigger_list(cfd92c79-e081-414b-a18b-14e4d42c486e)
+		{
+			script: "dp:Senzor_FrontDoor"
+		}
+		onTrigger: function<bool,bool>(111ca878-1e14-4bfb-b3e7-5111ef1f7b1f)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	if(dp:Senzor_FrontDoor && !dp:Toogle_DND)" \
+				"	fire ev:\"Pop-up_FrontDoor_Enable\"()" \
+				"	false" \
+				"}"
+		}
+	}
+}

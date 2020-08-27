@@ -1,0 +1,195 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(96233239-ace4-4cb3-84ee-8f2a647de668)
+{
+	name: "Welcome_View"
+	template: @3387c792-13b3-4788-98dd-d89ffa92573b (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(ff7ad9d9-5f4e-4e9e-994a-833293b1e8e9)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Welcome"
+			visible: true
+			width: 500
+			height: 100
+			x: 150
+			y: 190
+			text: @de7c173a-7525-4c22-8f29-d34e873b20e0 (objectref<string>)
+			textColor: #FFFFFFFF
+			font: font_resource(cda76039-78f9-42f8-9df6-37bd8be76fb8)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+			AnimStart: function<bool>(2294640a-17be-4d23-b6b6-61b58c496a93)
+			{
+				script: "function()" \
+					"{" \
+					"	f:animation_play(v:this->^->ShowText)" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfRectangle(7972aab7-c4bf-4e9a-a30f-08ff6d49348b)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "WritingIlusion"
+			visible: true
+			width: width@ff7ad9d9-5f4e-4e9e-994a-833293b1e8e9 (propref<int>)
+			height: height@ff7ad9d9-5f4e-4e9e-994a-833293b1e8e9 (propref<int>)
+			x: 150
+			y: 190
+			fillColor: @bcfff48a-c7fb-4ed0-ab77-858afb1a7093 (objectref<color>)
+		}, 
+		GtfRectangle(fc968eb6-daaa-4b2b-ac2e-855774caf0a2)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Rectangle 10"
+			visible: true
+			width: 4
+			height: 50
+			x: 150
+			y: 215
+			fillColor: #FFFFFFFF
+		}, 
+		GtfParallelAnimation(bfd6e4e7-39fe-4352-b81a-91ba4a9af7bb)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLinearInterpolationS32(c1b8d8a4-dc41-4460-8f79-024ee80d39e5)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "ShowText"
+					enabled: true
+					delay: 10
+					duration: 1490
+					repeat: 1
+					alternating: false
+					relative: false
+					start: 150
+					end: 800
+					target: x@7972aab7-c4bf-4e9a-a30f-08ff6d49348b (propref<int>)
+					start1: conditional_script(5498ab2e-0a56-4773-a9e7-b0ab8a024bf1)
+					{
+						triggerList: trigger_list(677dea61-bf79-4340-ae74-2b1dc33c53fa)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(42a9ef6d-0221-4147-8fc7-c5677a388c2c)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	f:animation_play(v:this)" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfLinearInterpolationS32(67bc5fab-114c-4468-a53b-9859bf0aca9b)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "WritingLine"
+					enabled: true
+					delay: 0
+					duration: 1085
+					repeat: 1
+					alternating: false
+					relative: false
+					start: 150
+					end: 620
+					target: x@fc968eb6-daaa-4b2b-ac2e-855774caf0a2 (propref<int>)
+					StartAnim2: conditional_script(763cd06b-d65c-40ff-bd64-d4b92e5dbdbe)
+					{
+						triggerList: trigger_list(ec03ed81-b89c-477d-ae1a-6e4692aba882)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(e39467b7-233c-4cc1-906a-c15e1fe5afa8)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	f:animation_play(v:this)" \
+								"}"
+						}
+					}
+				}, 
+				GtfLinearInterpolationColor(74575385-3351-4c3f-98fa-1fef23dc7ffb)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Linear interpolation curve 3"
+					enabled: true
+					delay: 1085
+					duration: 750
+					repeat: 5
+					alternating: false
+					relative: false
+					start: #FFFFFFFF
+					end: #6D929BFF
+					target: fillColor@fc968eb6-daaa-4b2b-ac2e-855774caf0a2 (propref<color>)
+					"Conditional script 8": conditional_script(b1834764-46f7-4ce8-b3e5-2faf02a518fd)
+					{
+						triggerList: trigger_list(c09fb511-339a-482c-a787-2d1f170c9d23)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(a08f0d1f-052e-4f97-a0ff-6bdaf7a75d02)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	f:animation_play(v:this)" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "ShowText"
+			enabled: true
+			repeat: 1
+			alternating: false
+			scale: 1F
+			onPlay: function<void,int,bool>(7309fbf5-dcbb-429f-85ae-d80a45acc79a)
+			{
+				script: "function(v:animation_time::int, v:forward::bool)" \
+					"{" \
+					"" \
+					"}"
+			}
+			onPause: function<void,int>(3a835019-08bd-4274-ad85-53cc9a80ba3c)
+			{
+				script: "function(v:animation_time::int)" \
+					"{" \
+					"" \
+					"}"
+			}
+			onTerminate: function<void,int,int>(19e15db7-812b-41a0-a6db-8b10fee632e3)
+			{
+				script: "function(v:animation_time::int, v:terminate::int)" \
+					"{" \
+					"" \
+					"}"
+			}
+		}]
+	StartHome: conditional_script(cb8bb4aa-06aa-48cd-9310-fc94d7732b9b)
+	{
+		triggerList: trigger_list(f83b68ca-8544-4cd2-8239-dac1ad4c723a)
+		{
+			script: ""
+		}
+		onTrigger: function<bool,bool>(dcff5a18-ef10-4a92-970e-5141b381efde)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	fire_delayed 5000, ev:GoTo_MainMenu()" \
+				"	false" \
+				"}"
+		}
+	}
+}
