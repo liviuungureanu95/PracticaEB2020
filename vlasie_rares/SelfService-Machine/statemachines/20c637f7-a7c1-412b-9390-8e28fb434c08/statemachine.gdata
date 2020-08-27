@@ -1,0 +1,136 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_statemachine(20c637f7-a7c1-412b-9390-8e28fb434c08)
+{
+	x: 0
+	y: 0
+	width: 853
+	height: 474
+	name: "Main"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions [
+		haptic_transition(448fd183-9512-4c4d-91e6-f64bfc9513d2)
+		{
+			action: function<void>(none)
+			target_state: @941c027d-94c8-42d7-a01a-da99049b009e (objectref<haptic_dialog_state>)
+			source_dock: 0.7485399F
+			target_dock: 0.767872F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+			event: @501b44e1-b2f2-4c7a-9479-2899c36648a7 (objectref<event>)
+			condition: function<bool>(none)
+		}, 
+		haptic_transition(d566d19a-fd71-4376-9d0f-8bc25c1a5459)
+		{
+			action: function<void>(none)
+			target_state: @a90d7217-7b4d-41a3-82c2-c13c76989461 (objectref<haptic_dialog_state>)
+			source_dock: 0.09699903F
+			target_dock: 0.1707408F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+			event: @e4d12ad5-8fc1-4ef2-a506-070ae9a87c00 (objectref<event>)
+			condition: function<bool>(none)
+		}]
+	internal_transitions: haptic_internal_transitions []
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(055eb74e-41d6-4f5f-a4eb-c941db68ca4d)
+		{
+			x: 209
+			y: 24
+			width: 100
+			height: 100
+			name: "Welcome_State"
+			entry_action: function<void>(c7170111-1173-4e72-8a69-71ac7a58dfe1)
+			{
+				script: "function()" \
+					"{" \
+					"	fire_delayed 2500, ev:goTo_Menu();" \
+					"" \
+					"}"
+			}
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (91131fb1-8142-40ca-9671-89621458699e)
+			priority_stack: priority_stack(none)
+		}, 
+		haptic_dialog_state(941c027d-94c8-42d7-a01a-da99049b009e)
+		{
+			x: 51
+			y: 213
+			width: 100
+			height: 100
+			name: "Menu_State"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions [
+				haptic_transition(56239e0b-fdf6-4781-89cb-3ce8b68e6be5)
+				{
+					action: function<void>(none)
+					target_state: @565ef107-ddbf-4843-bfde-ea7ee315f16d (objectref<haptic_compound_state>)
+					source_dock: 0.2355774F
+					target_dock: 0.7185835F
+					curveControlXOffset: 0
+					curveControlYOffset: 0
+					labelXOffset: 10
+					labelYOffset: -10
+					labelRotationAngle: 0
+					event: @8515caf6-fc0f-4637-a455-bea0183c3d55 (objectref<event>)
+					condition: function<bool>(none)
+				}]
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (cd8fc6dc-224f-43ff-b2be-9124c42e6ce4)
+			priority_stack: priority_stack(none)
+		}, 
+		(565ef107-ddbf-4843-bfde-ea7ee315f16d), 
+		haptic_dialog_state(a90d7217-7b4d-41a3-82c2-c13c76989461)
+		{
+			x: 515
+			y: 38
+			width: 100
+			height: 100
+			name: "Help_State"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (25b0692e-1c31-435f-807d-b3690059c017)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(8014d166-4469-4822-aeae-8d8b70b3b2f3)
+	{
+		x: 41
+		y: 52
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(63d3d0f9-7535-4618-b214-fa43d5ac30a6)
+		{
+			action: function<void>(none)
+			target_state: @055eb74e-41d6-4f5f-a4eb-c941db68ca4d (objectref<haptic_dialog_state>)
+			source_dock: 0.2544198F
+			target_dock: 0.7706549F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(5764e6cc-1643-4e64-9719-3b34442a703e)
+	{
+	}
+}

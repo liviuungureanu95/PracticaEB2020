@@ -1,0 +1,247 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(37316de7-4d24-4be9-b97c-26ea5756d838)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(a971bc9b-9a2d-4488-972a-c3cd4cdb7170)
+		{
+			features: feature_list [
+				ScaleMode(6d8b1df7-7211-48e8-974d-328a687e4747)
+				{
+					scaleMode: 1
+				}]
+			children: children_list [
+				GtfLabel(9226ef81-5626-4911-94ff-b5bbd912e61e)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Title"
+					visible: true
+					width: 480
+					height: 100
+					x: 150
+					y: 30
+					text: "Is this your order?"
+					textColor: #000000FF
+					font: font_resource(ab744c73-ff2e-47af-b3a5-d82f328283e9)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 40
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(8b4806bc-ee2d-4a0f-bf5d-b0ddd53b968a)
+				{
+					features: feature_list [
+						MultiLine(15fff0ec-f5d5-4bca-ae2c-cd11f4538a83)
+						{
+							lineOffset: 0
+							maxLineCount: 0
+						}]
+					children: children_list []
+					name: "Order"
+					visible: true
+					width: 500
+					height: 376
+					x: 150
+					y: 100
+					text: @85154ad8-a6b1-4e77-8df9-49a24dd3e409 (objectref<string>)
+					textColor: #000000FF
+					font: font_resource(f93a12b3-01c0-4f53-9d98-f0bd564fcb46)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(baf9b6ba-44bc-40e3-ac13-282ad5b4e1a4)
+				{
+					name: "Yes_Button"
+					template: @42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (objectref<GtfContainer_template>)
+					children: children_list []
+					width: 100
+					height: 50
+					x: 2
+					y: 52
+					lineIndex: lineIndex@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<int>)
+					fillColor: fillColor@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<color>)
+					ButtonEvent: function<bool>(49d8ad19-8884-41c3-b694-3bc2b198f548)
+					{
+						script: "function()" \
+							"{" \
+							"	if(dp:Order_Price!=0)" \
+							"	{" \
+							"		v:this->^->Card.visible=true" \
+							"		v:this->^->Cash.visible=true" \
+							"		v:this->^->Total.visible=true" \
+							"		" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"		fire_delayed 4000, ev:dismiss_msg()" \
+							"		dp:Order=\"\"" \
+							"		" \
+							"		v:this->^->Total.visible=false" \
+							"	}" \
+							"	" \
+							"	false" \
+							"}"
+					}
+					text: "YES"
+					textColor: textColor@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<color>)
+					visible: visible@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<bool>)
+				}, 
+				GtfContainer_template_instance(70acab84-bca1-41ec-9dec-df54258e6aa9)
+				{
+					name: "No_Button"
+					template: @42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (objectref<GtfContainer_template>)
+					children: children_list []
+					width: 100
+					height: 50
+					x: 700
+					y: 50
+					lineIndex: lineIndex@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<int>)
+					fillColor: fillColor@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<color>)
+					ButtonEvent: function<bool>(c90bd7d0-5f12-4eb7-88fd-2fbc588b56b9)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:Order=\"\"" \
+							"	" \
+							"	v:this->^->Total.visible=false" \
+							"	fire ev:dismiss_msg()" \
+							"	dp:Order_Price=0" \
+							"	false" \
+							"}"
+					}
+					text: "NO"
+					textColor: textColor@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<color>)
+					visible: visible@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<bool>)
+				}, 
+				GtfLabel(6663e011-4cfe-42b5-9c3a-9b18392032c5)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Total"
+					visible: true
+					width: 100
+					height: 100
+					x: 0
+					y: 358
+					text: string_scriptedValue(cef0d78e-31b4-4cc7-972f-47dfd04071f9)
+					{
+						triggerList: trigger_list(6aea360e-8930-4f09-b062-abf2beb4b909)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(5093e5a7-630c-415e-8356-2ea7810025ea)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(3ee5c9ec-ae13-4da9-b783-aaa88f9a18bb)
+						{
+							script: "function()" \
+								"{" \
+								"	\"Total: \"+f:int2string(dp:Order_Price)+\" €\"" \
+								"}"
+						}
+						write: function<bool,string>(78958bf3-a0a9-4180-a2fe-3833745ad62f)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #000000FF
+					font: font_resource(3a0d3972-9d34-4f44-93d4-c52050152992)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(4965d28a-e034-497c-bc2b-d9d4e96ad94e)
+				{
+					name: "Card"
+					template: @42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (objectref<GtfContainer_template>)
+					children: children_list []
+					width: 100
+					height: 50
+					x: 0
+					y: 115
+					lineIndex: lineIndex@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<int>)
+					fillColor: fillColor@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<color>)
+					ButtonEvent: function<bool>(db7a191a-232a-4c9e-b08f-d878f7a3a6cd)
+					{
+						script: "function()" \
+							"{" \
+							"" \
+							"	" \
+							"	fire ev:goTo_card()" \
+							"	dp:Order=\"\"" \
+							"	false" \
+							"}"
+					}
+					text: "Card"
+					textColor: textColor@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<color>)
+					visible: false
+				}, 
+				GtfContainer_template_instance(a6e31321-658a-47a8-8ac7-31d6463ff744)
+				{
+					name: "Cash"
+					template: @42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (objectref<GtfContainer_template>)
+					children: children_list []
+					width: 100
+					height: 50
+					x: 0
+					y: 175
+					lineIndex: lineIndex@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<int>)
+					fillColor: fillColor@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<color>)
+					ButtonEvent: function<bool>(2b136599-439f-46e9-bd04-b46b7010d474)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^->Order.visible=true" \
+							"	fire ev:goTo_cash()" \
+							"	dp:Order=\"\"" \
+							"	" \
+							"	v:this->^->Total.visible=false" \
+							"	dp:Order_Price=0" \
+							"	false" \
+							"}"
+					}
+					text: "Cash"
+					textColor: textColor@42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0 (propref<color>)
+					visible: false
+				}]
+			name: "Image 1"
+			visible: true
+			width: width@37316de7-4d24-4be9-b97c-26ea5756d838 (propref<int>)
+			height: height@37316de7-4d24-4be9-b97c-26ea5756d838 (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(89c166c5-374d-4712-84ff-051cd18156ca)
+			{
+				file: "final_back.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "View 1"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

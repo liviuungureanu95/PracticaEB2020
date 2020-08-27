@@ -1,0 +1,107 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(42fbcec3-d3eb-466b-abc1-8cb9fcdf8bb0)
+{
+	name: "Text_Button"
+	structure: GtfContainer(f1737b86-10e9-41a9-b3db-eaa931e33a76)
+	{
+		features: feature_list [
+			LineIndex(2872ea74-2986-4a2f-b709-87a285d4e246)
+			{
+				lineIndex: 0
+			}]
+		children: children_list [
+			GtfRectangle(8a22cce8-a0be-44ba-8570-9022bc05768d)
+			{
+				features: feature_list [
+					TouchPressed(5098a148-2350-45b9-abea-095b4f4c2b2d)
+					{
+						touchPressed: function<bool,int,int,int,int>(f6bad378-26e7-4719-a167-428656ae4d18)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.borderThickness+=3" \
+								"    false" \
+								"}"
+						}
+					}, 
+					TouchShortReleased(6673a38c-d6bf-43e7-98bb-efd994c1ceb1)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(25e68823-af1a-4f5a-b42d-4ecb616a4ce4)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.ButtonEvent()" \
+								"	v:this.borderThickness-=3" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(2c0a7ec2-e4de-4b2f-80f8-a2ad445c6a15)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}, 
+					Border(8a9a4967-7b44-4c70-9779-35ffd42df9df)
+					{
+						borderThickness: 1
+						borderColor: #FFFF00FF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@f1737b86-10e9-41a9-b3db-eaa931e33a76 (propref<int>)
+				height: height@f1737b86-10e9-41a9-b3db-eaa931e33a76 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FF4500FF
+				ButtonEvent: function<bool>(18919ecd-022b-4fc0-b6bc-58c8e4022bf1)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}, 
+			GtfLabel(0facbd3a-3f6d-48b0-9c35-74efcbc8a27b)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Text"
+				visible: true
+				width: width@f1737b86-10e9-41a9-b3db-eaa931e33a76 (propref<int>)
+				height: height@f1737b86-10e9-41a9-b3db-eaa931e33a76 (propref<int>)
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(57c51254-d9d0-49c6-8fbb-febda16ddc8e)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Button"
+		visible: true
+		width: 200
+		height: 100
+		x: 0
+		y: 0
+	}
+	width: width@f1737b86-10e9-41a9-b3db-eaa931e33a76 (propref<int>)
+	height: height@f1737b86-10e9-41a9-b3db-eaa931e33a76 (propref<int>)
+	x: x@f1737b86-10e9-41a9-b3db-eaa931e33a76 (propref<int>)
+	y: y@f1737b86-10e9-41a9-b3db-eaa931e33a76 (propref<int>)
+	lineIndex: lineIndex@2872ea74-2986-4a2f-b709-87a285d4e246 (propref<int>)
+	fillColor: fillColor@8a22cce8-a0be-44ba-8570-9022bc05768d (propref<color>)
+	ButtonEvent: ButtonEvent@8a22cce8-a0be-44ba-8570-9022bc05768d (propref<function<bool>>)
+	text: text@0facbd3a-3f6d-48b0-9c35-74efcbc8a27b (propref<string>)
+	textColor: textColor@0facbd3a-3f6d-48b0-9c35-74efcbc8a27b (propref<color>)
+	visible: visible@f1737b86-10e9-41a9-b3db-eaa931e33a76 (propref<bool>)
+}
