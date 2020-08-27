@@ -49,7 +49,7 @@ GtfView_template_instance(10f68744-3114-4b30-ab74-d8f538b53324)
 			textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 			font: font_resource(4f74a5da-3dbd-4685-99dd-55e8a3f2a88c)
 			{
-				file: "PT_Sans_Narrow.ttf"
+				file: "teen bd it.ttf"
 				size: 30
 			}
 			horizontalAlign: 0
@@ -303,125 +303,85 @@ GtfView_template_instance(10f68744-3114-4b30-ab74-d8f538b53324)
 			x: 250
 			y: 140
 		}, 
-		GtfRectangle(baa57c97-2b14-4e3f-98b1-843795f40152)
+		GtfImage(558b047a-0bd6-464b-87d7-81e4e87448f5)
 		{
 			features: feature_list [
-				TouchShortReleased(f5c12a8a-bf7b-49cc-be7a-a184d1343ca1)
+				TouchShortReleased(5d9b4226-7ee5-48db-8c87-4c3e7b583332)
 				{
-					touchShortReleased: function<bool,int,int,int,int>(00cdfa4c-77f1-4586-ac42-beac28d3f0fe)
+					touchShortReleased: function<bool,int,int,int,int>(df8d3ee2-7635-4e9d-989d-0a4e1e2e14c9)
 					{
 						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 							"{" \
-							"	v:this.buttonEvent()" \
+							"	fire ev:Apps_CompoundEvents:next_apps()" \
 							"    false" \
 							"}"
 					}
 				}, 
-				StateTouched(d1f2b83a-20ff-4731-a133-bdb710a7fbf3)
+				StateTouched(97d7ef6d-a474-4d70-8e22-0630ef80aa48)
 				{
 					touchable: true
 					touched: false
 					touchPolicy: 0
 					touchBehavior: 0
 				}]
-			children: children_list [
-				GtfLabel(20b8d1fe-4f71-43ff-8a67-9ebf84d7a4fd)
+			children: children_list []
+			name: "Prev_Apps"
+			visible: true
+			width: 100
+			height: 100
+			x: 100
+			y: 220
+			image: image_resource(cc38d7ca-461d-431b-99c1-9133347f0059)
+			{
+				file: "prev_apps.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(6061130e-34b7-46c7-be74-f44e63c67ecd)
+		{
+			features: feature_list [
+				TouchShortReleased(ba2d6eaf-1d58-471a-9ef4-4ea260c34ac1)
 				{
-					features: feature_list []
-					children: children_list []
-					name: "Label 2"
-					visible: true
-					width: 100
-					height: 100
-					x: 0
-					y: 0
-					text: ">"
-					textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
-					font: font_resource(a2225bc7-3cca-41ab-9832-b1a87c355987)
+					touchShortReleased: function<bool,int,int,int,int>(e9b964d5-43ba-4dad-a290-fe1005ae1e9f)
 					{
-						file: "PT_Sans_Narrow.ttf"
-						size: 30
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:Apps_CompoundEvents:prev_apps()" \
+							"    false" \
+							"}"
 					}
-					horizontalAlign: 1
-					verticalAlign: 0
+				}, 
+				StateTouched(3669a3f4-7afd-4c97-888d-7b900140f0e1)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
 				}]
-			name: "NextButton"
+			children: children_list []
+			name: "Next_Apps"
 			visible: true
 			width: 100
 			height: 100
 			x: 600
 			y: 230
-			fillColor: #A9A9A9FF
-			buttonEvent: function<bool>(d41768c4-5c15-4547-9dd9-94c46f5704a6)
+			image: image_resource(bfe8c3a6-1103-4eee-ae45-37d24e7cb050)
 			{
-				script: "function()" \
-					"{" \
-					"	fire ev:Apps_CompoundEvents:prev_apps()" \
-					"	false" \
-					"}"
+				file: "next_apps.png"
 			}
-		}, 
-		GtfRectangle(5f091472-52a8-4de7-9783-66a9a87e96f0)
-		{
-			features: feature_list [
-				TouchShortReleased(a2927e72-6e64-4f69-83b7-1b6a2e15696c)
-				{
-					touchShortReleased: function<bool,int,int,int,int>(6a201838-db0e-493d-b27b-4a1c86d221b0)
-					{
-						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
-							"{" \
-							"	v:this.buttonEvent()" \
-							"    false" \
-							"}"
-					}
-				}, 
-				StateTouched(b831d5b7-2b25-490c-8352-568ddbfe4603)
-				{
-					touchable: true
-					touched: false
-					touchPolicy: 0
-					touchBehavior: 0
-				}]
-			children: children_list [
-				GtfLabel(6a904531-30e0-416e-9c2f-42030ccd0396)
-				{
-					features: feature_list []
-					children: children_list []
-					name: "Label 3"
-					visible: true
-					width: 100
-					height: 100
-					x: 1
-					y: 0
-					text: "<"
-					textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
-					font: font_resource(31e4376c-6aed-4d50-a778-c8f340d7dff1)
-					{
-						file: "PT_Sans_Narrow.ttf"
-						size: 30
-					}
-					horizontalAlign: 1
-					verticalAlign: 0
-				}]
-			name: "PrevButton"
-			visible: true
-			width: 100
-			height: 100
-			x: 100
-			y: 230
-			fillColor: #A9A9A9FF
-			buttonEvent: function<bool>(bea71c5c-8495-41f1-9eaf-d04893f253df)
-			{
-				script: "function()" \
-					"{" \
-					"	fire ev:Apps_CompoundEvents:next_apps()" \
-					"	false" \
-					"}"
-			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
 		}]
 	text: @ab676769-2e7d-41b1-ad5f-d8bdca150370 (objectref<string>)
 	textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 	font: font@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<font>)
 	image: @28a5929a-87d6-4473-9912-d62fd743c5c6 (objectref<image>)
 	fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+	x: x@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	y: y@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	height: height@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	width: width@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
 }

@@ -64,7 +64,68 @@ GtfView_template(5f22b6ee-09f8-4acf-859c-b071bddbf8fc)
 			GtfLabel(16a8a2e3-bee4-44b4-af30-3fc2f7de95bc)
 			{
 				features: feature_list []
-				children: children_list []
+				children: children_list [
+					GtfParallelAnimation(2a857939-0c11-459d-b04c-35bba3b1c1fd)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLinearInterpolationS32(4c87de3b-b4a5-4702-a5dc-28d5e0842140)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Linear interpolation curve"
+								enabled: true
+								delay: 0
+								duration: 4000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 800
+								end: 700
+								target: x@16a8a2e3-bee4-44b4-af30-3fc2f7de95bc (propref<int>)
+								startAnimation: conditional_script(fea32047-90d3-4854-b97f-c30eb4166e93)
+								{
+									triggerList: trigger_list(c64feab5-1f7b-4c0c-b424-a206d433781a)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(83ba34fc-2f9f-426a-9ec8-0506b7067cd4)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	f:animation_play(v:this)" \
+											"	false" \
+											"}"
+									}
+								}
+							}]
+						name: "trip_animation"
+						enabled: true
+						repeat: 1
+						alternating: false
+						scale: 1F
+						onPlay: function<void,int,bool>(37c8dab4-f9f9-46e4-82c6-aaff4b017fd0)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(adecb598-a9b1-46c1-89b9-906d60646ade)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(f01e8261-8c5c-4914-bff9-f82d1f859087)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+					}]
 				name: "km_trip"
 				visible: true
 				width: 150
@@ -101,11 +162,11 @@ GtfView_template(5f22b6ee-09f8-4acf-859c-b071bddbf8fc)
 							"}"
 					}
 				}
-				textColor: #FFFFFFFF
+				textColor: #F0FFF0FF
 				font: font_resource(c9e4efa3-6da6-46f1-b943-71705bb3d518)
 				{
-					file: "PT_Sans_Narrow.ttf"
-					size: 30
+					file: "teen it.ttf"
+					size: 25
 				}
 				horizontalAlign: 0
 				verticalAlign: 0
@@ -113,12 +174,73 @@ GtfView_template(5f22b6ee-09f8-4acf-859c-b071bddbf8fc)
 			GtfLabel(52db5d0a-6508-4aac-a860-0eb2af5b7278)
 			{
 				features: feature_list []
-				children: children_list []
+				children: children_list [
+					GtfParallelAnimation(cfcd081c-8559-46cd-be15-9d8549428477)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLinearInterpolationS32(a6c2e5a0-8771-403f-8c99-fb9cedb40815)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Linear interpolation curve"
+								enabled: true
+								delay: 0
+								duration: 4000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 800
+								end: 420
+								target: y@52db5d0a-6508-4aac-a860-0eb2af5b7278 (propref<int>)
+								startAnimation: conditional_script(29a6f063-76f7-40bd-a77c-08c2d7251940)
+								{
+									triggerList: trigger_list(7ce1757b-7103-43be-be42-0c3cb67b7e82)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(89fff123-4574-40de-ae24-8579db45b7f9)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	f:animation_play(v:this)" \
+											"	false" \
+											"}"
+									}
+								}
+							}]
+						name: "km_animation"
+						enabled: true
+						repeat: 1
+						alternating: false
+						scale: 1F
+						onPlay: function<void,int,bool>(3d7d815c-19e9-4bef-a629-d5535da8e495)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(5f3a02f4-c178-4560-9a9e-2857a1cbc7a3)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(df54e496-2483-4d6d-b860-99d95ff477ba)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+					}]
 				name: "total_km"
 				visible: true
 				width: 150
 				height: 50
-				x: 675
+				x: 665
 				y: 420
 				text: string_scriptedValue(0dbd410a-9273-4bde-8b6e-aebe4dc4eb9d)
 				{
@@ -150,11 +272,11 @@ GtfView_template(5f22b6ee-09f8-4acf-859c-b071bddbf8fc)
 							"}"
 					}
 				}
-				textColor: #FFFFFFFF
+				textColor: #87CEFAFF
 				font: font_resource(a7267372-8396-4442-a3b4-e5f44edc48f4)
 				{
-					file: "PT_Sans_Narrow.ttf"
-					size: 30
+					file: "teen bd.ttf"
+					size: 25
 				}
 				horizontalAlign: 0
 				verticalAlign: 0
@@ -162,7 +284,68 @@ GtfView_template(5f22b6ee-09f8-4acf-859c-b071bddbf8fc)
 			GtfLabel(b093851e-686c-49af-8099-5a2dcefa0a5b)
 			{
 				features: feature_list []
-				children: children_list []
+				children: children_list [
+					GtfParallelAnimation(e528e243-ec3c-47b8-8795-d8e1cca6d2cc)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLinearInterpolationS32(c85861d8-7409-4aa7-b6bc-f2263deccde8)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Linear interpolation curve"
+								enabled: true
+								delay: 0
+								duration: 5000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: -100
+								end: 10
+								target: x@b093851e-686c-49af-8099-5a2dcefa0a5b (propref<int>)
+								startAnimation: conditional_script(38b606d4-450d-4a43-a344-fdf0cb9605ac)
+								{
+									triggerList: trigger_list(6b4458da-189e-4259-bb25-4a7e48ac45c2)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(1f557b76-5fd8-4dec-8b27-25b395416bff)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	f:animation_play(v:this)" \
+											"	false" \
+											"}"
+									}
+								}
+							}]
+						name: "time_animation"
+						enabled: true
+						repeat: 1
+						alternating: false
+						scale: 1F
+						onPlay: function<void,int,bool>(b4295203-d0de-4eec-9549-14c15e1ccdcb)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(bde27e3c-5ff8-4f9c-8d52-81e2231ef385)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(f1c1c254-66cb-4907-9f2d-41480843da97)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+					}]
 				name: "current_time"
 				visible: true
 				width: 150
@@ -170,11 +353,11 @@ GtfView_template(5f22b6ee-09f8-4acf-859c-b071bddbf8fc)
 				x: 10
 				y: 380
 				text: "Current time"
-				textColor: #FFFFFFFF
+				textColor: #F0FFF0FF
 				font: font_resource(b5928647-befd-4305-baf4-54eca54da8c8)
 				{
-					file: "PT_Sans_Narrow.ttf"
-					size: 30
+					file: "teen it.ttf"
+					size: 25
 				}
 				horizontalAlign: 0
 				verticalAlign: 0
@@ -182,7 +365,68 @@ GtfView_template(5f22b6ee-09f8-4acf-859c-b071bddbf8fc)
 			GtfLabel(28fdbf80-1c6e-4707-bfb2-79b74ad2ac7d)
 			{
 				features: feature_list []
-				children: children_list []
+				children: children_list [
+					GtfParallelAnimation(547df4ba-07e3-4c8b-8423-c38efd68adf9)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLinearInterpolationS32(0d7427a7-774e-4aa4-92a4-e6be60adaf70)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Linear interpolation curve"
+								enabled: true
+								delay: 0
+								duration: 4000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 800
+								end: 420
+								target: y@28fdbf80-1c6e-4707-bfb2-79b74ad2ac7d (propref<int>)
+							}]
+						name: "date_animation"
+						enabled: true
+						repeat: 1
+						alternating: false
+						scale: 1F
+						onPlay: function<void,int,bool>(a571d1b8-d614-4eca-aa0d-61641d94c691)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(b3876190-1695-4ae5-9103-8aa19a285311)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(2d1b4b21-15f2-4d3d-8348-3e5842a9199c)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						startAnimation: conditional_script(f2cb189e-579b-4fc1-b997-c27bd1413829)
+						{
+							triggerList: trigger_list(cc734fbb-e361-4b3b-bfa4-122de9051298)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(eeb6f7a8-b646-43b9-a9f6-866f1bd06dd4)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	f:animation_play(v:this)" \
+									"	false" \
+									"}"
+							}
+						}
+					}]
 				name: "current_date"
 				visible: true
 				width: 150
@@ -190,11 +434,11 @@ GtfView_template(5f22b6ee-09f8-4acf-859c-b071bddbf8fc)
 				x: 10
 				y: 420
 				text: "Current date"
-				textColor: #FFFFFFFF
+				textColor: #87CEFAFF
 				font: font_resource(94c82566-e50f-44d3-9424-9a32dec0f13c)
 				{
-					file: "PT_Sans_Narrow.ttf"
-					size: 30
+					file: "teen bd.ttf"
+					size: 25
 				}
 				horizontalAlign: 0
 				verticalAlign: 0

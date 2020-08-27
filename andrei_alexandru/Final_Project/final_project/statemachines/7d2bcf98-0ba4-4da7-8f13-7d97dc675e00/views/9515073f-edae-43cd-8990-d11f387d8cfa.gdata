@@ -4,6 +4,35 @@ GtfView(9515073f-edae-43cd-8990-d11f387d8cfa)
 {
 	features: feature_list []
 	children: children_list [
+		GtfRectangle(9de82be7-8696-4b46-9ff2-cc5c5b5e14b5)
+		{
+			features: feature_list [
+				TouchPressed(0d1f1355-5075-4ad6-9a03-30d0819aec9e)
+				{
+					touchPressed: function<bool,int,int,int,int>(7d38601d-b82d-4ee4-b39a-df72e98ca7e0)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(86cbfcbe-e005-4c04-afa3-2fac278db73c)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "InvisibleBackground"
+			visible: true
+			width: 800
+			height: 480
+			x: -150
+			y: -90
+			fillColor: #FFFFFF00
+		}, 
 		GtfRectangle(6f376237-5d93-4548-8d3c-fe18744cf457)
 		{
 			features: feature_list [
@@ -24,11 +53,11 @@ GtfView(9515073f-edae-43cd-8990-d11f387d8cfa)
 					height: 50
 					x: 0
 					y: 120
-					text: "No USB connection found."
+					text: @e8a5f5c3-044b-47f0-bbf4-e517736f58d9 (objectref<string>)
 					textColor: #000000FF
 					font: font_resource(42cafa82-3a6e-4892-a495-b29ad6110c98)
 					{
-						file: "PT_Sans_Narrow.ttf"
+						file: "big_noodle_titling_oblique.ttf"
 						size: 25
 					}
 					horizontalAlign: 1
@@ -44,11 +73,11 @@ GtfView(9515073f-edae-43cd-8990-d11f387d8cfa)
 					height: 50
 					x: 0
 					y: 160
-					text: "Using \"Connect\" button."
+					text: @66afae27-ef27-4f66-b1e3-bc69b843b177 (objectref<string>)
 					textColor: #3CB371FF
 					font: font_resource(c8ca8062-9fd4-4e90-b2a0-af0c991c9040)
 					{
-						file: "PT_Sans_Narrow.ttf"
+						file: "teen it.ttf"
 						size: 35
 					}
 					horizontalAlign: 1
@@ -71,7 +100,11 @@ GtfView(9515073f-edae-43cd-8990-d11f387d8cfa)
 					y: 220
 					text: "CONNECT"
 					textColor: #FF0000FF
-					font: font@60b61038-4f45-4014-b850-4e3cf3aef87b (propref<font>)
+					font: font_resource(b6a95e63-05ce-46fc-96b8-e18cbcf7e699)
+					{
+						file: "big_noodle_titling_oblique.ttf"
+						size: 30
+					}
 				}, 
 				GtfImage(97ae311a-e097-4ca6-a44a-17776fb04b1c)
 				{

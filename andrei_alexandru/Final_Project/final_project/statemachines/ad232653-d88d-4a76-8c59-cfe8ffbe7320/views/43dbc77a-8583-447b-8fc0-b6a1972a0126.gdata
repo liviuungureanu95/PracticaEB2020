@@ -109,7 +109,7 @@ GtfView(43dbc77a-8583-447b-8fc0-b6a1972a0126)
 							textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 							font: font_resource(b5d00daa-bfd3-40c6-8f32-e6adca0d008d)
 							{
-								file: "PT_Sans_Narrow.ttf"
+								file: "big_noodle_titling_oblique.ttf"
 								size: 30
 							}
 							horizontalAlign: 1
@@ -193,7 +193,7 @@ GtfView(43dbc77a-8583-447b-8fc0-b6a1972a0126)
 					visible: true
 					width: 100
 					height: 50
-					x: 70
+					x: 60
 					y: 180
 					fillColor: #FAF0E6FF
 				}, 
@@ -251,7 +251,7 @@ GtfView(43dbc77a-8583-447b-8fc0-b6a1972a0126)
 							textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 							font: font_resource(0bad6e38-9ee7-4345-8b83-32006f91aa35)
 							{
-								file: "PT_Sans_Narrow.ttf"
+								file: "big_noodle_titling_oblique.ttf"
 								size: 30
 							}
 							horizontalAlign: 1
@@ -335,7 +335,7 @@ GtfView(43dbc77a-8583-447b-8fc0-b6a1972a0126)
 					visible: true
 					width: 100
 					height: 50
-					x: 435
+					x: 445
 					y: 180
 					fillColor: #FAF0E6FF
 				}, 
@@ -348,7 +348,7 @@ GtfView(43dbc77a-8583-447b-8fc0-b6a1972a0126)
 					width: 600
 					height: 4
 					x: 0
-					y: 160
+					y: 155
 					fillColor: #2E8B57FF
 				}, 
 				GtfImage(c5d4489b-686f-440e-9a0d-f46c1b26014a)
@@ -371,13 +371,17 @@ GtfView(43dbc77a-8583-447b-8fc0-b6a1972a0126)
 							touched: false
 							touchPolicy: 0
 							touchBehavior: 0
+						}, 
+						ScaleMode(194ef4ea-37b4-4fdf-b5e9-1d1b0c146be2)
+						{
+							scaleMode: 1
 						}]
 					children: children_list []
 					name: "CloseButton"
 					visible: true
-					width: 50
-					height: 50
-					x: 540
+					width: 25
+					height: 25
+					x: 565
 					y: 10
 					image: image_resource(4932f412-592e-4486-90aa-07dde601740b)
 					{
@@ -394,7 +398,7 @@ GtfView(43dbc77a-8583-447b-8fc0-b6a1972a0126)
 					name: "VerticalBar"
 					visible: true
 					width: 4
-					height: 160
+					height: 155
 					x: 300
 					y: 0
 					fillColor: #2E8B57FF
@@ -705,6 +709,244 @@ GtfView(43dbc77a-8583-447b-8fc0-b6a1972a0126)
 					units: @c92c2bd1-a5e6-4f4e-8f33-ac5c21ce5c85 (objectref<int>)
 					color: #4682B4FF
 					currentUnits: @72cec45d-6abc-45ca-a96c-880b48fb21db (objectref<int>)
+				}, 
+				GtfImage(3fdc6c3f-f17c-446a-a240-7c533f2aba55)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "LeftCarSeat"
+					visible: true
+					width: 100
+					height: 100
+					x: 90
+					y: 15
+					image: image_resource(cd5ee6b1-6e9e-4b38-940a-d82fabc5b4b8)
+					{
+						file: "carseat.png"
+					}
+					sRGB: false
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfImage(607f95cb-27e8-4376-a08b-a142791d2095)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "RightCarSeat"
+					visible: true
+					width: 100
+					height: 100
+					x: 450
+					y: 15
+					image: image_resource(ae8df7f5-7156-43a6-8e0c-4a5342ab92af)
+					{
+						file: "carseat.png"
+					}
+					sRGB: false
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(7fde7a2e-6f6d-4d97-9b7e-e1ca65c71dc7)
+				{
+					name: "Front"
+					template: @3d83e615-7718-4830-83dc-f3bcd6d9440d (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 240
+					y: 15
+					touchShortReleased: function<bool,int,int,int,int>(9afea551-4963-4103-9f6c-559eadf53e50)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:AC_Menu:selected_ACButton = 1" \
+							"    false" \
+							"}"
+					}
+					image: image_resource(1451ce5c-3e38-4f15-97ed-663f0b1acf45)
+					{
+						file: "front.png"
+					}
+					borderThickness: borderThickness@3d83e615-7718-4830-83dc-f3bcd6d9440d (propref<int>)
+					width: 48
+					height: 48
+					setBorder: conditional_script(ecb22d3e-ecc2-4d4f-af2b-b9f6fd99b2c2)
+					{
+						triggerList: trigger_list(fad58a8d-ba6c-4841-ae88-467213e6a2d6)
+						{
+							script: "dp:AC_Menu:selected_ACButton" \
+								"" \
+								""
+						}
+						onTrigger: function<bool,bool>(56cbc7c2-f348-4005-983f-ee29c1699298)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(dp:AC_Menu:selected_ACButton == 1)" \
+								"		v:this.borderThickness = 5" \
+								"	" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfContainer_template_instance(eaae9cd0-96e3-4c25-b738-959be50e7eff)
+				{
+					name: "Rear"
+					template: @3d83e615-7718-4830-83dc-f3bcd6d9440d (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 320
+					y: 15
+					touchShortReleased: function<bool,int,int,int,int>(41d80664-cc73-43c8-914f-5fa8d7c61f2d)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:AC_Menu:selected_ACButton = 2" \
+							"    false" \
+							"}"
+					}
+					image: image_resource(76f38074-aab0-4f90-818d-d92e498aae32)
+					{
+						file: "rear.png"
+					}
+					borderThickness: borderThickness@3d83e615-7718-4830-83dc-f3bcd6d9440d (propref<int>)
+					width: 48
+					height: 48
+					setBorder: conditional_script(7fc63a93-48b4-4f35-af57-599e161ffc59)
+					{
+						triggerList: trigger_list(bd624ddc-7727-4791-815b-4e728dbfe022)
+						{
+							script: "dp:AC_Menu:selected_ACButton" \
+								""
+						}
+						onTrigger: function<bool,bool>(b70e5717-f945-48ab-bcfb-47f7bcd75962)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(dp:AC_Menu:selected_ACButton == 2)" \
+								"		v:this.borderThickness = 5" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfContainer_template_instance(56cdf223-1e24-47a7-a7ad-7cf8ab4eac56)
+				{
+					name: "Frontal"
+					template: @3d83e615-7718-4830-83dc-f3bcd6d9440d (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 220
+					y: 185
+					touchShortReleased: function<bool,int,int,int,int>(da46438a-42e7-4b4a-8e3b-a11719e8b93d)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:AC_Menu:selected_ACButton = 3" \
+							"    false" \
+							"}"
+					}
+					image: image_resource(3234979b-cbd5-4ba8-a550-55f760c09c39)
+					{
+						file: "frontal.PNG"
+					}
+					borderThickness: borderThickness@3d83e615-7718-4830-83dc-f3bcd6d9440d (propref<int>)
+					width: 50
+					height: 40
+					setBorder: conditional_script(aa2172c5-5d72-47c7-bdc1-08d4afb26d39)
+					{
+						triggerList: trigger_list(2116ae6c-bcb5-44d9-bbd4-e660d860ef7a)
+						{
+							script: "dp:AC_Menu:selected_ACButton" \
+								""
+						}
+						onTrigger: function<bool,bool>(4e0a4170-e707-4843-9d73-bf13d3b77d7c)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(dp:AC_Menu:selected_ACButton == 3)" \
+								"		v:this.borderThickness = 5" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfContainer_template_instance(cce26472-178b-4338-a1c7-2feca178999c)
+				{
+					name: "Legs"
+					template: @3d83e615-7718-4830-83dc-f3bcd6d9440d (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 340
+					y: 185
+					touchShortReleased: function<bool,int,int,int,int>(b61c3295-cc6f-4016-8b0d-d7fa7892bc70)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:AC_Menu:selected_ACButton = 5" \
+							"    false" \
+							"}"
+					}
+					image: image_resource(e2103763-6a41-49fc-ab20-60802ac334b4)
+					{
+						file: "legs.PNG"
+					}
+					borderThickness: borderThickness@3d83e615-7718-4830-83dc-f3bcd6d9440d (propref<int>)
+					width: 50
+					height: 40
+					setBorder: conditional_script(3728709d-cd97-4541-9752-4563f29bc612)
+					{
+						triggerList: trigger_list(d59db90d-ed8c-4457-88c6-f8ffdfa5f3c1)
+						{
+							script: "dp:AC_Menu:selected_ACButton" \
+								""
+						}
+						onTrigger: function<bool,bool>(853711d6-a5b0-4c44-8ff5-34a30d2d88af)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(dp:AC_Menu:selected_ACButton == 5)" \
+								"		v:this.borderThickness = 5" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfContainer_template_instance(73de283b-cc1b-4df3-9c07-75e1197b6ed5)
+				{
+					name: "Recirculare"
+					template: @3d83e615-7718-4830-83dc-f3bcd6d9440d (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 280
+					y: 185
+					touchShortReleased: function<bool,int,int,int,int>(0efa5b18-7439-4213-9826-38c50e05245f)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:AC_Menu:selected_ACButton = 4 " \
+							"    false" \
+							"}"
+					}
+					image: image_resource(4385aba8-338b-47b7-8efd-e81b13e24ba3)
+					{
+						file: "recirculare.PNG"
+					}
+					borderThickness: borderThickness@3d83e615-7718-4830-83dc-f3bcd6d9440d (propref<int>)
+					width: 50
+					height: 40
+					setBorder: conditional_script(5b6cf672-76c1-48c3-9f01-8e6d8c417cc0)
+					{
+						triggerList: trigger_list(b58f2b02-bcb2-4b00-975b-7f874b24fe4d)
+						{
+							script: "dp:AC_Menu:selected_ACButton" \
+								""
+						}
+						onTrigger: function<bool,bool>(bc38f17b-0379-4310-bae5-dc3adebac163)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(dp:AC_Menu:selected_ACButton == 4)" \
+								"		v:this.borderThickness = 5" \
+								"	false" \
+								"}"
+						}
+					}
 				}]
 			name: "AcPopUp_Container"
 			visible: true

@@ -32,36 +32,124 @@ GtfView_template(b380d1bf-d029-45e1-aa1b-a53a19df7e62)
 				name: "HorizontalLine"
 				visible: true
 				width: width@199e2822-71b6-4bf4-ae5d-f2bb87134cb0 (propref<int>)
-				height: 1
+				height: 2
 				x: 0
 				y: 70
-				fillColor: #000000FF
+				fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
 			}, 
-			GtfLabel(c51e5660-ce7d-463e-9006-c4ad0cfc39f4)
+			GtfRectangle(07db3965-0de7-4c27-bd4e-e91b7547e05e)
 			{
 				features: feature_list []
-				children: children_list []
-				name: "Title"
+				children: children_list [
+					GtfLabel(c51e5660-ce7d-463e-9006-c4ad0cfc39f4)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Title"
+						visible: true
+						width: width@07db3965-0de7-4c27-bd4e-e91b7547e05e (propref<int>)
+						height: height@07db3965-0de7-4c27-bd4e-e91b7547e05e (propref<int>)
+						x: 0
+						y: 0
+						text: "label"
+						textColor: #FFFFFFFF
+						font: font_resource(c10fc7fa-7265-435d-8225-dfbb52c30a87)
+						{
+							file: "teen bd it.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "TitleBackGround"
 				visible: true
-				width: width@199e2822-71b6-4bf4-ae5d-f2bb87134cb0 (propref<int>)
+				width: 800
 				height: 70
 				x: 0
 				y: 0
-				text: "label"
-				textColor: #FFFFFFFF
-				font: font_resource(c10fc7fa-7265-435d-8225-dfbb52c30a87)
-				{
-					file: "PT_Sans_Narrow.ttf"
-					size: 30
-				}
-				horizontalAlign: 1
-				verticalAlign: 0
+				fillColor: #FFFFFF00
 			}, 
 			GtfContainer_template_instance(9d4ace16-cf2c-4999-9819-42eb3ed9f42e)
 			{
 				name: "HomeButton"
 				template: @2653d82d-7335-465f-9d34-4e9c52f68697 (objectref<GtfContainer_template>)
 				children: children_list []
+			}, 
+			GtfEllipse(ea997da0-a591-4d89-8a93-59bce19a1b60)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfParallelAnimation(502fa449-eca1-4930-916a-7d97d3a34104)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLinearInterpolationS32(bee53f35-c7a6-4e33-a47b-11cb7e0e2312)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Linear interpolation curve 2"
+								enabled: true
+								delay: 10
+								duration: 5000
+								repeat: 0
+								alternating: false
+								relative: false
+								start: 0
+								end: 800
+								target: x@ea997da0-a591-4d89-8a93-59bce19a1b60 (propref<int>)
+							}]
+						name: "EllipseAnimation"
+						enabled: true
+						repeat: 1
+						alternating: false
+						scale: 1F
+						onPlay: function<void,int,bool>(719a653a-b9df-452b-8c6d-7dd785c86c92)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(1655b568-7947-42a8-a7d1-61958dd18f0c)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(f7a1fce6-f9c1-4f9e-85af-be6881b5463a)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						playAnimation: conditional_script(038ed50d-c748-4c24-8885-f4c8f3e5f378)
+						{
+							triggerList: trigger_list(b01d682c-3709-46bd-98b3-88bbfa92fa88)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(df65582b-5d06-4266-abf4-f553b0d3687c)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	f:animation_play(v:this)" \
+									"	false" \
+									"}"
+							}
+						}
+					}]
+				name: "Ellipse"
+				visible: true
+				width: 15
+				height: 15
+				x: 0
+				y: 65
+				fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
 			}]
 		name: "ChoiceMenu_View"
 		visible: true
@@ -75,4 +163,8 @@ GtfView_template(b380d1bf-d029-45e1-aa1b-a53a19df7e62)
 	font: font@c51e5660-ce7d-463e-9006-c4ad0cfc39f4 (propref<font>)
 	image: image@0fd3fa4f-2d25-4249-aa89-0c26906b80cb (propref<image>)
 	fillColor: fillColor@01a34551-d301-468a-9dfb-fced19403d09 (propref<color>)
+	x: x@07db3965-0de7-4c27-bd4e-e91b7547e05e (propref<int>)
+	y: y@07db3965-0de7-4c27-bd4e-e91b7547e05e (propref<int>)
+	height: height@07db3965-0de7-4c27-bd4e-e91b7547e05e (propref<int>)
+	width: width@07db3965-0de7-4c27-bd4e-e91b7547e05e (propref<int>)
 }
