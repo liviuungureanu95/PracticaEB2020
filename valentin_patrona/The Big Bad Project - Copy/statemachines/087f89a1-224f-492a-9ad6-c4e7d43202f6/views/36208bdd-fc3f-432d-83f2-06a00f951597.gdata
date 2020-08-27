@@ -1,0 +1,680 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(36208bdd-fc3f-432d-83f2-06a00f951597)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(902a188a-2e4b-40b3-a4b0-0c87940d9b6c)
+		{
+			name: "View_BG 1"
+			template: @6b61b73f-f21a-4a1b-ba8e-7deca7fb390f (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfContainer_template_instance(31b5ceea-a033-4409-b5ec-f5cffc357499)
+				{
+					name: "GoBackButton 1"
+					template: @2f9b95c5-8f97-4bc8-80fb-3e3d5d18d064 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 1110
+					y: 621
+					touchShortReleased: function<bool,int,int,int,int>(f8f82167-9ffd-4a81-a528-51aef2015b87)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goToMenu()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(591d99e7-5af0-4b40-a979-1bed67e02f16)
+				{
+					name: "WashingMachineButton 1"
+					template: @e7af1320-aaf7-47a4-8274-57218571a5cd (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 130
+					y: 160
+					visible: true
+					image: image_resource(1f3162f2-37b8-4c22-be88-2e6de6fc4a72)
+					{
+						file: "1500.png"
+					}
+					touchShortReleased: function<bool,int,int,int,int>(07fc3b5f-9bba-4803-aefa-f34e1f5bb1b3)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.visible=true" \
+							"	v:this->^->\"WashingMachineButton 2\".visible=false" \
+							"	v:this->^->\"WashingMachineButton 3\".visible=false" \
+							"	dp:BufferWashing[0]=\"1500\"" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(b3a237ab-23ce-412d-84d9-5401ef67973e)
+				{
+					name: "WashingMachineButton 2"
+					template: @e7af1320-aaf7-47a4-8274-57218571a5cd (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 130
+					y: 320
+					visible: visible@e7af1320-aaf7-47a4-8274-57218571a5cd (propref<bool>)
+					image: image_resource(a8d6666c-d539-4617-8645-72648aad6c72)
+					{
+						file: "3000.png"
+					}
+					touchShortReleased: function<bool,int,int,int,int>(b711f995-8fd0-41d8-8333-3da87d328298)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.visible=true" \
+							"	v:this->^->\"WashingMachineButton 1\".visible=false" \
+							"	v:this->^->\"WashingMachineButton 3\".visible=false" \
+							"	dp:BufferWashing[0]=\"3000\"" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(ee576e51-559e-4907-9ff1-295ed8f384c2)
+				{
+					name: "WashingMachineButton 3"
+					template: @e7af1320-aaf7-47a4-8274-57218571a5cd (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 130
+					y: 480
+					visible: visible@e7af1320-aaf7-47a4-8274-57218571a5cd (propref<bool>)
+					image: image_resource(35b398d5-9189-48eb-b8fb-10f5f281241d)
+					{
+						file: "4500.png"
+					}
+					touchShortReleased: function<bool,int,int,int,int>(b14de5a4-ad9d-4963-85c3-a9fd010731b7)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.visible=true" \
+							"	v:this->^->\"WashingMachineButton 1\".visible=false" \
+							"	v:this->^->\"WashingMachineButton 2\".visible=false" \
+							"	dp:BufferWashing[0]=\"4500\"" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(fc762dfb-ac97-4aff-a052-29f8ad547a26)
+				{
+					name: "WashingMachineButton 4"
+					template: @e7af1320-aaf7-47a4-8274-57218571a5cd (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 290
+					y: 158
+					visible: true
+					image: image_resource(6fa5c509-bde4-471a-801a-46e12b88d2f5)
+					{
+						file: "timer 15.png"
+					}
+					touchShortReleased: function<bool,int,int,int,int>(ab5f34c7-e0e9-4b21-8724-1786abf4eb3f)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.visible=true" \
+							"	v:this->^->\"WashingMachineButton 5\".visible=false" \
+							"	v:this->^->\"WashingMachineButton 6\".visible=false" \
+							"	dp:BufferWashing[1]=\"15 min\"" \
+							"	dp:bufferTime=15" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(7c33882b-1c9e-4c78-b59e-5dbb2ffdf9f0)
+				{
+					name: "WashingMachineButton 5"
+					template: @e7af1320-aaf7-47a4-8274-57218571a5cd (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 290
+					y: 320
+					visible: visible@e7af1320-aaf7-47a4-8274-57218571a5cd (propref<bool>)
+					image: image_resource(a75e03f0-86b0-4211-b8d8-ad636e3aabd8)
+					{
+						file: "timer 30.png"
+					}
+					touchShortReleased: function<bool,int,int,int,int>(431f46ff-a8b0-40cd-8011-1d07f8fdcd49)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.visible=true" \
+							"	v:this->^->\"WashingMachineButton 4\".visible=false" \
+							"	v:this->^->\"WashingMachineButton 6\".visible=false" \
+							"	dp:BufferWashing[1]=\"30 min\"" \
+							"	dp:bufferTime=30" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(234b3438-cd03-4b1b-bc2d-25a5e16958cc)
+				{
+					name: "WashingMachineButton 6"
+					template: @e7af1320-aaf7-47a4-8274-57218571a5cd (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 290
+					y: 480
+					visible: visible@e7af1320-aaf7-47a4-8274-57218571a5cd (propref<bool>)
+					image: image_resource(c53d99a1-d6a0-4bef-a974-be5d60640cd2)
+					{
+						file: "timer 1h.png"
+					}
+					touchShortReleased: function<bool,int,int,int,int>(8a55ac2a-b9b5-4525-b89a-f9b2cb12e658)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.visible=true" \
+							"	v:this->^->\"WashingMachineButton 4\".visible=false" \
+							"	v:this->^->\"WashingMachineButton 5\".visible=false" \
+							"	dp:BufferWashing[1]=\"1h\"" \
+							"	dp:bufferTime=60" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(22b51206-d94c-4f60-8908-b042d572ad66)
+				{
+					name: "WashingMachineButton 7"
+					template: @e7af1320-aaf7-47a4-8274-57218571a5cd (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 450
+					y: 160
+					visible: true
+					image: image_resource(9a36802f-a2c2-4371-986d-2d2967d03cfd)
+					{
+						file: "cotton.png"
+					}
+					touchShortReleased: function<bool,int,int,int,int>(368a91e5-c870-4313-911c-f09cfeb208d1)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.visible=true" \
+							"	v:this->^->\"WashingMachineButton 8\".visible=false" \
+							"	v:this->^->\"WashingMachineButton 9\".visible=false" \
+							"	dp:BufferWashing[2]=\"cotton\"" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(bd093d2f-a0b7-46a8-a737-94054320e2fe)
+				{
+					name: "WashingMachineButton 8"
+					template: @e7af1320-aaf7-47a4-8274-57218571a5cd (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 450
+					y: 320
+					visible: visible@e7af1320-aaf7-47a4-8274-57218571a5cd (propref<bool>)
+					image: image_resource(bdce2bb0-b082-4811-a3b0-2fd9655a6570)
+					{
+						file: "silk.png"
+					}
+					touchShortReleased: function<bool,int,int,int,int>(fc44d0fb-229d-47d8-b065-b329d0afffbe)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.visible=true" \
+							"	v:this->^->\"WashingMachineButton 7\".visible=false" \
+							"	v:this->^->\"WashingMachineButton 9\".visible=false" \
+							"	dp:BufferWashing[2]=\"silk\"" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(84ec7b6d-02de-48a0-9093-03c29f59c317)
+				{
+					name: "WashingMachineButton 9"
+					template: @e7af1320-aaf7-47a4-8274-57218571a5cd (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 450
+					y: 480
+					visible: visible@e7af1320-aaf7-47a4-8274-57218571a5cd (propref<bool>)
+					image: image_resource(c4be4514-e362-4b0e-9e26-4f5ffe3eab20)
+					{
+						file: "leather.png"
+					}
+					touchShortReleased: function<bool,int,int,int,int>(c0077a9f-8432-4821-8bba-c2ea36e80b1c)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.visible=true" \
+							"	v:this->^->\"WashingMachineButton 7\".visible=false" \
+							"	v:this->^->\"WashingMachineButton 8\".visible=false" \
+							"	dp:BufferWashing[2]=\"leather\"" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfLabel(e3de33be-abf1-409c-a92a-55c811da97cf)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 1"
+					visible: true
+					width: 150
+					height: 100
+					x: 107
+					y: 75
+					text: string_element_reference(398539cd-b676-49e5-9dfd-3d57926f0b63)
+					{
+						index: 0
+						list: @b0caf7b7-aec8-4fd3-8732-8664abcaab8c (objectref<stringlist>)
+					}
+					textColor: #000000FF
+					font: font_resource(872decc6-6c35-428f-bced-93d5c631f934)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(6dbcd973-8c10-41f1-9e95-bd6393ca44bb)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 2"
+					visible: true
+					width: 175
+					height: 100
+					x: 254
+					y: 70
+					text: string_element_reference(5086d6a3-f9b1-496a-a7e5-8481d1e71546)
+					{
+						index: 1
+						list: @b0caf7b7-aec8-4fd3-8732-8664abcaab8c (objectref<stringlist>)
+					}
+					textColor: #000000FF
+					font: font_resource(c8f9f396-f45e-40f1-9524-3b6d3df3d193)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(8ded8e2e-df7b-42c4-a1d3-29ce015afdef)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 3"
+					visible: true
+					width: 153
+					height: 100
+					x: 425
+					y: 72
+					text: string_element_reference(431dc542-dc82-4285-ac55-9eeff131fb14)
+					{
+						index: 2
+						list: @b0caf7b7-aec8-4fd3-8732-8664abcaab8c (objectref<stringlist>)
+					}
+					textColor: #000000FF
+					font: font_resource(5cddd4e1-3401-4fee-93b9-3fbce2ba7728)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer(09a3c231-4d22-43db-9a3b-0cf274c41b79)
+				{
+					features: feature_list [
+						TouchShortReleased(c6f1012d-8666-4846-81f2-d972ba18a732)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(55380ac2-27ac-497b-abed-550fecb40672)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{ if(dp:washingMachineClicked==false)" \
+									"{" \
+									"	" \
+									"	" \
+									"	if(dp:WashingmachineBooleans[0]&&dp:WashingmachineBooleans[1]&&dp:WashingmachineBooleans[2])" \
+									"	{" \
+									"		v:this->^->\"Label 9\".visible=true;" \
+									"		v:this->^->\"Label 10\".visible=true;" \
+									"		dp:washingMachineClicked=true" \
+									"		if((f:localtime_minute(f:system_time())+dp:bufferTime)>=60)" \
+									"		{" \
+									"			if(dp:bufferTime==60)" \
+									"			{" \
+									"				v:this->^->\"Label 9\".text=" \
+									"				(f:format_int(\"%.2i\",f:localtime_hour(f:system_time())+1)" \
+									"				+\":\"+" \
+									"				f:format_int(\"%.2i\",f:localtime_minute(f:system_time()))" \
+									"				+\":\"+" \
+									"				f:format_int(\"%.2i\",f:localtime_second(f:system_time())))" \
+									"				dp:BufferTimeProgramEdnWashingmachine=(\"00\"" \
+									"				+\":\"+" \
+									"				f:format_int(\"%.2i\",f:localtime_minute(f:system_time())+dp:bufferTime-60)" \
+									"				+\":\"+" \
+									"				f:format_int(\"%.2i\",f:localtime_second(f:system_time())))" \
+									"			}" \
+									"			else" \
+									"			{" \
+									"				v:this->^->\"Label 9\".text=(f:format_int(\"%.2i\",f:localtime_hour(f:system_time())+1)" \
+									"	+\":\"+" \
+									"	f:format_int(\"%.2i\",f:localtime_minute(f:system_time())+dp:bufferTime-60)+\":\"+" \
+									"	f:format_int(\"%.2i\",f:localtime_second(f:system_time())))" \
+									"	dp:BufferTimeProgramEdnWashingmachine=(f:format_int(\"%.2i\",f:localtime_hour(f:system_time())+1)" \
+									"	+\":\"+" \
+									"	f:format_int(\"%.2i\",f:localtime_minute(f:system_time())+dp:bufferTime-60)+\":\"+" \
+									"	f:format_int(\"%.2i\",f:localtime_second(f:system_time())))" \
+									"			}" \
+									"		}" \
+									"		else" \
+									"		{" \
+									"			v:this->^->\"Label 9\".text=(f:format_int(\"%.2i\",f:localtime_hour(f:system_time()))" \
+									"	+\":\"+" \
+									"	f:format_int(\"%.2i\",(f:localtime_minute(f:system_time())+dp:bufferTime)))" \
+									"	+\":\"+" \
+									"	f:format_int(\"%.2i\",f:localtime_second(f:system_time()))" \
+									"	dp:BufferTimeProgramEdnWashingmachine=(f:format_int(\"%.2i\",f:localtime_hour(f:system_time()))" \
+									"	+\":\"+" \
+									"	f:format_int(\"%.2i\",(f:localtime_minute(f:system_time())+dp:bufferTime)))" \
+									"	+\":\"+" \
+									"	f:format_int(\"%.2i\",f:localtime_second(f:system_time()))" \
+									"		}" \
+									"		" \
+									"	}" \
+									"	}" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(9aa25e46-095e-4da1-a205-9b3622b677fc)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfRectangle(a5fc1e22-8ba1-4d41-a979-eafabccd52ea)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLabel(6356644f-0d25-47e0-888d-122e52e0a10f)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Label 5"
+									visible: true
+									width: 100
+									height: 100
+									x: 99
+									y: 0
+									text: "START"
+									textColor: #000000FF
+									font: font_resource(51b51f42-db92-4213-9ebb-53a4fd1f0d9e)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 30
+									}
+									horizontalAlign: 0
+									verticalAlign: 0
+								}]
+							name: "Rectangle 4"
+							visible: true
+							width: 259
+							height: 100
+							x: -10
+							y: 4
+							fillColor: #D3D3D3FF
+						}]
+					name: "ButtonStart"
+					visible: true
+					width: 278
+					height: 122
+					x: 820
+					y: 408
+				}, 
+				GtfLabel(77cebf22-d3d5-4bb8-b5e8-012e15342c89)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 6"
+					visible: true
+					width: 424
+					height: 100
+					x: 800
+					y: 79
+					text: string_element_reference(6b4c85f1-9264-42e8-9b54-32c863a20006)
+					{
+						index: 3
+						list: @b0caf7b7-aec8-4fd3-8732-8664abcaab8c (objectref<stringlist>)
+					}
+					textColor: color_scriptedValue(0a20b16e-9921-435e-b8ce-cb818af828ea)
+					{
+						triggerList: trigger_list(67a90d74-062b-4518-b419-ffb94cd73889)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(3ff2d364-d481-4be2-adb1-a39f2af67369)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<color>(18c218c2-6180-440a-a814-e178361eb70c)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	if(dp:WashingmachineBooleans[0])" \
+								"	{dp:WashingMachineRequirements[1]}" \
+								"	else" \
+								"	{dp:WashingMachineRequirements[0]}" \
+								"}"
+						}
+						write: function<bool,color>(ca3d40a6-9408-49b9-93d1-4a8ba6e18cd5)
+						{
+							script: "function(v:arg0::color)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					font: font_resource(819d3ee6-9d58-4a11-bc6e-289c5154aa51)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 60
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(0fcac71e-d54f-45ce-8506-266006208bd0)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 7"
+					visible: true
+					width: 436
+					height: 100
+					x: 800
+					y: 171
+					text: string_element_reference(61ed1302-53b4-4f89-90c7-aba22d116842)
+					{
+						index: 4
+						list: @b0caf7b7-aec8-4fd3-8732-8664abcaab8c (objectref<stringlist>)
+					}
+					textColor: color_scriptedValue(f9bf0e06-8147-4e2e-a8b2-4371b21bf3f5)
+					{
+						triggerList: trigger_list(fed6bdd4-8e9a-4fe7-a61f-53799b12a979)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(597dd835-73d2-4b12-9443-23448f3bb373)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<color>(cf3e6aed-294e-4591-8b84-8b819817490e)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	if(dp:WashingmachineBooleans[1])" \
+								"	{dp:WashingMachineRequirements[1]}" \
+								"	else" \
+								"	{dp:WashingMachineRequirements[0]}" \
+								"}"
+						}
+						write: function<bool,color>(9c64ee6d-5ce0-4108-81a8-48aa94d954e7)
+						{
+							script: "function(v:arg0::color)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					font: font_resource(58b9ff04-e14d-432f-93ce-dd140c81b6ed)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 60
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(79a2753a-19d7-43fb-a2d7-ca5403fc6871)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 8"
+					visible: true
+					width: 429
+					height: 100
+					x: 800
+					y: 263
+					text: string_element_reference(7ed29988-cba3-48c5-85f7-485ff1e0ac71)
+					{
+						index: 5
+						list: @b0caf7b7-aec8-4fd3-8732-8664abcaab8c (objectref<stringlist>)
+					}
+					textColor: color_scriptedValue(8e2bc17e-6a8d-4b3a-a23f-c657e0d68735)
+					{
+						triggerList: trigger_list(1747e384-5c2f-4bac-84a8-36ce730b577a)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(e01721d2-1a78-4af0-bedc-c64658aee3a2)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<color>(bd13babe-7d25-4df4-b619-7dd8bfb504b7)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	if(dp:WashingmachineBooleans[2])" \
+								"	{dp:WashingMachineRequirements[1]}" \
+								"	else" \
+								"	{dp:WashingMachineRequirements[0]}" \
+								"}"
+						}
+						write: function<bool,color>(cc77884d-bed4-4b84-be48-bf8f0dbc5643)
+						{
+							script: "function(v:arg0::color)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					font: font_resource(e8310cf2-e195-4982-9dc9-a218905bd643)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 60
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(5e76b067-78b0-4544-8a85-6508932adfea)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 9"
+					visible: true
+					width: 512
+					height: 100
+					x: 681
+					y: 594
+					text: "label"
+					textColor: #000000FF
+					font: font_resource(8e4ee95a-3e83-4086-adf4-e348285fb734)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 60
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(3bcd930a-54f4-45ea-9e82-0c65311fc25d)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 10"
+					visible: true
+					width: 538
+					height: 100
+					x: 701
+					y: 506
+					text: @755e5320-d681-4709-b10d-8722009f6b18 (objectref<string>)
+					textColor: #000000FF
+					font: font_resource(458feb04-3641-4370-9ffe-b397a475145f)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 60
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			"Conditional script 1": conditional_script(203865c6-7c10-4dbf-becc-01ad64c8fd62)
+			{
+				triggerList: trigger_list(65987af1-0be5-4b41-909e-80ac08d1cff4)
+				{
+					script: "dp:RefreshClock"
+				}
+				onTrigger: function<bool,bool>(9a8d60c5-b1f9-4cf3-a473-2fece2759684)
+				{
+					script: "function(v:arg0::bool)" \
+						"{	" \
+						"	if(dp:BufferTimeProgramEdnWashingmachine==(f:format_int(\"%.2i\",f:localtime_hour(f:system_time()))" \
+						"	+\":\"+" \
+						"	f:format_int(\"%.2i\",f:localtime_minute(f:system_time()))" \
+						"	+\":\"+" \
+						"	f:format_int(\"%.2i\",f:localtime_second(f:system_time()))))" \
+						"	{" \
+						"	dp:washingMachineClicked=false" \
+						"	v:this->\"Label 9\".visible=false" \
+						"	v:this->\"Label 10\".visible=false" \
+						"	}" \
+						"	" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfContainer_template_instance(7884557e-95af-487c-a840-6a019fd532ee)
+		{
+			name: "TopBar 1"
+			template: @3d8b2a56-e6db-4491-999e-67be2e62da91 (objectref<GtfContainer_template>)
+			children: children_list []
+		}]
+	name: "View 2"
+	visible: true
+	width: 1280
+	height: 720
+	x: 0
+	y: 0
+}

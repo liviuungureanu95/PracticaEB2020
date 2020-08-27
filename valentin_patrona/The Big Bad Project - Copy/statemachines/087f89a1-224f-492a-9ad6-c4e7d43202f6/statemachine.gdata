@@ -1,0 +1,179 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_statemachine(087f89a1-224f-492a-9ad6-c4e7d43202f6)
+{
+	x: 0
+	y: 0
+	width: 1370
+	height: 1042
+	name: "Main"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions [
+		haptic_transition(30610f6f-fe27-4abb-aa61-9abb5e7d6b1e)
+		{
+			action: function<void>(none)
+			target_state: @b27dc172-f203-4c8d-a5f0-44353ea5aaed (objectref<haptic_dialog_state>)
+			source_dock: 0.002294569F
+			target_dock: 0.01541241F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+			event: @5db96be9-7f27-4fd1-b5d8-0ffbfb1a1ebe (objectref<event>)
+			condition: function<bool>(none)
+		}, 
+		haptic_transition(b25d532d-e585-430c-9900-1be4c0f079fe)
+		{
+			action: function<void>(none)
+			target_state: @a2afac62-f88f-4b4b-bc44-c27047d8a768 (objectref<haptic_dialog_state>)
+			source_dock: 0.07176565F
+			target_dock: 0.01180126F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+			event: @5fe29e97-7da0-4cad-8b32-eb303f756441 (objectref<event>)
+			condition: function<bool>(none)
+		}, 
+		haptic_transition(ef4ebabd-228f-4c4f-8500-089d315c367b)
+		{
+			action: function<void>(none)
+			target_state: @14aafb5e-4776-4b4a-aeda-d3c9144301b5 (objectref<haptic_dialog_state>)
+			source_dock: 0.2126615F
+			target_dock: 0.2654443F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+			event: @db9e04b7-0dfd-4177-9684-77499a339622 (objectref<event>)
+			condition: function<bool>(none)
+		}, 
+		haptic_transition(3f6fc673-7d37-458e-bdc9-931d8974b1f0)
+		{
+			action: function<void>(none)
+			target_state: @cc78d4a4-bc2c-4320-821f-fd40fe45bac4 (objectref<haptic_dialog_state>)
+			source_dock: 0.2667F
+			target_dock: 0.2626494F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+			event: @67b47e68-ab8e-4821-b59a-cdd1b30ae400 (objectref<event>)
+			condition: function<bool>(none)
+		}]
+	internal_transitions: haptic_internal_transitions []
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(e80ca5ee-d37b-4ef0-a0c4-9bd576af25b9)
+		{
+			x: 245
+			y: 73
+			width: 100
+			height: 100
+			name: "Animation Intro"
+			entry_action: function<void>(dd50e6c7-8c54-4920-ae46-c51843521cc1)
+			{
+				script: "function()" \
+					"{" \
+					"	if(dp:FirstTime)" \
+					"	{fire_delayed 5000, ev:goToFirstTimeSettings()}" \
+					"	else" \
+					"	{fire_delayed 5000, ev:goToMenu()}" \
+					"}"
+			}
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (83ddfc10-2838-4dfa-ad04-3d2732ea3e08)
+			priority_stack: priority_stack(none)
+		}, 
+		haptic_dialog_state(a2afac62-f88f-4b4b-bc44-c27047d8a768)
+		{
+			x: 889
+			y: 74
+			width: 100
+			height: 100
+			name: "Main Menu"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (08a1bcfe-3f85-4f32-b17c-7c5d0eb0ac9f)
+			priority_stack: priority_stack(none)
+		}, 
+		haptic_dialog_state(b27dc172-f203-4c8d-a5f0-44353ea5aaed)
+		{
+			x: 577
+			y: 72
+			width: 100
+			height: 100
+			name: "FirstTimeSettings"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (f976e3e1-cc89-4662-95cd-87755dc20b29)
+			priority_stack: priority_stack(none)
+		}, 
+		haptic_dialog_state(14aafb5e-4776-4b4a-aeda-d3c9144301b5)
+		{
+			x: 955
+			y: 335
+			width: 100
+			height: 100
+			name: "SmartTVView"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (e8206f3d-013b-4b21-bb3a-4a3b1edbcefd)
+			priority_stack: priority_stack(none)
+		}, 
+		haptic_dialog_state(cc78d4a4-bc2c-4320-821f-fd40fe45bac4)
+		{
+			x: 957
+			y: 514
+			width: 100
+			height: 100
+			name: "WashingmachineView"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (36208bdd-fc3f-432d-83f2-06a00f951597)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(f7ab0ce0-18c4-4451-be23-db21f2930fc2)
+	{
+		x: 68
+		y: 149
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(147ded36-f14b-4bd8-b260-ff657d12fffd)
+		{
+			action: function<void>(none)
+			target_state: @e80ca5ee-d37b-4ef0-a0c4-9bd576af25b9 (objectref<haptic_dialog_state>)
+			source_dock: 0.2243164F
+			target_dock: 0.7373506F
+			curveControlXOffset: -23
+			curveControlYOffset: 1
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(none)
+}

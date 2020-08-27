@@ -1,0 +1,139 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(8da9a615-211f-4c29-8286-3367dde39f69)
+{
+	name: "SwitchButton"
+	structure: GtfContainer(aac8e254-9605-4cc8-a88d-f78bddd6d23b)
+	{
+		features: feature_list [
+			TouchShortReleased(c3318267-9673-4029-9c21-8690eb386c39)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(23d1d19b-5cf0-4858-8938-93bf4b47a184)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	if(dp:quickButtonThermal)" \
+						"	{" \
+						"		v:this->MovingBody.x+=135;" \
+						"		v:this->Body->ActivateBody.visible=true" \
+						"		dp:quickButtonThermal=false" \
+						"	}" \
+						"	else" \
+						"	{" \
+						"		v:this->MovingBody.x-=135;" \
+						"		v:this->Body->ActivateBody.visible=false" \
+						"		dp:quickButtonThermal=true" \
+						"	}" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(ef0dd54c-f24c-4f70-b9b5-1cc90338b5e4)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(9ce6b4ba-3a63-4b2f-a655-8401511612a7)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfEllipse(0271135d-1601-4d6f-928c-8cd4879badca)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfEllipse(77583381-00f1-47b5-9a96-6c424f6486a1)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "ShapeChanger"
+								visible: true
+								width: 45
+								height: 32
+								x: 147
+								y: 0
+								fillColor: #A9A9A9FF
+								arcWidth: 0
+								centralAngle: 360F
+								sectorRotation: 0F
+							}]
+						name: "ShapeChanger"
+						visible: true
+						width: 45
+						height: 32
+						x: -19
+						y: 0
+						fillColor: #A9A9A9FF
+						arcWidth: 0
+						centralAngle: 360F
+						sectorRotation: 0F
+					}, 
+					GtfRectangle(f1a95590-4802-4d59-9b1f-1738aa945b9c)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfEllipse(cb4b19c4-071d-41de-ada8-4b365ffa00a1)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Ellipse 1"
+								visible: false
+								width: 21
+								height: 21
+								x: -7
+								y: -1
+								fillColor: fillColor@f1a95590-4802-4d59-9b1f-1738aa945b9c (propref<color>)
+								arcWidth: 0
+								centralAngle: 360F
+								sectorRotation: 0F
+							}]
+						name: "ActivateBody"
+						visible: false
+						width: 156
+						height: 18
+						x: -1
+						y: 8
+						fillColor: #F08080FF
+					}]
+				name: "Body"
+				visible: true
+				width: 155
+				height: 32
+				x: 25
+				y: 36
+				fillColor: #A9A9A9FF
+			}, 
+			GtfEllipse(4482e76b-eda3-4af0-833f-fac37a1ad679)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "MovingBody"
+				visible: true
+				width: 40
+				height: 40
+				x: 15
+				y: 33
+				fillColor: #FF0000FF
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}]
+		name: "Container 1"
+		visible: true
+		width: 208
+		height: 100
+		x: 0
+		y: 0
+	}
+	touchShortReleased: touchShortReleased@c3318267-9673-4029-9c21-8690eb386c39 (propref<function<bool,int,int,int,int>>)
+	fillColor: fillColor@f1a95590-4802-4d59-9b1f-1738aa945b9c (propref<color>)
+	"fillColor 2": fillColor@4482e76b-eda3-4af0-833f-fac37a1ad679 (propref<color>)
+	x: x@aac8e254-9605-4cc8-a88d-f78bddd6d23b (propref<int>)
+	y: y@aac8e254-9605-4cc8-a88d-f78bddd6d23b (propref<int>)
+	"x 2": x@4482e76b-eda3-4af0-833f-fac37a1ad679 (propref<int>)
+	"y 2": y@4482e76b-eda3-4af0-833f-fac37a1ad679 (propref<int>)
+	visible: visible@f1a95590-4802-4d59-9b1f-1738aa945b9c (propref<bool>)
+	"visible 2": visible@cb4b19c4-071d-41de-ada8-4b365ffa00a1 (propref<bool>)
+}
