@@ -1,0 +1,190 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(31a59b66-1391-4df7-9f1a-4e065a8bd241)
+{
+	name: "BluetoothView"
+	template: @e194e414-71c1-406e-a41c-22a1af233577 (objectref<GtfView_template>)
+	children: children_list [
+		GtfImage_template_instance(dd305173-5c92-4e44-b959-6fd339ebf4ed)
+		{
+			name: "BackButton"
+			template: @783dbbc3-0048-41b2-8249-a5078951fba2 (objectref<GtfImage_template>)
+			children: children_list []
+			x: 30
+			y: 16
+			image: image_resource(4f21eaa0-5822-4571-a0c7-e2893bbfaa5a)
+			{
+				file: "back.png"
+			}
+			rotationAngleZ: rotationAngleZ@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<float>)
+			touchPressed: function<bool,int,int,int,int>(49b2251e-3dcd-4813-a753-f8db32585c4b)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:GoBack()" \
+					"    false" \
+					"}"
+			}
+			width: 56
+			height: 55
+			visible: visible@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+			touchable: touchable@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+			touched: touched@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+		}, 
+		GtfContainer_template_instance(a6565af3-4534-4ec6-a69a-809f426b3d0b)
+		{
+			name: "ConnectButton"
+			template: @7333191c-1efc-47f7-9c7b-a35f85a543b7 (objectref<GtfContainer_template>)
+			children: children_list []
+			pressedAction: function<bool>(f53c12ed-0c72-4ac8-a9ad-aa57fce37cf9)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this.currentColor=v:this.pressedColor" \
+					"	v:this.currentTextColor = v:this.pressedTextColor" \
+					"	fire ev:showBluetoothPopUp()" \
+					"	false" \
+					"}"
+			}
+			releasedAction: releasedAction@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<function<bool>>)
+			x: 36
+			y: 180
+			width: width@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<int>)
+			currentColor: #000000FF
+			pressedColor: #FFA500FF
+			releasedColor: #000000FF
+			borderThickness: 2
+			borderColor: #FFA500FF
+			text: string_element_reference(2dd1782f-81c2-47b7-a54b-281d12c668df)
+			{
+				index: 0
+				list: @cb5b1bae-42c1-44eb-a53a-5bd44d3952bb (objectref<stringlist>)
+			}
+			height: height@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<int>)
+			lineIndex: lineIndex@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<int>)
+			pressedTextColor: #000000FF
+			releasedTextColor: #FFA500FF
+			currentTextColor: #FFA500FF
+			touchPressed: touchPressed@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<function<bool,int,int,int,int>>)
+		}, 
+		GtfRectangle(a9a1ce4f-bc47-464b-a096-92f724535188)
+		{
+			features: feature_list [
+				Border(20d84268-00ba-4880-a37a-8a204ebf8ffc)
+				{
+					borderThickness: 2
+					borderColor: #FFA500FF
+					borderStyle: 0
+				}]
+			children: children_list [
+				GtfLabel(c7de21bd-9a25-44ee-bdc8-7d8a68378183)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "ConnectedDevicesLabel"
+					visible: true
+					width: 180
+					height: 34
+					x: 42
+					y: 8
+					text: string_element_reference(bbd15b76-32d3-4639-bb97-634f0b3da47d)
+					{
+						index: 1
+						list: @cb5b1bae-42c1-44eb-a53a-5bd44d3952bb (objectref<stringlist>)
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(d46da417-6a18-4f02-b0b6-081589a565dc)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 25
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(6dc42c2a-d123-46e2-b1db-8a485eefdf32)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "ConnectedDevice"
+					visible: true
+					width: 244
+					height: 31
+					x: 9
+					y: 51
+					text: @7ff767da-77cd-41e6-9ba0-7477b740674d (objectref<string>)
+					textColor: #FFFFFFFF
+					font: font_resource(4ca16d8a-b34d-45ee-aacf-4836b4600781)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 20
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "OuterBorder"
+			visible: true
+			width: 271
+			height: 220
+			x: 441
+			y: 173
+			fillColor: #000000FF
+		}, 
+		GtfRectangle(1854f0ea-c4d6-4c16-924a-fecadcf61e86)
+		{
+			features: feature_list [
+				Border(0eeaef12-d8f2-470a-a46b-6e2d51d3ce1d)
+				{
+					borderThickness: 2
+					borderColor: #FFA500FF
+					borderStyle: 0
+				}]
+			children: children_list []
+			name: "InnerBorder"
+			visible: true
+			width: 270
+			height: 44
+			x: 442
+			y: 173
+			fillColor: #FFFFFF00
+		}]
+	text: "Configure Bluetooth"
+	x: x@e194e414-71c1-406e-a41c-22a1af233577 (propref<int>)
+	y: y@e194e414-71c1-406e-a41c-22a1af233577 (propref<int>)
+	keyboardListener: conditional_script(a69bea31-b94a-4b71-a307-59f6ef53fc25)
+	{
+		triggerList: trigger_list(efadbe7d-ecc1-4066-9f20-d1a942bd675a)
+		{
+			script: ""
+		}
+		onTrigger: function<bool,bool>(4fd1f131-1156-45f9-a230-e6aa37689629)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	showPopUp: conditional_script(1d616a10-01a6-484f-a8d9-c651e7c6d2b6)
+	{
+		triggerList: trigger_list(266c7da0-e73c-4a16-a0ff-265684c4fb13)
+		{
+			script: "ev:showBluetoothPopUp"
+		}
+		onTrigger: function<bool,bool>(f1c23acd-d438-4930-b2cf-ecc245d2c84a)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	" \
+				"	match_event v:event = ev:showBluetoothPopUp in" \
+				"	{" \
+				"		" \
+				"		f:pushDynamicStateMachine(popup_stack: Main, sm:BluetoothPopUpState, 0)" \
+				"" \
+				"	}" \
+				"" \
+				"false" \
+				"}"
+		}
+	}
+}

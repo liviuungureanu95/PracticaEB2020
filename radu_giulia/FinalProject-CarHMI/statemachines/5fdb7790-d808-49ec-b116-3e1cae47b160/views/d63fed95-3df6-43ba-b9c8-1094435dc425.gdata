@@ -1,0 +1,288 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(d63fed95-3df6-43ba-b9c8-1094435dc425)
+{
+	name: "DrivingView"
+	template: @e194e414-71c1-406e-a41c-22a1af233577 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(e8c85f10-e27a-44cf-a2ac-ecacab4347a0)
+		{
+			name: "EcoButton"
+			template: @7333191c-1efc-47f7-9c7b-a35f85a543b7 (objectref<GtfContainer_template>)
+			children: children_list []
+			pressedAction: function<bool>(66755a70-16a8-41d8-970b-8473dc13eb24)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this.currentColor=v:this.pressedColor" \
+					"	v:this->^->\"ModeSelected\".text=dp:carModes[0]" \
+					"	//v:this->^->CarPicture.visible=true" \
+					"	v:this->^->CarPicture.image=dp:carModePictures[0]" \
+					"	dp:currentMode=dp:carModes[0]" \
+					"	v:this->^->DescriptionEcoPro.visible=true" \
+					"	v:this->^->DescriptionComfort.visible=false" \
+					"	v:this->^->DescriptionSport.visible=false" \
+					"	false" \
+					"}"
+			}
+			releasedAction: releasedAction@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<function<bool>>)
+			x: 9
+			y: 100
+			width: 209
+			currentColor: #000000FF
+			pressedColor: #FFA500FF
+			releasedColor: #000000FF
+			borderThickness: 2
+			borderColor: #FFA500FF
+			text: "ECO Pro"
+			height: height@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<int>)
+			lineIndex: lineIndex@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<int>)
+			pressedTextColor: #000000FF
+			releasedTextColor: #FFFFFFFF
+			currentTextColor: currentTextColor@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<color>)
+			touchPressed: touchPressed@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<function<bool,int,int,int,int>>)
+			textColor: #FFA500FF
+		}, 
+		GtfContainer_template_instance(1550dfeb-ad9d-40a5-8eb9-19f04662eb5b)
+		{
+			name: "ComfortButton"
+			template: @7333191c-1efc-47f7-9c7b-a35f85a543b7 (objectref<GtfContainer_template>)
+			children: children_list []
+			pressedAction: function<bool>(2251c65d-7a26-4865-96ba-5ac8e6f67f71)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this.currentColor=v:this.pressedColor" \
+					"	v:this->^->\"ModeSelected\".text=dp:carModes[1]" \
+					"	//v:this->^->CarPicture.visible=true" \
+					"	v:this->^->CarPicture.image=dp:carModePictures[1]" \
+					"	dp:currentMode=dp:carModes[1]" \
+					"	v:this->^->DescriptionEcoPro.visible=false" \
+					"	v:this->^->DescriptionComfort.visible=true" \
+					"	v:this->^->DescriptionSport.visible=false" \
+					"	false" \
+					"}"
+			}
+			releasedAction: releasedAction@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<function<bool>>)
+			x: 283
+			y: 100
+			width: 209
+			currentColor: #000000FF
+			pressedColor: #FFA500FF
+			releasedColor: #000000FF
+			borderThickness: 2
+			borderColor: #FFA500FF
+			text: "Comfort"
+			height: height@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<int>)
+			lineIndex: lineIndex@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<int>)
+			pressedTextColor: #000000FF
+			releasedTextColor: #FFFFFFFF
+			currentTextColor: currentTextColor@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<color>)
+			touchPressed: touchPressed@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<function<bool,int,int,int,int>>)
+			textColor: #FFA500FF
+		}, 
+		GtfContainer_template_instance(5e74451b-6c3d-45bc-a6ab-8f00f2a19727)
+		{
+			name: "SportButton"
+			template: @7333191c-1efc-47f7-9c7b-a35f85a543b7 (objectref<GtfContainer_template>)
+			children: children_list []
+			pressedAction: function<bool>(8563d43f-3ffb-463c-9979-05a32f475b94)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this.currentColor=v:this.pressedColor" \
+					"	v:this->^->\"ModeSelected\".text=dp:carModes[2]" \
+					"	//v:this->^->CarPicture.visible=true" \
+					"	v:this->^->CarPicture.image=dp:carModePictures[2]" \
+					"	dp:currentMode=dp:carModes[2]" \
+					"	v:this->^->DescriptionEcoPro.visible=false" \
+					"	v:this->^->DescriptionComfort.visible=false" \
+					"	v:this->^->DescriptionSport.visible=true" \
+					"	false" \
+					"}"
+			}
+			releasedAction: releasedAction@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<function<bool>>)
+			x: 572
+			y: 100
+			width: 209
+			currentColor: #000000FF
+			pressedColor: #FFA500FF
+			releasedColor: #000000FF
+			borderThickness: 2
+			borderColor: #FFA500FF
+			text: "Sport"
+			height: height@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<int>)
+			lineIndex: lineIndex@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<int>)
+			pressedTextColor: #000000FF
+			releasedTextColor: #FFFFFFFF
+			currentTextColor: currentTextColor@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<color>)
+			touchPressed: touchPressed@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<function<bool,int,int,int,int>>)
+			textColor: #FFA500FF
+		}, 
+		GtfLabel(a7604d08-753d-4741-94a7-ef173a8dea55)
+		{
+			features: feature_list [
+				MultiLine(c0740f68-dfcb-4b8c-bf92-c3dfa3bf1d95)
+				{
+					lineOffset: 0
+					maxLineCount: 0
+				}]
+			children: children_list []
+			name: "DescriptionEcoPro"
+			visible: true
+			width: 338
+			height: 91
+			x: 442
+			y: 172
+			text: string_element_reference(771d2121-0055-4a5f-8c1c-897c565f2842)
+			{
+				index: 0
+				list: @54befdbf-144a-47e3-9cb5-d8badea95902 (objectref<stringlist>)
+			}
+			textColor: #FFFFFFFF
+			font: font_resource(b3ecce6a-85c5-4c56-8167-b5235b9b15c4)
+			{
+				file: "Vudotronic.otf"
+				size: 25
+			}
+			horizontalAlign: 0
+			verticalAlign: 1
+			colorByMode: colorlist [#00FFFFFF, #FFFFFFFF, #FF8C00FF]
+		}, 
+		GtfLabel(6ef827ad-9d38-48e3-8198-c7d15d15d7f3)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "ModeSelected"
+			visible: true
+			width: 119
+			height: 27
+			x: 18
+			y: 172
+			text: "Comfort"
+			textColor: #FFFFFFFF
+			font: font_resource(845f4c55-d565-4f9a-b8aa-49764389d2c8)
+			{
+				file: "Vudotronic.otf"
+				size: 24
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+			colorByMode: colorlist [#00FFFFFF, #FFFFFFFF, #A9A9A9FF, #FFA500FF]
+		}, 
+		GtfImage(ff253d96-bc05-4e28-adb5-0090229feefc)
+		{
+			features: feature_list [
+				ScaleMode(83fc320a-650c-400d-97a7-b16fa1108b9a)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "CarPicture"
+			visible: true
+			width: 416
+			height: 217
+			x: 29
+			y: 212
+			image: image_resource(f63b72a3-4a73-4308-afc3-fe7903f8ff9a)
+			{
+				file: "carModes\\comfortMode.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage_template_instance(227b6ce0-232d-432a-b449-8f284af1f228)
+		{
+			name: "BackButton"
+			template: @783dbbc3-0048-41b2-8249-a5078951fba2 (objectref<GtfImage_template>)
+			children: children_list []
+			x: 30
+			y: 16
+			image: image_resource(1fed7ed3-5772-4873-984c-d5a77639a506)
+			{
+				file: "back.png"
+			}
+			rotationAngleZ: rotationAngleZ@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<float>)
+			touchPressed: function<bool,int,int,int,int>(2b49231d-900c-442f-9e08-202cb258a29c)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:GoBack()" \
+					"    false" \
+					"}"
+			}
+			width: 56
+			height: 55
+			visible: visible@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+			touchable: touchable@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+			touched: touched@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+		}, 
+		GtfLabel(56bbec19-591a-4f4a-90b9-98f4c26ca4af)
+		{
+			features: feature_list [
+				MultiLine(ae842c79-9c6a-49a2-ae16-5b736d5a01bd)
+				{
+					lineOffset: 0
+					maxLineCount: 0
+				}]
+			children: children_list []
+			name: "DescriptionComfort"
+			visible: false
+			width: 290
+			height: 91
+			x: 491
+			y: 172
+			text: string_element_reference(12449e09-8284-45f2-a209-f03e71e34a8a)
+			{
+				index: 1
+				list: @54befdbf-144a-47e3-9cb5-d8badea95902 (objectref<stringlist>)
+			}
+			textColor: #FFFFFFFF
+			font: font_resource(870a3538-67b6-4e20-be8d-94c7f68ca247)
+			{
+				file: "Vudotronic.otf"
+				size: 25
+			}
+			horizontalAlign: 0
+			verticalAlign: 1
+			colorByMode: colorlist [#00FFFFFF, #FFFFFFFF, #FF8C00FF]
+		}, 
+		GtfLabel(464f23b9-f548-472e-8172-6daea4549f50)
+		{
+			features: feature_list [
+				MultiLine(60366eeb-eceb-4d8d-94fd-76185e642d53)
+				{
+					lineOffset: 0
+					maxLineCount: 0
+				}]
+			children: children_list []
+			name: "DescriptionSport"
+			visible: false
+			width: 290
+			height: 91
+			x: 491
+			y: 172
+			text: string_element_reference(6c051d38-ada7-48a1-bdba-408e696a2f1c)
+			{
+				index: 2
+				list: @54befdbf-144a-47e3-9cb5-d8badea95902 (objectref<stringlist>)
+			}
+			textColor: #FFFFFFFF
+			font: font_resource(2364a9bb-7deb-4d72-a5e2-63ffb76329b4)
+			{
+				file: "Vudotronic.otf"
+				size: 25
+			}
+			horizontalAlign: 0
+			verticalAlign: 1
+			colorByMode: colorlist [#00FFFFFF, #FFFFFFFF, #FF8C00FF]
+		}]
+	text: string_element_reference(259280bb-a70a-48bd-80e3-3d3e0764de6d)
+	{
+		index: 2
+		list: @1dc3d3cb-4b0b-48af-84ad-ea2469add107 (objectref<stringlist>)
+	}
+	x: x@e194e414-71c1-406e-a41c-22a1af233577 (propref<int>)
+	y: y@e194e414-71c1-406e-a41c-22a1af233577 (propref<int>)
+}

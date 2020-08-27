@@ -1,0 +1,343 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(9f7e0f15-3b2f-4b0d-88d0-14ed43c8d490)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(be24d6fb-7e24-4ab1-b22e-f07cbc2cef97)
+		{
+			features: feature_list [
+				ScaleMode(ee90578d-aef6-4896-9a6a-51e7be7a29e9)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "Image"
+			visible: true
+			width: width@9f7e0f15-3b2f-4b0d-88d0-14ed43c8d490 (propref<int>)
+			height: height@9f7e0f15-3b2f-4b0d-88d0-14ed43c8d490 (propref<int>)
+			x: 0
+			y: 0
+			image: image_resource(c7b4bbbc-112a-4d38-bfbb-833453908dd7)
+			{
+				file: "try3.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfRectangle(2a4b20d4-f168-44c5-8af9-f8d7fcffc0bc)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(f8d77191-83be-46a3-97fe-c8b756c44202)
+				{
+					features: feature_list [
+						ScaleMode(3747c53f-1948-465d-9793-e915e962b8a0)
+						{
+							scaleMode: 1
+						}, 
+						Translation(dde16169-6add-459e-95e0-6f5b76b1ae19)
+						{
+							translationEnabled: true
+							translationX: 0F
+							translationY: 0F
+							translationZ: 0F
+						}, 
+						Rotation(e7f6dec2-a1eb-4abb-9c7e-5c0d28d1bb73)
+						{
+							rotationEnabled: true
+							rotationAngleX: 0F
+							rotationAngleY: 0F
+							rotationAngleZ: 0F
+						}, 
+						Scaling(31f25cca-b010-4708-931a-771a17aaf86d)
+						{
+							scalingEnabled: true
+							scalingX: 100F
+							scalingY: 100F
+							scalingZ: 100F
+						}, 
+						Shearing(c5d6dd7d-9ff5-4276-ad7c-ff6b9a547106)
+						{
+							shearingEnabled: true
+							shearingXbyY: 0F
+							shearingXbyZ: 0F
+							shearingYbyX: 0F
+							shearingYbyZ: 0F
+							shearingZbyX: 0F
+							shearingZbyY: 0F
+						}, 
+						Pivot(d7ab7b72-e916-49f5-b89f-81b5eab2f64a)
+						{
+							pivotX: 53F
+							pivotY: 47F
+							pivotZ: 0F
+						}]
+					children: children_list [
+						GtfParallelAnimation(2eb8ccae-2d3a-4aed-9bf9-b62f05f2d292)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfSlowStartFloat(db89dbf4-fbc9-4488-8da3-795cef4c65be)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Slow start curve 1"
+									enabled: true
+									delay: 0
+									duration: 5000
+									repeat: 0
+									alternating: false
+									relative: false
+									start: 0F
+									end: 720F
+									target: rotationAngleZ@e7f6dec2-a1eb-4abb-9c7e-5c0d28d1bb73 (propref<float>)
+								}]
+							name: "NeuronAnimation"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(4d26dc75-c31c-4aa7-bb8f-514ddc7c5c36)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(9e5fa5b0-4806-4ee7-90ef-8893760a338b)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(dcf365cf-264b-423b-acec-db759bf95ca7)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}]
+					name: "NeuronImage"
+					visible: true
+					width: 106
+					height: 94
+					x: 645
+					y: 150
+					image: image_resource(7c9d98d0-c094-45f0-81b3-7f1324391b69)
+					{
+						file: "neuron.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+					startAnimation: conditional_script(0ff4f961-82ab-460d-8422-ab3b295aa8ce)
+					{
+						triggerList: trigger_list(f6acd379-db99-4437-a033-990fab819f2d)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(101f06bf-815a-4a14-aef7-87f3a44c0444)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	f:animation_play(v:this->NeuronAnimation)" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfImage(09737f23-4a7a-4048-a77f-256ad722217b)
+				{
+					features: feature_list [
+						ScaleMode(ba593e3b-aa3d-425d-9e53-72a43260603a)
+						{
+							scaleMode: 2
+						}]
+					children: children_list []
+					name: "Fencer"
+					visible: true
+					width: 533
+					height: 314
+					x: 25
+					y: 125
+					image: image_resource(db20a238-e88d-4d1d-8853-0f879c99896b)
+					{
+						file: "fencing.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfContainer_template_instance(d75d9a97-79f0-482a-84a7-78fe75a224e6)
+				{
+					name: "CreditsButton"
+					template: @8333bb03-38b5-4824-a70a-203d73d5b064 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 27
+					y: 441
+					width: 84
+					height: 28
+					text: "Credits"
+					touchReleased: function<bool>(5811c1e0-8f1d-48db-a1e5-ad307c0b4d0c)
+					{
+						script: "function()" \
+							"{" \
+							"	fire ev:GoToCredits()" \
+							"	false" \
+							"}"
+					}
+					font: font_resource(24e4d779-c4a9-4a9a-aad6-110d7f3651d8)
+					{
+						file: "Joystick-5KjV.ttf"
+						size: 20
+					}
+					visible: visible@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+					touchable: touchable@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+				}, 
+				GtfContainer_template_instance(16ee3ba4-6ea0-4f2c-a655-519987d308c3)
+				{
+					name: "PlayButton"
+					template: @8333bb03-38b5-4824-a70a-203d73d5b064 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 596
+					y: y@e6e93e16-5b9b-4286-91ab-0112b49b740b (propref<int>)
+					width: width@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<int>)
+					height: height@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<int>)
+					text: "Tutorial"
+					touchReleased: function<bool>(0cc74e3a-b1d7-42b5-a3f9-cbf3a2b0d745)
+					{
+						script: "function()" \
+							"{" \
+							"	fire ev:GoToTutorial();" \
+							"	false" \
+							"}"
+					}
+					font: font@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<font>)
+					visible: true
+					touchable: touchable@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+				}, 
+				GtfContainer_template_instance(e6e93e16-5b9b-4286-91ab-0112b49b740b)
+				{
+					name: "TutorialButton"
+					template: @8333bb03-38b5-4824-a70a-203d73d5b064 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 376
+					y: 324
+					width: width@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<int>)
+					height: height@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<int>)
+					text: text@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<string>)
+					touchReleased: function<bool>(be594bde-92f1-4ef3-9848-6b20650e6753)
+					{
+						script: "function()" \
+							"{" \
+							"	dp:Level = 1" \
+							"	dp:NewGame = true" \
+							"	fire ev:PlayGame();" \
+							"	false" \
+							"}"
+					}
+					font: font@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<font>)
+					visible: true
+					touchable: touchable@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+				}, 
+				GtfContainer_template_instance(c28d2ed4-b045-438d-8e45-88f9f3f3cb60)
+				{
+					name: "ContinueButton"
+					template: @8333bb03-38b5-4824-a70a-203d73d5b064 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 377
+					y: 411
+					width: 395
+					height: 56
+					text: "Continue"
+					touchReleased: function<bool>(9c494e89-3179-40e5-be7f-347178607e52)
+					{
+						script: "function()" \
+							"{" \
+							"	fire ev:PlayGame()" \
+							"	false" \
+							"}"
+					}
+					font: font@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<font>)
+					visible: visible@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+					touchable: touchable@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+					checkVisible: conditional_script(ef3855d6-51be-40e0-a196-12af75280c8b)
+					{
+						triggerList: trigger_list(9001da58-f4c7-40fe-94a4-af546aaa1553)
+						{
+							script: "dp:Level"
+						}
+						onTrigger: function<bool,bool>(7b6ed6ef-e665-49c2-835a-dc70a606c1d1)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(dp:Level == 0){" \
+								"		v:this.visible = false" \
+								"	}" \
+								"	else{" \
+								"		v:this.visible = true" \
+								"	}" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "Background"
+			visible: true
+			width: width@9f7e0f15-3b2f-4b0d-88d0-14ed43c8d490 (propref<int>)
+			height: height@9f7e0f15-3b2f-4b0d-88d0-14ed43c8d490 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #B0C4DEFF
+		}, 
+		GtfLabel(feb0fd4d-b7d6-4beb-84cc-0f89a305e82f)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Title"
+			visible: true
+			width: width@9f7e0f15-3b2f-4b0d-88d0-14ed43c8d490 (propref<int>)
+			height: 100
+			x: 0
+			y: 0
+			text: "CHALLENGE"
+			textColor: #000080FF
+			font: font_resource(ca9f2d03-d595-4930-9075-7c75ec131abc)
+			{
+				file: "TarrgetHalfToneItalic-ozyV.otf"
+				size: 90
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(9eeee8d7-78c7-467d-b79a-8f6a1c45bc81)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "TitleSecondPart"
+			visible: true
+			width: 537
+			height: 70
+			x: 241
+			y: 224
+			text: "YOUR BRAIN"
+			textColor: #0000FFFF
+			font: font_resource(c1027616-69b8-4719-8c0f-3494eea5e40e)
+			{
+				file: "Moonhouse-yE5M.ttf"
+				size: 70
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}]
+	name: "MenuView"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

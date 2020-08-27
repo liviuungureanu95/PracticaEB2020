@@ -1,0 +1,382 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfRectangle_template(2bf22985-b6b8-40f0-bec6-f56942232aa8)
+{
+	name: "Category Select"
+	structure: GtfRectangle(a46987d5-3fb9-4f94-a14f-43a0a4538f22)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(83917138-cd82-405f-a8c0-09414a155ecf)
+			{
+				features: feature_list [
+					Border(06f7c1c6-121a-451e-b569-40a631f977cb)
+					{
+						borderThickness: 2
+						borderColor: #000000FF
+						borderStyle: 0
+					}, 
+					TouchShortReleased(7dbcf20e-30fb-46a8-8079-aea630eb8677)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(6640167c-aa14-49fd-bbc1-a22399b10c70)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    dp:isFruit = true" \
+								"    f:animation_play(v:this->first_option_animation)" \
+								"    fire_delayed 2000, ev:goTo_choice()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(0ac69f4b-aafe-4f18-af37-80af4225bfa7)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list [
+					GtfLabel(d3641bcf-2ada-426e-b7e2-6d251eb43d95)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "fruits_label"
+						visible: true
+						width: 100
+						height: 100
+						x: 0
+						y: 0
+						text: "Fruits"
+						textColor: #FFFFFFFF
+						font: font_resource(716a4ffe-3a17-45b2-99f0-8a4ac532432d)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 25
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfParallelAnimation(55300db1-71a6-43d1-b8e6-55d697b53562)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfFastStartS32(00a635ee-ad62-42c3-89c9-0185c0195509)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "go_right"
+								enabled: true
+								delay: 0
+								duration: 1000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 280
+								end: 500
+								target: x@1c030e1f-9e04-4736-a510-2ce68c10ec5f (propref<int>)
+							}, 
+							GtfSlowStartS32(6f177d6b-9b19-4971-9a4e-b76a73ca4e5d)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "go_up"
+								enabled: true
+								delay: 1000
+								duration: 1000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 110
+								end: -138
+								target: y@83917138-cd82-405f-a8c0-09414a155ecf (propref<int>)
+							}, 
+							GtfFastStartS32(b2c08837-980c-4e0b-b036-ee2fb7c97ee9)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Fast start curve 2"
+								enabled: true
+								delay: 0
+								duration: 1000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 91
+								end: 190
+								target: x@83917138-cd82-405f-a8c0-09414a155ecf (propref<int>)
+							}, 
+							GtfFastStartS32(1ba4b91e-a542-4620-882b-bc325bea53aa)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "instructions_go"
+								enabled: true
+								delay: 0
+								duration: 1000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 0
+								end: 500
+								target: x@0b9f389e-7a1e-419d-ad09-03dfd401d06f (propref<int>)
+							}]
+						name: "first_option_animation"
+						enabled: true
+						repeat: 1
+						alternating: false
+						scale: 1F
+						onPlay: function<void,int,bool>(ad21c16f-7c91-4d0b-b75a-36e77a521601)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(f73a253e-7e79-4ce4-b225-7b83b39b853c)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(d20255cd-0fb0-4043-955b-6ac6b729ea35)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+					}]
+				name: "first_option_rectangle"
+				visible: true
+				width: 100
+				height: 100
+				x: 91
+				y: 110
+				fillColor: #F08080FF
+			}, 
+			GtfRectangle(1c030e1f-9e04-4736-a510-2ce68c10ec5f)
+			{
+				features: feature_list [
+					Border(e5f13e76-a792-4a3a-9e24-8a7badd72393)
+					{
+						borderThickness: 2
+						borderColor: #000000FF
+						borderStyle: 0
+					}, 
+					TouchShortReleased(a55b2062-6823-4a2d-b14c-a3a640f45bd1)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(c5ca92ca-4a81-4578-93c2-408cf6a7c410)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	dp:isFruit = false" \
+								"    v:this->vegetables_label.visible = false" \
+								"    f:animation_play(v:this->second_option_animation)" \
+								"    fire_delayed 2000, ev:goTo_choice()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(96e183e0-deca-42b5-9284-34a922d6962a)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list [
+					GtfLabel(4a36a245-10cf-4b30-ac1e-d473c2bf9a29)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "vegetables_label"
+						visible: true
+						width: 100
+						height: 100
+						x: 0
+						y: 0
+						text: "Vegetables"
+						textColor: #FFFFFFFF
+						font: font_resource(7176b8aa-27ad-479f-9d21-58dd6c666cfa)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 25
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfParallelAnimation(caec9390-ce8d-49ef-97fb-21edc0f0c974)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfFastStartS32(bae360af-54ab-4dda-851a-ad2d75cdce59)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "go_left"
+								enabled: true
+								delay: 0
+								duration: 1000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 280
+								end: 190
+								target: x@1c030e1f-9e04-4736-a510-2ce68c10ec5f (propref<int>)
+							}, 
+							GtfSlowStartS32(fd4fb3e1-a978-4b73-827a-4331694bd436)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "expand_width"
+								enabled: true
+								delay: 1000
+								duration: 1000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 100
+								end: 480
+								target: width@1c030e1f-9e04-4736-a510-2ce68c10ec5f (propref<int>)
+							}, 
+							GtfFastStartS32(670461a5-cd0b-43d7-971f-ae9ead391759)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Fast start curve 2"
+								enabled: true
+								delay: 0
+								duration: 1000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 91
+								end: -150
+								target: x@83917138-cd82-405f-a8c0-09414a155ecf (propref<int>)
+							}, 
+							GtfFastStartS32(a372175a-b3d5-4703-8259-e85613cb9f7d)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Fast start curve 3"
+								enabled: true
+								delay: 0
+								duration: 1000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 0
+								end: -500
+								target: x@0b9f389e-7a1e-419d-ad09-03dfd401d06f (propref<int>)
+							}, 
+							GtfSlowStartS32(ecd0bf45-8eba-443d-86c8-d3f8a0d7154c)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "expand_x"
+								enabled: true
+								delay: 1000
+								duration: 1000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 190
+								end: 0
+								target: x@1c030e1f-9e04-4736-a510-2ce68c10ec5f (propref<int>)
+							}, 
+							GtfSlowStartS32(acf4279b-fd72-419b-ab91-42b33e152a24)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "expand_height"
+								enabled: true
+								delay: 1000
+								duration: 1000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 100
+								end: 320
+								target: height@1c030e1f-9e04-4736-a510-2ce68c10ec5f (propref<int>)
+							}, 
+							GtfSlowStartS32(17f29e8e-34b4-40cc-b692-8b4742c92064)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "expand_y"
+								enabled: true
+								delay: 1000
+								duration: 1000
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 110
+								end: 0
+								target: y@1c030e1f-9e04-4736-a510-2ce68c10ec5f (propref<int>)
+							}]
+						name: "second_option_animation"
+						enabled: true
+						repeat: 1
+						alternating: false
+						scale: 1F
+						onPlay: function<void,int,bool>(5f9fdef0-77b9-427f-896a-74270463a3fe)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(c39c3e2f-ea3a-443f-9afe-f9f6a6afb303)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(2c6f3707-622e-4964-afc3-f8a65f5d2de8)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+					}]
+				name: "second_option_rectangle"
+				visible: true
+				width: 100
+				height: 100
+				x: 280
+				y: 110
+				fillColor: #32CD32FF
+			}, 
+			GtfLabel(0b9f389e-7a1e-419d-ad09-03dfd401d06f)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "instructions_label"
+				visible: true
+				width: width@a46987d5-3fb9-4f94-a14f-43a0a4538f22 (propref<int>)
+				height: 100
+				x: 0
+				y: 10
+				text: "Please Select Category"
+				textColor: #000000FF
+				font: font_resource(8f24cd3c-8787-4faa-8374-92664573cd08)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "background"
+		visible: true
+		width: 480
+		height: 320
+		x: 0
+		y: 0
+		fillColor: #FFFFFFFF
+	}
+}

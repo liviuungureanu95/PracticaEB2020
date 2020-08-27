@@ -1,0 +1,200 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(3f0a6fd9-bbb2-476e-9da9-0589a98eca69)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer(6701a4eb-54f6-4d4e-9c00-93cc7c6c415f)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(539c61ab-39ff-4c3b-bcfa-0159b4925a71)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Background"
+					visible: true
+					width: width@6701a4eb-54f6-4d4e-9c00-93cc7c6c415f (propref<int>)
+					height: height@6701a4eb-54f6-4d4e-9c00-93cc7c6c415f (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(30f8c467-66d3-4071-a937-c9acaa59b556)
+					{
+						file: "Menu_Background.jpg"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfInstantiator(944210fe-58d0-4cf4-b400-72361e442d50)
+				{
+					features: feature_list [
+						LayoutPolicyFlow(2ba607ee-a7ec-4935-a95d-618842497141)
+						{
+							horizontalGap: 10
+							verticalGap: 12
+							layoutDirection: 0
+							horizontalChildAlign: 0
+							verticalChildAlign: 0
+						}]
+					children: children_list [
+						GtfContainer(27f5e8f6-5cc2-47ca-ae58-004857ba078d)
+						{
+							features: feature_list [
+								LineIndex(7742988a-d335-4165-9c14-8cf66e72f53f)
+								{
+									lineIndex: 0
+								}, 
+								TouchPressed(681c63ca-309c-4f63-8ce2-ee4f13e62a18)
+								{
+									touchPressed: function<bool,int,int,int,int>(11bc4e2d-419c-4b10-b887-62394c1ea52e)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	v:this->Coffe_ImgBACKGROUND.image = dp:CoffeeBUTTON_Pressed" \
+											"    false" \
+											"}"
+									}
+								}, 
+								TouchShortReleased(941bab19-30f0-4c7f-bd1f-bf81188dd1a2)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(a298d09b-1fb2-489a-b759-bd706a036ab3)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	v:this->Coffe_ImgBACKGROUND.image = dp:CoffeBUTTON" \
+											"	fire_delayed 1000, ev:GoTo_Prepare()" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(675fea93-7a4c-4b8d-b9f0-66de9f438e6c)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list [
+								GtfImage(a1cd249c-7e71-4582-9880-7d069049a4b0)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Coffe_ImgBACKGROUND"
+									visible: true
+									width: width@27f5e8f6-5cc2-47ca-ae58-004857ba078d (propref<int>)
+									height: height@27f5e8f6-5cc2-47ca-ae58-004857ba078d (propref<int>)
+									x: 0
+									y: 0
+									image: image_resource(97549b42-6fbb-4d03-aeda-d41e39f3a890)
+									{
+										file: "Background_CoffeButton.png"
+									}
+									sRGB: false
+									horizontalAlign: 0
+									verticalAlign: 1
+								}, 
+								GtfLabel(d7329ee9-660f-4ae8-90f5-cba523784b3c)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Coffe_NameTXT"
+									visible: true
+									width: 285
+									height: height@27f5e8f6-5cc2-47ca-ae58-004857ba078d (propref<int>)
+									x: 75
+									y: 0
+									text: "label"
+									textColor: #FFFFFFFF
+									font: font_resource(bcdd5302-39a6-4e51-972a-64403e6376b0)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 40
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+									SetTXT: conditional_script(f7aba8e7-cc43-41b3-9845-53d90873aad2)
+									{
+										triggerList: trigger_list(c9eeb590-eb1a-4741-a119-3ade476952d7)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(7b71ffe9-8123-4eb5-bd81-04b855f8e9f1)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	v:this.text = v:this->^->^->^.coffeTIPElist[v:this->^.lineIndex]" \
+												"	false" \
+												"}"
+										}
+									}
+								}]
+							name: "List_buttonCOFFEE"
+							visible: true
+							width: 360
+							height: 75
+							x: 0
+							y: 0
+						}]
+					name: "Instantiator_Buttons"
+					visible: true
+					width: 360
+					height: 755
+					x: 20
+					y: 14
+					numItems: int_scriptedValue(cb064ee6-c53f-41e8-bce3-42cf969615fa)
+					{
+						triggerList: trigger_list(56451258-f60c-480a-a32b-817125224408)
+						{
+							script: "v:this->^.coffeTIPElist" \
+								""
+						}
+						onTrigger: function<bool,bool>(d216c286-3a7e-489e-aaf3-d147883f5b55)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<int>(f9e3056d-a1be-4b34-acb3-57f90b49ceb6)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	length v:this->^.coffeTIPElist" \
+								"}"
+						}
+						write: function<bool,int>(2225f239-34ea-4a3b-8217-41653fddc62e)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					lineMapping: intlist []
+				}, 
+				GtfContainer_template_instance(ba2cc398-36c8-4de0-ac69-b9ee681b2be3)
+				{
+					name: "Goup_CoffeTipeButton 1"
+					template: @03f5de5c-a5ed-46f6-9cf3-21fb3e83db88 (objectref<GtfContainer_template>)
+					children: children_list []
+				}]
+			name: "Container"
+			visible: true
+			width: width@3f0a6fd9-bbb2-476e-9da9-0589a98eca69 (propref<int>)
+			height: height@3f0a6fd9-bbb2-476e-9da9-0589a98eca69 (propref<int>)
+			x: 0
+			y: 0
+			coffeTIPElist: stringlist ["Expresso", "Cappuccino", "Mocha", "Expresso doppio", "Latte macchiato", "Americano", "Decaf", "Irish coffee", "Iced coffee"]
+		}]
+	name: "MENU_View"
+	visible: true
+	width: 480
+	height: 800
+	x: 0
+	y: 0
+}

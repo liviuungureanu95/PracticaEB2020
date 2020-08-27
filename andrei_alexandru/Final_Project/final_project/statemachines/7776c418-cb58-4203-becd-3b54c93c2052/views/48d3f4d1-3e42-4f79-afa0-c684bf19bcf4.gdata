@@ -1,0 +1,258 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(48d3f4d1-3e42-4f79-afa0-c684bf19bcf4)
+{
+	name: "MediaMenu_View"
+	template: @b380d1bf-d029-45e1-aa1b-a53a19df7e62 (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(6ecadb3d-7e09-4399-84f7-9f245cbfd545)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "CurrentTime"
+			visible: true
+			width: 100
+			height: 30
+			x: 720
+			y: 20
+			text: string_scriptedValue(6125c900-2b0f-4a0c-a563-16111ec98815)
+			{
+				triggerList: trigger_list(56b9ded0-fc01-4c44-ab28-1bccb021e4aa)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(ae968edf-05f7-4e04-a9c1-3358892ed4cf)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(2d8226d9-6665-42d3-bbb0-9746bc598bd8)
+				{
+					script: "function()" \
+						"{" \
+						"	//f:int2string(dp:StartMenu:hour + 3) + \":\" + f:int2string(dp:StartMenu:minutes)" \
+						"	f:int2string(dp:StartMenu:hour + 3) + \":\" + f:format_int(\"%.2i\", f:localtime_minute(f:system_time()))" \
+						"}"
+				}
+				write: function<bool,string>(be4a89ef-3643-444a-a17a-d772ddb21b2e)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+			font: font_resource(b5c81022-b15d-43a1-af3f-f92158ac7945)
+			{
+				file: "teen bd it.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfContainer(6eeee5df-bf62-42be-bb18-c8f0406e4e9f)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfInstantiator(13cc0899-4004-4bf7-b31c-e01766341827)
+				{
+					features: feature_list [
+						LayoutPolicyFlow(c274acf4-9d1f-4601-a919-c485ee865479)
+						{
+							horizontalGap: 60
+							verticalGap: 60
+							layoutDirection: 0
+							horizontalChildAlign: 0
+							verticalChildAlign: 0
+						}]
+					children: children_list [
+						GtfRectangle(30f8c5fe-4bb9-4491-aecb-8fcdbad937d4)
+						{
+							features: feature_list [
+								TouchShortReleased(e0f0a502-405b-47c5-a0bb-2557d7840c7b)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(3c16f8e2-c06f-4a51-9607-7dc1d6412795)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	v:this.buttonEvent()" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(c34965f5-ae79-40a1-ba3b-9b54c923f129)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}, 
+								LineIndex(ced0f33e-ab3a-4ac2-8082-0a88e8531d70)
+								{
+									lineIndex: 0
+								}, 
+								Border(e651fb0c-d8b9-495f-be89-3330fdba1006)
+								{
+									borderThickness: 0
+									borderColor: #87CEEBFF
+									borderStyle: 0
+								}]
+							children: children_list [
+								GtfLabel(69207183-f864-4445-8680-30debbd29ae5)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Text"
+									visible: true
+									width: 100
+									height: 100
+									x: 0
+									y: 30
+									text: "label"
+									textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+									font: font_resource(cc84d952-b2e1-4262-8e39-9fe8fa73a611)
+									{
+										file: "big_noodle_titling_oblique.ttf"
+										size: 25
+									}
+									horizontalAlign: 1
+									verticalAlign: 2
+								}, 
+								GtfImage(9a37fc68-9407-4a5b-896e-02f2945db77c)
+								{
+									features: feature_list [
+										ScaleMode(ee76d4b4-970a-43d2-b39c-b9222ae62ccd)
+										{
+											scaleMode: 1
+										}]
+									children: children_list []
+									name: "Logo's"
+									visible: true
+									width: 100
+									height: 100
+									x: 0
+									y: 0
+									image: image_resource(970e1893-ecfb-45f7-879e-35564466e52c)
+									{
+										file: ""
+									}
+									sRGB: false
+									horizontalAlign: 0
+									verticalAlign: 1
+								}]
+							name: "Background"
+							visible: true
+							width: 100
+							height: 100
+							x: 0
+							y: 0
+							fillColor: #FFFFFF00
+							buttonEvent: function<bool>(01edb4f2-7dde-4d1f-a270-cb2ca5a74706)
+							{
+								script: "function()" \
+									"{" \
+									"	if(v:this.lineIndex == 0 && dp:MediaMenu:bluetooth == false)" \
+									"		fire ev:Media_CompoundEvents:openBT_PopUp()" \
+									"	if(v:this.lineIndex == 0 && dp:MediaMenu:bluetooth == true)	" \
+									"		fire ev:Media_CompoundEvents:goTo_BT()" \
+									"		" \
+									"	if(v:this.lineIndex == 1 && dp:MediaMenu:usb == false)" \
+									"		fire ev:Media_CompoundEvents:openUSB_PopUp()" \
+									"	if(v:this.lineIndex == 1 && dp:MediaMenu:usb == true)	" \
+									"		fire ev:Media_CompoundEvents:goTo_USB()" \
+									"	" \
+									"	if(v:this.lineIndex == 2 && dp:MediaMenu:cd == false)" \
+									"		fire ev:Media_CompoundEvents:openCD_PopUp()" \
+									"	if(v:this.lineIndex == 2 && dp:MediaMenu:cd == true)	" \
+									"		fire ev:Media_CompoundEvents:goTo_CD()" \
+									"		" \
+									"	if(v:this.lineIndex == 3 && dp:MediaMenu:aux == false)" \
+									"		fire ev:Media_CompoundEvents:openAUX_PopUp()	" \
+									"	if(v:this.lineIndex == 3 && dp:MediaMenu:aux == true)" \
+									"		fire ev:Media_CompoundEvents:goTo_AUX()" \
+									"	false" \
+									"}"
+							}
+							setText: conditional_script(646ab686-a085-4285-af55-658951992bd0)
+							{
+								triggerList: trigger_list(4f49b207-2656-4a37-9339-6ae8e4ad793b)
+								{
+									script: "dp:MediaMenu:MediaList" \
+										"v:this.lineIndex" \
+										""
+								}
+								onTrigger: function<bool,bool>(d860955e-5654-4ada-97ce-0f0412ac1fae)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	v:this->Text.text = dp:MediaMenu:MediaList[v:this.lineIndex]" \
+										"	false" \
+										"}"
+								}
+							}
+							setLogo: conditional_script(748c4fb9-fd38-492b-a830-f416ed98b93c)
+							{
+								triggerList: trigger_list(21de364d-a327-4481-8030-07b914505875)
+								{
+									script: "dp:MediaMenu:Media_LogoList" \
+										"v:this.lineIndex" \
+										""
+								}
+								onTrigger: function<bool,bool>(68a7c449-104c-4964-8f56-5203aaac1336)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	v:this->\"Logo's\".image = dp:MediaMenu:Media_LogoList[v:this.lineIndex]" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "MediaMenu_Instantiator"
+					visible: true
+					width: 600
+					height: 200
+					x: 110
+					y: 180
+					numItems: 4
+					lineMapping: intlist []
+					calculateNumItems: conditional_script(d47fa394-0cc9-4b92-838e-205bb7625edc)
+					{
+						triggerList: trigger_list(7e0b07da-b63e-4541-8082-f51bdf179ede)
+						{
+							script: "dp:MediaMenu:MediaList" \
+								""
+						}
+						onTrigger: function<bool,bool>(b89ceee0-2f53-4e37-894d-a2e9d2e8aab3)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.numItems = length dp:MediaMenu:MediaList" \
+								"	v:this.numItems = length dp:MediaMenu:Media_LogoList" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "Media_Menu"
+			visible: true
+			width: 100
+			height: 100
+			x: 0
+			y: 0
+		}]
+	text: @556dc20e-0141-4827-8ada-8bba7915d9b9 (objectref<string>)
+	textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+	font: font@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<font>)
+	image: @28a5929a-87d6-4473-9912-d62fd743c5c6 (objectref<image>)
+	fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+	x: x@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	y: y@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	height: height@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	width: width@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+}

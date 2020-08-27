@@ -1,0 +1,393 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(de20bc59-c3bd-404e-a665-b685ab64d5c9)
+{
+	name: "PhonebookView"
+	template: @e194e414-71c1-406e-a41c-22a1af233577 (objectref<GtfView_template>)
+	children: children_list [
+		GtfImage_template_instance(a267f678-feb8-46fc-945f-b6713729cbce)
+		{
+			name: "BackButton"
+			template: @783dbbc3-0048-41b2-8249-a5078951fba2 (objectref<GtfImage_template>)
+			children: children_list []
+			x: 30
+			y: 16
+			image: image_resource(4ff598e3-b589-4f8f-a8fa-5de7180dc405)
+			{
+				file: "back.png"
+			}
+			rotationAngleZ: rotationAngleZ@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<float>)
+			touchPressed: function<bool,int,int,int,int>(1733523e-4337-4fb8-b877-99ce4c3d9390)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:GoBack()" \
+					"    false" \
+					"}"
+			}
+			width: 56
+			height: 55
+			visible: visible@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+			touchable: touchable@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+			touched: touched@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+		}, 
+		GtfContainer_template_instance(db449213-b0a3-41b3-a086-7f3a46f341ef)
+		{
+			name: "StraightKeyboard 1"
+			template: @f00c2995-59e2-499a-978b-e5af800cc7e5 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 10
+			y: 88
+			visible: false
+		}, 
+		GtfContainer(aa5154fc-bada-4883-ae86-13a24a9c67be)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfEllipse(e7298644-2e8e-4b39-9f02-f8ca35586229)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "outterCircle"
+					visible: true
+					width: 145
+					height: 145
+					x: 25
+					y: 217
+					fillColor: #FFA500FF
+					arcWidth: 3
+					centralAngle: 360F
+					sectorRotation: 0F
+				}, 
+				GtfLabel(c65610f7-9dc2-44bc-b573-4eada9be8106)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfContainer_template_instance(90dae5a9-811a-493e-8ae5-f321fb94c7e9)
+						{
+							name: "ScaledImage 1"
+							template: @9578104d-2715-4e59-9018-391d3a1c31a5 (objectref<GtfContainer_template>)
+							children: children_list []
+							x: -3
+							y: 0
+							height: height@9578104d-2715-4e59-9018-391d3a1c31a5 (propref<int>)
+							width: width@9578104d-2715-4e59-9018-391d3a1c31a5 (propref<int>)
+							image: image_resource(f4426747-bf33-4e66-9a5d-b7a3c54f2342)
+							{
+								file: "phone.png"
+							}
+							visible: visible@9578104d-2715-4e59-9018-391d3a1c31a5 (propref<bool>)
+							pivotX: pivotX@9578104d-2715-4e59-9018-391d3a1c31a5 (propref<float>)
+							pivotY: pivotY@9578104d-2715-4e59-9018-391d3a1c31a5 (propref<float>)
+							rotationAngleZ: rotationAngleZ@9578104d-2715-4e59-9018-391d3a1c31a5 (propref<float>)
+						}]
+					name: "selectedLetter"
+					visible: true
+					width: 95
+					height: 95
+					x: 52
+					y: 241
+					text: ""
+					textColor: #FFFFFFFF
+					font: font_resource(edd77cb7-1780-478f-aa76-fb9f7b21d1bb)
+					{
+						file: "Vudotronic.otf"
+						size: 90
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Container"
+			visible: true
+			width: 100
+			height: 100
+			x: 0
+			y: 0
+		}, 
+		GtfRectangle(4c38a103-6879-4771-92c8-f56244a2db88)
+		{
+			features: feature_list [
+				Border(b6b1501e-9c67-48cf-bf77-10de97ccc95e)
+				{
+					borderThickness: 2
+					borderColor: #FFA500FF
+					borderStyle: 0
+				}]
+			children: children_list [
+				GtfImage_template_instance(db6f7c04-5974-427f-bb62-491441791572)
+				{
+					name: "UpButton copy 1"
+					template: @783dbbc3-0048-41b2-8249-a5078951fba2 (objectref<GtfImage_template>)
+					children: children_list []
+					x: 518
+					y: 8
+					image: image_resource(70c95833-6c39-4a8d-865c-b5d710c0d4ff)
+					{
+						file: "UP.png"
+					}
+					rotationAngleZ: rotationAngleZ@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<float>)
+					touchPressed: function<bool,int,int,int,int>(297f269c-9c06-49a1-a83f-2e0636db4e51)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:scrollUp()" \
+							"    false" \
+							"}"
+					}
+					width: 49
+					height: 47
+					visible: visible@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+					touchable: touchable@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+					touched: touched@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+				}, 
+				GtfImage_template_instance(26946fe3-27ae-4598-8ead-d974e3c070f3)
+				{
+					name: "DownButton copy 1"
+					template: @783dbbc3-0048-41b2-8249-a5078951fba2 (objectref<GtfImage_template>)
+					children: children_list []
+					x: 517
+					y: 190
+					image: image_resource(e93ee255-d7da-483c-96db-2274dc01322d)
+					{
+						file: "DOWN.png"
+					}
+					rotationAngleZ: rotationAngleZ@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<float>)
+					touchPressed: function<bool,int,int,int,int>(4f8470c7-c450-4f22-bf76-8b758b08738c)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:scrollDown()" \
+							"    false" \
+							"}"
+					}
+					width: 49
+					height: 47
+					visible: visible@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+					touchable: touchable@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+					touched: touched@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+				}, 
+				GtfContainer_template_instance(ec618d47-4b92-4cc3-9687-31dba524e641)
+				{
+					name: "ScrollableList 1"
+					template: @eaba225e-00c7-4e60-b3b0-9bc252ee0039 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 13
+					y: 11
+					StationsList: @3ea324a8-69e0-46c6-92ac-980a946a02fb (objectref<stringlist>)
+					numItems: int_scriptedValue(f45aa560-0d96-45e2-994c-2ee39054bc32)
+					{
+						triggerList: trigger_list(e4118076-bb16-4918-920f-cf0a2c005e01)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(c241cdcd-1c94-4652-999c-cb1acd047d1a)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<int>(39f17d15-8757-4c30-80df-4429c5e8f48b)
+						{
+							script: "function()" \
+								"{" \
+								"	10" \
+								"	" \
+								"}"
+						}
+						write: function<bool,int>(4370c8ef-ab17-4c96-a194-96066a616df2)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					width: 493
+					height: 220
+					visible: bool_scriptedValue(6f58db13-050a-42e1-8f53-f38dc2cb39ae)
+					{
+						triggerList: trigger_list(7270080b-079e-4eda-803d-8bfa1218110e)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(11316808-ab27-4f96-b70e-d5a5d4c1b046)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<bool>(717c28f2-b625-4672-b635-93ec2db36e15)
+						{
+							script: "function()" \
+								"{" \
+								"	if(dp:deviceConnected)" \
+								"		true" \
+								"	else" \
+								"		false" \
+								"}"
+						}
+						write: function<bool,bool>(19ffe15b-d62a-44b7-bda7-9ac31b45b81b)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfLabel(da1cf1d4-6718-4529-920c-d3810d7a5687)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "hasPhoneBookLabel"
+					visible: bool_scriptedValue(ee3f62c5-471b-4c91-8df6-e1b41301f084)
+					{
+						triggerList: trigger_list(84ee568c-b717-4940-868c-d8e59e6ce16f)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(31ff27ca-d511-47f0-9faf-8611236806d2)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<bool>(1874ecdd-6aa1-458d-8d1a-79da9f53c804)
+						{
+							script: "function()" \
+								"{" \
+								"	if(dp:deviceConnected)" \
+								"		false" \
+								"	else" \
+								"		true" \
+								"}"
+						}
+						write: function<bool,bool>(db558548-1120-4b6f-8f71-43bfbc59518d)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					width: 246
+					height: 41
+					x: 19
+					y: 11
+					text: @f1e8f29d-7268-4c0e-9f65-fda588f30685 (objectref<string>)
+					textColor: #FFFFFFFF
+					font: font_resource(38a74f1b-c96c-43f7-891f-41deba02a879)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 25
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "Rectangle 2"
+			visible: true
+			width: 568
+			height: 244
+			x: 222
+			y: 160
+			fillColor: #FFFFFF00
+		}]
+	text: string_element_reference(9958fc87-f1c9-42a7-a80e-ece799ba9ef2)
+	{
+		index: 3
+		list: @1dc3d3cb-4b0b-48af-84ad-ea2469add107 (objectref<stringlist>)
+	}
+	x: 684
+	y: 0
+	selectedLetter: conditional_script(40215ace-3738-4024-8c94-a2b0ef205148)
+	{
+		triggerList: trigger_list(70711328-973b-4ab9-b828-c728b887ed9e)
+		{
+			script: "ev:listenStraightKeyboard"
+		}
+		onTrigger: function<bool,bool>(6f60c831-1f7a-4dd2-b716-0670ed239ba6)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	match_event v:e = ev:listenStraightKeyboard in {" \
+				"		v:this->Container->selectedLetter.text =v:e.letter" \
+				"			" \
+				"	}" \
+				"	false" \
+				"}"
+		}
+	}
+	displayByLetter: conditional_script(11fecdfa-27b8-42e6-bdb7-e1df77bbdcf0)
+	{
+		triggerList: trigger_list(c2c2b36c-0595-4289-9241-7cbe93c1c699)
+		{
+			script: "ev:listenStraightKeyboard"
+		}
+		onTrigger: function<bool,bool>(722ada60-5628-4b13-9241-82c1abf0caf0)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	match_event v:e = ev:listenStraightKeyboard in {" \
+				"		v:this->\"Rectangle 2\"->\"ScrollableList 1\".numItems=20" \
+				"			" \
+				"	}" \
+				"	false" \
+				"	" \
+				"}"
+		}
+	}
+	showCallPopUp: conditional_script(47e0a20c-9577-4796-af82-c3c5f3d9d856)
+	{
+		triggerList: trigger_list(bc3c0f37-0205-4fe4-b7ab-f1cd2ca3f873)
+		{
+			script: "ev:showCallPopUp"
+		}
+		onTrigger: function<bool,bool>(84cc0d42-3088-4313-9fbb-114622eaa897)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	" \
+				"	match_event v:event = ev:showCallPopUp in" \
+				"	{" \
+				"		v:this->BackButton.touchable=false" \
+				"		f:pushDynamicStateMachine(popup_stack: Main, sm:CallingPopUpState, 0)" \
+				"" \
+				"	}" \
+				"" \
+				"false" \
+				"}"
+		}
+	}
+	closeCallPopUp: conditional_script(f90df77e-e8a0-4111-862c-daa4bf27d6ca)
+	{
+		triggerList: trigger_list(9b37a925-2d66-429c-b346-1e6b07731c62)
+		{
+			script: "ev:closeCallPopUp"
+		}
+		onTrigger: function<bool,bool>(41c20478-4fbf-46e4-89a1-2560dc7319d7)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	" \
+				"	match_event v:event = ev:closeCallPopUp in" \
+				"	{" \
+				"		v:this->BackButton.touchable=true" \
+				"		f:popDynamicStateMachine(popup_stack:Main, sm:CallingPopUpState)" \
+				"		dp:isCalling=false" \
+				"" \
+				"	}" \
+				"" \
+				"false" \
+				"}"
+		}
+	}
+}

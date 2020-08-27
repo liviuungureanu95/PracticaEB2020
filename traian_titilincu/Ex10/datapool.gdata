@@ -1,0 +1,123 @@
+EBGUIDE 6.10.0.200602120856;
+
+dp_items(e236d1aa-e994-4ffa-a988-2ac7f1d744e0)
+{
+	items: dp_item_list [
+		dp<bool>(00b34878-5c10-4068-b03d-9e4e4dd1f2ef)
+		{
+			value: false
+			name: "isFruit"
+		}, 
+		dp<floatlist>(0e8f6ce4-b083-456c-88c7-7642842bc2b6)
+		{
+			value: floatlist [5F, 3.4F, 4.3F, 5.4F]
+			name: "vegetables_prices"
+		}, 
+		dp<floatlist>(1edbb88d-eaed-47a8-9976-0e21a43e78c0)
+		{
+			value: floatlist [3.23F, 4.35F, 2.4F, 3.6F]
+			name: "fruits_prices"
+		}, 
+		dp<float>(2f073872-5e6b-47f5-9073-4232a5b848a3)
+		{
+			value: float_scriptedValue(514f1502-c9ba-4d81-aeeb-1e34553fe813)
+			{
+				triggerList: trigger_list(cbc51cf3-ac04-477e-a59d-b9540ca04e21)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(f94fd395-e397-4eed-baae-bf136d629b50)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<float>(36ba3ae7-051f-44a6-8c5e-68fc4b853fb5)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:quantity * dp:product_price" \
+						"}"
+				}
+				write: function<bool,float>(aa0bb26b-eebf-4a0d-a599-70a738215eaa)
+				{
+					script: "function(v:arg0::float)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			name: "price"
+		}, 
+		dp<stringlist>(51c01665-b614-45e3-a9fb-d5c989347eef)
+		{
+			value: stringlist ["Bananas", "Oranges", "Strawberries", "Apples"]
+			name: "fruits_labels"
+		}, 
+		dp<float>(9e043baa-4782-4b03-b258-c14dff91b49a)
+		{
+			value: 0F
+			name: "product_price"
+		}, 
+		dp<imagelist>(b8ebe0de-a720-4a70-9259-348caacc3e6e)
+		{
+			value: imagelist [
+				image_resource(b06620fb-d00f-4834-9c31-c37c3659f85b)
+				{
+					file: "tomatoes.png"
+				}, 
+				image_resource(20b823b9-2486-46e0-9421-4fdd5a01c260)
+				{
+					file: "cucumber.png"
+				}, 
+				image_resource(0aa55569-fdf7-4807-895f-91fc6f19167e)
+				{
+					file: "potatoes.png"
+				}, 
+				image_resource(fcd0ee5d-93e8-4406-b3ee-9d47986211b6)
+				{
+					file: "carrots.png"
+				}]
+			name: "vegetables_images"
+		}, 
+		dp<float>(d5bd3300-589d-4403-a17d-5249c82cf041)
+		{
+			value: 0F
+			name: "quantity"
+		}, 
+		dp<imagelist>(dbaf923e-aac3-4406-8953-3b041685ae84)
+		{
+			value: imagelist [
+				image_resource(c14d036a-e0f9-494f-9e8b-c9706925714d)
+				{
+					file: "bananas.png"
+				}, 
+				image_resource(ad0a2633-fbc6-4e66-afca-8ccd289928a6)
+				{
+					file: "oranges.png"
+				}, 
+				image_resource(3032547f-a8af-4fcd-aa90-8d9f577df3ba)
+				{
+					file: "strawberry.png"
+				}, 
+				image_resource(41f82bad-c959-4dab-a7be-e38f9b552570)
+				{
+					file: "apples.png"
+				}]
+			name: "fruits_images"
+		}, 
+		dp<string>(de94ce03-5739-411b-9a0e-88433d3d3f0d)
+		{
+			value: ""
+			name: "current_product_label"
+		}, 
+		dp<stringlist>(f1f0f8e8-2cc3-4e92-81fa-f57be77f9592)
+		{
+			value: stringlist ["Tomatoes", "Cucumbers", "Potatoes", "Carrots"]
+			name: "vegetables_labels"
+		}]
+}

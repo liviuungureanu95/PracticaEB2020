@@ -1,0 +1,59 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(3c817bde-3572-4584-9c50-0301314be810)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(3f460742-e806-4c96-aa98-947851212b4f)
+		{
+			name: "template view 1"
+			template: @38796f7d-bd5f-49c9-9f4e-bdb10ac5be6d (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfContainer_template_instance(4875623a-8ccb-4b88-9f78-13f9a4add1e1)
+				{
+					name: "mesaj de pornire 1"
+					template: @c42517a5-25c8-4f6c-8f1d-152d768520ef (objectref<GtfContainer_template>)
+					children: children_list []
+					visible: false
+				}]
+			text: "You selected fast program"
+			"text 2": "text 2"@38796f7d-bd5f-49c9-9f4e-bdb10ac5be6d (propref<string>)
+			touchPressed: function<bool,int,int,int,int>(4b8d7d31-559a-41b1-88a6-a79d271a6443)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{if(dp:\"alimentare apa\" == true && dp:\"cuva deschisa\"==true && dp:detergent==true)" \
+					"	{v:this->\"mesaj de pornire 1\".visible = true" \
+					"	fire_delayed 5000 , ev:goback()}" \
+					"	" \
+					"	else if(dp:\"alimentare apa\" != true || dp:\"cuva deschisa\"!=true || dp:detergent!=true)" \
+					"	{fire ev:\"pop-up appear\"()" \
+					"	dp:mesaj=\"\"" \
+					"			if(dp:\"alimentare apa\"== false)" \
+					"				dp:mesaj= dp:mesaj + \"\\nEroare alimentare apa\"" \
+					"			if(dp:\"cuva deschisa\"==false)" \
+					"				dp:mesaj=dp:mesaj + \"\\nEroare cuva deschisa\"" \
+					"			if(dp:detergent==false)" \
+					"				dp:mesaj=dp:mesaj + \"\\nEroare detergent\"" \
+					"	}" \
+					"	" \
+					"	" \
+					"    false" \
+					"}"
+			}
+			"text 3": "text 3"@38796f7d-bd5f-49c9-9f4e-bdb10ac5be6d (propref<string>)
+			visible: true
+			"touchPressed 2": function<bool,int,int,int,int>(bba7d11b-87e7-400b-b0d5-2608e946a6de)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    false" \
+					"}"
+			}
+		}]
+	name: "View 2"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

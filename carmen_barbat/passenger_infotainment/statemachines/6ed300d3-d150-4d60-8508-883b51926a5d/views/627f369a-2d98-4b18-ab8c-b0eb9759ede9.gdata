@@ -1,0 +1,166 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(627f369a-2d98-4b18-ab8c-b0eb9759ede9)
+{
+	name: "Food_view"
+	template: @47101df3-2cb4-462c-8236-06e865e3862e (objectref<GtfView_template>)
+	children: children_list [
+		GtfRectangle(f5a97b06-b0b1-4279-8f72-e8a47d07ab2f)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Middle_bar"
+			visible: true
+			width: 10
+			height: 260
+			x: 395
+			y: 100
+			fillColor: #5F9EA0FF
+		}, 
+		GtfImage(0f787fdd-8d85-4374-b50b-d01b064f67e8)
+		{
+			features: feature_list [
+				ScaleMode(36de6c11-ff47-466f-a2ea-7858334f005d)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "FREE"
+			visible: true
+			width: 100
+			height: 100
+			x: 115
+			y: 0
+			image: image_resource(21481141-45e7-44a4-8740-d80b83f32931)
+			{
+				file: "no-money.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(4487f779-b221-4c6c-9ff8-13749bcf2bb1)
+		{
+			features: feature_list [
+				ScaleMode(b08c78d7-ad36-44fd-ab14-c9b593d770c1)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "PAY"
+			visible: true
+			width: 100
+			height: 100
+			x: 585
+			y: 0
+			image: image_resource(17984f1a-0a96-4475-85c2-69518cd352f7)
+			{
+				file: "premium-quality.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfContainer_template_instance(e6aecea4-b6fe-443a-bccd-c2dbe094822a)
+		{
+			name: "Back_button"
+			template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 700
+			y: 0
+			fillColor: #5F9EA0FF
+			text: "BACK"
+			buttonEvent: function<bool>(a095e9e8-a6f8-4ffc-9433-dc7e504eb3f7)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoBack()" \
+					"	false" \
+					"}"
+			}
+			width: 100
+			height: 50
+			visible: visible@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<bool>)
+			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			"x 2": 0
+			"y 2": 0
+			"x 3": 0
+			"y 3": 0
+		}, 
+		GtfContainer_template_instance(9ba187a7-40dd-47f3-b2ea-e50691327eb2)
+		{
+			name: "Free_Food_Scroll_list"
+			template: @7d032125-f578-4590-ab32-87bd9fd44acf (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfContainer_template_instance(213d8f6d-0fa9-4829-865b-d715b7486ef7)
+				{
+					name: "Text_button 1"
+					template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 286
+					y: 271
+					fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
+					text: "Place order"
+					buttonEvent: function<bool>(2a1a96ca-302b-4f30-a82c-fa8aed6d96b4)
+					{
+						script: "function()" \
+							"{" \
+							"	fire ev:display_message()" \
+							"	false" \
+							"}"
+					}
+					width: width@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+					height: height@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+					visible: visible@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<bool>)
+					lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+					"x 2": 0
+					"y 2": 0
+					"x 3": 0
+					"y 3": 0
+				}]
+			width: 331
+			height: 263
+			x: 2
+			y: 100
+			"x 2": "x 2"@7d032125-f578-4590-ab32-87bd9fd44acf (propref<int>)
+			"y 2": "y 2"@7d032125-f578-4590-ab32-87bd9fd44acf (propref<int>)
+			"x 3": "x 3"@7d032125-f578-4590-ab32-87bd9fd44acf (propref<int>)
+			"y 3": "y 3"@7d032125-f578-4590-ab32-87bd9fd44acf (propref<int>)
+			"width 2": "width 2"@7d032125-f578-4590-ab32-87bd9fd44acf (propref<int>)
+			"height 2": "height 2"@7d032125-f578-4590-ab32-87bd9fd44acf (propref<int>)
+			"x 4": "x 4"@7d032125-f578-4590-ab32-87bd9fd44acf (propref<int>)
+			"y 4": "y 4"@7d032125-f578-4590-ab32-87bd9fd44acf (propref<int>)
+			list_input: @c99300ab-eacb-46bb-af1c-95017bc816af (objectref<stringlist>)
+			fillColor: fillColor@7d032125-f578-4590-ab32-87bd9fd44acf (propref<color>)
+			buttonEvent: buttonEvent@7d032125-f578-4590-ab32-87bd9fd44acf (propref<function<bool>>)
+			"buttonEvent 2": "buttonEvent 2"@7d032125-f578-4590-ab32-87bd9fd44acf (propref<function<bool>>)
+			ListId: ListId@7d032125-f578-4590-ab32-87bd9fd44acf (propref<int>)
+		}, 
+		GtfContainer_template_instance(171955a1-b4d4-48e6-805c-aa14488c24d5)
+		{
+			name: "Pay_Food_Scroll_list"
+			template: @7d032125-f578-4590-ab32-87bd9fd44acf (objectref<GtfContainer_template>)
+			children: children_list []
+			width: width@7d032125-f578-4590-ab32-87bd9fd44acf (propref<int>)
+			height: height@7d032125-f578-4590-ab32-87bd9fd44acf (propref<int>)
+			x: 409
+			y: 100
+			"x 2": "x 2"@7d032125-f578-4590-ab32-87bd9fd44acf (propref<int>)
+			"y 2": "y 2"@7d032125-f578-4590-ab32-87bd9fd44acf (propref<int>)
+			"x 3": "x 3"@7d032125-f578-4590-ab32-87bd9fd44acf (propref<int>)
+			"y 3": "y 3"@7d032125-f578-4590-ab32-87bd9fd44acf (propref<int>)
+			"width 2": "width 2"@7d032125-f578-4590-ab32-87bd9fd44acf (propref<int>)
+			"height 2": "height 2"@7d032125-f578-4590-ab32-87bd9fd44acf (propref<int>)
+			"x 4": "x 4"@7d032125-f578-4590-ab32-87bd9fd44acf (propref<int>)
+			"y 4": "y 4"@7d032125-f578-4590-ab32-87bd9fd44acf (propref<int>)
+			list_input: @5526e18d-79bd-4f5e-8e41-356a7e17beec (objectref<stringlist>)
+			fillColor: fillColor@7d032125-f578-4590-ab32-87bd9fd44acf (propref<color>)
+			buttonEvent: buttonEvent@7d032125-f578-4590-ab32-87bd9fd44acf (propref<function<bool>>)
+			"buttonEvent 2": "buttonEvent 2"@7d032125-f578-4590-ab32-87bd9fd44acf (propref<function<bool>>)
+			ListId: 1
+		}]
+	image: image@47101df3-2cb4-462c-8236-06e865e3862e (propref<image>)
+	text: "FOOD"
+	visible: false
+	"visible 2": "visible 2"@47101df3-2cb4-462c-8236-06e865e3862e (propref<bool>)
+}

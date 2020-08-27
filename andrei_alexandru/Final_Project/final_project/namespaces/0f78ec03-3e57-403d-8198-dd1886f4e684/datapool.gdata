@@ -1,0 +1,136 @@
+EBGUIDE 6.10.0.200602120856;
+
+dp_items(4250c018-e330-4221-9c4a-a3850fca2724)
+{
+	items: dp_item_list [
+		dp<conditional_script>(1bdda28f-138a-41bd-95c8-3d2a156ce73d)
+		{
+			value: conditional_script(39b56611-b4df-49a1-ae7d-9ec6e3f92995)
+			{
+				triggerList: trigger_list(70469733-6f0c-4bc0-a7c6-a94c752c92e0)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(bb6669ee-1655-4c9b-aaf9-bc3b082f9c28)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	dp:StartMenu:year = f:localtime_year(f:system_time())" \
+						"	false" \
+						"}"
+				}
+			}
+			name: "current_year"
+		}, 
+		dp<int>(283d8da8-8864-4019-a8f6-4a6bdccc1bc1)
+		{
+			value: 0
+			name: "date"
+		}, 
+		dp<int>(2950ed89-9466-471e-a3c0-89b471b86c6c)
+		{
+			value: 0
+			name: "minutes"
+		}, 
+		dp<conditional_script>(57d03906-9904-43d6-ab8a-8b639937d773)
+		{
+			value: conditional_script(d9be49f3-746c-473c-b22b-0e80889301b9)
+			{
+				triggerList: trigger_list(50bf7882-0bd2-49a2-a888-6a9a414dbef2)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(97cb35b2-65cc-4b55-88b6-a5868a6b0299)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	dp:StartMenu:month = f:localtime_month(f:system_time())" \
+						"	false" \
+						"}"
+				}
+			}
+			name: "current_month"
+		}, 
+		dp<int>(57da4d93-b51d-4bdd-8d97-1157e4a341f5)
+		{
+			value: 0
+			name: "hour"
+		}, 
+		dp<string>(71b3b1ca-6d0c-4aa2-b6ee-61b376982a12)
+		{
+			value: "871.3"
+			name: "car_trip"
+		}, 
+		dp<conditional_script>(9ebd917b-fbbe-48a5-96cf-d13ea3d1c438)
+		{
+			value: conditional_script(9a635023-ff99-4c4d-bc7e-7ef156715bc1)
+			{
+				triggerList: trigger_list(f5130365-b6bb-4def-846d-ad8f48468e5b)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(29fd941e-f1c6-4c54-9783-6a3fc66fa228)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	dp:StartMenu:date = f:localtime_day(f:system_time())" \
+						"	false" \
+						"}"
+				}
+			}
+			name: "current_date"
+		}, 
+		dp<conditional_script>(b189c00f-454b-435e-9c98-3cd7a7ca9c5d)
+		{
+			value: conditional_script(fe714cb2-381b-41f0-8fa8-c6be80714ae7)
+			{
+				triggerList: trigger_list(f0804ff4-a2bc-4a5f-8933-440dd8cac869)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(69f9805b-156d-4052-a82d-b54dd525aaf4)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	dp:StartMenu:minutes = f:localtime_minute(f:system_time())" \
+						"	false" \
+						"}"
+				}
+			}
+			name: "current_time_min"
+		}, 
+		dp<string>(c70fe8d9-0d4f-45db-96c1-5457ce4a7eb5)
+		{
+			value: "152.766"
+			name: "total_km"
+		}, 
+		dp<conditional_script>(cb2db43b-ec8f-4b3f-947b-fca90a60cd7b)
+		{
+			value: conditional_script(63741273-faa4-4939-a309-3265cf00919b)
+			{
+				triggerList: trigger_list(56331d57-e1cd-49a1-9454-3ae074828a80)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(0cf51839-5073-4fc0-b4e8-fdf3ab3911dc)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	dp:StartMenu:hour = f:localtime_hour(f:system_time())" \
+						"	false" \
+						"}"
+				}
+			}
+			name: "current_time_h"
+		}, 
+		dp<int>(d0f2fdbc-8532-4083-a581-7305919b3eb3)
+		{
+			value: 0
+			name: "year"
+		}, 
+		dp<int>(dd718494-01a1-4c11-b4be-c1c3847ea9ba)
+		{
+			value: 0
+			name: "month"
+		}]
+}

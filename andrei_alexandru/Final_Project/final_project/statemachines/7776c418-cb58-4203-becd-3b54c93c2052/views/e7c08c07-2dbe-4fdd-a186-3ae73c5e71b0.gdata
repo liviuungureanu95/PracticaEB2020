@@ -1,0 +1,162 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(e7c08c07-2dbe-4fdd-a186-3ae73c5e71b0)
+{
+	name: "FavoritesMenu_View"
+	template: @b380d1bf-d029-45e1-aa1b-a53a19df7e62 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(43f347ed-ead5-42f8-acfb-0aca3239a459)
+		{
+			name: "BackButton"
+			template: @66713f45-2faf-4289-b7d7-da20b83b4fd3 (objectref<GtfContainer_template>)
+			children: children_list []
+			buttonEvent: function<bool>(ecd8e0a1-e85a-40d7-b4d8-4830896f7768)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_back()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer(94af7fe2-04f7-4841-9b27-59253bd02a5b)
+		{
+			features: feature_list [
+				TouchShortReleased(9d0f0f86-84c3-4933-8850-a0fe9fec674a)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(088cae63-b86a-4596-8bdf-ae4a3f8ad0fd)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonEvent()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(aa504cc7-1277-46b7-936f-c36adebaec73)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfInstantiator(a70acd9c-bd43-4fe6-8f63-f9868dd47f97)
+				{
+					features: feature_list [
+						LayoutPolicyFlow(fda9e87f-00ad-4820-be5e-53823a08eecc)
+						{
+							horizontalGap: 0
+							verticalGap: 0
+							layoutDirection: 0
+							horizontalChildAlign: 0
+							verticalChildAlign: 0
+						}]
+					children: children_list [
+						GtfRectangle(bbbab8c2-3aaa-41fc-b66b-b7a27c8f6e21)
+						{
+							features: feature_list [
+								Border(c7eabfb9-0b0e-49bf-bc25-f52f35513c76)
+								{
+									borderThickness: 1
+									borderColor: #87CEEBFF
+									borderStyle: 0
+								}, 
+								LineIndex(f3baf5e9-68fd-43d6-8e5c-e1e5249ab603)
+								{
+									lineIndex: 0
+								}]
+							children: children_list [
+								GtfLabel(b281122f-8eda-41bc-a481-67246b7e5344)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Text"
+									visible: true
+									width: width@bbbab8c2-3aaa-41fc-b66b-b7a27c8f6e21 (propref<int>)
+									height: 50
+									x: 0
+									y: 0
+									text: "label"
+									textColor: #FFFFFFFF
+									font: font_resource(0b2d8634-37ef-49f4-b638-4c43e66c209c)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 30
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+								}]
+							name: "Background"
+							visible: true
+							width: width@a70acd9c-bd43-4fe6-8f63-f9868dd47f97 (propref<int>)
+							height: 50
+							x: 0
+							y: 0
+							fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+							"Conditional script 5": conditional_script(7473ac4b-ebd2-457e-a1d7-424304f3e0fd)
+							{
+								triggerList: trigger_list(4af80ff2-1116-4088-9805-e52234376f76)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(a7feb98b-c2b9-4f08-8461-9e59dce068aa)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	v:this->Text.text = dp:PhoneMenu:Fav_ContactsList[v:this.lineIndex]" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "Fav_ContactsInstantiator"
+					visible: true
+					width: 600
+					height: 250
+					x: 0
+					y: 0
+					numItems: 5
+					lineMapping: intlist []
+					calculateNumItems: conditional_script(0aa7b0f4-5af6-4ab8-b42f-a0b663a3c734)
+					{
+						triggerList: trigger_list(91e62885-6ff2-4c5c-b545-11e4af96a2fc)
+						{
+							script: "dp:PhoneMenu:Fav_ContactsList" \
+								""
+						}
+						onTrigger: function<bool,bool>(c791e2de-1a93-4772-aff7-a5db0331b506)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.numItems = length dp:PhoneMenu:Fav_ContactsList" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "Fav_ContactsList"
+			visible: true
+			width: 600
+			height: 250
+			x: 100
+			y: 150
+			buttonEvent: function<bool>(6fb6ff0d-9ead-4e70-baf1-cf3de34fe1dc)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:Phone_CompoundEvents:calling()" \
+					"	false" \
+					"}"
+			}
+		}]
+	text: @4d971f15-e39a-4aa6-9e41-3e05f6d2d96d (objectref<string>)
+	textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+	font: font@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<font>)
+	image: @28a5929a-87d6-4473-9912-d62fd743c5c6 (objectref<image>)
+	fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+	x: x@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	y: y@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	height: height@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	width: width@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+}

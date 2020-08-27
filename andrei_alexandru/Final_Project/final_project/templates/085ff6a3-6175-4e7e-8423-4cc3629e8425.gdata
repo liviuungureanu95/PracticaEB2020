@@ -1,0 +1,72 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(085ff6a3-6175-4e7e-8423-4cc3629e8425)
+{
+	name: "T_MusicButton"
+	structure: GtfContainer(3ef3fcb6-b143-4728-94f0-91cb1a994651)
+	{
+		features: feature_list [
+			TouchPressed(85a16f93-7f62-419a-8a9a-41da85aea7d3)
+			{
+				touchPressed: function<bool,int,int,int,int>(18c936b0-da49-4f5f-bc38-6d2d04c0964a)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(2e3a2309-5381-451c-9a2e-f12ef8dfa318)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(6822243e-41b3-4909-ae02-3f98b73e863a)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(b291a16f-97ff-4931-92e2-a21bb9543a54)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfImage(2b613bdf-d6ca-4096-b1af-164b3c67ed87)
+			{
+				features: feature_list [
+					ScaleMode(e3405a10-c053-4f2c-b332-756456b18398)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "Logo"
+				visible: true
+				width: width@3ef3fcb6-b143-4728-94f0-91cb1a994651 (propref<int>)
+				height: height@3ef3fcb6-b143-4728-94f0-91cb1a994651 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(d429a03d-bce1-4e52-a784-784823c33b7b)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "Container"
+		visible: true
+		width: 64
+		height: 64
+		x: 0
+		y: 0
+		play: false
+	}
+	x: x@3ef3fcb6-b143-4728-94f0-91cb1a994651 (propref<int>)
+	y: y@3ef3fcb6-b143-4728-94f0-91cb1a994651 (propref<int>)
+	image: image@2b613bdf-d6ca-4096-b1af-164b3c67ed87 (propref<image>)
+	touchPressed: touchPressed@85a16f93-7f62-419a-8a9a-41da85aea7d3 (propref<function<bool,int,int,int,int>>)
+	play: play@3ef3fcb6-b143-4728-94f0-91cb1a994651 (propref<bool>)
+}

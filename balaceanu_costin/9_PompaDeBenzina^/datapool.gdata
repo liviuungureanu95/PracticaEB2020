@@ -1,0 +1,43 @@
+EBGUIDE 6.10.0.200602120856;
+
+dp_items(1342d335-7844-4d93-b249-a7028f60ca48)
+{
+	items: dp_item_list [
+		dp<float>(1982b047-66b6-471e-bdcf-e44e9688378f)
+		{
+			value: 0F
+			name: "Litri"
+		}, 
+		dp<float>(2e08dcc2-7cc7-4bfa-b64c-c9ad5d0bafb7)
+		{
+			value: 0F
+			name: "Pret"
+		}, 
+		dp<conditional_script>(a9ac5178-fa71-40b1-9a97-7389c34eda12)
+		{
+			value: conditional_script(75f78063-a4b5-400d-9cb9-8e8ddf504362)
+			{
+				triggerList: trigger_list(6c12ca33-b5a1-4341-b635-a0be6e780756)
+				{
+					script: "dp:Pret" \
+						"dp:Litri" \
+						""
+				}
+				onTrigger: function<bool,bool>(407f73f4-3ce1-4c35-80e4-3954e1c7a57b)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:PretCombustibil = dp:Pret * dp:Litri" \
+						"	false" \
+						"}"
+				}
+			}
+			name: "Calcul"
+		}, 
+		dp<float>(cdcadd78-4e01-4c97-ad06-834ea787e695)
+		{
+			value: 0F
+			name: "PretCombustibil"
+		}]
+}

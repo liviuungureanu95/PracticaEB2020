@@ -1,0 +1,87 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(fd7c4ce9-326f-46d2-9d87-de95e3b535f5)
+{
+	name: "CameraMenu_View"
+	template: @b380d1bf-d029-45e1-aa1b-a53a19df7e62 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(81e16b67-98cd-43f0-aacd-5bc92e63a9d5)
+		{
+			name: "BackButton"
+			template: @66713f45-2faf-4289-b7d7-da20b83b4fd3 (objectref<GtfContainer_template>)
+			children: children_list []
+			buttonEvent: function<bool>(6595d09f-41f7-4abf-b70a-c2880ea81f55)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_back()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfImage(fe39713c-b18e-46dd-a07c-c953efa660b0)
+		{
+			features: feature_list [
+				ScaleMode(4c167760-e651-4f0e-921d-115c3ad790a8)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "Camera1"
+			visible: true
+			width: 350
+			height: 350
+			x: 30
+			y: 120
+			image: image_resource(63f5b6f8-18f6-44ec-83cb-7b9d8d542681)
+			{
+				file: "front_camera.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(080a9d81-5378-44c0-afae-bc08d26279f1)
+		{
+			features: feature_list [
+				ScaleMode(a325b94e-c823-4aff-a63a-696afca1ca13)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "Camera2"
+			visible: true
+			width: 350
+			height: 350
+			x: 421
+			y: 120
+			image: image_resource(56e53bd7-59ab-45c5-ba86-ea986c8e9cef)
+			{
+				file: "back_camera.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfRectangle(8d78a66f-11ff-452c-bb44-3000d7aa24b9)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "VerticalLine"
+			visible: true
+			width: 2
+			height: 350
+			x: 400
+			y: 120
+			fillColor: #FFFFFFFF
+		}]
+	text: @8684e4b5-d1c4-41c7-95f3-0cf23214df29 (objectref<string>)
+	textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+	font: font@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<font>)
+	image: @28a5929a-87d6-4473-9912-d62fd743c5c6 (objectref<image>)
+	fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+	x: x@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	y: y@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	height: height@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	width: width@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+}

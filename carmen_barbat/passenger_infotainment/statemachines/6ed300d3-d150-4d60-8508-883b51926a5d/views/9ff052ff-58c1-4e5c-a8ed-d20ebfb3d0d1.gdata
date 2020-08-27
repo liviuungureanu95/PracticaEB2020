@@ -1,0 +1,150 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(9ff052ff-58c1-4e5c-a8ed-d20ebfb3d0d1)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(e9d21187-0a0a-48db-80ac-d33a32cf22fc)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(c3a53087-f890-4f28-8542-89a1c3fbaca8)
+				{
+					features: feature_list [
+						ScaleMode(1728df18-b234-4d2a-ac7e-62e44d01973f)
+						{
+							scaleMode: 1
+						}]
+					children: children_list [
+						GtfLabel(1eb050fc-4e8c-42bc-8aa3-12750e22593b)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Welcome_Label"
+							visible: true
+							width: 800
+							height: 100
+							x: 0
+							y: 140
+							text: "Welcome"
+							textColor: #000000FF
+							font: font_resource(e597637b-27a8-441b-a614-34311ea738f7)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 50
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}, 
+						GtfImage(2a6068d3-fdbf-440b-8463-2e1d21799a54)
+						{
+							features: feature_list [
+								ScaleMode(2f03b048-167a-45d6-9972-2fe9083beeda)
+								{
+									scaleMode: 1
+								}]
+							children: children_list [
+								GtfParallelAnimation(349f21b3-bfd8-43d0-889d-302fc52979ce)
+								{
+									features: feature_list []
+									children: children_list [
+										GtfLinearInterpolationS32(11961ab7-a3e4-40b4-a6d6-aee9dc1df3ab)
+										{
+											features: feature_list []
+											children: children_list []
+											name: "MoveRight"
+											enabled: true
+											delay: 0
+											duration: 3000
+											repeat: 1
+											alternating: false
+											relative: false
+											start: 0
+											end: 800
+											target: x@2a6068d3-fdbf-440b-8463-2e1d21799a54 (propref<int>)
+										}]
+									name: "Plane_move"
+									enabled: true
+									repeat: 1
+									alternating: false
+									scale: 1F
+									onPlay: function<void,int,bool>(28f05f90-e3ed-485d-bd8f-ec5f89230fc1)
+									{
+										script: "function(v:animation_time::int, v:forward::bool)" \
+											"{" \
+											"" \
+											"}"
+									}
+									onPause: function<void,int>(165ca66c-d46f-4dad-a4c6-293f0468e834)
+									{
+										script: "function(v:animation_time::int)" \
+											"{" \
+											"" \
+											"}"
+									}
+									onTerminate: function<void,int,int>(573295c6-73b9-4c88-a8ec-b4c75af0890d)
+									{
+										script: "function(v:animation_time::int, v:terminate::int)" \
+											"{" \
+											"" \
+											"}"
+									}
+									planeStart: conditional_script(372a0653-8de8-4161-839c-698a3e671051)
+									{
+										triggerList: trigger_list(03ce0452-6c52-49fd-a771-446393428e59)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(5fb984ba-4d73-416b-a8e8-3f50dd5c0546)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	f:animation_play(v:this)" \
+												"	false" \
+												"}"
+										}
+									}
+								}]
+							name: "Plane_img"
+							visible: true
+							width: 136
+							height: 165
+							x: 0
+							y: 293
+							image: image_resource(7cdd9309-147f-41da-8872-37d199a0049b)
+							{
+								file: "plane.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}]
+					name: "backgroundImage"
+					visible: true
+					width: width@9ff052ff-58c1-4e5c-a8ed-d20ebfb3d0d1 (propref<int>)
+					height: height@9ff052ff-58c1-4e5c-a8ed-d20ebfb3d0d1 (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(8ab477d6-ec7b-438e-b3d4-5cff900890e6)
+					{
+						file: "Back.jpg"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Background"
+			visible: true
+			width: width@9ff052ff-58c1-4e5c-a8ed-d20ebfb3d0d1 (propref<int>)
+			height: height@9ff052ff-58c1-4e5c-a8ed-d20ebfb3d0d1 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #A9A9A9FF
+		}]
+	name: "Main_view"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

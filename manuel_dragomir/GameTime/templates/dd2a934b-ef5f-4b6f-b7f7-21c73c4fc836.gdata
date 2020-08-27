@@ -1,0 +1,42 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfRectangle_template(dd2a934b-ef5f-4b6f-b7f7-21c73c4fc836)
+{
+	name: "Corner"
+	structure: GtfRectangle(3ffca6a0-be41-40e1-b6dd-336116004342)
+	{
+		features: feature_list [
+			MoveIn(623cb54e-02b2-4bda-b90a-f3d69f7b4928)
+			{
+				moveIn: function<bool,int,int,int,int>(053a10e4-26b6-45f1-9955-e2f80fbd123a)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.movedIn = true" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(ac2511c6-1dc6-45ee-9e34-f21dbcd2a499)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list []
+		name: "Rectangle"
+		visible: true
+		width: height@3ffca6a0-be41-40e1-b6dd-336116004342 (propref<int>)
+		height: squareLength@3ffca6a0-be41-40e1-b6dd-336116004342 (propref<int>)
+		x: 0
+		y: 0
+		fillColor: #FFFFFF00
+		movedIn: false
+		squareLength: 80
+	}
+	x: x@3ffca6a0-be41-40e1-b6dd-336116004342 (propref<int>)
+	y: y@3ffca6a0-be41-40e1-b6dd-336116004342 (propref<int>)
+	movedIn: movedIn@3ffca6a0-be41-40e1-b6dd-336116004342 (propref<bool>)
+	squareLength: squareLength@3ffca6a0-be41-40e1-b6dd-336116004342 (propref<int>)
+}

@@ -1,0 +1,77 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(30925345-30e4-4818-b61d-2723206c8290)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(5b124081-0e6c-4e27-b67c-e9dd10a6359c)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Shadow"
+			visible: true
+			width: 800
+			height: 480
+			x: 0
+			y: 0
+			fillColor: #FFFFFFFF
+		}, 
+		GtfRectangle(bfa754c2-43d4-4e0d-8ef5-a293469dd618)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Background"
+			visible: true
+			width: 600
+			height: 380
+			x: 100
+			y: 50
+			fillColor: #6495EDFF
+		}, 
+		GtfContainer_template_instance(ffecb17e-f3d3-41df-b421-2ea2fb467f50)
+		{
+			name: "Button 1"
+			template: @23da499a-28ed-4fd3-b449-6c26e7968fae (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "BACK"
+			x: 350
+			y: 250
+			height: height@23da499a-28ed-4fd3-b449-6c26e7968fae (propref<int>)
+			width: width@23da499a-28ed-4fd3-b449-6c26e7968fae (propref<int>)
+			visible: visible@23da499a-28ed-4fd3-b449-6c26e7968fae (propref<bool>)
+			onReleaseAction: function<bool>(f1c24d86-a274-4c0c-b35c-1bfaea29112b)
+			{
+				script: "function()" \
+					"{" \
+					"	f:popDynamicStateMachine(popup_stack:vsBuyTicket,sm:Popup)" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfLabel(8b2f33cd-6737-4830-83b6-1c3f5c80563f)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 4"
+			visible: true
+			width: 400
+			height: 100
+			x: 200
+			y: 75
+			text: @e937911f-a90b-4633-adbe-b06f2050d96b (objectref<string>)
+			textColor: #FFFFFFFF
+			font: font_resource(c478cdfc-25a6-4839-bee4-803c0ba53316)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+	name: "vPopup"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

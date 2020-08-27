@@ -1,0 +1,145 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(d913e776-a3f1-47a7-bb4a-ce85ba44a77c)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(8438015e-244c-4b31-888a-1d6a9fef92cf)
+		{
+			features: feature_list [
+				TouchPressed(970bb3ef-3b9e-442b-9ede-882a10f0efd1)
+				{
+					touchPressed: function<bool,int,int,int,int>(f9d2590f-8d5b-4752-8922-43aae9356df3)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(91275616-c047-443f-bf24-a209f82d5787)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "InvisibleBackground"
+			visible: true
+			width: 800
+			height: 480
+			x: -150
+			y: -90
+			fillColor: #FFFFFF00
+		}, 
+		GtfRectangle(0205dfde-f2e1-4863-94ac-7738a7ef5fa4)
+		{
+			features: feature_list [
+				Border(69ef6c5b-32c7-4eb7-9b6f-731d27c3f1b2)
+				{
+					borderThickness: 5
+					borderColor: #FF0000FF
+					borderStyle: 0
+				}]
+			children: children_list [
+				GtfLabel(445d9cb1-d453-4296-bd61-6b3fcbedc62e)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text"
+					visible: true
+					width: width@0205dfde-f2e1-4863-94ac-7738a7ef5fa4 (propref<int>)
+					height: 50
+					x: 0
+					y: 120
+					text: @a566ce56-21ed-42f0-bbde-be7dd2ba1d58 (objectref<string>)
+					textColor: #000000FF
+					font: font_resource(d3ee0b34-3041-4a2a-bb0f-2585158cc0fb)
+					{
+						file: "big_noodle_titling_oblique.ttf"
+						size: 25
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(f1b51200-c290-4a09-852a-e660d62a625e)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text2"
+					visible: true
+					width: width@0205dfde-f2e1-4863-94ac-7738a7ef5fa4 (propref<int>)
+					height: 50
+					x: 0
+					y: 160
+					text: @20b85335-e426-4a25-a1d4-2c11bc268544 (objectref<string>)
+					textColor: #3CB371FF
+					font: font_resource(47d0ec58-ec34-47a0-b304-5fcbecb97f3e)
+					{
+						file: "teen it.ttf"
+						size: 35
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(6f69c839-ea71-4db8-8c9f-b20d43526db3)
+				{
+					name: "ConnectButton"
+					template: @60b61038-4f45-4014-b850-4e3cf3aef87b (objectref<GtfContainer_template>)
+					children: children_list []
+					touchShortReleased: function<bool,int,int,int,int>(9f3c5fbc-c7ff-4684-82d8-d1050d60be91)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:Media_CompoundEvents:closeCD_PopUp()" \
+							"    false" \
+							"}"
+					}
+					x: 180
+					y: 220
+					text: "CONNECT"
+					textColor: #FF0000FF
+					font: font_resource(980f6042-7e2b-4ef0-b7cf-c16edd27d04a)
+					{
+						file: "big_noodle_titling_oblique.ttf"
+						size: 30
+					}
+				}, 
+				GtfImage(fa94834a-1408-4247-958f-f5192f505b5a)
+				{
+					features: feature_list [
+						ScaleMode(583c7103-dc1c-403d-9d68-0295f3e97fff)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "NoCD_Logo"
+					visible: true
+					width: 52
+					height: 52
+					x: 230
+					y: 60
+					image: image_resource(3171b0e7-c847-4d70-93df-be8b6682af26)
+					{
+						file: "no_cd.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Background"
+			visible: true
+			width: width@d913e776-a3f1-47a7-bb4a-ce85ba44a77c (propref<int>)
+			height: height@d913e776-a3f1-47a7-bb4a-ce85ba44a77c (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #F5F5DCFF
+		}]
+	name: "CDWarning_View"
+	visible: true
+	width: 500
+	height: 300
+	x: 150
+	y: 90
+}

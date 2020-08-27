@@ -1,0 +1,220 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(7bd0bee9-1cb9-4532-88f6-e095bc74dd31)
+{
+	name: "Product_Button"
+	structure: GtfContainer(7907c34b-561d-4460-9889-548201b59e2b)
+	{
+		features: feature_list [
+			TouchShortReleased(b1400f0d-64f3-490b-a3fc-f6dd79cc63a5)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(d6d9d026-8f4b-479c-b071-b7c6e399e192)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	dp:ProductSelected = v:this.buttonId;" \
+						"	fire ev:ChangeProduct(v:this.Price);" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(87d3bca3-1ac9-4641-8932-f5c2c7d4b5e7)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			StateSelected(8e3f172e-3851-4eed-9001-a79cb2dc1bfc)
+			{
+				selected: true
+			}, 
+			Buttongroup(d480da9b-b318-4a89-b25b-e08b30fc792e)
+			{
+				buttonId: 0
+				buttonValue: @291ea21d-76e2-4db5-816d-94ca443e1cd1 (objectref<int>)
+			}]
+		children: children_list [
+			GtfRectangle(33e35c58-88a3-4875-846d-e46729fbcbe4)
+			{
+				features: feature_list [
+					Border(055e51b5-4c26-4ee3-95bf-7b83c7cdf06d)
+					{
+						borderThickness: int_scriptedValue(49a5031a-2692-4749-9eba-24c272861c72)
+						{
+							triggerList: trigger_list(8518441b-be5a-4960-b626-25de86e1dbe3)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(f58e2a22-b33d-4839-8986-588ab93a4687)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<int>(3013caf7-c806-4cec-a5e2-bbf284353652)
+							{
+								script: "function()" \
+									"{" \
+									"	if(v:this.IsSelected == true){" \
+									"		2" \
+									"	}" \
+									"	else{" \
+									"		0" \
+									"	}" \
+									"}"
+							}
+							write: function<bool,int>(9db6e996-917b-4c1e-bb86-129f462d4a55)
+							{
+								script: "function(v:arg0::int)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						borderColor: #FFFF00FF
+						borderStyle: 0
+					}]
+				children: children_list [
+					GtfLabel(d59fc603-8132-4dd4-93b6-00427b7b8478)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Name"
+						visible: true
+						width: 100
+						height: 25
+						x: 0
+						y: 75
+						text: "product"
+						textColor: #F5F5F5FF
+						font: font_resource(aed584e6-e8fa-4b51-8567-541a6ef031ed)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfImage(87d2da63-2dc3-450d-adce-e409844a3f68)
+					{
+						features: feature_list [
+							ScaleMode(450c9f1b-97b7-4003-8191-39fc8d18e223)
+							{
+								scaleMode: 1
+							}]
+						children: children_list []
+						name: "Image "
+						visible: true
+						width: 100
+						height: 80
+						x: 0
+						y: 0
+						image: image_resource(9b067eea-986c-4c2e-85f7-3a213d67bd46)
+						{
+							file: ""
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+					}, 
+					GtfLabel(fb33d5cb-a8c6-4eb6-8c7b-50b3fb4726d7)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Price"
+						visible: true
+						width: 100
+						height: 25
+						x: 0
+						y: 100
+						text: "price"
+						textColor: #FFFFFFFF
+						font: font_resource(122eb1a5-e6ee-417a-907c-981faa72f4ba)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 20
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "background"
+				visible: true
+				width: width@7907c34b-561d-4460-9889-548201b59e2b (propref<int>)
+				height: height@7907c34b-561d-4460-9889-548201b59e2b (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #B679CEFF
+				IsSelected: false
+			}]
+		name: "Button"
+		visible: true
+		width: 100
+		height: 130
+		x: 0
+		y: 0
+		Price: float_scriptedValue(104df169-b377-4475-ab00-7be63f524f4d)
+		{
+			triggerList: trigger_list(9550a087-79d2-4e74-95ea-b3f32a4d2feb)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(fb758eb1-6ab8-4225-a80b-1452fc67e198)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	// todo: auto generated return value, please adapt" \
+					"	false" \
+					"}"
+			}
+			read: function<float>(a9c96dfc-bfd7-4985-9b62-abf9f655afe7)
+			{
+				script: "function()" \
+					"{" \
+					"	// todo: auto generated return value, please adapt" \
+					"	f:string2float(v:this->background->Price.text);" \
+					"}"
+			}
+			write: function<bool,float>(33c06a65-50c0-4de9-8026-2602fb04a54f)
+			{
+				script: "function(v:arg0::float)" \
+					"{" \
+					"	// todo: auto generated return value, please adapt" \
+					"	false" \
+					"}"
+			}
+		}
+		IsSelected: conditional_script(a1979208-fda0-4671-af26-60fd1d2de718)
+		{
+			triggerList: trigger_list(c1c5d05f-8443-468d-a245-6eb8976f84de)
+			{
+				script: "dp:ProductSelected"
+			}
+			onTrigger: function<bool,bool>(b24ae96f-e11f-49df-b673-066865074e93)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	if(dp:ProductSelected == v:this.buttonId){" \
+					"		v:this->background.IsSelected = true;" \
+					"	}" \
+					"	else{" \
+					"		v:this->background.IsSelected = false;	" \
+					"	}" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+	x: x@7907c34b-561d-4460-9889-548201b59e2b (propref<int>)
+	y: y@7907c34b-561d-4460-9889-548201b59e2b (propref<int>)
+	text: text@d59fc603-8132-4dd4-93b6-00427b7b8478 (propref<string>)
+	textColor: textColor@d59fc603-8132-4dd4-93b6-00427b7b8478 (propref<color>)
+	image: image@87d2da63-2dc3-450d-adce-e409844a3f68 (propref<image>)
+	"text 2": text@fb33d5cb-a8c6-4eb6-8c7b-50b3fb4726d7 (propref<string>)
+	"textColor 2": textColor@fb33d5cb-a8c6-4eb6-8c7b-50b3fb4726d7 (propref<color>)
+	IsSelected: IsSelected@33e35c58-88a3-4875-846d-e46729fbcbe4 (propref<bool>)
+	buttonId: buttonId@d480da9b-b318-4a89-b25b-e08b30fc792e (propref<int>)
+}

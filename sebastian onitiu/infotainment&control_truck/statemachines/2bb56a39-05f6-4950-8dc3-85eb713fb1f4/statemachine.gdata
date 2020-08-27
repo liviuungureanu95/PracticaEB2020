@@ -1,0 +1,54 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_dynamic_statemachine(2bb56a39-05f6-4950-8dc3-85eb713fb1f4)
+{
+	x: 0
+	y: 0
+	width: 600
+	height: 400
+	name: "message_for_tyresPressure"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions []
+	internal_transitions: haptic_internal_transitions []
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(f1add6d4-6813-4e0e-b859-36e705339176)
+		{
+			x: 121
+			y: 25
+			width: 100
+			height: 100
+			name: "view message"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (6f644b7c-f0a2-4cd3-9036-620f702954a0)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(7b2734c7-a73c-419c-b1bc-383d437312fe)
+	{
+		x: 51
+		y: 40
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(262ca547-fb01-43ec-a0e3-3a86ebfc64f3)
+		{
+			action: function<void>(none)
+			target_state: @f1add6d4-6813-4e0e-b859-36e705339176 (objectref<haptic_dialog_state>)
+			source_dock: 0.2840688F
+			target_dock: 0.8127329F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(none)
+}

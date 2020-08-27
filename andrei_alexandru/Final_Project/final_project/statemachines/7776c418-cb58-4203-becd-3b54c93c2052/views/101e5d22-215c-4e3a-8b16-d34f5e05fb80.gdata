@@ -1,0 +1,212 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(101e5d22-215c-4e3a-8b16-d34f5e05fb80)
+{
+	name: "ContactsView"
+	template: @b380d1bf-d029-45e1-aa1b-a53a19df7e62 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(5f0e394f-2c7f-4307-a5cf-d737a4e5a942)
+		{
+			name: "BackButton"
+			template: @66713f45-2faf-4289-b7d7-da20b83b4fd3 (objectref<GtfContainer_template>)
+			children: children_list []
+			buttonEvent: function<bool>(079069ea-ddf4-4aee-bfe6-7bd6d62f1962)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_back()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(ee69b739-8bee-4f96-8fcc-7814c7696efc)
+		{
+			name: "Contacts_ScrollableList"
+			template: @9a2e2635-9677-434a-b332-f5eb5358d538 (objectref<GtfContainer_template>)
+			children: children_list []
+			InputList: InputList@9a2e2635-9677-434a-b332-f5eb5358d538 (propref<stringlist>)
+			numItems: int_scriptedValue(e3d6ca99-bdbc-4600-9dad-8a3027da0ebf)
+			{
+				triggerList: trigger_list(c72dcf33-684b-4cdf-97a8-0a3780766076)
+				{
+					script: "dp:PhoneMenu:ContactsList"
+				}
+				onTrigger: function<bool,bool>(5ebbe934-ae28-47fb-97c5-97a73c5ed175)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<int>(a5063422-0e36-49a5-8155-717e0947338c)
+				{
+					script: "function()" \
+						"{" \
+						"	length dp:PhoneMenu:ContactsList" \
+						"}"
+				}
+				write: function<bool,int>(fbfc84b9-e79f-4b1c-b328-c60cf49b8631)
+				{
+					script: "function(v:arg0::int)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			x: x@9a2e2635-9677-434a-b332-f5eb5358d538 (propref<int>)
+			y: y@9a2e2635-9677-434a-b332-f5eb5358d538 (propref<int>)
+		}, 
+		GtfRectangle(f759a0a1-96f8-4efb-89f4-e6635c3f59a7)
+		{
+			features: feature_list [
+				TouchShortReleased(090f1f53-8511-4b07-969b-6d60f48b9ef9)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(2534e51d-3f4a-4826-9a30-22b0d7749383)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonEvent()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(5ed36818-0db5-43f8-b4fc-3963c23d5b78)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}, 
+				Border(f5dc2ccb-45ec-4fdf-ac48-03f784c03e96)
+				{
+					borderThickness: 1
+					borderColor: #000000FF
+					borderStyle: 0
+				}]
+			children: children_list [
+				GtfImage(75ef6d20-1c3c-48c0-a2eb-c226e99f6a7a)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Up_Image"
+					visible: true
+					width: 48
+					height: 48
+					x: 0
+					y: 0
+					image: image_resource(03b1b320-09a2-4301-aae6-aeb5126ba3c8)
+					{
+						file: "scroll_up.png"
+					}
+					sRGB: false
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Up_Button"
+			visible: true
+			width: 50
+			height: 50
+			x: 700
+			y: 100
+			fillColor: #FFFFFFFF
+			buttonEvent: function<bool>(deb52776-fbb6-433f-98d3-e61fff543cf8)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:Phone_CompoundEvents:scroll_up_Contacts()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfRectangle(a8fe8c86-6dba-4247-b485-2ff03507e779)
+		{
+			features: feature_list [
+				TouchShortReleased(ecc615a5-c58b-43aa-bba1-e230c9da0fe7)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(8fe2f1db-605c-45f6-aaba-854e9783b31b)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonEvent()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(0148c8db-02ac-4589-bbab-ca2296be8e5e)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}, 
+				Border(c6b9b032-dbdb-43c4-b817-d9403517c80a)
+				{
+					borderThickness: 1
+					borderColor: #000000FF
+					borderStyle: 0
+				}]
+			children: children_list [
+				GtfImage(989aaf84-481b-471a-b7df-91dd7714b36f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Down_Image"
+					visible: true
+					width: 48
+					height: 48
+					x: 0
+					y: 0
+					image: image_resource(5711d53b-197b-4b46-8ae1-7e4b6ee4df3f)
+					{
+						file: "scroll_down.png"
+					}
+					sRGB: false
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Down_Button"
+			visible: true
+			width: 50
+			height: 50
+			x: 700
+			y: 400
+			fillColor: #FFFFFFFF
+			buttonEvent: function<bool>(427e58e2-9557-423d-8550-60fe4578d348)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:Phone_CompoundEvents:scroll_down_Contacts()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfRectangle(794efb41-2f7a-4ec6-804b-790c56613772)
+		{
+			features: feature_list [
+				Border(4c204369-9e47-47f0-a0aa-0dafc525cbf0)
+				{
+					borderThickness: 1
+					borderColor: #000000FF
+					borderStyle: 0
+				}]
+			children: children_list []
+			name: "ProgressButton"
+			visible: true
+			width: 50
+			height: 250
+			x: 700
+			y: 150
+			fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+		}]
+	text: @13162794-de78-4f12-afb4-4a79e4b2ff53 (objectref<string>)
+	textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+	font: font@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<font>)
+	image: @28a5929a-87d6-4473-9912-d62fd743c5c6 (objectref<image>)
+	fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+	x: x@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	y: y@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	height: height@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	width: width@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+}

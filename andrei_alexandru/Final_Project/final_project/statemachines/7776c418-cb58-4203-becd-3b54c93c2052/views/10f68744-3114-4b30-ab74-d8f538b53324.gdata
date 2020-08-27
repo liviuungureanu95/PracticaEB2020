@@ -1,0 +1,387 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(10f68744-3114-4b30-ab74-d8f538b53324)
+{
+	name: "AppsMenu_View"
+	template: @b380d1bf-d029-45e1-aa1b-a53a19df7e62 (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(7d5c5a01-5688-491e-812e-0c762d8c7b24)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "CurrentTime"
+			visible: true
+			width: 100
+			height: 30
+			x: 720
+			y: 20
+			text: string_scriptedValue(be005745-a0af-4078-83be-6d31de8c6c69)
+			{
+				triggerList: trigger_list(9769cf58-372f-4fba-ba25-1cf100734bc7)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(9d8ece90-f926-4aab-ad1d-58bd4dce9bf7)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(114a8808-10c6-447f-ad5d-4154a5923e7d)
+				{
+					script: "function()" \
+						"{" \
+						"	//f:int2string(dp:StartMenu:hour + 3) + \":\" + f:int2string(dp:StartMenu:minutes)" \
+						"	f:int2string(dp:StartMenu:hour + 3) + \":\" + f:format_int(\"%.2i\", f:localtime_minute(f:system_time()))" \
+						"}"
+				}
+				write: function<bool,string>(2d1d8b9a-4ae2-49fd-a816-6c494d513cb3)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+			font: font_resource(4f74a5da-3dbd-4685-99dd-55e8a3f2a88c)
+			{
+				file: "teen bd it.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfContainer(52d992c1-f727-4031-a1a7-9b719d41c75c)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfInstantiator(acc80514-5d34-4de4-878d-11d8281f8ea0)
+				{
+					features: feature_list [
+						LayoutPolicyBox(e6508f1d-aead-4ec3-889b-970a6a1faac9)
+						{
+							gap: 0
+							layoutDirection: 0
+						}, 
+						ViewPort(be36bb4d-dd3e-4f6e-bb48-5f757d6653cd)
+						{
+							xOffset: 0
+							yOffset: 0
+						}]
+					children: children_list [
+						GtfRectangle(7827eb2e-fc5e-4f7a-af98-03b0c0fa7cb2)
+						{
+							features: feature_list [
+								TouchShortReleased(df556dcd-c79a-49ce-b86b-3dd55c22223a)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(667406ea-7fdf-4958-afe4-0239058f2891)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	v:this.buttonEvent()" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(4b59cf22-b2b1-4fb6-a310-606a79748c06)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}, 
+								LineIndex(68c07d29-0677-4ada-b6bb-17615f8e4861)
+								{
+									lineIndex: 0
+								}]
+							children: children_list [
+								GtfLabel(c68a62d1-ebda-4f38-a39b-3bd44f041e5a)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Text"
+									visible: true
+									width: listButtonWidth@acc80514-5d34-4de4-878d-11d8281f8ea0 (propref<int>)
+									height: 100
+									x: 0
+									y: 300
+									text: "label"
+									textColor: #FFFFFFFF
+									font: font_resource(6e1f371b-5357-44e0-ae46-363c40160241)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 30
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+								}, 
+								GtfImage(aeb6eb7a-35df-48a1-b319-49487aa93254)
+								{
+									features: feature_list [
+										ScaleMode(f1149e4c-c207-41d2-ad7c-282eb030eb24)
+										{
+											scaleMode: 1
+										}]
+									children: children_list []
+									name: "Logo's"
+									visible: true
+									width: listButtonWidth@acc80514-5d34-4de4-878d-11d8281f8ea0 (propref<int>)
+									height: height@7827eb2e-fc5e-4f7a-af98-03b0c0fa7cb2 (propref<int>)
+									x: 0
+									y: 0
+									image: image_resource(6370e989-3d91-4dda-bba6-4f1e2efeef75)
+									{
+										file: ""
+									}
+									sRGB: false
+									horizontalAlign: 0
+									verticalAlign: 1
+								}]
+							name: "Background"
+							visible: true
+							width: listButtonWidth@acc80514-5d34-4de4-878d-11d8281f8ea0 (propref<int>)
+							height: 300
+							x: 0
+							y: 0
+							fillColor: #FFFFFF00
+							buttonEvent: function<bool>(aa1946ba-1e92-4919-a20e-c92bb5361135)
+							{
+								script: "function()" \
+									"{" \
+									"	if(v:this.lineIndex == 0)" \
+									"	{" \
+									"		fire ev:Apps_CompoundEvents:goTo_AndroidAuto()" \
+									"	}" \
+									"	if(v:this.lineIndex == 1)" \
+									"	{" \
+									"		fire ev:Apps_CompoundEvents:goTo_AppleCar()" \
+									"	}" \
+									"	if(v:this.lineIndex == 2)" \
+									"	{" \
+									"		fire ev:Apps_CompoundEvents:goTo_Spotify()" \
+									"	}" \
+									"	if(v:this.lineIndex == 3)" \
+									"	{" \
+									"		fire ev:Apps_CompoundEvents:goTo_YTMusic()" \
+									"	}" \
+									"	if(v:this.lineIndex == 4)" \
+									"	{" \
+									"		fire ev:Apps_CompoundEvents:goTo_Weather()" \
+									"	}" \
+									"	if(v:this.lineIndex == 5)" \
+									"	{" \
+									"		fire ev:Apps_CompoundEvents:goTo_Browser()" \
+									"	}" \
+									"	false" \
+									"}"
+							}
+							setText: conditional_script(b9489d78-900f-4fe4-b3ba-36198426605c)
+							{
+								triggerList: trigger_list(58394302-2c95-4ea0-9471-c9f7fc38c4e6)
+								{
+									script: "dp:AppsMenu:AppsList" \
+										"v:this.lineIndex" \
+										""
+								}
+								onTrigger: function<bool,bool>(4f0c6918-329e-4b5c-81d1-6ddce4d278c3)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	v:this->Text.text = dp:AppsMenu:AppsList[v:this.lineIndex]" \
+										"	false" \
+										"}"
+								}
+							}
+							setLogo: conditional_script(6bf9ee91-ef98-4542-b67e-469bc66cff6a)
+							{
+								triggerList: trigger_list(8059f5dd-4013-47cc-9928-462d8efaa86d)
+								{
+									script: "dp:AppsMenu:Apps_LogoList" \
+										"v:this.lineIndex" \
+										""
+								}
+								onTrigger: function<bool,bool>(4cbdac0f-bd9c-4387-ad93-d05c75d45e33)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	v:this->\"Logo's\".image = dp:AppsMenu:Apps_LogoList[v:this.lineIndex]" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "Apps_Instantiator"
+					visible: true
+					width: width@52d992c1-f727-4031-a1a7-9b719d41c75c (propref<int>)
+					height: height@52d992c1-f727-4031-a1a7-9b719d41c75c (propref<int>)
+					x: 0
+					y: 0
+					numItems: 6
+					lineMapping: intlist []
+					listButtonWidth: 300
+					calculateNumItems: conditional_script(01f35560-67f7-468e-a2ee-4bc6cc9a7484)
+					{
+						triggerList: trigger_list(c99c4b45-0bf7-49ef-ae85-df8cdc4885f5)
+						{
+							script: "dp:AppsMenu:AppsList" \
+								"" \
+								""
+						}
+						onTrigger: function<bool,bool>(48ea38e6-2832-48c7-a7fc-e1e7cff713ef)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this.numItems = length dp:AppsMenu:AppsList" \
+								"	v:this.numItems = length dp:AppsMenu:Apps_LogoList" \
+								"	false" \
+								"}"
+						}
+					}
+					limitXMovement: conditional_script(0c48e8ee-80ee-4165-8b95-4a575c71eefa)
+					{
+						triggerList: trigger_list(e02c60ca-251e-4720-8536-25365ec9a0f1)
+						{
+							script: "dp:AppsMenu:AppsList" \
+								"dp:AppsMenu:Apps_LogoList" \
+								"v:this.listButtonWidth" \
+								"v:this.xOffset"
+						}
+						onTrigger: function<bool,bool>(569ef3ba-bb87-4044-b993-4ff207157f52)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	let v:maximumOffset = length dp:AppsMenu:Apps_LogoList * v:this.listButtonWidth - v:this.width in" \
+								"	{" \
+								"		if(v:this.xOffset > 0)" \
+								"		{" \
+								"			v:this.xOffset = 0" \
+								"		}" \
+								"		else if(v:this.xOffset < -v:maximumOffset)" \
+								"		{" \
+								"			v:this.xOffset = -v:maximumOffset" \
+								"		}" \
+								"	}" \
+								"	false" \
+								"}"
+						}
+					}
+					movePrevNext: conditional_script(f8fe29f6-791b-4065-bcf0-182b67494bcb)
+					{
+						triggerList: trigger_list(cf9153fd-dd4f-46d5-a6c1-3399243950c6)
+						{
+							script: "ev:Apps_CompoundEvents:next_apps" \
+								"ev:Apps_CompoundEvents:prev_apps" \
+								"v:this.listButtonWidth"
+						}
+						onTrigger: function<bool,bool>(9adfe370-d91a-4d70-b69e-7aa36e758ee3)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	match_event v:event = ev:Apps_CompoundEvents:next_apps in" \
+								"	{" \
+								"		v:this.xOffset += v:this.listButtonWidth / 1" \
+								"	}" \
+								"	" \
+								"	match_event v:event = ev:Apps_CompoundEvents:prev_apps in" \
+								"	{" \
+								"		v:this.xOffset -= v:this.listButtonWidth / 1" \
+								"	}" \
+								"	" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "AppsList"
+			visible: true
+			width: 300
+			height: 300
+			x: 250
+			y: 140
+		}, 
+		GtfImage(558b047a-0bd6-464b-87d7-81e4e87448f5)
+		{
+			features: feature_list [
+				TouchShortReleased(5d9b4226-7ee5-48db-8c87-4c3e7b583332)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(df8d3ee2-7635-4e9d-989d-0a4e1e2e14c9)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:Apps_CompoundEvents:next_apps()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(97d7ef6d-a474-4d70-8e22-0630ef80aa48)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "Prev_Apps"
+			visible: true
+			width: 100
+			height: 100
+			x: 100
+			y: 220
+			image: image_resource(cc38d7ca-461d-431b-99c1-9133347f0059)
+			{
+				file: "prev_apps.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(6061130e-34b7-46c7-be74-f44e63c67ecd)
+		{
+			features: feature_list [
+				TouchShortReleased(ba2d6eaf-1d58-471a-9ef4-4ea260c34ac1)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(e9b964d5-43ba-4dad-a290-fe1005ae1e9f)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:Apps_CompoundEvents:prev_apps()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(3669a3f4-7afd-4c97-888d-7b900140f0e1)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "Next_Apps"
+			visible: true
+			width: 100
+			height: 100
+			x: 600
+			y: 230
+			image: image_resource(bfe8c3a6-1103-4eee-ae45-37d24e7cb050)
+			{
+				file: "next_apps.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	text: @ab676769-2e7d-41b1-ad5f-d8bdca150370 (objectref<string>)
+	textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+	font: font@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<font>)
+	image: @28a5929a-87d6-4473-9912-d62fd743c5c6 (objectref<image>)
+	fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+	x: x@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	y: y@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	height: height@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	width: width@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+}

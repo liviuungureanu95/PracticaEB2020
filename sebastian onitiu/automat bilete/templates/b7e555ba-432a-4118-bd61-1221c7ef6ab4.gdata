@@ -1,0 +1,70 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(b7e555ba-432a-4118-bd61-1221c7ef6ab4)
+{
+	name: "template buton"
+	structure: GtfContainer(8735166e-de3c-42ce-8000-6088289fc05c)
+	{
+		features: feature_list [
+			TouchPressed(6c466468-b4a0-4130-99e6-8bac022f65e0)
+			{
+				touchPressed: function<bool,int,int,int,int>(334a2c5f-92d0-4194-b6ee-2f591ec0e247)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(abb16998-6654-4f62-bf1f-bb5ffb0ca7f1)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(ab4a8da0-437d-4f4c-b124-56008f5c6318)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Rectangle 3"
+				visible: true
+				width: 124
+				height: 74
+				x: 0
+				y: 0
+				fillColor: #F4A460FF
+			}, 
+			GtfLabel(5a7e8258-df35-4747-b2da-881c3fb2c079)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "text"
+				visible: true
+				width: 39
+				height: 57
+				x: 40
+				y: 7
+				text: "OK"
+				textColor: #FFFFFFFF
+				font: font_resource(963aaab1-dcbe-48e8-8479-cf9d23238b70)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 125
+		height: 74
+		x: 0
+		y: 0
+	}
+	x: x@8735166e-de3c-42ce-8000-6088289fc05c (propref<int>)
+	y: y@8735166e-de3c-42ce-8000-6088289fc05c (propref<int>)
+	text: text@5a7e8258-df35-4747-b2da-881c3fb2c079 (propref<string>)
+	touchPressed: touchPressed@6c466468-b4a0-4130-99e6-8bac022f65e0 (propref<function<bool,int,int,int,int>>)
+}

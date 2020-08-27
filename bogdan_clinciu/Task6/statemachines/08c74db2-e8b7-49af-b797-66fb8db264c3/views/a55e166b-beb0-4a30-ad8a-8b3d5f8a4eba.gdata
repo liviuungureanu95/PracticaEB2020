@@ -1,0 +1,93 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(a55e166b-beb0-4a30-ad8a-8b3d5f8a4eba)
+{
+	name: "Country_view"
+	template: @b0722ac3-9787-4c31-89f3-10718617ba60 (objectref<GtfView_template>)
+	children: children_list [
+		GtfRectangle(01617471-7c6a-4691-b9a6-5f440825bdcb)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(54f1575b-9672-4a27-8ef1-06d3b6824589)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "CountryInfoLabel"
+					visible: true
+					width: width@01617471-7c6a-4691-b9a6-5f440825bdcb (propref<int>)
+					height: height@01617471-7c6a-4691-b9a6-5f440825bdcb (propref<int>)
+					x: 0
+					y: 0
+					text: string_scriptedValue(f006f729-9fb2-478a-9319-110eab5f44a8)
+					{
+						triggerList: trigger_list(caae879a-18ad-402d-be6c-4c64f87add65)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(71d11bf4-d509-422d-9277-a951f7e21ad6)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(7d17a5a1-6bdc-4e5b-ac22-e0f52b36ca48)
+						{
+							script: "function()" \
+								"{" \
+								"	dp:Country" \
+								"}"
+						}
+						write: function<bool,string>(c3b7530b-afd5-4bd8-aa57-90e2a9c58d62)
+						{
+							script: "function(v:arg0::string)" \
+								"{   " \
+								"    dp:Country" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(e13855a9-7f8f-4de5-9564-5751bd2da169)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 40
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "CountryInfoBG"
+			visible: true
+			width: 500
+			height: 75
+			x: 150
+			y: 200
+			fillColor: #696969FF
+		}, 
+		GtfContainer_template_instance(41fd75d3-44aa-4906-9295-7db16c67d9c7)
+		{
+			name: "NextButton"
+			template: @8614a3a5-3cca-4639-8293-139b044f57c6 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Next"
+			width: 150
+			height: 75
+			x: 325
+			y: 340
+			ReleaseAction: function<bool>(f89b1af0-f107-4bf6-a778-9e813f49aced)
+			{
+				script: "function()" \
+					"{" \
+					"	if(dp:Country != \"\")" \
+					"      fire ev:CitySel()" \
+					"	" \
+					"	false" \
+					"}"
+			}
+			visible: true
+		}]
+	text: "Country Selection"
+	width: 270
+}

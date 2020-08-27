@@ -1,0 +1,964 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(43dbc77a-8583-447b-8fc0-b6a1972a0126)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(1a5934ba-ad36-4541-b758-31dfb38c99be)
+		{
+			features: feature_list [
+				TouchPressed(972073f6-59e2-4ff5-b7eb-ff67e3b247d2)
+				{
+					touchPressed: function<bool,int,int,int,int>(d70d44d7-c04d-459a-a461-f3c8d07ed027)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(ae1c44af-e34f-4981-a8a6-d5537007cc40)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "InvisibleBackground"
+			visible: true
+			width: width@43dbc77a-8583-447b-8fc0-b6a1972a0126 (propref<int>)
+			height: height@43dbc77a-8583-447b-8fc0-b6a1972a0126 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #FFFFFF00
+		}, 
+		GtfContainer(b844005f-9ce0-4bf2-8ab8-3439d4255193)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(3cddfb27-bbd2-4579-9165-64c11dcfdd58)
+				{
+					features: feature_list [
+						Border(064fc9cc-fedb-490d-92c4-8398479a093a)
+						{
+							borderThickness: 5
+							borderColor: #2E8B57FF
+							borderStyle: 0
+						}]
+					children: children_list []
+					name: "Background"
+					visible: true
+					width: width@b844005f-9ce0-4bf2-8ab8-3439d4255193 (propref<int>)
+					height: height@b844005f-9ce0-4bf2-8ab8-3439d4255193 (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #E0FFFFFF
+				}, 
+				GtfRectangle(62cb439c-7b2c-43c8-bc7a-db0b50d69cfe)
+				{
+					features: feature_list [
+						Border(31877b5d-a19a-4585-8943-d5d12d1cb497)
+						{
+							borderThickness: 2
+							borderColor: #000000FF
+							borderStyle: 0
+						}]
+					children: children_list [
+						GtfLabel(225b266f-b3e6-4ba9-9d3b-943de1c674de)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text"
+							visible: true
+							width: width@62cb439c-7b2c-43c8-bc7a-db0b50d69cfe (propref<int>)
+							height: height@62cb439c-7b2c-43c8-bc7a-db0b50d69cfe (propref<int>)
+							x: 0
+							y: 0
+							text: string_scriptedValue(480c8776-43ab-4076-8ee4-b43dc33d1bf3)
+							{
+								triggerList: trigger_list(895d9192-8c27-4398-89e6-d91753cde53d)
+								{
+									script: "dp:AC_Menu:ac_left_index" \
+										""
+								}
+								onTrigger: function<bool,bool>(32af3bf0-6b66-48d0-8a00-1f4d33d98675)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<string>(b60127b8-d763-4fea-a807-2d07f4d4de76)
+								{
+									script: "function()" \
+										"{" \
+										"	f:int2string(dp:AC_Menu:Left_Ac_List[dp:AC_Menu:ac_left_index]) + \" °C\"" \
+										"}"
+								}
+								write: function<bool,string>(f91d409e-d749-4fa2-8dc5-42fbd02cf24a)
+								{
+									script: "function(v:arg0::string)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+							font: font_resource(b5d00daa-bfd3-40c6-8f32-e6adca0d008d)
+							{
+								file: "big_noodle_titling_oblique.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}, 
+						GtfImage(5fcf9330-613b-4b3c-ab99-643989113d8f)
+						{
+							features: feature_list [
+								TouchShortReleased(eb47f32b-1d6c-423f-bd9b-710bd3f47fbb)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(82092303-4e65-49f5-a647-a9742938ac77)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	if(dp:AC_Menu:ac_left_index > 0)" \
+											"		dp:AC_Menu:ac_left_index = dp:AC_Menu:ac_left_index -1" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(8328cb96-da5c-465b-9d77-ca1df1599d86)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list []
+							name: "Left-"
+							visible: true
+							width: 50
+							height: 50
+							x: -50
+							y: 0
+							image: image_resource(1e1b08cd-5b93-46c9-8153-4a03213a87af)
+							{
+								file: "ac_minus.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}, 
+						GtfImage(903b9163-67f0-4067-8c39-6b65e94a534f)
+						{
+							features: feature_list [
+								TouchShortReleased(9a85a534-d1b4-499c-bd3a-172031a92c9d)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(3b080dca-e961-465d-aed6-e820ca6f1b16)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	if(dp:AC_Menu:ac_left_index < length dp:AC_Menu:Left_Ac_List -1)" \
+											"		dp:AC_Menu:ac_left_index = dp:AC_Menu:ac_left_index + 1" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(71b62aad-231e-4d57-bbf8-2b875ce0c674)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list []
+							name: "Left+"
+							visible: true
+							width: 50
+							height: 50
+							x: 100
+							y: 0
+							image: image_resource(d97bf212-5a88-4866-8a70-65f09ef6f9d7)
+							{
+								file: "ac_plus.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}]
+					name: "Left_AC"
+					visible: true
+					width: 100
+					height: 50
+					x: 60
+					y: 180
+					fillColor: #FAF0E6FF
+				}, 
+				GtfRectangle(413d8484-d152-4934-92d2-501e81bbfeee)
+				{
+					features: feature_list [
+						Border(b9b5e04b-6d63-4948-afc7-03dcb52a27ae)
+						{
+							borderThickness: 2
+							borderColor: #000000FF
+							borderStyle: 0
+						}]
+					children: children_list [
+						GtfLabel(cf6543d9-6973-4219-b94c-15c92744dcf4)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text"
+							visible: true
+							width: width@413d8484-d152-4934-92d2-501e81bbfeee (propref<int>)
+							height: height@413d8484-d152-4934-92d2-501e81bbfeee (propref<int>)
+							x: 0
+							y: 0
+							text: string_scriptedValue(c576b22e-9ebb-4008-91f8-8b2a662dc590)
+							{
+								triggerList: trigger_list(f8496214-28cc-4d45-a275-ce97c2b5dbcf)
+								{
+									script: "dp:AC_Menu:ac_right_index" \
+										""
+								}
+								onTrigger: function<bool,bool>(6d9b55f3-3088-4c6f-b10f-0007921aab7b)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<string>(549ca6e1-b542-43c1-8ff4-40986e0a68a6)
+								{
+									script: "function()" \
+										"{" \
+										"	f:int2string(dp:AC_Menu:Right_Ac_List[dp:AC_Menu:ac_right_index]) + \" °C\"" \
+										"}"
+								}
+								write: function<bool,string>(b8e1d02a-fcd5-4386-aaa2-7c8d8ff67320)
+								{
+									script: "function(v:arg0::string)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+							font: font_resource(0bad6e38-9ee7-4345-8b83-32006f91aa35)
+							{
+								file: "big_noodle_titling_oblique.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}, 
+						GtfImage(29d80826-8573-4873-b185-f49b75a4afac)
+						{
+							features: feature_list [
+								TouchShortReleased(ba27b58e-0d9d-45f8-8a54-7a5443fd581a)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(fa77110d-9562-49aa-8d49-98db5033d2a1)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	if(dp:AC_Menu:ac_right_index > 0)" \
+											"		dp:AC_Menu:ac_right_index = dp:AC_Menu:ac_right_index -1" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(c03cb774-ef64-48a5-9f4d-80612bfe67cf)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list []
+							name: "Right-"
+							visible: true
+							width: 50
+							height: 50
+							x: -50
+							y: 0
+							image: image_resource(401548de-c1a1-4be6-bcfe-feca4fe296b4)
+							{
+								file: "ac_minus.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}, 
+						GtfImage(c24ca96a-710b-4792-b2f7-818ef32653a8)
+						{
+							features: feature_list [
+								TouchShortReleased(74bfbe7a-c4a0-4d62-9626-76d1c8b88177)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(a56d3212-386d-47d2-b334-e86589a4bb9e)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	if(dp:AC_Menu:ac_right_index < length dp:AC_Menu:Right_Ac_List -1)" \
+											"		dp:AC_Menu:ac_right_index = dp:AC_Menu:ac_right_index + 1" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(dec3d249-90ff-447f-9a10-f47475700126)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list []
+							name: "Right+"
+							visible: true
+							width: 50
+							height: 50
+							x: 100
+							y: 0
+							image: image_resource(4a88ae9d-2abc-43ee-8f6a-57f796e3b6e5)
+							{
+								file: "ac_plus.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}]
+					name: "Right_AC"
+					visible: true
+					width: 100
+					height: 50
+					x: 445
+					y: 180
+					fillColor: #FAF0E6FF
+				}, 
+				GtfRectangle(f2ea4088-68b2-4116-b1a4-f470500d22f1)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "HorizontalBar"
+					visible: true
+					width: 600
+					height: 4
+					x: 0
+					y: 155
+					fillColor: #2E8B57FF
+				}, 
+				GtfImage(c5d4489b-686f-440e-9a0d-f46c1b26014a)
+				{
+					features: feature_list [
+						TouchShortReleased(c392005a-2a19-4126-afb6-4e3f8ea74680)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(5bd67700-3781-4680-841a-8cbb87953006)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:AcMenu_CompoundEvents:close_AC_PopUp()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(f4bff1dd-ffde-4f16-8319-b35b9ad74c95)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}, 
+						ScaleMode(194ef4ea-37b4-4fdf-b5e9-1d1b0c146be2)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "CloseButton"
+					visible: true
+					width: 25
+					height: 25
+					x: 565
+					y: 10
+					image: image_resource(4932f412-592e-4486-90aa-07dde601740b)
+					{
+						file: "close_pop_up.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfRectangle(0667ba6d-94dc-4ce5-ab47-057ea7e0eead)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "VerticalBar"
+					visible: true
+					width: 4
+					height: 155
+					x: 300
+					y: 0
+					fillColor: #2E8B57FF
+				}, 
+				GtfContainer(411fb9ef-f167-49f1-be85-2ce8852f95e1)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfInstantiator(6f707302-a96f-431a-b955-7f5680e279df)
+						{
+							features: feature_list [
+								LayoutPolicyFlow(d58ba11a-bf2c-4cb8-b739-125c64bc9067)
+								{
+									horizontalGap: 2
+									verticalGap: 0
+									layoutDirection: 0
+									horizontalChildAlign: 0
+									verticalChildAlign: 0
+								}]
+							children: children_list [
+								GtfRectangle(fba24fba-28fa-41ee-9162-0d84efa78666)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "BarBackground"
+									visible: true
+									width: int_scriptedValue(bf77c868-8a9a-4c53-8415-00ba9f2e6258)
+									{
+										triggerList: trigger_list(974d6e23-8642-4578-af6e-ed7c90202d33)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(6383dfd9-de6f-491b-b6eb-7d65968ebd86)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+										read: function<int>(833e4ac3-ac3c-4067-ae7b-1eb727efef25)
+										{
+											script: "function()" \
+												"{" \
+												"	v:this->^->^.width / v:this->^->^.units -2	" \
+												"}"
+										}
+										write: function<bool,int>(c866123f-c9ba-48a3-ad2a-d567bf5009f3)
+										{
+											script: "function(v:arg0::int)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+									}
+									height: height@6f707302-a96f-431a-b955-7f5680e279df (propref<int>)
+									x: 0
+									y: 0
+									fillColor: color@411fb9ef-f167-49f1-be85-2ce8852f95e1 (propref<color>)
+								}]
+							name: "Instantiator"
+							visible: true
+							width: width@411fb9ef-f167-49f1-be85-2ce8852f95e1 (propref<int>)
+							height: height@411fb9ef-f167-49f1-be85-2ce8852f95e1 (propref<int>)
+							x: 0
+							y: 0
+							numItems: currentUnits@411fb9ef-f167-49f1-be85-2ce8852f95e1 (propref<int>)
+							lineMapping: intlist []
+						}, 
+						GtfImage(429ab488-7555-4b6a-8837-19f78b1183f7)
+						{
+							features: feature_list [
+								TouchShortReleased(2c597f0e-62e5-4bdb-8c2e-6a755f02e419)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(5072352e-3bd8-47e3-bf95-4e6ed5e2ab00)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	dp:AC_Menu:current_left_units -=1" \
+											"	if(dp:AC_Menu:current_left_units<0)" \
+											"		dp:AC_Menu:current_left_units = 0" \
+											"		" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(7dd6ef07-8b00-49ce-aeb7-67528cb4b169)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list []
+							name: "Chair_Left-"
+							visible: true
+							width: 50
+							height: 50
+							x: -50
+							y: -10
+							image: image_resource(c73eca98-8adc-4e26-b83f-6a2a1c8ef5d9)
+							{
+								file: "ac_minus.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}, 
+						GtfImage(8641d820-f159-4433-b26f-b0667261703e)
+						{
+							features: feature_list [
+								TouchShortReleased(95173f30-4029-40e6-9ac4-4b2bd6afa6e7)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(e4c96215-a049-450a-8ac9-6a0bc41b7fa4)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	dp:AC_Menu:current_left_units +=1" \
+											"	if(dp:AC_Menu:current_left_units > dp:AC_Menu:left_units)" \
+											"		dp:AC_Menu:current_left_units = dp:AC_Menu:left_units" \
+											"		" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(00c7f099-6a9b-43f6-9030-8c55d0bd14b3)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list []
+							name: "Chair_Left+"
+							visible: true
+							width: 50
+							height: 50
+							x: 100
+							y: -10
+							image: image_resource(fae8ba6b-7a82-4a26-9b0b-b4198b169084)
+							{
+								file: "ac_plus.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}]
+					name: "LeftChair_Bar"
+					visible: true
+					width: 100
+					height: 30
+					x: 70
+					y: 110
+					units: @ca8428dc-1484-4c52-8d91-4b470fe755ce (objectref<int>)
+					color: #4682B4FF
+					currentUnits: @37dbd432-24fb-4409-a9cc-b3ad4aa46508 (objectref<int>)
+				}, 
+				GtfContainer(e1a5352e-ca9a-4f2b-887c-4fcfef1ffdbf)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfInstantiator(044001e7-dec3-4fbf-add1-00e78c87f788)
+						{
+							features: feature_list [
+								LayoutPolicyFlow(23757bd5-0149-4a91-852b-d8c2f81a1b60)
+								{
+									horizontalGap: 2
+									verticalGap: 0
+									layoutDirection: 0
+									horizontalChildAlign: 0
+									verticalChildAlign: 0
+								}]
+							children: children_list [
+								GtfRectangle(55c0eabb-1969-41b2-adcf-c22a80c61039)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "BarBackground"
+									visible: true
+									width: int_scriptedValue(de8170eb-f88c-42c8-bae0-c03d90f01a3d)
+									{
+										triggerList: trigger_list(5febacc0-5884-40fe-a1b2-83c9022a3d65)
+										{
+											script: ""
+										}
+										onTrigger: function<bool,bool>(5bb397a1-01b4-4db7-87b6-7f291dbf4f3f)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+										read: function<int>(9b76c2e1-7b35-4295-9fec-7a0ad2819952)
+										{
+											script: "function()" \
+												"{" \
+												"	v:this->^->^.width / v:this->^->^.units -2	" \
+												"}"
+										}
+										write: function<bool,int>(210f4893-3f3d-40ef-aff3-de80e6f72610)
+										{
+											script: "function(v:arg0::int)" \
+												"{" \
+												"	// todo: auto generated return value, please adapt" \
+												"	false" \
+												"}"
+										}
+									}
+									height: height@044001e7-dec3-4fbf-add1-00e78c87f788 (propref<int>)
+									x: 0
+									y: 0
+									fillColor: color@e1a5352e-ca9a-4f2b-887c-4fcfef1ffdbf (propref<color>)
+								}]
+							name: "Instantiator"
+							visible: true
+							width: width@e1a5352e-ca9a-4f2b-887c-4fcfef1ffdbf (propref<int>)
+							height: height@e1a5352e-ca9a-4f2b-887c-4fcfef1ffdbf (propref<int>)
+							x: 0
+							y: 0
+							numItems: currentUnits@e1a5352e-ca9a-4f2b-887c-4fcfef1ffdbf (propref<int>)
+							lineMapping: intlist []
+						}, 
+						GtfImage(42f72b75-4c32-4265-a5d8-a8803884cea0)
+						{
+							features: feature_list [
+								TouchShortReleased(ea922b1d-a73b-4fbe-9a48-7feac00274d6)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(61394cbf-9def-43a5-9997-7b307865fae5)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	dp:AC_Menu:current_right_units -=1" \
+											"	if(dp:AC_Menu:current_right_units<0)" \
+											"		dp:AC_Menu:current_right_units = 0" \
+											"		" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(f3c6f20a-e92a-4eed-80a2-5ef27cabfc94)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list []
+							name: "Chair_Right-"
+							visible: true
+							width: 50
+							height: 50
+							x: -50
+							y: -10
+							image: image_resource(8d2dd0d1-1258-4fff-b13a-da292d7571dc)
+							{
+								file: "ac_minus.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}, 
+						GtfImage(930a1e27-d89b-41c5-a192-15a7e3336abd)
+						{
+							features: feature_list [
+								TouchShortReleased(16ead281-ac18-47e3-ae54-0ab66f9ddd97)
+								{
+									touchShortReleased: function<bool,int,int,int,int>(03bf21aa-e60a-4fb1-883a-b55f7292ab3c)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	dp:AC_Menu:current_right_units +=1" \
+											"	if(dp:AC_Menu:current_right_units > dp:AC_Menu:right_units)" \
+											"		dp:AC_Menu:current_right_units = dp:AC_Menu:right_units" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(955b1898-80cb-40c5-89e2-00fef10abebf)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list []
+							name: "Chair_Right+"
+							visible: true
+							width: 50
+							height: 50
+							x: 100
+							y: -10
+							image: image_resource(1744f968-4bc8-4258-8be7-b570d8435b7a)
+							{
+								file: "ac_plus.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}]
+					name: "RightChair_Bar"
+					visible: true
+					width: 100
+					height: 30
+					x: 435
+					y: 110
+					units: @c92c2bd1-a5e6-4f4e-8f33-ac5c21ce5c85 (objectref<int>)
+					color: #4682B4FF
+					currentUnits: @72cec45d-6abc-45ca-a96c-880b48fb21db (objectref<int>)
+				}, 
+				GtfImage(3fdc6c3f-f17c-446a-a240-7c533f2aba55)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "LeftCarSeat"
+					visible: true
+					width: 100
+					height: 100
+					x: 90
+					y: 15
+					image: image_resource(cd5ee6b1-6e9e-4b38-940a-d82fabc5b4b8)
+					{
+						file: "carseat.png"
+					}
+					sRGB: false
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfImage(607f95cb-27e8-4376-a08b-a142791d2095)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "RightCarSeat"
+					visible: true
+					width: 100
+					height: 100
+					x: 450
+					y: 15
+					image: image_resource(ae8df7f5-7156-43a6-8e0c-4a5342ab92af)
+					{
+						file: "carseat.png"
+					}
+					sRGB: false
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(7fde7a2e-6f6d-4d97-9b7e-e1ca65c71dc7)
+				{
+					name: "Front"
+					template: @3d83e615-7718-4830-83dc-f3bcd6d9440d (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 240
+					y: 15
+					touchShortReleased: function<bool,int,int,int,int>(9afea551-4963-4103-9f6c-559eadf53e50)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:AC_Menu:selected_ACButton = 1" \
+							"    false" \
+							"}"
+					}
+					image: image_resource(1451ce5c-3e38-4f15-97ed-663f0b1acf45)
+					{
+						file: "front.png"
+					}
+					borderThickness: borderThickness@3d83e615-7718-4830-83dc-f3bcd6d9440d (propref<int>)
+					width: 48
+					height: 48
+					setBorder: conditional_script(ecb22d3e-ecc2-4d4f-af2b-b9f6fd99b2c2)
+					{
+						triggerList: trigger_list(fad58a8d-ba6c-4841-ae88-467213e6a2d6)
+						{
+							script: "dp:AC_Menu:selected_ACButton" \
+								"" \
+								""
+						}
+						onTrigger: function<bool,bool>(56cbc7c2-f348-4005-983f-ee29c1699298)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(dp:AC_Menu:selected_ACButton == 1)" \
+								"		v:this.borderThickness = 5" \
+								"	" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfContainer_template_instance(eaae9cd0-96e3-4c25-b738-959be50e7eff)
+				{
+					name: "Rear"
+					template: @3d83e615-7718-4830-83dc-f3bcd6d9440d (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 320
+					y: 15
+					touchShortReleased: function<bool,int,int,int,int>(41d80664-cc73-43c8-914f-5fa8d7c61f2d)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:AC_Menu:selected_ACButton = 2" \
+							"    false" \
+							"}"
+					}
+					image: image_resource(76f38074-aab0-4f90-818d-d92e498aae32)
+					{
+						file: "rear.png"
+					}
+					borderThickness: borderThickness@3d83e615-7718-4830-83dc-f3bcd6d9440d (propref<int>)
+					width: 48
+					height: 48
+					setBorder: conditional_script(7fc63a93-48b4-4f35-af57-599e161ffc59)
+					{
+						triggerList: trigger_list(bd624ddc-7727-4791-815b-4e728dbfe022)
+						{
+							script: "dp:AC_Menu:selected_ACButton" \
+								""
+						}
+						onTrigger: function<bool,bool>(b70e5717-f945-48ab-bcfb-47f7bcd75962)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(dp:AC_Menu:selected_ACButton == 2)" \
+								"		v:this.borderThickness = 5" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfContainer_template_instance(56cdf223-1e24-47a7-a7ad-7cf8ab4eac56)
+				{
+					name: "Frontal"
+					template: @3d83e615-7718-4830-83dc-f3bcd6d9440d (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 220
+					y: 185
+					touchShortReleased: function<bool,int,int,int,int>(da46438a-42e7-4b4a-8e3b-a11719e8b93d)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:AC_Menu:selected_ACButton = 3" \
+							"    false" \
+							"}"
+					}
+					image: image_resource(3234979b-cbd5-4ba8-a550-55f760c09c39)
+					{
+						file: "frontal.PNG"
+					}
+					borderThickness: borderThickness@3d83e615-7718-4830-83dc-f3bcd6d9440d (propref<int>)
+					width: 50
+					height: 40
+					setBorder: conditional_script(aa2172c5-5d72-47c7-bdc1-08d4afb26d39)
+					{
+						triggerList: trigger_list(2116ae6c-bcb5-44d9-bbd4-e660d860ef7a)
+						{
+							script: "dp:AC_Menu:selected_ACButton" \
+								""
+						}
+						onTrigger: function<bool,bool>(4e0a4170-e707-4843-9d73-bf13d3b77d7c)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(dp:AC_Menu:selected_ACButton == 3)" \
+								"		v:this.borderThickness = 5" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfContainer_template_instance(cce26472-178b-4338-a1c7-2feca178999c)
+				{
+					name: "Legs"
+					template: @3d83e615-7718-4830-83dc-f3bcd6d9440d (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 340
+					y: 185
+					touchShortReleased: function<bool,int,int,int,int>(b61c3295-cc6f-4016-8b0d-d7fa7892bc70)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:AC_Menu:selected_ACButton = 5" \
+							"    false" \
+							"}"
+					}
+					image: image_resource(e2103763-6a41-49fc-ab20-60802ac334b4)
+					{
+						file: "legs.PNG"
+					}
+					borderThickness: borderThickness@3d83e615-7718-4830-83dc-f3bcd6d9440d (propref<int>)
+					width: 50
+					height: 40
+					setBorder: conditional_script(3728709d-cd97-4541-9752-4563f29bc612)
+					{
+						triggerList: trigger_list(d59db90d-ed8c-4457-88c6-f8ffdfa5f3c1)
+						{
+							script: "dp:AC_Menu:selected_ACButton" \
+								""
+						}
+						onTrigger: function<bool,bool>(853711d6-a5b0-4c44-8ff5-34a30d2d88af)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(dp:AC_Menu:selected_ACButton == 5)" \
+								"		v:this.borderThickness = 5" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfContainer_template_instance(73de283b-cc1b-4df3-9c07-75e1197b6ed5)
+				{
+					name: "Recirculare"
+					template: @3d83e615-7718-4830-83dc-f3bcd6d9440d (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 280
+					y: 185
+					touchShortReleased: function<bool,int,int,int,int>(0efa5b18-7439-4213-9826-38c50e05245f)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:AC_Menu:selected_ACButton = 4 " \
+							"    false" \
+							"}"
+					}
+					image: image_resource(4385aba8-338b-47b7-8efd-e81b13e24ba3)
+					{
+						file: "recirculare.PNG"
+					}
+					borderThickness: borderThickness@3d83e615-7718-4830-83dc-f3bcd6d9440d (propref<int>)
+					width: 50
+					height: 40
+					setBorder: conditional_script(5b6cf672-76c1-48c3-9f01-8e6d8c417cc0)
+					{
+						triggerList: trigger_list(b58f2b02-bcb2-4b00-975b-7f874b24fe4d)
+						{
+							script: "dp:AC_Menu:selected_ACButton" \
+								""
+						}
+						onTrigger: function<bool,bool>(bc38f17b-0379-4310-bae5-dc3adebac163)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(dp:AC_Menu:selected_ACButton == 4)" \
+								"		v:this.borderThickness = 5" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "AcPopUp_Container"
+			visible: true
+			width: 600
+			height: 250
+			x: 100
+			y: 200
+		}]
+	name: "AC_PopUpView"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

@@ -1,0 +1,125 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(2e00010f-c64f-42b3-978c-e03c63feb733)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(6c12da37-3cb5-4511-8c13-fc35047fb151)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfContainer_template_instance(1b3e998e-3a9f-4fba-8420-ed7e7a17fda9)
+				{
+					name: "Retry"
+					template: @815ad5fc-ec09-4356-be54-0dc3783dd429 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 30
+					y: 285
+					fillColor: #FF0000FF
+					touchShortReleased: function<bool,int,int,int,int>(13b59d6d-c353-4340-a337-49d7ba000c6f)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:DismissMsg()" \
+							"	if(dp:Water_Suply==false || dp:Closed==false || dp:Detergent==false)" \
+							"	{" \
+							"		fire_delayed 1000, ev:DisplayMsg()" \
+							"		dp:Message=\"\";" \
+							"		dp:Message2=\"\";" \
+							"		if(dp:Water_Suply== false)" \
+							"			dp:Message= dp:Message + \"\\nEroare alimentare apa\"" \
+							"		if(dp:Closed==false)" \
+							"			dp:Message=dp:Message + \"\\nEroare cuva deschisa\"" \
+							"		if(dp:Detergent==false)" \
+							"			dp:Message=dp:Message + \"\\nEroare detergent\"" \
+							"	}" \
+							"	else" \
+							"		{" \
+							"			fire ev:goTo_Start()" \
+							"		}" \
+							"	" \
+							"    false" \
+							"}"
+					}
+					text: "Retry"
+					"x 2": "x 2"@815ad5fc-ec09-4356-be54-0dc3783dd429 (propref<int>)
+					"y 2": "y 2"@815ad5fc-ec09-4356-be54-0dc3783dd429 (propref<int>)
+				}, 
+				GtfContainer_template_instance(5071eed3-4195-45f8-96e3-23128cea8455)
+				{
+					name: "Ok"
+					template: @815ad5fc-ec09-4356-be54-0dc3783dd429 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 370
+					y: 285
+					fillColor: #FF0000FF
+					touchShortReleased: function<bool,int,int,int,int>(18ac9f15-135c-4d8a-9d2e-9f3079de3123)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:DismissMsg()" \
+							"	fire ev:goTo_back()" \
+							"    false" \
+							"}"
+					}
+					text: "Ok"
+					"x 2": "x 2"@815ad5fc-ec09-4356-be54-0dc3783dd429 (propref<int>)
+					"y 2": "y 2"@815ad5fc-ec09-4356-be54-0dc3783dd429 (propref<int>)
+				}, 
+				GtfImage(d68997f1-acf6-4a25-a3fb-96500334b06f)
+				{
+					features: feature_list [
+						ScaleMode(a74d0e99-615b-41ba-8fa5-5e1eac0e4e03)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "Icon"
+					visible: true
+					width: 200
+					height: 200
+					x: 150
+					y: 50
+					image: image_resource(3fe68c18-0b70-446a-9fdf-d9af76f47896)
+					{
+						file: "nogo.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(b45a0eca-d4ed-4291-a13e-e3dfab4c407d)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text"
+					visible: true
+					width: 490
+					height: 215
+					x: 4
+					y: 38
+					text: @a9f747bc-28bc-4efc-bbf2-af6d80937dfa (objectref<string>)
+					textColor: #000000FF
+					font: font_resource(90abea84-a039-484f-a696-d4b2f28a8925)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 50
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Rectangle 4"
+			visible: true
+			width: width@2e00010f-c64f-42b3-978c-e03c63feb733 (propref<int>)
+			height: height@2e00010f-c64f-42b3-978c-e03c63feb733 (propref<int>)
+			x: 0
+			y: y@2e00010f-c64f-42b3-978c-e03c63feb733 (propref<int>)
+			fillColor: #FFE4E1FF
+		}]
+	name: "View 8"
+	visible: true
+	width: 500
+	height: 340
+	x: 150
+	y: 0
+}

@@ -1,0 +1,227 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(c5910f03-c0ff-4a78-b0d2-367765444908)
+{
+	name: "List"
+	structure: GtfContainer(f85bb418-1519-4379-a78a-1715cf9012f4)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfInstantiator(00c3c9a4-32ac-40eb-8c18-58787752be64)
+			{
+				features: feature_list [
+					LayoutPolicyFlow(f26d4aa0-f715-4530-a0c4-80ebeb1ad72c)
+					{
+						horizontalGap: 0
+						verticalGap: 10
+						layoutDirection: 0
+						horizontalChildAlign: 0
+						verticalChildAlign: 0
+					}, 
+					TouchPressed(c19d2d42-2886-4fcd-8c28-ab26dafc180c)
+					{
+						touchPressed: function<bool,int,int,int,int>(f855f089-0b71-476d-b402-c935b5a2b599)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    false" \
+								"}"
+						}
+					}, 
+					TouchShortReleased(645fbd56-38ea-420a-b1f2-93ab112b64b1)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(78527dbc-06a9-471d-9731-fa5596c65bd9)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(03bee7e8-f3dc-41c8-8beb-4e46cf41a85f)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list [
+					GtfContainer(e91ca543-8321-4002-86b4-cf95c9cfddc7)
+					{
+						features: feature_list [
+							TouchPressed(cbf8aa5c-3438-4700-b4e0-e243a5b9aaec)
+							{
+								touchPressed: function<bool,int,int,int,int>(431cbd56-57d0-4520-96db-6fb07ea6a783)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	v:this->Background->^.pressedAction()" \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(c54924d9-091e-4ad3-9c94-1b78fdb369ac)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}, 
+							TouchShortReleased(b5188d54-ab8f-4de3-a2fe-721632d8c2d9)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(c8590341-f047-4ed3-9519-b2de1cce568a)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	v:this->Background->^.releasedAction()" \
+										"    false" \
+										"}"
+								}
+							}, 
+							LineIndex(a1552820-b7f7-46a0-81de-c412a2cbf337)
+							{
+								lineIndex: 0
+							}]
+						children: children_list [
+							GtfRectangle(9badff68-00cc-4be0-9ca6-4e979d6b96ab)
+							{
+								features: feature_list [
+									Border(1011ebe9-f6bd-413a-9d6f-511545b10736)
+									{
+										borderThickness: 2
+										borderColor: #FFA500FF
+										borderStyle: 0
+									}]
+								children: children_list []
+								name: "Background"
+								visible: true
+								width: width@e91ca543-8321-4002-86b4-cf95c9cfddc7 (propref<int>)
+								height: height@e91ca543-8321-4002-86b4-cf95c9cfddc7 (propref<int>)
+								x: 0
+								y: 0
+								fillColor: currentColor@e91ca543-8321-4002-86b4-cf95c9cfddc7 (propref<color>)
+							}, 
+							GtfLabel(a8818b7c-bf88-4add-819e-2c31eb39c290)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "ButtonText"
+								visible: true
+								width: width@e91ca543-8321-4002-86b4-cf95c9cfddc7 (propref<int>)
+								height: height@e91ca543-8321-4002-86b4-cf95c9cfddc7 (propref<int>)
+								x: 0
+								y: 0
+								text: "label"
+								textColor: currentTextColor@e91ca543-8321-4002-86b4-cf95c9cfddc7 (propref<color>)
+								font: font_resource(8bf19bb1-f696-40ba-9269-0431f38a9b5f)
+								{
+									file: "PT_Sans_Narrow.ttf"
+									size: 30
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}]
+						name: "ButtonContainer copy 1"
+						visible: true
+						width: 318
+						height: 40
+						x: 0
+						y: 0
+						pressedAction: function<bool>(57cef413-6ad1-4cfb-9e4b-de67fcc0a311)
+						{
+							script: "function()" \
+								"{" \
+								"	v:this.currentColor=v:this.pressedColor" \
+								"	v:this.currentTextColor = v:this.pressedTextColor" \
+								"	fire ev:settingButtonPressed(v:this->ButtonText.text)" \
+								"	fire ev:LanguagePressed(v:this->ButtonText.text)" \
+								"	fire ev:themePressed(v:this->ButtonText.text)" \
+								"	fire ev:BluetoothPressed(v:this->ButtonText.text)" \
+								"	false" \
+								"}"
+						}
+						releasedAction: function<bool>(9a247aad-b8c3-4516-8413-56ede73b388c)
+						{
+							script: "function()" \
+								"{" \
+								"	v:this.currentColor=v:this.releasedColor" \
+								"	v:this.currentTextColor=v:this.releasedTextColor" \
+								"	false" \
+								"}"
+						}
+						pressedColor: #FFA500FF
+						releasedColor: #000000FF
+						currentColor: #000000FF
+						pressedTextColor: #000000FF
+						releasedTextColor: #FFA500FF
+						currentTextColor: #FFA500FF
+						setText: conditional_script(8c647fc6-185a-4a53-91a0-a41aa862a807)
+						{
+							triggerList: trigger_list(fc0fb411-8623-4c15-8c89-4a458d07ea90)
+							{
+								script: "v:this->^->^.InputList" \
+									"v:this.lineIndex"
+							}
+							onTrigger: function<bool,bool>(70977667-bdcc-4910-ac4d-5b077681ee6e)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	v:this->ButtonText.text=v:this->^->^.InputList[v:this.lineIndex]" \
+									"	false" \
+									"}"
+							}
+						}
+					}]
+				name: "Instantiator 1"
+				visible: true
+				width: 100
+				height: 100
+				x: 0
+				y: 0
+				numItems: int_scriptedValue(ddfcfabf-2dfa-4756-85db-cbd134443949)
+				{
+					triggerList: trigger_list(b9c20731-ff7e-48e5-92db-9962027bf256)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(f0eb9564-455a-48af-b7f8-217aae576719)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(e1f072bb-db36-4bba-926e-c5df5aec561e)
+					{
+						script: "function()" \
+							"{" \
+							"	length v:this->^.InputList" \
+							"}"
+					}
+					write: function<bool,int>(3af73180-a14a-47d7-98ef-df8a2aaa7ab3)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				lineMapping: intlist []
+			}]
+		name: "ListContainer"
+		visible: true
+		width: 318
+		height: 40
+		x: 0
+		y: 0
+		InputList: stringlist []
+	}
+	InputList: InputList@f85bb418-1519-4379-a78a-1715cf9012f4 (propref<stringlist>)
+	x: x@f85bb418-1519-4379-a78a-1715cf9012f4 (propref<int>)
+	y: y@f85bb418-1519-4379-a78a-1715cf9012f4 (propref<int>)
+	width: width@f85bb418-1519-4379-a78a-1715cf9012f4 (propref<int>)
+	height: height@f85bb418-1519-4379-a78a-1715cf9012f4 (propref<int>)
+	visible: visible@f85bb418-1519-4379-a78a-1715cf9012f4 (propref<bool>)
+}

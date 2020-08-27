@@ -1,0 +1,481 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(119149c1-2133-42d4-9cda-70adb95ee7e9)
+{
+	name: "T_SearchAddress"
+	structure: GtfContainer(a136f97e-488d-49df-a35c-097368ad04e5)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(9f560483-bfa5-4e3b-90bf-cbd1c50cad4e)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfInstantiator(0aa295af-dd5e-4dd8-b5e1-cdaa4f85688f)
+					{
+						features: feature_list [
+							LayoutPolicyBox(7f69c06d-5544-468e-94e4-5de6b3d5e38b)
+							{
+								gap: 20
+								layoutDirection: 1
+							}]
+						children: children_list [
+							GtfRectangle(8b8b5d2b-b211-463e-8871-f6bce7a62ed9)
+							{
+								features: feature_list [
+									Border(c14c7ed9-9bb2-4124-aeee-d842ea85ad7b)
+									{
+										borderThickness: 1
+										borderColor: #000000FF
+										borderStyle: 0
+									}, 
+									LineIndex(958b9780-65aa-49d2-a1ef-7e055ff74abb)
+									{
+										lineIndex: 0
+									}]
+								children: children_list [
+									GtfLabel(3a6f49c6-512a-4169-9e03-0c570bc221ea)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "Text"
+										visible: true
+										width: width@8b8b5d2b-b211-463e-8871-f6bce7a62ed9 (propref<int>)
+										height: height@8b8b5d2b-b211-463e-8871-f6bce7a62ed9 (propref<int>)
+										x: 0
+										y: 0
+										text: "label"
+										textColor: #000000FF
+										font: font_resource(039eac6f-125c-41ce-969e-63c242d8c9a4)
+										{
+											file: "PT_Sans_Narrow.ttf"
+											size: 30
+										}
+										horizontalAlign: 1
+										verticalAlign: 0
+									}]
+								name: "Background"
+								visible: true
+								width: width@0aa295af-dd5e-4dd8-b5e1-cdaa4f85688f (propref<int>)
+								height: 50
+								x: 0
+								y: 0
+								fillColor: #ADD8E6FF
+								setText: conditional_script(990518ae-9f80-4af4-a47b-74a7f508a478)
+								{
+									triggerList: trigger_list(777d7d1f-9179-4844-b424-0e6d720bdeb6)
+									{
+										script: "dp:NavigationMenu:ChoiceButton_List" \
+											"v:this.lineIndex" \
+											""
+									}
+									onTrigger: function<bool,bool>(6cc5f448-f010-4747-8bb9-2ee839fbe18d)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	v:this->Text.text = dp:NavigationMenu:ChoiceButton_List[v:this.lineIndex]" \
+											"	false" \
+											"}"
+									}
+								}
+							}]
+						name: "ChoiceButtons"
+						visible: true
+						width: 200
+						height: 50
+						x: 20
+						y: 40
+						numItems: 4
+						lineMapping: intlist []
+						calculateNumItems: conditional_script(b0e3998f-dba3-4555-8b40-55a6905a42dd)
+						{
+							triggerList: trigger_list(822f1c19-c31d-418f-918a-8657b8dade61)
+							{
+								script: "dp:NavigationMenu:ChoiceButton_List" \
+									""
+							}
+							onTrigger: function<bool,bool>(793226d4-2fdc-4b78-ac64-b9777d3eaf47)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	v:this.numItems = length dp:NavigationMenu:ChoiceButton_List" \
+									"	false" \
+									"}"
+							}
+						}
+					}, 
+					GtfRectangle(4f85c50d-ff71-4f19-a5eb-4b4ca5ca641c)
+					{
+						features: feature_list [
+							Border(d4a5f97c-1dfd-4994-a63c-16975e0a0495)
+							{
+								borderThickness: 1
+								borderColor: #000000FF
+								borderStyle: 0
+							}]
+						children: children_list [
+							GtfLabel(c7f0c6ed-fa20-4b8a-8a8a-bb263c3ede22)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Text"
+								visible: true
+								width: width@4f85c50d-ff71-4f19-a5eb-4b4ca5ca641c (propref<int>)
+								height: height@4f85c50d-ff71-4f19-a5eb-4b4ca5ca641c (propref<int>)
+								x: 0
+								y: 0
+								text: string_scriptedValue(08e350a1-7360-4c6f-8052-0eccf56430d9)
+								{
+									triggerList: trigger_list(0bf5180c-9264-49e1-a1e5-2424e229fbb5)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(1bfdf0ec-8be5-4c96-acc9-a5482ba7ea97)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<string>(6ddda7f5-d229-4132-b118-6395dcd2fb82)
+									{
+										script: "function()" \
+											"{" \
+											"	if(dp:NavigationMenu:Country!=\"\")" \
+											"	dp:NavigationMenu:Search[0] = true" \
+											"	" \
+											"	dp:NavigationMenu:Country" \
+											"}"
+									}
+									write: function<bool,string>(c39ef3d3-91d3-4256-91b2-bd9e0a58295f)
+									{
+										script: "function(v:arg0::string)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								textColor: #000000FF
+								font: font_resource(751bc219-7d44-4179-9192-cd56b828c8d2)
+								{
+									file: "PT_Sans_Narrow.ttf"
+									size: 30
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}]
+						name: "CountryInput_Button"
+						visible: true
+						width: 300
+						height: 50
+						x: 290
+						y: 40
+						fillColor: #ADD8E6FF
+					}, 
+					GtfRectangle(e18df240-9b84-4079-966e-3e38f1954dd8)
+					{
+						features: feature_list [
+							Border(6cc7f16b-40df-4e9d-95cc-c22498ef5713)
+							{
+								borderThickness: 1
+								borderColor: #000000FF
+								borderStyle: 0
+							}]
+						children: children_list [
+							GtfLabel(b0be8573-817c-4ceb-8dde-66a4de48b54b)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Text"
+								visible: true
+								width: width@e18df240-9b84-4079-966e-3e38f1954dd8 (propref<int>)
+								height: height@e18df240-9b84-4079-966e-3e38f1954dd8 (propref<int>)
+								x: 0
+								y: 0
+								text: string_scriptedValue(695eb577-9f63-4833-9cfe-4458665f256c)
+								{
+									triggerList: trigger_list(f3364620-5fba-4a9c-b174-e9b66175f6c3)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(1aacb1d7-749e-4562-a7a6-5a4e235bdba0)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<string>(dd264458-4930-4dbc-bafd-c9e78927aecf)
+									{
+										script: "function()" \
+											"{	" \
+											"	if(dp:NavigationMenu:Search[0] == true && dp:NavigationMenu:City !=\"\")" \
+											"		dp:NavigationMenu:Search[1] = true" \
+											"		else" \
+											"		dp:NavigationMenu:City= \"\"" \
+											"		" \
+											"		dp:NavigationMenu:City " \
+											"}"
+									}
+									write: function<bool,string>(0718315e-eca9-4232-af93-831cddc55a2d)
+									{
+										script: "function(v:arg0::string)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								textColor: #000000FF
+								font: font_resource(3c53c8b1-eb72-451c-a05e-95227871dd4b)
+								{
+									file: "PT_Sans_Narrow.ttf"
+									size: 30
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}]
+						name: "CityInput_Button"
+						visible: true
+						width: 300
+						height: 50
+						x: 290
+						y: 110
+						fillColor: #ADD8E6FF
+					}, 
+					GtfRectangle(b7d6376f-d246-4e12-b20f-f5eaecee2529)
+					{
+						features: feature_list [
+							Border(dbf1a232-fd14-43f8-8a3b-1f5383b736dc)
+							{
+								borderThickness: 1
+								borderColor: #000000FF
+								borderStyle: 0
+							}]
+						children: children_list [
+							GtfLabel(ad74360b-ac06-4a48-b43d-e4b3a1515d57)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Text"
+								visible: true
+								width: width@b7d6376f-d246-4e12-b20f-f5eaecee2529 (propref<int>)
+								height: height@b7d6376f-d246-4e12-b20f-f5eaecee2529 (propref<int>)
+								x: 0
+								y: 0
+								text: string_scriptedValue(4bf9f299-fd1c-4254-8b01-d17de7058dab)
+								{
+									triggerList: trigger_list(16aeaa42-699c-431c-be77-118b615501a0)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(f228dded-e3c5-4764-98f2-7a7ca1272911)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<string>(65f4e1f9-4c1c-4d26-8265-3a3a52c04dd7)
+									{
+										script: "function()" \
+											"{" \
+											"	if(dp:NavigationMenu:Search[1] == true && dp:NavigationMenu:Street!=\"\")" \
+											"		dp:NavigationMenu:Search[2] = true" \
+											"		else" \
+											"		dp:NavigationMenu:Street =\"\"" \
+											"		" \
+											"		dp:NavigationMenu:Street" \
+											"}"
+									}
+									write: function<bool,string>(51a8d370-9c1b-4009-a62e-76e9d472cfd4)
+									{
+										script: "function(v:arg0::string)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								textColor: #000000FF
+								font: font_resource(d502695c-1982-4ee9-a99a-06978c3cd435)
+								{
+									file: "PT_Sans_Narrow.ttf"
+									size: 30
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}]
+						name: "StreetInput_Button"
+						visible: true
+						width: 300
+						height: 50
+						x: 290
+						y: 180
+						fillColor: #ADD8E6FF
+					}, 
+					GtfRectangle(e8479474-d339-4cf1-9ce5-bf73917e4181)
+					{
+						features: feature_list [
+							Border(1f7bea34-5234-4d31-9fc1-64185b26284b)
+							{
+								borderThickness: 1
+								borderColor: #000000FF
+								borderStyle: 0
+							}]
+						children: children_list [
+							GtfLabel(71c7d415-9dda-4d7e-ba92-616cc1b45f9f)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Text"
+								visible: true
+								width: width@e8479474-d339-4cf1-9ce5-bf73917e4181 (propref<int>)
+								height: height@e8479474-d339-4cf1-9ce5-bf73917e4181 (propref<int>)
+								x: 0
+								y: 0
+								text: string_scriptedValue(0b52ffaa-1bbc-48bc-86c8-7215eacf5ad7)
+								{
+									triggerList: trigger_list(c2f961c0-e1fb-422c-b1ab-1366f447ae89)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(0d018525-c4b2-4954-ad8e-46e03cbefddb)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<string>(2c34d9f3-c1b7-4206-8925-ec58335d8eb9)
+									{
+										script: "function()" \
+											"{" \
+											"	if(dp:NavigationMenu:Search[2] == true && dp:NavigationMenu:StreetNumber!=0)" \
+											"	dp:NavigationMenu:Search[3] = true" \
+											"	else" \
+											"	dp:NavigationMenu:StreetNumber = 0" \
+											"	" \
+											"	f:int2string(dp:NavigationMenu:StreetNumber)" \
+											"	" \
+											"	" \
+											"}"
+									}
+									write: function<bool,string>(b7dcc8e8-4629-4fd8-a8f8-ec45e624f0fa)
+									{
+										script: "function(v:arg0::string)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								textColor: #000000FF
+								font: font_resource(cee688ea-7b8b-4087-954d-bc44f969f981)
+								{
+									file: "PT_Sans_Narrow.ttf"
+									size: 30
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}]
+						name: "StreetNrInput_Button"
+						visible: true
+						width: 300
+						height: 50
+						x: 290
+						y: 250
+						fillColor: #ADD8E6FF
+					}, 
+					GtfLabel(b1671765-8734-4fd8-89d7-58e0d3384609)
+					{
+						features: feature_list [
+							TouchShortReleased(5f66beb1-99fc-43c3-9f6c-65f4b7280198)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(80e8be54-4457-4ee8-a0d1-6b2b6208a56f)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	fire ev:Navigation_CompoundEvents:start_searching()" \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(f3b03175-3317-44ad-bcec-715a1b804d2a)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list []
+						name: "StartSearching"
+						visible: true
+						width: 300
+						height: 50
+						x: 290
+						y: 300
+						text: string_scriptedValue(27e96346-bc2c-4788-958d-4c1437f1d6ea)
+						{
+							triggerList: trigger_list(d9aebad2-242d-4223-be4e-97d99207405b)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(4383a969-e0c7-41da-a1ce-7bf8c41eb59e)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<string>(21fe4f2a-b25a-40a6-b867-aa8a49605804)
+							{
+								script: "function()" \
+									"{" \
+									"	if(dp:NavigationMenu:Search[3]==true)" \
+									"	v:this.Searching = \"Touch for searching...\"" \
+									"	" \
+									"	v:this.Searching" \
+									"}"
+							}
+							write: function<bool,string>(141dc4ae-a77e-4bdb-b780-866e6c8dc610)
+							{
+								script: "function(v:arg0::string)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+						font: font_resource(2533a547-7660-4ae6-878e-31788f9171fa)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+						Searching: ""
+					}]
+				name: "Background"
+				visible: true
+				width: width@a136f97e-488d-49df-a35c-097368ad04e5 (propref<int>)
+				height: height@a136f97e-488d-49df-a35c-097368ad04e5 (propref<int>)
+				x: 1
+				y: 0
+				fillColor: #FFFFFF00
+			}]
+		name: "Container"
+		visible: true
+		width: 600
+		height: 350
+		x: 100
+		y: 100
+	}
+}

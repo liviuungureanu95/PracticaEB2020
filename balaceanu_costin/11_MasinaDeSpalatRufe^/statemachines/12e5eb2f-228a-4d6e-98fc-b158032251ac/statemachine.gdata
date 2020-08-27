@@ -1,0 +1,140 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_statemachine(12e5eb2f-228a-4d6e-98fc-b158032251ac)
+{
+	x: 0
+	y: 0
+	width: 301
+	height: 494
+	name: "Main"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions [
+		haptic_transition(61e62a69-f3a3-4e42-b324-7e90cab81b64)
+		{
+			action: function<void>(none)
+			target_state: @41816629-5ece-4cf2-b5ee-b6b91156b98c (objectref<haptic_dialog_state>)
+			source_dock: 0.758881F
+			target_dock: 0.7399123F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+			event: @70d0f455-2856-4dae-a6ff-fb6c9f4b9d4d (objectref<event>)
+			condition: function<bool>(none)
+		}]
+	internal_transitions: haptic_internal_transitions []
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(1b93faed-e0d7-4515-b412-ddb598fe73c2)
+		{
+			x: 116
+			y: 21
+			width: 100
+			height: 100
+			name: "EB"
+			entry_action: function<void>(3bf3617a-4850-4724-92dd-1da73b139ef0)
+			{
+				script: "function()" \
+					"{" \
+					"	fire_delayed 1000, ev:GoTo_M_FromEB()" \
+					"}"
+			}
+			exit_action: function<void>(none)
+			transitions: haptic_transitions [
+				haptic_transition(72248bc0-e624-4785-8e12-856e815e6138)
+				{
+					action: function<void>(none)
+					target_state: @41816629-5ece-4cf2-b5ee-b6b91156b98c (objectref<haptic_dialog_state>)
+					source_dock: 0.625F
+					target_dock: 0.875F
+					curveControlXOffset: 0
+					curveControlYOffset: 0
+					labelXOffset: 58
+					labelYOffset: 7
+					labelRotationAngle: 0
+					event: @2e402f2b-8893-4749-83ab-44a606d1e145 (objectref<event>)
+					condition: function<bool>(none)
+				}]
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (7ec1ba5d-e588-475f-841d-5c0178108c49)
+			priority_stack: priority_stack(none)
+		}, 
+		haptic_dialog_state(41816629-5ece-4cf2-b5ee-b6b91156b98c)
+		{
+			x: 116
+			y: 174
+			width: 100
+			height: 100
+			name: "PrincipalMENU"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions [
+				haptic_transition(bb2dc6ac-cf68-496b-9c5f-131f2629431c)
+				{
+					action: function<void>(none)
+					target_state: @c68e1e5e-c2bd-431d-86aa-62c741325d75 (objectref<haptic_dialog_state>)
+					source_dock: 0.6254023F
+					target_dock: 0.875F
+					curveControlXOffset: 0
+					curveControlYOffset: 0
+					labelXOffset: 47
+					labelYOffset: 10
+					labelRotationAngle: 0
+					event: @bda0e922-4873-478d-8048-a3ac00303ced (objectref<event>)
+					condition: function<bool>(none)
+				}]
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (de62d12f-5dc3-445a-9207-89369dd0b2b8)
+			priority_stack: priority_stack(none)
+		}, 
+		haptic_dialog_state(c68e1e5e-c2bd-431d-86aa-62c741325d75)
+		{
+			x: 116
+			y: 331
+			width: 100
+			height: 100
+			name: "Washing"
+			entry_action: function<void>(64f63673-8b27-411c-9db3-d52285c2f7ab)
+			{
+				script: "function()" \
+					"{" \
+					"	fire_delayed 5000, ev:GoTo_M()" \
+					"}"
+			}
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (8ed65c2f-e79f-4b6e-bb1d-649037e12a6f)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(3d56e049-72ba-41d7-9361-4f3c7f2db6e6)
+	{
+		x: 32
+		y: 34
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(4df88bc8-5c72-42c2-a842-d26225b90678)
+		{
+			action: function<void>(none)
+			target_state: @1b93faed-e0d7-4515-b412-ddb598fe73c2 (objectref<haptic_dialog_state>)
+			source_dock: 0.2134096F
+			target_dock: 0.8243542F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(588b3707-e293-4a04-90fa-08164b8b3ae8)
+	{
+	}
+}

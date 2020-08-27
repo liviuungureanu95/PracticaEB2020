@@ -1,0 +1,202 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(50d3ac83-0f1b-4193-b1b9-1171cdc8c06e)
+{
+	name: "11_View"
+	template: @6ed0fc89-f5fa-41df-8452-71b599053367 (objectref<GtfView_template>)
+	children: children_list [
+		GtfEllipse(32006b33-1b75-4f06-b21c-561d0328cf78)
+		{
+			features: feature_list [
+				TouchPressed(f684d752-f027-4a64-8e58-75f3250f7ea5)
+				{
+					touchPressed: function<bool,int,int,int,int>(d533d7a0-c70c-4b6e-a5c4-311caa564620)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:OpenHole()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(45e330ee-acec-408f-ace6-d8540de4de50)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "Hole"
+			visible: true
+			width: 435
+			height: 89
+			x: 178
+			y: 444
+			fillColor: #000000FF
+			arcWidth: 1
+			centralAngle: 360F
+			sectorRotation: 0F
+			whenOpenHole: conditional_script(b4f77e07-aecb-4a1f-b6b1-188749ffc1c0)
+			{
+				triggerList: trigger_list(da768b43-a4c7-4aaf-af5a-4f705992b68c)
+				{
+					script: "ev:OpenHole"
+				}
+				onTrigger: function<bool,bool>(9363853f-78dd-4f9c-b625-5d6c7151c993)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	match_event v:event = ev:OpenHole in" \
+						"	{" \
+						"		v:this.arcWidth = 0" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfContainer_template_instance(bf2387e2-89a2-4cf4-a81d-a19f8bf6118e)
+		{
+			name: "NextButton"
+			template: @8333bb03-38b5-4824-a70a-203d73d5b064 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 281
+			y: 154
+			width: 128
+			height: 55
+			text: "Next"
+			touchReleased: function<bool>(362d9be6-d345-4502-97cc-b79a01d308a0)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoToLevel_12()" \
+					"	false" \
+					"}"
+			}
+			font: font_resource(3124a853-8958-41c2-b9b8-619ace92e2b1)
+			{
+				file: "Joystick-5KjV.ttf"
+				size: 40
+			}
+			visible: visible@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+			touchable: touchable@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+		}, 
+		GtfImage(df476cec-4417-4371-8b02-d292088aa6c5)
+		{
+			features: feature_list [
+				ScaleMode(70bce2f3-ca53-4716-9fd0-7f5264f1f9e1)
+				{
+					scaleMode: 2
+				}]
+			children: children_list [
+				GtfParallelAnimation(39038413-747f-42fe-9286-7402def2fe49)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfFastStartS32(2e21c3b6-557d-4092-95fa-aeee4cf9b664)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Fast start curve 1"
+							enabled: true
+							delay: 0
+							duration: 1000
+							repeat: 1
+							alternating: false
+							relative: false
+							start: 4
+							end: 600
+							target: y@df476cec-4417-4371-8b02-d292088aa6c5 (propref<int>)
+						}]
+					name: "FallingDown"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(8a0675ab-fb66-47fd-bd12-c31d97e99c67)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(b53986d1-2f5e-4ea2-af6e-2efe8fd305d4)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(88cd920f-ee4a-49bc-ab22-10380dc5c7ed)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					openHole: conditional_script(73103568-5fd6-4f51-ba19-1d3c16a5bb5a)
+					{
+						triggerList: trigger_list(e3f9ad41-6307-49f3-828d-30011aa84635)
+						{
+							script: "ev:OpenHole"
+						}
+						onTrigger: function<bool,bool>(b7f2b1cb-3f94-4c67-9c2f-9ea19050f9ae)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	match_event v:event = ev:OpenHole in" \
+								"{" \
+								"	f:animation_play(v:this)" \
+								"}" \
+								"" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "Finn"
+			visible: true
+			width: 307
+			height: 548
+			x: 236
+			y: 5
+			image: image_resource(9dfc360b-6616-462d-8f7b-a27a1aa95538)
+			{
+				file: "finn.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(a89a0b24-b4b3-49db-82eb-d1a6660c8cc5)
+		{
+			features: feature_list [
+				MultiLine(6e083701-c54d-40d5-9679-2857ad8b6392)
+				{
+					lineOffset: 0
+					maxLineCount: 0
+				}]
+			children: children_list []
+			name: "Hint"
+			visible: true
+			width: 231
+			height: 153
+			x: 551
+			y: 13
+			text: "Where is the next button?"
+			textColor: #000000FF
+			font: @c686500e-f444-44ae-ad8a-5b5b3ef74343 (objectref<font>)
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+	hintForLevel: "The button is behind Finn. Make him dissappear. (There is a trap under him)"
+	backgroundColor: #B0E0E6FF
+	image: image@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<image>)
+	width: width@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	height: height@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	moveOver: moveOver@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<function<bool,int,int,int,int>>)
+	xLevelContainer: xLevelContainer@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	levelNumber: 11
+	colorationColor: colorationColor@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<color>)
+}

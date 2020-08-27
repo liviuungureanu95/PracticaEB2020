@@ -1,0 +1,370 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(3ee9ba53-7e9c-4dd4-b90e-ce0b4db36728)
+{
+	name: "T_MainMenu"
+	structure: GtfView(5791bc67-3a91-4c24-aa0b-34fbae23b98b)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfImage(9afe00b0-0966-416a-8d1b-e12254cc980b)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLabel(37bde8ff-7c4c-4680-96c0-1b7721df519c)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "CurrentDate"
+						visible: true
+						width: 150
+						height: 50
+						x: 10
+						y: 420
+						text: string_scriptedValue(9a732ec1-8426-4a21-89db-ff2d813c24c2)
+						{
+							triggerList: trigger_list(96ea48ca-00ca-4505-a014-986bce22a300)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(9e007428-3ca2-48ce-9543-e065f40c465d)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<string>(cd4c26b8-5f14-4656-b802-b9cf00381ef1)
+							{
+								script: "function()" \
+									"{" \
+									"	f:int2string(dp:StartMenu:date) + \"/\" + f:int2string(dp:StartMenu:month + 1) + \"/\" + f:int2string(dp:StartMenu:year)" \
+									"}"
+							}
+							write: function<bool,string>(29d5923b-5951-4e25-aa9b-fd17cfe6778a)
+							{
+								script: "function(v:arg0::string)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						textColor: #FFFFFFFF
+						font: font_resource(392d2991-e2e8-49e8-9249-16597bae6ef6)
+						{
+							file: "teen bd it.ttf"
+							size: 30
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}]
+				name: "Background"
+				visible: true
+				width: width@5791bc67-3a91-4c24-aa0b-34fbae23b98b (propref<int>)
+				height: height@5791bc67-3a91-4c24-aa0b-34fbae23b98b (propref<int>)
+				x: 0
+				y: -1
+				image: image_resource(e6c8275e-7aa1-433b-a2e0-b017e5f97556)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfContainer(c9708c25-e097-436e-9d7f-16445c63e71c)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "SearchButton"
+				visible: true
+				width: 150
+				height: 30
+				x: 330
+				y: 10
+			}, 
+			GtfLabel(f8f508f2-8eac-42b7-85d3-2cb73d2ec2f4)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "CurrentTime"
+				visible: true
+				width: 80
+				height: 50
+				x: 720
+				y: 10
+				text: string_scriptedValue(caaeb605-671c-4029-b294-4aff3ee79a2b)
+				{
+					triggerList: trigger_list(3ee5b0b2-659d-441a-b830-87ed048f538e)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(b1d29cef-45f5-4139-9ba1-9b92425a6354)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<string>(43bc3310-0886-4c20-a923-29a2d0aac434)
+					{
+						script: "function()" \
+							"{" \
+							"	//f:int2string(dp:StartMenu:hour + 3) + \":\" + f:int2string(dp:StartMenu:minutes)" \
+							"	f:int2string(dp:StartMenu:hour + 3) + \":\" + f:format_int(\"%.2i\", f:localtime_minute(f:system_time()))" \
+							"}"
+					}
+					write: function<bool,string>(49fa7c5e-f76b-479c-bfc3-82e524afb8c9)
+					{
+						script: "function(v:arg0::string)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				textColor: #FFFFFFFF
+				font: font_resource(c2a0c87e-a07d-49a8-897d-e2280fd3eba8)
+				{
+					file: "teen bd it.ttf"
+					size: 30
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}, 
+			GtfLabel(13bd1dd4-1689-4907-bf3c-d26b2a56577a)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "CurrentLocation"
+				visible: true
+				width: 120
+				height: 50
+				x: 670
+				y: 410
+				text: "Location"
+				textColor: #FFFFFFFF
+				font: font_resource(cd624a8c-fbc3-4ce6-8e8b-8b77775bfe7c)
+				{
+					file: "teen it.ttf"
+					size: 25
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}, 
+			GtfLabel(c62be928-24d3-4496-b718-004b2e74f42b)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "CurrentTemperature"
+				visible: true
+				width: 50
+				height: 50
+				x: 670
+				y: 435
+				text: "C"
+				textColor: #FFFFFFFF
+				font: font_resource(c537595d-d511-49d8-b81a-ebce17320edc)
+				{
+					file: "teen it.ttf"
+					size: 25
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}, 
+			GtfRectangle(e8541b60-a7b6-46d5-8fd0-acb235fd8c54)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfEllipse(d7a9ea6d-7119-4776-b579-45a299e184dc)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfParallelAnimation(2043662c-b698-4634-98e7-6773542a4493)
+							{
+								features: feature_list []
+								children: children_list [
+									GtfLinearInterpolationS32(44e6bed3-a253-43e5-a39b-91b445ec3ddf)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "Linear interpolation curve 2"
+										enabled: true
+										delay: 10
+										duration: 5000
+										repeat: 0
+										alternating: false
+										relative: false
+										start: 800
+										end: 0
+										target: x@d7a9ea6d-7119-4776-b579-45a299e184dc (propref<int>)
+									}]
+								name: "EllipseAnimation"
+								enabled: true
+								repeat: 1
+								alternating: false
+								scale: 1F
+								onPlay: function<void,int,bool>(35817b68-f677-4976-a6d1-04506f8913e0)
+								{
+									script: "function(v:animation_time::int, v:forward::bool)" \
+										"{" \
+										"" \
+										"}"
+								}
+								onPause: function<void,int>(02d0d475-441e-45de-b105-79b09c58e4f4)
+								{
+									script: "function(v:animation_time::int)" \
+										"{" \
+										"" \
+										"}"
+								}
+								onTerminate: function<void,int,int>(ded9cd8f-8b66-4009-b372-4365728992ea)
+								{
+									script: "function(v:animation_time::int, v:terminate::int)" \
+										"{" \
+										"" \
+										"}"
+								}
+								playAnimation: conditional_script(251b8093-4424-4e39-926f-2567eb07709b)
+								{
+									triggerList: trigger_list(ff04dd9f-ca16-4d7a-a8c9-fb8a2070f0ec)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(fb51b182-b967-4974-bb57-711b92421963)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	f:animation_play(v:this)" \
+											"	false" \
+											"}"
+									}
+								}
+							}]
+						name: "Ellipse"
+						visible: true
+						width: 15
+						height: 15
+						x: 0
+						y: -5
+						fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+						arcWidth: 0
+						centralAngle: 360F
+						sectorRotation: 0F
+					}]
+				name: "HorizontalLine"
+				visible: true
+				width: width@5791bc67-3a91-4c24-aa0b-34fbae23b98b (propref<int>)
+				height: 2
+				x: 0
+				y: 410
+				fillColor: #FAF0E6FF
+			}, 
+			GtfRectangle(5824f4ad-122e-4987-a213-81d1052ba0b5)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfEllipse(16dc4bc3-772c-4128-b0ff-8b32f7bc3548)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfParallelAnimation(05efd21d-5e0c-42cf-abed-0fd49bb6c75b)
+							{
+								features: feature_list []
+								children: children_list [
+									GtfLinearInterpolationS32(88fb5a0c-ab7f-4e8e-a2ae-f2cbd35206c1)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "Linear interpolation curve 2"
+										enabled: true
+										delay: 10
+										duration: 5000
+										repeat: 0
+										alternating: false
+										relative: false
+										start: 0
+										end: 800
+										target: x@16dc4bc3-772c-4128-b0ff-8b32f7bc3548 (propref<int>)
+									}]
+								name: "EllipseAnimation"
+								enabled: true
+								repeat: 1
+								alternating: false
+								scale: 1F
+								onPlay: function<void,int,bool>(590b7498-92f6-4fe6-9571-2de6752e3240)
+								{
+									script: "function(v:animation_time::int, v:forward::bool)" \
+										"{" \
+										"" \
+										"}"
+								}
+								onPause: function<void,int>(cd9bbcdf-b12b-4933-93c7-4ea4b125e583)
+								{
+									script: "function(v:animation_time::int)" \
+										"{" \
+										"" \
+										"}"
+								}
+								onTerminate: function<void,int,int>(3a17a917-2301-4721-8f0f-0e85c5703c12)
+								{
+									script: "function(v:animation_time::int, v:terminate::int)" \
+										"{" \
+										"" \
+										"}"
+								}
+								playAnimation: conditional_script(a6f14b12-0cd9-4485-810c-15274ab66dbc)
+								{
+									triggerList: trigger_list(4c28cf5e-1c81-4b94-8547-a99f4ed3062e)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(018aafdc-6fa6-41ef-87da-704562e61bf7)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	f:animation_play(v:this)" \
+											"	false" \
+											"}"
+									}
+								}
+							}]
+						name: "Ellipse"
+						visible: true
+						width: 15
+						height: 15
+						x: 0
+						y: -5
+						fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+						arcWidth: 0
+						centralAngle: 360F
+						sectorRotation: 0F
+					}]
+				name: "HorizontalLine2"
+				visible: true
+				width: width@5791bc67-3a91-4c24-aa0b-34fbae23b98b (propref<int>)
+				height: 2
+				x: 0
+				y: 70
+				fillColor: #FAF0E6FF
+			}]
+		name: "MainMenu_View"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+	}
+	image: image@9afe00b0-0966-416a-8d1b-e12254cc980b (propref<image>)
+	text: text@c62be928-24d3-4496-b718-004b2e74f42b (propref<string>)
+	"text 2": text@13bd1dd4-1689-4907-bf3c-d26b2a56577a (propref<string>)
+	textColor: textColor@f8f508f2-8eac-42b7-85d3-2cb73d2ec2f4 (propref<color>)
+	"textColor 2": textColor@13bd1dd4-1689-4907-bf3c-d26b2a56577a (propref<color>)
+	"textColor 3": textColor@c62be928-24d3-4496-b718-004b2e74f42b (propref<color>)
+	fillColor: fillColor@e8541b60-a7b6-46d5-8fd0-acb235fd8c54 (propref<color>)
+	"fillColor 2": fillColor@5824f4ad-122e-4987-a213-81d1052ba0b5 (propref<color>)
+	"textColor 4": textColor@37bde8ff-7c4c-4680-96c0-1b7721df519c (propref<color>)
+}

@@ -1,0 +1,103 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(088dae65-50d1-42eb-9808-eda3227e4677)
+{
+	name: "Assistance_menu_view"
+	template: @47101df3-2cb4-462c-8236-06e865e3862e (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(f6d796a1-1128-4a89-9325-af764170a05e)
+		{
+			name: "Food_button"
+			template: @e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: width@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			height: height@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			x: 150
+			y: 190
+			"x 2": "x 2"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			"y 2": "y 2"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			fillColor: #FFFFFF00
+			"x 3": "x 3"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			"y 3": "y 3"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			image: image_resource(8086f911-d24f-44cf-a270-0f94fe0405f2)
+			{
+				file: "fork.png"
+			}
+			buttonEvent: function<bool>(fde71178-6455-4cfc-bfc1-3a2d1bff2108)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoToFood()" \
+					"	dp:Food_order=\"\"" \
+					"	dp:Food_or_drink=true " \
+					"	false" \
+					"}"
+			}
+			visible: visible@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<bool>)
+		}, 
+		GtfContainer_template_instance(e889919b-3b75-447c-a262-2c299a29b36b)
+		{
+			name: "Drink_button"
+			template: @e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: width@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			height: height@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			x: 350
+			y: 190
+			"x 2": "x 2"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			"y 2": "y 2"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			fillColor: #FFFFFF00
+			"x 3": "x 3"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			"y 3": "y 3"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			image: image_resource(12ca30cd-c5f0-435f-8908-5dfddccd92d8)
+			{
+				file: "wine.png"
+			}
+			buttonEvent: function<bool>(2a6ddc34-e763-4a46-a738-6048d3c8ae1d)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoToDrink()" \
+					"	dp:Food_or_drink=false" \
+					"	dp:Drink_order=\"\"" \
+					"	dp:Drink_price=0;" \
+					"	false" \
+					"}"
+			}
+			visible: visible@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<bool>)
+		}, 
+		GtfContainer_template_instance(834cff1d-9645-40a7-8484-fd7261942cf4)
+		{
+			name: "Assistance_button"
+			template: @e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: width@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			height: height@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			x: 550
+			y: 190
+			"x 2": "x 2"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			"y 2": "y 2"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			fillColor: #FFFFFF00
+			"x 3": "x 3"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			"y 3": "y 3"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+			image: image_resource(f8340077-2eed-4831-af48-37acf02ba82a)
+			{
+				file: "air-hostess.png"
+			}
+			buttonEvent: function<bool>(12402c0d-eb7d-452a-9ae6-4ecc48f7b9bc)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:display_message()" \
+					"	fire_delayed 4000, ev:dismiss_message()" \
+					"	fire_delayed 4000, ev:GoToMenu()" \
+					"	false" \
+					"}"
+			}
+			visible: visible@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<bool>)
+		}]
+	image: image@47101df3-2cb4-462c-8236-06e865e3862e (propref<image>)
+	text: "How can I assist you?"
+	visible: visible@47101df3-2cb4-462c-8236-06e865e3862e (propref<bool>)
+	"visible 2": "visible 2"@47101df3-2cb4-462c-8236-06e865e3862e (propref<bool>)
+}

@@ -1,0 +1,414 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(96d7836a-465a-4888-af20-3cd3f828f318)
+{
+	name: "RadioView"
+	template: @e194e414-71c1-406e-a41c-22a1af233577 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer(9b27b042-41a4-4284-8555-efea0cee2960)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(efe4f6f9-0e02-45cc-9645-615009bc23db)
+				{
+					features: feature_list [
+						TouchPressed(c2ae0ecd-befb-46e9-8fb4-6ca0dab29c3f)
+						{
+							touchPressed: function<bool,int,int,int,int>(db1e3592-96b2-4fea-bf7f-a1d4cd2c4ba1)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:GoBack()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(023089c8-5b3d-4dcc-b588-19138e677036)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}, 
+						ScaleMode(0f827cf7-1d83-49f4-9e83-42d6f0680010)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "SongImage"
+					visible: true
+					width: 206
+					height: 207
+					x: 520
+					y: 68
+					image: @f428e388-4bbc-4d4c-9d3a-f14ede23b3fe (objectref<image>)
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+					SongImages: imagelist [
+						image_resource(b8329f34-3b4c-4c13-a673-a42b95539415)
+						{
+							file: "SongImage.png"
+						}, 
+						image_resource(e93d8083-10d6-4b51-adac-b0784738c3e0)
+						{
+							file: "ice cube.jpg"
+						}, 
+						image_resource(6536e8a3-fa55-4283-89fb-2e790b95f5b8)
+						{
+							file: "nas.jpg"
+						}, 
+						image_resource(205a95d6-15a7-4fb0-a60f-53ee86f37f75)
+						{
+							file: "saySo.jpg"
+						}, 
+						image_resource(445b1a33-7265-49f4-995e-7450dd6aeda2)
+						{
+							file: "igotu.jpg"
+						}, 
+						image_resource(6aa2d52c-b17d-4492-b208-7b5fc77dab4e)
+						{
+							file: "disk.jpg"
+						}]
+				}, 
+				GtfLabel(7e17960e-8dcf-4fd9-add3-9b4e0a5d923f)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "ArtistLabel"
+					visible: true
+					width: 146
+					height: 27
+					x: 552
+					y: 323
+					text: @7bc9ac1c-619a-4169-a356-800b57eebfc6 (objectref<string>)
+					textColor: #FFFFFFFF
+					font: font_resource(f6dadfef-40c7-4498-a1ce-18c08c83b5d0)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 16
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+					ArtistsList: stringlist ["Michael Jackson", "Ice Cube", "Nas", "Doja Cat", "Duke Dumont", "No Info"]
+				}, 
+				GtfLabel(c9018fa1-618a-43c7-a406-547af0dbaad8)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "SongLabel"
+					visible: true
+					width: 180
+					height: 20
+					x: 534
+					y: 301
+					text: @b0dcf99d-e94a-4fdf-8b4c-014286be8bb5 (objectref<string>)
+					textColor: #FFFFFFFF
+					font: font_resource(bc6b6c02-0ae5-4ebc-9288-df9d68a8499e)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 20
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+					SongsList: stringlist ["Slave to the rhytm", "It was a good day", "It ain't hard to tell", "Say So", "I got U", "No Info"]
+				}, 
+				GtfImage_template_instance(7d847a5b-4ec7-4bd0-b593-845a4a6b6b48)
+				{
+					name: "PlayButton"
+					template: @783dbbc3-0048-41b2-8249-a5078951fba2 (objectref<GtfImage_template>)
+					children: children_list []
+					x: 593
+					y: 358
+					image: @b7b909ac-a590-4231-990b-da28eba82230 (objectref<image>)
+					rotationAngleZ: rotationAngleZ@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<float>)
+					touchPressed: function<bool,int,int,int,int>(b4d34825-9c1b-4d91-b6af-109b04feeb7b)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.isPlaying=!v:this.isPlaying" \
+							"	if(v:this.isPlaying){" \
+							"		dp:currentPlayingState=v:this.images[1]" \
+							"		dp:LanguageSupport:CurrentPlayingMusic=dp:currentStation" \
+							"		}" \
+							"	else" \
+							"	{" \
+							"		dp:currentPlayingState=v:this.images[0]" \
+							"		if(dp:languageSelected==\"English\" )" \
+							"			dp:LanguageSupport:CurrentPlayingMusic=\"No music playing\"" \
+							"		if(dp:languageSelected==\"German\")" \
+							"			dp:LanguageSupport:CurrentPlayingMusic=\"Keine Musik spielt\"" \
+							"	}" \
+							"	" \
+							"		" \
+							"    false" \
+							"}"
+					}
+					width: 70
+					height: 70
+					visible: visible@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+					touchable: touchable@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+					touched: touched@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+					images: imagelist [
+						image_resource(d0c1b778-cc89-4c81-970f-6831840f51e8)
+						{
+							file: "play.png"
+						}, 
+						image_resource(27d1f6e7-81ad-43ab-a1e5-3c30db168b18)
+						{
+							file: "pause.png"
+						}]
+					isPlaying: @751d3b1b-8144-42de-a21f-5fb27827a2d9 (objectref<bool>)
+				}, 
+				GtfImage_template_instance(ae634852-fa0c-43e1-b81d-2b354e4a4b6e)
+				{
+					name: "PreviousButton"
+					template: @783dbbc3-0048-41b2-8249-a5078951fba2 (objectref<GtfImage_template>)
+					children: children_list []
+					x: 519
+					y: 376
+					image: image_resource(ebb77ca3-8439-4779-9166-051aa4d781d3)
+					{
+						file: "previous.png"
+					}
+					rotationAngleZ: rotationAngleZ@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<float>)
+					touchPressed: touchPressed@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<function<bool,int,int,int,int>>)
+					width: 50
+					height: 50
+					visible: visible@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+					touchable: touchable@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+					touched: touched@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+				}, 
+				GtfImage_template_instance(1ced79e5-60c2-4f6b-8f78-dd7391389732)
+				{
+					name: "NextButton"
+					template: @783dbbc3-0048-41b2-8249-a5078951fba2 (objectref<GtfImage_template>)
+					children: children_list []
+					x: 685
+					y: 376
+					image: image_resource(7587b149-08c6-4535-9987-d7585709dc45)
+					{
+						file: "next.png"
+					}
+					rotationAngleZ: rotationAngleZ@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<float>)
+					touchPressed: touchPressed@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<function<bool,int,int,int,int>>)
+					width: 50
+					height: 50
+					visible: visible@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+					touchable: touchable@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+					touched: touched@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+				}, 
+				GtfContainer_template_instance(b4e28039-87e0-4562-9780-fab51ac49623)
+				{
+					name: "ScrollableList"
+					template: @eaba225e-00c7-4e60-b3b0-9bc252ee0039 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 34
+					y: 80
+					StationsList: StationsList@eaba225e-00c7-4e60-b3b0-9bc252ee0039 (propref<stringlist>)
+					numItems: int_scriptedValue(b7d95c68-91fd-4a36-8f4e-bcb221fc763a)
+					{
+						triggerList: trigger_list(373f9366-fcf5-4feb-bfe7-7487732525b9)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(2d17e802-c013-4673-97e0-83c672814661)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<int>(e00bca51-a06f-4488-9bcc-eb1b10b6dc68)
+						{
+							script: "function()" \
+								"{" \
+								"	length v:this.StationsList" \
+								"}"
+						}
+						write: function<bool,int>(c0c74602-d9bf-4a0c-9f09-60a43654fb76)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					width: width@eaba225e-00c7-4e60-b3b0-9bc252ee0039 (propref<int>)
+					height: height@eaba225e-00c7-4e60-b3b0-9bc252ee0039 (propref<int>)
+					visible: visible@eaba225e-00c7-4e60-b3b0-9bc252ee0039 (propref<bool>)
+				}, 
+				GtfImage_template_instance(fbe0ec33-0e70-4e78-8899-defced3216ac)
+				{
+					name: "UpButton"
+					template: @783dbbc3-0048-41b2-8249-a5078951fba2 (objectref<GtfImage_template>)
+					children: children_list []
+					x: 369
+					y: 79
+					image: image_resource(fae285e8-ec46-4c19-8619-d6e1c1e6e3dd)
+					{
+						file: "UP.png"
+					}
+					rotationAngleZ: rotationAngleZ@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<float>)
+					touchPressed: function<bool,int,int,int,int>(ec189cca-d786-47a2-9671-4386a89e7cb1)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:scrollUp()" \
+							"    false" \
+							"}"
+					}
+					width: 65
+					height: 65
+					visible: visible@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+					touchable: touchable@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+					touched: touched@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+				}, 
+				GtfImage_template_instance(e875e987-b728-41c6-a345-bb3cdabf9c16)
+				{
+					name: "DownButton"
+					template: @783dbbc3-0048-41b2-8249-a5078951fba2 (objectref<GtfImage_template>)
+					children: children_list []
+					x: 369
+					y: 342
+					image: image_resource(f98aef00-7eed-4070-9486-b615c7fe0459)
+					{
+						file: "DOWN.png"
+					}
+					rotationAngleZ: rotationAngleZ@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<float>)
+					touchPressed: function<bool,int,int,int,int>(426a46ec-5d2e-4d55-8c84-e24b7ca98ffa)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:scrollDown()" \
+							"    false" \
+							"}"
+					}
+					width: 65
+					height: 65
+					visible: visible@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+					touchable: touchable@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+					touched: touched@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+				}]
+			name: "RadioStateContainer"
+			visible: true
+			width: 800
+			height: 480
+			x: 0
+			y: 0
+			listenStationPressed: conditional_script(38dedb13-5afe-4f27-af0f-26935be3352a)
+			{
+				triggerList: trigger_list(619b092a-d496-4498-8eeb-7a99563cbde0)
+				{
+					script: "ev:stationPressed"
+				}
+				onTrigger: function<bool,bool>(ca4accf9-5f32-455c-888f-7e1254f55dfa)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	" \
+						"	match_event v:e = ev:stationPressed in {" \
+						"		dp:\"musicPlaying \"=true" \
+						"		dp:currentPlayingState=v:this->PlayButton.images[1]" \
+						"		if(dp:\"musicPlaying \"){" \
+						"			dp:LanguageSupport:CurrentPlayingMusic = v:e.StationName" \
+						"			" \
+						"		}" \
+						"		if(v:e.StationName == \"Europa FM\"){" \
+						"			dp:currentStation=\"Europa FM\"" \
+						"			v:this->SongImage.image=v:this->SongImage.SongImages[1]" \
+						"			v:this->ArtistLabel.text = v:this->ArtistLabel.ArtistsList[1]" \
+						"			v:this->SongLabel.text=v:this->SongLabel.SongsList[1]" \
+						"			dp:lastPlayedSong=v:this->SongImage.SongImages[1]" \
+						"			dp:lastPlayedArtist=v:this->ArtistLabel.ArtistsList[1]" \
+						"			}" \
+						"		else" \
+						"			if(v:e.StationName == \"Magic FM\"){" \
+						"				dp:currentStation=\"Magic FM\"" \
+						"				v:this->SongImage.image=v:this->SongImage.SongImages[0]" \
+						"				v:this->ArtistLabel.text = v:this->ArtistLabel.ArtistsList[0]" \
+						"			v:this->SongLabel.text=v:this->SongLabel.SongsList[0]" \
+						"			dp:lastPlayedSong=v:this->SongImage.SongImages[0]" \
+						"			dp:lastPlayedArtist=v:this->ArtistLabel.ArtistsList[0]" \
+						"			}" \
+						"		else" \
+						"			if(v:e.StationName == \"Virgin Radio\"){	" \
+						"				dp:currentStation=\"Virgin Radio\"" \
+						"				v:this->SongImage.image=v:this->SongImage.SongImages[2]" \
+						"				v:this->ArtistLabel.text = v:this->ArtistLabel.ArtistsList[2]" \
+						"			v:this->SongLabel.text=v:this->SongLabel.SongsList[2]" \
+						"			dp:lastPlayedSong=v:this->SongImage.SongImages[2]" \
+						"			dp:lastPlayedArtist=v:this->ArtistLabel.ArtistsList[2]" \
+						"			}" \
+						"		else" \
+						"			if(v:e.StationName == \"Radio ZU\"){" \
+						"				dp:currentStation=\"Radio ZU\"" \
+						"				v:this->SongImage.image=v:this->SongImage.SongImages[3]" \
+						"				v:this->ArtistLabel.text = v:this->ArtistLabel.ArtistsList[3]" \
+						"				v:this->SongLabel.text=v:this->SongLabel.SongsList[3]" \
+						"				dp:lastPlayedSong=v:this->SongImage.SongImages[3]" \
+						"				dp:lastPlayedArtist=v:this->ArtistLabel.ArtistsList[3]" \
+						"			}" \
+						"		else" \
+						"			if(v:e.StationName == \"Kiss FM\"){" \
+						"				dp:currentStation=\"Kiss FM\"" \
+						"				v:this->SongImage.image=v:this->SongImage.SongImages[4]" \
+						"				v:this->ArtistLabel.text = v:this->ArtistLabel.ArtistsList[4]" \
+						"				v:this->SongLabel.text=v:this->SongLabel.SongsList[4]" \
+						"				dp:lastPlayedSong=v:this->SongImage.SongImages[4]" \
+						"				dp:lastPlayedArtist=v:this->ArtistLabel.ArtistsList[4]" \
+						"			}" \
+						"		else" \
+						"		{" \
+						"			v:this->SongImage.image=v:this->SongImage.SongImages[5]" \
+						"				v:this->ArtistLabel.text = v:this->ArtistLabel.ArtistsList[5]" \
+						"				v:this->SongLabel.text=v:this->SongLabel.SongsList[5]" \
+						"				dp:lastPlayedSong=v:this->SongImage.SongImages[5]" \
+						"				dp:lastPlayedArtist=v:this->ArtistLabel.ArtistsList[5]" \
+						"		}" \
+						"			" \
+						"		" \
+						"		" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfImage_template_instance(8b5a9f47-078d-489a-aed9-afd82d81a58a)
+		{
+			name: "BackButton"
+			template: @783dbbc3-0048-41b2-8249-a5078951fba2 (objectref<GtfImage_template>)
+			children: children_list []
+			x: 31
+			y: 16
+			image: image_resource(0533f47b-df10-49ae-b31c-e67d0583358e)
+			{
+				file: "back.png"
+			}
+			rotationAngleZ: rotationAngleZ@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<float>)
+			touchPressed: function<bool,int,int,int,int>(e4a969e2-77c3-47b3-9159-f0c878f36add)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:GoBack()" \
+					"	" \
+					"    false" \
+					"}"
+			}
+			width: 56
+			height: 55
+			visible: visible@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+			touchable: touchable@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+			touched: touched@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+		}]
+	text: string_element_reference(21cc7947-bcfb-4e10-bd94-e9b8a657356d)
+	{
+		index: 0
+		list: @1dc3d3cb-4b0b-48af-84ad-ea2469add107 (objectref<stringlist>)
+	}
+	x: x@e194e414-71c1-406e-a41c-22a1af233577 (propref<int>)
+	y: y@e194e414-71c1-406e-a41c-22a1af233577 (propref<int>)
+}

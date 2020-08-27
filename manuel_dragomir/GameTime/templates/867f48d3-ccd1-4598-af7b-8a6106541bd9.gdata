@@ -1,0 +1,69 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfEllipse_template(867f48d3-ccd1-4598-af7b-8a6106541bd9)
+{
+	name: "OptionButton"
+	structure: GtfEllipse(b0385200-5765-40ca-beed-83bda2d58ab0)
+	{
+		features: feature_list [
+			TouchShortReleased(796e9c84-325a-4d47-bae1-bc7a76713cf9)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(36125081-d2a3-4230-a711-87e1daff1f3f)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(9d3e3c56-0693-4711-aac8-e60a4297f003)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfLabel(f8afec13-36dd-4a00-b703-19744852c187)
+			{
+				features: feature_list [
+					MultiLine(4800b3f1-8fca-4929-aa70-931f63640493)
+					{
+						lineOffset: -5
+						maxLineCount: 0
+					}]
+				children: children_list []
+				name: "Text"
+				visible: true
+				width: width@b0385200-5765-40ca-beed-83bda2d58ab0 (propref<int>)
+				height: width@f8afec13-36dd-4a00-b703-19744852c187 (propref<int>)
+				x: 0
+				y: 0
+				text: "main menu"
+				textColor: #000000FF
+				font: font_resource(60086251-4f81-4928-b231-3bd5881dfe5c)
+				{
+					file: "Helvetica-Bold.ttf"
+					size: 12
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Button"
+		visible: true
+		width: height@b0385200-5765-40ca-beed-83bda2d58ab0 (propref<int>)
+		height: 49
+		x: 0
+		y: 0
+		fillColor: @3bc980bc-d4a8-4ef0-8816-66c46cf900f6 (objectref<color>)
+		arcWidth: 0
+		centralAngle: 360F
+		sectorRotation: 0F
+	}
+	height: height@b0385200-5765-40ca-beed-83bda2d58ab0 (propref<int>)
+	x: x@b0385200-5765-40ca-beed-83bda2d58ab0 (propref<int>)
+	y: y@b0385200-5765-40ca-beed-83bda2d58ab0 (propref<int>)
+	touchShortReleased: touchShortReleased@796e9c84-325a-4d47-bae1-bc7a76713cf9 (propref<function<bool,int,int,int,int>>)
+	text: text@f8afec13-36dd-4a00-b703-19744852c187 (propref<string>)
+	visible: visible@b0385200-5765-40ca-beed-83bda2d58ab0 (propref<bool>)
+}

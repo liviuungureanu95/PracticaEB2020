@@ -1,0 +1,63 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(daa278ba-3d7a-4829-a558-7ee4e17c3eba)
+{
+	name: "Button"
+	structure: GtfContainer(1c806e89-6532-477a-b4bd-1bf89a3f667c)
+	{
+		features: feature_list [
+			TouchPressed(0bd36350-996d-4204-8663-bb04d9b57bd8)
+			{
+				touchPressed: function<bool,int,int,int,int>(4eac9032-ed40-4cc1-bb53-2a7abba55fee)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(2c447eff-f1ad-4edf-847b-c78c0af1d0cc)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfImage(1639799e-2739-4416-9738-7d1bae7510ae)
+			{
+				features: feature_list [
+					ScaleMode(ea32481d-91fe-4ae2-b24a-a60170790680)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "Image"
+				visible: true
+				width: width@1c806e89-6532-477a-b4bd-1bf89a3f667c (propref<int>)
+				height: height@1c806e89-6532-477a-b4bd-1bf89a3f667c (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(b5387b28-3084-4489-95f8-a2f943e0ad5f)
+				{
+					file: "MenuItems\\RadioButton.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "ButtonContainer"
+		visible: true
+		width: 155
+		height: 155
+		x: 0
+		y: 0
+	}
+	image: image@1639799e-2739-4416-9738-7d1bae7510ae (propref<image>)
+	x: x@1c806e89-6532-477a-b4bd-1bf89a3f667c (propref<int>)
+	y: y@1c806e89-6532-477a-b4bd-1bf89a3f667c (propref<int>)
+	width: width@1c806e89-6532-477a-b4bd-1bf89a3f667c (propref<int>)
+	height: height@1c806e89-6532-477a-b4bd-1bf89a3f667c (propref<int>)
+	touchPressed: touchPressed@0bd36350-996d-4204-8663-bb04d9b57bd8 (propref<function<bool,int,int,int,int>>)
+}

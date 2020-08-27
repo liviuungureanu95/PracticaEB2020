@@ -1,0 +1,345 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(b9db78fc-a33c-483f-b129-435384dbaa8c)
+{
+	name: "VehicleMenu_View"
+	template: @b380d1bf-d029-45e1-aa1b-a53a19df7e62 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(18077d10-1aa0-4a59-98ea-373f4ff78186)
+		{
+			name: "BackButton"
+			template: @66713f45-2faf-4289-b7d7-da20b83b4fd3 (objectref<GtfContainer_template>)
+			children: children_list []
+			buttonEvent: function<bool>(c7ddd25a-e050-44b7-872d-807528aa7df1)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_back()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer(0b959530-e445-4b43-b9aa-8b7673229dda)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfContainer_template_instance(04d017f3-0784-4a3e-90a2-f534a14fb882)
+				{
+					name: "TripStatisticsButton"
+					template: @f6c12626-eb24-4a9e-be20-384f8af93859 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: x@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					y: y@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					touchShortReleased: function<bool,int,int,int,int>(eb56772a-83b3-4b85-a132-31a296b8fe7b)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonValue = v:this.buttonId" \
+							"	fire ev:Info_CompoundEvents:vehicle_choice(v:this.text)" \
+							"    false" \
+							"}"
+					}
+					selected: false
+					buttonId: buttonId@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					buttonValue: @258ff0d9-0c0b-4ca7-a0cb-de2386226ecd (objectref<int>)
+					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					Check: selected@04d017f3-0784-4a3e-90a2-f534a14fb882 (propref<bool>)
+					text: @3ef57e0b-67c4-4c15-b560-787f27eccf4c (objectref<string>)
+					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					image: image_resource(5ecd714b-55d9-4cde-9612-67cb4dc47e7b)
+					{
+						file: "trip_info_veh.png"
+					}
+					horizontalAlign: horizontalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					verticalAlign: verticalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+				}, 
+				GtfContainer_template_instance(be55071e-7658-41c3-88b3-7ed70dac847c)
+				{
+					name: "WheelPressureButton"
+					template: @f6c12626-eb24-4a9e-be20-384f8af93859 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: x@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					y: 60
+					touchShortReleased: function<bool,int,int,int,int>(009fbdd6-f8de-47a5-9683-a8c5b4fe46b9)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonValue = v:this.buttonId" \
+							"	fire ev:Info_CompoundEvents:vehicle_choice(v:this.text)" \
+							"    false" \
+							"}"
+					}
+					selected: false
+					buttonId: 1
+					buttonValue: @258ff0d9-0c0b-4ca7-a0cb-de2386226ecd (objectref<int>)
+					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					Check: selected@be55071e-7658-41c3-88b3-7ed70dac847c (propref<bool>)
+					text: @11beeb1a-4998-42c3-885f-d1729ac0bf29 (objectref<string>)
+					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					image: image_resource(f81e3b00-945a-46c1-875b-86515a2919e5)
+					{
+						file: "wheeel.png"
+					}
+					horizontalAlign: horizontalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					verticalAlign: verticalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+				}, 
+				GtfContainer_template_instance(e171a825-519f-4ac9-972f-05e9e666c781)
+				{
+					name: "OilInformationButton"
+					template: @f6c12626-eb24-4a9e-be20-384f8af93859 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: x@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					y: 120
+					touchShortReleased: function<bool,int,int,int,int>(e54e5633-b51e-4f21-b32d-bcb1bedfaf9e)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonValue = v:this.buttonId" \
+							"	fire ev:Info_CompoundEvents:vehicle_choice(v:this.text)" \
+							"    false" \
+							"}"
+					}
+					selected: false
+					buttonId: 2
+					buttonValue: @258ff0d9-0c0b-4ca7-a0cb-de2386226ecd (objectref<int>)
+					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					Check: selected@e171a825-519f-4ac9-972f-05e9e666c781 (propref<bool>)
+					text: @be86ee7c-7ff5-4fdd-b1b4-50858fe34ac6 (objectref<string>)
+					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					image: image_resource(c0a4a81c-7b28-4e4a-ada1-6716af886764)
+					{
+						file: "oil.png"
+					}
+					horizontalAlign: horizontalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					verticalAlign: verticalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+				}, 
+				GtfContainer_template_instance(8cfb37cb-0e6a-4223-a015-b97ee99e6827)
+				{
+					name: "ManualButton"
+					template: @f6c12626-eb24-4a9e-be20-384f8af93859 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 0
+					y: 180
+					touchShortReleased: function<bool,int,int,int,int>(652beb5e-9acb-4883-8a20-e355b19418d2)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this.buttonValue = v:this.buttonId" \
+							"	fire ev:Info_CompoundEvents:vehicle_choice(v:this.text)" \
+							"    false" \
+							"}"
+					}
+					selected: selected@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<bool>)
+					buttonId: 3
+					buttonValue: @258ff0d9-0c0b-4ca7-a0cb-de2386226ecd (objectref<int>)
+					fillColor: fillColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					Check: selected@8cfb37cb-0e6a-4223-a015-b97ee99e6827 (propref<bool>)
+					text: @eac36bd3-bf0e-488d-9f46-34d717b495ce (objectref<string>)
+					textColor: textColor@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<color>)
+					image: image_resource(fab4eaba-8821-47ce-8436-8318cf0ed3d9)
+					{
+						file: "manual.png"
+					}
+					horizontalAlign: horizontalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+					verticalAlign: verticalAlign@f6c12626-eb24-4a9e-be20-384f8af93859 (propref<int>)
+				}]
+			name: "VehicleContainer"
+			visible: true
+			width: 330
+			height: 350
+			x: 50
+			y: 100
+		}, 
+		GtfRectangle(8fe1536a-7839-4369-ab7a-3bf726a31d9e)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "VerticalBar"
+			visible: true
+			width: 1
+			height: 410
+			x: 404
+			y: 70
+			fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+		}, 
+		GtfLabel(cdf2a72c-502f-4073-8c70-85df584bcf45)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "ChangeChoice"
+			visible: false
+			width: 100
+			height: 100
+			x: 90
+			y: -1
+			text: ""
+			textColor: #FFFFFFFF
+			font: font_resource(0741dd24-6e57-482e-87bc-a69baa4df683)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+			changeChoice: conditional_script(6004032e-f775-4eda-ad16-6ec573b4b35a)
+			{
+				triggerList: trigger_list(1abd21d9-7347-4a49-8ade-001e95d38170)
+				{
+					script: "ev:Info_CompoundEvents:vehicle_choice" \
+						""
+				}
+				onTrigger: function<bool,bool>(0e2555e0-0e4a-4ad4-a3fb-59e8daf99b3a)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	match_event v:event = ev:Info_CompoundEvents:vehicle_choice in" \
+						"	{" \
+						"		v:this.text = v:event.choice" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfInstantiator(dadc7159-b06e-4b85-98d2-af586fc84ccb)
+		{
+			features: feature_list [
+				LayoutPolicyBox(e80c2321-8cbd-4dfc-9649-4df409588d1e)
+				{
+					gap: 2
+					layoutDirection: 1
+				}]
+			children: children_list [
+				GtfRectangle(5ff68058-8f17-40d7-aa84-f62e146bb657)
+				{
+					features: feature_list [
+						Border(f5adc07c-8282-428b-b939-3518cb2a9350)
+						{
+							borderThickness: 1
+							borderColor: #000000FF
+							borderStyle: 0
+						}, 
+						LineIndex(c4ec29bc-4bf0-4f68-8431-c250f2737d59)
+						{
+							lineIndex: 0
+						}]
+					children: children_list [
+						GtfLabel(07e47b5b-e41e-458a-926e-523f848fe7db)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text"
+							visible: true
+							width: width@5ff68058-8f17-40d7-aa84-f62e146bb657 (propref<int>)
+							height: height@5ff68058-8f17-40d7-aa84-f62e146bb657 (propref<int>)
+							x: 0
+							y: 0
+							text: "label"
+							textColor: #000000FF
+							font: font_resource(18452a59-89d5-458c-951a-3cbd228ebcd3)
+							{
+								file: "big_noodle_titling_oblique.ttf"
+								size: 30
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Background"
+					visible: true
+					width: width@dadc7159-b06e-4b85-98d2-af586fc84ccb (propref<int>)
+					height: 50
+					x: 0
+					y: 0
+					fillColor: #87CEEBFF
+					setText: conditional_script(a7ea68d1-b9fc-4606-b2f7-952944e5cff1)
+					{
+						triggerList: trigger_list(55570797-a993-4625-909d-663eb44e8ee9)
+						{
+							script: "v:this->^.StringList" \
+								"v:this.lineIndex" \
+								""
+						}
+						onTrigger: function<bool,bool>(aa769406-2962-41b1-be66-5b7a2439942f)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	v:this->Text.text = v:this->^.StringList[v:this.lineIndex]" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "VehicleInstantiator"
+			visible: true
+			width: 350
+			height: 350
+			x: 425
+			y: 100
+			numItems: 0
+			lineMapping: intlist []
+			StringList: @537af39f-c239-4a75-a186-3fba2ed2f827 (objectref<stringlist>)
+			changeList: conditional_script(9eee2e25-abfd-4c73-81f1-8a3a9b839d55)
+			{
+				triggerList: trigger_list(f3b37873-a27d-4697-bee9-cb5dd49ed3d7)
+				{
+					script: "ev:Info_CompoundEvents:vehicle_choice" \
+						""
+				}
+				onTrigger: function<bool,bool>(b856ce9b-2dce-426c-b105-5a4102aa292a)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	match_event v:event = ev:Info_CompoundEvents:vehicle_choice in" \
+						"	{" \
+						"		if(v:event.choice == \"Trip Statistics\" || v:event.choice == \"Informatii Calatorie\" || v:event.choice == \"Reisestatistik\")" \
+						"		{" \
+						"			dp:InfoMenu:ChosenList= dp:InfoMenu:TripList" \
+						"		}" \
+						"		" \
+						"		if(v:event.choice == \"Wheel Pressure\" || v:event.choice == \"Presiunea in roti\" || v:event.choice == \"Raddruck\")" \
+						"		{" \
+						"			dp:InfoMenu:ChosenList= dp:InfoMenu:WheelList" \
+						"		}" \
+						"		" \
+						"		if(v:event.choice == \"Oil Information\" || v:event.choice == \"Informatii Ulei\" || v:event.choice == \"Öli Informationen\")" \
+						"		{" \
+						"			dp:InfoMenu:ChosenList= dp:InfoMenu:OilList" \
+						"		}" \
+						"		" \
+						"		if(v:event.choice == \"Owner's Manual\" || v:event.choice == \"Cartea Masinii\" || v:event.choice == \"Bedienungsanleitung\")" \
+						"		{" \
+						"			dp:InfoMenu:ChosenList= dp:InfoMenu:ManualList" \
+						"		}" \
+						"		" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+			}
+			changeNumList: conditional_script(508c556b-4f9a-443d-bbba-d3096ce39fcf)
+			{
+				triggerList: trigger_list(edfe8b9d-fc3f-47bb-af84-36f6035a9daa)
+				{
+					script: "v:this.StringList" \
+						""
+				}
+				onTrigger: function<bool,bool>(662e80b4-2693-4d44-a177-763aad62e8f0)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	v:this.numItems = length v:this.StringList" \
+						"	false" \
+						"}"
+				}
+			}
+		}]
+	text: @46ed43ae-6252-4b28-b595-5625a36c5ee3 (objectref<string>)
+	textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+	font: font@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<font>)
+	image: @28a5929a-87d6-4473-9912-d62fd743c5c6 (objectref<image>)
+	fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+	x: x@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	y: y@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	height: height@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	width: width@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+}

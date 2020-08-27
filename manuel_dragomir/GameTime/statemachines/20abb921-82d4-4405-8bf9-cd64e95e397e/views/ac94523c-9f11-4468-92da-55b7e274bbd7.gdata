@@ -1,0 +1,239 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(ac94523c-9f11-4468-92da-55b7e274bbd7)
+{
+	name: "1_View"
+	template: @6ed0fc89-f5fa-41df-8452-71b599053367 (objectref<GtfView_template>)
+	children: children_list [
+		GtfImage(55ff903d-c114-4e83-a43e-054ed1d2309b)
+		{
+			features: feature_list [
+				ScaleMode(16041dae-0985-4a84-89b0-22164217aafa)
+				{
+					scaleMode: 1
+				}, 
+				Translation(6547951a-2c10-46e9-90f2-4b71b2687989)
+				{
+					translationEnabled: true
+					translationX: 0F
+					translationY: 0F
+					translationZ: 0F
+				}, 
+				Rotation(11a51a9e-8c01-404e-b09a-7a67e3a7e441)
+				{
+					rotationEnabled: true
+					rotationAngleX: 0F
+					rotationAngleY: 0F
+					rotationAngleZ: 0F
+				}, 
+				Scaling(a579562a-3900-41fc-9be9-503f2b5f8337)
+				{
+					scalingEnabled: true
+					scalingX: 100F
+					scalingY: 100F
+					scalingZ: 100F
+				}, 
+				Shearing(028b588a-d527-484d-8100-a1c7bcc89c24)
+				{
+					shearingEnabled: true
+					shearingXbyY: 0F
+					shearingXbyZ: 0F
+					shearingYbyX: 0F
+					shearingYbyZ: 0F
+					shearingZbyX: 0F
+					shearingZbyY: 0F
+				}, 
+				Pivot(13ba2ab2-39fd-41ba-9ec3-3f716a394a39)
+				{
+					pivotX: 400F
+					pivotY: 240F
+					pivotZ: 0F
+				}]
+			children: children_list [
+				GtfParallelAnimation(2508e246-3589-4dfa-9944-c3f3b84de403)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationFloat(7f057ede-d6bd-44d1-b22c-e7725b245f7f)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Linear interpolation curve 1"
+							enabled: true
+							delay: 0
+							duration: 1000
+							repeat: 0
+							alternating: true
+							relative: false
+							start: 0F
+							end: 80F
+							target: shearingXbyY@028b588a-d527-484d-8100-a1c7bcc89c24 (propref<float>)
+						}]
+					name: "RotatingArrows"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(5a721626-5bb2-43f9-bc59-d84d68067503)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(89eaf81c-b646-43f9-8129-0ec4b2f815e5)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(a10b9663-a4d9-45b5-bb9e-fbdf97e75407)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					startAnimation: conditional_script(b63e30b9-a095-4eb4-81e3-860a06d9a8f6)
+					{
+						triggerList: trigger_list(f75d0c47-c3ea-4b10-9a93-1814496185c6)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(722a5c47-fdd3-48d0-aaba-a8cbf720dd25)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	f:animation_play(v:this)" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "Background"
+			visible: true
+			width: 800
+			height: 480
+			x: 0
+			y: 0
+			image: image_resource(1df9e928-6c43-4141-ab0c-cf3708978dc2)
+			{
+				file: "arrows_pointing_center_without_background.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfContainer_template_instance(3c2162aa-ad1e-474f-86fe-31e693dfdbb3)
+		{
+			name: "NextButton"
+			template: @8333bb03-38b5-4824-a70a-203d73d5b064 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 284
+			y: 195
+			width: 187
+			height: 111
+			text: "Next"
+			touchReleased: function<bool>(0fe6d3fe-edb5-4c60-9f6b-0943c09266cc)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this->^->JustKiddingLabel.visible = !(v:this->^->JustKiddingLabel.visible)" \
+					"	v:this.ColorIndex += 1;" \
+					"	v:this.ColorBackground = v:this.ColorList[v:this.ColorIndex % 6]" \
+					"	false" \
+					"}"
+			}
+			font: font_resource(e54f93b5-1f92-4e16-b721-a242a39daf2d)
+			{
+				file: "Joystick-5KjV.ttf"
+				size: 40
+			}
+			visible: true
+			touchable: touchable@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+			ColorBackground: backgroundColor@ac94523c-9f11-4468-92da-55b7e274bbd7 (propref<color>)
+			ColorList: colorlist [#F5F5F5FF, #FFFF00FF, #1E90FFFF, #FF00FFFF, #00FFFFFF, #7FFF00FF]
+			ColorIndex: 1
+		}, 
+		GtfLabel(16f07dc6-dd40-4c9c-9a84-e076e97479d6)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Hint"
+			visible: true
+			width: 263
+			height: 54
+			x: 17
+			y: 5
+			text: "Starting easy"
+			textColor: #000000FF
+			font: @c686500e-f444-44ae-ad8a-5b5b3ef74343 (objectref<font>)
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(216b61be-8aee-4884-b484-899b6850c3a5)
+		{
+			name: "RealNextButton"
+			template: @8333bb03-38b5-4824-a70a-203d73d5b064 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 778
+			y: -1
+			width: 23
+			height: 13
+			text: "Next"
+			touchReleased: function<bool>(cccaacfb-137b-45ba-90a8-ddf7a992a13f)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoToLevel_2();" \
+					"	false" \
+					"}"
+			}
+			font: font_resource(7cd90336-accb-40de-af37-8ca0a1f28897)
+			{
+				file: "Joystick-5KjV.ttf"
+				size: 10
+			}
+			visible: true
+			touchable: touchable@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+		}, 
+		GtfLabel(61aa5853-c07f-4f13-8f90-5c645c32c50d)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "JustKiddingLabel"
+			visible: false
+			width: 157
+			height: 44
+			x: 6
+			y: 435
+			text: "Just kidding :D"
+			textColor: #000000FF
+			font: font_resource(9f19ac05-fdff-4751-b7df-34b752dc55e2)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}]
+	hintForLevel: "Look closely ! The answer is just around the corner."
+	backgroundColor: #F5F5F5FF
+	image: image_resource(d313cb48-77b8-41f9-8900-9cd7951e2749)
+	{
+		file: ""
+	}
+	width: width@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	height: height@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	moveOver: function<bool,int,int,int,int>(aef28404-5336-4d2e-9182-cc2390962bfd)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"    false" \
+			"}"
+	}
+	xLevelContainer: xLevelContainer@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	levelNumber: 1
+	colorationColor: colorationColor@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<color>)
+}

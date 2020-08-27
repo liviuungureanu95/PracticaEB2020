@@ -1,0 +1,460 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(5c34f2ac-c230-456d-aee2-897efe42ba24)
+{
+	name: "6_View"
+	template: @6ed0fc89-f5fa-41df-8452-71b599053367 (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(cedd835b-be70-436f-8c40-38b974dfbe31)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Hint"
+			visible: true
+			width: 301
+			height: 66
+			x: 36
+			y: 11
+			text: "Let's test your skills."
+			textColor: #000000FF
+			font: @c686500e-f444-44ae-ad8a-5b5b3ef74343 (objectref<font>)
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfRectangle(4bd7ff0b-b785-47d8-a14a-453e711f9843)
+		{
+			features: feature_list [
+				MoveOver(ac938bcf-b543-41ee-9f8c-f580d671706f)
+				{
+					moveOver: function<bool,int,int,int,int>(07ec4e56-9c6e-4e28-b767-9441f5c8bf3a)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:MazeError == false){" \
+							"		v:this->Ray.x = v:x - 33 - 5" \
+							"		v:this->Ray.y = v:y - 78 - 5" \
+							"	}	" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(9d5b00b6-e219-4361-b47a-10b743386b91)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfRectangle(74917821-ecc3-4a3a-bde5-8f14b4e06c4b)
+				{
+					features: feature_list [
+						MoveOver(f9170e01-7d35-4d98-b101-b0f1a396fce2)
+						{
+							moveOver: function<bool,int,int,int,int>(b8f9cc1b-31be-40c3-873b-75b416b1fd0a)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	dp:MazeError = false" \
+									"	v:this->^.moveOver(v:touchId, v:x, v:y, v:fingerId);" \
+									"	false" \
+									"}"
+							}
+						}, 
+						StateTouched(f8c4508b-20cf-466e-9e66-a5d492612fe8)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "StartPlan"
+					visible: true
+					width: 49
+					height: 59
+					x: 15
+					y: 308
+					fillColor: #98FB98FF
+				}, 
+				GtfEllipse(b5fbdef0-f358-49e9-85a5-0c666913bcdf)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Ray"
+					visible: true
+					width: 10
+					height: 10
+					x: 34
+					y: 334
+					fillColor: #FF0000FF
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+					onError: conditional_script(bda6f4c0-79c3-4144-ba02-a952040877bc)
+					{
+						triggerList: trigger_list(00804f96-1239-4f02-95bb-bf9db5e84ec8)
+						{
+							script: "dp:MazeError"
+						}
+						onTrigger: function<bool,bool>(38b3edf4-2b9f-4c51-b3aa-902f88f63149)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(dp:MazeError == true && v:this.visible == true){" \
+								"		dp:Tries += 1" \
+								"		v:this.x = 34;" \
+								"		v:this.y = 334;" \
+								"	}" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfRectangle(ea9b7814-1594-47f5-bf22-69d6d1dd09a5)
+				{
+					features: feature_list [
+						MoveIn(9bd83899-8f09-497c-bfde-9fecb30e3345)
+						{
+							moveIn: function<bool,int,int,int,int>(e1dcc90c-349f-4793-a275-524c7b903295)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(dp:MazeError == false){" \
+									"		v:this->^->^->NextButton.visible = true" \
+									"		v:this->^->Ray.visible = false" \
+									"	}" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(72ff9915-3c81-440c-b518-a78eb972e69b)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(4f8cca58-0347-468f-ad0d-b8c2bd76b144)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "EndLabel"
+							visible: true
+							width: 104
+							height: 91
+							x: 0
+							y: 0
+							text: "END"
+							textColor: #008000FF
+							font: font_resource(296cbdfe-cdaf-4dfa-a018-cc32072b25b2)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 40
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "EndPlan"
+					visible: true
+					width: 100
+					height: 90
+					x: 552
+					y: 13
+					fillColor: #FFA500FF
+				}, 
+				GtfRectangle_template_instance(2cf17132-6ea3-4c02-a4d7-a4948c94f15a)
+				{
+					name: "MazeRectangle 1"
+					template: @5cbd3546-e48f-427a-8d3c-f11ea3967820 (objectref<GtfRectangle_template>)
+					children: children_list []
+					width: 52
+					height: 315
+					x: 64
+					y: 51
+					visible: visible@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<bool>)
+					fillColor: fillColor@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<color>)
+				}, 
+				GtfRectangle_template_instance(a2239430-9512-444b-b247-4a43ba374ce1)
+				{
+					name: "MazeRectangle 2"
+					template: @5cbd3546-e48f-427a-8d3c-f11ea3967820 (objectref<GtfRectangle_template>)
+					children: children_list []
+					width: 260
+					height: 41
+					x: 64
+					y: 51
+					visible: visible@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<bool>)
+					fillColor: fillColor@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<color>)
+				}, 
+				GtfRectangle_template_instance(bbc34d2b-5d93-42b1-b456-caa7a60d9f8d)
+				{
+					name: "MazeRectangle 3"
+					template: @5cbd3546-e48f-427a-8d3c-f11ea3967820 (objectref<GtfRectangle_template>)
+					children: children_list []
+					width: 28
+					height: 106
+					x: 357
+					y: 49
+					visible: visible@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<bool>)
+					fillColor: fillColor@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<color>)
+				}, 
+				GtfRectangle_template_instance(44948d06-0ba6-4480-a83e-669beaffa3f0)
+				{
+					name: "MazeRectangle 4"
+					template: @5cbd3546-e48f-427a-8d3c-f11ea3967820 (objectref<GtfRectangle_template>)
+					children: children_list []
+					width: 225
+					height: 34
+					x: 160
+					y: 121
+					visible: visible@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<bool>)
+					fillColor: fillColor@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<color>)
+				}, 
+				GtfRectangle_template_instance(f44b1a2c-0e2c-4e3b-a0ef-efcd976fa9b7)
+				{
+					name: "MazeRectangle 5"
+					template: @5cbd3546-e48f-427a-8d3c-f11ea3967820 (objectref<GtfRectangle_template>)
+					children: children_list []
+					width: 106
+					height: 329
+					x: 429
+					y: 12
+					visible: visible@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<bool>)
+					fillColor: fillColor@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<color>)
+				}, 
+				GtfRectangle_template_instance(c092fcba-b25a-4934-9dab-27c9c3535383)
+				{
+					name: "MazeRectangle 6"
+					template: @5cbd3546-e48f-427a-8d3c-f11ea3967820 (objectref<GtfRectangle_template>)
+					children: children_list []
+					width: 34
+					height: 193
+					x: 160
+					y: 153
+					visible: visible@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<bool>)
+					fillColor: fillColor@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<color>)
+				}, 
+				GtfRectangle_template_instance(4333857f-0b94-45ea-ae61-97c9885485a0)
+				{
+					name: "MazeRectangle 7"
+					template: @5cbd3546-e48f-427a-8d3c-f11ea3967820 (objectref<GtfRectangle_template>)
+					children: children_list []
+					width: 215
+					height: 36
+					x: 217
+					y: 177
+					visible: visible@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<bool>)
+					fillColor: fillColor@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<color>)
+				}, 
+				GtfRectangle_template_instance(ecda3fe0-8faf-4e61-aed8-0187090d7c4c)
+				{
+					name: "MazeRectangle 8"
+					template: @5cbd3546-e48f-427a-8d3c-f11ea3967820 (objectref<GtfRectangle_template>)
+					children: children_list []
+					width: 221
+					height: 39
+					x: 167
+					y: 307
+					visible: visible@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<bool>)
+					fillColor: fillColor@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<color>)
+				}, 
+				GtfRectangle_template_instance(30493fa4-70e3-4aa5-b6cb-3744674d28bb)
+				{
+					name: "MazeRectangle 9"
+					template: @5cbd3546-e48f-427a-8d3c-f11ea3967820 (objectref<GtfRectangle_template>)
+					children: children_list []
+					width: width@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<int>)
+					height: height@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<int>)
+					x: 190
+					y: 237
+					visible: visible@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<bool>)
+					fillColor: fillColor@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<color>)
+				}, 
+				GtfRectangle_template_instance(8391824c-9e07-4415-9f25-6564d9a2e942)
+				{
+					name: "MazeRectangle 10"
+					template: @5cbd3546-e48f-427a-8d3c-f11ea3967820 (objectref<GtfRectangle_template>)
+					children: children_list []
+					width: 22
+					height: 116
+					x: 396
+					y: 256
+					visible: visible@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<bool>)
+					fillColor: fillColor@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<color>)
+				}, 
+				GtfRectangle_template_instance(6386d5cb-635f-45ff-8fe3-5a181b8d9c19)
+				{
+					name: "MazeRectangle 11"
+					template: @5cbd3546-e48f-427a-8d3c-f11ea3967820 (objectref<GtfRectangle_template>)
+					children: children_list []
+					width: 121
+					height: 45
+					x: 297
+					y: 237
+					visible: visible@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<bool>)
+					fillColor: fillColor@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<color>)
+				}, 
+				GtfRectangle_template_instance(46de2080-5d2e-4597-bac7-4f3d04a0b706)
+				{
+					name: "FakeMazeRectangle 1"
+					template: @4dcf81cc-8e94-4681-b511-7353f4a8d35d (objectref<GtfRectangle_template>)
+					children: children_list [
+						GtfRectangle_template_instance(8c68fac0-a605-43b7-92e9-39c4ff5ebd0c)
+						{
+							name: "FakeMazeRectangle 1"
+							template: @4dcf81cc-8e94-4681-b511-7353f4a8d35d (objectref<GtfRectangle_template>)
+							children: children_list []
+							x: -17
+							y: -87
+							height: 170
+							width: 18
+						}]
+					x: 552
+					y: 102
+					height: 230
+					width: width@4dcf81cc-8e94-4681-b511-7353f4a8d35d (propref<int>)
+				}]
+			name: "GameBoard"
+			visible: true
+			width: 680
+			height: 380
+			x: 33
+			y: 78
+			fillColor: #FFFFFF00
+		}, 
+		GtfContainer_template_instance(51498a0c-ef5a-4f1e-aa32-7b3e48c0a63b)
+		{
+			name: "NextButton"
+			template: @8333bb03-38b5-4824-a70a-203d73d5b064 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 707
+			y: 9
+			width: 79
+			height: 52
+			text: "Next"
+			touchReleased: function<bool>(71ca467a-f900-414b-ade9-7faf5e9b24c0)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoToLevel_7()" \
+					"	false" \
+					"}"
+			}
+			font: font_resource(eebebe72-3fb3-4ab5-a725-08d87733ae01)
+			{
+				file: "Joystick-5KjV.ttf"
+				size: 30
+			}
+			visible: false
+			touchable: touchable@8333bb03-38b5-4824-a70a-203d73d5b064 (propref<bool>)
+		}, 
+		GtfRectangle_template_instance(25c99a87-f75d-42a4-89cd-cb3e7102d40f)
+		{
+			name: "LeftBorder"
+			template: @5cbd3546-e48f-427a-8d3c-f11ea3967820 (objectref<GtfRectangle_template>)
+			children: children_list []
+			width: 14
+			height: 367
+			x: 34
+			y: 78
+			visible: visible@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<bool>)
+			fillColor: fillColor@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<color>)
+		}, 
+		GtfRectangle_template_instance(6da69947-1548-4f01-9e38-bf66254c0a5d)
+		{
+			name: "UpBorder"
+			template: @5cbd3546-e48f-427a-8d3c-f11ea3967820 (objectref<GtfRectangle_template>)
+			children: children_list []
+			width: 677
+			height: 14
+			x: 34
+			y: 78
+			visible: visible@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<bool>)
+			fillColor: fillColor@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<color>)
+		}, 
+		GtfRectangle_template_instance(48709af1-74e2-4e14-9c3a-6f4169ff27a5)
+		{
+			name: "DownBorder"
+			template: @5cbd3546-e48f-427a-8d3c-f11ea3967820 (objectref<GtfRectangle_template>)
+			children: children_list []
+			width: width@6da69947-1548-4f01-9e38-bf66254c0a5d (propref<int>)
+			height: height@6da69947-1548-4f01-9e38-bf66254c0a5d (propref<int>)
+			x: x@6da69947-1548-4f01-9e38-bf66254c0a5d (propref<int>)
+			y: 444
+			visible: visible@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<bool>)
+			fillColor: fillColor@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<color>)
+		}, 
+		GtfRectangle_template_instance(85f4af36-1b67-4105-85dd-411f9143a1c8)
+		{
+			name: "RightBorder"
+			template: @5cbd3546-e48f-427a-8d3c-f11ea3967820 (objectref<GtfRectangle_template>)
+			children: children_list []
+			width: width@25c99a87-f75d-42a4-89cd-cb3e7102d40f (propref<int>)
+			height: height@25c99a87-f75d-42a4-89cd-cb3e7102d40f (propref<int>)
+			x: 697
+			y: y@25c99a87-f75d-42a4-89cd-cb3e7102d40f (propref<int>)
+			visible: visible@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<bool>)
+			fillColor: fillColor@5cbd3546-e48f-427a-8d3c-f11ea3967820 (propref<color>)
+		}, 
+		GtfLabel(ec2f937f-2b21-470b-816e-92f95baa5298)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Tries"
+			visible: true
+			width: 64
+			height: 78
+			x: 723
+			y: 216
+			text: string_scriptedValue(4d6bee2b-6915-4080-97f0-348e95bc8fb4)
+			{
+				triggerList: trigger_list(62d56c3d-f342-484f-8968-929fa4740453)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(4b7b00bb-be9c-4a91-8ded-cd4d31040ecc)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(c72625d3-a3f8-487e-bc36-4428b02c5f41)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	f:int2string(dp:Tries)" \
+						"}"
+				}
+				write: function<bool,string>(1b33e388-8f3c-46bf-a25c-9ecc8444cdb6)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #000000FF
+			font: font_resource(30f991f9-c8a9-4e53-b8eb-035c6dcffb64)
+			{
+				file: "helvetica-rounded-bold-5871d05ead8de.otf"
+				size: 40
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+	hintForLevel: "Get the red button to the end."
+	backgroundColor: #ADD8E6FF
+	image: image@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<image>)
+	width: width@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	height: height@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	moveOver: moveOver@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<function<bool,int,int,int,int>>)
+	xLevelContainer: xLevelContainer@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<int>)
+	levelNumber: 6
+	colorationColor: colorationColor@6ed0fc89-f5fa-41df-8452-71b599053367 (propref<color>)
+}

@@ -1,0 +1,509 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(06da0385-7dcf-4767-b3a6-7aee22cd7176)
+{
+	name: "ButtonWithDropDown"
+	structure: GtfContainer(1ceff7bf-9e70-4395-89c4-043bab80294c)
+	{
+		features: feature_list [
+			MoveIn(ccdb6133-fcd7-4d60-8981-4442b82b728c)
+			{
+				moveIn: function<bool,int,int,int,int>(41dadd17-88ab-4f8a-8ab2-60c31c4173e3)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	f:animation_play(v:this->DropDownContainer->Drop)" \
+						"	v:this->BorderRectangle.visible=true" \
+						"	v:this->MoveInImage.visible=true" \
+						"	v:this->BackImageAnimated.visible=true" \
+						"	f:animation_play(v:this->BackImageAnimated->SpinAnimation)" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(5016f8c5-e44e-401d-acff-51e33aa8eb34)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			MoveOut(55291455-f3c8-4c95-80ab-bfc38c9cbecf)
+			{
+				moveOut: function<bool,int,int,int,int>(f35b1b06-8d34-4579-ad7d-df4368acfc58)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	f:animation_play(v:this->DropDownContainer->Pop)" \
+						"	v:this->BorderRectangle.visible=false" \
+						"	v:this->MoveInImage.visible=false" \
+						"	v:this->BackImageAnimated.visible=false" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchPressed(eac63f78-fd58-4028-831a-479df6a97ca0)
+			{
+				touchPressed: function<bool,int,int,int,int>(ca7e029d-2659-4e26-a7a0-13a67845098f)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}]
+		children: children_list [
+			GtfContainer(46ec8407-3f61-4444-afbe-2dba5d01206f)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfRectangle(abbc1bf8-9ebd-4182-a246-812ec0142e4d)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLabel(c3f68d07-9b70-487c-9847-6ac22149710a)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Label"
+								visible: true
+								width: 145
+								height: 33
+								x: -1
+								y: 121
+								text: "Radio"
+								textColor: #000000FF
+								font: font_resource(a90443ac-0c2c-4526-a836-9fb8c83d9769)
+								{
+									file: "PT_Sans_Narrow.ttf"
+									size: 25
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}]
+						name: "DropRectangle"
+						visible: true
+						width: 146
+						height: 155
+						x: 4
+						y: 0
+						fillColor: #FFFFFF84
+					}, 
+					GtfParallelAnimation(873140a3-3d3c-4434-895c-e9a22a1e9291)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLinearInterpolationS32(8ed0a08a-65af-4b73-9b25-f7e0ff738b41)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "DropRectangle"
+								enabled: true
+								delay: 0
+								duration: 100
+								repeat: 1
+								alternating: false
+								relative: false
+								start: int_scriptedValue(3d29d5db-551c-41f7-ac14-c3e2c04c36e4)
+								{
+									triggerList: trigger_list(addd3b81-f143-4f99-98a1-cf982a507158)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(f57c2928-cd35-4950-8fb5-dabe94cbd66c)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<int>(3ee55b46-ec63-4816-a3d8-e6f0df19a85e)
+									{
+										script: "function()" \
+											"{" \
+											"	v:this->^->^->DropRectangle.y" \
+											"}"
+									}
+									write: function<bool,int>(3e84b1e7-5cc5-4f11-84a0-6afc1325c7e5)
+									{
+										script: "function(v:arg0::int)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								end: int_scriptedValue(448575f8-3fcf-41e0-9a2a-578b735f3d5f)
+								{
+									triggerList: trigger_list(c43102a4-600a-4714-aa57-715572339015)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(6901d805-90c0-49ad-86c9-0566dbec8a4b)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<int>(c7f5bac1-a123-497d-a28f-012d192d6a59)
+									{
+										script: "function()" \
+											"{" \
+											"	v:this->^->^->DropRectangle.y +30" \
+											"}"
+									}
+									write: function<bool,int>(e70f4a35-3bdf-4c56-a9f1-c634ab19b6bb)
+									{
+										script: "function(v:arg0::int)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								target: y@46ec8407-3f61-4444-afbe-2dba5d01206f (propref<int>)
+							}]
+						name: "Drop"
+						enabled: true
+						repeat: 1
+						alternating: false
+						scale: 1F
+						onPlay: function<void,int,bool>(76768e3e-c2ee-474a-a8d3-616c0dcea3b7)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(9568e050-ef20-4e08-89f6-cc9e9f53455d)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(292327e5-b9f7-490b-a4d4-864c822bea23)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+					}, 
+					GtfParallelAnimation(f68922c1-7e0c-43a0-978e-c8a0ac768448)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLinearInterpolationS32(6d20969b-551e-4120-82f4-8db7ebec7850)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "PopBack"
+								enabled: true
+								delay: 0
+								duration: 100
+								repeat: 1
+								alternating: false
+								relative: false
+								start: int_scriptedValue(e674e5c4-a7a1-4fe9-8ca2-c8efa028a67b)
+								{
+									triggerList: trigger_list(ed09886d-1f23-4019-b3d8-67cd2802d82d)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(8653997a-b192-41b3-b80c-a9f41b9d37c0)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<int>(b7f9bfd6-c5b3-4759-bd9e-ec6122ca426e)
+									{
+										script: "function()" \
+											"{" \
+											"	v:this->^->^->DropRectangle.y +30" \
+											"}"
+									}
+									write: function<bool,int>(4f2e8657-f676-4aa8-a1b1-02f4f6bf5d59)
+									{
+										script: "function(v:arg0::int)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								end: int_scriptedValue(e9924ec9-c6f0-4386-bd1d-403691c764cc)
+								{
+									triggerList: trigger_list(509d7fe9-e7c5-471f-b877-6e9bcd9ad1d0)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(abf54e06-f579-4699-b9d3-7f61ca88d10d)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<int>(5b4ae9cc-0fc4-4859-b316-4ab738af0ec2)
+									{
+										script: "function()" \
+											"{" \
+											"	v:this->^->^->DropRectangle.y " \
+											"}"
+									}
+									write: function<bool,int>(d240ae2f-2163-4a8a-9fff-3ff9c76981f9)
+									{
+										script: "function(v:arg0::int)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								target: y@46ec8407-3f61-4444-afbe-2dba5d01206f (propref<int>)
+							}]
+						name: "Pop"
+						enabled: true
+						repeat: 1
+						alternating: false
+						scale: 1F
+						onPlay: function<void,int,bool>(de9efd83-f362-4101-bdb4-0ca51c4dc647)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(9e87a814-b2c4-4c85-b7d1-231533c58888)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(45ec7f5d-5728-470b-b48b-aa51b7f9b795)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+					}]
+				name: "DropDownContainer"
+				visible: true
+				width: 100
+				height: 100
+				x: 0
+				y: 0
+			}, 
+			GtfImage(f4e47b8a-03d2-49d0-b960-1b21a125ea4f)
+			{
+				features: feature_list [
+					ScaleMode(275b9f17-e7d0-45c4-9b13-988333f7df6d)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "ButtonImage"
+				visible: true
+				width: width@1ceff7bf-9e70-4395-89c4-043bab80294c (propref<int>)
+				height: height@1ceff7bf-9e70-4395-89c4-043bab80294c (propref<int>)
+				x: 0
+				y: -3
+				image: image_resource(a3ea3e39-b13d-4af9-bf28-3b363b1704f3)
+				{
+					file: "GPSButtons\\ReleasedSettingsButton.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfRectangle(96123f83-41db-44af-b078-36e87ffd8b64)
+			{
+				features: feature_list [
+					Border(95522c8c-ade7-4cef-86b1-2522f70be1a7)
+					{
+						borderThickness: 6
+						borderColor: #FFFFFFFF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "BorderRectangle"
+				visible: false
+				width: width@1ceff7bf-9e70-4395-89c4-043bab80294c (propref<int>)
+				height: height@1ceff7bf-9e70-4395-89c4-043bab80294c (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+			}, 
+			GtfImage(b556f567-d613-4720-b597-7b5f1c0bf384)
+			{
+				features: feature_list [
+					ScaleMode(6c02033f-313d-41af-b4e7-56f0937ca7ce)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "MoveInImage"
+				visible: false
+				width: 155
+				height: 155
+				x: 0
+				y: 0
+				image: image_resource(fa4d113a-3417-457e-a7bf-d4085563ccbc)
+				{
+					file: "GPSButtons\\ButtonBgPressed.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfContainer_template_instance(93a748b1-ca1f-40b2-a244-3954482265e5)
+			{
+				name: "BackImageAnimated"
+				template: @9578104d-2715-4e59-9018-391d3a1c31a5 (objectref<GtfContainer_template>)
+				children: children_list [
+					GtfParallelAnimation(9aee19b1-c00c-4269-8eaf-489d8a8e7fcf)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLinearInterpolationFloat(76ec3d7a-2956-49f8-8283-501de2d4e468)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Spin"
+								enabled: true
+								delay: 0
+								duration: 2500
+								repeat: 0
+								alternating: false
+								relative: false
+								start: 0F
+								end: -360F
+								target: rotationAngleZ@93a748b1-ca1f-40b2-a244-3954482265e5 (propref<float>)
+							}]
+						name: "SpinAnimation"
+						enabled: true
+						repeat: 1
+						alternating: false
+						scale: 1F
+						onPlay: function<void,int,bool>(46e84ce3-8887-4400-a9dc-de05e10e29d4)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(d58e43b1-9874-434d-a1f0-88d15cd7cd57)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(66e71dda-477c-4bae-830f-3cba7099ab03)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+					}]
+				x: 19
+				y: 13
+				height: 122
+				width: 117
+				image: image_resource(ec6819c7-a9c9-461f-a230-4878773bca4a)
+				{
+					file: ""
+				}
+				visible: false
+				pivotX: float_scriptedValue(d0d9a878-f9af-4939-8fb3-57dcbbf0b3cb)
+				{
+					triggerList: trigger_list(d1366432-8db0-442e-a7be-6d35f8ce4ecc)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(a8d2bfd5-fdf2-47a6-8c30-84b19ea387bb)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<float>(bc054444-5ed4-4966-8b39-6256da23a08d)
+					{
+						script: "function()" \
+							"{" \
+							"	f:int2float(v:this.width/2)" \
+							"}"
+					}
+					write: function<bool,float>(0512accf-a98b-4554-8fbc-55ca2f540013)
+					{
+						script: "function(v:arg0::float)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				pivotY: float_scriptedValue(8fce24f2-2653-49d8-9e4d-eb1b9639abd2)
+				{
+					triggerList: trigger_list(8c7e5d22-504b-428c-be63-778bb2e1ce21)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(dc6b8ead-09a9-4664-89ea-45aeb0cac558)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<float>(33dcd4f3-1cad-4dd9-a402-920e1fcadd64)
+					{
+						script: "function()" \
+							"{" \
+							"	f:int2float(v:this.height/2)" \
+							"}"
+					}
+					write: function<bool,float>(cf135848-3d4b-4522-98e0-19bea2a01f5d)
+					{
+						script: "function(v:arg0::float)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				rotationAngleZ: rotationAngleZ@9578104d-2715-4e59-9018-391d3a1c31a5 (propref<float>)
+			}]
+		name: "ButtonContainer"
+		visible: true
+		width: 155
+		height: 155
+		x: 0
+		y: 0
+	}
+	image: image@f4e47b8a-03d2-49d0-b960-1b21a125ea4f (propref<image>)
+	x: x@1ceff7bf-9e70-4395-89c4-043bab80294c (propref<int>)
+	y: y@1ceff7bf-9e70-4395-89c4-043bab80294c (propref<int>)
+	"image 2": image@b556f567-d613-4720-b597-7b5f1c0bf384 (propref<image>)
+	text: text@c3f68d07-9b70-487c-9847-6ac22149710a (propref<string>)
+	"x 2": x@b556f567-d613-4720-b597-7b5f1c0bf384 (propref<int>)
+	"y 2": y@b556f567-d613-4720-b597-7b5f1c0bf384 (propref<int>)
+	height: height@b556f567-d613-4720-b597-7b5f1c0bf384 (propref<int>)
+	width: width@b556f567-d613-4720-b597-7b5f1c0bf384 (propref<int>)
+	"image 3": image@93a748b1-ca1f-40b2-a244-3954482265e5 (propref<image>)
+	touchPressed: touchPressed@eac63f78-fd58-4028-831a-479df6a97ca0 (propref<function<bool,int,int,int,int>>)
+}

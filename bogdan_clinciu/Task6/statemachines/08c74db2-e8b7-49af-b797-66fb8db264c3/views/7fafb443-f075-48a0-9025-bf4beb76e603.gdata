@@ -1,0 +1,91 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(7fafb443-f075-48a0-9025-bf4beb76e603)
+{
+	name: "City_view"
+	template: @b0722ac3-9787-4c31-89f3-10718617ba60 (objectref<GtfView_template>)
+	children: children_list [
+		GtfRectangle(414a8bd9-c23f-4984-81e8-2e647276cc36)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(ce903f98-0b7b-4e8d-b99e-8235ff393cf7)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "CityInfoLabel"
+					visible: true
+					width: width@414a8bd9-c23f-4984-81e8-2e647276cc36 (propref<int>)
+					height: height@414a8bd9-c23f-4984-81e8-2e647276cc36 (propref<int>)
+					x: 0
+					y: 0
+					text: string_scriptedValue(7426d6c5-923a-4df2-be8f-96a2536f83e9)
+					{
+						triggerList: trigger_list(5f665538-74be-46fa-91b0-63e6d6360753)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(f2ba6a72-eaee-4964-b102-406852093818)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(c11076f7-ba77-43ce-8c13-053c052fcde6)
+						{
+							script: "function()" \
+								"{" \
+								"	dp:City" \
+								"}"
+						}
+						write: function<bool,string>(e882077c-029a-4e68-958e-4bbf8e504250)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	dp:City" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(b7da3dca-54ff-475e-9ee3-9532d9efa393)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 40
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "CiryInfoBG"
+			visible: true
+			width: 500
+			height: 75
+			x: 150
+			y: 200
+			fillColor: #696969FF
+		}, 
+		GtfContainer_template_instance(76e0428c-f2cd-4b11-9fe1-a92d534653a3)
+		{
+			name: "NextButton"
+			template: @8614a3a5-3cca-4639-8293-139b044f57c6 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Next"
+			width: 150
+			height: 75
+			x: 325
+			y: 340
+			ReleaseAction: function<bool>(7609bd6a-8f1e-4315-b1f3-7e3156d1a2ca)
+			{
+				script: "function()" \
+					"{" \
+					"	if(dp:City != \"\")" \
+					"	fire ev:StrNoSel()" \
+					"	false" \
+					"}"
+			}
+		}]
+	text: "City Selection"
+	width: 210
+}

@@ -1,0 +1,129 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(7333191c-1efc-47f7-9c7b-a35f85a543b7)
+{
+	name: "ScrollListButton"
+	structure: GtfContainer(92f4401c-3a04-4fca-a738-8249bad1e6a7)
+	{
+		features: feature_list [
+			TouchPressed(c7cf9351-eaa6-47ff-b184-9c9f06dfb046)
+			{
+				touchPressed: function<bool,int,int,int,int>(bba54d71-0d5b-43ed-aea7-55a0ff4dbf5e)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->Background->^.pressedAction()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(6f610151-e838-4179-b204-5afb150c475a)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			TouchShortReleased(11e4aa66-2ad9-4672-a9b2-ff6879ed5671)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(e81301c9-9f10-4e15-ab9f-bd7baf0ffaa7)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->Background->^.releasedAction()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			LineIndex(0280de37-b6b9-474c-83ce-a3132675eb6f)
+			{
+				lineIndex: 0
+			}]
+		children: children_list [
+			GtfRectangle(2e587a9f-72b7-48e8-a72c-b6830da8f045)
+			{
+				features: feature_list [
+					Border(acbb626a-981a-4c48-bad8-7f4d8d0689de)
+					{
+						borderThickness: 0
+						borderColor: #00FF00FF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@92f4401c-3a04-4fca-a738-8249bad1e6a7 (propref<int>)
+				height: height@92f4401c-3a04-4fca-a738-8249bad1e6a7 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: currentColor@92f4401c-3a04-4fca-a738-8249bad1e6a7 (propref<color>)
+			}, 
+			GtfLabel(49f78a97-bfd1-49af-9ace-ee5d7d0831d3)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "ButtonText"
+				visible: true
+				width: width@92f4401c-3a04-4fca-a738-8249bad1e6a7 (propref<int>)
+				height: height@92f4401c-3a04-4fca-a738-8249bad1e6a7 (propref<int>)
+				x: 0
+				y: 0
+				text: "label"
+				textColor: currentTextColor@92f4401c-3a04-4fca-a738-8249bad1e6a7 (propref<color>)
+				font: font_resource(1945d573-d903-4389-a291-c8cb731c1273)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "ButtonContainer"
+		visible: true
+		width: 318
+		height: 40
+		x: 0
+		y: 0
+		pressedAction: function<bool>(9a8a2549-70da-410e-8a59-cf9b617c088b)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.currentColor=v:this.pressedColor" \
+				"	v:this.currentTextColor = v:this.pressedTextColor" \
+				"	false" \
+				"}"
+		}
+		releasedAction: function<bool>(8fa802bb-04a9-4853-903d-25575097df36)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.currentColor=v:this.releasedColor" \
+				"	v:this.currentTextColor=v:this.releasedTextColor" \
+				"	false" \
+				"}"
+		}
+		pressedColor: #A9A9A9FF
+		releasedColor: #A9A9A9FF
+		currentColor: #A9A9A9FF
+		pressedTextColor: #A9A9A9FF
+		releasedTextColor: #A9A9A9FF
+		currentTextColor: #FFFFFFFF
+	}
+	pressedAction: pressedAction@92f4401c-3a04-4fca-a738-8249bad1e6a7 (propref<function<bool>>)
+	releasedAction: releasedAction@92f4401c-3a04-4fca-a738-8249bad1e6a7 (propref<function<bool>>)
+	x: x@92f4401c-3a04-4fca-a738-8249bad1e6a7 (propref<int>)
+	y: y@92f4401c-3a04-4fca-a738-8249bad1e6a7 (propref<int>)
+	width: width@92f4401c-3a04-4fca-a738-8249bad1e6a7 (propref<int>)
+	currentColor: currentColor@92f4401c-3a04-4fca-a738-8249bad1e6a7 (propref<color>)
+	pressedColor: pressedColor@92f4401c-3a04-4fca-a738-8249bad1e6a7 (propref<color>)
+	releasedColor: releasedColor@92f4401c-3a04-4fca-a738-8249bad1e6a7 (propref<color>)
+	borderThickness: borderThickness@acbb626a-981a-4c48-bad8-7f4d8d0689de (propref<int>)
+	borderColor: borderColor@acbb626a-981a-4c48-bad8-7f4d8d0689de (propref<color>)
+	text: text@49f78a97-bfd1-49af-9ace-ee5d7d0831d3 (propref<string>)
+	height: height@92f4401c-3a04-4fca-a738-8249bad1e6a7 (propref<int>)
+	lineIndex: lineIndex@0280de37-b6b9-474c-83ce-a3132675eb6f (propref<int>)
+	pressedTextColor: pressedTextColor@92f4401c-3a04-4fca-a738-8249bad1e6a7 (propref<color>)
+	releasedTextColor: releasedTextColor@92f4401c-3a04-4fca-a738-8249bad1e6a7 (propref<color>)
+	currentTextColor: currentTextColor@92f4401c-3a04-4fca-a738-8249bad1e6a7 (propref<color>)
+	touchPressed: touchPressed@c7cf9351-eaa6-47ff-b184-9c9f06dfb046 (propref<function<bool,int,int,int,int>>)
+}

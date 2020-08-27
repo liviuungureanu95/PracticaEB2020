@@ -1,0 +1,283 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(6ed0fc89-f5fa-41df-8452-71b599053367)
+{
+	name: "GameView"
+	structure: GtfView(40ce2856-063c-4e0a-8270-295ca52eaf05)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfImage(a6324f64-56c8-4ac7-8ec0-1a5046b8c9c9)
+			{
+				features: feature_list [
+					ScaleMode(4769da8a-14e2-4432-a0ca-60f4b4b1bbc8)
+					{
+						scaleMode: 1
+					}, 
+					Coloration(e7122708-ee73-4568-b531-a5b3ec226ae6)
+					{
+						colorationEnabled: true
+						colorationColor: #FFFFFFFF
+					}]
+				children: children_list []
+				name: "Image"
+				visible: true
+				width: width@40ce2856-063c-4e0a-8270-295ca52eaf05 (propref<int>)
+				height: height@40ce2856-063c-4e0a-8270-295ca52eaf05 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(75495aae-4304-4483-8c98-f859428cf045)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfRectangle(0df65875-a51c-4e8b-ad2b-3a7860a77a3c)
+			{
+				features: feature_list [
+					MoveOver(af82bbff-8488-4322-9bae-501e7db699f7)
+					{
+						moveOver: function<bool,int,int,int,int>(0d335360-78a9-4743-bfc0-e8b3e702088c)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(51fabb12-f3b2-4488-a1fa-5e38430de01e)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list [
+					GtfContainer(e16f0ce9-ef49-4b1f-880c-a9f21dad88d2)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfRectangle(29bfc78f-6de8-42b3-94ef-c9ec806c95e3)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Background"
+								visible: true
+								width: width@e16f0ce9-ef49-4b1f-880c-a9f21dad88d2 (propref<int>)
+								height: height@e16f0ce9-ef49-4b1f-880c-a9f21dad88d2 (propref<int>)
+								x: 0
+								y: 0
+								fillColor: #FFFFFF00
+							}, 
+							GtfLabel(6de3b59e-42fe-46c0-b3dc-ba57169b549e)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "LevelLabel"
+								visible: true
+								width: 273
+								height: height@e16f0ce9-ef49-4b1f-880c-a9f21dad88d2 (propref<int>)
+								x: 0
+								y: 0
+								text: "Level"
+								textColor: #FFFFFFFF
+								font: font_resource(c304a34d-cb39-4b0f-a415-dbf76f2f2203)
+								{
+									file: "Helvetica-Bold.ttf"
+									size: 80
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}, 
+							GtfLabel(71604c87-56ce-4716-b607-d59577bac2b8)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "NumberOfLevelLabel"
+								visible: true
+								width: 100
+								height: height@e16f0ce9-ef49-4b1f-880c-a9f21dad88d2 (propref<int>)
+								x: 253
+								y: 0
+								text: string_scriptedValue(9bfed594-b9f5-4c16-8ab3-c5386fba0e0d)
+								{
+									triggerList: trigger_list(c0315653-305e-4277-9233-252a04ea436e)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(e701d27a-dc6a-441c-8449-5906bb478b08)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<string>(c53c2082-06ef-40ce-b2ca-6b3cfa24f8f0)
+									{
+										script: "function()" \
+											"{" \
+											"	f:int2string(v:this->^->^->^.levelNumber)" \
+											"}"
+									}
+									write: function<bool,string>(8846df0a-903e-40ba-a80f-412f5a942a98)
+									{
+										script: "function(v:arg0::string)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								textColor: #FFFFFFFF
+								font: font@6de3b59e-42fe-46c0-b3dc-ba57169b549e (propref<font>)
+								horizontalAlign: 1
+								verticalAlign: 0
+							}]
+						name: "Container"
+						visible: @d6af35f5-0574-476d-bc02-69040b31f35d (objectref<bool>)
+						width: 357
+						height: 130
+						x: 213
+						y: 152
+					}]
+				name: "Background"
+				visible: true
+				width: width@40ce2856-063c-4e0a-8270-295ca52eaf05 (propref<int>)
+				height: height@40ce2856-063c-4e0a-8270-295ca52eaf05 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+			}, 
+			GtfRectangle(f6fc1287-0fac-4bdc-a4f6-2ced28e0b006)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "MenuBar"
+				visible: true
+				width: @519c98c8-9c84-4ed8-8361-25ae16ecbf5e (objectref<int>)
+				height: 85
+				x: @41c55bc9-8e43-4f1e-85fb-3f7d5d0771dd (objectref<int>)
+				y: 197
+				fillColor: #A9A9A9FF
+			}, 
+			GtfRectangle(12163830-29d0-415c-8f57-8f7479e011a6)
+			{
+				features: feature_list [
+					Gestures(cb911259-64e1-4037-bb12-1aa7bc78d269)
+					{
+					}, 
+					StateTouched(e9165570-fea0-4e2e-b511-8ba2883f5c30)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}, 
+					Path(29569fbf-13d4-419f-ac17-70095af25b38)
+					{
+						onPath: function<void,int>(e33eaba7-7028-4ea5-8121-ade3a7c1cf0f)
+						{
+							script: "function(v:gestureId::int)" \
+								"{" \
+								"	if(v:gestureId == 2){" \
+								"		fire ev:OpenOptionBarPopUp()" \
+								"	}" \
+								"}"
+						}
+						onPathStart: function<void>(075ae6d4-d871-454e-b956-f56c61bd86f5)
+						{
+							script: "function()" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPathNotRecognized: function<void>(c848ac0d-9d59-42d5-ab57-23c227c8cd9a)
+						{
+							script: "function()" \
+								"{" \
+								"" \
+								"}"
+						}
+						pathMinXBox: 50
+						pathMinYBox: 50
+					}]
+				children: children_list []
+				name: "MenuBarZone"
+				visible: true
+				width: 50
+				height: 129
+				x: 0
+				y: 179
+				fillColor: #FFFFFF00
+			}, 
+			GtfContainer_template_instance(cf3a8da8-a93a-4367-87c7-c8d712bee3e3)
+			{
+				name: "GiveUpButton"
+				template: @90ecc840-6650-4a09-8f49-e6749972a3c0 (objectref<GtfContainer_template>)
+				children: children_list []
+				x: 736
+				y: 416
+				hint: hint@90ecc840-6650-4a09-8f49-e6749972a3c0 (propref<string>)
+			}]
+		name: "View"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+		levelNumber: 0
+		onStart: conditional_script(cffd7e0d-16ed-4de4-9659-e9e215fa12ea)
+		{
+			triggerList: trigger_list(96946dff-1c8f-4d9e-b528-5b5fdd6b75c5)
+			{
+				script: "v:this.levelNumber" \
+					""
+			}
+			onTrigger: function<bool,bool>(84d2b2d6-8415-457c-97dd-5e9f37665e28)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	dp:Level = v:this.levelNumber" \
+					"	dp:NewGame = false" \
+					"	false" \
+					"}"
+			}
+		}
+		openOptionBar: conditional_script(8e16d56c-60bf-4450-a594-0d0bff889906)
+		{
+			triggerList: trigger_list(d31e7f7c-bf5b-4560-b9e6-861d336b90d4)
+			{
+				script: "ev:OpenOptionBarPopUp"
+			}
+			onTrigger: function<bool,bool>(56fc9b3a-b18f-45b2-8b58-2b1281ce593f)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	match_event v:event = ev:OpenOptionBarPopUp in" \
+					"{" \
+					"	// Configure the following parameters:" \
+					"//   - popup_stack - the state with dynamic state list" \
+					"//   - sm - the dynamic state machine" \
+					"//   - priority - priority of the dynamic state machine" \
+					"f:pushDynamicStateMachine(popup_stack:Main, sm:OptionBarPopUp, 0)" \
+					"" \
+					"}" \
+					"" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+	hintForLevel: hint@cf3a8da8-a93a-4367-87c7-c8d712bee3e3 (propref<string>)
+	backgroundColor: fillColor@0df65875-a51c-4e8b-ad2b-3a7860a77a3c (propref<color>)
+	image: image@a6324f64-56c8-4ac7-8ec0-1a5046b8c9c9 (propref<image>)
+	width: width@40ce2856-063c-4e0a-8270-295ca52eaf05 (propref<int>)
+	height: height@40ce2856-063c-4e0a-8270-295ca52eaf05 (propref<int>)
+	moveOver: moveOver@af82bbff-8488-4322-9bae-501e7db699f7 (propref<function<bool,int,int,int,int>>)
+	xLevelContainer: x@e16f0ce9-ef49-4b1f-880c-a9f21dad88d2 (propref<int>)
+	levelNumber: levelNumber@40ce2856-063c-4e0a-8270-295ca52eaf05 (propref<int>)
+	colorationColor: colorationColor@e7122708-ee73-4568-b531-a5b3ec226ae6 (propref<color>)
+}

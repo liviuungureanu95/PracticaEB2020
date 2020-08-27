@@ -1,0 +1,216 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(d69ba10a-5751-498f-9c9a-5ad91cd64d53)
+{
+	name: "MainMenuView"
+	template: @e194e414-71c1-406e-a41c-22a1af233577 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(2bd156ce-6b1d-4b4b-be17-ec096c5abcdf)
+		{
+			name: "GpsButton"
+			template: @06da0385-7dcf-4767-b3a6-7aee22cd7176 (objectref<GtfContainer_template>)
+			children: children_list []
+			image: image_resource(290fbd4b-7c84-40b4-b5e6-3443bac049d8)
+			{
+				file: "GPSButtons\\PressedGPSButton.png"
+			}
+			x: 324
+			y: 73
+			"image 2": image_resource(7188b39d-4ada-4dca-bcbe-7b87ffc21c28)
+			{
+				file: "GPSButtons\\ReleasedGPSButton.png"
+			}
+			text: string_element_reference(f54ec767-3f4f-46cc-ab27-17a885aa9ad9)
+			{
+				index: 2
+				list: @45bceb04-7370-468b-b0ff-60094ae3ca9f (objectref<stringlist>)
+			}
+			"x 2": "x 2"@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<int>)
+			"y 2": "y 2"@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<int>)
+			height: height@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<int>)
+			width: width@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<int>)
+			"image 3": "image 3"@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<image>)
+			touchPressed: function<bool,int,int,int,int>(c5b72f54-d2f9-47c7-a63c-e5d0b23d19b1)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:goToGPS()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(22bc99b8-1c63-42ff-a16c-41dd647c4665)
+		{
+			name: "DriveModeButton"
+			template: @06da0385-7dcf-4767-b3a6-7aee22cd7176 (objectref<GtfContainer_template>)
+			children: children_list []
+			image: image_resource(5a807d05-14d2-482e-b63d-883e4074a60e)
+			{
+				file: "GPSButtons\\ReleasedDrivingButton.png"
+			}
+			x: 325
+			y: 274
+			"image 2": image_resource(7ce9caf9-25cc-4a59-b04b-c2409072382b)
+			{
+				file: "GPSButtons\\PressedDrivingButton.png"
+			}
+			text: string_element_reference(4535c1df-e0b8-4841-b340-adcafcb2a580)
+			{
+				index: 5
+				list: @45bceb04-7370-468b-b0ff-60094ae3ca9f (objectref<stringlist>)
+			}
+			"x 2": "x 2"@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<int>)
+			"y 2": "y 2"@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<int>)
+			height: height@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<int>)
+			width: width@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<int>)
+			"image 3": "image 3"@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<image>)
+			touchPressed: function<bool,int,int,int,int>(b3e540c4-6831-4ba5-a305-9fa1bd15a02c)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:goToDrivingMode()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(9ec996c9-8de6-40e6-9253-3ea89b4d58a7)
+		{
+			name: "RevisionButton"
+			template: @06da0385-7dcf-4767-b3a6-7aee22cd7176 (objectref<GtfContainer_template>)
+			children: children_list []
+			image: image_resource(f2336c97-865d-4766-977d-ecb21f1b18a5)
+			{
+				file: "GPSButtons\\ReleasedRevisionButton.png"
+			}
+			x: 569
+			y: 73
+			"image 2": image_resource(2b9d7e4a-b824-44f9-875b-a963b1d5f43a)
+			{
+				file: "GPSButtons\\PressedRevisionButton.png"
+			}
+			text: string_element_reference(fcb06da2-7e98-4a73-a465-557aa53e212e)
+			{
+				index: 3
+				list: @45bceb04-7370-468b-b0ff-60094ae3ca9f (objectref<stringlist>)
+			}
+			"x 2": "x 2"@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<int>)
+			"y 2": "y 2"@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<int>)
+			height: height@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<int>)
+			width: width@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<int>)
+			"image 3": "image 3"@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<image>)
+			touchPressed: function<bool,int,int,int,int>(0dd2b20b-5fd8-4319-b2fb-d43554cc2d14)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:goToRevision()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(1761ae6a-200a-4e26-9b12-567034f15a24)
+		{
+			name: "RadioButton"
+			template: @06da0385-7dcf-4767-b3a6-7aee22cd7176 (objectref<GtfContainer_template>)
+			children: children_list []
+			image: image_resource(e1dcd0a6-c8bd-48ce-b00e-51788576204a)
+			{
+				file: "GPSButtons\\ReleasedRadioButton.png"
+			}
+			x: 79
+			y: 72
+			"image 2": image_resource(c52eaad0-5681-4e31-abeb-51ad9d3e2040)
+			{
+				file: "GPSButtons\\PressedRadioButton.png"
+			}
+			text: string_element_reference(f8ea8124-89d6-44a8-9d1f-fcc0f9806163)
+			{
+				index: 1
+				list: @45bceb04-7370-468b-b0ff-60094ae3ca9f (objectref<stringlist>)
+			}
+			"x 2": "x 2"@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<int>)
+			"y 2": "y 2"@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<int>)
+			height: 155
+			width: 155
+			"image 3": "image 3"@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<image>)
+			touchPressed: function<bool,int,int,int,int>(f12568fb-c384-45c3-95f3-dd973cb8d3a9)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:goToRadio()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(6c416b1d-cfa1-4840-a630-0922a6b4b6f5)
+		{
+			name: "SettingsButton"
+			template: @06da0385-7dcf-4767-b3a6-7aee22cd7176 (objectref<GtfContainer_template>)
+			children: children_list []
+			image: image@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<image>)
+			x: 80
+			y: 274
+			"image 2": "image 2"@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<image>)
+			text: string_element_reference(db9f3f9f-ccbf-4f8f-924c-4d132f631f7d)
+			{
+				index: 4
+				list: @45bceb04-7370-468b-b0ff-60094ae3ca9f (objectref<stringlist>)
+			}
+			"x 2": "x 2"@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<int>)
+			"y 2": "y 2"@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<int>)
+			height: height@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<int>)
+			width: width@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<int>)
+			"image 3": image_resource(68dfe53d-9363-4b9a-b49a-2d3d72ccf435)
+			{
+				file: "whiteCog.png"
+			}
+			touchPressed: function<bool,int,int,int,int>(31d42127-3fc9-465a-beb5-51946a817de6)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:goToSettings()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(28a7ed3f-e490-4929-a9e4-55ec834c53ca)
+		{
+			name: "PhonebookButton"
+			template: @06da0385-7dcf-4767-b3a6-7aee22cd7176 (objectref<GtfContainer_template>)
+			children: children_list []
+			image: image_resource(bbc83f58-2081-44aa-84c0-837bc2d8e5ef)
+			{
+				file: "GPSButtons\\ReleasedPhoneButton.png"
+			}
+			x: 572
+			y: 274
+			"image 2": image_resource(f32bde22-69ca-4a81-838a-11a3d993e169)
+			{
+				file: "GPSButtons\\PressedPhoneButton.png"
+			}
+			text: string_element_reference(fa7bc5fe-8e10-4f93-878a-864e51bbabc1)
+			{
+				index: 6
+				list: @45bceb04-7370-468b-b0ff-60094ae3ca9f (objectref<stringlist>)
+			}
+			"x 2": "x 2"@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<int>)
+			"y 2": "y 2"@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<int>)
+			height: height@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<int>)
+			width: width@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<int>)
+			"image 3": "image 3"@06da0385-7dcf-4767-b3a6-7aee22cd7176 (propref<image>)
+			touchPressed: function<bool,int,int,int,int>(5a3a62a2-f481-421e-850d-801feafc06ec)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:goToPhonebook()" \
+					"    false" \
+					"}"
+			}
+		}]
+	text: string_element_reference(b5a1fd2b-e792-4d7c-bd2e-d891cbc46a3d)
+	{
+		index: 0
+		list: @45bceb04-7370-468b-b0ff-60094ae3ca9f (objectref<stringlist>)
+	}
+	x: x@e194e414-71c1-406e-a41c-22a1af233577 (propref<int>)
+	y: y@e194e414-71c1-406e-a41c-22a1af233577 (propref<int>)
+}

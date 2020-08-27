@@ -1,0 +1,104 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(e194e414-71c1-406e-a41c-22a1af233577)
+{
+	name: "BasicView"
+	structure: GtfView(aa7d031f-f3e9-494b-aa6a-9c2930b44bd1)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfImage(0b357753-d3d4-42e6-8318-a1723c3499d7)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@aa7d031f-f3e9-494b-aa6a-9c2930b44bd1 (propref<int>)
+				height: height@aa7d031f-f3e9-494b-aa6a-9c2930b44bd1 (propref<int>)
+				x: 0
+				y: 0
+				image: @e4fcdcf3-0b04-43f7-b617-9b36d08e0a71 (objectref<image>)
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(2dd03697-f0f4-46f7-9f63-72b86d0526b3)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Title"
+				visible: true
+				width: width@aa7d031f-f3e9-494b-aa6a-9c2930b44bd1 (propref<int>)
+				height: 48
+				x: 0
+				y: 0
+				text: ""
+				textColor: #FFFFFFFF
+				font: font_resource(c9b885c2-051d-4afb-a04e-9e9e701ad82f)
+				{
+					file: "Vudotronic.otf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfLabel(649dc63f-0dc1-48ce-a148-62738d169816)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label 5"
+				visible: true
+				width: 111
+				height: 33
+				x: 684
+				y: 0
+				text: string_scriptedValue(a68e3535-79c2-4d06-bdc9-7264260b0600)
+				{
+					triggerList: trigger_list(90b027d6-c729-46ff-8be2-12cd79447014)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(dcae2cdf-9d9b-4543-b0ef-5d799f25c8a0)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<string>(e8def9ef-e2f5-412d-ba54-64d329dd1bfa)
+					{
+						script: "function()" \
+							"{" \
+							"		f:int2string(f:localtime_hour(f:system_time())+3) + \" : \" + f:format_int(\"%.2i\",f:localtime_minute(f:system_time()))" \
+							"}"
+					}
+					write: function<bool,string>(d42430f9-68d9-430a-aa7f-40b0d26efa8f)
+					{
+						script: "function(v:arg0::string)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				textColor: #FFFFFFFF
+				font: font_resource(4db8194b-acc7-4e29-9283-6b332dec0ee6)
+				{
+					file: "Vudotronic.otf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "View 1"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+	}
+	text: text@2dd03697-f0f4-46f7-9f63-72b86d0526b3 (propref<string>)
+	x: x@649dc63f-0dc1-48ce-a148-62738d169816 (propref<int>)
+	y: y@649dc63f-0dc1-48ce-a148-62738d169816 (propref<int>)
+}

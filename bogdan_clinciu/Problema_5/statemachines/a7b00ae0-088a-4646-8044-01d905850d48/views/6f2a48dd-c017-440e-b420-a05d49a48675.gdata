@@ -1,0 +1,52 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(6f2a48dd-c017-440e-b420-a05d49a48675)
+{
+	name: "Navigation_View"
+	template: @770fe946-3362-4dac-b06b-68b959057ebb (objectref<GtfView_template>)
+	children: children_list []
+	text: "Navigation"
+	image: image_resource(d751ad45-0380-4d1c-bc6e-d81bf7d53ae3)
+	{
+		file: "help.png"
+	}
+	touchShortReleased: function<bool,int,int,int,int>(c56790c8-97ed-4aa2-9140-824d2b074cbd)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"	v:this.\"fillColor 2\" = v:this.ReleasedC" \
+			"    false" \
+			"}"
+	}
+	"touchShortReleased 2": function<bool,int,int,int,int>(dc287aea-9bda-44d9-aa15-b196766c649e)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"	v:this.\"fillColor 3\" = v:this.ReleasedC" \
+			"    false" \
+			"}"
+	}
+	"image 2": image_resource(fedc1728-ab59-4844-a2b5-46da0e5bed90)
+	{
+		file: "media.png"
+	}
+	"touchShortReleased 3": function<bool,int,int,int,int>(e1a472d3-4915-4035-9891-3b1b54689930)
+	{
+		script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+			"{" \
+			"	v:this.\"fillColor 4\" = v:this.ReleasedC" \
+			"    false" \
+			"}"
+	}
+	"image 3": image_resource(f5cc3af8-4123-440a-9467-23d24551216d)
+	{
+		file: "radio.png"
+	}
+	TouchedC: TouchedC@770fe946-3362-4dac-b06b-68b959057ebb (propref<color>)
+	ReleasedC: ReleasedC@770fe946-3362-4dac-b06b-68b959057ebb (propref<color>)
+	fillColor: fillColor@770fe946-3362-4dac-b06b-68b959057ebb (propref<color>)
+	"fillColor 2": "fillColor 2"@770fe946-3362-4dac-b06b-68b959057ebb (propref<color>)
+	"fillColor 3": "fillColor 3"@770fe946-3362-4dac-b06b-68b959057ebb (propref<color>)
+	"fillColor 4": "fillColor 4"@770fe946-3362-4dac-b06b-68b959057ebb (propref<color>)
+	visible: true
+}

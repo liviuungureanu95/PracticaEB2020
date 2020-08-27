@@ -1,0 +1,143 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfImage_template(783dbbc3-0048-41b2-8249-a5078951fba2)
+{
+	name: "ImageButton"
+	structure: GtfImage(c19f1e1c-a584-4063-a6b2-fa9355215471)
+	{
+		features: feature_list [
+			ScaleMode(74ce8513-f4ac-4574-a5e5-83bc78f4431e)
+			{
+				scaleMode: 1
+			}, 
+			Rotation(2d136bbb-7cc3-4084-b5c5-b2527e27d71a)
+			{
+				rotationEnabled: true
+				rotationAngleX: 0F
+				rotationAngleY: 0F
+				rotationAngleZ: 0F
+			}, 
+			Scaling(640efcc9-54ea-4220-a8eb-0d7de3eb0f6f)
+			{
+				scalingEnabled: true
+				scalingX: 100F
+				scalingY: 100F
+				scalingZ: 100F
+			}, 
+			Shearing(45ce6458-cad9-4639-86ce-044f23d27c52)
+			{
+				shearingEnabled: true
+				shearingXbyY: 0F
+				shearingXbyZ: 0F
+				shearingYbyX: 0F
+				shearingYbyZ: 0F
+				shearingZbyX: 0F
+				shearingZbyY: 0F
+			}, 
+			Pivot(d06d1bbb-2f3d-4a71-9c8c-58998c07d07f)
+			{
+				pivotX: float_scriptedValue(7518bda8-9146-4c2b-bc7d-b93e8a662bcb)
+				{
+					triggerList: trigger_list(eca79900-089c-42f8-924d-3208b577900c)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(cc63d7a5-ab5b-4ef0-a46b-3102a4cf808e)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<float>(79fc3460-c4cb-47e4-b6b4-916002d8f95a)
+					{
+						script: "function()" \
+							"{" \
+							"	f:int2float(v:this.width/2)" \
+							"}"
+					}
+					write: function<bool,float>(9487b033-fa09-4ab6-b9d3-f37552b95892)
+					{
+						script: "function(v:arg0::float)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				pivotY: float_scriptedValue(90ed25a2-0092-4869-9350-802dc8928afc)
+				{
+					triggerList: trigger_list(5085d478-75a6-445b-9092-4f20df6c3bef)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(1a22d005-7f60-4557-8420-d8528a51ad52)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<float>(9b54aa41-cb29-4aa6-907f-904ce497e603)
+					{
+						script: "function()" \
+							"{" \
+							"	f:int2float(v:this.height/2)" \
+							"}"
+					}
+					write: function<bool,float>(543f279b-d73e-44ed-a7bb-d24db814d3f1)
+					{
+						script: "function(v:arg0::float)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				pivotZ: 0F
+			}, 
+			TouchPressed(79faea64-5334-4e56-936b-9d367864c8ad)
+			{
+				touchPressed: function<bool,int,int,int,int>(88e40c81-08a4-4a9c-b049-2163a2f0f454)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(ba25d2e1-9cb6-4ec8-8874-f206a70aacf7)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list []
+		name: "Image"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		image: image_resource(33a7f18a-e1ae-47a8-aed9-bdc7981773fd)
+		{
+			file: "drivewheel.png"
+		}
+		sRGB: false
+		horizontalAlign: 0
+		verticalAlign: 1
+	}
+	x: x@c19f1e1c-a584-4063-a6b2-fa9355215471 (propref<int>)
+	y: y@c19f1e1c-a584-4063-a6b2-fa9355215471 (propref<int>)
+	image: image@c19f1e1c-a584-4063-a6b2-fa9355215471 (propref<image>)
+	rotationAngleZ: rotationAngleZ@2d136bbb-7cc3-4084-b5c5-b2527e27d71a (propref<float>)
+	touchPressed: touchPressed@79faea64-5334-4e56-936b-9d367864c8ad (propref<function<bool,int,int,int,int>>)
+	width: width@c19f1e1c-a584-4063-a6b2-fa9355215471 (propref<int>)
+	height: height@c19f1e1c-a584-4063-a6b2-fa9355215471 (propref<int>)
+	visible: visible@c19f1e1c-a584-4063-a6b2-fa9355215471 (propref<bool>)
+	touchable: touchable@ba25d2e1-9cb6-4ec8-8874-f206a70aacf7 (propref<bool>)
+	touched: touched@ba25d2e1-9cb6-4ec8-8874-f206a70aacf7 (propref<bool>)
+}

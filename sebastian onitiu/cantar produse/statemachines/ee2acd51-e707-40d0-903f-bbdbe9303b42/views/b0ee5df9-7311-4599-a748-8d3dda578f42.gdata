@@ -1,0 +1,351 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(b0ee5df9-7311-4599-a748-8d3dda578f42)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(d83c199d-3849-4f25-9aba-99876b1039ab)
+		{
+			features: feature_list [
+				ScaleMode(15b458c6-6e89-4e3c-a2cf-b0f98198feb1)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "background copy 1"
+			visible: true
+			width: 480
+			height: 320
+			x: 1
+			y: 0
+			image: image_resource(49525d2c-c346-4ddc-8b36-5ab8865a67fa)
+			{
+				file: "background.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(cb56784d-7c76-48b9-8268-2b11bef02b27)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "text per/kg"
+			visible: true
+			width: 298
+			height: 40
+			x: 10
+			y: 15
+			text: string_scriptedValue(5999f430-d707-4e49-9ee8-48e0ce406746)
+			{
+				triggerList: trigger_list(0e2b5942-e4d2-4663-9d9f-d533bc629be9)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(b079f488-895d-4fea-9a10-1fa0a518c8a2)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(07394a67-1d63-4e1a-b884-08e62fcd06fd)
+				{
+					script: "function()" \
+						"{" \
+						"	" \
+						"	\"Pret per kg la \" + dp:produsele[dp:\"selected product\"] +\" \" + \"este de\" + \" \" " \
+						"	" \
+						"}"
+				}
+				write: function<bool,string>(249e89f9-3ee0-4e65-8c7b-f2e1cb780655)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #0000CDFF
+			font: font_resource(7d9e14bf-f324-4f34-99c5-e6abd8aef15d)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 20
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(4bc45b92-b416-4b23-a196-30aa1daf1e90)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "pret kg"
+			visible: true
+			width: 119
+			height: 42
+			x: 354
+			y: 12
+			text: string_scriptedValue(a9594e00-fdd6-4856-8978-4d6ede8e864f)
+			{
+				triggerList: trigger_list(0447d653-2a3a-4418-add6-7225c41e1676)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(09c6ca69-cdb6-4256-b26c-205d1d140966)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(06a1cf9e-0cc3-4b89-9417-25cd62c4b596)
+				{
+					script: "function()" \
+						"{" \
+						"f:int2string(f:round(dp:\"preturi/kg\"[dp:\"selected product\"])) + \" \" + \"RON\"" \
+						"	" \
+						"}"
+				}
+				write: function<bool,string>(4082453d-c01d-4090-a780-9a5d728cff5f)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #0000CDFF
+			font: font_resource(96fa9d22-b52c-42cc-b2f8-a2f2ec8ff53a)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 20
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(f70f245d-d4d8-4ff4-a0fc-56b68b889068)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "text final"
+			visible: true
+			width: 145
+			height: 39
+			x: 11
+			y: 67
+			text: "Pret final de plata"
+			textColor: #0000CDFF
+			font: font_resource(bd28694b-1224-4403-8f79-56575f34749d)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 25
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(b7142dac-1747-4dc7-8267-1690a323297c)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "pret final"
+			visible: true
+			width: 132
+			height: 48
+			x: 348
+			y: 57
+			text: string_scriptedValue(13704845-bb87-46e6-8022-f9ef7da75aef)
+			{
+				triggerList: trigger_list(10f9b99d-f3df-4c35-b161-844fb39d2d44)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(d72ac985-fcde-451f-bf51-37773698eb54)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(4e926f03-540d-4cbf-8847-f93cc6a1d8e2)
+				{
+					script: "function()" \
+						"{" \
+						"	f:float2string(dp:\"preturi/kg\"[dp:\"selected product\"]*dp:cantitate) + \" \" + \"RON\"" \
+						"}"
+				}
+				write: function<bool,string>(88c882df-0a59-40df-8aea-90acf15893bc)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #0000CDFF
+			font: font_resource(f6ac0463-690f-44aa-b21f-c51d5fcf5f58)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 25
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfImage(24d43ced-4e63-4e1a-bb82-cd5c34fce031)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfParallelAnimation(08c62a13-4414-4c2e-a2ce-a6600fa9d4a3)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationS32(c7f5cf89-413f-4200-9a6c-8a8b3db04a9a)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Linear interpolation curve 1"
+							enabled: true
+							delay: 0
+							duration: 803
+							repeat: 1
+							alternating: false
+							relative: false
+							start: 0
+							end: 200
+							target: y@24d43ced-4e63-4e1a-bb82-cd5c34fce031 (propref<int>)
+						}]
+					name: "Animation 1"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(05e79380-0164-4fba-8ae9-55d9a8df4e07)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(a098edcb-2821-4032-99e2-adbd436efee0)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(d2ac2043-8ae7-48a2-b99b-9cb278e275a5)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					"Conditional script 1": conditional_script(db5e2d18-aa45-4fde-8c82-f4d735e18570)
+					{
+						triggerList: trigger_list(671e7a9b-e6e0-4911-be76-eae0beef2410)
+						{
+							script: "dp:cantitate" \
+								""
+						}
+						onTrigger: function<bool,bool>(f2c87a4b-8b15-4b3f-a9b3-ae0a2c9c11ad)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	if(dp:cantitate != 0.00)" \
+								"	{v:this->^->^->\"kg animation\".visible = true ;" \
+								"		f:animation_play(v:this->^->\"Animation 1\")}" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "kg animation"
+			visible: false
+			width: 63
+			height: 63
+			x: 210
+			y: 92
+			image: image_resource(195eca72-0600-4357-b516-348dc51bbdbd)
+			{
+				file: "kg.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfContainer(9f446c54-cdc8-4cd5-a6fe-350875828a64)
+		{
+			features: feature_list [
+				TouchPressed(c5e79044-f72d-4f47-a210-c8fbc8757432)
+				{
+					touchPressed: function<bool,int,int,int,int>(cd044873-fb42-401f-b3a0-337087561e06)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goBack()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(8e5e1910-8d1b-4de4-8427-d599257c488d)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfEllipse(67f31f4f-4db3-48d1-9682-1d6599105589)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "forma"
+					visible: true
+					width: 56
+					height: 59
+					x: 13
+					y: 10
+					fillColor: #4682B4FF
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+				}, 
+				GtfLabel(22f23e79-390e-48fe-9aa2-0715af3a9508)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "text back"
+					visible: true
+					width: 47
+					height: 41
+					x: 16
+					y: 18
+					text: "Back"
+					textColor: #0000CDFF
+					font: font_resource(cabc5fd1-d4e9-44bf-9310-04475256dc99)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "buton back"
+			visible: true
+			width: 85
+			height: 71
+			x: 5
+			y: 246
+		}]
+	name: "View 1"
+	visible: true
+	width: 480
+	height: 320
+	x: 0
+	y: 0
+}

@@ -1,0 +1,54 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_dynamic_statemachine(8316a0d0-7985-433a-99d0-5820756dd7f9)
+{
+	x: 0
+	y: 0
+	width: 600
+	height: 400
+	name: "BulbFault_PopUp"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions []
+	internal_transitions: haptic_internal_transitions []
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(b3ecd7d0-bead-4421-9202-02bfc5ae58ca)
+		{
+			x: 178
+			y: 18
+			width: 100
+			height: 100
+			name: "BulbFault_Message"
+			entry_action: function<void>(none)
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (169d6b99-9645-4ede-8cf6-ccca51abe234)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(1941e53e-b300-4cf5-bca2-5b70fcd2e555)
+	{
+		x: 42
+		y: 41
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(b1310816-2ca8-4f4f-97b7-110b1f80e80e)
+		{
+			action: function<void>(none)
+			target_state: @b3ecd7d0-bead-4421-9202-02bfc5ae58ca (objectref<haptic_dialog_state>)
+			source_dock: 0.2554859F
+			target_dock: 0.7945259F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(none)
+}

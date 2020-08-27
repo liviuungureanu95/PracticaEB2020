@@ -1,0 +1,89 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832)
+{
+	name: "Button"
+	structure: GtfContainer(644d7114-bbc9-41b9-a0a5-f20c16a38893)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(bbc2051b-8f6e-4134-a262-84f2adcecc37)
+			{
+				features: feature_list [
+					TouchShortReleased(cfe55f27-4e59-49cb-b2d3-f7b3163ab44d)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(51287895-3c84-44f5-8596-7bf88b719f5a)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.buttonEvent()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(b87868ec-cd08-4d11-b743-6bd73134ddcd)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list []
+				name: "ButtonBackground"
+				visible: true
+				width: width@644d7114-bbc9-41b9-a0a5-f20c16a38893 (propref<int>)
+				height: height@644d7114-bbc9-41b9-a0a5-f20c16a38893 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #A9A9A9FF
+				buttonEvent: function<bool>(e795e8ff-e7e0-49ea-854c-b7dddf3c30ae)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}, 
+			GtfImage(3f7b787f-7cec-4b1d-abe2-4d876213f8ab)
+			{
+				features: feature_list [
+					ScaleMode(57707042-37df-469d-b390-38d579109799)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "ButtonImage"
+				visible: true
+				width: width@644d7114-bbc9-41b9-a0a5-f20c16a38893 (propref<int>)
+				height: height@644d7114-bbc9-41b9-a0a5-f20c16a38893 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(a1ea2695-72f1-4d89-a99a-c61651ed70fa)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "Button"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+	}
+	width: width@644d7114-bbc9-41b9-a0a5-f20c16a38893 (propref<int>)
+	height: height@644d7114-bbc9-41b9-a0a5-f20c16a38893 (propref<int>)
+	x: x@644d7114-bbc9-41b9-a0a5-f20c16a38893 (propref<int>)
+	y: y@644d7114-bbc9-41b9-a0a5-f20c16a38893 (propref<int>)
+	"x 2": x@bbc2051b-8f6e-4134-a262-84f2adcecc37 (propref<int>)
+	"y 2": y@bbc2051b-8f6e-4134-a262-84f2adcecc37 (propref<int>)
+	fillColor: fillColor@bbc2051b-8f6e-4134-a262-84f2adcecc37 (propref<color>)
+	"x 3": x@3f7b787f-7cec-4b1d-abe2-4d876213f8ab (propref<int>)
+	"y 3": y@3f7b787f-7cec-4b1d-abe2-4d876213f8ab (propref<int>)
+	image: image@3f7b787f-7cec-4b1d-abe2-4d876213f8ab (propref<image>)
+	buttonEvent: buttonEvent@bbc2051b-8f6e-4134-a262-84f2adcecc37 (propref<function<bool>>)
+	visible: visible@644d7114-bbc9-41b9-a0a5-f20c16a38893 (propref<bool>)
+}

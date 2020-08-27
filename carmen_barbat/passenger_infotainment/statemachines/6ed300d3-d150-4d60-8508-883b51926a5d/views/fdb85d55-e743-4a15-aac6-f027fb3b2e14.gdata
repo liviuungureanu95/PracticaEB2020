@@ -1,0 +1,88 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(fdb85d55-e743-4a15-aac6-f027fb3b2e14)
+{
+	name: "View"
+	template: @47101df3-2cb4-462c-8236-06e865e3862e (objectref<GtfView_template>)
+	children: children_list [
+		GtfImage(138a74ae-c225-4c09-aba0-e9688ed2a5dd)
+		{
+			features: feature_list [
+				ScaleMode(cccc071b-efdc-4334-a3b8-1ae87489bcf0)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "Image"
+			visible: true
+			width: 500
+			height: 470
+			x: 158
+			y: 10
+			image: image_scriptedValue(d293609d-84a4-4bc4-b4d9-b50f015fa0d8)
+			{
+				triggerList: trigger_list(5dec3ed5-ccad-4c0f-ba5f-67f22c73b55e)
+				{
+					script: "dp:View_index" \
+						"dp:Image_View"
+				}
+				onTrigger: function<bool,bool>(5a9bab8e-05b9-44b5-8f72-8d6415885673)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<image>(5c4ded95-fe03-452a-84f8-d4a8dfc4fc4f)
+				{
+					script: "function()" \
+						"{" \
+						"	dp:Image_View[dp:View_index]" \
+						"" \
+						"}"
+				}
+				write: function<bool,image>(b3649380-8c22-4bb1-b494-0e1397b2f0ea)
+				{
+					script: "function(v:arg0::image)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfContainer_template_instance(d37140f1-6230-4ae4-b544-fe1d7b8d62ad)
+		{
+			name: "BACK_button"
+			template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 6
+			y: 425
+			fillColor: #5F9EA0FF
+			text: "BACK"
+			buttonEvent: function<bool>(549663bb-cc1b-4637-be5e-4ff1a8905947)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoBack()" \
+					"	false" \
+					"}"
+			}
+			width: 100
+			height: 50
+			visible: visible@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<bool>)
+			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			"x 2": 0
+			"y 2": 0
+			"x 3": 0
+			"y 3": 0
+		}]
+	image: image@47101df3-2cb4-462c-8236-06e865e3862e (propref<image>)
+	text: text@47101df3-2cb4-462c-8236-06e865e3862e (propref<string>)
+	visible: false
+	"visible 2": false
+}

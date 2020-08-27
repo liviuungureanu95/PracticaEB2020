@@ -1,0 +1,204 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(591fbb20-dfb6-405f-86e2-065dfdf952c3)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(cb3d74f8-6ed9-4a55-9a3c-e0368479da1d)
+		{
+			features: feature_list [
+				Border(3f0ebc39-2ab9-470b-b813-3fbad4a1969d)
+				{
+					borderThickness: 3
+					borderColor: #FFA500FF
+					borderStyle: 0
+				}]
+			children: children_list [
+				GtfRectangle(2bb26b94-ac2d-4fcd-9062-57fe037e7284)
+				{
+					features: feature_list [
+						TouchPressed(beed9dd6-c3e0-4637-b08f-25a64bca3bd7)
+						{
+							touchPressed: function<bool,int,int,int,int>(0cad5e43-8588-453c-b729-86f141a4d699)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(2059e3e9-869a-4a53-a0fb-fe501fabd4e8)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "blockBackground"
+					visible: true
+					width: 800
+					height: 480
+					x: -141
+					y: -102
+					fillColor: #FFFFFF00
+				}, 
+				GtfLabel(ac2187c9-6e92-4e86-a383-26b74b531169)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "founded"
+					visible: true
+					width: 371
+					height: 60
+					x: 67
+					y: 27
+					text: string_element_reference(35ccb32e-61a9-4777-8f14-2f683296724e)
+					{
+						index: 0
+						list: @97a5d1e7-51e2-4cb9-b94f-99d40eb726aa (objectref<stringlist>)
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(14615c08-f86e-4708-b11a-07c845d7cab2)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(7365b67c-7735-4606-8d5f-62d5abab936e)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "confirmQuestion"
+					visible: true
+					width: 493
+					height: 67
+					x: 18
+					y: 85
+					text: string_element_reference(e572beab-f768-4cf3-aac7-409b5c05c9b2)
+					{
+						index: 1
+						list: @97a5d1e7-51e2-4cb9-b94f-99d40eb726aa (objectref<stringlist>)
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(f8c0462f-2d6a-495b-835d-df3599e80018)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(31f52031-2461-42c0-8092-58ee320b1afa)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "modelNumber"
+					visible: true
+					width: 100
+					height: 41
+					x: 216
+					y: 151
+					text: "SM-N986x"
+					textColor: #FFA500FF
+					font: font_resource(fd57f219-d020-4c5b-9d38-2c11916260ab)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(ded3d910-b23e-419f-9d17-8ff722994aae)
+				{
+					name: "NoButton"
+					template: @7333191c-1efc-47f7-9c7b-a35f85a543b7 (objectref<GtfContainer_template>)
+					children: children_list []
+					pressedAction: function<bool>(134af6ca-f4cf-45c5-81a7-96f68ab47fb8)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this.currentColor=v:this.pressedColor" \
+							"	v:this.currentTextColor = v:this.pressedTextColor" \
+							"	dp:deviceConnected=false" \
+							"	f:popDynamicStateMachine(popup_stack:Main, sm:BluetoothPopUpState)" \
+							"	false" \
+							"}"
+					}
+					releasedAction: releasedAction@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<function<bool>>)
+					x: 291
+					y: 201
+					width: 122
+					currentColor: #000000FF
+					pressedColor: #FFA500FF
+					releasedColor: #000000FF
+					borderThickness: 2
+					borderColor: #FFA500FF
+					text: string_element_reference(ca1ea4b4-7dbc-4d87-b474-0cb0b1713801)
+					{
+						index: 3
+						list: @97a5d1e7-51e2-4cb9-b94f-99d40eb726aa (objectref<stringlist>)
+					}
+					height: height@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<int>)
+					lineIndex: lineIndex@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<int>)
+					pressedTextColor: #000000FF
+					releasedTextColor: #FFA500FF
+					currentTextColor: #FFA500FF
+					touchPressed: touchPressed@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<function<bool,int,int,int,int>>)
+				}, 
+				GtfContainer_template_instance(8811a16b-dd41-4807-85c2-430cf590c550)
+				{
+					name: "YesButton"
+					template: @7333191c-1efc-47f7-9c7b-a35f85a543b7 (objectref<GtfContainer_template>)
+					children: children_list []
+					pressedAction: function<bool>(17bbad09-8c9c-40e6-8ff2-8a6e3aa0b2c2)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this.currentColor=v:this.pressedColor" \
+							"	v:this.currentTextColor = v:this.pressedTextColor" \
+							"	dp:deviceConnected=true" \
+							"	dp:LanguageSupport:deviceName=\"SM-N986\"" \
+							"	f:popDynamicStateMachine(popup_stack:Main, sm:BluetoothPopUpState)" \
+							"	" \
+							"	false" \
+							"}"
+					}
+					releasedAction: releasedAction@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<function<bool>>)
+					x: 104
+					y: 203
+					width: 122
+					currentColor: #000000FF
+					pressedColor: #FFA500FF
+					releasedColor: #000000FF
+					borderThickness: 2
+					borderColor: #FFA500FF
+					text: string_element_reference(c7caff64-95ca-412e-ac56-b696e3794cb6)
+					{
+						index: 2
+						list: @97a5d1e7-51e2-4cb9-b94f-99d40eb726aa (objectref<stringlist>)
+					}
+					height: height@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<int>)
+					lineIndex: lineIndex@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<int>)
+					pressedTextColor: #000000FF
+					releasedTextColor: #FFA500FF
+					currentTextColor: #FFA500FF
+					touchPressed: touchPressed@7333191c-1efc-47f7-9c7b-a35f85a543b7 (propref<function<bool,int,int,int,int>>)
+				}]
+			name: "ViewRectangle"
+			visible: true
+			width: 522
+			height: 277
+			x: 140
+			y: 101
+			fillColor: #000000FF
+		}]
+	name: "BluetoothView"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+}

@@ -1,0 +1,530 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(165daaa8-3c55-435a-a4aa-720dbf8c6f1b)
+{
+	features: feature_list []
+	children: children_list [
+		GtfContainer_template_instance(16b1448f-cc19-42df-a411-123b875a5d77)
+		{
+			name: "TEMPLATE FOR VIEW ac 1"
+			template: @dce1fc75-951c-461b-91d3-24b5a5f79e77 (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfImage(7a079167-bc3a-46bc-bb96-d3b418fad5e0)
+				{
+					features: feature_list [
+						ScaleMode(19ba502d-48b9-4f60-9c6b-d644331a90cd)
+						{
+							scaleMode: 1
+						}]
+					children: children_list [
+						GtfImage(19537bbd-19cd-4f8a-978c-0e6fc56db823)
+						{
+							features: feature_list [
+								ScaleMode(cf5c3563-8dcc-40a7-a067-c7971e0c23ca)
+								{
+									scaleMode: 1
+								}, 
+								TouchPressed(a60d03c9-9d76-41fa-8a9d-cca157217caf)
+								{
+									touchPressed: function<bool,int,int,int,int>(c66d1d4d-09cb-4e77-a518-1740f953a6d4)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	" \
+											"	 if(v:this.turn_on == true)" \
+											"	 {" \
+											"	 	v:this->^->^->\"container animation\".visible = true" \
+											"    	v:this.turn_on = false;" \
+											"    	v:this->^->^->\"controls for heat\".visible = true" \
+											"    	" \
+											"    }" \
+											"    else" \
+											"    {" \
+											"    	v:this->^->^->\"container animation\".visible = false" \
+											"    	v:this.turn_on = true;" \
+											"    	v:this->^->^->\"controls for heat\".visible = false" \
+											"    	" \
+											"    }" \
+											"    false" \
+											"}"
+									}
+								}, 
+								StateTouched(264dfd50-9bf0-4655-8118-febc1a3d2af8)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list []
+							name: "turn_on_button"
+							visible: true
+							width: 100
+							height: 57
+							x: -92
+							y: -53
+							image: image_scriptedValue(44006509-9586-4e7b-970d-c195c6555a18)
+							{
+								triggerList: trigger_list(6fc035da-a726-48ff-8dfd-0a809882ca0d)
+								{
+									script: "v:this.turn_on" \
+										"dp:redoff" \
+										"dp:\"green on\"" \
+										""
+								}
+								onTrigger: function<bool,bool>(38b60cb2-a933-4923-b155-988ca1992abd)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<image>(6fc6a9cb-4f69-4bbf-9038-5f56bc680ede)
+								{
+									script: "function()" \
+										"{" \
+										"	if(v:this.turn_on == true)" \
+										"	{" \
+										"		dp:redoff" \
+										"	}" \
+										"	else" \
+										"	{" \
+										"		dp:\"green on\"" \
+										"	}" \
+										"" \
+										"}"
+								}
+								write: function<bool,image>(65af36a1-6ee5-4cdd-9a8c-4507eb39e076)
+								{
+									script: "function(v:arg0::image)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+							turn_on: true
+						}]
+					name: "steering wheel"
+					visible: true
+					width: 379
+					height: 353
+					x: 109
+					y: 224
+					image: image_resource(be9ee75f-e0db-4b71-ba9f-cc102addb41e)
+					{
+						file: "steering-wheel (1).png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfContainer(2cac5082-8dd5-42c9-ac79-3a0fd83b49b8)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfImage(713a1cb2-77dc-40a8-9a52-cc0c83d74c5d)
+						{
+							features: feature_list [
+								TouchPressed(2d6dad4b-34a1-4d32-9724-a645f7d1a1e1)
+								{
+									touchPressed: function<bool,int,int,int,int>(dc50736f-ea6f-40c6-b7a2-2606c8e5ea25)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	" \
+											"	v:this->^->^->\"container animation\"->\"Rectangle 1\".fillColor = dp:color_animation2" \
+											"	v:this->^->^->\"container animation\"->\"Rectangle 3\".fillColor = dp:color_animation2" \
+											"	v:this->^->^->\"container animation\"->\"Rectangle 4\".fillColor = dp:color_animation2" \
+											"	v:this->^->^->\"container animation\"->\"Rectangle  2\".fillColor = dp:color_animation2" \
+											"	 f:animation_play(v:this->^->^->\"container animation\"->\"Rectangle 1\"->\"Animation 1\")" \
+											"	  f:animation_play(v:this->^->^->\"container animation\"->\"Rectangle 3\"->\"Animation 3\")" \
+											"	    f:animation_play(v:this->^->^->\"container animation\"->\"Rectangle  2\"->\"Animation 2\")" \
+											"	    f:animation_play(v:this->^->^->\"container animation\"->\"Rectangle 4\"->\"Animation 4\")" \
+											"" \
+											"	" \
+											"}"
+									}
+								}, 
+								StateTouched(77161050-ddee-4b0f-813d-3e6f11899e9c)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list []
+							name: "medium_button"
+							visible: true
+							width: 63
+							height: 61
+							x: 19
+							y: 24
+							image: image_resource(cb578001-633f-432c-8b3a-43d8588aa12b)
+							{
+								file: "Fără titlu (1).png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}, 
+						GtfImage(012ee53e-06dd-4131-8710-1b1c12c3b70b)
+						{
+							features: feature_list [
+								TouchPressed(92e44126-dada-4b2a-aa50-0608edfa76a2)
+								{
+									touchPressed: function<bool,int,int,int,int>(4903e3d9-cbff-4b79-8430-77c44e046b90)
+									{
+										script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+											"{" \
+											"	v:this->^->^->\"container animation\"->\"Rectangle 1\".fillColor = dp:color_animation" \
+											"	v:this->^->^->\"container animation\"->\"Rectangle 3\".fillColor = dp:color_animation" \
+											"	v:this->^->^->\"container animation\"->\"Rectangle 4\".fillColor = dp:color_animation" \
+											"	v:this->^->^->\"container animation\"->\"Rectangle  2\".fillColor = dp:color_animation" \
+											"	f:animation_play(v:this->^->^->\"container animation\"->\"Rectangle 1\"->\"Animation 1\")" \
+											"	  f:animation_play(v:this->^->^->\"container animation\"->\"Rectangle 3\"->\"Animation 3\")" \
+											"	    f:animation_play(v:this->^->^->\"container animation\"->\"Rectangle  2\"->\"Animation 2\")" \
+											"f:animation_play(v:this->^->^->\"container animation\"->\"Rectangle 4\"->\"Animation 4\")   " \
+											"   false" \
+											"}"
+									}
+								}, 
+								StateTouched(b47fb199-5752-41d1-868e-b2c07d054dfa)
+								{
+									touchable: true
+									touched: false
+									touchPolicy: 0
+									touchBehavior: 0
+								}]
+							children: children_list []
+							name: "high_button"
+							visible: true
+							width: 63
+							height: 61
+							x: 18
+							y: 137
+							image: image_resource(b46ade33-498c-4108-b274-1a59c1a1ee30)
+							{
+								file: "Fără titlu (1).png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}, 
+						GtfLabel(81c6e630-d3a8-44a0-a3a1-71bd4b9be500)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "medium_text"
+							visible: true
+							width: 100
+							height: 36
+							x: 4
+							y: 85
+							text: "MEDIUM HEAT"
+							textColor: #FFFFFFFF
+							font: font_resource(7586fa22-f6a2-4793-b325-b2c97890f85d)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 20
+							}
+							horizontalAlign: 0
+							verticalAlign: 0
+						}, 
+						GtfLabel(27f343b3-a2ed-4abf-8c28-3646995edb69)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "high_text"
+							visible: true
+							width: 77
+							height: 42
+							x: 12
+							y: 195
+							text: "HIGH HEAT"
+							textColor: #FFFFFFFF
+							font: font_resource(dc02303c-2170-41c8-b1fd-d7bb934f6367)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 20
+							}
+							horizontalAlign: 0
+							verticalAlign: 0
+						}]
+					name: "controls for heat"
+					visible: false
+					width: 100
+					height: 241
+					x: 13
+					y: 302
+				}, 
+				GtfContainer(69a7993b-c437-4330-890b-71675dbbe69e)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfRectangle(4e068726-f564-4e99-b9a1-13bae67f7fe1)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfParallelAnimation(c453238a-79b2-4ef6-95f5-f0aa444ab4a0)
+								{
+									features: feature_list []
+									children: children_list [
+										GtfLinearInterpolationS32(fb7271a2-359b-427e-bee8-251a1bb9f1b9)
+										{
+											features: feature_list []
+											children: children_list []
+											name: "Linear interpolation curve 1"
+											enabled: true
+											delay: 0
+											duration: 2000
+											repeat: 2
+											alternating: false
+											relative: false
+											start: 0
+											end: 53
+											target: width@4e068726-f564-4e99-b9a1-13bae67f7fe1 (propref<int>)
+										}]
+									name: "Animation 1"
+									enabled: true
+									repeat: 1
+									alternating: false
+									scale: 1F
+									onPlay: function<void,int,bool>(2e03f3aa-8567-44a8-a0db-25ca80e2f74e)
+									{
+										script: "function(v:animation_time::int, v:forward::bool)" \
+											"{" \
+											"" \
+											"}"
+									}
+									onPause: function<void,int>(fd98fb20-2282-42d6-808c-0fc9c95c813f)
+									{
+										script: "function(v:animation_time::int)" \
+											"{" \
+											"" \
+											"}"
+									}
+									onTerminate: function<void,int,int>(c0aa4041-69e8-428d-92ab-cbad6ab0d221)
+									{
+										script: "function(v:animation_time::int, v:terminate::int)" \
+											"{" \
+											"" \
+											"}"
+									}
+								}]
+							name: "Rectangle 1"
+							visible: true
+							width: 0
+							height: 19
+							x: 61
+							y: 0
+							fillColor: #00FF00FF
+						}, 
+						GtfRectangle(75c10fd1-bb73-408e-89cb-b8a57ff6890a)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfParallelAnimation(5b0d7c68-4b77-4e82-8498-f6bd12bab8e7)
+								{
+									features: feature_list []
+									children: children_list [
+										GtfLinearInterpolationS32(be666685-0aba-4690-b66a-9e4745c27676)
+										{
+											features: feature_list []
+											children: children_list []
+											name: "Linear interpolation curve 2"
+											enabled: true
+											delay: 0
+											duration: 2000
+											repeat: 2
+											alternating: false
+											relative: false
+											start: 0
+											end: 53
+											target: width@75c10fd1-bb73-408e-89cb-b8a57ff6890a (propref<int>)
+										}]
+									name: "Animation 2"
+									enabled: true
+									repeat: 1
+									alternating: false
+									scale: 1F
+									onPlay: function<void,int,bool>(f1116471-a753-4468-a827-46ffb4862069)
+									{
+										script: "function(v:animation_time::int, v:forward::bool)" \
+											"{" \
+											"" \
+											"}"
+									}
+									onPause: function<void,int>(ea524ecd-b68c-418b-bbed-424b513ab655)
+									{
+										script: "function(v:animation_time::int)" \
+											"{" \
+											"" \
+											"}"
+									}
+									onTerminate: function<void,int,int>(cbcb9f2b-49d8-4c00-b376-d8bb2f4b437f)
+									{
+										script: "function(v:animation_time::int, v:terminate::int)" \
+											"{" \
+											"" \
+											"}"
+									}
+								}]
+							name: "Rectangle  2"
+							visible: true
+							width: 0
+							height: 19
+							x: 121
+							y: 0
+							fillColor: #00FF00FF
+						}, 
+						GtfRectangle(a6856254-a04e-4b4f-9395-7882b5a62592)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfParallelAnimation(900560bf-ff82-432b-a2a1-30d0af97dd13)
+								{
+									features: feature_list []
+									children: children_list [
+										GtfLinearInterpolationS32(7a69b450-70e2-4a9d-92dc-5fc913b999c6)
+										{
+											features: feature_list []
+											children: children_list []
+											name: "Linear interpolation curve 3"
+											enabled: true
+											delay: 0
+											duration: 2000
+											repeat: 2
+											alternating: false
+											relative: false
+											start: 0
+											end: 53
+											target: width@a6856254-a04e-4b4f-9395-7882b5a62592 (propref<int>)
+										}]
+									name: "Animation 3"
+									enabled: true
+									repeat: 1
+									alternating: false
+									scale: 1F
+									onPlay: function<void,int,bool>(2a6e4e41-e737-4c09-9342-604d8e426cdb)
+									{
+										script: "function(v:animation_time::int, v:forward::bool)" \
+											"{" \
+											"" \
+											"}"
+									}
+									onPause: function<void,int>(5b5c2f50-695c-4d6a-918e-fd9c6ac14001)
+									{
+										script: "function(v:animation_time::int)" \
+											"{" \
+											"" \
+											"}"
+									}
+									onTerminate: function<void,int,int>(1a22d84a-2a0c-49a6-9b3b-b29c5e323380)
+									{
+										script: "function(v:animation_time::int, v:terminate::int)" \
+											"{" \
+											"" \
+											"}"
+									}
+								}]
+							name: "Rectangle 3"
+							visible: true
+							width: 0
+							height: 19
+							x: 0
+							y: 0
+							fillColor: #00FF00FF
+						}, 
+						GtfRectangle(7aa7b984-15b6-45b4-ad18-d4182cee72b2)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfParallelAnimation(be9f110d-8750-4c1c-962e-c7dc25eb8e45)
+								{
+									features: feature_list []
+									children: children_list [
+										GtfLinearInterpolationS32(6d6dc510-03d2-40f9-994f-45a5f2cb7e17)
+										{
+											features: feature_list []
+											children: children_list []
+											name: "Linear interpolation curve 4"
+											enabled: true
+											delay: 0
+											duration: 2000
+											repeat: 2
+											alternating: false
+											relative: false
+											start: 0
+											end: 53
+											target: width@7aa7b984-15b6-45b4-ad18-d4182cee72b2 (propref<int>)
+										}]
+									name: "Animation 4"
+									enabled: true
+									repeat: 1
+									alternating: false
+									scale: 1F
+									onPlay: function<void,int,bool>(6b364894-96e7-4488-9b7c-b6b5c88592bf)
+									{
+										script: "function(v:animation_time::int, v:forward::bool)" \
+											"{" \
+											"" \
+											"}"
+									}
+									onPause: function<void,int>(576971f1-d8ca-4377-b253-c9433e06bf1c)
+									{
+										script: "function(v:animation_time::int)" \
+											"{" \
+											"" \
+											"}"
+									}
+									onTerminate: function<void,int,int>(573455b2-ce4e-4626-9296-ca343bd4b673)
+									{
+										script: "function(v:animation_time::int, v:terminate::int)" \
+											"{" \
+											"" \
+											"}"
+									}
+								}]
+							name: "Rectangle 4"
+							visible: true
+							width: 0
+							height: 19
+							x: 181
+							y: 0
+							fillColor: #00FF00FF
+						}]
+					name: "container animation"
+					visible: true
+					width: 266
+					height: 47
+					x: 165
+					y: 196
+				}]
+			touchPressed: touchPressed@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<function<bool,int,int,int,int>>)
+			"touchPressed 2": "touchPressed 2"@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<function<bool,int,int,int,int>>)
+			image: image@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<image>)
+			"image 2": "image 2"@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<image>)
+			"touchPressed 3": "touchPressed 3"@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<function<bool,int,int,int,int>>)
+			"image 3": "image 3"@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<image>)
+			"image 4": "image 4"@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<image>)
+			"touchPressed 4": "touchPressed 4"@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<function<bool,int,int,int,int>>)
+			"image 5": "image 5"@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<image>)
+			visible: visible@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<bool>)
+			text: text@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<string>)
+			"image 6": image_resource(85ba40b1-0903-4b4a-b940-55827048c6c6)
+			{
+				file: "heat air (12).png"
+			}
+		}]
+	name: "View steering wheel"
+	visible: true
+	width: 580
+	height: 780
+	x: 0
+	y: 0
+}

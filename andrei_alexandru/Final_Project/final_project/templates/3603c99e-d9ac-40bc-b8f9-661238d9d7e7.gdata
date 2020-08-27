@@ -1,0 +1,80 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(3603c99e-d9ac-40bc-b8f9-661238d9d7e7)
+{
+	name: "T_Minus/Plus_Button"
+	structure: GtfContainer(56c05dc9-7604-4412-83fa-a17dd9f8ad82)
+	{
+		features: feature_list [
+			TouchShortReleased(c885c88e-26e5-47ee-a38f-63b6c2228807)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(f9f58d38-ae0d-41ec-9ddf-510329c9d8cf)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(9ff7be0e-6d1d-4c7f-bd92-cbff6ed82175)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(0b7a2168-4927-4793-8952-9f67155bacbd)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "backgound"
+				visible: true
+				width: width@56c05dc9-7604-4412-83fa-a17dd9f8ad82 (propref<int>)
+				height: height@56c05dc9-7604-4412-83fa-a17dd9f8ad82 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFFFF
+			}, 
+			GtfImage(226ae068-23c2-4a10-819c-7582db3960d0)
+			{
+				features: feature_list [
+					StateTouched(393d3322-2d67-4ced-bd23-14848d4badfa)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}, 
+					ScaleMode(7d792dcb-7ce5-4d41-bd2e-e5ee3ee7599d)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "Logo"
+				visible: true
+				width: width@56c05dc9-7604-4412-83fa-a17dd9f8ad82 (propref<int>)
+				height: height@56c05dc9-7604-4412-83fa-a17dd9f8ad82 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(3d79b387-e810-4dfd-abad-337f5c14711d)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "Container"
+		visible: true
+		width: 50
+		height: 50
+		x: 0
+		y: 0
+	}
+	x: x@56c05dc9-7604-4412-83fa-a17dd9f8ad82 (propref<int>)
+	y: y@56c05dc9-7604-4412-83fa-a17dd9f8ad82 (propref<int>)
+	image: image@226ae068-23c2-4a10-819c-7582db3960d0 (propref<image>)
+	touchShortReleased: touchShortReleased@c885c88e-26e5-47ee-a38f-63b6c2228807 (propref<function<bool,int,int,int,int>>)
+	fillColor: fillColor@0b7a2168-4927-4793-8952-9f67155bacbd (propref<color>)
+}

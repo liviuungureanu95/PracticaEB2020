@@ -1,0 +1,220 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(169d6b99-9645-4ede-8cf6-ccca51abe234)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(b3d25a3b-14bc-4910-bd40-26b1849fcadf)
+		{
+			features: feature_list [
+				TouchPressed(0b354901-4453-4408-ba29-80261662cae9)
+				{
+					touchPressed: function<bool,int,int,int,int>(abb7f552-a55d-4083-a4d9-a8b89ec2a77c)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(29af8b0e-2934-40a9-bee3-f8a9bb1b3a40)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "InvisibleBackground"
+			visible: true
+			width: 800
+			height: 480
+			x: -150
+			y: -90
+			fillColor: #FFFFFF00
+		}, 
+		GtfRectangle(279dbec4-ba5b-4e24-882e-220ceb96d1bc)
+		{
+			features: feature_list [
+				Border(63ef5bbd-9316-43f8-a091-2c9756d9d2d6)
+				{
+					borderThickness: 5
+					borderColor: #FF0000FF
+					borderStyle: 0
+				}]
+			children: children_list [
+				GtfLabel(9100d4ec-0aec-4257-8b6a-b0fca2424675)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text"
+					visible: true
+					width: width@279dbec4-ba5b-4e24-882e-220ceb96d1bc (propref<int>)
+					height: 50
+					x: 0
+					y: 100
+					text: @a34a9800-4e43-4439-9839-8a355b62a787 (objectref<string>)
+					textColor: #000000FF
+					font: font_resource(a68672ce-c854-44ef-a4a4-0382ee12cad0)
+					{
+						file: "big_noodle_titling_oblique.ttf"
+						size: 25
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(56156e9d-581b-493b-a895-b43a4fa9451b)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Text2"
+					visible: true
+					width: width@279dbec4-ba5b-4e24-882e-220ceb96d1bc (propref<int>)
+					height: 50
+					x: 0
+					y: 140
+					text: @ea1ef167-42b6-41ee-ba58-75ce67fd0a32 (objectref<string>)
+					textColor: #3CB371FF
+					font: font_resource(60eb3546-11ef-40a4-8784-91989922231f)
+					{
+						file: "teen it.ttf"
+						size: 35
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(1af46557-e04c-4ee6-8c5b-b4f098412ec4)
+				{
+					name: "OkButton"
+					template: @60b61038-4f45-4014-b850-4e3cf3aef87b (objectref<GtfContainer_template>)
+					children: children_list []
+					touchShortReleased: function<bool,int,int,int,int>(4346d689-c481-4a14-aff0-61aa9459aeca)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:Info_CompoundEvents:close_Bulb_PopUp()" \
+							"    false" \
+							"}"
+					}
+					x: 180
+					y: 190
+					text: "OK"
+					textColor: #FF0000FF
+					font: font_resource(bd3c185e-4370-4a1e-a8bc-5d8b58c354b1)
+					{
+						file: "big_noodle_titling_oblique.ttf"
+						size: 30
+					}
+				}, 
+				GtfImage(73eeb0f6-8f75-4f91-b4a6-b6ce64a24bfc)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Image"
+					visible: true
+					width: 50
+					height: 50
+					x: 230
+					y: 50
+					image: image_resource(e0571bc8-f360-44b2-bec7-95ac2dfd429b)
+					{
+						file: "carbulb.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(9a09edf4-ce1c-4e62-af9e-ef9002d404b8)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfParallelAnimation(c7a9d134-c153-4616-a12b-e4b187525e5a)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(89119657-6d00-4e34-b134-5525760919a0)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve"
+									enabled: true
+									delay: 0
+									duration: 3000
+									repeat: 0
+									alternating: false
+									relative: false
+									start: 20
+									end: 420
+									target: x@9a09edf4-ce1c-4e62-af9e-ef9002d404b8 (propref<int>)
+								}]
+							name: "CarAnimation"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(4b363ee1-9b84-44e7-9b60-52c7fabb6589)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(e13f783e-1266-44b1-9397-919a41ec9d40)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(28938e03-2fdf-4f10-b29b-aa8312f7172f)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							startAnimation: conditional_script(77db6fc6-47cf-419f-bf00-19ee5289060d)
+							{
+								triggerList: trigger_list(f2f3b313-57d5-43f7-be6d-4ba935933c01)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(c1d134f6-085c-4488-a7bb-8f59d0b10784)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	f:animation_play(v:this)" \
+										"	false" \
+										"}"
+								}
+							}
+						}]
+					name: "CarAnimation"
+					visible: true
+					width: 50
+					height: 50
+					x: 420
+					y: 240
+					image: image_resource(f43647a1-58a0-4d3a-ada8-9fdbd8b63bd5)
+					{
+						file: "pop_up_car.png"
+					}
+					sRGB: false
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Background"
+			visible: true
+			width: width@169d6b99-9645-4ede-8cf6-ccca51abe234 (propref<int>)
+			height: height@169d6b99-9645-4ede-8cf6-ccca51abe234 (propref<int>)
+			x: -1
+			y: 0
+			fillColor: #FFFFFFFF
+		}]
+	name: "BulbFault_View"
+	visible: true
+	width: 500
+	height: 300
+	x: 150
+	y: 90
+}

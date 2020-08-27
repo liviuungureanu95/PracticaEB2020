@@ -1,0 +1,43 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfRectangle_template(4dcf81cc-8e94-4681-b511-7353f4a8d35d)
+{
+	name: "FakeMazeRectangle"
+	structure: GtfRectangle(78b193e4-c58e-4dce-a831-03ea7abe7a02)
+	{
+		features: feature_list [
+			MoveIn(33fae489-a3ae-46c9-9c17-a94c1fc52ac1)
+			{
+				moveIn: function<bool,int,int,int,int>(150bed88-c1de-4826-af7f-16fd5c60e667)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	if(!dp:MazeError){" \
+						"		v:this.fillColor = color:0, 255, 0, 255" \
+						"		dp:MazeError = true" \
+						"	}" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(0cddf1cb-96e2-42be-8b63-c64730cb01e7)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list []
+		name: "Rectangle"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		fillColor: #ADD8E6FF
+	}
+	x: x@78b193e4-c58e-4dce-a831-03ea7abe7a02 (propref<int>)
+	y: y@78b193e4-c58e-4dce-a831-03ea7abe7a02 (propref<int>)
+	height: height@78b193e4-c58e-4dce-a831-03ea7abe7a02 (propref<int>)
+	width: width@78b193e4-c58e-4dce-a831-03ea7abe7a02 (propref<int>)
+}

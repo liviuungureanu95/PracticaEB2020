@@ -1,0 +1,264 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(7e1581ce-1abb-4edb-99ec-7b39fea2036b)
+{
+	name: "LanguageSupport_View"
+	template: @b380d1bf-d029-45e1-aa1b-a53a19df7e62 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(9761a26d-ac9a-420f-b9e8-c4a59e790495)
+		{
+			name: "BackButton"
+			template: @66713f45-2faf-4289-b7d7-da20b83b4fd3 (objectref<GtfContainer_template>)
+			children: children_list []
+			buttonEvent: function<bool>(490ff76f-d707-4537-9110-0aba124d98b0)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_back()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer(05af2085-91e7-439f-923c-bf50e4e3585a)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(eb8cd41d-5771-4df3-8ba6-40cadb6125e1)
+				{
+					features: feature_list [
+						Border(5f120b83-8d30-429f-9771-862e3b07f921)
+						{
+							borderThickness: 1
+							borderColor: #000000FF
+							borderStyle: 0
+						}, 
+						TouchShortReleased(c3531187-c9d2-4e7d-a5c0-c92b1cf01a22)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(04f4cbd0-c508-480c-ac9e-e98c02d871f8)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"   	f:setLanguage(l:Romanian, true)" \
+									"   	false" \
+									"}"
+							}
+						}, 
+						StateTouched(3b093f9a-590f-4b32-b287-84a35bd7e317)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(868f4737-db59-420e-99c0-62f6a6fb791b)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text"
+							visible: true
+							width: width@eb8cd41d-5771-4df3-8ba6-40cadb6125e1 (propref<int>)
+							height: height@eb8cd41d-5771-4df3-8ba6-40cadb6125e1 (propref<int>)
+							x: -10
+							y: 0
+							text: "Romanian"
+							textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+							font: font_resource(06db83f5-4b94-477d-b7f0-3208332f3959)
+							{
+								file: "big_noodle_titling_oblique.ttf"
+								size: 30
+							}
+							horizontalAlign: 2
+							verticalAlign: 0
+						}, 
+						GtfImage(ecc6f543-00fa-4a31-b89c-021e1a43543d)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Logo"
+							visible: true
+							width: 100
+							height: 50
+							x: 20
+							y: 0
+							image: image_resource(2826c307-1e4d-4a26-ad0b-de8bfa30c46d)
+							{
+								file: "ro_lg.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}]
+					name: "RomaniaLg"
+					visible: true
+					width: 300
+					height: 50
+					x: 0
+					y: 0
+					fillColor: #87CEEBFF
+				}, 
+				GtfRectangle(b7bb738a-87aa-4ba4-94f0-ec277d8124e4)
+				{
+					features: feature_list [
+						Border(41e40d13-0c77-40f3-8aac-747358c4d98a)
+						{
+							borderThickness: 1
+							borderColor: #000000FF
+							borderStyle: 0
+						}, 
+						TouchShortReleased(4f6fa2cf-a788-42f5-882b-f55b10eda09f)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(f8ae078b-381e-44ca-89cf-4889a46e9714)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	f:setLanguage(l:Standard, true)" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(9949ebf5-4de0-4d6c-83d4-71f5165131c5)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(df658914-5ffc-41ea-88ac-0ac6c405ffc9)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text"
+							visible: true
+							width: width@b7bb738a-87aa-4ba4-94f0-ec277d8124e4 (propref<int>)
+							height: height@b7bb738a-87aa-4ba4-94f0-ec277d8124e4 (propref<int>)
+							x: -10
+							y: 0
+							text: "English"
+							textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+							font: font_resource(29864049-30b2-467a-828e-6d9fdee7c5c7)
+							{
+								file: "big_noodle_titling_oblique.ttf"
+								size: 30
+							}
+							horizontalAlign: 2
+							verticalAlign: 0
+						}, 
+						GtfImage(3359528a-ec24-41f0-8e1e-d62ba24f0f66)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Logo"
+							visible: true
+							width: 100
+							height: 50
+							x: 20
+							y: 0
+							image: image_resource(166d059f-e762-4c47-b28d-330f88640512)
+							{
+								file: "en_lg.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}]
+					name: "EnglishLg"
+					visible: true
+					width: 300
+					height: 50
+					x: 0
+					y: 80
+					fillColor: #87CEEBFF
+				}, 
+				GtfRectangle(e9a5dcb0-a2f5-4e14-a99e-70a4cd0b9c63)
+				{
+					features: feature_list [
+						Border(ffdeca3b-8143-49b5-a463-b0a69533a10b)
+						{
+							borderThickness: 1
+							borderColor: #000000FF
+							borderStyle: 0
+						}, 
+						TouchShortReleased(811555cd-ca01-4ef6-b988-2802ca820432)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(319496f3-aa92-4f28-80bd-a05be3337328)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	f:setLanguage(l:German, true)" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(fb5fecf8-646b-46b8-87c2-6a2b21206377)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(8c4cdcdd-d472-456f-9a9d-3ee5eea38a87)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text"
+							visible: true
+							width: width@e9a5dcb0-a2f5-4e14-a99e-70a4cd0b9c63 (propref<int>)
+							height: height@e9a5dcb0-a2f5-4e14-a99e-70a4cd0b9c63 (propref<int>)
+							x: -10
+							y: 0
+							text: "German"
+							textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+							font: font_resource(c9d2277f-3751-44b5-a6a1-ecda166ea4dd)
+							{
+								file: "big_noodle_titling_oblique.ttf"
+								size: 30
+							}
+							horizontalAlign: 2
+							verticalAlign: 0
+						}, 
+						GtfImage(98f8247b-d09c-446d-b284-1efdb072e8a1)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Logo"
+							visible: true
+							width: 100
+							height: 50
+							x: 20
+							y: 0
+							image: image_resource(c470d641-3b6c-4f6a-bbd1-8896a5a4dc70)
+							{
+								file: "ger_lg.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}]
+					name: "GermanLg"
+					visible: true
+					width: 300
+					height: 50
+					x: 0
+					y: 160
+					fillColor: #87CEEBFF
+				}]
+			name: "LanguageContainer"
+			visible: true
+			width: 300
+			height: 300
+			x: 250
+			y: 160
+		}]
+	text: @7b00d969-18ab-4428-b738-83a16303c4c7 (objectref<string>)
+	textColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+	font: font@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<font>)
+	image: @28a5929a-87d6-4473-9912-d62fd743c5c6 (objectref<image>)
+	fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+	x: x@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	y: y@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	height: height@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+	width: width@b380d1bf-d029-45e1-aa1b-a53a19df7e62 (propref<int>)
+}

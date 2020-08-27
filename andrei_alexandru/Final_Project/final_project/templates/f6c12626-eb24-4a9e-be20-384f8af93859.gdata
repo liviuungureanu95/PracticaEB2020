@@ -1,0 +1,165 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(f6c12626-eb24-4a9e-be20-384f8af93859)
+{
+	name: "T_TrafficMenuButton"
+	structure: GtfContainer(ee0f7dd1-508b-4465-84b0-c7e5edfc315f)
+	{
+		features: feature_list [
+			TouchShortReleased(c29de0f4-f981-41d1-adf9-06c969e52776)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(cdf0bdde-1dee-4927-9cea-b58e63753a40)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(8141daa1-147a-4ec1-9bc4-982730c8820a)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			MoveOut(f94bcb40-0a75-4c13-beaf-5826e4a93097)
+			{
+				moveOut: function<bool,int,int,int,int>(dc828b24-f594-4feb-ab17-79912bf4bdd1)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->Background.borderThickness = 0;" \
+						"    false" \
+						"}"
+				}
+			}, 
+			MoveIn(552a5ea4-5e45-4b3c-b2ac-03e49803be87)
+			{
+				moveIn: function<bool,int,int,int,int>(a84fe4df-09ac-4faf-9763-51f4f74d1363)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->Background.borderThickness = 1;" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateSelected(ffecf5d9-b703-4406-8b89-f7e69138213a)
+			{
+				selected: false
+			}, 
+			Buttongroup(78015fe2-96a7-45b0-9855-a3fd947f81dd)
+			{
+				buttonId: 0
+				buttonValue: 0
+			}]
+		children: children_list [
+			GtfEllipse(38afbac9-035c-41f3-84b1-a90f225b42bc)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfEllipse(c73b8cd4-3ab2-4336-bbfc-d03dccbceb0c)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Ellipse"
+						visible: Check@c73b8cd4-3ab2-4336-bbfc-d03dccbceb0c (propref<bool>)
+						width: 30
+						height: 30
+						x: 10
+						y: 10
+						fillColor: @b7614fa9-c031-4e60-837d-70e5c8e3d4a9 (objectref<color>)
+						arcWidth: 0
+						centralAngle: 360F
+						sectorRotation: 0F
+						Check: false
+					}]
+				name: "Ellipse"
+				visible: true
+				width: 50
+				height: height@ee0f7dd1-508b-4465-84b0-c7e5edfc315f (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #87CEEBFF
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}, 
+			GtfRectangle(840792e8-eeff-4bff-b404-160965560f51)
+			{
+				features: feature_list [
+					Border(feb78ecd-0ec9-425b-83ef-473d40560dbd)
+					{
+						borderThickness: 0
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: 270
+				height: height@ee0f7dd1-508b-4465-84b0-c7e5edfc315f (propref<int>)
+				x: 60
+				y: 0
+				fillColor: #AFEEEEFF
+			}, 
+			GtfLabel(9aa8c66b-374b-490a-b571-cb31f490ab4e)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Text"
+				visible: true
+				width: width@840792e8-eeff-4bff-b404-160965560f51 (propref<int>)
+				height: height@840792e8-eeff-4bff-b404-160965560f51 (propref<int>)
+				x: 40
+				y: 0
+				text: "label"
+				textColor: #000000FF
+				font: font_resource(31b0847e-9d1a-4d92-90ee-7ec415be71c4)
+				{
+					file: "teen it.ttf"
+					size: 25
+				}
+				horizontalAlign: 2
+				verticalAlign: 0
+			}, 
+			GtfImage(00a9cd89-90c6-4bb8-b37e-d9ae8a31d1d5)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Logo"
+				visible: true
+				width: width@840792e8-eeff-4bff-b404-160965560f51 (propref<int>)
+				height: height@ee0f7dd1-508b-4465-84b0-c7e5edfc315f (propref<int>)
+				x: 60
+				y: 0
+				image: image_resource(d4785c42-289d-4361-915f-12d0a2d890e7)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 300
+		height: 50
+		x: 0
+		y: 0
+	}
+	x: x@ee0f7dd1-508b-4465-84b0-c7e5edfc315f (propref<int>)
+	y: y@ee0f7dd1-508b-4465-84b0-c7e5edfc315f (propref<int>)
+	touchShortReleased: touchShortReleased@c29de0f4-f981-41d1-adf9-06c969e52776 (propref<function<bool,int,int,int,int>>)
+	selected: selected@ffecf5d9-b703-4406-8b89-f7e69138213a (propref<bool>)
+	buttonId: buttonId@78015fe2-96a7-45b0-9855-a3fd947f81dd (propref<int>)
+	buttonValue: buttonValue@78015fe2-96a7-45b0-9855-a3fd947f81dd (propref<int>)
+	fillColor: fillColor@38afbac9-035c-41f3-84b1-a90f225b42bc (propref<color>)
+	Check: Check@c73b8cd4-3ab2-4336-bbfc-d03dccbceb0c (propref<bool>)
+	text: text@9aa8c66b-374b-490a-b571-cb31f490ab4e (propref<string>)
+	textColor: textColor@9aa8c66b-374b-490a-b571-cb31f490ab4e (propref<color>)
+	image: image@00a9cd89-90c6-4bb8-b37e-d9ae8a31d1d5 (propref<image>)
+	horizontalAlign: horizontalAlign@00a9cd89-90c6-4bb8-b37e-d9ae8a31d1d5 (propref<int>)
+	verticalAlign: verticalAlign@00a9cd89-90c6-4bb8-b37e-d9ae8a31d1d5 (propref<int>)
+}
