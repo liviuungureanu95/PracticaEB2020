@@ -1,0 +1,1887 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(5c27751b-f70d-4d31-8d40-c55bf8c19fb8)
+{
+	name: "Vehicle_Second_View"
+	template: @dd151528-66b9-40c3-84cc-8ff2db2988ad (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(456ccc5f-6f1b-4bf9-94a2-ba8c39004817)
+		{
+			name: "Left_Arrow_Button"
+			template: @cfc31c5e-f76d-4889-878d-a4c54e6ba2c3 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 355
+			y: 325
+			width: 50
+			height: 50
+			image: @2eb54351-002b-400b-9511-82739c4d65a2 (objectref<image>)
+			touchShortReleased: function<bool,int,int,int,int>(fbc3132a-6ff4-43b4-b92d-8c8529c00a6e)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:goToVehicle1()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(38eec97c-9f6f-4f8e-8a7c-388d0e818ea2)
+		{
+			name: "Right_Arrow_Button"
+			template: @cfc31c5e-f76d-4889-878d-a4c54e6ba2c3 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 425
+			y: 325
+			width: 50
+			height: 50
+			image: @db99d6b5-b76c-45cd-92a2-410a43bf8f4c (objectref<image>)
+			touchShortReleased: function<bool,int,int,int,int>(d3e99b36-e3b3-48c5-a224-f440b5596791)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:goToVehicle3()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfSceneGraph(a5784716-7d70-40c2-867b-f4b9aaff5913)
+		{
+			features: feature_list [
+				GtfSSAOFeature(ae48f686-2f67-4a0c-a15f-4e6a51a65300)
+				{
+					enabled: true
+					radius: 0.1F
+					fallOff: 0.001F
+					samples: 16
+				}, 
+				GtfAntiAliasingFeature(429d79ec-968d-4bb0-9665-cf804de98caa)
+				{
+					antiAliasing: 3
+				}]
+			children: children_list [
+				GtfSceneGraphNode(ce41d69a-aa55-4e48-bbd9-c660a1917e62)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfSceneGraphNode(47f22820-9996-48ff-b82f-b06154bf7706)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfCameraWidget(4e8b9a72-ef15-45be-b91e-72b9f0c6b659)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Camera"
+									enabled: true
+									nearPlane: 4F
+									farPlane: 10000F
+									fieldOfView: 30F
+									projectionType: 0
+								}]
+							name: "Camera_Car"
+							visible: true
+							rotationX: 20F
+							rotationY: -42F
+							rotationZ: -28F
+							scalingX: 1F
+							scalingY: 1F
+							scalingZ: 1F
+							translationX: -272F
+							translationY: 168F
+							translationZ: -313F
+						}, 
+						GtfSceneGraphNode(32d1e3e4-1920-45e1-be83-9bad1cf7141c)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfSceneGraphNode(d7f7fdb9-6786-40e7-89c4-aecb2aa6f166)
+								{
+									features: feature_list []
+									children: children_list [
+										GtfSceneGraphNode(495cc697-2e77-4d2e-80cd-bb96bee71240)
+										{
+											features: feature_list []
+											children: children_list [
+												GtfSceneGraphNode(d504e47f-4389-4497-a5bd-c8ecb6ad4155)
+												{
+													features: feature_list []
+													children: children_list [
+														GtfSceneGraphNode(e530d2a2-0c6d-4d3e-bb33-8c2e0e0de90b)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMeshWidget(e0d97bf0-ab9d-4451-a3e0-daffe5885435)
+																{
+																	features: feature_list []
+																	children: children_list [
+																		GtfMaterialWidget(c1e61b5c-5b20-43b7-a03a-708c72b75d2c)
+																		{
+																			features: feature_list []
+																			children: children_list []
+																			name: "Material 2"
+																			ambient: #000000FF
+																			diffuse: #40E0D0FF
+																			emissive: #000000FF
+																			shininess: 0F
+																			specular: #A9A9A9FF
+																			opacity: 0.1F
+																		}]
+																	name: "Mesh 2"
+																	visible: true
+																	mesh: mesh_resource(b0c8c377-4dd1-480c-a54f-59e19cf128d4)
+																	{
+																		file: "Audi A7_20200713_173001\\Glass0.ebmesh"
+																	}
+																	culling: 2
+																}]
+															name: "Glass"
+															visible: true
+															rotationX: 0F
+															rotationY: 0F
+															rotationZ: 0F
+															scalingX: 1F
+															scalingY: 1F
+															scalingZ: 1F
+															translationX: 0F
+															translationY: 63.21175F
+															translationZ: -174.2721F
+														}, 
+														GtfSceneGraphNode(7a2c1da4-becd-43b8-95fa-1bd998cd9109)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMeshWidget(0bfce206-7ef5-4a86-b539-5310273f77f5)
+																{
+																	features: feature_list []
+																	children: children_list [
+																		GtfMaterialWidget(93d470e3-e121-4d1c-a60f-a2b5425233c4)
+																		{
+																			features: feature_list []
+																			children: children_list []
+																			name: "Material 4"
+																			ambient: #000000FF
+																			diffuse: #8B0000FF
+																			emissive: #000000FF
+																			shininess: 0F
+																			specular: #A9A9A9FF
+																			opacity: 1F
+																		}]
+																	name: "Mesh 4"
+																	visible: true
+																	mesh: mesh_resource(e9c91505-76c4-407c-a800-52fe99e2a196)
+																	{
+																		file: "Audi A7_20200713_173001\\Back_plating0.ebmesh"
+																	}
+																	culling: 2
+																}]
+															name: "Back_plating"
+															visible: true
+															rotationX: 0F
+															rotationY: 0F
+															rotationZ: 0F
+															scalingX: 1F
+															scalingY: 1F
+															scalingZ: 1F
+															translationX: 38.90031F
+															translationY: 59.87579F
+															translationZ: -167.92F
+														}, 
+														GtfSceneGraphNode(e3231dbe-e2a7-4a98-9158-5e1b2dd8f1b2)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMeshWidget(7f7c51d8-c42b-459a-b551-7b99deee0c94)
+																{
+																	features: feature_list []
+																	children: children_list [
+																		GtfMaterialWidget(373debf8-700d-4167-86a1-04031f01e9a5)
+																		{
+																			features: feature_list []
+																			children: children_list []
+																			name: "Material 6"
+																			ambient: #000000FF
+																			diffuse: #000000FF
+																			emissive: #000000FF
+																			shininess: 0F
+																			specular: #A9A9A9FF
+																			opacity: 1F
+																		}]
+																	name: "Mesh 6"
+																	visible: true
+																	mesh: mesh_resource(b8388761-43aa-4b85-b79c-b9e5147f4b9a)
+																	{
+																		file: "Audi A7_20200713_173001\\Box0.ebmesh"
+																	}
+																	culling: 2
+																}]
+															name: "Box"
+															visible: true
+															rotationX: 0F
+															rotationY: 0F
+															rotationZ: 0F
+															scalingX: 1F
+															scalingY: 1F
+															scalingZ: 1F
+															translationX: 1.695315F
+															translationY: 63.37544F
+															translationZ: -174.5455F
+														}]
+													name: "Tail_Light"
+													visible: true
+													rotationX: 0F
+													rotationY: 0F
+													rotationZ: 0F
+													scalingX: 1F
+													scalingY: 1F
+													scalingZ: 1F
+													translationX: 0F
+													translationY: 0F
+													translationZ: 0F
+												}, 
+												GtfSceneGraphNode(ba911717-d759-488f-a60f-ccaf290b30e2)
+												{
+													features: feature_list []
+													children: children_list [
+														GtfSceneGraphNode(e7c88f91-9198-4e69-8ce3-2befdcce09e2)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMeshWidget(678b577b-8ece-4f1e-aa43-205f08dec9ef)
+																{
+																	features: feature_list []
+																	children: children_list [
+																		GtfMaterialWidget(cbb6d18e-6431-420b-9b74-f140dead2650)
+																		{
+																			features: feature_list []
+																			children: children_list []
+																			name: "Material 8"
+																			ambient: #000000FF
+																			diffuse: #40E0D0FF
+																			emissive: #000000FF
+																			shininess: 0F
+																			specular: #A9A9A9FF
+																			opacity: 0.2F
+																		}]
+																	name: "Mesh 8"
+																	visible: true
+																	mesh: mesh_resource(4194850e-3d0f-45e3-8be1-c1fd0c54a0d0)
+																	{
+																		file: "Audi A7_20200713_173001\\Glass_20.ebmesh"
+																	}
+																	culling: 2
+																}]
+															name: "Glass_2"
+															visible: true
+															rotationX: 0F
+															rotationY: 0F
+															rotationZ: 0F
+															scalingX: 1F
+															scalingY: 1F
+															scalingZ: 1F
+															translationX: 56.62493F
+															translationY: 51.71627F
+															translationZ: 153.7499F
+														}, 
+														GtfSceneGraphNode(5510e36f-84b3-4da0-9abf-223918f5dd3c)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMeshWidget(da56fe0e-56e1-40b6-bdd3-75b9c8531e7f)
+																{
+																	features: feature_list []
+																	children: children_list [
+																		GtfMaterialWidget(db0bc599-21c0-4435-87fe-3e1414866bd0)
+																		{
+																			features: feature_list []
+																			children: children_list []
+																			name: "Material 10"
+																			ambient: #000000FF
+																			diffuse: #FFFFFFFF
+																			emissive: #000000FF
+																			shininess: 0F
+																			specular: #A9A9A9FF
+																			opacity: 0.1F
+																		}]
+																	name: "Mesh 10"
+																	visible: true
+																	mesh: mesh_resource(3c291c5f-b9e6-4a04-b598-3e4c1cec9490)
+																	{
+																		file: "Audi A7_20200713_173001\\Light0.ebmesh"
+																	}
+																	culling: 2
+																}]
+															name: "Light"
+															visible: true
+															rotationX: 0F
+															rotationY: 0F
+															rotationZ: 0F
+															scalingX: 1F
+															scalingY: 1F
+															scalingZ: 1F
+															translationX: 50.28675F
+															translationY: 52.67059F
+															translationZ: 155.8663F
+														}, 
+														GtfSceneGraphNode(1db95b00-84de-4ad5-9f87-ea4a082cd6d6)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMeshWidget(9a0a4f5f-6fa9-423a-a27c-8bb3fc6518ed)
+																{
+																	features: feature_list []
+																	children: children_list [
+																		GtfMaterialWidget(cc792fe1-8f32-448b-ba87-d1bc59c04d1f)
+																		{
+																			features: feature_list []
+																			children: children_list []
+																			name: "Material 12"
+																			ambient: #000000FF
+																			diffuse: #000000FF
+																			emissive: #000000FF
+																			shininess: 0F
+																			specular: #A9A9A9FF
+																			opacity: 1F
+																		}]
+																	name: "Mesh 12"
+																	visible: true
+																	mesh: mesh_resource(39d2e464-dbc5-4f4f-9ab9-c9100df9d003)
+																	{
+																		file: "Audi A7_20200713_173001\\Light_box0.ebmesh"
+																	}
+																	culling: 2
+																}]
+															name: "Light_box"
+															visible: true
+															rotationX: 0F
+															rotationY: 0F
+															rotationZ: 0F
+															scalingX: 1F
+															scalingY: 1F
+															scalingZ: 1F
+															translationX: 51.26546F
+															translationY: 50.74101F
+															translationZ: 167.7478F
+														}]
+													name: "Headlight"
+													visible: true
+													rotationX: 0F
+													rotationY: 0F
+													rotationZ: 0F
+													scalingX: 1F
+													scalingY: 1F
+													scalingZ: 1F
+													translationX: 0F
+													translationY: 0F
+													translationZ: 0F
+												}]
+											name: "Lights"
+											visible: true
+											rotationX: 0F
+											rotationY: 0F
+											rotationZ: 0F
+											scalingX: 1F
+											scalingY: 1F
+											scalingZ: 1F
+											translationX: 0F
+											translationY: 0F
+											translationZ: 0F
+										}, 
+										GtfSceneGraphNode(c93bdf3d-d838-4e5a-b6ab-82de4066668b)
+										{
+											features: feature_list []
+											children: children_list [
+												GtfSceneGraphNode(b62bc04f-780d-433e-9713-2de012d35480)
+												{
+													features: feature_list []
+													children: children_list [
+														GtfSceneGraphNode(1fef72ae-aecf-4ade-b95d-ccaf7db83f1f)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMeshWidget(4d0f4c11-b553-4f73-b702-2c68ac0f266e)
+																{
+																	features: feature_list []
+																	children: children_list [
+																		GtfMaterialWidget(709ea4de-e393-4e81-b11b-6cf293bdffc0)
+																		{
+																			features: feature_list []
+																			children: children_list []
+																			name: "Material 14"
+																			ambient: #000000FF
+																			diffuse: #DCDCDCFF
+																			emissive: #000000FF
+																			shininess: 0F
+																			specular: #A9A9A9FF
+																			opacity: 1F
+																		}]
+																	name: "Mesh 14"
+																	visible: true
+																	mesh: mesh_resource(0c6946fa-dfd2-4c54-9e86-b2f06fcad151)
+																	{
+																		file: "Audi A7_20200713_173001\\Rim0.ebmesh"
+																	}
+																	culling: 2
+																}]
+															name: "Rim"
+															visible: true
+															rotationX: 0F
+															rotationY: 0F
+															rotationZ: -90F
+															scalingX: 1F
+															scalingY: 1F
+															scalingZ: 1F
+															translationX: 0F
+															translationY: -5.160081F
+															translationZ: 0F
+														}, 
+														GtfSceneGraphNode(c800e842-0360-475d-bf9c-4fffbc8c4423)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMeshWidget(ad548862-c323-4908-9540-f16e82e160ad)
+																{
+																	features: feature_list []
+																	children: children_list [
+																		GtfMaterialWidget(78810a27-71d1-4dbb-bfe0-fcdb09717d01)
+																		{
+																			features: feature_list []
+																			children: children_list []
+																			name: "Material 16"
+																			ambient: #000000FF
+																			diffuse: #FF0000FF
+																			emissive: #000000FF
+																			shininess: 0F
+																			specular: #A9A9A9FF
+																			opacity: 1F
+																		}]
+																	name: "Mesh 16"
+																	visible: true
+																	mesh: mesh_resource(6b144ddd-7594-4bcf-98cf-965fafd113c2)
+																	{
+																		file: "Audi A7_20200713_173001\\caliper0.ebmesh"
+																	}
+																	culling: 2
+																}]
+															name: "caliper"
+															visible: true
+															rotationX: 4.349277E-06F
+															rotationY: 59.50586F
+															rotationZ: 5.047433E-06F
+															scalingX: 1F
+															scalingY: 1F
+															scalingZ: 1F
+															translationX: 5.159043F
+															translationY: -2.317451F
+															translationZ: -10.19136F
+														}, 
+														GtfSceneGraphNode(3f2c1f60-077f-4c24-9b4b-fb588f8aa5c1)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMeshWidget(5a350e4f-9343-424c-b57f-65378befcd21)
+																{
+																	features: feature_list []
+																	children: children_list [
+																		GtfMaterialWidget(b2993ff5-7aaa-4f9e-9521-054768830f67)
+																		{
+																			features: feature_list []
+																			children: children_list []
+																			name: "Material 18"
+																			ambient: #000000FF
+																			diffuse: #040404FF
+																			emissive: #000000FF
+																			shininess: 0F
+																			specular: #A9A9A9FF
+																			opacity: 1F
+																		}]
+																	name: "Mesh 18"
+																	visible: true
+																	mesh: mesh_resource(08cd7db5-7547-43c2-a13b-775e408fca21)
+																	{
+																		file: "Audi A7_20200713_173001\\Tire0.ebmesh"
+																	}
+																	culling: 2
+																}]
+															name: "Tire"
+															visible: true
+															rotationX: 0F
+															rotationY: 0F
+															rotationZ: 0F
+															scalingX: 1F
+															scalingY: 1F
+															scalingZ: 1F
+															translationX: 0F
+															translationY: 0F
+															translationZ: 0F
+														}, 
+														GtfSceneGraphNode(4ecafc4d-a865-4a0a-a75d-2c5c17a1a501)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMeshWidget(2f091ecd-068c-4e68-9c81-55c1a6c989c4)
+																{
+																	features: feature_list []
+																	children: children_list [
+																		GtfMaterialWidget(d867aade-db30-43eb-94d5-dae410b88f7c)
+																		{
+																			features: feature_list []
+																			children: children_list []
+																			name: "Material 20"
+																			ambient: #000000FF
+																			diffuse: #161616FF
+																			emissive: #000000FF
+																			shininess: 0F
+																			specular: #A9A9A9FF
+																			opacity: 1F
+																		}]
+																	name: "Mesh 20"
+																	visible: true
+																	mesh: mesh_resource(0dd7dbfa-8981-4581-ab43-dc85482c0206)
+																	{
+																		file: "Audi A7_20200713_173001\\Tube0.ebmesh"
+																	}
+																	culling: 2
+																}]
+															name: "Tube"
+															visible: true
+															rotationX: 0F
+															rotationY: 0F
+															rotationZ: -90F
+															scalingX: 1F
+															scalingY: 1F
+															scalingZ: 1F
+															translationX: 0F
+															translationY: 0F
+															translationZ: 0F
+														}, 
+														GtfSceneGraphNode(9a1eb778-dbfd-454d-8a28-5f550bcaff6e)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMeshWidget(da7d7de0-0aa5-4be0-88d7-5391936ab4e8)
+																{
+																	features: feature_list []
+																	children: children_list [
+																		GtfMaterialWidget(11a44a62-c8e3-4b01-accd-703e724c8fcb)
+																		{
+																			features: feature_list []
+																			children: children_list []
+																			name: "Material 22"
+																			ambient: #000000FF
+																			diffuse: #000000FF
+																			emissive: #000000FF
+																			shininess: 0F
+																			specular: #A9A9A9FF
+																			opacity: 1F
+																		}]
+																	name: "Mesh 22"
+																	visible: true
+																	mesh: mesh_resource(900c390c-dff2-4c0b-90eb-b118724f886f)
+																	{
+																		file: "Audi A7_20200713_173001\\Rim_cover0.ebmesh"
+																	}
+																	culling: 2
+																}]
+															name: "Rim_cover"
+															visible: true
+															rotationX: 0F
+															rotationY: 0F
+															rotationZ: -90F
+															scalingX: 1F
+															scalingY: 1F
+															scalingZ: 1F
+															translationX: 0.0314567F
+															translationY: -7.749954F
+															translationZ: 0F
+														}]
+													name: "Back_Wheels"
+													visible: true
+													rotationX: 0F
+													rotationY: 0F
+													rotationZ: 90F
+													scalingX: 1F
+													scalingY: 1F
+													scalingZ: 1F
+													translationX: 58.94086F
+													translationY: 25.92474F
+													translationZ: -99.17643F
+												}, 
+												GtfSceneGraphNode(99270f4b-d8c3-461c-870d-e64bb70eee56)
+												{
+													features: feature_list []
+													children: children_list [
+														GtfSceneGraphNode(2e53eec5-a084-466d-8c20-acd868bb233f)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMeshWidget(46cdae25-5f3f-4a65-86ea-1ec751aca87c)
+																{
+																	features: feature_list []
+																	children: children_list [
+																		GtfMaterialWidget(a57cf0e9-ed00-4bb7-bbc6-8a1a162a7026)
+																		{
+																			features: feature_list []
+																			children: children_list []
+																			name: "Material 24"
+																			ambient: #000000FF
+																			diffuse: #DCDCDCFF
+																			emissive: #000000FF
+																			shininess: 0F
+																			specular: #A9A9A9FF
+																			opacity: 1F
+																		}]
+																	name: "Mesh 24"
+																	visible: true
+																	mesh: mesh_resource(979ba960-344f-4dd5-be7c-81f91e3856f2)
+																	{
+																		file: "Audi A7_20200713_173001\\Rim_20.ebmesh"
+																	}
+																	culling: 2
+																}]
+															name: "Rim_2"
+															visible: true
+															rotationX: 0F
+															rotationY: 0F
+															rotationZ: -90F
+															scalingX: 1F
+															scalingY: 1F
+															scalingZ: 1F
+															translationX: 0F
+															translationY: -5.160081F
+															translationZ: 0F
+														}, 
+														GtfSceneGraphNode(de0f41f4-4b0b-410c-ae26-d4ac2ac8e9d3)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMeshWidget(36f8b17e-bc66-4f7f-87c6-37bff73a17e3)
+																{
+																	features: feature_list []
+																	children: children_list [
+																		GtfMaterialWidget(b41af46a-fff9-44bc-a4e7-683fb8de49ba)
+																		{
+																			features: feature_list []
+																			children: children_list []
+																			name: "Material 26"
+																			ambient: #000000FF
+																			diffuse: #FF0000FF
+																			emissive: #000000FF
+																			shininess: 0F
+																			specular: #A9A9A9FF
+																			opacity: 1F
+																		}]
+																	name: "Mesh 26"
+																	visible: true
+																	mesh: mesh_resource(79591120-e6b0-4336-8f99-3241156f4065)
+																	{
+																		file: "Audi A7_20200713_173001\\caliper_20.ebmesh"
+																	}
+																	culling: 2
+																}]
+															name: "caliper_2"
+															visible: true
+															rotationX: 4.349277E-06F
+															rotationY: 59.50586F
+															rotationZ: 5.047433E-06F
+															scalingX: 1F
+															scalingY: 1F
+															scalingZ: 1F
+															translationX: 5.159043F
+															translationY: -2.317451F
+															translationZ: -10.19136F
+														}, 
+														GtfSceneGraphNode(ed943405-6a4c-4c20-8c7c-932eb475aaf7)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMeshWidget(f108668f-0035-4827-be46-da5607cc88da)
+																{
+																	features: feature_list []
+																	children: children_list [
+																		GtfMaterialWidget(70e0ed19-57f3-46d3-93af-4d180114b587)
+																		{
+																			features: feature_list []
+																			children: children_list []
+																			name: "Material 28"
+																			ambient: #000000FF
+																			diffuse: #040404FF
+																			emissive: #000000FF
+																			shininess: 0F
+																			specular: #A9A9A9FF
+																			opacity: 1F
+																		}]
+																	name: "Mesh 28"
+																	visible: true
+																	mesh: mesh_resource(f75484a1-4a07-471e-a85b-0b8b3f93b2f9)
+																	{
+																		file: "Audi A7_20200713_173001\\Tire_20.ebmesh"
+																	}
+																	culling: 2
+																}]
+															name: "Tire_2"
+															visible: true
+															rotationX: 0F
+															rotationY: 0F
+															rotationZ: 0F
+															scalingX: 1F
+															scalingY: 1F
+															scalingZ: 1F
+															translationX: 0F
+															translationY: 0F
+															translationZ: 0F
+														}, 
+														GtfSceneGraphNode(4f425536-db5c-41dc-af6e-d2f141ffdf69)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMeshWidget(81bc0074-600e-4aca-a8dd-b8e0e4b75898)
+																{
+																	features: feature_list []
+																	children: children_list [
+																		GtfMaterialWidget(ac711eb3-7393-421a-b904-0571dc8e5548)
+																		{
+																			features: feature_list []
+																			children: children_list []
+																			name: "Material 30"
+																			ambient: #000000FF
+																			diffuse: #161616FF
+																			emissive: #000000FF
+																			shininess: 0F
+																			specular: #A9A9A9FF
+																			opacity: 1F
+																		}]
+																	name: "Mesh 30"
+																	visible: true
+																	mesh: mesh_resource(614a61b5-7bac-47dc-ba32-898196447226)
+																	{
+																		file: "Audi A7_20200713_173001\\Tube_20.ebmesh"
+																	}
+																	culling: 2
+																}]
+															name: "Tube_2"
+															visible: true
+															rotationX: 0F
+															rotationY: 0F
+															rotationZ: -90F
+															scalingX: 1F
+															scalingY: 1F
+															scalingZ: 1F
+															translationX: 0F
+															translationY: 0F
+															translationZ: 0F
+														}, 
+														GtfSceneGraphNode(f91e10d5-2801-4fb0-8171-c4d39f9d472f)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMeshWidget(bfac205e-07f6-4b37-b4f9-a705261e3cfa)
+																{
+																	features: feature_list []
+																	children: children_list [
+																		GtfMaterialWidget(a056eb9d-bb65-45ed-93f4-a38da92ad178)
+																		{
+																			features: feature_list []
+																			children: children_list []
+																			name: "Material 32"
+																			ambient: #000000FF
+																			diffuse: #000000FF
+																			emissive: #000000FF
+																			shininess: 0F
+																			specular: #A9A9A9FF
+																			opacity: 1F
+																		}]
+																	name: "Mesh 32"
+																	visible: true
+																	mesh: mesh_resource(98aa3e4b-924a-480b-94ba-e37765b22cf6)
+																	{
+																		file: "Audi A7_20200713_173001\\Rim_cover_20.ebmesh"
+																	}
+																	culling: 2
+																}]
+															name: "Rim_cover_2"
+															visible: true
+															rotationX: 0F
+															rotationY: 0F
+															rotationZ: -90F
+															scalingX: 1F
+															scalingY: 1F
+															scalingZ: 1F
+															translationX: 0.0314567F
+															translationY: -7.749954F
+															translationZ: 0F
+														}]
+													name: "Front_Wheels"
+													visible: true
+													rotationX: 0F
+													rotationY: 0F
+													rotationZ: 90F
+													scalingX: 1F
+													scalingY: 1F
+													scalingZ: 1F
+													translationX: 58.94086F
+													translationY: 25.92474F
+													translationZ: 112.8697F
+												}]
+											name: "Wheels"
+											visible: true
+											rotationX: 0F
+											rotationY: 0F
+											rotationZ: 0F
+											scalingX: 1F
+											scalingY: 1F
+											scalingZ: 1F
+											translationX: 0F
+											translationY: 0F
+											translationZ: 0F
+										}, 
+										GtfSceneGraphNode(2cc6c594-68c5-4b8e-ba06-803131ae20de)
+										{
+											features: feature_list []
+											children: children_list [
+												GtfSceneGraphNode(f2c0d6e9-0b78-49ac-8015-49926950d02e)
+												{
+													features: feature_list []
+													children: children_list [
+														GtfMeshWidget(1887808b-566a-43e0-865b-5e138c6ef012)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMaterialWidget(0bb98c07-223c-4450-bb2b-cc0b234a4fdc)
+																{
+																	features: feature_list []
+																	children: children_list []
+																	name: "Material 34"
+																	ambient: #000000FF
+																	diffuse: #121111FF
+																	emissive: #000000FF
+																	shininess: 0F
+																	specular: #A9A9A9FF
+																	opacity: 1F
+																}]
+															name: "Mesh 34"
+															visible: true
+															mesh: mesh_resource(4b728aa5-362b-451f-af1a-266ddc3a5359)
+															{
+																file: "Audi A7_20200713_173001\\Interior_20.ebmesh"
+															}
+															culling: 2
+														}]
+													name: "Interior_2"
+													visible: true
+													rotationX: 0F
+													rotationY: 0F
+													rotationZ: 0F
+													scalingX: 1F
+													scalingY: 1F
+													scalingZ: 1F
+													translationX: 33.99578F
+													translationY: 60.13244F
+													translationZ: -45.64208F
+												}, 
+												GtfSceneGraphNode(3177f534-28ca-4149-8c9f-6c78785184b6)
+												{
+													features: feature_list []
+													children: children_list [
+														GtfMeshWidget(a9b23613-d760-4b36-b75e-d42395ff4473)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMaterialWidget(1b404719-e7ff-4f17-87f5-62b52f4bf974)
+																{
+																	features: feature_list []
+																	children: children_list []
+																	name: "Material 36"
+																	ambient: #000000FF
+																	diffuse: #8B4513FF
+																	emissive: #000000FF
+																	shininess: 0F
+																	specular: #A9A9A9FF
+																	opacity: 1F
+																}]
+															name: "Mesh 36"
+															visible: true
+															mesh: mesh_resource(ff11bb0a-b032-4f0b-bbc7-3ba3cdf41f29)
+															{
+																file: "Audi A7_20200713_173001\\Dash_board0.ebmesh"
+															}
+															culling: 2
+														}]
+													name: "Dash_board"
+													visible: true
+													rotationX: 0F
+													rotationY: 0F
+													rotationZ: 0F
+													scalingX: 1F
+													scalingY: 1F
+													scalingZ: 1F
+													translationX: 0.02719766F
+													translationY: 51.81624F
+													translationZ: 30.50696F
+												}, 
+												GtfSceneGraphNode(f656fd54-d88f-4c53-9965-1389d9850823)
+												{
+													features: feature_list []
+													children: children_list [
+														GtfMeshWidget(a363ef98-425f-46d5-bc63-580bf92260ab)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMaterialWidget(752f0629-1df9-4ad0-9ec8-d5fc1f4ef072)
+																{
+																	features: feature_list []
+																	children: children_list []
+																	name: "Material 38"
+																	ambient: #000000FF
+																	diffuse: #8B4513FF
+																	emissive: #000000FF
+																	shininess: 0F
+																	specular: #A9A9A9FF
+																	opacity: 1F
+																}]
+															name: "Mesh 38"
+															visible: true
+															mesh: mesh_resource(32d1b55d-2dfc-4d1b-a058-7c2cde1735e9)
+															{
+																file: "Audi A7_20200713_173001\\Chair0.ebmesh"
+															}
+															culling: 2
+														}]
+													name: "Chair"
+													visible: true
+													rotationX: -180F
+													rotationY: 0F
+													rotationZ: 180F
+													scalingX: 1F
+													scalingY: 1F
+													scalingZ: 1F
+													translationX: 29.68542F
+													translationY: 53.71668F
+													translationZ: 2.024066F
+												}]
+											name: "Interior"
+											visible: true
+											rotationX: 0F
+											rotationY: 0F
+											rotationZ: 0F
+											scalingX: 1F
+											scalingY: 1F
+											scalingZ: 1F
+											translationX: 0F
+											translationY: 0F
+											translationZ: 0F
+										}, 
+										GtfSceneGraphNode(ac3826ae-4e65-4eed-82a8-066dd88d221c)
+										{
+											features: feature_list []
+											children: children_list [
+												GtfMeshWidget(00ceb88d-f5bc-4165-a89b-8a088a91b5f0)
+												{
+													features: feature_list []
+													children: children_list [
+														GtfMaterialWidget(87fac46b-e44b-4e05-9ab0-dd15fabb5d57)
+														{
+															features: feature_list []
+															children: children_list []
+															name: "Material 40"
+															ambient: #000000FF
+															diffuse: #FFFFFFFF
+															emissive: #000000FF
+															shininess: 0F
+															specular: #A9A9A9FF
+															opacity: 1F
+														}]
+													name: "Mesh 40"
+													visible: true
+													mesh: mesh_resource(688f6a8b-f1c4-4e05-a728-90b3e4bc8483)
+													{
+														file: "Audi A7_20200713_173001\\Trunk0.ebmesh"
+													}
+													culling: 2
+												}, 
+												GtfSceneGraphNode(980052a9-5557-447a-ae9d-b9054d2b4884)
+												{
+													features: feature_list []
+													children: children_list [
+														GtfMeshWidget(7abe74c1-2592-447e-a156-d58a1c883b7a)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMaterialWidget(5ea436df-37a9-4eca-a139-69160b814781)
+																{
+																	features: feature_list []
+																	children: children_list []
+																	name: "Material 42"
+																	ambient: #000000FF
+																	diffuse: #40E0D0FF
+																	emissive: #000000FF
+																	shininess: 0F
+																	specular: #A9A9A9FF
+																	opacity: 0.1F
+																}]
+															name: "Mesh 42"
+															visible: true
+															mesh: mesh_resource(baa518d3-1ee9-44ce-acfd-f6cefe6b421c)
+															{
+																file: "Audi A7_20200713_173001\\Glass_30.ebmesh"
+															}
+															culling: 2
+														}]
+													name: "Glass_3"
+													visible: true
+													rotationX: 0F
+													rotationY: 0F
+													rotationZ: 0F
+													scalingX: 1F
+													scalingY: 1F
+													scalingZ: 1F
+													translationX: 0F
+													translationY: 0F
+													translationZ: 0F
+												}]
+											name: "Trunk"
+											visible: true
+											rotationX: 0F
+											rotationY: 0F
+											rotationZ: 0F
+											scalingX: 1F
+											scalingY: 1F
+											scalingZ: 1F
+											translationX: 69.05053F
+											translationY: 35.90171F
+											translationZ: -98.94867F
+										}, 
+										GtfSceneGraphNode(a8b05d78-721f-4ee3-8274-d9338ef54a6e)
+										{
+											features: feature_list []
+											children: children_list [
+												GtfMeshWidget(7502af4d-77dc-4c02-a1ba-f0fdb587804f)
+												{
+													features: feature_list []
+													children: children_list [
+														GtfMaterialWidget(c3018980-0eca-4ad9-afbc-02c7460daa17)
+														{
+															features: feature_list []
+															children: children_list []
+															name: "Material 44"
+															ambient: #000000FF
+															diffuse: #FFFFFFFF
+															emissive: #000000FF
+															shininess: 0F
+															specular: #A9A9A9FF
+															opacity: 1F
+														}]
+													name: "Mesh 44"
+													visible: true
+													mesh: mesh_resource(a1de55a1-60ee-448d-98d3-2d975f201c13)
+													{
+														file: "Audi A7_20200713_173001\\Front_Door0.ebmesh"
+													}
+													culling: 2
+												}, 
+												GtfSceneGraphNode(51cfce21-9794-4c4b-90a8-1f1c9c1a1b5a)
+												{
+													features: feature_list []
+													children: children_list [
+														GtfMeshWidget(78d7cd7e-8b4a-427a-af19-26cf04b4e573)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMaterialWidget(5bda57e7-cac3-4c27-8e9f-d586f625be2a)
+																{
+																	features: feature_list []
+																	children: children_list []
+																	name: "Material 46"
+																	ambient: #000000FF
+																	diffuse: #40E0D0FF
+																	emissive: #000000FF
+																	shininess: 0F
+																	specular: #A9A9A9FF
+																	opacity: 0.1F
+																}]
+															name: "Mesh 46"
+															visible: true
+															mesh: mesh_resource(985393c2-9fbf-420c-9133-2ff243297e97)
+															{
+																file: "Audi A7_20200713_173001\\Glass_40.ebmesh"
+															}
+															culling: 2
+														}]
+													name: "Glass_4"
+													visible: true
+													rotationX: -180F
+													rotationY: 0F
+													rotationZ: -180F
+													scalingX: 1F
+													scalingY: 1F
+													scalingZ: 1F
+													translationX: 0F
+													translationY: 37.76421F
+													translationZ: 44.79094F
+												}]
+											name: "Front_Door"
+											visible: true
+											rotationX: -180F
+											rotationY: 0F
+											rotationZ: 180F
+											scalingX: 1F
+											scalingY: 1F
+											scalingZ: 1F
+											translationX: 0F
+											translationY: 46.43115F
+											translationZ: 29.56107F
+										}, 
+										GtfSceneGraphNode(bb98cd09-ecac-48ae-95c8-141b74bae2be)
+										{
+											features: feature_list []
+											children: children_list [
+												GtfMeshWidget(2f023f28-5c99-4d2f-8be6-24632af762ac)
+												{
+													features: feature_list []
+													children: children_list [
+														GtfMaterialWidget(dad733c5-81ed-48b8-9acb-670b64382dc4)
+														{
+															features: feature_list []
+															children: children_list []
+															name: "Material 48"
+															ambient: #000000FF
+															diffuse: #FFFFFFFF
+															emissive: #000000FF
+															shininess: 0F
+															specular: #A9A9A9FF
+															opacity: 1F
+														}]
+													name: "Mesh 48"
+													visible: true
+													mesh: mesh_resource(427b935d-92ea-4353-a3f1-a107d253c777)
+													{
+														file: "Audi A7_20200713_173001\\Back_Door0.ebmesh"
+													}
+													culling: 2
+												}, 
+												GtfSceneGraphNode(9c8e2ff9-7173-4198-87c5-dfe99c6344b9)
+												{
+													features: feature_list []
+													children: children_list [
+														GtfMeshWidget(9f918e33-48fe-4e8f-a08c-473796039acd)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMaterialWidget(b62c4014-66bb-49cb-b502-6c1655d363ce)
+																{
+																	features: feature_list []
+																	children: children_list []
+																	name: "Material 50"
+																	ambient: #000000FF
+																	diffuse: #40E0D0FF
+																	emissive: #000000FF
+																	shininess: 0F
+																	specular: #A9A9A9FF
+																	opacity: 0.1F
+																}]
+															name: "Mesh 50"
+															visible: true
+															mesh: mesh_resource(a580d844-566e-4456-8b20-477ad918c035)
+															{
+																file: "Audi A7_20200713_173001\\Glass_50.ebmesh"
+															}
+															culling: 2
+														}]
+													name: "Glass_5"
+													visible: true
+													rotationX: -180F
+													rotationY: 0F
+													rotationZ: -180F
+													scalingX: 1F
+													scalingY: 1F
+													scalingZ: 1F
+													translationX: 0F
+													translationY: 36.33232F
+													translationZ: -31.12305F
+												}]
+											name: "Back_Door"
+											visible: true
+											rotationX: -180F
+											rotationY: 0F
+											rotationZ: 180F
+											scalingX: 1F
+											scalingY: 1F
+											scalingZ: 1F
+											translationX: 0F
+											translationY: 47.86304F
+											translationZ: -46.35292F
+										}, 
+										GtfSceneGraphNode(91e5b18b-5797-41a8-9039-30ea44e01225)
+										{
+											features: feature_list []
+											children: children_list [
+												GtfSceneGraphNode(86a06679-12a7-4c47-826a-78e90e34f3b1)
+												{
+													features: feature_list []
+													children: children_list [
+														GtfMeshWidget(142e8a66-5e80-4798-875f-eb21643b5e59)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMaterialWidget(5ae99412-2e73-41ca-a22e-85fa65c4eeda)
+																{
+																	features: feature_list []
+																	children: children_list []
+																	name: "Material 52"
+																	ambient: #000000FF
+																	diffuse: #FFFFFFFF
+																	emissive: #000000FF
+																	shininess: 0F
+																	specular: #A9A9A9FF
+																	opacity: 1F
+																}]
+															name: "Mesh 52"
+															visible: true
+															mesh: mesh_resource(6bad42a3-6207-404f-b604-243e7d089403)
+															{
+																file: "Audi A7_20200713_173001\\Car_paint0.ebmesh"
+															}
+															culling: 2
+														}]
+													name: "Car_paint"
+													visible: true
+													rotationX: 0F
+													rotationY: 0F
+													rotationZ: 0F
+													scalingX: 1F
+													scalingY: 1F
+													scalingZ: 1F
+													translationX: -69.05053F
+													translationY: 23.25448F
+													translationZ: 98.8117F
+												}, 
+												GtfSceneGraphNode(27b05d13-7044-4c8b-aee7-0bdefd22eefa)
+												{
+													features: feature_list []
+													children: children_list [
+														GtfMeshWidget(81fc2df2-9058-4298-aa99-f781e973ef10)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMaterialWidget(f712202c-a77c-41dd-9708-89939019c0d8)
+																{
+																	features: feature_list []
+																	children: children_list []
+																	name: "Material 54"
+																	ambient: #000000FF
+																	diffuse: #0C0C0CFF
+																	emissive: #000000FF
+																	shininess: 0F
+																	specular: #A9A9A9FF
+																	opacity: 1F
+																}]
+															name: "Mesh 54"
+															visible: true
+															mesh: mesh_resource(2151af60-85d3-4521-b888-7abc118fa6a1)
+															{
+																file: "Audi A7_20200713_173001\\Chrome0.ebmesh"
+															}
+															culling: 2
+														}]
+													name: "Chrome"
+													visible: true
+													rotationX: 0F
+													rotationY: 0F
+													rotationZ: 0F
+													scalingX: 1F
+													scalingY: 1F
+													scalingZ: 1F
+													translationX: -69.05053F
+													translationY: 24.88688F
+													translationZ: 99.06765F
+												}, 
+												GtfSceneGraphNode(3f566d68-ba86-47e2-93a9-4a621031e6d9)
+												{
+													features: feature_list []
+													children: children_list [
+														GtfMeshWidget(58acce62-af69-468b-803a-f6282b5583b5)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMaterialWidget(c438c8e3-d368-4c74-b91b-863b272c7bea)
+																{
+																	features: feature_list []
+																	children: children_list []
+																	name: "Material 56"
+																	ambient: #000000FF
+																	diffuse: #696969FF
+																	emissive: #000000FF
+																	shininess: 0F
+																	specular: #A9A9A9FF
+																	opacity: 1F
+																}]
+															name: "Mesh 56"
+															visible: true
+															mesh: mesh_resource(68a44704-fcc4-45ef-8bc0-4abaa0bde8bf)
+															{
+																file: "Audi A7_20200713_173001\\Under_geo0.ebmesh"
+															}
+															culling: 2
+														}]
+													name: "Under_geo"
+													visible: true
+													rotationX: 0F
+													rotationY: 0F
+													rotationZ: 0F
+													scalingX: 1F
+													scalingY: 1F
+													scalingZ: 1F
+													translationX: -69.05053F
+													translationY: -21.84259F
+													translationZ: 98.94867F
+												}, 
+												GtfSceneGraphNode(de3b5b97-41e0-4100-b99a-3ed0ae862125)
+												{
+													features: feature_list []
+													children: children_list [
+														GtfMeshWidget(68aebae5-b7fe-46df-913b-3ce3d567f22a)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMaterialWidget(cff24e48-5102-49df-be80-7d0990eb2cc9)
+																{
+																	features: feature_list []
+																	children: children_list []
+																	name: "Material 58"
+																	ambient: #000000FF
+																	diffuse: #696969FF
+																	emissive: #000000FF
+																	shininess: 0F
+																	specular: #A9A9A9FF
+																	opacity: 1F
+																}]
+															name: "Mesh 58"
+															visible: true
+															mesh: mesh_resource(5b2cbf89-a5f6-4eb7-8610-9d2ee52f1efc)
+															{
+																file: "Audi A7_20200713_173001\\Logo0.ebmesh"
+															}
+															culling: 2
+														}]
+													name: "Logo"
+													visible: true
+													rotationX: 0F
+													rotationY: 0F
+													rotationZ: 0F
+													scalingX: 1F
+													scalingY: 1F
+													scalingZ: 1F
+													translationX: -66.90089F
+													translationY: 9.686643F
+													translationZ: 272.6991F
+												}, 
+												GtfSceneGraphNode(475ad64b-b81f-4705-bf32-ddec4fd91211)
+												{
+													features: feature_list []
+													children: children_list [
+														GtfMeshWidget(95f999b5-0ede-4191-8c1f-ef896710839a)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMaterialWidget(e996708a-6939-4cd9-a734-f896f8a65f2b)
+																{
+																	features: feature_list []
+																	children: children_list []
+																	name: "Material 60"
+																	ambient: #000000FF
+																	diffuse: #40E0D0FF
+																	emissive: #000000FF
+																	shininess: 0F
+																	specular: #A9A9A9FF
+																	opacity: 0.1F
+																}]
+															name: "Mesh 60"
+															visible: true
+															mesh: mesh_resource(2062473a-4099-47f9-9990-d09ef3d639f7)
+															{
+																file: "Audi A7_20200713_173001\\Glass_60.ebmesh"
+															}
+															culling: 2
+														}]
+													name: "Glass_6"
+													visible: true
+													rotationX: 0F
+													rotationY: 0F
+													rotationZ: 0F
+													scalingX: 1F
+													scalingY: 1F
+													scalingZ: 1F
+													translationX: -69.05053F
+													translationY: 48.29364F
+													translationZ: 83.7188F
+												}, 
+												GtfSceneGraphNode(35dc1541-b9cf-4368-be12-336b08561809)
+												{
+													features: feature_list []
+													children: children_list [
+														GtfMeshWidget(4a34e4f9-2ec4-44ab-a3e2-551152e5f8e2)
+														{
+															features: feature_list []
+															children: children_list [
+																GtfMaterialWidget(f3f8c58a-3f85-4d73-b753-9c43d17f645c)
+																{
+																	features: feature_list []
+																	children: children_list []
+																	name: "Material 62"
+																	ambient: #000000FF
+																	diffuse: #121111FF
+																	emissive: #000000FF
+																	shininess: 0F
+																	specular: #A9A9A9FF
+																	opacity: 1F
+																}]
+															name: "Mesh 62"
+															visible: true
+															mesh: mesh_resource(7b452bd9-678b-4626-8840-667ce7410bc4)
+															{
+																file: "Audi A7_20200713_173001\\Plastic0.ebmesh"
+															}
+															culling: 2
+														}]
+													name: "Plastic"
+													visible: true
+													rotationX: 0F
+													rotationY: 0F
+													rotationZ: 0F
+													scalingX: 1F
+													scalingY: 1F
+													scalingZ: 1F
+													translationX: -69.27098F
+													translationY: 25.05988F
+													translationZ: 98.75271F
+												}]
+											name: "Body"
+											visible: true
+											rotationX: 0F
+											rotationY: 0F
+											rotationZ: 0F
+											scalingX: 1F
+											scalingY: 1F
+											scalingZ: 1F
+											translationX: 69.05053F
+											translationY: 35.90171F
+											translationZ: -98.94867F
+										}]
+									name: "Car"
+									visible: true
+									rotationX: -180F
+									rotationY: 0F
+									rotationZ: 180F
+									scalingX: 1F
+									scalingY: 1F
+									scalingZ: 1F
+									translationX: 0F
+									translationY: 0F
+									translationZ: 0F
+								}]
+							name: "Subdivision_Surface_Car"
+							visible: true
+							rotationX: 0F
+							rotationY: -136F
+							rotationZ: 0F
+							scalingX: 1F
+							scalingY: 1F
+							scalingZ: 1F
+							translationX: 7F
+							translationY: -20F
+							translationZ: 7F
+						}, 
+						GtfSceneGraphNode(2a8df54c-acdf-4490-85d9-64a1fa17deb5)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfPointLight(582a2d39-c870-44fd-94e4-69c1a69b25d0)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Light_Point"
+									enabled: true
+									color: #FFFAFAFF
+									intensity: 4F
+									attenuationConstant: 5F
+									attenuationLinear: 0F
+									attenuationQuadratic: 0F
+								}]
+							name: "Light_Point_Car"
+							visible: true
+							rotationX: 0F
+							rotationY: 0F
+							rotationZ: 0F
+							scalingX: 1F
+							scalingY: 1F
+							scalingZ: 1F
+							translationX: -500F
+							translationY: 500F
+							translationZ: -500F
+						}]
+					name: "Home_Car_3D"
+					visible: true
+					rotationX: 0F
+					rotationY: 0F
+					rotationZ: 0F
+					scalingX: 1F
+					scalingY: 1F
+					scalingZ: 1F
+					translationX: 0F
+					translationY: 0F
+					translationZ: 0F
+				}]
+			name: "Vehicle_Car_3D"
+			visible: true
+			width: 425
+			height: 225
+			x: 360
+			y: 80
+			gamma: 1.5F
+		}, 
+		GtfContainer(722db7cf-4d13-4c6c-8e64-94199aec7b74)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfEllipse(5baceba5-b02c-470a-94be-de284dc52764)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Front_Lights_Ellipse"
+					visible: true
+					width: 15
+					height: 15
+					x: 505
+					y: 233
+					fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+				}, 
+				GtfEllipse(0190e77d-3d13-4154-9e19-55033901d3d3)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Back_Lights_Ellipse"
+					visible: true
+					width: 15
+					height: 15
+					x: 672
+					y: 225
+					fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+				}, 
+				GtfRectangle(db2bd405-f241-4aa7-8b0f-729cb675767a)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Brakes_Line"
+					visible: true
+					width: 90
+					height: 3
+					x: 377
+					y: 189
+					fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+				}, 
+				GtfRectangle(d6fa22a3-4d3a-458c-809d-05a865ad088b)
+				{
+					features: feature_list [
+						Rotation(ecdd13ca-7be6-42b3-b032-08ab020a5fea)
+						{
+							rotationEnabled: true
+							rotationAngleX: 0F
+							rotationAngleY: 0F
+							rotationAngleZ: -45F
+						}, 
+						Scaling(618a89b8-bc89-422b-928d-f505bb7cfa11)
+						{
+							scalingEnabled: true
+							scalingX: 100F
+							scalingY: 100F
+							scalingZ: 100F
+						}, 
+						Shearing(d1ba46eb-ad15-4035-beb4-5de3381986cd)
+						{
+							shearingEnabled: true
+							shearingXbyY: 0F
+							shearingXbyZ: 0F
+							shearingYbyX: 0F
+							shearingYbyZ: 0F
+							shearingZbyX: 0F
+							shearingZbyY: 0F
+						}, 
+						Pivot(32abf369-1bfe-4319-bd82-172ba83b091a)
+						{
+							pivotX: 37.5F
+							pivotY: 37.5F
+							pivotZ: 0F
+						}]
+					children: children_list []
+					name: "Brakes_Line_2"
+					visible: true
+					width: 70
+					height: 3
+					x: 429
+					y: 205
+					fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+				}, 
+				GtfRectangle(0dea7e62-5d9b-4fa8-93bd-b41f4d14b713)
+				{
+					features: feature_list [
+						Rotation(552ab459-86c5-4ab2-a455-ae83fd2400b2)
+						{
+							rotationEnabled: true
+							rotationAngleX: 0F
+							rotationAngleY: 0F
+							rotationAngleZ: 45F
+						}, 
+						Scaling(92ff6615-5d4d-4573-a80b-50b27e910a86)
+						{
+							scalingEnabled: true
+							scalingX: 100F
+							scalingY: 100F
+							scalingZ: 100F
+						}, 
+						Shearing(d53265f9-7cf2-4df8-8b14-021eecaa1170)
+						{
+							shearingEnabled: true
+							shearingXbyY: 0F
+							shearingXbyZ: 0F
+							shearingYbyX: 0F
+							shearingYbyZ: 0F
+							shearingZbyX: 0F
+							shearingZbyY: 0F
+						}, 
+						Pivot(85008519-789a-4997-bcd6-f55905f7273b)
+						{
+							pivotX: 37.5F
+							pivotY: 37.5F
+							pivotZ: 0F
+						}]
+					children: children_list []
+					name: "Back_Lights_Line_2"
+					visible: true
+					width: 53
+					height: 3
+					x: 657
+					y: 229
+					fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+				}, 
+				GtfRectangle(3a819eaf-9dc4-4207-9339-06f50689a7ec)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Back_Lights_Line"
+					visible: true
+					width: 262
+					height: 3
+					x: 380
+					y: 266
+					fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+				}, 
+				GtfContainer(e5c7a99f-5f75-47f7-a9fa-06000224efba)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfRectangle(c82575b6-cf55-4245-ba5c-2e9309d0c801)
+						{
+							features: feature_list [
+								Border(3959870f-9b20-4428-ac5f-e834ab4e37f7)
+								{
+									borderThickness: 2
+									borderColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+									borderStyle: 0
+								}]
+							children: children_list [
+								GtfLabel(4d690fbc-8853-436e-9cba-889487d4ac6b)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Back_Lights_Label"
+									visible: true
+									width: width@e5c7a99f-5f75-47f7-a9fa-06000224efba (propref<int>)
+									height: height@e5c7a99f-5f75-47f7-a9fa-06000224efba (propref<int>)
+									x: 0
+									y: 0
+									text: @3b7febc8-c3e5-4ed3-b601-770a0aac2a75 (objectref<string>)
+									textColor: #FFFFFFFF
+									font: font_resource(c36bb0d0-358a-49f7-9ba6-f412fc04781c)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 20
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+									okCondition: conditional_script(732bb85f-b87a-43a3-8638-fa331421aaea)
+									{
+										triggerList: trigger_list(427261fa-f758-4102-98dc-a0e8bd2f8caa)
+										{
+											script: "dp:Variables:Back_Lights_Ok" \
+												"dp:Colors:Vehicle_Colors" \
+												""
+										}
+										onTrigger: function<bool,bool>(3daf4a20-3b3b-4107-998b-dd62d1a76ed2)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	if(dp:Variables:Back_Lights_Ok == true)" \
+												"		v:this->^.fillColor = dp:Colors:Vehicle_Colors[0]" \
+												"	else" \
+												"		v:this->^.fillColor = dp:Colors:Vehicle_Colors[1]	" \
+												"	false" \
+												"}"
+										}
+									}
+								}]
+							name: "Back_Lights_Border"
+							visible: true
+							width: width@e5c7a99f-5f75-47f7-a9fa-06000224efba (propref<int>)
+							height: height@e5c7a99f-5f75-47f7-a9fa-06000224efba (propref<int>)
+							x: 0
+							y: 0
+							fillColor: #FFFFFF00
+						}]
+					name: "Back_Lights_Container"
+					visible: true
+					width: 175
+					height: 35
+					x: 205
+					y: 250
+				}, 
+				GtfContainer(a6f3f9f6-90c1-4f43-b6d6-2a721c221477)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfRectangle(c84c00c0-50aa-4fb1-a0d1-2c52e70ab9af)
+						{
+							features: feature_list [
+								Border(40412312-ac83-4bfa-a876-5f43f906d4ad)
+								{
+									borderThickness: 2
+									borderColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+									borderStyle: 0
+								}]
+							children: children_list [
+								GtfLabel(68331818-2c27-4e92-a21d-32371a71d041)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Brakes_Label"
+									visible: true
+									width: width@a6f3f9f6-90c1-4f43-b6d6-2a721c221477 (propref<int>)
+									height: height@a6f3f9f6-90c1-4f43-b6d6-2a721c221477 (propref<int>)
+									x: 0
+									y: 0
+									text: @4d010ec8-acf6-466f-9835-b9d6c6976fbb (objectref<string>)
+									textColor: #FFFFFFFF
+									font: font_resource(fb0c79f3-c619-4a0c-981d-f5f7a5e74e1f)
+									{
+										file: "PT_Sans_Narrow.ttf"
+										size: 20
+									}
+									horizontalAlign: 1
+									verticalAlign: 0
+									okCondition: conditional_script(f915dbed-e384-4879-bae4-cc99e35256fe)
+									{
+										triggerList: trigger_list(5a8fc64c-aa2b-425e-810b-fb52501bfb98)
+										{
+											script: "dp:Variables:Brakes_Ok" \
+												"dp:Colors:Vehicle_Colors" \
+												""
+										}
+										onTrigger: function<bool,bool>(89819b90-6f3e-49af-838d-d847a4587b6d)
+										{
+											script: "function(v:arg0::bool)" \
+												"{" \
+												"	if(dp:Variables:Brakes_Ok == true)" \
+												"		v:this->^.fillColor = dp:Colors:Vehicle_Colors[0]" \
+												"	else" \
+												"		v:this->^.fillColor = dp:Colors:Vehicle_Colors[1]	" \
+												"	false" \
+												"}"
+										}
+									}
+								}]
+							name: "Brakes_Border"
+							visible: true
+							width: width@a6f3f9f6-90c1-4f43-b6d6-2a721c221477 (propref<int>)
+							height: height@a6f3f9f6-90c1-4f43-b6d6-2a721c221477 (propref<int>)
+							x: 0
+							y: 0
+							fillColor: #FFFFFF00
+						}]
+					name: "Brakes_Container"
+					visible: true
+					width: 175
+					height: 35
+					x: 205
+					y: 175
+				}]
+			name: "Vehicle_Container"
+			visible: true
+			width: 800
+			height: 480
+			x: 0
+			y: 0
+		}, 
+		GtfEllipse(c853438f-ec17-4fa9-9b16-2c6635e87568)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Vehicle_1"
+			visible: true
+			width: 30
+			height: 30
+			x: 325
+			y: 20
+			fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+			arcWidth: 0
+			centralAngle: 360F
+			sectorRotation: 0F
+		}, 
+		GtfEllipse(3a6f3c03-932d-4c1d-989c-c1e58ed4b42b)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Vehicle_2"
+			visible: true
+			width: 30
+			height: 30
+			x: 375
+			y: 20
+			fillColor: #00FF00FF
+			arcWidth: 0
+			centralAngle: 360F
+			sectorRotation: 0F
+		}, 
+		GtfEllipse(708f26b5-1811-4bcb-ae24-f7d50e49c19c)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Vehicle_3"
+			visible: true
+			width: 30
+			height: 30
+			x: 425
+			y: 20
+			fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+			arcWidth: 0
+			centralAngle: 360F
+			sectorRotation: 0F
+		}, 
+		GtfEllipse(d2e6150f-23c1-4ddb-9ccb-ff1ac66c0a0d)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Vehicle_4"
+			visible: true
+			width: 30
+			height: 30
+			x: 475
+			y: 20
+			fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+			arcWidth: 0
+			centralAngle: 360F
+			sectorRotation: 0F
+		}]
+}

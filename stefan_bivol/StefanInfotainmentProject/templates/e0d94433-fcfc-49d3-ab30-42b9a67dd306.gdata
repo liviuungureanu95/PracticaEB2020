@@ -1,0 +1,684 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template(e0d94433-fcfc-49d3-ab30-42b9a67dd306)
+{
+	name: "Media Screen View"
+	structure: GtfView(63b8130d-0c65-4940-a300-1c832681cee0)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(f31822b5-b4f8-4227-b394-5550410d3f2c)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfRectangle(837e1224-6daf-49aa-9b34-473cc1208dca)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Menu_Line"
+						visible: true
+						width: 730
+						height: 3
+						x: 32
+						y: 385
+						fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+					}, 
+					GtfContainer(a7abc839-ef50-4289-b261-660e1c6b5c5b)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLabel(9fa0272b-edd2-4788-9394-99bd6c4ff66d)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Time_Label"
+								visible: true
+								width: width@a7abc839-ef50-4289-b261-660e1c6b5c5b (propref<int>)
+								height: height@a7abc839-ef50-4289-b261-660e1c6b5c5b (propref<int>)
+								x: 0
+								y: 0
+								text: string_scriptedValue(ffe1a502-48f6-4257-862d-735fd1eaff72)
+								{
+									triggerList: trigger_list(b29cc788-a799-4ac1-9ba0-60a605ff7d51)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(abad1aac-dce2-4cf1-b5ae-f9e117ab3d33)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<string>(5b8d9e40-3c82-4def-9a39-a06a90d59b3f)
+									{
+										script: "function()" \
+											"{" \
+											"	if(f:localtime_minute(f:system_time()) < 10 && (f:localtime_hour(f:system_time()) + 3) < 10)" \
+											"		dp:Variables:Time = \"0\" + f:int2string(f:localtime_hour(f:system_time()) + 3)" \
+											"		+ \":0\" + f:int2string(f:localtime_minute(f:system_time()))" \
+											"	else if(f:localtime_minute(f:system_time()) < 10)" \
+											"	 	dp:Variables:Time = f:int2string(f:localtime_hour(f:system_time()) + 3)" \
+											"		+ \":0\" + f:int2string(f:localtime_minute(f:system_time()))" \
+											"	else if((f:localtime_hour(f:system_time()) + 3) < 10)" \
+											"		dp:Variables:Time = \"0\" + f:int2string(f:localtime_hour(f:system_time()) + 3)" \
+											"		+ \":\" + f:int2string(f:localtime_minute(f:system_time()))" \
+											"	else " \
+											"		dp:Variables:Time = f:int2string(f:localtime_hour(f:system_time()) + 3)" \
+											"		+ \":\" + f:int2string(f:localtime_minute(f:system_time()))" \
+											"	" \
+											"	dp:Variables:Time" \
+											"}"
+									}
+									write: function<bool,string>(957f9929-274e-48b7-aab5-8939f9031a15)
+									{
+										script: "function(v:arg0::string)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								textColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+								font: font_resource(c47c4491-3368-42ac-866a-f4d4a444613c)
+								{
+									file: "PT_Sans_Narrow.ttf"
+									size: 30
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}, 
+							GtfRectangle(22f8f1f6-2fc2-4e55-bd67-64540054afbb)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Time_Left_Line"
+								visible: true
+								width: 3
+								height: height@a7abc839-ef50-4289-b261-660e1c6b5c5b (propref<int>)
+								x: 0
+								y: 0
+								fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+							}, 
+							GtfRectangle(dc16c558-3bdd-4ac9-8468-aafe80d8b8e3)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Time_Right_Line"
+								visible: true
+								width: 3
+								height: height@a7abc839-ef50-4289-b261-660e1c6b5c5b (propref<int>)
+								x: width@a7abc839-ef50-4289-b261-660e1c6b5c5b (propref<int>)
+								y: 0
+								fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+							}]
+						name: "Time_Label"
+						visible: true
+						width: 125
+						height: 75
+						x: 350
+						y: 395
+					}, 
+					GtfContainer_template_instance(2512c3ad-3eb2-46bf-9e42-8279793e9076)
+					{
+						name: "Home_Button"
+						template: @f0572966-554c-46a4-ab74-f728d70588ab (objectref<GtfContainer_template>)
+						children: children_list []
+						x: 6
+						y: 100
+						textButton: @bf886898-5b77-4bf8-b31c-e78963c3b2bf (objectref<string>)
+						imageButton: @c2bfcd63-a30c-492e-b3b3-b8f7e2011542 (objectref<image>)
+						touchShortReleased: function<bool,int,int,int,int>(03722401-b61f-49c4-b4bc-d0b5dc4c9f8d)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	fire ev:goToHome()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					GtfContainer_template_instance(61434c36-2a56-43d5-ad2f-488e54c56251)
+					{
+						name: "Menu_Button"
+						template: @f0572966-554c-46a4-ab74-f728d70588ab (objectref<GtfContainer_template>)
+						children: children_list []
+						x: 5
+						y: 200
+						textButton: @4fb82dac-a1f0-439f-892d-d0d3d4d30f8e (objectref<string>)
+						imageButton: @ed3fd46a-1397-4936-9297-42c3ea6d7d83 (objectref<image>)
+						touchShortReleased: function<bool,int,int,int,int>(941c1f4e-51a5-40e9-b322-dc4bb7032ae9)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{	" \
+								"	fire ev:goToMenu()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					GtfContainer_template_instance(44190384-bb94-4700-9bf0-74eb39375b7f)
+					{
+						name: "Left_Seat_Button "
+						template: @f7fd713e-cdd4-49ca-a525-61a2a0801218 (objectref<GtfContainer_template>)
+						children: children_list []
+						x: 205
+						y: 395
+						imageSeat: @bd5283b1-86c3-422f-872c-9d66da9e8289 (objectref<image>)
+						ImageX: 15
+						stageAction: function<bool>(ee9cc318-82ec-4314-bfa9-dddfdc99b719)
+						{
+							script: "function()" \
+								"{" \
+								"	if(dp:Variables:Seat_Heating_Left == 0)" \
+								"	{" \
+								"		dp:Colors:Stage_Left_Color[0] = v:this.stageColorOn" \
+								"		dp:Variables:Seat_Heating_Left += 1" \
+								"	}" \
+								"	else if(dp:Variables:Seat_Heating_Left == 1)" \
+								"	{" \
+								"		dp:Colors:Stage_Left_Color[1] = v:this.stageColorOn" \
+								"		dp:Variables:Seat_Heating_Left += 1" \
+								"	}" \
+								"	else if(dp:Variables:Seat_Heating_Left == 2)" \
+								"	{" \
+								"		dp:Colors:Stage_Left_Color[2] = v:this.stageColorOn" \
+								"		dp:Variables:Seat_Heating_Left += 1" \
+								"	}" \
+								"	else if(dp:Variables:Seat_Heating_Left == 3)" \
+								"	{" \
+								"		dp:Colors:Stage_Left_Color[3] = v:this.stageColorOn" \
+								"		dp:Variables:Seat_Heating_Left += 1" \
+								"	}" \
+								"	else if(dp:Variables:Seat_Heating_Left == 4)" \
+								"	 	dp:Variables:Seat_Heating_Left += 1" \
+								"	" \
+								"	if(dp:Variables:Seat_Heating_Left == 5)" \
+								"	{" \
+								"		dp:Variables:Seat_Heating_Left = 0" \
+								"		dp:Colors:Stage_Left_Color[0] = v:this.stageColorOff" \
+								"		dp:Colors:Stage_Left_Color[1] = v:this.stageColorOff" \
+								"		dp:Colors:Stage_Left_Color[2] = v:this.stageColorOff" \
+								"		dp:Colors:Stage_Left_Color[3] = v:this.stageColorOff" \
+								"	}" \
+								"		" \
+								"	false" \
+								"}"
+						}
+						stage1Color: color_element_reference(96cd1f1c-5d59-4dd0-8b4d-b4fb060ae138)
+						{
+							index: 0
+							list: @72f61174-5792-4b91-a24b-32d6e200895c (objectref<colorlist>)
+						}
+						stage2Color: color_element_reference(ea9a7466-95c0-44d7-9fdf-6bd08eaf36b1)
+						{
+							index: 1
+							list: @72f61174-5792-4b91-a24b-32d6e200895c (objectref<colorlist>)
+						}
+						stage3Color: color_element_reference(c290f310-0da8-4903-84fd-f57f895e7085)
+						{
+							index: 2
+							list: @72f61174-5792-4b91-a24b-32d6e200895c (objectref<colorlist>)
+						}
+						stage4Color: color_element_reference(0d8686ec-4bf8-409e-aa01-e132fb3a57c9)
+						{
+							index: 3
+							list: @72f61174-5792-4b91-a24b-32d6e200895c (objectref<colorlist>)
+						}
+						stageColorOff: stageColorOff@f7fd713e-cdd4-49ca-a525-61a2a0801218 (propref<color>)
+						stageColorOn: stageColorOn@f7fd713e-cdd4-49ca-a525-61a2a0801218 (propref<color>)
+						touchShortReleased: function<bool,int,int,int,int>(49b03f0b-09a1-4258-905b-40848ff47bce)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.stageAction()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					GtfContainer_template_instance(523e52c4-41c2-43bf-b3d7-9051e8983a19)
+					{
+						name: "Right_Seat_Button"
+						template: @f7fd713e-cdd4-49ca-a525-61a2a0801218 (objectref<GtfContainer_template>)
+						children: children_list []
+						x: 525
+						y: 395
+						imageSeat: @d4c671da-0e41-41f0-9938-e038f88211a9 (objectref<image>)
+						ImageX: 23
+						stageAction: function<bool>(7b5d6830-0c7b-440a-878b-844cada54ce1)
+						{
+							script: "function()" \
+								"{" \
+								"	if(dp:Variables:Seat_Heating_Right == 0)" \
+								"	{" \
+								"		dp:Colors:Stage_Right_Color[0] = v:this.stageColorOn" \
+								"		dp:Variables:Seat_Heating_Right += 1" \
+								"	}" \
+								"	else if(dp:Variables:Seat_Heating_Right == 1)" \
+								"	{" \
+								"		dp:Colors:Stage_Right_Color[1] = v:this.stageColorOn" \
+								"		dp:Variables:Seat_Heating_Right += 1" \
+								"	}" \
+								"	else if(dp:Variables:Seat_Heating_Right == 2)" \
+								"	{" \
+								"		dp:Colors:Stage_Right_Color[2] = v:this.stageColorOn" \
+								"		dp:Variables:Seat_Heating_Right += 1" \
+								"	}" \
+								"	else if(dp:Variables:Seat_Heating_Right == 3)" \
+								"	{" \
+								"		dp:Colors:Stage_Right_Color[3] = v:this.stageColorOn" \
+								"		dp:Variables:Seat_Heating_Right += 1" \
+								"	}" \
+								"	else if(dp:Variables:Seat_Heating_Right == 4)" \
+								"	 	dp:Variables:Seat_Heating_Right += 1" \
+								"	" \
+								"	if(dp:Variables:Seat_Heating_Right == 5)" \
+								"	{" \
+								"		dp:Variables:Seat_Heating_Right = 0" \
+								"		dp:Colors:Stage_Right_Color[0] = v:this.stageColorOff" \
+								"		dp:Colors:Stage_Right_Color[1] = v:this.stageColorOff" \
+								"		dp:Colors:Stage_Right_Color[2] = v:this.stageColorOff" \
+								"		dp:Colors:Stage_Right_Color[3] = v:this.stageColorOff" \
+								"	}" \
+								"		" \
+								"	false" \
+								"}"
+						}
+						stage1Color: color_element_reference(2ec38e76-a91e-49ce-b91f-998477b5f71c)
+						{
+							index: 0
+							list: @781fcc42-75db-4219-aa12-c3568e51cc33 (objectref<colorlist>)
+						}
+						stage2Color: color_element_reference(c8d88ee4-6656-4f41-994a-f1093c52cd8f)
+						{
+							index: 1
+							list: @781fcc42-75db-4219-aa12-c3568e51cc33 (objectref<colorlist>)
+						}
+						stage3Color: color_element_reference(d67140a1-dee4-4cdf-82b0-fc0b6e471bb8)
+						{
+							index: 2
+							list: @781fcc42-75db-4219-aa12-c3568e51cc33 (objectref<colorlist>)
+						}
+						stage4Color: color_element_reference(3f9ef161-3dfe-4522-92cb-2c70c52e22c8)
+						{
+							index: 3
+							list: @781fcc42-75db-4219-aa12-c3568e51cc33 (objectref<colorlist>)
+						}
+						stageColorOff: stageColorOff@f7fd713e-cdd4-49ca-a525-61a2a0801218 (propref<color>)
+						stageColorOn: stageColorOn@f7fd713e-cdd4-49ca-a525-61a2a0801218 (propref<color>)
+						touchShortReleased: function<bool,int,int,int,int>(b82cf474-d23c-4a64-b4d5-5476d54a2211)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.stageAction()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					GtfContainer_template_instance(cbd22452-d8d5-4eb4-89a4-d9241392536e)
+					{
+						name: "Plus_Button"
+						template: @cfc31c5e-f76d-4889-878d-a4c54e6ba2c3 (objectref<GtfContainer_template>)
+						children: children_list []
+						x: 148
+						y: 418
+						width: 35
+						height: 35
+						image: @0e416303-1afd-4812-9aae-5c7163b15e4d (objectref<image>)
+						touchShortReleased: function<bool,int,int,int,int>(67997b90-24ba-4f98-9069-a5322d415efd)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	if(dp:Variables:Temperature < 32.0)" \
+								"		dp:Variables:Temperature += 0.5" \
+								"    false" \
+								"}"
+						}
+					}, 
+					GtfContainer_template_instance(5b5329c3-2de4-45eb-8a91-efaf0e51cf8c)
+					{
+						name: "Minus_Button"
+						template: @cfc31c5e-f76d-4889-878d-a4c54e6ba2c3 (objectref<GtfContainer_template>)
+						children: children_list []
+						x: 40
+						y: 418
+						width: 35
+						height: 35
+						image: @027a57e6-6a00-41c4-9ff7-e81efd7c4bf0 (objectref<image>)
+						touchShortReleased: function<bool,int,int,int,int>(d3e076a5-b83b-47b3-93df-3add130f7f65)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	if(dp:Variables:Temperature > 17.0)" \
+								"		dp:Variables:Temperature -= 0.5" \
+								"    false" \
+								"}"
+						}
+					}, 
+					GtfLabel(4ee8b14e-e52b-4dce-9f79-19b491386bf8)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Temp_Label"
+						visible: true
+						width: 80
+						height: 30
+						x: 70
+						y: 420
+						text: string_scriptedValue(03e37687-0b7f-41ba-9efa-27b83d7d1266)
+						{
+							triggerList: trigger_list(6fb63b0b-e780-4907-b026-c28f2cae8404)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(9c17348b-0b91-49d8-831f-43ec06574c29)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<string>(74133e60-a29b-4bb8-897b-b86e1c3a9d5d)
+							{
+								script: "function()" \
+									"{" \
+									"	f:format_float(\"%.1f\", true, dp:Variables:Temperature) + \"°C\"" \
+									"}"
+							}
+							write: function<bool,string>(5e88c9fa-f21e-4dd1-a19e-63f68f7023d8)
+							{
+								script: "function(v:arg0::string)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						textColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+						font: font_resource(68310664-fe93-4f62-a55c-e010dd7fd03f)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 27
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfContainer_template_instance(3560e3c7-4b15-4aef-a7f5-1847eb466671)
+					{
+						name: "Radio_Button"
+						template: @f0572966-554c-46a4-ab74-f728d70588ab (objectref<GtfContainer_template>)
+						children: children_list []
+						x: 250
+						y: 300
+						textButton: @0251e0fb-c658-4e52-b4d6-ea2f900a0cdf (objectref<string>)
+						imageButton: @e5e8f0ec-e00c-4d2f-a701-8fa87b91221d (objectref<image>)
+						touchShortReleased: function<bool,int,int,int,int>(90ebc6f1-58e1-4398-9806-99c29434049f)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	fire ev:goToRadio()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					GtfContainer_template_instance(c031db5a-9fa4-42bf-bd6b-09b86025a460)
+					{
+						name: "Media_Button"
+						template: @f0572966-554c-46a4-ab74-f728d70588ab (objectref<GtfContainer_template>)
+						children: children_list []
+						x: 360
+						y: 300
+						textButton: @08293d09-43ad-4811-ad33-b8ebff9121f2 (objectref<string>)
+						imageButton: @e6382559-e3cd-47fc-9590-d8e0548dc538 (objectref<image>)
+						touchShortReleased: function<bool,int,int,int,int>(f10a73f2-4531-43b7-8638-0b53b4b4fc72)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	fire ev:goToMedia()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					GtfContainer_template_instance(1a8bd24b-b1f4-47af-b5da-08b5707cdd14)
+					{
+						name: "Favourite_Button"
+						template: @f0572966-554c-46a4-ab74-f728d70588ab (objectref<GtfContainer_template>)
+						children: children_list []
+						x: 475
+						y: 300
+						textButton: @5fb37974-95fb-41c5-83ad-07d72da9e2d7 (objectref<string>)
+						imageButton: @6ec61b2a-e471-4109-8a53-7fbce7a7a3a1 (objectref<image>)
+						touchShortReleased: function<bool,int,int,int,int>(e98eaa4f-2984-4aec-8d4d-cb02a64efab8)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	fire ev:goToFavourite()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					GtfLabel(d1fa009f-5636-49a0-b0c1-8e2145c56d63)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfRectangle(3fc906f0-4679-4907-9411-1f2dea6a9681)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Down_Line"
+								visible: true
+								width: 100
+								height: 2
+								x: 350
+								y: 30
+								fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+							}]
+						name: "Media_Label"
+						visible: true
+						width: width@63b8130d-0c65-4940-a300-1c832681cee0 (propref<int>)
+						height: 30
+						x: 0
+						y: 25
+						text: "<Title>"
+						textColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+						font: font_resource(9521176b-cf5d-4296-b054-2fa1f198c4b0)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfContainer(25fe2428-d224-4588-8d50-7e403ae423aa)
+					{
+						features: feature_list [
+							MoveOut(6fb2caa2-dca6-4046-a40a-53677396ecda)
+							{
+								moveOut: function<bool,int,int,int,int>(01cdc302-d965-44b6-abd1-8b6a6c815902)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	v:this->AC_Background.fillColor = dp:Colors:Move_Out_Color" \
+										"    false" \
+										"}"
+								}
+							}, 
+							MoveIn(010540c0-e6bd-4cfd-9a6c-65c363308f34)
+							{
+								moveIn: function<bool,int,int,int,int>(1f12a511-081d-4fba-9797-1edcb7c31bea)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"	v:this->AC_Background.fillColor = dp:Colors:Move_In_Color" \
+										"    false" \
+										"}"
+								}
+							}, 
+							TouchShortReleased(7180520b-ad49-4768-9944-d009d6eb305f)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(08a77218-6c97-48d6-a142-5853b4181ae1)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{	" \
+										"	if(dp:Variables:AC_Mode == 41)" \
+										"		dp:Variables:AC_Mode = 65" \
+										"	else if(dp:Variables:AC_Mode == 65)" \
+										"		dp:Variables:AC_Mode = 20" \
+										"	else if(dp:Variables:AC_Mode == 20)" \
+										"		dp:Variables:AC_Mode = 41" \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(2ce6c1d4-b336-4999-88e3-632bb53f6b44)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list [
+							GtfRectangle(4fbb1d51-d55b-45fb-9039-3ccb7b6bcb4a)
+							{
+								features: feature_list []
+								children: children_list [
+									GtfImage(864e4271-4d0c-498d-ab43-2ca9fd4e6ae7)
+									{
+										features: feature_list [
+											ScaleMode(a3bd5a6b-8105-481f-a019-55d02acc26e2)
+											{
+												scaleMode: 1
+											}]
+										children: children_list []
+										name: "AC_Image"
+										visible: true
+										width: 50
+										height: 50
+										x: 25
+										y: 4
+										image: @cc19c428-4882-4c94-80cf-a09db05693ef (objectref<image>)
+										sRGB: false
+										horizontalAlign: 0
+										verticalAlign: 1
+									}, 
+									GtfContainer(98eb7722-e198-43b6-92cd-6a34cc489ebe)
+									{
+										features: feature_list []
+										children: children_list [
+											GtfRectangle(b0a8f902-24c0-4729-b6ba-6628a5ae4893)
+											{
+												features: feature_list []
+												children: children_list []
+												name: "First_Line"
+												visible: true
+												width: 3
+												height: 15
+												x: 25
+												y: 60
+												fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+											}, 
+											GtfRectangle(d0ed55cc-e8c2-41da-b917-0c31e504b957)
+											{
+												features: feature_list []
+												children: children_list []
+												name: "Second_Line"
+												visible: true
+												width: 3
+												height: 15
+												x: 50
+												y: 60
+												fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+											}, 
+											GtfRectangle(ce192060-fe59-4a1b-b148-710432dfec48)
+											{
+												features: feature_list []
+												children: children_list []
+												name: "Third_Line"
+												visible: true
+												width: 3
+												height: 15
+												x: 75
+												y: 60
+												fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+											}, 
+											GtfRectangle(40285998-e376-4e4f-ba45-73c68c856b79)
+											{
+												features: feature_list []
+												children: children_list []
+												name: "Horizontal_Line"
+												visible: true
+												width: 50
+												height: 3
+												x: 25
+												y: 66
+												fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+											}, 
+											GtfEllipse(b86f8a3c-0bd1-4aa3-ad09-56bd9395bf46)
+											{
+												features: feature_list []
+												children: children_list [
+													GtfEllipse(fb5b3277-04ed-4aa8-8d26-6ce7f9ec5585)
+													{
+														features: feature_list []
+														children: children_list []
+														name: "Ellipse"
+														visible: true
+														width: 17
+														height: 17
+														x: 2
+														y: 2
+														fillColor: #00FF00FF
+														arcWidth: 0
+														centralAngle: 360F
+														sectorRotation: 0F
+													}]
+												name: "Mode_Elipse"
+												visible: true
+												width: 20
+												height: 20
+												x: @af94620b-24d8-431e-9078-ca9081c60584 (objectref<int>)
+												y: 57
+												fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+												arcWidth: 0
+												centralAngle: 360F
+												sectorRotation: 0F
+											}]
+										name: "AC_Mode"
+										visible: true
+										width: 100
+										height: 100
+										x: 0
+										y: 0
+									}]
+								name: "AC_Background"
+								visible: true
+								width: width@25fe2428-d224-4588-8d50-7e403ae423aa (propref<int>)
+								height: height@25fe2428-d224-4588-8d50-7e403ae423aa (propref<int>)
+								x: 0
+								y: 0
+								fillColor: #FFFFFF00
+							}]
+						name: "AC_Button"
+						visible: true
+						width: 100
+						height: 75
+						x: 650
+						y: 395
+					}]
+				name: "View_Background"
+				visible: true
+				width: width@63b8130d-0c65-4940-a300-1c832681cee0 (propref<int>)
+				height: height@63b8130d-0c65-4940-a300-1c832681cee0 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: @6927c983-d312-43fc-8e7f-bde98fa1464b (objectref<color>)
+			}]
+		name: "Media_Screen_View"
+		visible: true
+		width: 800
+		height: 480
+		x: 0
+		y: 0
+	}
+	textTitleView: text@d1fa009f-5636-49a0-b0c1-8e2145c56d63 (propref<string>)
+}

@@ -1,0 +1,422 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(3846eda9-e59a-499a-b5dd-20c1d9030545)
+{
+	name: "Sub_Settings_View"
+	template: @dd151528-66b9-40c3-84cc-8ff2db2988ad (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer(34c6a888-83dd-4efa-9775-f2f77f77219a)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(b499dcca-a18c-41de-93e3-1b7feefd9fc0)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Title_Label"
+					visible: true
+					width: width@34c6a888-83dd-4efa-9775-f2f77f77219a (propref<int>)
+					height: height@34c6a888-83dd-4efa-9775-f2f77f77219a (propref<int>)
+					x: 5
+					y: 0
+					text: @43ca19d6-b0a8-44cc-8e29-8296641580bc (objectref<string>)
+					textColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+					font: font_resource(24dce273-97ef-44eb-8c0b-2c95aaf2f17b)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfRectangle(f8b0f3d8-b921-415f-ac15-38fa0ee792f5)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Down_Line"
+					visible: true
+					width: width@34c6a888-83dd-4efa-9775-f2f77f77219a (propref<int>)
+					height: 1
+					x: 5
+					y: 45
+					fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+				}]
+			name: "Sub_Title_1"
+			visible: true
+			width: 635
+			height: 50
+			x: 125
+			y: 5
+		}, 
+		GtfContainer(8f02b9e2-76f4-4232-a4b7-585464ce0b79)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(67039e90-ba1d-483c-951f-5a852af07dbd)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Title_Label"
+					visible: true
+					width: width@8f02b9e2-76f4-4232-a4b7-585464ce0b79 (propref<int>)
+					height: height@8f02b9e2-76f4-4232-a4b7-585464ce0b79 (propref<int>)
+					x: 5
+					y: 0
+					text: @8ad768d3-9884-43bf-9566-06f7220cd823 (objectref<string>)
+					textColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+					font: font_resource(dadbca70-335f-4815-a905-20af581a55b4)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfRectangle(040959f3-9818-4017-8543-520b67a04b1c)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Down_Line"
+					visible: true
+					width: width@8f02b9e2-76f4-4232-a4b7-585464ce0b79 (propref<int>)
+					height: 1
+					x: 5
+					y: 45
+					fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+				}]
+			name: "Sub_Title_2"
+			visible: true
+			width: 635
+			height: 50
+			x: 125
+			y: 230
+		}, 
+		GtfContainer_template_instance(58e3bb66-1104-43d0-b15b-9960507b7fac)
+		{
+			name: "Dark_Mode_Button"
+			template: @0e808e95-8fea-4568-8bae-9a1361d62ded (objectref<GtfContainer_template>)
+			children: children_list []
+			width: width@0e808e95-8fea-4568-8bae-9a1361d62ded (propref<int>)
+			height: height@0e808e95-8fea-4568-8bae-9a1361d62ded (propref<int>)
+			x: 130
+			y: 60
+			image: image_resource(200e84a6-e78e-4b53-8499-a00d418abcf1)
+			{
+				file: "White_Slide_Button_On.png"
+			}
+			text: @b56b70ad-93b7-4c50-8171-774ba88d371f (objectref<string>)
+			actionButton: function<bool>(34388752-be23-4f2e-a4d0-725074a05a71)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:Variables:Dark_On = true" \
+					"	dp:Variables:Blue_On = false" \
+					"	dp:Variables:Pink_On = false" \
+					"	dp:Variables:Light_On = false" \
+					"	false" \
+					"}"
+			}
+			actionButtonPressed: function<bool>(45dff42e-000c-4f1d-b97b-b5583aeddd35)
+			{
+				script: "function()" \
+					"{" \
+					"	f:setSkin(s:Dark, true)" \
+					"	false" \
+					"}"
+			}
+			isOn: conditional_script(d4834d43-9e76-4c8f-ac2f-8f8575cde0ea)
+			{
+				triggerList: trigger_list(202e8e13-3946-47ea-92c2-9687a9d6c68a)
+				{
+					script: "dp:Variables:Dark_On" \
+						"dp:Images:Slide_Button_On_Dark_Image" \
+						"dp:Images:Slide_Button_Off_Dark_Image" \
+						""
+				}
+				onTrigger: function<bool,bool>(6464472c-6a59-491b-9c36-d3393ebca3d9)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(dp:Variables:Dark_On == true)" \
+						"		v:this.image = dp:Images:Slide_Button_On_Dark_Image" \
+						"	else" \
+						"		v:this.image = dp:Images:Slide_Button_Off_Dark_Image" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfContainer_template_instance(f5c81431-1b5b-4875-a70a-4397ac087bae)
+		{
+			name: "Blue_Mode_Button"
+			template: @0e808e95-8fea-4568-8bae-9a1361d62ded (objectref<GtfContainer_template>)
+			children: children_list []
+			width: width@0e808e95-8fea-4568-8bae-9a1361d62ded (propref<int>)
+			height: height@0e808e95-8fea-4568-8bae-9a1361d62ded (propref<int>)
+			x: 130
+			y: 105
+			image: image_resource(95ca582e-2718-4cea-b969-a7172c70c791)
+			{
+				file: "White_Slide_Button_Off.png"
+			}
+			text: @111edb22-2193-4c7f-8130-839ce0c7c15f (objectref<string>)
+			actionButton: function<bool>(ed2927e3-84d1-4594-a0f4-9333bee112dd)
+			{
+				script: "function()" \
+					"{" \
+					"	" \
+					"	dp:Variables:Dark_On = false" \
+					"	dp:Variables:Blue_On = true" \
+					"	dp:Variables:Pink_On = false" \
+					"	dp:Variables:Light_On = false" \
+					"	false" \
+					"}"
+			}
+			actionButtonPressed: function<bool>(2f52f283-d807-4a49-baaf-92e7f15278ad)
+			{
+				script: "function()" \
+					"{" \
+					"	f:setSkin(s:Blue, true)" \
+					"	false" \
+					"}"
+			}
+			isOn: conditional_script(e9bf4f23-4759-4ce6-9f81-4c0989f0c05e)
+			{
+				triggerList: trigger_list(66fdb1ef-e96a-4529-a8a0-ca4c6ed10524)
+				{
+					script: "dp:Variables:Blue_On" \
+						"dp:Images:Slide_Button_On_Blue_Image" \
+						"dp:Images:Slide_Button_Off_Blue_Image" \
+						""
+				}
+				onTrigger: function<bool,bool>(439b6802-7f8c-4dcf-aa95-68115c483b4a)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(dp:Variables:Blue_On == true)" \
+						"		v:this.image = dp:Images:Slide_Button_On_Blue_Image" \
+						"	else" \
+						"		v:this.image = dp:Images:Slide_Button_Off_Blue_Image" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfContainer_template_instance(990b8587-973d-421c-a707-c1d869fd2054)
+		{
+			name: "Pink_Mode_Button"
+			template: @0e808e95-8fea-4568-8bae-9a1361d62ded (objectref<GtfContainer_template>)
+			children: children_list []
+			width: width@0e808e95-8fea-4568-8bae-9a1361d62ded (propref<int>)
+			height: height@0e808e95-8fea-4568-8bae-9a1361d62ded (propref<int>)
+			x: 130
+			y: 150
+			image: image_resource(129b692b-fb5f-4466-af53-c7ae08718fef)
+			{
+				file: "White_Slide_Button_Off.png"
+			}
+			text: @666cfa6e-40d3-43dd-bd16-ad0576a5d0bc (objectref<string>)
+			actionButton: function<bool>(4ba3f1cc-9967-4c91-ac8f-b41a5646fbed)
+			{
+				script: "function()" \
+					"{" \
+					"	" \
+					"	dp:Variables:Dark_On = false" \
+					"	dp:Variables:Blue_On = false" \
+					"	dp:Variables:Pink_On = true" \
+					"	dp:Variables:Light_On = false" \
+					"	false" \
+					"}"
+			}
+			actionButtonPressed: function<bool>(c248182a-abb5-4d08-b656-39e9a9666596)
+			{
+				script: "function()" \
+					"{" \
+					"	f:setSkin(s:Pink, true)" \
+					"	false" \
+					"}"
+			}
+			isOn: conditional_script(06280e66-74f0-4a86-b0bd-519146cd9d7f)
+			{
+				triggerList: trigger_list(e4295708-17c6-4dd8-a821-5e9d45a5a3d9)
+				{
+					script: "dp:Variables:Pink_On" \
+						"dp:Images:Slide_Button_On_Pink_Image" \
+						"dp:Images:Slide_Button_Off_Pink_Image" \
+						""
+				}
+				onTrigger: function<bool,bool>(cbe05ef8-aa86-47c4-9021-6d6f59725f9e)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(dp:Variables:Pink_On == true)" \
+						"		v:this.image = dp:Images:Slide_Button_On_Pink_Image" \
+						"	else" \
+						"		v:this.image = dp:Images:Slide_Button_Off_Pink_Image" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfContainer_template_instance(588b0ecf-7002-41c9-a385-3415a9e3ff28)
+		{
+			name: "Light_Mode_Button"
+			template: @0e808e95-8fea-4568-8bae-9a1361d62ded (objectref<GtfContainer_template>)
+			children: children_list []
+			width: width@0e808e95-8fea-4568-8bae-9a1361d62ded (propref<int>)
+			height: height@0e808e95-8fea-4568-8bae-9a1361d62ded (propref<int>)
+			x: 130
+			y: 195
+			image: image_resource(16106a86-4fef-4c1e-a8f7-c6db3e3fd200)
+			{
+				file: "White_Slide_Button_Off.png"
+			}
+			text: @c33b806d-c802-4f85-acf3-2e17c64e1e57 (objectref<string>)
+			actionButton: function<bool>(8596ed21-b9d8-4466-a44a-737ed74da6d8)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:Variables:Dark_On = false" \
+					"	dp:Variables:Blue_On = false" \
+					"	dp:Variables:Pink_On = false" \
+					"	dp:Variables:Light_On = true	" \
+					"	false" \
+					"}"
+			}
+			actionButtonPressed: function<bool>(0132ba7b-6c65-40ce-bbf4-d80bccb9c9b7)
+			{
+				script: "function()" \
+					"{" \
+					"	f:setSkin(s:Light, true)" \
+					"	false" \
+					"}"
+			}
+			isOn: conditional_script(8d4b09af-17af-4af1-a7a9-607d6c646c42)
+			{
+				triggerList: trigger_list(259a3b0a-27bf-40ff-8634-66ea14863cc5)
+				{
+					script: "dp:Variables:Light_On" \
+						"dp:Images:Slide_Button_On_Light_Image" \
+						"dp:Images:Slide_Button_Off_Light_Image" \
+						""
+				}
+				onTrigger: function<bool,bool>(72798374-e152-4c59-bb7f-0cf4a44a8a62)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(dp:Variables:Light_On == true)" \
+						"		v:this.image = dp:Images:Slide_Button_On_Light_Image" \
+						"	else" \
+						"		v:this.image = dp:Images:Slide_Button_Off_Light_Image" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfContainer_template_instance(6c05c9ed-cd3c-4710-98de-aeb515d0c20f)
+		{
+			name: "English_Button"
+			template: @0e808e95-8fea-4568-8bae-9a1361d62ded (objectref<GtfContainer_template>)
+			children: children_list []
+			width: width@0e808e95-8fea-4568-8bae-9a1361d62ded (propref<int>)
+			height: height@0e808e95-8fea-4568-8bae-9a1361d62ded (propref<int>)
+			x: 130
+			y: 285
+			image: image_resource(3f807d8d-f312-4674-8ab9-332318b14011)
+			{
+				file: "White_Slide_Button_On.png"
+			}
+			text: @ebbcfdcb-59f2-4c6c-a594-91c1cc10e3da (objectref<string>)
+			actionButton: function<bool>(b9cdf246-c596-47c2-bf8b-1d2859e0873e)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:Variables:En_On = true" \
+					"	dp:Variables:Ro_On = false" \
+					"	false" \
+					"}"
+			}
+			actionButtonPressed: function<bool>(311285b9-d9f7-4b0e-9590-907b5eb18e5c)
+			{
+				script: "function()" \
+					"{" \
+					"	f:setLanguage(l:English, true)" \
+					"	false" \
+					"}"
+			}
+			isOn: conditional_script(0aea0c22-bf80-4538-b197-647b4ca81e0b)
+			{
+				triggerList: trigger_list(002f63fc-4607-4f8c-ba53-ab9cc7ff516b)
+				{
+					script: "dp:Variables:En_On" \
+						"dp:Images:Slide_Button_On_En_Image" \
+						"dp:Images:Slide_Button_Off_En_Image" \
+						""
+				}
+				onTrigger: function<bool,bool>(7b36c869-e015-4ae7-bd4a-a0399d596d0d)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(dp:Variables:En_On == true)" \
+						"		v:this.image = dp:Images:Slide_Button_On_En_Image" \
+						"	else" \
+						"		v:this.image = dp:Images:Slide_Button_Off_En_Image" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfContainer_template_instance(9b29999c-c663-4f2f-877a-fd29f5e0dff1)
+		{
+			name: "Romanian_Button"
+			template: @0e808e95-8fea-4568-8bae-9a1361d62ded (objectref<GtfContainer_template>)
+			children: children_list []
+			width: width@0e808e95-8fea-4568-8bae-9a1361d62ded (propref<int>)
+			height: height@0e808e95-8fea-4568-8bae-9a1361d62ded (propref<int>)
+			x: 130
+			y: 330
+			image: image_resource(1a051e55-37f6-47e9-a764-38c41548786e)
+			{
+				file: "White_Slide_Button_Off.png"
+			}
+			text: @88126a61-b4b4-4f75-a087-064eb8028f92 (objectref<string>)
+			actionButton: function<bool>(15a4f353-1102-4ae6-a6f7-8c1d4b176e59)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:Variables:Ro_On = true" \
+					"	dp:Variables:En_On = false" \
+					"	false" \
+					"}"
+			}
+			actionButtonPressed: function<bool>(6bf7d5b8-f8e6-43bb-ba16-cbb077849ca0)
+			{
+				script: "function()" \
+					"{" \
+					"	f:setLanguage(l:Romania, true)" \
+					"	false" \
+					"}"
+			}
+			isOn: conditional_script(7d7f98b4-a458-4a46-bd9b-4d90655a7bae)
+			{
+				triggerList: trigger_list(249fe1b7-166a-4361-9595-9fe25af8ff3e)
+				{
+					script: "dp:Variables:Ro_On" \
+						"dp:Images:Slide_Button_On_Ro_Image" \
+						"dp:Images:Slide_Button_Off_Ro_Image" \
+						""
+				}
+				onTrigger: function<bool,bool>(72df8b21-086b-412e-98b9-5bde97f0916a)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	if(dp:Variables:Ro_On == true)" \
+						"		v:this.image = dp:Images:Slide_Button_On_Ro_Image" \
+						"	else" \
+						"		v:this.image = dp:Images:Slide_Button_Off_Ro_Image" \
+						"	false" \
+						"}"
+				}
+			}
+		}]
+}

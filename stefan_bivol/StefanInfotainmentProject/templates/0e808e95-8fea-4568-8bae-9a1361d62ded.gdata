@@ -1,0 +1,130 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(0e808e95-8fea-4568-8bae-9a1361d62ded)
+{
+	name: "Text Slide Button"
+	structure: GtfContainer(87b17665-c0a1-472e-b9f5-3ce560a0ef2e)
+	{
+		features: feature_list [
+			TouchShortReleased(ac367d5c-cf0e-4b7d-81eb-3bedf7497619)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(318da9e1-5d40-4d12-8fc5-5638649ca812)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.actionButton()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(07879c46-d8e4-4e3b-b661-4fe0df7449e0)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			TouchPressed(2c227871-af84-4c1c-be41-18340874f102)
+			{
+				touchPressed: function<bool,int,int,int,int>(ccacaeaa-8be6-4dc7-a99d-8f625603eb6f)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.actionButtonPressed()" \
+						"    false" \
+						"}"
+				}
+			}]
+		children: children_list [
+			GtfRectangle(bd8dd443-49a2-47ed-a900-48116d49a989)
+			{
+				features: feature_list [
+					Border(fcbe5cdc-9258-483a-b025-7dc1afffca8c)
+					{
+						borderThickness: 1
+						borderColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+						borderStyle: 0
+					}]
+				children: children_list [
+					GtfLabel(2c8fdec7-6a7f-4821-80d4-db6e332c9567)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Button_Label"
+						visible: true
+						width: width@87b17665-c0a1-472e-b9f5-3ce560a0ef2e (propref<int>)
+						height: height@87b17665-c0a1-472e-b9f5-3ce560a0ef2e (propref<int>)
+						x: 10
+						y: 0
+						text: "<Text>"
+						textColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+						font: font_resource(878b3057-370e-46a5-adae-2c496cf541e9)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}, 
+					GtfImage(45471997-851b-4f63-98a3-48087fb7af92)
+					{
+						features: feature_list [
+							ScaleMode(cc7f9c48-617a-4d2c-ab36-5b0b60d08fd1)
+							{
+								scaleMode: 1
+							}]
+						children: children_list []
+						name: "Button_Image"
+						visible: true
+						width: 75
+						height: 65
+						x: 565
+						y: -10
+						image: image_resource(9fb65c75-c512-4b22-b0b0-77501ce3fa6f)
+						{
+							file: ""
+						}
+						sRGB: false
+						horizontalAlign: 0
+						verticalAlign: 1
+					}]
+				name: "Button_Border"
+				visible: true
+				width: width@87b17665-c0a1-472e-b9f5-3ce560a0ef2e (propref<int>)
+				height: height@87b17665-c0a1-472e-b9f5-3ce560a0ef2e (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+			}]
+		name: "Text_Slide_Button"
+		visible: true
+		width: 635
+		height: 40
+		x: 0
+		y: 0
+		actionButton: function<bool>(ec4dd333-f467-4735-b3af-108270ed9cb5)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		actionButtonPressed: function<bool>(1951e609-bbe4-4b27-912e-df8e2428191c)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	width: width@87b17665-c0a1-472e-b9f5-3ce560a0ef2e (propref<int>)
+	height: height@87b17665-c0a1-472e-b9f5-3ce560a0ef2e (propref<int>)
+	x: x@87b17665-c0a1-472e-b9f5-3ce560a0ef2e (propref<int>)
+	y: y@87b17665-c0a1-472e-b9f5-3ce560a0ef2e (propref<int>)
+	image: image@45471997-851b-4f63-98a3-48087fb7af92 (propref<image>)
+	text: text@2c8fdec7-6a7f-4821-80d4-db6e332c9567 (propref<string>)
+	actionButton: actionButton@87b17665-c0a1-472e-b9f5-3ce560a0ef2e (propref<function<bool>>)
+	actionButtonPressed: actionButtonPressed@87b17665-c0a1-472e-b9f5-3ce560a0ef2e (propref<function<bool>>)
+}

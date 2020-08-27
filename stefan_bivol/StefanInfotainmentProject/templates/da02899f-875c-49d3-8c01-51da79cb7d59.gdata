@@ -1,0 +1,190 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(da02899f-875c-49d3-8c01-51da79cb7d59)
+{
+	name: "Element List"
+	structure: GtfContainer(0768ce0b-e4a7-48b9-88df-a42a3f4614a0)
+	{
+		features: feature_list [
+			MoveOut(27ca99a0-3eb7-4bc9-a590-017a7d5cdf71)
+			{
+				moveOut: function<bool,int,int,int,int>(49a2469d-6c47-439b-91e4-140e4a8bb48a)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->Border_Element.visible = false" \
+						"	v:this->Plus_Image.visible = false" \
+						"	v:this->Play_Image.visible = false" \
+						"    false" \
+						"}"
+				}
+			}, 
+			MoveIn(4dd53914-96e6-44dc-901b-195ee5feae69)
+			{
+				moveIn: function<bool,int,int,int,int>(cb3ab7db-22de-4923-828d-c638394b6ac8)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->Border_Element.visible = true" \
+						"	v:this->Plus_Image.visible = true" \
+						"	v:this->Play_Image.visible = true" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(549b6304-7e13-4eb6-b2a4-9d397284fa9f)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			LineIndex(592b2367-f3a0-46d9-93fb-93a8551e21ff)
+			{
+				lineIndex: 0
+			}]
+		children: children_list [
+			GtfRectangle(b0af6a89-11a2-4500-8deb-7e6404415398)
+			{
+				features: feature_list [
+					Border(92b392dd-7d28-43ca-b8f2-e16d666f7415)
+					{
+						borderThickness: 1
+						borderColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "Border_Element"
+				visible: false
+				width: width@0768ce0b-e4a7-48b9-88df-a42a3f4614a0 (propref<int>)
+				height: height@0768ce0b-e4a7-48b9-88df-a42a3f4614a0 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+			}, 
+			GtfLabel(a9badf6a-505a-4c7b-97d1-2cba2508f610)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Title_Label"
+				visible: true
+				width: 460
+				height: 35
+				x: 20
+				y: 5
+				text: "<Title>"
+				textColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+				font: font_resource(69f6433f-df30-4653-afb6-2d60a2e970a4)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 32
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}, 
+			GtfLabel(13cda1aa-0516-4b21-ac99-6206361b3124)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Gen_or_Artist_Label"
+				visible: true
+				width: 250
+				height: 30
+				x: 20
+				y: 35
+				text: "<Gen/Artist>"
+				textColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+				font: font_resource(d9ae6630-3867-41f4-98c5-727fa0eda984)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 20
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}, 
+			GtfImage(cb78922d-3694-483d-95ae-9599a120a560)
+			{
+				features: feature_list [
+					ScaleMode(ea01699d-9f55-4158-9a1d-fd4c56cb5f50)
+					{
+						scaleMode: 1
+					}, 
+					TouchShortReleased(8637bdd5-9da5-4cdd-8a96-c6466474924d)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(0ef28906-4856-4d82-9f49-4d3e177042e9)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	fire ev:playRadioMedia()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(0642f9ae-5175-445e-a4b6-c7ce195293ea)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list []
+				name: "Play_Image"
+				visible: false
+				width: 50
+				height: 50
+				x: 370
+				y: 12
+				image: @29de4c45-57db-4e64-8935-822323fcce36 (objectref<image>)
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfImage(04ca7cc9-66f3-4c14-9e4c-8beff42e3ff2)
+			{
+				features: feature_list [
+					ScaleMode(7d925575-932b-46b3-99f6-fa4eed6290c5)
+					{
+						scaleMode: 1
+					}, 
+					TouchShortReleased(1c9f672d-0a96-492c-a7d0-72adfbeb4dbd)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(5cd8998e-20f9-4f98-8653-e3a2fd4a0332)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(d6074a60-feb7-4a8f-bfa9-4a23460419c5)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list []
+				name: "Plus_Image"
+				visible: false
+				width: 50
+				height: 50
+				x: 430
+				y: 12
+				image: @0e416303-1afd-4812-9aae-5c7163b15e4d (objectref<image>)
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "Element_List"
+		visible: true
+		width: 500
+		height: 75
+		x: 0
+		y: 0
+	}
+	titleText: text@a9badf6a-505a-4c7b-97d1-2cba2508f610 (propref<string>)
+	"gen/ArtistText": text@13cda1aa-0516-4b21-ac99-6206361b3124 (propref<string>)
+	lineIndex: lineIndex@592b2367-f3a0-46d9-93fb-93a8551e21ff (propref<int>)
+	touchShortReleased: touchShortReleased@1c9f672d-0a96-492c-a7d0-72adfbeb4dbd (propref<function<bool,int,int,int,int>>)
+	touchShortReleasedPlay: touchShortReleased@8637bdd5-9da5-4cdd-8a96-c6466474924d (propref<function<bool,int,int,int,int>>)
+}

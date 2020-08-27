@@ -1,0 +1,187 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(fc131ce6-cd35-4110-b8f2-2b6766f4c836)
+{
+	name: "Sub_Mods_View"
+	template: @dd151528-66b9-40c3-84cc-8ff2db2988ad (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(d8083f52-c8ea-498d-b5c5-4f9a5c819257)
+		{
+			name: "Eco_Button"
+			template: @e6351d64-f062-46bd-a0b0-36cd9cd6440e (objectref<GtfContainer_template>)
+			children: children_list []
+			image: @4ceea6c2-52c5-4c5d-aa8a-0066abb0ea7e (objectref<image>)
+			text: @b258bc85-a630-4134-9f99-1991f2c8bfb0 (objectref<string>)
+			x: 185
+			y: 26
+			actionButton: function<bool,int,int,int,int>(abc4bf8d-fd0a-4605-8dd7-57ad68a52f56)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:onModePopUp()" \
+					"	dp:Variables:Pop_Up_Choice = \"Eco\"" \
+					"	dp:Variables:M_Baby = false" \
+					"	dp:Variables:M_Comfort = false" \
+					"	dp:Variables:M_Dog = false" \
+					"	dp:Variables:M_Eco = true" \
+					"	dp:Variables:M_Normal = false" \
+					"	dp:Variables:M_Sport = false" \
+					"	dp:Variables:Mods_Background_On = true" \
+					"	dp:Variables:Limit_On = false" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(4fdbd8b2-b771-4e8e-9597-f185201a2777)
+		{
+			name: "Comfort_Button"
+			template: @e6351d64-f062-46bd-a0b0-36cd9cd6440e (objectref<GtfContainer_template>)
+			children: children_list []
+			image: @976649d1-86ee-43c4-8354-5623f2556e4c (objectref<image>)
+			text: @3e179d58-8818-4675-be48-8d29c132a8b5 (objectref<string>)
+			x: 375
+			y: 26
+			actionButton: function<bool,int,int,int,int>(db264db3-b68a-46f7-9aea-cdbcf845c476)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:onModePopUp()" \
+					"	dp:Variables:Pop_Up_Choice = \"Comfort\"" \
+					"	dp:Variables:M_Baby = false" \
+					"	dp:Variables:M_Comfort = true" \
+					"	dp:Variables:M_Dog = false" \
+					"	dp:Variables:M_Eco = false" \
+					"	dp:Variables:M_Normal = false" \
+					"	dp:Variables:M_Sport = false" \
+					"	dp:Variables:Mods_Background_On = true" \
+					"	dp:Variables:Limit_On = false" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(eecae1ea-f69d-4891-9fb0-3e0153847a7c)
+		{
+			name: "Normal_Button"
+			template: @e6351d64-f062-46bd-a0b0-36cd9cd6440e (objectref<GtfContainer_template>)
+			children: children_list []
+			image: @ec1f97b9-b000-43d6-9a0a-be8e8e093bb9 (objectref<image>)
+			text: @fd850f22-1abf-40cd-9d91-7a224fc94dd3 (objectref<string>)
+			x: 565
+			y: 26
+			actionButton: function<bool,int,int,int,int>(800ce230-f8b2-4caf-9457-7fb2480b6f13)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:onModePopUp()" \
+					"	dp:Variables:Pop_Up_Choice = \"Normal\"" \
+					"	dp:Variables:M_Baby = false" \
+					"	dp:Variables:M_Comfort = false" \
+					"	dp:Variables:M_Dog = false" \
+					"	dp:Variables:M_Eco = false" \
+					"	dp:Variables:M_Normal = true" \
+					"	dp:Variables:M_Sport = false" \
+					"	dp:Variables:Mods_Background_On = true" \
+					"	dp:Variables:Limit_On = false" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(4c5a9757-36f5-4d82-8c2c-77220a20c092)
+		{
+			name: "Sport_Button"
+			template: @e6351d64-f062-46bd-a0b0-36cd9cd6440e (objectref<GtfContainer_template>)
+			children: children_list []
+			image: @6140b8a0-d7ae-48d2-820d-698ed3197bb4 (objectref<image>)
+			text: @cdf8a682-8720-4d28-a010-4da72dd475b6 (objectref<string>)
+			x: 185
+			y: 200
+			actionButton: function<bool,int,int,int,int>(fa57ea93-9008-45f3-8920-f1c7b30f18f5)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:onModePopUp()" \
+					"	dp:Variables:Pop_Up_Choice = \"Sport\"" \
+					"	dp:Variables:M_Baby = false" \
+					"	dp:Variables:M_Comfort = false" \
+					"	dp:Variables:M_Dog = false" \
+					"	dp:Variables:M_Eco = false" \
+					"	dp:Variables:M_Normal = false" \
+					"	dp:Variables:M_Sport = true" \
+					"	dp:Variables:Mods_Background_On = true" \
+					"	dp:Variables:Limit_On = false " \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(0052679c-0793-40ae-8d26-66fb1f2b81ba)
+		{
+			name: "Baby_Button"
+			template: @e6351d64-f062-46bd-a0b0-36cd9cd6440e (objectref<GtfContainer_template>)
+			children: children_list []
+			image: @1fc64914-fd4e-4785-ae44-0a8572091c2d (objectref<image>)
+			text: @5f524505-1710-4958-9549-89d3b9711a65 (objectref<string>)
+			x: 374
+			y: 200
+			actionButton: function<bool,int,int,int,int>(93f52286-b88d-492c-a14b-29a3a8d95b20)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:onModePopUp()" \
+					"	dp:Variables:Pop_Up_Choice = \"Baby\"" \
+					"	dp:Variables:M_Baby = true" \
+					"	dp:Variables:M_Comfort = false" \
+					"	dp:Variables:M_Dog = false" \
+					"	dp:Variables:M_Eco = false" \
+					"	dp:Variables:M_Normal = false" \
+					"	dp:Variables:M_Sport = false" \
+					"	dp:Variables:Mods_Background_On = true" \
+					"	dp:Variables:Limit_On = true" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(f0f37ffa-189a-4e89-b425-bbe03bd5f544)
+		{
+			name: "Dog_Button"
+			template: @e6351d64-f062-46bd-a0b0-36cd9cd6440e (objectref<GtfContainer_template>)
+			children: children_list []
+			image: @43a2de21-ca70-4dde-b6cb-0cd569177737 (objectref<image>)
+			text: @f3089365-e9a1-422c-9ff0-1c9dd0e74a64 (objectref<string>)
+			x: 565
+			y: 200
+			actionButton: function<bool,int,int,int,int>(6009cd7f-f843-4442-9fc0-f257817c13d4)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:onModePopUp()" \
+					"	dp:Variables:Pop_Up_Choice = \"Dog\"" \
+					"	dp:Variables:M_Baby = false" \
+					"	dp:Variables:M_Comfort = false" \
+					"	dp:Variables:M_Dog = true" \
+					"	dp:Variables:M_Eco = false" \
+					"	dp:Variables:M_Normal = false" \
+					"	dp:Variables:M_Sport = false" \
+					"	dp:Variables:Mods_Background_On = true" \
+					"	dp:Variables:Temperature = 18.5" \
+					"	dp:Variables:P_On = true" \
+					"	dp:Variables:R_On = false" \
+					"	dp:Variables:N_On = false" \
+					"	dp:Variables:D_On = false" \
+					"	dp:Variables:Limit_On = false" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfRectangle(8322c1ed-4988-418e-828c-019b6b75224b)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Pop_Up_Background"
+			visible: @ddb0fa7a-4479-4ad0-82f0-3eb1e85f2fdd (objectref<bool>)
+			width: 800
+			height: 480
+			x: 0
+			y: 0
+			fillColor: @6927c983-d312-43fc-8e7f-bde98fa1464b (objectref<color>)
+		}]
+}

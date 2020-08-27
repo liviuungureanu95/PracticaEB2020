@@ -1,0 +1,352 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(c2d39e75-2fe1-4521-a6c2-839911c02647)
+{
+	name: "Sub_Sound_View"
+	template: @dd151528-66b9-40c3-84cc-8ff2db2988ad (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(e65f755b-1e26-4240-a0b5-aed0c77816b9)
+		{
+			name: "Focus_Button"
+			template: @f0572966-554c-46a4-ab74-f728d70588ab (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 662
+			y: 100
+			textButton: @ab33724f-7f18-484f-a201-58d2f208ef7d (objectref<string>)
+			imageButton: @5a1c3e6f-f786-4443-8b4d-0a86d9c4eb79 (objectref<image>)
+			touchShortReleased: touchShortReleased@f0572966-554c-46a4-ab74-f728d70588ab (propref<function<bool,int,int,int,int>>)
+		}, 
+		GtfContainer_template_instance(c1a642a6-6650-4d8b-b7e7-218de9bbdfbc)
+		{
+			name: "Volume_Button"
+			template: @f0572966-554c-46a4-ab74-f728d70588ab (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 662
+			y: 200
+			textButton: @744ee62a-f586-476b-b110-33577b011ff8 (objectref<string>)
+			imageButton: @49d72945-f1dd-4f75-b4c7-046a78ac292e (objectref<image>)
+			touchShortReleased: function<bool,int,int,int,int>(2b63b278-9991-4749-afe9-a7cbec7deace)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:goToVolume()" \
+					"    false" \
+					"}"
+			}
+		}, 
+		GtfContainer(2cc1dff2-1f02-4e7a-b780-f269c8912128)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(9a79bf82-eb73-4f0f-82b6-abc513845544)
+				{
+					features: feature_list [
+						Border(d0ba9a05-b95e-44dc-9aca-694c5ee53751)
+						{
+							borderThickness: 1
+							borderColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+							borderStyle: 0
+						}]
+					children: children_list []
+					name: "Point_Rectangle"
+					visible: true
+					width: width@2cc1dff2-1f02-4e7a-b780-f269c8912128 (propref<int>)
+					height: height@2cc1dff2-1f02-4e7a-b780-f269c8912128 (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #00FF00FF
+				}]
+			name: "Selected_Point"
+			visible: true
+			width: 20
+			height: 20
+			x: 390
+			y: 355
+		}, 
+		GtfContainer(0042b851-2887-4a80-9081-6f7783a9ba09)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(5433073f-5b66-4d40-9f30-f0ddadc6352f)
+				{
+					features: feature_list [
+						Border(6694033e-b3ed-4259-afd7-821c89112284)
+						{
+							borderThickness: 1
+							borderColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+							borderStyle: 0
+						}]
+					children: children_list []
+					name: "Point_Rectangle"
+					visible: true
+					width: width@0042b851-2887-4a80-9081-6f7783a9ba09 (propref<int>)
+					height: height@0042b851-2887-4a80-9081-6f7783a9ba09 (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #FFFAFAFF
+				}]
+			name: "Selected_Second_Point"
+			visible: true
+			width: 20
+			height: 20
+			x: 415
+			y: 355
+		}, 
+		GtfContainer(8a889708-55c6-4b35-b1f4-b43c7502b6a0)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(95e28905-fbef-4809-af73-3f90cfa098b2)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Horizontal_Line"
+					visible: true
+					width: 400
+					height: 3
+					x: 190
+					y: 188
+					fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+				}, 
+				GtfRectangle(fc323591-852d-4e6a-afb3-3a2e47d039f2)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Vertical_Line"
+					visible: true
+					width: 3
+					height: 280
+					x: 388
+					y: 42
+					fillColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+				}]
+			name: "Focus_Sound_Lines"
+			visible: true
+			width: 100
+			height: 100
+			x: 0
+			y: 0
+		}, 
+		GtfImage(7cda9aee-5a9c-426a-967d-e54ddc883948)
+		{
+			features: feature_list [
+				ScaleMode(8d7b76bd-e5d2-4367-a57a-a643e722ec58)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "Left_Seat_Image"
+			visible: true
+			width: 130
+			height: 130
+			x: 269
+			y: 195
+			image: @6b5ab965-47d7-4f01-b409-6d391c2bab59 (objectref<image>)
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(d2151350-ab52-486d-ac93-64fe1947db84)
+		{
+			features: feature_list [
+				ScaleMode(d5cce805-5aeb-4b59-b75f-11910c8969d5)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "Right_Seat_Image"
+			visible: true
+			width: 130
+			height: 130
+			x: 380
+			y: 195
+			image: @6b5ab965-47d7-4f01-b409-6d391c2bab59 (objectref<image>)
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(374b4aca-51ec-4951-b998-726b0a5efbd6)
+		{
+			features: feature_list [
+				ScaleMode(f20cbd72-b984-4ad4-b892-5c9f9269545f)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "Back_Left_Seat_Image"
+			visible: true
+			width: 130
+			height: 130
+			x: 285
+			y: 50
+			image: @6b5ab965-47d7-4f01-b409-6d391c2bab59 (objectref<image>)
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(7856821c-4523-4606-bac8-0d2a2135d1e1)
+		{
+			features: feature_list [
+				ScaleMode(2d9e6d29-1913-4856-93a9-2e1449d935a6)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "Back_Right_Seat_Image"
+			visible: true
+			width: 130
+			height: 130
+			x: 364
+			y: 50
+			image: @6b5ab965-47d7-4f01-b409-6d391c2bab59 (objectref<image>)
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfEllipse(770630bb-cdf8-4c84-a1fe-eaa03b381506)
+		{
+			features: feature_list [
+				StateFocused(f3e7b24c-9115-422a-8353-0999f9ec8bc9)
+				{
+					focusable: 3
+					focused: false
+				}, 
+				StatePressed(38f0cd4e-55ef-434c-a39e-797e2fe83c50)
+				{
+					pressed: false
+				}, 
+				TouchMove(80273e69-b2d5-47b8-9df8-250b09393638)
+				{
+					touchMoved: function<bool,int,int,int,int>(ca52a8e7-0e4a-44c1-83d2-ad7093de63b5)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(v:x >= 255 && v:x <= 525	&& v:y >= 50 && v:y <= 310)" \
+							"	{" \
+							"		dp:Variables:x_Focus = v:x - v:this.width/2" \
+							"		dp:Variables:y_Focus = v:y - v:this.height/2" \
+							"    }" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(57519679-bed2-4c8e-bcaf-f5d220d7b243)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfEllipse(77bfe1b7-a4a3-43ba-8110-250e8fd851ec)
+				{
+					features: feature_list [
+						StateTouched(7d044786-eaf2-4150-a07b-fe86c8e0199a)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "Focus_Elipse"
+					visible: true
+					width: 45
+					height: 45
+					x: 3
+					y: 3
+					fillColor: #FFFAFAFF
+					arcWidth: 0
+					centralAngle: 360F
+					sectorRotation: 0F
+				}]
+			name: "Focus_Border_Elipse"
+			visible: true
+			width: 50
+			height: 50
+			x: @da200e17-50a5-42b0-940d-3e066f736239 (objectref<int>)
+			y: @69351f8a-765e-490b-9e43-1de70891f54c (objectref<int>)
+			fillColor: @df3a02bc-fdfd-4072-a6e6-646cecfd3ea6 (objectref<color>)
+			arcWidth: 0
+			centralAngle: 360F
+			sectorRotation: 0F
+		}, 
+		GtfContainer(bcedd765-7b77-4dfa-9c35-6ea016ec23b0)
+		{
+			features: feature_list [
+				TouchShortReleased(352f688a-9709-4c96-bedb-111923e77cf3)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(582463c0-4356-4978-82ae-560de7ca3835)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->Focus_Border_Elipse.x = 364" \
+							"	v:this->^->Focus_Border_Elipse.y = 164" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(680f6f53-a090-4c20-a29f-0d4e202716c2)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}, 
+				TouchPressed(505f4410-d10f-483c-85a3-3086f5b9ef09)
+				{
+					touchPressed: function<bool,int,int,int,int>(80c0099e-0d45-4a74-93a7-17020a04cf0f)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    false" \
+							"}"
+					}
+				}]
+			children: children_list [
+				GtfRectangle(dacd67c2-baad-4bcf-836b-0443b3a7d646)
+				{
+					features: feature_list [
+						Border(18a52d3a-9d72-4369-8672-b9a0eaa220e8)
+						{
+							borderThickness: 2
+							borderColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+							borderStyle: 0
+						}]
+					children: children_list [
+						GtfLabel(3f000cde-ebfb-4c6f-8613-6b0d20ed3708)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Text_Button"
+							visible: true
+							width: width@bcedd765-7b77-4dfa-9c35-6ea016ec23b0 (propref<int>)
+							height: height@bcedd765-7b77-4dfa-9c35-6ea016ec23b0 (propref<int>)
+							x: 1
+							y: 0
+							text: @5e525b4e-e5c8-4951-a4fe-f9bb5258381f (objectref<string>)
+							textColor: @4ec70f4d-0077-4fbd-9c1c-42a8be61026e (objectref<color>)
+							font: font_resource(973449b7-dd0f-4d61-8646-4d509eaa667e)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 25
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+						}]
+					name: "Button_Border"
+					visible: true
+					width: width@bcedd765-7b77-4dfa-9c35-6ea016ec23b0 (propref<int>)
+					height: height@bcedd765-7b77-4dfa-9c35-6ea016ec23b0 (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #FFFFFF00
+				}]
+			name: "Center_Button"
+			visible: true
+			width: 75
+			height: 30
+			x: 675
+			y: 315
+		}]
+}

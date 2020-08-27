@@ -1,0 +1,351 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(3bf83cc8-0922-4309-943d-2381201b8967)
+{
+	name: "Media_View"
+	template: @e0d94433-fcfc-49d3-ab30-42b9a67dd306 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer(424b0676-d7f3-4750-b547-e35a82970741)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfInstantiator(b2420bad-8c5a-41e3-84c2-e95d9766c421)
+				{
+					features: feature_list [
+						LayoutPolicyFlow(f44fca5c-c405-457c-a295-b77bbb21fb76)
+						{
+							horizontalGap: 0
+							verticalGap: 0
+							layoutDirection: 0
+							horizontalChildAlign: 0
+							verticalChildAlign: 0
+						}, 
+						ViewPort(898fcc25-e9bd-484e-9fed-470551a40827)
+						{
+							xOffset: 0
+							yOffset: 0
+						}]
+					children: children_list [
+						GtfContainer_template_instance(d61be860-38ff-417c-a20a-f29baa74ed81)
+						{
+							name: "List_Element"
+							template: @da02899f-875c-49d3-8c01-51da79cb7d59 (objectref<GtfContainer_template>)
+							children: children_list []
+							titleText: string_scriptedValue(12051f92-6c5f-427f-80ab-5aa2f946349a)
+							{
+								triggerList: trigger_list(9479f1cf-b5be-4cef-b23e-9a01a1cb7fc4)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(bea5bed9-4f54-442b-b8fd-3f1774ebd357)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<string>(68f08097-9704-48b1-8834-d27580d2c0e0)
+								{
+									script: "function()" \
+										"{	" \
+										"	dp:Variables:Media_List[v:this.lineIndex]" \
+										"}"
+								}
+								write: function<bool,string>(3026c041-3315-4bd1-b0d1-6721b0cba9cd)
+								{
+									script: "function(v:arg0::string)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							"gen/ArtistText": string_scriptedValue(d0778ffb-22c4-4bb6-9148-573a3295cc4d)
+							{
+								triggerList: trigger_list(4b49da7b-e5b0-40ad-8e28-ef4d8ae581ee)
+								{
+									script: "v:this.lineIndex" \
+										""
+								}
+								onTrigger: function<bool,bool>(2ed8ca9f-1002-4ec1-ac1a-7f79f7c12917)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<string>(bf7a67fe-d461-4395-aaf8-c891ba54c2fc)
+								{
+									script: "function()" \
+										"{" \
+										"	dp:Variables:Media_Artist_List[v:this.lineIndex]" \
+										"}"
+								}
+								write: function<bool,string>(c23de9ed-3a71-4382-8599-d3cc9906d0e5)
+								{
+									script: "function(v:arg0::string)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							lineIndex: lineIndex@da02899f-875c-49d3-8c01-51da79cb7d59 (propref<int>)
+							touchShortReleased: function<bool,int,int,int,int>(b19a4a6c-cd8f-4b90-adce-268aaecbc284)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(dp:Variables:index_Fav_Media < 3)" \
+									"	{" \
+									"		dp:Variables:Favorite_Media_List[dp:Variables:index_Fav_Media] = v:this.titleText + \" - \"" \
+									"			+ v:this.\"gen/ArtistText\"" \
+									"    	dp:Variables:index_Fav_Media += 1" \
+									"	}" \
+									"	else" \
+									"	{" \
+									"		dp:Variables:index_Fav_Media = 0" \
+									"		dp:Variables:Favorite_Media_List[dp:Variables:index_Fav_Media] = v:this.titleText + \" - \" " \
+									"			+ v:this.\"gen/ArtistText\"" \
+									"    	dp:Variables:index_Fav_Media += 1" \
+									"	}" \
+									"    false" \
+									"}"
+							}
+							touchShortReleasedPlay: function<bool,int,int,int,int>(a6d5623a-0148-433f-873f-0ad8696d7349)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:playRadioMedia()" \
+									"	dp:Variables:Radio_Media_Choice = \"Media\"" \
+									"	dp:Variables:Current_Radio_Media_Song = v:this.titleText + \" - \" + v:this.\"gen/ArtistText\"" \
+									"    false" \
+									"}"
+							}
+						}]
+					name: "List"
+					visible: true
+					width: 500
+					height: 200
+					x: 0
+					y: 0
+					numItems: int_scriptedValue(2a5c9752-e77b-4089-9eec-d0b6bd8aa488)
+					{
+						triggerList: trigger_list(42a915bc-11fb-40f8-b7d6-e6d9a205760c)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(7b76c818-63c9-41c3-88bc-bee327ca49c9)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<int>(b657330c-4773-46fa-afc5-168deb7cf0b5)
+						{
+							script: "function()" \
+								"{" \
+								"	length dp:Variables:Radio_List	" \
+								"}"
+						}
+						write: function<bool,int>(e8f6223e-3624-45ae-887e-d4edecb5ff13)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					lineMapping: intlist []
+				}]
+			name: "Media_List"
+			visible: @a73a212f-b07f-43a0-bd03-4789810e5619 (objectref<bool>)
+			width: 500
+			height: 200
+			x: 160
+			y: 70
+		}, 
+		GtfContainer(a9524ebe-25b0-4143-9a64-c397175f5801)
+		{
+			features: feature_list [
+				MoveOut(be65f0f9-94c7-44ac-9dd6-80211bae998d)
+				{
+					moveOut: function<bool,int,int,int,int>(bbcde81a-eda0-4f5b-95de-faaa8fbfc6b1)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->Background_Button.fillColor = dp:Colors:Move_Out_Color" \
+							"    false" \
+							"}"
+					}
+				}, 
+				MoveIn(2254091d-8a88-4162-8281-554b04b277ab)
+				{
+					moveIn: function<bool,int,int,int,int>(6b8a9981-a806-42da-b01b-62896c9bdd70)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{	" \
+							"	v:this->Background_Button.fillColor = dp:Colors:Move_In_Color" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(a9a7e3d3-0be8-44c7-afbf-32194a936bf8)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}, 
+				TouchShortReleased(8184c53f-c5bc-4bfc-8a1d-7556f161d5aa)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(81158c97-667b-4b0c-a8bd-223cb97b757a)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(v:this->^->Media_List->List.yOffset < 0)" \
+							"		v:this->^->Media_List->List.yOffset += 35" \
+							"    false" \
+							"}"
+					}
+				}]
+			children: children_list [
+				GtfRectangle(0b339087-06cc-4ba8-bbac-e9b531b212b3)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfImage(9f7b1953-e092-495a-b859-5f12ee30492c)
+						{
+							features: feature_list [
+								ScaleMode(eb402379-504f-44de-8c27-e660a21b40f7)
+								{
+									scaleMode: 1
+								}]
+							children: children_list []
+							name: "Image_Button"
+							visible: true
+							width: width@a9524ebe-25b0-4143-9a64-c397175f5801 (propref<int>)
+							height: height@a9524ebe-25b0-4143-9a64-c397175f5801 (propref<int>)
+							x: 0
+							y: 0
+							image: @7e7adcf2-bf79-41e1-8c6d-7f53ae7be6aa (objectref<image>)
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}]
+					name: "Background_Button"
+					visible: true
+					width: width@a9524ebe-25b0-4143-9a64-c397175f5801 (propref<int>)
+					height: height@a9524ebe-25b0-4143-9a64-c397175f5801 (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #FFFFFF00
+				}]
+			name: "Up_List_Button"
+			visible: true
+			width: 50
+			height: 50
+			x: 675
+			y: 65
+		}, 
+		GtfContainer(ede337e4-af30-494f-9547-a460e4712857)
+		{
+			features: feature_list [
+				MoveOut(26966f5c-c044-4ed5-9e2e-974b14609462)
+				{
+					moveOut: function<bool,int,int,int,int>(7337a392-d34a-4b9a-943a-648bd7846560)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->Background_Button.fillColor = dp:Colors:Move_Out_Color" \
+							"    false" \
+							"}"
+					}
+				}, 
+				MoveIn(78b51aaa-b78c-4088-a576-a383de3be673)
+				{
+					moveIn: function<bool,int,int,int,int>(1b4828ce-e7d9-4e0a-8510-d222d8c43b73)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->Background_Button.fillColor = dp:Colors:Move_In_Color" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(dee01a6e-48da-4421-9dbb-51e380a4e825)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}, 
+				TouchShortReleased(66e906c0-6e15-4184-84e5-fb9707219bf3)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(7e424758-527b-4bfb-b27d-3822a01f4323)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(v:this->^->Media_List->List.yOffset > -165)" \
+							"		v:this->^->Media_List->List.yOffset -= 35" \
+							"    false" \
+							"}"
+					}
+				}]
+			children: children_list [
+				GtfRectangle(e3882d45-d780-4c49-94fa-ad070c778d8a)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfImage(ef47fff7-b99b-49fd-9b9e-f0f09ede6df7)
+						{
+							features: feature_list [
+								ScaleMode(f2f47d3c-3b8b-4523-9d7d-effcb0cf1809)
+								{
+									scaleMode: 1
+								}]
+							children: children_list []
+							name: "Image_Button"
+							visible: true
+							width: width@ede337e4-af30-494f-9547-a460e4712857 (propref<int>)
+							height: height@ede337e4-af30-494f-9547-a460e4712857 (propref<int>)
+							x: 0
+							y: 0
+							image: @0917a1ce-256e-4a45-93c2-af43cab43965 (objectref<image>)
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}]
+					name: "Background_Button"
+					visible: true
+					width: width@ede337e4-af30-494f-9547-a460e4712857 (propref<int>)
+					height: height@ede337e4-af30-494f-9547-a460e4712857 (propref<int>)
+					x: 0
+					y: 0
+					fillColor: #FFFFFF00
+				}]
+			name: "Down_List_Button"
+			visible: true
+			width: 50
+			height: 50
+			x: 675
+			y: 225
+		}, 
+		GtfRectangle(16835502-f7cd-4f29-9c9f-825e373c787c)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "USB_Background"
+			visible: @920df054-37af-4f8e-8525-65fe0c5b6341 (objectref<bool>)
+			width: 800
+			height: 480
+			x: 0
+			y: 0
+			fillColor: @6927c983-d312-43fc-8e7f-bde98fa1464b (objectref<color>)
+		}]
+	textTitleView: @08293d09-43ad-4811-ad33-b8ebff9121f2 (objectref<string>)
+}
