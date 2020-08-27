@@ -1,0 +1,727 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(f1932a8e-7d4e-48bb-833d-4aaef1fbea6b)
+{
+	name: "RoundKeyboard"
+	structure: GtfContainer(fcbafe05-9a36-437b-ad46-53dc03db9381)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfInstantiator(491dae1c-8797-49f4-bddb-5f18e9692599)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfContainer(8b8c649f-446e-46e3-91eb-5d642e1445ec)
+					{
+						features: feature_list [
+							LineIndex(add83def-e952-4c8c-8043-7e3ec30c49ff)
+							{
+								lineIndex: 0
+							}]
+						children: children_list [
+							GtfContainer_template_instance(09c8925f-a9e5-4f96-a3da-f03f0703dba9)
+							{
+								name: "EllipseButton"
+								template: @6c666789-7e60-483d-9182-6ecbe93b4851 (objectref<GtfContainer_template>)
+								children: children_list []
+								x: 0
+								y: 0
+								lineIndex: lineIndex@6c666789-7e60-483d-9182-6ecbe93b4851 (propref<int>)
+								height: 30
+								width: 30
+								text: "A"
+								image: image@6c666789-7e60-483d-9182-6ecbe93b4851 (propref<image>)
+								labelVisible: labelVisible@6c666789-7e60-483d-9182-6ecbe93b4851 (propref<bool>)
+								ellipseVisible: false
+								pressAction: function<bool>(2c4df55a-089e-4de4-997f-64ce4d427e56)
+								{
+									script: "function()" \
+										"{" \
+										"	fire ev:keyPressed(v:this.text)" \
+										"	v:this->^->^->^->Selector.x = v:this.x" \
+										"	v:this->^->^->^->Selector.y = v:this.y" \
+										"	" \
+										"	v:this->^->^->^->Indicator.rotationAngleZ = 180.0-f:rad2deg(v:this.angle)" \
+										"	v:this->^->^->^->Selector.visible = true" \
+										"	" \
+										"	if(v:this.text!= \"123\" && v:this.text!= \"DEL\"&& v:this.text!= \"<\" && v:this.text!= \"ABC\")" \
+										"		v:this->^->^->^->CurrentLetter.text=v:this.text" \
+										"	else" \
+										"		v:this->^->^->^->CurrentLetter.text =\"\"" \
+										"	false" \
+										"}"
+								}
+								angle: 0F
+							}]
+						name: "InstantiatorContainer"
+						visible: true
+						width: 352
+						height: 350
+						x: 0
+						y: 0
+						setItems: conditional_script(bf4a8c36-c67e-4854-acb4-9765583380e2)
+						{
+							triggerList: trigger_list(48b50cf8-3888-41b9-9a48-39be378cc42c)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(21b48b27-aa65-40b5-8910-f01305a2f98e)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	let v:teta = 6.28318 / f:int2float(v:this->^.numItems);" \
+									"		v:phi = 3.14;" \
+									"		v:alpha = 0.0;" \
+									"		v:r = f:int2float(v:this->^->^.radius)" \
+									"		v:bubleSize = v:this->EllipseButton.width" \
+									"	in {" \
+									"		" \
+									"		v:alpha = v:teta * f:int2float(v:this.lineIndex) + v:phi" \
+									"		v:this->EllipseButton.angle = v:alpha" \
+									"		v:this->EllipseButton.x = f:string2int(f:format_float(\"%.0f\",true,f:cosf(v:alpha) * v:r + f:int2float(v:this->^->^.width / 2 - v:bubleSize/2)))" \
+									"		v:this->EllipseButton.y = f:string2int(f:format_float(\"%.0f\",true,f:sinf(v:alpha) * v:r + f:int2float(v:this->^->^.height / 2 - v:bubleSize/2)))" \
+									"		if(v:this->^->^.letters[v:this.lineIndex] == \"123\"){" \
+									"			v:this->EllipseButton.labelVisible = false" \
+									"			v:this->EllipseButton.ellipseVisible = false" \
+									"			v:this->EllipseButton.image = dp:keyboardIcons[3]" \
+									"		}" \
+									"		if(v:this->^->^.letters[v:this.lineIndex] == \"DEL\"){" \
+									"			v:this->EllipseButton.labelVisible = false" \
+									"			v:this->EllipseButton.ellipseVisible = false" \
+									"			v:this->EllipseButton.image = dp:keyboardIcons[0]" \
+									"		}" \
+									"		if(v:this->^->^.letters[v:this.lineIndex] == \"<\"){" \
+									"			v:this->EllipseButton.labelVisible = false" \
+									"			v:this->EllipseButton.ellipseVisible = false" \
+									"			v:this->EllipseButton.image = dp:keyboardIcons[1]" \
+									"		}" \
+									"		if(v:this->^->^.letters[v:this.lineIndex] == \"_\"){" \
+									"			v:this->EllipseButton.labelVisible = false" \
+									"			v:this->EllipseButton.ellipseVisible = false" \
+									"			v:this->EllipseButton.image = dp:keyboardIcons[2]" \
+									"		}" \
+									"		v:this->EllipseButton.text = v:this->^->^.letters[v:this.lineIndex]" \
+									"	}" \
+									"	false" \
+									"}"
+							}
+						}
+					}]
+				name: "CircleInstantiator"
+				visible: true
+				width: width@fcbafe05-9a36-437b-ad46-53dc03db9381 (propref<int>)
+				height: height@fcbafe05-9a36-437b-ad46-53dc03db9381 (propref<int>)
+				x: 0
+				y: 0
+				numItems: 30
+				lineMapping: intlist []
+				setNumItems: conditional_script(d038eb42-f837-4077-b414-f3bc61dbff82)
+				{
+					triggerList: trigger_list(6c579c2b-90e0-442a-b84b-d1bd7ea3c944)
+					{
+						script: "v:this->^.letters"
+					}
+					onTrigger: function<bool,bool>(280c8d0e-ceb1-47e9-8c7c-e2ae38f10c11)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	v:this.numItems = length v:this->^.letters" \
+							"	false" \
+							"}"
+					}
+				}
+			}, 
+			GtfInstantiator(c71515c6-189a-4942-95f7-d00a887060ee)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfContainer(e44144b8-5e13-43cf-ba0d-14cd6c0bd52d)
+					{
+						features: feature_list [
+							LineIndex(5c6b6657-50d6-465b-b1ed-66fa697d4558)
+							{
+								lineIndex: 0
+							}]
+						children: children_list [
+							GtfContainer_template_instance(0d060a99-2f58-413e-ae0a-91d3b4e16796)
+							{
+								name: "EllipseButton"
+								template: @6c666789-7e60-483d-9182-6ecbe93b4851 (objectref<GtfContainer_template>)
+								children: children_list []
+								x: 0
+								y: 0
+								lineIndex: lineIndex@6c666789-7e60-483d-9182-6ecbe93b4851 (propref<int>)
+								height: 30
+								width: 30
+								text: "A"
+								image: image@6c666789-7e60-483d-9182-6ecbe93b4851 (propref<image>)
+								labelVisible: labelVisible@6c666789-7e60-483d-9182-6ecbe93b4851 (propref<bool>)
+								ellipseVisible: false
+								pressAction: function<bool>(cb698b99-03b2-44fe-8701-05432fbea96a)
+								{
+									script: "function()" \
+										"{" \
+										"	fire ev:keyPressed(v:this.text)" \
+										"	v:this->^->^->^->Selector.x = v:this.x" \
+										"	v:this->^->^->^->Selector.y = v:this.y" \
+										"	v:this->^->^->^->Indicator.rotationAngleZ = 180.0-f:rad2deg(v:this.angle) " \
+										"	v:this->^->^->^->Selector.visible = true" \
+										"	if(v:this.text!= \"123\" && v:this.text!= \"DEL\"&&v:this.text!= \"<\" && v:this.text!= \"ABC\")" \
+										"		v:this->^->^->^->CurrentLetter.text=v:this.text" \
+										"	else" \
+										"		v:this->^->^->^->CurrentLetter.text =\"\"" \
+										"	false" \
+										"}"
+								}
+								angle: 0F
+							}]
+						name: "InstantiatorContainer"
+						visible: true
+						width: 354
+						height: 351
+						x: 0
+						y: 0
+						setItems: conditional_script(4ae4eb61-bd64-4c33-acb4-340be70b5368)
+						{
+							triggerList: trigger_list(1a0277bb-eafb-4243-a489-5e1139514207)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(ce6730c9-94e9-492a-a365-4a091787d99b)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	let v:teta = 6.28318 / f:int2float(v:this->^.numItems);" \
+									"		v:phi = 3.14;" \
+									"		v:alpha = 0.0;" \
+									"		v:r = f:int2float(v:this->^->^.radius)" \
+									"		v:bubleSize = v:this->EllipseButton.width" \
+									"	in {" \
+									"		" \
+									"		v:alpha = v:teta * f:int2float(v:this.lineIndex) + v:phi" \
+									"		v:this->EllipseButton.angle = v:alpha" \
+									"		v:this->EllipseButton.x = f:string2int(f:format_float(\"%.0f\",true,f:cosf(v:alpha) * v:r + f:int2float(v:this->^->^.width / 2 - v:bubleSize/2)))" \
+									"		v:this->EllipseButton.y = f:string2int(f:format_float(\"%.0f\",true,f:sinf(v:alpha) * v:r + f:int2float(v:this->^->^.height / 2 - v:bubleSize/2)))" \
+									"		if(v:this->^->^.numbers[v:this.lineIndex] == \"\"){" \
+									"			v:this->EllipseButton.labelVisible = false" \
+									"			v:this->EllipseButton.ellipseVisible = false" \
+									"		}" \
+									"		if(v:this->^->^.numbers[v:this.lineIndex] == \"123\"){" \
+									"			v:this->EllipseButton.labelVisible = false" \
+									"			v:this->EllipseButton.ellipseVisible = false" \
+									"			v:this->EllipseButton.image = dp:warningList[0]" \
+									"		}" \
+									"		if(v:this->^->^.letters[v:this.lineIndex] == \"DEL\"){" \
+									"			v:this->EllipseButton.labelVisible = false" \
+									"			v:this->EllipseButton.ellipseVisible = false" \
+									"			v:this->EllipseButton.image = dp:keyboardIcons[0]" \
+									"		}" \
+									"		if(v:this->^->^.letters[v:this.lineIndex] == \"<\"){" \
+									"			v:this->EllipseButton.labelVisible = false" \
+									"			v:this->EllipseButton.ellipseVisible = false" \
+									"			v:this->EllipseButton.image = dp:keyboardIcons[1]" \
+									"		}" \
+									"		if(v:this->^->^.letters[v:this.lineIndex] == \"_\"){" \
+									"			v:this->EllipseButton.labelVisible = false" \
+									"			v:this->EllipseButton.ellipseVisible = false" \
+									"			v:this->EllipseButton.image = dp:keyboardIcons[2]" \
+									"		}" \
+									"		v:this->EllipseButton.text = v:this->^->^.numbers[v:this.lineIndex]" \
+									"	}" \
+									"	false" \
+									"}"
+							}
+						}
+					}]
+				name: "NumbersInstantiator"
+				visible: false
+				width: width@fcbafe05-9a36-437b-ad46-53dc03db9381 (propref<int>)
+				height: height@fcbafe05-9a36-437b-ad46-53dc03db9381 (propref<int>)
+				x: 0
+				y: 0
+				numItems: 30
+				lineMapping: intlist []
+				setNumItems: conditional_script(3875e4fb-ea4d-4e76-b8a0-a0c14a765d12)
+				{
+					triggerList: trigger_list(4a900716-1818-48dd-8d66-831c6116255b)
+					{
+						script: "v:this->^.numbers"
+					}
+					onTrigger: function<bool,bool>(5ef9c47d-be60-4fec-8636-26b096ab7f4c)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	v:this.numItems = length v:this->^.numbers" \
+							"	false" \
+							"}"
+					}
+				}
+			}, 
+			GtfEllipse(9fe2dbcd-e322-498b-8ee3-44245005b755)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "BorderInt"
+				visible: true
+				width: 270
+				height: 270
+				x: int_scriptedValue(a82bec46-06b7-4d4d-b3d1-baa190a1d8db)
+				{
+					triggerList: trigger_list(677fe5be-ee34-4e8a-ad3d-536f9864cf06)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(7ae437e7-a130-4cf9-9baf-547e865c0da0)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(e4fe9e51-30a8-432b-8a08-bd5d4ccd7f7b)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.width / 2- v:this.width/2" \
+							"}"
+					}
+					write: function<bool,int>(c7dfd9df-8c4e-4634-b43f-37bae9a9a8fe)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				y: int_scriptedValue(cc823d08-999b-4a33-87f2-74b6d3008ccf)
+				{
+					triggerList: trigger_list(13b7c639-dbf1-43e9-927f-0c8bb96f9911)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(f4797423-7095-4165-be9c-234cf8994513)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(47883dfa-c8be-43e2-bfc2-d71908622f3a)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.height / 2- v:this.height/2" \
+							"}"
+					}
+					write: function<bool,int>(77a18dc8-128e-4792-876c-fe3521929c79)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				fillColor: #FFFFFFFF
+				arcWidth: 5
+				centralAngle: 360F
+				sectorRotation: 0F
+			}, 
+			GtfEllipse(782a76e7-80a6-475b-b2cf-534a563705d6)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "BorderExt"
+				visible: true
+				width: 350
+				height: 350
+				x: int_scriptedValue(e485b411-e2a1-4a97-a5ff-54bcd1bf1573)
+				{
+					triggerList: trigger_list(cb341637-8c85-4a00-a2bc-5e33cdc9b77c)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(8fd1c1a7-4e6b-470d-ad5d-1110fabad823)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(bed9936c-7175-489e-9ebc-659bf8912f79)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.width / 2- v:this.width/2" \
+							"}"
+					}
+					write: function<bool,int>(52f570b9-21c1-4dd5-a574-b3ea7e132a67)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				y: int_scriptedValue(4f0707a0-4e0e-4046-9ec5-23cf9e5d5858)
+				{
+					triggerList: trigger_list(1714c435-03d7-41cb-aa75-5b9495729e77)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(8f029f45-fffa-4203-ba28-74f216d2b1ca)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(1b9f9ffd-efec-48e5-ba4f-5f0e8b2fdb19)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.height / 2- v:this.height/2" \
+							"}"
+					}
+					write: function<bool,int>(aae2a6ff-cbf7-4505-bb8c-414b889d1787)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				fillColor: #FFFFFFFF
+				arcWidth: 5
+				centralAngle: 360F
+				sectorRotation: 0F
+			}, 
+			GtfRectangle(000c94a3-cbed-455e-9c74-51226ef220c3)
+			{
+				features: feature_list [
+					Rotation(a76b110d-af95-4b91-84fc-44781e15fc65)
+					{
+						rotationEnabled: true
+						rotationAngleX: 0F
+						rotationAngleY: 0F
+						rotationAngleZ: 0F
+					}, 
+					Scaling(08cd9eff-52a0-47dc-a045-f7a7c765d50b)
+					{
+						scalingEnabled: true
+						scalingX: 100F
+						scalingY: 100F
+						scalingZ: 100F
+					}, 
+					Shearing(870d1a4f-e03f-44e6-ada8-9eedfb605949)
+					{
+						shearingEnabled: true
+						shearingXbyY: 0F
+						shearingXbyZ: 0F
+						shearingYbyX: 0F
+						shearingYbyZ: 0F
+						shearingZbyX: 0F
+						shearingZbyY: 0F
+					}, 
+					Pivot(88044fad-631f-486a-9bb2-4b26483c2906)
+					{
+						pivotX: float_scriptedValue(6b1d0375-f5a7-42db-9cd7-f43fc67eca84)
+						{
+							triggerList: trigger_list(f3e8bfad-92c9-4c48-92dd-21ef5af8694f)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(ae44c406-c652-46b7-8f0d-8f7114829ed4)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<float>(bb4fcfda-7211-4339-97e2-be5a52cb28d2)
+							{
+								script: "function()" \
+									"{" \
+									"	f:int2float(v:this.width)" \
+									"}"
+							}
+							write: function<bool,float>(85b3b336-a31a-452a-9a96-83a78ce8d24a)
+							{
+								script: "function(v:arg0::float)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						pivotY: float_scriptedValue(fa80b1bd-1328-451c-aa71-d5fdeff2d3c0)
+						{
+							triggerList: trigger_list(4b1e07bd-4c88-4bdd-ad7f-5451aa714f41)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(7cdfd80e-626e-41f6-a3ef-605f25097b9c)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<float>(a46c28ff-a570-4099-adb3-79bbebbe0117)
+							{
+								script: "function()" \
+									"{" \
+									"	f:int2float(v:this.height / 2)" \
+									"}"
+							}
+							write: function<bool,float>(18db85bc-b494-42f3-b6c4-c074d1ef61c4)
+							{
+								script: "function(v:arg0::float)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						pivotZ: 0F
+					}]
+				children: children_list []
+				name: "Indicator"
+				visible: true
+				width: 130
+				height: 5
+				x: 45
+				y: 173
+				fillColor: #FFA500FF
+			}, 
+			GtfEllipse(e83c3c58-b7ae-4bad-8753-b00f092e49ce)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "CenterMaskBorder"
+				visible: true
+				width: 110
+				height: 110
+				x: int_scriptedValue(8ab1c6e1-8264-4e14-9cf8-74d14882e21c)
+				{
+					triggerList: trigger_list(d86ba414-f1f2-44ea-ba93-bd3c75de04f2)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(3deaa5f2-e1f6-4cbb-8f3c-fd69a147e23e)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(df9f0e43-eb57-46f5-98ba-efe480e77090)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.width / 2- v:this.width/2" \
+							"}"
+					}
+					write: function<bool,int>(5494d917-fe11-4d54-b414-e48e2f93f0c7)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				y: int_scriptedValue(30682bd5-2a9d-4706-bf19-8bcfae0f1eb2)
+				{
+					triggerList: trigger_list(a881df3e-a9ed-42c5-a011-6644806851ad)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(390926c9-589c-49c0-a32e-dd415177e94e)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(f32d6279-faa6-4a57-9721-55aa0a5de2d7)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.height / 2- v:this.height/2" \
+							"}"
+					}
+					write: function<bool,int>(7877c03b-9d20-4a88-8a31-d8aede1ae3e3)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				fillColor: #FFFFFFFF
+				arcWidth: 5
+				centralAngle: 360F
+				sectorRotation: 0F
+			}, 
+			GtfEllipse(2e080476-aab3-4b9f-91d3-20f9916d7bb0)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "CenterMask"
+				visible: true
+				width: 100
+				height: 100
+				x: int_scriptedValue(ea4f0a73-1f35-4839-ad23-e66ae7d82f62)
+				{
+					triggerList: trigger_list(7a142095-772b-4d8f-af02-9baca58961e5)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(7b76a5b1-8dd6-4c3f-933c-91ac4a656214)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(f60464e5-65b2-40a4-b6da-6cbbc054130b)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.width / 2 - v:this.width / 2" \
+							"}"
+					}
+					write: function<bool,int>(a2bb130a-8145-45f6-8b4f-5bb1dfa06a6e)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				y: int_scriptedValue(2fdcfea5-1cb7-4f6d-81c9-d2da8c77daae)
+				{
+					triggerList: trigger_list(f70325b6-3af0-440b-ba92-8c64f9b24c9d)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(4566e6d3-efca-4a41-9f25-43b1230ee3db)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(4d2424f7-9cf8-4b87-8736-7d8fb7b5c44e)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.height / 2 - v:this.height / 2" \
+							"}"
+					}
+					write: function<bool,int>(d9a4ced7-b7ac-4456-af14-53f4820ca255)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				fillColor: #000000FF
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}, 
+			GtfLabel(13aa143f-51a3-49e8-9fe1-51f9576c1ba3)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "CurrentLetter"
+				visible: true
+				width: 60
+				height: 73
+				x: 143
+				y: 135
+				text: ""
+				textColor: #FFFFFFFF
+				font: font_resource(731ef978-6c05-4270-a715-b92561956bfc)
+				{
+					file: "Vudotronic.otf"
+					size: 35
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfEllipse(e156d603-9436-4d77-a992-02b305806945)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Selector"
+				visible: false
+				width: 30
+				height: 30
+				x: 0
+				y: 0
+				fillColor: #FFA500FF
+				arcWidth: 3
+				centralAngle: 360F
+				sectorRotation: 0F
+			}]
+		name: "KeyboardContainer"
+		visible: true
+		width: 350
+		height: 350
+		x: 0
+		y: 0
+		radius: 150
+		letters: stringlist ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "123", "_", "<", "DEL", "."]
+		listenKeyPress: conditional_script(b2a3faaa-0bbb-4f78-87d4-af3fa1d4541d)
+		{
+			triggerList: trigger_list(ab0fb933-f4b3-4a28-831f-a8dbdf807bbb)
+			{
+				script: "ev:keyPressed"
+			}
+			onTrigger: function<bool,bool>(88a9ad1a-2b47-4285-8efc-b60345c65609)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	" \
+					"	match_event v:e = ev:keyPressed in {" \
+					"		if(v:e.value == \"123\"){" \
+					"			v:this->NumbersInstantiator.visible = true" \
+					"			v:this->CircleInstantiator.visible = false" \
+					"			v:this->Selector.visible = false" \
+					"		}" \
+					"		if(v:e.value == \"ABC\"){" \
+					"			v:this->NumbersInstantiator.visible = false" \
+					"			v:this->CircleInstantiator.visible = true" \
+					"			v:this->Selector.visible = false" \
+					"		}" \
+					"			" \
+					"	}" \
+					"	false" \
+					"}"
+			}
+		}
+		numbers: stringlist ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "ABC", "_", "<", "DEL", "."]
+	}
+	x: x@fcbafe05-9a36-437b-ad46-53dc03db9381 (propref<int>)
+	y: y@fcbafe05-9a36-437b-ad46-53dc03db9381 (propref<int>)
+}

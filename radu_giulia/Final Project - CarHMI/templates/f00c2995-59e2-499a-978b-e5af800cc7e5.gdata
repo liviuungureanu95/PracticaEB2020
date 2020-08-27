@@ -1,0 +1,108 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(f00c2995-59e2-499a-978b-e5af800cc7e5)
+{
+	name: "StraightKeyboard"
+	structure: GtfContainer(28a6d422-d8fb-4922-bd4b-9e447c71b1df)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfInstantiator(72388774-49f8-41bc-b951-9ddec8d3245d)
+			{
+				features: feature_list [
+					LayoutPolicyFlow(bebf081d-c1b7-4bfc-ac37-040d90afe6cf)
+					{
+						horizontalGap: 0
+						verticalGap: 1
+						layoutDirection: 0
+						horizontalChildAlign: 0
+						verticalChildAlign: 0
+					}]
+				children: children_list [
+					GtfContainer_template_instance(f61db55f-93da-47f9-8529-505108433c93)
+					{
+						name: "StraightKeyboardLetterButton 1"
+						template: @56f7f44a-6d47-4f30-80c8-584291cbcf5f (objectref<GtfContainer_template>)
+						children: children_list []
+						pressAction: function<bool>(c51c8976-6991-4585-a8d1-26f154fb3b2b)
+						{
+							script: "function()" \
+								"{" \
+								"	" \
+								"	fire ev:listenStraightKeyboard(v:this.text)" \
+								"	//v:this.borderColor" \
+								"	false" \
+								"}"
+						}
+						text: text@56f7f44a-6d47-4f30-80c8-584291cbcf5f (propref<string>)
+						lineIndex: lineIndex@56f7f44a-6d47-4f30-80c8-584291cbcf5f (propref<int>)
+						x: x@56f7f44a-6d47-4f30-80c8-584291cbcf5f (propref<int>)
+						y: y@56f7f44a-6d47-4f30-80c8-584291cbcf5f (propref<int>)
+						setText: conditional_script(a1dfa9be-983c-40c3-ace1-89be147778f1)
+						{
+							triggerList: trigger_list(09ad0a54-4213-4172-aaf9-12f48876097f)
+							{
+								script: "v:this->^->^.InputList" \
+									"v:this.lineIndex"
+							}
+							onTrigger: function<bool,bool>(730f1631-406b-4943-a6b7-a8fdc02b3d46)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	v:this.text=v:this->^->^.InputList[v:this.lineIndex]" \
+									"	false" \
+									"}"
+							}
+						}
+						borderColor: #000000FF
+					}]
+				name: "KeyboardInstatiator"
+				visible: true
+				width: width@28a6d422-d8fb-4922-bd4b-9e447c71b1df (propref<int>)
+				height: height@28a6d422-d8fb-4922-bd4b-9e447c71b1df (propref<int>)
+				x: 0
+				y: 0
+				numItems: int_scriptedValue(ccd138da-1afd-41c2-9759-3989fd206f82)
+				{
+					triggerList: trigger_list(6b7df73b-4195-4078-9557-d5e753de15a0)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(ba90306b-89b7-4076-ad13-09b36a6df72e)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(bd678872-cdcb-488a-88b4-88a37cdf602f)
+					{
+						script: "function()" \
+							"{" \
+							"	length v:this->^.InputList" \
+							"}"
+					}
+					write: function<bool,int>(ef84e876-a60b-4101-9870-baab601c1df6)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				lineMapping: intlist []
+			}]
+		name: "KeyboardContainer"
+		visible: true
+		width: 800
+		height: 50
+		x: 0
+		y: 0
+		InputList: stringlist ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+	}
+	x: x@72388774-49f8-41bc-b951-9ddec8d3245d (propref<int>)
+	y: y@72388774-49f8-41bc-b951-9ddec8d3245d (propref<int>)
+	visible: visible@28a6d422-d8fb-4922-bd4b-9e447c71b1df (propref<bool>)
+}

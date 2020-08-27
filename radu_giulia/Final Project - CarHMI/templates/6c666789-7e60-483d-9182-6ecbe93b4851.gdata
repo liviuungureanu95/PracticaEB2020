@@ -1,0 +1,124 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(6c666789-7e60-483d-9182-6ecbe93b4851)
+{
+	name: "EllipseButton"
+	structure: GtfContainer(d8e6fdc2-212e-4c2c-ac8e-4a03ea7bd673)
+	{
+		features: feature_list [
+			TouchPressed(73475c13-50f9-4e4b-ae3a-168d98af08f6)
+			{
+				touchPressed: function<bool,int,int,int,int>(7c91cd64-b850-4ad6-87e9-c02a827b471d)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.pressAction()" \
+						"	false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(bd0ca4f1-b1ae-44e1-85b8-2afe5d08b6bf)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(ce017579-6631-4e3f-8c8f-e816b97e323d)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(ec60909a-528d-4927-a857-dc7ad4c97cfd)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			LineIndex(068b956c-de39-44f2-9701-6c3b465ab530)
+			{
+				lineIndex: 0
+			}]
+		children: children_list [
+			GtfEllipse(65d0845f-5da9-4b19-a3dd-2c786acc9bdd)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Ellipse"
+				visible: false
+				width: width@d8e6fdc2-212e-4c2c-ac8e-4a03ea7bd673 (propref<int>)
+				height: height@d8e6fdc2-212e-4c2c-ac8e-4a03ea7bd673 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #A9A9A9FF
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}, 
+			GtfLabel(ef009170-ddc7-4dce-b722-21aa6d2ed257)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label"
+				visible: true
+				width: width@d8e6fdc2-212e-4c2c-ac8e-4a03ea7bd673 (propref<int>)
+				height: height@d8e6fdc2-212e-4c2c-ac8e-4a03ea7bd673 (propref<int>)
+				x: 0
+				y: 0
+				text: "type"
+				textColor: #FFFFFFFF
+				font: font_resource(0673b273-d947-475c-9166-fd3a29465cb5)
+				{
+					file: "Vudotronic.otf"
+					size: 25
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfImage(d56dd40d-44f7-49fe-af83-7f9969727ba7)
+			{
+				features: feature_list [
+					ScaleMode(1c647dbb-4189-4f6a-a3be-6d095f7b62dc)
+					{
+						scaleMode: 1
+					}]
+				children: children_list []
+				name: "Image"
+				visible: true
+				width: width@d8e6fdc2-212e-4c2c-ac8e-4a03ea7bd673 (propref<int>)
+				height: height@d8e6fdc2-212e-4c2c-ac8e-4a03ea7bd673 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(5a770599-c6cc-4c41-bd4d-1ea9c04610ab)
+				{
+					file: ""
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "EllipseContainer"
+		visible: true
+		width: 55
+		height: 55
+		x: 0
+		y: 0
+		pressAction: function<bool>(d43fc0d9-a600-4790-8a2f-4397a8308abc)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	x: x@d8e6fdc2-212e-4c2c-ac8e-4a03ea7bd673 (propref<int>)
+	y: y@d8e6fdc2-212e-4c2c-ac8e-4a03ea7bd673 (propref<int>)
+	lineIndex: lineIndex@068b956c-de39-44f2-9701-6c3b465ab530 (propref<int>)
+	height: height@d8e6fdc2-212e-4c2c-ac8e-4a03ea7bd673 (propref<int>)
+	width: width@d8e6fdc2-212e-4c2c-ac8e-4a03ea7bd673 (propref<int>)
+	text: text@ef009170-ddc7-4dce-b722-21aa6d2ed257 (propref<string>)
+	image: image@d56dd40d-44f7-49fe-af83-7f9969727ba7 (propref<image>)
+	labelVisible: visible@ef009170-ddc7-4dce-b722-21aa6d2ed257 (propref<bool>)
+	ellipseVisible: visible@65d0845f-5da9-4b19-a3dd-2c786acc9bdd (propref<bool>)
+	pressAction: pressAction@d8e6fdc2-212e-4c2c-ac8e-4a03ea7bd673 (propref<function<bool>>)
+}

@@ -1,0 +1,231 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(6b50dda8-4cd3-487b-9524-209ae4313588)
+{
+	name: "RevisionView"
+	template: @e194e414-71c1-406e-a41c-22a1af233577 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(426084e4-7b3c-4869-9efc-6664be522ab1)
+		{
+			name: "ScrollableList"
+			template: @eaba225e-00c7-4e60-b3b0-9bc252ee0039 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 33
+			y: 128
+			StationsList: @cdea90f3-cf28-4a8c-ab05-4748a37ec435 (objectref<stringlist>)
+			numItems: int_scriptedValue(000c9796-51dd-427a-906c-0505068f8fd4)
+			{
+				triggerList: trigger_list(0634642e-4d15-4393-9710-fc9a9c6dc120)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(2881860e-beaf-4d56-b73c-e391dfdfc54d)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<int>(cd898692-3924-463b-9e0b-2bc04b282dc0)
+				{
+					script: "function()" \
+						"{" \
+						"	length v:this.StationsList" \
+						"}"
+				}
+				write: function<bool,int>(4e55fb12-5ea7-4cbc-8eab-c17e2781e544)
+				{
+					script: "function(v:arg0::int)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			width: width@eaba225e-00c7-4e60-b3b0-9bc252ee0039 (propref<int>)
+			height: 238
+			visible: visible@eaba225e-00c7-4e60-b3b0-9bc252ee0039 (propref<bool>)
+		}, 
+		GtfImage_template_instance(0158bd3e-3f91-4ee5-b94d-ff713e059ca9)
+		{
+			name: "BackButton"
+			template: @783dbbc3-0048-41b2-8249-a5078951fba2 (objectref<GtfImage_template>)
+			children: children_list []
+			x: 31
+			y: 16
+			image: image_resource(53f2994a-d9ac-4653-8661-12616d492566)
+			{
+				file: "back.png"
+			}
+			rotationAngleZ: rotationAngleZ@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<float>)
+			touchPressed: function<bool,int,int,int,int>(fc5b2746-cbc3-4bdd-bc60-dfea63ca8ced)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:GoBack()" \
+					"    false" \
+					"}"
+			}
+			width: 56
+			height: 55
+			visible: visible@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+			touchable: touchable@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+			touched: touched@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+		}, 
+		GtfImage_template_instance(8a7c374f-0aba-4f5b-bbe7-b64004f7951f)
+		{
+			name: "UPButton"
+			template: @783dbbc3-0048-41b2-8249-a5078951fba2 (objectref<GtfImage_template>)
+			children: children_list []
+			x: 401
+			y: 119
+			image: image_resource(28f8cc20-8665-4af8-9c20-dbd49ff73e56)
+			{
+				file: "UP.png"
+			}
+			rotationAngleZ: rotationAngleZ@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<float>)
+			touchPressed: function<bool,int,int,int,int>(2665a158-8a64-434b-89a8-bc4bb7e8f16b)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:scrollUp()" \
+					"    false" \
+					"}"
+			}
+			width: 50
+			height: 50
+			visible: visible@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+			touchable: touchable@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+			touched: touched@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+		}, 
+		GtfImage_template_instance(f51445bf-d1ef-4b55-9aea-02146a71c37d)
+		{
+			name: "DownButton"
+			template: @783dbbc3-0048-41b2-8249-a5078951fba2 (objectref<GtfImage_template>)
+			children: children_list []
+			x: 401
+			y: 303
+			image: image_resource(52cd2d1b-e5c7-4b33-868c-c44e61170d96)
+			{
+				file: "DOWN.png"
+			}
+			rotationAngleZ: rotationAngleZ@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<float>)
+			touchPressed: function<bool,int,int,int,int>(3222a5ca-2c12-430b-8b76-eda5e513b2f2)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:scrollDown()" \
+					"    false" \
+					"}"
+			}
+			width: 50
+			height: 50
+			visible: visible@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+			touchable: touchable@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+			touched: touched@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+		}, 
+		GtfLabel(9458fb94-6201-4825-8bb1-30379886d694)
+		{
+			features: feature_list [
+				MultiLine(75b78105-8082-425c-a9c3-4226190160c2)
+				{
+					lineOffset: 0
+					maxLineCount: 0
+				}]
+			children: children_list []
+			name: "text"
+			visible: true
+			width: 304
+			height: 63
+			x: 479
+			y: 120
+			text: @f7177155-9b2d-44fd-90cf-1ea7750bf582 (objectref<string>)
+			textColor: #FFFFFFFF
+			font: font_resource(7209fc2b-7445-46ea-ae38-446b915d3d62)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 20
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(f2ab87dd-8842-443b-9948-63753c21022b)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "date"
+			visible: true
+			width: 144
+			height: 50
+			x: 543
+			y: 204
+			text: ""
+			textColor: #FFFFFFFF
+			font: font_resource(5d30351c-40dc-47da-838e-80856dac1522)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfRectangle(e4792f8e-df9c-4326-b118-5408b7f82334)
+		{
+			features: feature_list [
+				Border(a27f7f4d-1afd-4459-9727-8bee01661193)
+				{
+					borderThickness: 2
+					borderColor: #FFA500FF
+					borderStyle: 0
+				}]
+			children: children_list []
+			name: "Rectangle 6"
+			visible: true
+			width: 196
+			height: 73
+			x: 516
+			y: 192
+			fillColor: #FFFFFF00
+		}]
+	text: string_element_reference(658d9f14-8bb7-414a-ab39-05ba88e93824)
+	{
+		index: 4
+		list: @1dc3d3cb-4b0b-48af-84ad-ea2469add107 (objectref<stringlist>)
+	}
+	x: 683
+	y: y@e194e414-71c1-406e-a41c-22a1af233577 (propref<int>)
+	listenToButtonPressed: conditional_script(34e45cc3-2bae-4cd3-b8d7-a0ca2437ae51)
+	{
+		triggerList: trigger_list(04873f49-e54a-4830-9a9f-0ca9f538f4cf)
+		{
+			script: "ev:stationPressed"
+		}
+		onTrigger: function<bool,bool>(58d094e3-c30f-43eb-aaca-46666382dc1c)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	match_event v:e = ev:stationPressed in {" \
+				"		if(v:e.StationName==v:this->ScrollableList.StationsList[0])" \
+				"			v:this->date.text=dp:vehicleChecks[0]" \
+				"		else" \
+				"			if(v:e.StationName==v:this->ScrollableList.StationsList[1])" \
+				"				v:this->date.text=dp:vehicleChecks[1]" \
+				"			else" \
+				"				if(v:e.StationName==v:this->ScrollableList.StationsList[2])" \
+				"					v:this->date.text=dp:vehicleChecks[2]" \
+				"				else" \
+				"					if(v:e.StationName==v:this->ScrollableList.StationsList[3])" \
+				"						v:this->date.text=dp:vehicleChecks[3]" \
+				"					else" \
+				"						if(v:e.StationName==v:this->ScrollableList.StationsList[4])" \
+				"							v:this->date.text=dp:vehicleChecks[4]" \
+				"						else" \
+				"							if(v:e.StationName==v:this->ScrollableList.StationsList[5])" \
+				"								v:this->date.text=dp:vehicleChecks[5]" \
+				"	}" \
+				"	false" \
+				"}"
+		}
+	}
+}

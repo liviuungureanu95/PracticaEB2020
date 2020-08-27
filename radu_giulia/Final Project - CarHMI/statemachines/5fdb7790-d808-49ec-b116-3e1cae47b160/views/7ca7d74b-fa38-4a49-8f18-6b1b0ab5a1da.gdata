@@ -1,0 +1,380 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(7ca7d74b-fa38-4a49-8f18-6b1b0ab5a1da)
+{
+	name: "GpsView"
+	template: @e194e414-71c1-406e-a41c-22a1af233577 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(7fc99055-e4a6-4e4e-bdec-fc40e5a58b22)
+		{
+			name: "RoundKeyboard 1"
+			template: @f1932a8e-7d4e-48bb-833d-4aaef1fbea6b (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 20
+			y: 93
+			width: 350
+			height: 350
+		}, 
+		GtfLabel(ce56ff86-9870-4c16-ac22-2d82e95cf691)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "KeyboardListen"
+			visible: false
+			width: 100
+			height: 56
+			x: 473
+			y: 270
+			text: "label"
+			textColor: #FFFFFFFF
+			font: font_resource(347caa12-5b9f-4bd2-a8b0-1a5959f450dd)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+			listenKeyboard: conditional_script(b75aae01-a8b8-4292-b17a-e438991d3449)
+			{
+				triggerList: trigger_list(a6a64d9d-af5e-4f52-9757-bba44cd20005)
+				{
+					script: "ev:keyPressed"
+				}
+				onTrigger: function<bool,bool>(4512f6d2-a5c1-4c05-8e4c-ec4d193fe80a)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	match_event v:e = ev:keyPressed in {" \
+						"		" \
+						"		if(v:e.value == \"123\"){}" \
+						"		else if(v:e.value == \"ABC\"){}" \
+						"		else if(v:e.value == \"<\")" \
+						"			v:this.text = f:substring(v:this.text,0,f:getTextLength(v:this.text) - 1)" \
+						"		else if(v:e.value == \"_\")" \
+						"			v:this.text += \" \"" \
+						"		else if(v:e.value == \"DEL\")" \
+						"			v:this.text = \"\"" \
+						"		else" \
+						"			v:this.text += v:e.value" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfRectangle(f4b75b2c-449b-41e2-8360-bac72d82c3e8)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Rectangle 4"
+			visible: true
+			width: 457
+			height: 39
+			x: 325
+			y: 87
+			fillColor: #FFFFFFFF
+		}, 
+		GtfImage(2d116ef8-f4d5-4cbb-a1d1-b931c6818952)
+		{
+			features: feature_list [
+				TouchPressed(2802f3d5-4e04-4f14-ab5d-b749bee85008)
+				{
+					touchPressed: function<bool,int,int,int,int>(7027332b-92c6-4c9d-a93f-c9945b9fd3cf)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->Location.visible=true" \
+							"	v:this->^->Map.visible=true" \
+							"	if(v:this->^->TextInput.text!=\"\")" \
+							"	{" \
+							"		v:this->^->Pin.visible=true" \
+							"		f:animation_play(v:this->^->Pin->\"Animation 1\")" \
+							"	}" \
+							"	" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(27f486de-9b89-47a0-abd1-4b47a447d3c4)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "MagnifierImage"
+			visible: true
+			width: 30
+			height: 31
+			x: 748
+			y: 90
+			image: image_resource(9cc35e7e-a2be-4807-aeca-3f887343e63a)
+			{
+				file: "GPS\\MagnifierImage.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(c98c42ae-d4db-416b-aae9-85820d4fb890)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "TextInput"
+			visible: true
+			width: 412
+			height: 42
+			x: 328
+			y: 87
+			text: ""
+			textColor: #000000FF
+			font: font_resource(271a0611-c4ef-4498-b030-7086282f43b5)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+			listenKeyboard: conditional_script(997b770b-b7ab-43e9-bed1-912cddff67ce)
+			{
+				triggerList: trigger_list(a1b345b8-127d-4b3b-87ee-9c357fbf93cc)
+				{
+					script: "ev:keyPressed"
+				}
+				onTrigger: function<bool,bool>(79954520-bda9-4f93-963d-aed964081f0f)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	" \
+						"	match_event v:e = ev:keyPressed in {" \
+						"		" \
+						"		if(v:e.value == \"123\"){}" \
+						"		else if(v:e.value == \"ABC\"){}" \
+						"		else if(v:e.value == \"<\")" \
+						"			v:this.text = f:substring(v:this.text,0,f:getTextLength(v:this.text) - 1)" \
+						"		else if(v:e.value == \"_\")" \
+						"			v:this.text += \" \"" \
+						"		else if(v:e.value == \"DEL\")" \
+						"			v:this.text = \"\"" \
+						"		else" \
+						"			v:this.text += v:e.value" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfImage_template_instance(69dce5f5-e368-44b3-9dff-84c027d336ef)
+		{
+			name: "BackButton"
+			template: @783dbbc3-0048-41b2-8249-a5078951fba2 (objectref<GtfImage_template>)
+			children: children_list []
+			x: 30
+			y: 16
+			image: image_resource(c775b6d4-791b-4736-ad39-49e289b9b0b6)
+			{
+				file: "back.png"
+			}
+			rotationAngleZ: rotationAngleZ@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<float>)
+			touchPressed: function<bool,int,int,int,int>(b6d7d27e-63aa-42d6-ba9b-f6f6fb9fd8be)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	fire ev:GoBack()" \
+					"    false" \
+					"}"
+			}
+			width: 56
+			height: 55
+			visible: visible@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+			touchable: touchable@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+			touched: touched@783dbbc3-0048-41b2-8249-a5078951fba2 (propref<bool>)
+		}, 
+		GtfLabel(ee66968b-84c9-409f-b0da-725e8d15cd27)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Location"
+			visible: false
+			width: 331
+			height: 42
+			x: 388
+			y: 161
+			text: ""
+			textColor: #FFA500FF
+			font: font_resource(b5bc59e8-3586-4ab9-9d45-98e66c17d91e)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+			listenKeyboard: conditional_script(b44ef1e4-49eb-4ca7-8891-8ff455635f42)
+			{
+				triggerList: trigger_list(cecb4deb-6760-43ed-99f4-7a36c9f164c6)
+				{
+					script: "ev:keyPressed"
+				}
+				onTrigger: function<bool,bool>(5e1b6009-d837-41a5-b69d-f082c7346828)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	" \
+						"	match_event v:e = ev:keyPressed in {" \
+						"		" \
+						"		if(v:e.value == \"123\"){}" \
+						"		else if(v:e.value == \"ABC\"){}" \
+						"		else if(v:e.value == \"<\")" \
+						"			v:this.text = f:substring(v:this.text,0,f:getTextLength(v:this.text) - 1)" \
+						"		else if(v:e.value == \"_\")" \
+						"			v:this.text += \" \"" \
+						"		else if(v:e.value == \"DEL\")" \
+						"			v:this.text = \"\"" \
+						"		else" \
+						"			v:this.text += v:e.value" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfContainer_template_instance(ac2adb28-15f9-4415-9aa8-4e442c92b9f6)
+		{
+			name: "Map"
+			template: @9578104d-2715-4e59-9018-391d3a1c31a5 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 436
+			y: 154
+			height: 265
+			width: 279
+			image: image_resource(49600ab9-cc8f-487a-b66d-bb8b1353c068)
+			{
+				file: "map.png"
+			}
+			visible: true
+			pivotX: pivotX@9578104d-2715-4e59-9018-391d3a1c31a5 (propref<float>)
+			pivotY: pivotY@9578104d-2715-4e59-9018-391d3a1c31a5 (propref<float>)
+			rotationAngleZ: rotationAngleZ@9578104d-2715-4e59-9018-391d3a1c31a5 (propref<float>)
+		}, 
+		GtfContainer_template_instance(01edbdf0-38ce-4d5c-b624-3737965698ca)
+		{
+			name: "Pin"
+			template: @9578104d-2715-4e59-9018-391d3a1c31a5 (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfParallelAnimation(69bfe9ca-f13f-4e2a-8af8-ec713f4468a6)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationS32(8a926c99-29d7-4723-9427-8a476ba4f8f9)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Drop"
+							enabled: true
+							delay: 0
+							duration: 500
+							repeat: 1
+							alternating: false
+							relative: false
+							start: int_scriptedValue(171d2566-3c5e-4859-a30d-8aa636cf4c4e)
+							{
+								triggerList: trigger_list(014c7ce6-a221-4865-8649-9b78dc8cf9d8)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(89714ac1-a630-46b4-9d88-dc5736668568)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<int>(bd2a295c-20cb-44d0-8d4e-d25f35576780)
+								{
+									script: "function()" \
+										"{" \
+										"	v:this->^->^.y" \
+										"}"
+								}
+								write: function<bool,int>(51019bdc-6f44-4fb6-b9eb-3933923e5e5a)
+								{
+									script: "function(v:arg0::int)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							end: 230
+							target: y@01edbdf0-38ce-4d5c-b624-3737965698ca (propref<int>)
+						}]
+					name: "Animation 1"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(ec36e04f-e178-40f6-acbd-e54f5af41270)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(801c055e-d937-4760-b90d-9d376189cf6c)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(d4318881-c13c-4e99-b062-e345eef4f726)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"	v:this->^->^->successMessage.visible=true" \
+							"}"
+					}
+				}]
+			x: 536
+			y: 0
+			height: height@9578104d-2715-4e59-9018-391d3a1c31a5 (propref<int>)
+			width: 66
+			image: image_resource(c1596a10-b7dc-4192-9ba0-f3ec1bac04bb)
+			{
+				file: "Pin.png"
+			}
+			visible: false
+			pivotX: pivotX@9578104d-2715-4e59-9018-391d3a1c31a5 (propref<float>)
+			pivotY: pivotY@9578104d-2715-4e59-9018-391d3a1c31a5 (propref<float>)
+			rotationAngleZ: rotationAngleZ@9578104d-2715-4e59-9018-391d3a1c31a5 (propref<float>)
+		}, 
+		GtfLabel(18a3bc7e-600b-451e-902d-d8e6776ef7a3)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "successMessage"
+			visible: false
+			width: 278
+			height: 55
+			x: 437
+			y: 365
+			text: @dd4ad5b0-9d92-467d-9aca-152bfdaccb60 (objectref<string>)
+			textColor: #FFFFFFFF
+			font: font_resource(ba63ecef-9d89-44eb-afee-24e5da358c08)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+	text: string_element_reference(f43e1c33-ab12-48e5-aa24-3d52524e4ae0)
+	{
+		index: 1
+		list: @1dc3d3cb-4b0b-48af-84ad-ea2469add107 (objectref<stringlist>)
+	}
+	x: 675
+	y: 25
+}
