@@ -1,0 +1,127 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(dabdb878-1d07-457a-a436-0e66cd2b8905)
+{
+	name: "Button_Image"
+	structure: GtfContainer(ad1853db-f281-41b7-8fc0-15721573113e)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(1fa7ca43-c140-44ab-bfa5-d6eb1b740403)
+			{
+				features: feature_list [
+					TouchPressed(cad1f137-6d16-424b-ac25-428d384088c9)
+					{
+						touchPressed: function<bool,int,int,int,int>(88cd034c-7740-4aa3-b6ae-4b8aaf433323)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.PressColor()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					TouchShortReleased(5dab8e9f-6a3f-492f-8f9b-d909fb47728e)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(1f32f7cf-bb33-4021-a510-c547e1aec5d0)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.ReleaseColor()" \
+								"	v:this.OnReleaseAction()" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(1153e807-1d01-4c8f-b6eb-b4949e1c7b94)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}, 
+					Border(6064dd5c-285d-465a-bf6a-12d802a76ba7)
+					{
+						borderThickness: 2
+						borderColor: CurrentBorderCol@1fa7ca43-c140-44ab-bfa5-d6eb1b740403 (propref<color>)
+						borderStyle: 0
+					}]
+				children: children_list [
+					GtfImage(cdd0f6e1-f421-408f-9c61-bfa63785f25b)
+					{
+						features: feature_list [
+							ScaleMode(e7262ecf-bed2-4894-8f5b-ca2ec024d6a1)
+							{
+								scaleMode: 2
+							}]
+						children: children_list []
+						name: "Image 2"
+						visible: true
+						width: width@ad1853db-f281-41b7-8fc0-15721573113e (propref<int>)
+						height: height@ad1853db-f281-41b7-8fc0-15721573113e (propref<int>)
+						x: 0
+						y: 0
+						image: image_resource(24ec3d89-4957-4a17-8b94-2d9c38631986)
+						{
+							file: ""
+						}
+						sRGB: false
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "Background"
+				visible: true
+				width: width@ad1853db-f281-41b7-8fc0-15721573113e (propref<int>)
+				height: height@ad1853db-f281-41b7-8fc0-15721573113e (propref<int>)
+				x: 0
+				y: 0
+				fillColor: CurrentColor@1fa7ca43-c140-44ab-bfa5-d6eb1b740403 (propref<color>)
+				CurrentColor: #C1DAD6FF
+				OnReleaseAction: function<bool>(c2a2cd21-b9b4-40ad-9452-bb039e8d97d8)
+				{
+					script: "function()" \
+						"{" \
+						"	fire ev:GoTo_MainMenu()" \
+						"	false" \
+						"}"
+				}
+				PressColor: function<bool>(79a2c0d0-8570-4401-8797-c2aa4d01aece)
+				{
+					script: "function()" \
+						"{" \
+						"	v:this.CurrentColor = v:this.ColorPressed" \
+						"	v:this.CurrentBorderCol = v:this.ColorList[1]" \
+						"	false" \
+						"}"
+				}
+				ReleaseColor: function<bool>(7bf32e39-d78f-4e1e-966c-5fa0222eef02)
+				{
+					script: "function()" \
+						"{" \
+						"	v:this.CurrentColor = v:this.ColorReleased" \
+						"	v:this.CurrentBorderCol = v:this.ColorList[0]" \
+						"	false" \
+						"}"
+				}
+				ColorPressed: #A9A9A9FF
+				ColorReleased: #A9A9A9FF
+				ColorList: colorlist [#696969FF, #000000FF]
+				CurrentBorderCol: #696969FF
+			}]
+		name: "Container 1"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+	}
+	width: width@ad1853db-f281-41b7-8fc0-15721573113e (propref<int>)
+	height: height@ad1853db-f281-41b7-8fc0-15721573113e (propref<int>)
+	x: x@ad1853db-f281-41b7-8fc0-15721573113e (propref<int>)
+	y: y@ad1853db-f281-41b7-8fc0-15721573113e (propref<int>)
+	CurrentColor: CurrentColor@1fa7ca43-c140-44ab-bfa5-d6eb1b740403 (propref<color>)
+	OnReleaseAction: OnReleaseAction@1fa7ca43-c140-44ab-bfa5-d6eb1b740403 (propref<function<bool>>)
+	image: image@cdd0f6e1-f421-408f-9c61-bfa63785f25b (propref<image>)
+	ColorReleased: ColorReleased@1fa7ca43-c140-44ab-bfa5-d6eb1b740403 (propref<color>)
+	ColorPressed: ColorPressed@1fa7ca43-c140-44ab-bfa5-d6eb1b740403 (propref<color>)
+}

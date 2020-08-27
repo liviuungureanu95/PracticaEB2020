@@ -1,0 +1,465 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(b0c5ec62-2752-46c7-8be7-a5df42ec50a7)
+{
+	name: "Button_AdjustmentBar"
+	structure: GtfContainer(2a37706a-7be1-47db-8a32-2176daa25c30)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfParallelAnimation(6861e19d-6fbd-4f72-9988-4c2d28a8afcb)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLinearInterpolationS32(cc4ff2fb-c61c-4d67-8939-7c6fc4d1b121)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Linear interpolation curve 1"
+						enabled: true
+						delay: 0
+						duration: 500
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 0
+						end: 160
+						target: height@2c0f864c-57b6-4856-a47f-a12816e3adb3 (propref<int>)
+					}, 
+					GtfLinearInterpolationS32(2e54aa29-9004-43a1-98f3-372f220ce18e)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Linear interpolation curve 2"
+						enabled: true
+						delay: 0
+						duration: 500
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 0
+						end: 160
+						target: y@346a352c-ca24-4dad-ac68-94d5ef370cf9 (propref<int>)
+					}, 
+					GtfFastStartS32(08f91323-e8a7-42ff-aa38-11117798393e)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "ClockAnimation"
+						enabled: true
+						delay: 0
+						duration: 1
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 720
+						end: 0
+						target: x@3812ad51-ae86-4736-9ad0-71d19aff88a7 (propref<int>)
+					}, 
+					GtfLinearInterpolationS32(159aec06-7167-4f25-8d59-3bf200dba412)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "ButtonShow"
+						enabled: true
+						delay: 0
+						duration: 500
+						repeat: 1
+						alternating: false
+						relative: false
+						start: -140
+						end: 20
+						target: y@22d7667a-8113-47ea-89f2-f4a70146416e (propref<int>)
+					}]
+				name: "BarSlide"
+				enabled: true
+				repeat: 1
+				alternating: false
+				scale: 1F
+				onPlay: function<void,int,bool>(8f58e57d-67ac-4423-8595-da82d0c409aa)
+				{
+					script: "function(v:animation_time::int, v:forward::bool)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onPause: function<void,int>(8348f086-cc2b-4fbc-aa86-a18f0023c764)
+				{
+					script: "function(v:animation_time::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onTerminate: function<void,int,int>(3f5f2e02-ab23-4d68-8ac7-6c0172afc079)
+				{
+					script: "function(v:animation_time::int, v:terminate::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+			}, 
+			GtfRectangle(2c0f864c-57b6-4856-a47f-a12816e3adb3)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "FunctionBG"
+				visible: true
+				width: 800
+				height: 0
+				x: 0
+				y: 0
+				fillColor: #F5F5F5FF
+			}, 
+			GtfRectangle(346a352c-ca24-4dad-ac68-94d5ef370cf9)
+			{
+				features: feature_list [
+					StateTouched(e990b3e9-8cd0-423d-a31e-6493c9071ec9)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}, 
+					TouchPressed(e0652805-810e-4043-8404-dfbcb6057bb5)
+					{
+						touchPressed: function<bool,int,int,int,int>(9589b3e2-f6be-47be-98a3-c9ca959da7f1)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"    false" \
+								"}"
+						}
+					}, 
+					TouchShortReleased(46f6a096-8818-4d06-a8f6-a95dd4ead927)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(e930a5a3-69c7-4f97-99d2-4f733076152c)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	" \
+								"	if(v:this->Arrows.visible)" \
+								"	{f:animation_reverse(v:this->^->BarSlide)" \
+								"    v:this->Arrows.visible = false" \
+								"    }" \
+								"    else" \
+								"    {f:animation_play(v:this->^->BarSlide)" \
+								"      v:this->Arrows.visible = true" \
+								"    }" \
+								"    false" \
+								"}"
+						}
+					}]
+				children: children_list [
+					GtfImage(5348bb92-75da-4688-8308-06e9e2fa9c48)
+					{
+						features: feature_list [
+							ScaleMode(60a57658-2420-4f5d-826c-6a4c0a2193c4)
+							{
+								scaleMode: 2
+							}]
+						children: children_list []
+						name: "Arrows"
+						visible: false
+						width: 100
+						height: 25
+						x: 350
+						y: 0
+						image: image_resource(e373ac4d-a312-404e-b450-c93d496ad923)
+						{
+							file: "arrows.png"
+						}
+						sRGB: false
+						horizontalAlign: 1
+						verticalAlign: 1
+					}]
+				name: "Bar"
+				visible: true
+				width: width@2a37706a-7be1-47db-8a32-2176daa25c30 (propref<int>)
+				height: height@2a37706a-7be1-47db-8a32-2176daa25c30 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: @32ed2230-43e3-4665-b514-c4adcfb402f8 (objectref<color>)
+				OnReleaseAction: function<bool>(956531f8-e5bf-47bf-9b90-e66911502ca2)
+				{
+					script: "function()" \
+						"{" \
+						"	false" \
+						"}"
+				}
+			}, 
+			GtfContainer_template_instance(22d7667a-8113-47ea-89f2-f4a70146416e)
+			{
+				name: "Button_Circle 1"
+				template: @df813284-b5ce-4ed8-ad04-6695df16e932 (objectref<GtfContainer_template>)
+				children: children_list [
+					GtfLabel(2dce6401-6bfd-4b86-b954-1537d39838c9)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Label 2"
+						visible: true
+						width: 100
+						height: 30
+						x: 0
+						y: 105
+						text: @12db8cc9-2015-4986-9e77-0d26a63f9b07 (objectref<string>)
+						textColor: #000000FF
+						font: font_resource(1d210cf4-e068-4e89-a0ee-74aca6bfccc2)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				width: width@df813284-b5ce-4ed8-ad04-6695df16e932 (propref<int>)
+				height: height@df813284-b5ce-4ed8-ad04-6695df16e932 (propref<int>)
+				x: 80
+				y: -140
+				image: image_resource(c4049995-9c02-4869-822b-8722ac2d5a2a)
+				{
+					file: "settings (1).png"
+				}
+				CurrentColor: CurrentColor@df813284-b5ce-4ed8-ad04-6695df16e932 (propref<color>)
+				OnReleaseAction: function<bool>(493a6a05-e57b-4e70-839c-f9a96a669418)
+				{
+					script: "function()" \
+						"{" \
+						"	fire ev:GoTo_Settings()" \
+						"	false" \
+						"}"
+				}
+				PressOff: PressOff@df813284-b5ce-4ed8-ad04-6695df16e932 (propref<function<bool>>)
+				PressOn: PressOn@df813284-b5ce-4ed8-ad04-6695df16e932 (propref<function<bool>>)
+			}, 
+			GtfContainer_template_instance(b1876da1-38fb-41cf-8538-6947631fbd53)
+			{
+				name: "Button_Circle 2"
+				template: @df813284-b5ce-4ed8-ad04-6695df16e932 (objectref<GtfContainer_template>)
+				children: children_list [
+					GtfLabel(68dd4090-9379-401a-9659-63b312517653)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Label 2 copy 1"
+						visible: true
+						width: 100
+						height: 30
+						x: 0
+						y: 105
+						text: @5c273317-850f-4777-9130-89c707f57d98 (objectref<string>)
+						textColor: #000000FF
+						font: font_resource(9d6cc246-6d10-401e-81ce-08613d5db2cf)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				width: width@df813284-b5ce-4ed8-ad04-6695df16e932 (propref<int>)
+				height: height@df813284-b5ce-4ed8-ad04-6695df16e932 (propref<int>)
+				x: 240
+				y: y@22d7667a-8113-47ea-89f2-f4a70146416e (propref<int>)
+				image: image_resource(a6062a90-95e4-4820-b496-9ec80a700176)
+				{
+					file: "music.png"
+				}
+				CurrentColor: CurrentColor@df813284-b5ce-4ed8-ad04-6695df16e932 (propref<color>)
+				OnReleaseAction: function<bool>(8bb8558d-6fdb-45fa-a63e-578d36393dfb)
+				{
+					script: "function()" \
+						"{" \
+						"	fire ev:GoTo_FunctionalAct()" \
+						"	fire ev:Use_Media()" \
+						"	false" \
+						"}"
+				}
+				PressOff: function<bool>(7436594e-5046-4999-b2d0-105e20a88107)
+				{
+					script: "function()" \
+						"{" \
+						"	v:this.CurrentColor = dp:Color_Tray" \
+						"	false" \
+						"}"
+				}
+				PressOn: PressOn@df813284-b5ce-4ed8-ad04-6695df16e932 (propref<function<bool>>)
+			}, 
+			GtfContainer_template_instance(448135f3-6e1c-4108-b952-96b4f37ba219)
+			{
+				name: "Button_Circle 3"
+				template: @df813284-b5ce-4ed8-ad04-6695df16e932 (objectref<GtfContainer_template>)
+				children: children_list [
+					GtfLabel(9e9e214a-9cbf-4295-8578-89a1382c7be7)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Label 2 copy 1"
+						visible: true
+						width: 100
+						height: 30
+						x: 0
+						y: 106
+						text: @f0661356-afdc-4e45-959c-ef2c11eba277 (objectref<string>)
+						textColor: #000000FF
+						font: font_resource(d3e32828-163a-4286-a585-de413d1b25ab)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				width: width@df813284-b5ce-4ed8-ad04-6695df16e932 (propref<int>)
+				height: height@df813284-b5ce-4ed8-ad04-6695df16e932 (propref<int>)
+				x: 420
+				y: y@22d7667a-8113-47ea-89f2-f4a70146416e (propref<int>)
+				image: image_resource(d3386d97-6f5a-468d-a0e8-dcc296222017)
+				{
+					file: "dnd.png"
+				}
+				CurrentColor: @38202256-09c4-444b-a863-78536bd9945e (objectref<color>)
+				OnReleaseAction: function<bool>(ba02f3c5-8b00-4fd3-8f2b-52ced0c67aca)
+				{
+					script: "function()" \
+						"{" \
+						"	if(dp:Toogle_DND)" \
+						"	{" \
+						"		dp:Toogle_DND = false" \
+						"	}" \
+						"	else" \
+						"	{" \
+						"		dp:Toogle_DND = true" \
+						"	}" \
+						"	" \
+						"	false" \
+						"}"
+				}
+				PressOff: function<bool>(3d064a9b-77eb-4160-ad83-d1c53dcc1ca1)
+				{
+					script: "function()" \
+						"{" \
+						"	" \
+						"	false" \
+						"}"
+				}
+				PressOn: function<bool>(b1a28332-c1f3-46ba-bb8e-2a8c2a60813a)
+				{
+					script: "function()" \
+						"{" \
+						"	if(!dp:Toogle_DND)" \
+						"	{" \
+						"		dp:Color_TrayDND = dp:Color_Surveillance" \
+						"	}" \
+						"	else" \
+						"	{" \
+						"		dp:Color_TrayDND = dp:Color_Tray" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+			}, 
+			GtfContainer_template_instance(b76b0dfd-7a15-4731-a92f-84183ffede53)
+			{
+				name: "Button_Circle 4"
+				template: @df813284-b5ce-4ed8-ad04-6695df16e932 (objectref<GtfContainer_template>)
+				children: children_list [
+					GtfLabel(27a1ee1d-661e-4fda-86d3-e3c5abe93c41)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Label 2 copy 1"
+						visible: true
+						width: 120
+						height: 30
+						x: -10
+						y: 105
+						text: @9087ee36-c5d4-4006-b3c2-51bf5bb0d181 (objectref<string>)
+						textColor: #000000FF
+						font: font_resource(c3fbdf81-01da-43f1-a6de-eab007d60bc1)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				width: width@df813284-b5ce-4ed8-ad04-6695df16e932 (propref<int>)
+				height: height@df813284-b5ce-4ed8-ad04-6695df16e932 (propref<int>)
+				x: 600
+				y: y@448135f3-6e1c-4108-b952-96b4f37ba219 (propref<int>)
+				image: image_resource(e7832719-fc91-47ce-814d-7abdb8e54d7b)
+				{
+					file: "moon.png"
+				}
+				CurrentColor: @984c6377-179d-4120-83f2-fed66b9a6bdc (objectref<color>)
+				OnReleaseAction: function<bool>(fccba48b-7c17-496e-b7a2-0499b2612b3c)
+				{
+					script: "function()" \
+						"{" \
+						"	if(dp:Toogle_DarkMode)" \
+						"	{" \
+						"		dp:Toogle_DarkMode = false" \
+						"		f:setSkin(s:\"Day Mode\",true)" \
+						"	}" \
+						"	else" \
+						"	{" \
+						"		dp:Toogle_DarkMode = true" \
+						"		f:setSkin(s:\"Night Mode\",true)" \
+						"	}" \
+						"	false" \
+						"}"
+				}
+				PressOff: function<bool>(d016d2f0-eb63-4a32-bd4e-88bdada8ee64)
+				{
+					script: "function()" \
+						"{" \
+						"	" \
+						"	false" \
+						"}"
+				}
+				PressOn: function<bool>(110c39eb-8075-49b3-9bdb-f135e538502a)
+				{
+					script: "function()" \
+						"{" \
+						"	if(!dp:Toogle_DarkMode)" \
+						"	{" \
+						"		dp:Color_TrayNM = dp:Color_Surveillance" \
+						"	}" \
+						"	else" \
+						"	{" \
+						"		dp:Color_TrayNM = dp:Color_Tray" \
+						"	}" \
+						"	" \
+						"	false" \
+						"}"
+				}
+			}, 
+			GtfLabel(3812ad51-ae86-4736-9ad0-71d19aff88a7)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Clock"
+				visible: true
+				width: 70
+				height: 25
+				x: 720
+				y: 0
+				text: @9d6b7fbe-2491-4b0e-a783-23828a89d9f8 (objectref<string>)
+				textColor: #000000FF
+				font: font_resource(e648e7e4-3210-4d37-8c16-61f26655fedd)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 2
+				verticalAlign: 0
+			}]
+		name: "Container 3"
+		visible: true
+		width: 800
+		height: 25
+		x: 0
+		y: 0
+	}
+}

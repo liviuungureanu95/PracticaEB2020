@@ -1,0 +1,278 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(3d98b22b-3949-4cc8-a8eb-3b94b3053993)
+{
+	name: "HomeCinema_View"
+	template: @538ab14d-ec39-4483-9c0d-5bf1490a8f4b (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(c02fb0fb-3b5a-406b-8758-f83bb784bee2)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "SongName"
+			visible: true
+			width: 500
+			height: 100
+			x: 152
+			y: 39
+			text: @46652ba6-1dbf-4093-b926-89bfdbe6b04f (objectref<string>)
+			textColor: #FFFFFFFF
+			font: font_resource(99398c59-4816-4f9a-8e6a-ea3b8224a119)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 40
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(ea9ec3d8-deb9-4b7f-b42b-b7835ca65a5f)
+		{
+			name: "PrevSong"
+			template: @dabdb878-1d07-457a-a436-0e66cd2b8905 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: 150
+			height: 75
+			x: 109
+			y: 189
+			CurrentColor: #F5DEB3FF
+			OnReleaseAction: function<bool>(ab51282e-ded7-4548-ac4d-bae4f57e1ad3)
+			{
+				script: "function()" \
+					"{" \
+					"	if(dp:MelodyIndex==0)" \
+					"	dp:MelodyIndex = length dp:Player_List" \
+					"	else" \
+					"	dp:MelodyIndex = (dp:MelodyIndex - 1)" \
+					"	" \
+					"	dp:\"Toogle_Play/Pause\" = dp:Player_List[0]" \
+					"	dp:Player_Play = true" \
+					"	false" \
+					"}"
+			}
+			image: image_resource(5f35f88e-8b09-4aef-8db2-4cbe681e689f)
+			{
+				file: "prev.png"
+			}
+			ColorReleased: #F5DEB3FF
+			ColorPressed: #F4A460FF
+		}, 
+		GtfContainer_template_instance(5f27e5ef-4880-40be-b8fb-f827ca746aca)
+		{
+			name: "Play/PAuse"
+			template: @dabdb878-1d07-457a-a436-0e66cd2b8905 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: 150
+			height: 75
+			x: 326
+			y: y@ea9ec3d8-deb9-4b7f-b42b-b7835ca65a5f (propref<int>)
+			CurrentColor: #F5DEB3FF
+			OnReleaseAction: function<bool>(2c631e7f-df3c-4242-b5d3-e619f745f8b4)
+			{
+				script: "function()" \
+					"{" \
+					"	if(dp:Player_Play)" \
+					"	{" \
+					"		dp:Player_Play = false" \
+					"		dp:\"Toogle_Play/Pause\"= dp:Player_List[0]" \
+					"		" \
+					"	}" \
+					"	else" \
+					"	{" \
+					"		dp:Player_Play = true" \
+					"		dp:\"Toogle_Play/Pause\"= dp:Player_List[1]" \
+					"	}" \
+					"	false" \
+					"}"
+			}
+			image: @c39dbd89-cf3d-4b6e-8e2b-47262461aa72 (objectref<image>)
+			ColorReleased: #F5DEB3FF
+			ColorPressed: #F4A460FF
+		}, 
+		GtfContainer_template_instance(32d98bdc-888d-4b93-944e-a0ebcdc4efce)
+		{
+			name: "NextSong"
+			template: @dabdb878-1d07-457a-a436-0e66cd2b8905 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: 150
+			height: 75
+			x: 545
+			y: y@ea9ec3d8-deb9-4b7f-b42b-b7835ca65a5f (propref<int>)
+			CurrentColor: #F5DEB3FF
+			OnReleaseAction: function<bool>(dc097708-ad76-487e-9d67-ef90754176f2)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:MelodyIndex = (dp:MelodyIndex + 1)%(length dp:List_Melody)" \
+					"	" \
+					"	dp:\"Toogle_Play/Pause\" = dp:Player_List[0]" \
+					"	" \
+					"	dp:Player_Play = false" \
+					"	" \
+					"	" \
+					"	" \
+					"	" \
+					"	" \
+					"	false" \
+					"}"
+			}
+			image: image_resource(e6977484-5076-4b13-9289-98bfb6c9bb5b)
+			{
+				file: "next.png"
+			}
+			ColorReleased: #F5DEB3FF
+			ColorPressed: #F4A460FF
+		}, 
+		GtfContainer_template_instance(55d97bd4-f6ff-490e-9882-fd38879251c9)
+		{
+			name: "LoweVol"
+			template: @baec24da-5825-4011-873a-6cf70181bac7 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: 50
+			height: 30
+			x: 260
+			y: 339
+			OnReleaseAction: function<bool>(01ec9ce4-c4a9-4e12-92c3-1e23bebd398d)
+			{
+				script: "function()" \
+					"{" \
+					"    if(dp:Music_Volume> 0)" \
+					"    	{" \
+					"    	dp:Music_Volume = dp:Music_Volume - 1" \
+					"    	}" \
+					"    	else" \
+					"    	{" \
+					"    	dp:Music_Volume = 0	" \
+					"    	}" \
+					"	false" \
+					"}"
+			}
+			Colors: Colors@baec24da-5825-4011-873a-6cf70181bac7 (propref<colorlist>)
+			text: "-"
+		}, 
+		GtfContainer_template_instance(e328b14d-c07c-4df9-95fb-5181b2e60f93)
+		{
+			name: "HigherVol"
+			template: @baec24da-5825-4011-873a-6cf70181bac7 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: 50
+			height: 30
+			x: 491
+			y: 339
+			OnReleaseAction: function<bool>(c55452c3-15e3-498e-8425-c5d11d512f18)
+			{
+				script: "function()" \
+					"{" \
+					"    if(dp:Music_Volume< 23)" \
+					"    	{" \
+					"    	dp:Music_Volume = dp:Music_Volume + 1" \
+					"    	}" \
+					"    	else" \
+					"    	{" \
+					"    	dp:Music_Volume = 23	" \
+					"    	}" \
+					"	false" \
+					"}"
+			}
+			Colors: Colors@baec24da-5825-4011-873a-6cf70181bac7 (propref<colorlist>)
+			text: "+"
+		}, 
+		GtfRectangle(a0ecead4-d426-4f9b-a659-c6e80f0e999d)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(1cf9acb3-8dfe-4075-95b3-32ad7e5d5348)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Volume"
+					visible: true
+					width: int_scriptedValue(c1a4cd3a-c6ea-49f9-9978-b5539e4336da)
+					{
+						triggerList: trigger_list(15b88399-9b43-43ae-b2f4-30be8dc457c0)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(b89edf83-f44f-40ec-a56d-c6af1f37697f)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<int>(af012130-fa6f-4f61-9ab8-cb7057333d5d)
+						{
+							script: "function()" \
+								"{" \
+								"	" \
+								"	dp:Music_Volume*5" \
+								"	" \
+								"}"
+						}
+						write: function<bool,int>(cf560dd5-2fd0-402c-890a-06ef3c70b0bc)
+						{
+							script: "function(v:arg0::int)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					height: 24
+					x: 5
+					y: 3
+					fillColor: #9ACD32FF
+				}]
+			name: "VolumeOutline"
+			visible: true
+			width: 125
+			height: 30
+			x: 337
+			y: 339
+			fillColor: #A9A9A9FF
+		}, 
+		GtfContainer_template_instance(34a8351f-a39a-4892-b0dd-70a89fd93522)
+		{
+			name: "Button_Group 1"
+			template: @98332056-7c7c-4d65-87d7-17e4fcfcde5b (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 304
+			y: 388
+			OnReleaseAction: function<bool>(4a868b5c-7391-459c-a320-4e6f7c99a715)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoTo_FunctionalAct()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfImage(48db4da2-d6ed-4c6b-a04d-4eca4b4bf8ad)
+		{
+			features: feature_list [
+				ScaleMode(1999a257-53e2-4c55-ad4b-0d30448b260a)
+				{
+					scaleMode: 2
+				}]
+			children: children_list []
+			name: "Image 7"
+			visible: true
+			width: 199
+			height: 158
+			x: -10
+			y: 15
+			image: image_resource(6891106d-382e-4ab8-9bbd-1a0d7e2f7722)
+			{
+				file: "music.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfContainer_template_instance(6054c47f-4249-4c26-b51a-595d20d83c64)
+		{
+			name: "Button_AdjustmentBar 1"
+			template: @b0c5ec62-2752-46c7-8be7-a5df42ec50a7 (objectref<GtfContainer_template>)
+			children: children_list []
+		}]
+}

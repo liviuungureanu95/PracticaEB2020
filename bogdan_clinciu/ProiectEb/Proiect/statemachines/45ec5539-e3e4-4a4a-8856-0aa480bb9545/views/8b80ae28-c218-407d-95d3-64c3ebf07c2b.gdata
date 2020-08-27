@@ -1,0 +1,247 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(8b80ae28-c218-407d-95d3-64c3ebf07c2b)
+{
+	name: "Temperature_View"
+	template: @538ab14d-ec39-4483-9c0d-5bf1490a8f4b (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(b489ec06-be08-4985-a4c8-0ac8091d908d)
+		{
+			name: "Button_Text 1"
+			template: @baec24da-5825-4011-873a-6cf70181bac7 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: 40
+			height: 40
+			x: 660
+			y: 290
+			OnReleaseAction: function<bool>(e1af8090-99d9-4fa6-8b3c-e0df66d0db8b)
+			{
+				script: "function()" \
+					"{" \
+					"   if(dp:Message_WishedTemp > 15)" \
+					"    	{" \
+					"    	dp:Message_WishedTemp = dp:Message_WishedTemp - 1" \
+					"    	}" \
+					"    	else" \
+					"    	{" \
+					"    	dp:Music_Volume = 15" \
+					"    	}" \
+					"	false" \
+					"}"
+			}
+			Colors: Colors@baec24da-5825-4011-873a-6cf70181bac7 (propref<colorlist>)
+			text: "-"
+		}, 
+		GtfContainer_template_instance(77bfb75a-e998-4d3f-bafb-3736dbd75d95)
+		{
+			name: "Button_Text 2"
+			template: @baec24da-5825-4011-873a-6cf70181bac7 (objectref<GtfContainer_template>)
+			children: children_list []
+			width: 40
+			height: 40
+			x: 660
+			y: 150
+			OnReleaseAction: function<bool>(2db6108a-12b8-4f6f-a9ea-b2285cafa887)
+			{
+				script: "function()" \
+					"{" \
+					"	 if(dp:Message_WishedTemp < 30)" \
+					"    	{" \
+					"    	dp:Message_WishedTemp = dp:Message_WishedTemp + 1" \
+					"    	}" \
+					"    	else" \
+					"    	{" \
+					"    	dp:Music_Volume = 30" \
+					"    	}" \
+					"  " \
+					"	false" \
+					"}"
+			}
+			Colors: Colors@baec24da-5825-4011-873a-6cf70181bac7 (propref<colorlist>)
+			text: "+"
+		}, 
+		GtfLabel(2c9dea82-1163-440d-bf95-f014bfc92c2b)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 7"
+			visible: true
+			width: 245
+			height: 100
+			x: 60
+			y: 60
+			text: "Temperature Inside"
+			textColor: #FFFFFFFF
+			font: font_resource(e016f2bd-0009-41b2-b463-2888d6a721cc)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(dff6cc4e-f0ef-4931-8df0-f778391ca406)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 8"
+			visible: true
+			width: 100
+			height: 100
+			x: 314
+			y: 60
+			text: string_scriptedValue(3c8415d6-1e9d-402b-96dc-b6c300216821)
+			{
+				triggerList: trigger_list(a3856f2d-ff00-43eb-bde5-7e690b9553d8)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(3441b0b0-a489-474b-84ff-eebb38d1ab98)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(49563498-6a89-4f33-81cb-1208603601cb)
+				{
+					script: "function()" \
+						"{" \
+						"	f:int2string(dp:Senzor_IntTemp) + \"°C\"" \
+						"}"
+				}
+				write: function<bool,string>(0a3429d5-0dac-416a-bf83-548930283f09)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #FFFFFFFF
+			font: font_resource(bdd96bb7-2916-4c53-9dab-d190bb7e76f5)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(bd5080cc-4885-4777-a113-82c4b63863c4)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 9"
+			visible: true
+			width: 60
+			height: 40
+			x: 651
+			y: 223
+			text: string_scriptedValue(04fce63e-1347-478e-8dfe-2cc91d5da343)
+			{
+				triggerList: trigger_list(c13d947e-150a-43b7-9f13-80c114448eb2)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(12d2456c-44fb-4b14-baac-6540356a01f1)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(be113b80-3fe4-4e66-81b5-df20eac90aef)
+				{
+					script: "function()" \
+						"{" \
+						"	f:int2string(dp:Message_WishedTemp) + \"°C\"" \
+						"}"
+				}
+				write: function<bool,string>(ab6db290-c918-40d1-8901-49e456b104a5)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #FFFFFFFF
+			font: font_resource(ec5573bc-7303-4933-bc45-a980cc8aa817)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfImage(d54ae387-0925-4320-8477-f318bfd8e8b6)
+		{
+			features: feature_list [
+				ScaleMode(569cdfde-6e8e-42e5-bd6a-d7bc49e75f05)
+				{
+					scaleMode: 2
+				}]
+			children: children_list [
+				GtfImage(e9b459f6-a12c-4ed7-9404-e46cac00b447)
+				{
+					features: feature_list [
+						ScaleMode(97d92322-4760-467d-9a9b-e708a13dcf7b)
+						{
+							scaleMode: 2
+						}]
+					children: children_list []
+					name: "Image 6"
+					visible: true
+					width: 129
+					height: 204
+					x: -46
+					y: -6
+					image: image_resource(43810dea-bab6-49f1-89b2-92f5e7382809)
+					{
+						file: "thermometer.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfContainer_template_instance(ec8454f6-5603-47f7-b74d-3a374421f46c)
+				{
+					name: "Button_Group 1"
+					template: @98332056-7c7c-4d65-87d7-17e4fcfcde5b (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 208
+					y: 253
+					OnReleaseAction: function<bool>(8b3c2ab7-7b3a-41d4-a598-ed5ac76a0a77)
+					{
+						script: "function()" \
+							"{" \
+							"	fire ev:GoTo_FunctionalAct()" \
+							"	false" \
+							"}"
+					}
+				}]
+			name: "Image 5"
+			visible: true
+			width: 290
+			height: 291
+			x: 78
+			y: 138
+			image: image_resource(dd482403-44ac-4113-b43a-b25416517242)
+			{
+				file: "home.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfContainer_template_instance(ffe3685c-92c8-4c97-8dc8-ceaeccb4011d)
+		{
+			name: "Button_AdjustmentBar 1"
+			template: @b0c5ec62-2752-46c7-8be7-a5df42ec50a7 (objectref<GtfContainer_template>)
+			children: children_list []
+		}]
+}

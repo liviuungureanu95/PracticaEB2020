@@ -1,0 +1,101 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(98332056-7c7c-4d65-87d7-17e4fcfcde5b)
+{
+	name: "Button_Group"
+	structure: GtfContainer(aae150d1-edb9-4308-9e24-371195841f9a)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfContainer_template_instance(ea35a957-05a6-4594-b567-960496e0aefa)
+			{
+				name: "Button_Circle 1"
+				template: @df813284-b5ce-4ed8-ad04-6695df16e932 (objectref<GtfContainer_template>)
+				children: children_list []
+				width: 60
+				height: 60
+				x: 120
+				y: 20
+				image: image_resource(b2fd9f65-a804-4efa-85b3-c7935fbf2de9)
+				{
+					file: "return.png"
+				}
+				CurrentColor: #DCDCDCFF
+				OnReleaseAction: OnReleaseAction@df813284-b5ce-4ed8-ad04-6695df16e932 (propref<function<bool>>)
+				PressOff: function<bool>(abde20bf-64a2-4f31-8157-fc11dde76a87)
+				{
+					script: "function()" \
+						"{" \
+						"	v:this.CurrentColor = dp:Color_Tray" \
+						"	false" \
+						"}"
+				}
+				PressOn: function<bool>(95df7d43-c696-46e6-9c68-a86338a3fcda)
+				{
+					script: "function()" \
+						"{" \
+						"	v:this.CurrentColor = dp:Color_Surveillance" \
+						"	false" \
+						"}"
+				}
+				"x 2": 0
+				"y 2": 0
+				"height 2": 100
+				"width 2": 100
+				ColorList: colorlist [#C0C0C0FF, #DCDCDCFF]
+			}, 
+			GtfContainer_template_instance(23cbcb5e-81a2-48a2-b7dd-bd6ec92369c6)
+			{
+				name: "Button_Circle 2"
+				template: @df813284-b5ce-4ed8-ad04-6695df16e932 (objectref<GtfContainer_template>)
+				children: children_list []
+				width: 60
+				height: 60
+				x: 20
+				y: 19
+				image: image_resource(9579527d-37f8-4d3a-a934-10d4d7221dfd)
+				{
+					file: "home.png"
+				}
+				CurrentColor: #DCDCDCFF
+				OnReleaseAction: function<bool>(0677d483-8ddb-451d-acc7-c32ddbd82c6b)
+				{
+					script: "function()" \
+						"{" \
+						"	fire ev:GoTo_MainMenu()" \
+						"	false" \
+						"}"
+				}
+				PressOff: function<bool>(3718058b-7136-4852-923a-e9623b79fd13)
+				{
+					script: "function()" \
+						"{" \
+						"	v:this.CurrentColor = dp:Color_Tray" \
+						"	false" \
+						"}"
+				}
+				PressOn: function<bool>(15472b76-2606-4087-8c1f-38bb07ee24c2)
+				{
+					script: "function()" \
+						"{" \
+						"	v:this.CurrentColor = dp:Color_Surveillance" \
+						"	false" \
+						"}"
+				}
+				"x 2": 0
+				"y 2": 0
+				"height 2": 100
+				"width 2": 100
+				ColorList: colorlist [#C0C0C0FF, #DCDCDCFF]
+			}]
+		name: "Group_Button"
+		visible: true
+		width: 200
+		height: 100
+		x: 300
+		y: 350
+	}
+	x: x@aae150d1-edb9-4308-9e24-371195841f9a (propref<int>)
+	y: y@aae150d1-edb9-4308-9e24-371195841f9a (propref<int>)
+	OnReleaseAction: OnReleaseAction@ea35a957-05a6-4594-b567-960496e0aefa (propref<function<bool>>)
+}
