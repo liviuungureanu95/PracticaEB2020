@@ -8,7 +8,29 @@ GtfView_template_instance(627f369a-2d98-4b18-ab8c-b0eb9759ede9)
 		GtfRectangle(f5a97b06-b0b1-4279-8f72-e8a47d07ab2f)
 		{
 			features: feature_list []
-			children: children_list []
+			children: children_list [
+				GtfImage(88151c3f-3d20-4fa1-8d7f-25b59453593d)
+				{
+					features: feature_list [
+						ScaleMode(8c948cd0-877b-4160-9c23-7283d07671ab)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "Image 3"
+					visible: true
+					width: width@f5a97b06-b0b1-4279-8f72-e8a47d07ab2f (propref<int>)
+					height: height@f5a97b06-b0b1-4279-8f72-e8a47d07ab2f (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(82442b5a-355a-4ce8-ab36-47456b3322b3)
+					{
+						file: "line.jpg"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
 			name: "Middle_bar"
 			visible: true
 			width: 10
@@ -66,9 +88,9 @@ GtfView_template_instance(627f369a-2d98-4b18-ab8c-b0eb9759ede9)
 			name: "Back_button"
 			template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
 			children: children_list []
-			x: 700
-			y: 0
-			fillColor: #5F9EA0FF
+			x: 0
+			y: 430
+			fillColor: #ADD8E6FF
 			text: "BACK"
 			buttonEvent: function<bool>(a095e9e8-a6f8-4ffc-9433-dc7e504eb3f7)
 			{
@@ -82,6 +104,7 @@ GtfView_template_instance(627f369a-2d98-4b18-ab8c-b0eb9759ede9)
 			height: 50
 			visible: visible@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<bool>)
 			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			borderColor: borderColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
 			"x 2": 0
 			"y 2": 0
 			"x 3": 0
@@ -91,33 +114,7 @@ GtfView_template_instance(627f369a-2d98-4b18-ab8c-b0eb9759ede9)
 		{
 			name: "Free_Food_Scroll_list"
 			template: @7d032125-f578-4590-ab32-87bd9fd44acf (objectref<GtfContainer_template>)
-			children: children_list [
-				GtfContainer_template_instance(213d8f6d-0fa9-4829-865b-d715b7486ef7)
-				{
-					name: "Text_button 1"
-					template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
-					children: children_list []
-					x: 286
-					y: 271
-					fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
-					text: "Place order"
-					buttonEvent: function<bool>(2a1a96ca-302b-4f30-a82c-fa8aed6d96b4)
-					{
-						script: "function()" \
-							"{" \
-							"	fire ev:display_message()" \
-							"	false" \
-							"}"
-					}
-					width: width@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
-					height: height@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
-					visible: visible@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<bool>)
-					lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
-					"x 2": 0
-					"y 2": 0
-					"x 3": 0
-					"y 3": 0
-				}]
+			children: children_list []
 			width: 331
 			height: 263
 			x: 2
@@ -135,6 +132,7 @@ GtfView_template_instance(627f369a-2d98-4b18-ab8c-b0eb9759ede9)
 			buttonEvent: buttonEvent@7d032125-f578-4590-ab32-87bd9fd44acf (propref<function<bool>>)
 			"buttonEvent 2": "buttonEvent 2"@7d032125-f578-4590-ab32-87bd9fd44acf (propref<function<bool>>)
 			ListId: ListId@7d032125-f578-4590-ab32-87bd9fd44acf (propref<int>)
+			visible: visible@7d032125-f578-4590-ab32-87bd9fd44acf (propref<bool>)
 		}, 
 		GtfContainer_template_instance(171955a1-b4d4-48e6-805c-aa14488c24d5)
 		{
@@ -158,9 +156,46 @@ GtfView_template_instance(627f369a-2d98-4b18-ab8c-b0eb9759ede9)
 			buttonEvent: buttonEvent@7d032125-f578-4590-ab32-87bd9fd44acf (propref<function<bool>>)
 			"buttonEvent 2": "buttonEvent 2"@7d032125-f578-4590-ab32-87bd9fd44acf (propref<function<bool>>)
 			ListId: 1
+			visible: visible@7d032125-f578-4590-ab32-87bd9fd44acf (propref<bool>)
+		}, 
+		GtfContainer_template_instance(213d8f6d-0fa9-4829-865b-d715b7486ef7)
+		{
+			name: "Place_button"
+			template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 309
+			y: 369
+			fillColor: fillColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
+			text: "Place order"
+			buttonEvent: function<bool>(2a1a96ca-302b-4f30-a82c-fa8aed6d96b4)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:display_message()" \
+					"	false" \
+					"}"
+			}
+			width: width@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			height: height@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			visible: visible@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<bool>)
+			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			borderColor: borderColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
+			"x 2": 0
+			"y 2": 0
+			"x 3": 0
+			"y 3": 0
 		}]
 	image: image@47101df3-2cb4-462c-8236-06e865e3862e (propref<image>)
 	text: "FOOD"
 	visible: false
-	"visible 2": "visible 2"@47101df3-2cb4-462c-8236-06e865e3862e (propref<bool>)
+	"visible 2": true
+	"visible 3": false
+	fillColor: fillColor@47101df3-2cb4-462c-8236-06e865e3862e (propref<color>)
+	textColor: #000000FF
+	initFocus: 0
+	focusedIndex: 0
+	focusNext: false
+	focusPrev: false
+	focusFlow: 1
+	focused: false
 }

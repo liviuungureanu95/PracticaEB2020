@@ -71,16 +71,26 @@ GtfContainer_template(7d032125-f578-4590-ab32-87bd9fd44acf)
 										"		dp:Drink_order+=v:this.text+\"\\n\"" \
 										"	    dp:Drink_price+=dp:Drink_price_list[v:this.lineIndex]" \
 										"	}" \
-										"	" \
+										"	if(v:this->^->^.ListId==4)" \
+										"	{" \
+										"		fire ev:PlayMusic()" \
+										"		dp:index=v:this.lineIndex" \
+										"	}" \
+										"	if(v:this->^->^.ListId==5)" \
+										"	{" \
+										"		fire ev:PlayMusic()" \
+										"		dp:index=v:this.lineIndex" \
+										"	}" \
 										"	" \
 										"" \
 										"	false" \
 										"}"
 								}
-								width: 315
+								width: width@4e9845b4-ff08-44e8-8fc6-0f8c306f4bd1 (propref<int>)
 								height: 50
 								visible: visible@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<bool>)
 								lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+								borderColor: borderColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
 								setText: conditional_script(ea73ce7b-9e03-4b94-833c-da74995b2f75)
 								{
 									triggerList: trigger_list(a374f1ce-1658-4286-b88e-0b6effb7bacb)
@@ -182,7 +192,8 @@ GtfContainer_template(7d032125-f578-4590-ab32-87bd9fd44acf)
 					{
 						script: "v:this->buttonInstantiator.listButtonHeight" \
 							"v:this.height" \
-							""
+							"v:this.list_input" \
+							"v:this->buttonInstantiator.yOffset"
 					}
 					onTrigger: function<bool,bool>(f6266580-2237-46e3-b061-fbe45e5086ba)
 					{
@@ -228,6 +239,7 @@ GtfContainer_template(7d032125-f578-4590-ab32-87bd9fd44acf)
 				height: 50
 				visible: visible@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<bool>)
 				lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+				borderColor: borderColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
 				"x 2": 0
 				"y 2": 0
 				"x 3": 0
@@ -256,6 +268,7 @@ GtfContainer_template(7d032125-f578-4590-ab32-87bd9fd44acf)
 				height: 50
 				visible: visible@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<bool>)
 				lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+				borderColor: borderColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
 				"x 2": 0
 				"y 2": 0
 				"x 3": 0
@@ -285,4 +298,5 @@ GtfContainer_template(7d032125-f578-4590-ab32-87bd9fd44acf)
 	buttonEvent: buttonEvent@28add179-5b8a-4057-b9ad-8a4b8da07b25 (propref<function<bool>>)
 	"buttonEvent 2": buttonEvent@db42890d-5035-41d0-b3c2-2d753d0898f9 (propref<function<bool>>)
 	ListId: ListId@04e1d16c-d433-4ad1-9c28-f74ba6a0426a (propref<int>)
+	visible: visible@208d7da6-544b-4709-ac3a-17f5568dfaba (propref<bool>)
 }

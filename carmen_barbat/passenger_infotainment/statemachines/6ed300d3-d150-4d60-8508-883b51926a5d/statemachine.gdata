@@ -71,7 +71,7 @@ haptic_statemachine(6ed300d3-d150-4d60-8508-883b51926a5d)
 			action: function<void>(none)
 			target_state: @70e87ff5-7eb4-4467-98a9-d8aa88393238 (objectref<haptic_dialog_state>)
 			source_dock: 0.9918919F
-			target_dock: 0.9355595F
+			target_dock: 0.9371025F
 			curveControlXOffset: 0
 			curveControlYOffset: 0
 			labelXOffset: 10
@@ -136,7 +136,7 @@ haptic_statemachine(6ed300d3-d150-4d60-8508-883b51926a5d)
 			{
 				script: "function()" \
 					"{" \
-					" fire_delayed 3000, ev:GoToMenu();" \
+					" fire_delayed 3500, ev:GoToMenu();" \
 					" " \
 					"}"
 			}
@@ -191,7 +191,31 @@ haptic_statemachine(6ed300d3-d150-4d60-8508-883b51926a5d)
 			entry_action: function<void>(none)
 			exit_action: function<void>(none)
 			transitions: haptic_transitions []
-			internal_transitions: haptic_internal_transitions []
+			internal_transitions: haptic_internal_transitions [
+				haptic_internal_transition(15b7a6de-1dc1-467b-839a-858c12b1b884)
+				{
+					event: @3052eced-8dcc-431b-a921-321192ecb4ea (objectref<event>)
+					condition: function<bool>(none)
+					action: function<void>(89ba8fd0-3a8a-40bf-910a-904858f0346b)
+					{
+						script: "function()" \
+							"{" \
+							"	f:pushDynamicStateMachine(popup_stack:Main, sm:\"Taxi\", 0)" \
+							"}"
+					}
+				}, 
+				haptic_internal_transition(15cc951e-b059-4e1b-b86c-5701c9d46d78)
+				{
+					event: @2032862a-a4fb-44cd-af87-e9932b0e2756 (objectref<event>)
+					condition: function<bool>(none)
+					action: function<void>(16b2d81d-4c71-463f-b416-6d4eaf56a861)
+					{
+						script: "function()" \
+							"{	f:popDynamicStateMachine(popup_stack:Main, sm:\"Taxi\")" \
+							"" \
+							"}"
+					}
+				}]
 			background_color: #6C6C6CFF
 			dialog: (41d35ab7-6a50-4958-a25c-49c530186113)
 			priority_stack: priority_stack(none)
@@ -206,7 +230,31 @@ haptic_statemachine(6ed300d3-d150-4d60-8508-883b51926a5d)
 			entry_action: function<void>(none)
 			exit_action: function<void>(none)
 			transitions: haptic_transitions []
-			internal_transitions: haptic_internal_transitions []
+			internal_transitions: haptic_internal_transitions [
+				haptic_internal_transition(873a89a9-e9e2-48fd-baf0-262b401d6fa6)
+				{
+					event: @3052eced-8dcc-431b-a921-321192ecb4ea (objectref<event>)
+					condition: function<bool>(none)
+					action: function<void>(4aa999a2-5690-47ba-9cce-abc131ef14db)
+					{
+						script: "function()" \
+							"{" \
+							"	f:pushDynamicStateMachine(popup_stack:Main, sm:\"RentACar\", 0)" \
+							"}"
+					}
+				}, 
+				haptic_internal_transition(de9d9e22-5e16-47a9-a508-84d2fb3ed692)
+				{
+					event: @2032862a-a4fb-44cd-af87-e9932b0e2756 (objectref<event>)
+					condition: function<bool>(none)
+					action: function<void>(576e4f62-13f5-4019-ae17-3d436af33e15)
+					{
+						script: "function()" \
+							"{" \
+							"	f:popDynamicStateMachine(popup_stack:Main, sm:\"RentACar\")" \
+							"}"
+					}
+				}]
 			background_color: #6C6C6CFF
 			dialog: (815e892a-e12f-40e4-a0cc-b76a5ff7653e)
 			priority_stack: priority_stack(none)
@@ -222,7 +270,7 @@ haptic_statemachine(6ed300d3-d150-4d60-8508-883b51926a5d)
 			action: function<void>(none)
 			target_state: @118507e9-3e35-4110-9f31-1fab1d3d25ce (objectref<haptic_dialog_state>)
 			source_dock: 0.2653543F
-			target_dock: 0.7765126F
+			target_dock: 0.7873283F
 			curveControlXOffset: 0
 			curveControlYOffset: 0
 			labelXOffset: 10

@@ -1,0 +1,282 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(93865988-5ae9-4255-993c-bb3bfde382ac)
+{
+	name: "Music_view"
+	template: @47101df3-2cb4-462c-8236-06e865e3862e (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(da845c3b-c37c-43ae-9d51-ea48633b4fc4)
+		{
+			name: "PlayMenuTemp 1"
+			template: @d23f21b6-fb1b-410f-bd3a-f6227c15a42d (objectref<GtfContainer_template>)
+			children: children_list []
+			y: 380
+			x: 100
+			buttonEvent: function<bool>(9f34aa15-bada-4a52-ba90-544f7c1d79e1)
+			{
+				script: "function()" \
+					"{" \
+					"	if(dp:index>=1)" \
+					"		dp:index-=1" \
+					"	" \
+					"	false" \
+					"}"
+			}
+			"buttonEvent 2": function<bool>(6335d572-ad4c-4f64-b11f-db0a477164cb)
+			{
+				script: "function()" \
+					"{" \
+					"	if(dp:\"Play/Pause\"==false)" \
+					"	{" \
+					"		v:this->^->\"PlayMenuTemp 1\".image=dp:Pause_image" \
+					"		dp:\"Play/Pause\"=true" \
+					"		f:animation_play(v:this->^->Image->Spinning)" \
+					"	}	" \
+					"	else" \
+					"	{" \
+					"		v:this->^->\"PlayMenuTemp 1\".image=dp:Play_image" \
+					"		dp:\"Play/Pause\"=false" \
+					"		f:animation_pause(v:this->^->Image->Spinning)" \
+					"	}" \
+					"		" \
+					"false" \
+					"}"
+			}
+			"buttonEvent 3": function<bool>(2f4b21e9-f371-4bf3-8282-f48a4a7ae755)
+			{
+				script: "function()" \
+					"{" \
+					"	if(dp:index<length dp:MusicList -1)" \
+					"		dp:index+=1" \
+					"	false" \
+					"}"
+			}
+			image: image@d23f21b6-fb1b-410f-bd3a-f6227c15a42d (propref<image>)
+		}, 
+		GtfContainer_template_instance(ca813187-5c97-4095-b4f9-b45d37fe0e36)
+		{
+			name: "Back_button"
+			template: @7c4be026-1770-45f7-b13f-6d9b679aaab9 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 0
+			y: 0
+			fillColor: #6495EDFF
+			text: "BACK"
+			buttonEvent: function<bool>(93fa1192-5c66-42fe-85e9-5d3a2758ffbe)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoBack()" \
+					"	false" \
+					"}"
+			}
+			width: 100
+			height: 50
+			visible: visible@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<bool>)
+			lineIndex: lineIndex@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<int>)
+			borderColor: borderColor@7c4be026-1770-45f7-b13f-6d9b679aaab9 (propref<color>)
+		}, 
+		GtfImage(d0ea5a52-72ea-4a33-976e-0afbd7aa9ea4)
+		{
+			features: feature_list [
+				ScaleMode(0488cd17-3cfe-4e8a-b950-2cef2041ee47)
+				{
+					scaleMode: 1
+				}, 
+				Rotation(fa5e901d-8123-4edb-93eb-e91f27552768)
+				{
+					rotationEnabled: true
+					rotationAngleX: 0F
+					rotationAngleY: 0F
+					rotationAngleZ: 0F
+				}, 
+				Scaling(0ddb6ed7-339a-4e79-a7e7-c4f294e45a34)
+				{
+					scalingEnabled: true
+					scalingX: 100F
+					scalingY: 100F
+					scalingZ: 100F
+				}, 
+				Shearing(a7c8aeee-19dd-4552-83d8-39af91aa415e)
+				{
+					shearingEnabled: true
+					shearingXbyY: 0F
+					shearingXbyZ: 0F
+					shearingYbyX: 0F
+					shearingYbyZ: 0F
+					shearingZbyX: 0F
+					shearingZbyY: 0F
+				}, 
+				Pivot(e56e4eab-e832-4f28-bc0a-8b859f28e143)
+				{
+					pivotX: float_scriptedValue(1247f2b7-aba3-413d-9b0a-48ba3225b234)
+					{
+						triggerList: trigger_list(cf006989-cca9-4a07-801f-f58f507bc6de)
+						{
+							script: "v:this.width" \
+								""
+						}
+						onTrigger: function<bool,bool>(7ec638a8-45b1-4d51-ae19-14dcb2f43359)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<float>(9060356c-bab7-4abf-be1f-dc47367d8bba)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:int2float(v:this.width/2)" \
+								"}"
+						}
+						write: function<bool,float>(a0e1141b-5e83-4a3d-b4a8-bd59abcf00ca)
+						{
+							script: "function(v:arg0::float)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					pivotY: float_scriptedValue(9322f122-0425-4b24-a0f0-960f90513c4f)
+					{
+						triggerList: trigger_list(153a706f-5326-4cd5-b94a-9793a942bc25)
+						{
+							script: "v:this.height" \
+								""
+						}
+						onTrigger: function<bool,bool>(23aa9267-f2f4-413f-bd7e-6225dc9189f9)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<float>(ce6d8b40-395e-4bd5-8188-a8ed47d7936f)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:int2float(v:this.height/2)" \
+								"}"
+						}
+						write: function<bool,float>(d6e69540-82c0-4808-8d09-fd09675f1c25)
+						{
+							script: "function(v:arg0::float)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					pivotZ: 0F
+				}]
+			children: children_list [
+				GtfParallelAnimation(6f46a646-63e7-42f7-a760-b9e8da038394)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationFloat(86f2178b-8a5d-474d-81e8-814a4963edb9)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "spinning"
+							enabled: true
+							delay: 0
+							duration: 4000
+							repeat: 10
+							alternating: false
+							relative: false
+							start: 0F
+							end: -360F
+							target: rotationAngleZ@fa5e901d-8123-4edb-93eb-e91f27552768 (propref<float>)
+						}]
+					name: "Spinning"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(842ecfd3-6aad-4f85-abbc-b1a434710c68)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(8d084b11-6f8d-4c6e-b65c-8023622699c9)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(addf1061-05aa-4680-b3e3-352204b67c50)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+				}]
+			name: "Image"
+			visible: true
+			width: 270
+			height: 270
+			x: 231
+			y: 102
+			image: image_resource(0635ecb1-d998-44c6-a1fd-6e47254005c3)
+			{
+				file: "vinyl.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	image: image@47101df3-2cb4-462c-8236-06e865e3862e (propref<image>)
+	text: string_scriptedValue(ac1565fe-83a1-475c-96f4-72b6577e711b)
+	{
+		triggerList: trigger_list(ebb22e09-76c8-49b4-9986-5f753bef5bba)
+		{
+			script: "dp:index" \
+				"dp:MusicList"
+		}
+		onTrigger: function<bool,bool>(0abe5503-0258-4141-9652-11d48e82d9f1)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		read: function<string>(1aa23f15-6fde-43c2-8dfa-2f860a04ef41)
+		{
+			script: "function()" \
+				"{" \
+				"	dp:MusicList[dp:index]" \
+				"}"
+		}
+		write: function<bool,string>(da88145f-7007-4fd8-84ba-a78f0cff5975)
+		{
+			script: "function(v:arg0::string)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	visible: false
+	"visible 2": true
+	"visible 3": "visible 3"@47101df3-2cb4-462c-8236-06e865e3862e (propref<bool>)
+	fillColor: fillColor@47101df3-2cb4-462c-8236-06e865e3862e (propref<color>)
+	textColor: textColor@47101df3-2cb4-462c-8236-06e865e3862e (propref<color>)
+	initFocus: 0
+	focusedIndex: 0
+	focusNext: false
+	focusPrev: false
+	focusFlow: 1
+	focused: false
+}

@@ -5,7 +5,20 @@ GtfView_template(47101df3-2cb4-462c-8236-06e865e3862e)
 	name: "View_temp"
 	structure: GtfView(9f724c7b-07de-4746-8978-025b012788b0)
 	{
-		features: feature_list []
+		features: feature_list [
+			StateFocused(c393fa78-d76d-42bf-b4c3-1c5d4067f80f)
+			{
+				focusable: 3
+				focused: false
+			}, 
+			AutoFocus(18d9769f-5a33-4aa9-9da5-d3e4d8249126)
+			{
+				initFocus: 0
+				focusedIndex: 0
+				focusNext: false
+				focusPrev: false
+				focusFlow: 1
+			}]
 		children: children_list [
 			GtfRectangle(1f998cfb-b44e-4179-9701-8c221d85ea01)
 			{
@@ -31,14 +44,14 @@ GtfView_template(47101df3-2cb4-462c-8236-06e865e3862e)
 					{
 						features: feature_list []
 						children: children_list []
-						name: "Title_Lavel"
+						name: "Title_Label"
 						visible: true
 						width: width@9f724c7b-07de-4746-8978-025b012788b0 (propref<int>)
-						height: 100
+						height: 75
 						x: 0
 						y: 0
 						text: "label"
-						textColor: #FFFFFFFF
+						textColor: #808080FF
 						font: font_resource(9063e2a3-19ae-496c-afc4-0805cde79655)
 						{
 							file: "PT_Sans_Narrow.ttf"
@@ -52,8 +65,8 @@ GtfView_template(47101df3-2cb4-462c-8236-06e865e3862e)
 						name: "MenuButton"
 						template: @e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (objectref<GtfContainer_template>)
 						children: children_list []
-						width: width@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
-						height: height@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+						width: 75
+						height: 75
 						x: 700
 						y: 0
 						"x 2": "x 2"@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
@@ -74,6 +87,43 @@ GtfView_template(47101df3-2cb4-462c-8236-06e865e3862e)
 								"}"
 						}
 						visible: visible@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<bool>)
+						scaleMode: scaleMode@e70e5a8f-f1f1-4fbe-af48-ec6bfbbf5832 (propref<int>)
+						"width 2": 75
+						"height 2": 75
+					}, 
+					GtfRectangle(c57924ca-1cff-4653-ab68-bbea85fef076)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfImage(42072e24-e79b-4ad4-a0f7-64947af6ea66)
+							{
+								features: feature_list [
+									ScaleMode(1db5ad64-ca79-42b8-9b6c-8a237070ce22)
+									{
+										scaleMode: 1
+									}]
+								children: children_list []
+								name: "Line_image"
+								visible: true
+								width: width@c57924ca-1cff-4653-ab68-bbea85fef076 (propref<int>)
+								height: height@c57924ca-1cff-4653-ab68-bbea85fef076 (propref<int>)
+								x: 0
+								y: 0
+								image: image_resource(0d2bce54-9c41-43dc-98a0-b7b55c6ff81f)
+								{
+									file: "line.jpg"
+								}
+								sRGB: false
+								horizontalAlign: 0
+								verticalAlign: 1
+							}]
+						name: "Line"
+						visible: true
+						width: 800
+						height: 10
+						x: 0
+						y: 77
+						fillColor: #A9A9A9FF
 					}]
 				name: "Back_image"
 				visible: true
@@ -83,7 +133,7 @@ GtfView_template(47101df3-2cb4-462c-8236-06e865e3862e)
 				y: 0
 				image: image_resource(4b82ca92-b2d7-4a19-83d5-aa271ff4ff2e)
 				{
-					file: "Back.jpg"
+					file: "Background.jpg"
 				}
 				sRGB: false
 				horizontalAlign: 0
@@ -100,4 +150,7 @@ GtfView_template(47101df3-2cb4-462c-8236-06e865e3862e)
 	text: text@94b3da64-9773-4eae-9936-2916fdce59e4 (propref<string>)
 	visible: visible@969e2b62-e694-42e8-9201-84c6e4a026dc (propref<bool>)
 	"visible 2": visible@94b3da64-9773-4eae-9936-2916fdce59e4 (propref<bool>)
+	"visible 3": visible@c57924ca-1cff-4653-ab68-bbea85fef076 (propref<bool>)
+	fillColor: fillColor@c57924ca-1cff-4653-ab68-bbea85fef076 (propref<color>)
+	textColor: textColor@94b3da64-9773-4eae-9936-2916fdce59e4 (propref<color>)
 }
