@@ -1,0 +1,283 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(309dbe2c-86d7-42d1-9a54-681da27fe05c)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(a62b327e-b734-46b5-a33a-e6e7cb8a1f81)
+		{
+			features: feature_list [
+				ScaleMode(2a48ea26-e93b-40c9-85f1-a44d3f8fe776)
+				{
+					scaleMode: 1
+				}, 
+				TouchPressed(8d72946e-fd24-448f-9151-2cded01e8c19)
+				{
+					touchPressed: function<bool,int,int,int,int>(805f66b0-bd78-496c-b4eb-dfe8970d52a8)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	" \
+							"	 if(dp:blueetooth==false)" \
+							"	 {" \
+							"    	" \
+							"    	v:this->^->Image.visible =true" \
+							"    	" \
+							"    }" \
+							"    else" \
+							"    {" \
+							"    	" \
+							"    	v:this->^->Image.visible = false" \
+							"    " \
+							"    }" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(40bde236-633d-499f-bf91-de9a28960e1d)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "turn_on_button copy 1"
+			visible: true
+			width: 100
+			height: 57
+			x: 365
+			y: 30
+			image: image_scriptedValue(eeffedb1-58d1-478f-8c39-2d90b9e02599)
+			{
+				triggerList: trigger_list(ea2dbaca-64e2-406e-8e70-b3b4f75be7c1)
+				{
+					script: "dp:redoff" \
+						"dp:\"green on\"" \
+						"dp:blueetooth"
+				}
+				onTrigger: function<bool,bool>(09575efa-c794-485b-b5b0-0405fc2d6023)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	" \
+						"	false" \
+						"}"
+				}
+				read: function<image>(a3cf692b-b1b2-4d05-84bd-2f0629d30879)
+				{
+					script: "function()" \
+						"{" \
+						"	if(dp:blueetooth==false)" \
+						"	{" \
+						"		dp:redoff" \
+						"	}" \
+						"	else" \
+						"	{" \
+						"		dp:\"green on\"" \
+						"	}" \
+						"" \
+						"}"
+				}
+				write: function<bool,image>(167a43b6-523f-4d0f-b37f-bd6c81e04ac7)
+				{
+					script: "function(v:arg0::image)" \
+						"{" \
+						"	" \
+						"	false" \
+						"}"
+				}
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+			turn_on: true
+		}, 
+		GtfImage(78cb718f-470f-4cc0-a912-8b4ab12c8283)
+		{
+			features: feature_list [
+				ScaleMode(19c6db71-1cf3-4246-a387-048412346c67)
+				{
+					scaleMode: 1
+				}, 
+				TouchPressed(b23dae9e-f67c-440b-b019-7bdd8b06d2d3)
+				{
+					touchPressed: function<bool,int,int,int,int>(51095315-1a03-4123-b0f0-f29d29b4bba8)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goToMedia()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(ba322f7f-e080-44d2-beef-549dd2ebcaa9)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "backToMenu button copy 1 copy 1 copy 1"
+			visible: true
+			width: 63
+			height: 59
+			x: 11
+			y: 714
+			image: image_resource(45be78a5-3a64-4070-8046-12b9863c6757)
+			{
+				file: "back_to_menu.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(7fc18312-f11c-42b6-959c-e7f01adf7795)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfLabel(45587b53-1ae1-437e-9eed-d24922c4a5b2)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "TEXT- CONNECTION"
+					visible: true
+					width: 281
+					height: 76
+					x: 29
+					y: 14
+					text: "CONNECTION IN PROGRESS"
+					textColor: #FFFFFFFF
+					font: font_resource(14917a6d-d483-430a-b60d-875c907fd051)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "Image"
+			visible: @bb4e02ea-f014-49be-826a-5ad127ac9f08 (objectref<bool>)
+			width: 391
+			height: 108
+			x: 104
+			y: 119
+			image: image_resource(c52ff7ad-eca8-45ea-8fa7-f32e8629df1b)
+			{
+				file: "BUTON.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(a0377997-407e-443f-ada9-3f959c2951b7)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "TEXT-STARTIING-BLUETOOTH"
+			visible: true
+			width: 290
+			height: 64
+			x: 45
+			y: 17
+			text: "TURN ON /OFF"
+			textColor: #FFFFFFFF
+			font: font_resource(eec90e5d-eb77-4069-a385-3971b1bd2f4b)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfImage(5fa8d418-11fc-44b1-bafe-f6875921aeba)
+		{
+			features: feature_list [
+				ScaleMode(34f5db6a-dc2e-4e7e-9c9e-12445ae5ec86)
+				{
+					scaleMode: 1
+				}]
+			children: children_list [
+				GtfParallelAnimation(67779a8c-5910-42ee-a9cc-36a2c9927c71)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationS32(7d285731-0555-47ef-860f-5fe88e1756dd)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Linear interpolation curve 1"
+							enabled: true
+							delay: 0
+							duration: 4000
+							repeat: 2
+							alternating: false
+							relative: false
+							start: 0
+							end: 350
+							target: height@5fa8d418-11fc-44b1-bafe-f6875921aeba (propref<int>)
+						}]
+					name: "Animation 1"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(348f255f-32d8-4a59-89b9-4cfb0dd3fba1)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(1edbd539-39e9-4d95-ac40-050d43b70abe)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(4f422eb9-7163-494e-82aa-75fb2fb64fbb)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					start: conditional_script(7633ad39-16cb-4526-b5e8-f7d2c03da2de)
+					{
+						triggerList: trigger_list(6b7727e6-462f-4e02-962a-0ee63c82f042)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(4a6349d5-ee84-4384-84ad-48810dcc587e)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	f:animation_play(v:this->\"Linear interpolation curve 1\")" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "phone-connected"
+			visible: @bb4e02ea-f014-49be-826a-5ad127ac9f08 (objectref<bool>)
+			width: 295
+			height: 0
+			x: 150
+			y: 262
+			image: image_resource(746a603a-5ef6-465a-81b9-1b6fba423175)
+			{
+				file: "connected.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "View bluetooth"
+	visible: true
+	width: 580
+	height: 780
+	x: -3
+	y: 1
+}

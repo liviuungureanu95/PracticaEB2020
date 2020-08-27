@@ -1,0 +1,271 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(2620b703-6b2c-45b6-84be-3123437e3aef)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(043a647e-903b-4313-941b-3cbf5e633ee7)
+		{
+			features: feature_list [
+				ScaleMode(af0c078f-6b67-4877-a9c3-7c0dfdb2e97d)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "Image 7"
+			visible: true
+			width: 580
+			height: 780
+			x: 0
+			y: 0
+			image: image_resource(8bf3b75e-e7bc-475c-8415-33de50dd55c3)
+			{
+				file: "background3.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(4bb19120-4e26-493b-a90b-60aa507cea50)
+		{
+			features: feature_list [
+				ScaleMode(2880fd93-6184-4aac-8b4f-2f2dd6ac60d3)
+				{
+					scaleMode: 1
+				}]
+			children: children_list [
+				GtfRectangle(e4f44dd1-689e-410b-b6e5-8ed4587d2164)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfImage(8aadb4b8-afa3-49b0-a934-532e1efd34e4)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "stop-sign"
+							visible: true
+							width: 100
+							height: 100
+							x: 35
+							y: 16
+							image: image_resource(b0e8cb64-648a-4307-9b0f-636dcac2d202)
+							{
+								file: "center.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}]
+					name: "frame-message"
+					visible: true
+					width: 157
+					height: 139
+					x: 3
+					y: 10
+					fillColor: #FFFFFFFF
+				}, 
+				GtfLabel(d0840b10-bcd6-478e-b5b0-de3c4a7699cb)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "text-label2"
+					visible: true
+					width: 357
+					height: 70
+					x: 168
+					y: -1
+					text: "YOU ARE IN THE MANDATORY PAUSE TIME!"
+					textColor: #FFFFFFFF
+					font: font_resource(948f136f-1af7-4379-9a3d-9caf2c8404bc)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 25
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfLabel(b55c7b57-fea4-469c-a8fe-17e5fa3ca209)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "text-label2.2"
+					visible: true
+					width: 370
+					height: 56
+					x: 153
+					y: 96
+					text: string_scriptedValue(8218cd38-eb85-4c43-a52a-1ce6443a4417)
+					{
+						triggerList: trigger_list(562e9f6e-a017-46e6-9b67-33f71e845d0b)
+						{
+							script: "dp:\"hour-finish-pause\"" \
+								"dp:\"minute-finish-pause\""
+						}
+						onTrigger: function<bool,bool>(63e1025e-1931-4a4c-93ae-0f2325cb65c2)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(fa64779a-c376-4a2f-8475-d0f04a34f1e6)
+						{
+							script: "function()" \
+								"{    " \
+								"	\"Time until starting driving: \" + f:int2string(dp:\"hour-finish-pause\"-f:localtime_hour(f:system_time())) + \" \" + \"hours\" " \
+								"	+ f:int2string(dp:\"minute-finish-pause\"-f:localtime_minute(f:system_time())) + \" \" + \"minutes\"" \
+								"	" \
+								"	" \
+								"}"
+						}
+						write: function<bool,string>(6c329f0d-c2c4-4c93-aa62-466ae41ed073)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(d186ebaf-3d6d-4306-9335-d95417be7241)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 22
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(92dc89ca-8ec9-42ac-8ea9-9bb08c680f13)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "text-label2.1"
+					visible: true
+					width: 268
+					height: 47
+					x: 163
+					y: 54
+					text: string_scriptedValue(d9b118a4-f113-4171-b3b5-cbe86f594e52)
+					{
+						triggerList: trigger_list(331128ce-854a-4574-9ffa-7d57ff243e7b)
+						{
+							script: "dp:\"hour-pause\"" \
+								"dp:\"minute-pause\"" \
+								""
+						}
+						onTrigger: function<bool,bool>(0ea1000e-0224-47fa-bee0-24cfabba0db1)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(1e0e2b6b-aeb2-4e63-8275-e68466f0f629)
+						{
+							script: "function()" \
+								"{" \
+								"	\"Pause starting at  \" + f:int2string(dp:\"hour-pause\") + \":\" + f:int2string(dp:\"minute-pause\")" \
+								"}"
+						}
+						write: function<bool,string>(b6822795-d294-49f2-925f-628b74f01a4f)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FFFFFFFF
+					font: font_resource(8ba25e49-b726-4e9d-8b84-5917d6836f52)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "Image MESSAGE 2 "
+			visible: true
+			width: 549
+			height: 167
+			x: 18
+			y: 235
+			image: image_resource(28ea542c-de7a-468a-b757-46433216771d)
+			{
+				file: "control five.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(b0b1bc3d-442c-4006-93f1-6629f253bb48)
+		{
+			features: feature_list [
+				ScaleMode(dfea968f-c4a4-4e72-889a-dbbe6fe6f02c)
+				{
+					scaleMode: 1
+				}, 
+				TouchPressed(fe264254-1da3-4f19-9911-8dafa0f7f2d3)
+				{
+					touchPressed: function<bool,int,int,int,int>(086ac7d9-3df6-49b1-8125-d77f7817306e)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"    fire ev:popUP_DISABLE2()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(08a620ce-8eb3-482a-a95c-b0ae32ba9a8a)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfLabel(02d41982-5984-4e7e-8700-24db8e014489)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "ok-text"
+					visible: true
+					width: 38
+					height: 46
+					x: 26
+					y: 19
+					text: "OK"
+					textColor: #000000FF
+					font: font_resource(e66f6605-5367-41eb-843f-dcff0e3d4ac7)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}]
+			name: "ok-button copy 1"
+			visible: true
+			width: 86
+			height: 79
+			x: 256
+			y: 605
+			image: image_resource(d6aa5535-a059-499d-9af4-30d1fa32c93e)
+			{
+				file: "Fără titlu (1).png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	name: "View Message2"
+	visible: true
+	width: 580
+	height: 780
+	x: 0
+	y: 0
+}

@@ -8,7 +8,293 @@ GtfView(dc2a6b3f-4f78-437e-83a7-57b8f391c0ca)
 		{
 			name: "TEMPLATE FOR VIEW ac 1"
 			template: @dce1fc75-951c-461b-91d3-24b5a5f79e77 (objectref<GtfContainer_template>)
-			children: children_list []
+			children: children_list [
+				GtfImage(70881e5f-97a2-41e2-a592-588fa0470100)
+				{
+					features: feature_list [
+						ScaleMode(f97fd9b3-3ba8-49d2-9a5e-b9a1f308ea8f)
+						{
+							scaleMode: 1
+						}]
+					children: children_list []
+					name: "playlist-image"
+					visible: true
+					width: 418
+					height: 544
+					x: 80
+					y: 79
+					image: image_resource(34bcdef7-d38a-4fae-a1a2-53f9d5b6483e)
+					{
+						file: "playlist.jpg"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfInstantiator(a5c8cbb4-3780-4492-960a-baa3072bf3bd)
+				{
+					features: feature_list [
+						LayoutPolicyListItem(46f118e8-e1f0-46bc-805b-21144a277fb2)
+						{
+							listIndex: 0
+						}, 
+						LayoutPolicyGrid(7d8fe12c-bd37-49b9-8c90-743a98d25a26)
+						{
+							horizontalGap: 0
+							verticalGap: 6
+							numRows: 5
+							numColumns: 1
+						}, 
+						TouchPressed(47c1030e-6592-4e30-bbab-6b9b1441afd6)
+						{
+							touchPressed: function<bool,int,int,int,int>(03026c9f-e479-4242-9e34-e6f7b694c8b7)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:goToSongs()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(1fddc261-a8c8-41f7-8c04-25620a5b1af7)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfRectangle(a5eaad99-64b6-4976-98a6-80c32ef12d8e)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "buttons"
+							visible: true
+							width: 415
+							height: 86
+							x: 0
+							y: 0
+							fillColor: #FFFFFF00
+						}]
+					name: "Instantiator playlist"
+					visible: true
+					width: 418
+					height: 439
+					x: 79
+					y: 182
+					numItems: 5
+					lineMapping: intlist []
+				}, 
+				GtfImage(02c3f8e7-4809-4e6c-be17-21b82505b9a4)
+				{
+					features: feature_list [
+						ScaleMode(7ad7eecf-2964-4b99-9cc1-889dcbe1a2c4)
+						{
+							scaleMode: 2
+						}, 
+						TouchPressed(a969a407-61c9-4799-a852-6c3bf4bb6939)
+						{
+							touchPressed: function<bool,int,int,int,int>(e8922327-9b35-4031-98c4-9be192c05595)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(v:this.play==true)" \
+									"	{" \
+									"		v:this.play=false" \
+									"		dp:\"button-play\"=dp:pause" \
+									"	}" \
+									"	else" \
+									"" \
+									"	{" \
+									"		v:this.play=true" \
+									"		dp:\"button-play\"=dp:play" \
+									"	}" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(8991da67-82a2-4d87-872f-68c6619a589b)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "play-pause-button"
+					visible: true
+					width: 74
+					height: 82
+					x: 263
+					y: 619
+					image: image_scriptedValue(2cb1c0d2-c933-4ff4-8b9e-004241d53179)
+					{
+						triggerList: trigger_list(6ccbe408-5a72-4797-aa8e-05b3ac14228a)
+						{
+							script: "dp:\"button-play\"" \
+								""
+						}
+						onTrigger: function<bool,bool>(9ed66979-5ba5-49e2-a086-75c2adae2e45)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	" \
+								"	false" \
+								"}"
+						}
+						read: function<image>(e5be24ff-c11b-4690-a984-11caf1c5391c)
+						{
+							script: "function()" \
+								"{" \
+								"	dp:\"button-play\"" \
+								"" \
+								"}"
+						}
+						write: function<bool,image>(cf1ab9a5-a1b4-4780-99f5-86c402d03544)
+						{
+							script: "function(v:arg0::image)" \
+								"{" \
+								"	" \
+								"	false" \
+								"}"
+						}
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+					play: true
+				}, 
+				GtfImage(ea44e2e3-191e-4f6e-803f-395190ca42e8)
+				{
+					features: feature_list [
+						TouchPressed(f85b682f-8c8f-48a7-8a78-28093d2876ee)
+						{
+							touchPressed: function<bool,int,int,int,int>(8a30bd74-0c27-4918-b88b-41023417a1b4)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(1e4b4217-5284-4da7-b6c4-5d745b1f2259)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "next-track-button"
+					visible: true
+					width: 43
+					height: 43
+					x: 373
+					y: 638
+					image: image_resource(855bf832-d7a1-409e-8c35-9801d34b7793)
+					{
+						file: "next.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfImage(e8f33361-526d-4ec6-9fb6-6c46d5baed6f)
+				{
+					features: feature_list [
+						TouchPressed(0b7ad966-aa3a-4264-b90f-dd33f1c8bb74)
+						{
+							touchPressed: function<bool,int,int,int,int>(860e807f-6696-4e07-bbac-21a1b8306cbd)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(23ded3fe-8325-4dc0-83ab-93c884b14169)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "previous-track-button"
+					visible: true
+					width: 48
+					height: 47
+					x: 178
+					y: 637
+					image: image_resource(0fa4d305-dba2-434b-9e61-e56c07af5422)
+					{
+						file: "previous.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfRectangle(3ed4955a-616b-4af0-ad0e-6c8fb325f2a7)
+				{
+					features: feature_list [
+						TouchPressed(baaa8e8e-9994-44db-9a7d-d994572748b3)
+						{
+							touchPressed: function<bool,int,int,int,int>(f6dac2df-ee82-4de7-8f02-01b2fc1a5259)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"    dp:\"button-play\"=dp:play" \
+									"	fire ev:goToRadio()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(991c28ed-23f2-40db-be60-29f593df2052)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "button-radio"
+					visible: true
+					width: 124
+					height: 64
+					x: 229
+					y: 92
+					fillColor: #FFFFFF00
+				}, 
+				GtfRectangle(c36552de-1f88-4690-b03a-f91f540a72d2)
+				{
+					features: feature_list [
+						TouchPressed(a6cdb29b-1f62-4bbb-9ac1-5e35f4f45223)
+						{
+							touchPressed: function<bool,int,int,int,int>(2ad5cdec-91c9-4583-9fe5-b018b00302f4)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	fire ev:goToBlueetooth()" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(fa3fb617-027d-4e22-87f5-a82586bf6d9a)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "button-bluetooth"
+					visible: true
+					width: 124
+					height: 64
+					x: 375
+					y: 112
+					fillColor: #FFFFFF00
+				}]
 			touchPressed: touchPressed@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<function<bool,int,int,int,int>>)
 			"touchPressed 2": "touchPressed 2"@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<function<bool,int,int,int,int>>)
 			image: image@dce1fc75-951c-461b-91d3-24b5a5f79e77 (propref<image>)

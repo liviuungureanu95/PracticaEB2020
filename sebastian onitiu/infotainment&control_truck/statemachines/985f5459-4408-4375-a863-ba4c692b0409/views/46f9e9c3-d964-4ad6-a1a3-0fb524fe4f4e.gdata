@@ -1,0 +1,429 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(46f9e9c3-d964-4ad6-a1a3-0fb524fe4f4e)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(2b24a647-dc9a-4255-a724-3ba57ed70f60)
+		{
+			features: feature_list [
+				ScaleMode(1b548302-cad5-4f61-b934-d546b208a632)
+				{
+					scaleMode: 1
+				}, 
+				TouchPressed(df5ca897-3fe6-4391-8771-c4db1350699e)
+				{
+					touchPressed: function<bool,int,int,int,int>(22bfa3bc-a0e4-40cd-8e9c-607108357d8e)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	fire ev:goToMedia()" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(b378a28c-8184-46d5-b600-7278f7505218)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "backToMenu button copy 1 copy 1 copy 1"
+			visible: true
+			width: 63
+			height: 59
+			x: 11
+			y: 714
+			image: image_resource(8c97646f-0810-448f-bcf8-92cfb26cda86)
+			{
+				file: "back_to_menu.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(5394cfca-2692-4ca7-afe6-bdaeafeba68b)
+		{
+			features: feature_list [
+				ScaleMode(9bb0cdff-d526-4c2f-a682-76f8e44bd4d3)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "radio-band"
+			visible: true
+			width: 579
+			height: 110
+			x: 2
+			y: 93
+			image: image_resource(22affc28-e253-4af7-8861-2866743084fd)
+			{
+				file: "radio-band.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(33478b44-a419-4c1c-b4d0-4d299532b8b4)
+		{
+			features: feature_list [
+				ScaleMode(c325721c-ec26-4489-aad0-a0699732ffd4)
+				{
+					scaleMode: 1
+				}, 
+				TouchPressed(662ce73f-f2d2-494c-a3a2-69081256eb78)
+				{
+					touchPressed: function<bool,int,int,int,int>(319c93c1-47fd-4f76-9658-4c7661376e33)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	" \
+							"	" \
+							"	" \
+							"	if(dp:\"band-fm\" > 88.000 && dp:\"band_fm\" < 560)" \
+							"	{   " \
+							"		" \
+							"		dp:\"band-fm\" -=0.500" \
+							"		" \
+							"		if(dp:band_fm >= 0 && dp:band_fm < 560)" \
+							"		{dp:band_fm -= 13 }" \
+							"		else" \
+							"		{" \
+							"			dp:band_fm = 88" \
+							"		}" \
+							"		" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"		dp:\"band-fm\" = 88.00" \
+							"	}" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(19bc2f53-7ddb-41e5-8353-7ff8b38bffc8)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "prev.FM"
+			visible: true
+			width: 88
+			height: 83
+			x: 5
+			y: 207
+			image: image_resource(87e9327b-1f49-473f-b777-155ab9b46e6c)
+			{
+				file: "previous.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(d67c36c8-7739-4676-b558-d9fc4290181a)
+		{
+			features: feature_list [
+				ScaleMode(e80f31ee-73e5-4d17-af0c-caa1e8185019)
+				{
+					scaleMode: 1
+				}, 
+				TouchPressed(16bdb84d-979b-45a4-bab7-312944c1b6a1)
+				{
+					touchPressed: function<bool,int,int,int,int>(82b5f195-f0a4-449a-abc1-8ea66e1f9d73)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:\"band-fm\" >= 88.000 && dp:\"band_fm\" < 560)" \
+							"	{   " \
+							"		" \
+							"		dp:\"band-fm\" +=0.500" \
+							"		" \
+							"		if(dp:band_fm >= 0 && dp:band_fm < 560)" \
+							"		{dp:band_fm += 13 }" \
+							"		else" \
+							"		{" \
+							"			dp:band_fm = 560" \
+							"		}" \
+							"		" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"		dp:\"band-fm\" = 108.0" \
+							"	}" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(44db3581-5450-4493-a7b8-968ff1b58dbb)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "next.FM"
+			visible: true
+			width: 88
+			height: 83
+			x: 487
+			y: 206
+			image: image_resource(c39a1675-07d1-41a6-8a4d-64614d50d5e2)
+			{
+				file: "next.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfRectangle(70daa723-3250-497f-bda4-3872df1e87fe)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "indicatorFM"
+			visible: true
+			width: 16
+			height: 107
+			x: @9dc97564-29cd-420e-93d6-254b66f703d4 (objectref<int>)
+			y: 93
+			fillColor: #FF4500FF
+		}, 
+		GtfLabel(a34d8554-4dbe-40d9-9ebc-14929aed905e)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "your_frequency-text"
+			visible: true
+			width: 180
+			height: 65
+			x: 115
+			y: 219
+			text: "Your Frequency"
+			textColor: #FFFFFFFF
+			font: font_resource(e7586eb7-5957-4c5d-b72f-05370b6edb37)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(238ce599-3161-43e5-8d32-b389405e0915)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "number-frequency-text"
+			visible: true
+			width: 100
+			height: 70
+			x: 325
+			y: 216
+			text: string_scriptedValue(0b81d1a8-4147-413e-88b8-3df2a824d604)
+			{
+				triggerList: trigger_list(21ec9c5a-d713-417e-a562-58ac6f1f7f7e)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(39805f7d-74c5-4d5e-a933-8e1573189bd2)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(2d999115-c1f7-40fe-8217-f23c149c0ede)
+				{
+					script: "function()" \
+						"{" \
+						"	f:float2string(dp:\"band-fm\")" \
+						"}"
+				}
+				write: function<bool,string>(cacd53ca-505a-4de3-afca-f424c720a2b7)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #FFFFFFFF
+			font: font_resource(33e6e018-73c2-4edd-8645-378b28f0fa77)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfInstantiator(4c2fc46d-57cb-412c-913c-e4b6927441f0)
+		{
+			features: feature_list [
+				LayoutPolicyGrid(75471837-2c58-419b-bf69-19d6b259f5a4)
+				{
+					horizontalGap: 6
+					verticalGap: 5
+					numRows: 3
+					numColumns: 2
+				}]
+			children: children_list [
+				GtfImage(fee39ef9-91c8-40ed-85f8-18ccd121bbc8)
+				{
+					features: feature_list [
+						ScaleMode(1873ef93-4fde-4639-8d4c-bf2f3f585cca)
+						{
+							scaleMode: 1
+						}, 
+						LineIndex(13497c6d-b900-4bd5-9311-1a4acd92b15f)
+						{
+							lineIndex: 0
+						}, 
+						Coloration(b0b1359d-4f3b-43a9-b74e-bddc5c4d37b3)
+						{
+							colorationEnabled: true
+							colorationColor: #FFFFFFFF
+						}, 
+						TouchPressed(d4db0cea-9053-46ff-b7f0-3ebeb4c85ae2)
+						{
+							touchPressed: function<bool,int,int,int,int>(7d4c1f0a-c119-4a1e-ba13-c20e638bc5f3)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(v:this.lineIndex == 0)" \
+									"	{" \
+									"		dp:band_fm = 217" \
+									"		dp:\"band-fm\"= 95.500" \
+									"		" \
+									"	}" \
+									"	else" \
+									"	if(v:this.lineIndex == 1)" \
+									"	{" \
+									"		dp:band_fm = 334" \
+									"		dp:\"band-fm\"= 100.0" \
+									"		" \
+									"	}" \
+									"	else" \
+									"	if(v:this.lineIndex == 2)" \
+									"	{" \
+									"		dp:band_fm = 425" \
+									"		dp:\"band-fm\"= 103.500" \
+									"		" \
+									"	}" \
+									"	else" \
+									"	if(v:this.lineIndex == 3)" \
+									"	{" \
+									"		dp:band_fm = 282" \
+									"		dp:\"band-fm\"= 98.500" \
+									"		" \
+									"	}" \
+									"	else" \
+									"	if(v:this.lineIndex == 4)" \
+									"	{" \
+									"		dp:band_fm = 113" \
+									"		dp:\"band-fm\"= 91.500" \
+									"	" \
+									"	}" \
+									"	else" \
+									"	if(v:this.lineIndex == 5)" \
+									"	{" \
+									"		dp:band_fm = 48" \
+									"		dp:\"band-fm\"= 89.0" \
+									"	" \
+									"	}" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(3c6273d2-3fd7-493e-9c7a-3f70ab9a40b5)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list [
+						GtfLabel(95651610-323d-4e85-813f-3a74aa5dd17f)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "name-posts"
+							visible: true
+							width: 126
+							height: 100
+							x: 0
+							y: 0
+							text: string_scriptedValue(f604e886-3bae-4245-be94-5edd8c0ae80c)
+							{
+								triggerList: trigger_list(6e856e84-c166-4b6a-b777-f28c670d0022)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(c796ecc8-2721-4489-bf41-9b7b6b9c1521)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<string>(6ade92fd-9acc-4f95-b0a9-cff539f8c1bd)
+								{
+									script: "function()" \
+										"{" \
+										"	dp:\"posts-radio\"[v:this->^.lineIndex]" \
+										"}"
+								}
+								write: function<bool,string>(7ef39167-1f36-4f03-b7da-d760f41fc5af)
+								{
+									script: "function(v:arg0::string)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							textColor: #FFFFFFFF
+							font: font_resource(72567a5f-080f-4f96-9bd5-6963ee1a2f56)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 30
+							}
+							horizontalAlign: 2
+							verticalAlign: 1
+						}]
+					name: "post-radio"
+					visible: true
+					width: 202
+					height: 64
+					x: 0
+					y: 0
+					image: image_resource(5c1fd238-e7fd-4cb5-bbb1-08060dc7dfc1)
+					{
+						file: "BUTON.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Instantiator"
+			visible: true
+			width: 409
+			height: 169
+			x: 94
+			y: 350
+			numItems: 6
+			lineMapping: intlist []
+		}]
+	name: "view radio"
+	visible: true
+	width: 580
+	height: 780
+	x: -1
+	y: 0
+}

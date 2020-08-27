@@ -49,7 +49,7 @@ GtfView(89989a94-3ad3-464c-9d16-33eae9b4dbcb)
 					children: children_list []
 					name: "BarcontrolHeat"
 					visible: true
-					width: 0
+					width: @73a0234b-4422-4bf4-a6ad-c4bba7e534af (objectref<int>)
 					height: 20
 					x: 186
 					y: 559
@@ -60,49 +60,54 @@ GtfView(89989a94-3ad3-464c-9d16-33eae9b4dbcb)
 					name: "left plus heat"
 					template: @f1cfb5db-aa91-48d1-aac8-cc492abb5ad0 (objectref<GtfImage_template>)
 					children: children_list []
-					x: 467
-					y: 531
+					x: 435
+					y: 195
 					touchPressed: function<bool,int,int,int,int>(b5ea60e2-c318-4d4b-af43-63d865911224)
 					{
 						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 							"{" \
 							"" \
-							"	if(v:this->^->BarcontrolHeat.width < 200)" \
+							"	if(v:this->^->\"BarcontrolHeat copy 1\".width < 200)" \
 							"	{" \
-							"		v:this->^->BarcontrolHeat.width = v:this->^->BarcontrolHeat.width + 20" \
-							"		v:this->^->\"temperature left seat\".text = \"Left seat temperature \" + f:int2string(v:this->^->BarcontrolHeat.width/8)" \
+							"		dp:\"temeprature-left\" = dp:\"temeprature-left\" + 20" \
+							"		v:this->^->\"temperature left seat\".text = \"Left seat temperature \" + f:int2string(dp:\"temeprature-left\"/8)" \
 							"	}" \
 							"	else" \
 							"	{" \
-							"		v:this->^->BarcontrolHeat.width = 200" \
+							"	dp:\"temperature-right\" = 200" \
 							"	}" \
 							"    false" \
 							"}"
 					}
+					width: width@f1cfb5db-aa91-48d1-aac8-cc492abb5ad0 (propref<int>)
+					height: height@f1cfb5db-aa91-48d1-aac8-cc492abb5ad0 (propref<int>)
 				}, 
 				GtfImage_template_instance(c1799279-914c-4e58-a52b-2ecd830943a9)
 				{
 					name: "left minus heat"
 					template: @d3d810ba-12d3-450c-92c3-7cfdc13fa329 (objectref<GtfImage_template>)
 					children: children_list []
-					x: 23
-					y: 532
+					x: 53
+					y: 534
 					touchPressed: function<bool,int,int,int,int>(289f0406-4ae4-4c03-8956-5a6a5aadca5c)
 					{
 						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 							"{" \
+							"	" \
 							"	if(v:this->^->BarcontrolHeat.width > 0)" \
 							"	{" \
-							"		v:this->^->BarcontrolHeat.width = v:this->^->BarcontrolHeat.width -20" \
-							"		v:this->^->\"temperature left seat\".text = \"Left seat temperature \" + f:int2string(v:this->^->BarcontrolHeat.width/8)" \
+							"		dp:\"temperature-right\" = dp:\"temperature-right\" - 20" \
+							"		v:this->^->\"temperature right seat\".text = \"Right seat temperature \" + f:int2string(dp:\"temperature-right\"/8)" \
 							"	}" \
 							"	else" \
 							"	{" \
-							"		v:this->^->BarcontrolHeat.width = 0" \
+							"	dp:\"temperature-right\" = 0" \
 							"	}" \
 							"    false" \
 							"}"
 					}
+					width: width@d3d810ba-12d3-450c-92c3-7cfdc13fa329 (propref<int>)
+					height: height@d3d810ba-12d3-450c-92c3-7cfdc13fa329 (propref<int>)
 				}, 
 				GtfLabel(a1ad61c7-562c-4d77-a23b-be200be8ed35)
 				{
@@ -112,8 +117,8 @@ GtfView(89989a94-3ad3-464c-9d16-33eae9b4dbcb)
 					visible: true
 					width: 274
 					height: 66
-					x: 152
-					y: 599
+					x: 150
+					y: 157
 					text: ""
 					textColor: #FFFFFFFF
 					font: font_resource(879102cc-a557-4550-98f8-795865fe4d0c)
@@ -142,7 +147,7 @@ GtfView(89989a94-3ad3-464c-9d16-33eae9b4dbcb)
 					children: children_list []
 					name: "BarcontrolHeat copy 1"
 					visible: true
-					width: 0
+					width: @4ff85187-a105-443d-8bb8-32a9fca1dd57 (objectref<int>)
 					height: 20
 					x: 183
 					y: 231
@@ -153,8 +158,8 @@ GtfView(89989a94-3ad3-464c-9d16-33eae9b4dbcb)
 					name: "right plus heat"
 					template: @f1cfb5db-aa91-48d1-aac8-cc492abb5ad0 (objectref<GtfImage_template>)
 					children: children_list []
-					x: 467
-					y: 200
+					x: 435
+					y: 534
 					touchPressed: function<bool,int,int,int,int>(b8f4c5a0-5689-4d59-aa59-27552f88b7bc)
 					{
 						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
@@ -162,40 +167,46 @@ GtfView(89989a94-3ad3-464c-9d16-33eae9b4dbcb)
 							"" \
 							"	if(v:this->^->BarcontrolHeat.width < 200)" \
 							"	{" \
-							"		v:this->^->\"BarcontrolHeat copy 1\".width = v:this->^->\"BarcontrolHeat copy 1\".width + 20" \
-							"		v:this->^->\"temperature right seat\".text = \"Right seat temperature \" + f:int2string(v:this->^->\"BarcontrolHeat copy 1\".width/8)" \
+							"		dp:\"temperature-right\" = dp:\"temperature-right\" + 20" \
+							"		v:this->^->\"temperature right seat\".text = \"Right seat temperature \" + f:int2string(dp:\"temperature-right\"/8)" \
 							"	}" \
 							"	else" \
 							"	{" \
-							"	v:this->^->\"BarcontrolHeat copy 1\".width = 200" \
+							"	dp:\"temperature-right\" = 200" \
 							"	}" \
 							"    false" \
 							"}"
 					}
+					width: width@f1cfb5db-aa91-48d1-aac8-cc492abb5ad0 (propref<int>)
+					height: height@f1cfb5db-aa91-48d1-aac8-cc492abb5ad0 (propref<int>)
 				}, 
 				GtfImage_template_instance(a0298649-dfcb-401e-9251-fd3934c901c8)
 				{
 					name: "right minus heat "
 					template: @d3d810ba-12d3-450c-92c3-7cfdc13fa329 (objectref<GtfImage_template>)
 					children: children_list []
-					x: 23
-					y: 201
+					x: 54
+					y: 195
 					touchPressed: function<bool,int,int,int,int>(eab14c23-d429-4cc5-801a-967e46feb979)
 					{
 						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
 							"{" \
+							"" \
+							"	" \
 							"	if(v:this->^->\"BarcontrolHeat copy 1\".width > 0)" \
 							"	{" \
-							"		v:this->^->\"BarcontrolHeat copy 1\".width = v:this->^->\"BarcontrolHeat copy 1\".width -20" \
-							"		v:this->^->\"temperature right seat\".text = \"Left seat temperature \" + f:int2string(v:this->^->\"BarcontrolHeat copy 1\".width/8)" \
+							"		dp:\"temeprature-left\" = dp:\"temeprature-left\" - 20" \
+							"		v:this->^->\"temperature left seat\".text = \"Left seat temperature \" + f:int2string(dp:\"temeprature-left\"/8)" \
 							"	}" \
 							"	else" \
 							"	{" \
-							"		v:this->^->\"BarcontrolHeat copy 1\".width = 0" \
+							"	dp:\"temperature-right\" = 0" \
 							"	}" \
 							"    false" \
 							"}"
 					}
+					width: width@d3d810ba-12d3-450c-92c3-7cfdc13fa329 (propref<int>)
+					height: height@d3d810ba-12d3-450c-92c3-7cfdc13fa329 (propref<int>)
 				}, 
 				GtfLabel(ee384434-2f4f-4cba-9979-41cd02b7a989)
 				{
@@ -205,9 +216,9 @@ GtfView(89989a94-3ad3-464c-9d16-33eae9b4dbcb)
 					visible: true
 					width: 272
 					height: 38
-					x: 154
-					y: 189
-					text: "label"
+					x: 153
+					y: 603
+					text: ""
 					textColor: #FFFFFFFF
 					font: font_resource(bd221e8b-1530-4eb4-a8ad-d1d7813170eb)
 					{
