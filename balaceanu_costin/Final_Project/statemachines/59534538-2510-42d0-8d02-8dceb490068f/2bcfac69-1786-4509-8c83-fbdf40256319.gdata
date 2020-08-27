@@ -1,0 +1,60 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_compound_state(2bcfac69-1786-4509-8c83-fbdf40256319)
+{
+	x: 319
+	y: 407
+	width: 300
+	height: 200
+	name: "YouTube"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions []
+	internal_transitions: haptic_internal_transitions []
+	background_color: #000000FF
+	states: haptic_states [
+		haptic_dialog_state(25d5ec83-21d5-4a4f-9e33-cbbece8aae01)
+		{
+			x: 67
+			y: 19
+			width: 100
+			height: 100
+			name: "YouTube"
+			entry_action: function<void>(b6550a4c-0990-4d80-b592-219daf1f5ce7)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:KEYBOARD:YouTube_Txt = \"\"" \
+					"}"
+			}
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (4e129074-dc7c-41d6-a48d-419dca1e50dc)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(d2aa4502-8408-4dc3-9a31-eeee34447595)
+	{
+		x: 9
+		y: 55
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(3551ca35-5cc8-43fe-8ab9-8b056a513cee)
+		{
+			action: function<void>(none)
+			target_state: @25d5ec83-21d5-4a4f-9e33-cbbece8aae01 (objectref<haptic_dialog_state>)
+			source_dock: 0.2702938F
+			target_dock: 0.7536498F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(none)
+}

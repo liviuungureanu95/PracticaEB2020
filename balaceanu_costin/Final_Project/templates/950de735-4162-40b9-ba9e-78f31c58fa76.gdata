@@ -1,0 +1,93 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(950de735-4162-40b9-ba9e-78f31c58fa76)
+{
+	name: "Ambient_Button"
+	structure: GtfContainer(96dbe6d1-8214-45fa-b080-b872825d69ea)
+	{
+		features: feature_list [
+			TouchPressed(99ae078b-c270-47c0-98c4-0e2da4a0c9c3)
+			{
+				touchPressed: function<bool,int,int,int,int>(112c9e63-2d01-4fe9-ba0e-4d7c96b1185c)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->background.borderColor = dp:BorderColor_Pressed" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(89a0dce6-27e6-40bb-bae8-12116c3f903a)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(9dfa6f34-a8f5-4b3b-9f7b-bb321edfa892)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->background.borderColor = dp:BorderColor" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(4ee2e570-afdf-4df2-b7a1-58d78793b88c)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(1fe05718-1420-43d5-b032-cc06460149d0)
+			{
+				features: feature_list [
+					Border(349874c5-94aa-4e57-955f-e2c4034aec51)
+					{
+						borderThickness: 2
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "background"
+				visible: true
+				width: width@96dbe6d1-8214-45fa-b080-b872825d69ea (propref<int>)
+				height: height@96dbe6d1-8214-45fa-b080-b872825d69ea (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #A9A9A9FF
+			}, 
+			GtfLabel(68128ea6-af8f-40e6-9fbf-bb20d27f8682)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "txt"
+				visible: true
+				width: width@96dbe6d1-8214-45fa-b080-b872825d69ea (propref<int>)
+				height: height@96dbe6d1-8214-45fa-b080-b872825d69ea (propref<int>)
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(2e0659f9-c2dd-4b30-bf95-82da7937c314)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 25
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 100
+		height: 50
+		x: 0
+		y: 0
+	}
+	Color: fillColor@1fe05718-1420-43d5-b032-cc06460149d0 (propref<color>)
+	BorderColor: borderColor@349874c5-94aa-4e57-955f-e2c4034aec51 (propref<color>)
+	text: text@68128ea6-af8f-40e6-9fbf-bb20d27f8682 (propref<string>)
+	x: x@96dbe6d1-8214-45fa-b080-b872825d69ea (propref<int>)
+	y: y@96dbe6d1-8214-45fa-b080-b872825d69ea (propref<int>)
+	touchShortReleased: touchShortReleased@89a0dce6-27e6-40bb-bae8-12116c3f903a (propref<function<bool,int,int,int,int>>)
+	width: width@96dbe6d1-8214-45fa-b080-b872825d69ea (propref<int>)
+	height: height@96dbe6d1-8214-45fa-b080-b872825d69ea (propref<int>)
+	visible: visible@96dbe6d1-8214-45fa-b080-b872825d69ea (propref<bool>)
+}

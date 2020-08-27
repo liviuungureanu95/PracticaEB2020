@@ -1,0 +1,353 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(4b0b1c99-dce5-4072-93fa-44341b639e9a)
+{
+	name: "zzzzzzzz"
+	structure: GtfContainer(9fc35faa-a4cb-440f-ae12-ca4aaeb5d526)
+	{
+		features: feature_list [
+			TouchPressed(4f784f48-9721-4709-b5db-2e38fdacc316)
+			{
+				touchPressed: function<bool,int,int,int,int>(2994032e-8ae5-4bb2-80c5-3ff07d75bb5e)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	f:animation_play(v:this->Image->\"Animation 3\")" \
+						"	f:animation_play(v:this->Image->\"Animation 5\")" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(aa387c07-9230-456d-b3ff-82d54edd39ec)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(5b5827b3-056a-454e-a6d9-a37c3dad88f5)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	f:animation_play(v:this->Image->\"Animation 4\")" \
+						"	f:animation_play(v:this->Image->\"Animation 6\")" \
+						"	v:this.Button_Function()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(9ae0c8e5-37ec-4de8-ae77-f67e174ad977)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfImage(46dddc4f-23f7-4af2-8194-1e2e2e460649)
+			{
+				features: feature_list [
+					Rotation(646e619d-1a11-4551-a101-3988c0631b04)
+					{
+						rotationEnabled: true
+						rotationAngleX: 0F
+						rotationAngleY: 0F
+						rotationAngleZ: 0F
+					}, 
+					Scaling(af860825-aaa7-4832-b783-fa6593b60e75)
+					{
+						scalingEnabled: true
+						scalingX: 100F
+						scalingY: 100F
+						scalingZ: 100F
+					}, 
+					Shearing(f5200a0a-4318-4603-8b17-0b7413aced46)
+					{
+						shearingEnabled: true
+						shearingXbyY: 0F
+						shearingXbyZ: 0F
+						shearingYbyX: 0F
+						shearingYbyZ: 0F
+						shearingZbyX: 0F
+						shearingZbyY: 0F
+					}, 
+					Pivot(465e68d4-c7ab-44d2-8805-cd5fc6b16292)
+					{
+						pivotX: float_scriptedValue(51545269-fa7e-4b1d-a112-fc59e1cd8668)
+						{
+							triggerList: trigger_list(bac6863c-594b-490f-8487-f713388e3ecb)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(7db6a5c9-7bec-4983-9447-4c82332f4690)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<float>(d2d7ea84-3953-45d9-a6c7-66e460cdd666)
+							{
+								script: "function()" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	f:int2float(v:this.width/2)" \
+									"}"
+							}
+							write: function<bool,float>(b0cb8989-b993-4087-a60e-37908c001e5b)
+							{
+								script: "function(v:arg0::float)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						pivotY: float_scriptedValue(d189e0f6-2baf-48c1-a871-9f5af52dd7fb)
+						{
+							triggerList: trigger_list(ac9a67da-8473-4c79-aec9-79d0278ebf22)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(0d8e1873-88f5-4453-b4e8-aff84ba42ba5)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<float>(f44319c2-7da0-459e-b578-915841ea3a5f)
+							{
+								script: "function()" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	f:int2float(v:this.height/2)" \
+									"}"
+							}
+							write: function<bool,float>(ece4f597-f5f8-4f91-aa41-1c956a523bb7)
+							{
+								script: "function(v:arg0::float)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						pivotZ: 0F
+					}]
+				children: children_list [
+					GtfParallelAnimation(2a92e572-53d8-4e3b-9d87-59383749ea68)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLinearInterpolationFloat(85bf6d0d-81f4-4ce8-8a1d-a85ab8e07cf5)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Linear interpolation curve 1"
+								enabled: true
+								delay: 0
+								duration: 10
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 100F
+								end: 80F
+								target: scalingY@af860825-aaa7-4832-b783-fa6593b60e75 (propref<float>)
+							}]
+						name: "Animation 3"
+						enabled: true
+						repeat: 1
+						alternating: false
+						scale: 1F
+						onPlay: function<void,int,bool>(103a86d2-616f-4030-a764-8e4e167f8b28)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(34a3476f-c528-463e-96ae-8520350eb026)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(6a763139-878b-4b35-8205-0c99231651ff)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+					}, 
+					GtfParallelAnimation(a9690c8a-6622-40a5-ba1d-55f18f01a8ce)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLinearInterpolationFloat(620c330f-0d79-4dc0-97b8-7ed707e29bd3)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Linear interpolation curve 2"
+								enabled: true
+								delay: 0
+								duration: 10
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 80F
+								end: 100F
+								target: scalingY@af860825-aaa7-4832-b783-fa6593b60e75 (propref<float>)
+							}]
+						name: "Animation 4"
+						enabled: true
+						repeat: 1
+						alternating: false
+						scale: 1F
+						onPlay: function<void,int,bool>(8aca8de9-71e5-42b7-940a-e971dcc95047)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(743b3070-9679-49c6-bfa7-f4f233c30bf1)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(989caa02-7da9-4935-9c9d-359f9a997ff6)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+					}, 
+					GtfParallelAnimation(01de03ee-5150-4335-b09d-d4a0d107f81d)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLinearInterpolationFloat(99f95c07-5770-4303-b86c-29d91aa4a50f)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Linear interpolation curve 3"
+								enabled: true
+								delay: 0
+								duration: 10
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 100F
+								end: 80F
+								target: scalingX@af860825-aaa7-4832-b783-fa6593b60e75 (propref<float>)
+							}]
+						name: "Animation 5"
+						enabled: true
+						repeat: 1
+						alternating: false
+						scale: 1F
+						onPlay: function<void,int,bool>(2afa9234-63f5-4a73-bfed-afad0f0a6b02)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(08bc3edc-98b3-4669-9ae8-da6aa3e8a28b)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(cf135cd9-b15d-4590-8e6f-37afefa33ef8)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+					}, 
+					GtfParallelAnimation(5d69e7ac-e60e-4bed-b84e-b02059ea4d13)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLinearInterpolationFloat(97864163-10fb-445e-a7af-b64dc0dfa950)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "Linear interpolation curve 4"
+								enabled: true
+								delay: 0
+								duration: 10
+								repeat: 1
+								alternating: false
+								relative: false
+								start: 80F
+								end: 100F
+								target: scalingX@af860825-aaa7-4832-b783-fa6593b60e75 (propref<float>)
+							}]
+						name: "Animation 6"
+						enabled: true
+						repeat: 1
+						alternating: false
+						scale: 1F
+						onPlay: function<void,int,bool>(0befe837-a537-4276-b7f3-5a9715660f48)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(b9e25171-7b62-4605-a23f-d573b95dd5b4)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(9780f281-fbeb-4f11-a4cf-2fc6e74d6731)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+					}]
+				name: "Image"
+				visible: true
+				width: 100
+				height: 100
+				x: 0
+				y: 0
+				image: image_resource(7f2b7913-2256-470e-8722-0213a6cff076)
+				{
+					file: "1111.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "Container"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		Button_Function: function<bool>(6c430668-7ba7-4be8-a78a-174afdc066d4)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	x: x@9fc35faa-a4cb-440f-ae12-ca4aaeb5d526 (propref<int>)
+	y: y@9fc35faa-a4cb-440f-ae12-ca4aaeb5d526 (propref<int>)
+	Button_Function: Button_Function@9fc35faa-a4cb-440f-ae12-ca4aaeb5d526 (propref<function<bool>>)
+	image: image@46dddc4f-23f7-4af2-8194-1e2e2e460649 (propref<image>)
+}

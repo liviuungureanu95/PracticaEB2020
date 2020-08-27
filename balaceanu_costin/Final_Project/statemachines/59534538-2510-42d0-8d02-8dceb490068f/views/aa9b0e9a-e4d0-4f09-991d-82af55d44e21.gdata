@@ -1,0 +1,240 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(aa9b0e9a-e4d0-4f09-991d-82af55d44e21)
+{
+	name: "Driving_Mode_View"
+	template: @95461b8a-82f0-421b-ba66-6095f03a1846 (objectref<GtfView_template>)
+	children: children_list [
+		GtfImage(d310f70e-24e1-4208-b657-2b7a1f6a5efd)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfContainer_template_instance(dfc97921-23fe-40c1-9eb3-861d157a271e)
+				{
+					name: "Ambient_Button 1"
+					template: @950de735-4162-40b9-ba9e-78f31c58fa76 (objectref<GtfContainer_template>)
+					children: children_list []
+					Color: #FFFFFF00
+					BorderColor: BorderColor@950de735-4162-40b9-ba9e-78f31c58fa76 (propref<color>)
+					text: "SELECT"
+					x: 69
+					y: 294
+					touchShortReleased: function<bool,int,int,int,int>(7d49e97a-22f5-4eca-87e5-693208ed9b77)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->\"Ambient_Button 1\".BorderColor = dp:BorderColor" \
+							"	dp:Driveing_Mode = \"Effiency\"" \
+							"	v:this->^->DrivingMode_effiency.borderColor = dp:BorderColor_Pressed" \
+							"	v:this->^->DrivingMode_comfort.borderColor = dp:BorderColor_red" \
+							"	v:this->^->DrivingMode_auto.borderColor = dp:BorderColor_red" \
+							"	v:this->^->DrivingMode_dynamic.borderColor = dp:BorderColor_red" \
+							"	v:this->^->DrivingMode_sport.borderColor = dp:BorderColor_red" \
+							"    false" \
+							"}"
+					}
+					width: width@950de735-4162-40b9-ba9e-78f31c58fa76 (propref<int>)
+					height: height@950de735-4162-40b9-ba9e-78f31c58fa76 (propref<int>)
+					visible: visible@950de735-4162-40b9-ba9e-78f31c58fa76 (propref<bool>)
+				}, 
+				GtfContainer_template_instance(65de43df-d441-4cf7-8f89-6770d7ba2c5e)
+				{
+					name: "Ambient_Button 2"
+					template: @950de735-4162-40b9-ba9e-78f31c58fa76 (objectref<GtfContainer_template>)
+					children: children_list []
+					Color: #FFFFFF00
+					BorderColor: BorderColor@950de735-4162-40b9-ba9e-78f31c58fa76 (propref<color>)
+					text: "SELECT"
+					x: 205
+					y: 320
+					touchShortReleased: function<bool,int,int,int,int>(bdd2c239-9be5-4ef9-b97b-1d78e1218ce6)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->\"Ambient_Button 2\".BorderColor = dp:BorderColor" \
+							"	dp:Driveing_Mode = \"Comfort\"" \
+							"	v:this->^->DrivingMode_comfort.borderColor = dp:BorderColor_Pressed" \
+							"	v:this->^->DrivingMode_effiency.borderColor = dp:BorderColor_red" \
+							"	v:this->^->DrivingMode_auto.borderColor = dp:BorderColor_red" \
+							"	v:this->^->DrivingMode_dynamic.borderColor = dp:BorderColor_red" \
+							"	v:this->^->DrivingMode_sport.borderColor = dp:BorderColor_red" \
+							"    false" \
+							"}"
+					}
+					width: width@950de735-4162-40b9-ba9e-78f31c58fa76 (propref<int>)
+					height: height@950de735-4162-40b9-ba9e-78f31c58fa76 (propref<int>)
+					visible: visible@950de735-4162-40b9-ba9e-78f31c58fa76 (propref<bool>)
+				}, 
+				GtfContainer_template_instance(d4be31c7-fbbd-49f2-b352-8206939d2325)
+				{
+					name: "Ambient_Button 3"
+					template: @950de735-4162-40b9-ba9e-78f31c58fa76 (objectref<GtfContainer_template>)
+					children: children_list []
+					Color: #FFFFFF00
+					BorderColor: BorderColor@950de735-4162-40b9-ba9e-78f31c58fa76 (propref<color>)
+					text: "SELECT"
+					x: 345
+					y: 334
+					touchShortReleased: function<bool,int,int,int,int>(15033c84-1c8f-4490-930f-b9dddbf9f101)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->\"Ambient_Button 3\".BorderColor = dp:BorderColor" \
+							"	dp:Driveing_Mode = \"Auto\"" \
+							"	v:this->^->DrivingMode_auto.borderColor = dp:BorderColor_Pressed" \
+							"	v:this->^->DrivingMode_comfort.borderColor = dp:BorderColor_red" \
+							"	v:this->^->DrivingMode_effiency.borderColor = dp:BorderColor_red" \
+							"	v:this->^->DrivingMode_dynamic.borderColor = dp:BorderColor_red" \
+							"	v:this->^->DrivingMode_sport.borderColor = dp:BorderColor_red" \
+							"    false" \
+							"}"
+					}
+					width: width@950de735-4162-40b9-ba9e-78f31c58fa76 (propref<int>)
+					height: height@950de735-4162-40b9-ba9e-78f31c58fa76 (propref<int>)
+					visible: visible@950de735-4162-40b9-ba9e-78f31c58fa76 (propref<bool>)
+				}, 
+				GtfContainer_template_instance(0006c58d-0a6f-425c-8c8d-cd440e6070e7)
+				{
+					name: "Ambient_Button 4"
+					template: @950de735-4162-40b9-ba9e-78f31c58fa76 (objectref<GtfContainer_template>)
+					children: children_list []
+					Color: #FFFFFF00
+					BorderColor: BorderColor@950de735-4162-40b9-ba9e-78f31c58fa76 (propref<color>)
+					text: "SELECT"
+					x: 499
+					y: 319
+					touchShortReleased: function<bool,int,int,int,int>(d454ac0d-1922-45a6-8da6-387cb4314051)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->\"Ambient_Button 4\".BorderColor = dp:BorderColor" \
+							"	dp:Driveing_Mode = \"Dynamic\" " \
+							"	v:this->^->DrivingMode_dynamic.borderColor = dp:BorderColor_Pressed" \
+							"	v:this->^->DrivingMode_comfort.borderColor = dp:BorderColor_red" \
+							"	v:this->^->DrivingMode_auto.borderColor = dp:BorderColor_red" \
+							"	v:this->^->DrivingMode_effiency.borderColor = dp:BorderColor_red" \
+							"	v:this->^->DrivingMode_sport.borderColor = dp:BorderColor_red" \
+							"    false" \
+							"}"
+					}
+					width: width@950de735-4162-40b9-ba9e-78f31c58fa76 (propref<int>)
+					height: height@950de735-4162-40b9-ba9e-78f31c58fa76 (propref<int>)
+					visible: visible@950de735-4162-40b9-ba9e-78f31c58fa76 (propref<bool>)
+				}, 
+				GtfContainer_template_instance(674b6ba5-e73e-49a9-bf8e-e90dc18ada96)
+				{
+					name: "Ambient_Button 5"
+					template: @950de735-4162-40b9-ba9e-78f31c58fa76 (objectref<GtfContainer_template>)
+					children: children_list []
+					Color: #FFFFFF00
+					BorderColor: BorderColor@950de735-4162-40b9-ba9e-78f31c58fa76 (propref<color>)
+					text: "SELECT"
+					x: 647
+					y: 292
+					touchShortReleased: function<bool,int,int,int,int>(ca7e19bc-6429-4221-a7d4-878481a70f66)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->\"Ambient_Button 5\".BorderColor = dp:BorderColor" \
+							"	dp:Driveing_Mode = \"Sport\"" \
+							"	v:this->^->DrivingMode_sport.borderColor = dp:BorderColor_Pressed" \
+							"	v:this->^->DrivingMode_comfort.borderColor = dp:BorderColor_red" \
+							"	v:this->^->DrivingMode_auto.borderColor = dp:BorderColor_red" \
+							"	v:this->^->DrivingMode_dynamic.borderColor = dp:BorderColor_red" \
+							"	v:this->^->DrivingMode_effiency.borderColor = dp:BorderColor_red" \
+							"    false " \
+							"}"
+					}
+					width: width@950de735-4162-40b9-ba9e-78f31c58fa76 (propref<int>)
+					height: height@950de735-4162-40b9-ba9e-78f31c58fa76 (propref<int>)
+					visible: visible@950de735-4162-40b9-ba9e-78f31c58fa76 (propref<bool>)
+				}, 
+				GtfRectangle_template_instance(05b35154-4d8e-4fca-b637-3dc6be0dd345)
+				{
+					name: "DrivingMode_effiency"
+					template: @a4f61628-aca0-4ed4-b9c1-e70c1a22ed23 (objectref<GtfRectangle_template>)
+					children: children_list []
+					text: "effiency"
+					width: 91
+					x: 101
+					y: 197
+					borderColor: borderColor@a4f61628-aca0-4ed4-b9c1-e70c1a22ed23 (propref<color>)
+				}, 
+				GtfRectangle_template_instance(bf8a3782-7c37-4b73-bd14-f49df54c347d)
+				{
+					name: "DrivingMode_comfort"
+					template: @a4f61628-aca0-4ed4-b9c1-e70c1a22ed23 (objectref<GtfRectangle_template>)
+					children: children_list []
+					text: "COMFORT"
+					width: 120
+					x: 212
+					y: 233
+					borderColor: borderColor@a4f61628-aca0-4ed4-b9c1-e70c1a22ed23 (propref<color>)
+				}, 
+				GtfRectangle_template_instance(d1bccb1d-c621-4931-8c78-e302190bfb9d)
+				{
+					name: "DrivingMode_auto"
+					template: @a4f61628-aca0-4ed4-b9c1-e70c1a22ed23 (objectref<GtfRectangle_template>)
+					children: children_list []
+					text: "auto"
+					width: 65
+					x: 359
+					y: 241
+					borderColor: borderColor@a4f61628-aca0-4ed4-b9c1-e70c1a22ed23 (propref<color>)
+				}, 
+				GtfRectangle_template_instance(e89a8906-c74d-4bff-97cc-f44d12428f11)
+				{
+					name: "DrivingMode_dynamic"
+					template: @a4f61628-aca0-4ed4-b9c1-e70c1a22ed23 (objectref<GtfRectangle_template>)
+					children: children_list []
+					text: "dynamic"
+					width: 95
+					x: 469
+					y: 233
+					borderColor: borderColor@a4f61628-aca0-4ed4-b9c1-e70c1a22ed23 (propref<color>)
+				}, 
+				GtfRectangle_template_instance(ff00b1d6-1203-42f9-a03c-42fc0b7be2bd)
+				{
+					name: "DrivingMode_sport"
+					template: @a4f61628-aca0-4ed4-b9c1-e70c1a22ed23 (objectref<GtfRectangle_template>)
+					children: children_list []
+					text: "SPORT"
+					width: 80
+					x: 607
+					y: 197
+					borderColor: borderColor@a4f61628-aca0-4ed4-b9c1-e70c1a22ed23 (propref<color>)
+				}]
+			name: "Background"
+			visible: true
+			width: 800
+			height: 410
+			x: 0
+			y: 68
+			image: image_resource(6295f54d-982d-45b9-9573-f4b52bbf33a2)
+			{
+				file: "DriveMode_Background.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfRectangle_template_instance(5082253b-7d62-4dfb-ab0e-10230d1f597f)
+		{
+			name: "TopBar 1"
+			template: @946dc760-ee83-4771-bd7f-52f3864de092 (objectref<GtfRectangle_template>)
+			children: children_list []
+			MainText: "Drive Mode"
+			BackButton_Background: BackButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Background: MainMenuButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Visible: MainMenuButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			BackButton_Visible: BackButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			Released_BACK: function<bool>(cc683ee8-cab5-4d5b-aa67-7b8fa278d395)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoTo_Settings()" \
+					"	false" \
+					"}"
+			}
+		}]
+}

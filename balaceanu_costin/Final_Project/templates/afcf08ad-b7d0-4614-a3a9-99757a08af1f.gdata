@@ -1,0 +1,211 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(afcf08ad-b7d0-4614-a3a9-99757a08af1f)
+{
+	name: "WEEL_Button"
+	structure: GtfContainer(aead499d-5b79-4a16-aca9-92d0fc0541da)
+	{
+		features: feature_list [
+			TouchPressed(20e8110b-24dc-456b-ab1c-06519e91dc78)
+			{
+				touchPressed: function<bool,int,int,int,int>(cb73276c-4473-415f-8070-788d4f841893)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	f:animation_play(v:this->\"Animation 4\")" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(6d9f6bea-171f-4d9f-93a7-6dbf93349a94)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(557906cd-4e42-4310-b45f-25dc923da528)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.\"Release button\"()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(94660673-c901-4bdc-9997-44f8fe56e9e4)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			Rotation(13b4dd81-7e66-4eee-8942-d4754b30a04d)
+			{
+				rotationEnabled: true
+				rotationAngleX: 0F
+				rotationAngleY: 0F
+				rotationAngleZ: 0F
+			}, 
+			Scaling(41d62938-db72-4544-b934-6bf237a45d6d)
+			{
+				scalingEnabled: true
+				scalingX: 100F
+				scalingY: 100F
+				scalingZ: 100F
+			}, 
+			Shearing(3d94d6c7-45c6-4d2d-9a5a-577c92234b57)
+			{
+				shearingEnabled: true
+				shearingXbyY: 0F
+				shearingXbyZ: 0F
+				shearingYbyX: 0F
+				shearingYbyZ: 0F
+				shearingZbyX: 0F
+				shearingZbyY: 0F
+			}, 
+			Pivot(0bcce0d6-dd52-42a1-810b-1a7cb60a9c7c)
+			{
+				pivotX: float_scriptedValue(0b901082-1a3b-4e0a-9d13-df7aae000fa4)
+				{
+					triggerList: trigger_list(8ddb9683-3f67-4309-bf5a-993ded0169df)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(f68d2b80-0a5c-4138-9dfa-f25f6aeb11c1)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<float>(4fc3d072-551d-4aea-ab47-65ad2f275de5)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	f:int2float(v:this.width/2)" \
+							"}"
+					}
+					write: function<bool,float>(f9ad9fce-dc7d-48fd-9911-261752404e34)
+					{
+						script: "function(v:arg0::float)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				pivotY: float_scriptedValue(8b1ef318-b6d1-434b-9404-766b08fddec2)
+				{
+					triggerList: trigger_list(d8a0f065-8ce8-4a51-ad55-a7e935ff73b1)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(17fea164-726b-4ee0-9437-ffcd5129deef)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<float>(43bff6a2-d857-4c06-abf3-94d5984c7e80)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	f:int2float(v:this.height/2)" \
+							"}"
+					}
+					write: function<bool,float>(55f5c990-fa04-4bd8-910a-847257720efe)
+					{
+						script: "function(v:arg0::float)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				pivotZ: 0F
+			}]
+		children: children_list [
+			GtfImage(7e89e442-3e27-4890-809b-76fea63a7844)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "background"
+				visible: true
+				width: width@aead499d-5b79-4a16-aca9-92d0fc0541da (propref<int>)
+				height: height@aead499d-5b79-4a16-aca9-92d0fc0541da (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(1cdc7f06-d448-4e57-bc47-0b1d66e0c666)
+				{
+					file: "WEEL_background.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfParallelAnimation(fc8d062e-f425-4faa-9b4b-e9902f867fa0)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLinearInterpolationFloat(3fafeb43-1f33-4c25-a72b-d50066290ca1)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Linear interpolation curve 5"
+						enabled: true
+						delay: 0
+						duration: 800
+						repeat: 2
+						alternating: false
+						relative: false
+						start: 0F
+						end: -360F
+						target: rotationAngleZ@13b4dd81-7e66-4eee-8942-d4754b30a04d (propref<float>)
+					}]
+				name: "Animation 4"
+				enabled: true
+				repeat: 1
+				alternating: false
+				scale: 1F
+				onPlay: function<void,int,bool>(27153c61-783c-4ca4-bf0c-45b079279e8b)
+				{
+					script: "function(v:animation_time::int, v:forward::bool)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onPause: function<void,int>(7580c773-1530-4ee0-89a1-c96851b845bf)
+				{
+					script: "function(v:animation_time::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onTerminate: function<void,int,int>(e1a5149e-5f47-4079-8065-3dae241a9755)
+				{
+					script: "function(v:animation_time::int, v:terminate::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+			}]
+		name: "Container"
+		visible: true
+		width: 150
+		height: 150
+		x: 0
+		y: 0
+		"Release button": function<bool>(5edee961-89b3-4630-b7d6-8531cb0020fc)
+		{
+			script: "function()" \
+				"{" \
+				"	" \
+				"	false" \
+				"}"
+		}
+	}
+	x: x@aead499d-5b79-4a16-aca9-92d0fc0541da (propref<int>)
+	y: y@aead499d-5b79-4a16-aca9-92d0fc0541da (propref<int>)
+	"Release button": "Release button"@aead499d-5b79-4a16-aca9-92d0fc0541da (propref<function<bool>>)
+}

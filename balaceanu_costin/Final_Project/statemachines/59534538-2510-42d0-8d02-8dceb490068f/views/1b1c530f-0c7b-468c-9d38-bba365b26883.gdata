@@ -1,0 +1,476 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(1b1c530f-0c7b-468c-9d38-bba365b26883)
+{
+	name: "Hotspot_View"
+	template: @95461b8a-82f0-421b-ba66-6095f03a1846 (objectref<GtfView_template>)
+	children: children_list [
+		GtfRectangle_template_instance(3aac39c1-af8d-42aa-9723-0e04b2d87332)
+		{
+			name: "TopBar 1"
+			template: @946dc760-ee83-4771-bd7f-52f3864de092 (objectref<GtfRectangle_template>)
+			children: children_list []
+			MainText: "Hotspot"
+			BackButton_Background: BackButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Background: MainMenuButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Visible: MainMenuButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			BackButton_Visible: BackButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			Released_BACK: function<bool>(bec3097b-36c1-4b31-a43c-a693af0ec644)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoTo_Settings()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfLabel(88685cd4-e30c-476b-a957-8bcc402b1e6a)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Conect to"
+			visible: true
+			width: 284
+			height: 100
+			x: 28
+			y: 69
+			text: "Connect to hotspot below !"
+			textColor: #00FF00FF
+			font: font_resource(eb53c35b-6bf0-478c-b969-bee043fb86ed)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(6fc0d93b-84f0-4e26-a77d-46b7d951a46e)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "You are connected"
+			visible: true
+			width: 227
+			height: 100
+			x: 511
+			y: 147
+			text: "You are connected at :"
+			textColor: #00FF00FF
+			font: font_resource(5510fcdf-986f-47da-9e87-f324d28a7551)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(6e76c493-6775-4fd2-aa24-4055e7e71733)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Hotspot_name"
+			visible: true
+			width: 260
+			height: 100
+			x: 494
+			y: 180
+			text: string_scriptedValue(7f47cac4-39c4-4803-a984-70f7386091d5)
+			{
+				triggerList: trigger_list(49918a83-28b5-4d34-8fdb-fd5830373cf2)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(7c318ee0-9f32-43b8-8a45-f6b4e15c0343)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(8375cac6-a35c-40ff-9c66-098ab91acec8)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:Hotspot" \
+						"}"
+				}
+				write: function<bool,string>(13177f2c-0337-4f0b-b5cb-9bbc448c9feb)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #9FFF00FF
+			font: font_resource(2ff485bb-f96a-418d-9d06-f1d5207c31f8)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(4391111c-b293-4f6d-b040-5aae70e0b088)
+		{
+			name: "Hotspot_Button 1"
+			template: @96ca8fed-5ba8-404a-b051-f6850e87fe8c (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "Internet_Costin"
+			x: 25
+			y: 160
+			borderColor: borderColor@96ca8fed-5ba8-404a-b051-f6850e87fe8c (propref<color>)
+			touchShortReleased: function<bool,int,int,int,int>(84f67a77-ea2f-42ca-a753-777c86e3d532)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->\"Hotspot_Button 2\".borderColor = dp:BorderColor" \
+					"	v:this->^->\"Hotspot_Button 3\".borderColor = dp:BorderColor" \
+					"	v:this->^->\"Hotspot_Button 4\".borderColor = dp:BorderColor" \
+					"	v:this->^->\"Hotspot_Button 5\".borderColor = dp:BorderColor" \
+					"	dp:Hotspot = \"Internet_Costin\"" \
+					"    false" \
+					"}"
+			}
+			touchPressed: function<bool,int,int,int,int>(c9212da1-1c3e-4e59-b43b-a1421e7c3b56)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->\"Hotspot_Button 1\".borderColor = dp:BorderColor_Pressed" \
+					"    false" \
+					"}"
+			}
+			visible: false
+		}, 
+		GtfContainer_template_instance(b5434c9e-8f27-477b-a5d8-648b321aa7f6)
+		{
+			name: "Hotspot_Button 2"
+			template: @96ca8fed-5ba8-404a-b051-f6850e87fe8c (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "internet pe gratis"
+			x: 25
+			y: 225
+			borderColor: borderColor@96ca8fed-5ba8-404a-b051-f6850e87fe8c (propref<color>)
+			touchShortReleased: function<bool,int,int,int,int>(36813530-3e3a-42f0-bc0b-4e71d7821106)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->\"Hotspot_Button 1\".borderColor = dp:BorderColor" \
+					"	v:this->^->\"Hotspot_Button 3\".borderColor = dp:BorderColor" \
+					"	v:this->^->\"Hotspot_Button 4\".borderColor = dp:BorderColor" \
+					"	v:this->^->\"Hotspot_Button 5\".borderColor = dp:BorderColor" \
+					"	dp:Hotspot = \"internet pe gratis\"" \
+					"    false" \
+					"}"
+			}
+			touchPressed: function<bool,int,int,int,int>(4cf850d9-d014-4bbe-9614-9f91f0e0ad51)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->\"Hotspot_Button 2\".borderColor = dp:BorderColor_Pressed" \
+					"    false" \
+					"}"
+			}
+			visible: false
+		}, 
+		GtfContainer_template_instance(0f700922-45ce-44ed-b98b-764f9fcb1386)
+		{
+			name: "Hotspot_Button 3"
+			template: @96ca8fed-5ba8-404a-b051-f6850e87fe8c (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "NeT fara parola"
+			x: 25
+			y: 290
+			borderColor: borderColor@96ca8fed-5ba8-404a-b051-f6850e87fe8c (propref<color>)
+			touchShortReleased: function<bool,int,int,int,int>(d1cbfc62-740d-46ca-8134-5c43b71fe0d1)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->\"Hotspot_Button 1\".borderColor = dp:BorderColor" \
+					"	v:this->^->\"Hotspot_Button 2\".borderColor = dp:BorderColor" \
+					"	v:this->^->\"Hotspot_Button 4\".borderColor = dp:BorderColor" \
+					"	v:this->^->\"Hotspot_Button 5\".borderColor = dp:BorderColor" \
+					"	dp:Hotspot = \"NeT fara parola\"" \
+					"    false" \
+					"}"
+			}
+			touchPressed: function<bool,int,int,int,int>(95d7ec4c-ceff-4d10-9453-8e20bb1c919e)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->\"Hotspot_Button 3\".borderColor = dp:BorderColor_Pressed" \
+					"    false" \
+					"}"
+			}
+			visible: false
+		}, 
+		GtfContainer_template_instance(2dcbe9c6-0b10-464c-b59c-6cdec747c665)
+		{
+			name: "Hotspot_Button 4"
+			template: @96ca8fed-5ba8-404a-b051-f6850e87fe8c (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "i n t e r n e t"
+			x: 25
+			y: 355
+			borderColor: borderColor@96ca8fed-5ba8-404a-b051-f6850e87fe8c (propref<color>)
+			touchShortReleased: function<bool,int,int,int,int>(35440986-5251-4ac6-9a76-7edb832bab99)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->\"Hotspot_Button 1\".borderColor = dp:BorderColor" \
+					"	v:this->^->\"Hotspot_Button 2\".borderColor = dp:BorderColor" \
+					"	v:this->^->\"Hotspot_Button 3\".borderColor = dp:BorderColor" \
+					"	v:this->^->\"Hotspot_Button 5\".borderColor = dp:BorderColor" \
+					"	dp:Hotspot = \"i n t e r n e t\"" \
+					"    false" \
+					"}"
+			}
+			touchPressed: function<bool,int,int,int,int>(0d4a8125-d495-4c4b-8d94-8a19db637883)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->\"Hotspot_Button 4\".borderColor = dp:BorderColor_Pressed" \
+					"    false" \
+					"}"
+			}
+			visible: false
+		}, 
+		GtfContainer_template_instance(fe2c88cc-f91a-4441-b757-578ff9bdea8f)
+		{
+			name: "Hotspot_Button 5"
+			template: @96ca8fed-5ba8-404a-b051-f6850e87fe8c (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "House_Internet"
+			x: 25
+			y: 420
+			borderColor: borderColor@96ca8fed-5ba8-404a-b051-f6850e87fe8c (propref<color>)
+			touchShortReleased: function<bool,int,int,int,int>(7dda5e4c-6f0a-4ca6-980a-23a22201f094)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->\"Hotspot_Button 1\".borderColor = dp:BorderColor" \
+					"	v:this->^->\"Hotspot_Button 2\".borderColor = dp:BorderColor" \
+					"	v:this->^->\"Hotspot_Button 3\".borderColor = dp:BorderColor" \
+					"	v:this->^->\"Hotspot_Button 4\".borderColor = dp:BorderColor" \
+					"	dp:Hotspot = \"House_Internet\"" \
+					"    false" \
+					"}"
+			}
+			touchPressed: function<bool,int,int,int,int>(af0281cf-b90e-4c0c-94bb-728a675a55b2)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->\"Hotspot_Button 5\".borderColor = dp:BorderColor_Pressed" \
+					"    false" \
+					"}"
+			}
+			visible: false
+		}, 
+		GtfImage(4b95fe25-6bd1-4d71-84a6-db895ce384c4)
+		{
+			features: feature_list [
+				Rotation(ccc2cf06-dd19-4eef-94c9-34225d2defe9)
+				{
+					rotationEnabled: true
+					rotationAngleX: 0F
+					rotationAngleY: 0F
+					rotationAngleZ: 0F
+				}, 
+				Scaling(4f74454d-3170-47fc-a7b6-990eeb514dfe)
+				{
+					scalingEnabled: true
+					scalingX: 150F
+					scalingY: 150F
+					scalingZ: 100F
+				}, 
+				Shearing(16e51fbd-9fe0-467f-ae89-b131001593aa)
+				{
+					shearingEnabled: true
+					shearingXbyY: 0F
+					shearingXbyZ: 0F
+					shearingYbyX: 0F
+					shearingYbyZ: 0F
+					shearingZbyX: 0F
+					shearingZbyY: 0F
+				}, 
+				Pivot(3c02e8ec-3f15-44b9-8083-e7d2ed4ccb9e)
+				{
+					pivotX: float_scriptedValue(2df0cf22-ffc7-4cec-8fb4-b0ca45171974)
+					{
+						triggerList: trigger_list(ba99fc10-f3c2-4ec8-81fe-8cdcbc8282b9)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(93ba691a-a8b3-416f-8d69-2b63d3348b0f)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<float>(5aed1228-f210-4950-8cac-49127de5ffdb)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:int2float(v:this.width/2)" \
+								"}"
+						}
+						write: function<bool,float>(89a45e4a-e9a1-4298-96a2-79b87c1c5f23)
+						{
+							script: "function(v:arg0::float)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					pivotY: float_scriptedValue(6a04169a-81f2-4d12-9e70-7f05b791d160)
+					{
+						triggerList: trigger_list(c6d978db-ce9f-44e9-ba9a-af62ef95726a)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(116816d9-9a20-47f3-9ded-075ecd425002)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<float>(02bda919-bbb2-4572-9112-2a90a4bcb5b7)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:int2float(v:this.height/2)" \
+								"}"
+						}
+						write: function<bool,float>(599a8981-a8ad-435f-a8e8-b0b4f1ced089)
+						{
+							script: "function(v:arg0::float)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					pivotZ: 0F
+				}]
+			children: children_list [
+				GtfParallelAnimation(c6556346-ce57-4033-a578-d5b1872db6f0)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationFloat(2dc1516a-2abb-4989-bdf0-7d165a251c83)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Linear interpolation curve 1"
+							enabled: true
+							delay: 0
+							duration: 1000
+							repeat: 0
+							alternating: false
+							relative: false
+							start: 0F
+							end: -360F
+							target: rotationAngleZ@ccc2cf06-dd19-4eef-94c9-34225d2defe9 (propref<float>)
+						}]
+					name: "Animation 1"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(c1f08d76-afa1-48ba-b005-a35a531657d0)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(9165939f-0e45-4b95-95c9-a172e5879112)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(9d28e71f-6287-45b9-bc51-43812e450ce3)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					"Start Animation": conditional_script(8cffd506-abf9-4ca2-8efc-9fce78b83b83)
+					{
+						triggerList: trigger_list(1184cfed-557b-4fee-969f-381ae3216a9e)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(5a8204f5-de91-43c3-a408-cf976a37fae0)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:animation_play(v:this)" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "waiting"
+			visible: true
+			width: 70
+			height: 70
+			x: 134
+			y: 282
+			image: image_resource(d6f55fb9-5223-42a0-a5b0-9c5ebc9363e8)
+			{
+				file: "Waiting_Img.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+	Condition: conditional_script(1c992b17-a359-4fab-b535-cef54c38f96b)
+	{
+		triggerList: trigger_list(898247fe-6439-4311-9d16-68f4ee797fd9)
+		{
+			script: "ev:HOTSPOT:Load_Hotspot1" \
+				"ev:HOTSPOT:Load_Hotspot2" \
+				"ev:HOTSPOT:Load_Hotspot3" \
+				""
+		}
+		onTrigger: function<bool,bool>(7a44f73d-d131-4e79-b5d4-0917a5852d6e)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	match_event v:event = ev:HOTSPOT:Load_Hotspot1 in" \
+				"{" \
+				"	v:this->\"Hotspot_Button 1\".visible = true" \
+				"}" \
+				"	match_event v:event = ev:HOTSPOT:Load_Hotspot2 in" \
+				"{" \
+				"	v:this->\"Hotspot_Button 2\".visible = true" \
+				"	v:this->\"Hotspot_Button 3\".visible = true" \
+				"}" \
+				"	match_event v:event = ev:HOTSPOT:Load_Hotspot3 in" \
+				"{" \
+				"	v:this->\"Hotspot_Button 4\".visible = true" \
+				"	v:this->\"Hotspot_Button 5\".visible = true" \
+				"	v:this->waiting.visible = false" \
+				"}" \
+				"" \
+				"" \
+				"	false" \
+				"}"
+		}
+	}
+}

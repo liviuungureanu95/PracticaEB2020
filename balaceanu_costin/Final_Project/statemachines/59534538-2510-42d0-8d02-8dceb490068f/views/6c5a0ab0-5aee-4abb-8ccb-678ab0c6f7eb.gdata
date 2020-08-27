@@ -1,0 +1,143 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(6c5a0ab0-5aee-4abb-8ccb-678ab0c6f7eb)
+{
+	name: "Audi_Connect_View"
+	template: @95461b8a-82f0-421b-ba66-6095f03a1846 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(66003fc4-d5b3-49a2-839f-8bc7e85683a9)
+		{
+			name: "LanguageButton 1"
+			template: @3dec476b-ecd7-42d9-8eab-62f7eb2acd70 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 125
+			y: 190
+			Background_Image: image_resource(47b24d8e-93a0-4dad-bf6b-9af3fe42ba07)
+			{
+				file: "Android_background.png"
+			}
+			BorderColor: BorderColor@3dec476b-ecd7-42d9-8eab-62f7eb2acd70 (propref<color>)
+			Released: function<bool,int,int,int,int>(2ddb8a6a-f82d-4993-ba43-50c79c3dbec3)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->\"LanguageButton 2\".BorderColor = dp:BorderColor" \
+					"	dp:Audi_Connect = \"Android\"" \
+					"    false" \
+					"}"
+			}
+			text: ""
+		}, 
+		GtfContainer_template_instance(d67341da-670f-4eb4-a6fd-1eb9777675c9)
+		{
+			name: "LanguageButton 2"
+			template: @3dec476b-ecd7-42d9-8eab-62f7eb2acd70 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 420
+			y: 190
+			Background_Image: image_resource(b6baf2d6-6580-4b99-ac76-0ad9bbc32a96)
+			{
+				file: "IOS_background.jpg"
+			}
+			BorderColor: BorderColor@3dec476b-ecd7-42d9-8eab-62f7eb2acd70 (propref<color>)
+			Released: function<bool,int,int,int,int>(f676a822-ff41-460b-b3a0-178872b891b6)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->\"LanguageButton 1\".BorderColor = dp:BorderColor" \
+					"	dp:Audi_Connect = \"IOS\"" \
+					"    false" \
+					"}"
+			}
+			text: ""
+		}, 
+		GtfLabel(7ba7d864-8474-4697-bc38-0428a550d355)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Info"
+			visible: true
+			width: 300
+			height: 100
+			x: 155
+			y: 70
+			text: "You are connected at :"
+			textColor: #00FF00FF
+			font: font_resource(5042eece-2712-4573-87c0-64085dafc5ac)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 40
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(85f24c0c-1b5a-49ec-b885-43734b10fa2e)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "connection"
+			visible: true
+			width: 253
+			height: 100
+			x: 460
+			y: 70
+			text: string_scriptedValue(52a6435f-33d4-4ff9-a896-f56ff8d54a2c)
+			{
+				triggerList: trigger_list(c782f9e2-defd-430e-8775-fd33bae2b9e6)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(fe00c8ca-423a-42ec-8721-173cc5af825a)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(32c3286d-fdca-4e67-86f1-0b27d7cad135)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:Audi_Connect" \
+						"}"
+				}
+				write: function<bool,string>(2154ad76-cde7-434e-ac4a-adc8f2ba28e6)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #87FF00FF
+			font: font_resource(7453c45b-8947-4194-8ebd-03cc3c81a213)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 45
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfRectangle_template_instance(012bdb96-f343-4079-a9f1-ea982a758d1e)
+		{
+			name: "TopBar 1"
+			template: @946dc760-ee83-4771-bd7f-52f3864de092 (objectref<GtfRectangle_template>)
+			children: children_list []
+			MainText: "Connect"
+			BackButton_Background: BackButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Background: MainMenuButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Visible: MainMenuButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			BackButton_Visible: BackButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			Released_BACK: function<bool>(9913796d-48ff-47d0-8371-7a6469e796a3)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoTo_Settings()" \
+					"	false" \
+					"}"
+			}
+		}]
+}

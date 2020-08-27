@@ -1,0 +1,217 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(2f2fd12c-42d6-408a-9bb1-b4aaf5067cf7)
+{
+	name: "ESP_View"
+	template: @95461b8a-82f0-421b-ba66-6095f03a1846 (objectref<GtfView_template>)
+	children: children_list [
+		GtfLabel(4bca737c-c09a-4bb0-95ad-d9ba00f4ee4f)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "ESPis"
+			visible: true
+			width: 126
+			height: 66
+			x: 28
+			y: 84
+			text: "ESP is :"
+			textColor: #00FF00FF
+			font: font_resource(1b93e068-29b9-49a3-86e4-3ff290ca1077)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(e74acc13-2c62-4bc2-a2d1-2b00e3d22fae)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "ON/OFF"
+			visible: true
+			width: 73
+			height: 66
+			x: 152
+			y: 84
+			text: string_scriptedValue(3bac0629-0a74-4f32-a306-154e0080d41a)
+			{
+				triggerList: trigger_list(6d5804ac-c231-441c-a84f-185b0779649f)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(eac26e5b-96e8-40ad-8e09-2c8432bb9d18)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(38621d9e-b6f8-427f-9f05-b23ca10b46e5)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:ESP_ALL:\"ESP_ON/OFF\"" \
+						"}"
+				}
+				write: function<bool,string>(97d4e7e1-8968-4e3b-9d09-7233570e8126)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #FFFFFFFF
+			font: font_resource(8192c200-7cd3-4a69-83d1-975a018220fb)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfImage(5fb53fe3-26af-4049-ad69-2188660b2d2e)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "ON/OFF_img"
+			visible: true
+			width: 300
+			height: 277
+			x: 435
+			y: 140
+			image: image_resource(07e90062-b0d0-4e3c-a6bf-a86a08a6ab6f)
+			{
+				file: "ESP_ON.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfContainer(458c5f33-2f2d-490b-9625-535dd2707ef5)
+		{
+			features: feature_list [
+				TouchShortReleased(b37522ff-ba13-48b1-b3cc-bfa20802314d)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(9de4a85b-0108-46ff-8767-b93f4b7a6550)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->\"ON/OFF_img\".image = dp:ESP_ALL:ESP_OFF" \
+							"	dp:ESP_ALL:\"ESP_ON/OFF\" = \"OFF\"" \
+							"	v:this->^->Button_ESP_ON.visible = false" \
+							"	v:this->^->Button_ESP_OFF.visible = true" \
+							"	dp:MARTORS:ESP = true" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(3261151f-f1d0-43ac-85a8-0ca5f02684ed)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfImage(1dee1838-874e-413b-ac67-b02268f5a034)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Background"
+					visible: true
+					width: width@458c5f33-2f2d-490b-9625-535dd2707ef5 (propref<int>)
+					height: height@458c5f33-2f2d-490b-9625-535dd2707ef5 (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(69206a44-21e0-4542-9069-7974cf64946c)
+					{
+						file: "ESP_ON_img.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Button_ESP_ON"
+			visible: true
+			width: 150
+			height: 61
+			x: 56
+			y: 175
+		}, 
+		GtfContainer(3fc22245-6acf-4526-881d-e39181f24d34)
+		{
+			features: feature_list [
+				TouchShortReleased(c0cd7b5f-2c19-4fde-b5d2-81fea16147b8)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(f1d564a4-3459-4f70-94cb-ca698e5209b8)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->\"ON/OFF_img\".image = dp:ESP_ALL:ESP_ON" \
+							"	dp:ESP_ALL:\"ESP_ON/OFF\" = \"ON\"" \
+							"	v:this->^->Button_ESP_OFF.visible = false" \
+							"	v:this->^->Button_ESP_ON.visible = true" \
+							"	dp:MARTORS:ESP = false" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(5ef6c0f8-bdc2-4142-b156-7ca5842a8a46)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfImage(98d91cee-8361-4888-83ce-bb8c0034a999)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Background"
+					visible: true
+					width: width@3fc22245-6acf-4526-881d-e39181f24d34 (propref<int>)
+					height: height@3fc22245-6acf-4526-881d-e39181f24d34 (propref<int>)
+					x: 0
+					y: 0
+					image: image_resource(4bf15afa-dd96-4ac0-8f70-f0406f9d297f)
+					{
+						file: "ESP_OFF_img.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}]
+			name: "Button_ESP_OFF"
+			visible: false
+			width: 150
+			height: 61
+			x: 56
+			y: 175
+		}, 
+		GtfRectangle_template_instance(59cf1331-4e1f-4535-a137-217fb6497688)
+		{
+			name: "TopBar 1"
+			template: @946dc760-ee83-4771-bd7f-52f3864de092 (objectref<GtfRectangle_template>)
+			children: children_list []
+			MainText: "ESP"
+			BackButton_Background: BackButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Background: MainMenuButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Visible: MainMenuButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			BackButton_Visible: BackButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			Released_BACK: function<bool>(6c5f9720-a0e4-4239-ad26-778390c2a4a8)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoTo_Settings()" \
+					"	false" \
+					"}"
+			}
+		}]
+}

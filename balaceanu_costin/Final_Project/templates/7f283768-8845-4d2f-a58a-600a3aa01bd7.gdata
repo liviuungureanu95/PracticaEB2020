@@ -1,0 +1,63 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(7f283768-8845-4d2f-a58a-600a3aa01bd7)
+{
+	name: "Arrow_button"
+	structure: GtfContainer(3583f10d-aa59-4b69-8040-22eba5adc768)
+	{
+		features: feature_list [
+			TouchShortReleased(c1df7eeb-57fe-477f-ae35-5c6dc646d02b)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(7fb2a6ea-2f2c-4889-97df-dceb4dcd07ab)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(212c3629-ba76-440b-800b-f78376cfa765)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			Rotation(2d0ecaca-73d8-4a76-89dd-7beb966d7ef4)
+			{
+				rotationEnabled: true
+				rotationAngleX: 0F
+				rotationAngleY: 0F
+				rotationAngleZ: 0F
+			}]
+		children: children_list [
+			GtfImage(b8ef71f4-d19b-40eb-ad35-6968963b198d)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "background"
+				visible: true
+				width: width@3583f10d-aa59-4b69-8040-22eba5adc768 (propref<int>)
+				height: height@3583f10d-aa59-4b69-8040-22eba5adc768 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(5714bf15-74ab-4cd4-bb18-f61e546e5647)
+				{
+					file: "Arrow.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}]
+		name: "Container"
+		visible: true
+		width: 30
+		height: 30
+		x: 0
+		y: 0
+	}
+	y: y@3583f10d-aa59-4b69-8040-22eba5adc768 (propref<int>)
+	x: x@3583f10d-aa59-4b69-8040-22eba5adc768 (propref<int>)
+	touchShortReleased: touchShortReleased@c1df7eeb-57fe-477f-ae35-5c6dc646d02b (propref<function<bool,int,int,int,int>>)
+	rotationAngleZ: rotationAngleZ@2d0ecaca-73d8-4a76-89dd-7beb966d7ef4 (propref<float>)
+}

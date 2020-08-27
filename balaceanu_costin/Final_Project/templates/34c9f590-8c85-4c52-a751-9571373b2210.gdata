@@ -1,0 +1,295 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(34c9f590-8c85-4c52-a751-9571373b2210)
+{
+	name: "zzzzzz"
+	structure: GtfContainer(5bf2e514-7997-425f-a43a-cd97dd9b1dca)
+	{
+		features: feature_list [
+			LayoutPolicyFlow(2ff44992-f0ac-4d34-9394-c81f32e20690)
+			{
+				horizontalGap: 30
+				verticalGap: 0
+				layoutDirection: 0
+				horizontalChildAlign: 0
+				verticalChildAlign: 0
+			}, 
+			ViewPort(46f6b982-108b-449a-980c-082711d46a74)
+			{
+				xOffset: 0
+				yOffset: 0
+			}, 
+			TouchMove(8a1be18a-bd39-4d00-9cb5-7f8a6654e774)
+			{
+				touchMoved: function<bool,int,int,int,int>(3658b244-5090-494c-92d2-83fbbc3babce)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	//v:this.xOffset = v:x" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(ed1bc95a-6fcb-492b-b45a-9e281d1e1858)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfContainer_template_instance(4ac050ef-4f49-48bc-88e0-8e1a8b6fdf28)
+			{
+				name: "WhatsAPP"
+				template: @1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (objectref<GtfContainer_template>)
+				children: children_list []
+				Background: image_resource(cc725255-d94c-4730-b475-e45a657fff55)
+				{
+					file: "WHATSAPPbutton_background.png"
+				}
+				Title: ""
+				x: x@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<int>)
+				y: y@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<int>)
+				AnimationRotate: false
+				ReactOnPredded: function<bool>(6e8537bf-2af1-4dfa-b86f-b3c8569d5023)
+				{
+					script: "function()" \
+						"{" \
+						"	fire ev:GoTo_WhatApp()" \
+						"	false" \
+						"}"
+				}
+				visible: visible@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<bool>)
+			}, 
+			GtfContainer_template_instance(877c9a3a-de53-4fdc-9198-fc4f5c87f958)
+			{
+				name: "Spotify"
+				template: @1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (objectref<GtfContainer_template>)
+				children: children_list []
+				Background: image_resource(6ba44d17-de29-4d2c-ad8c-6580b81bf95e)
+				{
+					file: "SPOTIFYbutton_background.png"
+				}
+				Title: ""
+				x: x@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<int>)
+				y: y@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<int>)
+				AnimationRotate: false
+				ReactOnPredded: function<bool>(a5109d8a-9a23-4178-b633-f96114ac2859)
+				{
+					script: "function()" \
+						"{" \
+						"	fire ev:GoTo_Spotify()" \
+						"	false" \
+						"}"
+				}
+				visible: visible@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<bool>)
+			}, 
+			GtfContainer_template_instance(8ebce883-52a2-4f9c-b686-c0d4e3b0551c)
+			{
+				name: "Waze"
+				template: @1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (objectref<GtfContainer_template>)
+				children: children_list []
+				Background: image_resource(a29659f8-2149-4932-95ba-9d9983952334)
+				{
+					file: "WAZEbutton_background.png"
+				}
+				Title: ""
+				x: x@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<int>)
+				y: y@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<int>)
+				AnimationRotate: false
+				ReactOnPredded: function<bool>(43df13c7-264c-40b9-a794-890c2e0b5d9f)
+				{
+					script: "function()" \
+						"{" \
+						"	fire ev:GoTo_Waze()" \
+						"	false" \
+						"}"
+				}
+				visible: visible@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<bool>)
+			}, 
+			GtfContainer_template_instance(5d43530d-7356-4fac-9c37-889f9e9ad4c6)
+			{
+				name: "Radio"
+				template: @1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (objectref<GtfContainer_template>)
+				children: children_list []
+				Background: image_resource(60731073-6df7-4c46-a6e2-cb91216ba95c)
+				{
+					file: "RADIObutton_background.png"
+				}
+				Title: ""
+				x: x@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<int>)
+				y: y@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<int>)
+				AnimationRotate: false
+				ReactOnPredded: function<bool>(99dbcd6b-c46a-45fe-b6e4-2b42390a1364)
+				{
+					script: "function()" \
+						"{" \
+						"	fire ev:GoTo_Radio()" \
+						"	false" \
+						"}"
+				}
+				visible: visible@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<bool>)
+			}, 
+			GtfContainer_template_instance(1c486f3a-a7f5-44e8-9c49-1c4ccab1776a)
+			{
+				name: "Language"
+				template: @1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (objectref<GtfContainer_template>)
+				children: children_list []
+				Background: image_resource(f1ad7fa4-d8d7-4b58-8d64-da220b1ffc93)
+				{
+					file: "LANGUAGESbutton_background.png"
+				}
+				Title: "LANGUAGES"
+				x: x@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<int>)
+				y: y@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<int>)
+				AnimationRotate: false
+				ReactOnPredded: function<bool>(80ca51cd-246c-4cfd-bb0f-06e9ad937b85)
+				{
+					script: "function()" \
+						"{" \
+						"	fire ev:GoTo_Language()" \
+						"	false" \
+						"}"
+				}
+				visible: visible@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<bool>)
+			}, 
+			GtfContainer_template_instance(39d745bf-cb29-41ad-b7a4-bd5b3d732171)
+			{
+				name: "Settings"
+				template: @1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (objectref<GtfContainer_template>)
+				children: children_list []
+				Background: Background@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<image>)
+				Title: Title@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<string>)
+				x: x@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<int>)
+				y: y@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<int>)
+				AnimationRotate: AnimationRotate@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<bool>)
+				ReactOnPredded: ReactOnPredded@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<function<bool>>)
+				visible: visible@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<bool>)
+			}, 
+			GtfContainer_template_instance(2720eda9-99ba-44aa-b43a-165ad295ed81)
+			{
+				name: "InfoCar"
+				template: @1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (objectref<GtfContainer_template>)
+				children: children_list []
+				Background: image_resource(f73c332c-ce1b-4e73-9c29-fd2479f99aac)
+				{
+					file: "INFOCARbutton_background.png"
+				}
+				Title: "INFO"
+				x: x@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<int>)
+				y: y@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<int>)
+				AnimationRotate: false
+				ReactOnPredded: function<bool>(90487189-99c0-43b2-acba-69b3c4f2a3ce)
+				{
+					script: "function()" \
+						"{" \
+						"	fire ev:GoTo_InfoCar()" \
+						"	false" \
+						"}"
+				}
+				visible: visible@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<bool>)
+			}, 
+			GtfContainer_template_instance(fe2ba4ba-7da7-4646-b56f-03b4f2251b7f)
+			{
+				name: "Phone"
+				template: @1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (objectref<GtfContainer_template>)
+				children: children_list []
+				Background: image_resource(5f06db36-614a-4d33-b744-c91272e2ce89)
+				{
+					file: "PHONEbutton_background.png"
+				}
+				Title: ""
+				x: x@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<int>)
+				y: y@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<int>)
+				AnimationRotate: false
+				ReactOnPredded: function<bool>(ef98e048-ef28-4f55-b389-2e98747bbb35)
+				{
+					script: "function()" \
+						"{" \
+						"	fire ev:GoTo_Phone()" \
+						"	false" \
+						"}"
+				}
+				visible: visible@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<bool>)
+			}, 
+			GtfContainer_template_instance(1a972629-2b52-43ae-b337-0f5c3172d1db)
+			{
+				name: "YouTube"
+				template: @1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (objectref<GtfContainer_template>)
+				children: children_list []
+				Background: image_resource(46c01b1e-a4b4-467c-9146-fabfe740133c)
+				{
+					file: "YOUTUBEbutton_background.png"
+				}
+				Title: ""
+				x: x@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<int>)
+				y: y@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<int>)
+				AnimationRotate: false
+				ReactOnPredded: function<bool>(2e69ce6e-e363-446d-9cea-d2e00ddf9c0c)
+				{
+					script: "function()" \
+						"{" \
+						"	fire ev:GoTo_YouTube()" \
+						"	false" \
+						"}"
+				}
+				visible: visible@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<bool>)
+			}, 
+			GtfContainer_template_instance(5c7eb6f4-e2e2-44f2-b3fe-c04b2ed73171)
+			{
+				name: "Google"
+				template: @1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (objectref<GtfContainer_template>)
+				children: children_list []
+				Background: image_resource(06838805-88b1-4e47-b380-6d4f6df6288b)
+				{
+					file: "GOOGLEbutton_background.png"
+				}
+				Title: ""
+				x: x@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<int>)
+				y: y@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<int>)
+				AnimationRotate: false
+				ReactOnPredded: function<bool>(43045e89-60c9-460b-a81f-f62952a87d78)
+				{
+					script: "function()" \
+						"{" \
+						"	fire ev:GoTo_Google()" \
+						"	false" \
+						"}"
+				}
+				visible: visible@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<bool>)
+			}, 
+			GtfContainer_template_instance(c9e42346-6765-4a64-9a7e-5fbf21f4111d)
+			{
+				name: "Calendar"
+				template: @1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (objectref<GtfContainer_template>)
+				children: children_list []
+				Background: image_resource(535037f6-d043-4ba5-a159-a74ffbc2509f)
+				{
+					file: "CALENDARbutton_background.png"
+				}
+				Title: ""
+				x: x@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<int>)
+				y: y@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<int>)
+				AnimationRotate: false
+				ReactOnPredded: function<bool>(e615e19f-b129-44f4-adf0-d51c446a2b5e)
+				{
+					script: "function()" \
+						"{" \
+						"	fire ev:GoTo_Calendar()" \
+						"	false" \
+						"}"
+				}
+				visible: visible@1f54ee7e-1ff0-4e6b-8444-1aa96245bea7 (propref<bool>)
+			}]
+		name: "Container"
+		visible: true
+		width: 2500
+		height: 200
+		x: -850
+		y: 190
+	}
+	visible: visible@5bf2e514-7997-425f-a43a-cd97dd9b1dca (propref<bool>)
+	x: x@5bf2e514-7997-425f-a43a-cd97dd9b1dca (propref<int>)
+	y: y@5bf2e514-7997-425f-a43a-cd97dd9b1dca (propref<int>)
+	xOffset: xOffset@46f6b982-108b-449a-980c-082711d46a74 (propref<int>)
+}

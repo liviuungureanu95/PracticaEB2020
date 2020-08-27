@@ -1,0 +1,394 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(475e04a1-5c42-4be1-85b4-1bfe0b2ab7c8)
+{
+	name: "Oil_level"
+	template: @95461b8a-82f0-421b-ba66-6095f03a1846 (objectref<GtfView_template>)
+	children: children_list [
+		GtfRectangle(99fe6d97-97f0-41df-a48c-11c3caddb48f)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "OIL_RECIPE"
+			visible: true
+			width: 42
+			height: 300
+			x: 170
+			y: 125
+			fillColor: #000000FF
+		}, 
+		GtfImage(d482636d-c02a-490d-9b8f-8af66a1e0cde)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfParallelAnimation(2aafed95-62f4-4632-b03c-ad03f655c116)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationS32(a29bf819-5023-4df2-8d39-cd1da819583a)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Linear interpolation curve 1"
+							enabled: true
+							delay: 0
+							duration: 3000
+							repeat: 1
+							alternating: false
+							relative: false
+							start: 0
+							end: 156
+							target: height@d482636d-c02a-490d-9b8f-8af66a1e0cde (propref<int>)
+						}, 
+						GtfLinearInterpolationS32(f55a6155-d753-422b-9312-71572102c51c)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Linear interpolation curve 2"
+							enabled: true
+							delay: 0
+							duration: 3000
+							repeat: 1
+							alternating: false
+							relative: false
+							start: 422
+							end: 266
+							target: y@d482636d-c02a-490d-9b8f-8af66a1e0cde (propref<int>)
+						}]
+					name: "Animation 6"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(d3289d99-20d0-4be5-b6fe-92b6a0bc12a7)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(9d7bfc78-65e3-4faf-9eae-160def66acb7)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(8ee771ee-43ff-47a6-b4e3-66d22cef53ef)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+				}]
+			name: "OIL_img"
+			visible: true
+			width: 35
+			height: 156
+			x: 174
+			y: 266
+			image: image_resource(45d5805e-d8a0-43e3-b97c-017c289dfe49)
+			{
+				file: "OIL_image.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(71334ad3-2da9-492d-90e4-8abb0738085d)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "MAX_txt"
+			visible: true
+			width: 100
+			height: 40
+			x: 218
+			y: 105
+			text: "----  MAX"
+			textColor: #FF0000FF
+			font: font_resource(bb9047ab-dd35-4eb7-9d94-898cdad6ab3d)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(fa0325ec-034e-4973-8c12-47edd46c9bec)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "MIN_txt"
+			visible: true
+			width: 100
+			height: 40
+			x: 218
+			y: 400
+			text: "----  MIN"
+			textColor: #FF0000FF
+			font: font_resource(f97a61ed-8514-4855-92d0-0f5fe2451790)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfLabel(7d123c40-f7dc-438a-af81-ae78cc2dd9a2)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 13"
+			visible: true
+			width: 100
+			height: 40
+			x: 218
+			y: 255
+			text: "----  OK"
+			textColor: #00FF00FF
+			font: font_resource(ed4853ad-75a1-45ae-a5be-40f1a6734fc1)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 0
+			verticalAlign: 0
+		}, 
+		GtfContainer(962090b4-de60-4575-b6db-24c98cf48219)
+		{
+			features: feature_list [
+				TouchPressed(a3fa2957-1ea6-4edf-a690-b374c539b813)
+				{
+					touchPressed: function<bool,int,int,int,int>(41956015-b45a-404c-8df2-92bd86ed7483)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	f:animation_play(v:this->background->\"Animation 5\")" \
+							"    false" \
+							"}"
+					}
+				}, 
+				TouchShortReleased(91708d34-215c-4efc-9c2a-7e058d6661a8)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(9c2ea0fa-e1a8-4103-9a11-c3cfbd06311d)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	f:animation_cancel(v:this->background->\"Animation 5\")" \
+							"	v:this->background.rotationAngleZ = 0.0" \
+							"	f:animation_play(v:this->^->OIL_img->\"Animation 6\")" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(42b2c2ba-e322-477a-a61d-a956db330951)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list [
+				GtfImage(b5e71baf-d237-4653-aba4-6072c50a02fe)
+				{
+					features: feature_list [
+						Rotation(ad70014d-b915-4ad1-8b7f-f746ac361bda)
+						{
+							rotationEnabled: true
+							rotationAngleX: 0F
+							rotationAngleY: 0F
+							rotationAngleZ: 0F
+						}, 
+						Scaling(b7699bd8-4c39-4132-9fc4-51b2284d349a)
+						{
+							scalingEnabled: true
+							scalingX: 100F
+							scalingY: 100F
+							scalingZ: 100F
+						}, 
+						Shearing(19c01209-1d22-45b4-ad20-0f1dcb43e2a5)
+						{
+							shearingEnabled: true
+							shearingXbyY: 0F
+							shearingXbyZ: 0F
+							shearingYbyX: 0F
+							shearingYbyZ: 0F
+							shearingZbyX: 0F
+							shearingZbyY: 0F
+						}, 
+						Pivot(75833fcb-2078-4505-9aa5-b35d0976f878)
+						{
+							pivotX: float_scriptedValue(ae9e152d-01c2-4f32-b83f-d6f848df4336)
+							{
+								triggerList: trigger_list(3d4fccc6-6f73-4bc0-a0aa-9c6447fd207a)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(3e5089f4-f425-4064-acbf-294493f0ad59)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<float>(ab63f956-d2cd-4c76-bbea-ba1a11f854cf)
+								{
+									script: "function()" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	f:int2float(v:this.width/2)" \
+										"}"
+								}
+								write: function<bool,float>(ba7331d0-623c-4fe4-8b2a-3937dc5c27b8)
+								{
+									script: "function(v:arg0::float)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							pivotY: float_scriptedValue(74eb0beb-7e07-4251-b1fc-dda03c30ec2d)
+							{
+								triggerList: trigger_list(4b3cc834-6538-48f9-b02c-5dd841e78233)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(eb2cee46-9a3f-44a0-aadf-3f66fcafd5b7)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<float>(a8a6d148-654c-4adf-a5e9-0f9da483b4ff)
+								{
+									script: "function()" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	f:int2float(v:this.height/2)" \
+										"}"
+								}
+								write: function<bool,float>(181d054c-a2f3-42c7-ab96-6b2dcaaa75a3)
+								{
+									script: "function(v:arg0::float)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							pivotZ: 0F
+						}]
+					children: children_list [
+						GtfParallelAnimation(a8474820-0d6b-4db1-8da3-306af162350f)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationFloat(a7e3e4b8-b3f0-47d2-88ed-e7968e8d381d)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve 6"
+									enabled: true
+									delay: 0
+									duration: 1000
+									repeat: 0
+									alternating: false
+									relative: false
+									start: 0F
+									end: -20F
+									target: rotationAngleZ@ad70014d-b915-4ad1-8b7f-f746ac361bda (propref<float>)
+								}]
+							name: "Animation 5"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(baaf1f47-0c90-4361-af42-a43c7d4a27dc)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(693a60d3-c0f5-4fb3-993e-81c155a09fa0)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(1510d7ba-efd9-4e81-b376-3360944fbd2d)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}]
+					name: "background"
+					visible: true
+					width: 150
+					height: 150
+					x: 0
+					y: 0
+					image: image_resource(1c56616e-b0df-4dfe-8d47-ecbe54a633af)
+					{
+						file: "CHECK_OIL_button.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfLabel(abb83982-fc81-4271-9084-1f46bd4911e2)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "check"
+					visible: true
+					width: 95
+					height: 49
+					x: 21
+					y: 100
+					text: "check"
+					textColor: #FFFFFFFF
+					font: font_resource(413b5a90-727d-46d2-a3ca-d8f97599172b)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}]
+			name: "Check_Button"
+			visible: true
+			width: 150
+			height: 150
+			x: 504
+			y: 217
+		}, 
+		GtfRectangle_template_instance(76cbeb78-c7e9-4051-8d66-9e9bf30825d4)
+		{
+			name: "TopBar 1"
+			template: @946dc760-ee83-4771-bd7f-52f3864de092 (objectref<GtfRectangle_template>)
+			children: children_list []
+			MainText: "Oil Level"
+			BackButton_Background: BackButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Background: MainMenuButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Visible: MainMenuButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			BackButton_Visible: BackButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			Released_BACK: function<bool>(68086567-4b7e-4326-8d6d-e0afb13819f2)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoTo_InfoCar()" \
+					"	false" \
+					"}"
+			}
+		}]
+}

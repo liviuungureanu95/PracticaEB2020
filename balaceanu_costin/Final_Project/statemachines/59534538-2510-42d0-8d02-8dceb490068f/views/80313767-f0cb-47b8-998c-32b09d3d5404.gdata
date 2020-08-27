@@ -1,0 +1,501 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(80313767-f0cb-47b8-998c-32b09d3d5404)
+{
+	name: "Spotify_View"
+	template: @95461b8a-82f0-421b-ba66-6095f03a1846 (objectref<GtfView_template>)
+	children: children_list [
+		GtfImage(f7643c91-a4c6-4516-b73d-f0ed257755e4)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(ac2aaac7-fd06-4d89-b2b7-0e7ef16e4c5d)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Content_Spotify"
+					visible: true
+					width: 680
+					height: 385
+					x: 121
+					y: 27
+					image: image_resource(15421c26-4a66-40f1-8020-e28ba65101a6)
+					{
+						file: "HOME_spotify.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfContainer_template_instance(81ed23c3-8abd-4e86-ae20-b76187126742)
+				{
+					name: "home"
+					template: @85aeb067-7bc5-4064-af92-f88f668b0a47 (objectref<GtfContainer_template>)
+					children: children_list []
+					width: 60
+					x: 10
+					y: 34
+					visible: true
+					touchShortReleased: function<bool,int,int,int,int>(3ce95c8d-ea57-4aae-aaaa-1cd26df36310)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->home.visible = true" \
+							"	v:this->^->browse.visible = false" \
+							"	v:this->^->radio.visible = false" \
+							"	v:this->^->Content_Spotify.image = dp:SPOTIFY:home_spotify" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(2d91f05e-2587-44d2-8a18-6ad71fc92c74)
+				{
+					name: "browse"
+					template: @85aeb067-7bc5-4064-af92-f88f668b0a47 (objectref<GtfContainer_template>)
+					children: children_list []
+					width: 65
+					x: 10
+					y: 57
+					visible: false
+					touchShortReleased: function<bool,int,int,int,int>(cb6aa0dc-947b-44fd-b321-db669a306c21)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->home.visible = false" \
+							"	v:this->^->browse.visible = true" \
+							"	v:this->^->radio.visible = false" \
+							"	v:this->^->Content_Spotify.image = dp:SPOTIFY:browse_spotify" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(9ca7352c-e9ab-415e-b7cd-6260a5e37ab7)
+				{
+					name: "radio"
+					template: @85aeb067-7bc5-4064-af92-f88f668b0a47 (objectref<GtfContainer_template>)
+					children: children_list []
+					width: 57
+					x: 10
+					y: 81
+					visible: false
+					touchShortReleased: function<bool,int,int,int,int>(c60fbf11-80a9-41ad-9f04-6665e8da6eaf)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->home.visible = false" \
+							"	v:this->^->browse.visible = false" \
+							"	v:this->^->radio.visible = true" \
+							"	v:this->^->Content_Spotify.image = dp:SPOTIFY:radio_spotify" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfRectangle(56a6bc16-c81c-4481-9e61-de99f4c24025)
+				{
+					features: feature_list [
+						Border(8066f5af-fa49-487b-8be6-df86dcf4d2e9)
+						{
+							borderThickness: 2
+							borderColor: color_scriptedValue(0ec25562-5486-4139-8dcb-1e17f334285e)
+							{
+								triggerList: trigger_list(7ea88c4f-3a2d-4a28-a673-d1f3757096e1)
+								{
+									script: ""
+								}
+								onTrigger: function<bool,bool>(a22deec9-49c1-4a26-9f19-4fd4682b08cf)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+								read: function<color>(e7f25d8f-dd73-4cca-9750-912a416f7309)
+								{
+									script: "function()" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	dp:BorderGrey" \
+										"}"
+								}
+								write: function<bool,color>(26792802-599c-44d8-82ac-f8a9dfa2a5ea)
+								{
+									script: "function(v:arg0::color)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	false" \
+										"}"
+								}
+							}
+							borderStyle: 0
+						}]
+					children: children_list [
+						GtfLabel(05192031-9383-4de1-89b2-3f776d15739e)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Label 1"
+							visible: true
+							width: 60
+							height: 20
+							x: 5
+							y: 0
+							text: "File"
+							textColor: #FFFFFFFF
+							font: font_resource(a44ef545-0864-4f0d-8d61-7f420fa3e61e)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 15
+							}
+							horizontalAlign: 0
+							verticalAlign: 0
+						}, 
+						GtfLabel(2eece79e-0df2-464a-bd55-85c60a193ea2)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Label 2"
+							visible: true
+							width: 60
+							height: 20
+							x: 5
+							y: 20
+							text: "Edit"
+							textColor: #FFFFFFFF
+							font: font_resource(145553bb-74a1-47d1-aa8f-5d6558773056)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 15
+							}
+							horizontalAlign: 0
+							verticalAlign: 0
+						}, 
+						GtfLabel(634dd399-e9e2-4fdd-894a-39d77c142855)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Label 3"
+							visible: true
+							width: 60
+							height: 20
+							x: 5
+							y: 40
+							text: "View"
+							textColor: #FFFFFFFF
+							font: font_resource(d83a9b5f-5d3c-4a17-9b97-4731af1450d4)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 15
+							}
+							horizontalAlign: 0
+							verticalAlign: 0
+						}, 
+						GtfLabel(7d8e40bf-6768-46d6-8522-159a73ba8a45)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Label 4"
+							visible: true
+							width: 60
+							height: 20
+							x: 5
+							y: 60
+							text: "Playback"
+							textColor: #FFFFFFFF
+							font: font_resource(fb0a961e-2f72-47b8-99a5-45b375be6e2b)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 15
+							}
+							horizontalAlign: 0
+							verticalAlign: 0
+						}, 
+						GtfLabel(a4dfb6e4-8687-4a14-8435-1dea01bfa0eb)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Label 5"
+							visible: true
+							width: 60
+							height: 20
+							x: 5
+							y: 80
+							text: "Help"
+							textColor: #FFFFFFFF
+							font: font_resource(211769b7-a5d6-43a6-a1be-f3e33e630bc2)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 15
+							}
+							horizontalAlign: 0
+							verticalAlign: 0
+						}]
+					name: "3point"
+					visible: false
+					width: 84
+					height: 100
+					x: 9
+					y: 30
+					fillColor: #A9A9A9FF
+				}, 
+				GtfContainer(679c9e14-50ac-4854-ad46-82990bd121ff)
+				{
+					features: feature_list [
+						TouchShortReleased(de20a3c6-6604-4349-ba34-de8519e9966c)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(bd4fd136-c72d-4230-9813-525e13f8b2eb)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->\"3point\".visible = false" \
+									"	v:this->^->\"3pointON\".visible = false" \
+									"	v:this->^->\"3pointOFF\".visible = true" \
+									"	v:this->^->home.visible = true" \
+									"	v:this->^->browse.visible = false" \
+									"	v:this->^->radio.visible = false" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(ff866761-207e-48e8-b039-3a3b38713fcb)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "3pointON"
+					visible: false
+					width: 24
+					height: 12
+					x: 10
+					y: 10
+				}, 
+				GtfContainer(6bdccf5b-c328-4530-a3ad-499600447e6f)
+				{
+					features: feature_list [
+						TouchShortReleased(fd3cc50b-06b5-4c96-b4ef-3d1628d2b2a5)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(6104e6b0-9c35-40dc-ae6a-dbf4ffc5ab56)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->\"3point\".visible = true" \
+									"	v:this->^->\"3pointON\".visible = true" \
+									"	v:this->^->\"3pointOFF\".visible = false" \
+									"	v:this->^->home.visible = false" \
+									"	v:this->^->browse.visible = false" \
+									"	v:this->^->radio.visible = false" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(be8b1f8e-dc9e-42d4-a273-34fd9a2dd53a)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "3pointOFF"
+					visible: true
+					width: 24
+					height: 12
+					x: 10
+					y: 10
+				}, 
+				GtfContainer(bdf7f0e5-49be-4417-b82b-51efe661b408)
+				{
+					features: feature_list [
+						TouchShortReleased(97eee857-3769-4fd3-b4a7-6447abb50ec5)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(0fee2fbb-067a-4d07-be9e-e47639acb8d8)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->ArrowON.visible = false" \
+									"	v:this->^->ArrowOFF.visible = true" \
+									"	v:this->^->Arrow.visible = false" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(fc215c7b-75af-4b1f-938b-a5c6c953a30a)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "ArrowON"
+					visible: false
+					width: 16
+					height: 15
+					x: 776
+					y: 6
+				}, 
+				GtfContainer(a007d271-29b0-46fa-942e-e21effdc090e)
+				{
+					features: feature_list [
+						TouchShortReleased(5304ba11-6805-4e76-aed8-e0f36a2d2482)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(f80377c3-3e27-4b08-ba8e-45e8820a10f3)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->ArrowON.visible = true" \
+									"	v:this->^->ArrowOFF.visible = false" \
+									"	v:this->^->Arrow.visible = true" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(0ff48c64-1845-4b5d-b6ae-fc0c07ecf416)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "ArrowOFF"
+					visible: true
+					width: 16
+					height: 15
+					x: 776
+					y: 6
+				}, 
+				GtfContainer_template_instance(0de0d9fb-6e48-4f00-a113-46e9b48cc295)
+				{
+					name: "Arrow"
+					template: @269622a7-f78d-4b49-baff-dde5dd4df48f (objectref<GtfContainer_template>)
+					children: children_list []
+					visible: false
+				}, 
+				GtfLabel(206a6491-7ffb-4693-bf8c-19714c6097ed)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "Label 5"
+					visible: true
+					width: 95
+					height: 13
+					x: 177
+					y: 7
+					text: @371981d8-c4e5-4964-b98a-cf50fbea7de8 (objectref<string>)
+					textColor: #000000FF
+					font: font_resource(e89d4e1d-68d6-44da-86b9-5d17ae1bd6ff)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 15
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+					inputScript: conditional_script(5b8f5536-d16d-4bc4-9d70-206197b2f835)
+					{
+						triggerList: trigger_list(e65642d9-c176-4bfb-b39d-0ccf7f5d3a8f)
+						{
+							script: "ev:KEYBOARD:keypadPress" \
+								""
+						}
+						onTrigger: function<bool,bool>(3fce6bf0-46f3-4633-a763-e69acf9cc934)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	match_event v:e = ev:KEYBOARD:keypadPress in " \
+								"		let v:val = v:e.Value in " \
+								"			if(v:val == \"space\")" \
+								"				dp:KEYBOARD:Spotify_Txt += \" \"" \
+								"			else if(v:val == \"delete\")" \
+								"				dp:KEYBOARD:Spotify_Txt = \"\"" \
+								"			else" \
+								"				dp:KEYBOARD:Spotify_Txt += v:val	" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfContainer(1c3551d0-737d-4630-93ad-4c0d46ed91f7)
+				{
+					features: feature_list [
+						TouchShortReleased(1f503603-806e-4043-b536-3fa855f50c0d)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(4a7f73d5-b8ff-4f7b-81f1-a7d667c99553)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->\"KEYBOARD 1\".visible = true" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(f9ce4d3d-1f7b-4ce0-b919-b126e43bdbe7)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "show_keyboard"
+					visible: true
+					width: 65
+					height: 16
+					x: 192
+					y: 6
+				}, 
+				GtfContainer_template_instance(143dbf6c-94c6-4869-94f8-64683a87ee39)
+				{
+					name: "KEYBOARD 1"
+					template: @710457c0-db12-4a2e-8b40-5b77a4a35792 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 133
+					y: 187
+					visible: false
+					"Released_button DEL": function<bool>(757d7403-7b4d-4766-b94b-80ea257c5307)
+					{
+						script: "function()" \
+							"{" \
+							"	fire ev:KEYBOARD:keypadPress(\"delete\")" \
+							"	false" \
+							"}"
+					}
+					Released_Button_ENTER: function<bool>(8626f957-ea52-4e7b-8910-80fb7e4ce9c9)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^->\"KEYBOARD 1\".visible = false" \
+							"	false" \
+							"}"
+					}
+				}]
+			name: "background"
+			visible: true
+			width: 800
+			height: 410
+			x: 0
+			y: 70
+			image: image_resource(8a2ca4a5-331a-4b8c-9b40-87c628d93d71)
+			{
+				file: "SPOTIFY_background.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfRectangle_template_instance(ecc7e9eb-a74f-4948-a86e-b56cd6be0acc)
+		{
+			name: "TopBar 1"
+			template: @946dc760-ee83-4771-bd7f-52f3864de092 (objectref<GtfRectangle_template>)
+			children: children_list []
+			MainText: "Spotify"
+			BackButton_Background: BackButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Background: MainMenuButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Visible: MainMenuButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			BackButton_Visible: false
+			Released_BACK: Released_BACK@946dc760-ee83-4771-bd7f-52f3864de092 (propref<function<bool>>)
+		}]
+}

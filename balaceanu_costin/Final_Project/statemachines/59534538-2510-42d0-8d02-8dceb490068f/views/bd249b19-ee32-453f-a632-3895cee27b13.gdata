@@ -1,0 +1,149 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(bd249b19-ee32-453f-a632-3895cee27b13)
+{
+	name: "Connections_View"
+	template: @95461b8a-82f0-421b-ba66-6095f03a1846 (objectref<GtfView_template>)
+	children: children_list [
+		GtfRectangle_template_instance(8476c449-2f77-4956-b378-a54a6447fc4b)
+		{
+			name: "TopBar 1"
+			template: @946dc760-ee83-4771-bd7f-52f3864de092 (objectref<GtfRectangle_template>)
+			children: children_list []
+			MainText: "Connections"
+			BackButton_Background: BackButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Background: MainMenuButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Visible: MainMenuButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			BackButton_Visible: BackButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			Released_BACK: function<bool>(f84c5c3c-c151-4cb3-9ecc-20b1bad03b67)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:GoTo_MediaPlayer()" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(29a2359f-7af9-464b-a55a-3c4ba3af1163)
+		{
+			name: "USB"
+			template: @791e8512-29f6-4b62-9118-02d2f99033ef (objectref<GtfContainer_template>)
+			children: children_list []
+			visible: visible@791e8512-29f6-4b62-9118-02d2f99033ef (propref<bool>)
+			x: 125
+			y: 130
+			image: image@791e8512-29f6-4b62-9118-02d2f99033ef (propref<image>)
+			Button_function: function<bool>(4bd1769b-8d65-4b67-ac57-2d66bb2ea149)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this->^->CD.borderColor = dp:BorderColorTRANS" \
+					"	v:this->^->BLUETOOTH.borderColor = dp:BorderColorTRANS" \
+					"	dp:MEDIA_PLAYER:CONNECTON = \"Connected at USB, enjoy !\"" \
+					"	false" \
+					"}"
+			}
+			borderColor: borderColor@791e8512-29f6-4b62-9118-02d2f99033ef (propref<color>)
+			text: "USB"
+		}, 
+		GtfContainer_template_instance(2a33e99e-35e2-4385-bbb3-df6070df1e5c)
+		{
+			name: "CD"
+			template: @791e8512-29f6-4b62-9118-02d2f99033ef (objectref<GtfContainer_template>)
+			children: children_list []
+			visible: visible@791e8512-29f6-4b62-9118-02d2f99033ef (propref<bool>)
+			x: 350
+			y: 130
+			image: image_resource(8ce4d5b9-663e-4425-846f-a5340f84f668)
+			{
+				file: "MP_CD.png"
+			}
+			Button_function: function<bool>(fa0a0440-f1f9-4768-95e0-c3482aaea434)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this->^->USB.borderColor = dp:BorderColorTRANS" \
+					"	v:this->^->BLUETOOTH.borderColor = dp:BorderColorTRANS" \
+					"	dp:MEDIA_PLAYER:CONNECTON = \"Connected at CD, enjoy !\"" \
+					"	false" \
+					"}"
+			}
+			borderColor: borderColor@791e8512-29f6-4b62-9118-02d2f99033ef (propref<color>)
+			text: "CD"
+		}, 
+		GtfContainer_template_instance(01c209a2-d5b5-48d8-af42-230a60b1c864)
+		{
+			name: "BLUETOOTH"
+			template: @791e8512-29f6-4b62-9118-02d2f99033ef (objectref<GtfContainer_template>)
+			children: children_list []
+			visible: visible@791e8512-29f6-4b62-9118-02d2f99033ef (propref<bool>)
+			x: 575
+			y: 130
+			image: image_resource(aa8353c5-63ce-4796-9a53-2a87d9ca2a0e)
+			{
+				file: "MP_BLUETOOTH.png"
+			}
+			Button_function: function<bool>(61afbf90-1ffa-4d6f-806f-2c1aa05058a2)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this->^->CD.borderColor = dp:BorderColorTRANS" \
+					"	v:this->^->USB.borderColor = dp:BorderColorTRANS" \
+					"	dp:MEDIA_PLAYER:CONNECTON = \"Connected at BLUETOOTH, enjoy !\"" \
+					"	false" \
+					"}"
+			}
+			borderColor: borderColor@791e8512-29f6-4b62-9118-02d2f99033ef (propref<color>)
+			text: "BLUETOOTH"
+		}, 
+		GtfLabel(a4818923-1eec-42fc-905d-fb30a5e3b59e)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Label 4"
+			visible: true
+			width: 600
+			height: 100
+			x: 100
+			y: 339
+			text: string_scriptedValue(d7902eec-23b7-4b82-a134-3570c144988b)
+			{
+				triggerList: trigger_list(deafd31c-0025-40dd-9603-1167fa79760f)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(b5446549-25b9-4ee0-9109-ebe0aafb9012)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(7b053363-6bfa-4ae2-bab9-2708fa60f251)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	\"Now you are : \"+dp:MEDIA_PLAYER:CONNECTON" \
+						"}"
+				}
+				write: function<bool,string>(a6b4c8a1-dee7-4688-b4aa-038cfcc301e1)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #00BFFFFF
+			font: font_resource(953b8dd1-8825-47ee-96cd-f677ab8f9c9d)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}]
+}

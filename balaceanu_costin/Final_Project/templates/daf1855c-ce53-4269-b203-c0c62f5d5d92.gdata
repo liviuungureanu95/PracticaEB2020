@@ -1,0 +1,95 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(daf1855c-ce53-4269-b203-c0c62f5d5d92)
+{
+	name: "Numbers"
+	structure: GtfContainer(d445f706-5a60-46e6-997e-a9b088e935d2)
+	{
+		features: feature_list [
+			TouchPressed(c3e54788-18a6-4670-b338-0f2711a95d68)
+			{
+				touchPressed: function<bool,int,int,int,int>(ea2b71da-9b0f-40b7-84a6-4e8baba8a9b4)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->Rectangle.borderColor = dp:BorderColor_Pressed" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(e0c72efa-47b0-4dba-95e9-771b53bf3b66)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(5710a730-d548-4634-87da-d074dd8dc237)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.Released_Button()" \
+						"	v:this->Rectangle.borderColor = dp:BorderColor" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(ca7aa237-40a3-4522-9517-39346db0659a)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfRectangle(a64de162-19ac-4eeb-99ba-7523f0c3a64b)
+			{
+				features: feature_list [
+					Border(94c42df5-d51b-41cd-95ba-5b9ce6a61738)
+					{
+						borderThickness: 1
+						borderColor: #000000FF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "Rectangle"
+				visible: true
+				width: width@d445f706-5a60-46e6-997e-a9b088e935d2 (propref<int>)
+				height: height@d445f706-5a60-46e6-997e-a9b088e935d2 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #000000FF
+			}, 
+			GtfLabel(7dd67b4f-06a9-4836-90af-8974a864820d)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label"
+				visible: true
+				width: width@d445f706-5a60-46e6-997e-a9b088e935d2 (propref<int>)
+				height: height@d445f706-5a60-46e6-997e-a9b088e935d2 (propref<int>)
+				x: 0
+				y: 0
+				text: "9"
+				textColor: #FFFFFFFF
+				font: font_resource(76b405eb-38f3-491b-be76-e400c0f7d105)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 40
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 40
+		height: 40
+		x: 0
+		y: 0
+		Released_Button: function<bool>(3527c7e9-2a26-4f53-a437-a36742489f68)
+		{
+			script: "function()" \
+				"{" \
+				"	" \
+				"	false" \
+				"}"
+		}
+	}
+	text: text@7dd67b4f-06a9-4836-90af-8974a864820d (propref<string>)
+	Released_Button: Released_Button@d445f706-5a60-46e6-997e-a9b088e935d2 (propref<function<bool>>)
+}

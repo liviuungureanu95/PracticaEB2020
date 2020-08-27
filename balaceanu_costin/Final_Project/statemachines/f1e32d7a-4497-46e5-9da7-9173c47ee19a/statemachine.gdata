@@ -1,0 +1,97 @@
+EBGUIDE 6.10.0.200602120856;
+
+haptic_statemachine(f1e32d7a-4497-46e5-9da7-9173c47ee19a)
+{
+	x: 0
+	y: 0
+	width: 300
+	height: 309
+	name: "Outside_Events"
+	entry_action: function<void>(none)
+	exit_action: function<void>(none)
+	transitions: haptic_transitions []
+	internal_transitions: haptic_internal_transitions []
+	background_color: #6C6C6CFF
+	states: haptic_states [
+		haptic_dialog_state(19eedcb8-cfea-4817-91f9-bc4a24340c4b)
+		{
+			x: 55
+			y: 169
+			width: 100
+			height: 100
+			name: "Outside_Events"
+			entry_action: function<void>(865bb89b-5d37-4390-8c9d-bb89eb327772)
+			{
+				script: "function()" \
+					"{" \
+					"	fire_delayed 3100, ev:SCREEN2:Audi_sign()" \
+					"	fire_delayed 6100, ev:SCREEN2:Audi_Line_big()" \
+					"	fire_delayed 6100, ev:SCREEN2:Audi_Line_small()" \
+					"}"
+			}
+			exit_action: function<void>(none)
+			transitions: haptic_transitions []
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (1ae3024f-ee73-4fc6-a8b0-da1ed9801685)
+			priority_stack: priority_stack(none)
+		}, 
+		haptic_dialog_state(dd881029-baa7-42e0-9fad-9c192137f6ea)
+		{
+			x: 55
+			y: 11
+			width: 100
+			height: 100
+			name: "Waiting"
+			entry_action: function<void>(c87570a2-706c-4801-8332-b82ef9e80fab)
+			{
+				script: "function()" \
+					"{" \
+					"	fire_delayed 35000, ev:GoTo_OutsideEv()" \
+					"}"
+			}
+			exit_action: function<void>(none)
+			transitions: haptic_transitions [
+				haptic_transition(533ba6ed-6051-42c8-89cf-d49a46e01f57)
+				{
+					action: function<void>(none)
+					target_state: @19eedcb8-cfea-4817-91f9-bc4a24340c4b (objectref<haptic_dialog_state>)
+					source_dock: 0.626421F
+					target_dock: 0.875F
+					curveControlXOffset: 0
+					curveControlYOffset: 0
+					labelXOffset: 59
+					labelYOffset: 12
+					labelRotationAngle: 0
+					event: @8bcc7fa1-67ca-40d1-8bd2-883434399214 (objectref<event>)
+					condition: function<bool>(none)
+				}]
+			internal_transitions: haptic_internal_transitions []
+			background_color: #6C6C6CFF
+			dialog: (ba66bc28-9720-44f7-bae5-297ceb8b1de1)
+			priority_stack: priority_stack(none)
+		}]
+	initial_state: haptic_initial_state(fde86662-8e71-42c7-aa9e-fae236f9c252)
+	{
+		x: 5
+		y: 12
+		width: 100
+		height: 100
+		default_transition: haptic_default_transition(96b7e467-320d-49e2-a01d-f1a4d929655b)
+		{
+			action: function<void>(none)
+			target_state: @dd881029-baa7-42e0-9fad-9c192137f6ea (objectref<haptic_dialog_state>)
+			source_dock: 0.254546F
+			target_dock: 0.8459664F
+			curveControlXOffset: 0
+			curveControlYOffset: 0
+			labelXOffset: 10
+			labelYOffset: -10
+			labelRotationAngle: 0
+		}
+	}
+	final_state: haptic_final_state(none)
+	history_state: haptic_history_state(none)
+	deep_history_state: haptic_deep_history_state(none)
+	priority_stack: priority_stack(none)
+}

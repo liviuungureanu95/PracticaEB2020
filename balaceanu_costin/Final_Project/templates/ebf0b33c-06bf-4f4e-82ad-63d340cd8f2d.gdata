@@ -1,0 +1,87 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(ebf0b33c-06bf-4f4e-82ad-63d340cd8f2d)
+{
+	name: "AVATAR_Button"
+	structure: GtfContainer(55dab649-2219-4f7a-936d-444224412848)
+	{
+		features: feature_list [
+			TouchShortReleased(c86a2988-dc1d-42d4-81b3-d89ac5e485ce)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(7ede00e7-3343-4e41-8400-3ae8ed32ffd3)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(6b4ce920-35cd-4f6c-bc06-a1c1e2f552a0)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			TouchPressed(fb55d47a-bc4f-4383-bc08-a04115b73782)
+			{
+				touchPressed: function<bool,int,int,int,int>(0f377d93-8053-4dc8-b684-4fbf803a319b)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->Rectangle.visible = true" \
+						"    false" \
+						"}"
+				}
+			}]
+		children: children_list [
+			GtfImage(74960239-3632-4b1d-80d2-4f220e46fa53)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Image"
+				visible: true
+				width: width@55dab649-2219-4f7a-936d-444224412848 (propref<int>)
+				height: height@55dab649-2219-4f7a-936d-444224412848 (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(baa1963b-15a9-4725-b6a2-fc17e3a864f2)
+				{
+					file: "1.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfRectangle(cf6c1594-b75d-40aa-be06-67e6f92bf7df)
+			{
+				features: feature_list [
+					Border(ec5c5ba6-d554-4239-b452-585c6fc6d944)
+					{
+						borderThickness: 1
+						borderColor: #00FF00FF
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "Rectangle"
+				visible: false
+				width: width@55dab649-2219-4f7a-936d-444224412848 (propref<int>)
+				height: height@55dab649-2219-4f7a-936d-444224412848 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+			}]
+		name: "Container"
+		visible: true
+		width: 70
+		height: 70
+		x: 0
+		y: 0
+	}
+	x: x@55dab649-2219-4f7a-936d-444224412848 (propref<int>)
+	y: y@55dab649-2219-4f7a-936d-444224412848 (propref<int>)
+	image: image@74960239-3632-4b1d-80d2-4f220e46fa53 (propref<image>)
+	touchShortReleased: touchShortReleased@c86a2988-dc1d-42d4-81b3-d89ac5e485ce (propref<function<bool,int,int,int,int>>)
+	visible: visible@cf6c1594-b75d-40aa-be06-67e6f92bf7df (propref<bool>)
+}

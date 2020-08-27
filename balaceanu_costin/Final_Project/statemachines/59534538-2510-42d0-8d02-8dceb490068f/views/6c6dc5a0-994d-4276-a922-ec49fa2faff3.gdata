@@ -1,0 +1,654 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(6c6dc5a0-994d-4276-a922-ec49fa2faff3)
+{
+	features: feature_list []
+	children: children_list [
+		GtfImage(da9200c8-03c7-4167-8226-ba5c9c3fdf34)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Background"
+			visible: true
+			width: width@6c6dc5a0-994d-4276-a922-ec49fa2faff3 (propref<int>)
+			height: height@6c6dc5a0-994d-4276-a922-ec49fa2faff3 (propref<int>)
+			x: 1
+			y: 0
+			image: image_resource(79dd46cf-dfd0-4602-b292-6c7ccd2f917e)
+			{
+				file: "View_Background.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfRectangle_template_instance(35062d27-8712-4483-a405-cd252d96d59c)
+		{
+			name: "TopBar"
+			template: @946dc760-ee83-4771-bd7f-52f3864de092 (objectref<GtfRectangle_template>)
+			children: children_list []
+			MainText: "Temperature"
+			BackButton_Background: BackButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Background: MainMenuButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Visible: MainMenuButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			BackButton_Visible: false
+			Released_BACK: Released_BACK@946dc760-ee83-4771-bd7f-52f3864de092 (propref<function<bool>>)
+		}, 
+		GtfImage(0aff8fab-8133-43fd-8cd2-efae061552a2)
+		{
+			features: feature_list [
+				ScaleMode(8af1b3fd-a783-4962-8599-9e66071e4f48)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "line"
+			visible: true
+			width: 800
+			height: 162
+			x: 0
+			y: 150
+			image: image_resource(b1a47e7a-fa3b-4119-8d9f-c1d07e487f2c)
+			{
+				file: "line.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(47555930-617e-4889-95e9-528e6ae4a627)
+		{
+			features: feature_list [
+				Rotation(32a94595-72b6-4bee-978f-626e454a8ea8)
+				{
+					rotationEnabled: true
+					rotationAngleX: 0F
+					rotationAngleY: 0F
+					rotationAngleZ: 0F
+				}, 
+				Scaling(9e9e1e26-3ade-4cb9-8ad6-a5c582711b19)
+				{
+					scalingEnabled: true
+					scalingX: 100F
+					scalingY: 100F
+					scalingZ: 100F
+				}, 
+				Shearing(51faab1b-d611-4f65-a328-a93257408005)
+				{
+					shearingEnabled: true
+					shearingXbyY: 0F
+					shearingXbyZ: 0F
+					shearingYbyX: 0F
+					shearingYbyZ: 0F
+					shearingZbyX: 0F
+					shearingZbyY: 0F
+				}, 
+				Pivot(337d3729-de79-4cd1-a719-d2e4f75cee22)
+				{
+					pivotX: float_scriptedValue(dcebef74-3484-4998-ab08-71cfcf177a50)
+					{
+						triggerList: trigger_list(80c27a14-d76a-4864-9273-e1841433569f)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(d921d1c4-b2d8-490f-9078-00deba997fa9)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<float>(b6ac2250-1f4a-48eb-905e-f6f5949952ff)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:int2float(v:this.width/2)" \
+								"}"
+						}
+						write: function<bool,float>(a9005027-d81c-4e1f-9ee1-02cf8346e4e5)
+						{
+							script: "function(v:arg0::float)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					pivotY: float_scriptedValue(edc4eb1b-20f4-41e9-9526-e067d32829cc)
+					{
+						triggerList: trigger_list(89770796-cbb4-4a89-9209-0f7e3748fd02)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(eeb5e380-6ce4-4e08-8e6d-2401f6d815ec)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<float>(2e70d629-cb2c-4e1e-b7d9-62e5b050e0ec)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:int2float(v:this.height/2)" \
+								"}"
+						}
+						write: function<bool,float>(bd53973f-eb13-44c1-87ad-590f77883bca)
+						{
+							script: "function(v:arg0::float)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					pivotZ: 0F
+				}]
+			children: children_list [
+				GtfParallelAnimation(bdb1c0a0-d6bc-4bd6-860b-1c741c732693)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationFloat(9ddc2a8f-a58a-41b9-b8bc-32f4e6ed5181)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Linear interpolation curve 1"
+							enabled: true
+							delay: 0
+							duration: 1000
+							repeat: 0
+							alternating: false
+							relative: false
+							start: 0F
+							end: -360F
+							target: rotationAngleZ@32a94595-72b6-4bee-978f-626e454a8ea8 (propref<float>)
+						}, 
+						GtfLinearInterpolationS32(6ea5417e-e310-43d6-b355-9cab6a9327c5)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Linear interpolation curve 5"
+							enabled: true
+							delay: 0
+							duration: 10000
+							repeat: 0
+							alternating: false
+							relative: false
+							start: -150
+							end: 750
+							target: x@47555930-617e-4889-95e9-528e6ae4a627 (propref<int>)
+						}]
+					name: "spinning"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(527ca912-9b55-4da5-b9eb-ec069870db89)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(1944f513-ede4-48f0-a4d1-d87d7f182374)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(9aa8e56b-69fd-45fd-8bd8-bf4a4b53a107)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+				}]
+			name: "ThunderStorm"
+			visible: true
+			width: 200
+			height: 200
+			x: -200
+			y: 70
+			image: image_resource(d7dc49ff-f43a-4c31-a749-178db1d3b329)
+			{
+				file: "zzzz.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+			Animation_play: conditional_script(55c5242a-afb7-4db8-85bb-383ab095173a)
+			{
+				triggerList: trigger_list(e30ccc7d-9286-4640-9026-6ae876714208)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(9ff16795-9678-4720-949b-6370e8357390)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	f:animation_play(v:this->spinning)" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfLabel(0e652edd-a5f4-4572-8c90-063f2fe93ce2)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Snow"
+			visible: true
+			width: 100
+			height: 50
+			x: 190
+			y: 300
+			text: "Snowing"
+			textColor: #FFFFFFFF
+			font: font_resource(748738af-11d9-424c-8822-a4d53a862458)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(f7d21390-4c9a-46fc-976f-20d51f8acb5a)
+		{
+			name: "on_snow"
+			template: @6de69774-4256-4b08-8264-fa138570e724 (objectref<GtfContainer_template>)
+			children: children_list []
+			touchShortReleased: touchShortReleased@6de69774-4256-4b08-8264-fa138570e724 (propref<function<bool,int,int,int,int>>)
+			x: 225
+			y: 360
+			image: image_resource(9fcdd94e-6041-4951-94fc-dcf514849b76)
+			{
+				file: "on_button.png"
+			}
+			visible: false
+		}, 
+		GtfContainer_template_instance(58e6dd59-835c-411a-bac1-d2cd18f15202)
+		{
+			name: "off_snow"
+			template: @6de69774-4256-4b08-8264-fa138570e724 (objectref<GtfContainer_template>)
+			children: children_list []
+			touchShortReleased: function<bool,int,int,int,int>(df68227e-b298-410d-98ae-5981dfd4d722)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	if(dp:TOPBAR:Temperature_Nr <=0)" \
+					"	{" \
+					"	v:this->^->off_snow.visible = false" \
+					"	v:this->^->on_snow.visible = true" \
+					"	v:this->^->off_rain.visible = true" \
+					"	v:this->^->off_sun.visible = true" \
+					"	dp:TOPBAR:IMG_Temperature = dp:TOPBAR:SNOW" \
+					"	}" \
+					"	else" \
+					"	{" \
+					"	fire ev:GoTo_Snow1()" \
+					"	fire_delayed 5000, ev:GoTo_Snow2()" \
+					"	}" \
+					"    false" \
+					"}"
+			}
+			x: 225
+			y: 360
+			image: image@6de69774-4256-4b08-8264-fa138570e724 (propref<image>)
+			visible: visible@6de69774-4256-4b08-8264-fa138570e724 (propref<bool>)
+		}, 
+		GtfLabel(c1430996-deaf-4c19-aa9d-5af0a79dbce1)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Rain"
+			visible: true
+			width: 100
+			height: 50
+			x: 350
+			y: 300
+			text: "Raining"
+			textColor: #FFFFFFFF
+			font: font_resource(68844622-293f-41a3-a25f-8c2f2eef53bd)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(2b843e8b-0f7c-4510-9af7-16ae90be414d)
+		{
+			name: "on_rain"
+			template: @6de69774-4256-4b08-8264-fa138570e724 (objectref<GtfContainer_template>)
+			children: children_list []
+			touchShortReleased: touchShortReleased@6de69774-4256-4b08-8264-fa138570e724 (propref<function<bool,int,int,int,int>>)
+			x: 385
+			y: 355
+			image: image_resource(017fde3f-cc1b-425f-a015-ac95b275008b)
+			{
+				file: "on_button.png"
+			}
+			visible: false
+		}, 
+		GtfContainer_template_instance(a03aebd9-2a2c-4dec-babe-20a0d613da5a)
+		{
+			name: "off_rain"
+			template: @6de69774-4256-4b08-8264-fa138570e724 (objectref<GtfContainer_template>)
+			children: children_list []
+			touchShortReleased: function<bool,int,int,int,int>(e7993984-2f06-4d7f-a9d4-9b7d185b8fae)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	" \
+					"	v:this->^->off_snow.visible = true" \
+					"	v:this->^->off_rain.visible = false" \
+					"	v:this->^->on_rain.visible = true" \
+					"	v:this->^->off_sun.visible = true" \
+					"	dp:TOPBAR:IMG_Temperature = dp:TOPBAR:RAIN" \
+					"	dp:TOPBAR:Temperature_Nr = 30" \
+					"    false" \
+					"}"
+			}
+			x: 385
+			y: 355
+			image: image_resource(1f0374e8-28a3-4c56-8b72-d7a3f5bb30a2)
+			{
+				file: "off_button.png"
+			}
+			visible: visible@6de69774-4256-4b08-8264-fa138570e724 (propref<bool>)
+		}, 
+		GtfLabel(10aee95a-af10-4226-bd58-18c939b8b301)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Sun"
+			visible: true
+			width: 100
+			height: 50
+			x: 500
+			y: 300
+			text: "Sunny"
+			textColor: #FFFFFFFF
+			font: font_resource(b79db84e-73a2-468a-ae3c-92bfc88144c4)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 30
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer_template_instance(6c88e384-0353-491a-abfc-51ec36d83b88)
+		{
+			name: "on_sun"
+			template: @6de69774-4256-4b08-8264-fa138570e724 (objectref<GtfContainer_template>)
+			children: children_list []
+			touchShortReleased: touchShortReleased@6de69774-4256-4b08-8264-fa138570e724 (propref<function<bool,int,int,int,int>>)
+			x: 535
+			y: 355
+			image: image_resource(8e23186d-d70a-49b7-a289-90f5a496d630)
+			{
+				file: "on_button.png"
+			}
+			visible: visible@6de69774-4256-4b08-8264-fa138570e724 (propref<bool>)
+		}, 
+		GtfContainer_template_instance(508d8e56-d5ec-4543-9271-046b9478d58f)
+		{
+			name: "off_sun"
+			template: @6de69774-4256-4b08-8264-fa138570e724 (objectref<GtfContainer_template>)
+			children: children_list []
+			touchShortReleased: function<bool,int,int,int,int>(4598ae6b-a54b-412f-b7a7-a870827c1b4b)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"	v:this->^->off_snow.visible = true" \
+					"	v:this->^->off_rain.visible = true" \
+					"	v:this->^->off_sun.visible = false" \
+					"	v:this->^->on_sun.visible = true" \
+					"	dp:TOPBAR:IMG_Temperature = dp:TOPBAR:SunHot_img" \
+					"	dp:TOPBAR:Temperature_Nr = 30" \
+					"    false" \
+					"}"
+			}
+			x: 535
+			y: 355
+			image: image_resource(b1ef8113-0272-46a2-bea6-adfbc501a496)
+			{
+				file: "off_button.png"
+			}
+			visible: false
+		}, 
+		GtfContainer_template_instance(5ed6176b-62d6-44e4-8312-68bb430c9df0)
+		{
+			name: "Warning"
+			template: @75bee090-7a74-46fe-98ad-450571ad33fa (objectref<GtfContainer_template>)
+			children: children_list [
+				GtfLabel(27950737-abf8-452b-b9bd-d35955b40695)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfParallelAnimation(c2835b5d-2553-4205-9235-00629ef2eeba)
+						{
+							features: feature_list []
+							children: children_list [
+								GtfLinearInterpolationS32(afe53012-6c1e-44fa-8cb5-a851a9cfcd0f)
+								{
+									features: feature_list []
+									children: children_list []
+									name: "Linear interpolation curve 2"
+									enabled: true
+									delay: 0
+									duration: 5000
+									repeat: 1
+									alternating: false
+									relative: false
+									start: 6
+									end: 1
+									target: @0939a9be-be3f-4281-8ac2-fe18d41cffdc (objectref<int>)
+								}]
+							name: "Animation"
+							enabled: true
+							repeat: 1
+							alternating: false
+							scale: 1F
+							onPlay: function<void,int,bool>(88f6c64e-0f17-4610-b606-05ac3d4ffd86)
+							{
+								script: "function(v:animation_time::int, v:forward::bool)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onPause: function<void,int>(c7eb894e-d667-4511-98f9-431175ba4e2f)
+							{
+								script: "function(v:animation_time::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+							onTerminate: function<void,int,int>(fd1f0706-b436-43f2-a9ee-fa11c3cc5868)
+							{
+								script: "function(v:animation_time::int, v:terminate::int)" \
+									"{" \
+									"" \
+									"}"
+							}
+						}]
+					name: "Label"
+					visible: true
+					width: 100
+					height: 56
+					x: 65
+					y: 115
+					text: string_scriptedValue(5aae5559-37e7-4633-85db-ea48c04c3b55)
+					{
+						triggerList: trigger_list(5061da4e-476b-4c4d-b13d-ceefe4f41b66)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(91a263fc-e676-4566-8451-40e76e202118)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<string>(310e5633-3ff2-4b83-b029-49cd8b57ae2d)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:int2string(dp:TOPBAR:Counter_Temp)" \
+								"}"
+						}
+						write: function<bool,string>(ff9da481-8294-4b59-be7c-a85de575d6e9)
+						{
+							script: "function(v:arg0::string)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+					textColor: #FF0000FF
+					font: font_resource(754363f0-52a0-4105-a34c-45743a7adbf7)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 30
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(4f8b3792-5e42-4caf-a5c9-ef596bd7544c)
+				{
+					features: feature_list [
+						MultiLine(ef4719f6-c8a0-4e24-a94d-6f331c109107)
+						{
+							lineOffset: 0
+							maxLineCount: 0
+						}]
+					children: children_list []
+					name: "Label_info"
+					visible: true
+					width: 172
+					height: 66
+					x: 30
+					y: 1
+					text: "The temperature is too high for snowing !"
+					textColor: #000000FF
+					font: font_resource(6111b543-17e8-4275-b253-0d2ebbd3148b)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 20
+					}
+					horizontalAlign: 1
+					verticalAlign: 0
+				}, 
+				GtfLabel(6a328f3f-6329-4032-a671-2f2e7e08fa60)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "make_temp_0"
+					visible: true
+					width: 184
+					height: 53
+					x: 17
+					y: 72
+					text: "Make temperature 0°C"
+					textColor: #FFFF00FF
+					font: font_resource(c2589aff-1ac0-4803-b066-d0ae742df8c6)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 20
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+				}, 
+				GtfContainer_template_instance(b40e8e27-8445-4162-99fd-21706c83ff24)
+				{
+					name: "NO"
+					template: @6de69774-4256-4b08-8264-fa138570e724 (objectref<GtfContainer_template>)
+					children: children_list []
+					touchShortReleased: function<bool,int,int,int,int>(4e60c27c-8ab2-4430-9d03-08528f1dce3c)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->NO.visible = false" \
+							"	v:this->^->YES.visible = true" \
+							"	dp:TOPBAR:Temperature_Nr = 30" \
+							"    false" \
+							"}"
+					}
+					x: 173
+					y: 84
+					image: image@6de69774-4256-4b08-8264-fa138570e724 (propref<image>)
+					visible: false
+				}, 
+				GtfContainer_template_instance(c2006063-4b3e-4b58-ae68-3f4b5493a8ab)
+				{
+					name: "YES"
+					template: @6de69774-4256-4b08-8264-fa138570e724 (objectref<GtfContainer_template>)
+					children: children_list []
+					touchShortReleased: function<bool,int,int,int,int>(8dafb2cd-7a1f-4cba-b290-b2c2a4334f90)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->NO.visible = true" \
+							"	v:this->^->YES.visible = false" \
+							"	dp:TOPBAR:Temperature_Nr = 0" \
+							"    false" \
+							"}"
+					}
+					x: 173
+					y: 84
+					image: image_resource(291993eb-8b00-4015-a1a1-672929230fc6)
+					{
+						file: "on_button.png"
+					}
+					visible: visible@6de69774-4256-4b08-8264-fa138570e724 (propref<bool>)
+				}]
+			visible: false
+			x: 114
+			y: 268
+		}]
+	name: "Temperature_View"
+	visible: true
+	width: 800
+	height: 480
+	x: 0
+	y: 0
+	Match_event: conditional_script(8b1523a8-1fcb-47cb-b423-e504915ebd04)
+	{
+		triggerList: trigger_list(12234e24-99e0-4d1d-bc9d-9e42693d90a9)
+		{
+			script: "ev:GoTo_Snow1" \
+				"ev:GoTo_Snow2" \
+				"" \
+				""
+		}
+		onTrigger: function<bool,bool>(e6b0dbff-7448-4b2d-b09b-5bf242b3d187)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	match_event v:event = ev:GoTo_Snow1 in" \
+				"{" \
+				"	v:this->Warning.visible = true" \
+				"	f:animation_play(v:this->Warning->Label->Animation)" \
+				"}" \
+				"	match_event v:event = ev:GoTo_Snow2 in" \
+				"{" \
+				"	v:this->Warning.visible = false" \
+				"}" \
+				"" \
+				"	false" \
+				"}"
+		}
+	}
+}

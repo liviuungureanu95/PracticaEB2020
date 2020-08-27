@@ -1,0 +1,553 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(cff474ea-8713-47a8-a262-00e3b17b683f)
+{
+	name: "Radio_View"
+	template: @95461b8a-82f0-421b-ba66-6095f03a1846 (objectref<GtfView_template>)
+	children: children_list [
+		GtfRectangle_template_instance(1778e500-e398-4d8b-be91-37308ff14a78)
+		{
+			name: "TopBar 1"
+			template: @946dc760-ee83-4771-bd7f-52f3864de092 (objectref<GtfRectangle_template>)
+			children: children_list []
+			MainText: "Radio"
+			BackButton_Background: BackButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Background: MainMenuButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Visible: MainMenuButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			BackButton_Visible: false
+			Released_BACK: Released_BACK@946dc760-ee83-4771-bd7f-52f3864de092 (propref<function<bool>>)
+		}, 
+		GtfImage(6341f7f1-e37c-4bfe-a230-4fe5abc2666a)
+		{
+			features: feature_list [
+				ScaleMode(81b65d84-7b48-49aa-a998-0f6c2884dcab)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "arrow"
+			visible: true
+			width: 30
+			height: 50
+			x: 385
+			y: 160
+			image: image_resource(dab14410-f6c6-45a0-afdf-42daba290ccb)
+			{
+				file: "MP_ARROW_SIDES.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(d7ab6f7a-51c6-40f1-bdf7-b3102f00145b)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "NR_Hz"
+			visible: true
+			width: 100
+			height: 70
+			x: 350
+			y: 95
+			text: string_scriptedValue(d4ca932b-2bbf-4d00-b785-d7a32ed79f97)
+			{
+				triggerList: trigger_list(3b278b96-3726-4331-b155-b1f2792cf3db)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(966a61d2-338f-466e-a2d0-73df3536a404)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(bbd2017e-ddd5-4f11-a357-b30e08b27ab8)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:RADIO:RADIO_NUMBER[dp:RADIO:RADIO_INDEX]" \
+						"}"
+				}
+				write: function<bool,string>(113e3f59-8d21-4010-8e5a-2b459428d4c5)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #00BFFFFF
+			font: font_resource(ace265b2-2400-4ebc-930d-4b80b73d94ad)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 50
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfImage(14c943b9-73f3-4e44-ab14-031f1362d2a9)
+		{
+			features: feature_list [
+				ScaleMode(9c43636c-a56f-4906-b976-b121c883ff97)
+				{
+					scaleMode: 1
+				}]
+			children: children_list []
+			name: "Name_Background"
+			visible: true
+			width: 800
+			height: 140
+			x: 0
+			y: 155
+			image: image_resource(33224423-e15f-402f-aacd-a2d855e5ea23)
+			{
+				file: "RADIO_ARROWS.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfLabel(7b84ae0a-c770-4de7-b7b7-4a70fbc1d3ea)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "RADIO_name_TXT"
+			visible: true
+			width: 300
+			height: 51
+			x: 250
+			y: 204
+			text: string_scriptedValue(9b766159-4d61-4265-b5e6-4617fc4243e2)
+			{
+				triggerList: trigger_list(3925fa5f-360c-4c61-9d84-c05f6d4df94d)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(8802dee3-08bf-41e5-ae53-dd2e4dc0aa1f)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(748b3875-c2f1-4834-9724-c247085b2759)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:RADIO:RADIO_NAME[dp:RADIO:RADIO_INDEX]" \
+						"}"
+				}
+				write: function<bool,string>(3a11ca50-7740-44bd-b7e5-ad32f3c4feea)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: #0000FFFF
+			font: font_resource(5632e77c-d7ec-47fa-b6ca-f1592bbe5fad)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 25
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfImage(ef5f31d2-5447-474a-aca9-443167b7a829)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Next_arrow"
+			visible: true
+			width: 50
+			height: 50
+			x: 532
+			y: 204
+			image: image_resource(a850845a-d341-43b2-8875-b91724f2facb)
+			{
+				file: "RADIO_ARROW.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(d9fe550f-9561-4823-a4d6-96a4383d20d3)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "SUPER_Next_arrow"
+			visible: true
+			width: 50
+			height: 50
+			x: 587
+			y: 204
+			image: image_resource(827aca7d-07ed-4c2e-8b32-85863c4244e0)
+			{
+				file: "MP_ARROW.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(cf84eba7-f976-4018-a670-6d98ae422aae)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Preview_arrow"
+			visible: true
+			width: 50
+			height: 50
+			x: 216
+			y: 204
+			image: image_resource(0d3b097a-8428-4fd4-95a1-befbd8d79a48)
+			{
+				file: "RADIO_ARROW1.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfImage(b367ca7c-c74b-4804-8182-8afcaf024474)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "SUPER_Preview_arrow"
+			visible: true
+			width: 50
+			height: 50
+			x: 165
+			y: 204
+			image: image_resource(f2d4ce6b-4763-4bfe-a7c5-be89c1115108)
+			{
+				file: "MP_ARROW1.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfContainer(14637ca5-f2e2-45bc-ba7a-4e8a8ed61cd8)
+		{
+			features: feature_list [
+				TouchShortReleased(8b60e3bf-5f17-4b05-be10-e7d06fa77729)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(b9343655-fc5a-4415-944f-d690fd5eb15f)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:RADIO:RADIO_INDEX = (dp:RADIO:RADIO_INDEX +1) % dp:RADIO:RADIO_Name_number" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(ad59a287-e89b-4ad6-9988-ec027fe096f0)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "Next_arrow_button"
+			visible: true
+			width: 50
+			height: 50
+			x: 532
+			y: 204
+		}, 
+		GtfContainer(94db6d7d-f087-4630-b56e-381cf369ff65)
+		{
+			features: feature_list [
+				TouchShortReleased(7be714bc-5191-4bf8-8d86-6dd212534cb9)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(e4f15837-14b3-4b54-977a-f1314fd4fad7)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	dp:RADIO:RADIO_INDEX = (dp:RADIO:RADIO_INDEX +10) % dp:RADIO:RADIO_Name_number" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(029da8cd-71fb-423e-b3d5-9bd6581190f0)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "Super_next_arrow_button"
+			visible: true
+			width: 50
+			height: 50
+			x: 587
+			y: 204
+		}, 
+		GtfContainer(d33aec9c-6b1e-4f72-a918-4f789e9009db)
+		{
+			features: feature_list [
+				TouchShortReleased(2d63ed47-897d-4da3-be1e-3ed43183305e)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(99cd8497-7c6f-4619-bf42-521fc54b6d57)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:RADIO:RADIO_INDEX == 0)" \
+							"	{" \
+							"		dp:RADIO:RADIO_INDEX = dp:RADIO:RADIO_Name_number -1" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"		dp:RADIO:RADIO_INDEX = dp:RADIO:RADIO_INDEX -1" \
+							"	}" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(11b76767-d1ad-4a15-8af8-43b04450c06f)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "Preview_arrow_button"
+			visible: true
+			width: 50
+			height: 50
+			x: 216
+			y: 204
+		}, 
+		GtfContainer(6e8c5321-3e5f-4619-b268-a0eedcee08c1)
+		{
+			features: feature_list [
+				TouchShortReleased(a25c203c-0ed8-455e-9248-7823c416ca71)
+				{
+					touchShortReleased: function<bool,int,int,int,int>(f583dbfd-cf13-4b5f-9f4b-f22d4546ebeb)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	if(dp:RADIO:RADIO_INDEX == 0)" \
+							"	{" \
+							"		dp:RADIO:RADIO_INDEX = dp:RADIO:RADIO_Name_number -10" \
+							"	}" \
+							"	else" \
+							"	{" \
+							"		dp:RADIO:RADIO_INDEX = dp:RADIO:RADIO_INDEX -10" \
+							"	}" \
+							"    false" \
+							"}"
+					}
+				}, 
+				StateTouched(bdcd16b8-6023-4dd0-a9fd-848128538d87)
+				{
+					touchable: true
+					touched: false
+					touchPolicy: 0
+					touchBehavior: 0
+				}]
+			children: children_list []
+			name: "Super_preview_arrow_button"
+			visible: true
+			width: 50
+			height: 50
+			x: 165
+			y: 204
+		}, 
+		GtfContainer_template_instance(984e4684-28c1-4c4c-9598-6dc61b88a61d)
+		{
+			name: "DOWNBAR"
+			template: @db5436ec-e941-4c17-8128-a4e544b0abe6 (objectref<GtfContainer_template>)
+			children: children_list []
+		}, 
+		GtfContainer_template_instance(f5566db3-bdb2-4762-9c91-b89609b98770)
+		{
+			name: "button1"
+			template: @e1f953fa-1a2f-49a4-af3c-e9794438717a (objectref<GtfContainer_template>)
+			children: children_list []
+			text: text@e1f953fa-1a2f-49a4-af3c-e9794438717a (propref<string>)
+			x: 5
+			y: 406
+			Button_function: function<bool>(70e532f3-7df6-4436-becd-e77ddc6f18ca)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:RADIO:RADIO_INDEX = 32" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(ac084a95-d33b-4c87-b9f3-73d607cc4f8e)
+		{
+			name: "button2"
+			template: @e1f953fa-1a2f-49a4-af3c-e9794438717a (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "88.6"
+			x: 105
+			y: 406
+			Button_function: function<bool>(6a935e45-d5b7-428c-9565-0a10748e835f)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:RADIO:RADIO_INDEX = 26" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(aecc60af-4a69-4e25-9431-56b072451198)
+		{
+			name: "button3"
+			template: @e1f953fa-1a2f-49a4-af3c-e9794438717a (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "87.4"
+			x: 205
+			y: 406
+			Button_function: function<bool>(c15a9c48-a1ab-4742-97a8-d94b2fccb572)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:RADIO:RADIO_INDEX = 14" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(f7987f6a-d751-427b-aef9-6bc57ef1338c)
+		{
+			name: "button4"
+			template: @e1f953fa-1a2f-49a4-af3c-e9794438717a (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "91.3"
+			x: 305
+			y: 406
+			Button_function: function<bool>(9ca472ea-41b3-4e04-8a06-f61653bee743)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:RADIO:RADIO_INDEX = 53" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(a73eeaca-5da2-47d4-8c19-79af6619c0f5)
+		{
+			name: "button5"
+			template: @e1f953fa-1a2f-49a4-af3c-e9794438717a (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "91.0"
+			x: 405
+			y: 406
+			Button_function: function<bool>(759fddb7-d31e-4596-8ed8-ffb080fee24e)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:RADIO:RADIO_INDEX = 50" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(18101b35-90ed-4e39-8f7b-0b53b5494dbd)
+		{
+			name: "button6"
+			template: @e1f953fa-1a2f-49a4-af3c-e9794438717a (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "88.5"
+			x: 505
+			y: 406
+			Button_function: function<bool>(7360ab2b-e80a-432d-87d5-7a3fe09c8ead)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:RADIO:RADIO_INDEX = 25" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(68af167c-6735-471d-ba42-7a5401ae9537)
+		{
+			name: "button7"
+			template: @e1f953fa-1a2f-49a4-af3c-e9794438717a (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "87.2"
+			x: 605
+			y: 406
+			Button_function: function<bool>(c83663e9-bf51-451f-b222-6cd540f7881b)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:RADIO:RADIO_INDEX = 12" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfContainer_template_instance(8aff6e16-9140-4f6e-8c60-6726a616ae89)
+		{
+			name: "button8"
+			template: @e1f953fa-1a2f-49a4-af3c-e9794438717a (objectref<GtfContainer_template>)
+			children: children_list []
+			text: "92.0"
+			x: 705
+			y: 406
+			Button_function: function<bool>(80899036-e381-4c5d-bbd8-11e69a7bef57)
+			{
+				script: "function()" \
+					"{" \
+					"	dp:RADIO:RADIO_INDEX = 60" \
+					"	false" \
+					"}"
+			}
+		}, 
+		GtfImage(3f9b818f-1c69-4f68-ac57-0814e19b3bc4)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "Radio_Img"
+			visible: true
+			width: 200
+			height: 100
+			x: 300
+			y: 280
+			image: image_scriptedValue(1f56f373-2cd9-47d0-a2a3-69710611e94a)
+			{
+				triggerList: trigger_list(864f5a49-c550-4547-ad6d-53d6442e66a9)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(6bf38cbd-df55-430c-b48b-4c763119f3df)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<image>(b82a5295-f34e-45dc-9484-ef0a0a83b6a1)
+				{
+					script: "function()" \
+						"{" \
+						"	dp:RADIO:RADIO_IMG[dp:RADIO:RADIO_INDEX]" \
+						"" \
+						"}"
+				}
+				write: function<bool,image>(0dcb93a1-36e5-4fe7-8da7-001a579a0309)
+				{
+					script: "function(v:arg0::image)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}]
+}

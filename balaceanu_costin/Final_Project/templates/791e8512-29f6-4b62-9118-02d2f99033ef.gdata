@@ -1,0 +1,117 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(791e8512-29f6-4b62-9118-02d2f99033ef)
+{
+	name: "zzzzzUSB"
+	structure: GtfContainer(b79a0307-f4ee-4c11-ae8a-baef7c932dde)
+	{
+		features: feature_list [
+			TouchPressed(d163c7f1-9865-4b26-9a97-aad6b466d07b)
+			{
+				touchPressed: function<bool,int,int,int,int>(189b62c2-49d9-4449-9067-e5901cd3931f)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->border.borderColor = dp:BorderColor_Pressed" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(52ed9629-298d-4d93-b745-28f9860a9b67)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(3b4177d7-be99-464b-afa6-9a171587128a)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.Button_function()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(b73479ee-a8ba-427a-9518-a59ccf3d6534)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfImage(fdbf35e6-1f61-4132-bdaa-700bb7cbda75)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Image"
+				visible: true
+				width: width@b79a0307-f4ee-4c11-ae8a-baef7c932dde (propref<int>)
+				height: height@b79a0307-f4ee-4c11-ae8a-baef7c932dde (propref<int>)
+				x: 0
+				y: 0
+				image: image_resource(0ee52c79-7321-4683-a09f-206ac3cd7c0b)
+				{
+					file: "MP_USB.png"
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfLabel(63d44de0-d9f8-4316-96fc-e6013478aa17)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Label 3"
+				visible: true
+				width: 100
+				height: 40
+				x: 1
+				y: 100
+				text: "label"
+				textColor: #00BFFFFF
+				font: font_resource(e743cb61-08ed-4158-a353-cd8cd9a90733)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 20
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfRectangle(32cf7a0e-1667-475e-bcd4-875d5726004c)
+			{
+				features: feature_list [
+					Border(3a886357-c264-4c1e-bbee-d12ede653952)
+					{
+						borderThickness: 2
+						borderColor: #FFFFFF00
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "border"
+				visible: true
+				width: 100
+				height: 140
+				x: 0
+				y: 0
+				fillColor: #FFFFFF00
+			}]
+		name: "Container"
+		visible: true
+		width: 100
+		height: 140
+		x: 0
+		y: 0
+		Button_function: function<bool>(53adf424-566d-4e60-9ebb-1e5ba08837cb)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	visible: visible@b79a0307-f4ee-4c11-ae8a-baef7c932dde (propref<bool>)
+	x: x@b79a0307-f4ee-4c11-ae8a-baef7c932dde (propref<int>)
+	y: y@b79a0307-f4ee-4c11-ae8a-baef7c932dde (propref<int>)
+	image: image@fdbf35e6-1f61-4132-bdaa-700bb7cbda75 (propref<image>)
+	Button_function: Button_function@b79a0307-f4ee-4c11-ae8a-baef7c932dde (propref<function<bool>>)
+	borderColor: borderColor@3a886357-c264-4c1e-bbee-d12ede653952 (propref<color>)
+	text: text@63d44de0-d9f8-4316-96fc-e6013478aa17 (propref<string>)
+}

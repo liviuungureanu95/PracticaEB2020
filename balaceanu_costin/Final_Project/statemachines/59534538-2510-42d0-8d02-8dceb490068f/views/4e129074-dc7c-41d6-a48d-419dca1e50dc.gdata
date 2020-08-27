@@ -1,0 +1,396 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(4e129074-dc7c-41d6-a48d-419dca1e50dc)
+{
+	name: "YouTube_View"
+	template: @95461b8a-82f0-421b-ba66-6095f03a1846 (objectref<GtfView_template>)
+	children: children_list [
+		GtfImage(fd28b151-6355-4e89-a5d4-7d2546ca2cc2)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfImage(54316665-5435-4f7a-81d9-7a9a8a758723)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "content_img"
+					visible: true
+					width: 670
+					height: 380
+					x: 130
+					y: 30
+					image: image_resource(a49afaaa-4ea4-472a-be7f-6ea5f5991a86)
+					{
+						file: "ACASA_YouTube.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfContainer_template_instance(7b03ad76-9048-460c-ae68-43a45eca78f0)
+				{
+					name: "acasa"
+					template: @85aeb067-7bc5-4064-af92-f88f668b0a47 (objectref<GtfContainer_template>)
+					children: children_list []
+					width: 60
+					x: 10
+					y: 39
+					visible: true
+					touchShortReleased: function<bool,int,int,int,int>(a2a57ce2-7704-49a3-8610-9f5419a729d3)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->content_img.image = dp:YOUTUBE:acasa_youtube" \
+							"	v:this->^->acasa.visible = true" \
+							"	v:this->^->tendinte.visible = false" \
+							"	v:this->^->abonamente.visible = false" \
+							"	v:this->^->biblioteca.visible = false" \
+							"	v:this->^->istoric.visible = false" \
+							"	v:this->^->videoclipurile_tale.visible = false" \
+							"	v:this->^->vizioneaza_mai_tarziu.visible = false" \
+							"	v:this->^->clipuri_apreciate.visible = false" \
+							"	v:this->^->music.visible = false" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(569244e3-e2ef-4b8a-9da1-e657ad3a122c)
+				{
+					name: "tendinte"
+					template: @85aeb067-7bc5-4064-af92-f88f668b0a47 (objectref<GtfContainer_template>)
+					children: children_list []
+					width: 65
+					x: 10
+					y: 61
+					visible: false
+					touchShortReleased: function<bool,int,int,int,int>(478f2d6c-e56d-4d4e-a9ed-063cbbc81ced)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->content_img.image = dp:YOUTUBE:tendinte_youtube" \
+							"	v:this->^->tendinte.visible = true" \
+							"	v:this->^->acasa.visible = false" \
+							"	v:this->^->abonamente.visible = false" \
+							"	v:this->^->biblioteca.visible = false" \
+							"	v:this->^->istoric.visible = false" \
+							"	v:this->^->videoclipurile_tale.visible = false" \
+							"	v:this->^->vizioneaza_mai_tarziu.visible = false" \
+							"	v:this->^->clipuri_apreciate.visible = false" \
+							"	v:this->^->music.visible = false" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(3e00f50a-6a3a-4650-867b-d2eaa7a3c443)
+				{
+					name: "abonamente"
+					template: @85aeb067-7bc5-4064-af92-f88f668b0a47 (objectref<GtfContainer_template>)
+					children: children_list []
+					width: 80
+					x: 10
+					y: 83
+					visible: false
+					touchShortReleased: function<bool,int,int,int,int>(0d47b904-3293-413e-acd0-a5fc98e6454c)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->content_img.image = dp:YOUTUBE:abonamente_youtube" \
+							"	v:this->^->abonamente.visible = true" \
+							"	v:this->^->tendinte.visible = false" \
+							"	v:this->^->acasa.visible = false" \
+							"	v:this->^->biblioteca.visible = false" \
+							"	v:this->^->istoric.visible = false" \
+							"	v:this->^->videoclipurile_tale.visible = false" \
+							"	v:this->^->vizioneaza_mai_tarziu.visible = false" \
+							"	v:this->^->clipuri_apreciate.visible = false" \
+							"	v:this->^->music.visible = false" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(f5a8581c-7c39-4f05-b5f0-3d4b774b80c0)
+				{
+					name: "biblioteca"
+					template: @85aeb067-7bc5-4064-af92-f88f668b0a47 (objectref<GtfContainer_template>)
+					children: children_list []
+					width: 70
+					x: 10
+					y: 118
+					visible: false
+					touchShortReleased: function<bool,int,int,int,int>(b09cc9f6-d4db-4166-949c-ea2ec54f1480)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->content_img.image = dp:YOUTUBE:biblioteca_youtube" \
+							"	v:this->^->biblioteca.visible = true" \
+							"	v:this->^->tendinte.visible = false" \
+							"	v:this->^->abonamente.visible = false" \
+							"	v:this->^->acasa.visible = false" \
+							"	v:this->^->istoric.visible = false" \
+							"	v:this->^->videoclipurile_tale.visible = false" \
+							"	v:this->^->vizioneaza_mai_tarziu.visible = false" \
+							"	v:this->^->clipuri_apreciate.visible = false" \
+							"	v:this->^->music.visible = false" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(2c7c5c13-4793-4e34-9675-54463bbe13fb)
+				{
+					name: "istoric"
+					template: @85aeb067-7bc5-4064-af92-f88f668b0a47 (objectref<GtfContainer_template>)
+					children: children_list []
+					width: 57
+					x: 10
+					y: 140
+					visible: false
+					touchShortReleased: function<bool,int,int,int,int>(7acb0563-53f9-4c22-aacf-990167b1a144)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->content_img.image = dp:YOUTUBE:istoric_youtube" \
+							"	v:this->^->istoric.visible = true" \
+							"	v:this->^->tendinte.visible = false" \
+							"	v:this->^->abonamente.visible = false" \
+							"	v:this->^->biblioteca.visible = false" \
+							"	v:this->^->acasa.visible = false" \
+							"	v:this->^->videoclipurile_tale.visible = false" \
+							"	v:this->^->vizioneaza_mai_tarziu.visible = false" \
+							"	v:this->^->clipuri_apreciate.visible = false" \
+							"	v:this->^->music.visible = false" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(e4bb479f-1c63-4751-90ae-e870d0aa2a4b)
+				{
+					name: "videoclipurile_tale"
+					template: @85aeb067-7bc5-4064-af92-f88f668b0a47 (objectref<GtfContainer_template>)
+					children: children_list []
+					width: 96
+					x: 10
+					y: 162
+					visible: false
+					touchShortReleased: function<bool,int,int,int,int>(0648d9fd-bdca-4c53-90d7-5d3a47ef2725)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->content_img.image = dp:YOUTUBE:videoclipurile_tale_youtube" \
+							"	v:this->^->videoclipurile_tale.visible = true" \
+							"	v:this->^->tendinte.visible = false" \
+							"	v:this->^->abonamente.visible = false" \
+							"	v:this->^->biblioteca.visible = false" \
+							"	v:this->^->istoric.visible = false" \
+							"	v:this->^->acasa.visible = false" \
+							"	v:this->^->vizioneaza_mai_tarziu.visible = false" \
+							"	v:this->^->clipuri_apreciate.visible = false" \
+							"	v:this->^->music.visible = false" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(bb7c1234-26ad-4a0d-a64b-aef89f96d1f6)
+				{
+					name: "vizioneaza_mai_tarziu"
+					template: @85aeb067-7bc5-4064-af92-f88f668b0a47 (objectref<GtfContainer_template>)
+					children: children_list []
+					width: 108
+					x: 10
+					y: 184
+					visible: false
+					touchShortReleased: function<bool,int,int,int,int>(7b1dce31-59b5-4281-89d7-dd9ff8d938ac)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->content_img.image = dp:YOUTUBE:vizioneaza_mai_tarziu_youtube" \
+							"	v:this->^->vizioneaza_mai_tarziu.visible = true" \
+							"	v:this->^->tendinte.visible = false" \
+							"	v:this->^->abonamente.visible = false" \
+							"	v:this->^->biblioteca.visible = false" \
+							"	v:this->^->istoric.visible = false" \
+							"	v:this->^->videoclipurile_tale.visible = false" \
+							"	v:this->^->acasa.visible = false" \
+							"	v:this->^->clipuri_apreciate.visible = false" \
+							"	v:this->^->music.visible = false" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(792f8209-26ed-40be-b440-321ab1668a88)
+				{
+					name: "clipuri_apreciate"
+					template: @85aeb067-7bc5-4064-af92-f88f668b0a47 (objectref<GtfContainer_template>)
+					children: children_list []
+					width: 90
+					x: 10
+					y: 206
+					visible: false
+					touchShortReleased: function<bool,int,int,int,int>(9c89645f-b19a-4dca-a545-67b2fef4e480)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->content_img.image = dp:YOUTUBE:clipuri_apreciate_youtube" \
+							"	v:this->^->clipuri_apreciate.visible = true" \
+							"	v:this->^->tendinte.visible = false" \
+							"	v:this->^->abonamente.visible = false" \
+							"	v:this->^->biblioteca.visible = false" \
+							"	v:this->^->istoric.visible = false" \
+							"	v:this->^->videoclipurile_tale.visible = false" \
+							"	v:this->^->vizioneaza_mai_tarziu.visible = false" \
+							"	v:this->^->acasa.visible = false" \
+							"	v:this->^->music.visible = false" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfContainer_template_instance(8a14fbda-fa90-4605-a7d0-0fb2eb57f507)
+				{
+					name: "music"
+					template: @85aeb067-7bc5-4064-af92-f88f668b0a47 (objectref<GtfContainer_template>)
+					children: children_list []
+					width: 56
+					x: 10
+					y: 228
+					visible: false
+					touchShortReleased: function<bool,int,int,int,int>(5e196ccb-4ee3-4839-bfed-936fc9bcf763)
+					{
+						script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+							"{" \
+							"	v:this->^->content_img.image = dp:YOUTUBE:music_youtube" \
+							"	v:this->^->music.visible = true" \
+							"	v:this->^->tendinte.visible = false" \
+							"	v:this->^->abonamente.visible = false" \
+							"	v:this->^->biblioteca.visible = false" \
+							"	v:this->^->istoric.visible = false" \
+							"	v:this->^->videoclipurile_tale.visible = false" \
+							"	v:this->^->vizioneaza_mai_tarziu.visible = false" \
+							"	v:this->^->clipuri_apreciate.visible = false" \
+							"	v:this->^->acasa.visible = false" \
+							"    false" \
+							"}"
+					}
+				}, 
+				GtfLabel(9bb485d8-b95f-4a84-9d70-73881ba38b3c)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "add_txt"
+					visible: true
+					width: 289
+					height: 17
+					x: 314
+					y: 8
+					text: @c50af199-5d24-4dac-9638-b6ee71809d36 (objectref<string>)
+					textColor: #FFFFFFFF
+					font: font_resource(031e62eb-09e8-40dc-af6b-f10c687c082f)
+					{
+						file: "PT_Sans_Narrow.ttf"
+						size: 15
+					}
+					horizontalAlign: 0
+					verticalAlign: 0
+					inputScript: conditional_script(c199186b-939e-4428-a0e6-981abfd09a79)
+					{
+						triggerList: trigger_list(e4df1c28-680a-4df0-9797-d71b4c65a1e3)
+						{
+							script: "ev:KEYBOARD:keypadPress" \
+								""
+						}
+						onTrigger: function<bool,bool>(467e8ef2-a252-4377-b825-d239b9eb2360)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	match_event v:e = ev:KEYBOARD:keypadPress in " \
+								"		let v:val = v:e.Value in " \
+								"			if(v:val == \"space\")" \
+								"				dp:KEYBOARD:YouTube_Txt += \" \"" \
+								"			else if(v:val == \"delete\")" \
+								"				dp:KEYBOARD:YouTube_Txt = \"\"" \
+								"			else" \
+								"				dp:KEYBOARD:YouTube_Txt += v:val	" \
+								"	false" \
+								"}"
+						}
+					}
+				}, 
+				GtfContainer(5ddfc0f5-e1a5-43e1-9897-315122be9df7)
+				{
+					features: feature_list [
+						TouchShortReleased(b02b05d1-5b63-4db1-bffa-24a5ad5e589f)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(d65494a5-8731-4197-80f8-c50e4e1044d5)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	v:this->^->\"KEYBOARD 1\".visible = true" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(87ec49c0-4c04-4230-8341-cc559aec99aa)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}]
+					children: children_list []
+					name: "keyboard_txt"
+					visible: true
+					width: 12
+					height: 8
+					x: 609
+					y: 12
+				}, 
+				GtfContainer_template_instance(20fde1c4-1309-41d7-83a7-5c470a61ea7a)
+				{
+					name: "KEYBOARD 1"
+					template: @710457c0-db12-4a2e-8b40-5b77a4a35792 (objectref<GtfContainer_template>)
+					children: children_list []
+					x: 162
+					y: 189
+					visible: false
+					"Released_button DEL": function<bool>(bc95976a-8653-4c23-b3a3-ff378631b796)
+					{
+						script: "function()" \
+							"{" \
+							"	fire ev:KEYBOARD:keypadPress(\"delete\")" \
+							"	false" \
+							"}"
+					}
+					Released_Button_ENTER: function<bool>(f496836a-bc44-4612-9e09-7969b4128b11)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^->\"KEYBOARD 1\".visible = false" \
+							"	false" \
+							"}"
+					}
+				}]
+			name: "Background"
+			visible: true
+			width: 800
+			height: 410
+			x: 0
+			y: 70
+			image: image_resource(90561ecc-4f2e-42c5-adf9-2c8833e8cb43)
+			{
+				file: "YouTube_background.png"
+			}
+			sRGB: false
+			horizontalAlign: 0
+			verticalAlign: 1
+		}, 
+		GtfRectangle_template_instance(b0a5ae19-3ce0-4a5a-9fa9-1b756b016df5)
+		{
+			name: "TopBar 1"
+			template: @946dc760-ee83-4771-bd7f-52f3864de092 (objectref<GtfRectangle_template>)
+			children: children_list []
+			MainText: "YouTube"
+			BackButton_Background: BackButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Background: MainMenuButton_Background@946dc760-ee83-4771-bd7f-52f3864de092 (propref<image>)
+			MainMenuButton_Visible: MainMenuButton_Visible@946dc760-ee83-4771-bd7f-52f3864de092 (propref<bool>)
+			BackButton_Visible: false
+			Released_BACK: Released_BACK@946dc760-ee83-4771-bd7f-52f3864de092 (propref<function<bool>>)
+		}]
+}
