@@ -21,12 +21,53 @@ haptic_compound_state(caf66d41-70d9-437e-956f-915b21d4aeef)
 			height: 100
 			name: "Settings Main State"
 			entry_action: function<void>(none)
-			exit_action: function<void>(none)
+			exit_action: function<void>(e41a1ea4-5cbd-41c4-8750-11d654503617)
+			{
+				script: "function()" \
+					"{" \
+					"	f:clearAllDynamicStateMachines(popup_stack:Main)" \
+					"}"
+			}
 			transitions: haptic_transitions []
-			internal_transitions: haptic_internal_transitions []
+			internal_transitions: haptic_internal_transitions [
+				haptic_internal_transition(cfe24ae0-202c-40c9-815d-fee4ea255ef6)
+				{
+					event: @3e7208e4-29cf-4f8f-95bc-223fe12513b2 (objectref<event>)
+					condition: function<bool>(none)
+					action: function<void>(766c67ee-41fe-4f53-9113-db53de819174)
+					{
+						script: "function()" \
+							"{" \
+							"	// Configure the following parameters:" \
+							"//   - popup_stack - the state with dynamic state list" \
+							"//   - sm - the dynamic state machine" \
+							"//   - priority - priority of the dynamic state machine" \
+							"f:pushDynamicStateMachine(popup_stack:Main, sm:\"Pop-Up\", 0)" \
+							"" \
+							"}"
+					}
+				}, 
+				haptic_internal_transition(92ab0dad-5be5-4b0b-85ce-46a2169bdabe)
+				{
+					event: @5ed75290-c810-43c5-a540-2c832c09d011 (objectref<event>)
+					condition: function<bool>(none)
+					action: function<void>(d756ba2c-6f57-44e8-8a22-2146b9e50ed6)
+					{
+						script: "function()" \
+							"{" \
+							"	// Configure the following parameters:" \
+							"//   - state - the state with dynamic state list" \
+							"//   - sm - the dynamic state machine" \
+							"	f:popDynamicStateMachine(popup_stack:Main, sm:\"Pop-Up\")" \
+							"" \
+							"}"
+					}
+				}]
 			background_color: #6C6C6CFF
 			dialog: (8cc9a1ae-cb2b-4e73-9e41-e176ed003f8e)
-			priority_stack: priority_stack(none)
+			priority_stack: priority_stack(ea0bba96-3872-4329-9bbf-8dc7dd9b3ca1)
+			{
+			}
 		}]
 	initial_state: haptic_initial_state(be077721-3d19-479e-b5c5-0eca42de8dea)
 	{

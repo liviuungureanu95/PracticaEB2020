@@ -4,12 +4,44 @@ GtfView(71345537-0e7a-4d43-a13f-8ba13adba30e)
 {
 	features: feature_list []
 	children: children_list [
-		GtfContainer_template_instance(e792f4b3-6f8b-4f52-8423-82c57b0cd7d4)
+		GtfContainer_template_instance(7d655526-a6ad-4e6a-af30-d8b2c7d8e294)
 		{
-			name: "Info 1"
-			template: @25a974a8-a71f-4d8f-bad2-86b065f546c6 (objectref<GtfContainer_template>)
+			name: "Music Player 1"
+			template: @6c468a75-a3b5-4206-b4b6-e172cfcb4478 (objectref<GtfContainer_template>)
 			children: children_list []
-			text: "Music"
+			text: text@6c468a75-a3b5-4206-b4b6-e172cfcb4478 (propref<string>)
+			"text 2": "text 2"@6c468a75-a3b5-4206-b4b6-e172cfcb4478 (propref<string>)
+			numItems: int_scriptedValue(60c1050a-0b7f-4ed1-9230-94dc83b36ad2)
+			{
+				triggerList: trigger_list(8d5ae7ca-3fa0-4b73-94ac-7b23839974e1)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(c87f2f23-98a0-4f86-8ef9-130e13dce177)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<int>(7902f13b-6c61-480c-afcc-7d3f9d0566c1)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	length dp:Music:song_list" \
+						"}"
+				}
+				write: function<bool,int>(8fd07a9a-db08-4198-b136-1b322a71773e)
+				{
+					script: "function(v:arg0::int)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
 		}]
 	name: "Music Main View"
 	visible: true

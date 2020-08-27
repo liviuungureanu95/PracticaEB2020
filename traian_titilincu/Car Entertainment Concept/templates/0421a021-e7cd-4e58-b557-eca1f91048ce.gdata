@@ -1,0 +1,438 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(0421a021-e7cd-4e58-b557-eca1f91048ce)
+{
+	name: "Settings Template"
+	structure: GtfContainer(cf52ea67-94d4-4bc0-a71a-6824f4593709)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(0d016e78-3ef0-46fb-baf1-f9ab7b87a570)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "background"
+				visible: true
+				width: width@cf52ea67-94d4-4bc0-a71a-6824f4593709 (propref<int>)
+				height: height@cf52ea67-94d4-4bc0-a71a-6824f4593709 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: @af66ba07-d9db-41c1-a543-11b5323fa844 (objectref<color>)
+			}, 
+			GtfAlphaMask(e6e82fa0-474d-4889-ba32-15036b7dd9dc)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfRectangle(88c85eb5-a6c4-4680-9215-66208b48eedc)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "background"
+						visible: true
+						width: 1280
+						height: 720
+						x: 0
+						y: 0
+						fillColor: #3B3B3BFF
+					}, 
+					GtfRectangle(c0218717-ebee-4c29-a2a6-def0bf27a066)
+					{
+						features: feature_list [
+							TouchShortReleased(180ba671-9f26-445f-95eb-a2f9ad97fb3e)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(dd84c950-e2b1-42ed-a691-f96923756010)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    v:this.fillColor = f:rgba2color(105, 105, 105, 255)" \
+										"    v:this->^->^->menu_title->background->title_label.text = \"Theme\"" \
+										"    v:this->^->setting_1_right.visible = true" \
+										"    " \
+										"    v:this->^->setting_2.fillColor = f:rgba2color(255, 255, 255, 0)" \
+										"    v:this->^->setting_2_right.visible = false" \
+										"    " \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(e72aec79-ee1f-47fc-aa9f-99fdd59cd1e2)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list [
+							GtfLabel(a207648f-61d6-44ed-a4c4-b48cf21247c5)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "setting_1_label"
+								visible: true
+								width: 347
+								height: height@c0218717-ebee-4c29-a2a6-def0bf27a066 (propref<int>)
+								x: 32
+								y: 0
+								text: "Theme"
+								textColor: #FFFFFFFF
+								font: font_resource(639c5f71-0375-4f75-acf2-18700820ecef)
+								{
+									file: "Fonts\\HelveticaNowDisplay-Bold.otf"
+									size: 30
+								}
+								horizontalAlign: 0
+								verticalAlign: 0
+							}]
+						name: "setting_1"
+						visible: true
+						width: 442
+						height: 85
+						x: 130
+						y: 175
+						fillColor: #FFFFFF00
+					}, 
+					GtfRectangle(b01ff96c-3700-4313-8bba-2d7d16944d83)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfInstantiator(f66bd504-5046-4ca6-82f7-86dc8252ba6e)
+							{
+								features: feature_list [
+									LayoutPolicyFlow(f3c23386-ecae-45de-88c1-141091ef7ffe)
+									{
+										horizontalGap: 20
+										verticalGap: 20
+										layoutDirection: 0
+										horizontalChildAlign: 0
+										verticalChildAlign: 0
+									}]
+								children: children_list [
+									GtfRectangle(70edeb18-c4be-41ed-9735-164755157df3)
+									{
+										features: feature_list [
+											LineIndex(1ae1d6ae-386f-4502-bc8a-7fd97d1b9fb1)
+											{
+												lineIndex: 0
+											}, 
+											TouchShortReleased(8682e413-b4d4-4217-b95e-159a0a3b7093)
+											{
+												touchShortReleased: function<bool,int,int,int,int>(df1e6de7-abf9-47e0-8ae0-abf41ab99d83)
+												{
+													script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+														"{" \
+														"    dp:Settings:theme_color = dp:Settings:themes[v:this.lineIndex]" \
+														"	fire ev:showPopUp(\"Theme\", \"The theme color changed.\")" \
+														"	false" \
+														"}"
+												}
+											}, 
+											StateTouched(a33a1bb2-53c7-497f-a456-96985856e7fd)
+											{
+												touchable: true
+												touched: false
+												touchPolicy: 0
+												touchBehavior: 0
+											}]
+										children: children_list []
+										name: "color"
+										visible: true
+										width: 60
+										height: 60
+										x: 0
+										y: 0
+										fillColor: #FFFFFFFF
+										setColor: conditional_script(fd0e9959-9c6b-4e05-9f96-964955781d3d)
+										{
+											triggerList: trigger_list(461f1a9b-4d62-49e0-8024-43f908ca9af4)
+											{
+												script: "dp:Settings:themes" \
+													"v:this.lineIndex"
+											}
+											onTrigger: function<bool,bool>(91a35600-d687-42da-8a8a-7f637c0d0ae8)
+											{
+												script: "function(v:arg0::bool)" \
+													"{" \
+													"	v:this.fillColor = dp:Settings:themes[v:this.lineIndex]" \
+													"	false" \
+													"}"
+											}
+										}
+										showPopUp: conditional_script(22433761-4e02-480d-84f5-4ddc87d93fff)
+										{
+											triggerList: trigger_list(7c152a77-c9cd-4099-ac7e-32f2f6703868)
+											{
+												script: "ev:showPopUp"
+											}
+											onTrigger: function<bool,bool>(407b83ed-8ff6-444e-8dcc-4a614c981840)
+											{
+												script: "function(v:arg0::bool)" \
+													"{" \
+													"	match_event v:event = ev:showPopUp in" \
+													"	{" \
+													"		dp:PopUp:popUp_title = \"Theme\"" \
+													"		dp:PopUp:popUp_description = \"Theme color changed\"" \
+													"		f:pushDynamicStateMachine(popup_stack:Main, sm:\"Pop-Up\", 0)" \
+													"	}" \
+													"" \
+													"	false" \
+													"}"
+											}
+										}
+									}]
+								name: "colors"
+								visible: true
+								width: 381
+								height: 314
+								x: 45
+								y: 131
+								numItems: int_scriptedValue(035d644e-868f-4dc3-b142-bffae375a540)
+								{
+									triggerList: trigger_list(8e65e3c8-04b7-4328-b0b6-3b946e4910bb)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(3d589e51-5b7c-422c-86fd-50b42f4dd586)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<int>(900aef1f-cc4b-451c-a1bc-0076dbd193b7)
+									{
+										script: "function()" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	length dp:Settings:themes" \
+											"}"
+									}
+									write: function<bool,int>(bd051a28-798a-4448-9788-ca45b7519165)
+									{
+										script: "function(v:arg0::int)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								lineMapping: intlist []
+							}, 
+							GtfLabel(dbc72906-1496-4b09-b476-924ace2b7854)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "info_label"
+								visible: true
+								width: 373
+								height: 100
+								x: 46
+								y: 19
+								text: "Select Theme Color:"
+								textColor: #FFFFFFFF
+								font: font_resource(9055b146-0df0-4fd6-822d-cd996b6a50b4)
+								{
+									file: "Fonts\\HelveticaNowDisplay-ExtraBold.otf"
+									size: 30
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}]
+						name: "setting_1_right"
+						visible: true
+						width: 483
+						height: 462
+						x: 694
+						y: 166
+						fillColor: #FFFFFF00
+					}, 
+					GtfRectangle(4a3463fd-252f-40bc-b480-a15d22fe019c)
+					{
+						features: feature_list [
+							TouchShortReleased(954822c3-17e4-4197-bd35-70f91fb60b1c)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(65d467c7-e412-444c-9f5e-25425009eaec)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    v:this.fillColor = f:rgba2color(105, 105, 105, 255)" \
+										"    v:this->^->^->menu_title->background->title_label.text = \"About\"" \
+										"    v:this->^->setting_2_right.visible = true" \
+										"    " \
+										"    v:this->^->setting_1.fillColor = f:rgba2color(255, 255, 255, 0)" \
+										"    v:this->^->setting_1_right.visible = false" \
+										"    " \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(18076c17-e52a-4333-9a8c-94736084541a)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list [
+							GtfLabel(08e1ed34-192c-4c81-af71-488fabf9286f)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "setting_2_label"
+								visible: true
+								width: 347
+								height: height@4a3463fd-252f-40bc-b480-a15d22fe019c (propref<int>)
+								x: 32
+								y: 0
+								text: "About"
+								textColor: #FFFFFFFF
+								font: font_resource(bf556249-73df-46f4-9416-20a4f8475eeb)
+								{
+									file: "Fonts\\HelveticaNowDisplay-Bold.otf"
+									size: 30
+								}
+								horizontalAlign: 0
+								verticalAlign: 0
+							}]
+						name: "setting_2"
+						visible: true
+						width: 442
+						height: 85
+						x: 129
+						y: 260
+						fillColor: #FFFFFF00
+					}, 
+					GtfRectangle(fd2ef8cb-2adc-42d6-b89f-4536484ed9f4)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLabel(10cf6c29-7489-45dc-b516-3bce5b1afe8d)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "about_label"
+								visible: true
+								width: 373
+								height: 48
+								x: 46
+								y: 35
+								text: "Created by Traian Titilincu"
+								textColor: #FFFFFFFF
+								font: font_resource(7e892f84-baa6-4e8c-952c-d22a987552ff)
+								{
+									file: "Fonts\\HelveticaNowDisplay-Bold.otf"
+									size: 30
+								}
+								horizontalAlign: 0
+								verticalAlign: 1
+							}]
+						name: "setting_2_right"
+						visible: false
+						width: 483
+						height: 462
+						x: 694
+						y: 166
+						fillColor: #FFFFFF00
+					}]
+				name: "menu"
+				visible: true
+				width: 1280
+				height: 720
+				x: 0
+				y: 0
+				enabled: true
+				image: image_resource(82ded8a9-4f8e-48b5-b0eb-25f27272ff5d)
+				{
+					file: "Graphic Elements\\Alpha Masks\\menu mask.jpg"
+				}
+				horizontalAlign: 0
+				verticalAlign: 1
+				scaleMode: 0
+			}, 
+			GtfAlphaMask(e937757c-137a-4997-8ea9-c3897980f3c1)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfRectangle(3986cb87-97be-48f3-b209-3bd7e5766205)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLabel(6a57cd33-ad9f-44a1-b582-b7058e86a546)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "title_label"
+								visible: true
+								width: 367
+								height: 72
+								x: 744
+								y: 102
+								text: ""
+								textColor: #FFFFFFFF
+								font: font_resource(56273e6f-db8a-4b6d-802a-e42557e7bcc2)
+								{
+									file: "Fonts\\HelveticaNowDisplay-Bold.otf"
+									size: 30
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}, 
+							GtfLabel(a91682dc-8ebd-478b-8e8f-a5c8857a151a)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "title_label_2"
+								visible: true
+								width: 367
+								height: 72
+								x: 159
+								y: 102
+								text: "Settings"
+								textColor: #FFFFFFFF
+								font: font_resource(f75cc3b2-a44a-493c-ba33-ae3d3956a4be)
+								{
+									file: "Fonts\\HelveticaNowDisplay-Bold.otf"
+									size: 30
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}]
+						name: "background"
+						visible: true
+						width: 1280
+						height: 720
+						x: 1
+						y: 0
+						fillColor: @f490717d-9d6d-48ab-8a26-8a47b0dbc54d (objectref<color>)
+					}]
+				name: "menu_title"
+				visible: true
+				width: 1280
+				height: 720
+				x: 0
+				y: 0
+				enabled: true
+				image: image_resource(9e0f8808-602e-4e01-81ba-b4a8a35a4e5d)
+				{
+					file: "Graphic Elements\\Alpha Masks\\menu title mask.jpg"
+				}
+				horizontalAlign: 0
+				verticalAlign: 1
+				scaleMode: 0
+			}, 
+			GtfContainer_template_instance(30c614d8-1423-4390-a723-adf670b23cd8)
+			{
+				name: "home_button"
+				template: @37538332-8afd-45a9-bc6f-34198f6c046d (objectref<GtfContainer_template>)
+				children: children_list []
+				y: 650
+				visible: visible@37538332-8afd-45a9-bc6f-34198f6c046d (propref<bool>)
+			}]
+		name: "Elements"
+		visible: true
+		width: 1280
+		height: 720
+		x: 0
+		y: 0
+	}
+}

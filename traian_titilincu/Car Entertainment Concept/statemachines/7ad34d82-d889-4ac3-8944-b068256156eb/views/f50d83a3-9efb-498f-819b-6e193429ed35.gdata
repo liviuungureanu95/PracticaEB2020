@@ -4,12 +4,158 @@ GtfView(f50d83a3-9efb-498f-819b-6e193429ed35)
 {
 	features: feature_list []
 	children: children_list [
-		GtfContainer_template_instance(2e698edb-b2d1-4b2b-8f72-18df3eb6cf7a)
+		GtfContainer_template_instance(ba5008d5-d085-46b7-a97c-289607f07909)
 		{
-			name: "Info 1"
-			template: @25a974a8-a71f-4d8f-bad2-86b065f546c6 (objectref<GtfContainer_template>)
+			name: "Videos Template"
+			template: @a5cbedac-b6f8-4379-aa07-603d5e637695 (objectref<GtfContainer_template>)
 			children: children_list []
-			text: "Videos"
+			text: string_scriptedValue(db94bfe6-7c34-4860-b291-d00e8821bb16)
+			{
+				triggerList: trigger_list(3a4c9613-bcd5-4617-aff9-02d31bcf624c)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(b1a7ee6b-19ab-44a0-a367-fbdab3fc3d0e)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(6d55fe11-74f3-4bc2-adbb-fe4c25990900)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:Videos:videos_list[dp:Videos:video_index] + \"\"" \
+						"}"
+				}
+				write: function<bool,string>(dbd90632-3b49-47cd-b5a5-64012d601863)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			image: image_scriptedValue(9047cef6-72cf-4cd2-a700-74702d285ef1)
+			{
+				triggerList: trigger_list(04137ddb-49f3-4f99-b05c-b4590aab5c3e)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(4bdceea5-e9fa-411b-8728-671769509dad)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<image>(1cb22c7a-6f5f-45a4-91a7-dd845bef8fb1)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:Videos:videos_images[dp:Videos:video_index]" \
+						"}"
+				}
+				write: function<bool,image>(c27f4116-f4f8-445d-b7be-bf0f45db7e94)
+				{
+					script: "function(v:arg0::image)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			touchShortReleased: function<bool,int,int,int,int>(dcfa6879-35e8-4765-b792-3b51baf3e2ed)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    if (dp:Videos:video_index == 0)" \
+					"    {" \
+					"    	dp:Videos:video_index = length dp:Videos:videos_list - 1" \
+					"    }" \
+					"    else" \
+					"    {" \
+					"    	dp:Videos:video_index -= 1" \
+					"    }" \
+					"    dp:Videos:videos_isPlay = true" \
+					"    false" \
+					"}"
+			}
+			"touchShortReleased 2": function<bool,int,int,int,int>(65b21c63-ea75-4dc1-a7d8-08f2380d32de)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    if(dp:Videos:videos_isPlay == true)" \
+					"    {" \
+					"    	dp:Videos:videos_isPlay = false" \
+					"    }" \
+					"    else" \
+					"    {" \
+					"    	dp:Videos:videos_isPlay = true" \
+					"    }" \
+					"    false" \
+					"}"
+			}
+			"touchShortReleased 3": function<bool,int,int,int,int>(ac8ab87c-93bb-45fd-ba92-9c299cc57431)
+			{
+				script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+					"{" \
+					"    if (dp:Videos:video_index == length dp:Videos:videos_list - 1)" \
+					"    {" \
+					"    	dp:Videos:video_index = 0" \
+					"    }" \
+					"    else" \
+					"    {" \
+					"    	dp:Videos:video_index += 1" \
+					"    }" \
+					"    dp:Videos:videos_isPlay = true" \
+					"    false" \
+					"}"
+			}
+			"image 2": image_scriptedValue(4f0eb51f-4e00-43a3-8fb4-921643d71497)
+			{
+				triggerList: trigger_list(8ad6fd9b-cace-4c76-87fb-2295fd0b27fb)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(d9e05297-8727-4e44-93f0-21a30e38e347)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<image>(286cbbe4-e053-4aa8-8e48-c80ed0837c8b)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	if(dp:Videos:videos_isPlay == true)" \
+						"	{" \
+						"		dp:\"Graphic Elements\":play_states[0]" \
+						"	}" \
+						"	else" \
+						"	{" \
+						"		dp:\"Graphic Elements\":play_states[1]" \
+						"	}" \
+						"}"
+				}
+				write: function<bool,image>(009c53ae-b73b-4fef-8901-2531de4ec655)
+				{
+					script: "function(v:arg0::image)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
 		}]
 	name: "Videos Main View"
 	visible: true

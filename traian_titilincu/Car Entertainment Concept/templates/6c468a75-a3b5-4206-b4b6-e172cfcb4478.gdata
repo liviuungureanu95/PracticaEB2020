@@ -1,0 +1,705 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(6c468a75-a3b5-4206-b4b6-e172cfcb4478)
+{
+	name: "Music Player"
+	structure: GtfContainer(10f4b76c-a5b9-40b4-9dc4-0cf7bd13ceb7)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(2a2f8e96-3136-42d8-82d7-da94a7a76f53)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "background"
+				visible: true
+				width: width@10f4b76c-a5b9-40b4-9dc4-0cf7bd13ceb7 (propref<int>)
+				height: height@10f4b76c-a5b9-40b4-9dc4-0cf7bd13ceb7 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: @af66ba07-d9db-41c1-a543-11b5323fa844 (objectref<color>)
+			}, 
+			GtfContainer_template_instance(c6a6c2ae-8400-4271-9247-a77d76d0fa5f)
+			{
+				name: "home_button"
+				template: @37538332-8afd-45a9-bc6f-34198f6c046d (objectref<GtfContainer_template>)
+				children: children_list []
+				y: 650
+				visible: visible@37538332-8afd-45a9-bc6f-34198f6c046d (propref<bool>)
+			}, 
+			GtfAlphaMask(26b10fa1-4484-4a17-8764-5043b6c4e8a3)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfRectangle(7c98b50c-9499-46c5-bcd6-76e0bcc96405)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "menu_rectangle"
+						visible: true
+						width: 1280
+						height: 720
+						x: 43
+						y: 37
+						fillColor: #333333FF
+					}, 
+					GtfImage(2632d35d-3343-4aa9-b92a-ceb18bb26441)
+					{
+						features: feature_list [
+							ScaleMode(39a70fc2-2e1c-4122-bd2c-3686b6fa4873)
+							{
+								scaleMode: 2
+							}, 
+							TouchShortReleased(fb025fd6-133c-4719-9322-deef25716474)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(8207451a-3d45-4f60-81dc-cea4d648aa07)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    if(dp:Music:song_isPlay == true)" \
+										"    {" \
+										"    	dp:Music:song_isPlay = false" \
+										"    }" \
+										"    else" \
+										"    {" \
+										"    	dp:Music:song_isPlay = true" \
+										"    }" \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(15655a74-2f51-4440-9785-c0026ceea803)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list []
+						name: "play/pause"
+						visible: true
+						width: 60
+						height: 60
+						x: 312
+						y: 525
+						image: image_scriptedValue(f662cbc8-a9c2-4141-a48a-951c889c982e)
+						{
+							triggerList: trigger_list(11406120-9bc5-4f1a-a574-242a48188eb5)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(7d9865b3-d953-482f-9219-7b303dc65e86)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<image>(c57e91bb-a0e0-42c2-9190-a651c37f02b2)
+							{
+								script: "function()" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	if(dp:Music:song_isPlay == true)" \
+									"	{" \
+									"		dp:\"Graphic Elements\":play_states[0]" \
+									"	}" \
+									"	else" \
+									"	{" \
+									"		dp:\"Graphic Elements\":play_states[1]" \
+									"	}" \
+									"}"
+							}
+							write: function<bool,image>(460feae0-5daf-48d9-b9c5-54abfc7163fc)
+							{
+								script: "function(v:arg0::image)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						sRGB: false
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfImage(df88873e-3bdf-4eff-b1ce-491e7739eeb1)
+					{
+						features: feature_list [
+							ScaleMode(637dd3de-a50d-402e-af3b-101d62feabf2)
+							{
+								scaleMode: 2
+							}, 
+							TouchShortReleased(bbb0eca5-cc2a-45aa-810b-67fd68e9286e)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(15716ded-6b6e-4a07-a5e8-f6a204fabb38)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    if (dp:Music:song_index == 0)" \
+										"    {" \
+										"    	dp:Music:song_index = length dp:Music:song_list - 1" \
+										"    }" \
+										"    else" \
+										"    {" \
+										"    	dp:Music:song_index -= 1" \
+										"    }" \
+										"    dp:Music:song_isPlay = true" \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(d384077a-1263-4059-b048-0711b035ad73)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list []
+						name: "prev"
+						visible: true
+						width: 60
+						height: 60
+						x: 232
+						y: 525
+						image: image_resource(311ce23a-9e50-4491-8e63-d49ac31ad74b)
+						{
+							file: "Graphic Elements\\Buttons\\prev_song.png"
+						}
+						sRGB: false
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfImage(793d8375-767c-42d1-b912-0ccf7e3c0f50)
+					{
+						features: feature_list [
+							ScaleMode(b2bb9bd7-8102-4d2a-bae2-b6882fe585a8)
+							{
+								scaleMode: 2
+							}, 
+							TouchShortReleased(df957e3f-bd20-4b88-8a52-27d93bd0b4aa)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(d9ba8dd5-8a4e-4662-bbeb-adb42b1806ce)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    if (dp:Music:song_index == length dp:Music:song_list - 1)" \
+										"    {" \
+										"    	dp:Music:song_index = 0" \
+										"    }" \
+										"    else" \
+										"    {" \
+										"    	dp:Music:song_index += 1" \
+										"    }" \
+										"    dp:Music:song_isPlay = true" \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(350ab2a1-91c8-46a0-97ae-2eec5b44da55)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list []
+						name: "next"
+						visible: true
+						width: 60
+						height: 60
+						x: 395
+						y: 525
+						image: image_resource(64c3ca22-81e6-410e-9cbc-0fdf26bbe2e9)
+						{
+							file: "Graphic Elements\\Buttons\\next_song.png"
+						}
+						sRGB: false
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfImage(e48e5a4a-4b36-458f-a16a-4c29d65c445e)
+					{
+						features: feature_list [
+							ScaleMode(51cb84c4-a19a-423b-9e01-5e23b8387b67)
+							{
+								scaleMode: 2
+							}]
+						children: children_list []
+						name: "song_cover"
+						visible: true
+						width: 240
+						height: 240
+						x: 224
+						y: 208
+						image: image_scriptedValue(b7a6c835-471a-4f27-b456-5b292383942e)
+						{
+							triggerList: trigger_list(2636836b-30b0-4bc4-96e8-24354cee2995)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(ff01c9cf-d7d3-4c44-9978-29c23791351d)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<image>(f2394736-b590-49c0-b362-ade5c00e788b)
+							{
+								script: "function()" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	dp:Music:songs_images[dp:Music:song_index]" \
+									"}"
+							}
+							write: function<bool,image>(03ebbb0a-df69-4ca4-886d-2b056860fc36)
+							{
+								script: "function(v:arg0::image)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						sRGB: true
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfLabel(ef8cd2dd-ff0b-4d44-8c93-08e021748e10)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "song_title"
+						visible: true
+						width: 343
+						height: 62
+						x: 174
+						y: 457
+						text: string_scriptedValue(8d364bf0-a6cb-49e8-bae7-3f7e30bb8e4e)
+						{
+							triggerList: trigger_list(0dc75bdb-c62b-4479-8e99-5c862ae0c506)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(d60e93f2-304f-475e-ae80-29fb832de64d)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<string>(d145027f-0a18-4b79-be17-8bf8f3a84d89)
+							{
+								script: "function()" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	dp:Music:song_list[dp:Music:song_index] + \"\"" \
+									"}"
+							}
+							write: function<bool,string>(400feb80-0058-4348-8d49-4947188fa908)
+							{
+								script: "function(v:arg0::string)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						textColor: #FFFFFFFF
+						font: font_resource(cd7d43e7-71ff-4dea-bf48-9b201a385c44)
+						{
+							file: "Fonts\\HelveticaNowDisplay-ExtraBold.otf"
+							size: 30
+						}
+						horizontalAlign: 0
+						verticalAlign: 0
+					}, 
+					GtfAlphaMask(bd83e1f4-c697-4de7-af11-41a43cd3f1f9)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfContainer_template_instance(9cbd2dfa-aa2e-4084-92d0-f97482f8b9d6)
+							{
+								name: "volume_bar"
+								template: @380f76a9-8656-46e2-b4d1-d77e6b1d4a14 (objectref<GtfContainer_template>)
+								children: children_list []
+								x: 615
+								y: 78
+							}]
+						name: "volume_mask"
+						visible: true
+						width: 1280
+						height: 720
+						x: 0
+						y: 0
+						enabled: true
+						image: image_resource(de2e1a9c-b4a6-455b-8f4c-59669ebf0759)
+						{
+							file: "Graphic Elements\\Alpha Masks\\volume bar mask.jpg"
+						}
+						horizontalAlign: 0
+						verticalAlign: 1
+						scaleMode: 0
+					}, 
+					GtfContainer(1a94bd8b-d4ab-4d5b-97eb-6e4540e3481b)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfInstantiator(27232c6c-e8b0-4abb-8e58-dd06ebb464e8)
+							{
+								features: feature_list [
+									LayoutPolicyBox(5aa00ef5-865b-4670-97c6-b179ed244f3e)
+									{
+										gap: 0
+										layoutDirection: 1
+									}, 
+									ViewPort(aa255c00-426c-4c04-9622-4fa698bf5b12)
+									{
+										xOffset: 0
+										yOffset: 0
+									}]
+								children: children_list [
+									GtfRectangle(13790d9b-0092-47aa-857a-40fa543ae664)
+									{
+										features: feature_list [
+											LineIndex(842b6a99-6866-42fd-a29c-07966e07c64d)
+											{
+												lineIndex: 0
+											}]
+										children: children_list [
+											GtfLabel(18643fbf-d5d5-45e1-97fc-78665bd3d8f0)
+											{
+												features: feature_list [
+													TouchShortReleased(ee2c5e2b-e327-4b2b-be5e-e961e376ff39)
+													{
+														touchShortReleased: function<bool,int,int,int,int>(5822de11-7b48-4a1a-bcdb-6ed75e273def)
+														{
+															script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+																"{" \
+																"    dp:Music:song_index = v:this->^.lineIndex" \
+																"    false" \
+																"}"
+														}
+													}, 
+													StateTouched(01eeeddc-4b49-4a4d-b952-4b7a18a76baf)
+													{
+														touchable: true
+														touched: false
+														touchPolicy: 0
+														touchBehavior: 0
+													}]
+												children: children_list []
+												name: "song"
+												visible: true
+												width: 389
+												height: 60
+												x: 19
+												y: 0
+												text: ""
+												textColor: #FFFFFFFF
+												font: font_resource(b9f1c515-e92c-4265-95e7-638aa877d532)
+												{
+													file: "Fonts\\HelveticaNowDisplay-Regular.otf"
+													size: 30
+												}
+												horizontalAlign: 0
+												verticalAlign: 0
+											}]
+										name: "background"
+										visible: true
+										width: 413
+										height: 60
+										x: -8
+										y: 0
+										fillColor: #FFFFFF00
+										setText: conditional_script(7a33548f-753f-4c1d-91b5-ec75d8d44fe6)
+										{
+											triggerList: trigger_list(197ba814-2cb0-4abb-a092-2ad7704aacac)
+											{
+												script: "v:this.lineIndex" \
+													"dp:Music:song_list"
+											}
+											onTrigger: function<bool,bool>(85427f54-ed76-463c-a50a-7c4272a71db3)
+											{
+												script: "function(v:arg0::bool)" \
+													"{" \
+													"	v:this->song.text = dp:Music:song_list[v:this.lineIndex]" \
+													"	false" \
+													"}"
+											}
+										}
+									}]
+								name: "function_list"
+								visible: true
+								width: width@1a94bd8b-d4ab-4d5b-97eb-6e4540e3481b (propref<int>)
+								height: height@1a94bd8b-d4ab-4d5b-97eb-6e4540e3481b (propref<int>)
+								x: 0
+								y: 0
+								numItems: 0
+								lineMapping: intlist []
+								listButtonHeight: 60
+								goUpDown: conditional_script(9d920bec-d6f7-4f6f-a93b-83204840b18b)
+								{
+									triggerList: trigger_list(73ef071d-13ce-467c-aa74-efadf78d9d03)
+									{
+										script: "ev:scrollUp" \
+											"ev:scrollDown" \
+											"v:this.listButtonHeight"
+									}
+									onTrigger: function<bool,bool>(8abfc68a-7d84-49bf-be62-5003fc2cdf72)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	match_event v:event = ev:scrollUp in" \
+											"	{" \
+											"		v:this.yOffset += v:this.listButtonHeight/2" \
+											"	}" \
+											"	match_event v:event = ev:scrollDown in" \
+											"	{" \
+											"		v:this.yOffset -= v:this.listButtonHeight/2" \
+											"	}" \
+											"" \
+											"	false" \
+											"}"
+									}
+								}
+							}]
+						name: "list_container"
+						visible: true
+						width: 400
+						height: 300
+						x: 727
+						y: 240
+						limitYMovement: conditional_script(5e7b441b-dacb-4a05-82af-21bf30957b11)
+						{
+							triggerList: trigger_list(ab0453c3-35ee-4150-b37c-618c0d9f75ca)
+							{
+								script: "dp:Music:song_list" \
+									"v:this->function_list.listButtonHeight" \
+									"v:this->function_list.yOffset"
+							}
+							onTrigger: function<bool,bool>(7d539cf6-87dc-4212-b632-8cd01a529f3d)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	let v:maximumOffset = length dp:Music:song_list * v:this->function_list.listButtonHeight - v:this.height in" \
+									"	{" \
+									"		if(v:this->function_list.yOffset > 0)" \
+									"		{" \
+									"			v:this->function_list.yOffset = 0" \
+									"		}" \
+									"		if(v:this->function_list.yOffset < -v:maximumOffset)" \
+									"		{" \
+									"			v:this->function_list.yOffset = -v:maximumOffset" \
+									"		}" \
+									"		" \
+									"	}" \
+									"	false" \
+									"}"
+							}
+						}
+					}, 
+					GtfImage(055c2fec-4391-4461-81a5-a508a483b5bd)
+					{
+						features: feature_list [
+							ScaleMode(19a0d532-5b2b-467c-9617-5df3f09103ff)
+							{
+								scaleMode: 2
+							}, 
+							TouchShortReleased(450c93bf-5caa-419b-bccc-4da75e6d16e8)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(5e0157f0-f84c-4fce-88ec-77c9770838a0)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    fire ev:scrollUp()" \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(de3dddc4-eb7c-4aae-8ee7-b755b5907c2c)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list []
+						name: "up_arrow"
+						visible: true
+						width: 435
+						height: 62
+						x: 715
+						y: 180
+						image: image_resource(c9d4a664-f4e6-418c-8704-08700c33d9ff)
+						{
+							file: "Icons\\up_arrow.png"
+						}
+						sRGB: false
+						horizontalAlign: 1
+						verticalAlign: 0
+					}, 
+					GtfImage(a69cea82-bcba-4b07-a692-3b1bac0182d3)
+					{
+						features: feature_list [
+							ScaleMode(13252038-a41a-4108-9c83-f44e1dfe7cb1)
+							{
+								scaleMode: 2
+							}, 
+							TouchShortReleased(e1c79530-1e53-4255-a03c-d1552728f227)
+							{
+								touchShortReleased: function<bool,int,int,int,int>(b4ed8218-cafa-43fa-9dd6-7e6936abb0c7)
+								{
+									script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+										"{" \
+										"    fire ev:scrollDown()" \
+										"    false" \
+										"}"
+								}
+							}, 
+							StateTouched(5015a85d-ab73-4b2b-bd62-e899dc5c822a)
+							{
+								touchable: true
+								touched: false
+								touchPolicy: 0
+								touchBehavior: 0
+							}]
+						children: children_list []
+						name: "down_arrow"
+						visible: true
+						width: 436
+						height: 62
+						x: 715
+						y: 547
+						image: image_resource(68176785-2a44-49b9-b396-311e3fc16e9a)
+						{
+							file: "Icons\\down_arrow.png"
+						}
+						sRGB: false
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "menu_mask"
+				visible: true
+				width: 1280
+				height: 720
+				x: 0
+				y: 0
+				enabled: true
+				image: image_resource(a4a7f082-9020-41fb-9069-b2976eafc571)
+				{
+					file: "Graphic Elements\\menu mask.jpg"
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+				scaleMode: 2
+			}, 
+			GtfAlphaMask(66166674-45b4-40e2-acc0-8293dcb927ac)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfRectangle(92390484-5cdc-418b-a687-01a0b0cb6e5d)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfLabel(bafe080d-3fb5-495d-887a-a3efa6952177)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "list_label"
+								visible: true
+								width: 374
+								height: 76
+								x: 745
+								y: 101
+								text: "All Songs"
+								textColor: #FFFFFFFF
+								font: font_resource(dbd3d276-5edb-4d23-ad8b-74cc6b9498c3)
+								{
+									file: "Fonts\\HelveticaNowDisplay-Bold.otf"
+									size: 30
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}, 
+							GtfLabel(07e44140-d0ee-4b08-9420-bf250c510a39)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "function_label"
+								visible: true
+								width: 374
+								height: 76
+								x: 154
+								y: 101
+								text: "Music Player"
+								textColor: #FFFFFFFF
+								font: font_resource(2a8aa0f1-91f1-420e-a89f-d989e7f01001)
+								{
+									file: "Fonts\\HelveticaNowDisplay-Bold.otf"
+									size: 30
+								}
+								horizontalAlign: 1
+								verticalAlign: 0
+							}, 
+							GtfImage(b8d15952-ec23-4ca7-b8da-8d7c3b2ebea3)
+							{
+								features: feature_list [
+									ScaleMode(38400480-851e-4d44-91c7-da2aed067e3d)
+									{
+										scaleMode: 2
+									}]
+								children: children_list []
+								name: "volume_icon"
+								visible: true
+								width: 51
+								height: 44
+								x: 616
+								y: 122
+								image: image_resource(739a70b9-1c18-4992-8e5b-ad435ac1137d)
+								{
+									file: "Icons\\volume.png"
+								}
+								sRGB: false
+								horizontalAlign: 1
+								verticalAlign: 0
+							}]
+						name: "menu_title_bg"
+						visible: true
+						width: 1280
+						height: 720
+						x: 2
+						y: 1
+						fillColor: @f490717d-9d6d-48ab-8a26-8a47b0dbc54d (objectref<color>)
+					}]
+				name: "menu_titles_mask"
+				visible: true
+				width: 1280
+				height: 720
+				x: 0
+				y: 0
+				enabled: true
+				image: image_resource(3ad0bc05-97f6-4a00-9567-06aa4bc189ff)
+				{
+					file: "Graphic Elements\\menu title mask.jpg"
+				}
+				horizontalAlign: 0
+				verticalAlign: 1
+				scaleMode: 0
+			}]
+		name: "Elements"
+		visible: true
+		width: 1280
+		height: 720
+		x: 0
+		y: 0
+	}
+	text: text@07e44140-d0ee-4b08-9420-bf250c510a39 (propref<string>)
+	"text 2": text@bafe080d-3fb5-495d-887a-a3efa6952177 (propref<string>)
+	numItems: numItems@27232c6c-e8b0-4abb-8e58-dd06ebb464e8 (propref<int>)
+}

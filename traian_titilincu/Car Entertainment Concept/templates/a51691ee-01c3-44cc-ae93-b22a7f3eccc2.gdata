@@ -1,0 +1,327 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(a51691ee-01c3-44cc-ae93-b22a7f3eccc2)
+{
+	name: "Opener Template"
+	structure: GtfContainer(b2891966-b4cc-47de-970d-5e650061a7e9)
+	{
+		features: feature_list [
+			TouchShortReleased(b174ed3a-a88e-4027-87b8-e240d1b6aa8d)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(84c8c5a7-de16-4092-bb82-efe6ca36035a)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"    f:animation_play(v:this->opener_fade_out)" \
+						"    fire_delayed 1000, ev:goTo_menu()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(bcc476b7-496e-4d61-ad4b-9212bdc24d52)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfImage(954fdd31-a2bb-4cc8-8614-eb455bce3f02)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "frame"
+				visible: true
+				width: 1280
+				height: 720
+				x: 0
+				y: 0
+				image: image_scriptedValue(e8d721a2-0b92-410f-aea4-aeb2b31aa4e3)
+				{
+					triggerList: trigger_list(d8b88008-4d08-4a8d-9473-cc551771b99a)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(3a3203b8-2899-48bc-8e39-2cd1049edac1)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<image>(acf0e8bf-d7c0-4a16-96be-1941396f1a3f)
+					{
+						script: "function()" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	dp:Animations:opener_animation[v:this->^.frameIndex]" \
+							"}"
+					}
+					write: function<bool,image>(39d5493b-bef0-44a7-a9a9-4c1a1197b1a5)
+					{
+						script: "function(v:arg0::image)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				sRGB: false
+				horizontalAlign: 0
+				verticalAlign: 1
+			}, 
+			GtfParallelAnimation(f8d5ab8f-ee15-44b0-9d93-d58b5e7fced4)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLinearInterpolationS32(8283837e-67dc-42dd-889f-4f14d3db67ef)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "frameIndex_increase"
+						enabled: true
+						delay: 0
+						duration: 4500
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 0
+						end: 163
+						target: frameIndex@b2891966-b4cc-47de-970d-5e650061a7e9 (propref<int>)
+					}, 
+					GtfLinearInterpolationColor(73d622ff-2ba0-4437-a354-ec3229dfc5fb)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "fade_in"
+						enabled: true
+						delay: 0
+						duration: 1000
+						repeat: 1
+						alternating: false
+						relative: false
+						start: #000000FF
+						end: #00000000
+						target: fillColor@5919678c-ca30-42a6-a09c-2e89bab914c7 (propref<color>)
+					}, 
+					GtfConstCurveBool(8739741c-9472-4be2-9c1e-abaabab8059d)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "label_visibility"
+						enabled: true
+						delay: 0
+						duration: 4000
+						repeat: 1
+						alternating: false
+						relative: false
+						value: false
+						target: visible@058e2347-5b17-4e02-9ea9-e8d2f1d5f387 (propref<bool>)
+					}, 
+					GtfConstCurveBool(3fe7a365-04a8-4a22-b6f6-e331060507b4)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "label_visibility_on"
+						enabled: true
+						delay: 4000
+						duration: 4000
+						repeat: 1
+						alternating: false
+						relative: false
+						value: true
+						target: visible@058e2347-5b17-4e02-9ea9-e8d2f1d5f387 (propref<bool>)
+					}]
+				name: "opener_animation"
+				enabled: true
+				repeat: 1
+				alternating: false
+				scale: 1F
+				onPlay: function<void,int,bool>(cab040a6-0360-4c98-bd6d-444853cc9d1e)
+				{
+					script: "function(v:animation_time::int, v:forward::bool)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onPause: function<void,int>(8529ccd5-dd09-4c90-a83d-09b0ec272f26)
+				{
+					script: "function(v:animation_time::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onTerminate: function<void,int,int>(0aedcb2e-33c0-4b59-a07d-f51c86634950)
+				{
+					script: "function(v:animation_time::int, v:terminate::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+				animationStart: conditional_script(e3392379-9b9d-4f8f-a7df-ce3a87e42706)
+				{
+					triggerList: trigger_list(a0a55022-e83f-4358-8f09-c6cf9f7ef5d5)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(96442d18-0be1-4e7d-a76f-91adfd2d0ce9)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	f:animation_play(v:this)" \
+							"	false" \
+							"}"
+					}
+				}
+			}, 
+			GtfParallelAnimation(34f67b15-e1b1-4b1a-8adc-c9657376999f)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLinearInterpolationColor(f4fc1cdf-62a3-403c-92db-9bf6c7988aff)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "fade_out"
+						enabled: true
+						delay: 0
+						duration: 1000
+						repeat: 1
+						alternating: false
+						relative: false
+						start: #00000000
+						end: #000000FF
+						target: fillColor@5919678c-ca30-42a6-a09c-2e89bab914c7 (propref<color>)
+					}]
+				name: "opener_fade_out"
+				enabled: true
+				repeat: 1
+				alternating: false
+				scale: 1F
+				onPlay: function<void,int,bool>(1d193fe1-ead6-4940-b813-4f7f75c531f1)
+				{
+					script: "function(v:animation_time::int, v:forward::bool)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onPause: function<void,int>(8dfaee07-0d12-47ee-a5c0-3f7a2fcbddda)
+				{
+					script: "function(v:animation_time::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onTerminate: function<void,int,int>(a73965c6-bff4-42a9-9b6d-ce6cf94f1124)
+				{
+					script: "function(v:animation_time::int, v:terminate::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+			}, 
+			GtfLabel(058e2347-5b17-4e02-9ea9-e8d2f1d5f387)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfParallelAnimation(089e7812-004e-41e7-905d-cb0c3c7267d2)
+					{
+						features: feature_list []
+						children: children_list [
+							GtfSinusCurveColor(da25f631-5066-4ff9-8f09-942576b507e2)
+							{
+								features: feature_list []
+								children: children_list []
+								name: "flash"
+								enabled: true
+								delay: 0
+								duration: 1000
+								repeat: 0
+								alternating: true
+								relative: false
+								amplitude: #FFFFFFFF
+								constant: #FFFFFF00
+								frequency: 0.1F
+								phase: 0F
+								target: textColor@058e2347-5b17-4e02-9ea9-e8d2f1d5f387 (propref<color>)
+								startAnimation: conditional_script(5e9dbe3d-d0bb-4fc2-9348-2968890eea28)
+								{
+									triggerList: trigger_list(4409e571-c4e7-4739-9d26-8560962c264f)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(87452d8a-7879-4c82-86e3-0efd82a6e050)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	f:animation_play(v:this)" \
+											"	false" \
+											"}"
+									}
+								}
+							}]
+						name: "flash_animation"
+						enabled: true
+						repeat: 0
+						alternating: false
+						scale: 0.6F
+						onPlay: function<void,int,bool>(963c0863-c738-4070-ba07-bac0b3d76de6)
+						{
+							script: "function(v:animation_time::int, v:forward::bool)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onPause: function<void,int>(e9069415-9ba6-4d59-9da6-4c9ae75c257b)
+						{
+							script: "function(v:animation_time::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+						onTerminate: function<void,int,int>(d212e627-16c3-4256-8bdb-558819a2f954)
+						{
+							script: "function(v:animation_time::int, v:terminate::int)" \
+								"{" \
+								"" \
+								"}"
+						}
+					}]
+				name: "touch_label"
+				visible: true
+				width: width@b2891966-b4cc-47de-970d-5e650061a7e9 (propref<int>)
+				height: 100
+				x: 0
+				y: 580
+				text: "Touch the screen to continue"
+				textColor: #FFFFFFFF
+				font: font_resource(2fc2b324-ce67-4714-97b4-bd59f478a8ac)
+				{
+					file: "Fonts\\HelveticaNowDisplay-Bold.otf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfRectangle(5919678c-ca30-42a6-a09c-2e89bab914c7)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "background"
+				visible: true
+				width: 1280
+				height: 720
+				x: 0
+				y: 0
+				fillColor: #000000FF
+			}]
+		name: "opener_container"
+		visible: true
+		width: 1280
+		height: 720
+		x: 0
+		y: 0
+		frameIndex: 0
+	}
+}
