@@ -1,0 +1,522 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(753b3ddc-dbd9-4c2a-af5e-adc0fe812c08)
+{
+	name: "vGeneralInfo"
+	template: @5e80652e-ecef-4af0-ad89-16f04f9129f9 (objectref<GtfView_template>)
+	children: children_list [
+		GtfRectangle(0c0e8874-ea56-428e-8d74-5971fea04131)
+		{
+			features: feature_list [
+				Border(1219f887-e4f7-4de1-ae0b-5dca6ecbf576)
+				{
+					borderThickness: 2
+					borderColor: #3F3F3F1B
+					borderStyle: 0
+				}]
+			children: children_list []
+			name: "Separator"
+			visible: true
+			width: 2
+			height: 310
+			x: 250
+			y: 150
+			fillColor: #A9A9A900
+		}, 
+		GtfRectangle(2046b9fb-c07a-4f86-a1f8-df59f83eefe9)
+		{
+			features: feature_list [
+				Border(a45ab2ae-2989-42e4-b4cb-005d70b37e17)
+				{
+					borderThickness: 2
+					borderColor: #3F3F3F1B
+					borderStyle: 0
+				}]
+			children: children_list []
+			name: "Separator2"
+			visible: true
+			width: 2
+			height: 310
+			x: 550
+			y: 150
+			fillColor: #A9A9A900
+		}, 
+		GtfContainer_template_instance(c3ac3de7-7f97-4304-89da-14fda31ff5ef)
+		{
+			name: "SlidingMenu"
+			template: @53aefd19-c201-4011-b951-480be3737f43 (objectref<GtfContainer_template>)
+			children: children_list []
+		}, 
+		GtfContainer_template_instance(3214db74-7d3f-4587-8e9d-babca1597229)
+		{
+			name: "PieChart"
+			template: @9db3857f-438f-40c5-bf82-44947109bf4c (objectref<GtfContainer_template>)
+			children: children_list []
+			Colors: Colors@9db3857f-438f-40c5-bf82-44947109bf4c (propref<colorlist>)
+			Percents: intlist [88, 5, 7]
+			width: 130
+			height: 130
+			x: 60
+			y: 170
+		}, 
+		GtfContainer_template_instance(0c4ac61a-c673-4e36-82a6-b2316f2b85b2)
+		{
+			name: "Chlorine"
+			template: @bf2df7d6-3d0c-4a94-b51a-520feaa28818 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: string_scriptedValue(a6cca4c1-7c0e-4fa1-b163-71c9b2e26b3b)
+			{
+				triggerList: trigger_list(38a4f5f3-dec4-45e7-8108-77f6c25b8c55)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(2586f02a-e9f2-42b4-a5c2-d1eae487e3b6)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(542c8939-f45c-43b4-8b85-747c85e4ced8)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	dp:Substances[0]+ \" : \" + f:format_int(\"%1d\",v:this->^->PieChart.Percents[1]) + \"%\"" \
+						"}"
+				}
+				write: function<bool,string>(a2b06890-5027-4f7a-9021-e99c58b62cea)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			x: 59
+			y: 339
+			color: color_element_reference(a65dde1c-84e0-4c91-a2b6-5243373eb27d)
+			{
+				index: 1
+				list: Colors@3214db74-7d3f-4587-8e9d-babca1597229 (propref<colorlist>)
+			}
+			visible: visible@bf2df7d6-3d0c-4a94-b51a-520feaa28818 (propref<bool>)
+			width: width@bf2df7d6-3d0c-4a94-b51a-520feaa28818 (propref<int>)
+		}, 
+		GtfContainer_template_instance(289cb560-c76e-407c-abcb-ae3de37e8b2d)
+		{
+			name: "AntiAlgee"
+			template: @bf2df7d6-3d0c-4a94-b51a-520feaa28818 (objectref<GtfContainer_template>)
+			children: children_list []
+			text: string_scriptedValue(4fb0131c-040e-415e-9ed2-9b55f4f12e87)
+			{
+				triggerList: trigger_list(3c0f79df-5047-4a2a-89b0-9026fee47d12)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(7f5a4f37-9ab3-431b-8aa1-97f0491225a6)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(7c27d863-8749-4307-9ed4-202d067284de)
+				{
+					script: "function()" \
+						"{" \
+						"	dp:Substances[1]+\" : \" + f:format_int(\"%1d\",v:this->^->PieChart.Percents[2]) + \"%\"" \
+						"}"
+				}
+				write: function<bool,string>(20fd5051-1bc4-4741-9ac6-3d2f5d4917e7)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			x: 60
+			y: 360
+			color: color_element_reference(d7005a7e-1adc-4c11-8403-85c1bd477797)
+			{
+				index: 2
+				list: Colors@3214db74-7d3f-4587-8e9d-babca1597229 (propref<colorlist>)
+			}
+			visible: visible@bf2df7d6-3d0c-4a94-b51a-520feaa28818 (propref<bool>)
+			width: width@bf2df7d6-3d0c-4a94-b51a-520feaa28818 (propref<int>)
+		}, 
+		GtfContainer_template_instance(4ce6cdb0-5420-40e5-ac4c-eb2c7c5521a9)
+		{
+			name: "DetailsComposition"
+			template: @14e536d3-a7a4-409b-b37a-5c10fe79bad0 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 90
+			y: 420
+			width: 60
+			height: 40
+			text: @a5c4a503-bbc2-476d-b64d-2fafa1cbe4c3 (objectref<string>)
+			colors: @b022832e-bf09-4161-bc55-b4d5e1a6e564 (objectref<colorlist>)
+			onReleaseAction: function<bool>(c21e4e90-f371-43a3-b166-f698c1eb4638)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_Composition()" \
+					"	false" \
+					"}"
+			}
+			font: font_resource(8443b949-26f1-4e97-8e75-f3ba861fc4b4)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 20
+			}
+			visible: visible@14e536d3-a7a4-409b-b37a-5c10fe79bad0 (propref<bool>)
+		}, 
+		GtfContainer_template_instance(b1a6c791-79ec-4593-b07e-044eae2525aa)
+		{
+			name: "DetailsTemperature"
+			template: @14e536d3-a7a4-409b-b37a-5c10fe79bad0 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 375
+			y: 420
+			width: 60
+			height: 40
+			text: @a5c4a503-bbc2-476d-b64d-2fafa1cbe4c3 (objectref<string>)
+			colors: @b022832e-bf09-4161-bc55-b4d5e1a6e564 (objectref<colorlist>)
+			onReleaseAction: function<bool>(4b60ff55-7e24-4304-b574-85ff4ab269d1)
+			{
+				script: "function()" \
+					"{" \
+					"	fire ev:goTo_Temperatures()" \
+					"	false" \
+					"}"
+			}
+			font: font_resource(82927507-5403-486e-ac5e-f404e81e4e06)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 20
+			}
+			visible: visible@14e536d3-a7a4-409b-b37a-5c10fe79bad0 (propref<bool>)
+		}, 
+		GtfLabel(e5339550-d323-4ffb-9d97-5f6940aaaba2)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "CurrentAirTemp"
+			visible: true
+			width: 200
+			height: 20
+			x: 300
+			y: 340
+			text: "Temperatura Aer : 25* C"
+			textColor: @d54463d6-525e-40d2-ac5a-5fa03c727f72 (objectref<color>)
+			font: font_resource(d61c57ca-6c80-4337-936b-0d54bc972381)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 20
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(802702c0-bcfb-4ffb-9ac7-b4ea99c1f688)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "CurrentWaterTemp"
+			visible: true
+			width: 200
+			height: 20
+			x: 300
+			y: 360
+			text: "Temperatura Apa: 21* C"
+			textColor: @d54463d6-525e-40d2-ac5a-5fa03c727f72 (objectref<color>)
+			font: font_resource(04e4f893-6ff9-49df-8dec-a73105119e78)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 20
+			}
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfLabel(2278a17b-d1cb-41a5-bdaf-c6d4975ed724)
+		{
+			features: feature_list [
+				MultiLine(7aa97d10-a81c-448d-946e-25f7784c80d5)
+				{
+					lineOffset: 0
+					maxLineCount: 0
+				}]
+			children: children_list []
+			name: "PumpIndicator"
+			visible: true
+			width: 225
+			height: 75
+			x: 561
+			y: 340
+			text: string_scriptedValue(e7fef067-cb57-4ab7-ab75-24771d12a868)
+			{
+				triggerList: trigger_list(b87b5b41-395b-4634-bfae-8853c2c2cd0f)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(785ffd44-0c38-46e1-9a26-37afbb00cdaa)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<string>(9a8dcf82-2cf7-4e7e-8361-8e8cf0a71034)
+				{
+					script: "function()" \
+						"{" \
+						"	if(dp:pumpHasFault)" \
+						"		dp:pumpFaultString[1]" \
+						"	else" \
+						"		dp:pumpFaultString[0]" \
+						"}"
+				}
+				write: function<bool,string>(e84232cf-8ccf-4d2c-a184-479f3544f3e9)
+				{
+					script: "function(v:arg0::string)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			textColor: @d54463d6-525e-40d2-ac5a-5fa03c727f72 (objectref<color>)
+			font: font_resource(92ec4384-0327-4e2c-ae5b-b8a4d380b682)
+			{
+				file: "PT_Sans_Narrow.ttf"
+				size: 20
+			}
+			horizontalAlign: 1
+			verticalAlign: 1
+		}, 
+		GtfImage(837e093e-6067-4604-8595-2d6eb05c26c5)
+		{
+			features: feature_list [
+				ScaleMode(fae5d03a-ad70-4dfa-813b-cb5a697e613b)
+				{
+					scaleMode: 1
+				}, 
+				Coloration(fb23cccd-c0dc-4f3b-8f7f-1032f9b60433)
+				{
+					colorationEnabled: true
+					colorationColor: #3681E3FF
+				}]
+			children: children_list [
+				GtfParallelAnimation(dee28b74-7443-4169-b7f8-599076c752cc)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfFastStartColor(57d97029-0640-4e7f-b980-7a2508a42f1b)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Fast start curve 1"
+							enabled: true
+							delay: 0
+							duration: 600
+							repeat: 1
+							alternating: false
+							relative: false
+							start: #FFFFFF00
+							end: #3681E3FF
+							target: colorationColor@fb23cccd-c0dc-4f3b-8f7f-1032f9b60433 (propref<color>)
+						}]
+					name: "FadeIn"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(9ea24f73-da1a-41c8-a072-cb1fe90ec7d3)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(6ee3367c-3a74-4332-b05c-695740a08971)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(d0904f80-9ff1-4259-bb48-2d983c90d0ff)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+				}]
+			name: "TempIcon"
+			visible: true
+			width: 130
+			height: 130
+			x: 330
+			y: 170
+			image: image_resource(ebe13f9c-cb2e-402c-a2b4-2365ea3de059)
+			{
+				file: "thermometer.png"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 0
+			onInit: conditional_script(3e512625-0ca3-4ed4-a458-fc57a98bcff6)
+			{
+				triggerList: trigger_list(fb7ab6c3-2854-4ad7-8a1d-1c0107f59753)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(4fa8d424-8544-404b-8f67-a1f2c01c3b1d)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	f:animation_play(v:this->FadeIn)" \
+						"	false" \
+						"}"
+				}
+			}
+		}, 
+		GtfImage(deb3e1d7-d8fa-41ad-9f06-7db20e6cf7f2)
+		{
+			features: feature_list [
+				ScaleMode(c7ac4028-c5fc-4373-8735-7898e3090fe4)
+				{
+					scaleMode: 1
+				}, 
+				Coloration(117dc8f2-a2a1-44f7-bfbb-35c4f57a712e)
+				{
+					colorationEnabled: true
+					colorationColor: color_scriptedValue(8f1d5e75-f40d-4a46-88a6-8ba8f0e258cc)
+					{
+						triggerList: trigger_list(a96d09f3-6975-41fc-ae23-cc3a04ba1188)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(59ef64a1-f95c-40d1-bfa7-2062684cbb03)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+						read: function<color>(700a87d8-5f49-45e0-8e2b-7e8c563c8115)
+						{
+							script: "function()" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	if(dp:pumpHasFault)" \
+								"		color:255, 169, 169, 255" \
+								"	else" \
+								"		dp:BrandColors:BrandAction" \
+								"}"
+						}
+						write: function<bool,color>(04afbde6-90b6-438f-926d-1c4dc6652a78)
+						{
+							script: "function(v:arg0::color)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			children: children_list [
+				GtfParallelAnimation(92b2dffe-7a41-4834-a530-99425f2382b9)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfFastStartColor(59c380f9-b4a4-4dc3-8d8d-46664217b76a)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Fast start curve 1"
+							enabled: true
+							delay: 0
+							duration: 600
+							repeat: 1
+							alternating: false
+							relative: false
+							start: #FFFFFF00
+							end: #3681E3FF
+							target: colorationColor@117dc8f2-a2a1-44f7-bfbb-35c4f57a712e (propref<color>)
+						}]
+					name: "FadeIn"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(087c7a3f-9af9-42e9-9d15-24ef193b7186)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(8ab12c13-d1bb-4c8c-92f3-c2c222028277)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(7fd89db4-5d3b-4d2e-93b6-cfa9dd90aea7)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+				}]
+			name: "PumpIcon"
+			visible: true
+			width: 130
+			height: 130
+			x: 600
+			y: 170
+			image: image_resource(dab4a72d-12d3-4580-80ed-63f6d0a92974)
+			{
+				file: "pump.png"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 0
+			onInit: conditional_script(155d3862-3540-4e2c-a6c2-42227c5e417d)
+			{
+				triggerList: trigger_list(377d6e19-855c-4f41-95cc-93e1054be13f)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(e906d58c-6d05-44aa-89d8-18fc83dc4764)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	f:animation_play(v:this->FadeIn)" \
+						"	false" \
+						"}"
+				}
+			}
+		}]
+	MainInfo: @eb370099-8c0a-4970-93f2-11c83908f4a0 (objectref<string>)
+	SecondaryInfo: ""
+	backButtonAction: function<bool>(04034aed-3669-46ed-b0ff-4b6c8f8e4f3c)
+	{
+		script: "function()" \
+			"{" \
+			"	fire ev:goTo_BasinsList()" \
+			"	false" \
+			"}"
+	}
+	backButtonVisible: backButtonVisible@5e80652e-ecef-4af0-ad89-16f04f9129f9 (propref<bool>)
+}

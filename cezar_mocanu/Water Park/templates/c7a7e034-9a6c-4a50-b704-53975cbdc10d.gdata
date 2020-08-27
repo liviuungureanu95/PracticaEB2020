@@ -1,0 +1,262 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(c7a7e034-9a6c-4a50-b704-53975cbdc10d)
+{
+	name: "Scrollbar"
+	structure: GtfContainer(96d600f3-9d13-4583-bbfe-978f1a8d0193)
+	{
+		features: feature_list [
+			TouchMove(cc98e0b5-6d17-4827-849b-ff1ada03c11a)
+			{
+				touchMoved: function<bool,int,int,int,int>(d3b7a6c7-c7e8-493b-a05f-48576f789dd3)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->Cursor.y = v:y - v:this.y" \
+						"	if(v:this->Cursor.y + v:this->Cursor.height > v:this.height)" \
+						"		v:this->Cursor.y = v:this.height -v:this->Cursor.height " \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(3eb29421-af2a-4bd5-b4dd-40e29295d902)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 1
+				touchBehavior: 0
+			}]
+		children: children_list [
+			GtfEllipse(c568f428-73b7-4c87-a6c9-2a4c912c85cf)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "BottomCap"
+				visible: true
+				width: width@96d600f3-9d13-4583-bbfe-978f1a8d0193 (propref<int>)
+				height: width@96d600f3-9d13-4583-bbfe-978f1a8d0193 (propref<int>)
+				x: 0
+				y: int_scriptedValue(f4838614-f8e2-49d5-886e-f48df0c420d4)
+				{
+					triggerList: trigger_list(72810525-810a-4e2c-99af-a06a71809cf7)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(a89989e7-aef2-4072-847b-f5db50e23ce4)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(7047e0dd-0bd8-49f4-be27-39fa38878163)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.height - v:this.height" \
+							"}"
+					}
+					write: function<bool,int>(51abee14-d0b3-4bf4-96fc-fe453e7736a0)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				fillColor: background@96d600f3-9d13-4583-bbfe-978f1a8d0193 (propref<color>)
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}, 
+			GtfEllipse(ada12ceb-ff04-4c36-862f-84bad327ef0b)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "TopCap"
+				visible: true
+				width: width@96d600f3-9d13-4583-bbfe-978f1a8d0193 (propref<int>)
+				height: width@96d600f3-9d13-4583-bbfe-978f1a8d0193 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: background@96d600f3-9d13-4583-bbfe-978f1a8d0193 (propref<color>)
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}, 
+			GtfRectangle(900a8939-9e6a-4774-b05f-239300eff06b)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@96d600f3-9d13-4583-bbfe-978f1a8d0193 (propref<int>)
+				height: int_scriptedValue(9a192830-215b-4da0-ba14-f46e347b98e4)
+				{
+					triggerList: trigger_list(681fa3cb-9158-436f-8ca9-70c9b37a8d03)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(e4f33d91-6349-42a0-b06e-c5dcb63f0ecf)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(467e4452-b8ea-4a12-8e95-33594c4a176d)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^.height - v:this->^->TopCap.height" \
+							"}"
+					}
+					write: function<bool,int>(e09e62d3-802f-407f-8868-58dd1086b7fc)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				x: 0
+				y: int_scriptedValue(c1f5d847-76fe-41a4-b1cf-36c16a2562bb)
+				{
+					triggerList: trigger_list(d6964717-5a61-45b8-a0b8-f0c6fb339f52)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(d2c6ad75-3995-47cd-8ea0-ed7b83b261c1)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(bcd9988c-8cd5-4901-b60d-efc1885c4d2a)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^->TopCap.height / 2" \
+							"}"
+					}
+					write: function<bool,int>(ba72493c-90d5-4abb-91d7-122868ccd4a0)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				fillColor: background@96d600f3-9d13-4583-bbfe-978f1a8d0193 (propref<color>)
+			}, 
+			GtfEllipse(c2db76d1-303b-4a83-b4cd-9dfd69f8cc15)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Cursor"
+				visible: true
+				width: int_scriptedValue(9a32b236-45da-43ee-9c78-8eb225311e11)
+				{
+					triggerList: trigger_list(b9a38c1b-b511-406e-9b2e-85009572a105)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(b610e64f-d4b1-40db-802a-b96db3fb7ec6)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(03738f38-580f-47cd-bf95-93d73cbec618)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^->TopCap.width * 8 / 10" \
+							"}"
+					}
+					write: function<bool,int>(7e45c97b-dd1f-481c-a693-08c1cce8fc54)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				height: width@c2db76d1-303b-4a83-b4cd-9dfd69f8cc15 (propref<int>)
+				x: int_scriptedValue(23104b3c-8ab3-4b8a-b795-c1194e8bee8e)
+				{
+					triggerList: trigger_list(40e615ff-034c-40af-ad3a-af0896f95f97)
+					{
+						script: ""
+					}
+					onTrigger: function<bool,bool>(142bc54b-c797-41ba-b3c6-58dcc46173b8)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+					read: function<int>(5d3ff1cf-c0b9-4a23-a6a1-9be7fbbff645)
+					{
+						script: "function()" \
+							"{" \
+							"	v:this->^->TopCap.width * 1 / 10" \
+							"}"
+					}
+					write: function<bool,int>(5d5c452b-6902-418e-bda1-e71e7ddfb0ef)
+					{
+						script: "function(v:arg0::int)" \
+							"{" \
+							"	// todo: auto generated return value, please adapt" \
+							"	false" \
+							"}"
+					}
+				}
+				y: 0
+				fillColor: @8bb64966-d947-4590-82bb-dbbc9bc24f9e (objectref<color>)
+				arcWidth: 0
+				centralAngle: 360F
+				sectorRotation: 0F
+			}]
+		name: "Container"
+		visible: true
+		width: 30
+		height: 480
+		x: 0
+		y: 0
+		background: @b50efa95-90cd-4d66-8c87-b923f6b804ff (objectref<color>)
+		scrollPercent: 0
+		setScrollPercent: conditional_script(cad20dda-e494-4af8-8887-b7438b4aa5ee)
+		{
+			triggerList: trigger_list(ed879922-ed51-40a0-83f2-8912e8480a46)
+			{
+				script: "v:this->Cursor.y"
+			}
+			onTrigger: function<bool,bool>(1838fd41-aa4b-41c1-96da-91433460d4b8)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	" \
+					"	v:this.scrollPercent = v:this->Cursor.y * 100 / (v:this.height - v:this->Cursor.height)" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+	y: y@96d600f3-9d13-4583-bbfe-978f1a8d0193 (propref<int>)
+	x: x@96d600f3-9d13-4583-bbfe-978f1a8d0193 (propref<int>)
+	width: width@96d600f3-9d13-4583-bbfe-978f1a8d0193 (propref<int>)
+	height: height@96d600f3-9d13-4583-bbfe-978f1a8d0193 (propref<int>)
+	scrollPercent: scrollPercent@96d600f3-9d13-4583-bbfe-978f1a8d0193 (propref<int>)
+}

@@ -1,0 +1,185 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(14e536d3-a7a4-409b-b37a-5c10fe79bad0)
+{
+	name: "Button"
+	structure: GtfContainer(75a320f0-69fe-44c4-bf63-66b8c96d8d8c)
+	{
+		features: feature_list [
+			MoveOut(10d77e17-d99c-484a-a269-4e6826163cf3)
+			{
+				moveOut: function<bool,int,int,int,int>(399219fd-ddb8-4838-91de-640478a4621a)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.onMouseOutStyle()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			MoveIn(883e599a-29f8-417c-adc5-c6d23530ecbe)
+			{
+				moveIn: function<bool,int,int,int,int>(2342bb76-c984-415a-a582-ec6c05c3ab5e)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.onMouseInStyle()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchPressed(67be5180-f18f-4596-8783-28f6dcf5e097)
+			{
+				touchPressed: function<bool,int,int,int,int>(d509818d-a206-4b65-8159-095bca4b79fe)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.onPressStyle()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			TouchShortReleased(bd39eac0-0dd5-4105-8596-27ed0bd80156)
+			{
+				touchShortReleased: function<bool,int,int,int,int>(732dbf77-58ed-4c05-8b66-f5b6e05552f5)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this.onReleaseStyle()" \
+						"	v:this.onReleaseAction()" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(0d7b5fea-608c-4163-b36d-fed0edd36576)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			ViewPort(838bab15-1e7f-4e64-9923-cd990e161091)
+			{
+				xOffset: 0
+				yOffset: 0
+			}]
+		children: children_list [
+			GtfRectangle(6793b720-5034-4b96-b970-2aa33054573f)
+			{
+				features: feature_list [
+					Border(60cdd155-c843-4055-a176-a82c9f810f18)
+					{
+						borderThickness: 2
+						borderColor: currentBorder@75a320f0-69fe-44c4-bf63-66b8c96d8d8c (propref<color>)
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@75a320f0-69fe-44c4-bf63-66b8c96d8d8c (propref<int>)
+				height: height@75a320f0-69fe-44c4-bf63-66b8c96d8d8c (propref<int>)
+				x: 0
+				y: 0
+				fillColor: currentBackground@75a320f0-69fe-44c4-bf63-66b8c96d8d8c (propref<color>)
+			}, 
+			GtfLabel(0f6c9b23-40c3-41be-b26a-8ce350e2408e)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "Text"
+				visible: true
+				width: width@75a320f0-69fe-44c4-bf63-66b8c96d8d8c (propref<int>)
+				height: height@75a320f0-69fe-44c4-bf63-66b8c96d8d8c (propref<int>)
+				x: 0
+				y: 0
+				text: "label"
+				textColor: #FFFFFFFF
+				font: font_resource(85b0839b-6956-4a2e-94b8-ff6e90a92314)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}]
+		name: "Container"
+		visible: true
+		width: 100
+		height: 100
+		x: 0
+		y: 0
+		colors: colorlist [#8B0000FF, #B22222FF, #FF0000FF, #556B2FFF, #32CD32FF, #ADFF2FFF]
+		currentBackground: #A9A9A9FF
+		currentBorder: #A9A9A9FF
+		onInit: conditional_script(72d811ab-ef92-445c-89b9-b24b25acff04)
+		{
+			triggerList: trigger_list(3b74a53e-1ad0-41be-b169-539ccab8e274)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(33c9bf17-8575-4bdc-99c4-3dadd96ea752)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	v:this.currentBorder = v:this.colors[0]" \
+					"	v:this.currentBackground = v:this.colors[3]" \
+					"	false" \
+					"}"
+			}
+		}
+		onMouseInStyle: function<bool>(5aa514de-35be-46d0-b6c8-0b2c07d347c5)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.currentBorder = v:this.colors[1]" \
+				"	v:this.currentBackground = v:this.colors[4]" \
+				"	false" \
+				"}"
+		}
+		onMouseOutStyle: function<bool>(f70e81b4-ee48-46a1-977f-16ed896d2bb3)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	v:this.currentBorder = v:this.colors[0]" \
+				"	v:this.currentBackground = v:this.colors[3]" \
+				"	false" \
+				"}"
+		}
+		onPressStyle: function<bool>(5e586fde-4991-45e4-b3b4-49661560ccd1)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.currentBorder = v:this.colors[2]" \
+				"	v:this.currentBackground = v:this.colors[5]" \
+				"	false" \
+				"}"
+		}
+		onReleaseStyle: function<bool>(dfbb2fb6-8860-4257-a4f9-4b518261e527)
+		{
+			script: "function()" \
+				"{" \
+				"	v:this.currentBorder = v:this.colors[1]" \
+				"	v:this.currentBackground = v:this.colors[4]" \
+				"	false" \
+				"}"
+		}
+		onReleaseAction: function<bool>(9362db63-9e67-4487-a130-535c28b4f432)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	x: x@75a320f0-69fe-44c4-bf63-66b8c96d8d8c (propref<int>)
+	y: y@75a320f0-69fe-44c4-bf63-66b8c96d8d8c (propref<int>)
+	width: width@75a320f0-69fe-44c4-bf63-66b8c96d8d8c (propref<int>)
+	height: height@75a320f0-69fe-44c4-bf63-66b8c96d8d8c (propref<int>)
+	text: text@0f6c9b23-40c3-41be-b26a-8ce350e2408e (propref<string>)
+	colors: colors@75a320f0-69fe-44c4-bf63-66b8c96d8d8c (propref<colorlist>)
+	onReleaseAction: onReleaseAction@75a320f0-69fe-44c4-bf63-66b8c96d8d8c (propref<function<bool>>)
+	font: font@0f6c9b23-40c3-41be-b26a-8ce350e2408e (propref<font>)
+	visible: visible@75a320f0-69fe-44c4-bf63-66b8c96d8d8c (propref<bool>)
+}

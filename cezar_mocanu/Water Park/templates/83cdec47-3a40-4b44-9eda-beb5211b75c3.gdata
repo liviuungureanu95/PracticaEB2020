@@ -1,0 +1,242 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(83cdec47-3a40-4b44-9eda-beb5211b75c3)
+{
+	name: "CoordonatePolare"
+	structure: GtfContainer(68726592-2b77-4d9b-a57a-2abd10f988da)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfInstantiator(55769abd-f6a3-4838-a61f-0d9bbda7f9e5)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfContainer(f8d6eae0-5195-4a47-8aac-aeab3139bba5)
+					{
+						features: feature_list [
+							LineIndex(b8304a77-192d-4f85-92ed-cba08e036e72)
+							{
+								lineIndex: 0
+							}]
+						children: children_list [
+							GtfEllipse(21895aec-f9eb-4f98-abd3-95d9b3d069b4)
+							{
+								features: feature_list []
+								children: children_list [
+									GtfLabel(65d7961b-d268-4923-a72f-b5ae5dc99871)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "Text"
+										visible: true
+										width: width@21895aec-f9eb-4f98-abd3-95d9b3d069b4 (propref<int>)
+										height: height@21895aec-f9eb-4f98-abd3-95d9b3d069b4 (propref<int>)
+										x: 0
+										y: 0
+										text: "label"
+										textColor: #FFFFFFFF
+										font: font_resource(53575764-3748-4fa7-b772-a5ac681fe356)
+										{
+											file: "PT_Sans_Narrow.ttf"
+											size: 30
+										}
+										horizontalAlign: 1
+										verticalAlign: 0
+									}]
+								name: "Ellipse"
+								visible: true
+								width: 40
+								height: 40
+								x: 0
+								y: 0
+								fillColor: #A9A9A9FF
+								arcWidth: 0
+								centralAngle: 360F
+								sectorRotation: 0F
+							}]
+						name: "Button"
+						visible: true
+						width: 100
+						height: 100
+						x: 0
+						y: 0
+						setItems: conditional_script(b3f85fe7-90ce-446d-b4cc-1a9d9544aeb2)
+						{
+							triggerList: trigger_list(aaf537c9-2df4-4418-aba6-0ab8e8297017)
+							{
+								script: "v:this.lineIndex" \
+									"v:this->^.Letters"
+							}
+							onTrigger: function<bool,bool>(523ea812-7d5c-4a6e-86e3-bf5d6520e6c0)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	let v:angle = 360.0 / f:int2float(length v:this->^.Letters) ;" \
+									"		v:radius = 200.0	in{" \
+									"			" \
+									"		v:this->Ellipse.x = v:this->^->^.centerX + f:string2int(f:format_float(\"%.8f\",true,f:cosf(f:deg2rad(v:angle * f:int2float(v:this.lineIndex))) * v:radius)) - v:this->Ellipse.width / 2" \
+									"		v:this->Ellipse.y = v:this->^->^.centerY + f:string2int(f:format_float(\"%.8f\",true,f:sinf(f:deg2rad(v:angle * f:int2float(v:this.lineIndex))) * v:radius)) - v:this->Ellipse.height / 2" \
+									"	}" \
+									"	 " \
+									"	v:this->Ellipse->Text.text = v:this->^.Letters[v:this.lineIndex]" \
+									"	false" \
+									"}"
+							}
+						}
+					}]
+				name: "Instantiator"
+				visible: true
+				width: width@68726592-2b77-4d9b-a57a-2abd10f988da (propref<int>)
+				height: height@68726592-2b77-4d9b-a57a-2abd10f988da (propref<int>)
+				x: 0
+				y: 0
+				numItems: 0
+				lineMapping: intlist []
+				Letters: stringlist ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+				setNumItems: conditional_script(1db5f1fa-2ee8-446a-baf0-ad66ebec6e85)
+				{
+					triggerList: trigger_list(67d972b1-0d8f-44e3-9023-aac60d07afe2)
+					{
+						script: "v:this.Letters"
+					}
+					onTrigger: function<bool,bool>(f451a039-ca79-45a2-9a97-919f1d7c1ad4)
+					{
+						script: "function(v:arg0::bool)" \
+							"{" \
+							"	v:this.numberOfItems = length v:this.Letters" \
+							"	false" \
+							"}"
+					}
+				}
+				numberOfItems: 0
+			}, 
+			GtfParallelAnimation(1ec53ecc-5b51-4274-aa6f-7908588c6a70)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfFastStartS32(777f33c4-f7fd-4a85-b96e-ac152f1f17fc)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "Fast start curve 1"
+						enabled: true
+						delay: 0
+						duration: 1000
+						repeat: 1
+						alternating: false
+						relative: false
+						start: 0
+						end: numberOfItems@55769abd-f6a3-4838-a61f-0d9bbda7f9e5 (propref<int>)
+						target: numItems@55769abd-f6a3-4838-a61f-0d9bbda7f9e5 (propref<int>)
+					}]
+				name: "onLoad"
+				enabled: true
+				repeat: 1
+				alternating: false
+				scale: 1F
+				onPlay: function<void,int,bool>(e615596d-0222-47ff-a214-1dcd224d80d6)
+				{
+					script: "function(v:animation_time::int, v:forward::bool)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onPause: function<void,int>(c2a45ccd-1a4c-477c-acdb-cb3b3aad0b19)
+				{
+					script: "function(v:animation_time::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+				onTerminate: function<void,int,int>(4584e430-2dbc-4eeb-aa41-c1b164f7257a)
+				{
+					script: "function(v:animation_time::int, v:terminate::int)" \
+						"{" \
+						"" \
+						"}"
+				}
+			}]
+		name: "Container"
+		visible: true
+		width: 480
+		height: 480
+		x: 0
+		y: 0
+		centerX: int_scriptedValue(a6625966-641d-4d51-b114-85bb6c0b52e7)
+		{
+			triggerList: trigger_list(193d5bd1-03bb-4d63-b2d4-f6515c3e2ee0)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(3a8ab881-5f68-444f-8d45-b6e2ec5ce6fe)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	// todo: auto generated return value, please adapt" \
+					"	false" \
+					"}"
+			}
+			read: function<int>(1a2191b3-c9b0-4dc6-b012-13914fcd0187)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this.width / 2" \
+					"}"
+			}
+			write: function<bool,int>(e6b2ab39-87fe-44e1-bda2-17496e60a54d)
+			{
+				script: "function(v:arg0::int)" \
+					"{" \
+					"	// todo: auto generated return value, please adapt" \
+					"	false" \
+					"}"
+			}
+		}
+		centerY: int_scriptedValue(1b5f62f0-8254-4afb-9413-c733d4146470)
+		{
+			triggerList: trigger_list(8a0088fa-509b-436b-b58c-38836228c277)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(2e66433f-9c1c-4ca3-b321-dc663d06702d)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	// todo: auto generated return value, please adapt" \
+					"	false" \
+					"}"
+			}
+			read: function<int>(170eb2a3-c602-4cae-bb4b-45f0fadd82af)
+			{
+				script: "function()" \
+					"{" \
+					"	v:this.height / 2" \
+					"}"
+			}
+			write: function<bool,int>(f605ca83-346b-475f-9ade-cf8ac1633ce1)
+			{
+				script: "function(v:arg0::int)" \
+					"{" \
+					"	// todo: auto generated return value, please adapt" \
+					"	false" \
+					"}"
+			}
+		}
+		onLoad: conditional_script(aa0b8c3e-417d-4f48-bc89-8e62f4f924a8)
+		{
+			triggerList: trigger_list(7b387d77-9d9a-41f3-9cc5-b6e6a65e8f32)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(078f291a-8bec-40b5-973e-f8b3f6b0dda4)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	f:animation_play(v:this->onLoad)" \
+					"	false" \
+					"}"
+			}
+		}
+	}
+}

@@ -1,0 +1,703 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(470ef673-8939-49a3-b411-a743d36b216f)
+{
+	name: "TemperatureChart"
+	structure: GtfContainer(00097ade-c0d0-4ca8-8118-6deb9a13c209)
+	{
+		features: feature_list [
+			TouchMove(22f41c9b-fae0-4c94-9de7-f8969e486b66)
+			{
+				touchMoved: function<bool,int,int,int,int>(feb8a3f6-ea71-4a17-86a3-20969ff2feac)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	v:this->CursorHorizontal.y = v:y - v:this.y - 1" \
+						"	v:this->CursorVertical.x = v:x -v:this.x - 1" \
+						"	if(v:this->CursorHorizontal.y > v:this->Instantiator.y + v:this->Instantiator.barHeight)" \
+						"		v:this->CursorHorizontal.y = v:this->Instantiator.y + v:this->Instantiator.barHeight - 1" \
+						"	if(v:this->CursorHorizontal.y < v:this->Instantiator.y)" \
+						"		v:this->CursorHorizontal.y = v:this->Instantiator.y" \
+						"	" \
+						"	if(v:this->CursorHorizontal.x > v:this->Instantiator.width + v:this->Instantiator.x)" \
+						"		v:this->CursorHorizontal.x = v:this->Instantiator.width + v:this->Instantiator.x - 1" \
+						"	" \
+						"	if(v:this->CursorVertical.x <v:this->Instantiator.x)" \
+						"		v:this->CursorVertical.x = v:this->Instantiator.x" \
+						"	" \
+						"	let " \
+						"		v:indicatedTemperature = f:format_float(\"%.1f\",true,f:int2float(v:this->Instantiator.height + v:this->Instantiator.y - v:this->CursorHorizontal.y ) * v:this.maxTemp / f:int2float(v:this->Instantiator.height));" \
+						"		v:indicatedTime = f:int2float(v:this->CursorVertical.x - v:this->Instantiator.x -1) * 24.0 / f:int2float(v:this->Instantiator.width);" \
+						"		v:hour = 0;" \
+						"		v:minute = 0.0;" \
+						"		v:minuteString=\"\";" \
+						"		v:indicatedBar = (v:this->CursorVertical.x - v:this->Instantiator.x - 3) / (v:this->Instantiator.barWidth+v:this->Instantiator.horizontalGap)" \
+						"	in{" \
+						"		" \
+						"	//	" \
+						"		" \
+						"		v:hour = f:trunc(v:indicatedTime)" \
+						"		v:minute = 	(v:indicatedTime - f:int2float(v:hour)) * 60.0" \
+						"		" \
+						"		v:this.indicatedValues[0] = v:indicatedTemperature" \
+						"		if(v:minute < 0.0 )" \
+						"			v:minute = 0.0" \
+						"		if(v:minute < 10.0)" \
+						"			v:minuteString = \"0\"+ f:format_float(\"%.0f\",true,v:minute)" \
+						"		else" \
+						"			v:minuteString = f:format_float(\"%.0f\",true,v:minute)" \
+						"		v:this.indicatedValues[1] = f:int2string(v:hour) + \":\" +v:minuteString " \
+						"		v:this.indicatedBar = v:indicatedBar" \
+						"	}" \
+						"	" \
+						"	" \
+						"    false" \
+						"}"
+				}
+			}, 
+			StateTouched(18d384ec-b706-4832-815a-f609cdc69f9c)
+			{
+				touchable: true
+				touched: false
+				touchPolicy: 0
+				touchBehavior: 0
+			}, 
+			MoveIn(e9f0d789-3b68-4e12-903f-56d65df04cf9)
+			{
+				moveIn: function<bool,int,int,int,int>(ceb5eb24-d24e-47b1-b8a2-47c8b19df073)
+				{
+					script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+						"{" \
+						"	" \
+						"    false" \
+						"}"
+				}
+			}]
+		children: children_list [
+			GtfRectangle(ff0cb249-164c-4708-a4ac-dc815a03e902)
+			{
+				features: feature_list [
+					Border(05fa65c6-5c9d-4399-a6bb-d62ab3cb5a5a)
+					{
+						borderThickness: 2
+						borderColor: #3F3F3F64
+						borderStyle: 0
+					}]
+				children: children_list []
+				name: "Background"
+				visible: true
+				width: width@909eb0e4-393c-4cd9-9be3-5ff6c1fb282a (propref<int>)
+				height: height@909eb0e4-393c-4cd9-9be3-5ff6c1fb282a (propref<int>)
+				x: x@909eb0e4-393c-4cd9-9be3-5ff6c1fb282a (propref<int>)
+				y: y@909eb0e4-393c-4cd9-9be3-5ff6c1fb282a (propref<int>)
+				fillColor: #1B1B1B28
+			}, 
+			GtfInstantiator(909eb0e4-393c-4cd9-9be3-5ff6c1fb282a)
+			{
+				features: feature_list [
+					LayoutPolicyFlow(603cca9c-5d07-4da7-8bfb-dd954407e212)
+					{
+						horizontalGap: 2
+						verticalGap: 0
+						layoutDirection: 0
+						horizontalChildAlign: 0
+						verticalChildAlign: 0
+					}]
+				children: children_list [
+					GtfContainer(e0939154-44fa-43a4-97c2-38ed4c9f88fb)
+					{
+						features: feature_list [
+							LineIndex(d7d8f9ac-8d5a-4a30-992e-1c95ab1c54bb)
+							{
+								lineIndex: 0
+							}]
+						children: children_list [
+							GtfRectangle(39b8208e-006b-4d06-86ce-abc174082145)
+							{
+								features: feature_list []
+								children: children_list [
+									GtfLabel(627744ce-fdfe-4e8c-ba34-6252d9a7be23)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "AirText"
+										visible: true
+										width: 30
+										height: 20
+										x: 0
+										y: 0
+										text: "24.5"
+										textColor: #FFFFFFFF
+										font: font_resource(1d58649c-8c89-4de3-ab9b-869f51b92e42)
+										{
+											file: "PT_Sans_Narrow.ttf"
+											size: 18
+										}
+										horizontalAlign: 1
+										verticalAlign: 0
+									}]
+								name: "Air"
+								visible: true
+								width: 30
+								height: 180
+								x: 0
+								y: int_scriptedValue(6631e7d5-318c-4c7a-b1e3-43703088231b)
+								{
+									triggerList: trigger_list(0cf0050d-26c5-4435-9d01-58cb66fba425)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(a3dc2472-e22b-450d-926c-f81132b71bf3)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<int>(fd678c28-5539-4577-9e52-c262d67997a0)
+									{
+										script: "function()" \
+											"{" \
+											"	v:this->^.height - v:this.height" \
+											"}"
+									}
+									write: function<bool,int>(03cd5756-1b82-4913-aa1f-181cce25eee5)
+									{
+										script: "function(v:arg0::int)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								fillColor: #FFA500FF
+								targetHeight: 0
+							}, 
+							GtfRectangle(044592fa-d3f1-44cf-8863-4d89adc95cb0)
+							{
+								features: feature_list []
+								children: children_list [
+									GtfLabel(a94350a1-6421-4ba8-b2a0-858ab0f8f295)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "WaterText"
+										visible: true
+										width: 30
+										height: 20
+										x: 0
+										y: 0
+										text: "24.5"
+										textColor: #FFFFFFFF
+										font: font_resource(e52b87aa-dd9e-4658-91b7-806c8d1700e9)
+										{
+											file: "PT_Sans_Narrow.ttf"
+											size: 18
+										}
+										horizontalAlign: 1
+										verticalAlign: 0
+									}]
+								name: "Water"
+								visible: true
+								width: 30
+								height: 100
+								x: 0
+								y: int_scriptedValue(b2fa30f0-75b9-4f21-9a01-7fecde65cbee)
+								{
+									triggerList: trigger_list(09cabd98-777d-4e75-919c-8c4041e57916)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(f8679968-a65f-4bdb-9c4f-135c68abe19e)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<int>(fe828f82-fb27-4df5-a2a6-86ae34ad46e5)
+									{
+										script: "function()" \
+											"{" \
+											"	v:this->^.height - v:this.height" \
+											"}"
+									}
+									write: function<bool,int>(dee8f81d-6860-4699-8de4-4bb1941c11ad)
+									{
+										script: "function(v:arg0::int)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								fillColor: #00BFFFFF
+								targetHeight: 0
+							}, 
+							GtfParallelAnimation(ff8338c0-80f3-40bd-9c78-c00542fe6391)
+							{
+								features: feature_list []
+								children: children_list [
+									GtfFastStartS32(449f2a18-9225-4c0c-a907-87bb8e7c70eb)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "LoadHeights"
+										enabled: true
+										delay: 0
+										duration: 500
+										repeat: 1
+										alternating: false
+										relative: false
+										start: 0
+										end: targetHeight@39b8208e-006b-4d06-86ce-abc174082145 (propref<int>)
+										target: height@39b8208e-006b-4d06-86ce-abc174082145 (propref<int>)
+									}, 
+									GtfFastStartS32(00e13c06-cf14-441f-b042-fa09d0bb186e)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "LoadWaterHeights"
+										enabled: true
+										delay: 0
+										duration: 500
+										repeat: 1
+										alternating: false
+										relative: false
+										start: 0
+										end: targetHeight@044592fa-d3f1-44cf-8863-4d89adc95cb0 (propref<int>)
+										target: height@044592fa-d3f1-44cf-8863-4d89adc95cb0 (propref<int>)
+									}, 
+									GtfFastStartS32(3db57e27-4cb4-4ae4-b596-6e2b1592a6c1)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "LoadAirSmall"
+										enabled: true
+										delay: 0
+										duration: 500
+										repeat: 1
+										alternating: false
+										relative: false
+										start: 0
+										end: targetHeight@b764ddaa-1b86-423a-99b3-c049d30bf6c8 (propref<int>)
+										target: height@b764ddaa-1b86-423a-99b3-c049d30bf6c8 (propref<int>)
+									}]
+								name: "AirRise"
+								enabled: true
+								repeat: 1
+								alternating: false
+								scale: 1F
+								onPlay: function<void,int,bool>(47b1b923-4dbe-4f28-b505-3acb5c94df23)
+								{
+									script: "function(v:animation_time::int, v:forward::bool)" \
+										"{" \
+										"" \
+										"}"
+								}
+								onPause: function<void,int>(8472a46a-2fc8-435c-88ec-760089c4dddf)
+								{
+									script: "function(v:animation_time::int)" \
+										"{" \
+										"" \
+										"}"
+								}
+								onTerminate: function<void,int,int>(0abea60b-e6f1-46da-935f-cc4a165e33d2)
+								{
+									script: "function(v:animation_time::int, v:terminate::int)" \
+										"{" \
+										"" \
+										"}"
+								}
+							}, 
+							GtfRectangle(b764ddaa-1b86-423a-99b3-c049d30bf6c8)
+							{
+								features: feature_list []
+								children: children_list [
+									GtfLabel(048aa7a5-00dd-4cac-beed-bcdc388dadb2)
+									{
+										features: feature_list []
+										children: children_list []
+										name: "Label"
+										visible: true
+										width: 30
+										height: 20
+										x: 0
+										y: 0
+										text: "24.5"
+										textColor: #FFFFFFFF
+										font: font_resource(94dd9976-7f7b-42d6-b1d5-922d9f22e656)
+										{
+											file: "PT_Sans_Narrow.ttf"
+											size: 18
+										}
+										horizontalAlign: 1
+										verticalAlign: 0
+									}]
+								name: "AirSmall"
+								visible: true
+								width: 30
+								height: 50
+								x: 0
+								y: int_scriptedValue(6522d1f5-5cf5-488d-8a0b-f643146b149a)
+								{
+									triggerList: trigger_list(0d8297a9-c9cd-42c3-b7c7-518d81311cb4)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(10422036-7c00-46e0-9acc-c7c3a09ae01a)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<int>(9f59f4be-ce13-40b8-b548-406f2a3a78f0)
+									{
+										script: "function()" \
+											"{" \
+											"	v:this->^.height - v:this.height" \
+											"}"
+									}
+									write: function<bool,int>(cebe34ef-b528-4ec6-bf81-6297d6319bbd)
+									{
+										script: "function(v:arg0::int)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								fillColor: fillColor@39b8208e-006b-4d06-86ce-abc174082145 (propref<color>)
+								targetHeight: 0
+							}, 
+							GtfRectangle(6eef1ec3-5671-476f-9bf6-af1434a2d504)
+							{
+								features: feature_list [
+									Border(64d357ba-b225-4de7-9ef1-f1e6b08211e9)
+									{
+										borderThickness: 4
+										borderColor: #FFFFFC64
+										borderStyle: 0
+									}]
+								children: children_list []
+								name: "HoverForeground"
+								visible: false
+								width: barWidth@909eb0e4-393c-4cd9-9be3-5ff6c1fb282a (propref<int>)
+								height: 100
+								x: 0
+								y: int_scriptedValue(fe8cefdb-92b6-4103-9ba8-08ed9934b68f)
+								{
+									triggerList: trigger_list(661e4463-bd6f-4526-851a-70882d897642)
+									{
+										script: ""
+									}
+									onTrigger: function<bool,bool>(fc236e1f-4604-40ba-b3ba-002499315a7f)
+									{
+										script: "function(v:arg0::bool)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+									read: function<int>(c7009379-5b93-4f6b-9b4e-1ddb21c2a12f)
+									{
+										script: "function()" \
+											"{" \
+											"	v:this->^.height - v:this.height" \
+											"}"
+									}
+									write: function<bool,int>(5c451fa6-8433-46ae-925e-2b2ac1a2a2b8)
+									{
+										script: "function(v:arg0::int)" \
+											"{" \
+											"	// todo: auto generated return value, please adapt" \
+											"	false" \
+											"}"
+									}
+								}
+								fillColor: #FFFFFC50
+							}]
+						name: "Bar"
+						visible: true
+						width: barWidth@909eb0e4-393c-4cd9-9be3-5ff6c1fb282a (propref<int>)
+						height: 180
+						x: 0
+						y: int_scriptedValue(e7f0e32f-cb57-459f-ae31-67de978fb49b)
+						{
+							triggerList: trigger_list(85a3e049-ad8d-4eec-a3de-807fbe6f55f9)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(1bed609a-659f-4df6-8ca3-321c7afb9d20)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<int>(87c4f285-3377-446f-9612-6904b32b1f50)
+							{
+								script: "function()" \
+									"{" \
+									"	v:this->^.height - v:this.height" \
+									"}"
+							}
+							write: function<bool,int>(b33bfe8b-df52-4335-972b-5f82186af411)
+							{
+								script: "function(v:arg0::int)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						setItems: conditional_script(979a0869-feb5-4329-874d-e7f81ad37f83)
+						{
+							triggerList: trigger_list(554bc1dd-eaee-4e07-9236-62990a9765d4)
+							{
+								script: "v:this.lineIndex" \
+									"v:this->^->^.air" \
+									"v:this->^->^.water" \
+									""
+							}
+							onTrigger: function<bool,bool>(b2e73054-2824-4361-83a3-6262e27c649a)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	v:this->Air.height = f:string2int(f:format_float(\"%.2f\",true,v:this->^->^.air[v:this.lineIndex] * 100.0 / v:this->^->^.maxTemp)) * v:this->^.barHeight / 100" \
+									"	v:this->AirSmall.height = f:string2int(f:format_float(\"%.2f\",true,v:this->^->^.air[v:this.lineIndex] * 100.0 / v:this->^->^.maxTemp)) *  v:this->^.barHeight / 100" \
+									"	v:this->Water.height = f:string2int(f:format_float(\"%.2f\",true,v:this->^->^.water[v:this.lineIndex] * 100.0 / v:this->^->^.maxTemp)) * v:this->^.barHeight / 100" \
+									"	" \
+									"	v:this->Air.targetHeight = v:this->Air.height" \
+									"	v:this->AirSmall.targetHeight = v:this->Air.height" \
+									"	v:this->Water.targetHeight = v:this->Water.height" \
+									"	" \
+									"	if(v:this->^->^.air[v:this.lineIndex] < v:this->^->^.water[v:this.lineIndex] ){" \
+									"		v:this->AirSmall.visible = true" \
+									"		v:this->HoverForeground.height = v:this->Water.height" \
+									"	}" \
+									"	else{" \
+									"		v:this->AirSmall.visible = false" \
+									"		v:this->HoverForeground.height = v:this->Air.height" \
+									"	}" \
+									"		" \
+									"	" \
+									"	if(v:this->^->^.air[v:this.lineIndex] > 0.0 || v:this->^->^.water[v:this.lineIndex] > 0.0){" \
+									"		v:this->Air->AirText.visible = true" \
+									"		v:this->Water->WaterText.visible = true" \
+									"		v:this->AirSmall->Label.visible = true" \
+									"		v:this->Air->AirText.text = f:format_float(\"%.1f\",true,v:this->^->^.air[v:this.lineIndex])" \
+									"		v:this->AirSmall->Label.text = f:format_float(\"%.1f\",true,v:this->^->^.air[v:this.lineIndex])" \
+									"		v:this->Water->WaterText.text = f:format_float(\"%.1f\",true,v:this->^->^.water[v:this.lineIndex])	" \
+									"	}" \
+									"	else{" \
+									"		v:this->Air->AirText.visible = false" \
+									"		v:this->Water->WaterText.visible = false" \
+									"		v:this->AirSmall->Label.visible = false" \
+									"		" \
+									"	}" \
+									"	 " \
+									"	" \
+									"	false" \
+									"}"
+							}
+						}
+						onInit: conditional_script(a7dcf807-2766-4bfe-b044-4bb7d078071a)
+						{
+							triggerList: trigger_list(474ef19f-3320-47d8-a005-ddb4adb0db91)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(7c34c182-0331-4095-ad4d-356bdb4f907e)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	f:animation_play(v:this->AirRise)" \
+									"	false" \
+									"}"
+							}
+						}
+						onHighlight: conditional_script(a9b9de56-5d39-4f9e-8d4e-86a9c506e09d)
+						{
+							triggerList: trigger_list(4136fc2c-735b-4839-9da4-559f6f365f2b)
+							{
+								script: "v:this->^->^.indicatedBar" \
+									"v:this.lineIndex"
+							}
+							onTrigger: function<bool,bool>(16ececad-4ab0-43f9-bd88-f218ad1eb764)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	if(v:this->^->^.indicatedBar == v:this.lineIndex)" \
+									"		v:this->HoverForeground.visible = true" \
+									"	else" \
+									"		v:this->HoverForeground.visible = false" \
+									"	false" \
+									"}"
+							}
+						}
+					}]
+				name: "Instantiator"
+				visible: true
+				width: 770
+				height: barHeight@909eb0e4-393c-4cd9-9be3-5ff6c1fb282a (propref<int>)
+				x: 8
+				y: 20
+				numItems: 24
+				lineMapping: intlist []
+				barWidth: 30
+				barHeight: 180
+			}, 
+			GtfLabel(41adc177-006f-44b2-8ed0-400e89ba5ea7)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "00"
+				visible: true
+				width: 50
+				height: 30
+				x: 0
+				y: 200
+				text: "0:00"
+				textColor: @d54463d6-525e-40d2-ac5a-5fa03c727f72 (objectref<color>)
+				font: font_resource(ffdc8ea2-ea04-41d4-adb4-d730ce9f1798)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}, 
+			GtfLabel(0a32dc77-7154-4dd1-8fa0-fd420cffdef8)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "12"
+				visible: true
+				width: 60
+				height: 30
+				x: 360
+				y: 200
+				text: "12:00"
+				textColor: @d54463d6-525e-40d2-ac5a-5fa03c727f72 (objectref<color>)
+				font: font_resource(4ae71fb1-b560-4cb3-8e20-05c9deba3138)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}, 
+			GtfLabel(6d05032b-17c6-4786-8d5e-414175b34e65)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "24"
+				visible: true
+				width: 60
+				height: 30
+				x: 720
+				y: 200
+				text: "24:00"
+				textColor: @d54463d6-525e-40d2-ac5a-5fa03c727f72 (objectref<color>)
+				font: font_resource(b039988b-6dba-42bd-b105-37d01ca31c2c)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 0
+				verticalAlign: 0
+			}, 
+			GtfRectangle(752605b3-84e9-47e9-a4bd-20c51fee4a27)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "CursorHorizontal"
+				visible: true
+				width: width@909eb0e4-393c-4cd9-9be3-5ff6c1fb282a (propref<int>)
+				height: 2
+				x: x@909eb0e4-393c-4cd9-9be3-5ff6c1fb282a (propref<int>)
+				y: 200
+				fillColor: #0000003C
+			}, 
+			GtfRectangle(c2f5cce9-7f32-499c-96f2-ea04fb718c67)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "CursorVertical"
+				visible: true
+				width: 2
+				height: height@909eb0e4-393c-4cd9-9be3-5ff6c1fb282a (propref<int>)
+				x: 8
+				y: y@909eb0e4-393c-4cd9-9be3-5ff6c1fb282a (propref<int>)
+				fillColor: #0000003C
+			}]
+		name: "Container"
+		visible: true
+		width: 780
+		height: 240
+		x: 0
+		y: 0
+		air: floatlist [30F, 31F, 29F, 30F, 30F, 30F, 29F, 28F, 25F, 24F, 25F, 12F, 9F, 14F, 25F, 27F, 28F, 26F, 31F, 31F, 32F, 33F, 24F, 22F]
+		water: floatlist [24F, 24F, 24F, 22F, 22F, 21F, 21F, 20F, 21F, 21F, 22F, 22F, 18F, 22F, 17F, 22F, 22F, 22F, 21F, 21F, 20F, 19F, 24F, 26F]
+		onInit: conditional_script(045faa6f-e8ff-4b6a-8f28-5c152e03f2cb)
+		{
+			triggerList: trigger_list(3f20f70b-27ef-41f8-9dc0-b3cb908f1476)
+			{
+				script: ""
+			}
+			onTrigger: function<bool,bool>(75ea440b-5d3b-41ee-9e0b-0ff6ee33d4c5)
+			{
+				script: "function(v:arg0::bool)" \
+					"{" \
+					"	" \
+					"	let v:i = 0;v:dif = 0.0 in{" \
+					"		while(v:i < length v:this.water){" \
+					"			" \
+					"			if(f:log10f(f:int2float(f:rand())) > 9.0)" \
+					"				v:dif = 5.0" \
+					"			else" \
+					"				v:dif = 0.0;" \
+					"			v:this.water[v:i] = f:log10f(f:int2float(f:rand())) * 3.0 - v:dif * 2.0 " \
+					"			v:this.air[v:i] = f:log10f(f:int2float(f:rand()))  * 3.0 - v:dif" \
+					"			v:i+=1" \
+					"		}" \
+					"		" \
+					"	}" \
+					"	" \
+					"	" \
+					"	let v:max = -100.0; v:index = 0 in {" \
+					"		while(v:index < length v:this.water){" \
+					"			if(v:max < v:this.water[v:index])" \
+					"				v:max = v:this.water[v:index]" \
+					"			v:index += 1" \
+					"		}" \
+					"		" \
+					"		v:index = 0" \
+					"		" \
+					"		while(v:index < length v:this.air){" \
+					"			if(v:max < v:this.air[v:index])" \
+					"				v:max = v:this.air[v:index]" \
+					"			v:index += 1" \
+					"		}" \
+					"		v:this.maxTemp = v:max		" \
+					"	}" \
+					"	" \
+					"	" \
+					"	false" \
+					"}"
+			}
+		}
+		maxTemp: 0F
+		indicatedValues: stringlist ["Empty", "Empty"]
+		indicatedBar: -1
+	}
+	x: x@00097ade-c0d0-4ca8-8118-6deb9a13c209 (propref<int>)
+	y: y@00097ade-c0d0-4ca8-8118-6deb9a13c209 (propref<int>)
+	indicatedValues: indicatedValues@00097ade-c0d0-4ca8-8118-6deb9a13c209 (propref<stringlist>)
+}

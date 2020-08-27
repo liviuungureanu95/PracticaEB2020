@@ -1,0 +1,60 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView_template_instance(4c0f4995-555c-4579-be2d-00ac4009d48c)
+{
+	name: "vSchema"
+	template: @5e80652e-ecef-4af0-ad89-16f04f9129f9 (objectref<GtfView_template>)
+	children: children_list [
+		GtfContainer_template_instance(1418f8bb-90e2-4eb4-846d-b115a93a3389)
+		{
+			name: "SlidingMenu"
+			template: @53aefd19-c201-4011-b951-480be3737f43 (objectref<GtfContainer_template>)
+			children: children_list []
+		}, 
+		GtfContainer_template_instance(51ff35cc-fc81-477d-92e8-c569a7c3004e)
+		{
+			name: "Schema"
+			template: @cc203692-7b29-4908-9afa-da97ee26181f (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 5
+			y: 155
+			colors: colorlist [#8B0000FF, #B22222FF, #FF0000FF, #556B2FFF, #32CD32FF, #ADFF2FFF]
+		}]
+	MainInfo: "Schema Complexului"
+	SecondaryInfo: string_scriptedValue(66967aeb-272a-455b-a88c-3c59751ba11a)
+	{
+		triggerList: trigger_list(d86ed971-3c48-4070-9949-7ca721e96ff7)
+		{
+			script: ""
+		}
+		onTrigger: function<bool,bool>(9b2fd58b-db1e-45cd-8c4d-1a2013036dba)
+		{
+			script: "function(v:arg0::bool)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+		read: function<string>(2f8b4485-6a7c-41f8-acb7-fc6b70415bde)
+		{
+			script: "function()" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	if(dp:selectedBasin == \"\")" \
+				"		\"Please select a basin\"" \
+				"	else" \
+				"		dp:selectedBasin" \
+				"}"
+		}
+		write: function<bool,string>(856b3f6e-f45f-4d5c-916e-4e885afb4781)
+		{
+			script: "function(v:arg0::string)" \
+				"{" \
+				"	// todo: auto generated return value, please adapt" \
+				"	false" \
+				"}"
+		}
+	}
+	backButtonAction: backButtonAction@5e80652e-ecef-4af0-ad89-16f04f9129f9 (propref<function<bool>>)
+	backButtonVisible: false
+}
