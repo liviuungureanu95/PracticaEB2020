@@ -1,0 +1,198 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(02df03bc-057c-4915-8481-8d64141025f2)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(65251d93-6547-4eb0-a407-756f1b40420e)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "background"
+			visible: true
+			width: width@02df03bc-057c-4915-8481-8d64141025f2 (propref<int>)
+			height: height@02df03bc-057c-4915-8481-8d64141025f2 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #696969FF
+		}, 
+		GtfContainer_template_instance(47e7a377-bedc-452c-bc45-c673faf1db25)
+		{
+			name: "panel 1"
+			template: @12a93c82-954d-41d8-b5da-46e51f2275f9 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 0
+			y: 0
+		}, 
+		GtfContainer_template_instance(72949916-14d7-4b9b-9a04-3356cad35cce)
+		{
+			name: "panel 2"
+			template: @12a93c82-954d-41d8-b5da-46e51f2275f9 (objectref<GtfContainer_template>)
+			children: children_list []
+			x: 0
+			y: 150
+		}, 
+		GtfInstantiator(1b7ec956-ab35-4061-9723-c52150fa19b2)
+		{
+			features: feature_list [
+				LayoutPolicyGrid(d11121bc-0037-4ee4-bf6a-50ae7ebcc7e9)
+				{
+					horizontalGap: 20
+					verticalGap: 10
+					numRows: 10
+					numColumns: 2
+				}]
+			children: children_list [
+				GtfContainer(80fc31dd-a189-4bc6-bc76-fd68361a8aa1)
+				{
+					features: feature_list [
+						TouchShortReleased(dce6cd53-2869-4efc-823d-701665d6a862)
+						{
+							touchShortReleased: function<bool,int,int,int,int>(3c6681ae-b9c6-4ddf-b3aa-d01104b0b6d1)
+							{
+								script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+									"{" \
+									"	if(v:this->doneImage.visible==false)" \
+									"	v:this->doneImage.visible=true" \
+									"	else" \
+									"	v:this->doneImage.visible=false" \
+									"    false" \
+									"}"
+							}
+						}, 
+						StateTouched(b01a05fd-60a2-4de8-b68a-3df2a9096399)
+						{
+							touchable: true
+							touched: false
+							touchPolicy: 0
+							touchBehavior: 0
+						}, 
+						LineIndex(d0ccfeaa-59be-4d99-bc07-70e9fe8b5e93)
+						{
+							lineIndex: 0
+						}]
+					children: children_list [
+						GtfRectangle(d4bc9817-c74f-4239-be44-8311ea0b1f21)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "background"
+							visible: true
+							width: width@80fc31dd-a189-4bc6-bc76-fd68361a8aa1 (propref<int>)
+							height: height@80fc31dd-a189-4bc6-bc76-fd68361a8aa1 (propref<int>)
+							x: 0
+							y: 0
+							fillColor: #FFFFFFFF
+						}, 
+						GtfLabel(24cabf98-db2b-4c45-a233-3ce004fef78b)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "text"
+							visible: true
+							width: 179
+							height: height@80fc31dd-a189-4bc6-bc76-fd68361a8aa1 (propref<int>)
+							x: 0
+							y: 0
+							text: "label"
+							textColor: #000000FF
+							font: font_resource(4c333542-2403-42b3-a00c-d4ded3efca65)
+							{
+								file: "PT_Sans_Narrow.ttf"
+								size: 40
+							}
+							horizontalAlign: 1
+							verticalAlign: 0
+							setText: conditional_script(76b2bacd-b0fe-40b0-9775-29f20bc02a5b)
+							{
+								triggerList: trigger_list(27d3f95f-cea3-4795-bf6a-b7658c69e99a)
+								{
+									script: "dp:toDoList" \
+										"v:this->^.lineIndex"
+								}
+								onTrigger: function<bool,bool>(dbcbc856-a66a-4290-919e-38fb93f123a4)
+								{
+									script: "function(v:arg0::bool)" \
+										"{" \
+										"	// todo: auto generated return value, please adapt" \
+										"	v:this.text=dp:toDoList[v:this->^.lineIndex]" \
+										"	false" \
+										"}"
+								}
+							}
+						}, 
+						GtfImage(7f2d0099-4d94-4df2-ae18-174865a75e5d)
+						{
+							features: feature_list [
+								ScaleMode(8a4f84d4-8082-47ae-830f-106ef64ac04a)
+								{
+									scaleMode: 2
+								}]
+							children: children_list []
+							name: "doneImage"
+							visible: false
+							width: 55
+							height: 53
+							x: 176
+							y: -2
+							image: image_resource(d6849a94-a507-45e8-890d-ca88e3e239ef)
+							{
+								file: "icons8-checkmark-96.png"
+							}
+							sRGB: false
+							horizontalAlign: 0
+							verticalAlign: 1
+						}]
+					name: "item"
+					visible: true
+					width: 100
+					height: 40
+					x: 0
+					y: 0
+				}]
+			name: "list"
+			visible: true
+			width: 480
+			height: 590
+			x: 0
+			y: 310
+			numItems: int_scriptedValue(82e81c1f-3999-496c-b6b0-b1b14dea00e4)
+			{
+				triggerList: trigger_list(9aa62780-ebed-4bed-b30d-8f4298c98911)
+				{
+					script: ""
+				}
+				onTrigger: function<bool,bool>(cf188c35-541e-45cf-9b89-0a0f0a40dc95)
+				{
+					script: "function(v:arg0::bool)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+				read: function<int>(d58bcdcb-72d8-4e69-ba5f-92e541d6f1f6)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	length dp:toDoList" \
+						"}"
+				}
+				write: function<bool,int>(c3c31c06-f5fe-412a-84a5-c9621200a568)
+				{
+					script: "function(v:arg0::int)" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	false" \
+						"}"
+				}
+			}
+			lineMapping: intlist []
+		}]
+	name: "mainViewS2"
+	visible: true
+	width: 480
+	height: 900
+	x: 0
+	y: 0
+}

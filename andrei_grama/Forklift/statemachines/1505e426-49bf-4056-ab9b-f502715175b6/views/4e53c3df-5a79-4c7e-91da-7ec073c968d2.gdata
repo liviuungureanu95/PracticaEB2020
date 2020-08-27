@@ -1,0 +1,154 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfView(4e53c3df-5a79-4c7e-91da-7ec073c968d2)
+{
+	features: feature_list []
+	children: children_list [
+		GtfRectangle(153d6fb2-05a4-4e4a-b016-114ac323208d)
+		{
+			features: feature_list []
+			children: children_list []
+			name: "background"
+			visible: true
+			width: width@4e53c3df-5a79-4c7e-91da-7ec073c968d2 (propref<int>)
+			height: height@4e53c3df-5a79-4c7e-91da-7ec073c968d2 (propref<int>)
+			x: 0
+			y: 0
+			fillColor: #FFFFFFFF
+		}, 
+		GtfImage(a257636b-c8f9-4a3f-959d-0707cc044faf)
+		{
+			features: feature_list [
+				ScaleMode(782ad34d-8457-49cb-899c-63d9c0cc0530)
+				{
+					scaleMode: 2
+				}]
+			children: children_list []
+			name: "logoImage"
+			visible: true
+			width: 470
+			height: 220
+			x: 5
+			y: 100
+			image: image_resource(95066a66-e844-4554-a8a3-a9bac2bc0d0e)
+			{
+				file: "logo.jpg"
+			}
+			sRGB: false
+			horizontalAlign: 1
+			verticalAlign: 0
+		}, 
+		GtfContainer(0208d7ac-e326-423f-9eee-7aa85e0ad08d)
+		{
+			features: feature_list []
+			children: children_list [
+				GtfRectangle(87ba79d6-9446-46a1-b4c6-ac185dbd03de)
+				{
+					features: feature_list []
+					children: children_list []
+					name: "road"
+					visible: true
+					width: width@0208d7ac-e326-423f-9eee-7aa85e0ad08d (propref<int>)
+					height: 50
+					x: 0
+					y: 100
+					fillColor: #696969FF
+				}, 
+				GtfImage(673b4008-93f4-4b88-a3ad-49d2705bfa62)
+				{
+					features: feature_list [
+						ScaleMode(edf8f341-146a-4dd5-807d-75bd9f69001a)
+						{
+							scaleMode: 2
+						}]
+					children: children_list []
+					name: "forkLift"
+					visible: true
+					width: 130
+					height: width@673b4008-93f4-4b88-a3ad-49d2705bfa62 (propref<int>)
+					x: 0
+					y: 13
+					image: image_resource(2a1902ed-17ea-4e8d-a647-2ff4f23008ac)
+					{
+						file: "forklift-lift-truck-warehouse-512.png"
+					}
+					sRGB: false
+					horizontalAlign: 0
+					verticalAlign: 1
+				}, 
+				GtfParallelAnimation(040af953-9e6b-40b1-afdc-28ba6f352d0b)
+				{
+					features: feature_list []
+					children: children_list [
+						GtfLinearInterpolationS32(55aa3421-17fa-4e01-b6d5-42caf98d78d7)
+						{
+							features: feature_list []
+							children: children_list []
+							name: "Linear interpolation curve"
+							enabled: true
+							delay: 0
+							duration: 4000
+							repeat: 1
+							alternating: false
+							relative: false
+							start: 0
+							end: 480
+							target: x@673b4008-93f4-4b88-a3ad-49d2705bfa62 (propref<int>)
+						}]
+					name: "driveAnimation"
+					enabled: true
+					repeat: 1
+					alternating: false
+					scale: 1F
+					onPlay: function<void,int,bool>(ea5aa665-5676-4fb7-8236-e32abb69e139)
+					{
+						script: "function(v:animation_time::int, v:forward::bool)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onPause: function<void,int>(d256cdb1-cb57-4bd5-8ab0-41f4b10acefe)
+					{
+						script: "function(v:animation_time::int)" \
+							"{" \
+							"" \
+							"}"
+					}
+					onTerminate: function<void,int,int>(6fdbe31e-2a19-4706-9624-2bfd54c6fc27)
+					{
+						script: "function(v:animation_time::int, v:terminate::int)" \
+							"{" \
+							"	fire ev:goToMainS2()" \
+							"}"
+					}
+					play: conditional_script(6b4b85d6-363a-4ea3-bec7-31795b514f0d)
+					{
+						triggerList: trigger_list(c1adc4fc-3a41-4906-a14d-fe53df6ea653)
+						{
+							script: ""
+						}
+						onTrigger: function<bool,bool>(dc10995a-a646-4e27-820c-543af7951977)
+						{
+							script: "function(v:arg0::bool)" \
+								"{" \
+								"	// todo: auto generated return value, please adapt" \
+								"	f:animation_play(v:this)" \
+								"	false" \
+								"}"
+						}
+					}
+				}]
+			name: "loadingBar"
+			visible: true
+			width: width@4e53c3df-5a79-4c7e-91da-7ec073c968d2 (propref<int>)
+			height: 200
+			x: 0
+			y: 450
+		}]
+	name: "introViewS2"
+	visible: true
+	width: 480
+	height: 900
+	x: 0
+	y: 0
+}

@@ -1,0 +1,448 @@
+EBGUIDE 6.10.0.200602120856;
+
+GtfContainer_template(12a93c82-954d-41d8-b5da-46e51f2275f9)
+{
+	name: "panel"
+	structure: GtfContainer(bb741aec-e88a-40d3-8f8e-2d1d72ac8d73)
+	{
+		features: feature_list []
+		children: children_list [
+			GtfRectangle(92aac609-9938-4ddd-8438-f97f7fefbdab)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "background"
+				visible: true
+				width: width@bb741aec-e88a-40d3-8f8e-2d1d72ac8d73 (propref<int>)
+				height: height@bb741aec-e88a-40d3-8f8e-2d1d72ac8d73 (propref<int>)
+				x: 0
+				y: 0
+				fillColor: #FFA500FF
+			}, 
+			GtfRectangle(30995c8d-8809-44bc-8c42-b8a8e5ef5cd8)
+			{
+				features: feature_list [
+					TouchPressed(b28484e0-1354-4728-a6f0-c3d536e25158)
+					{
+						touchPressed: function<bool,int,int,int,int>(2b125953-a193-4923-a876-021803aff828)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.fillColor=color:0, 0, 0, 255" \
+								"	v:this->loadLabel.textColor=color:255, 255, 255, 255" \
+								"    false" \
+								"}"
+						}
+					}, 
+					TouchShortReleased(b0afac74-3d71-415c-83d4-28f00bd82725)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(53efe3c9-470d-4458-bf37-fa76db6e000f)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.fillColor=color:255, 255, 255, 255" \
+								"	v:this->loadLabel.textColor=color:0, 0, 0, 255" \
+								"	v:this->^->frkAngbackground->forkAngle.fAngle=dp:forkAngle" \
+								"	v:this->^->frkHeightbackground->forkHeight.fHeight=dp:forkHeight" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(cc767be9-55e9-472b-a80e-1fd4fe79e0bc)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list [
+					GtfLabel(bade165c-fdb5-4139-b6b6-2eab8ee53773)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "loadLabel"
+						visible: true
+						width: width@30995c8d-8809-44bc-8c42-b8a8e5ef5cd8 (propref<int>)
+						height: height@30995c8d-8809-44bc-8c42-b8a8e5ef5cd8 (propref<int>)
+						x: 0
+						y: 0
+						text: "Load"
+						textColor: #000000FF
+						font: font_resource(cd725c64-7026-4ba3-95a8-5db2370f129a)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "loadButton"
+				visible: true
+				width: 70
+				height: 40
+				x: 85
+				y: 5
+				fillColor: #FFFFFFFF
+			}, 
+			GtfRectangle(ad255e30-ef16-4662-9379-51216b80b5db)
+			{
+				features: feature_list [
+					TouchPressed(ecec70bb-6bbe-4cad-9676-da4aaa3f57f1)
+					{
+						touchPressed: function<bool,int,int,int,int>(094c2afe-d209-4d1b-a13a-a6ba482c342f)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.fillColor=color:0, 0, 0, 255" \
+								"	v:this->resetLabel.textColor=color:255, 255, 255, 255" \
+								"    false" \
+								"}"
+						}
+					}, 
+					TouchShortReleased(f2cdeac3-3b6d-4172-a558-33defd27b674)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(3112a478-438d-42c3-b006-443b255d9842)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.fillColor=color:255, 255, 255, 255" \
+								"	v:this->resetLabel.textColor=color:0, 0, 0, 255" \
+								"	v:this->^->frkAngbackground->forkAngle.fAngle=0" \
+								"	v:this->^->frkHeightbackground->forkHeight.fHeight=0" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(a6ff5fa5-bac5-4dfb-899b-db62ddcd4192)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list [
+					GtfLabel(f372daf8-0d61-40da-ad54-5108809961af)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "resetLabel"
+						visible: true
+						width: width@ad255e30-ef16-4662-9379-51216b80b5db (propref<int>)
+						height: height@ad255e30-ef16-4662-9379-51216b80b5db (propref<int>)
+						x: 0
+						y: 0
+						text: "Reset"
+						textColor: #000000FF
+						font: font_resource(7c644ebe-9a58-4459-aeb4-2a012b33df40)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "resetButton"
+				visible: true
+				width: 70
+				height: 40
+				x: 205
+				y: 5
+				fillColor: #FFFFFFFF
+			}, 
+			GtfRectangle(cfeda4d7-e532-421f-9fa4-5df2d8dabb5b)
+			{
+				features: feature_list [
+					TouchPressed(582abcfc-1eeb-40cd-9c09-6bb50f82cd6d)
+					{
+						touchPressed: function<bool,int,int,int,int>(0eee02cb-fbff-4b46-bd3e-29da73971ce0)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.fillColor=color:0, 0, 0, 255" \
+								"	v:this->applyLabel.textColor=color:255, 255, 255, 255" \
+								"    false" \
+								"}"
+						}
+					}, 
+					TouchShortReleased(e3b5c7d7-a50d-4f35-9295-ca30f3053409)
+					{
+						touchShortReleased: function<bool,int,int,int,int>(ed5d8103-e45d-442c-8091-6241f4c49ccf)
+						{
+							script: "function(v:touchId::int, v:x::int, v:y::int, v:fingerId::int)" \
+								"{" \
+								"	v:this.fillColor=color:255, 255, 255, 255" \
+								"	v:this->applyLabel.textColor=color:0, 0, 0, 255" \
+								"	dp:forkAngle=v:this->^->frkAngbackground->forkAngle.fAngle" \
+								"	dp:forkHeight=v:this->^->frkHeightbackground->forkHeight.fHeight" \
+								"    false" \
+								"}"
+						}
+					}, 
+					StateTouched(10d14b83-b09a-4b60-808f-b30d6c0fff3e)
+					{
+						touchable: true
+						touched: false
+						touchPolicy: 0
+						touchBehavior: 0
+					}]
+				children: children_list [
+					GtfLabel(8e43165e-e653-4994-a0dd-6dbe3a211108)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "applyLabel"
+						visible: true
+						width: width@cfeda4d7-e532-421f-9fa4-5df2d8dabb5b (propref<int>)
+						height: height@cfeda4d7-e532-421f-9fa4-5df2d8dabb5b (propref<int>)
+						x: 0
+						y: 0
+						text: "Apply"
+						textColor: #000000FF
+						font: font_resource(fba821cf-47ab-4d80-b57b-8a205d13ae93)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+					}]
+				name: "applyButton"
+				visible: true
+				width: 70
+				height: 40
+				x: 325
+				y: 5
+				fillColor: #FFFFFFFF
+			}, 
+			GtfLabel(5c988ff4-705b-4aad-8b1c-04f3a15812fb)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "forkAngleLabel"
+				visible: true
+				width: 100
+				height: 50
+				x: 120
+				y: 40
+				text: "fork angle"
+				textColor: #000000FF
+				font: font_resource(00c93d0d-845c-4079-9a4c-23c80ee43d01)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfRectangle(38a62818-2379-4ad5-b4e2-f1c5c39cb9c8)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLabel(f55b7c0b-7405-47da-bc6f-56436742009a)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "forkAngle"
+						visible: true
+						width: 100
+						height: 50
+						x: 0
+						y: 0
+						text: string_scriptedValue(f2f2c66f-9999-47f4-b350-5a9f28f22643)
+						{
+							triggerList: trigger_list(d6937fdb-5d70-4370-987b-0e7852368b0d)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(7e77af03-8959-454c-86fa-b032c14e78a3)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<string>(211923f3-77b7-4ffa-a750-447020bfeeba)
+							{
+								script: "function()" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	f:int2string(v:this.fAngle)+\"°\"" \
+									"}"
+							}
+							write: function<bool,string>(eb815c61-6c3f-4bf5-9777-8d43e1094d31)
+							{
+								script: "function(v:arg0::string)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						textColor: #000000FF
+						font: font_resource(7f1c0444-a3c1-4a80-b9c9-7b9cd718838d)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+						fAngle: 0
+					}]
+				name: "frkAngbackground"
+				visible: true
+				width: 100
+				height: 50
+				x: 120
+				y: 90
+				fillColor: #FFFFFFFF
+			}, 
+			GtfContainer_template_instance(4bea2462-8651-4c74-b631-f6516422a918)
+			{
+				name: "anglebuttons"
+				template: @02f766ad-1847-4550-99f7-a50116e6db22 (objectref<GtfContainer_template>)
+				children: children_list []
+				x: 0
+				y: 90
+				"buttonPressed+": function<bool>(47b78c61-e708-49b3-9bdb-c6c2c4a2b12d)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	if(v:this->^->frkAngbackground->forkAngle.fAngle<10)" \
+						"	v:this->^->frkAngbackground->forkAngle.fAngle+=1" \
+						"false" \
+						"}"
+				}
+				"buttonPressed-": function<bool>(bcc47232-4166-4a5c-828d-c8d3522b8e95)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	if(v:this->^->frkAngbackground->forkAngle.fAngle>-10)" \
+						"	v:this->^->frkAngbackground->forkAngle.fAngle+=-1" \
+						"	false" \
+						"}"
+				}
+			}, 
+			GtfLabel(6748640e-31b4-457c-852c-c3780e1cbf5c)
+			{
+				features: feature_list []
+				children: children_list []
+				name: "forkHeightLabel"
+				visible: true
+				width: 100
+				height: 50
+				x: 380
+				y: 40
+				text: "fork height"
+				textColor: #000000FF
+				font: font_resource(4724a8eb-72b2-435f-8847-67312e5a04f8)
+				{
+					file: "PT_Sans_Narrow.ttf"
+					size: 30
+				}
+				horizontalAlign: 1
+				verticalAlign: 0
+			}, 
+			GtfRectangle(0e8f6200-6f4d-4995-bfa8-249bc9feca5a)
+			{
+				features: feature_list []
+				children: children_list [
+					GtfLabel(a8a53227-0dae-4045-9d85-a1464369125a)
+					{
+						features: feature_list []
+						children: children_list []
+						name: "forkHeight"
+						visible: true
+						width: 100
+						height: 50
+						x: 0
+						y: 0
+						text: string_scriptedValue(1303f3f5-697e-4069-bb07-6de7c4d12cc1)
+						{
+							triggerList: trigger_list(fe1b5158-a180-48b3-9ff9-30cd051de593)
+							{
+								script: ""
+							}
+							onTrigger: function<bool,bool>(9745b145-c608-404f-90ee-130b042ff33d)
+							{
+								script: "function(v:arg0::bool)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+							read: function<string>(405e8515-3d0a-4b7e-981f-4a082a4514c0)
+							{
+								script: "function()" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	f:int2string(v:this.fHeight)+\"m\"" \
+									"}"
+							}
+							write: function<bool,string>(4a73431c-5748-43cc-9b3d-42f49e45b688)
+							{
+								script: "function(v:arg0::string)" \
+									"{" \
+									"	// todo: auto generated return value, please adapt" \
+									"	false" \
+									"}"
+							}
+						}
+						textColor: #000000FF
+						font: font_resource(fbc9b17d-a3c2-4afd-8c1e-2cf9510e4663)
+						{
+							file: "PT_Sans_Narrow.ttf"
+							size: 30
+						}
+						horizontalAlign: 1
+						verticalAlign: 0
+						fHeight: 0
+					}]
+				name: "frkHeightbackground"
+				visible: true
+				width: 100
+				height: 50
+				x: 380
+				y: 90
+				fillColor: #FFFFFFFF
+			}, 
+			GtfContainer_template_instance(efae7bcb-d4c6-406f-af23-ceb2c52bad2a)
+			{
+				name: "heightbuttons"
+				template: @02f766ad-1847-4550-99f7-a50116e6db22 (objectref<GtfContainer_template>)
+				children: children_list []
+				x: 260
+				y: 90
+				"buttonPressed+": function<bool>(009e1aa9-d29f-4034-b5a4-e972052b8349)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	if(v:this->^->frkHeightbackground->forkHeight.fHeight<8)" \
+						"	v:this->^->frkHeightbackground->forkHeight.fHeight+=1" \
+						"	false" \
+						"}"
+				}
+				"buttonPressed-": function<bool>(b97bd73c-fcb0-46e2-9dff-e3104c449828)
+				{
+					script: "function()" \
+						"{" \
+						"	// todo: auto generated return value, please adapt" \
+						"	if(v:this->^->frkHeightbackground->forkHeight.fHeight>0)" \
+						"	v:this->^->frkHeightbackground->forkHeight.fHeight+=-1" \
+						"	false" \
+						"}"
+				}
+			}]
+		name: "Container"
+		visible: true
+		width: 480
+		height: 140
+		x: 0
+		y: 0
+	}
+	x: x@bb741aec-e88a-40d3-8f8e-2d1d72ac8d73 (propref<int>)
+	y: y@bb741aec-e88a-40d3-8f8e-2d1d72ac8d73 (propref<int>)
+}
